@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Properties of the scope in which a user operates, which represents a developer account or Mozu production tenant.
+ *	Properties of the scope in which a user operates, which represents a developer account or  production tenant.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class UserScope implements Serializable
@@ -21,9 +21,6 @@ public class UserScope implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Identifier of the scope, which represents a developer account ID or tenant ID.
-	 */
 	protected  Integer id;
 
 	public Integer getId() {
@@ -34,9 +31,6 @@ public class UserScope implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * The name of the developer account or tenant.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -47,9 +41,6 @@ public class UserScope implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * The type of scope, which is a developer account or production tenant.
-	 */
 	protected  String type;
 
 	public String getType() {

@@ -21,9 +21,6 @@ public class Hours implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Label that describes the range of operating hours for a location. For example - {"Label": "10:00 AM - 6:00 PM"}
-	 */
 	protected  String label;
 
 	public String getLabel() {

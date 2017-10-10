@@ -26,6 +26,9 @@ public class BillingInfo implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Holds the transaction IDÂ for an external payment type service.
+	 */
 	protected  String externalTransactionId;
 
 	public String getExternalTransactionId() {
@@ -36,9 +39,6 @@ public class BillingInfo implements Serializable
 		this.externalTransactionId = externalTransactionId;
 	}
 
-	/**
-	 * If true, the system overrides the customer's billing address information with the supplied fulfillment information.
-	 */
 	protected  Boolean isSameBillingShippingAddress;
 
 	public Boolean getIsSameBillingShippingAddress() {
@@ -49,9 +49,6 @@ public class BillingInfo implements Serializable
 		this.isSameBillingShippingAddress = isSameBillingShippingAddress;
 	}
 
-	/**
-	 * The type of payment, such as credit card, check, or PayPal Express. Additional payment types will be supported in future releases.
-	 */
 	protected  String paymentType;
 
 	public String getPaymentType() {
@@ -62,6 +59,9 @@ public class BillingInfo implements Serializable
 		this.paymentType = paymentType;
 	}
 
+	/**
+	 * Identifies a specific workflow the payment goes through. This is used to define a workflow for external payment services.
+	 */
 	protected  String paymentWorkflow;
 
 	public String getPaymentWorkflow() {
@@ -85,9 +85,6 @@ public class BillingInfo implements Serializable
 		this.storeCreditCode = storeCreditCode;
 	}
 
-	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -98,9 +95,6 @@ public class BillingInfo implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * The cardholder's billing contact information, including addresses.
-	 */
 	protected  Contact billingContact;
 
 	public Contact getBillingContact() {
@@ -111,9 +105,6 @@ public class BillingInfo implements Serializable
 		this.billingContact = billingContact;
 	}
 
-	/**
-	 * If the customer is paying by card, the credit card information.
-	 */
 	protected  PaymentCard card;
 
 	public PaymentCard getCard() {
@@ -124,6 +115,9 @@ public class BillingInfo implements Serializable
 		this.card = card;
 	}
 
+	/**
+	 * Information about the check used in the billing information, if it exists.
+	 */
 	protected  CheckPayment check;
 
 	public CheckPayment getCheck() {
@@ -134,6 +128,9 @@ public class BillingInfo implements Serializable
 		this.check = check;
 	}
 
+	/**
+	 * Custom data originated by the billing service.
+	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {
@@ -144,6 +141,9 @@ public class BillingInfo implements Serializable
 		this.data = data;
 	}
 
+	/**
+	 * The purchase order payment details.
+	 */
 	protected  PurchaseOrderPayment purchaseOrder;
 
 	public PurchaseOrderPayment getPurchaseOrder() {

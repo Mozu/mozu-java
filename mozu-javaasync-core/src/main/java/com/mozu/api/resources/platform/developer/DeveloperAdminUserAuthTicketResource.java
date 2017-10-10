@@ -20,7 +20,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use this resource to manage authentication tickets for your developer account.
+ * Use the Authtickets resource to manage authentication tickets for your developer account.
  * </summary>
  */
 public class DeveloperAdminUserAuthTicketResource {
@@ -41,12 +41,12 @@ public DeveloperAdminUserAuthTicketResource(ApiContext apiContext)
 
 	
 	/**
-	 * Generate an authentication ticket for a developer account.
+	 * 
 	 * <p><pre><code>
 	 *	DeveloperAdminUserAuthTicket developeradminuserauthticket = new DeveloperAdminUserAuthTicket();
 	 *	DeveloperAdminUserAuthTicket developerAdminUserAuthTicket = developeradminuserauthticket.createDeveloperUserAuthTicket( userAuthInfo);
 	 * </code></pre></p>
-	 * @param userAuthInfo The user authentication information required to generate the developer account user authentication ticket, which consists of a user name and password.
+	 * @param userAuthInfo Information required to authenticate a user.
 	 * @return com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.core.UserAuthInfo
@@ -57,13 +57,13 @@ public DeveloperAdminUserAuthTicketResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Generate an authentication ticket for a developer account.
+	 * 
 	 * <p><pre><code>
 	 *	DeveloperAdminUserAuthTicket developeradminuserauthticket = new DeveloperAdminUserAuthTicket();
 	 *	CountDownLatch latch = developeradminuserauthticket.createDeveloperUserAuthTicket( userAuthInfo, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param userAuthInfo The user authentication information required to generate the developer account user authentication ticket, which consists of a user name and password.
+	 * @param userAuthInfo Information required to authenticate a user.
 	 * @return com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.core.UserAuthInfo
@@ -74,14 +74,14 @@ public DeveloperAdminUserAuthTicketResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Generate an authentication ticket for a developer account.
+	 * 
 	 * <p><pre><code>
 	 *	DeveloperAdminUserAuthTicket developeradminuserauthticket = new DeveloperAdminUserAuthTicket();
 	 *	DeveloperAdminUserAuthTicket developerAdminUserAuthTicket = developeradminuserauthticket.createDeveloperUserAuthTicket( userAuthInfo,  developerAccountId,  responseFields);
 	 * </code></pre></p>
 	 * @param developerAccountId Unique identifier of the developer account.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param userAuthInfo The user authentication information required to generate the developer account user authentication ticket, which consists of a user name and password.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param userAuthInfo Information required to authenticate a user.
 	 * @return com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.core.UserAuthInfo
@@ -96,15 +96,15 @@ public DeveloperAdminUserAuthTicketResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Generate an authentication ticket for a developer account.
+	 * 
 	 * <p><pre><code>
 	 *	DeveloperAdminUserAuthTicket developeradminuserauthticket = new DeveloperAdminUserAuthTicket();
 	 *	CountDownLatch latch = developeradminuserauthticket.createDeveloperUserAuthTicket( userAuthInfo,  developerAccountId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param developerAccountId Unique identifier of the developer account.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param userAuthInfo The user authentication information required to generate the developer account user authentication ticket, which consists of a user name and password.
+	 * @param userAuthInfo Information required to authenticate a user.
 	 * @return com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.core.UserAuthInfo
@@ -118,12 +118,12 @@ public DeveloperAdminUserAuthTicketResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Generates a new developer account authentication ticket for the specified tenant by supplying the defined refresh token information.
+	 * 
 	 * <p><pre><code>
 	 *	DeveloperAdminUserAuthTicket developeradminuserauthticket = new DeveloperAdminUserAuthTicket();
 	 *	DeveloperAdminUserAuthTicket developerAdminUserAuthTicket = developeradminuserauthticket.refreshDeveloperAuthTicket( existingAuthTicket);
 	 * </code></pre></p>
-	 * @param existingAuthTicket Properties of the authentication ticket to refresh. The refresh token is required to complete this request.
+	 * @param existingAuthTicket Properties of the authentication ticket to be used in developer account claims with the  API.
 	 * @return com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket
@@ -134,13 +134,13 @@ public DeveloperAdminUserAuthTicketResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Generates a new developer account authentication ticket for the specified tenant by supplying the defined refresh token information.
+	 * 
 	 * <p><pre><code>
 	 *	DeveloperAdminUserAuthTicket developeradminuserauthticket = new DeveloperAdminUserAuthTicket();
 	 *	CountDownLatch latch = developeradminuserauthticket.refreshDeveloperAuthTicket( existingAuthTicket, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param existingAuthTicket Properties of the authentication ticket to refresh. The refresh token is required to complete this request.
+	 * @param existingAuthTicket Properties of the authentication ticket to be used in developer account claims with the  API.
 	 * @return com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket
@@ -151,14 +151,14 @@ public DeveloperAdminUserAuthTicketResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Generates a new developer account authentication ticket for the specified tenant by supplying the defined refresh token information.
+	 * 
 	 * <p><pre><code>
 	 *	DeveloperAdminUserAuthTicket developeradminuserauthticket = new DeveloperAdminUserAuthTicket();
 	 *	DeveloperAdminUserAuthTicket developerAdminUserAuthTicket = developeradminuserauthticket.refreshDeveloperAuthTicket( existingAuthTicket,  developerAccountId,  responseFields);
 	 * </code></pre></p>
 	 * @param developerAccountId Unique identifier of the developer account.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param existingAuthTicket Properties of the authentication ticket to refresh. The refresh token is required to complete this request.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param existingAuthTicket Properties of the authentication ticket to be used in developer account claims with the  API.
 	 * @return com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket
@@ -173,15 +173,15 @@ public DeveloperAdminUserAuthTicketResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Generates a new developer account authentication ticket for the specified tenant by supplying the defined refresh token information.
+	 * 
 	 * <p><pre><code>
 	 *	DeveloperAdminUserAuthTicket developeradminuserauthticket = new DeveloperAdminUserAuthTicket();
 	 *	CountDownLatch latch = developeradminuserauthticket.refreshDeveloperAuthTicket( existingAuthTicket,  developerAccountId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param developerAccountId Unique identifier of the developer account.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param existingAuthTicket Properties of the authentication ticket to refresh. The refresh token is required to complete this request.
+	 * @param existingAuthTicket Properties of the authentication ticket to be used in developer account claims with the  API.
 	 * @return com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket
@@ -195,12 +195,12 @@ public DeveloperAdminUserAuthTicketResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Deletes the authentication ticket for the developer account by supplying the refresh token.
+	 * 
 	 * <p><pre><code>
 	 *	DeveloperAdminUserAuthTicket developeradminuserauthticket = new DeveloperAdminUserAuthTicket();
 	 *	developeradminuserauthticket.deleteUserAuthTicket( refreshToken);
 	 * </code></pre></p>
-	 * @param refreshToken Refresh token string associated with the developer account authentication ticket.
+	 * @param refreshToken Alphanumeric string used for access tokens. This token refreshes access for accounts by generating a new developer or application account authentication ticket after an access token expires.
 	 * @return 
 	 */
 	public void deleteUserAuthTicket(String refreshToken) throws Exception

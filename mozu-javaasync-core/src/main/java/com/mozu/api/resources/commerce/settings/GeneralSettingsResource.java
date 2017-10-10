@@ -37,7 +37,7 @@ public class GeneralSettingsResource {
 
 	
 	/**
-	 * Retrieve a site's general global settings.
+	 * 
 	 * <p><pre><code>
 	 *	GeneralSettings generalsettings = new GeneralSettings();
 	 *	GeneralSettings generalSettings = generalsettings.getGeneralSettings();
@@ -51,7 +51,7 @@ public class GeneralSettingsResource {
 	}
 
 	/**
-	 * Retrieve a site's general global settings.
+	 * 
 	 * <p><pre><code>
 	 *	GeneralSettings generalsettings = new GeneralSettings();
 	 *	CountDownLatch latch = generalsettings.getGeneralSettings( callback );
@@ -66,12 +66,12 @@ public class GeneralSettingsResource {
 	}
 
 	/**
-	 * Retrieve a site's general global settings.
+	 * 
 	 * <p><pre><code>
 	 *	GeneralSettings generalsettings = new GeneralSettings();
 	 *	GeneralSettings generalSettings = generalsettings.getGeneralSettings( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.sitesettings.general.GeneralSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings
 	 */
@@ -85,12 +85,12 @@ public class GeneralSettingsResource {
 	}
 
 	/**
-	 * Retrieve a site's general global settings.
+	 * 
 	 * <p><pre><code>
 	 *	GeneralSettings generalsettings = new GeneralSettings();
 	 *	CountDownLatch latch = generalsettings.getGeneralSettings( responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.sitesettings.general.GeneralSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings
@@ -104,12 +104,12 @@ public class GeneralSettingsResource {
 	}
 
 	/**
-	 * Updates a site's general global settings.
+	 * 
 	 * <p><pre><code>
 	 *	GeneralSettings generalsettings = new GeneralSettings();
 	 *	GeneralSettings generalSettings = generalsettings.updateGeneralSettings( generalSettings);
 	 * </code></pre></p>
-	 * @param generalSettings The properties of the site's general settings to update.
+	 * @param generalSettings General settings used on the storefront site.
 	 * @return com.mozu.api.contracts.sitesettings.general.GeneralSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings
@@ -120,13 +120,13 @@ public class GeneralSettingsResource {
 	}
 
 	/**
-	 * Updates a site's general global settings.
+	 * 
 	 * <p><pre><code>
 	 *	GeneralSettings generalsettings = new GeneralSettings();
 	 *	CountDownLatch latch = generalsettings.updateGeneralSettings( generalSettings, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param generalSettings The properties of the site's general settings to update.
+	 * @param generalSettings General settings used on the storefront site.
 	 * @return com.mozu.api.contracts.sitesettings.general.GeneralSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings
@@ -137,13 +137,13 @@ public class GeneralSettingsResource {
 	}
 
 	/**
-	 * Updates a site's general global settings.
+	 * 
 	 * <p><pre><code>
 	 *	GeneralSettings generalsettings = new GeneralSettings();
 	 *	GeneralSettings generalSettings = generalsettings.updateGeneralSettings( generalSettings,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param generalSettings The properties of the site's general settings to update.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param generalSettings General settings used on the storefront site.
 	 * @return com.mozu.api.contracts.sitesettings.general.GeneralSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings
@@ -158,14 +158,14 @@ public class GeneralSettingsResource {
 	}
 
 	/**
-	 * Updates a site's general global settings.
+	 * 
 	 * <p><pre><code>
 	 *	GeneralSettings generalsettings = new GeneralSettings();
 	 *	CountDownLatch latch = generalsettings.updateGeneralSettings( generalSettings,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param generalSettings The properties of the site's general settings to update.
+	 * @param generalSettings General settings used on the storefront site.
 	 * @return com.mozu.api.contracts.sitesettings.general.GeneralSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings

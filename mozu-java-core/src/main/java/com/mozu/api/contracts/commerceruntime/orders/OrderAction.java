@@ -21,9 +21,6 @@ public class OrderAction implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The name of the action for the order.
-	 */
 	protected  String actionName;
 
 	public String getActionName() {

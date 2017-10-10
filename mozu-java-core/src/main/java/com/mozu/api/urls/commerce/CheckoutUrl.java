@@ -50,13 +50,13 @@ public class CheckoutUrl
 	}
 
 	/**
-	 * Get Resource Url for GetAvailableShipmentMethods
+	 * Get Resource Url for GetAvailableShippingMethods
 	 * @param checkoutId 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getAvailableShipmentMethodsUrl(String checkoutId)
+	public static MozuUrl getAvailableShippingMethodsUrl(String checkoutId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/checkouts/{checkoutId}/shipments/methods");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/checkouts/{checkoutId}/shippingMethods");
 		formatter.formatUrl("checkoutId", checkoutId);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
@@ -104,6 +104,18 @@ public class CheckoutUrl
 	}
 
 	/**
+	 * Get Resource Url for ResendCheckoutConfirmationEmail
+	 * @param checkoutId 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl resendCheckoutConfirmationEmailUrl(String checkoutId)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/checkouts/{checkoutId}/email/resend");
+		formatter.formatUrl("checkoutId", checkoutId);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for SetShippingMethods
 	 * @param checkoutId 
 	 * @param responseFields 
@@ -132,14 +144,32 @@ public class CheckoutUrl
 	}
 
 	/**
-	 * Get Resource Url for ResendCheckoutConfirmationEmail
+	 * Get Resource Url for ProcessDigitalWallet
 	 * @param checkoutId 
+	 * @param digitalWalletType 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl resendCheckoutConfirmationEmailUrl(String checkoutId)
+	public static MozuUrl processDigitalWalletUrl(String checkoutId, String digitalWalletType, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/checkouts/{checkoutId}/email/resend");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/checkouts/{checkoutId}/digitalWallet/{digitalWalletType}?responseFields={responseFields}");
 		formatter.formatUrl("checkoutId", checkoutId);
+		formatter.formatUrl("digitalWalletType", digitalWalletType);
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for ChangeCheckoutPriceList
+	 * @param checkoutId 
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl changeCheckoutPriceListUrl(String checkoutId, String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/checkouts/{checkoutId}/priceList?responseFields={responseFields}");
+		formatter.formatUrl("checkoutId", checkoutId);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

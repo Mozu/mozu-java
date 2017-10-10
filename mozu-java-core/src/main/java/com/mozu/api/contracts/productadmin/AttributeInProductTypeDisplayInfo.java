@@ -12,12 +12,18 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
+/**
+ *	Properties for the intended view of the product attribute in the storefront.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AttributeInProductTypeDisplayInfo implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Defines the intended display of this attribute in the storefront. Options include Drop Down, Image Picker, and Radio Buttons.
+	 */
 	protected  String displayIntention;
 
 	public String getDisplayIntention() {

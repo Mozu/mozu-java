@@ -20,7 +20,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * 
+ * commerce/payments/cards related resources. DOCUMENT_HERE 
  * </summary>
  */
 public class PublicCardResource {
@@ -46,7 +46,7 @@ public PublicCardResource(ApiContext apiContext)
 	 *	PublicCard publiccard = new PublicCard();
 	 *	SyncResponse syncResponse = publiccard.create( request);
 	 * </code></pre></p>
-	 * @param request 
+	 * @param request Mozu.PaymentService.Contracts.PublicCard ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.paymentservice.response.SyncResponse
 	 * @see com.mozu.api.contracts.paymentservice.response.SyncResponse
 	 * @see com.mozu.api.contracts.paymentservice.PublicCard
@@ -63,7 +63,7 @@ public PublicCardResource(ApiContext apiContext)
 	 *	CountDownLatch latch = publiccard.create( request, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param request 
+	 * @param request Mozu.PaymentService.Contracts.PublicCard ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.paymentservice.response.SyncResponse
 	 * @see com.mozu.api.contracts.paymentservice.response.SyncResponse
 	 * @see com.mozu.api.contracts.paymentservice.PublicCard
@@ -79,8 +79,8 @@ public PublicCardResource(ApiContext apiContext)
 	 *	PublicCard publiccard = new PublicCard();
 	 *	SyncResponse syncResponse = publiccard.create( request,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param request 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param request Mozu.PaymentService.Contracts.PublicCard ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.paymentservice.response.SyncResponse
 	 * @see com.mozu.api.contracts.paymentservice.response.SyncResponse
 	 * @see com.mozu.api.contracts.paymentservice.PublicCard
@@ -100,9 +100,9 @@ public PublicCardResource(ApiContext apiContext)
 	 *	PublicCard publiccard = new PublicCard();
 	 *	CountDownLatch latch = publiccard.create( request,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param request 
+	 * @param request Mozu.PaymentService.Contracts.PublicCard ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.paymentservice.response.SyncResponse
 	 * @see com.mozu.api.contracts.paymentservice.response.SyncResponse
 	 * @see com.mozu.api.contracts.paymentservice.PublicCard
@@ -121,8 +121,8 @@ public PublicCardResource(ApiContext apiContext)
 	 *	PublicCard publiccard = new PublicCard();
 	 *	SyncResponse syncResponse = publiccard.update( request,  cardId);
 	 * </code></pre></p>
-	 * @param cardId 
-	 * @param request 
+	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
+	 * @param request Mozu.PaymentService.Contracts.PublicCard ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.paymentservice.response.SyncResponse
 	 * @see com.mozu.api.contracts.paymentservice.response.SyncResponse
 	 * @see com.mozu.api.contracts.paymentservice.PublicCard
@@ -138,9 +138,9 @@ public PublicCardResource(ApiContext apiContext)
 	 *	PublicCard publiccard = new PublicCard();
 	 *	CountDownLatch latch = publiccard.update( request,  cardId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param cardId 
+	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param request 
+	 * @param request Mozu.PaymentService.Contracts.PublicCard ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.paymentservice.response.SyncResponse
 	 * @see com.mozu.api.contracts.paymentservice.response.SyncResponse
 	 * @see com.mozu.api.contracts.paymentservice.PublicCard
@@ -156,9 +156,9 @@ public PublicCardResource(ApiContext apiContext)
 	 *	PublicCard publiccard = new PublicCard();
 	 *	SyncResponse syncResponse = publiccard.update( request,  cardId,  responseFields);
 	 * </code></pre></p>
-	 * @param cardId 
-	 * @param responseFields 
-	 * @param request 
+	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param request Mozu.PaymentService.Contracts.PublicCard ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.paymentservice.response.SyncResponse
 	 * @see com.mozu.api.contracts.paymentservice.response.SyncResponse
 	 * @see com.mozu.api.contracts.paymentservice.PublicCard
@@ -178,10 +178,10 @@ public PublicCardResource(ApiContext apiContext)
 	 *	PublicCard publiccard = new PublicCard();
 	 *	CountDownLatch latch = publiccard.update( request,  cardId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param cardId 
-	 * @param responseFields 
+	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param request 
+	 * @param request Mozu.PaymentService.Contracts.PublicCard ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.paymentservice.response.SyncResponse
 	 * @see com.mozu.api.contracts.paymentservice.response.SyncResponse
 	 * @see com.mozu.api.contracts.paymentservice.PublicCard
@@ -200,7 +200,7 @@ public PublicCardResource(ApiContext apiContext)
 	 *	PublicCard publiccard = new PublicCard();
 	 *	publiccard.delete( cardId);
 	 * </code></pre></p>
-	 * @param cardId 
+	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
 	 * @return 
 	 */
 	public void delete(String cardId) throws Exception

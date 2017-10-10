@@ -22,9 +22,6 @@ public class OrderNote implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Unique identifier of the order note.
-	 */
 	protected  String id;
 
 	public String getId() {
@@ -35,9 +32,6 @@ public class OrderNote implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * The text content of the order note.
-	 */
 	protected  String text;
 
 	public String getText() {
@@ -48,9 +42,6 @@ public class OrderNote implements Serializable
 		this.text = text;
 	}
 
-	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {

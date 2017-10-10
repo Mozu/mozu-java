@@ -24,9 +24,6 @@ public class ProductProperty implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 */
 	protected  String attributeFQN;
 
 	public String getAttributeFQN() {
@@ -37,9 +34,6 @@ public class ProductProperty implements Serializable
 		this.attributeFQN = attributeFQN;
 	}
 
-	/**
-	 * The data type of the property attribute, which is Bool, DateTime, Number, or String.
-	 */
 	protected  String dataType;
 
 	public String getDataType() {
@@ -50,9 +44,6 @@ public class ProductProperty implements Serializable
 		this.dataType = dataType;
 	}
 
-	/**
-	 * If true, the product property can have more than one value.
-	 */
 	protected  Boolean isMultiValue;
 
 	public Boolean getIsMultiValue() {
@@ -63,9 +54,6 @@ public class ProductProperty implements Serializable
 		this.isMultiValue = isMultiValue;
 	}
 
-	/**
-	 * The name of the product property.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -76,9 +64,6 @@ public class ProductProperty implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * The list of possible values for the product property.
-	 */
 	protected List<ProductPropertyValue> values;
 	public List<ProductPropertyValue> getValues() {
 		return this.values;

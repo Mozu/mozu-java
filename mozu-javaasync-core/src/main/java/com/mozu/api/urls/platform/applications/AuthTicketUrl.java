@@ -15,7 +15,7 @@ public class AuthTicketUrl
 
 	/**
 	 * Get Resource Url for AuthenticateApp
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl authenticateAppUrl(String responseFields)
@@ -27,7 +27,7 @@ public class AuthTicketUrl
 
 	/**
 	 * Get Resource Url for RefreshAppAuthTicket
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl refreshAppAuthTicketUrl(String responseFields)
@@ -39,7 +39,7 @@ public class AuthTicketUrl
 
 	/**
 	 * Get Resource Url for DeleteAppAuthTicket
-	 * @param refreshToken The refresh token string from the application's authentication ticket.
+	 * @param refreshToken Alphanumeric string used for access tokens. This token refreshes access for accounts by generating a new developer or application account authentication ticket after an access token expires.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteAppAuthTicketUrl(String refreshToken)

@@ -20,7 +20,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * The Reference resource retrieves collections of standards the Mozu system currently supports. This includes content locales, top-level domains, units of measure, countries, currencies, time zones, and shipping or billing address schemas.
+ * The Reference resource retrieves collections of standards the  system currently supports. This includes content locales, top-level domains, units of measure, countries, currencies, time zones, and shipping or billing address schemas.
  * </summary>
  */
 public class ReferenceDataResource {
@@ -41,7 +41,7 @@ public ReferenceDataResource(ApiContext apiContext)
 
 	
 	/**
-	 * Retrieves a specific address schema based on the country code provided. This operation allows the creation of custom shipping and billing address fields.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	AddressSchema addressSchema = referencedata.getAddressSchema();
@@ -55,7 +55,7 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves a specific address schema based on the country code provided. This operation allows the creation of custom shipping and billing address fields.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	CountDownLatch latch = referencedata.getAddressSchema( callback );
@@ -70,13 +70,13 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves a specific address schema based on the country code provided. This operation allows the creation of custom shipping and billing address fields.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	AddressSchema addressSchema = referencedata.getAddressSchema( countryCode,  responseFields);
 	 * </code></pre></p>
-	 * @param countryCode The 2-letter geographic code representing the country for the physical or mailing address. Currently limited to the US.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param countryCode The 2-letter country code used to retrieve a specified address schema.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.reference.AddressSchema
 	 * @see com.mozu.api.contracts.reference.AddressSchema
 	 */
@@ -90,13 +90,13 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves a specific address schema based on the country code provided. This operation allows the creation of custom shipping and billing address fields.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	CountDownLatch latch = referencedata.getAddressSchema( countryCode,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param countryCode The 2-letter geographic code representing the country for the physical or mailing address. Currently limited to the US.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param countryCode The 2-letter country code used to retrieve a specified address schema.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.reference.AddressSchema
 	 * @see com.mozu.api.contracts.reference.AddressSchema
@@ -110,7 +110,7 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the entire list of address schemas that the system supports.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	AddressSchemaCollection addressSchemaCollection = referencedata.getAddressSchemas();
@@ -124,7 +124,7 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the entire list of address schemas that the system supports.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	CountDownLatch latch = referencedata.getAddressSchemas( callback );
@@ -139,12 +139,12 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the entire list of address schemas that the system supports.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	AddressSchemaCollection addressSchemaCollection = referencedata.getAddressSchemas( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.reference.AddressSchemaCollection
 	 * @see com.mozu.api.contracts.reference.AddressSchemaCollection
 	 */
@@ -158,12 +158,12 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the entire list of address schemas that the system supports.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	CountDownLatch latch = referencedata.getAddressSchemas( responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.reference.AddressSchemaCollection
 	 * @see com.mozu.api.contracts.reference.AddressSchemaCollection
@@ -177,7 +177,7 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the details of a behavior based on the behavior ID specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	Behavior behavior = referencedata.getBehavior( behaviorId);
@@ -192,7 +192,7 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the details of a behavior based on the behavior ID specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	CountDownLatch latch = referencedata.getBehavior( behaviorId, callback );
@@ -208,13 +208,13 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the details of a behavior based on the behavior ID specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	Behavior behavior = referencedata.getBehavior( behaviorId,  responseFields);
 	 * </code></pre></p>
 	 * @param behaviorId Unique identifier of the behavior.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.core.Behavior
 	 * @see com.mozu.api.contracts.core.Behavior
 	 */
@@ -228,13 +228,13 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the details of a behavior based on the behavior ID specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	CountDownLatch latch = referencedata.getBehavior( behaviorId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param behaviorId Unique identifier of the behavior.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.core.Behavior
 	 * @see com.mozu.api.contracts.core.Behavior
@@ -248,12 +248,12 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the details of the behavior category specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	BehaviorCategory behaviorCategory = referencedata.getBehaviorCategory( categoryId);
 	 * </code></pre></p>
-	 * @param categoryId Unique identifier of the behavior category.
+	 * @param categoryId Unique identifier of the category to modify.
 	 * @return com.mozu.api.contracts.core.BehaviorCategory
 	 * @see com.mozu.api.contracts.core.BehaviorCategory
 	 */
@@ -263,12 +263,12 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the details of the behavior category specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	CountDownLatch latch = referencedata.getBehaviorCategory( categoryId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param categoryId Unique identifier of the behavior category.
+	 * @param categoryId Unique identifier of the category to modify.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.core.BehaviorCategory
 	 * @see com.mozu.api.contracts.core.BehaviorCategory
@@ -279,13 +279,13 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the details of the behavior category specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	BehaviorCategory behaviorCategory = referencedata.getBehaviorCategory( categoryId,  responseFields);
 	 * </code></pre></p>
-	 * @param categoryId Unique identifier of the behavior category.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param categoryId Unique identifier of the category to modify.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.core.BehaviorCategory
 	 * @see com.mozu.api.contracts.core.BehaviorCategory
 	 */
@@ -299,13 +299,13 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the details of the behavior category specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	CountDownLatch latch = referencedata.getBehaviorCategory( categoryId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param categoryId Unique identifier of the behavior category.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param categoryId Unique identifier of the category to modify.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.core.BehaviorCategory
 	 * @see com.mozu.api.contracts.core.BehaviorCategory
@@ -319,7 +319,7 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the list of behavior categories.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	BehaviorCategoryCollection behaviorCategoryCollection = referencedata.getBehaviorCategories();
@@ -333,7 +333,7 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the list of behavior categories.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	CountDownLatch latch = referencedata.getBehaviorCategories( callback );
@@ -348,12 +348,12 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the list of behavior categories.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	BehaviorCategoryCollection behaviorCategoryCollection = referencedata.getBehaviorCategories( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.core.BehaviorCategoryCollection
 	 * @see com.mozu.api.contracts.core.BehaviorCategoryCollection
 	 */
@@ -367,12 +367,12 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the list of behavior categories.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	CountDownLatch latch = referencedata.getBehaviorCategories( responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.core.BehaviorCategoryCollection
 	 * @see com.mozu.api.contracts.core.BehaviorCategoryCollection
@@ -386,7 +386,7 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves a list of application behaviors.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	BehaviorCollection behaviorCollection = referencedata.getBehaviors();
@@ -400,7 +400,7 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves a list of application behaviors.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	CountDownLatch latch = referencedata.getBehaviors( callback );
@@ -415,12 +415,12 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves a list of application behaviors.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	BehaviorCollection behaviorCollection = referencedata.getBehaviors( userType,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param userType The user type associated with the behaviors to retrieve.
 	 * @return com.mozu.api.contracts.core.BehaviorCollection
 	 * @see com.mozu.api.contracts.core.BehaviorCollection
@@ -435,12 +435,12 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves a list of application behaviors.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	CountDownLatch latch = referencedata.getBehaviors( userType,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param userType The user type associated with the behaviors to retrieve.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.core.BehaviorCollection
@@ -455,7 +455,7 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the list of content locales the system supports. Content locales indicate the language used and the country where the language is used.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	ContentLocaleCollection contentLocaleCollection = referencedata.getContentLocales();
@@ -469,7 +469,7 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the list of content locales the system supports. Content locales indicate the language used and the country where the language is used.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	CountDownLatch latch = referencedata.getContentLocales( callback );
@@ -484,12 +484,12 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the list of content locales the system supports. Content locales indicate the language used and the country where the language is used.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	ContentLocaleCollection contentLocaleCollection = referencedata.getContentLocales( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.reference.ContentLocaleCollection
 	 * @see com.mozu.api.contracts.reference.ContentLocaleCollection
 	 */
@@ -503,12 +503,12 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the list of content locales the system supports. Content locales indicate the language used and the country where the language is used.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	CountDownLatch latch = referencedata.getContentLocales( responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.reference.ContentLocaleCollection
 	 * @see com.mozu.api.contracts.reference.ContentLocaleCollection
@@ -522,7 +522,7 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the entire list of countries that the system supports.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	CountryCollection countryCollection = referencedata.getCountries();
@@ -536,7 +536,7 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the entire list of countries that the system supports.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	CountDownLatch latch = referencedata.getCountries( callback );
@@ -551,12 +551,12 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the entire list of countries that the system supports.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	CountryCollection countryCollection = referencedata.getCountries( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.reference.CountryCollection
 	 * @see com.mozu.api.contracts.reference.CountryCollection
 	 */
@@ -570,12 +570,12 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the entire list of countries that the system supports.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	CountDownLatch latch = referencedata.getCountries( responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.reference.CountryCollection
 	 * @see com.mozu.api.contracts.reference.CountryCollection
@@ -623,7 +623,7 @@ public ReferenceDataResource(ApiContext apiContext)
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	CountryWithStatesCollection countryWithStatesCollection = referencedata.getCountriesWithStates( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.reference.CountryWithStatesCollection
 	 * @see com.mozu.api.contracts.reference.CountryWithStatesCollection
 	 */
@@ -642,7 +642,7 @@ public ReferenceDataResource(ApiContext apiContext)
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	CountDownLatch latch = referencedata.getCountriesWithStates( responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.reference.CountryWithStatesCollection
 	 * @see com.mozu.api.contracts.reference.CountryWithStatesCollection
@@ -656,7 +656,7 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the entire list of currencies that the system supports.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	CurrencyCollection currencyCollection = referencedata.getCurrencies();
@@ -670,7 +670,7 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the entire list of currencies that the system supports.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	CountDownLatch latch = referencedata.getCurrencies( callback );
@@ -685,12 +685,12 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the entire list of currencies that the system supports.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	CurrencyCollection currencyCollection = referencedata.getCurrencies( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.reference.CurrencyCollection
 	 * @see com.mozu.api.contracts.reference.CurrencyCollection
 	 */
@@ -704,12 +704,12 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the entire list of currencies that the system supports.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	CountDownLatch latch = referencedata.getCurrencies( responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.reference.CurrencyCollection
 	 * @see com.mozu.api.contracts.reference.CurrencyCollection
@@ -723,7 +723,7 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the entire list of time zones that the system supports.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	TimeZoneCollection timeZoneCollection = referencedata.getTimeZones();
@@ -737,7 +737,7 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the entire list of time zones that the system supports.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	CountDownLatch latch = referencedata.getTimeZones( callback );
@@ -752,12 +752,12 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the entire list of time zones that the system supports.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	TimeZoneCollection timeZoneCollection = referencedata.getTimeZones( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.reference.TimeZoneCollection
 	 * @see com.mozu.api.contracts.reference.TimeZoneCollection
 	 */
@@ -771,12 +771,12 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the entire list of time zones that the system supports.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	CountDownLatch latch = referencedata.getTimeZones( responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.reference.TimeZoneCollection
 	 * @see com.mozu.api.contracts.reference.TimeZoneCollection
@@ -790,7 +790,7 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the entire list of top-level internet domains that the system supports.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	TopLevelDomainCollection topLevelDomainCollection = referencedata.getTopLevelDomains();
@@ -804,7 +804,7 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the entire list of top-level internet domains that the system supports.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	CountDownLatch latch = referencedata.getTopLevelDomains( callback );
@@ -819,12 +819,12 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the entire list of top-level internet domains that the system supports.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	TopLevelDomainCollection topLevelDomainCollection = referencedata.getTopLevelDomains( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.reference.TopLevelDomainCollection
 	 * @see com.mozu.api.contracts.reference.TopLevelDomainCollection
 	 */
@@ -838,12 +838,12 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the entire list of top-level internet domains that the system supports.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	CountDownLatch latch = referencedata.getTopLevelDomains( responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.reference.TopLevelDomainCollection
 	 * @see com.mozu.api.contracts.reference.TopLevelDomainCollection
@@ -857,7 +857,7 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves an array list of all units of measure the system supports.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	UnitOfMeasureCollection unitOfMeasureCollection = referencedata.getUnitsOfMeasure();
@@ -871,7 +871,7 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves an array list of all units of measure the system supports.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	CountDownLatch latch = referencedata.getUnitsOfMeasure( callback );
@@ -886,13 +886,13 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves an array list of all units of measure the system supports.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	UnitOfMeasureCollection unitOfMeasureCollection = referencedata.getUnitsOfMeasure( filter,  responseFields);
 	 * </code></pre></p>
-	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.reference.UnitOfMeasureCollection
 	 * @see com.mozu.api.contracts.reference.UnitOfMeasureCollection
 	 */
@@ -906,13 +906,13 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves an array list of all units of measure the system supports.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	CountDownLatch latch = referencedata.getUnitsOfMeasure( filter,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.reference.UnitOfMeasureCollection
 	 * @see com.mozu.api.contracts.reference.UnitOfMeasureCollection

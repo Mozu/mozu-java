@@ -24,9 +24,6 @@ public class ProductContent implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Description defined for the metadata used to internally manage information about the product.
-	 */
 	protected  String metaTagDescription;
 
 	public String getMetaTagDescription() {
@@ -37,9 +34,6 @@ public class ProductContent implements Serializable
 		this.metaTagDescription = metaTagDescription;
 	}
 
-	/**
-	 * Keywords defined for the metadata used to internally manage information about the product.
-	 */
 	protected  String metaTagKeywords;
 
 	public String getMetaTagKeywords() {
@@ -50,9 +44,6 @@ public class ProductContent implements Serializable
 		this.metaTagKeywords = metaTagKeywords;
 	}
 
-	/**
-	 * Title defined for the metadata used to internally manage information about the product.
-	 */
 	protected  String metaTagTitle;
 
 	public String getMetaTagTitle() {
@@ -63,9 +54,6 @@ public class ProductContent implements Serializable
 		this.metaTagTitle = metaTagTitle;
 	}
 
-	/**
-	 * Full description of the product, which typically appears on the product details page.
-	 */
 	protected  String productFullDescription;
 
 	public String getProductFullDescription() {
@@ -76,9 +64,6 @@ public class ProductContent implements Serializable
 		this.productFullDescription = productFullDescription;
 	}
 
-	/**
-	 * The descriptive brief product name.
-	 */
 	protected  String productName;
 
 	public String getProductName() {
@@ -89,9 +74,6 @@ public class ProductContent implements Serializable
 		this.productName = productName;
 	}
 
-	/**
-	 * Brief description of the product typically used when the product is displayed in a list or in search results.
-	 */
 	protected  String productShortDescription;
 
 	public String getProductShortDescription() {
@@ -102,9 +84,6 @@ public class ProductContent implements Serializable
 		this.productShortDescription = productShortDescription;
 	}
 
-	/**
-	 * Product URL defined for search engine optimization.
-	 */
 	protected  String seoFriendlyUrl;
 
 	public String getSeoFriendlyUrl() {
@@ -115,9 +94,6 @@ public class ProductContent implements Serializable
 		this.seoFriendlyUrl = seoFriendlyUrl;
 	}
 
-	/**
-	 * List of image files associated with the product.
-	 */
 	protected List<ProductImage> productImages;
 	public List<ProductImage> getProductImages() {
 		return this.productImages;

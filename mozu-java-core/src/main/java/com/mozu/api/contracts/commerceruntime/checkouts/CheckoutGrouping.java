@@ -42,14 +42,14 @@ public class CheckoutGrouping implements Serializable
 		this.dutyAmount = dutyAmount;
 	}
 
-	protected  String fulfillmentLocationCode;
+	protected  Double dutyTotal;
 
-	public String getFulfillmentLocationCode() {
-		return this.fulfillmentLocationCode;
+	public Double getDutyTotal() {
+		return this.dutyTotal;
 	}
 
-	public void setFulfillmentLocationCode(String fulfillmentLocationCode) {
-		this.fulfillmentLocationCode = fulfillmentLocationCode;
+	public void setDutyTotal(Double dutyTotal) {
+		this.dutyTotal = dutyTotal;
 	}
 
 	protected  String fulfillmentMethod;
@@ -92,6 +92,16 @@ public class CheckoutGrouping implements Serializable
 		this.handlingTax = handlingTax;
 	}
 
+	protected  Double handlingTaxTotal;
+
+	public Double getHandlingTaxTotal() {
+		return this.handlingTaxTotal;
+	}
+
+	public void setHandlingTaxTotal(Double handlingTaxTotal) {
+		this.handlingTaxTotal = handlingTaxTotal;
+	}
+
 	protected  Double handlingTotal;
 
 	public Double getHandlingTotal() {
@@ -112,12 +122,52 @@ public class CheckoutGrouping implements Serializable
 		this.id = id;
 	}
 
+	protected  Double itemLevelHandlingDiscountTotal;
+
+	public Double getItemLevelHandlingDiscountTotal() {
+		return this.itemLevelHandlingDiscountTotal;
+	}
+
+	public void setItemLevelHandlingDiscountTotal(Double itemLevelHandlingDiscountTotal) {
+		this.itemLevelHandlingDiscountTotal = itemLevelHandlingDiscountTotal;
+	}
+
+	protected  Double itemLevelShippingDiscountTotal;
+
+	public Double getItemLevelShippingDiscountTotal() {
+		return this.itemLevelShippingDiscountTotal;
+	}
+
+	public void setItemLevelShippingDiscountTotal(Double itemLevelShippingDiscountTotal) {
+		this.itemLevelShippingDiscountTotal = itemLevelShippingDiscountTotal;
+	}
+
 	protected List<String> orderItemIds;
 	public List<String> getOrderItemIds() {
 		return this.orderItemIds;
 	}
 	public void setOrderItemIds(List<String> orderItemIds) {
 		this.orderItemIds = orderItemIds;
+	}
+
+	protected  Double orderLevelHandlingDiscountTotal;
+
+	public Double getOrderLevelHandlingDiscountTotal() {
+		return this.orderLevelHandlingDiscountTotal;
+	}
+
+	public void setOrderLevelHandlingDiscountTotal(Double orderLevelHandlingDiscountTotal) {
+		this.orderLevelHandlingDiscountTotal = orderLevelHandlingDiscountTotal;
+	}
+
+	protected  Double orderLevelShippingDiscountTotal;
+
+	public Double getOrderLevelShippingDiscountTotal() {
+		return this.orderLevelShippingDiscountTotal;
+	}
+
+	public void setOrderLevelShippingDiscountTotal(Double orderLevelShippingDiscountTotal) {
+		this.orderLevelShippingDiscountTotal = orderLevelShippingDiscountTotal;
 	}
 
 	protected  Double shippingAmount;
@@ -168,6 +218,16 @@ public class CheckoutGrouping implements Serializable
 
 	public void setShippingTax(Double shippingTax) {
 		this.shippingTax = shippingTax;
+	}
+
+	protected  Double shippingTaxTotal;
+
+	public Double getShippingTaxTotal() {
+		return this.shippingTaxTotal;
+	}
+
+	public void setShippingTaxTotal(Double shippingTaxTotal) {
+		this.shippingTaxTotal = shippingTaxTotal;
 	}
 
 	protected  Double shippingTotal;

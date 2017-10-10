@@ -22,9 +22,6 @@ public class AppliedDiscount implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Alphanumeric code associated with the coupon or promotion that results in a discounted price.
-	 */
 	protected  String couponCode;
 
 	public String getCouponCode() {
@@ -35,9 +32,6 @@ public class AppliedDiscount implements Serializable
 		this.couponCode = couponCode;
 	}
 
-	/**
-	 * If true, the system ignores this discount when pricing the order.
-	 */
 	protected  Boolean excluded;
 
 	public Boolean getExcluded() {
@@ -48,9 +42,6 @@ public class AppliedDiscount implements Serializable
 		this.excluded = excluded;
 	}
 
-	/**
-	 * The value of the discount applied to the cart or order, represented as a negative currency amount to apply to the original price.
-	 */
 	protected  Double impact;
 
 	public Double getImpact() {
@@ -61,9 +52,6 @@ public class AppliedDiscount implements Serializable
 		this.impact = impact;
 	}
 
-	/**
-	 * Discount currently applied to the cart or order.
-	 */
 	protected  Discount discount;
 
 	public Discount getDiscount() {

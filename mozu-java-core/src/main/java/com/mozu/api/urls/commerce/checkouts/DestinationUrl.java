@@ -45,15 +45,13 @@ public class DestinationUrl
 	 * Get Resource Url for AddDestination
 	 * @param checkoutId 
 	 * @param responseFields 
-	 * @param version 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl addDestinationUrl(String checkoutId, String responseFields, String version)
+	public static MozuUrl addDestinationUrl(String checkoutId, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/checkouts/{checkoutId}/destinations?version={version}&responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/checkouts/{checkoutId}/destinations?responseFields={responseFields}");
 		formatter.formatUrl("checkoutId", checkoutId);
 		formatter.formatUrl("responseFields", responseFields);
-		formatter.formatUrl("version", version);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
@@ -62,16 +60,14 @@ public class DestinationUrl
 	 * @param checkoutId 
 	 * @param destinationId 
 	 * @param responseFields 
-	 * @param version 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl updateDestinationUrl(String checkoutId, String destinationId, String responseFields, String version)
+	public static MozuUrl updateDestinationUrl(String checkoutId, String destinationId, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/checkouts/{checkoutId}/destinations/{destinationId}?version={version}&responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/checkouts/{checkoutId}/destinations/{destinationId}?responseFields={responseFields}");
 		formatter.formatUrl("checkoutId", checkoutId);
 		formatter.formatUrl("destinationId", destinationId);
 		formatter.formatUrl("responseFields", responseFields);
-		formatter.formatUrl("version", version);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
@@ -79,15 +75,13 @@ public class DestinationUrl
 	 * Get Resource Url for RemoveDestination
 	 * @param checkoutId 
 	 * @param destinationId 
-	 * @param version 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl removeDestinationUrl(String checkoutId, String destinationId, String version)
+	public static MozuUrl removeDestinationUrl(String checkoutId, String destinationId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/checkouts/{checkoutId}/destinations/{destinationId}?version={version}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/checkouts/{checkoutId}/destinations/{destinationId}");
 		formatter.formatUrl("checkoutId", checkoutId);
 		formatter.formatUrl("destinationId", destinationId);
-		formatter.formatUrl("version", version);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

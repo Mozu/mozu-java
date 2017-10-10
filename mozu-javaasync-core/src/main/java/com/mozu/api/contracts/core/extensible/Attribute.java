@@ -28,9 +28,6 @@ public class Attribute implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Name of this extensible attribute defined in Mozu Admin.
-	 */
 	protected  String adminName;
 
 	public String getAdminName() {
@@ -41,9 +38,6 @@ public class Attribute implements Serializable
 		this.adminName = adminName;
 	}
 
-	/**
-	 * Merchant-defined code for an extensible attribute.
-	 */
 	protected  String attributeCode;
 
 	public String getAttributeCode() {
@@ -64,9 +58,6 @@ public class Attribute implements Serializable
 		this.attributeFQN = attributeFQN;
 	}
 
-	/**
-	 * The data type of the customer or order attribute, which is Bool, DateTime, Number, or String.
-	 */
 	protected  String dataType;
 
 	public String getDataType() {
@@ -78,7 +69,7 @@ public class Attribute implements Serializable
 	}
 
 	/**
-	 * Whether the customer or order attribute appears in Mozu Admin only, or in both Mozu Admin and the website storefront. Possible values are Admin and AdminAndStorefront.
+	 * Whether the customer or order attribute appears in  only, or in both  and the website storefront. Possible values are Admin and AdminAndStorefront.
 	 */
 	protected  String displayGroup;
 
@@ -100,9 +91,6 @@ public class Attribute implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * The type of input selection used to define a value for the attribute, which is YesNo, Date, DateTime, List, TextBox, or TextArea.
-	 */
 	protected  String inputType;
 
 	public String getInputType() {
@@ -113,9 +101,6 @@ public class Attribute implements Serializable
 		this.inputType = inputType;
 	}
 
-	/**
-	 * If true, the customer or order attribute is active.
-	 */
 	protected  Boolean isActive;
 
 	public Boolean getIsActive() {
@@ -139,6 +124,9 @@ public class Attribute implements Serializable
 		this.isMultiValued = isMultiValued;
 	}
 
+	/**
+	 * Flag used to indicate if this attribute definition is read-only. Once an attribute definition is set to read-only this action cannot be undone. 
+	 */
 	protected  Boolean isReadOnly;
 
 	public Boolean getIsReadOnly() {
@@ -150,7 +138,7 @@ public class Attribute implements Serializable
 	}
 
 	/**
-	 * If true, the attribute must have a defined value.
+	 * Indicates if the property, attribute, product option, or product extra is required. If true, the object must have a defined value.
 	 */
 	protected  Boolean isRequired;
 
@@ -175,9 +163,6 @@ public class Attribute implements Serializable
 		this.isVisible = isVisible;
 	}
 
-	/**
-	 * Namespace associated with this extensible attribute.
-	 */
 	protected  String namespace;
 
 	public String getNamespace() {
@@ -189,7 +174,7 @@ public class Attribute implements Serializable
 	}
 
 	/**
-	 * Integer that represents the sequence of the attribute.
+	 * Integer that represents the sequence order of the attribute.
 	 */
 	protected  Integer order;
 
@@ -202,7 +187,7 @@ public class Attribute implements Serializable
 	}
 
 	/**
-	 * An attribute value type is either predefined vocabulary by the admin during attribute set up or it can be "AdminEntered" or "ShopperEntered". The difference between predefined values versus manually entered values is such that the first choice is a set of options to choose from. AdminEntered and ShopperEntered are values that are entered rather than system-supplied and are not stored in the database, but captured during a live commerce operations such as during an order.
+	 * An attribute value type is either predefined vocabulary by the admin during attribute set up or user-defined with an appropriate type (AdminEntered or ShopperEntered depending on the user). These types are used by products and attributes. The difference between predefined values versus manually entered values is such that the first choice is a set of options to choose from. AdminEntered and ShopperEntered are values that are entered rather than system-supplied and are not stored in the database, but captured during a live commerce operations such as during an order.
 	 */
 	protected  String valueType;
 
@@ -214,9 +199,6 @@ public class Attribute implements Serializable
 		this.valueType = valueType;
 	}
 
-	/**
-	 * List of metadata key-value pairs defined for an extensible attribute.
-	 */
 	protected List<AttributeMetadataItem> attributeMetadata;
 	public List<AttributeMetadataItem> getAttributeMetadata() {
 		return this.attributeMetadata;
@@ -235,9 +217,6 @@ public class Attribute implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * The localized name and description of the attribute, displayed in the locale code specified for the master catalog.
-	 */
 	protected  AttributeLocalizedContent content;
 
 	public AttributeLocalizedContent getContent() {
@@ -248,9 +227,6 @@ public class Attribute implements Serializable
 		this.content = content;
 	}
 
-	/**
-	 * Properties used when validating a value entered for an extensible attribute.
-	 */
 	protected  AttributeValidation validation;
 
 	public AttributeValidation getValidation() {
@@ -261,9 +237,6 @@ public class Attribute implements Serializable
 		this.validation = validation;
 	}
 
-	/**
-	 * List of valid vocabulary values defined for an attribute.
-	 */
 	protected List<AttributeVocabularyValue> vocabularyValues;
 	public List<AttributeVocabularyValue> getVocabularyValues() {
 		return this.vocabularyValues;

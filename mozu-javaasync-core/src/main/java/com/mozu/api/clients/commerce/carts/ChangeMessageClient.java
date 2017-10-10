@@ -25,7 +25,7 @@ import org.apache.commons.lang.StringUtils;
 public class ChangeMessageClient {
 	
 	/**
-	 * Retrieves the messages associated with the current shopper's cart.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection> mozuClient=GetMessagesClient();
 	 * client.setBaseAddress(url);
@@ -41,14 +41,14 @@ public class ChangeMessageClient {
 	}
 
 	/**
-	 * Retrieves the messages associated with the current shopper's cart.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection> mozuClient=GetMessagesClient( responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * CartChangeMessageCollection cartChangeMessageCollection = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection>
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection
 	 */
@@ -65,7 +65,7 @@ public class ChangeMessageClient {
 	}
 
 	/**
-	 * Deletes all messages associated with the cart of the current shopper.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=RemoveAllMessagesClient();
 	 * client.setBaseAddress(url);
@@ -85,7 +85,7 @@ public class ChangeMessageClient {
 	}
 
 	/**
-	 * Removes a single message associated with the cart of the current shopper.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=RemoveMessageClient( messageId);
 	 * client.setBaseAddress(url);

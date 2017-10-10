@@ -25,9 +25,6 @@ public class RateRequestItem implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Unique identifier of the item to ship, for which to calculate a shipping rate.
-	 */
 	protected  String itemId;
 
 	public String getItemId() {
@@ -38,9 +35,6 @@ public class RateRequestItem implements Serializable
 		this.itemId = itemId;
 	}
 
-	/**
-	 * Quantity of the item for which to calculate the shipping rate.
-	 */
 	protected  Integer quantity;
 
 	public Integer getQuantity() {
@@ -51,9 +45,6 @@ public class RateRequestItem implements Serializable
 		this.quantity = quantity;
 	}
 
-	/**
-	 * If true, this item must ship separately from other items in a shipment.
-	 */
 	protected  Boolean shipsByItself;
 
 	public Boolean getShipsByItself() {
@@ -64,6 +55,9 @@ public class RateRequestItem implements Serializable
 		this.shipsByItself = shipsByItself;
 	}
 
+	/**
+	 * Data unique to the shipping rate for the item.
+	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {
@@ -74,6 +68,9 @@ public class RateRequestItem implements Serializable
 		this.data = data;
 	}
 
+	/**
+	 * If Product Summaries are populated, this information will be utilized in Product Rules (e.g. ProductCode eq "ABC" or (Weight.Unit eq "lbs" and Weight.Value ge 50)
+	 */
 	protected List<ProductSummary> productSummaries;
 	public List<ProductSummary> getProductSummaries() {
 		return this.productSummaries;
@@ -82,9 +79,6 @@ public class RateRequestItem implements Serializable
 		this.productSummaries = productSummaries;
 	}
 
-	/**
-	 * The measured weight and dimensions of the item to ship.
-	 */
 	protected  ItemMeasurements unitMeasurements;
 
 	public ItemMeasurements getUnitMeasurements() {

@@ -163,7 +163,7 @@ public class DestinationResource {
 	 */
 	public com.mozu.api.contracts.commerceruntime.fulfillment.Destination addDestination(com.mozu.api.contracts.commerceruntime.fulfillment.Destination destination, String checkoutId) throws Exception
 	{
-		return addDestination( destination,  checkoutId,  null,  null);
+		return addDestination( destination,  checkoutId,  null);
 	}
 
 	/**
@@ -181,26 +181,25 @@ public class DestinationResource {
 	 */
 	public CountDownLatch addDestinationAsync(com.mozu.api.contracts.commerceruntime.fulfillment.Destination destination, String checkoutId, AsyncCallback<com.mozu.api.contracts.commerceruntime.fulfillment.Destination> callback) throws Exception
 	{
-		return addDestinationAsync( destination,  checkoutId,  null,  null, callback);
+		return addDestinationAsync( destination,  checkoutId,  null, callback);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	Destination destination = new Destination();
-	 *	Destination destination = destination.addDestination( destination,  checkoutId,  version,  responseFields);
+	 *	Destination destination = destination.addDestination( destination,  checkoutId,  responseFields);
 	 * </code></pre></p>
 	 * @param checkoutId 
 	 * @param responseFields 
-	 * @param version 
 	 * @param destination 
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Destination
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Destination
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Destination
 	 */
-	public com.mozu.api.contracts.commerceruntime.fulfillment.Destination addDestination(com.mozu.api.contracts.commerceruntime.fulfillment.Destination destination, String checkoutId, String version, String responseFields) throws Exception
+	public com.mozu.api.contracts.commerceruntime.fulfillment.Destination addDestination(com.mozu.api.contracts.commerceruntime.fulfillment.Destination destination, String checkoutId, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Destination> client = com.mozu.api.clients.commerce.checkouts.DestinationClient.addDestinationClient( destination,  checkoutId,  version,  responseFields);
+		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Destination> client = com.mozu.api.clients.commerce.checkouts.DestinationClient.addDestinationClient( destination,  checkoutId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -211,20 +210,19 @@ public class DestinationResource {
 	 * 
 	 * <p><pre><code>
 	 *	Destination destination = new Destination();
-	 *	CountDownLatch latch = destination.addDestination( destination,  checkoutId,  version,  responseFields, callback );
+	 *	CountDownLatch latch = destination.addDestination( destination,  checkoutId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param checkoutId 
 	 * @param responseFields 
-	 * @param version 
 	 * @param  callback callback handler for asynchronous operations
 	 * @param destination 
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Destination
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Destination
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Destination
 	 */
-	public CountDownLatch addDestinationAsync(com.mozu.api.contracts.commerceruntime.fulfillment.Destination destination, String checkoutId, String version, String responseFields, AsyncCallback<com.mozu.api.contracts.commerceruntime.fulfillment.Destination> callback) throws Exception
+	public CountDownLatch addDestinationAsync(com.mozu.api.contracts.commerceruntime.fulfillment.Destination destination, String checkoutId, String responseFields, AsyncCallback<com.mozu.api.contracts.commerceruntime.fulfillment.Destination> callback) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Destination> client = com.mozu.api.clients.commerce.checkouts.DestinationClient.addDestinationClient( destination,  checkoutId,  version,  responseFields);
+		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Destination> client = com.mozu.api.clients.commerce.checkouts.DestinationClient.addDestinationClient( destination,  checkoutId,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 
@@ -245,7 +243,7 @@ public class DestinationResource {
 	 */
 	public com.mozu.api.contracts.commerceruntime.fulfillment.Destination updateDestination(com.mozu.api.contracts.commerceruntime.fulfillment.Destination destination, String checkoutId, String destinationId) throws Exception
 	{
-		return updateDestination( destination,  checkoutId,  destinationId,  null,  null);
+		return updateDestination( destination,  checkoutId,  destinationId,  null);
 	}
 
 	/**
@@ -264,27 +262,26 @@ public class DestinationResource {
 	 */
 	public CountDownLatch updateDestinationAsync(com.mozu.api.contracts.commerceruntime.fulfillment.Destination destination, String checkoutId, String destinationId, AsyncCallback<com.mozu.api.contracts.commerceruntime.fulfillment.Destination> callback) throws Exception
 	{
-		return updateDestinationAsync( destination,  checkoutId,  destinationId,  null,  null, callback);
+		return updateDestinationAsync( destination,  checkoutId,  destinationId,  null, callback);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	Destination destination = new Destination();
-	 *	Destination destination = destination.updateDestination( destination,  checkoutId,  destinationId,  version,  responseFields);
+	 *	Destination destination = destination.updateDestination( destination,  checkoutId,  destinationId,  responseFields);
 	 * </code></pre></p>
 	 * @param checkoutId 
 	 * @param destinationId 
 	 * @param responseFields 
-	 * @param version 
 	 * @param destination 
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Destination
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Destination
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Destination
 	 */
-	public com.mozu.api.contracts.commerceruntime.fulfillment.Destination updateDestination(com.mozu.api.contracts.commerceruntime.fulfillment.Destination destination, String checkoutId, String destinationId, String version, String responseFields) throws Exception
+	public com.mozu.api.contracts.commerceruntime.fulfillment.Destination updateDestination(com.mozu.api.contracts.commerceruntime.fulfillment.Destination destination, String checkoutId, String destinationId, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Destination> client = com.mozu.api.clients.commerce.checkouts.DestinationClient.updateDestinationClient( destination,  checkoutId,  destinationId,  version,  responseFields);
+		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Destination> client = com.mozu.api.clients.commerce.checkouts.DestinationClient.updateDestinationClient( destination,  checkoutId,  destinationId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -295,21 +292,20 @@ public class DestinationResource {
 	 * 
 	 * <p><pre><code>
 	 *	Destination destination = new Destination();
-	 *	CountDownLatch latch = destination.updateDestination( destination,  checkoutId,  destinationId,  version,  responseFields, callback );
+	 *	CountDownLatch latch = destination.updateDestination( destination,  checkoutId,  destinationId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param checkoutId 
 	 * @param destinationId 
 	 * @param responseFields 
-	 * @param version 
 	 * @param  callback callback handler for asynchronous operations
 	 * @param destination 
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Destination
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Destination
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Destination
 	 */
-	public CountDownLatch updateDestinationAsync(com.mozu.api.contracts.commerceruntime.fulfillment.Destination destination, String checkoutId, String destinationId, String version, String responseFields, AsyncCallback<com.mozu.api.contracts.commerceruntime.fulfillment.Destination> callback) throws Exception
+	public CountDownLatch updateDestinationAsync(com.mozu.api.contracts.commerceruntime.fulfillment.Destination destination, String checkoutId, String destinationId, String responseFields, AsyncCallback<com.mozu.api.contracts.commerceruntime.fulfillment.Destination> callback) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Destination> client = com.mozu.api.clients.commerce.checkouts.DestinationClient.updateDestinationClient( destination,  checkoutId,  destinationId,  version,  responseFields);
+		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Destination> client = com.mozu.api.clients.commerce.checkouts.DestinationClient.updateDestinationClient( destination,  checkoutId,  destinationId,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 
@@ -327,23 +323,7 @@ public class DestinationResource {
 	 */
 	public void removeDestination(String checkoutId, String destinationId) throws Exception
 	{
-		removeDestination( checkoutId,  destinationId,  null);
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 *	Destination destination = new Destination();
-	 *	destination.removeDestination( checkoutId,  destinationId,  version);
-	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param destinationId 
-	 * @param version 
-	 * @return 
-	 */
-	public void removeDestination(String checkoutId, String destinationId, String version) throws Exception
-	{
-		MozuClient client = com.mozu.api.clients.commerce.checkouts.DestinationClient.removeDestinationClient( checkoutId,  destinationId,  version);
+		MozuClient client = com.mozu.api.clients.commerce.checkouts.DestinationClient.removeDestinationClient( checkoutId,  destinationId);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		client.cleanupHttpConnection();

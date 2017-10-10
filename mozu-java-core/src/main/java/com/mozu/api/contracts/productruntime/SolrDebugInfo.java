@@ -14,12 +14,18 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
+/**
+ *	A container of debugging information from Solr.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SolrDebugInfo implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * A list of products that have been blocked in Solr by search tuning rules.
+	 */
 	protected List<String> blockedProductCodes;
 	public List<String> getBlockedProductCodes() {
 		return this.blockedProductCodes;
@@ -28,6 +34,9 @@ public class SolrDebugInfo implements Serializable
 		this.blockedProductCodes = blockedProductCodes;
 	}
 
+	/**
+	 * A list of products that have been boosted in Solr by search tuning rules.
+	 */
 	protected List<String> boostedProductCodes;
 	public List<String> getBoostedProductCodes() {
 		return this.boostedProductCodes;
@@ -36,6 +45,9 @@ public class SolrDebugInfo implements Serializable
 		this.boostedProductCodes = boostedProductCodes;
 	}
 
+	/**
+	 * A list of boost functions sent to Solr by search tuning rules.
+	 */
 	protected List<String> boostFunctions;
 	public List<String> getBoostFunctions() {
 		return this.boostFunctions;
@@ -44,6 +56,9 @@ public class SolrDebugInfo implements Serializable
 		this.boostFunctions = boostFunctions;
 	}
 
+	/**
+	 * A list of boost queries sent to Solr by search tuning rules.
+	 */
 	protected List<String> boostQueries;
 	public List<String> getBoostQueries() {
 		return this.boostQueries;
@@ -52,6 +67,9 @@ public class SolrDebugInfo implements Serializable
 		this.boostQueries = boostQueries;
 	}
 
+	/**
+	 * A list of search tuning rule codes sent to Solr.
+	 */
 	protected  String searchTuningRuleCode;
 
 	public String getSearchTuningRuleCode() {

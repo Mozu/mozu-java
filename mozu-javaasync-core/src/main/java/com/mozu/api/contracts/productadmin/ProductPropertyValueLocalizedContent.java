@@ -21,9 +21,6 @@ public class ProductPropertyValueLocalizedContent implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Language used for the entity. Currently, only "en-US" is supported.
-	 */
 	protected  String localeCode;
 
 	public String getLocaleCode() {
@@ -34,9 +31,6 @@ public class ProductPropertyValueLocalizedContent implements Serializable
 		this.localeCode = localeCode;
 	}
 
-	/**
-	 * The string value of the product property set in the language specified the locale code.
-	 */
 	protected  String stringValue;
 
 	public String getStringValue() {

@@ -21,9 +21,6 @@ public class SupportedCard implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Company-defined friendly name that identifies the supported card.
-	 */
 	protected  String friendlyName;
 
 	public String getFriendlyName() {
@@ -34,9 +31,6 @@ public class SupportedCard implements Serializable
 		this.friendlyName = friendlyName;
 	}
 
-	/**
-	 * The card type of the supported payment card, such as Visa or Amex.
-	 */
 	protected  String type;
 
 	public String getType() {

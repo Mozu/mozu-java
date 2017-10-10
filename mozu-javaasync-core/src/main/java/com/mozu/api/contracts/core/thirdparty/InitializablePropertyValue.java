@@ -21,9 +21,6 @@ public class InitializablePropertyValue implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * If true, the property value is initialized.
-	 */
 	protected  Boolean initialized;
 
 	public Boolean getInitialized() {
@@ -34,9 +31,6 @@ public class InitializablePropertyValue implements Serializable
 		this.initialized = initialized;
 	}
 
-	/**
-	 * Value of the initializable third-party capability property.
-	 */
 	protected  String value;
 
 	public String getValue() {

@@ -17,7 +17,7 @@ import com.mozu.api.contracts.core.UserRole;
 import com.mozu.api.contracts.core.UserSystemData;
 
 /**
- *	Properties of the user.
+ *	Properties of the user. Users include customers and  users.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class User implements Serializable
@@ -25,9 +25,6 @@ public class User implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The email address of the specified user or the email address associated with the specified entity.
-	 */
 	protected  String emailAddress;
 
 	public String getEmailAddress() {
@@ -38,9 +35,6 @@ public class User implements Serializable
 		this.emailAddress = emailAddress;
 	}
 
-	/**
-	 * The first name of the contact. The maximum character length is 200.
-	 */
 	protected  String firstName;
 
 	public String getFirstName() {
@@ -51,9 +45,6 @@ public class User implements Serializable
 		this.firstName = firstName;
 	}
 
-	/**
-	 * Identifier of the user.
-	 */
 	protected  String id;
 
 	public String getId() {
@@ -64,9 +55,6 @@ public class User implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * If true, the user is an active user.
-	 */
 	protected  Boolean isActive;
 
 	public Boolean getIsActive() {
@@ -77,9 +65,6 @@ public class User implements Serializable
 		this.isActive = isActive;
 	}
 
-	/**
-	 * The last name or surname of the contact. The maximum character length is 200.
-	 */
 	protected  String lastName;
 
 	public String getLastName() {
@@ -90,9 +75,6 @@ public class User implements Serializable
 		this.lastName = lastName;
 	}
 
-	/**
-	 * Language used for the entity. Currently, only "en-US" is supported.
-	 */
 	protected  String localeCode;
 
 	public String getLocaleCode() {
@@ -103,9 +85,6 @@ public class User implements Serializable
 		this.localeCode = localeCode;
 	}
 
-	/**
-	 * The user password.
-	 */
 	protected  String password;
 
 	public String getPassword() {
@@ -116,9 +95,6 @@ public class User implements Serializable
 		this.password = password;
 	}
 
-	/**
-	 * Collection of roles assigned to the user.
-	 */
 	protected List<UserRole> roles;
 	public List<UserRole> getRoles() {
 		return this.roles;
@@ -127,9 +103,6 @@ public class User implements Serializable
 		this.roles = roles;
 	}
 
-	/**
-	 * Collection of system-supplied data about the user.
-	 */
 	protected  UserSystemData systemData;
 
 	public UserSystemData getSystemData() {

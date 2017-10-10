@@ -21,9 +21,6 @@ public class FacetRangeQuery implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The maximum value to use for the facet range query.
-	 */
 	protected  Object rangeValueEnd;
 
 	public Object getRangeValueEnd() {
@@ -34,9 +31,6 @@ public class FacetRangeQuery implements Serializable
 		this.rangeValueEnd = rangeValueEnd;
 	}
 
-	/**
-	 * The minimum value to use for the facet range query.
-	 */
 	protected  Object rangeValueStart;
 
 	public Object getRangeValueStart() {

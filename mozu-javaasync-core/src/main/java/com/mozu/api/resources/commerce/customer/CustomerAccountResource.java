@@ -37,7 +37,7 @@ public class CustomerAccountResource {
 
 	
 	/**
-	 * Retrieves a list of customer accounts.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CustomerAccountCollection customerAccountCollection = customeraccount.getAccounts();
@@ -51,7 +51,7 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Retrieves a list of customer accounts.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CountDownLatch latch = customeraccount.getAccounts( callback );
@@ -66,20 +66,20 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Retrieves a list of customer accounts.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CustomerAccountCollection customerAccountCollection = customeraccount.getAccounts( startIndex,  pageSize,  sortBy,  filter,  fields,  q,  qLimit,  isAnonymous,  responseFields);
 	 * </code></pre></p>
 	 * @param fields The fields to include in the response.
-	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
 	 * @param isAnonymous If true, retrieve anonymous shopper accounts in the response.
-	 * @param pageSize 
-	 * @param q A list of customer account search terms to use in the query when searching across customer name and email. Separate multiple search terms with a space character.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param q A list of order search terms (not phrases) to use in the query when searching across order number and the name or email of the billing contact. When entering, separate multiple search terms with a space character.
 	 * @param qLimit The maximum number of search results to return in the response. You can limit any range between 1-100.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return com.mozu.api.contracts.customer.CustomerAccountCollection
 	 * @see com.mozu.api.contracts.customer.CustomerAccountCollection
 	 */
@@ -93,20 +93,20 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Retrieves a list of customer accounts.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CountDownLatch latch = customeraccount.getAccounts( startIndex,  pageSize,  sortBy,  filter,  fields,  q,  qLimit,  isAnonymous,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param fields The fields to include in the response.
-	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
 	 * @param isAnonymous If true, retrieve anonymous shopper accounts in the response.
-	 * @param pageSize 
-	 * @param q A list of customer account search terms to use in the query when searching across customer name and email. Separate multiple search terms with a space character.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param q A list of order search terms (not phrases) to use in the query when searching across order number and the name or email of the billing contact. When entering, separate multiple search terms with a space character.
 	 * @param qLimit The maximum number of search results to return in the response. You can limit any range between 1-100.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.CustomerAccountCollection
 	 * @see com.mozu.api.contracts.customer.CustomerAccountCollection
@@ -120,7 +120,7 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Retrieves the current login state of the customer account specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	LoginState loginState = customeraccount.getLoginState( accountId);
@@ -135,7 +135,7 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Retrieves the current login state of the customer account specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CountDownLatch latch = customeraccount.getLoginState( accountId, callback );
@@ -151,13 +151,13 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Retrieves the current login state of the customer account specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	LoginState loginState = customeraccount.getLoginState( accountId,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.customer.LoginState
 	 * @see com.mozu.api.contracts.customer.LoginState
 	 */
@@ -171,13 +171,13 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Retrieves the current login state of the customer account specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CountDownLatch latch = customeraccount.getLoginState( accountId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.LoginState
 	 * @see com.mozu.api.contracts.customer.LoginState
@@ -191,12 +191,12 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Retrieve details of a customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CustomerAccount customerAccount = customeraccount.getAccount( accountId);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account to retrieve.
+	 * @param accountId Unique identifier of the customer account.
 	 * @return com.mozu.api.contracts.customer.CustomerAccount
 	 * @see com.mozu.api.contracts.customer.CustomerAccount
 	 */
@@ -206,12 +206,12 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Retrieve details of a customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CountDownLatch latch = customeraccount.getAccount( accountId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account to retrieve.
+	 * @param accountId Unique identifier of the customer account.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.CustomerAccount
 	 * @see com.mozu.api.contracts.customer.CustomerAccount
@@ -222,13 +222,13 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Retrieve details of a customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CustomerAccount customerAccount = customeraccount.getAccount( accountId,  responseFields);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account to retrieve.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param accountId Unique identifier of the customer account.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.customer.CustomerAccount
 	 * @see com.mozu.api.contracts.customer.CustomerAccount
 	 */
@@ -242,13 +242,13 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Retrieve details of a customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CountDownLatch latch = customeraccount.getAccount( accountId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account to retrieve.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param accountId Unique identifier of the customer account.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.CustomerAccount
 	 * @see com.mozu.api.contracts.customer.CustomerAccount
@@ -262,12 +262,12 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Creates a new customer account based on the information specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CustomerAccount customerAccount = customeraccount.addAccount( account);
 	 * </code></pre></p>
-	 * @param account Properties of the customer account to update.
+	 * @param account Properties of the customer account.
 	 * @return com.mozu.api.contracts.customer.CustomerAccount
 	 * @see com.mozu.api.contracts.customer.CustomerAccount
 	 * @see com.mozu.api.contracts.customer.CustomerAccount
@@ -278,13 +278,13 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Creates a new customer account based on the information specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CountDownLatch latch = customeraccount.addAccount( account, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param account Properties of the customer account to update.
+	 * @param account Properties of the customer account.
 	 * @return com.mozu.api.contracts.customer.CustomerAccount
 	 * @see com.mozu.api.contracts.customer.CustomerAccount
 	 * @see com.mozu.api.contracts.customer.CustomerAccount
@@ -295,13 +295,13 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Creates a new customer account based on the information specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CustomerAccount customerAccount = customeraccount.addAccount( account,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param account Properties of the customer account to update.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param account Properties of the customer account.
 	 * @return com.mozu.api.contracts.customer.CustomerAccount
 	 * @see com.mozu.api.contracts.customer.CustomerAccount
 	 * @see com.mozu.api.contracts.customer.CustomerAccount
@@ -316,14 +316,14 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Creates a new customer account based on the information specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CountDownLatch latch = customeraccount.addAccount( account,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param account Properties of the customer account to update.
+	 * @param account Properties of the customer account.
 	 * @return com.mozu.api.contracts.customer.CustomerAccount
 	 * @see com.mozu.api.contracts.customer.CustomerAccount
 	 * @see com.mozu.api.contracts.customer.CustomerAccount
@@ -337,13 +337,13 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Modify the password associated with a customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	customeraccount.changePassword( passwordInfo,  accountId);
 	 * </code></pre></p>
-	 * @param accountId The customer account information required to change the userpassword.
-	 * @param passwordInfo The password information required to change the user password.
+	 * @param accountId Unique identifier of the customer account.
+	 * @param passwordInfo The information required to modify a shopper account password.
 	 * @return 
 	 * @see com.mozu.api.contracts.customer.PasswordInfo
 	 */
@@ -353,14 +353,14 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Modify the password associated with a customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	customeraccount.changePassword( passwordInfo,  accountId,  unlockAccount);
 	 * </code></pre></p>
-	 * @param accountId The customer account information required to change the userpassword.
-	 * @param unlockAccount 
-	 * @param passwordInfo The password information required to change the user password.
+	 * @param accountId Unique identifier of the customer account.
+	 * @param unlockAccount Specifies whether to unlock the specified customer account.
+	 * @param passwordInfo The information required to modify a shopper account password.
 	 * @return 
 	 * @see com.mozu.api.contracts.customer.PasswordInfo
 	 */
@@ -374,13 +374,13 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Adds a new user login to a defined customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CustomerAuthTicket customerAuthTicket = customeraccount.addLoginToExistingCustomer( customerAuthInfo,  accountId);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param customerAuthInfo The authentication information for the customer account.
+	 * @param customerAuthInfo The login information for a customer account.
 	 * @return com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerLoginInfo
@@ -391,14 +391,14 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Adds a new user login to a defined customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CountDownLatch latch = customeraccount.addLoginToExistingCustomer( customerAuthInfo,  accountId, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param customerAuthInfo The authentication information for the customer account.
+	 * @param customerAuthInfo The login information for a customer account.
 	 * @return com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerLoginInfo
@@ -409,14 +409,14 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Adds a new user login to a defined customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CustomerAuthTicket customerAuthTicket = customeraccount.addLoginToExistingCustomer( customerAuthInfo,  accountId,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param customerAuthInfo The authentication information for the customer account.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param customerAuthInfo The login information for a customer account.
 	 * @return com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerLoginInfo
@@ -431,15 +431,15 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Adds a new user login to a defined customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CountDownLatch latch = customeraccount.addLoginToExistingCustomer( customerAuthInfo,  accountId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param customerAuthInfo The authentication information for the customer account.
+	 * @param customerAuthInfo The login information for a customer account.
 	 * @return com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerLoginInfo
@@ -453,12 +453,12 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Updates the customer lifetime value of the specified customer account in the event of an order import or a lifetime value calculation error.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	customeraccount.recomputeCustomerLifetimeValue( accountId);
 	 * </code></pre></p>
-	 * @param accountId The unique identifier of the customer account for which to calculate customer lifetime value.
+	 * @param accountId Unique identifier of the customer account.
 	 * @return 
 	 */
 	public void recomputeCustomerLifetimeValue(Integer accountId) throws Exception
@@ -471,12 +471,12 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Lock or unlock a customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	customeraccount.setLoginLocked( isLocked,  accountId);
 	 * </code></pre></p>
-	 * @param accountId The unique identifier of the customer account.
+	 * @param accountId Unique identifier of the customer account.
 	 * @param isLocked If true, the customer account is locked from logging in.
 	 * @return 
 	 * @see bool
@@ -491,7 +491,7 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Requires the password for the customer account to be changed.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	customeraccount.setPasswordChangeRequired( isPasswordChangeRequired,  accountId);
@@ -511,12 +511,12 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Creates a new customer account and logs the user associated with the customer account into the site.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CustomerAuthTicket customerAuthTicket = customeraccount.addAccountAndLogin( accountAndAuthInfo);
 	 * </code></pre></p>
-	 * @param accountAndAuthInfo Properties of the customer account to create, including the user authentication information.
+	 * @param accountAndAuthInfo The authentication information associated with a customer account.Â The data includes the account properties such as the name, username, authorization access, and email address, the required password to match, and indicates if the account was imported from a third party resource. 
 	 * @return com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerAccountAndAuthInfo
@@ -527,13 +527,13 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Creates a new customer account and logs the user associated with the customer account into the site.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CountDownLatch latch = customeraccount.addAccountAndLogin( accountAndAuthInfo, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param accountAndAuthInfo Properties of the customer account to create, including the user authentication information.
+	 * @param accountAndAuthInfo The authentication information associated with a customer account.Â The data includes the account properties such as the name, username, authorization access, and email address, the required password to match, and indicates if the account was imported from a third party resource. 
 	 * @return com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerAccountAndAuthInfo
@@ -544,13 +544,13 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Creates a new customer account and logs the user associated with the customer account into the site.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CustomerAuthTicket customerAuthTicket = customeraccount.addAccountAndLogin( accountAndAuthInfo,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param accountAndAuthInfo Properties of the customer account to create, including the user authentication information.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param accountAndAuthInfo The authentication information associated with a customer account.Â The data includes the account properties such as the name, username, authorization access, and email address, the required password to match, and indicates if the account was imported from a third party resource. 
 	 * @return com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerAccountAndAuthInfo
@@ -565,14 +565,14 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Creates a new customer account and logs the user associated with the customer account into the site.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CountDownLatch latch = customeraccount.addAccountAndLogin( accountAndAuthInfo,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param accountAndAuthInfo Properties of the customer account to create, including the user authentication information.
+	 * @param accountAndAuthInfo The authentication information associated with a customer account.Â The data includes the account properties such as the name, username, authorization access, and email address, the required password to match, and indicates if the account was imported from a third party resource. 
 	 * @return com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerAccountAndAuthInfo
@@ -586,12 +586,12 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Creates multiple customer accounts based on the information specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CustomerAccountCollection customerAccountCollection = customeraccount.addAccounts( customers);
 	 * </code></pre></p>
-	 * @param customers Properties of the customer accounts to create.
+	 * @param customers The authentication information associated with a customer account.Â The data includes the account properties such as the name, username, authorization access, and email address, the required password to match, and indicates if the account was imported from a third party resource. 
 	 * @return com.mozu.api.contracts.customer.CustomerAccountCollection
 	 * @see com.mozu.api.contracts.customer.CustomerAccountCollection
 	 * @see com.mozu.api.contracts.customer.CustomerAccountAndAuthInfo
@@ -602,13 +602,13 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Creates multiple customer accounts based on the information specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CountDownLatch latch = customeraccount.addAccounts( customers, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param customers Properties of the customer accounts to create.
+	 * @param customers The authentication information associated with a customer account.Â The data includes the account properties such as the name, username, authorization access, and email address, the required password to match, and indicates if the account was imported from a third party resource. 
 	 * @return com.mozu.api.contracts.customer.CustomerAccountCollection
 	 * @see com.mozu.api.contracts.customer.CustomerAccountCollection
 	 * @see com.mozu.api.contracts.customer.CustomerAccountAndAuthInfo
@@ -619,13 +619,13 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Creates multiple customer accounts based on the information specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CustomerAccountCollection customerAccountCollection = customeraccount.addAccounts( customers,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param customers Properties of the customer accounts to create.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param customers The authentication information associated with a customer account.Â The data includes the account properties such as the name, username, authorization access, and email address, the required password to match, and indicates if the account was imported from a third party resource. 
 	 * @return com.mozu.api.contracts.customer.CustomerAccountCollection
 	 * @see com.mozu.api.contracts.customer.CustomerAccountCollection
 	 * @see com.mozu.api.contracts.customer.CustomerAccountAndAuthInfo
@@ -640,14 +640,14 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Creates multiple customer accounts based on the information specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CountDownLatch latch = customeraccount.addAccounts( customers,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param customers Properties of the customer accounts to create.
+	 * @param customers The authentication information associated with a customer account.Â The data includes the account properties such as the name, username, authorization access, and email address, the required password to match, and indicates if the account was imported from a third party resource. 
 	 * @return com.mozu.api.contracts.customer.CustomerAccountCollection
 	 * @see com.mozu.api.contracts.customer.CustomerAccountCollection
 	 * @see com.mozu.api.contracts.customer.CustomerAccountAndAuthInfo
@@ -666,7 +666,7 @@ public class CustomerAccountResource {
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	ChangePasswordResultCollection changePasswordResultCollection = customeraccount.changePasswords( accountPasswordInfos);
 	 * </code></pre></p>
-	 * @param accountPasswordInfos 
+	 * @param accountPasswordInfos The details of the changed customer account passwords.
 	 * @return com.mozu.api.contracts.customer.ChangePasswordResultCollection
 	 * @see com.mozu.api.contracts.customer.ChangePasswordResultCollection
 	 * @see com.mozu.api.contracts.customer.AccountPasswordInfoCollection
@@ -683,7 +683,7 @@ public class CustomerAccountResource {
 	 *	CountDownLatch latch = customeraccount.changePasswords( accountPasswordInfos, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param accountPasswordInfos 
+	 * @param accountPasswordInfos The details of the changed customer account passwords.
 	 * @return com.mozu.api.contracts.customer.ChangePasswordResultCollection
 	 * @see com.mozu.api.contracts.customer.ChangePasswordResultCollection
 	 * @see com.mozu.api.contracts.customer.AccountPasswordInfoCollection
@@ -699,8 +699,8 @@ public class CustomerAccountResource {
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	ChangePasswordResultCollection changePasswordResultCollection = customeraccount.changePasswords( accountPasswordInfos,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param accountPasswordInfos 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param accountPasswordInfos The details of the changed customer account passwords.
 	 * @return com.mozu.api.contracts.customer.ChangePasswordResultCollection
 	 * @see com.mozu.api.contracts.customer.ChangePasswordResultCollection
 	 * @see com.mozu.api.contracts.customer.AccountPasswordInfoCollection
@@ -720,9 +720,9 @@ public class CustomerAccountResource {
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CountDownLatch latch = customeraccount.changePasswords( accountPasswordInfos,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param accountPasswordInfos 
+	 * @param accountPasswordInfos The details of the changed customer account passwords.
 	 * @return com.mozu.api.contracts.customer.ChangePasswordResultCollection
 	 * @see com.mozu.api.contracts.customer.ChangePasswordResultCollection
 	 * @see com.mozu.api.contracts.customer.AccountPasswordInfoCollection
@@ -736,7 +736,7 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Retrieves the current login state of a customer account by providing the customer's email address.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	LoginState loginState = customeraccount.getLoginStateByEmailAddress( emailAddress);
@@ -751,7 +751,7 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Retrieves the current login state of a customer account by providing the customer's email address.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CountDownLatch latch = customeraccount.getLoginStateByEmailAddress( emailAddress, callback );
@@ -767,14 +767,14 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Retrieves the current login state of a customer account by providing the customer's email address.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	LoginState loginState = customeraccount.getLoginStateByEmailAddress( emailAddress,  customerSetCode,  responseFields);
 	 * </code></pre></p>
-	 * @param customerSetCode 
+	 * @param customerSetCode The unique idenfitier of the customer set.
 	 * @param emailAddress The email address associated with the customer account.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.customer.LoginState
 	 * @see com.mozu.api.contracts.customer.LoginState
 	 */
@@ -788,14 +788,14 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Retrieves the current login state of a customer account by providing the customer's email address.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CountDownLatch latch = customeraccount.getLoginStateByEmailAddress( emailAddress,  customerSetCode,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param customerSetCode 
+	 * @param customerSetCode The unique idenfitier of the customer set.
 	 * @param emailAddress The email address associated with the customer account.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.LoginState
 	 * @see com.mozu.api.contracts.customer.LoginState
@@ -809,7 +809,7 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Retrieves the current login state of a customer account by providing the user name associated with the customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	LoginState loginState = customeraccount.getLoginStateByUserName( userName);
@@ -824,7 +824,7 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Retrieves the current login state of a customer account by providing the user name associated with the customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CountDownLatch latch = customeraccount.getLoginStateByUserName( userName, callback );
@@ -840,13 +840,13 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Retrieves the current login state of a customer account by providing the user name associated with the customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	LoginState loginState = customeraccount.getLoginStateByUserName( userName,  customerSetCode,  responseFields);
 	 * </code></pre></p>
-	 * @param customerSetCode 
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param customerSetCode The unique idenfitier of the customer set.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param userName The user name associated with the customer account.
 	 * @return com.mozu.api.contracts.customer.LoginState
 	 * @see com.mozu.api.contracts.customer.LoginState
@@ -861,13 +861,13 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Retrieves the current login state of a customer account by providing the user name associated with the customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CountDownLatch latch = customeraccount.getLoginStateByUserName( userName,  customerSetCode,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param customerSetCode 
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param customerSetCode The unique idenfitier of the customer set.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param userName The user name associated with the customer account.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.LoginState
@@ -916,10 +916,10 @@ public class CustomerAccountResource {
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CustomerPurchaseOrderAccountCollection customerPurchaseOrderAccountCollection = customeraccount.getCustomersPurchaseOrderAccounts( startIndex,  pageSize,  sortBy,  responseFields);
 	 * </code></pre></p>
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return com.mozu.api.contracts.customer.CustomerPurchaseOrderAccountCollection
 	 * @see com.mozu.api.contracts.customer.CustomerPurchaseOrderAccountCollection
 	 */
@@ -938,10 +938,10 @@ public class CustomerAccountResource {
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CountDownLatch latch = customeraccount.getCustomersPurchaseOrderAccounts( startIndex,  pageSize,  sortBy,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.CustomerPurchaseOrderAccountCollection
 	 * @see com.mozu.api.contracts.customer.CustomerPurchaseOrderAccountCollection
@@ -955,7 +955,7 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Resets the password for a customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	customeraccount.resetPassword( resetPasswordInfo);
@@ -974,13 +974,13 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Updates a customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CustomerAccount customerAccount = customeraccount.updateAccount( account,  accountId);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param account Properties of the customer account to update.
+	 * @param account Properties of the customer account.
 	 * @return com.mozu.api.contracts.customer.CustomerAccount
 	 * @see com.mozu.api.contracts.customer.CustomerAccount
 	 * @see com.mozu.api.contracts.customer.CustomerAccount
@@ -991,14 +991,14 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Updates a customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CountDownLatch latch = customeraccount.updateAccount( account,  accountId, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param account Properties of the customer account to update.
+	 * @param account Properties of the customer account.
 	 * @return com.mozu.api.contracts.customer.CustomerAccount
 	 * @see com.mozu.api.contracts.customer.CustomerAccount
 	 * @see com.mozu.api.contracts.customer.CustomerAccount
@@ -1009,14 +1009,14 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Updates a customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CustomerAccount customerAccount = customeraccount.updateAccount( account,  accountId,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param account Properties of the customer account to update.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param account Properties of the customer account.
 	 * @return com.mozu.api.contracts.customer.CustomerAccount
 	 * @see com.mozu.api.contracts.customer.CustomerAccount
 	 * @see com.mozu.api.contracts.customer.CustomerAccount
@@ -1031,15 +1031,15 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Updates a customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CountDownLatch latch = customeraccount.updateAccount( account,  accountId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param account Properties of the customer account to update.
+	 * @param account Properties of the customer account.
 	 * @return com.mozu.api.contracts.customer.CustomerAccount
 	 * @see com.mozu.api.contracts.customer.CustomerAccount
 	 * @see com.mozu.api.contracts.customer.CustomerAccount
@@ -1053,12 +1053,12 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Deletes a customer account. A customer account cannot be deleted if any orders exist, past or present.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	customeraccount.deleteAccount( accountId);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account to delete.
+	 * @param accountId Unique identifier of the customer account.
 	 * @return 
 	 */
 	public void deleteAccount(Integer accountId) throws Exception

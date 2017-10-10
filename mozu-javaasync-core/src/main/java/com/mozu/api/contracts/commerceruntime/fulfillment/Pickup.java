@@ -26,9 +26,6 @@ public class Pickup implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Array list of actions that can be performed for the in-store pickup.
-	 */
 	protected List<String> availableActions;
 	public List<String> getAvailableActions() {
 		return this.availableActions;
@@ -50,9 +47,6 @@ public class Pickup implements Serializable
 		this.code = code;
 	}
 
-	/**
-	 * The date and time the customer picked up the order items.
-	 */
 	protected  DateTime fulfillmentDate;
 
 	public DateTime getFulfillmentDate() {
@@ -64,7 +58,7 @@ public class Pickup implements Serializable
 	}
 
 	/**
-	 * The location code that represents the location where the shopper will fulfill this pickup.
+	 * The code that identifies the location used to fulfill the cart/cart item or order/order item. This code can include physical store locations for in-store pickup, warehouse locations providing the products for shipment, or the location for the digital file(s).
 	 */
 	protected  String fulfillmentLocationCode;
 
@@ -76,9 +70,6 @@ public class Pickup implements Serializable
 		this.fulfillmentLocationCode = fulfillmentLocationCode;
 	}
 
-	/**
-	 * Unique identifier of the in-store pickup.
-	 */
 	protected  String id;
 
 	public String getId() {
@@ -89,9 +80,6 @@ public class Pickup implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * The fulfillment status of the in-store pickup, which is "Fulfilled," "NotFulfilled," or "PartiallyFulfilled."
-	 */
 	protected  String status;
 
 	public String getStatus() {
@@ -102,9 +90,6 @@ public class Pickup implements Serializable
 		this.status = status;
 	}
 
-	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -116,7 +101,7 @@ public class Pickup implements Serializable
 	}
 
 	/**
-	 * List of change messages associated with the pickup.
+	 * Collection (list or paged) of change messages logged for each modification made by a shopper to their carts, wishlists, orders, package, payment, pickup, and returns. Change log messages are system-supplied based on shopper actions and read only.
 	 */
 	protected List<ChangeMessage> changeMessages;
 	public List<ChangeMessage> getChangeMessages() {
@@ -126,9 +111,6 @@ public class Pickup implements Serializable
 		this.changeMessages = changeMessages;
 	}
 
-	/**
-	 * An array list of objects in the returned collection.
-	 */
 	protected List<PickupItem> items;
 	public List<PickupItem> getItems() {
 		return this.items;

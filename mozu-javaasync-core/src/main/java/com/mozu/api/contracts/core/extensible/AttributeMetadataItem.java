@@ -21,9 +21,6 @@ public class AttributeMetadataItem implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Key used for metadata defined for an extensible attribute.
-	 */
 	protected  String key;
 
 	public String getKey() {
@@ -34,9 +31,6 @@ public class AttributeMetadataItem implements Serializable
 		this.key = key;
 	}
 
-	/**
-	 * Value of a metadata item defined for an extensible attribute.
-	 */
 	protected  String value;
 
 	public String getValue() {

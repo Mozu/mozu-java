@@ -21,9 +21,6 @@ public class AuthTicket implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The token that stores an encrypted list of the application's configured behaviors and authenticates the application.
-	 */
 	protected  String accessToken;
 
 	public String getAccessToken() {
@@ -34,9 +31,6 @@ public class AuthTicket implements Serializable
 		this.accessToken = accessToken;
 	}
 
-	/**
-	 * Date and time the access token expires. After the access token expires, refresh the authentication ticket using the refresh koken.
-	 */
 	protected  DateTime accessTokenExpiration;
 
 	public DateTime getAccessTokenExpiration() {
@@ -47,9 +41,6 @@ public class AuthTicket implements Serializable
 		this.accessTokenExpiration = accessTokenExpiration;
 	}
 
-	/**
-	 * The token that refreshes the application's authentication ticket.
-	 */
 	protected  String refreshToken;
 
 	public String getRefreshToken() {
@@ -60,9 +51,6 @@ public class AuthTicket implements Serializable
 		this.refreshToken = refreshToken;
 	}
 
-	/**
-	 * Date and time the refresh token expires. After the refresh token expires, generate a new authentication ticket.
-	 */
 	protected  DateTime refreshTokenExpiration;
 
 	public DateTime getRefreshTokenExpiration() {

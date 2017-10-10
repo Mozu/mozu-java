@@ -34,9 +34,6 @@ public class MasterCatalog implements Serializable
 		this.createDate = createDate;
 	}
 
-	/**
-	 * The default three-letter ISO currency code associated with this master catalog. At this time, only "USD" is supported.
-	 */
 	protected  String defaultCurrencyCode;
 
 	public String getDefaultCurrencyCode() {
@@ -47,9 +44,6 @@ public class MasterCatalog implements Serializable
 		this.defaultCurrencyCode = defaultCurrencyCode;
 	}
 
-	/**
-	 * The default locale code associated with this master catalog. At this time, only "en-US" is supported.
-	 */
 	protected  String defaultLocaleCode;
 
 	public String getDefaultLocaleCode() {
@@ -60,9 +54,6 @@ public class MasterCatalog implements Serializable
 		this.defaultLocaleCode = defaultLocaleCode;
 	}
 
-	/**
-	 * The date and time the master catalog was deleted.
-	 */
 	protected  DateTime deleteDate;
 
 	public DateTime getDeleteDate() {
@@ -83,9 +74,6 @@ public class MasterCatalog implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * If true, this master catalog and its associated catalogs have been deleted from the tenant.
-	 */
 	protected  Boolean isDeleted;
 
 	public Boolean getIsDeleted() {
@@ -96,9 +84,6 @@ public class MasterCatalog implements Serializable
 		this.isDeleted = isDeleted;
 	}
 
-	/**
-	 * User-defined name of the master catalog.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -110,7 +95,7 @@ public class MasterCatalog implements Serializable
 	}
 
 	/**
-	 * The current status of the master catalog.
+	 * The current status of the object.This value is read only. Valid values for this field are: "Active", "Expired", and "Inactive".
 	 */
 	protected  String status;
 
@@ -145,9 +130,6 @@ public class MasterCatalog implements Serializable
 		this.updateDate = updateDate;
 	}
 
-	/**
-	 * Collection of product catalogs that use product definitions from the master catalog.
-	 */
 	protected List<Catalog> catalogs;
 	public List<Catalog> getCatalogs() {
 		return this.catalogs;

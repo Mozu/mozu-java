@@ -23,9 +23,6 @@ public class Setting implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Carrier-specific key field.
-	 */
 	protected  String key;
 
 	public String getKey() {
@@ -36,9 +33,6 @@ public class Setting implements Serializable
 		this.key = key;
 	}
 
-	/**
-	 * Carrier-specific value for the associated key.
-	 */
 	protected  String value;
 
 	public String getValue() {
@@ -49,9 +43,6 @@ public class Setting implements Serializable
 		this.value = value;
 	}
 
-	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -62,9 +53,6 @@ public class Setting implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * The label of the carrier-specific key.
-	 */
 	protected  LocalizableString label;
 
 	public LocalizableString getLabel() {

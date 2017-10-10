@@ -21,9 +21,6 @@ public class CategoryImage implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Descriptive text associated with the image or video that appears on the web storefront.
-	 */
 	protected  String altText;
 
 	public String getAltText() {
@@ -35,7 +32,7 @@ public class CategoryImage implements Serializable
 	}
 
 	/**
-	 * The identifier of the category image in the Mozu CMS. Supply a value for either the CMS ID or Image URL parameter.
+	 * The identifier of the image in the  CMS. Supply a value for either the CMS ID or Image URL parameter.
 	 */
 	protected  String cmsId;
 
@@ -47,9 +44,6 @@ public class CategoryImage implements Serializable
 		this.cmsId = cmsId;
 	}
 
-	/**
-	 * Image title that appears on the web storefront, set to the language specified by the site's LocaleCode.
-	 */
 	protected  String imageLabel;
 
 	public String getImageLabel() {
@@ -60,9 +54,6 @@ public class CategoryImage implements Serializable
 		this.imageLabel = imageLabel;
 	}
 
-	/**
-	 * URL of the product category image.
-	 */
 	protected  String imageUrl;
 
 	public String getImageUrl() {
@@ -73,9 +64,6 @@ public class CategoryImage implements Serializable
 		this.imageUrl = imageUrl;
 	}
 
-	/**
-	 * Type of media specification required to successfully render the image, video, or other category content.
-	 */
 	protected  String mediaType;
 
 	public String getMediaType() {
@@ -86,9 +74,6 @@ public class CategoryImage implements Serializable
 		this.mediaType = mediaType;
 	}
 
-	/**
-	 * Integer that represents the sequential order of the category image in the collection.
-	 */
 	protected  Integer sequence;
 
 	public Integer getSequence() {
@@ -99,9 +84,6 @@ public class CategoryImage implements Serializable
 		this.sequence = sequence;
 	}
 
-	/**
-	 * The link or URL of the product category video. The file path name is set in the language specified by the LocaleCode.
-	 */
 	protected  String videoUrl;
 
 	public String getVideoUrl() {

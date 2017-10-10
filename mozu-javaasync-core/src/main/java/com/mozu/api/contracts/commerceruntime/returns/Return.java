@@ -30,9 +30,6 @@ public class Return implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The actions a user can perform for the return at this time.
-	 */
 	protected List<String> availableActions;
 	public List<String> getAvailableActions() {
 		return this.availableActions;
@@ -41,9 +38,6 @@ public class Return implements Serializable
 		this.availableActions = availableActions;
 	}
 
-	/**
-	 * The code that identifies the channel associated with the return, which is typically the same channel associated with the order.
-	 */
 	protected  String channelCode;
 
 	public String getChannelCode() {
@@ -54,9 +48,6 @@ public class Return implements Serializable
 		this.channelCode = channelCode;
 	}
 
-	/**
-	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
-	 */
 	protected  String currencyCode;
 
 	public String getCurrencyCode() {
@@ -67,9 +58,6 @@ public class Return implements Serializable
 		this.currencyCode = currencyCode;
 	}
 
-	/**
-	 * Unique identifier of the customer account associated with the return.
-	 */
 	protected  Integer customerAccountId;
 
 	public Integer getCustomerAccountId() {
@@ -80,9 +68,6 @@ public class Return implements Serializable
 		this.customerAccountId = customerAccountId;
 	}
 
-	/**
-	 * String that describes the customer interaction used to return an item. Possible values are Website, Store, Call, and Unknown.
-	 */
 	protected  String customerInteractionType;
 
 	public String getCustomerInteractionType() {
@@ -93,9 +78,6 @@ public class Return implements Serializable
 		this.customerInteractionType = customerInteractionType;
 	}
 
-	/**
-	 * Unique identifier of the return.
-	 */
 	protected  String id;
 
 	public String getId() {
@@ -106,9 +88,6 @@ public class Return implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * The code that uniquely identifies the location where items were returned.
-	 */
 	protected  String locationCode;
 
 	public String getLocationCode() {
@@ -119,9 +98,6 @@ public class Return implements Serializable
 		this.locationCode = locationCode;
 	}
 
-	/**
-	 * The total value of the return to the merchant for accounting purposes. This total represents the combined product loss and shipping loss associated with the return.
-	 */
 	protected  Double lossTotal;
 
 	public Double getLossTotal() {
@@ -132,9 +108,6 @@ public class Return implements Serializable
 		this.lossTotal = lossTotal;
 	}
 
-	/**
-	 * If this return is associated with a previously completed order, the unique identifier of the original order.
-	 */
 	protected  String originalOrderId;
 
 	public String getOriginalOrderId() {
@@ -145,6 +118,9 @@ public class Return implements Serializable
 		this.originalOrderId = originalOrderId;
 	}
 
+	/**
+	 * The order number of the original order where the return was created.
+	 */
 	protected  Integer originalOrderNumber;
 
 	public Integer getOriginalOrderNumber() {
@@ -155,9 +131,6 @@ public class Return implements Serializable
 		this.originalOrderNumber = originalOrderNumber;
 	}
 
-	/**
-	 * The total tax amount levied on the product loss amount.
-	 */
 	protected  Double productLossTaxTotal;
 
 	public Double getProductLossTaxTotal() {
@@ -168,9 +141,6 @@ public class Return implements Serializable
 		this.productLossTaxTotal = productLossTaxTotal;
 	}
 
-	/**
-	 * The total value of the product returned to the merchant for accounting purposes, calculated by multiplying the cost of the item by its quantity returned.
-	 */
 	protected  Double productLossTotal;
 
 	public Double getProductLossTotal() {
@@ -181,6 +151,9 @@ public class Return implements Serializable
 		this.productLossTotal = productLossTotal;
 	}
 
+	/**
+	 * The status that indicates whether you have received the return item from the shopper. The accepted values are , , or .
+	 */
 	protected  String receiveStatus;
 
 	public String getReceiveStatus() {
@@ -191,9 +164,6 @@ public class Return implements Serializable
 		this.receiveStatus = receiveStatus;
 	}
 
-	/**
-	 * If a refund action was performed for this return, the total amount refunded to the shopper. The refund amount can differ from the sum of the price of the returned items.
-	 */
 	protected  Double refundAmount;
 
 	public Double getRefundAmount() {
@@ -204,6 +174,9 @@ public class Return implements Serializable
 		this.refundAmount = refundAmount;
 	}
 
+	/**
+	 * The status of the refund. The accepted values are  if the shopper only wants a replacement or  if either a partial or full refund is applied to the return.
+	 */
 	protected  String refundStatus;
 
 	public String getRefundStatus() {
@@ -214,6 +187,9 @@ public class Return implements Serializable
 		this.refundStatus = refundStatus;
 	}
 
+	/**
+	 * The status of the replacement order. The accepted values are  if there is no replacement order or  if a replacement order exits.
+	 */
 	protected  String replaceStatus;
 
 	public String getReplaceStatus() {
@@ -224,9 +200,6 @@ public class Return implements Serializable
 		this.replaceStatus = replaceStatus;
 	}
 
-	/**
-	 * A merchant-specific identifier used to sequentially order returns.
-	 */
 	protected  Integer returnNumber;
 
 	public Integer getReturnNumber() {
@@ -237,9 +210,6 @@ public class Return implements Serializable
 		this.returnNumber = returnNumber;
 	}
 
-	/**
-	 * Unique identifier for the order created as a result of the return. If the return results in shipping a replacement item, the order includes shipment information for the replaced items. If the return results in a refund, the order includes payment transactions to credit the shopper.
-	 */
 	protected  String returnOrderId;
 
 	public String getReturnOrderId() {
@@ -250,9 +220,6 @@ public class Return implements Serializable
 		this.returnOrderId = returnOrderId;
 	}
 
-	/**
-	 * The type of return, which is "Refund" or "Replace".
-	 */
 	protected  String returnType;
 
 	public String getReturnType() {
@@ -263,9 +230,6 @@ public class Return implements Serializable
 		this.returnType = returnType;
 	}
 
-	/**
-	 * The date by which a shopper must ship items associated with a return in an "awaiting items" state to the merchant.
-	 */
 	protected  DateTime rmaDeadline;
 
 	public DateTime getRmaDeadline() {
@@ -276,9 +240,6 @@ public class Return implements Serializable
 		this.rmaDeadline = rmaDeadline;
 	}
 
-	/**
-	 * The total tax amount levied on the shipping loss amount.
-	 */
 	protected  Double shippingLossTaxTotal;
 
 	public Double getShippingLossTaxTotal() {
@@ -289,9 +250,6 @@ public class Return implements Serializable
 		this.shippingLossTaxTotal = shippingLossTaxTotal;
 	}
 
-	/**
-	 * The total value of shipping the returned product to the merchant for accounting purposes, calculated by multiplying the shipping cost of the item by its quantity returned.
-	 */
 	protected  Double shippingLossTotal;
 
 	public Double getShippingLossTotal() {
@@ -302,9 +260,6 @@ public class Return implements Serializable
 		this.shippingLossTotal = shippingLossTotal;
 	}
 
-	/**
-	 * Unique identifier of the site.
-	 */
 	protected  Integer siteId;
 
 	public Integer getSiteId() {
@@ -315,9 +270,6 @@ public class Return implements Serializable
 		this.siteId = siteId;
 	}
 
-	/**
-	 * Current status of the return, such as "ReturnAuthorized".
-	 */
 	protected  String status;
 
 	public String getStatus() {
@@ -328,9 +280,6 @@ public class Return implements Serializable
 		this.status = status;
 	}
 
-	/**
-	 * Unique identifier of the Mozu tenant.
-	 */
 	protected  Integer tenantId;
 
 	public Integer getTenantId() {
@@ -341,9 +290,6 @@ public class Return implements Serializable
 		this.tenantId = tenantId;
 	}
 
-	/**
-	 * Unique identifier of the user responsible for the return. Read only and supplied by the original order.
-	 */
 	protected  String userId;
 
 	public String getUserId() {
@@ -354,9 +300,6 @@ public class Return implements Serializable
 		this.userId = userId;
 	}
 
-	/**
-	 * The unique identifier of the customer visit associated with the return transaction.
-	 */
 	protected  String visitId;
 
 	public String getVisitId() {
@@ -367,9 +310,6 @@ public class Return implements Serializable
 		this.visitId = visitId;
 	}
 
-	/**
-	 * Unique identifier of the web session in which the return was created or last modified, which is system-supplied and read only.
-	 */
 	protected  String webSessionId;
 
 	public String getWebSessionId() {
@@ -380,9 +320,6 @@ public class Return implements Serializable
 		this.webSessionId = webSessionId;
 	}
 
-	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -394,7 +331,7 @@ public class Return implements Serializable
 	}
 
 	/**
-	 * List of change messages associated with the return.
+	 * Collection (list or paged) of change messages logged for each modification made by a shopper to their carts, wishlists, orders, package, payment, pickup, and returns. Change log messages are system-supplied based on shopper actions and read only.
 	 */
 	protected List<ChangeMessage> changeMessages;
 	public List<ChangeMessage> getChangeMessages() {
@@ -404,6 +341,9 @@ public class Return implements Serializable
 		this.changeMessages = changeMessages;
 	}
 
+	/**
+	 * contact ApiType DOCUMENT_HERE 
+	 */
 	protected  Contact contact;
 
 	public Contact getContact() {
@@ -414,9 +354,6 @@ public class Return implements Serializable
 		this.contact = contact;
 	}
 
-	/**
-	 * An array list of objects in the returned collection.
-	 */
 	protected List<ReturnItem> items;
 	public List<ReturnItem> getItems() {
 		return this.items;
@@ -425,9 +362,6 @@ public class Return implements Serializable
 		this.items = items;
 	}
 
-	/**
-	 * Collection of merchant-supplied notes entered for the return.
-	 */
 	protected List<OrderNote> notes;
 	public List<OrderNote> getNotes() {
 		return this.notes;
@@ -436,9 +370,6 @@ public class Return implements Serializable
 		this.notes = notes;
 	}
 
-	/**
-	 * List of packages associated with a replacement order for a return.
-	 */
 	protected List<Package> packages;
 	public List<Package> getPackages() {
 		return this.packages;
@@ -447,9 +378,6 @@ public class Return implements Serializable
 		this.packages = packages;
 	}
 
-	/**
-	 * Array list of payments associated with this return, if applicable.
-	 */
 	protected List<Payment> payments;
 	public List<Payment> getPayments() {
 		return this.payments;

@@ -43,7 +43,7 @@ public class ProductTypePropertyResource {
 	}
 		
 	/**
-	 * Retrieves a list of product property attributes defined for a product type.
+	 * 
 	 * <p><pre><code>
 	 *	ProductTypeProperty producttypeproperty = new ProductTypeProperty();
 	 *	AttributeInProductType attributeInProductType = producttypeproperty.getProperties( productTypeId);
@@ -63,12 +63,12 @@ public class ProductTypePropertyResource {
 	}
 
 	/**
-	 * Retrieves a product property attribute definition for the specified product type.
+	 * 
 	 * <p><pre><code>
 	 *	ProductTypeProperty producttypeproperty = new ProductTypeProperty();
 	 *	AttributeInProductType attributeInProductType = producttypeproperty.getProperty( productTypeId,  attributeFQN);
 	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param productTypeId Identifier of the product type.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.AttributeInProductType
@@ -80,14 +80,14 @@ public class ProductTypePropertyResource {
 	}
 
 	/**
-	 * Retrieves a product property attribute definition for the specified product type.
+	 * 
 	 * <p><pre><code>
 	 *	ProductTypeProperty producttypeproperty = new ProductTypeProperty();
 	 *	AttributeInProductType attributeInProductType = producttypeproperty.getProperty( productTypeId,  attributeFQN,  responseFields);
 	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param productTypeId Identifier of the product type.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.AttributeInProductType
 	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
@@ -102,14 +102,14 @@ public class ProductTypePropertyResource {
 	}
 
 	/**
-	 * Assigns a property attribute to the specified product type, according to the information defined in the request.
+	 * 
 	 * <p><pre><code>
 	 *	ProductTypeProperty producttypeproperty = new ProductTypeProperty();
 	 *	AttributeInProductType attributeInProductType = producttypeproperty.addProperty( attributeInProductType,  productTypeId);
 	 * </code></pre></p>
 	 * @param productTypeId Identifier of the product type.
 	 * @param dataViewMode DataViewMode
-	 * @param attributeInProductType Properties of the property attribute to define for the specified product type.
+	 * @param attributeInProductType Properties of an attribute definition associated with a specific product type. When an attribute is applied to a product type, each product of that type maintains the same set of attributes.
 	 * @return com.mozu.api.contracts.productadmin.AttributeInProductType
 	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
 	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
@@ -120,15 +120,15 @@ public class ProductTypePropertyResource {
 	}
 
 	/**
-	 * Assigns a property attribute to the specified product type, according to the information defined in the request.
+	 * 
 	 * <p><pre><code>
 	 *	ProductTypeProperty producttypeproperty = new ProductTypeProperty();
 	 *	AttributeInProductType attributeInProductType = producttypeproperty.addProperty( attributeInProductType,  productTypeId,  responseFields);
 	 * </code></pre></p>
 	 * @param productTypeId Identifier of the product type.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
-	 * @param attributeInProductType Properties of the property attribute to define for the specified product type.
+	 * @param attributeInProductType Properties of an attribute definition associated with a specific product type. When an attribute is applied to a product type, each product of that type maintains the same set of attributes.
 	 * @return com.mozu.api.contracts.productadmin.AttributeInProductType
 	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
 	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
@@ -143,15 +143,15 @@ public class ProductTypePropertyResource {
 	}
 
 	/**
-	 * Updates the definition of a property attribute for the specified product type.
+	 * 
 	 * <p><pre><code>
 	 *	ProductTypeProperty producttypeproperty = new ProductTypeProperty();
 	 *	AttributeInProductType attributeInProductType = producttypeproperty.updateProperty( attributeInProductType,  productTypeId,  attributeFQN);
 	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param productTypeId Identifier of the product type.
 	 * @param dataViewMode DataViewMode
-	 * @param attributeInProductType Properties of the property attribute to define for the product type.
+	 * @param attributeInProductType Properties of an attribute definition associated with a specific product type. When an attribute is applied to a product type, each product of that type maintains the same set of attributes.
 	 * @return com.mozu.api.contracts.productadmin.AttributeInProductType
 	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
 	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
@@ -162,16 +162,16 @@ public class ProductTypePropertyResource {
 	}
 
 	/**
-	 * Updates the definition of a property attribute for the specified product type.
+	 * 
 	 * <p><pre><code>
 	 *	ProductTypeProperty producttypeproperty = new ProductTypeProperty();
 	 *	AttributeInProductType attributeInProductType = producttypeproperty.updateProperty( attributeInProductType,  productTypeId,  attributeFQN,  responseFields);
 	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param productTypeId Identifier of the product type.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
-	 * @param attributeInProductType Properties of the property attribute to define for the product type.
+	 * @param attributeInProductType Properties of an attribute definition associated with a specific product type. When an attribute is applied to a product type, each product of that type maintains the same set of attributes.
 	 * @return com.mozu.api.contracts.productadmin.AttributeInProductType
 	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
 	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
@@ -186,12 +186,12 @@ public class ProductTypePropertyResource {
 	}
 
 	/**
-	 * Removes a property attribute previously defined for the specified product type.
+	 * 
 	 * <p><pre><code>
 	 *	ProductTypeProperty producttypeproperty = new ProductTypeProperty();
 	 *	producttypeproperty.deleteProperty( productTypeId,  attributeFQN);
 	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param productTypeId Identifier of the product type.
 	 * @param dataViewMode DataViewMode
 	 * @return 

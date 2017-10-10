@@ -21,32 +21,6 @@ public class Catalog implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The default currency code for the product catalog. Currently, only "USD" is supported.
-	 */
-	protected  String defaultCurrencyCode;
-
-	public String getDefaultCurrencyCode() {
-		return this.defaultCurrencyCode;
-	}
-
-	public void setDefaultCurrencyCode(String defaultCurrencyCode) {
-		this.defaultCurrencyCode = defaultCurrencyCode;
-	}
-
-	/**
-	 * The default locale code for the product catalog. Currently, only "en-US" is supported.
-	 */
-	protected  String defaultLocaleCode;
-
-	public String getDefaultLocaleCode() {
-		return this.defaultLocaleCode;
-	}
-
-	public void setDefaultLocaleCode(String defaultLocaleCode) {
-		this.defaultLocaleCode = defaultLocaleCode;
-	}
-
 	protected  DateTime createDate;
 
 	public DateTime getCreateDate() {
@@ -57,9 +31,26 @@ public class Catalog implements Serializable
 		this.createDate = createDate;
 	}
 
-	/**
-	 * The date and time the catalog was deleted.
-	 */
+	protected  String defaultCurrencyCode;
+
+	public String getDefaultCurrencyCode() {
+		return this.defaultCurrencyCode;
+	}
+
+	public void setDefaultCurrencyCode(String defaultCurrencyCode) {
+		this.defaultCurrencyCode = defaultCurrencyCode;
+	}
+
+	protected  String defaultLocaleCode;
+
+	public String getDefaultLocaleCode() {
+		return this.defaultLocaleCode;
+	}
+
+	public void setDefaultLocaleCode(String defaultLocaleCode) {
+		this.defaultLocaleCode = defaultLocaleCode;
+	}
+
 	protected  DateTime deleteDate;
 
 	public DateTime getDeleteDate() {
@@ -80,9 +71,6 @@ public class Catalog implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * If true, the catalog has been deleted.
-	 */
 	protected  Boolean isDeleted;
 
 	public Boolean getIsDeleted() {
@@ -103,9 +91,6 @@ public class Catalog implements Serializable
 		this.masterCatalogId = masterCatalogId;
 	}
 
-	/**
-	 * The user-defined name of the product catalog.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -117,7 +102,7 @@ public class Catalog implements Serializable
 	}
 
 	/**
-	 * The current status of the product catalog.
+	 * The current status of the object.This value is read only. Valid values for this field are: "Active", "Expired", and "Inactive".
 	 */
 	protected  String status;
 

@@ -1,33 +1,18 @@
 package com.mozu.test.framework.core;
 
 import org.apache.commons.lang.StringUtils;
-import org.apache.commons.lang.math.NumberUtils;
 import org.apache.http.HttpStatus;
 
-//import org.junit.Assert.*;
-
-
-
-
-
-
-
-
-
-
-import com.mozu.test.framework.core.*;
-import com.mozu.test.framework.core.Environment.Environments;
-import com.mozu.test.framework.datafactory.TenantFactory;
 import com.mozu.api.ApiContext;
 import com.mozu.api.ApiException;
 import com.mozu.api.MozuApiContext;
 import com.mozu.api.MozuConfig;
 import com.mozu.api.cache.impl.CacheManagerImpl;
 import com.mozu.api.contracts.appdev.AppAuthInfo;
-import com.mozu.api.contracts.tenant.*;
-import com.mozu.api.resources.platform.TenantResource;
+import com.mozu.api.contracts.tenant.Tenant;
 import com.mozu.api.security.AppAuthenticator;
-import com.mozu.api.security.RefreshInterval;
+import com.mozu.test.framework.core.Environment.Environments;
+import com.mozu.test.framework.datafactory.platform.TenantFactory;
 
 public class MozuApiTestBase {
 	

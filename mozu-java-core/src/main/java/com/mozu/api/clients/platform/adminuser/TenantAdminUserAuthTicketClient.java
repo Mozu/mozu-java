@@ -17,20 +17,20 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the Admin User authentication tickets resource to generate and refresh authentication tickets that enable Mozu administrator or developer account users to access development or production tenants.
+ * Use the Admin User authentication tickets resource to generate and refresh authentication tickets that enable  administrator or developer account users to access development or production tenants.
  * </summary>
  */
 public class TenantAdminUserAuthTicketClient {
 	
 	/**
-	 * Creates an authentication ticket for the supplied user to specify in API requests associated with the supplied tenant.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket> mozuClient=CreateUserAuthTicketClient( userAuthInfo);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * TenantAdminUserAuthTicket tenantAdminUserAuthTicket = client.Result();
 	 * </code></pre></p>
-	 * @param userAuthInfo The user authentication information required to generate the user authentication ticket, which consists of a user name and password.
+	 * @param userAuthInfo Information required to authenticate a user.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket>
 	 * @see com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.core.UserAuthInfo
@@ -41,16 +41,16 @@ public class TenantAdminUserAuthTicketClient {
 	}
 
 	/**
-	 * Creates an authentication ticket for the supplied user to specify in API requests associated with the supplied tenant.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket> mozuClient=CreateUserAuthTicketClient( userAuthInfo,  tenantId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * TenantAdminUserAuthTicket tenantAdminUserAuthTicket = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param tenantId Unique identifier of the development or production tenant for which to generate the user authentication ticket.
-	 * @param userAuthInfo The user authentication information required to generate the user authentication ticket, which consists of a user name and password.
+	 * @param userAuthInfo Information required to authenticate a user.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket>
 	 * @see com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.core.UserAuthInfo
@@ -69,14 +69,14 @@ public class TenantAdminUserAuthTicketClient {
 	}
 
 	/**
-	 * Generates a new user authentication ticket for the specified tenant by supplying the user's existing refresh token information.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket> mozuClient=RefreshAuthTicketClient( existingAuthTicket);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * TenantAdminUserAuthTicket tenantAdminUserAuthTicket = client.Result();
 	 * </code></pre></p>
-	 * @param existingAuthTicket Properties of the authentication ticket to refresh. The refresh token is required to complete this request.
+	 * @param existingAuthTicket Properties of the authentication ticket to be used in user claims with the  API.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket>
 	 * @see com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
@@ -87,16 +87,16 @@ public class TenantAdminUserAuthTicketClient {
 	}
 
 	/**
-	 * Generates a new user authentication ticket for the specified tenant by supplying the user's existing refresh token information.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket> mozuClient=RefreshAuthTicketClient( existingAuthTicket,  tenantId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * TenantAdminUserAuthTicket tenantAdminUserAuthTicket = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param tenantId 
-	 * @param existingAuthTicket Properties of the authentication ticket to refresh. The refresh token is required to complete this request.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param tenantId Unique identifier of the development or production tenant for which to generate the user authentication ticket.
+	 * @param existingAuthTicket Properties of the authentication ticket to be used in user claims with the  API.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket>
 	 * @see com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
@@ -115,13 +115,13 @@ public class TenantAdminUserAuthTicketClient {
 	}
 
 	/**
-	 * Deletes the authentication ticket for the user by supplying the refresh token.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteUserAuthTicketClient( refreshToken);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param refreshToken Refresh token string associated with the user authentication ticket.
+	 * @param refreshToken Alphanumeric string used for access tokens. This token refreshes access for accounts by generating a new developer or application account authentication ticket after an access token expires.
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deleteUserAuthTicketClient(String refreshToken) throws Exception

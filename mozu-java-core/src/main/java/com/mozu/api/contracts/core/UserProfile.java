@@ -21,9 +21,6 @@ public class UserProfile implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The email address of the specified user or the email address associated with the specified entity.
-	 */
 	protected  String emailAddress;
 
 	public String getEmailAddress() {
@@ -34,9 +31,6 @@ public class UserProfile implements Serializable
 		this.emailAddress = emailAddress;
 	}
 
-	/**
-	 * The first name of the contact. The maximum character length is 200.
-	 */
 	protected  String firstName;
 
 	public String getFirstName() {
@@ -47,9 +41,6 @@ public class UserProfile implements Serializable
 		this.firstName = firstName;
 	}
 
-	/**
-	 * The last name or surname of the contact. The maximum character length is 200.
-	 */
 	protected  String lastName;
 
 	public String getLastName() {
@@ -60,9 +51,6 @@ public class UserProfile implements Serializable
 		this.lastName = lastName;
 	}
 
-	/**
-	 * Identifier of the user.
-	 */
 	protected  String userId;
 
 	public String getUserId() {
@@ -74,7 +62,7 @@ public class UserProfile implements Serializable
 	}
 
 	/**
-	 * The user name associated with the user profile.
+	 * The user name associated with the user profile. The customer uses the user name to access the account.
 	 */
 	protected  String userName;
 

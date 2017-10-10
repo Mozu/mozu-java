@@ -1,6 +1,8 @@
 package com.mozu.test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -16,10 +18,8 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.mozu.api.ApiContext;
-import com.mozu.api.ApiException;
 import com.mozu.api.DataViewMode;
 import com.mozu.api.MozuApiContext;
-import com.mozu.api.cache.impl.CacheManagerImpl;
 import com.mozu.api.contracts.commerceruntime.carts.Cart;
 import com.mozu.api.contracts.commerceruntime.carts.CartItem;
 import com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo;
@@ -35,55 +35,39 @@ import com.mozu.api.contracts.commerceruntime.returns.ReturnCollection;
 import com.mozu.api.contracts.core.Contact;
 import com.mozu.api.contracts.customer.CustomerAccount;
 import com.mozu.api.contracts.customer.CustomerAccountAndAuthInfo;
-import com.mozu.api.contracts.customer.CustomerAccountCollection;
 import com.mozu.api.contracts.customer.CustomerAuthTicket;
-import com.mozu.api.contracts.customer.CustomerContact;
 import com.mozu.api.contracts.customer.CustomerUserAuthInfo;
 import com.mozu.api.contracts.location.Location;
 import com.mozu.api.contracts.location.LocationCollection;
-import com.mozu.api.contracts.location.LocationType;
-import com.mozu.api.contracts.productadmin.Category;
 import com.mozu.api.contracts.productadmin.LocationInventory;
 import com.mozu.api.contracts.productadmin.LocationInventoryAdjustment;
 import com.mozu.api.contracts.productadmin.Product;
 import com.mozu.api.contracts.productadmin.ProductCategory;
-import com.mozu.api.contracts.productadmin.ProductInCatalogInfo;
-import com.mozu.api.contracts.productadmin.ProductType;
-import com.mozu.api.contracts.productadmin.ProductTypeCollection;
 import com.mozu.api.contracts.productruntime.ProductCollection;
 import com.mozu.api.security.CustomerAuthenticationProfile;
 import com.mozu.api.security.CustomerAuthenticator;
 import com.mozu.test.framework.core.MozuApiTestBase;
 import com.mozu.test.framework.core.TestFailException;
-import com.mozu.test.framework.datafactory.AdminLocationInventoryFactory;
-import com.mozu.test.framework.datafactory.BillingInfoFactory;
-import com.mozu.test.framework.datafactory.CartFactory;
-import com.mozu.test.framework.datafactory.CartItemFactory;
-import com.mozu.test.framework.datafactory.CategoryFactory;
-import com.mozu.test.framework.datafactory.CommerceLocationFactory;
-import com.mozu.test.framework.datafactory.FulfillmentActionFactory;
-import com.mozu.test.framework.datafactory.FulfillmentInfoFactory;
-import com.mozu.test.framework.datafactory.LocationFactory;
-import com.mozu.test.framework.datafactory.LocationInventoryFactory;
-import com.mozu.test.framework.datafactory.LocationTypeFactory;
-import com.mozu.test.framework.datafactory.OrderFactory;
-import com.mozu.test.framework.datafactory.AdminProductFactory;
-import com.mozu.test.framework.datafactory.OrderItemFactory;
-import com.mozu.test.framework.datafactory.OrdersPackageFactory;
-import com.mozu.test.framework.datafactory.OrdersShipmentFactory;
-import com.mozu.test.framework.datafactory.PaymentFactory;
-import com.mozu.test.framework.datafactory.PickupFactory;
-import com.mozu.test.framework.datafactory.ProductTypeFactory;
-import com.mozu.test.framework.datafactory.ProductFactory;
-import com.mozu.test.framework.datafactory.CustomerAccountFactory;
-import com.mozu.test.framework.datafactory.CustomerContactFactory;
-import com.mozu.test.framework.datafactory.ReturnFactory;
+import com.mozu.test.framework.datafactory.commerce.CartFactory;
+import com.mozu.test.framework.datafactory.commerce.OrderFactory;
+import com.mozu.test.framework.datafactory.commerce.ReturnFactory;
+import com.mozu.test.framework.datafactory.commerce.admin.LocationFactory;
+import com.mozu.test.framework.datafactory.commerce.carts.CartItemFactory;
+import com.mozu.test.framework.datafactory.commerce.catalog.admin.LocationInventoryFactory;
+import com.mozu.test.framework.datafactory.commerce.catalog.storefront.ProductFactory;
+import com.mozu.test.framework.datafactory.commerce.customer.CustomerAccountFactory;
+import com.mozu.test.framework.datafactory.commerce.orders.BillingInfoFactory;
+import com.mozu.test.framework.datafactory.commerce.orders.FulfillmentActionFactory;
+import com.mozu.test.framework.datafactory.commerce.orders.FulfillmentInfoFactory;
+import com.mozu.test.framework.datafactory.commerce.orders.OrderItemFactory;
+import com.mozu.test.framework.datafactory.commerce.orders.PackageFactory;
+import com.mozu.test.framework.datafactory.commerce.orders.PaymentFactory;
+import com.mozu.test.framework.datafactory.commerce.orders.PickupFactory;
+import com.mozu.test.framework.datafactory.commerce.orders.ShipmentFactory;
 import com.mozu.test.framework.helper.Constants;
-import com.mozu.test.framework.helper.Generator;
-import com.mozu.test.framework.helper.ProductCategoryGenerator;
-import com.mozu.test.framework.helper.ProductGenerator;
-import com.mozu.test.framework.helper.ProductTypeGenerator;
 import com.mozu.test.framework.helper.CustomerGenerator;
+import com.mozu.test.framework.helper.Generator;
+import com.mozu.test.framework.helper.ProductGenerator;
 
 public class OrderTests extends MozuApiTestBase {
 	private static List<String> products = new ArrayList<String>(); 
@@ -277,7 +261,7 @@ public class OrderTests extends MozuApiTestBase {
 		fulfillmentInfo.setFulfillmentContact(shippingContact);
 		FulfillmentInfoFactory.setFulFillmentInfo(siteApiContext, fulfillmentInfo, testOrder.getId(), HttpStatus.SC_OK);
 		
-		List<ShippingRate> availableShippingMethods = OrdersShipmentFactory.getAvailableShipmentMethods(siteApiContext, testOrder.getId(), HttpStatus.SC_OK);
+		List<ShippingRate> availableShippingMethods = ShipmentFactory.getAvailableShipmentMethods(siteApiContext, testOrder.getId(), HttpStatus.SC_OK);
 		fulfillmentInfo.setShippingMethodCode(availableShippingMethods.get(0).getShippingMethodCode());
 		fulfillmentInfo.setShippingMethodCode(availableShippingMethods.get(0).getShippingMethodName());
 		FulfillmentInfoFactory.setFulFillmentInfo(siteApiContext, fulfillmentInfo, testOrder.getId(), HttpStatus.SC_OK);
@@ -318,13 +302,13 @@ public class OrderTests extends MozuApiTestBase {
             
             Cart createdCart = CartFactory.getOrCreateCart(siteApiContext, HttpStatus.SC_OK);
 
-            Location directShipLocation = CommerceLocationFactory.getDirectShipLocation(siteApiContext, HttpStatus.SC_OK);
+            Location directShipLocation = com.mozu.test.framework.datafactory.commerce.LocationFactory.getDirectShipLocation(siteApiContext, HttpStatus.SC_OK);
             if(!directShipLocation.getSupportsInventory())
             {
             	directShipLocation.setSupportsInventory(true);
             	LocationFactory.updateLocation(apiContext, directShipLocation, directShipLocation.getCode(), HttpStatus.SC_OK);
             }
-            LocationCollection PickupLocationCodes = CommerceLocationFactory.getInStorePickupLocations(siteApiContext, HttpStatus.SC_OK);
+            LocationCollection PickupLocationCodes = com.mozu.test.framework.datafactory.commerce.LocationFactory.getInStorePickupLocations(siteApiContext, HttpStatus.SC_OK);
             Location pickupLocation = PickupLocationCodes.getItems().get(0);
             if(!pickupLocation.getSupportsInventory())
             {
@@ -337,12 +321,12 @@ public class OrderTests extends MozuApiTestBase {
 //                productCollection = ProductFactory.getProducts(shopperMsgHandler, null, 0, 13, null, shopperAuth.getAuthTicket(), HttpStatus.SC_OK, HttpStatus.SC_OK);
 //            }
             com.mozu.api.contracts.productruntime.Product product = productCollection.getItems().get(0);
-            Product adminProduct = AdminProductFactory.getProduct(apiContext, DataViewMode.Live, product.getProductCode(), HttpStatus.SC_OK);
+            Product adminProduct = com.mozu.test.framework.datafactory.commerce.catalog.admin.ProductFactory.getProduct(apiContext, DataViewMode.Live, product.getProductCode(), HttpStatus.SC_OK);
             adminProduct.getSeoContent().setSeoFriendlyUrl(Generator.randomURL());
             if(!adminProduct.getInventoryInfo().getManageStock())
             {
             	adminProduct.getInventoryInfo().setManageStock(true);
-            	AdminProductFactory.updateProduct(apiContext, DataViewMode.Live, adminProduct, product.getProductCode(), HttpStatus.SC_OK);
+            	com.mozu.test.framework.datafactory.commerce.catalog.admin.ProductFactory.updateProduct(apiContext, DataViewMode.Live, adminProduct, product.getProductCode(), HttpStatus.SC_OK);
             }
             updateInventory(siteApiContext, directShipLocation.getCode(), product.getProductCode(), 100);            
             updateInventory(siteApiContext, pickupLocation.getCode(), product.getProductCode(), 50);
@@ -354,7 +338,7 @@ public class OrderTests extends MozuApiTestBase {
             BillingInfo billingInfo = BillingInfoFactory.setBillingInfo(siteApiContext, CustomerGenerator.generateBillingInfo(shippingContact, "Check", true), order.getId(), HttpStatus.SC_OK);
 //            FulfillmentActionFactory.setFulFillmentInfo(shopperMsgHandler, CustomerGenerator.generateFulfillmentInfo(false, shippingContact, null, null), order.getId(), HttpStatus.SC_OK, HttpStatus.SC_OK);
 			Thread.sleep(1000);
-            List<ShippingRate> availableShippingMethods = OrdersShipmentFactory.getAvailableShipmentMethods(siteApiContext, order.getId(), HttpStatus.SC_OK);
+            List<ShippingRate> availableShippingMethods = ShipmentFactory.getAvailableShipmentMethods(siteApiContext, order.getId(), HttpStatus.SC_OK);
 //            FulfillmentActionFactory.setFulFillmentInfo(shopperMsgHandler, CustomerGenerator.generateFulfillmentInfo(false, shippingContact, availableShippingMethods.get(0).getShippingMethodCode(), availableShippingMethods.get(0).getShippingMethodName()), order.getId(), HttpStatus.SC_OK, HttpStatus.SC_OK);
 
             PaymentAction paymentAction = CustomerGenerator.generatePaymentAction("CreatePayment", order.getTotal(), Generator.randomString(10, Generator.NumericChars), null);
@@ -425,10 +409,10 @@ public class OrderTests extends MozuApiTestBase {
             com.mozu.api.contracts.commerceruntime.fulfillment.Package pkg = CustomerGenerator.generatePackage(availableShippingMethods.get(0).getShippingMethodCode(), 
             		availableShippingMethods.get(0).getShippingMethodName(), order.getItems().get(1).getProduct().getProductCode(), order.getItems().get(1).getQuantity());
 
-            com.mozu.api.contracts.commerceruntime.fulfillment.Package createdPkg = OrdersPackageFactory.createPackage(siteApiContext, pkg, order.getId(), HttpStatus.SC_CREATED);
+            com.mozu.api.contracts.commerceruntime.fulfillment.Package createdPkg = PackageFactory.createPackage(siteApiContext, pkg, order.getId(), HttpStatus.SC_CREATED);
             if (!createdPkg.getShippingMethodName().equals("Flat Rate"))
             {
-            	InputStream getLabel = OrdersPackageFactory.getPackageLabel(siteApiContext, order.getId(), createdPkg.getId(), HttpStatus.SC_OK);
+            	InputStream getLabel = PackageFactory.getPackageLabel(siteApiContext, order.getId(), createdPkg.getId(), HttpStatus.SC_OK);
             }
             
             Order orderShipment = FulfillmentActionFactory.performFulfillmentAction(siteApiContext, CustomerGenerator.generateFulfillmentAction("Ship", createdPkg.getId(), null), order.getId(), HttpStatus.SC_OK);
@@ -467,7 +451,7 @@ public class OrderTests extends MozuApiTestBase {
 	{
 		try
 	    {
-	    	AdminLocationInventoryFactory.getLocationInventory(apiContext, DataViewMode.Live, locationCode, productCode, HttpStatus.SC_OK);
+	    	LocationInventoryFactory.getLocationInventory(apiContext, DataViewMode.Live, locationCode, productCode, HttpStatus.SC_OK);
 	    }
 	    catch (TestFailException te)
 	    {
@@ -476,13 +460,13 @@ public class OrderTests extends MozuApiTestBase {
 	    		List<LocationInventory> list = new ArrayList<LocationInventory>();
 	    		LocationInventory inv = ProductGenerator.generateLocationInventory(locationCode, productCode, absoluteQuantity);
 	    		list.add(inv);
-	            AdminLocationInventoryFactory.addLocationInventory(apiContext, DataViewMode.Live, list, locationCode, HttpStatus.SC_CREATED);            		
+	            LocationInventoryFactory.addLocationInventory(apiContext, DataViewMode.Live, list, locationCode, HttpStatus.SC_CREATED);            		
 	    	}
 	    }
 	    LocationInventoryAdjustment adjustment = ProductGenerator.generateLocationInventoryAdjustment(locationCode, productCode, "Absolute", absoluteQuantity);
 	    List<LocationInventoryAdjustment> adjustments = new ArrayList<LocationInventoryAdjustment>();
 	    adjustments.add(adjustment);
-	    AdminLocationInventoryFactory.updateLocationInventory(apiContext, DataViewMode.Live, adjustments, locationCode, HttpStatus.SC_OK);
+	    LocationInventoryFactory.updateLocationInventory(apiContext, DataViewMode.Live, adjustments, locationCode, HttpStatus.SC_OK);
 	}
 	
 }

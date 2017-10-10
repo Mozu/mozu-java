@@ -37,7 +37,7 @@ public class InStockNotificationSubscriptionResource {
 
 	
 	/**
-	 * Retrieves a list of in-stock notification subscriptions.
+	 * 
 	 * <p><pre><code>
 	 *	InStockNotificationSubscription instocknotificationsubscription = new InStockNotificationSubscription();
 	 *	InStockNotificationSubscriptionCollection inStockNotificationSubscriptionCollection = instocknotificationsubscription.getInStockNotificationSubscriptions();
@@ -51,7 +51,7 @@ public class InStockNotificationSubscriptionResource {
 	}
 
 	/**
-	 * Retrieves a list of in-stock notification subscriptions.
+	 * 
 	 * <p><pre><code>
 	 *	InStockNotificationSubscription instocknotificationsubscription = new InStockNotificationSubscription();
 	 *	CountDownLatch latch = instocknotificationsubscription.getInStockNotificationSubscriptions( callback );
@@ -66,16 +66,16 @@ public class InStockNotificationSubscriptionResource {
 	}
 
 	/**
-	 * Retrieves a list of in-stock notification subscriptions.
+	 * 
 	 * <p><pre><code>
 	 *	InStockNotificationSubscription instocknotificationsubscription = new InStockNotificationSubscription();
 	 *	InStockNotificationSubscriptionCollection inStockNotificationSubscriptionCollection = instocknotificationsubscription.getInStockNotificationSubscriptions( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return com.mozu.api.contracts.customer.InStockNotificationSubscriptionCollection
 	 * @see com.mozu.api.contracts.customer.InStockNotificationSubscriptionCollection
 	 */
@@ -89,16 +89,16 @@ public class InStockNotificationSubscriptionResource {
 	}
 
 	/**
-	 * Retrieves a list of in-stock notification subscriptions.
+	 * 
 	 * <p><pre><code>
 	 *	InStockNotificationSubscription instocknotificationsubscription = new InStockNotificationSubscription();
 	 *	CountDownLatch latch = instocknotificationsubscription.getInStockNotificationSubscriptions( startIndex,  pageSize,  sortBy,  filter,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.InStockNotificationSubscriptionCollection
 	 * @see com.mozu.api.contracts.customer.InStockNotificationSubscriptionCollection
@@ -112,12 +112,12 @@ public class InStockNotificationSubscriptionResource {
 	}
 
 	/**
-	 * Retrieves the details of a subscription that sends a push notification when a product is available in a site's active stock.
+	 * 
 	 * <p><pre><code>
 	 *	InStockNotificationSubscription instocknotificationsubscription = new InStockNotificationSubscription();
 	 *	InStockNotificationSubscription inStockNotificationSubscription = instocknotificationsubscription.getInStockNotificationSubscription( id);
 	 * </code></pre></p>
-	 * @param id Unique identifier of the in-stock notification subscription to retrieve.
+	 * @param id Unique identifier of the customer segment to retrieve.
 	 * @return com.mozu.api.contracts.customer.InStockNotificationSubscription
 	 * @see com.mozu.api.contracts.customer.InStockNotificationSubscription
 	 */
@@ -127,12 +127,12 @@ public class InStockNotificationSubscriptionResource {
 	}
 
 	/**
-	 * Retrieves the details of a subscription that sends a push notification when a product is available in a site's active stock.
+	 * 
 	 * <p><pre><code>
 	 *	InStockNotificationSubscription instocknotificationsubscription = new InStockNotificationSubscription();
 	 *	CountDownLatch latch = instocknotificationsubscription.getInStockNotificationSubscription( id, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param id Unique identifier of the in-stock notification subscription to retrieve.
+	 * @param id Unique identifier of the customer segment to retrieve.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.InStockNotificationSubscription
 	 * @see com.mozu.api.contracts.customer.InStockNotificationSubscription
@@ -143,13 +143,13 @@ public class InStockNotificationSubscriptionResource {
 	}
 
 	/**
-	 * Retrieves the details of a subscription that sends a push notification when a product is available in a site's active stock.
+	 * 
 	 * <p><pre><code>
 	 *	InStockNotificationSubscription instocknotificationsubscription = new InStockNotificationSubscription();
 	 *	InStockNotificationSubscription inStockNotificationSubscription = instocknotificationsubscription.getInStockNotificationSubscription( id,  responseFields);
 	 * </code></pre></p>
-	 * @param id Unique identifier of the in-stock notification subscription to retrieve.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.customer.InStockNotificationSubscription
 	 * @see com.mozu.api.contracts.customer.InStockNotificationSubscription
 	 */
@@ -163,13 +163,13 @@ public class InStockNotificationSubscriptionResource {
 	}
 
 	/**
-	 * Retrieves the details of a subscription that sends a push notification when a product is available in a site's active stock.
+	 * 
 	 * <p><pre><code>
 	 *	InStockNotificationSubscription instocknotificationsubscription = new InStockNotificationSubscription();
 	 *	CountDownLatch latch = instocknotificationsubscription.getInStockNotificationSubscription( id,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param id Unique identifier of the in-stock notification subscription to retrieve.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.InStockNotificationSubscription
 	 * @see com.mozu.api.contracts.customer.InStockNotificationSubscription
@@ -183,12 +183,12 @@ public class InStockNotificationSubscriptionResource {
 	}
 
 	/**
-	 * Creates a new subscription that notifies the customer when the product specified in the request is available in the active inventory of the defined location.
+	 * 
 	 * <p><pre><code>
 	 *	InStockNotificationSubscription instocknotificationsubscription = new InStockNotificationSubscription();
 	 *	InStockNotificationSubscription inStockNotificationSubscription = instocknotificationsubscription.addInStockNotificationSubscription( inStockNotificationSubscription);
 	 * </code></pre></p>
-	 * @param inStockNotificationSubscription Properties of a subscription that sends the customer a notification when a product is available in a site's active stock.
+	 * @param inStockNotificationSubscription Properties of a push notification to which the shopper subscribes. This notification sends the shopper an alert when a new product or a product previously out of stock becomes available in the specified location's active product inventory.
 	 * @return com.mozu.api.contracts.customer.InStockNotificationSubscription
 	 * @see com.mozu.api.contracts.customer.InStockNotificationSubscription
 	 * @see com.mozu.api.contracts.customer.InStockNotificationSubscription
@@ -199,13 +199,13 @@ public class InStockNotificationSubscriptionResource {
 	}
 
 	/**
-	 * Creates a new subscription that notifies the customer when the product specified in the request is available in the active inventory of the defined location.
+	 * 
 	 * <p><pre><code>
 	 *	InStockNotificationSubscription instocknotificationsubscription = new InStockNotificationSubscription();
 	 *	CountDownLatch latch = instocknotificationsubscription.addInStockNotificationSubscription( inStockNotificationSubscription, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param inStockNotificationSubscription Properties of a subscription that sends the customer a notification when a product is available in a site's active stock.
+	 * @param inStockNotificationSubscription Properties of a push notification to which the shopper subscribes. This notification sends the shopper an alert when a new product or a product previously out of stock becomes available in the specified location's active product inventory.
 	 * @return com.mozu.api.contracts.customer.InStockNotificationSubscription
 	 * @see com.mozu.api.contracts.customer.InStockNotificationSubscription
 	 * @see com.mozu.api.contracts.customer.InStockNotificationSubscription
@@ -216,13 +216,13 @@ public class InStockNotificationSubscriptionResource {
 	}
 
 	/**
-	 * Creates a new subscription that notifies the customer when the product specified in the request is available in the active inventory of the defined location.
+	 * 
 	 * <p><pre><code>
 	 *	InStockNotificationSubscription instocknotificationsubscription = new InStockNotificationSubscription();
 	 *	InStockNotificationSubscription inStockNotificationSubscription = instocknotificationsubscription.addInStockNotificationSubscription( inStockNotificationSubscription,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param inStockNotificationSubscription Properties of a subscription that sends the customer a notification when a product is available in a site's active stock.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param inStockNotificationSubscription Properties of a push notification to which the shopper subscribes. This notification sends the shopper an alert when a new product or a product previously out of stock becomes available in the specified location's active product inventory.
 	 * @return com.mozu.api.contracts.customer.InStockNotificationSubscription
 	 * @see com.mozu.api.contracts.customer.InStockNotificationSubscription
 	 * @see com.mozu.api.contracts.customer.InStockNotificationSubscription
@@ -237,14 +237,14 @@ public class InStockNotificationSubscriptionResource {
 	}
 
 	/**
-	 * Creates a new subscription that notifies the customer when the product specified in the request is available in the active inventory of the defined location.
+	 * 
 	 * <p><pre><code>
 	 *	InStockNotificationSubscription instocknotificationsubscription = new InStockNotificationSubscription();
 	 *	CountDownLatch latch = instocknotificationsubscription.addInStockNotificationSubscription( inStockNotificationSubscription,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param inStockNotificationSubscription Properties of a subscription that sends the customer a notification when a product is available in a site's active stock.
+	 * @param inStockNotificationSubscription Properties of a push notification to which the shopper subscribes. This notification sends the shopper an alert when a new product or a product previously out of stock becomes available in the specified location's active product inventory.
 	 * @return com.mozu.api.contracts.customer.InStockNotificationSubscription
 	 * @see com.mozu.api.contracts.customer.InStockNotificationSubscription
 	 * @see com.mozu.api.contracts.customer.InStockNotificationSubscription
@@ -258,12 +258,12 @@ public class InStockNotificationSubscriptionResource {
 	}
 
 	/**
-	 * Deletes a subscription for a customer in-stock notification.
+	 * 
 	 * <p><pre><code>
 	 *	InStockNotificationSubscription instocknotificationsubscription = new InStockNotificationSubscription();
 	 *	instocknotificationsubscription.deleteInStockNotificationSubscription( id);
 	 * </code></pre></p>
-	 * @param id Unique identifier of the customer in-stock notification subscription to delete.
+	 * @param id Unique identifier of the customer segment to retrieve.
 	 * @return 
 	 */
 	public void deleteInStockNotificationSubscription(Integer id) throws Exception

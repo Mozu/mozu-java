@@ -24,9 +24,6 @@ public class ProductLocalizedContent implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Language used for the entity. Currently, only "en-US" is supported.
-	 */
 	protected  String localeCode;
 
 	public String getLocaleCode() {
@@ -37,9 +34,6 @@ public class ProductLocalizedContent implements Serializable
 		this.localeCode = localeCode;
 	}
 
-	/**
-	 * More detailed or full product description typically used for a product details page.
-	 */
 	protected  String productFullDescription;
 
 	public String getProductFullDescription() {
@@ -50,9 +44,6 @@ public class ProductLocalizedContent implements Serializable
 		this.productFullDescription = productFullDescription;
 	}
 
-	/**
-	 * The descriptive brief product name.
-	 */
 	protected  String productName;
 
 	public String getProductName() {
@@ -63,9 +54,6 @@ public class ProductLocalizedContent implements Serializable
 		this.productName = productName;
 	}
 
-	/**
-	 * Brief description of the product typically used when the product is displayed in a list or in search results.
-	 */
 	protected  String productShortDescription;
 
 	public String getProductShortDescription() {
@@ -76,9 +64,6 @@ public class ProductLocalizedContent implements Serializable
 		this.productShortDescription = productShortDescription;
 	}
 
-	/**
-	 * List of product images associated with a product.
-	 */
 	protected List<ProductLocalizedImage> productImages;
 	public List<ProductLocalizedImage> getProductImages() {
 		return this.productImages;

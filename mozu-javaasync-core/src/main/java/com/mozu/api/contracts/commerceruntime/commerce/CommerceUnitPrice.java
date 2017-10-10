@@ -21,9 +21,6 @@ public class CommerceUnitPrice implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Represents the total price of the line item extended to the shopper. This begins with the Unit Price, then uses any of the following prices if they are defined, in the following order: Override Amount, Sale Amount, List Amount.
-	 */
 	protected  Double extendedAmount;
 
 	public Double getExtendedAmount() {
@@ -34,9 +31,6 @@ public class CommerceUnitPrice implements Serializable
 		this.extendedAmount = extendedAmount;
 	}
 
-	/**
-	 * The price the item is listed for in the storefront.
-	 */
 	protected  Double listAmount;
 
 	public Double getListAmount() {
@@ -47,9 +41,6 @@ public class CommerceUnitPrice implements Serializable
 		this.listAmount = listAmount;
 	}
 
-	/**
-	 * The override price of the item set by the merchant for a given order.
-	 */
 	protected  Double overrideAmount;
 
 	public Double getOverrideAmount() {
@@ -60,9 +51,6 @@ public class CommerceUnitPrice implements Serializable
 		this.overrideAmount = overrideAmount;
 	}
 
-	/**
-	 * The sale price set for the item.
-	 */
 	protected  Double saleAmount;
 
 	public Double getSaleAmount() {

@@ -35,7 +35,7 @@ public class LocationTypeResource {
 
 	
 	/**
-	 * Retrieve a list of all location types defined for the tenant.
+	 * 
 	 * <p><pre><code>
 	 *	LocationType locationtype = new LocationType();
 	 *	LocationType locationType = locationtype.getLocationTypes();
@@ -53,7 +53,7 @@ public class LocationTypeResource {
 	}
 
 	/**
-	 * Retrieves the details of the location type specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	LocationType locationtype = new LocationType();
 	 *	LocationType locationType = locationtype.getLocationType( locationTypeCode);
@@ -68,13 +68,13 @@ public class LocationTypeResource {
 	}
 
 	/**
-	 * Retrieves the details of the location type specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	LocationType locationtype = new LocationType();
 	 *	LocationType locationType = locationtype.getLocationType( locationTypeCode,  responseFields);
 	 * </code></pre></p>
 	 * @param locationTypeCode The user-defined code that identifies the location type.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.location.LocationType
 	 * @see com.mozu.api.contracts.location.LocationType
 	 */
@@ -88,12 +88,12 @@ public class LocationTypeResource {
 	}
 
 	/**
-	 * Creates a new location type based on the information specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	LocationType locationtype = new LocationType();
 	 *	LocationType locationType = locationtype.addLocationType( locationType);
 	 * </code></pre></p>
-	 * @param locationType Properties of the location type to create.
+	 * @param locationType Properties of a type of physical location, such as warehouse or kiosk. Location types enable tenants to group similar locations for filtering and location usage type definition.
 	 * @return com.mozu.api.contracts.location.LocationType
 	 * @see com.mozu.api.contracts.location.LocationType
 	 * @see com.mozu.api.contracts.location.LocationType
@@ -104,13 +104,13 @@ public class LocationTypeResource {
 	}
 
 	/**
-	 * Creates a new location type based on the information specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	LocationType locationtype = new LocationType();
 	 *	LocationType locationType = locationtype.addLocationType( locationType,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param locationType Properties of the location type to create.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param locationType Properties of a type of physical location, such as warehouse or kiosk. Location types enable tenants to group similar locations for filtering and location usage type definition.
 	 * @return com.mozu.api.contracts.location.LocationType
 	 * @see com.mozu.api.contracts.location.LocationType
 	 * @see com.mozu.api.contracts.location.LocationType
@@ -125,13 +125,13 @@ public class LocationTypeResource {
 	}
 
 	/**
-	 * Updates the name of a defined location type.
+	 * 
 	 * <p><pre><code>
 	 *	LocationType locationtype = new LocationType();
 	 *	LocationType locationType = locationtype.updateLocationType( locationType,  locationTypeCode);
 	 * </code></pre></p>
 	 * @param locationTypeCode The user-defined code that identifies the location type.
-	 * @param locationType Properties of the location type to update.
+	 * @param locationType Properties of a type of physical location, such as warehouse or kiosk. Location types enable tenants to group similar locations for filtering and location usage type definition.
 	 * @return com.mozu.api.contracts.location.LocationType
 	 * @see com.mozu.api.contracts.location.LocationType
 	 * @see com.mozu.api.contracts.location.LocationType
@@ -142,14 +142,14 @@ public class LocationTypeResource {
 	}
 
 	/**
-	 * Updates the name of a defined location type.
+	 * 
 	 * <p><pre><code>
 	 *	LocationType locationtype = new LocationType();
 	 *	LocationType locationType = locationtype.updateLocationType( locationType,  locationTypeCode,  responseFields);
 	 * </code></pre></p>
 	 * @param locationTypeCode The user-defined code that identifies the location type.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param locationType Properties of the location type to update.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param locationType Properties of a type of physical location, such as warehouse or kiosk. Location types enable tenants to group similar locations for filtering and location usage type definition.
 	 * @return com.mozu.api.contracts.location.LocationType
 	 * @see com.mozu.api.contracts.location.LocationType
 	 * @see com.mozu.api.contracts.location.LocationType
@@ -164,12 +164,12 @@ public class LocationTypeResource {
 	}
 
 	/**
-	 * Deletes the location type specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	LocationType locationtype = new LocationType();
 	 *	locationtype.deleteLocationType( locationTypeCode);
 	 * </code></pre></p>
-	 * @param locationTypeCode User-defined code used to identify the location type.
+	 * @param locationTypeCode The user-defined code that identifies the location type.
 	 * @return 
 	 */
 	public void deleteLocationType(String locationTypeCode) throws Exception

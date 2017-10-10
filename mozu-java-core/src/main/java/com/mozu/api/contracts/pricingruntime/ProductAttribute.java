@@ -21,9 +21,6 @@ public class ProductAttribute implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The data type of the attribute. There are four valid data types: "Bool", "DateTime", "Number", "String"
-	 */
 	protected  String dataType;
 
 	public String getDataType() {
@@ -34,9 +31,6 @@ public class ProductAttribute implements Serializable
 		this.dataType = dataType;
 	}
 
-	/**
-	 * The description of this product attribute.
-	 */
 	protected  String description;
 
 	public String getDescription() {
@@ -47,9 +41,6 @@ public class ProductAttribute implements Serializable
 		this.description = description;
 	}
 
-	/**
-	 * The storefront interface input type for this attribute such as a radio button or drop-down menu selection.
-	 */
 	protected  String inputType;
 
 	public String getInputType() {
@@ -60,9 +51,6 @@ public class ProductAttribute implements Serializable
 		this.inputType = inputType;
 	}
 
-	/**
-	 * The name of the product attribute.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -73,9 +61,6 @@ public class ProductAttribute implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * An attribute value type is either predefined vocabulary by the admin during product attribute set up or it can be "AdminEntered" or "ShopperEntered". The difference between predefined values versus manually entered values is such that the first choice is a set of options to choose from. AdminEntered and ShopperEntered are values that are entered rather than system-supplied and are not stored in the database, but captured during a live commerce operations such as during an order.
-	 */
 	protected  String valueType;
 
 	public String getValueType() {

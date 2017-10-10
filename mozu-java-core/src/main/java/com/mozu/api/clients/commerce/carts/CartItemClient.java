@@ -23,14 +23,14 @@ import org.apache.commons.lang.StringUtils;
 public class CartItemClient {
 	
 	/**
-	 * Retrieves a particular cart item by providing the cart item ID.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartItem> mozuClient=GetCartItemClient( cartItemId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * CartItem cartItem = client.Result();
 	 * </code></pre></p>
-	 * @param cartItemId Identifier of the cart item to retrieve.
+	 * @param cartItemId Identifier of the cart item to delete.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.carts.CartItem>
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 */
@@ -40,15 +40,15 @@ public class CartItemClient {
 	}
 
 	/**
-	 * Retrieves a particular cart item by providing the cart item ID.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartItem> mozuClient=GetCartItemClient( cartItemId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * CartItem cartItem = client.Result();
 	 * </code></pre></p>
-	 * @param cartItemId Identifier of the cart item to retrieve.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param cartItemId Identifier of the cart item to delete.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.carts.CartItem>
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 */
@@ -65,7 +65,7 @@ public class CartItemClient {
 	}
 
 	/**
-	 * Retrieves a list of cart items including the total number of items in the cart.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartItemCollection> mozuClient=GetCartItemsClient();
 	 * client.setBaseAddress(url);
@@ -81,14 +81,14 @@ public class CartItemClient {
 	}
 
 	/**
-	 * Retrieves a list of cart items including the total number of items in the cart.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartItemCollection> mozuClient=GetCartItemsClient( responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * CartItemCollection cartItemCollection = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.carts.CartItemCollection>
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItemCollection
 	 */
@@ -105,14 +105,14 @@ public class CartItemClient {
 	}
 
 	/**
-	 * Adds a product to the current shopper's cart.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartItem> mozuClient=AddItemToCartClient( cartItem);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * CartItem cartItem = client.Result();
 	 * </code></pre></p>
-	 * @param cartItem All properties of the new cart item. The product code is required.
+	 * @param cartItem Properties of an item added to an active shopping cart.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.carts.CartItem>
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
@@ -123,15 +123,15 @@ public class CartItemClient {
 	}
 
 	/**
-	 * Adds a product to the current shopper's cart.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartItem> mozuClient=AddItemToCartClient( cartItem,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * CartItem cartItem = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param cartItem All properties of the new cart item. The product code is required.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param cartItem Properties of an item added to an active shopping cart.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.carts.CartItem>
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
@@ -150,14 +150,14 @@ public class CartItemClient {
 	}
 
 	/**
-	 * Update the quantity of an individual cart item in the cart of the current shopper.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartItem> mozuClient=UpdateCartItemQuantityClient( cartItemId,  quantity);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * CartItem cartItem = client.Result();
 	 * </code></pre></p>
-	 * @param cartItemId Identifier of the cart item to update quantity.
+	 * @param cartItemId Identifier of the cart item to delete.
 	 * @param quantity The number of cart items in the shopper's active cart.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.carts.CartItem>
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
@@ -168,16 +168,16 @@ public class CartItemClient {
 	}
 
 	/**
-	 * Update the quantity of an individual cart item in the cart of the current shopper.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartItem> mozuClient=UpdateCartItemQuantityClient( cartItemId,  quantity,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * CartItem cartItem = client.Result();
 	 * </code></pre></p>
-	 * @param cartItemId Identifier of the cart item to update quantity.
+	 * @param cartItemId Identifier of the cart item to delete.
 	 * @param quantity The number of cart items in the shopper's active cart.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.carts.CartItem>
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 */
@@ -194,15 +194,15 @@ public class CartItemClient {
 	}
 
 	/**
-	 * Update the product or product quantity of an item in the current shopper's cart.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartItem> mozuClient=UpdateCartItemClient( cartItem,  cartItemId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * CartItem cartItem = client.Result();
 	 * </code></pre></p>
-	 * @param cartItemId Identifier of the cart item to update.
-	 * @param cartItem The properties of the cart item to update.
+	 * @param cartItemId Identifier of the cart item to delete.
+	 * @param cartItem Properties of an item added to an active shopping cart.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.carts.CartItem>
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
@@ -213,16 +213,16 @@ public class CartItemClient {
 	}
 
 	/**
-	 * Update the product or product quantity of an item in the current shopper's cart.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartItem> mozuClient=UpdateCartItemClient( cartItem,  cartItemId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * CartItem cartItem = client.Result();
 	 * </code></pre></p>
-	 * @param cartItemId Identifier of the cart item to update.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param cartItem The properties of the cart item to update.
+	 * @param cartItemId Identifier of the cart item to delete.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param cartItem Properties of an item added to an active shopping cart.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.carts.CartItem>
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
@@ -241,7 +241,7 @@ public class CartItemClient {
 	}
 
 	/**
-	 * Removes all items in the current shopper's active cart.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> mozuClient=RemoveAllCartItemsClient();
 	 * client.setBaseAddress(url);
@@ -264,7 +264,7 @@ public class CartItemClient {
 	}
 
 	/**
-	 * Deletes a specific cart item by providing the cart item ID.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteCartItemClient( cartItemId);
 	 * client.setBaseAddress(url);

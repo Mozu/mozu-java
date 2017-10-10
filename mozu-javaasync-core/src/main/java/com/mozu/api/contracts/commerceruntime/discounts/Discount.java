@@ -23,9 +23,6 @@ public class Discount implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The date and time at which the discount can no longer be applied to a product or order.
-	 */
 	protected  DateTime expirationDate;
 
 	public DateTime getExpirationDate() {
@@ -36,9 +33,6 @@ public class Discount implements Serializable
 		this.expirationDate = expirationDate;
 	}
 
-	/**
-	 * Unique identifier of the discount.
-	 */
 	protected  Integer id;
 
 	public Integer getId() {
@@ -49,9 +43,6 @@ public class Discount implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * List of cart or order items to which the discount applies, if applicable.
-	 */
 	protected List<String> itemIds;
 	public List<String> getItemIds() {
 		return this.itemIds;
@@ -60,9 +51,6 @@ public class Discount implements Serializable
 		this.itemIds = itemIds;
 	}
 
-	/**
-	 * The name of the discount, in the language specified by the LocaleCode of the storefront.
-	 */
 	protected  String name;
 
 	public String getName() {

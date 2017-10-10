@@ -16,7 +16,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productadmin.ProductPropertyValue;
 
 /**
- *	Properties of the product property to create such as attribute detail, fully qualified name, and list of product property values.
+ *	Details of a property defined for a product.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductProperty implements Serializable
@@ -24,9 +24,6 @@ public class ProductProperty implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 */
 	protected  String attributeFQN;
 
 	public String getAttributeFQN() {
@@ -37,9 +34,6 @@ public class ProductProperty implements Serializable
 		this.attributeFQN = attributeFQN;
 	}
 
-	/**
-	 * The actual values that populate a product property to set in the Admin to appear on the Storefront.
-	 */
 	protected List<ProductPropertyValue> values;
 	public List<ProductPropertyValue> getValues() {
 		return this.values;

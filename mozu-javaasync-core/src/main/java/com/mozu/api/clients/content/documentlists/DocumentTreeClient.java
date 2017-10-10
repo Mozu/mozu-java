@@ -26,15 +26,15 @@ import com.mozu.api.DataViewMode;
 public class DocumentTreeClient {
 	
 	/**
-	 * Retrieve the content associated with the document, such as a product image or PDF specifications file.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<java.io.InputStream> mozuClient=GetTreeDocumentContentClient(dataViewMode,  documentListName,  documentName);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param documentListName The name of the document list associated with the document.
-	 * @param documentName The name of the document, which is unique within its folder.
+	 * @param documentListName Name of content documentListName to delete
+	 * @param documentName The name of the document in the site.
 	 * @return Mozu.Api.MozuClient <Stream>
 	 * @see Stream
 	 */
@@ -59,8 +59,8 @@ public class DocumentTreeClient {
 	 * client.executeRequest();
 	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param documentListName 
-	 * @param documentName 
+	 * @param documentListName Name of content documentListName to delete
+	 * @param documentName The name of the document in the site.
 	 * @return Mozu.Api.MozuClient <Stream>
 	 * @see Stream
 	 */
@@ -77,15 +77,15 @@ public class DocumentTreeClient {
 	 * client.executeRequest();
 	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param crop 
-	 * @param documentListName 
-	 * @param documentName 
-	 * @param height 
-	 * @param max 
-	 * @param maxHeight 
-	 * @param maxWidth 
-	 * @param quality 
-	 * @param width 
+	 * @param crop Crops the image based on the specified coordinates. The reference point for positive coordinates is the top-left corner of the image, and the reference point for negative coordinates is the bottom-right corner of the image.Usage: Example:  removes 10 pixels from all edges of the image.  leaves the image uncropped.
+	 * @param documentListName Name of content documentListName to delete
+	 * @param documentName The name of the document in the site.
+	 * @param height Specifies an exact height dimension for the image, in pixels.
+	 * @param max Specifies a pixel limitation for the largest side of an image.
+	 * @param maxHeight Specifies a pixel limitation for the height of the image, preserving the aspect ratio if the image needs resizing.
+	 * @param maxWidth Specifies a pixel limitation for the width of the image, preserving the aspect ratio if the image needs resizing.
+	 * @param quality Adjusts the image compression. Accepts values from 0-100, where 100 = highest quality, least compression.
+	 * @param width Specifies an exact width dimension for the image, in pixels.
 	 * @return Mozu.Api.MozuClient <Stream>
 	 * @see Stream
 	 */
@@ -102,15 +102,15 @@ public class DocumentTreeClient {
 	}
 
 	/**
-	 * Retrieves a document based on its document list and folder path in the document hierarchy.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.Document> mozuClient=GetTreeDocumentClient(dataViewMode,  documentListName,  documentName);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Document document = client.Result();
 	 * </code></pre></p>
-	 * @param documentListName The name of the document list associated with the document.
-	 * @param documentName The name of the document, which is unique within its folder.
+	 * @param documentListName Name of content documentListName to delete
+	 * @param documentName The name of the document in the site.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.Document>
 	 * @see com.mozu.api.contracts.content.Document
 	 */
@@ -120,17 +120,17 @@ public class DocumentTreeClient {
 	}
 
 	/**
-	 * Retrieves a document based on its document list and folder path in the document hierarchy.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.Document> mozuClient=GetTreeDocumentClient(dataViewMode,  documentListName,  documentName,  includeInactive,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Document document = client.Result();
 	 * </code></pre></p>
-	 * @param documentListName The name of the document list associated with the document.
-	 * @param documentName The name of the document, which is unique within its folder.
-	 * @param includeInactive 
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param documentListName Name of content documentListName to delete
+	 * @param documentName The name of the document in the site.
+	 * @param includeInactive Include inactive content.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.Document>
 	 * @see com.mozu.api.contracts.content.Document
 	 */
@@ -148,15 +148,15 @@ public class DocumentTreeClient {
 	}
 
 	/**
-	 * Updates the content associated with a document, such as a product image or PDF specifications file, based on the document's position in the document hierarchy.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=UpdateTreeDocumentContentClient( stream,  documentListName,  documentName,  contentType);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param documentListName The name of the document list associated with the document.
-	 * @param documentName The name of the document, which is unique within its folder.
-	 * @param stream Input output stream that delivers information.
+	 * @param documentListName Name of content documentListName to delete
+	 * @param documentName The name of the document in the site.
+	 * @param stream Data stream that delivers information. Used to input and output data.
 	 * @return Mozu.Api.MozuClient 
 	 * @see Stream
 	 */
@@ -175,15 +175,15 @@ public class DocumentTreeClient {
 	}
 
 	/**
-	 * Deletes the content associated with a document, such as a product image or PDF specifications file.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteTreeDocumentContentClient( stream,  documentListName,  documentName,  contentType);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param documentListName The name of the document list associated with the document.
-	 * @param documentName The name of the document, which is unique within its folder.
-	 * @param stream Input output stream that delivers information.
+	 * @param documentListName Name of content documentListName to delete
+	 * @param documentName The name of the document in the site.
+	 * @param stream Data stream that delivers information. Used to input and output data.
 	 * @return Mozu.Api.MozuClient 
 	 * @see Stream
 	 */

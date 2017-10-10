@@ -21,9 +21,6 @@ public class ShippingItemRate implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The calculated shipping amount for an item in a shipment.
-	 */
 	protected  Double amount;
 
 	public Double getAmount() {
@@ -34,9 +31,6 @@ public class ShippingItemRate implements Serializable
 		this.amount = amount;
 	}
 
-	/**
-	 * Unique identifier of the item for which to calculate a shipping rate.
-	 */
 	protected  String itemId;
 
 	public String getItemId() {
@@ -47,9 +41,6 @@ public class ShippingItemRate implements Serializable
 		this.itemId = itemId;
 	}
 
-	/**
-	 * The quantity of the line item for which to calculate shipping.
-	 */
 	protected  Integer quantity;
 
 	public Integer getQuantity() {

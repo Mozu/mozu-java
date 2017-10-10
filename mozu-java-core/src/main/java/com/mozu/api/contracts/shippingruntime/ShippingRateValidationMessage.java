@@ -21,9 +21,6 @@ public class ShippingRateValidationMessage implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * URL displayed with the shipping validation message that links to help information.
-	 */
 	protected  String helpLink;
 
 	public String getHelpLink() {
@@ -34,9 +31,6 @@ public class ShippingRateValidationMessage implements Serializable
 		this.helpLink = helpLink;
 	}
 
-	/**
-	 * Content of the shipping rate validation message.
-	 */
 	protected  String message;
 
 	public String getMessage() {
@@ -47,9 +41,6 @@ public class ShippingRateValidationMessage implements Serializable
 		this.message = message;
 	}
 
-	/**
-	 * Severity level of the shipping rate validation failure.
-	 */
 	protected  String severity;
 
 	public String getSeverity() {

@@ -27,9 +27,6 @@ public class ShippingRate implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The total calculated shipping amount requested for the package or shipment.
-	 */
 	protected  Double amount;
 
 	public Double getAmount() {
@@ -40,9 +37,6 @@ public class ShippingRate implements Serializable
 		this.amount = amount;
 	}
 
-	/**
-	 * The carrier-defined alphanumeric code associated with this shipping rate.
-	 */
 	protected  String code;
 
 	public String getCode() {
@@ -66,9 +60,6 @@ public class ShippingRate implements Serializable
 		this.daysInTransit = daysInTransit;
 	}
 
-	/**
-	 * Localized content for a shipping rate based on the defined locale code.
-	 */
 	protected  ShippingRateLocalizedContent content;
 
 	public ShippingRateLocalizedContent getContent() {
@@ -79,9 +70,6 @@ public class ShippingRate implements Serializable
 		this.content = content;
 	}
 
-	/**
-	 * Collection of carrier-specific key-value attribute pairs required to retrieve a shipping rate request.
-	 */
 	protected List<CustomAttribute> customAttributes;
 	public List<CustomAttribute> getCustomAttributes() {
 		return this.customAttributes;
@@ -90,6 +78,9 @@ public class ShippingRate implements Serializable
 		this.customAttributes = customAttributes;
 	}
 
+	/**
+	 * Shipping rate data.
+	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {
@@ -100,9 +91,6 @@ public class ShippingRate implements Serializable
 		this.data = data;
 	}
 
-	/**
-	 * Array list of success/failure messages associated with the shipping rate validation.
-	 */
 	protected List<ShippingRateValidationMessage> messages;
 	public List<ShippingRateValidationMessage> getMessages() {
 		return this.messages;
@@ -111,9 +99,6 @@ public class ShippingRate implements Serializable
 		this.messages = messages;
 	}
 
-	/**
-	 * Properties of a calculated shipping rate for individual line items in a shipment.
-	 */
 	protected List<ShippingItemRate> shippingItemRates;
 	public List<ShippingItemRate> getShippingItemRates() {
 		return this.shippingItemRates;

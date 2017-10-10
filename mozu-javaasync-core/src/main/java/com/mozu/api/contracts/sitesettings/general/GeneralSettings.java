@@ -30,9 +30,6 @@ public class GeneralSettings implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * If true, the site allows entry of addresses not verified by an address validation service.
-	 */
 	protected  Boolean allowInvalidAddresses;
 
 	public Boolean getAllowInvalidAddresses() {
@@ -43,6 +40,9 @@ public class GeneralSettings implements Serializable
 		this.allowInvalidAddresses = allowInvalidAddresses;
 	}
 
+	/**
+	 * An email address to blind carbon copy anytime an automatic email is sent from  to a shopper.
+	 */
 	protected  String bccEmailAddress;
 
 	public String getBccEmailAddress() {
@@ -53,6 +53,9 @@ public class GeneralSettings implements Serializable
 		this.bccEmailAddress = bccEmailAddress;
 	}
 
+	/**
+	 * Custom override of the default subdomain for CDN-hosted content. For example, for SEO reasons you may prefer that the subdomain for your CDN content be  instead of the default subdomain, which might be something like .
+	 */
 	protected  String customCdnHostName;
 
 	public String getCustomCdnHostName() {
@@ -63,9 +66,6 @@ public class GeneralSettings implements Serializable
 		this.customCdnHostName = customCdnHostName;
 	}
 
-	/**
-	 * The physical directory path or URL where the mobile favicon image file is stored. The favicon icon is generally 57x57 pixels. The icon appears on a mobile website or on the mobile device's OS Home.
-	 */
 	protected  String favIconMobilePath;
 
 	public String getFavIconMobilePath() {
@@ -76,9 +76,6 @@ public class GeneralSettings implements Serializable
 		this.favIconMobilePath = favIconMobilePath;
 	}
 
-	/**
-	 * The physical directory path or URL where the mobile favicon image file is stored. The favicon icon is generally 16x16 pixels. The icon appears on a a browser tab as the website's mini logo or on a browser address bar, or next to the page name in a list of bookmarks.
-	 */
 	protected  String favIconPath;
 
 	public String getFavIconPath() {
@@ -89,9 +86,6 @@ public class GeneralSettings implements Serializable
 		this.favIconPath = favIconPath;
 	}
 
-	/**
-	 * The Google Analytics code associated with a particular store. This could be the web tracking code.
-	 */
 	protected  String googleAnalyticsCode;
 
 	public String getGoogleAnalyticsCode() {
@@ -102,9 +96,6 @@ public class GeneralSettings implements Serializable
 		this.googleAnalyticsCode = googleAnalyticsCode;
 	}
 
-	/**
-	 * If true, a service to verify addresses as valid is enabled for the site.
-	 */
 	protected  Boolean isAddressValidationEnabled;
 
 	public Boolean getIsAddressValidationEnabled() {
@@ -115,9 +106,6 @@ public class GeneralSettings implements Serializable
 		this.isAddressValidationEnabled = isAddressValidationEnabled;
 	}
 
-	/**
-	 * If true, the Google analytics for eCommerce is enabled for this site. If false, the analytics are not enabled.
-	 */
 	protected  Boolean isGoogleAnalyticsEcommerceEnabled;
 
 	public Boolean getIsGoogleAnalyticsEcommerceEnabled() {
@@ -128,9 +116,6 @@ public class GeneralSettings implements Serializable
 		this.isGoogleAnalyticsEcommerceEnabled = isGoogleAnalyticsEcommerceEnabled;
 	}
 
-	/**
-	 * If true, enable Google analytics for this site. If false, analytics are not enabled.
-	 */
 	protected  Boolean isGoogleAnalyticsEnabled;
 
 	public Boolean getIsGoogleAnalyticsEnabled() {
@@ -141,9 +126,6 @@ public class GeneralSettings implements Serializable
 		this.isGoogleAnalyticsEnabled = isGoogleAnalyticsEnabled;
 	}
 
-	/**
-	 * If true, this site represents a Mozu-hosted web storefront.
-	 */
 	protected  Boolean isMozuWebSite;
 
 	public Boolean getIsMozuWebSite() {
@@ -154,9 +136,16 @@ public class GeneralSettings implements Serializable
 		this.isMozuWebSite = isMozuWebSite;
 	}
 
-	/**
-	 * If true, shoppers on this site can create customer wish lists.
-	 */
+	protected  Boolean isMultishipEnabled;
+
+	public Boolean getIsMultishipEnabled() {
+		return this.isMultishipEnabled;
+	}
+
+	public void setIsMultishipEnabled(Boolean isMultishipEnabled) {
+		this.isMultishipEnabled = isMultishipEnabled;
+	}
+
 	protected  Boolean isWishlistCreationEnabled;
 
 	public Boolean getIsWishlistCreationEnabled() {
@@ -167,9 +156,6 @@ public class GeneralSettings implements Serializable
 		this.isWishlistCreationEnabled = isWishlistCreationEnabled;
 	}
 
-	/**
-	 * The physical directory path or URL where the website logo is stored.
-	 */
 	protected  String logoPath;
 
 	public String getLogoPath() {
@@ -180,9 +166,6 @@ public class GeneralSettings implements Serializable
 		this.logoPath = logoPath;
 	}
 
-	/**
-	 * The tagline or text that appears when hovering over the site logo.
-	 */
 	protected  String logoText;
 
 	public String getLogoText() {
@@ -193,6 +176,9 @@ public class GeneralSettings implements Serializable
 		this.logoText = logoText;
 	}
 
+	/**
+	 * Assigns an image to render in place of broken images and unspecified product images (and unspecified category images, if your theme developer has enabled category images). Specified by the name or ID of the CMS image within .
+	 */
 	protected  String missingImageSubstitute;
 
 	public String getMissingImageSubstitute() {
@@ -203,9 +189,6 @@ public class GeneralSettings implements Serializable
 		this.missingImageSubstitute = missingImageSubstitute;
 	}
 
-	/**
-	 * The name of the theme to use when viewing this website on a mobile device.
-	 */
 	protected  String mobileTheme;
 
 	public String getMobileTheme() {
@@ -216,9 +199,6 @@ public class GeneralSettings implements Serializable
 		this.mobileTheme = mobileTheme;
 	}
 
-	/**
-	 * Email address to display on email messages sent from the site.
-	 */
 	protected  String replyToEmailAddress;
 
 	public String getReplyToEmailAddress() {
@@ -229,9 +209,6 @@ public class GeneralSettings implements Serializable
 		this.replyToEmailAddress = replyToEmailAddress;
 	}
 
-	/**
-	 * Email address to set up so that shoppers and users browsing the site can use to contact the merchant.
-	 */
 	protected  String senderEmailAddress;
 
 	public String getSenderEmailAddress() {
@@ -242,6 +219,9 @@ public class GeneralSettings implements Serializable
 		this.senderEmailAddress = senderEmailAddress;
 	}
 
+	/**
+	 * An alternate name for the sender email. For example, if your sender email is , you might want to use an alias of .
+	 */
 	protected  String senderEmailAlias;
 
 	public String getSenderEmailAlias() {
@@ -252,9 +232,6 @@ public class GeneralSettings implements Serializable
 		this.senderEmailAlias = senderEmailAlias;
 	}
 
-	/**
-	 * Choose a format to use on the site: 12-hour (hh:mm:ss tt) or 24-hour format (HH:mm:ss).
-	 */
 	protected  String siteTimeFormat;
 
 	public String getSiteTimeFormat() {
@@ -265,9 +242,6 @@ public class GeneralSettings implements Serializable
 		this.siteTimeFormat = siteTimeFormat;
 	}
 
-	/**
-	 * Choose the time zone to use for the site.
-	 */
 	protected  String siteTimeZone;
 
 	public String getSiteTimeZone() {
@@ -291,9 +265,6 @@ public class GeneralSettings implements Serializable
 		this.tabletTheme = tabletTheme;
 	}
 
-	/**
-	 * Unique identifier of the tenant site that site uses to render content for the shopper. For example, if this site represents a third-party sales channel such as Amazon but the company wants to send shopper emails, this value represents the Mozu-hosted web storefront site that maintains this content.
-	 */
 	protected  Integer templateSiteId;
 
 	public Integer getTemplateSiteId() {
@@ -304,9 +275,6 @@ public class GeneralSettings implements Serializable
 		this.templateSiteId = templateSiteId;
 	}
 
-	/**
-	 * The name of the theme used on the storefront.
-	 */
 	protected  String theme;
 
 	public String getTheme() {
@@ -317,9 +285,6 @@ public class GeneralSettings implements Serializable
 		this.theme = theme;
 	}
 
-	/**
-	 * The name of the website to display on the storefront with no spaces.
-	 */
 	protected  String websiteName;
 
 	public String getWebsiteName() {
@@ -330,9 +295,6 @@ public class GeneralSettings implements Serializable
 		this.websiteName = websiteName;
 	}
 
-	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -343,6 +305,9 @@ public class GeneralSettings implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
+	/**
+	 * Set of settings to deal with site caching.
+	 */
 	protected  CacheSettings cacheSettings;
 
 	public CacheSettings getCacheSettings() {
@@ -353,6 +318,9 @@ public class GeneralSettings implements Serializable
 		this.cacheSettings = cacheSettings;
 	}
 
+	/**
+	 * Site-level settings for custom routing, which allows you to use your own custom URL patterns for common  pages.
+	 */
 	protected  CustomRouteSettings customRoutes;
 
 	public CustomRouteSettings getCustomRoutes() {
@@ -363,6 +331,9 @@ public class GeneralSettings implements Serializable
 		this.customRoutes = customRoutes;
 	}
 
+	/**
+	 * Set this property to  to disable automatically sending order confirmation emails after an order is submitted. If you enable this property, order confirmation emails are triggered only by the  API operation or a Resend Order Confirmation Email event (which can be triggered by an  user).
+	 */
 	protected  EmailTransactionSettings emailTransactionsOnlyOnRequest;
 
 	public EmailTransactionSettings getEmailTransactionsOnlyOnRequest() {
@@ -373,6 +344,9 @@ public class GeneralSettings implements Serializable
 		this.emailTransactionsOnlyOnRequest = emailTransactionsOnlyOnRequest;
 	}
 
+	/**
+	 * A collection of overrides that allow you to apply unique email settings to the email template(s) of your choice.
+	 */
 	protected List<EmailTypeSetting> emailTypes;
 	public List<EmailTypeSetting> getEmailTypes() {
 		return this.emailTypes;
@@ -381,6 +355,9 @@ public class GeneralSettings implements Serializable
 		this.emailTypes = emailTypes;
 	}
 
+	/**
+	 * Supressed emails. Setting any of these to 'true' will block  from sending that email and an event will be published instead.
+	 */
 	protected  EmailTransactionSettings supressedEmailTransactions;
 
 	public EmailTransactionSettings getSupressedEmailTransactions() {
@@ -391,9 +368,6 @@ public class GeneralSettings implements Serializable
 		this.supressedEmailTransactions = supressedEmailTransactions;
 	}
 
-	/**
-	 * The territories configured for the site that are subject to sales tax.
-	 */
 	protected List<TaxableTerritory> taxableTerritories;
 	public List<TaxableTerritory> getTaxableTerritories() {
 		return this.taxableTerritories;
@@ -402,6 +376,9 @@ public class GeneralSettings implements Serializable
 		this.taxableTerritories = taxableTerritories;
 	}
 
+	/**
+	 * A collection of authorizations that control access to viewing the pending and live sites.
+	 */
 	protected  ViewAuthorizations viewAuthorizations;
 
 	public ViewAuthorizations getViewAuthorizations() {

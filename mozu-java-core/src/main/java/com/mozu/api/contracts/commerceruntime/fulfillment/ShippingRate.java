@@ -23,9 +23,6 @@ public class ShippingRate implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
-	 */
 	protected  String currencyCode;
 
 	public String getCurrencyCode() {
@@ -36,9 +33,6 @@ public class ShippingRate implements Serializable
 		this.currencyCode = currencyCode;
 	}
 
-	/**
-	 * If true, the estimated shipping rate is valid.
-	 */
 	protected  Boolean isValid;
 
 	public Boolean getIsValid() {
@@ -49,9 +43,6 @@ public class ShippingRate implements Serializable
 		this.isValid = isValid;
 	}
 
-	/**
-	 * Array list of validation messages associated with the shipping rate.
-	 */
 	protected List<String> messages;
 	public List<String> getMessages() {
 		return this.messages;
@@ -60,9 +51,6 @@ public class ShippingRate implements Serializable
 		this.messages = messages;
 	}
 
-	/**
-	 * The amount the company and the shopper pay for shipping based on the current rate. Depending on any company discounts or fees, the price the company pays for shipping may differ from what the shopper pays.
-	 */
 	protected  Double price;
 
 	public Double getPrice() {
@@ -73,9 +61,6 @@ public class ShippingRate implements Serializable
 		this.price = price;
 	}
 
-	/**
-	 * The code that identifies the service type shipping method, such as FED_EX_INTERNATIONAL.
-	 */
 	protected  String shippingMethodCode;
 
 	public String getShippingMethodCode() {
@@ -86,9 +71,6 @@ public class ShippingRate implements Serializable
 		this.shippingMethodCode = shippingMethodCode;
 	}
 
-	/**
-	 * The name of the shipping method associated with the estimated rate, such as "UPS Ground".
-	 */
 	protected  String shippingMethodName;
 
 	public String getShippingMethodName() {
@@ -99,6 +81,9 @@ public class ShippingRate implements Serializable
 		this.shippingMethodName = shippingMethodName;
 	}
 
+	/**
+	 * The shipping zone to which this rate applies.
+	 */
 	protected  String shippingZoneCode;
 
 	public String getShippingZoneCode() {
@@ -109,6 +94,9 @@ public class ShippingRate implements Serializable
 		this.shippingZoneCode = shippingZoneCode;
 	}
 
+	/**
+	 * Custom data returned by the shipping service.
+	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {

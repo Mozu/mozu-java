@@ -16,7 +16,7 @@ import com.mozu.api.contracts.productadmin.CategoryLocalizedContent;
 import com.mozu.api.contracts.productadmin.DynamicExpression;
 
 /**
- *	A descriptive container in a storefront hierarchy to organize collections of products.
+ *	A descriptive container that groups products. A category is merchant defined with associated products and discounts as configured. GThe storefront displays products in a hierarchy of categories. As such, categories can include a nesting of sub-categories to organize products and product options per set guidelines such as color, brand, material, and size.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Category implements Serializable
@@ -34,6 +34,9 @@ public class Category implements Serializable
 		this.catalogId = catalogId;
 	}
 
+	/**
+	 * External unique identifier of the category.
+	 */
 	protected  String categoryCode;
 
 	public String getCategoryCode() {
@@ -44,6 +47,9 @@ public class Category implements Serializable
 		this.categoryCode = categoryCode;
 	}
 
+	/**
+	 * Specifies the type of category. The following are the valid values:* * * 
+	 */
 	protected  String categoryType;
 
 	public String getCategoryType() {
@@ -54,9 +60,6 @@ public class Category implements Serializable
 		this.categoryType = categoryType;
 	}
 
-	/**
-	 * The number of children (subcategories, for example) that stem from a parent (top-level category).
-	 */
 	protected  Integer childCount;
 
 	public Integer getChildCount() {
@@ -67,9 +70,6 @@ public class Category implements Serializable
 		this.childCount = childCount;
 	}
 
-	/**
-	 * Identifier of the entity.
-	 */
 	protected  Integer id;
 
 	public Integer getId() {
@@ -80,6 +80,9 @@ public class Category implements Serializable
 		this.id = id;
 	}
 
+	/**
+	 * Indicates if the object or feature is active.
+	 */
 	protected  Boolean isActive;
 
 	public Boolean getIsActive() {
@@ -90,9 +93,6 @@ public class Category implements Serializable
 		this.isActive = isActive;
 	}
 
-	/**
-	 * If true, the admin product category is displayed in the store. If true, the category is not displayed.
-	 */
 	protected  Boolean isDisplayed;
 
 	public Boolean getIsDisplayed() {
@@ -103,6 +103,9 @@ public class Category implements Serializable
 		this.isDisplayed = isDisplayed;
 	}
 
+	/**
+	 * The code of the current category's parent category.
+	 */
 	protected  String parentCategoryCode;
 
 	public String getParentCategoryCode() {
@@ -113,9 +116,6 @@ public class Category implements Serializable
 		this.parentCategoryCode = parentCategoryCode;
 	}
 
-	/**
-	 * Identifier of the parent or top-level category.
-	 */
 	protected  Integer parentCategoryId;
 
 	public Integer getParentCategoryId() {
@@ -126,6 +126,9 @@ public class Category implements Serializable
 		this.parentCategoryId = parentCategoryId;
 	}
 
+	/**
+	 * If the current category has a parent, the name of the category's parent category.
+	 */
 	protected  String parentCategoryName;
 
 	public String getParentCategoryName() {
@@ -136,6 +139,9 @@ public class Category implements Serializable
 		this.parentCategoryName = parentCategoryName;
 	}
 
+	/**
+	 * Indicates whether the parent category is active.
+	 */
 	protected  Boolean parentIsActive;
 
 	public Boolean getParentIsActive() {
@@ -146,9 +152,6 @@ public class Category implements Serializable
 		this.parentIsActive = parentIsActive;
 	}
 
-	/**
-	 * The number of products in a list.
-	 */
 	protected  Integer productCount;
 
 	public Integer getProductCount() {
@@ -159,9 +162,6 @@ public class Category implements Serializable
 		this.productCount = productCount;
 	}
 
-	/**
-	 * The numeric value that denotes the place this entity occupies in the order of the entity list.
-	 */
 	protected  Integer sequence;
 
 	public Integer getSequence() {
@@ -172,9 +172,6 @@ public class Category implements Serializable
 		this.sequence = sequence;
 	}
 
-	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -185,9 +182,6 @@ public class Category implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * Complex type that contains content for a language specified by LocaleCode.
-	 */
 	protected  CategoryLocalizedContent content;
 
 	public CategoryLocalizedContent getContent() {
@@ -198,6 +192,9 @@ public class Category implements Serializable
 		this.content = content;
 	}
 
+	/**
+	 * Mozu.ProductAdmin.Contracts.Category dynamicExpression ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected  DynamicExpression dynamicExpression;
 
 	public DynamicExpression getDynamicExpression() {

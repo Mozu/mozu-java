@@ -23,15 +23,15 @@ import org.apache.commons.lang.StringUtils;
 public class PackageClient {
 	
 	/**
-	 * Retrieves a list of the actions available to perform for a package associated with order fulfillment.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<String>> mozuClient=GetAvailablePackageFulfillmentActionsClient( orderId,  packageId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * string string = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with the package fulfillment.
-	 * @param packageId Unique identifier of the package associated with the fulfillment actions to retrieve.
+	 * @param orderId Unique identifier of the order.
+	 * @param packageId Unique identifier of the package for which to retrieve the label.
 	 * @return Mozu.Api.MozuClient <List<string>>
 	 * @see string
 	 */
@@ -48,14 +48,14 @@ public class PackageClient {
 	}
 
 	/**
-	 * Retrieves the package label image supplied by the carrier.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<java.io.InputStream> mozuClient=GetPackageLabelClient( orderId,  packageId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with the package label to retrieve.
+	 * @param orderId Unique identifier of the order.
 	 * @param packageId Unique identifier of the package for which to retrieve the label.
 	 * @return Mozu.Api.MozuClient <Stream>
 	 * @see Stream
@@ -73,15 +73,15 @@ public class PackageClient {
 	}
 
 	/**
-	 * Retrieves the details of a package of order items.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Package> mozuClient=GetPackageClient( orderId,  packageId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Package package = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with the package to retrieve.
-	 * @param packageId Unique identifier of the package to retrieve.
+	 * @param orderId Unique identifier of the order.
+	 * @param packageId Unique identifier of the package for which to retrieve the label.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Package>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 */
@@ -91,16 +91,16 @@ public class PackageClient {
 	}
 
 	/**
-	 * Retrieves the details of a package of order items.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Package> mozuClient=GetPackageClient( orderId,  packageId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Package package = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with the package to retrieve.
-	 * @param packageId Unique identifier of the package to retrieve.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param orderId Unique identifier of the order.
+	 * @param packageId Unique identifier of the package for which to retrieve the label.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Package>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 */
@@ -117,15 +117,15 @@ public class PackageClient {
 	}
 
 	/**
-	 * Creates a new physical package of order items.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Package> mozuClient=CreatePackageClient( pkg,  orderId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Package package = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with this package.
-	 * @param package Properties of the physical package of order items.
+	 * @param orderId Unique identifier of the order.
+	 * @param package Properties of a physical package shipped for an order.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Package>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
@@ -136,16 +136,16 @@ public class PackageClient {
 	}
 
 	/**
-	 * Creates a new physical package of order items.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Package> mozuClient=CreatePackageClient( pkg,  orderId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Package package = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with this package.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param package Properties of the physical package of order items.
+	 * @param orderId Unique identifier of the order.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param package Properties of a physical package shipped for an order.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Package>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
@@ -164,16 +164,16 @@ public class PackageClient {
 	}
 
 	/**
-	 * Updates one or more properties of a physical package of order items.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Package> mozuClient=UpdatePackageClient( pkg,  orderId,  packageId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Package package = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with the package to update.
-	 * @param packageId Unique identifier of the package of order items to update.
-	 * @param package Wrapper of properties for the package of order items to update.
+	 * @param orderId Unique identifier of the order.
+	 * @param packageId Unique identifier of the package for which to retrieve the label.
+	 * @param package Properties of a physical package shipped for an order.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Package>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
@@ -184,17 +184,17 @@ public class PackageClient {
 	}
 
 	/**
-	 * Updates one or more properties of a physical package of order items.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Package> mozuClient=UpdatePackageClient( pkg,  orderId,  packageId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Package package = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with the package to update.
-	 * @param packageId Unique identifier of the package of order items to update.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param package Wrapper of properties for the package of order items to update.
+	 * @param orderId Unique identifier of the order.
+	 * @param packageId Unique identifier of the package for which to retrieve the label.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param package Properties of a physical package shipped for an order.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Package>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
@@ -213,14 +213,14 @@ public class PackageClient {
 	}
 
 	/**
-	 * Removes a physical package of items from the specified order.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeletePackageClient( orderId,  packageId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with the package to delete.
-	 * @param packageId Unique identifier of the package to delete.
+	 * @param orderId Unique identifier of the order.
+	 * @param packageId Unique identifier of the package for which to retrieve the label.
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deletePackageClient(String orderId, String packageId) throws Exception

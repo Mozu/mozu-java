@@ -22,6 +22,9 @@ public class AttributeDetail implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Indicates whether the attribute should be able to be used in filters, facets, and sorting on the public storefront.
+	 */
 	protected  Boolean allowFilteringAndSortingInStorefront;
 
 	public Boolean getAllowFilteringAndSortingInStorefront() {
@@ -32,9 +35,6 @@ public class AttributeDetail implements Serializable
 		this.allowFilteringAndSortingInStorefront = allowFilteringAndSortingInStorefront;
 	}
 
-	/**
-	 * The data type (such as datetime or string) associated with the attribute.
-	 */
 	protected  String dataType;
 
 	public String getDataType() {
@@ -45,9 +45,6 @@ public class AttributeDetail implements Serializable
 		this.dataType = dataType;
 	}
 
-	/**
-	 * Unique sequence of the attribute for its data type.
-	 */
 	protected  Integer dataTypeSequence;
 
 	public Integer getDataTypeSequence() {
@@ -58,9 +55,6 @@ public class AttributeDetail implements Serializable
 		this.dataTypeSequence = dataTypeSequence;
 	}
 
-	/**
-	 * Description of the attribute in the language specified by the locale code.
-	 */
 	protected  String description;
 
 	public String getDescription() {
@@ -71,6 +65,9 @@ public class AttributeDetail implements Serializable
 		this.description = description;
 	}
 
+	/**
+	 * Defines the intended display of this attribute in the storefront. Options include Drop Down, Image Picker, and Radio Buttons.
+	 */
 	protected  String displayIntention;
 
 	public String getDisplayIntention() {
@@ -81,6 +78,9 @@ public class AttributeDetail implements Serializable
 		this.displayIntention = displayIntention;
 	}
 
+	/**
+	 * Specifies whether to create a case-sensitive Solr search index. The default is .
+	 */
 	protected  Boolean indexValueWithCase;
 
 	public Boolean getIndexValueWithCase() {
@@ -91,9 +91,6 @@ public class AttributeDetail implements Serializable
 		this.indexValueWithCase = indexValueWithCase;
 	}
 
-	/**
-	 * The input type (such as date or text area) accepted for the attribute's data type.
-	 */
 	protected  String inputType;
 
 	public String getInputType() {
@@ -104,9 +101,6 @@ public class AttributeDetail implements Serializable
 		this.inputType = inputType;
 	}
 
-	/**
-	 * Name of the atrribute in the language specified by the locale code.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -118,7 +112,7 @@ public class AttributeDetail implements Serializable
 	}
 
 	/**
-	 * Indicates whether the attribute value is searchable in the storefont by a shopper.
+	 * Indicates if the attribute value is searchable on the public storefront.
 	 */
 	protected  Boolean searchableInStorefront;
 
@@ -131,7 +125,7 @@ public class AttributeDetail implements Serializable
 	}
 
 	/**
-	 * If true, the system indexes the display value of string attributes instead of the canonical value for searching. The canonical value is always used for filtering. This does not apply for for non-string attributes.
+	 * Indicates what kind of values search queries and returns. If true, the system indexes the display value of string attributes instead of the canonical value for searching. Always use the canonical value for filtering. This does not apply for non-string attributes.
 	 */
 	protected  Boolean searchDisplayValue;
 
@@ -143,9 +137,6 @@ public class AttributeDetail implements Serializable
 		this.searchDisplayValue = searchDisplayValue;
 	}
 
-	/**
-	 * The usage type of the product attribute, which is property, option, or extra.
-	 */
 	protected  String usageType;
 
 	public String getUsageType() {
@@ -156,9 +147,6 @@ public class AttributeDetail implements Serializable
 		this.usageType = usageType;
 	}
 
-	/**
-	 * The type of value for the attribute, which is either ShopperEntered, AdminEntered, or Predefined.
-	 */
 	protected  String valueType;
 
 	public String getValueType() {
@@ -169,9 +157,6 @@ public class AttributeDetail implements Serializable
 		this.valueType = valueType;
 	}
 
-	/**
-	 * Validation rules of an attribute that determine which values are valid for ShopperEntered and AdminEntered ValueTypes.
-	 */
 	protected  AttributeValidation validation;
 
 	public AttributeValidation getValidation() {

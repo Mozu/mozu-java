@@ -37,7 +37,7 @@ public class FulfillmentInfoResource {
 
 	
 	/**
-	 * Retrieves a list of the fulfillment information for the specified order.
+	 * 
 	 * <p><pre><code>
 	 *	FulfillmentInfo fulfillmentinfo = new FulfillmentInfo();
 	 *	FulfillmentInfo fulfillmentInfo = fulfillmentinfo.getFulfillmentInfo( orderId);
@@ -52,7 +52,7 @@ public class FulfillmentInfoResource {
 	}
 
 	/**
-	 * Retrieves a list of the fulfillment information for the specified order.
+	 * 
 	 * <p><pre><code>
 	 *	FulfillmentInfo fulfillmentinfo = new FulfillmentInfo();
 	 *	CountDownLatch latch = fulfillmentinfo.getFulfillmentInfo( orderId, callback );
@@ -68,14 +68,14 @@ public class FulfillmentInfoResource {
 	}
 
 	/**
-	 * Retrieves a list of the fulfillment information for the specified order.
+	 * 
 	 * <p><pre><code>
 	 *	FulfillmentInfo fulfillmentinfo = new FulfillmentInfo();
 	 *	FulfillmentInfo fulfillmentInfo = fulfillmentinfo.getFulfillmentInfo( orderId,  draft,  responseFields);
 	 * </code></pre></p>
-	 * @param draft If true, retrieve the draft version of the order's fulfillment information, which might include uncommitted changes.
+	 * @param draft If true, retrieve the draft version of the order, which might include uncommitted changes to the order or its components.
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo
 	 */
@@ -89,14 +89,14 @@ public class FulfillmentInfoResource {
 	}
 
 	/**
-	 * Retrieves a list of the fulfillment information for the specified order.
+	 * 
 	 * <p><pre><code>
 	 *	FulfillmentInfo fulfillmentinfo = new FulfillmentInfo();
 	 *	CountDownLatch latch = fulfillmentinfo.getFulfillmentInfo( orderId,  draft,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param draft If true, retrieve the draft version of the order's fulfillment information, which might include uncommitted changes.
+	 * @param draft If true, retrieve the draft version of the order, which might include uncommitted changes to the order or its components.
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo
@@ -110,13 +110,13 @@ public class FulfillmentInfoResource {
 	}
 
 	/**
-	 * Updates one or more properties of fulfillment information for the specified order.
+	 * 
 	 * <p><pre><code>
 	 *	FulfillmentInfo fulfillmentinfo = new FulfillmentInfo();
 	 *	FulfillmentInfo fulfillmentInfo = fulfillmentinfo.setFulFillmentInfo( fulfillmentInfo,  orderId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param fulfillmentInfo Array list of fulfillment information associated with an order.
+	 * @param fulfillmentInfo Properties of the information needed to fulfill an order, whether via in-store pickup or direct shipping.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo
@@ -127,14 +127,14 @@ public class FulfillmentInfoResource {
 	}
 
 	/**
-	 * Updates one or more properties of fulfillment information for the specified order.
+	 * 
 	 * <p><pre><code>
 	 *	FulfillmentInfo fulfillmentinfo = new FulfillmentInfo();
 	 *	CountDownLatch latch = fulfillmentinfo.setFulFillmentInfo( fulfillmentInfo,  orderId, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param fulfillmentInfo Array list of fulfillment information associated with an order.
+	 * @param fulfillmentInfo Properties of the information needed to fulfill an order, whether via in-store pickup or direct shipping.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo
@@ -145,16 +145,16 @@ public class FulfillmentInfoResource {
 	}
 
 	/**
-	 * Updates one or more properties of fulfillment information for the specified order.
+	 * 
 	 * <p><pre><code>
 	 *	FulfillmentInfo fulfillmentinfo = new FulfillmentInfo();
 	 *	FulfillmentInfo fulfillmentInfo = fulfillmentinfo.setFulFillmentInfo( fulfillmentInfo,  orderId,  updateMode,  version,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param updateMode Specifies whether to set the fulfillment information by updating the original order, updating the order in draft mode, or updating the order in draft mode and then committing the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param version System-supplied integer that represents the current version of the order, which prevents users from unintentionally overriding changes to the order. When a user performs an operation for a defined order, the system validates that the version of the updated order matches the version of the order on the server. After the operation completes successfully, the system increments the version number by one.
-	 * @param fulfillmentInfo Array list of fulfillment information associated with an order.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
+	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
+	 * @param fulfillmentInfo Properties of the information needed to fulfill an order, whether via in-store pickup or direct shipping.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo
@@ -169,17 +169,17 @@ public class FulfillmentInfoResource {
 	}
 
 	/**
-	 * Updates one or more properties of fulfillment information for the specified order.
+	 * 
 	 * <p><pre><code>
 	 *	FulfillmentInfo fulfillmentinfo = new FulfillmentInfo();
 	 *	CountDownLatch latch = fulfillmentinfo.setFulFillmentInfo( fulfillmentInfo,  orderId,  updateMode,  version,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param updateMode Specifies whether to set the fulfillment information by updating the original order, updating the order in draft mode, or updating the order in draft mode and then committing the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param version System-supplied integer that represents the current version of the order, which prevents users from unintentionally overriding changes to the order. When a user performs an operation for a defined order, the system validates that the version of the updated order matches the version of the order on the server. After the operation completes successfully, the system increments the version number by one.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
+	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param fulfillmentInfo Array list of fulfillment information associated with an order.
+	 * @param fulfillmentInfo Properties of the information needed to fulfill an order, whether via in-store pickup or direct shipping.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo

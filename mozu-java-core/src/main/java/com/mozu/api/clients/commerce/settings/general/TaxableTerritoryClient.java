@@ -23,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 public class TaxableTerritoryClient {
 	
 	/**
-	 * Retrieves a list of the taxable territories configured for the site.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.sitesettings.general.TaxableTerritory>> mozuClient=GetTaxableTerritoriesClient();
 	 * client.setBaseAddress(url);
@@ -46,14 +46,14 @@ public class TaxableTerritoryClient {
 	}
 
 	/**
-	 * Creates a new territory for which to calculate sales tax.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.sitesettings.general.TaxableTerritory> mozuClient=AddTaxableTerritoryClient( taxableTerritory);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * TaxableTerritory taxableTerritory = client.Result();
 	 * </code></pre></p>
-	 * @param taxableTerritory Properties of the taxable territory to create.
+	 * @param taxableTerritory Properties of the territory which is subject to sales tax.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.general.TaxableTerritory>
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
@@ -64,15 +64,15 @@ public class TaxableTerritoryClient {
 	}
 
 	/**
-	 * Creates a new territory for which to calculate sales tax.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.sitesettings.general.TaxableTerritory> mozuClient=AddTaxableTerritoryClient( taxableTerritory,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * TaxableTerritory taxableTerritory = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param taxableTerritory Properties of the taxable territory to create.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param taxableTerritory Properties of the territory which is subject to sales tax.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.general.TaxableTerritory>
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
@@ -91,14 +91,14 @@ public class TaxableTerritoryClient {
 	}
 
 	/**
-	 * Updates one or more taxable territories configured for a site.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.sitesettings.general.TaxableTerritory>> mozuClient=UpdateTaxableTerritoriesClient( taxableterritories);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * TaxableTerritory taxableTerritory = client.Result();
 	 * </code></pre></p>
-	 * @param taxableterritories Properties of the taxable territories to update.
+	 * @param taxableterritories Properties of the territory which is subject to sales tax.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.sitesettings.general.TaxableTerritory>>
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory

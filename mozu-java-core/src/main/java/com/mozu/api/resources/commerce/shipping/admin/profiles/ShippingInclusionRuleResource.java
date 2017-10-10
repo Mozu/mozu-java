@@ -18,7 +18,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * 
+ * Use the ShippingInclusionRules sub-resource to manage your shipping inclusion rules that are associated with a specific shipping profile.
  * </summary>
  */
 public class ShippingInclusionRuleResource {
@@ -40,8 +40,8 @@ public class ShippingInclusionRuleResource {
 	 *	ShippingInclusionRule shippinginclusionrule = new ShippingInclusionRule();
 	 *	ShippingInclusionRule shippingInclusionRule = shippinginclusionrule.getShippingInclusionRule( profilecode,  id);
 	 * </code></pre></p>
-	 * @param id 
-	 * @param profilecode 
+	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param profilecode The unique, user-defined code of the profile with which the shipping inclusion rule is associated.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
@@ -57,9 +57,9 @@ public class ShippingInclusionRuleResource {
 	 *	ShippingInclusionRule shippinginclusionrule = new ShippingInclusionRule();
 	 *	ShippingInclusionRule shippingInclusionRule = shippinginclusionrule.getShippingInclusionRule( profilecode,  id,  responseFields);
 	 * </code></pre></p>
-	 * @param id 
-	 * @param profilecode 
-	 * @param responseFields 
+	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param profilecode The unique, user-defined code of the profile with which the shipping inclusion rule is associated.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
@@ -79,7 +79,7 @@ public class ShippingInclusionRuleResource {
 	 *	ShippingInclusionRule shippinginclusionrule = new ShippingInclusionRule();
 	 *	ShippingInclusionRuleCollection shippingInclusionRuleCollection = shippinginclusionrule.getShippingInclusionRules( profilecode);
 	 * </code></pre></p>
-	 * @param profilecode 
+	 * @param profilecode The unique, user-defined code of the profile with which the shipping inclusion rule is associated.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRuleCollection
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRuleCollection
@@ -95,8 +95,8 @@ public class ShippingInclusionRuleResource {
 	 *	ShippingInclusionRule shippinginclusionrule = new ShippingInclusionRule();
 	 *	ShippingInclusionRuleCollection shippingInclusionRuleCollection = shippinginclusionrule.getShippingInclusionRules( profilecode,  responseFields);
 	 * </code></pre></p>
-	 * @param profilecode 
-	 * @param responseFields 
+	 * @param profilecode The unique, user-defined code of the profile with which the shipping inclusion rule is associated.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRuleCollection
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRuleCollection
@@ -116,9 +116,9 @@ public class ShippingInclusionRuleResource {
 	 *	ShippingInclusionRule shippinginclusionrule = new ShippingInclusionRule();
 	 *	ShippingInclusionRule shippingInclusionRule = shippinginclusionrule.createShippingInclusionRule( rule,  profilecode);
 	 * </code></pre></p>
-	 * @param profilecode 
+	 * @param profilecode The unique, user-defined code of the profile with which the shipping inclusion rule is associated.
 	 * @param dataViewMode DataViewMode
-	 * @param rule 
+	 * @param rule The details of the new shipping inclusion rule.
 	 * @return com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
@@ -134,10 +134,10 @@ public class ShippingInclusionRuleResource {
 	 *	ShippingInclusionRule shippinginclusionrule = new ShippingInclusionRule();
 	 *	ShippingInclusionRule shippingInclusionRule = shippinginclusionrule.createShippingInclusionRule( rule,  profilecode,  responseFields);
 	 * </code></pre></p>
-	 * @param profilecode 
-	 * @param responseFields 
+	 * @param profilecode The unique, user-defined code of the profile with which the shipping inclusion rule is associated.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
-	 * @param rule 
+	 * @param rule The details of the new shipping inclusion rule.
 	 * @return com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
@@ -157,10 +157,10 @@ public class ShippingInclusionRuleResource {
 	 *	ShippingInclusionRule shippinginclusionrule = new ShippingInclusionRule();
 	 *	ShippingInclusionRule shippingInclusionRule = shippinginclusionrule.updateShippingInclusionRule( rule,  profilecode,  id);
 	 * </code></pre></p>
-	 * @param id 
-	 * @param profilecode 
+	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param profilecode The unique, user-defined code of the profile with which the shipping inclusion rule is associated.
 	 * @param dataViewMode DataViewMode
-	 * @param rule 
+	 * @param rule The updated details of the shipping inclusion rule.
 	 * @return com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
@@ -176,11 +176,11 @@ public class ShippingInclusionRuleResource {
 	 *	ShippingInclusionRule shippinginclusionrule = new ShippingInclusionRule();
 	 *	ShippingInclusionRule shippingInclusionRule = shippinginclusionrule.updateShippingInclusionRule( rule,  profilecode,  id,  responseFields);
 	 * </code></pre></p>
-	 * @param id 
-	 * @param profilecode 
-	 * @param responseFields 
+	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param profilecode The unique, user-defined code of the profile with which the shipping inclusion rule is associated.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
-	 * @param rule 
+	 * @param rule The updated details of the shipping inclusion rule.
 	 * @return com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
@@ -200,8 +200,8 @@ public class ShippingInclusionRuleResource {
 	 *	ShippingInclusionRule shippinginclusionrule = new ShippingInclusionRule();
 	 *	shippinginclusionrule.deleteShippingInclusionRule( profilecode,  id);
 	 * </code></pre></p>
-	 * @param id 
-	 * @param profilecode 
+	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param profilecode The unique, user-defined code of the profile with which the shipping inclusion rule is associated.
 	 * @param dataViewMode DataViewMode
 	 * @return 
 	 */

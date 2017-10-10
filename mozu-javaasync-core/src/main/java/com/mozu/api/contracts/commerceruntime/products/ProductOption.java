@@ -21,9 +21,6 @@ public class ProductOption implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 */
 	protected  String attributeFQN;
 
 	public String getAttributeFQN() {
@@ -34,9 +31,6 @@ public class ProductOption implements Serializable
 		this.attributeFQN = attributeFQN;
 	}
 
-	/**
-	 * The data type, such as bool or string, used in this option attribute.
-	 */
 	protected  String dataType;
 
 	public String getDataType() {
@@ -47,9 +41,6 @@ public class ProductOption implements Serializable
 		this.dataType = dataType;
 	}
 
-	/**
-	 * The name of the product option attribute in the language of the locale code specified for the storefront.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -60,9 +51,6 @@ public class ProductOption implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * The value a shopper entered for an option attribute that requires additional input for the product on a storefront.
-	 */
 	protected  Object shopperEnteredValue;
 
 	public Object getShopperEnteredValue() {
@@ -73,9 +61,6 @@ public class ProductOption implements Serializable
 		this.shopperEnteredValue = shopperEnteredValue;
 	}
 
-	/**
-	 * If the value is a string, the string entered for the value.
-	 */
 	protected  String stringValue;
 
 	public String getStringValue() {
@@ -86,9 +71,6 @@ public class ProductOption implements Serializable
 		this.stringValue = stringValue;
 	}
 
-	/**
-	 * If the value if an object, the value selected.
-	 */
 	protected  Object value;
 
 	public Object getValue() {

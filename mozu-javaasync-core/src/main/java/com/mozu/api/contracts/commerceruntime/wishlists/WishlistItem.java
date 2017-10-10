@@ -28,6 +28,9 @@ public class WishlistItem implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The adjusted subtotal of the line item, including all manual adjustments, discounts, shipping charges and discounts, and duty or any other additional line item fees.
+	 */
 	protected  Double adjustedLineItemSubtotal;
 
 	public Double getAdjustedLineItemSubtotal() {
@@ -38,9 +41,6 @@ public class WishlistItem implements Serializable
 		this.adjustedLineItemSubtotal = adjustedLineItemSubtotal;
 	}
 
-	/**
-	 * Shopper-entered comments for an item in a wish list.
-	 */
 	protected  String comments;
 
 	public String getComments() {
@@ -51,9 +51,6 @@ public class WishlistItem implements Serializable
 		this.comments = comments;
 	}
 
-	/**
-	 * The subtotal of the wishlist item including any applied discount calculations. This property value is not calculated at this time and is reserved for future functionality.
-	 */
 	protected  Double discountedTotal;
 
 	public Double getDiscountedTotal() {
@@ -64,9 +61,6 @@ public class WishlistItem implements Serializable
 		this.discountedTotal = discountedTotal;
 	}
 
-	/**
-	 * Estimated amount of discounts applied to the item in the wish list, which is system-supplied and read-only.  This property value is not calculated at this time and is reserved for future functionality.
-	 */
 	protected  Double discountTotal;
 
 	public Double getDiscountTotal() {
@@ -77,9 +71,6 @@ public class WishlistItem implements Serializable
 		this.discountTotal = discountTotal;
 	}
 
-	/**
-	 * The extended total of an item in a wish list. This property value is not calculated at this time and is reserved for future functionality.
-	 */
 	protected  Double extendedTotal;
 
 	public Double getExtendedTotal() {
@@ -90,9 +81,6 @@ public class WishlistItem implements Serializable
 		this.extendedTotal = extendedTotal;
 	}
 
-	/**
-	 * The fee total of an item in a wish list. This property value is not calculated at this time and is reserved for future functionality.
-	 */
 	protected  Double feeTotal;
 
 	public Double getFeeTotal() {
@@ -103,6 +91,9 @@ public class WishlistItem implements Serializable
 		this.feeTotal = feeTotal;
 	}
 
+	/**
+	 * The combined price for all handling costs calculated together for shipped orders, not for digital or in-store pickup. This includes all handling costs per the product line items and options, excluding taxes and discounts. 
+	 */
 	protected  Double handlingAmount;
 
 	public Double getHandlingAmount() {
@@ -113,9 +104,6 @@ public class WishlistItem implements Serializable
 		this.handlingAmount = handlingAmount;
 	}
 
-	/**
-	 * Unique identifier of an item in a shopper wish list.
-	 */
 	protected  String id;
 
 	public String getId() {
@@ -126,9 +114,6 @@ public class WishlistItem implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * If true, the item in the wish list is a recurring purchase, such as a subscription. This property is reserved for future use and is system-supplied and read only.
-	 */
 	protected  Boolean isRecurring;
 
 	public Boolean getIsRecurring() {
@@ -139,9 +124,6 @@ public class WishlistItem implements Serializable
 		this.isRecurring = isRecurring;
 	}
 
-	/**
-	 * If true, the item in a wish list is subject to sales tax.
-	 */
 	protected  Boolean isTaxable;
 
 	public Boolean getIsTaxable() {
@@ -152,9 +134,6 @@ public class WishlistItem implements Serializable
 		this.isTaxable = isTaxable;
 	}
 
-	/**
-	 * The total sales tax of the item in the wish list. This property value is not calculated at this time, and is reserved for future functionality.
-	 */
 	protected  Double itemTaxTotal;
 
 	public Double getItemTaxTotal() {
@@ -165,6 +144,9 @@ public class WishlistItem implements Serializable
 		this.itemTaxTotal = itemTaxTotal;
 	}
 
+	/**
+	 * The line id assigned to the order item. Visible only in the Admin, this is set from the Admin or in CommerceRuntime when a cart is converted to an order.
+	 */
 	protected  Integer lineId;
 
 	public Integer getLineId() {
@@ -175,9 +157,6 @@ public class WishlistItem implements Serializable
 		this.lineId = lineId;
 	}
 
-	/**
-	 * Language used for the entity. Currently, only "en-US" is supported.
-	 */
 	protected  String localeCode;
 
 	public String getLocaleCode() {
@@ -188,9 +167,6 @@ public class WishlistItem implements Serializable
 		this.localeCode = localeCode;
 	}
 
-	/**
-	 * User-defined string that indicates the priority of an item in a wish list. Possible values are Lowest, Low, Medium, High, and Highest.
-	 */
 	protected  String priorityType;
 
 	public String getPriorityType() {
@@ -201,9 +177,6 @@ public class WishlistItem implements Serializable
 		this.priorityType = priorityType;
 	}
 
-	/**
-	 * The status of the item that indicates whether an item in a wish list can be purchased. Possible values are "Purchasable" which indicates the item can be purchased, "NotPurchasable" which indicates the item is out of stock or otherwise unavailable, or "Missing" which indicates the item has been deleted from the catalog since it was added to the wish list.
-	 */
 	protected  String purchasableStatusType;
 
 	public String getPurchasableStatusType() {
@@ -214,9 +187,6 @@ public class WishlistItem implements Serializable
 		this.purchasableStatusType = purchasableStatusType;
 	}
 
-	/**
-	 * The quantity of an item in a shopper wish list.
-	 */
 	protected  Integer quantity;
 
 	public Integer getQuantity() {
@@ -227,6 +197,9 @@ public class WishlistItem implements Serializable
 		this.quantity = quantity;
 	}
 
+	/**
+	 * The total shipping amount for the line item before discounts and adjustments.
+	 */
 	protected  Double shippingAmountBeforeDiscountsAndAdjustments;
 
 	public Double getShippingAmountBeforeDiscountsAndAdjustments() {
@@ -237,9 +210,6 @@ public class WishlistItem implements Serializable
 		this.shippingAmountBeforeDiscountsAndAdjustments = shippingAmountBeforeDiscountsAndAdjustments;
 	}
 
-	/**
-	 * The total amount of tax levied against shipping charges for an item in a wish list. This property is not calculated at this time and is reserved for future functionality.
-	 */
 	protected  Double shippingTaxTotal;
 
 	public Double getShippingTaxTotal() {
@@ -250,9 +220,6 @@ public class WishlistItem implements Serializable
 		this.shippingTaxTotal = shippingTaxTotal;
 	}
 
-	/**
-	 * The total amount of shipping for an item in a wish list. This property is not calculated at this time and is reserved for future functionality.
-	 */
 	protected  Double shippingTotal;
 
 	public Double getShippingTotal() {
@@ -263,9 +230,6 @@ public class WishlistItem implements Serializable
 		this.shippingTotal = shippingTotal;
 	}
 
-	/**
-	 * The subtotal of an item in a wish list. This property is not calculated at this time and is reserved for future functionality.
-	 */
 	protected  Double subtotal;
 
 	public Double getSubtotal() {
@@ -276,9 +240,6 @@ public class WishlistItem implements Serializable
 		this.subtotal = subtotal;
 	}
 
-	/**
-	 * The taxable total of an item in a wish list. This property is not calculated at this time and is reserved for future functionality.
-	 */
 	protected  Double taxableTotal;
 
 	public Double getTaxableTotal() {
@@ -289,9 +250,6 @@ public class WishlistItem implements Serializable
 		this.taxableTotal = taxableTotal;
 	}
 
-	/**
-	 * The total of an item in a wish list. This property is not calculated at this time and is reserved for future functionality.
-	 */
 	protected  Double total;
 
 	public Double getTotal() {
@@ -302,6 +260,9 @@ public class WishlistItem implements Serializable
 		this.total = total;
 	}
 
+	/**
+	 * The total charge for the line item without any weighted order level shipping and handling charges.
+	 */
 	protected  Double totalWithoutWeightedShippingAndHandling;
 
 	public Double getTotalWithoutWeightedShippingAndHandling() {
@@ -312,6 +273,9 @@ public class WishlistItem implements Serializable
 		this.totalWithoutWeightedShippingAndHandling = totalWithoutWeightedShippingAndHandling;
 	}
 
+	/**
+	 * The total charge for the line item with all weighted order level shipping and handling charges.
+	 */
 	protected  Double totalWithWeightedShippingAndHandling;
 
 	public Double getTotalWithWeightedShippingAndHandling() {
@@ -322,6 +286,9 @@ public class WishlistItem implements Serializable
 		this.totalWithWeightedShippingAndHandling = totalWithWeightedShippingAndHandling;
 	}
 
+	/**
+	 * The total weighted order level manual adjustment amount.
+	 */
 	protected  Double weightedOrderAdjustment;
 
 	public Double getWeightedOrderAdjustment() {
@@ -332,6 +299,9 @@ public class WishlistItem implements Serializable
 		this.weightedOrderAdjustment = weightedOrderAdjustment;
 	}
 
+	/**
+	 * The total weighted order level discount amount.
+	 */
 	protected  Double weightedOrderDiscount;
 
 	public Double getWeightedOrderDiscount() {
@@ -342,6 +312,9 @@ public class WishlistItem implements Serializable
 		this.weightedOrderDiscount = weightedOrderDiscount;
 	}
 
+	/**
+	 * The total weighted order level duty charges.
+	 */
 	protected  Double weightedOrderDuty;
 
 	public Double getWeightedOrderDuty() {
@@ -352,6 +325,9 @@ public class WishlistItem implements Serializable
 		this.weightedOrderDuty = weightedOrderDuty;
 	}
 
+	/**
+	 * The adjustment to apply to the order handling fee.
+	 */
 	protected  Double weightedOrderHandlingAdjustment;
 
 	public Double getWeightedOrderHandlingAdjustment() {
@@ -362,6 +338,9 @@ public class WishlistItem implements Serializable
 		this.weightedOrderHandlingAdjustment = weightedOrderHandlingAdjustment;
 	}
 
+	/**
+	 * The total weighted order level handling fee amount.
+	 */
 	protected  Double weightedOrderHandlingFee;
 
 	public Double getWeightedOrderHandlingFee() {
@@ -372,6 +351,9 @@ public class WishlistItem implements Serializable
 		this.weightedOrderHandlingFee = weightedOrderHandlingFee;
 	}
 
+	/**
+	 * The total weighted order handling fee discount amount.
+	 */
 	protected  Double weightedOrderHandlingFeeDiscount;
 
 	public Double getWeightedOrderHandlingFeeDiscount() {
@@ -382,6 +364,9 @@ public class WishlistItem implements Serializable
 		this.weightedOrderHandlingFeeDiscount = weightedOrderHandlingFeeDiscount;
 	}
 
+	/**
+	 * The total weighted order level handling fee tax amount.
+	 */
 	protected  Double weightedOrderHandlingFeeTax;
 
 	public Double getWeightedOrderHandlingFeeTax() {
@@ -392,6 +377,9 @@ public class WishlistItem implements Serializable
 		this.weightedOrderHandlingFeeTax = weightedOrderHandlingFeeTax;
 	}
 
+	/**
+	 * The total weighted order level shipping charge.
+	 */
 	protected  Double weightedOrderShipping;
 
 	public Double getWeightedOrderShipping() {
@@ -402,6 +390,9 @@ public class WishlistItem implements Serializable
 		this.weightedOrderShipping = weightedOrderShipping;
 	}
 
+	/**
+	 * The total weighted order level shipping discount amount.
+	 */
 	protected  Double weightedOrderShippingDiscount;
 
 	public Double getWeightedOrderShippingDiscount() {
@@ -412,6 +403,9 @@ public class WishlistItem implements Serializable
 		this.weightedOrderShippingDiscount = weightedOrderShippingDiscount;
 	}
 
+	/**
+	 * The total weighted order level shipping manual adjustment amount.
+	 */
 	protected  Double weightedOrderShippingManualAdjustment;
 
 	public Double getWeightedOrderShippingManualAdjustment() {
@@ -422,6 +416,9 @@ public class WishlistItem implements Serializable
 		this.weightedOrderShippingManualAdjustment = weightedOrderShippingManualAdjustment;
 	}
 
+	/**
+	 * The total weighted order level shipping tax amount.
+	 */
 	protected  Double weightedOrderShippingTax;
 
 	public Double getWeightedOrderShippingTax() {
@@ -432,6 +429,9 @@ public class WishlistItem implements Serializable
 		this.weightedOrderShippingTax = weightedOrderShippingTax;
 	}
 
+	/**
+	 * The total weighted order level tax amount.
+	 */
 	protected  Double weightedOrderTax;
 
 	public Double getWeightedOrderTax() {
@@ -442,9 +442,6 @@ public class WishlistItem implements Serializable
 		this.weightedOrderTax = weightedOrderTax;
 	}
 
-	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -455,6 +452,9 @@ public class WishlistItem implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
+	/**
+	 * Custom data for a given vendor set within the commerce process.
+	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {
@@ -465,9 +465,6 @@ public class WishlistItem implements Serializable
 		this.data = data;
 	}
 
-	/**
-	 * The properties of the product associated with an item in a wish list.
-	 */
 	protected  Product product;
 
 	public Product getProduct() {
@@ -479,7 +476,7 @@ public class WishlistItem implements Serializable
 	}
 
 	/**
-	 * List of product discounts that apply to the item in the wishlist.
+	 * The applicable product discount for an associated cart, order, or wish list. 
 	 */
 	protected  AppliedLineItemProductDiscount productDiscount;
 
@@ -491,9 +488,6 @@ public class WishlistItem implements Serializable
 		this.productDiscount = productDiscount;
 	}
 
-	/**
-	 * Array of product discounts applicable to an item in a wish list. This property is not used at this time and is reserved for future functionality.
-	 */
 	protected List<AppliedLineItemProductDiscount> productDiscounts;
 	public List<AppliedLineItemProductDiscount> getProductDiscounts() {
 		return this.productDiscounts;
@@ -502,9 +496,6 @@ public class WishlistItem implements Serializable
 		this.productDiscounts = productDiscounts;
 	}
 
-	/**
-	 * Array of shipping discounts applicable for an item in a wish list. This property is not used at this time and is reserved for future functionality.
-	 */
 	protected List<AppliedLineItemShippingDiscount> shippingDiscounts;
 	public List<AppliedLineItemShippingDiscount> getShippingDiscounts() {
 		return this.shippingDiscounts;
@@ -513,6 +504,9 @@ public class WishlistItem implements Serializable
 		this.shippingDiscounts = shippingDiscounts;
 	}
 
+	/**
+	 * Leverage this property within a [tax Arc.js action](https://www.mozu.com/docs/arcjs/commerce-catalog-storefront-tax/commerce-catalog-storefront-tax.htm) to supplement the tax information for this item or object with custom JSON data.
+	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode taxData;
 
 	public com.fasterxml.jackson.databind.JsonNode getTaxData() {
@@ -523,9 +517,6 @@ public class WishlistItem implements Serializable
 		this.taxData = taxData;
 	}
 
-	/**
-	 * The unit price of an item in a wish list. This property is not calculated at this time and is reserved for future functionality.
-	 */
 	protected  CommerceUnitPrice unitPrice;
 
 	public CommerceUnitPrice getUnitPrice() {

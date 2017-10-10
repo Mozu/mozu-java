@@ -14,12 +14,18 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
+/**
+ *	Mozu.CommerceRuntime.Contracts.Returns.ReasonCollection ApiType DOCUMENT_HERE 
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ReasonCollection implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * A list of requested items. All returned data is provided in an items array.For a failed request, the returned response may be success with an empty item array.
+	 */
 	protected List<String> items;
 	public List<String> getItems() {
 		return this.items;
@@ -28,6 +34,9 @@ public class ReasonCollection implements Serializable
 		this.items = items;
 	}
 
+	/**
+	 * The total number of items in the list.
+	 */
 	protected  Integer totalCount;
 
 	public Integer getTotalCount() {

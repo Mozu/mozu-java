@@ -34,6 +34,9 @@ public class ChangeMessage implements Serializable
 		this.amount = amount;
 	}
 
+	/**
+	 * Unique identifier of an app available in your  tenant or within  Dev Center. This ID is unique across all apps installed, initialized, and enabled in the  and those in development through the Dev Center Console.
+	 */
 	protected  String appId;
 
 	public String getAppId() {
@@ -44,6 +47,9 @@ public class ChangeMessage implements Serializable
 		this.appId = appId;
 	}
 
+	/**
+	 * The application's key.
+	 */
 	protected  String appKey;
 
 	public String getAppKey() {
@@ -54,6 +60,9 @@ public class ChangeMessage implements Serializable
 		this.appKey = appKey;
 	}
 
+	/**
+	 * The application's name.
+	 */
 	protected  String appName;
 
 	public String getAppName() {
@@ -64,6 +73,9 @@ public class ChangeMessage implements Serializable
 		this.appName = appName;
 	}
 
+	/**
+	 * The unique identifier of the API request associated with the event action, which might contain multiple actions.
+	 */
 	protected  String correlationId;
 
 	public String getCorrelationId() {
@@ -74,9 +86,6 @@ public class ChangeMessage implements Serializable
 		this.correlationId = correlationId;
 	}
 
-	/**
-	 * Date and time when the entity was created, represented in UTC Date/Time.
-	 */
 	protected  DateTime createDate;
 
 	public DateTime getCreateDate() {
@@ -87,9 +96,6 @@ public class ChangeMessage implements Serializable
 		this.createDate = createDate;
 	}
 
-	/**
-	 * Unique identifier of the change message. System-supplied and read-only.
-	 */
 	protected  String id;
 
 	public String getId() {
@@ -100,9 +106,6 @@ public class ChangeMessage implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * Identifier for the object associated with the change message, which can represent a cart, cart item, or an order.
-	 */
 	protected  String identifier;
 
 	public String getIdentifier() {
@@ -113,9 +116,6 @@ public class ChangeMessage implements Serializable
 		this.identifier = identifier;
 	}
 
-	/**
-	 * The text of the change message, such as "This product is no longer available". System-supplied and read-only.
-	 */
 	protected  String message;
 
 	public String getMessage() {
@@ -126,6 +126,9 @@ public class ChangeMessage implements Serializable
 		this.message = message;
 	}
 
+	/**
+	 * Metadata content for entities, used by document lists, document type lists, document type, views, entity lists, and list views.
+	 */
 	protected  Object metadata;
 
 	public Object getMetadata() {
@@ -136,9 +139,6 @@ public class ChangeMessage implements Serializable
 		this.metadata = metadata;
 	}
 
-	/**
-	 * The new value of the object affected by the change, such as the new price of the product. System-supplied and read-only.
-	 */
 	protected  String newValue;
 
 	public String getNewValue() {
@@ -149,9 +149,6 @@ public class ChangeMessage implements Serializable
 		this.newValue = newValue;
 	}
 
-	/**
-	 * The prior value of the object affected by the change, such as the price of the product when it was added to the cart. System-supplied and read-only.
-	 */
 	protected  String oldValue;
 
 	public String getOldValue() {
@@ -162,9 +159,6 @@ public class ChangeMessage implements Serializable
 		this.oldValue = oldValue;
 	}
 
-	/**
-	 * The text that appears on the subject line of the message, such as "The product price has changed."
-	 */
 	protected  String subject;
 
 	public String getSubject() {
@@ -175,9 +169,6 @@ public class ChangeMessage implements Serializable
 		this.subject = subject;
 	}
 
-	/**
-	 * Represents the type of object affected by the change, such as Cart Item or Product. System-supplied and read-only.
-	 */
 	protected  String subjectType;
 
 	public String getSubjectType() {
@@ -201,6 +192,9 @@ public class ChangeMessage implements Serializable
 		this.success = success;
 	}
 
+	/**
+	 * The user's first name.
+	 */
 	protected  String userFirstName;
 
 	public String getUserFirstName() {
@@ -212,7 +206,7 @@ public class ChangeMessage implements Serializable
 	}
 
 	/**
-	 * The unique identifier of the user who initiated the change.
+	 * Unique identifier of the customer account (shopper or system user). System-supplied and read-only. If the shopper user is anonymous, the user ID represents a system-generated user ID string.
 	 */
 	protected  String userId;
 
@@ -224,6 +218,9 @@ public class ChangeMessage implements Serializable
 		this.userId = userId;
 	}
 
+	/**
+	 * The user's last name.
+	 */
 	protected  String userLastName;
 
 	public String getUserLastName() {
@@ -234,6 +231,9 @@ public class ChangeMessage implements Serializable
 		this.userLastName = userLastName;
 	}
 
+	/**
+	 * The user type (e.g. Shopper, Admin, etc.).
+	 */
 	protected  String userScopeType;
 
 	public String getUserScopeType() {
@@ -244,9 +244,6 @@ public class ChangeMessage implements Serializable
 		this.userScopeType = userScopeType;
 	}
 
-	/**
-	 * The action associated with this message. For example, if the price of a product changes, the verb could be "Increased" or "Decreased". If the product is no longer available, the verb could be "Invalidated". System-supplied and read-only.
-	 */
 	protected  String verb;
 
 	public String getVerb() {

@@ -29,9 +29,6 @@ public class ProductInCatalogInfo implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The unique identifier of the catalog of products used by a site.
-	 */
 	protected  Integer catalogId;
 
 	public Integer getCatalogId() {
@@ -42,6 +39,9 @@ public class ProductInCatalogInfo implements Serializable
 		this.catalogId = catalogId;
 	}
 
+	/**
+	 * Date this product was first Available for sale in the catalog. This is utilized in expressions that refrence DaysInCatloag.
+	 */
 	protected  DateTime dateFirstAvailableInCatalog;
 
 	public DateTime getDateFirstAvailableInCatalog() {
@@ -52,9 +52,6 @@ public class ProductInCatalogInfo implements Serializable
 		this.dateFirstAvailableInCatalog = dateFirstAvailableInCatalog;
 	}
 
-	/**
-	 * If true, the product is actively available (for sale) in the associated catalog.
-	 */
 	protected  Boolean isActive;
 
 	public Boolean getIsActive() {
@@ -65,9 +62,6 @@ public class ProductInCatalogInfo implements Serializable
 		this.isActive = isActive;
 	}
 
-	/**
-	 * If true, the content defined for this product in the master catalog in overridden in the catalog with the content specified in the request body. If false, this catalog uses the content defined in the master catalog for the product.
-	 */
 	protected  Boolean isContentOverridden;
 
 	public Boolean getIsContentOverridden() {
@@ -78,9 +72,6 @@ public class ProductInCatalogInfo implements Serializable
 		this.isContentOverridden = isContentOverridden;
 	}
 
-	/**
-	 * If true, the price defined for this product in the master catalog in overridden in the catalog with the price specified in the request body. If false, this catalog uses the price defined in the master catalog for the product.
-	 */
 	protected  Boolean isPriceOverridden;
 
 	public Boolean getIsPriceOverridden() {
@@ -91,9 +82,6 @@ public class ProductInCatalogInfo implements Serializable
 		this.isPriceOverridden = isPriceOverridden;
 	}
 
-	/**
-	 * If true, the SEO content defined for this product in the master catalog in overridden in the catalog with the SEO content specified in the request body. If false, this catalog uses the SEO content defined in the master catalog for the product.
-	 */
 	protected  Boolean isseoContentOverridden;
 
 	public Boolean getIsseoContentOverridden() {
@@ -104,6 +92,9 @@ public class ProductInCatalogInfo implements Serializable
 		this.isseoContentOverridden = isseoContentOverridden;
 	}
 
+	/**
+	 * If true, the product is marked as available for sale in the catalog. Setting a product to IsActive = false will prevent it from being shown on the customer facing storefront.
+	 */
 	protected  ActiveDateRange activeDateRange;
 
 	public ActiveDateRange getActiveDateRange() {
@@ -114,9 +105,6 @@ public class ProductInCatalogInfo implements Serializable
 		this.activeDateRange = activeDateRange;
 	}
 
-	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -127,9 +115,6 @@ public class ProductInCatalogInfo implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * Localizable content for a product associated with a specific catalog. If no catalog-level content is specified, the master catalog content is used. To override content at the catalog level, the IsContentOverridden flag must be set to "true".
-	 */
 	protected  ProductLocalizedContent content;
 
 	public ProductLocalizedContent getContent() {
@@ -140,9 +125,6 @@ public class ProductInCatalogInfo implements Serializable
 		this.content = content;
 	}
 
-	/**
-	 * The price of the product associated with the specified catalog. If no price is specified in the request, this catalog uses the price defined in the master catalog. To override the product price for this catalog, the IsPriceOverridden flag must be set to "true".
-	 */
 	protected  ProductPrice price;
 
 	public ProductPrice getPrice() {
@@ -153,6 +135,9 @@ public class ProductInCatalogInfo implements Serializable
 		this.price = price;
 	}
 
+	/**
+	 * Specifies which static category to use in the navigation breadcrumb, regardless of how shoppers navigate to the product. If not set, or if the product belongs only to dynamic categories, the default is to use the category with the smallest ID.
+	 */
 	protected  ProductCategory primaryProductCategory;
 
 	public ProductCategory getPrimaryProductCategory() {
@@ -163,9 +148,6 @@ public class ProductInCatalogInfo implements Serializable
 		this.primaryProductCategory = primaryProductCategory;
 	}
 
-	/**
-	 * The product categories to define for the product associated with the specified catalog.
-	 */
 	protected List<ProductCategory> productCategories;
 	public List<ProductCategory> getProductCategories() {
 		return this.productCategories;
@@ -174,9 +156,6 @@ public class ProductInCatalogInfo implements Serializable
 		this.productCategories = productCategories;
 	}
 
-	/**
-	 * The SEO content of the product associated with the specific catalog. If no SEO content is specified in the request, this catalog uses the SEO content defined in the master catalog. To override the SEO content for this catalog, the IsSEOContentOverridden flag must be set to "true".
-	 */
 	protected  ProductLocalizedSEOContent seoContent;
 
 	public ProductLocalizedSEOContent getSeoContent() {

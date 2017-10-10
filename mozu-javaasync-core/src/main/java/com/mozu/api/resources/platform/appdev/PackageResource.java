@@ -20,7 +20,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * 
+ * This resource is not public.
  * </summary>
  */
 public class PackageResource {
@@ -30,11 +30,7 @@ public class PackageResource {
 	private ApiContext _apiContext;
 
 
-	public PackageResource() 
-		{
-			_apiContext = null;
-	}
-public PackageResource(ApiContext apiContext) 
+	public PackageResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
@@ -44,16 +40,48 @@ public PackageResource(ApiContext apiContext)
 	 * 
 	 * <p><pre><code>
 	 *	Package package = new Package();
-	 *	Stream stream = package.getFile( applicationKey,  fileName);
+	 *	PackageSummaryCollection packageSummaryCollection = package.getAllPackages();
 	 * </code></pre></p>
-	 * @param applicationKey 
-	 * @param fileName 
-	 * @return Stream
-	 * @see Stream
+	 * @return com.mozu.api.contracts.appdev.PackageSummaryCollection
+	 * @see com.mozu.api.contracts.appdev.PackageSummaryCollection
 	 */
-	public java.io.InputStream getFile(String applicationKey, String fileName) throws Exception
+	public com.mozu.api.contracts.appdev.PackageSummaryCollection getAllPackages() throws Exception
 	{
-		MozuClient<java.io.InputStream> client = com.mozu.api.clients.platform.appdev.PackageClient.getFileClient( applicationKey,  fileName);
+		return getAllPackages( null,  null,  null,  null,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Package package = new Package();
+	 *	CountDownLatch latch = package.getAllPackages( callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.appdev.PackageSummaryCollection
+	 * @see com.mozu.api.contracts.appdev.PackageSummaryCollection
+	 */
+	public CountDownLatch getAllPackagesAsync( AsyncCallback<com.mozu.api.contracts.appdev.PackageSummaryCollection> callback) throws Exception
+	{
+		return getAllPackagesAsync( null,  null,  null,  null,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Package package = new Package();
+	 *	PackageSummaryCollection packageSummaryCollection = package.getAllPackages( startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 * </code></pre></p>
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @return com.mozu.api.contracts.appdev.PackageSummaryCollection
+	 * @see com.mozu.api.contracts.appdev.PackageSummaryCollection
+	 */
+	public com.mozu.api.contracts.appdev.PackageSummaryCollection getAllPackages(Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.appdev.PackageSummaryCollection> client = com.mozu.api.clients.platform.appdev.PackageClient.getAllPackagesClient( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -64,19 +92,613 @@ public PackageResource(ApiContext apiContext)
 	 * 
 	 * <p><pre><code>
 	 *	Package package = new Package();
-	 *	CountDownLatch latch = package.getFile( applicationKey,  fileName, callback );
+	 *	CountDownLatch latch = package.getAllPackages( startIndex,  pageSize,  sortBy,  filter,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param applicationKey 
-	 * @param fileName 
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @param  callback callback handler for asynchronous operations
-	 * @return Stream
-	 * @see Stream
+	 * @return com.mozu.api.contracts.appdev.PackageSummaryCollection
+	 * @see com.mozu.api.contracts.appdev.PackageSummaryCollection
 	 */
-	public CountDownLatch getFileAsync(String applicationKey, String fileName, AsyncCallback<java.io.InputStream> callback) throws Exception
+	public CountDownLatch getAllPackagesAsync(Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, AsyncCallback<com.mozu.api.contracts.appdev.PackageSummaryCollection> callback) throws Exception
 	{
-		MozuClient<java.io.InputStream> client = com.mozu.api.clients.platform.appdev.PackageClient.getFileClient( applicationKey,  fileName);
+		MozuClient<com.mozu.api.contracts.appdev.PackageSummaryCollection> client = com.mozu.api.clients.platform.appdev.PackageClient.getAllPackagesClient( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Package package = new Package();
+	 *	Package package = package.getPackage( applicationKey);
+	 * </code></pre></p>
+	 * @param applicationKey 
+	 * @return com.mozu.api.contracts.appdev.Package
+	 * @see com.mozu.api.contracts.appdev.Package
+	 */
+	public com.mozu.api.contracts.appdev.Package getPackage(String applicationKey) throws Exception
+	{
+		return getPackage( applicationKey,  null,  null,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Package package = new Package();
+	 *	CountDownLatch latch = package.getPackage( applicationKey, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param applicationKey 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.appdev.Package
+	 * @see com.mozu.api.contracts.appdev.Package
+	 */
+	public CountDownLatch getPackageAsync(String applicationKey, AsyncCallback<com.mozu.api.contracts.appdev.Package> callback) throws Exception
+	{
+		return getPackageAsync( applicationKey,  null,  null,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Package package = new Package();
+	 *	Package package = package.getPackage( applicationKey,  includeChildren,  skipDevAccountCheck,  responseFields);
+	 * </code></pre></p>
+	 * @param applicationKey 
+	 * @param includeChildren 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param skipDevAccountCheck 
+	 * @return com.mozu.api.contracts.appdev.Package
+	 * @see com.mozu.api.contracts.appdev.Package
+	 */
+	public com.mozu.api.contracts.appdev.Package getPackage(String applicationKey, Boolean includeChildren, Boolean skipDevAccountCheck, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.appdev.Package> client = com.mozu.api.clients.platform.appdev.PackageClient.getPackageClient( applicationKey,  includeChildren,  skipDevAccountCheck,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Package package = new Package();
+	 *	CountDownLatch latch = package.getPackage( applicationKey,  includeChildren,  skipDevAccountCheck,  responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param applicationKey 
+	 * @param includeChildren 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param skipDevAccountCheck 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.appdev.Package
+	 * @see com.mozu.api.contracts.appdev.Package
+	 */
+	public CountDownLatch getPackageAsync(String applicationKey, Boolean includeChildren, Boolean skipDevAccountCheck, String responseFields, AsyncCallback<com.mozu.api.contracts.appdev.Package> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.appdev.Package> client = com.mozu.api.clients.platform.appdev.PackageClient.getPackageClient( applicationKey,  includeChildren,  skipDevAccountCheck,  responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Package package = new Package();
+	 *	PackageCollection packageCollection = package.getPackages( applicationKey);
+	 * </code></pre></p>
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
+	 * @return com.mozu.api.contracts.appdev.PackageCollection
+	 * @see com.mozu.api.contracts.appdev.PackageCollection
+	 */
+	public com.mozu.api.contracts.appdev.PackageCollection getPackages(String applicationKey) throws Exception
+	{
+		return getPackages( applicationKey,  null,  null,  null,  null,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Package package = new Package();
+	 *	CountDownLatch latch = package.getPackages( applicationKey, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.appdev.PackageCollection
+	 * @see com.mozu.api.contracts.appdev.PackageCollection
+	 */
+	public CountDownLatch getPackagesAsync(String applicationKey, AsyncCallback<com.mozu.api.contracts.appdev.PackageCollection> callback) throws Exception
+	{
+		return getPackagesAsync( applicationKey,  null,  null,  null,  null,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Package package = new Package();
+	 *	PackageCollection packageCollection = package.getPackages( applicationKey,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 * </code></pre></p>
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @return com.mozu.api.contracts.appdev.PackageCollection
+	 * @see com.mozu.api.contracts.appdev.PackageCollection
+	 */
+	public com.mozu.api.contracts.appdev.PackageCollection getPackages(String applicationKey, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.appdev.PackageCollection> client = com.mozu.api.clients.platform.appdev.PackageClient.getPackagesClient( applicationKey,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Package package = new Package();
+	 *	CountDownLatch latch = package.getPackages( applicationKey,  startIndex,  pageSize,  sortBy,  filter,  responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.appdev.PackageCollection
+	 * @see com.mozu.api.contracts.appdev.PackageCollection
+	 */
+	public CountDownLatch getPackagesAsync(String applicationKey, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, AsyncCallback<com.mozu.api.contracts.appdev.PackageCollection> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.appdev.PackageCollection> client = com.mozu.api.clients.platform.appdev.PackageClient.getPackagesClient( applicationKey,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Package package = new Package();
+	 *	ApplicationSummary applicationSummary = package.getApplicationSummaryChildren( appId);
+	 * </code></pre></p>
+	 * @param appId appId parameter description DOCUMENT_HERE 
+	 * @return List<com.mozu.api.contracts.appdev.ApplicationSummary>
+	 * @see com.mozu.api.contracts.appdev.ApplicationSummary
+	 */
+	public List<com.mozu.api.contracts.appdev.ApplicationSummary> getApplicationSummaryChildren(String appId) throws Exception
+	{
+		MozuClient<List<com.mozu.api.contracts.appdev.ApplicationSummary>> client = com.mozu.api.clients.platform.appdev.PackageClient.getApplicationSummaryChildrenClient( appId);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Package package = new Package();
+	 *	CountDownLatch latch = package.getApplicationSummaryChildren( appId, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param appId appId parameter description DOCUMENT_HERE 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return List<com.mozu.api.contracts.appdev.ApplicationSummary>
+	 * @see com.mozu.api.contracts.appdev.ApplicationSummary
+	 */
+	public CountDownLatch getApplicationSummaryChildrenAsync(String appId, AsyncCallback<List<com.mozu.api.contracts.appdev.ApplicationSummary>> callback) throws Exception
+	{
+		MozuClient<List<com.mozu.api.contracts.appdev.ApplicationSummary>> client = com.mozu.api.clients.platform.appdev.PackageClient.getApplicationSummaryChildrenClient( appId);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Package package = new Package();
+	 *	ApplicationSummaryCollection applicationSummaryCollection = package.getApplicationSummaryParents();
+	 * </code></pre></p>
+	 * @return com.mozu.api.contracts.appdev.ApplicationSummaryCollection
+	 * @see com.mozu.api.contracts.appdev.ApplicationSummaryCollection
+	 */
+	public com.mozu.api.contracts.appdev.ApplicationSummaryCollection getApplicationSummaryParents() throws Exception
+	{
+		return getApplicationSummaryParents( null,  null,  null,  null,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Package package = new Package();
+	 *	CountDownLatch latch = package.getApplicationSummaryParents( callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.appdev.ApplicationSummaryCollection
+	 * @see com.mozu.api.contracts.appdev.ApplicationSummaryCollection
+	 */
+	public CountDownLatch getApplicationSummaryParentsAsync( AsyncCallback<com.mozu.api.contracts.appdev.ApplicationSummaryCollection> callback) throws Exception
+	{
+		return getApplicationSummaryParentsAsync( null,  null,  null,  null,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Package package = new Package();
+	 *	ApplicationSummaryCollection applicationSummaryCollection = package.getApplicationSummaryParents( startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 * </code></pre></p>
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @return com.mozu.api.contracts.appdev.ApplicationSummaryCollection
+	 * @see com.mozu.api.contracts.appdev.ApplicationSummaryCollection
+	 */
+	public com.mozu.api.contracts.appdev.ApplicationSummaryCollection getApplicationSummaryParents(Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.appdev.ApplicationSummaryCollection> client = com.mozu.api.clients.platform.appdev.PackageClient.getApplicationSummaryParentsClient( startIndex,  pageSize,  sortBy,  filter,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Package package = new Package();
+	 *	CountDownLatch latch = package.getApplicationSummaryParents( startIndex,  pageSize,  sortBy,  filter,  responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.appdev.ApplicationSummaryCollection
+	 * @see com.mozu.api.contracts.appdev.ApplicationSummaryCollection
+	 */
+	public CountDownLatch getApplicationSummaryParentsAsync(Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, AsyncCallback<com.mozu.api.contracts.appdev.ApplicationSummaryCollection> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.appdev.ApplicationSummaryCollection> client = com.mozu.api.clients.platform.appdev.PackageClient.getApplicationSummaryParentsClient( startIndex,  pageSize,  sortBy,  filter,  responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Package package = new Package();
+	 *	Package package = package.clonePackage( applicationKey,  packageName);
+	 * </code></pre></p>
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}. 
+	 * @param packageName 
+	 * @return com.mozu.api.contracts.appdev.Package
+	 * @see com.mozu.api.contracts.appdev.Package
+	 */
+	public com.mozu.api.contracts.appdev.Package clonePackage(String applicationKey, String packageName) throws Exception
+	{
+		return clonePackage( applicationKey,  packageName,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Package package = new Package();
+	 *	CountDownLatch latch = package.clonePackage( applicationKey,  packageName, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}. 
+	 * @param packageName 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.appdev.Package
+	 * @see com.mozu.api.contracts.appdev.Package
+	 */
+	public CountDownLatch clonePackageAsync(String applicationKey, String packageName, AsyncCallback<com.mozu.api.contracts.appdev.Package> callback) throws Exception
+	{
+		return clonePackageAsync( applicationKey,  packageName,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Package package = new Package();
+	 *	Package package = package.clonePackage( applicationKey,  packageName,  responseFields);
+	 * </code></pre></p>
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}. 
+	 * @param packageName 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @return com.mozu.api.contracts.appdev.Package
+	 * @see com.mozu.api.contracts.appdev.Package
+	 */
+	public com.mozu.api.contracts.appdev.Package clonePackage(String applicationKey, String packageName, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.appdev.Package> client = com.mozu.api.clients.platform.appdev.PackageClient.clonePackageClient( applicationKey,  packageName,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Package package = new Package();
+	 *	CountDownLatch latch = package.clonePackage( applicationKey,  packageName,  responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}. 
+	 * @param packageName 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.appdev.Package
+	 * @see com.mozu.api.contracts.appdev.Package
+	 */
+	public CountDownLatch clonePackageAsync(String applicationKey, String packageName, String responseFields, AsyncCallback<com.mozu.api.contracts.appdev.Package> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.appdev.Package> client = com.mozu.api.clients.platform.appdev.PackageClient.clonePackageClient( applicationKey,  packageName,  responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Package package = new Package();
+	 *	Package package = package.createNewCorePackage( packageRequest);
+	 * </code></pre></p>
+	 * @param packageRequest This operation is not public.
+	 * @return com.mozu.api.contracts.appdev.Package
+	 * @see com.mozu.api.contracts.appdev.Package
+	 * @see com.mozu.api.contracts.appdev.PackageRequest
+	 */
+	public com.mozu.api.contracts.appdev.Package createNewCorePackage(com.mozu.api.contracts.appdev.PackageRequest packageRequest) throws Exception
+	{
+		return createNewCorePackage( packageRequest,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Package package = new Package();
+	 *	CountDownLatch latch = package.createNewCorePackage( packageRequest, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param  callback callback handler for asynchronous operations
+	 * @param packageRequest This operation is not public.
+	 * @return com.mozu.api.contracts.appdev.Package
+	 * @see com.mozu.api.contracts.appdev.Package
+	 * @see com.mozu.api.contracts.appdev.PackageRequest
+	 */
+	public CountDownLatch createNewCorePackageAsync(com.mozu.api.contracts.appdev.PackageRequest packageRequest, AsyncCallback<com.mozu.api.contracts.appdev.Package> callback) throws Exception
+	{
+		return createNewCorePackageAsync( packageRequest,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Package package = new Package();
+	 *	Package package = package.createNewCorePackage( packageRequest,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param packageRequest This operation is not public.
+	 * @return com.mozu.api.contracts.appdev.Package
+	 * @see com.mozu.api.contracts.appdev.Package
+	 * @see com.mozu.api.contracts.appdev.PackageRequest
+	 */
+	public com.mozu.api.contracts.appdev.Package createNewCorePackage(com.mozu.api.contracts.appdev.PackageRequest packageRequest, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.appdev.Package> client = com.mozu.api.clients.platform.appdev.PackageClient.createNewCorePackageClient( packageRequest,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Package package = new Package();
+	 *	CountDownLatch latch = package.createNewCorePackage( packageRequest,  responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param  callback callback handler for asynchronous operations
+	 * @param packageRequest This operation is not public.
+	 * @return com.mozu.api.contracts.appdev.Package
+	 * @see com.mozu.api.contracts.appdev.Package
+	 * @see com.mozu.api.contracts.appdev.PackageRequest
+	 */
+	public CountDownLatch createNewCorePackageAsync(com.mozu.api.contracts.appdev.PackageRequest packageRequest, String responseFields, AsyncCallback<com.mozu.api.contracts.appdev.Package> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.appdev.Package> client = com.mozu.api.clients.platform.appdev.PackageClient.createNewCorePackageClient( packageRequest,  responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Package package = new Package();
+	 *	Package package = package.createPackage( pkg);
+	 * </code></pre></p>
+	 * @param package Properties for a package for fulfillment and shipment. A package may include one to many products, or a bundle of products.
+	 * @return com.mozu.api.contracts.appdev.Package
+	 * @see com.mozu.api.contracts.appdev.Package
+	 * @see com.mozu.api.contracts.appdev.Package
+	 */
+	public com.mozu.api.contracts.appdev.Package createPackage(com.mozu.api.contracts.appdev.Package pkg) throws Exception
+	{
+		return createPackage( pkg,  null,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Package package = new Package();
+	 *	CountDownLatch latch = package.createPackage( pkg, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param  callback callback handler for asynchronous operations
+	 * @param package Properties for a package for fulfillment and shipment. A package may include one to many products, or a bundle of products.
+	 * @return com.mozu.api.contracts.appdev.Package
+	 * @see com.mozu.api.contracts.appdev.Package
+	 * @see com.mozu.api.contracts.appdev.Package
+	 */
+	public CountDownLatch createPackageAsync(com.mozu.api.contracts.appdev.Package pkg, AsyncCallback<com.mozu.api.contracts.appdev.Package> callback) throws Exception
+	{
+		return createPackageAsync( pkg,  null,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Package package = new Package();
+	 *	Package package = package.createPackage( pkg,  projectId,  responseFields);
+	 * </code></pre></p>
+	 * @param projectId 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param package Properties for a package for fulfillment and shipment. A package may include one to many products, or a bundle of products.
+	 * @return com.mozu.api.contracts.appdev.Package
+	 * @see com.mozu.api.contracts.appdev.Package
+	 * @see com.mozu.api.contracts.appdev.Package
+	 */
+	public com.mozu.api.contracts.appdev.Package createPackage(com.mozu.api.contracts.appdev.Package pkg, Integer projectId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.appdev.Package> client = com.mozu.api.clients.platform.appdev.PackageClient.createPackageClient( pkg,  projectId,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Package package = new Package();
+	 *	CountDownLatch latch = package.createPackage( pkg,  projectId,  responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param projectId 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param  callback callback handler for asynchronous operations
+	 * @param package Properties for a package for fulfillment and shipment. A package may include one to many products, or a bundle of products.
+	 * @return com.mozu.api.contracts.appdev.Package
+	 * @see com.mozu.api.contracts.appdev.Package
+	 * @see com.mozu.api.contracts.appdev.Package
+	 */
+	public CountDownLatch createPackageAsync(com.mozu.api.contracts.appdev.Package pkg, Integer projectId, String responseFields, AsyncCallback<com.mozu.api.contracts.appdev.Package> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.appdev.Package> client = com.mozu.api.clients.platform.appdev.PackageClient.createPackageClient( pkg,  projectId,  responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Package package = new Package();
+	 *	Package package = package.updatePackage( pkg,  applicationKey);
+	 * </code></pre></p>
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}. 
+	 * @param package Properties for a package for fulfillment and shipment. A package may include one to many products, or a bundle of products.
+	 * @return com.mozu.api.contracts.appdev.Package
+	 * @see com.mozu.api.contracts.appdev.Package
+	 * @see com.mozu.api.contracts.appdev.Package
+	 */
+	public com.mozu.api.contracts.appdev.Package updatePackage(com.mozu.api.contracts.appdev.Package pkg, String applicationKey) throws Exception
+	{
+		return updatePackage( pkg,  applicationKey,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Package package = new Package();
+	 *	CountDownLatch latch = package.updatePackage( pkg,  applicationKey, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}. 
+	 * @param  callback callback handler for asynchronous operations
+	 * @param package Properties for a package for fulfillment and shipment. A package may include one to many products, or a bundle of products.
+	 * @return com.mozu.api.contracts.appdev.Package
+	 * @see com.mozu.api.contracts.appdev.Package
+	 * @see com.mozu.api.contracts.appdev.Package
+	 */
+	public CountDownLatch updatePackageAsync(com.mozu.api.contracts.appdev.Package pkg, String applicationKey, AsyncCallback<com.mozu.api.contracts.appdev.Package> callback) throws Exception
+	{
+		return updatePackageAsync( pkg,  applicationKey,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Package package = new Package();
+	 *	Package package = package.updatePackage( pkg,  applicationKey,  responseFields);
+	 * </code></pre></p>
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}. 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param package Properties for a package for fulfillment and shipment. A package may include one to many products, or a bundle of products.
+	 * @return com.mozu.api.contracts.appdev.Package
+	 * @see com.mozu.api.contracts.appdev.Package
+	 * @see com.mozu.api.contracts.appdev.Package
+	 */
+	public com.mozu.api.contracts.appdev.Package updatePackage(com.mozu.api.contracts.appdev.Package pkg, String applicationKey, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.appdev.Package> client = com.mozu.api.clients.platform.appdev.PackageClient.updatePackageClient( pkg,  applicationKey,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Package package = new Package();
+	 *	CountDownLatch latch = package.updatePackage( pkg,  applicationKey,  responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}. 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param  callback callback handler for asynchronous operations
+	 * @param package Properties for a package for fulfillment and shipment. A package may include one to many products, or a bundle of products.
+	 * @return com.mozu.api.contracts.appdev.Package
+	 * @see com.mozu.api.contracts.appdev.Package
+	 * @see com.mozu.api.contracts.appdev.Package
+	 */
+	public CountDownLatch updatePackageAsync(com.mozu.api.contracts.appdev.Package pkg, String applicationKey, String responseFields, AsyncCallback<com.mozu.api.contracts.appdev.Package> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.appdev.Package> client = com.mozu.api.clients.platform.appdev.PackageClient.updatePackageClient( pkg,  applicationKey,  responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Package package = new Package();
+	 *	package.deletePackage( applicationKey);
+	 * </code></pre></p>
+	 * @param applicationKey : The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
+	 * @return 
+	 */
+	public void deletePackage(String applicationKey) throws Exception
+	{
+		MozuClient client = com.mozu.api.clients.platform.appdev.PackageClient.deletePackageClient( applicationKey);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 

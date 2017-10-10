@@ -24,9 +24,6 @@ public class SiteShippingSettings implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -37,9 +34,6 @@ public class SiteShippingSettings implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * The combined price for all items in the order, including all selected options but excluding any discounts.
-	 */
 	protected  SiteShippingHandlingFee orderHandlingFee;
 
 	public SiteShippingHandlingFee getOrderHandlingFee() {
@@ -50,9 +44,6 @@ public class SiteShippingSettings implements Serializable
 		this.orderHandlingFee = orderHandlingFee;
 	}
 
-	/**
-	 * Properties of the package signature requirements for the site.
-	 */
 	protected  SiteShippingSignatureRequirement signatureRequirement;
 
 	public SiteShippingSignatureRequirement getSignatureRequirement() {

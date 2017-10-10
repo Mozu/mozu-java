@@ -12,6 +12,9 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
+/**
+ *	Mozu.AppDev.Contracts.ApplicationTransaction ApiType DOCUMENT_HERE 
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ApplicationTransaction implements Serializable
 {
@@ -28,6 +31,9 @@ public class ApplicationTransaction implements Serializable
 		this.applicationEntitlementId = applicationEntitlementId;
 	}
 
+	/**
+	 * Mozu.AppDev.Contracts.ApplicationTransaction applicationId ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected  Integer applicationId;
 
 	public Integer getApplicationId() {
@@ -58,9 +64,6 @@ public class ApplicationTransaction implements Serializable
 		this.isoCurrencyCode = isoCurrencyCode;
 	}
 
-	/**
-	 * Language used for the entity. Currently, only "en-US" is supported.
-	 */
 	protected  Integer localeCode;
 
 	public Integer getLocaleCode() {
@@ -91,9 +94,6 @@ public class ApplicationTransaction implements Serializable
 		this.siteId = siteId;
 	}
 
-	/**
-	 * Unique identifier of the Mozu tenant.
-	 */
 	protected  Integer tenantId;
 
 	public Integer getTenantId() {

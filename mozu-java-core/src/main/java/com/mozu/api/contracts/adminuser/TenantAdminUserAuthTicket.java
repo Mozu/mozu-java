@@ -17,7 +17,7 @@ import com.mozu.api.contracts.tenant.Tenant;
 import com.mozu.api.contracts.core.UserProfile;
 
 /**
- *	Properties of the authentication ticket to be used in user claims with the Mozu API.
+ *	Properties of the authentication ticket to be used in user claims with the  API.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class TenantAdminUserAuthTicket implements Serializable
@@ -25,9 +25,6 @@ public class TenantAdminUserAuthTicket implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Alphanumeric string used to authenticate the user in API request headers.
-	 */
 	protected  String accessToken;
 
 	public String getAccessToken() {
@@ -38,9 +35,6 @@ public class TenantAdminUserAuthTicket implements Serializable
 		this.accessToken = accessToken;
 	}
 
-	/**
-	 * The date and time the user access token expires.
-	 */
 	protected  DateTime accessTokenExpiration;
 
 	public DateTime getAccessTokenExpiration() {
@@ -51,9 +45,6 @@ public class TenantAdminUserAuthTicket implements Serializable
 		this.accessTokenExpiration = accessTokenExpiration;
 	}
 
-	/**
-	 * Date and time when the entity was created, represented in UTC Date/Time.
-	 */
 	protected  DateTime createdOn;
 
 	public DateTime getCreatedOn() {
@@ -64,9 +55,6 @@ public class TenantAdminUserAuthTicket implements Serializable
 		this.createdOn = createdOn;
 	}
 
-	/**
-	 * Collection of behaviors encrypted in the user authentication ticket. Behaviors are granted to users as part of the role assigned for the given tenant or developer account.
-	 */
 	protected List<Integer> grantedBehaviors;
 	public List<Integer> getGrantedBehaviors() {
 		return this.grantedBehaviors;
@@ -75,9 +63,6 @@ public class TenantAdminUserAuthTicket implements Serializable
 		this.grantedBehaviors = grantedBehaviors;
 	}
 
-	/**
-	 * Alphanumeric string used to generate a new user authentication ticket after the access token expires.
-	 */
 	protected  String refreshToken;
 
 	public String getRefreshToken() {
@@ -88,9 +73,6 @@ public class TenantAdminUserAuthTicket implements Serializable
 		this.refreshToken = refreshToken;
 	}
 
-	/**
-	 * The date and time the user refresh token expires.
-	 */
 	protected  DateTime refreshTokenExpiration;
 
 	public DateTime getRefreshTokenExpiration() {
@@ -101,9 +83,6 @@ public class TenantAdminUserAuthTicket implements Serializable
 		this.refreshTokenExpiration = refreshTokenExpiration;
 	}
 
-	/**
-	 * Collection of tenants for which the user authentication ticket grants access.
-	 */
 	protected List<Tenant> availableTenants;
 	public List<Tenant> getAvailableTenants() {
 		return this.availableTenants;
@@ -112,9 +91,6 @@ public class TenantAdminUserAuthTicket implements Serializable
 		this.availableTenants = availableTenants;
 	}
 
-	/**
-	 * Tenant information associated with the user authentication ticket.
-	 */
 	protected  Tenant tenant;
 
 	public Tenant getTenant() {
@@ -125,9 +101,6 @@ public class TenantAdminUserAuthTicket implements Serializable
 		this.tenant = tenant;
 	}
 
-	/**
-	 * User information associated with the authentication ticket.
-	 */
 	protected  UserProfile user;
 
 	public UserProfile getUser() {

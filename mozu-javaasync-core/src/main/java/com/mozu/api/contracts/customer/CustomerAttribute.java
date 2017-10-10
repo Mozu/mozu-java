@@ -24,9 +24,6 @@ public class CustomerAttribute implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Unique identifier of the attribute definition.
-	 */
 	protected  Integer attributeDefinitionId;
 
 	public Integer getAttributeDefinitionId() {
@@ -37,9 +34,6 @@ public class CustomerAttribute implements Serializable
 		this.attributeDefinitionId = attributeDefinitionId;
 	}
 
-	/**
-	 * The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 */
 	protected  String fullyQualifiedName;
 
 	public String getFullyQualifiedName() {
@@ -50,9 +44,6 @@ public class CustomerAttribute implements Serializable
 		this.fullyQualifiedName = fullyQualifiedName;
 	}
 
-	/**
-	 * List of values for the attribute.
-	 */
 	protected List<Object> values;
 	public List<Object> getValues() {
 		return this.values;
@@ -61,9 +52,6 @@ public class CustomerAttribute implements Serializable
 		this.values = values;
 	}
 
-	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {

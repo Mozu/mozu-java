@@ -15,8 +15,8 @@ public class PickupUrl
 
 	/**
 	 * Get Resource Url for GetAvailablePickupFulfillmentActions
-	 * @param orderId Unique identifier of the order associated with the pickup.
-	 * @param pickupId Unique identifier of the pickup for which to retrieve available actions.
+	 * @param orderId Unique identifier of the order.
+	 * @param pickupId Unique identifier of the pickup to remove.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getAvailablePickupFulfillmentActionsUrl(String orderId, String pickupId)
@@ -29,9 +29,9 @@ public class PickupUrl
 
 	/**
 	 * Get Resource Url for GetPickup
-	 * @param orderId Unique identifier of the order associated with the pickup.
-	 * @param pickupId Unique identifier of the pickup to retrieve.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param orderId Unique identifier of the order.
+	 * @param pickupId Unique identifier of the pickup to remove.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getPickupUrl(String orderId, String pickupId, String responseFields)
@@ -46,7 +46,7 @@ public class PickupUrl
 	/**
 	 * Get Resource Url for CreatePickup
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl createPickupUrl(String orderId, String responseFields)
@@ -59,9 +59,9 @@ public class PickupUrl
 
 	/**
 	 * Get Resource Url for UpdatePickup
-	 * @param orderId Unique identifier of the order associated with the in-store pickup.
-	 * @param pickupId Unique identifier of the pickup to update.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param orderId Unique identifier of the order.
+	 * @param pickupId Unique identifier of the pickup to remove.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updatePickupUrl(String orderId, String pickupId, String responseFields)
@@ -75,7 +75,7 @@ public class PickupUrl
 
 	/**
 	 * Get Resource Url for DeletePickup
-	 * @param orderId Unique identifier of the order associated with the pickup.
+	 * @param orderId Unique identifier of the order.
 	 * @param pickupId Unique identifier of the pickup to remove.
 	 * @return   String Resource Url
 	 */

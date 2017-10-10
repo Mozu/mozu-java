@@ -21,9 +21,6 @@ public class Measurement implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The unit of measurement, such as length or weight.
-	 */
 	protected  String unit;
 
 	public String getUnit() {
@@ -34,9 +31,6 @@ public class Measurement implements Serializable
 		this.unit = unit;
 	}
 
-	/**
-	 * The value of the measured unit.
-	 */
 	protected  Double value;
 
 	public Double getValue() {

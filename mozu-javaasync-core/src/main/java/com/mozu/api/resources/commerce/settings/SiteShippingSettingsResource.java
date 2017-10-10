@@ -37,7 +37,7 @@ public class SiteShippingSettingsResource {
 
 	
 	/**
-	 * Retrieves a list of the shipping settings configured for a site.
+	 * 
 	 * <p><pre><code>
 	 *	SiteShippingSettings siteshippingsettings = new SiteShippingSettings();
 	 *	SiteShippingSettings siteShippingSettings = siteshippingsettings.getSiteShippingSettings();
@@ -51,7 +51,7 @@ public class SiteShippingSettingsResource {
 	}
 
 	/**
-	 * Retrieves a list of the shipping settings configured for a site.
+	 * 
 	 * <p><pre><code>
 	 *	SiteShippingSettings siteshippingsettings = new SiteShippingSettings();
 	 *	CountDownLatch latch = siteshippingsettings.getSiteShippingSettings( callback );
@@ -66,12 +66,12 @@ public class SiteShippingSettingsResource {
 	}
 
 	/**
-	 * Retrieves a list of the shipping settings configured for a site.
+	 * 
 	 * <p><pre><code>
 	 *	SiteShippingSettings siteshippingsettings = new SiteShippingSettings();
 	 *	SiteShippingSettings siteShippingSettings = siteshippingsettings.getSiteShippingSettings( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.sitesettings.shipping.SiteShippingSettings
 	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingSettings
 	 */
@@ -85,12 +85,12 @@ public class SiteShippingSettingsResource {
 	}
 
 	/**
-	 * Retrieves a list of the shipping settings configured for a site.
+	 * 
 	 * <p><pre><code>
 	 *	SiteShippingSettings siteshippingsettings = new SiteShippingSettings();
 	 *	CountDownLatch latch = siteshippingsettings.getSiteShippingSettings( responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.sitesettings.shipping.SiteShippingSettings
 	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingSettings

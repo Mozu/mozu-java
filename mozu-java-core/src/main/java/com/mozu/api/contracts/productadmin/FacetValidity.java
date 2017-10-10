@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	System-supplied and read only parameter that validates a facet for its associated category.
+ *	Describes whether a facet is currently valid and the reason. A facet may become invalid if the source data is changed in some ways (for example if the category tree structure is changed).
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class FacetValidity implements Serializable
@@ -21,9 +21,6 @@ public class FacetValidity implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * If true, the facet source is valid for its associated category.
-	 */
 	protected  Boolean isValid;
 
 	public Boolean getIsValid() {
@@ -34,9 +31,6 @@ public class FacetValidity implements Serializable
 		this.isValid = isValid;
 	}
 
-	/**
-	 * Code associated with a reason for facet validation to return false for its associated category.
-	 */
 	protected  String reasonCode;
 
 	public String getReasonCode() {

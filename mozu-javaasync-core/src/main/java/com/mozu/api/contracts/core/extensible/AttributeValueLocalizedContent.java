@@ -21,9 +21,6 @@ public class AttributeValueLocalizedContent implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Language used for the entity. Currently, only "en-US" is supported.
-	 */
 	protected  String localeCode;
 
 	public String getLocaleCode() {
@@ -34,9 +31,6 @@ public class AttributeValueLocalizedContent implements Serializable
 		this.localeCode = localeCode;
 	}
 
-	/**
-	 * Localized content for the extensible attribute value.
-	 */
 	protected  String value;
 
 	public String getValue() {

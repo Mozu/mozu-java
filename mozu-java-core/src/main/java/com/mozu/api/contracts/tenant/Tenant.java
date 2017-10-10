@@ -25,9 +25,6 @@ public class Tenant implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The domain information associated with the tenant.
-	 */
 	protected  String domain;
 
 	public String getDomain() {
@@ -38,9 +35,6 @@ public class Tenant implements Serializable
 		this.domain = domain;
 	}
 
-	/**
-	 * Unique identifier of the Mozu tenant.
-	 */
 	protected  Integer id;
 
 	public Integer getId() {
@@ -51,9 +45,6 @@ public class Tenant implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * If true, the tenant represents a collection of master catalogs and catalogs for a development tenant, used by a developer account to test applications and themes.
-	 */
 	protected  Boolean isDevTenant;
 
 	public Boolean getIsDevTenant() {
@@ -64,9 +55,6 @@ public class Tenant implements Serializable
 		this.isDevTenant = isDevTenant;
 	}
 
-	/**
-	 * The name of the tenant.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -77,9 +65,6 @@ public class Tenant implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * Collection of master catalogs associated with the tenant.
-	 */
 	protected List<MasterCatalog> masterCatalogs;
 	public List<MasterCatalog> getMasterCatalogs() {
 		return this.masterCatalogs;
@@ -88,9 +73,6 @@ public class Tenant implements Serializable
 		this.masterCatalogs = masterCatalogs;
 	}
 
-	/**
-	 * Collection of sites associated with the tenant.
-	 */
 	protected List<Site> sites;
 	public List<Site> getSites() {
 		return this.sites;

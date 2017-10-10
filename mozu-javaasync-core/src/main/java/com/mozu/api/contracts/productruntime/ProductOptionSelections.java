@@ -24,9 +24,6 @@ public class ProductOptionSelections implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Product code that represents the product variation selected based on the option values the shopper entered.
-	 */
 	protected  String variationProductCode;
 
 	public String getVariationProductCode() {
@@ -37,9 +34,6 @@ public class ProductOptionSelections implements Serializable
 		this.variationProductCode = variationProductCode;
 	}
 
-	/**
-	 * List of option attributes associated with the product and the associated values currently defined for this product configuration.
-	 */
 	protected List<ProductOptionSelection> options;
 	public List<ProductOptionSelection> getOptions() {
 		return this.options;

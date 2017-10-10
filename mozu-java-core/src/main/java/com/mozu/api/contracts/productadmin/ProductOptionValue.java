@@ -22,9 +22,6 @@ public class ProductOptionValue implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Value of the product option attribute.
-	 */
 	protected  Object value;
 
 	public Object getValue() {
@@ -35,9 +32,6 @@ public class ProductOptionValue implements Serializable
 		this.value = value;
 	}
 
-	/**
-	 * Detailed properties of the product option attribute's vocabulary value.
-	 */
 	protected  AttributeVocabularyValue attributeVocabularyValueDetail;
 
 	public AttributeVocabularyValue getAttributeVocabularyValueDetail() {

@@ -14,12 +14,18 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
+/**
+ *	Mozu.ProductAdmin.Contracts.SoftAllocationRenew ApiType DOCUMENT_HERE 
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SoftAllocationRenew implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The updated date and time in UTC format that you wish the soft allocations to expire on.
+	 */
 	protected  DateTime expiresAt;
 
 	public DateTime getExpiresAt() {
@@ -30,6 +36,9 @@ public class SoftAllocationRenew implements Serializable
 		this.expiresAt = expiresAt;
 	}
 
+	/**
+	 * A comma-separate list of unique identifiers of the soft allocations to renew.
+	 */
 	protected List<Integer> ids;
 	public List<Integer> getIds() {
 		return this.ids;

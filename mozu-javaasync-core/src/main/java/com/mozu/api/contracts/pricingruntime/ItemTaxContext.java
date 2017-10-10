@@ -21,9 +21,6 @@ public class ItemTaxContext implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Unique identifier of the line item in the order.
-	 */
 	protected  String id;
 
 	public String getId() {
@@ -44,9 +41,6 @@ public class ItemTaxContext implements Serializable
 		this.productCode = productCode;
 	}
 
-	/**
-	 * Quantity of the line item in the order.
-	 */
 	protected  Integer quantity;
 
 	public Integer getQuantity() {
@@ -57,9 +51,6 @@ public class ItemTaxContext implements Serializable
 		this.quantity = quantity;
 	}
 
-	/**
-	 * Amount of tax applied to shipping costs for the line item in the order.
-	 */
 	protected  Double shippingTax;
 
 	public Double getShippingTax() {
@@ -70,9 +61,6 @@ public class ItemTaxContext implements Serializable
 		this.shippingTax = shippingTax;
 	}
 
-	/**
-	 * The total tax amount applied to the line item in the order, minus any shipping taxes.
-	 */
 	protected  Double tax;
 
 	public Double getTax() {
@@ -83,6 +71,9 @@ public class ItemTaxContext implements Serializable
 		this.tax = tax;
 	}
 
+	/**
+	 * Leverage this property within a [tax Arc.js action](https://www.mozu.com/docs/arcjs/commerce-catalog-storefront-tax/commerce-catalog-storefront-tax.htm) to supplement the tax information for this item or object with custom JSON data.
+	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode taxData;
 
 	public com.fasterxml.jackson.databind.JsonNode getTaxData() {

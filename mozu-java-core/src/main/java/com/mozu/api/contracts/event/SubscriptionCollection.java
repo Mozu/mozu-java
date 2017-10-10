@@ -15,6 +15,9 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.event.Subscription;
 
+/**
+ *	Paged collection subscription entities used to provide event notifications for third-parties.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SubscriptionCollection implements Serializable
 {

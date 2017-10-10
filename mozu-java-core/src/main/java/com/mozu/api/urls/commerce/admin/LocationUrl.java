@@ -15,11 +15,11 @@ public class LocationUrl
 
 	/**
 	 * Get Resource Url for GetLocations
-	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getLocationsUrl(String filter, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
@@ -35,8 +35,8 @@ public class LocationUrl
 
 	/**
 	 * Get Resource Url for GetLocation
-	 * @param locationCode The merchant-defined code of the location to retrieve.
-	 * @param responseFields 
+	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getLocationUrl(String locationCode, String responseFields)
@@ -49,7 +49,7 @@ public class LocationUrl
 
 	/**
 	 * Get Resource Url for AddLocation
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addLocationUrl(String responseFields)
@@ -61,8 +61,8 @@ public class LocationUrl
 
 	/**
 	 * Get Resource Url for UpdateLocation
-	 * @param locationCode The merchant-defined code associated with the location to update.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateLocationUrl(String locationCode, String responseFields)
@@ -75,7 +75,7 @@ public class LocationUrl
 
 	/**
 	 * Get Resource Url for DeleteLocation
-	 * @param locationCode The merchant-defined code of the location to delete.
+	 * @param locationCode The unique, user-defined code that identifies a location. 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteLocationUrl(String locationCode)

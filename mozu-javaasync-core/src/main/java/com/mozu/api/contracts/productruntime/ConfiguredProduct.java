@@ -33,7 +33,7 @@ public class ConfiguredProduct implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The list of fulfillment types the product supports.
+	 * List of supported types of fulfillment for the product or variation. The types include direct ship, in-store pickup, or both.
 	 */
 	protected List<String> fulfillmentTypesSupported;
 	public List<String> getFulfillmentTypesSupported() {
@@ -44,7 +44,7 @@ public class ConfiguredProduct implements Serializable
 	}
 
 	/**
-	 * The manufacturer part number supplied for the product.
+	 * The manufacturer's part number for the product.
 	 */
 	protected  String mfgPartNumber;
 
@@ -56,9 +56,6 @@ public class ConfiguredProduct implements Serializable
 		this.mfgPartNumber = mfgPartNumber;
 	}
 
-	/**
-	 * Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 */
 	protected  String productCode;
 
 	public String getProductCode() {
@@ -69,8 +66,18 @@ public class ConfiguredProduct implements Serializable
 		this.productCode = productCode;
 	}
 
+	protected  String purchaseLocation;
+
+	public String getPurchaseLocation() {
+		return this.purchaseLocation;
+	}
+
+	public void setPurchaseLocation(String purchaseLocation) {
+		this.purchaseLocation = purchaseLocation;
+	}
+
 	/**
-	 * The universal product code defined for the product.
+	 * The universal product code (UPC) is the barcode defined for the product. The UPC is unique across all sales channels. 
 	 */
 	protected  String upc;
 
@@ -82,9 +89,6 @@ public class ConfiguredProduct implements Serializable
 		this.upc = upc;
 	}
 
-	/**
-	 * Merchant-created code associated with a specific product variation. Variation product codes maintain an association with the base product code.
-	 */
 	protected  String variationProductCode;
 
 	public String getVariationProductCode() {
@@ -95,9 +99,6 @@ public class ConfiguredProduct implements Serializable
 		this.variationProductCode = variationProductCode;
 	}
 
-	/**
-	 * List of shipping discounts that can be applied to the configured product.
-	 */
 	protected List<Discount> availableShippingDiscounts;
 	public List<Discount> getAvailableShippingDiscounts() {
 		return this.availableShippingDiscounts;
@@ -106,9 +107,6 @@ public class ConfiguredProduct implements Serializable
 		this.availableShippingDiscounts = availableShippingDiscounts;
 	}
 
-	/**
-	 * Properties of the inventory of the configured product, including the number of items in stock, whether the item appears on the storefront, and whether the item is out of stock or can be back ordered.
-	 */
 	protected  ProductInventoryInfo inventoryInfo;
 
 	public ProductInventoryInfo getInventoryInfo() {
@@ -119,9 +117,6 @@ public class ConfiguredProduct implements Serializable
 		this.inventoryInfo = inventoryInfo;
 	}
 
-	/**
-	 * Dimensions of the packaged product.
-	 */
 	protected  PackageMeasurements measurements;
 
 	public PackageMeasurements getMeasurements() {
@@ -132,9 +127,6 @@ public class ConfiguredProduct implements Serializable
 		this.measurements = measurements;
 	}
 
-	/**
-	 * The list of options set up in product admin.
-	 */
 	protected List<ProductOption> options;
 	public List<ProductOption> getOptions() {
 		return this.options;
@@ -143,9 +135,6 @@ public class ConfiguredProduct implements Serializable
 		this.options = options;
 	}
 
-	/**
-	 * Unit price that the tenant intends to sell the product if no sale price is set.
-	 */
 	protected  ProductPrice price;
 
 	public ProductPrice getPrice() {
@@ -156,6 +145,9 @@ public class ConfiguredProduct implements Serializable
 		this.price = price;
 	}
 
+	/**
+	 * The price list entry type.
+	 */
 	protected  ProductProperty priceListEntryTypeProperty;
 
 	public ProductProperty getPriceListEntryTypeProperty() {
@@ -166,9 +158,6 @@ public class ConfiguredProduct implements Serializable
 		this.priceListEntryTypeProperty = priceListEntryTypeProperty;
 	}
 
-	/**
-	 * For products with options that vary the cost of the product, the range between lowest and highest possible price of the product based on the current selection of options.
-	 */
 	protected  ProductPriceRange priceRange;
 
 	public ProductPriceRange getPriceRange() {
@@ -179,9 +168,6 @@ public class ConfiguredProduct implements Serializable
 		this.priceRange = priceRange;
 	}
 
-	/**
-	 * The current state of the configured product determines whether or not the product is eligible for purchase. Products with options are only purchasable if the shopper has selected all required options. If the product is not ready for purchase, a message lists missing options that are required.
-	 */
 	protected  ProductPurchasableState purchasableState;
 
 	public ProductPurchasableState getPurchasableState() {
@@ -192,6 +178,9 @@ public class ConfiguredProduct implements Serializable
 		this.purchasableState = purchasableState;
 	}
 
+	/**
+	 * The details of any volume price bands associated with the product.Refer to [Volume Pricing](https://www.mozu.com/docs/guides/catalog/price-lists.htm#volume_pricing) for more information.
+	 */
 	protected List<ProductVolumePrice> volumePriceBands;
 	public List<ProductVolumePrice> getVolumePriceBands() {
 		return this.volumePriceBands;
@@ -200,6 +189,9 @@ public class ConfiguredProduct implements Serializable
 		this.volumePriceBands = volumePriceBands;
 	}
 
+	/**
+	 * The details of the volume price range associated with the product. Volume price ranges consist of a lower price and an upper price, and either lower or upper prices can be affected by discounts.You can display the volume price range on product listing pages, such as category and search result pages, and product detail pages.Refer to [Volume Pricing Storefront Behavior](https://www.mozu.com/docs/guides/catalog/price-lists.htm#volume_pricing_storefront_behavior) for more information.
+	 */
 	protected  ProductPriceRange volumePriceRange;
 
 	public ProductPriceRange getVolumePriceRange() {

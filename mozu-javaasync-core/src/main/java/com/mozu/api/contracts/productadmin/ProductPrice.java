@@ -22,7 +22,7 @@ public class ProductPrice implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The credit amount of the product.
+	 * The credit value of the product or bundled product. When the `goodsType `is `DigitalCredit`, this value is populated to indicate the value of the credit. This is used to create store credit in the fulfillment of gift cards.
 	 */
 	protected  Double creditValue;
 
@@ -34,9 +34,6 @@ public class ProductPrice implements Serializable
 		this.creditValue = creditValue;
 	}
 
-	/**
-	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
-	 */
 	protected  String isoCurrencyCode;
 
 	public String getIsoCurrencyCode() {
@@ -87,7 +84,7 @@ public class ProductPrice implements Serializable
 	}
 
 	/**
-	 * The manufacturer's suggested retail price, as defined by the supplier.
+	 * The manufacturer's suggested retail price (MSRP) for the product. This content may be defined by the supplier.
 	 */
 	protected  Double msrp;
 
@@ -99,9 +96,6 @@ public class ProductPrice implements Serializable
 		this.msrp = msrp;
 	}
 
-	/**
-	 * Price that the merchant intends to sell the product which is not necessarily the list price. This is the price the merchant intends to sell the product if no sale price is present.
-	 */
 	protected  Double price;
 
 	public Double getPrice() {
@@ -112,9 +106,6 @@ public class ProductPrice implements Serializable
 		this.price = price;
 	}
 
-	/**
-	 * Price of the product with a discount already applied which the merchant intends to sell the product.
-	 */
 	protected  Double salePrice;
 
 	public Double getSalePrice() {

@@ -13,7 +13,10 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
+import com.mozu.api.contracts.core.Address;
+import com.mozu.api.contracts.pricingruntime.AppliedLineItemProductDiscount;
 import com.mozu.api.contracts.pricingruntime.ProductProperty;
+import com.mozu.api.contracts.pricingruntime.AppliedLineItemShippingDiscount;
 
 /**
  *	Properties of a line item in an order that is subject to tax.
@@ -25,8 +28,57 @@ public class TaxableLineItem implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Unique identifier of the taxable line item.
+	 * The subtotal of the cart, order, and wishlist items, including any applied discount calculations. Wishlist subtotals may change depending on the length of time, available discounts, and stock amounts of products at the time of review by shoppers.
 	 */
+	protected  Double discountedTotal;
+
+	public Double getDiscountedTotal() {
+		return this.discountedTotal;
+	}
+
+	public void setDiscountedTotal(Double discountedTotal) {
+		this.discountedTotal = discountedTotal;
+	}
+
+	/**
+	 * Estimated amount of discounts applied to all items in the carts and orders. System-supplied and read-only. This value will be available at the wish list, cart item, order item, and wish list item level at a later time.
+	 */
+	protected  Double discountTotal;
+
+	public Double getDiscountTotal() {
+		return this.discountTotal;
+	}
+
+	public void setDiscountTotal(Double discountTotal) {
+		this.discountTotal = discountTotal;
+	}
+
+	/**
+	 * The monetary sum of all fees incurred in the cart, order, line item in a cart, or line item in an order. This value is not calculated for wish lists at this time.
+	 */
+	protected  Double feeTotal;
+
+	public Double getFeeTotal() {
+		return this.feeTotal;
+	}
+
+	public void setFeeTotal(Double feeTotal) {
+		this.feeTotal = feeTotal;
+	}
+
+	/**
+	 * The combined price for all handling costs calculated together for shipped orders, not for digital or in-store pickup. This includes all handling costs per the product line items and options, excluding taxes and discounts.
+	 */
+	protected  Double handlingAmount;
+
+	public Double getHandlingAmount() {
+		return this.handlingAmount;
+	}
+
+	public void setHandlingAmount(Double handlingAmount) {
+		this.handlingAmount = handlingAmount;
+	}
+
 	protected  String id;
 
 	public String getId() {
@@ -37,9 +89,6 @@ public class TaxableLineItem implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * If true, the line item in the order is subject to tax.
-	 */
 	protected  Boolean isTaxable;
 
 	public Boolean getIsTaxable() {
@@ -50,9 +99,6 @@ public class TaxableLineItem implements Serializable
 		this.isTaxable = isTaxable;
 	}
 
-	/**
-	 * The sale price of the line item in the order.
-	 */
 	protected  Double lineItemPrice;
 
 	public Double getLineItemPrice() {
@@ -63,9 +109,6 @@ public class TaxableLineItem implements Serializable
 		this.lineItemPrice = lineItemPrice;
 	}
 
-	/**
-	 * Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 */
 	protected  String productCode;
 
 	public String getProductCode() {
@@ -77,7 +120,7 @@ public class TaxableLineItem implements Serializable
 	}
 
 	/**
-	 * The name of the product that represents a line item in a taxable order.
+	 * The name of the product that represents a line item in a taxable order or product bundle.
 	 */
 	protected  String productName;
 
@@ -89,9 +132,6 @@ public class TaxableLineItem implements Serializable
 		this.productName = productName;
 	}
 
-	/**
-	 * The quantity of the line item in the order.
-	 */
 	protected  Integer quantity;
 
 	public Integer getQuantity() {
@@ -103,7 +143,7 @@ public class TaxableLineItem implements Serializable
 	}
 
 	/**
-	 * The reason the item is either taxed or returned.
+	 * The reason description for an action, including item return, coupon not valid, and item is taxed. 
 	 */
 	protected  String reason;
 
@@ -115,9 +155,6 @@ public class TaxableLineItem implements Serializable
 		this.reason = reason;
 	}
 
-	/**
-	 * The amount of shipping calculated for a line item in an order.
-	 */
 	protected  Double shippingAmount;
 
 	public Double getShippingAmount() {
@@ -128,6 +165,9 @@ public class TaxableLineItem implements Serializable
 		this.shippingAmount = shippingAmount;
 	}
 
+	/**
+	 * For configurable products, the unique identifier of the product variation that has been selected.
+	 */
 	protected  String variantProductCode;
 
 	public String getVariantProductCode() {
@@ -138,6 +178,9 @@ public class TaxableLineItem implements Serializable
 		this.variantProductCode = variantProductCode;
 	}
 
+	/**
+	 * Custom data for a given vendor set within the commerce process.
+	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {
@@ -148,15 +191,80 @@ public class TaxableLineItem implements Serializable
 		this.data = data;
 	}
 
+	protected  Address destinationAddress;
+
+	public Address getDestinationAddress() {
+		return this.destinationAddress;
+	}
+
+	public void setDestinationAddress(Address destinationAddress) {
+		this.destinationAddress = destinationAddress;
+	}
+
+	protected  Address originAddress;
+
+	public Address getOriginAddress() {
+		return this.originAddress;
+	}
+
+	public void setOriginAddress(Address originAddress) {
+		this.originAddress = originAddress;
+	}
+
 	/**
-	 * Properties of the product that represents the line item in the order.
+	 * The applicable product discount for an associated cart, order, or wish list.
 	 */
+	protected  AppliedLineItemProductDiscount productDiscount;
+
+	public AppliedLineItemProductDiscount getProductDiscount() {
+		return this.productDiscount;
+	}
+
+	public void setProductDiscount(AppliedLineItemProductDiscount productDiscount) {
+		this.productDiscount = productDiscount;
+	}
+
+	/**
+	 * List of product-level discounts projected to apply to a cart, order, or wish list.
+	 */
+	protected List<AppliedLineItemProductDiscount> productDiscounts;
+	public List<AppliedLineItemProductDiscount> getProductDiscounts() {
+		return this.productDiscounts;
+	}
+	public void setProductDiscounts(List<AppliedLineItemProductDiscount> productDiscounts) {
+		this.productDiscounts = productDiscounts;
+	}
+
 	protected List<ProductProperty> productProperties;
 	public List<ProductProperty> getProductProperties() {
 		return this.productProperties;
 	}
 	public void setProductProperties(List<ProductProperty> productProperties) {
 		this.productProperties = productProperties;
+	}
+
+	/**
+	 * The shipping discount applied to the taxable line item.
+	 */
+	protected  AppliedLineItemShippingDiscount shippingDiscount;
+
+	public AppliedLineItemShippingDiscount getShippingDiscount() {
+		return this.shippingDiscount;
+	}
+
+	public void setShippingDiscount(AppliedLineItemShippingDiscount shippingDiscount) {
+		this.shippingDiscount = shippingDiscount;
+	}
+
+	/**
+	 * List of shipping discounts projected to apply to carts, orders, and wish lists and items at checkout.
+	 */
+	protected List<AppliedLineItemShippingDiscount> shippingDiscounts;
+	public List<AppliedLineItemShippingDiscount> getShippingDiscounts() {
+		return this.shippingDiscounts;
+	}
+	public void setShippingDiscounts(List<AppliedLineItemShippingDiscount> shippingDiscounts) {
+		this.shippingDiscounts = shippingDiscounts;
 	}
 
 	private void writeObject(java.io.ObjectOutputStream out) throws IOException {

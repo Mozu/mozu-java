@@ -37,7 +37,7 @@ public class CustomerCheckoutSettingsResource {
 
 	
 	/**
-	 * Retrieves all checkout settings defined for the site: Payment settings, such as the payment gateway ID and credentials, supported credit cards, and more; Customer Checkout settings, such as whether login is required, and any custom attributes; and Order Processing settings, such as when payment is authorized and captured, and any custom attributes.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerCheckoutSettings customercheckoutsettings = new CustomerCheckoutSettings();
 	 *	CustomerCheckoutSettings customerCheckoutSettings = customercheckoutsettings.getCustomerCheckoutSettings();
@@ -51,7 +51,7 @@ public class CustomerCheckoutSettingsResource {
 	}
 
 	/**
-	 * Retrieves all checkout settings defined for the site: Payment settings, such as the payment gateway ID and credentials, supported credit cards, and more; Customer Checkout settings, such as whether login is required, and any custom attributes; and Order Processing settings, such as when payment is authorized and captured, and any custom attributes.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerCheckoutSettings customercheckoutsettings = new CustomerCheckoutSettings();
 	 *	CountDownLatch latch = customercheckoutsettings.getCustomerCheckoutSettings( callback );
@@ -66,12 +66,12 @@ public class CustomerCheckoutSettingsResource {
 	}
 
 	/**
-	 * Retrieves all checkout settings defined for the site: Payment settings, such as the payment gateway ID and credentials, supported credit cards, and more; Customer Checkout settings, such as whether login is required, and any custom attributes; and Order Processing settings, such as when payment is authorized and captured, and any custom attributes.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerCheckoutSettings customercheckoutsettings = new CustomerCheckoutSettings();
 	 *	CustomerCheckoutSettings customerCheckoutSettings = customercheckoutsettings.getCustomerCheckoutSettings( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings
 	 * @see com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings
 	 */
@@ -85,12 +85,12 @@ public class CustomerCheckoutSettingsResource {
 	}
 
 	/**
-	 * Retrieves all checkout settings defined for the site: Payment settings, such as the payment gateway ID and credentials, supported credit cards, and more; Customer Checkout settings, such as whether login is required, and any custom attributes; and Order Processing settings, such as when payment is authorized and captured, and any custom attributes.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerCheckoutSettings customercheckoutsettings = new CustomerCheckoutSettings();
 	 *	CountDownLatch latch = customercheckoutsettings.getCustomerCheckoutSettings( responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings
 	 * @see com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings
@@ -104,12 +104,12 @@ public class CustomerCheckoutSettingsResource {
 	}
 
 	/**
-	 * Modifies existing site checkout settings. Modify Payment, Customer Checkout, and Order Processing settings in one PUT.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerCheckoutSettings customercheckoutsettings = new CustomerCheckoutSettings();
 	 *	CustomerCheckoutSettings customerCheckoutSettings = customercheckoutsettings.updateCustomerCheckoutSettings( customerCheckoutSettings);
 	 * </code></pre></p>
-	 * @param customerCheckoutSettings All the properties to update in the checkout settings.
+	 * @param customerCheckoutSettings The properties of the customer checkout settings such as whether shoppers must be logged in.
 	 * @return com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings
 	 * @see com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings
 	 * @see com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings
@@ -120,13 +120,13 @@ public class CustomerCheckoutSettingsResource {
 	}
 
 	/**
-	 * Modifies existing site checkout settings. Modify Payment, Customer Checkout, and Order Processing settings in one PUT.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerCheckoutSettings customercheckoutsettings = new CustomerCheckoutSettings();
 	 *	CountDownLatch latch = customercheckoutsettings.updateCustomerCheckoutSettings( customerCheckoutSettings, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param customerCheckoutSettings All the properties to update in the checkout settings.
+	 * @param customerCheckoutSettings The properties of the customer checkout settings such as whether shoppers must be logged in.
 	 * @return com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings
 	 * @see com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings
 	 * @see com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings
@@ -137,13 +137,13 @@ public class CustomerCheckoutSettingsResource {
 	}
 
 	/**
-	 * Modifies existing site checkout settings. Modify Payment, Customer Checkout, and Order Processing settings in one PUT.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerCheckoutSettings customercheckoutsettings = new CustomerCheckoutSettings();
 	 *	CustomerCheckoutSettings customerCheckoutSettings = customercheckoutsettings.updateCustomerCheckoutSettings( customerCheckoutSettings,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param customerCheckoutSettings All the properties to update in the checkout settings.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param customerCheckoutSettings The properties of the customer checkout settings such as whether shoppers must be logged in.
 	 * @return com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings
 	 * @see com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings
 	 * @see com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings
@@ -158,14 +158,14 @@ public class CustomerCheckoutSettingsResource {
 	}
 
 	/**
-	 * Modifies existing site checkout settings. Modify Payment, Customer Checkout, and Order Processing settings in one PUT.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerCheckoutSettings customercheckoutsettings = new CustomerCheckoutSettings();
 	 *	CountDownLatch latch = customercheckoutsettings.updateCustomerCheckoutSettings( customerCheckoutSettings,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param customerCheckoutSettings All the properties to update in the checkout settings.
+	 * @param customerCheckoutSettings The properties of the customer checkout settings such as whether shoppers must be logged in.
 	 * @return com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings
 	 * @see com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings
 	 * @see com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings

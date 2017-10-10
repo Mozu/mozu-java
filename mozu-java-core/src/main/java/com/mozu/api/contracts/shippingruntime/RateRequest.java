@@ -39,7 +39,7 @@ public class RateRequest implements Serializable
 	}
 
 	/**
-	 * The date and time the shipment will be shipped to the shopper.
+	 * The estimated date and time the shipment will be shipped to the shopper. This calculation is based on product stock, availability, date of order entry, and location.
 	 */
 	protected  DateTime estimatedShipmentDate;
 
@@ -61,9 +61,6 @@ public class RateRequest implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * If true, the destination address associated with the shipping rate request is a commercial address.
-	 */
 	protected  Boolean isDestinationAddressCommercial;
 
 	public Boolean getIsDestinationAddressCommercial() {
@@ -74,9 +71,6 @@ public class RateRequest implements Serializable
 		this.isDestinationAddressCommercial = isDestinationAddressCommercial;
 	}
 
-	/**
-	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
-	 */
 	protected  String isoCurrencyCode;
 
 	public String getIsoCurrencyCode() {
@@ -87,6 +81,9 @@ public class RateRequest implements Serializable
 		this.isoCurrencyCode = isoCurrencyCode;
 	}
 
+	/**
+	 * The sub total of the order including all applicable discounts.
+	 */
 	protected  Double orderDiscountedSubTotal;
 
 	public Double getOrderDiscountedSubTotal() {
@@ -97,9 +94,6 @@ public class RateRequest implements Serializable
 		this.orderDiscountedSubTotal = orderDiscountedSubTotal;
 	}
 
-	/**
-	 * The total amount of the order used to calculate the shipping rate estimate.
-	 */
 	protected  Double orderTotal;
 
 	public Double getOrderTotal() {
@@ -110,6 +104,9 @@ public class RateRequest implements Serializable
 		this.orderTotal = orderTotal;
 	}
 
+	/**
+	 * The unique identifier of the order to which the shipping rate is related.You can use Arc.js in combination with this property to retrieve other properties of the related order.
+	 */
 	protected  String relatedOrderId;
 
 	public String getRelatedOrderId() {
@@ -120,6 +117,9 @@ public class RateRequest implements Serializable
 		this.relatedOrderId = relatedOrderId;
 	}
 
+	/**
+	 * The order number that the customer sees on the storefront when they place the order.
+	 */
 	protected  Integer relatedOrderNumber;
 
 	public Integer getRelatedOrderNumber() {
@@ -141,6 +141,9 @@ public class RateRequest implements Serializable
 		this.shippingServiceTypes = shippingServiceTypes;
 	}
 
+	/**
+	 * Collection of attributes that may be paged list or a list, depending on the usage per object and API type.
+	 */
 	protected List<RateRequestAttribute> attributes;
 	public List<RateRequestAttribute> getAttributes() {
 		return this.attributes;
@@ -150,7 +153,7 @@ public class RateRequest implements Serializable
 	}
 
 	/**
-	 * List of key-value pairs that represent custom attributes associated with the request.
+	 * Collection of carrier-specific key-value attribute pairs associated with a shipping carrier. These are required to retrieve a shipping rate request and are returned for the generated shipping label.
 	 */
 	protected List<CustomAttribute> customAttributes;
 	public List<CustomAttribute> getCustomAttributes() {
@@ -160,6 +163,9 @@ public class RateRequest implements Serializable
 		this.customAttributes = customAttributes;
 	}
 
+	/**
+	 * Data included in the shipping rate information.
+	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {
@@ -170,9 +176,6 @@ public class RateRequest implements Serializable
 		this.data = data;
 	}
 
-	/**
-	 * The physical address to which the shipment will ship.
-	 */
 	protected  Address destinationAddress;
 
 	public Address getDestinationAddress() {
@@ -183,9 +186,6 @@ public class RateRequest implements Serializable
 		this.destinationAddress = destinationAddress;
 	}
 
-	/**
-	 * List of items to include in the shipping rate request.
-	 */
 	protected List<RateRequestItem> items;
 	public List<RateRequestItem> getItems() {
 		return this.items;
@@ -195,7 +195,7 @@ public class RateRequest implements Serializable
 	}
 
 	/**
-	 * The physical address from which the shipment will ship.
+	 * The physical address from which the order or shipment will ship.
 	 */
 	protected  Address originAddress;
 

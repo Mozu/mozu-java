@@ -24,9 +24,6 @@ public class CustomAttribute implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Key required for a custom attribute associated with a shipping provider integration, as part of a key-value pair.
-	 */
 	protected  String key;
 
 	public String getKey() {
@@ -37,9 +34,6 @@ public class CustomAttribute implements Serializable
 		this.key = key;
 	}
 
-	/**
-	 * Value for a custom attribute associated with a shipping provider integration, as part of a key-value pair.
-	 */
 	protected  String value;
 
 	public String getValue() {
@@ -50,9 +44,6 @@ public class CustomAttribute implements Serializable
 		this.value = value;
 	}
 
-	/**
-	 * Collection of child attributes associated with a shipping provider integration.
-	 */
 	protected List<CustomAttribute> childAttributes;
 	public List<CustomAttribute> getChildAttributes() {
 		return this.childAttributes;

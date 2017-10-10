@@ -16,8 +16,7 @@ import com.mozu.api.contracts.customer.CustomerAccount;
 import com.mozu.api.contracts.customer.CustomerAccountAndAuthInfo;
 import com.mozu.api.contracts.customer.CustomerAuthTicket;
 import com.mozu.test.framework.core.MozuApiTestBase;
-import com.mozu.test.framework.datafactory.CustomerAccountFactory;
-import com.mozu.test.framework.datafactory.CustomerContactFactory;
+import com.mozu.test.framework.datafactory.commerce.customer.CustomerAccountFactory;
 import com.mozu.test.framework.helper.CustomerGenerator;
 import com.mozu.test.framework.helper.Generator;
 

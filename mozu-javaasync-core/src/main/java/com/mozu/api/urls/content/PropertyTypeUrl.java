@@ -15,9 +15,9 @@ public class PropertyTypeUrl
 
 	/**
 	 * Get Resource Url for GetPropertyTypes
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getPropertyTypesUrl(Integer pageSize, String responseFields, Integer startIndex)
@@ -31,8 +31,8 @@ public class PropertyTypeUrl
 
 	/**
 	 * Get Resource Url for GetPropertyType
-	 * @param propertyTypeName The name of the content property type.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param propertyTypeName The name of the property type.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getPropertyTypeUrl(String propertyTypeName, String responseFields)
@@ -45,7 +45,7 @@ public class PropertyTypeUrl
 
 	/**
 	 * Get Resource Url for CreatePropertyType
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl createPropertyTypeUrl(String responseFields)
@@ -57,8 +57,8 @@ public class PropertyTypeUrl
 
 	/**
 	 * Get Resource Url for UpdatePropertyType
-	 * @param propertyTypeName 
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param propertyTypeName The name of the property type.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updatePropertyTypeUrl(String propertyTypeName, String responseFields)
@@ -71,7 +71,7 @@ public class PropertyTypeUrl
 
 	/**
 	 * Get Resource Url for DeletePropertyType
-	 * @param propertyTypeName 
+	 * @param propertyTypeName The name of the property type.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deletePropertyTypeUrl(String propertyTypeName)

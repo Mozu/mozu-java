@@ -13,12 +13,18 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 
+/**
+ *	Mozu.ProductAdmin.Contracts.AssignedDiscount ApiType DOCUMENT_HERE 
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AssignedDiscount implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The unique identifier of the coupon set.
+	 */
 	protected  String couponSetCode;
 
 	public String getCouponSetCode() {
@@ -29,6 +35,9 @@ public class AssignedDiscount implements Serializable
 		this.couponSetCode = couponSetCode;
 	}
 
+	/**
+	 * The unique, system generated id. You can use this value to further identify the coupon set.This value is ready only.
+	 */
 	protected  Integer couponSetId;
 
 	public Integer getCouponSetId() {
@@ -39,6 +48,9 @@ public class AssignedDiscount implements Serializable
 		this.couponSetId = couponSetId;
 	}
 
+	/**
+	 * The unique identifier of the discount.
+	 */
 	protected  Integer discountId;
 
 	public Integer getDiscountId() {
@@ -49,6 +61,9 @@ public class AssignedDiscount implements Serializable
 		this.discountId = discountId;
 	}
 
+	/**
+	 * Basic audit info about the object, including date, time, and user account. This data may be captured when creating, updating, and removing data.
+	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {

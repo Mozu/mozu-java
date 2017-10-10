@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
+ *	Basic audit info about the object, including date, time, and user account. This data may be captured when creating, updating, and removing data.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AuditInfo implements Serializable
@@ -22,7 +22,7 @@ public class AuditInfo implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Unique identifier of the user created the resource entity. This value is system-supplied and read-only.
+	 * Identifier of the user that created the object. System created and read only.
 	 */
 	protected  String createBy;
 
@@ -35,7 +35,7 @@ public class AuditInfo implements Serializable
 	}
 
 	/**
-	 * Date and time when the entity was created, represented in UTC Date/Time.
+	 * The date and time in UTCÂ format set when the object was created.
 	 */
 	protected  DateTime createDate;
 
@@ -48,7 +48,7 @@ public class AuditInfo implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the user who last modified the item. This value is system-supplied and read-only.
+	 * Identifier of the user that updated the entity most recently.
 	 */
 	protected  String updateBy;
 
@@ -61,7 +61,7 @@ public class AuditInfo implements Serializable
 	}
 
 	/**
-	 * Date and time when the entity was last updated, represented in UTC Date/Time.
+	 * The date and time in UTC format the object was updated most recently.
 	 */
 	protected  DateTime updateDate;
 

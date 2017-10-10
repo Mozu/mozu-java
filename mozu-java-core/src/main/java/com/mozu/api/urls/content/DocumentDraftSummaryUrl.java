@@ -15,10 +15,10 @@ public class DocumentDraftSummaryUrl
 
 	/**
 	 * Get Resource Url for ListDocumentDraftSummaries
-	 * @param documentLists Lists that contain the document drafts.
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
+	 * @param documentLists List of document lists that contain documents to delete.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl listDocumentDraftSummariesUrl(String documentLists, Integer pageSize, String responseFields, Integer startIndex)
@@ -45,7 +45,7 @@ public class DocumentDraftSummaryUrl
 
 	/**
 	 * Get Resource Url for PublishDocuments
-	 * @param documentLists List of document lists that contain documents to publish.
+	 * @param documentLists List of document lists that contain documents to delete.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl publishDocumentsUrl(String documentLists)

@@ -15,12 +15,18 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.shippingadmin.profile.State;
 
+/**
+ *	Mozu.ShippingAdmin.Contracts.Profile.ShippingStates ApiType DOCUMENT_HERE 
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ShippingStates implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The 2-letter geographic code representing the country for the physical or mailing address. Currently limited to the US.
+	 */
 	protected  String countryCode;
 
 	public String getCountryCode() {
@@ -31,6 +37,9 @@ public class ShippingStates implements Serializable
 		this.countryCode = countryCode;
 	}
 
+	/**
+	 * The states of the shipping profile.
+	 */
 	protected List<State> states;
 	public List<State> getStates() {
 		return this.states;

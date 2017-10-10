@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Properties of a defined product, order, or shipping discount.
+ *	Name of the discount added and applied to a shopping cart and order for a shopper's purchase. 
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Discount implements Serializable
@@ -21,9 +21,6 @@ public class Discount implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Unique identifier of the discount. System-supplied and read only.
-	 */
 	protected  Integer discountId;
 
 	public Integer getDiscountId() {
@@ -34,9 +31,6 @@ public class Discount implements Serializable
 		this.discountId = discountId;
 	}
 
-	/**
-	 * The date and time the discount can no longer be redeemed. Date in UTC Date/Time. System-supplied and read only.
-	 */
 	protected  DateTime expirationDate;
 
 	public DateTime getExpirationDate() {
@@ -48,7 +42,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * Client-defined description that displays for the shopper on the web storefront.
+	 * The localizable, shopper-facing description defined for a discount or a storefront message. 
 	 */
 	protected  String friendlyDescription;
 
@@ -60,9 +54,6 @@ public class Discount implements Serializable
 		this.friendlyDescription = friendlyDescription;
 	}
 
-	/**
-	 * The localizable name assigned for the product discount.
-	 */
 	protected  String name;
 
 	public String getName() {

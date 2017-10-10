@@ -16,10 +16,9 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.commerceruntime.orders.OrderAttribute;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.commerceruntime.fulfillment.Destination;
-import com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty;
 import com.mozu.api.contracts.commerceruntime.checkouts.CheckoutGrouping;
+import com.mozu.api.contracts.commerceruntime.discounts.InvalidCoupon;
 import com.mozu.api.contracts.commerceruntime.orders.OrderItem;
-import com.mozu.api.contracts.commerceruntime.orders.OrderNote;
 import com.mozu.api.contracts.commerceruntime.discounts.AppliedDiscount;
 import com.mozu.api.contracts.commerceruntime.payments.Payment;
 import com.mozu.api.contracts.commerceruntime.orders.ShopperNotes;
@@ -30,6 +29,34 @@ public class Checkout implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected  Boolean acceptsMarketing;
+
+	public Boolean getAcceptsMarketing() {
+		return this.acceptsMarketing;
+	}
+
+	public void setAcceptsMarketing(Boolean acceptsMarketing) {
+		this.acceptsMarketing = acceptsMarketing;
+	}
+
+	protected  Double amountRemainingForPayment;
+
+	public Double getAmountRemainingForPayment() {
+		return this.amountRemainingForPayment;
+	}
+
+	public void setAmountRemainingForPayment(Double amountRemainingForPayment) {
+		this.amountRemainingForPayment = amountRemainingForPayment;
+	}
+
+	protected List<String> availableActions;
+	public List<String> getAvailableActions() {
+		return this.availableActions;
+	}
+	public void setAvailableActions(List<String> availableActions) {
+		this.availableActions = availableActions;
+	}
+
 	protected  String channelCode;
 
 	public String getChannelCode() {
@@ -38,6 +65,14 @@ public class Checkout implements Serializable
 
 	public void setChannelCode(String channelCode) {
 		this.channelCode = channelCode;
+	}
+
+	protected List<String> couponCodes;
+	public List<String> getCouponCodes() {
+		return this.couponCodes;
+	}
+	public void setCouponCodes(List<String> couponCodes) {
+		this.couponCodes = couponCodes;
 	}
 
 	protected  String currencyCode;
@@ -88,6 +123,16 @@ public class Checkout implements Serializable
 
 	public void setDutyTotal(Double dutyTotal) {
 		this.dutyTotal = dutyTotal;
+	}
+
+	protected  String email;
+
+	public String getEmail() {
+		return this.email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	protected  Double feeTotal;
@@ -160,6 +205,36 @@ public class Checkout implements Serializable
 		this.isTaxExempt = isTaxExempt;
 	}
 
+	protected  Double itemLevelHandlingDiscountTotal;
+
+	public Double getItemLevelHandlingDiscountTotal() {
+		return this.itemLevelHandlingDiscountTotal;
+	}
+
+	public void setItemLevelHandlingDiscountTotal(Double itemLevelHandlingDiscountTotal) {
+		this.itemLevelHandlingDiscountTotal = itemLevelHandlingDiscountTotal;
+	}
+
+	protected  Double itemLevelProductDiscountTotal;
+
+	public Double getItemLevelProductDiscountTotal() {
+		return this.itemLevelProductDiscountTotal;
+	}
+
+	public void setItemLevelProductDiscountTotal(Double itemLevelProductDiscountTotal) {
+		this.itemLevelProductDiscountTotal = itemLevelProductDiscountTotal;
+	}
+
+	protected  Double itemLevelShippingDiscountTotal;
+
+	public Double getItemLevelShippingDiscountTotal() {
+		return this.itemLevelShippingDiscountTotal;
+	}
+
+	public void setItemLevelShippingDiscountTotal(Double itemLevelShippingDiscountTotal) {
+		this.itemLevelShippingDiscountTotal = itemLevelShippingDiscountTotal;
+	}
+
 	protected  Double itemTaxTotal;
 
 	public Double getItemTaxTotal() {
@@ -168,6 +243,16 @@ public class Checkout implements Serializable
 
 	public void setItemTaxTotal(Double itemTaxTotal) {
 		this.itemTaxTotal = itemTaxTotal;
+	}
+
+	protected  Double itemTotal;
+
+	public Double getItemTotal() {
+		return this.itemTotal;
+	}
+
+	public void setItemTotal(Double itemTotal) {
+		this.itemTotal = itemTotal;
 	}
 
 	protected  String locationCode;
@@ -188,6 +273,36 @@ public class Checkout implements Serializable
 
 	public void setNumber(Integer number) {
 		this.number = number;
+	}
+
+	protected  Double orderLevelHandlingDiscountTotal;
+
+	public Double getOrderLevelHandlingDiscountTotal() {
+		return this.orderLevelHandlingDiscountTotal;
+	}
+
+	public void setOrderLevelHandlingDiscountTotal(Double orderLevelHandlingDiscountTotal) {
+		this.orderLevelHandlingDiscountTotal = orderLevelHandlingDiscountTotal;
+	}
+
+	protected  Double orderLevelProductDiscountTotal;
+
+	public Double getOrderLevelProductDiscountTotal() {
+		return this.orderLevelProductDiscountTotal;
+	}
+
+	public void setOrderLevelProductDiscountTotal(Double orderLevelProductDiscountTotal) {
+		this.orderLevelProductDiscountTotal = orderLevelProductDiscountTotal;
+	}
+
+	protected  Double orderLevelShippingDiscountTotal;
+
+	public Double getOrderLevelShippingDiscountTotal() {
+		return this.orderLevelShippingDiscountTotal;
+	}
+
+	public void setOrderLevelShippingDiscountTotal(Double orderLevelShippingDiscountTotal) {
+		this.orderLevelShippingDiscountTotal = orderLevelShippingDiscountTotal;
 	}
 
 	protected  String originalCartId;
@@ -270,24 +385,14 @@ public class Checkout implements Serializable
 		this.submittedDate = submittedDate;
 	}
 
-	protected  Double subtotal;
+	protected  Double subTotal;
 
-	public Double getSubtotal() {
-		return this.subtotal;
+	public Double getSubTotal() {
+		return this.subTotal;
 	}
 
-	public void setSubtotal(Double subtotal) {
-		this.subtotal = subtotal;
-	}
-
-	protected  Double taxTotal;
-
-	public Double getTaxTotal() {
-		return this.taxTotal;
-	}
-
-	public void setTaxTotal(Double taxTotal) {
-		this.taxTotal = taxTotal;
+	public void setSubTotal(Double subTotal) {
+		this.subTotal = subTotal;
 	}
 
 	protected  Integer tenantId;
@@ -376,14 +481,6 @@ public class Checkout implements Serializable
 		this.destinations = destinations;
 	}
 
-	protected List<ExtendedProperty> extendedProperties;
-	public List<ExtendedProperty> getExtendedProperties() {
-		return this.extendedProperties;
-	}
-	public void setExtendedProperties(List<ExtendedProperty> extendedProperties) {
-		this.extendedProperties = extendedProperties;
-	}
-
 	protected List<CheckoutGrouping> groupings;
 	public List<CheckoutGrouping> getGroupings() {
 		return this.groupings;
@@ -392,20 +489,20 @@ public class Checkout implements Serializable
 		this.groupings = groupings;
 	}
 
+	protected List<InvalidCoupon> invalidCoupons;
+	public List<InvalidCoupon> getInvalidCoupons() {
+		return this.invalidCoupons;
+	}
+	public void setInvalidCoupons(List<InvalidCoupon> invalidCoupons) {
+		this.invalidCoupons = invalidCoupons;
+	}
+
 	protected List<OrderItem> items;
 	public List<OrderItem> getItems() {
 		return this.items;
 	}
 	public void setItems(List<OrderItem> items) {
 		this.items = items;
-	}
-
-	protected List<OrderNote> notes;
-	public List<OrderNote> getNotes() {
-		return this.notes;
-	}
-	public void setNotes(List<OrderNote> notes) {
-		this.notes = notes;
 	}
 
 	protected List<AppliedDiscount> orderDiscounts;

@@ -21,7 +21,7 @@ import org.apache.commons.lang.StringUtils;
 
 import com.mozu.api.DataViewMode;
 /** <summary>
- * Temporarily hold a product from inventory while a shopper is filling out payment information. Create a product reservation when a shopper proceeds to check out and then release the reservation when the order process is complete.
+ * Use the Product Reservations resource to temporarily hold a product from inventory while a shopper is filling out payment information. You can create a product reservation when a shopper proceeds to check out and then release the reservation when the order process is complete.
  * </summary>
  */
 public class ProductReservationResource {
@@ -45,7 +45,7 @@ public class ProductReservationResource {
 	}
 		
 	/**
-	 * Retrieves a list of product reservations according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 *	ProductReservation productreservation = new ProductReservation();
 	 *	ProductReservationCollection productReservationCollection = productreservation.getProductReservations();
@@ -60,7 +60,7 @@ public class ProductReservationResource {
 	}
 
 	/**
-	 * Retrieves a list of product reservations according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 *	ProductReservation productreservation = new ProductReservation();
 	 *	CountDownLatch latch = productreservation.getProductReservations( callback );
@@ -76,16 +76,16 @@ public class ProductReservationResource {
 	}
 
 	/**
-	 * Retrieves a list of product reservations according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 *	ProductReservation productreservation = new ProductReservation();
 	 *	ProductReservationCollection productReservationCollection = productreservation.getProductReservations( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.ProductReservationCollection
 	 * @see com.mozu.api.contracts.productadmin.ProductReservationCollection
@@ -100,16 +100,16 @@ public class ProductReservationResource {
 	}
 
 	/**
-	 * Retrieves a list of product reservations according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 *	ProductReservation productreservation = new ProductReservation();
 	 *	CountDownLatch latch = productreservation.getProductReservations( startIndex,  pageSize,  sortBy,  filter,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.ProductReservationCollection
@@ -124,7 +124,7 @@ public class ProductReservationResource {
 	}
 
 	/**
-	 * Retrieves the details of a product reservation.
+	 * 
 	 * <p><pre><code>
 	 *	ProductReservation productreservation = new ProductReservation();
 	 *	ProductReservation productReservation = productreservation.getProductReservation( productReservationId);
@@ -140,7 +140,7 @@ public class ProductReservationResource {
 	}
 
 	/**
-	 * Retrieves the details of a product reservation.
+	 * 
 	 * <p><pre><code>
 	 *	ProductReservation productreservation = new ProductReservation();
 	 *	CountDownLatch latch = productreservation.getProductReservation( productReservationId, callback );
@@ -157,13 +157,13 @@ public class ProductReservationResource {
 	}
 
 	/**
-	 * Retrieves the details of a product reservation.
+	 * 
 	 * <p><pre><code>
 	 *	ProductReservation productreservation = new ProductReservation();
 	 *	ProductReservation productReservation = productreservation.getProductReservation( productReservationId,  responseFields);
 	 * </code></pre></p>
 	 * @param productReservationId Unique identifier of the product reservation.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.ProductReservation
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
@@ -178,13 +178,13 @@ public class ProductReservationResource {
 	}
 
 	/**
-	 * Retrieves the details of a product reservation.
+	 * 
 	 * <p><pre><code>
 	 *	ProductReservation productreservation = new ProductReservation();
 	 *	CountDownLatch latch = productreservation.getProductReservation( productReservationId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param productReservationId Unique identifier of the product reservation.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.ProductReservation
@@ -199,13 +199,13 @@ public class ProductReservationResource {
 	}
 
 	/**
-	 * Creates a new product reservation for a product. This action places a hold on the product inventory for the quantity specified during the ordering process.
+	 * 
 	 * <p><pre><code>
 	 *	ProductReservation productreservation = new ProductReservation();
 	 *	ProductReservation productReservation = productreservation.addProductReservations( productReservations);
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param productReservations Details of the product reservations to add.
+	 * @param productReservations A hold placed on product inventory for a particular product so that the quantity specified is set aside and available for purchase during the ordering process.
 	 * @return List<com.mozu.api.contracts.productadmin.ProductReservation>
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
@@ -216,14 +216,14 @@ public class ProductReservationResource {
 	}
 
 	/**
-	 * Creates a new product reservation for a product. This action places a hold on the product inventory for the quantity specified during the ordering process.
+	 * 
 	 * <p><pre><code>
 	 *	ProductReservation productreservation = new ProductReservation();
 	 *	CountDownLatch latch = productreservation.addProductReservations( productReservations, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
-	 * @param productReservations Details of the product reservations to add.
+	 * @param productReservations A hold placed on product inventory for a particular product so that the quantity specified is set aside and available for purchase during the ordering process.
 	 * @return List<com.mozu.api.contracts.productadmin.ProductReservation>
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
@@ -234,14 +234,14 @@ public class ProductReservationResource {
 	}
 
 	/**
-	 * Creates a new product reservation for a product. This action places a hold on the product inventory for the quantity specified during the ordering process.
+	 * 
 	 * <p><pre><code>
 	 *	ProductReservation productreservation = new ProductReservation();
 	 *	ProductReservation productReservation = productreservation.addProductReservations( productReservations,  skipInventoryCheck);
 	 * </code></pre></p>
 	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
 	 * @param dataViewMode DataViewMode
-	 * @param productReservations Details of the product reservations to add.
+	 * @param productReservations A hold placed on product inventory for a particular product so that the quantity specified is set aside and available for purchase during the ordering process.
 	 * @return List<com.mozu.api.contracts.productadmin.ProductReservation>
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
@@ -256,7 +256,7 @@ public class ProductReservationResource {
 	}
 
 	/**
-	 * Creates a new product reservation for a product. This action places a hold on the product inventory for the quantity specified during the ordering process.
+	 * 
 	 * <p><pre><code>
 	 *	ProductReservation productreservation = new ProductReservation();
 	 *	CountDownLatch latch = productreservation.addProductReservations( productReservations,  skipInventoryCheck, callback );
@@ -264,7 +264,7 @@ public class ProductReservationResource {
 	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
-	 * @param productReservations Details of the product reservations to add.
+	 * @param productReservations A hold placed on product inventory for a particular product so that the quantity specified is set aside and available for purchase during the ordering process.
 	 * @return List<com.mozu.api.contracts.productadmin.ProductReservation>
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
@@ -278,13 +278,13 @@ public class ProductReservationResource {
 	}
 
 	/**
-	 * Commits a product reservation to decrement the product's inventory by the quantity specified then release the reservation once the order process completed successfully.
+	 * 
 	 * <p><pre><code>
 	 *	ProductReservation productreservation = new ProductReservation();
 	 *	productreservation.commitReservations( productReservations);
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param productReservations List of unique identifiers of the reservations to commit.
+	 * @param productReservations A hold placed on product inventory for a particular product so that the quantity specified is set aside and available for purchase during the ordering process.
 	 * @return 
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 */
@@ -298,13 +298,13 @@ public class ProductReservationResource {
 	}
 
 	/**
-	 * Updates an existing product reservation for a product.
+	 * 
 	 * <p><pre><code>
 	 *	ProductReservation productreservation = new ProductReservation();
 	 *	ProductReservation productReservation = productreservation.updateProductReservations( productReservations);
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param productReservations Properties of the product reservations to update.
+	 * @param productReservations A hold placed on product inventory for a particular product so that the quantity specified is set aside and available for purchase during the ordering process.
 	 * @return List<com.mozu.api.contracts.productadmin.ProductReservation>
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
@@ -315,14 +315,14 @@ public class ProductReservationResource {
 	}
 
 	/**
-	 * Updates an existing product reservation for a product.
+	 * 
 	 * <p><pre><code>
 	 *	ProductReservation productreservation = new ProductReservation();
 	 *	CountDownLatch latch = productreservation.updateProductReservations( productReservations, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
-	 * @param productReservations Properties of the product reservations to update.
+	 * @param productReservations A hold placed on product inventory for a particular product so that the quantity specified is set aside and available for purchase during the ordering process.
 	 * @return List<com.mozu.api.contracts.productadmin.ProductReservation>
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
@@ -333,14 +333,14 @@ public class ProductReservationResource {
 	}
 
 	/**
-	 * Updates an existing product reservation for a product.
+	 * 
 	 * <p><pre><code>
 	 *	ProductReservation productreservation = new ProductReservation();
 	 *	ProductReservation productReservation = productreservation.updateProductReservations( productReservations,  skipInventoryCheck);
 	 * </code></pre></p>
-	 * @param skipInventoryCheck If true, skip the inventory validation process when updating this product reservation.
+	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
 	 * @param dataViewMode DataViewMode
-	 * @param productReservations Properties of the product reservations to update.
+	 * @param productReservations A hold placed on product inventory for a particular product so that the quantity specified is set aside and available for purchase during the ordering process.
 	 * @return List<com.mozu.api.contracts.productadmin.ProductReservation>
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
@@ -355,15 +355,15 @@ public class ProductReservationResource {
 	}
 
 	/**
-	 * Updates an existing product reservation for a product.
+	 * 
 	 * <p><pre><code>
 	 *	ProductReservation productreservation = new ProductReservation();
 	 *	CountDownLatch latch = productreservation.updateProductReservations( productReservations,  skipInventoryCheck, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param skipInventoryCheck If true, skip the inventory validation process when updating this product reservation.
+	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
-	 * @param productReservations Properties of the product reservations to update.
+	 * @param productReservations A hold placed on product inventory for a particular product so that the quantity specified is set aside and available for purchase during the ordering process.
 	 * @return List<com.mozu.api.contracts.productadmin.ProductReservation>
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
@@ -377,12 +377,12 @@ public class ProductReservationResource {
 	}
 
 	/**
-	 * Deletes a product reservation. For example, delete a reservation when an order is not processed to return the product quantity back to inventory.
+	 * 
 	 * <p><pre><code>
 	 *	ProductReservation productreservation = new ProductReservation();
 	 *	productreservation.deleteProductReservation( productReservationId);
 	 * </code></pre></p>
-	 * @param productReservationId Unique identifier of the reservation.
+	 * @param productReservationId Unique identifier of the product reservation.
 	 * @param dataViewMode DataViewMode
 	 * @return 
 	 */

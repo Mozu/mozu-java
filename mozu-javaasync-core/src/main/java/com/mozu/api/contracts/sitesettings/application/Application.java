@@ -24,9 +24,6 @@ public class Application implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The unique identifier of the application in Mozu Dev Center.
-	 */
 	protected  String appId;
 
 	public String getAppId() {
@@ -37,6 +34,9 @@ public class Application implements Serializable
 		this.appId = appId;
 	}
 
+	/**
+	 * denotes the Application Key for the app.
+	 */
 	protected  String appKey;
 
 	public String getAppKey() {
@@ -47,9 +47,6 @@ public class Application implements Serializable
 		this.appKey = appKey;
 	}
 
-	/**
-	 * If true, the application is enabled for the tenant. System-supplied and read-only.
-	 */
 	protected  Boolean enabled;
 
 	public Boolean getEnabled() {
@@ -60,9 +57,6 @@ public class Application implements Serializable
 		this.enabled = enabled;
 	}
 
-	/**
-	 * If true, the third party application settings have been configured and the application is initialized.
-	 */
 	protected  Boolean initialized;
 
 	public Boolean getInitialized() {
@@ -74,7 +68,7 @@ public class Application implements Serializable
 	}
 
 	/**
-	 * If true, the application type is Extension.
+	 * Indicates if the installed application is of type extension. An extension is an application that extends upon the  infrastructure. Examples of extensions include Arc.js applications and applications that integrate third-party services.
 	 */
 	protected  Boolean isExtension;
 
@@ -86,6 +80,9 @@ public class Application implements Serializable
 		this.isExtension = isExtension;
 	}
 
+	/**
+	 * Indicates if the installed application is a  certified application.
+	 */
 	protected  Boolean isExtensionCertified;
 
 	public Boolean getIsExtensionCertified() {
@@ -96,9 +93,6 @@ public class Application implements Serializable
 		this.isExtensionCertified = isExtensionCertified;
 	}
 
-	/**
-	 * URL of the application's setting configuration user interface, supplied by the capability developer in Dev Center.
-	 */
 	protected  String uiConfigurationUrl;
 
 	public String getUiConfigurationUrl() {
@@ -109,9 +103,6 @@ public class Application implements Serializable
 		this.uiConfigurationUrl = uiConfigurationUrl;
 	}
 
-	/**
-	 * List of capabilities installed in a tenant.
-	 */
 	protected List<Capability> capabilities;
 	public List<Capability> getCapabilities() {
 		return this.capabilities;

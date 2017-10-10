@@ -28,7 +28,7 @@ public class OrderValidationResultUrl
 	/**
 	 * Get Resource Url for AddValidationResult
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addValidationResultUrl(String orderId, String responseFields)

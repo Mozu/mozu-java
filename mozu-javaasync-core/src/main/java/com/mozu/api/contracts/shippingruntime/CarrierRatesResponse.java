@@ -25,9 +25,6 @@ public class CarrierRatesResponse implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Unique identifier of the shipping carrier.
-	 */
 	protected  String carrierId;
 
 	public String getCarrierId() {
@@ -38,9 +35,6 @@ public class CarrierRatesResponse implements Serializable
 		this.carrierId = carrierId;
 	}
 
-	/**
-	 * Collection of carrier-specific key-value attribute pairs required to retrieve a shipping rate request.
-	 */
 	protected List<CustomAttribute> customAttributes;
 	public List<CustomAttribute> getCustomAttributes() {
 		return this.customAttributes;
@@ -49,9 +43,6 @@ public class CarrierRatesResponse implements Serializable
 		this.customAttributes = customAttributes;
 	}
 
-	/**
-	 * Array list of calculated shipping rates for the specified carrier.
-	 */
 	protected List<ShippingRate> shippingRates;
 	public List<ShippingRate> getShippingRates() {
 		return this.shippingRates;

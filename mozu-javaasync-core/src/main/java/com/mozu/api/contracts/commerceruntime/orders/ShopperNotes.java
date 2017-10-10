@@ -21,9 +21,6 @@ public class ShopperNotes implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Shopper-entered notes for the associated order.
-	 */
 	protected  String comments;
 
 	public String getComments() {
@@ -34,9 +31,6 @@ public class ShopperNotes implements Serializable
 		this.comments = comments;
 	}
 
-	/**
-	 * Shopper-entered gift message for the associated order.
-	 */
 	protected  String giftMessage;
 
 	public String getGiftMessage() {

@@ -24,14 +24,14 @@ import com.mozu.api.DataViewMode;
 public class DiscountTargetClient {
 	
 	/**
-	 * Retrieves the discount target, that is which products, categories, or shipping methods are eligible for the discount.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.DiscountTarget> mozuClient=GetDiscountTargetClient(dataViewMode,  discountId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DiscountTarget discountTarget = client.Result();
 	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount. System-supplied and read only.
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.DiscountTarget>
 	 * @see com.mozu.api.contracts.productadmin.DiscountTarget
 	 */
@@ -41,15 +41,15 @@ public class DiscountTargetClient {
 	}
 
 	/**
-	 * Retrieves the discount target, that is which products, categories, or shipping methods are eligible for the discount.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.DiscountTarget> mozuClient=GetDiscountTargetClient(dataViewMode,  discountId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DiscountTarget discountTarget = client.Result();
 	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount. System-supplied and read only.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.DiscountTarget>
 	 * @see com.mozu.api.contracts.productadmin.DiscountTarget
 	 */
@@ -67,15 +67,15 @@ public class DiscountTargetClient {
 	}
 
 	/**
-	 * Modifies properties of the discount target, for example, the dollar amount, or precentage off the price.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.DiscountTarget> mozuClient=UpdateDiscountTargetClient( discountTarget,  discountId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DiscountTarget discountTarget = client.Result();
 	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
-	 * @param discountTarget Properties of the discount target to modify. Required properties: Target.Type. Any unspecified properties are set to null and boolean variables to false.
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param discountTarget Properties of the target to which the discount applies, such as the type of discount and which products, categories, or shipping methods are eligible for the discount and the properties of this discount target.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.DiscountTarget>
 	 * @see com.mozu.api.contracts.productadmin.DiscountTarget
 	 * @see com.mozu.api.contracts.productadmin.DiscountTarget
@@ -86,16 +86,16 @@ public class DiscountTargetClient {
 	}
 
 	/**
-	 * Modifies properties of the discount target, for example, the dollar amount, or precentage off the price.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.DiscountTarget> mozuClient=UpdateDiscountTargetClient( discountTarget,  discountId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DiscountTarget discountTarget = client.Result();
 	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param discountTarget Properties of the discount target to modify. Required properties: Target.Type. Any unspecified properties are set to null and boolean variables to false.
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param discountTarget Properties of the target to which the discount applies, such as the type of discount and which products, categories, or shipping methods are eligible for the discount and the properties of this discount target.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.DiscountTarget>
 	 * @see com.mozu.api.contracts.productadmin.DiscountTarget
 	 * @see com.mozu.api.contracts.productadmin.DiscountTarget

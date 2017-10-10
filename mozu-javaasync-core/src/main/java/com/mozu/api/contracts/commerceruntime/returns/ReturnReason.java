@@ -21,9 +21,6 @@ public class ReturnReason implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The quantity of the item returned for the specified reason.
-	 */
 	protected  Integer quantity;
 
 	public Integer getQuantity() {
@@ -34,9 +31,6 @@ public class ReturnReason implements Serializable
 		this.quantity = quantity;
 	}
 
-	/**
-	 * The reason for which an item is returned to the merchant.
-	 */
 	protected  String reason;
 
 	public String getReason() {

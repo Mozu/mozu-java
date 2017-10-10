@@ -23,7 +23,7 @@ public class DiscountLocalizedContent implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The localizable, shopper-facing description defined for the discount.
+	 * The localizable, shopper-facing description defined for a discount or a storefront message. 
 	 */
 	protected  String friendlyDescription;
 
@@ -35,9 +35,6 @@ public class DiscountLocalizedContent implements Serializable
 		this.friendlyDescription = friendlyDescription;
 	}
 
-	/**
-	 * Language used for the entity. Currently, only "en-US" is supported.
-	 */
 	protected  String localeCode;
 
 	public String getLocaleCode() {
@@ -48,9 +45,6 @@ public class DiscountLocalizedContent implements Serializable
 		this.localeCode = localeCode;
 	}
 
-	/**
-	 * The localizable name of the discount.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -61,9 +55,6 @@ public class DiscountLocalizedContent implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {

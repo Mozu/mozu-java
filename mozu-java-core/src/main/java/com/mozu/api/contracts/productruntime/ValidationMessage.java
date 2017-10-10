@@ -21,9 +21,6 @@ public class ValidationMessage implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The contents of the message displayed to the user when the product validation failure occurs.
-	 */
 	protected  String message;
 
 	public String getMessage() {
@@ -34,9 +31,6 @@ public class ValidationMessage implements Serializable
 		this.message = message;
 	}
 
-	/**
-	 * The severity level of the product validation failure.
-	 */
 	protected  String severity;
 
 	public String getSeverity() {
@@ -47,9 +41,6 @@ public class ValidationMessage implements Serializable
 		this.severity = severity;
 	}
 
-	/**
-	 * The entity that triggered the product validation.
-	 */
 	protected  String source;
 
 	public String getSource() {
@@ -60,9 +51,6 @@ public class ValidationMessage implements Serializable
 		this.source = source;
 	}
 
-	/**
-	 * Unique identifier of the entity that triggered the validation.
-	 */
 	protected  String sourceId;
 
 	public String getSourceId() {
@@ -73,6 +61,9 @@ public class ValidationMessage implements Serializable
 		this.sourceId = sourceId;
 	}
 
+	/**
+	 * Type of validation error that occurred. This can be checked programatically. Must be one of the values in ValidationTypeConst.
+	 */
 	protected  String validationType;
 
 	public String getValidationType() {

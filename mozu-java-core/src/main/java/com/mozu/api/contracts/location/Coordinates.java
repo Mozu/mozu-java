@@ -21,9 +21,6 @@ public class Coordinates implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The latitude coordinate of the location.
-	 */
 	protected  double lat;
 
 	public double getLat() {
@@ -34,9 +31,6 @@ public class Coordinates implements Serializable
 		this.lat = lat;
 	}
 
-	/**
-	 * The longitude coordinate of the location.
-	 */
 	protected  double lng;
 
 	public double getLng() {

@@ -14,12 +14,18 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
+/**
+ *	Paged collection of entities.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class EntityCollection implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The total number of pages of the results divided per the `pageSize`.
+	 */
 	protected  Integer pageCount;
 
 	public Integer getPageCount() {
@@ -30,6 +36,9 @@ public class EntityCollection implements Serializable
 		this.pageCount = pageCount;
 	}
 
+	/**
+	 * The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
+	 */
 	protected  Integer pageSize;
 
 	public Integer getPageSize() {
@@ -40,6 +49,9 @@ public class EntityCollection implements Serializable
 		this.pageSize = pageSize;
 	}
 
+	/**
+	 * When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=50`.
+	 */
 	protected  Integer startIndex;
 
 	public Integer getStartIndex() {
@@ -50,6 +62,9 @@ public class EntityCollection implements Serializable
 		this.startIndex = startIndex;
 	}
 
+	/**
+	 * The total number of items in the list.
+	 */
 	protected  Integer totalCount;
 
 	public Integer getTotalCount() {
@@ -60,6 +75,9 @@ public class EntityCollection implements Serializable
 		this.totalCount = totalCount;
 	}
 
+	/**
+	 * A list of requested items. All returned data is provided in an items array.For a failed request, the returned response may be success with an empty item array.
+	 */
 	protected List<com.fasterxml.jackson.databind.JsonNode> items;
 	public List<com.fasterxml.jackson.databind.JsonNode> getItems() {
 		return this.items;

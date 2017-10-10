@@ -22,9 +22,6 @@ public class Document implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The character length associated with the document content.
-	 */
 	protected  Long contentLength;
 
 	public Long getContentLength() {
@@ -35,9 +32,6 @@ public class Document implements Serializable
 		this.contentLength = contentLength;
 	}
 
-	/**
-	 * The mime type associated with the document content, if applicable.
-	 */
 	protected  String contentMimeType;
 
 	public String getContentMimeType() {
@@ -48,9 +42,6 @@ public class Document implements Serializable
 		this.contentMimeType = contentMimeType;
 	}
 
-	/**
-	 * The date and time the most recent content update was made. UTC date/time. System-supplied and read-only.
-	 */
 	protected  DateTime contentUpdateDate;
 
 	public DateTime getContentUpdateDate() {
@@ -61,6 +52,9 @@ public class Document implements Serializable
 		this.contentUpdateDate = contentUpdateDate;
 	}
 
+	/**
+	 * Fully qualified name of the document type. 
+	 */
 	protected  String documentTypeFQN;
 
 	public String getDocumentTypeFQN() {
@@ -71,9 +65,6 @@ public class Document implements Serializable
 		this.documentTypeFQN = documentTypeFQN;
 	}
 
-	/**
-	 * If applicable, the file extension associated with the document content.
-	 */
 	protected  String extension;
 
 	public String getExtension() {
@@ -84,9 +75,6 @@ public class Document implements Serializable
 		this.extension = extension;
 	}
 
-	/**
-	 * Unique identifier of the document.
-	 */
 	protected  String id;
 
 	public String getId() {
@@ -97,9 +85,6 @@ public class Document implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * When the document was added to the document list. System-supplied and read-only.
-	 */
 	protected  DateTime insertDate;
 
 	public DateTime getInsertDate() {
@@ -110,6 +95,9 @@ public class Document implements Serializable
 		this.insertDate = insertDate;
 	}
 
+	/**
+	 * The fully qualified name of the document list.
+	 */
 	protected  String listFQN;
 
 	public String getListFQN() {
@@ -120,9 +108,6 @@ public class Document implements Serializable
 		this.listFQN = listFQN;
 	}
 
-	/**
-	 * The name of the document, which is unique within its folder.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -133,6 +118,9 @@ public class Document implements Serializable
 		this.name = name;
 	}
 
+	/**
+	 * The name of the publish set that this document belongs to, if any.
+	 */
 	protected  String publishSetCode;
 
 	public String getPublishSetCode() {
@@ -143,9 +131,6 @@ public class Document implements Serializable
 		this.publishSetCode = publishSetCode;
 	}
 
-	/**
-	 * The current state of the document, which is Active, Draft, or Latest. Active documents are published and cannot be deleted. Querying Latest returns the most recent version of the document, regardless of whether it is published or a draft.
-	 */
 	protected  String publishState;
 
 	public String getPublishState() {
@@ -156,9 +141,6 @@ public class Document implements Serializable
 		this.publishState = publishState;
 	}
 
-	/**
-	 * Date and time when the entity was last updated, represented in UTC Date/Time.
-	 */
 	protected  DateTime updateDate;
 
 	public DateTime getUpdateDate() {
@@ -169,6 +151,9 @@ public class Document implements Serializable
 		this.updateDate = updateDate;
 	}
 
+	/**
+	 * Mozu.Content.Contracts.Document activeDateRange ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected  ActiveDateRange activeDateRange;
 
 	public ActiveDateRange getActiveDateRange() {
@@ -179,9 +164,6 @@ public class Document implements Serializable
 		this.activeDateRange = activeDateRange;
 	}
 
-	/**
-	 * List of properties for the given property value.
-	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode properties;
 
 	public com.fasterxml.jackson.databind.JsonNode getProperties() {

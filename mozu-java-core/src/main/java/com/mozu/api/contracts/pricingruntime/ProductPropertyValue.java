@@ -21,9 +21,6 @@ public class ProductPropertyValue implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * If the product property value is a text entry, the string value of the product property.
-	 */
 	protected  String stringValue;
 
 	public String getStringValue() {
@@ -34,9 +31,6 @@ public class ProductPropertyValue implements Serializable
 		this.stringValue = stringValue;
 	}
 
-	/**
-	 * If the product property value is selected from a list of possible values, the selected value.
-	 */
 	protected  Object value;
 
 	public Object getValue() {

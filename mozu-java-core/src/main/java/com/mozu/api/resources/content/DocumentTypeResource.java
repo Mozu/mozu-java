@@ -43,7 +43,7 @@ public class DocumentTypeResource {
 	}
 		
 	/**
-	 * Retrieves a paged list of the system-defined document types.
+	 * 
 	 * <p><pre><code>
 	 *	DocumentType documenttype = new DocumentType();
 	 *	DocumentTypeCollection documentTypeCollection = documenttype.getDocumentTypes();
@@ -57,14 +57,14 @@ public class DocumentTypeResource {
 	}
 
 	/**
-	 * Retrieves a paged list of the system-defined document types.
+	 * 
 	 * <p><pre><code>
 	 *	DocumentType documenttype = new DocumentType();
 	 *	DocumentTypeCollection documentTypeCollection = documenttype.getDocumentTypes( pageSize,  startIndex,  responseFields);
 	 * </code></pre></p>
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return com.mozu.api.contracts.content.DocumentTypeCollection
 	 * @see com.mozu.api.contracts.content.DocumentTypeCollection
 	 */
@@ -78,7 +78,7 @@ public class DocumentTypeResource {
 	}
 
 	/**
-	 * Retrieves a system-defined document type.
+	 * 
 	 * <p><pre><code>
 	 *	DocumentType documenttype = new DocumentType();
 	 *	DocumentType documentType = documenttype.getDocumentType( documentTypeName);
@@ -93,13 +93,13 @@ public class DocumentTypeResource {
 	}
 
 	/**
-	 * Retrieves a system-defined document type.
+	 * 
 	 * <p><pre><code>
 	 *	DocumentType documenttype = new DocumentType();
 	 *	DocumentType documentType = documenttype.getDocumentType( documentTypeName,  responseFields);
 	 * </code></pre></p>
 	 * @param documentTypeName The name of the document type to retrieve.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.content.DocumentType
 	 * @see com.mozu.api.contracts.content.DocumentType
 	 */
@@ -118,7 +118,7 @@ public class DocumentTypeResource {
 	 *	DocumentType documenttype = new DocumentType();
 	 *	DocumentType documentType = documenttype.createDocumentType( documentType);
 	 * </code></pre></p>
-	 * @param documentType 
+	 * @param documentType The type of documents used in the CMS such as "web_page" or "template" or "image_url".
 	 * @return com.mozu.api.contracts.content.DocumentType
 	 * @see com.mozu.api.contracts.content.DocumentType
 	 * @see com.mozu.api.contracts.content.DocumentType
@@ -134,8 +134,8 @@ public class DocumentTypeResource {
 	 *	DocumentType documenttype = new DocumentType();
 	 *	DocumentType documentType = documenttype.createDocumentType( documentType,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param documentType 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param documentType The type of documents used in the CMS such as "web_page" or "template" or "image_url".
 	 * @return com.mozu.api.contracts.content.DocumentType
 	 * @see com.mozu.api.contracts.content.DocumentType
 	 * @see com.mozu.api.contracts.content.DocumentType
@@ -155,8 +155,8 @@ public class DocumentTypeResource {
 	 *	DocumentType documenttype = new DocumentType();
 	 *	DocumentType documentType = documenttype.updateDocumentType( documentType,  documentTypeName);
 	 * </code></pre></p>
-	 * @param documentTypeName 
-	 * @param documentType 
+	 * @param documentTypeName The name of the document type to retrieve.
+	 * @param documentType The type of documents used in the CMS such as "web_page" or "template" or "image_url".
 	 * @return com.mozu.api.contracts.content.DocumentType
 	 * @see com.mozu.api.contracts.content.DocumentType
 	 * @see com.mozu.api.contracts.content.DocumentType
@@ -172,9 +172,9 @@ public class DocumentTypeResource {
 	 *	DocumentType documenttype = new DocumentType();
 	 *	DocumentType documentType = documenttype.updateDocumentType( documentType,  documentTypeName,  responseFields);
 	 * </code></pre></p>
-	 * @param documentTypeName 
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param documentType 
+	 * @param documentTypeName The name of the document type to retrieve.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param documentType The type of documents used in the CMS such as "web_page" or "template" or "image_url".
 	 * @return com.mozu.api.contracts.content.DocumentType
 	 * @see com.mozu.api.contracts.content.DocumentType
 	 * @see com.mozu.api.contracts.content.DocumentType

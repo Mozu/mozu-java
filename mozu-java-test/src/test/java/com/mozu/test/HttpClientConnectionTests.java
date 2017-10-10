@@ -1,7 +1,5 @@
 package com.mozu.test;
 
-import static org.junit.Assert.*;
-
 import org.apache.http.HttpStatus;
 import org.joda.time.DateTime;
 import org.junit.After;
@@ -15,10 +13,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mozu.api.ApiContext;
 import com.mozu.api.MozuApiContext;
 import com.mozu.api.utils.JsonUtils;
-import com.mozu.api.utils.MozuHttpClientPool;
 import com.mozu.test.framework.core.MozuApiTestBase;
-import com.mozu.test.framework.datafactory.TenantDataFactory;
-import com.mozu.test.framework.helper.Generator;
+import com.mozu.test.framework.datafactory.platform.TenantDataFactory;
 
 public class HttpClientConnectionTests extends MozuApiTestBase {
 

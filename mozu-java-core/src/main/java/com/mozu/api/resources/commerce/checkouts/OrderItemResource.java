@@ -38,154 +38,6 @@ public class OrderItemResource {
 	 * 
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
-	 *	OrderItem orderItem = orderitem.getItem( checkoutId,  itemId);
-	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param itemId 
-	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderItem
-	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItem
-	 */
-	public com.mozu.api.contracts.commerceruntime.orders.OrderItem getItem(String checkoutId, String itemId) throws Exception
-	{
-		return getItem( checkoutId,  itemId,  null);
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 *	OrderItem orderitem = new OrderItem();
-	 *	OrderItem orderItem = orderitem.getItem( checkoutId,  itemId,  responseFields);
-	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param itemId 
-	 * @param responseFields 
-	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderItem
-	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItem
-	 */
-	public com.mozu.api.contracts.commerceruntime.orders.OrderItem getItem(String checkoutId, String itemId, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderItem> client = com.mozu.api.clients.commerce.checkouts.OrderItemClient.getItemClient( checkoutId,  itemId,  responseFields);
-		client.setContext(_apiContext);
-		client.executeRequest();
-		return client.getResult();
-
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 *	OrderItem orderitem = new OrderItem();
-	 *	OrderItem orderItem = orderitem.getItemViaLineId( checkoutId,  lineId);
-	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param lineId 
-	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderItem
-	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItem
-	 */
-	public com.mozu.api.contracts.commerceruntime.orders.OrderItem getItemViaLineId(String checkoutId, Integer lineId) throws Exception
-	{
-		return getItemViaLineId( checkoutId,  lineId,  null);
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 *	OrderItem orderitem = new OrderItem();
-	 *	OrderItem orderItem = orderitem.getItemViaLineId( checkoutId,  lineId,  responseFields);
-	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param lineId 
-	 * @param responseFields 
-	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderItem
-	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItem
-	 */
-	public com.mozu.api.contracts.commerceruntime.orders.OrderItem getItemViaLineId(String checkoutId, Integer lineId, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderItem> client = com.mozu.api.clients.commerce.checkouts.OrderItemClient.getItemViaLineIdClient( checkoutId,  lineId,  responseFields);
-		client.setContext(_apiContext);
-		client.executeRequest();
-		return client.getResult();
-
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 *	OrderItem orderitem = new OrderItem();
-	 *	OrderItemCollection orderItemCollection = orderitem.getItems( checkoutId);
-	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderItemCollection
-	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItemCollection
-	 */
-	public com.mozu.api.contracts.commerceruntime.orders.OrderItemCollection getItems(String checkoutId) throws Exception
-	{
-		return getItems( checkoutId,  null);
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 *	OrderItem orderitem = new OrderItem();
-	 *	OrderItemCollection orderItemCollection = orderitem.getItems( checkoutId,  responseFields);
-	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param responseFields 
-	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderItemCollection
-	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItemCollection
-	 */
-	public com.mozu.api.contracts.commerceruntime.orders.OrderItemCollection getItems(String checkoutId, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderItemCollection> client = com.mozu.api.clients.commerce.checkouts.OrderItemClient.getItemsClient( checkoutId,  responseFields);
-		client.setContext(_apiContext);
-		client.executeRequest();
-		return client.getResult();
-
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 *	OrderItem orderitem = new OrderItem();
-	 *	Checkout checkout = orderitem.updateItemDestination( checkoutId,  itemId,  destinationId);
-	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param destinationId 
-	 * @param itemId 
-	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
-	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
-	 */
-	public com.mozu.api.contracts.commerceruntime.checkouts.Checkout updateItemDestination(String checkoutId, String itemId, String destinationId) throws Exception
-	{
-		return updateItemDestination( checkoutId,  itemId,  destinationId,  null);
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 *	OrderItem orderitem = new OrderItem();
-	 *	Checkout checkout = orderitem.updateItemDestination( checkoutId,  itemId,  destinationId,  responseFields);
-	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param destinationId 
-	 * @param itemId 
-	 * @param responseFields 
-	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
-	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
-	 */
-	public com.mozu.api.contracts.commerceruntime.checkouts.Checkout updateItemDestination(String checkoutId, String itemId, String destinationId, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> client = com.mozu.api.clients.commerce.checkouts.OrderItemClient.updateItemDestinationClient( checkoutId,  itemId,  destinationId,  responseFields);
-		client.setContext(_apiContext);
-		client.executeRequest();
-		return client.getResult();
-
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 *	OrderItem orderitem = new OrderItem();
 	 *	Checkout checkout = orderitem.splitItem( checkoutId,  itemId);
 	 * </code></pre></p>
 	 * @param checkoutId 
@@ -263,214 +115,35 @@ public class OrderItemResource {
 	 * 
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
-	 *	Checkout checkout = orderitem.createItem( item,  checkoutId);
+	 *	Checkout checkout = orderitem.updateItemDestination( checkoutId,  itemId,  destinationId);
 	 * </code></pre></p>
 	 * @param checkoutId 
-	 * @param item 
-	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
-	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
-	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItem
-	 */
-	public com.mozu.api.contracts.commerceruntime.checkouts.Checkout createItem(com.mozu.api.contracts.commerceruntime.orders.OrderItem item, String checkoutId) throws Exception
-	{
-		return createItem( item,  checkoutId,  null,  null);
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 *	OrderItem orderitem = new OrderItem();
-	 *	Checkout checkout = orderitem.createItem( item,  checkoutId,  skipInventoryCheck,  responseFields);
-	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param responseFields 
-	 * @param skipInventoryCheck 
-	 * @param item 
-	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
-	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
-	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItem
-	 */
-	public com.mozu.api.contracts.commerceruntime.checkouts.Checkout createItem(com.mozu.api.contracts.commerceruntime.orders.OrderItem item, String checkoutId, Boolean skipInventoryCheck, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> client = com.mozu.api.clients.commerce.checkouts.OrderItemClient.createItemClient( item,  checkoutId,  skipInventoryCheck,  responseFields);
-		client.setContext(_apiContext);
-		client.executeRequest();
-		return client.getResult();
-
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 *	OrderItem orderitem = new OrderItem();
-	 *	Checkout checkout = orderitem.updateItemDuty( checkoutId,  itemId,  dutyAmount);
-	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param dutyAmount 
+	 * @param destinationId 
 	 * @param itemId 
 	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 */
-	public com.mozu.api.contracts.commerceruntime.checkouts.Checkout updateItemDuty(String checkoutId, String itemId, Double dutyAmount) throws Exception
+	public com.mozu.api.contracts.commerceruntime.checkouts.Checkout updateItemDestination(String checkoutId, String itemId, String destinationId) throws Exception
 	{
-		return updateItemDuty( checkoutId,  itemId,  dutyAmount,  null);
+		return updateItemDestination( checkoutId,  itemId,  destinationId,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
-	 *	Checkout checkout = orderitem.updateItemDuty( checkoutId,  itemId,  dutyAmount,  responseFields);
+	 *	Checkout checkout = orderitem.updateItemDestination( checkoutId,  itemId,  destinationId,  responseFields);
 	 * </code></pre></p>
 	 * @param checkoutId 
-	 * @param dutyAmount 
+	 * @param destinationId 
 	 * @param itemId 
 	 * @param responseFields 
 	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 */
-	public com.mozu.api.contracts.commerceruntime.checkouts.Checkout updateItemDuty(String checkoutId, String itemId, Double dutyAmount, String responseFields) throws Exception
+	public com.mozu.api.contracts.commerceruntime.checkouts.Checkout updateItemDestination(String checkoutId, String itemId, String destinationId, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> client = com.mozu.api.clients.commerce.checkouts.OrderItemClient.updateItemDutyClient( checkoutId,  itemId,  dutyAmount,  responseFields);
-		client.setContext(_apiContext);
-		client.executeRequest();
-		return client.getResult();
-
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 *	OrderItem orderitem = new OrderItem();
-	 *	Checkout checkout = orderitem.updateItemFulfillment( item,  checkoutId,  itemId);
-	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param itemId 
-	 * @param item 
-	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
-	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
-	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItem
-	 */
-	public com.mozu.api.contracts.commerceruntime.checkouts.Checkout updateItemFulfillment(com.mozu.api.contracts.commerceruntime.orders.OrderItem item, String checkoutId, String itemId) throws Exception
-	{
-		return updateItemFulfillment( item,  checkoutId,  itemId,  null);
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 *	OrderItem orderitem = new OrderItem();
-	 *	Checkout checkout = orderitem.updateItemFulfillment( item,  checkoutId,  itemId,  responseFields);
-	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param itemId 
-	 * @param responseFields 
-	 * @param item 
-	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
-	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
-	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItem
-	 */
-	public com.mozu.api.contracts.commerceruntime.checkouts.Checkout updateItemFulfillment(com.mozu.api.contracts.commerceruntime.orders.OrderItem item, String checkoutId, String itemId, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> client = com.mozu.api.clients.commerce.checkouts.OrderItemClient.updateItemFulfillmentClient( item,  checkoutId,  itemId,  responseFields);
-		client.setContext(_apiContext);
-		client.executeRequest();
-		return client.getResult();
-
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 *	OrderItem orderitem = new OrderItem();
-	 *	Checkout checkout = orderitem.updateItemProductPrice( checkoutId,  itemId,  price);
-	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param itemId 
-	 * @param price 
-	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
-	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
-	 */
-	public com.mozu.api.contracts.commerceruntime.checkouts.Checkout updateItemProductPrice(String checkoutId, String itemId, Double price) throws Exception
-	{
-		return updateItemProductPrice( checkoutId,  itemId,  price,  null);
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 *	OrderItem orderitem = new OrderItem();
-	 *	Checkout checkout = orderitem.updateItemProductPrice( checkoutId,  itemId,  price,  responseFields);
-	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param itemId 
-	 * @param price 
-	 * @param responseFields 
-	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
-	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
-	 */
-	public com.mozu.api.contracts.commerceruntime.checkouts.Checkout updateItemProductPrice(String checkoutId, String itemId, Double price, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> client = com.mozu.api.clients.commerce.checkouts.OrderItemClient.updateItemProductPriceClient( checkoutId,  itemId,  price,  responseFields);
-		client.setContext(_apiContext);
-		client.executeRequest();
-		return client.getResult();
-
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 *	OrderItem orderitem = new OrderItem();
-	 *	Checkout checkout = orderitem.updateQuantity( checkoutId,  itemId,  quantity);
-	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param itemId 
-	 * @param quantity 
-	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
-	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
-	 */
-	public com.mozu.api.contracts.commerceruntime.checkouts.Checkout updateQuantity(String checkoutId, String itemId, Integer quantity) throws Exception
-	{
-		return updateQuantity( checkoutId,  itemId,  quantity,  null);
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 *	OrderItem orderitem = new OrderItem();
-	 *	Checkout checkout = orderitem.updateQuantity( checkoutId,  itemId,  quantity,  responseFields);
-	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param itemId 
-	 * @param quantity 
-	 * @param responseFields 
-	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
-	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
-	 */
-	public com.mozu.api.contracts.commerceruntime.checkouts.Checkout updateQuantity(String checkoutId, String itemId, Integer quantity, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> client = com.mozu.api.clients.commerce.checkouts.OrderItemClient.updateQuantityClient( checkoutId,  itemId,  quantity,  responseFields);
-		client.setContext(_apiContext);
-		client.executeRequest();
-		return client.getResult();
-
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 *	OrderItem orderitem = new OrderItem();
-	 *	Checkout checkout = orderitem.deleteItem( checkoutId,  itemId);
-	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param itemId 
-	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
-	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
-	 */
-	public com.mozu.api.contracts.commerceruntime.checkouts.Checkout deleteItem(String checkoutId, String itemId) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> client = com.mozu.api.clients.commerce.checkouts.OrderItemClient.deleteItemClient( checkoutId,  itemId);
+		MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> client = com.mozu.api.clients.commerce.checkouts.OrderItemClient.updateItemDestinationClient( checkoutId,  itemId,  destinationId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

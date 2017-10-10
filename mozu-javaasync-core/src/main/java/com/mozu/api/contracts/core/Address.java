@@ -21,9 +21,6 @@ public class Address implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Physical or mailing address line one. Usually includes the street number and street name or it could be a P.O. Box. Max length: 200.
-	 */
 	protected  String address1;
 
 	public String getAddress1() {
@@ -34,9 +31,6 @@ public class Address implements Serializable
 		this.address1 = address1;
 	}
 
-	/**
-	 * Physical or mailing address line two. Usually supplements the main street address with apartment, floor, suite, building, or unit information. Max length: 200.
-	 */
 	protected  String address2;
 
 	public String getAddress2() {
@@ -47,9 +41,6 @@ public class Address implements Serializable
 		this.address2 = address2;
 	}
 
-	/**
-	 * Physical or mailing address line three. Max length: 200.
-	 */
 	protected  String address3;
 
 	public String getAddress3() {
@@ -60,9 +51,6 @@ public class Address implements Serializable
 		this.address3 = address3;
 	}
 
-	/**
-	 * Physical or mailing address line four. Max length: 200.
-	 */
 	protected  String address4;
 
 	public String getAddress4() {
@@ -73,9 +61,6 @@ public class Address implements Serializable
 		this.address4 = address4;
 	}
 
-	/**
-	 * The type of address, which is commercial or residential.
-	 */
 	protected  String addressType;
 
 	public String getAddressType() {
@@ -86,9 +71,6 @@ public class Address implements Serializable
 		this.addressType = addressType;
 	}
 
-	/**
-	 * City or town for the physical or mailing address. The maximum character length is 100.
-	 */
 	protected  String cityOrTown;
 
 	public String getCityOrTown() {
@@ -99,9 +81,6 @@ public class Address implements Serializable
 		this.cityOrTown = cityOrTown;
 	}
 
-	/**
-	 * The 2-letter geographic code representing the country for the physical or mailing address. Currently limited to the US.
-	 */
 	protected  String countryCode;
 
 	public String getCountryCode() {
@@ -112,9 +91,6 @@ public class Address implements Serializable
 		this.countryCode = countryCode;
 	}
 
-	/**
-	 * If true, the address has been verified by an address validation service.
-	 */
 	protected  Boolean isValidated;
 
 	public Boolean getIsValidated() {
@@ -125,9 +101,6 @@ public class Address implements Serializable
 		this.isValidated = isValidated;
 	}
 
-	/**
-	 * The postal or zip code for the address. For example, a USPS-approved ZIP code standard is ZIP+4: 12345-6789. The maximum character length is 100.
-	 */
 	protected  String postalOrZipCode;
 
 	public String getPostalOrZipCode() {
@@ -138,9 +111,6 @@ public class Address implements Serializable
 		this.postalOrZipCode = postalOrZipCode;
 	}
 
-	/**
-	 * The two-letter geographic code representing the state for the physical or mailing address. This is currently limited to the US.
-	 */
 	protected  String stateOrProvince;
 
 	public String getStateOrProvince() {

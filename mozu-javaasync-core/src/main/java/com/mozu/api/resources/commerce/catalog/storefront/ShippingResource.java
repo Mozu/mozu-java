@@ -112,12 +112,12 @@ public class ShippingResource {
 	}
 
 	/**
-	 * Retrieves the shipping rates applicable for the site.
+	 * 
 	 * <p><pre><code>
 	 *	Shipping shipping = new Shipping();
 	 *	RatesResponse ratesResponse = shipping.getRates( rateRequest);
 	 * </code></pre></p>
-	 * @param rateRequest Properties of the shipping rate request sent on behalf of the storefront website.
+	 * @param rateRequest Properties required to request a shipping rate calculation.
 	 * @return com.mozu.api.contracts.shippingruntime.RatesResponse
 	 * @see com.mozu.api.contracts.shippingruntime.RatesResponse
 	 * @see com.mozu.api.contracts.shippingruntime.RateRequest
@@ -128,13 +128,13 @@ public class ShippingResource {
 	}
 
 	/**
-	 * Retrieves the shipping rates applicable for the site.
+	 * 
 	 * <p><pre><code>
 	 *	Shipping shipping = new Shipping();
 	 *	CountDownLatch latch = shipping.getRates( rateRequest, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param rateRequest Properties of the shipping rate request sent on behalf of the storefront website.
+	 * @param rateRequest Properties required to request a shipping rate calculation.
 	 * @return com.mozu.api.contracts.shippingruntime.RatesResponse
 	 * @see com.mozu.api.contracts.shippingruntime.RatesResponse
 	 * @see com.mozu.api.contracts.shippingruntime.RateRequest
@@ -145,14 +145,14 @@ public class ShippingResource {
 	}
 
 	/**
-	 * Retrieves the shipping rates applicable for the site.
+	 * 
 	 * <p><pre><code>
 	 *	Shipping shipping = new Shipping();
 	 *	RatesResponse ratesResponse = shipping.getRates( rateRequest,  includeRawResponse,  responseFields);
 	 * </code></pre></p>
-	 * @param includeRawResponse 
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param rateRequest Properties of the shipping rate request sent on behalf of the storefront website.
+	 * @param includeRawResponse Set this parameter to  to retrieve the full raw JSON response from a shipping carrier (instead of just the shipping rate).
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param rateRequest Properties required to request a shipping rate calculation.
 	 * @return com.mozu.api.contracts.shippingruntime.RatesResponse
 	 * @see com.mozu.api.contracts.shippingruntime.RatesResponse
 	 * @see com.mozu.api.contracts.shippingruntime.RateRequest
@@ -167,15 +167,15 @@ public class ShippingResource {
 	}
 
 	/**
-	 * Retrieves the shipping rates applicable for the site.
+	 * 
 	 * <p><pre><code>
 	 *	Shipping shipping = new Shipping();
 	 *	CountDownLatch latch = shipping.getRates( rateRequest,  includeRawResponse,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param includeRawResponse 
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param includeRawResponse Set this parameter to  to retrieve the full raw JSON response from a shipping carrier (instead of just the shipping rate).
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param rateRequest Properties of the shipping rate request sent on behalf of the storefront website.
+	 * @param rateRequest Properties required to request a shipping rate calculation.
 	 * @return com.mozu.api.contracts.shippingruntime.RatesResponse
 	 * @see com.mozu.api.contracts.shippingruntime.RatesResponse
 	 * @see com.mozu.api.contracts.shippingruntime.RateRequest

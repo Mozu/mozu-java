@@ -17,7 +17,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * 
+ * The Entity Lists resource manages all dynamic entities in your  document store of the  cloud. The content is JSON and can have up to five indexed properties (integer, decimal, string, date, and boolean) with support for additional customized elements as needed. Every document in the entity list has a validated unique ID.
  * </summary>
  */
 public class EntityListClient {
@@ -46,11 +46,11 @@ public class EntityListClient {
 	 * client.executeRequest();
 	 * EntityListCollection entityListCollection = client.Result();
 	 * </code></pre></p>
-	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param pageSize 
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.EntityListCollection>
 	 * @see com.mozu.api.contracts.mzdb.EntityListCollection
 	 */
@@ -74,7 +74,7 @@ public class EntityListClient {
 	 * client.executeRequest();
 	 * EntityList entityList = client.Result();
 	 * </code></pre></p>
-	 * @param entityListFullName 
+	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.EntityList>
 	 * @see com.mozu.api.contracts.mzdb.EntityList
 	 */
@@ -91,8 +91,8 @@ public class EntityListClient {
 	 * client.executeRequest();
 	 * EntityList entityList = client.Result();
 	 * </code></pre></p>
-	 * @param entityListFullName 
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.EntityList>
 	 * @see com.mozu.api.contracts.mzdb.EntityList
 	 */
@@ -116,7 +116,7 @@ public class EntityListClient {
 	 * client.executeRequest();
 	 * EntityList entityList = client.Result();
 	 * </code></pre></p>
-	 * @param entityList 
+	 * @param entityList The definition of an MZDB EntityList which describes the characteristics of the EntityList on a per tenant basis. EntityLists are created at the tenant level, but instances of the EntityLists are implicitly created at the appropriate context level as entities are added or removed from the EntityList.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.EntityList>
 	 * @see com.mozu.api.contracts.mzdb.EntityList
 	 * @see com.mozu.api.contracts.mzdb.EntityList
@@ -134,8 +134,8 @@ public class EntityListClient {
 	 * client.executeRequest();
 	 * EntityList entityList = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param entityList 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param entityList The definition of an MZDB EntityList which describes the characteristics of the EntityList on a per tenant basis. EntityLists are created at the tenant level, but instances of the EntityLists are implicitly created at the appropriate context level as entities are added or removed from the EntityList.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.EntityList>
 	 * @see com.mozu.api.contracts.mzdb.EntityList
 	 * @see com.mozu.api.contracts.mzdb.EntityList
@@ -161,8 +161,8 @@ public class EntityListClient {
 	 * client.executeRequest();
 	 * EntityList entityList = client.Result();
 	 * </code></pre></p>
-	 * @param entityListFullName 
-	 * @param entityList 
+	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param entityList The definition of an MZDB EntityList which describes the characteristics of the EntityList on a per tenant basis. EntityLists are created at the tenant level, but instances of the EntityLists are implicitly created at the appropriate context level as entities are added or removed from the EntityList.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.EntityList>
 	 * @see com.mozu.api.contracts.mzdb.EntityList
 	 * @see com.mozu.api.contracts.mzdb.EntityList
@@ -180,9 +180,9 @@ public class EntityListClient {
 	 * client.executeRequest();
 	 * EntityList entityList = client.Result();
 	 * </code></pre></p>
-	 * @param entityListFullName 
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param entityList 
+	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param entityList The definition of an MZDB EntityList which describes the characteristics of the EntityList on a per tenant basis. EntityLists are created at the tenant level, but instances of the EntityLists are implicitly created at the appropriate context level as entities are added or removed from the EntityList.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.EntityList>
 	 * @see com.mozu.api.contracts.mzdb.EntityList
 	 * @see com.mozu.api.contracts.mzdb.EntityList
@@ -207,7 +207,7 @@ public class EntityListClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param entityListFullName 
+	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deleteEntityListClient(String entityListFullName) throws Exception

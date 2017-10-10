@@ -21,9 +21,6 @@ public class ProductImage implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Descriptive text associated with the image or video that appears on the storefront.
-	 */
 	protected  String altText;
 
 	public String getAltText() {
@@ -35,7 +32,7 @@ public class ProductImage implements Serializable
 	}
 
 	/**
-	 * The identifier of the product image in the Mozu CMS. Supply a value for either the CMS ID or the Image URL parameter.
+	 * The identifier of the image in the  CMS. Supply a value for either the CMS ID or Image URL parameter.
 	 */
 	protected  String cmsId;
 
@@ -47,9 +44,6 @@ public class ProductImage implements Serializable
 		this.cmsId = cmsId;
 	}
 
-	/**
-	 * Image title that appears on the storefront.
-	 */
 	protected  String imageLabel;
 
 	public String getImageLabel() {
@@ -60,9 +54,6 @@ public class ProductImage implements Serializable
 		this.imageLabel = imageLabel;
 	}
 
-	/**
-	 * URL of the product image.
-	 */
 	protected  String imageUrl;
 
 	public String getImageUrl() {
@@ -73,9 +64,6 @@ public class ProductImage implements Serializable
 		this.imageUrl = imageUrl;
 	}
 
-	/**
-	 * Type of media specification required to successfully render the product image, video, or other content.
-	 */
 	protected  String mediaType;
 
 	public String getMediaType() {
@@ -86,9 +74,6 @@ public class ProductImage implements Serializable
 		this.mediaType = mediaType;
 	}
 
-	/**
-	 * The numeric value that denotes the place this entity occupies in the order of the entity list.
-	 */
 	protected  Integer sequence;
 
 	public Integer getSequence() {
@@ -99,9 +84,6 @@ public class ProductImage implements Serializable
 		this.sequence = sequence;
 	}
 
-	/**
-	 * The file link or URL of the product video.
-	 */
 	protected  String videoUrl;
 
 	public String getVideoUrl() {

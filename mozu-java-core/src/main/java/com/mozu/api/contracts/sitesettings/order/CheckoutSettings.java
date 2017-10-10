@@ -24,9 +24,6 @@ public class CheckoutSettings implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Settings for the checkout login. Choose whether or not shoppers must first login before a purchase can be processed. Choose the option for guests to purchase without logging in, prompt guests to login, or require them to login before a purchase can be completed.
-	 */
 	protected  CustomerCheckoutSettings customerCheckoutSettings;
 
 	public CustomerCheckoutSettings getCustomerCheckoutSettings() {
@@ -37,9 +34,6 @@ public class CheckoutSettings implements Serializable
 		this.customerCheckoutSettings = customerCheckoutSettings;
 	}
 
-	/**
-	 * Credit card payment authorization setting defined for the site for order processing.
-	 */
 	protected  OrderProcessingSettings orderProcessingSettings;
 
 	public OrderProcessingSettings getOrderProcessingSettings() {
@@ -50,9 +44,6 @@ public class CheckoutSettings implements Serializable
 		this.orderProcessingSettings = orderProcessingSettings;
 	}
 
-	/**
-	 * Payment gateway settings defined for the site. A payment gateway is an eCommerce application service provider that authorizes payments for eBusinesses, online retailers, and other stores that have an online commerce component. Currently, only the Authorize.net gateway is supported.
-	 */
 	protected  PaymentSettings paymentSettings;
 
 	public PaymentSettings getPaymentSettings() {

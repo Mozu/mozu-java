@@ -31,9 +31,6 @@ public class Cart implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Code that identifies the channel associated with the site where the shopping cart was created.
-	 */
 	protected  String channelCode;
 
 	public String getChannelCode() {
@@ -45,7 +42,7 @@ public class Cart implements Serializable
 	}
 
 	/**
-	 * The coupon codes applied to the cart. When the customer proceeds to checkout, the coupons applied to the cart apply to the order.
+	 * Array list of coupon codes associated with a shopping cart and the associated order. These codes are entered by a shopper when proceeding to checkout. 
 	 */
 	protected List<String> couponCodes;
 	public List<String> getCouponCodes() {
@@ -55,9 +52,6 @@ public class Cart implements Serializable
 		this.couponCodes = couponCodes;
 	}
 
-	/**
-	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
-	 */
 	protected  String currencyCode;
 
 	public String getCurrencyCode() {
@@ -68,9 +62,6 @@ public class Cart implements Serializable
 		this.currencyCode = currencyCode;
 	}
 
-	/**
-	 * The type of customer interaction used to create this shopping cart. Possible values are Website, Call, Store, or Unknown.
-	 */
 	protected  String customerInteractionType;
 
 	public String getCustomerInteractionType() {
@@ -81,9 +72,6 @@ public class Cart implements Serializable
 		this.customerInteractionType = customerInteractionType;
 	}
 
-	/**
-	 * The aggregate total for all items in the cart, including costs associated with shopper-defined options or extras and any applied discounts.
-	 */
 	protected  Double discountedSubtotal;
 
 	public Double getDiscountedSubtotal() {
@@ -94,9 +82,6 @@ public class Cart implements Serializable
 		this.discountedSubtotal = discountedSubtotal;
 	}
 
-	/**
-	 * The subtotal of the cart including any applied discount calculations.
-	 */
 	protected  Double discountedTotal;
 
 	public Double getDiscountedTotal() {
@@ -107,9 +92,6 @@ public class Cart implements Serializable
 		this.discountedTotal = discountedTotal;
 	}
 
-	/**
-	 * Estimated amount of discounts applied to all items in the cart, which is system-supplied and read-only.
-	 */
 	protected  Double discountTotal;
 
 	public Double getDiscountTotal() {
@@ -120,9 +102,6 @@ public class Cart implements Serializable
 		this.discountTotal = discountTotal;
 	}
 
-	/**
-	 * Date in UTC Date/Time when the cart becomes inactive based on a system-calculated interval. For example, if an anonymous shopper has 14 days of inactivity, the cart is considered abandoned after that period of inactivity. System-supplied and read-only.
-	 */
 	protected  DateTime expirationDate;
 
 	public DateTime getExpirationDate() {
@@ -133,9 +112,6 @@ public class Cart implements Serializable
 		this.expirationDate = expirationDate;
 	}
 
-	/**
-	 * The monetary sum of all fees incurred in the cart.
-	 */
 	protected  Double feeTotal;
 
 	public Double getFeeTotal() {
@@ -146,6 +122,9 @@ public class Cart implements Serializable
 		this.feeTotal = feeTotal;
 	}
 
+	/**
+	 * The combined price for all handling costs calculated together for shipped orders, not for digital or in-store pickup. This includes all handling costs per the product line items and options, excluding taxes and discounts.
+	 */
 	protected  Double handlingAmount;
 
 	public Double getHandlingAmount() {
@@ -156,6 +135,9 @@ public class Cart implements Serializable
 		this.handlingAmount = handlingAmount;
 	}
 
+	/**
+	 * The handling fee subtotal included in the cart calculation.
+	 */
 	protected  Double handlingSubTotal;
 
 	public Double getHandlingSubTotal() {
@@ -166,9 +148,6 @@ public class Cart implements Serializable
 		this.handlingSubTotal = handlingSubTotal;
 	}
 
-	/**
-	 * If the handling fee for the cart is subject to sales tax, the total tax amount.
-	 */
 	protected  Double handlingTaxTotal;
 
 	public Double getHandlingTaxTotal() {
@@ -179,6 +158,9 @@ public class Cart implements Serializable
 		this.handlingTaxTotal = handlingTaxTotal;
 	}
 
+	/**
+	 * The handling fee total included in the cart calculation.
+	 */
 	protected  Double handlingTotal;
 
 	public Double getHandlingTotal() {
@@ -189,9 +171,6 @@ public class Cart implements Serializable
 		this.handlingTotal = handlingTotal;
 	}
 
-	/**
-	 * Unique identifier of the shopping cart.
-	 */
 	protected  String id;
 
 	public String getId() {
@@ -202,9 +181,6 @@ public class Cart implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * The total amount of tax for items in the cart.
-	 */
 	protected  Double itemTaxTotal;
 
 	public Double getItemTaxTotal() {
@@ -215,9 +191,6 @@ public class Cart implements Serializable
 		this.itemTaxTotal = itemTaxTotal;
 	}
 
-	/**
-	 * The date in UTC Date/Time when the items in the cart were last validated against the site's product catalog. System-supplied and read-only.
-	 */
 	protected  DateTime lastValidationDate;
 
 	public DateTime getLastValidationDate() {
@@ -228,6 +201,9 @@ public class Cart implements Serializable
 		this.lastValidationDate = lastValidationDate;
 	}
 
+	/**
+	 * The total charge for the line item with all weighted order level manual adjustments.
+	 */
 	protected  Double lineItemSubtotalWithOrderAdjustments;
 
 	public Double getLineItemSubtotalWithOrderAdjustments() {
@@ -238,6 +214,9 @@ public class Cart implements Serializable
 		this.lineItemSubtotalWithOrderAdjustments = lineItemSubtotalWithOrderAdjustments;
 	}
 
+	/**
+	 * Pricelist code
+	 */
 	protected  String priceListCode;
 
 	public String getPriceListCode() {
@@ -248,6 +227,9 @@ public class Cart implements Serializable
 		this.priceListCode = priceListCode;
 	}
 
+	/**
+	 * The total shipping amount for the cart before discounts and adjustments.
+	 */
 	protected  Double shippingAmountBeforeDiscountsAndAdjustments;
 
 	public Double getShippingAmountBeforeDiscountsAndAdjustments() {
@@ -258,9 +240,6 @@ public class Cart implements Serializable
 		this.shippingAmountBeforeDiscountsAndAdjustments = shippingAmountBeforeDiscountsAndAdjustments;
 	}
 
-	/**
-	 * The shipping subtotal amount calculated without any applied discounts.
-	 */
 	protected  Double shippingSubTotal;
 
 	public Double getShippingSubTotal() {
@@ -271,9 +250,6 @@ public class Cart implements Serializable
 		this.shippingSubTotal = shippingSubTotal;
 	}
 
-	/**
-	 * The total amount of tax incurred on the shipping charges in the cart.
-	 */
 	protected  Double shippingTaxTotal;
 
 	public Double getShippingTaxTotal() {
@@ -284,9 +260,6 @@ public class Cart implements Serializable
 		this.shippingTaxTotal = shippingTaxTotal;
 	}
 
-	/**
-	 * The total shipping amount estimated for the cart, including tax.
-	 */
 	protected  Double shippingTotal;
 
 	public Double getShippingTotal() {
@@ -297,9 +270,6 @@ public class Cart implements Serializable
 		this.shippingTotal = shippingTotal;
 	}
 
-	/**
-	 * Unique identifier of the site.
-	 */
 	protected  Integer siteId;
 
 	public Integer getSiteId() {
@@ -310,9 +280,6 @@ public class Cart implements Serializable
 		this.siteId = siteId;
 	}
 
-	/**
-	 * Estimated amount of the cart without sales tax, shipping costs, and other fees.
-	 */
 	protected  Double subtotal;
 
 	public Double getSubtotal() {
@@ -323,9 +290,6 @@ public class Cart implements Serializable
 		this.subtotal = subtotal;
 	}
 
-	/**
-	 * The total sum of sales tax estimated for a cart.
-	 */
 	protected  Double taxTotal;
 
 	public Double getTaxTotal() {
@@ -336,9 +300,6 @@ public class Cart implements Serializable
 		this.taxTotal = taxTotal;
 	}
 
-	/**
-	 * Unique identifier of the Mozu tenant.
-	 */
 	protected  Integer tenantId;
 
 	public Integer getTenantId() {
@@ -349,9 +310,6 @@ public class Cart implements Serializable
 		this.tenantId = tenantId;
 	}
 
-	/**
-	 * Estimated total amount of the cart, including items, sales tax, shipping costs, and other fees.
-	 */
 	protected  Double total;
 
 	public Double getTotal() {
@@ -362,9 +320,6 @@ public class Cart implements Serializable
 		this.total = total;
 	}
 
-	/**
-	 * Unique identifier of the user associated with the shopping cart.
-	 */
 	protected  String userId;
 
 	public String getUserId() {
@@ -375,9 +330,6 @@ public class Cart implements Serializable
 		this.userId = userId;
 	}
 
-	/**
-	 * Unique identifier of the customer visit in which the cart was created or last modified.
-	 */
 	protected  String visitId;
 
 	public String getVisitId() {
@@ -388,9 +340,6 @@ public class Cart implements Serializable
 		this.visitId = visitId;
 	}
 
-	/**
-	 * Unique identifier of the web session in which the cart was created or last modified.
-	 */
 	protected  String webSessionId;
 
 	public String getWebSessionId() {
@@ -401,9 +350,6 @@ public class Cart implements Serializable
 		this.webSessionId = webSessionId;
 	}
 
-	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -414,6 +360,9 @@ public class Cart implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
+	/**
+	 * An array of message details associated with the cart.
+	 */
 	protected  CartMessage cartMessage;
 
 	public CartMessage getCartMessage() {
@@ -424,6 +373,9 @@ public class Cart implements Serializable
 		this.cartMessage = cartMessage;
 	}
 
+	/**
+	 * A list of cart messages associated with the cart.
+	 */
 	protected List<CartMessage> cartMessages;
 	public List<CartMessage> getCartMessages() {
 		return this.cartMessages;
@@ -432,9 +384,6 @@ public class Cart implements Serializable
 		this.cartMessages = cartMessages;
 	}
 
-	/**
-	 * Messages logged or created each time the cart was modified.
-	 */
 	protected List<ChangeMessage> changeMessages;
 	public List<ChangeMessage> getChangeMessages() {
 		return this.changeMessages;
@@ -443,6 +392,9 @@ public class Cart implements Serializable
 		this.changeMessages = changeMessages;
 	}
 
+	/**
+	 * Custom data for a given vendor set within the commerce process.
+	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {
@@ -453,6 +405,9 @@ public class Cart implements Serializable
 		this.data = data;
 	}
 
+	/**
+	 * Extra properties (key-value pairs) that extend the primary object. Think of this as a property bag of string keys and string values.
+	 */
 	protected List<ExtendedProperty> extendedProperties;
 	public List<ExtendedProperty> getExtendedProperties() {
 		return this.extendedProperties;
@@ -461,9 +416,6 @@ public class Cart implements Serializable
 		this.extendedProperties = extendedProperties;
 	}
 
-	/**
-	 * Properties of the information required to fulfill this cart.
-	 */
 	protected  FulfillmentInfo fulfillmentInfo;
 
 	public FulfillmentInfo getFulfillmentInfo() {
@@ -475,7 +427,7 @@ public class Cart implements Serializable
 	}
 
 	/**
-	 * The list of invalid coupons the shopper attempted to enter for the cart.
+	 * The list of invalid coupons the shopper attempted to enter for the cart or order. These coupons may no longer be valid or incorrectly entered.
 	 */
 	protected List<InvalidCoupon> invalidCoupons;
 	public List<InvalidCoupon> getInvalidCoupons() {
@@ -485,9 +437,6 @@ public class Cart implements Serializable
 		this.invalidCoupons = invalidCoupons;
 	}
 
-	/**
-	 * An array list of objects in the returned collection.
-	 */
 	protected List<CartItem> items;
 	public List<CartItem> getItems() {
 		return this.items;
@@ -496,9 +445,6 @@ public class Cart implements Serializable
 		this.items = items;
 	}
 
-	/**
-	 * List of order-level discounts projected to apply to the cart at checkout.
-	 */
 	protected List<AppliedDiscount> orderDiscounts;
 	public List<AppliedDiscount> getOrderDiscounts() {
 		return this.orderDiscounts;
@@ -507,6 +453,9 @@ public class Cart implements Serializable
 		this.orderDiscounts = orderDiscounts;
 	}
 
+	/**
+	 * Leverage this property within a [tax Arc.js action](https://www.mozu.com/docs/arcjs/commerce-catalog-storefront-tax/commerce-catalog-storefront-tax.htm) to supplement the tax information for this item or object with custom JSON data.
+	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode taxData;
 
 	public com.fasterxml.jackson.databind.JsonNode getTaxData() {

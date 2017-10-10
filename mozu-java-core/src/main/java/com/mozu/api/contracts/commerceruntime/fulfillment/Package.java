@@ -27,9 +27,6 @@ public class Package implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The actions that a user can perform for a package at this time.
-	 */
 	protected List<String> availableActions;
 	public List<String> getAvailableActions() {
 		return this.availableActions;
@@ -51,9 +48,6 @@ public class Package implements Serializable
 		this.code = code;
 	}
 
-	/**
-	 * The date and time the package shipped to the customer.
-	 */
 	protected  DateTime fulfillmentDate;
 
 	public DateTime getFulfillmentDate() {
@@ -65,7 +59,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * The location code that represents the location from which this package will ship.
+	 * The code that identifies the location used to fulfill the cart/cart item or order/order item. This code can include physical store locations for in-store pickup, warehouse locations providing the products for shipment, or the location for the digital file(s).
 	 */
 	protected  String fulfillmentLocationCode;
 
@@ -77,6 +71,9 @@ public class Package implements Serializable
 		this.fulfillmentLocationCode = fulfillmentLocationCode;
 	}
 
+	/**
+	 * If there is a shipping label present for this Package, this will be set to true
+	 */
 	protected  Boolean hasLabel;
 
 	public Boolean getHasLabel() {
@@ -87,9 +84,6 @@ public class Package implements Serializable
 		this.hasLabel = hasLabel;
 	}
 
-	/**
-	 * Unique identifier of a package.
-	 */
 	protected  String id;
 
 	public String getId() {
@@ -100,9 +94,6 @@ public class Package implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * The package type associated with this physical package. Possible values include Tube, Letter, Pak, Small Box (carrier_box_small), Medium Box (carrier_box_medium), Large Box (carrier_box_large), or Custom.
-	 */
 	protected  String packagingType;
 
 	public String getPackagingType() {
@@ -113,9 +104,6 @@ public class Package implements Serializable
 		this.packagingType = packagingType;
 	}
 
-	/**
-	 * Unique identifier of the shipment associated with this package.
-	 */
 	protected  String shipmentId;
 
 	public String getShipmentId() {
@@ -126,9 +114,6 @@ public class Package implements Serializable
 		this.shipmentId = shipmentId;
 	}
 
-	/**
-	 * The code associated with the carrier's shipping method service type. Service type codes include a prefix that indicates the carrier. For example: FEDEX_INTERNATIONAL_STANDARD
-	 */
 	protected  String shippingMethodCode;
 
 	public String getShippingMethodCode() {
@@ -139,9 +124,6 @@ public class Package implements Serializable
 		this.shippingMethodCode = shippingMethodCode;
 	}
 
-	/**
-	 * Name of the shipping method associated with the package. For example: UPS Ground or 2nd Day Air.
-	 */
 	protected  String shippingMethodName;
 
 	public String getShippingMethodName() {
@@ -152,9 +134,6 @@ public class Package implements Serializable
 		this.shippingMethodName = shippingMethodName;
 	}
 
-	/**
-	 * Status of the package, which is "Fulfilled" or "NotFulfilled".
-	 */
 	protected  String status;
 
 	public String getStatus() {
@@ -165,9 +144,6 @@ public class Package implements Serializable
 		this.status = status;
 	}
 
-	/**
-	 * Tracking number for the package supplied by the carrier.
-	 */
 	protected  String trackingNumber;
 
 	public String getTrackingNumber() {
@@ -178,9 +154,6 @@ public class Package implements Serializable
 		this.trackingNumber = trackingNumber;
 	}
 
-	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -192,7 +165,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * List of change messages associated with the package.
+	 * Collection (list or paged) of change messages logged for each modification made by a shopper to their carts, wishlists, orders, package, payment, pickup, and returns. Change log messages are system-supplied based on shopper actions and read only.
 	 */
 	protected List<ChangeMessage> changeMessages;
 	public List<ChangeMessage> getChangeMessages() {
@@ -202,9 +175,6 @@ public class Package implements Serializable
 		this.changeMessages = changeMessages;
 	}
 
-	/**
-	 * An array list of objects in the returned collection.
-	 */
 	protected List<PackageItem> items;
 	public List<PackageItem> getItems() {
 		return this.items;
@@ -213,9 +183,6 @@ public class Package implements Serializable
 		this.items = items;
 	}
 
-	/**
-	 * Dimensional properties of the package.
-	 */
 	protected  PackageMeasurements measurements;
 
 	public PackageMeasurements getMeasurements() {

@@ -21,9 +21,6 @@ public class Currency implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
-	 */
 	protected  String code;
 
 	public String getCode() {
@@ -34,9 +31,6 @@ public class Currency implements Serializable
 		this.code = code;
 	}
 
-	/**
-	 * The name of the currency represented by the ISO currency code.
-	 */
 	protected  String name;
 
 	public String getName() {

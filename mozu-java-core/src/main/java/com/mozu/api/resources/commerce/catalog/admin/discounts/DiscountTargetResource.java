@@ -43,12 +43,12 @@ public class DiscountTargetResource {
 	}
 		
 	/**
-	 * Retrieves the discount target, that is which products, categories, or shipping methods are eligible for the discount.
+	 * 
 	 * <p><pre><code>
 	 *	DiscountTarget discounttarget = new DiscountTarget();
 	 *	DiscountTarget discountTarget = discounttarget.getDiscountTarget( discountId);
 	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount. System-supplied and read only.
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.productadmin.DiscountTarget
 	 * @see com.mozu.api.contracts.productadmin.DiscountTarget
 	 */
@@ -58,13 +58,13 @@ public class DiscountTargetResource {
 	}
 
 	/**
-	 * Retrieves the discount target, that is which products, categories, or shipping methods are eligible for the discount.
+	 * 
 	 * <p><pre><code>
 	 *	DiscountTarget discounttarget = new DiscountTarget();
 	 *	DiscountTarget discountTarget = discounttarget.getDiscountTarget( discountId,  responseFields);
 	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount. System-supplied and read only.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.productadmin.DiscountTarget
 	 * @see com.mozu.api.contracts.productadmin.DiscountTarget
 	 */
@@ -78,13 +78,13 @@ public class DiscountTargetResource {
 	}
 
 	/**
-	 * Modifies properties of the discount target, for example, the dollar amount, or precentage off the price.
+	 * 
 	 * <p><pre><code>
 	 *	DiscountTarget discounttarget = new DiscountTarget();
 	 *	DiscountTarget discountTarget = discounttarget.updateDiscountTarget( discountTarget,  discountId);
 	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
-	 * @param discountTarget Properties of the discount target to modify. Required properties: Target.Type. Any unspecified properties are set to null and boolean variables to false.
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param discountTarget Properties of the target to which the discount applies, such as the type of discount and which products, categories, or shipping methods are eligible for the discount and the properties of this discount target.
 	 * @return com.mozu.api.contracts.productadmin.DiscountTarget
 	 * @see com.mozu.api.contracts.productadmin.DiscountTarget
 	 * @see com.mozu.api.contracts.productadmin.DiscountTarget
@@ -95,14 +95,14 @@ public class DiscountTargetResource {
 	}
 
 	/**
-	 * Modifies properties of the discount target, for example, the dollar amount, or precentage off the price.
+	 * 
 	 * <p><pre><code>
 	 *	DiscountTarget discounttarget = new DiscountTarget();
 	 *	DiscountTarget discountTarget = discounttarget.updateDiscountTarget( discountTarget,  discountId,  responseFields);
 	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param discountTarget Properties of the discount target to modify. Required properties: Target.Type. Any unspecified properties are set to null and boolean variables to false.
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param discountTarget Properties of the target to which the discount applies, such as the type of discount and which products, categories, or shipping methods are eligible for the discount and the properties of this discount target.
 	 * @return com.mozu.api.contracts.productadmin.DiscountTarget
 	 * @see com.mozu.api.contracts.productadmin.DiscountTarget
 	 * @see com.mozu.api.contracts.productadmin.DiscountTarget

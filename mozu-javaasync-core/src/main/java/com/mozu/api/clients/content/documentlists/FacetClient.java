@@ -25,14 +25,14 @@ import org.apache.commons.lang.StringUtils;
 public class FacetClient {
 	
 	/**
-	 * Retrieves the properties of facets that aid in indexing and searching.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.content.Facet>> mozuClient=GetFacetsClient( documentListName,  propertyName);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Facet facet = client.Result();
 	 * </code></pre></p>
-	 * @param documentListName The document list associated with the facets to retrieve.
+	 * @param documentListName Name of content documentListName to delete
 	 * @param propertyName The property name associated with the facets to retrieve.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.content.Facet>>
 	 * @see com.mozu.api.contracts.content.Facet

@@ -23,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 public class LocationTypeClient {
 	
 	/**
-	 * Retrieve a list of all location types defined for the tenant.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.location.LocationType>> mozuClient=GetLocationTypesClient();
 	 * client.setBaseAddress(url);
@@ -46,7 +46,7 @@ public class LocationTypeClient {
 	}
 
 	/**
-	 * Retrieves the details of the location type specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.location.LocationType> mozuClient=GetLocationTypeClient( locationTypeCode);
 	 * client.setBaseAddress(url);
@@ -63,7 +63,7 @@ public class LocationTypeClient {
 	}
 
 	/**
-	 * Retrieves the details of the location type specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.location.LocationType> mozuClient=GetLocationTypeClient( locationTypeCode,  responseFields);
 	 * client.setBaseAddress(url);
@@ -71,7 +71,7 @@ public class LocationTypeClient {
 	 * LocationType locationType = client.Result();
 	 * </code></pre></p>
 	 * @param locationTypeCode The user-defined code that identifies the location type.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.LocationType>
 	 * @see com.mozu.api.contracts.location.LocationType
 	 */
@@ -88,14 +88,14 @@ public class LocationTypeClient {
 	}
 
 	/**
-	 * Creates a new location type based on the information specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.location.LocationType> mozuClient=AddLocationTypeClient( locationType);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * LocationType locationType = client.Result();
 	 * </code></pre></p>
-	 * @param locationType Properties of the location type to create.
+	 * @param locationType Properties of a type of physical location, such as warehouse or kiosk. Location types enable tenants to group similar locations for filtering and location usage type definition.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.LocationType>
 	 * @see com.mozu.api.contracts.location.LocationType
 	 * @see com.mozu.api.contracts.location.LocationType
@@ -106,15 +106,15 @@ public class LocationTypeClient {
 	}
 
 	/**
-	 * Creates a new location type based on the information specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.location.LocationType> mozuClient=AddLocationTypeClient( locationType,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * LocationType locationType = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param locationType Properties of the location type to create.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param locationType Properties of a type of physical location, such as warehouse or kiosk. Location types enable tenants to group similar locations for filtering and location usage type definition.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.LocationType>
 	 * @see com.mozu.api.contracts.location.LocationType
 	 * @see com.mozu.api.contracts.location.LocationType
@@ -133,7 +133,7 @@ public class LocationTypeClient {
 	}
 
 	/**
-	 * Updates the name of a defined location type.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.location.LocationType> mozuClient=UpdateLocationTypeClient( locationType,  locationTypeCode);
 	 * client.setBaseAddress(url);
@@ -141,7 +141,7 @@ public class LocationTypeClient {
 	 * LocationType locationType = client.Result();
 	 * </code></pre></p>
 	 * @param locationTypeCode The user-defined code that identifies the location type.
-	 * @param locationType Properties of the location type to update.
+	 * @param locationType Properties of a type of physical location, such as warehouse or kiosk. Location types enable tenants to group similar locations for filtering and location usage type definition.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.LocationType>
 	 * @see com.mozu.api.contracts.location.LocationType
 	 * @see com.mozu.api.contracts.location.LocationType
@@ -152,7 +152,7 @@ public class LocationTypeClient {
 	}
 
 	/**
-	 * Updates the name of a defined location type.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.location.LocationType> mozuClient=UpdateLocationTypeClient( locationType,  locationTypeCode,  responseFields);
 	 * client.setBaseAddress(url);
@@ -160,8 +160,8 @@ public class LocationTypeClient {
 	 * LocationType locationType = client.Result();
 	 * </code></pre></p>
 	 * @param locationTypeCode The user-defined code that identifies the location type.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param locationType Properties of the location type to update.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param locationType Properties of a type of physical location, such as warehouse or kiosk. Location types enable tenants to group similar locations for filtering and location usage type definition.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.LocationType>
 	 * @see com.mozu.api.contracts.location.LocationType
 	 * @see com.mozu.api.contracts.location.LocationType
@@ -180,13 +180,13 @@ public class LocationTypeClient {
 	}
 
 	/**
-	 * Deletes the location type specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteLocationTypeClient( locationTypeCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param locationTypeCode User-defined code used to identify the location type.
+	 * @param locationTypeCode The user-defined code that identifies the location type.
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deleteLocationTypeClient(String locationTypeCode) throws Exception

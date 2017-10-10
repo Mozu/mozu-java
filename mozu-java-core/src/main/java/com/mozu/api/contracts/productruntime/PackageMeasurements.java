@@ -22,9 +22,6 @@ public class PackageMeasurements implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Height of the package in imperial units of feet and inches.
-	 */
 	protected  Measurement packageHeight;
 
 	public Measurement getPackageHeight() {
@@ -35,9 +32,6 @@ public class PackageMeasurements implements Serializable
 		this.packageHeight = packageHeight;
 	}
 
-	/**
-	 * Length of the package in imperial units of feet and inches.
-	 */
 	protected  Measurement packageLength;
 
 	public Measurement getPackageLength() {
@@ -48,9 +42,6 @@ public class PackageMeasurements implements Serializable
 		this.packageLength = packageLength;
 	}
 
-	/**
-	 * Weight of the package in imperial units of pounds and ounces.
-	 */
 	protected  Measurement packageWeight;
 
 	public Measurement getPackageWeight() {
@@ -61,9 +52,6 @@ public class PackageMeasurements implements Serializable
 		this.packageWeight = packageWeight;
 	}
 
-	/**
-	 * Width of the package in imperial units of feet and inches.
-	 */
 	protected  Measurement packageWidth;
 
 	public Measurement getPackageWidth() {

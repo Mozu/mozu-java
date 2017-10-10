@@ -20,7 +20,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the Carts resource to manage storefront shopping carts as items are added and removed. Each time a shopper's cart is modified, the Carts resource updates the estimated total with any applicable discounts.
+ * Use this resource to manage storefront shopping carts as shoppers add and remove items for purchase. Each time a shopper's cart is modified, the Carts resource updates the estimated total with any applicable discounts.
  * </summary>
  */
 public class CartResource {
@@ -37,12 +37,12 @@ public class CartResource {
 
 	
 	/**
-	 * Retrieves the cart specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	Cart cart = new Cart();
 	 *	Cart cart = cart.getCart( cartId);
 	 * </code></pre></p>
-	 * @param cartId Identifier of the cart to retrieve.
+	 * @param cartId Identifier of the cart to delete.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
 	 */
@@ -52,12 +52,12 @@ public class CartResource {
 	}
 
 	/**
-	 * Retrieves the cart specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	Cart cart = new Cart();
 	 *	CountDownLatch latch = cart.getCart( cartId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param cartId Identifier of the cart to retrieve.
+	 * @param cartId Identifier of the cart to delete.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
@@ -68,13 +68,13 @@ public class CartResource {
 	}
 
 	/**
-	 * Retrieves the cart specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	Cart cart = new Cart();
 	 *	Cart cart = cart.getCart( cartId,  responseFields);
 	 * </code></pre></p>
-	 * @param cartId Identifier of the cart to retrieve.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param cartId Identifier of the cart to delete.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
 	 */
@@ -88,13 +88,13 @@ public class CartResource {
 	}
 
 	/**
-	 * Retrieves the cart specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	Cart cart = new Cart();
 	 *	CountDownLatch latch = cart.getCart( cartId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param cartId Identifier of the cart to retrieve.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param cartId Identifier of the cart to delete.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
@@ -108,7 +108,7 @@ public class CartResource {
 	}
 
 	/**
-	 * Retrieves a cart's contents for the current shopper. If the shopper does not have an active cart on the site, the service creates one.
+	 * 
 	 * <p><pre><code>
 	 *	Cart cart = new Cart();
 	 *	Cart cart = cart.getOrCreateCart();
@@ -122,7 +122,7 @@ public class CartResource {
 	}
 
 	/**
-	 * Retrieves a cart's contents for the current shopper. If the shopper does not have an active cart on the site, the service creates one.
+	 * 
 	 * <p><pre><code>
 	 *	Cart cart = new Cart();
 	 *	CountDownLatch latch = cart.getOrCreateCart( callback );
@@ -137,12 +137,12 @@ public class CartResource {
 	}
 
 	/**
-	 * Retrieves a cart's contents for the current shopper. If the shopper does not have an active cart on the site, the service creates one.
+	 * 
 	 * <p><pre><code>
 	 *	Cart cart = new Cart();
 	 *	Cart cart = cart.getOrCreateCart( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
 	 */
@@ -156,12 +156,12 @@ public class CartResource {
 	}
 
 	/**
-	 * Retrieves a cart's contents for the current shopper. If the shopper does not have an active cart on the site, the service creates one.
+	 * 
 	 * <p><pre><code>
 	 *	Cart cart = new Cart();
 	 *	CountDownLatch latch = cart.getOrCreateCart( responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
@@ -175,7 +175,7 @@ public class CartResource {
 	}
 
 	/**
-	 * Retrieves summary information associated with the cart of the current shopper, including the number of items, the current total, and whether the cart has expired. All anonymous idle carts that do not proceed to checkout expire after 14 days.
+	 * 
 	 * <p><pre><code>
 	 *	Cart cart = new Cart();
 	 *	CartSummary cartSummary = cart.getCartSummary();
@@ -189,7 +189,7 @@ public class CartResource {
 	}
 
 	/**
-	 * Retrieves summary information associated with the cart of the current shopper, including the number of items, the current total, and whether the cart has expired. All anonymous idle carts that do not proceed to checkout expire after 14 days.
+	 * 
 	 * <p><pre><code>
 	 *	Cart cart = new Cart();
 	 *	CountDownLatch latch = cart.getCartSummary( callback );
@@ -204,12 +204,12 @@ public class CartResource {
 	}
 
 	/**
-	 * Retrieves summary information associated with the cart of the current shopper, including the number of items, the current total, and whether the cart has expired. All anonymous idle carts that do not proceed to checkout expire after 14 days.
+	 * 
 	 * <p><pre><code>
 	 *	Cart cart = new Cart();
 	 *	CartSummary cartSummary = cart.getCartSummary( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartSummary
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartSummary
 	 */
@@ -223,12 +223,12 @@ public class CartResource {
 	}
 
 	/**
-	 * Retrieves summary information associated with the cart of the current shopper, including the number of items, the current total, and whether the cart has expired. All anonymous idle carts that do not proceed to checkout expire after 14 days.
+	 * 
 	 * <p><pre><code>
 	 *	Cart cart = new Cart();
 	 *	CountDownLatch latch = cart.getCartSummary( responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartSummary
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartSummary
@@ -242,12 +242,12 @@ public class CartResource {
 	}
 
 	/**
-	 * Retrieves summary information associated with the cart of user specified in the request, including the number of items in the cart, the current total, and whether the cart has expired. All anonymous idle carts that do not proceed to checkout expire after 14 days.
+	 * 
 	 * <p><pre><code>
 	 *	Cart cart = new Cart();
 	 *	CartSummary cartSummary = cart.getUserCartSummary( userId);
 	 * </code></pre></p>
-	 * @param userId Unique identifier of the user whose cart details you want to retrieve.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartSummary
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartSummary
 	 */
@@ -257,12 +257,12 @@ public class CartResource {
 	}
 
 	/**
-	 * Retrieves summary information associated with the cart of user specified in the request, including the number of items in the cart, the current total, and whether the cart has expired. All anonymous idle carts that do not proceed to checkout expire after 14 days.
+	 * 
 	 * <p><pre><code>
 	 *	Cart cart = new Cart();
 	 *	CountDownLatch latch = cart.getUserCartSummary( userId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param userId Unique identifier of the user whose cart details you want to retrieve.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartSummary
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartSummary
@@ -273,13 +273,13 @@ public class CartResource {
 	}
 
 	/**
-	 * Retrieves summary information associated with the cart of user specified in the request, including the number of items in the cart, the current total, and whether the cart has expired. All anonymous idle carts that do not proceed to checkout expire after 14 days.
+	 * 
 	 * <p><pre><code>
 	 *	Cart cart = new Cart();
 	 *	CartSummary cartSummary = cart.getUserCartSummary( userId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param userId Unique identifier of the user whose cart details you want to retrieve.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartSummary
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartSummary
 	 */
@@ -293,13 +293,13 @@ public class CartResource {
 	}
 
 	/**
-	 * Retrieves summary information associated with the cart of user specified in the request, including the number of items in the cart, the current total, and whether the cart has expired. All anonymous idle carts that do not proceed to checkout expire after 14 days.
+	 * 
 	 * <p><pre><code>
 	 *	Cart cart = new Cart();
 	 *	CountDownLatch latch = cart.getUserCartSummary( userId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param userId Unique identifier of the user whose cart details you want to retrieve.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartSummary
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartSummary
@@ -313,12 +313,12 @@ public class CartResource {
 	}
 
 	/**
-	 * Retrieves the cart of the user specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	Cart cart = new Cart();
 	 *	Cart cart = cart.getUserCart( userId);
 	 * </code></pre></p>
-	 * @param userId Unique identifier of the user whose cart you want to retrieve.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
 	 */
@@ -328,12 +328,12 @@ public class CartResource {
 	}
 
 	/**
-	 * Retrieves the cart of the user specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	Cart cart = new Cart();
 	 *	CountDownLatch latch = cart.getUserCart( userId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param userId Unique identifier of the user whose cart you want to retrieve.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
@@ -344,13 +344,13 @@ public class CartResource {
 	}
 
 	/**
-	 * Retrieves the cart of the user specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	Cart cart = new Cart();
 	 *	Cart cart = cart.getUserCart( userId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param userId Unique identifier of the user whose cart you want to retrieve.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
 	 */
@@ -364,13 +364,13 @@ public class CartResource {
 	}
 
 	/**
-	 * Retrieves the cart of the user specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	Cart cart = new Cart();
 	 *	CountDownLatch latch = cart.getUserCart( userId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param userId Unique identifier of the user whose cart you want to retrieve.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
@@ -384,12 +384,12 @@ public class CartResource {
 	}
 
 	/**
-	 * Update the current shopper's cart.
+	 * 
 	 * <p><pre><code>
 	 *	Cart cart = new Cart();
 	 *	Cart cart = cart.updateCart( cart);
 	 * </code></pre></p>
-	 * @param cart All of the properties of the cart to update. The product code is required.
+	 * @param cart Properties of a shopping cart.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
@@ -400,13 +400,13 @@ public class CartResource {
 	}
 
 	/**
-	 * Update the current shopper's cart.
+	 * 
 	 * <p><pre><code>
 	 *	Cart cart = new Cart();
 	 *	CountDownLatch latch = cart.updateCart( cart, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param cart All of the properties of the cart to update. The product code is required.
+	 * @param cart Properties of a shopping cart.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
@@ -417,13 +417,13 @@ public class CartResource {
 	}
 
 	/**
-	 * Update the current shopper's cart.
+	 * 
 	 * <p><pre><code>
 	 *	Cart cart = new Cart();
 	 *	Cart cart = cart.updateCart( cart,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param cart All of the properties of the cart to update. The product code is required.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param cart Properties of a shopping cart.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
@@ -438,14 +438,14 @@ public class CartResource {
 	}
 
 	/**
-	 * Update the current shopper's cart.
+	 * 
 	 * <p><pre><code>
 	 *	Cart cart = new Cart();
 	 *	CountDownLatch latch = cart.updateCart( cart,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param cart All of the properties of the cart to update. The product code is required.
+	 * @param cart Properties of a shopping cart.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
@@ -459,7 +459,7 @@ public class CartResource {
 	}
 
 	/**
-	 * Deletes the cart specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	Cart cart = new Cart();
 	 *	cart.deleteCart( cartId);
@@ -477,7 +477,7 @@ public class CartResource {
 	}
 
 	/**
-	 * Deletes the cart of the currently active shopper.
+	 * 
 	 * <p><pre><code>
 	 *	Cart cart = new Cart();
 	 *	cart.deleteCurrentCart();

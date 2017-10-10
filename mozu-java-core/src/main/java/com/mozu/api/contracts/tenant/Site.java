@@ -21,9 +21,6 @@ public class Site implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The unique identifier of the catalog of products used by a site.
-	 */
 	protected  Integer catalogId;
 
 	public Integer getCatalogId() {
@@ -44,9 +41,6 @@ public class Site implements Serializable
 		this.countryCode = countryCode;
 	}
 
-	/**
-	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
-	 */
 	protected  String currencyCode;
 
 	public String getCurrencyCode() {
@@ -57,9 +51,6 @@ public class Site implements Serializable
 		this.currencyCode = currencyCode;
 	}
 
-	/**
-	 * The domain associated with the site.
-	 */
 	protected  String domain;
 
 	public String getDomain() {
@@ -80,9 +71,6 @@ public class Site implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * Language used for the entity. Currently, only "en-US" is supported.
-	 */
 	protected  String localeCode;
 
 	public String getLocaleCode() {
@@ -93,9 +81,6 @@ public class Site implements Serializable
 		this.localeCode = localeCode;
 	}
 
-	/**
-	 * The name of the site.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -106,9 +91,6 @@ public class Site implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * The primary custom domain of the site.
-	 */
 	protected  String primaryCustomDomain;
 
 	public String getPrimaryCustomDomain() {
@@ -119,9 +101,6 @@ public class Site implements Serializable
 		this.primaryCustomDomain = primaryCustomDomain;
 	}
 
-	/**
-	 * Unique identifier of the Mozu tenant.
-	 */
 	protected  Integer tenantId;
 
 	public Integer getTenantId() {

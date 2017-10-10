@@ -27,182 +27,6 @@ public class OrderItemClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderItem> mozuClient=GetItemClient( checkoutId,  itemId);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * OrderItem orderItem = client.Result();
-	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param itemId 
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.OrderItem>
-	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItem
-	 */
-	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderItem> getItemClient(String checkoutId, String itemId) throws Exception
-	{
-		return getItemClient( checkoutId,  itemId,  null);
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderItem> mozuClient=GetItemClient( checkoutId,  itemId,  responseFields);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * OrderItem orderItem = client.Result();
-	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param itemId 
-	 * @param responseFields 
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.OrderItem>
-	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItem
-	 */
-	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderItem> getItemClient(String checkoutId, String itemId, String responseFields) throws Exception
-	{
-		MozuUrl url = com.mozu.api.urls.commerce.checkouts.OrderItemUrl.getItemUrl(checkoutId, itemId, responseFields);
-		String verb = "GET";
-		Class<?> clz = com.mozu.api.contracts.commerceruntime.orders.OrderItem.class;
-		MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderItem> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderItem>) MozuClientFactory.getInstance(clz);
-		mozuClient.setVerb(verb);
-		mozuClient.setResourceUrl(url);
-		return mozuClient;
-
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderItem> mozuClient=GetItemViaLineIdClient( checkoutId,  lineId);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * OrderItem orderItem = client.Result();
-	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param lineId 
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.OrderItem>
-	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItem
-	 */
-	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderItem> getItemViaLineIdClient(String checkoutId, Integer lineId) throws Exception
-	{
-		return getItemViaLineIdClient( checkoutId,  lineId,  null);
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderItem> mozuClient=GetItemViaLineIdClient( checkoutId,  lineId,  responseFields);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * OrderItem orderItem = client.Result();
-	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param lineId 
-	 * @param responseFields 
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.OrderItem>
-	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItem
-	 */
-	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderItem> getItemViaLineIdClient(String checkoutId, Integer lineId, String responseFields) throws Exception
-	{
-		MozuUrl url = com.mozu.api.urls.commerce.checkouts.OrderItemUrl.getItemViaLineIdUrl(checkoutId, lineId, responseFields);
-		String verb = "GET";
-		Class<?> clz = com.mozu.api.contracts.commerceruntime.orders.OrderItem.class;
-		MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderItem> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderItem>) MozuClientFactory.getInstance(clz);
-		mozuClient.setVerb(verb);
-		mozuClient.setResourceUrl(url);
-		return mozuClient;
-
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderItemCollection> mozuClient=GetItemsClient( checkoutId);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * OrderItemCollection orderItemCollection = client.Result();
-	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.OrderItemCollection>
-	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItemCollection
-	 */
-	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderItemCollection> getItemsClient(String checkoutId) throws Exception
-	{
-		return getItemsClient( checkoutId,  null);
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderItemCollection> mozuClient=GetItemsClient( checkoutId,  responseFields);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * OrderItemCollection orderItemCollection = client.Result();
-	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param responseFields 
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.OrderItemCollection>
-	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItemCollection
-	 */
-	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderItemCollection> getItemsClient(String checkoutId, String responseFields) throws Exception
-	{
-		MozuUrl url = com.mozu.api.urls.commerce.checkouts.OrderItemUrl.getItemsUrl(checkoutId, responseFields);
-		String verb = "GET";
-		Class<?> clz = com.mozu.api.contracts.commerceruntime.orders.OrderItemCollection.class;
-		MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderItemCollection> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderItemCollection>) MozuClientFactory.getInstance(clz);
-		mozuClient.setVerb(verb);
-		mozuClient.setResourceUrl(url);
-		return mozuClient;
-
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> mozuClient=UpdateItemDestinationClient( checkoutId,  itemId,  destinationId);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * Checkout checkout = client.Result();
-	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param destinationId 
-	 * @param itemId 
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.checkouts.Checkout>
-	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
-	 */
-	public static MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> updateItemDestinationClient(String checkoutId, String itemId, String destinationId) throws Exception
-	{
-		return updateItemDestinationClient( checkoutId,  itemId,  destinationId,  null);
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> mozuClient=UpdateItemDestinationClient( checkoutId,  itemId,  destinationId,  responseFields);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * Checkout checkout = client.Result();
-	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param destinationId 
-	 * @param itemId 
-	 * @param responseFields 
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.checkouts.Checkout>
-	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
-	 */
-	public static MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> updateItemDestinationClient(String checkoutId, String itemId, String destinationId, String responseFields) throws Exception
-	{
-		MozuUrl url = com.mozu.api.urls.commerce.checkouts.OrderItemUrl.updateItemDestinationUrl(checkoutId, destinationId, itemId, responseFields);
-		String verb = "POST";
-		Class<?> clz = com.mozu.api.contracts.commerceruntime.checkouts.Checkout.class;
-		MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout>) MozuClientFactory.getInstance(clz);
-		mozuClient.setVerb(verb);
-		mozuClient.setResourceUrl(url);
-		return mozuClient;
-
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> mozuClient=SplitItemClient( checkoutId,  itemId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
@@ -295,255 +119,41 @@ public class OrderItemClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> mozuClient=CreateItemClient( item,  checkoutId);
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> mozuClient=UpdateItemDestinationClient( checkoutId,  itemId,  destinationId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Checkout checkout = client.Result();
 	 * </code></pre></p>
 	 * @param checkoutId 
-	 * @param item 
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.checkouts.Checkout>
-	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
-	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItem
-	 */
-	public static MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> createItemClient(com.mozu.api.contracts.commerceruntime.orders.OrderItem item, String checkoutId) throws Exception
-	{
-		return createItemClient( item,  checkoutId,  null,  null);
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> mozuClient=CreateItemClient( item,  checkoutId,  skipInventoryCheck,  responseFields);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * Checkout checkout = client.Result();
-	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param responseFields 
-	 * @param skipInventoryCheck 
-	 * @param item 
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.checkouts.Checkout>
-	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
-	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItem
-	 */
-	public static MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> createItemClient(com.mozu.api.contracts.commerceruntime.orders.OrderItem item, String checkoutId, Boolean skipInventoryCheck, String responseFields) throws Exception
-	{
-		MozuUrl url = com.mozu.api.urls.commerce.checkouts.OrderItemUrl.createItemUrl(checkoutId, responseFields, skipInventoryCheck);
-		String verb = "POST";
-		Class<?> clz = com.mozu.api.contracts.commerceruntime.checkouts.Checkout.class;
-		MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout>) MozuClientFactory.getInstance(clz);
-		mozuClient.setVerb(verb);
-		mozuClient.setResourceUrl(url);
-		mozuClient.setBody(item);
-		return mozuClient;
-
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> mozuClient=UpdateItemDutyClient( checkoutId,  itemId,  dutyAmount);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * Checkout checkout = client.Result();
-	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param dutyAmount 
+	 * @param destinationId 
 	 * @param itemId 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.checkouts.Checkout>
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 */
-	public static MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> updateItemDutyClient(String checkoutId, String itemId, Double dutyAmount) throws Exception
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> updateItemDestinationClient(String checkoutId, String itemId, String destinationId) throws Exception
 	{
-		return updateItemDutyClient( checkoutId,  itemId,  dutyAmount,  null);
+		return updateItemDestinationClient( checkoutId,  itemId,  destinationId,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> mozuClient=UpdateItemDutyClient( checkoutId,  itemId,  dutyAmount,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> mozuClient=UpdateItemDestinationClient( checkoutId,  itemId,  destinationId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Checkout checkout = client.Result();
 	 * </code></pre></p>
 	 * @param checkoutId 
-	 * @param dutyAmount 
+	 * @param destinationId 
 	 * @param itemId 
 	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.checkouts.Checkout>
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 */
-	public static MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> updateItemDutyClient(String checkoutId, String itemId, Double dutyAmount, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> updateItemDestinationClient(String checkoutId, String itemId, String destinationId, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.checkouts.OrderItemUrl.updateItemDutyUrl(checkoutId, dutyAmount, itemId, responseFields);
+		MozuUrl url = com.mozu.api.urls.commerce.checkouts.OrderItemUrl.updateItemDestinationUrl(checkoutId, destinationId, itemId, responseFields);
 		String verb = "PUT";
-		Class<?> clz = com.mozu.api.contracts.commerceruntime.checkouts.Checkout.class;
-		MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout>) MozuClientFactory.getInstance(clz);
-		mozuClient.setVerb(verb);
-		mozuClient.setResourceUrl(url);
-		return mozuClient;
-
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> mozuClient=UpdateItemFulfillmentClient( item,  checkoutId,  itemId);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * Checkout checkout = client.Result();
-	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param itemId 
-	 * @param item 
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.checkouts.Checkout>
-	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
-	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItem
-	 */
-	public static MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> updateItemFulfillmentClient(com.mozu.api.contracts.commerceruntime.orders.OrderItem item, String checkoutId, String itemId) throws Exception
-	{
-		return updateItemFulfillmentClient( item,  checkoutId,  itemId,  null);
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> mozuClient=UpdateItemFulfillmentClient( item,  checkoutId,  itemId,  responseFields);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * Checkout checkout = client.Result();
-	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param itemId 
-	 * @param responseFields 
-	 * @param item 
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.checkouts.Checkout>
-	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
-	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItem
-	 */
-	public static MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> updateItemFulfillmentClient(com.mozu.api.contracts.commerceruntime.orders.OrderItem item, String checkoutId, String itemId, String responseFields) throws Exception
-	{
-		MozuUrl url = com.mozu.api.urls.commerce.checkouts.OrderItemUrl.updateItemFulfillmentUrl(checkoutId, itemId, responseFields);
-		String verb = "PUT";
-		Class<?> clz = com.mozu.api.contracts.commerceruntime.checkouts.Checkout.class;
-		MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout>) MozuClientFactory.getInstance(clz);
-		mozuClient.setVerb(verb);
-		mozuClient.setResourceUrl(url);
-		mozuClient.setBody(item);
-		return mozuClient;
-
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> mozuClient=UpdateItemProductPriceClient( checkoutId,  itemId,  price);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * Checkout checkout = client.Result();
-	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param itemId 
-	 * @param price 
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.checkouts.Checkout>
-	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
-	 */
-	public static MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> updateItemProductPriceClient(String checkoutId, String itemId, Double price) throws Exception
-	{
-		return updateItemProductPriceClient( checkoutId,  itemId,  price,  null);
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> mozuClient=UpdateItemProductPriceClient( checkoutId,  itemId,  price,  responseFields);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * Checkout checkout = client.Result();
-	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param itemId 
-	 * @param price 
-	 * @param responseFields 
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.checkouts.Checkout>
-	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
-	 */
-	public static MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> updateItemProductPriceClient(String checkoutId, String itemId, Double price, String responseFields) throws Exception
-	{
-		MozuUrl url = com.mozu.api.urls.commerce.checkouts.OrderItemUrl.updateItemProductPriceUrl(checkoutId, itemId, price, responseFields);
-		String verb = "PUT";
-		Class<?> clz = com.mozu.api.contracts.commerceruntime.checkouts.Checkout.class;
-		MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout>) MozuClientFactory.getInstance(clz);
-		mozuClient.setVerb(verb);
-		mozuClient.setResourceUrl(url);
-		return mozuClient;
-
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> mozuClient=UpdateQuantityClient( checkoutId,  itemId,  quantity);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * Checkout checkout = client.Result();
-	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param itemId 
-	 * @param quantity 
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.checkouts.Checkout>
-	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
-	 */
-	public static MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> updateQuantityClient(String checkoutId, String itemId, Integer quantity) throws Exception
-	{
-		return updateQuantityClient( checkoutId,  itemId,  quantity,  null);
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> mozuClient=UpdateQuantityClient( checkoutId,  itemId,  quantity,  responseFields);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * Checkout checkout = client.Result();
-	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param itemId 
-	 * @param quantity 
-	 * @param responseFields 
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.checkouts.Checkout>
-	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
-	 */
-	public static MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> updateQuantityClient(String checkoutId, String itemId, Integer quantity, String responseFields) throws Exception
-	{
-		MozuUrl url = com.mozu.api.urls.commerce.checkouts.OrderItemUrl.updateQuantityUrl(checkoutId, itemId, quantity, responseFields);
-		String verb = "PUT";
-		Class<?> clz = com.mozu.api.contracts.commerceruntime.checkouts.Checkout.class;
-		MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout>) MozuClientFactory.getInstance(clz);
-		mozuClient.setVerb(verb);
-		mozuClient.setResourceUrl(url);
-		return mozuClient;
-
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> mozuClient=DeleteItemClient( checkoutId,  itemId);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * Checkout checkout = client.Result();
-	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param itemId 
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.checkouts.Checkout>
-	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
-	 */
-	public static MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> deleteItemClient(String checkoutId, String itemId) throws Exception
-	{
-		MozuUrl url = com.mozu.api.urls.commerce.checkouts.OrderItemUrl.deleteItemUrl(checkoutId, itemId);
-		String verb = "DELETE";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.checkouts.Checkout.class;
 		MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);

@@ -23,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 public class GeneralSettingsClient {
 	
 	/**
-	 * Retrieve a site's general global settings.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.sitesettings.general.GeneralSettings> mozuClient=GetGeneralSettingsClient();
 	 * client.setBaseAddress(url);
@@ -39,14 +39,14 @@ public class GeneralSettingsClient {
 	}
 
 	/**
-	 * Retrieve a site's general global settings.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.sitesettings.general.GeneralSettings> mozuClient=GetGeneralSettingsClient( responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * GeneralSettings generalSettings = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.general.GeneralSettings>
 	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings
 	 */
@@ -63,14 +63,14 @@ public class GeneralSettingsClient {
 	}
 
 	/**
-	 * Updates a site's general global settings.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.sitesettings.general.GeneralSettings> mozuClient=UpdateGeneralSettingsClient( generalSettings);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * GeneralSettings generalSettings = client.Result();
 	 * </code></pre></p>
-	 * @param generalSettings The properties of the site's general settings to update.
+	 * @param generalSettings General settings used on the storefront site.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.general.GeneralSettings>
 	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings
@@ -81,15 +81,15 @@ public class GeneralSettingsClient {
 	}
 
 	/**
-	 * Updates a site's general global settings.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.sitesettings.general.GeneralSettings> mozuClient=UpdateGeneralSettingsClient( generalSettings,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * GeneralSettings generalSettings = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param generalSettings The properties of the site's general settings to update.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param generalSettings General settings used on the storefront site.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.general.GeneralSettings>
 	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings

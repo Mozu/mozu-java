@@ -45,7 +45,7 @@ public class ProductTypeResource {
 	}
 		
 	/**
-	 * Retrieves a list of product types according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 *	ProductType producttype = new ProductType();
 	 *	ProductTypeCollection productTypeCollection = producttype.getProductTypes();
@@ -60,7 +60,7 @@ public class ProductTypeResource {
 	}
 
 	/**
-	 * Retrieves a list of product types according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 *	ProductType producttype = new ProductType();
 	 *	CountDownLatch latch = producttype.getProductTypes( callback );
@@ -76,16 +76,16 @@ public class ProductTypeResource {
 	}
 
 	/**
-	 * Retrieves a list of product types according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 *	ProductType producttype = new ProductType();
 	 *	ProductTypeCollection productTypeCollection = producttype.getProductTypes( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. You can filter product type search results by any of its properties. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=Name+cont+shoes"
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.ProductTypeCollection
 	 * @see com.mozu.api.contracts.productadmin.ProductTypeCollection
@@ -100,16 +100,16 @@ public class ProductTypeResource {
 	}
 
 	/**
-	 * Retrieves a list of product types according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 *	ProductType producttype = new ProductType();
 	 *	CountDownLatch latch = producttype.getProductTypes( startIndex,  pageSize,  sortBy,  filter,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. You can filter product type search results by any of its properties. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=Name+cont+shoes"
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.ProductTypeCollection
@@ -124,12 +124,12 @@ public class ProductTypeResource {
 	}
 
 	/**
-	 * Retrieves the details of the product type specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	ProductType producttype = new ProductType();
 	 *	ProductType productType = producttype.getProductType( productTypeId);
 	 * </code></pre></p>
-	 * @param productTypeId Identifier of the product type to retrieve.
+	 * @param productTypeId Identifier of the product type.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.ProductType
 	 * @see com.mozu.api.contracts.productadmin.ProductType
@@ -140,12 +140,12 @@ public class ProductTypeResource {
 	}
 
 	/**
-	 * Retrieves the details of the product type specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	ProductType producttype = new ProductType();
 	 *	CountDownLatch latch = producttype.getProductType( productTypeId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param productTypeId Identifier of the product type to retrieve.
+	 * @param productTypeId Identifier of the product type.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.ProductType
@@ -157,13 +157,13 @@ public class ProductTypeResource {
 	}
 
 	/**
-	 * Retrieves the details of the product type specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	ProductType producttype = new ProductType();
 	 *	ProductType productType = producttype.getProductType( productTypeId,  responseFields);
 	 * </code></pre></p>
-	 * @param productTypeId Identifier of the product type to retrieve.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param productTypeId Identifier of the product type.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.ProductType
 	 * @see com.mozu.api.contracts.productadmin.ProductType
@@ -178,13 +178,13 @@ public class ProductTypeResource {
 	}
 
 	/**
-	 * Retrieves the details of the product type specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	ProductType producttype = new ProductType();
 	 *	CountDownLatch latch = producttype.getProductType( productTypeId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param productTypeId Identifier of the product type to retrieve.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param productTypeId Identifier of the product type.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.ProductType
@@ -199,13 +199,13 @@ public class ProductTypeResource {
 	}
 
 	/**
-	 * Creates a new product type based on the information supplied in the request.
+	 * 
 	 * <p><pre><code>
 	 *	ProductType producttype = new ProductType();
 	 *	ProductType productType = producttype.addProductType( productType);
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param productType Properties of the product type to create.
+	 * @param productType A product type is like a product template.
 	 * @return com.mozu.api.contracts.productadmin.ProductType
 	 * @see com.mozu.api.contracts.productadmin.ProductType
 	 * @see com.mozu.api.contracts.productadmin.ProductType
@@ -216,14 +216,14 @@ public class ProductTypeResource {
 	}
 
 	/**
-	 * Creates a new product type based on the information supplied in the request.
+	 * 
 	 * <p><pre><code>
 	 *	ProductType producttype = new ProductType();
 	 *	CountDownLatch latch = producttype.addProductType( productType, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
-	 * @param productType Properties of the product type to create.
+	 * @param productType A product type is like a product template.
 	 * @return com.mozu.api.contracts.productadmin.ProductType
 	 * @see com.mozu.api.contracts.productadmin.ProductType
 	 * @see com.mozu.api.contracts.productadmin.ProductType
@@ -234,14 +234,14 @@ public class ProductTypeResource {
 	}
 
 	/**
-	 * Creates a new product type based on the information supplied in the request.
+	 * 
 	 * <p><pre><code>
 	 *	ProductType producttype = new ProductType();
 	 *	ProductType productType = producttype.addProductType( productType,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
-	 * @param productType Properties of the product type to create.
+	 * @param productType A product type is like a product template.
 	 * @return com.mozu.api.contracts.productadmin.ProductType
 	 * @see com.mozu.api.contracts.productadmin.ProductType
 	 * @see com.mozu.api.contracts.productadmin.ProductType
@@ -256,15 +256,15 @@ public class ProductTypeResource {
 	}
 
 	/**
-	 * Creates a new product type based on the information supplied in the request.
+	 * 
 	 * <p><pre><code>
 	 *	ProductType producttype = new ProductType();
 	 *	CountDownLatch latch = producttype.addProductType( productType,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
-	 * @param productType Properties of the product type to create.
+	 * @param productType A product type is like a product template.
 	 * @return com.mozu.api.contracts.productadmin.ProductType
 	 * @see com.mozu.api.contracts.productadmin.ProductType
 	 * @see com.mozu.api.contracts.productadmin.ProductType
@@ -278,14 +278,14 @@ public class ProductTypeResource {
 	}
 
 	/**
-	 * Updates one or more properties of a product type.
+	 * 
 	 * <p><pre><code>
 	 *	ProductType producttype = new ProductType();
 	 *	ProductType productType = producttype.updateProductType( productType,  productTypeId);
 	 * </code></pre></p>
-	 * @param productTypeId Identifier of the product type to update.
+	 * @param productTypeId Identifier of the product type.
 	 * @param dataViewMode DataViewMode
-	 * @param productType The details of the product type to update.
+	 * @param productType A product type is like a product template.
 	 * @return com.mozu.api.contracts.productadmin.ProductType
 	 * @see com.mozu.api.contracts.productadmin.ProductType
 	 * @see com.mozu.api.contracts.productadmin.ProductType
@@ -296,15 +296,15 @@ public class ProductTypeResource {
 	}
 
 	/**
-	 * Updates one or more properties of a product type.
+	 * 
 	 * <p><pre><code>
 	 *	ProductType producttype = new ProductType();
 	 *	CountDownLatch latch = producttype.updateProductType( productType,  productTypeId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param productTypeId Identifier of the product type to update.
+	 * @param productTypeId Identifier of the product type.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
-	 * @param productType The details of the product type to update.
+	 * @param productType A product type is like a product template.
 	 * @return com.mozu.api.contracts.productadmin.ProductType
 	 * @see com.mozu.api.contracts.productadmin.ProductType
 	 * @see com.mozu.api.contracts.productadmin.ProductType
@@ -315,15 +315,15 @@ public class ProductTypeResource {
 	}
 
 	/**
-	 * Updates one or more properties of a product type.
+	 * 
 	 * <p><pre><code>
 	 *	ProductType producttype = new ProductType();
 	 *	ProductType productType = producttype.updateProductType( productType,  productTypeId,  responseFields);
 	 * </code></pre></p>
-	 * @param productTypeId Identifier of the product type to update.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param productTypeId Identifier of the product type.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
-	 * @param productType The details of the product type to update.
+	 * @param productType A product type is like a product template.
 	 * @return com.mozu.api.contracts.productadmin.ProductType
 	 * @see com.mozu.api.contracts.productadmin.ProductType
 	 * @see com.mozu.api.contracts.productadmin.ProductType
@@ -338,16 +338,16 @@ public class ProductTypeResource {
 	}
 
 	/**
-	 * Updates one or more properties of a product type.
+	 * 
 	 * <p><pre><code>
 	 *	ProductType producttype = new ProductType();
 	 *	CountDownLatch latch = producttype.updateProductType( productType,  productTypeId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param productTypeId Identifier of the product type to update.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param productTypeId Identifier of the product type.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
-	 * @param productType The details of the product type to update.
+	 * @param productType A product type is like a product template.
 	 * @return com.mozu.api.contracts.productadmin.ProductType
 	 * @see com.mozu.api.contracts.productadmin.ProductType
 	 * @see com.mozu.api.contracts.productadmin.ProductType
@@ -361,12 +361,12 @@ public class ProductTypeResource {
 	}
 
 	/**
-	 * Deletes the product type by providing the product type ID.
+	 * 
 	 * <p><pre><code>
 	 *	ProductType producttype = new ProductType();
 	 *	producttype.deleteProductType( productTypeId);
 	 * </code></pre></p>
-	 * @param productTypeId Identifier of the product type to delete.
+	 * @param productTypeId Identifier of the product type.
 	 * @param dataViewMode DataViewMode
 	 * @return 
 	 */

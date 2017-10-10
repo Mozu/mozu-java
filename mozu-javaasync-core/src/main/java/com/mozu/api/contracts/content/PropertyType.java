@@ -21,6 +21,9 @@ public class PropertyType implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The administrator name associated with the object/data.
+	 */
 	protected  String adminName;
 
 	public String getAdminName() {
@@ -31,6 +34,9 @@ public class PropertyType implements Serializable
 		this.adminName = adminName;
 	}
 
+	/**
+	 * The data type of the source product property, typically of type Bool, DateTime, Number, or String.
+	 */
 	protected  String dataType;
 
 	public String getDataType() {
@@ -41,6 +47,9 @@ public class PropertyType implements Serializable
 		this.dataType = dataType;
 	}
 
+	/**
+	 * The package of document lists and content documents to be installed.
+	 */
 	protected  String installationPackage;
 
 	public String getInstallationPackage() {
@@ -51,9 +60,6 @@ public class PropertyType implements Serializable
 		this.installationPackage = installationPackage;
 	}
 
-	/**
-	 * If true, this entity can be grouped.
-	 */
 	protected  Boolean isAggregatable;
 
 	public Boolean getIsAggregatable() {
@@ -64,9 +70,6 @@ public class PropertyType implements Serializable
 		this.isAggregatable = isAggregatable;
 	}
 
-	/**
-	 * If true, the entity can be searched. If false, the entity cannot be searched.
-	 */
 	protected  Boolean isQueryable;
 
 	public Boolean getIsQueryable() {
@@ -77,9 +80,6 @@ public class PropertyType implements Serializable
 		this.isQueryable = isQueryable;
 	}
 
-	/**
-	 * If true, the property type results are sortable. If false, the property type results cannot be sorted by any options.
-	 */
 	protected  Boolean isSortable;
 
 	public Boolean getIsSortable() {
@@ -90,9 +90,6 @@ public class PropertyType implements Serializable
 		this.isSortable = isSortable;
 	}
 
-	/**
-	 * The name of the content property type.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -103,6 +100,9 @@ public class PropertyType implements Serializable
 		this.name = name;
 	}
 
+	/**
+	 * The namespace for the accessible APIs and source capabilities in the core of  APIs.
+	 */
 	protected  String namespace;
 
 	public String getNamespace() {
@@ -113,6 +113,9 @@ public class PropertyType implements Serializable
 		this.namespace = namespace;
 	}
 
+	/**
+	 * The fully qualified name for the property type for content.
+	 */
 	protected  String propertyTypeFQN;
 
 	public String getPropertyTypeFQN() {
@@ -123,6 +126,9 @@ public class PropertyType implements Serializable
 		this.propertyTypeFQN = propertyTypeFQN;
 	}
 
+	/**
+	 * The current version number of the order, wish list, document list, or document type list.
+	 */
 	protected  String version;
 
 	public String getVersion() {

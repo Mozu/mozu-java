@@ -13,12 +13,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
-import com.mozu.api.contracts.customer.CustomerSegment;
 import com.mozu.api.contracts.customer.CustomerAttribute;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.customer.CommerceSummary;
 import com.mozu.api.contracts.customer.CustomerContact;
 import com.mozu.api.contracts.customer.CustomerNote;
+import com.mozu.api.contracts.customer.CustomerSegment;
 
 /**
  *	Properties of the customer account.
@@ -29,9 +29,6 @@ public class CustomerAccount implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * If true, the customer prefers to receive marketing material such as newsletters or email offers.
-	 */
 	protected  Boolean acceptsMarketing;
 
 	public Boolean getAcceptsMarketing() {
@@ -42,9 +39,6 @@ public class CustomerAccount implements Serializable
 		this.acceptsMarketing = acceptsMarketing;
 	}
 
-	/**
-	 * The legal or doing business as (DBA) or tradestyle name of the business or organization. The maximum character length is 200.
-	 */
 	protected  String companyOrOrganization;
 
 	public String getCompanyOrOrganization() {
@@ -55,6 +49,9 @@ public class CustomerAccount implements Serializable
 		this.companyOrOrganization = companyOrOrganization;
 	}
 
+	/**
+	 * customerSet ApiType DOCUMENT_HERE 
+	 */
 	protected  String customerSet;
 
 	public String getCustomerSet() {
@@ -65,6 +62,9 @@ public class CustomerAccount implements Serializable
 		this.customerSet = customerSet;
 	}
 
+	/**
+	 * This property tracks the customer account creation date. This date can be set manually via the APIÂ for customer accounts that are imported into . 
+	 */
 	protected  DateTime customerSinceDate;
 
 	public DateTime getCustomerSinceDate() {
@@ -76,7 +76,7 @@ public class CustomerAccount implements Serializable
 	}
 
 	/**
-	 * The email address associated with the customer account.
+	 * The email address for the customer account and contact. This email may be used for login to the storefront and for subscription mailing lists.
 	 */
 	protected  String emailAddress;
 
@@ -89,7 +89,7 @@ public class CustomerAccount implements Serializable
 	}
 
 	/**
-	 * Unique identifier an external system uses to identify this customer account.
+	 * Unique identifier used by an external program to identify a  order, customer account, or wish list.
 	 */
 	protected  String externalId;
 
@@ -102,7 +102,7 @@ public class CustomerAccount implements Serializable
 	}
 
 	/**
-	 * The first name associated with the customer account.
+	 * The full first name of a customer or contact name.
 	 */
 	protected  String firstName;
 
@@ -114,6 +114,9 @@ public class CustomerAccount implements Serializable
 		this.firstName = firstName;
 	}
 
+	/**
+	 * Indicates if an external password is set on this account.
+	 */
 	protected  Boolean hasExternalPassword;
 
 	public Boolean getHasExternalPassword() {
@@ -124,9 +127,6 @@ public class CustomerAccount implements Serializable
 		this.hasExternalPassword = hasExternalPassword;
 	}
 
-	/**
-	 * Identifier of the entity.
-	 */
 	protected  Integer id;
 
 	public Integer getId() {
@@ -137,6 +137,9 @@ public class CustomerAccount implements Serializable
 		this.id = id;
 	}
 
+	/**
+	 * Indicates if the object or feature is active.
+	 */
 	protected  Boolean isActive;
 
 	public Boolean getIsActive() {
@@ -160,6 +163,9 @@ public class CustomerAccount implements Serializable
 		this.isAnonymous = isAnonymous;
 	}
 
+	/**
+	 * Indicates if a customer account and associated data is locked. If true, the user account is locked due to multiple failed authentication attempts. The user cannot login until the account is unlocked.
+	 */
 	protected  Boolean isLocked;
 
 	public Boolean getIsLocked() {
@@ -171,7 +177,7 @@ public class CustomerAccount implements Serializable
 	}
 
 	/**
-	 * The last name associated with the customer account.
+	 * The full last name of a customer or contact name.
 	 */
 	protected  String lastName;
 
@@ -196,9 +202,6 @@ public class CustomerAccount implements Serializable
 		this.localeCode = localeCode;
 	}
 
-	/**
-	 * If true, this customer account has tax exempt status.
-	 */
 	protected  Boolean taxExempt;
 
 	public Boolean getTaxExempt() {
@@ -209,9 +212,6 @@ public class CustomerAccount implements Serializable
 		this.taxExempt = taxExempt;
 	}
 
-	/**
-	 * The tax identification number associated with the customer account.
-	 */
 	protected  String taxId;
 
 	public String getTaxId() {
@@ -222,9 +222,6 @@ public class CustomerAccount implements Serializable
 		this.taxId = taxId;
 	}
 
-	/**
-	 * Unique identifier of the user associated with the customer account. All customer accounts must have a defined user ID. If the shopper user is anonymous, the user ID represents a system-generated user ID string.
-	 */
 	protected  String userId;
 
 	public String getUserId() {
@@ -236,7 +233,7 @@ public class CustomerAccount implements Serializable
 	}
 
 	/**
-	 * The user name of the user associated with the customer account.
+	 * The user name associated with the user profile. The customer uses the user name to access the account.
 	 */
 	protected  String userName;
 
@@ -248,20 +245,6 @@ public class CustomerAccount implements Serializable
 		this.userName = userName;
 	}
 
-	/**
-	 * List of customer segments associated with the customer account. Customer accounts can be members of any number of segments.
-	 */
-	protected List<CustomerSegment> segments;
-	public List<CustomerSegment> getSegments() {
-		return this.segments;
-	}
-	public void setSegments(List<CustomerSegment> segments) {
-		this.segments = segments;
-	}
-
-	/**
-	 * Collection of customer account attributes.
-	 */
 	protected List<CustomerAttribute> attributes;
 	public List<CustomerAttribute> getAttributes() {
 		return this.attributes;
@@ -270,9 +253,6 @@ public class CustomerAccount implements Serializable
 		this.attributes = attributes;
 	}
 
-	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -283,9 +263,6 @@ public class CustomerAccount implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * Properties of the commerce summary associated with a customer account, which includes details about the shopper's most recent order, wish lists, and total order value over time.
-	 */
 	protected  CommerceSummary commerceSummary;
 
 	public CommerceSummary getCommerceSummary() {
@@ -296,9 +273,6 @@ public class CustomerAccount implements Serializable
 		this.commerceSummary = commerceSummary;
 	}
 
-	/**
-	 * Contact information, including the contact's name, address, phone numbers, email addresses, and company (if supplied). Also indicates whether this is a billing, shipping, or billing and shipping contact.
-	 */
 	protected List<CustomerContact> contacts;
 	public List<CustomerContact> getContacts() {
 		return this.contacts;
@@ -307,15 +281,23 @@ public class CustomerAccount implements Serializable
 		this.contacts = contacts;
 	}
 
-	/**
-	 * List of customer account notes.
-	 */
 	protected List<CustomerNote> notes;
 	public List<CustomerNote> getNotes() {
 		return this.notes;
 	}
 	public void setNotes(List<CustomerNote> notes) {
 		this.notes = notes;
+	}
+
+	/**
+	 * List of customer segments associated with the customer account. Customer accounts can be members of any number of segments.
+	 */
+	protected List<CustomerSegment> segments;
+	public List<CustomerSegment> getSegments() {
+		return this.segments;
+	}
+	public void setSegments(List<CustomerSegment> segments) {
+		this.segments = segments;
 	}
 
 

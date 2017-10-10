@@ -37,12 +37,12 @@ public class OrderAttributeResource {
 
 	
 	/**
-	 * Retrieves a list of the attributes defined for the order specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	OrderAttribute orderattribute = new OrderAttribute();
 	 *	OrderAttribute orderAttribute = orderattribute.getOrderAttributes( orderId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order for which to retrieve a list of defined attributes.
+	 * @param orderId Unique identifier of the order.
 	 * @return List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderAttribute
 	 */
@@ -56,12 +56,12 @@ public class OrderAttributeResource {
 	}
 
 	/**
-	 * Retrieves a list of the attributes defined for the order specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	OrderAttribute orderattribute = new OrderAttribute();
 	 *	CountDownLatch latch = orderattribute.getOrderAttributes( orderId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order for which to retrieve a list of defined attributes.
+	 * @param orderId Unique identifier of the order.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderAttribute
@@ -75,13 +75,13 @@ public class OrderAttributeResource {
 	}
 
 	/**
-	 * Applies a list of attributes to the order specified in the request and defines a value for each attribute in the request body.
+	 * 
 	 * <p><pre><code>
 	 *	OrderAttribute orderattribute = new OrderAttribute();
 	 *	OrderAttribute orderAttribute = orderattribute.createOrderAttributes( orderAttributes,  orderId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order for which to assign the attributes.
-	 * @param orderAttributes The list of attributes to associate with the order, and the properties of each attribute to define for the order.
+	 * @param orderId Unique identifier of the order.
+	 * @param orderAttributes Properties of an attribute applied to an order.
 	 * @return List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderAttribute
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderAttribute
@@ -96,14 +96,14 @@ public class OrderAttributeResource {
 	}
 
 	/**
-	 * Applies a list of attributes to the order specified in the request and defines a value for each attribute in the request body.
+	 * 
 	 * <p><pre><code>
 	 *	OrderAttribute orderattribute = new OrderAttribute();
 	 *	CountDownLatch latch = orderattribute.createOrderAttributes( orderAttributes,  orderId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order for which to assign the attributes.
+	 * @param orderId Unique identifier of the order.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param orderAttributes The list of attributes to associate with the order, and the properties of each attribute to define for the order.
+	 * @param orderAttributes Properties of an attribute applied to an order.
 	 * @return List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderAttribute
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderAttribute
@@ -117,13 +117,13 @@ public class OrderAttributeResource {
 	}
 
 	/**
-	 * Updates one or more properties of an attribute defined for the order specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	OrderAttribute orderattribute = new OrderAttribute();
 	 *	OrderAttribute orderAttribute = orderattribute.updateOrderAttributes( orderAttributes,  orderId);
 	 * </code></pre></p>
-	 * @param orderId Identifier of the order for which to update attributes.
-	 * @param orderAttributes List of order attributes to update, including the properties of each defined attribute in the list.
+	 * @param orderId Unique identifier of the order.
+	 * @param orderAttributes Properties of an attribute applied to an order.
 	 * @return List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderAttribute
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderAttribute
@@ -134,14 +134,14 @@ public class OrderAttributeResource {
 	}
 
 	/**
-	 * Updates one or more properties of an attribute defined for the order specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	OrderAttribute orderattribute = new OrderAttribute();
 	 *	CountDownLatch latch = orderattribute.updateOrderAttributes( orderAttributes,  orderId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param orderId Identifier of the order for which to update attributes.
+	 * @param orderId Unique identifier of the order.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param orderAttributes List of order attributes to update, including the properties of each defined attribute in the list.
+	 * @param orderAttributes Properties of an attribute applied to an order.
 	 * @return List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderAttribute
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderAttribute
@@ -152,14 +152,14 @@ public class OrderAttributeResource {
 	}
 
 	/**
-	 * Updates one or more properties of an attribute defined for the order specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	OrderAttribute orderattribute = new OrderAttribute();
 	 *	OrderAttribute orderAttribute = orderattribute.updateOrderAttributes( orderAttributes,  orderId,  removeMissing);
 	 * </code></pre></p>
-	 * @param orderId Identifier of the order for which to update attributes.
+	 * @param orderId Unique identifier of the order.
 	 * @param removeMissing If true, the operation removes missing properties so that the updated order attributes will not show properties with a null value.
-	 * @param orderAttributes List of order attributes to update, including the properties of each defined attribute in the list.
+	 * @param orderAttributes Properties of an attribute applied to an order.
 	 * @return List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderAttribute
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderAttribute
@@ -174,15 +174,15 @@ public class OrderAttributeResource {
 	}
 
 	/**
-	 * Updates one or more properties of an attribute defined for the order specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	OrderAttribute orderattribute = new OrderAttribute();
 	 *	CountDownLatch latch = orderattribute.updateOrderAttributes( orderAttributes,  orderId,  removeMissing, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param orderId Identifier of the order for which to update attributes.
+	 * @param orderId Unique identifier of the order.
 	 * @param removeMissing If true, the operation removes missing properties so that the updated order attributes will not show properties with a null value.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param orderAttributes List of order attributes to update, including the properties of each defined attribute in the list.
+	 * @param orderAttributes Properties of an attribute applied to an order.
 	 * @return List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderAttribute
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderAttribute

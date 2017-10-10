@@ -15,12 +15,18 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productruntime.SearchSuggestion;
 
+/**
+ *	A group of product search terms to suggest to a customer based on defined queries.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SearchSuggestionGroup implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The user supplied name that appears in . You can use this field for identification purposes.
+	 */
 	protected  String name;
 
 	public String getName() {
@@ -31,6 +37,9 @@ public class SearchSuggestionGroup implements Serializable
 		this.name = name;
 	}
 
+	/**
+	 * List of related SearchSuggestions
+	 */
 	protected List<SearchSuggestion> suggestions;
 	public List<SearchSuggestion> getSuggestions() {
 		return this.suggestions;

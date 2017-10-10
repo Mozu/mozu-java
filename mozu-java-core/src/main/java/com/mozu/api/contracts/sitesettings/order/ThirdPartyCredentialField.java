@@ -24,9 +24,6 @@ public class ThirdPartyCredentialField implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * System-supplied API name required to communicate with the external payment processor.
-	 */
 	protected  String apiName;
 
 	public String getApiName() {
@@ -37,9 +34,6 @@ public class ThirdPartyCredentialField implements Serializable
 		this.apiName = apiName;
 	}
 
-	/**
-	 * System-supplied name that displays for the third party credential field.
-	 */
 	protected  String displayName;
 
 	public String getDisplayName() {
@@ -50,6 +44,9 @@ public class ThirdPartyCredentialField implements Serializable
 		this.displayName = displayName;
 	}
 
+	/**
+	 * The type of input selection used to define a value for the attribute, including Yes/No, Date, DateTime, List, TextBox, or TextArea.
+	 */
 	protected  String inputType;
 
 	public String getInputType() {
@@ -60,6 +57,9 @@ public class ThirdPartyCredentialField implements Serializable
 		this.inputType = inputType;
 	}
 
+	/**
+	 * A flag to determine if the field holds sensitive information.
+	 */
 	protected  Boolean isSensitive;
 
 	public Boolean getIsSensitive() {
@@ -70,9 +70,6 @@ public class ThirdPartyCredentialField implements Serializable
 		this.isSensitive = isSensitive;
 	}
 
-	/**
-	 * The value supplied for the third party credential.
-	 */
 	protected  String value;
 
 	public String getValue() {
@@ -83,6 +80,9 @@ public class ThirdPartyCredentialField implements Serializable
 		this.value = value;
 	}
 
+	/**
+	 * List of valid vocabulary values defined for an attribute.
+	 */
 	protected List<VocabularyValue> vocabularyValues;
 	public List<VocabularyValue> getVocabularyValues() {
 		return this.vocabularyValues;

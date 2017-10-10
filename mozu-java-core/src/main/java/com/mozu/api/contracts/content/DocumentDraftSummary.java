@@ -31,6 +31,9 @@ public class DocumentDraftSummary implements Serializable
 		this.activeUpdateDate = activeUpdateDate;
 	}
 
+	/**
+	 * The unique identifier of the user that last updated the content or document draft.
+	 */
 	protected  String activeUpdatedBy;
 
 	public String getActiveUpdatedBy() {
@@ -41,6 +44,9 @@ public class DocumentDraftSummary implements Serializable
 		this.activeUpdatedBy = activeUpdatedBy;
 	}
 
+	/**
+	 * The unique identifier for the product catalog. Catalogs are part of a master catalog.
+	 */
 	protected  Integer catalogId;
 
 	public Integer getCatalogId() {
@@ -51,6 +57,9 @@ public class DocumentDraftSummary implements Serializable
 		this.catalogId = catalogId;
 	}
 
+	/**
+	 * Fully qualified name of the document type. 
+	 */
 	protected  String documentTypeFQN;
 
 	public String getDocumentTypeFQN() {
@@ -71,9 +80,6 @@ public class DocumentDraftSummary implements Serializable
 		this.draftUpdateDate = draftUpdateDate;
 	}
 
-	/**
-	 * Identifier of document draft.
-	 */
 	protected  String id;
 
 	public String getId() {
@@ -84,6 +90,9 @@ public class DocumentDraftSummary implements Serializable
 		this.id = id;
 	}
 
+	/**
+	 * The fully qualified name of the document list.
+	 */
 	protected  String listFQN;
 
 	public String getListFQN() {
@@ -94,6 +103,9 @@ public class DocumentDraftSummary implements Serializable
 		this.listFQN = listFQN;
 	}
 
+	/**
+	 * Unique identifier for the master catalog. 
+	 */
 	protected  Integer masterCatalogId;
 
 	public Integer getMasterCatalogId() {
@@ -104,9 +116,6 @@ public class DocumentDraftSummary implements Serializable
 		this.masterCatalogId = masterCatalogId;
 	}
 
-	/**
-	 * Name of the document draft.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -117,6 +126,9 @@ public class DocumentDraftSummary implements Serializable
 		this.name = name;
 	}
 
+	/**
+	 * The unique identifier of the publish set.
+	 */
 	protected  String publishSetCode;
 
 	public String getPublishSetCode() {
@@ -127,9 +139,6 @@ public class DocumentDraftSummary implements Serializable
 		this.publishSetCode = publishSetCode;
 	}
 
-	/**
-	 * Whether the draft has been published.
-	 */
 	protected  String publishType;
 
 	public String getPublishType() {
@@ -140,6 +149,9 @@ public class DocumentDraftSummary implements Serializable
 		this.publishType = publishType;
 	}
 
+	/**
+	 * Unique identifier for the site. This IDÂ is used at all levels of a store, catalog, and tenant to associate objects to a site.
+	 */
 	protected  Integer siteId;
 
 	public Integer getSiteId() {
@@ -150,9 +162,6 @@ public class DocumentDraftSummary implements Serializable
 		this.siteId = siteId;
 	}
 
-	/**
-	 * Unique identifier of the user who last modified the item. This value is system-supplied and read-only.
-	 */
 	protected  String updatedBy;
 
 	public String getUpdatedBy() {

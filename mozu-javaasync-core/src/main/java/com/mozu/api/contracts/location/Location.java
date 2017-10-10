@@ -14,6 +14,7 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.Address;
+import com.mozu.api.contracts.location.LocationAttribute;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.location.FulfillmentType;
 import com.mozu.api.contracts.location.Coordinates;
@@ -30,6 +31,9 @@ public class Location implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Allow fullfillment with no (or less) stock
+	 */
 	protected  Boolean allowFulfillmentWithNoStock;
 
 	public Boolean getAllowFulfillmentWithNoStock() {
@@ -40,9 +44,6 @@ public class Location implements Serializable
 		this.allowFulfillmentWithNoStock = allowFulfillmentWithNoStock;
 	}
 
-	/**
-	 * User-defined code to assign to this location.
-	 */
 	protected  String code;
 
 	public String getCode() {
@@ -53,9 +54,6 @@ public class Location implements Serializable
 		this.code = code;
 	}
 
-	/**
-	 * User-defined description of this location.
-	 */
 	protected  String description;
 
 	public String getDescription() {
@@ -66,9 +64,6 @@ public class Location implements Serializable
 		this.description = description;
 	}
 
-	/**
-	 * The fax number associated with this location.
-	 */
 	protected  String fax;
 
 	public String getFax() {
@@ -79,6 +74,9 @@ public class Location implements Serializable
 		this.fax = fax;
 	}
 
+	/**
+	 * Locations is disabled (soft delete)
+	 */
 	protected  Boolean isDisabled;
 
 	public Boolean getIsDisabled() {
@@ -89,9 +87,6 @@ public class Location implements Serializable
 		this.isDisabled = isDisabled;
 	}
 
-	/**
-	 * The user-defined name of the location.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -102,9 +97,6 @@ public class Location implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * Any tenant-defined notes associated with this location.
-	 */
 	protected  String note;
 
 	public String getNote() {
@@ -115,9 +107,6 @@ public class Location implements Serializable
 		this.note = note;
 	}
 
-	/**
-	 * The phone number associated with this location.
-	 */
 	protected  String phone;
 
 	public String getPhone() {
@@ -128,9 +117,6 @@ public class Location implements Serializable
 		this.phone = phone;
 	}
 
-	/**
-	 * If true, this location maintains its own product inventory. If the location uses the direct ship fulfillment type, it must also support inventory.
-	 */
 	protected  Boolean supportsInventory;
 
 	public Boolean getSupportsInventory() {
@@ -141,9 +127,6 @@ public class Location implements Serializable
 		this.supportsInventory = supportsInventory;
 	}
 
-	/**
-	 * List of tenant-defined tags associated with this location.
-	 */
 	protected List<String> tags;
 	public List<String> getTags() {
 		return this.tags;
@@ -152,9 +135,6 @@ public class Location implements Serializable
 		this.tags = tags;
 	}
 
-	/**
-	 * The physical address properties of the location.
-	 */
 	protected  Address address;
 
 	public Address getAddress() {
@@ -163,6 +143,17 @@ public class Location implements Serializable
 
 	public void setAddress(Address address) {
 		this.address = address;
+	}
+
+	/**
+	 * Collection of attributes that may be paged list or a list, depending on the usage per object and API type.
+	 */
+	protected List<LocationAttribute> attributes;
+	public List<LocationAttribute> getAttributes() {
+		return this.attributes;
+	}
+	public void setAttributes(List<LocationAttribute> attributes) {
+		this.attributes = attributes;
 	}
 
 	protected  AuditInfo auditInfo;
@@ -175,9 +166,6 @@ public class Location implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * List of order fulfillment types associated with this location. The location can have fulfillment types of direct ship (DS), in-store pickup (SP), or both.
-	 */
 	protected List<FulfillmentType> fulfillmentTypes;
 	public List<FulfillmentType> getFulfillmentTypes() {
 		return this.fulfillmentTypes;
@@ -186,9 +174,6 @@ public class Location implements Serializable
 		this.fulfillmentTypes = fulfillmentTypes;
 	}
 
-	/**
-	 * The geographical coordinates associated with this location.
-	 */
 	protected  Coordinates geo;
 
 	public Coordinates getGeo() {
@@ -199,9 +184,6 @@ public class Location implements Serializable
 		this.geo = geo;
 	}
 
-	/**
-	 * List of location types associated with this location. You can associate individual locations with any number of location types.
-	 */
 	protected List<LocationType> locationTypes;
 	public List<LocationType> getLocationTypes() {
 		return this.locationTypes;
@@ -210,9 +192,6 @@ public class Location implements Serializable
 		this.locationTypes = locationTypes;
 	}
 
-	/**
-	 * List of standard operating hours for each day of the week this location is open for shopper business.
-	 */
 	protected  RegularHours regularHours;
 
 	public RegularHours getRegularHours() {

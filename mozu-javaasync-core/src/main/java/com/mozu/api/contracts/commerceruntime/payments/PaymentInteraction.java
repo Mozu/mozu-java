@@ -25,9 +25,6 @@ public class PaymentInteraction implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * If applicable, the total monetary amount associated with this payment interaction.
-	 */
 	protected  Double amount;
 
 	public Double getAmount() {
@@ -38,9 +35,6 @@ public class PaymentInteraction implements Serializable
 		this.amount = amount;
 	}
 
-	/**
-	 * If applicable, the check number associated with this payment interaction.
-	 */
 	protected  String checkNumber;
 
 	public String getCheckNumber() {
@@ -51,9 +45,6 @@ public class PaymentInteraction implements Serializable
 		this.checkNumber = checkNumber;
 	}
 
-	/**
-	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
-	 */
 	protected  String currencyCode;
 
 	public String getCurrencyCode() {
@@ -64,9 +55,6 @@ public class PaymentInteraction implements Serializable
 		this.currencyCode = currencyCode;
 	}
 
-	/**
-	 * If required by the payment gateway, the authorization code of the transaction.
-	 */
 	protected  String gatewayAuthCode;
 
 	public String getGatewayAuthCode() {
@@ -77,9 +65,6 @@ public class PaymentInteraction implements Serializable
 		this.gatewayAuthCode = gatewayAuthCode;
 	}
 
-	/**
-	 * AVS codes supplied by the payment gateway.
-	 */
 	protected  String gatewayAVSCodes;
 
 	public String getGatewayAVSCodes() {
@@ -90,9 +75,6 @@ public class PaymentInteraction implements Serializable
 		this.gatewayAVSCodes = gatewayAVSCodes;
 	}
 
-	/**
-	 * CVV2 codes supplied by the payment gateway.
-	 */
 	protected  String gatewayCVV2Codes;
 
 	public String getGatewayCVV2Codes() {
@@ -103,9 +85,6 @@ public class PaymentInteraction implements Serializable
 		this.gatewayCVV2Codes = gatewayCVV2Codes;
 	}
 
-	/**
-	 * Unique identifier of the gateway interaction. Used for credit card transactions where the payment creates a GatewayInteractionId for each interaction. System-supplied and read-only.
-	 */
 	protected  Integer gatewayInteractionId;
 
 	public Integer getGatewayInteractionId() {
@@ -116,9 +95,6 @@ public class PaymentInteraction implements Serializable
 		this.gatewayInteractionId = gatewayInteractionId;
 	}
 
-	/**
-	 * Response code from the gateway associated with the payment interaction. For example, if the gateway returns "Not Authorized," an interaction for voiding the payment transaction would result.
-	 */
 	protected  String gatewayResponseCode;
 
 	public String getGatewayResponseCode() {
@@ -130,7 +106,7 @@ public class PaymentInteraction implements Serializable
 	}
 
 	/**
-	 * Textual message returned by the payment gateway.
+	 * Textual message returned by the payment gateway for the associated .Refer to [Gateway Response Code and Text](https://www.mozu.com/docs/developer/api-guides/payment-gateways.htm#gateway_response_code_and_text) in the API Guides for more information.
 	 */
 	protected  String gatewayResponseText;
 
@@ -142,9 +118,6 @@ public class PaymentInteraction implements Serializable
 		this.gatewayResponseText = gatewayResponseText;
 	}
 
-	/**
-	 * Unique identifier of the gateway transaction associated with the payment interaction.
-	 */
 	protected  String gatewayTransactionId;
 
 	public String getGatewayTransactionId() {
@@ -155,9 +128,6 @@ public class PaymentInteraction implements Serializable
 		this.gatewayTransactionId = gatewayTransactionId;
 	}
 
-	/**
-	 * Unique identifier of the payment interaction.
-	 */
 	protected  String id;
 
 	public String getId() {
@@ -168,9 +138,6 @@ public class PaymentInteraction implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * Date and time the payment interaction occured.
-	 */
 	protected  DateTime interactionDate;
 
 	public DateTime getInteractionDate() {
@@ -181,9 +148,6 @@ public class PaymentInteraction implements Serializable
 		this.interactionDate = interactionDate;
 	}
 
-	/**
-	 * The type of payment interaction, such as Capture or CheckReceived.
-	 */
 	protected  String interactionType;
 
 	public String getInteractionType() {
@@ -194,9 +158,6 @@ public class PaymentInteraction implements Serializable
 		this.interactionType = interactionType;
 	}
 
-	/**
-	 * If true, the payment interaction was manually defined s part of offline order processing.
-	 */
 	protected  Boolean isManual;
 
 	public Boolean getIsManual() {
@@ -207,9 +168,6 @@ public class PaymentInteraction implements Serializable
 		this.isManual = isManual;
 	}
 
-	/**
-	 * If true, this payment interaction repeats on a scheduled interval.
-	 */
 	protected  Boolean isRecurring;
 
 	public Boolean getIsRecurring() {
@@ -220,9 +178,6 @@ public class PaymentInteraction implements Serializable
 		this.isRecurring = isRecurring;
 	}
 
-	/**
-	 * Note content entered for a payment interaction.
-	 */
 	protected  String note;
 
 	public String getNote() {
@@ -233,9 +188,6 @@ public class PaymentInteraction implements Serializable
 		this.note = note;
 	}
 
-	/**
-	 * Unique identifier of the order associated with this payment interaction.
-	 */
 	protected  String orderId;
 
 	public String getOrderId() {
@@ -246,9 +198,6 @@ public class PaymentInteraction implements Serializable
 		this.orderId = orderId;
 	}
 
-	/**
-	 * The status of the payment prior to the interaction being performed, which enables manual rollback of previous transactions.
-	 */
 	protected  String paymentEntryStatus;
 
 	public String getPaymentEntryStatus() {
@@ -259,9 +208,6 @@ public class PaymentInteraction implements Serializable
 		this.paymentEntryStatus = paymentEntryStatus;
 	}
 
-	/**
-	 * Unique identifier of the payment associated with this transaction.
-	 */
 	protected  String paymentId;
 
 	public String getPaymentId() {
@@ -272,9 +218,6 @@ public class PaymentInteraction implements Serializable
 		this.paymentId = paymentId;
 	}
 
-	/**
-	 * Unique identifier of previous interaction that this payment interaction is modifying. For example, when refunding a payment, the crediting interaction would reference the capture interaction.
-	 */
 	protected  Integer paymentTransactionInteractionIdReference;
 
 	public Integer getPaymentTransactionInteractionIdReference() {
@@ -285,6 +228,9 @@ public class PaymentInteraction implements Serializable
 		this.paymentTransactionInteractionIdReference = paymentTransactionInteractionIdReference;
 	}
 
+	/**
+	 * The unique identifier of the refund for a given interaction.
+	 */
 	protected  String refundId;
 
 	public String getRefundId() {
@@ -295,6 +241,9 @@ public class PaymentInteraction implements Serializable
 		this.refundId = refundId;
 	}
 
+	/**
+	 * The unique identifier of the return associated with a given interaction.
+	 */
 	protected  String returnId;
 
 	public String getReturnId() {
@@ -305,9 +254,6 @@ public class PaymentInteraction implements Serializable
 		this.returnId = returnId;
 	}
 
-	/**
-	 * The status of this payment interaction. Possible values are New, Authorized, Captured, Declined, Failed, Voided, Credited, CheckRequested, or RolledBack.
-	 */
 	protected  String status;
 
 	public String getStatus() {
@@ -318,9 +264,6 @@ public class PaymentInteraction implements Serializable
 		this.status = status;
 	}
 
-	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -331,6 +274,9 @@ public class PaymentInteraction implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
+	/**
+	 * Additional response data from the gateway that's unique to each gateway.This is a list of key value pairs.Refer to [Gateway Response Data](https://www.mozu.com/docs/developer/api-guides/payment-gateways.htm#gateway_response_data) in the API Guides for more information.
+	 */
 	protected List<PaymentGatewayResponseData> gatewayResponseData;
 	public List<PaymentGatewayResponseData> getGatewayResponseData() {
 		return this.gatewayResponseData;

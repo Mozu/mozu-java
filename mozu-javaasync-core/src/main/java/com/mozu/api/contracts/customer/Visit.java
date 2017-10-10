@@ -24,9 +24,6 @@ public class Visit implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Unique identifier of the customer account associated with the visit.
-	 */
 	protected  Integer accountId;
 
 	public Integer getAccountId() {
@@ -37,9 +34,6 @@ public class Visit implements Serializable
 		this.accountId = accountId;
 	}
 
-	/**
-	 * If the customer visit is made online, the location code associated with the website visited.
-	 */
 	protected  String browserLocationCode;
 
 	public String getBrowserLocationCode() {
@@ -50,9 +44,6 @@ public class Visit implements Serializable
 		this.browserLocationCode = browserLocationCode;
 	}
 
-	/**
-	 * The date and time of the customer visit.
-	 */
 	protected  DateTime date;
 
 	public DateTime getDate() {
@@ -63,9 +54,6 @@ public class Visit implements Serializable
 		this.date = date;
 	}
 
-	/**
-	 * Unique identifier of the customer visit.
-	 */
 	protected  String id;
 
 	public String getId() {
@@ -76,9 +64,6 @@ public class Visit implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * If the customer visit is made in person and associated with a defined location, the code that identifies the location.
-	 */
 	protected  String locationCode;
 
 	public String getLocationCode() {
@@ -89,9 +74,6 @@ public class Visit implements Serializable
 		this.locationCode = locationCode;
 	}
 
-	/**
-	 * The type of customer visit, which is "Website," "Store," "Call," or "Unknown."
-	 */
 	protected  String type;
 
 	public String getType() {
@@ -102,9 +84,6 @@ public class Visit implements Serializable
 		this.type = type;
 	}
 
-	/**
-	 * The user ID of the customer who visited the site.
-	 */
 	protected  String userId;
 
 	public String getUserId() {
@@ -115,9 +94,6 @@ public class Visit implements Serializable
 		this.userId = userId;
 	}
 
-	/**
-	 * The HTTP_Referrer that initiatied the visit started. If the shopper was not referred from another source, this value is null.
-	 */
 	protected  String webReferrer;
 
 	public String getWebReferrer() {
@@ -128,9 +104,6 @@ public class Visit implements Serializable
 		this.webReferrer = webReferrer;
 	}
 
-	/**
-	 * If the visit was made online, the identifier of the web session associated with the visit, which is system-supplied and read only.
-	 */
 	protected  String webSessionId;
 
 	public String getWebSessionId() {
@@ -141,9 +114,6 @@ public class Visit implements Serializable
 		this.webSessionId = webSessionId;
 	}
 
-	/**
-	 * Unique identifier of the site.
-	 */
 	protected  Integer webSiteId;
 
 	public Integer getWebSiteId() {
@@ -154,9 +124,6 @@ public class Visit implements Serializable
 		this.webSiteId = webSiteId;
 	}
 
-	/**
-	 * The user agent string for the browser.
-	 */
 	protected  String webUserAgent;
 
 	public String getWebUserAgent() {
@@ -167,9 +134,6 @@ public class Visit implements Serializable
 		this.webUserAgent = webUserAgent;
 	}
 
-	/**
-	 * Array list of transactions the customer performed during the visit. A customer can perform multiple transactions in a single visit, or the visit can have no associated transactions.
-	 */
 	protected List<Transaction> transactions;
 	public List<Transaction> getTransactions() {
 		return this.transactions;

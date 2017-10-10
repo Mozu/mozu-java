@@ -16,7 +16,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productruntime.FacetValue;
 
 /**
- *	Properties of the facet used to index product searches on a storefront.
+ *	Properties of the facet used to retrieve documents.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Facet implements Serializable
@@ -24,9 +24,6 @@ public class Facet implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The type of facet. Valid values are "range," which enables creation of a range of values, or "value," which populates the facet values based on the associated attribute or category.
-	 */
 	protected  String facetType;
 
 	public String getFacetType() {
@@ -37,9 +34,6 @@ public class Facet implements Serializable
 		this.facetType = facetType;
 	}
 
-	/**
-	 * The field name associated with the facet.
-	 */
 	protected  String field;
 
 	public String getField() {
@@ -50,9 +44,6 @@ public class Facet implements Serializable
 		this.field = field;
 	}
 
-	/**
-	 * The descriptive label for the facet.
-	 */
 	protected  String label;
 
 	public String getLabel() {
@@ -63,9 +54,6 @@ public class Facet implements Serializable
 		this.label = label;
 	}
 
-	/**
-	 * The values associated with the facet.
-	 */
 	protected List<FacetValue> values;
 	public List<FacetValue> getValues() {
 		return this.values;

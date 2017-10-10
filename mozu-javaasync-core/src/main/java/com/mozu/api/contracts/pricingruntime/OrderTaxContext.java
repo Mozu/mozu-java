@@ -24,9 +24,6 @@ public class OrderTaxContext implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Tax amount applied to the handling fee defined for orders on this site.
-	 */
 	protected  Double handlingFeeTax;
 
 	public Double getHandlingFeeTax() {
@@ -37,9 +34,6 @@ public class OrderTaxContext implements Serializable
 		this.handlingFeeTax = handlingFeeTax;
 	}
 
-	/**
-	 * Tax amount applied to the order.
-	 */
 	protected  Double orderTax;
 
 	public Double getOrderTax() {
@@ -50,9 +44,6 @@ public class OrderTaxContext implements Serializable
 		this.orderTax = orderTax;
 	}
 
-	/**
-	 * Tax amount applied to the shipping costs on the order.
-	 */
 	protected  Double shippingTax;
 
 	public Double getShippingTax() {
@@ -63,9 +54,6 @@ public class OrderTaxContext implements Serializable
 		this.shippingTax = shippingTax;
 	}
 
-	/**
-	 * Properties of the tax context applicable for line items in an order.
-	 */
 	protected List<ItemTaxContext> itemTaxContexts;
 	public List<ItemTaxContext> getItemTaxContexts() {
 		return this.itemTaxContexts;
@@ -74,6 +62,9 @@ public class OrderTaxContext implements Serializable
 		this.itemTaxContexts = itemTaxContexts;
 	}
 
+	/**
+	 * Leverage this property within a [tax Arc.js action](https://www.mozu.com/docs/arcjs/commerce-catalog-storefront-tax/commerce-catalog-storefront-tax.htm) to supplement the tax information for this item or object with custom JSON data.
+	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode taxData;
 
 	public com.fasterxml.jackson.databind.JsonNode getTaxData() {

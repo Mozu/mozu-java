@@ -24,6 +24,9 @@ public class ExternalPaymentWorkflowDefinition implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The localized description in text for the object, displayed per the locale code. For example, descriptions are used for product descriptions, attributes, and pre-authorization transaction types.
+	 */
 	protected  String description;
 
 	public String getDescription() {
@@ -34,6 +37,9 @@ public class ExternalPaymentWorkflowDefinition implements Serializable
 		this.description = description;
 	}
 
+	/**
+	 * Fully qualified name of the attribute for the order or customer. 
+	 */
 	protected  String fullyQualifiedName;
 
 	public String getFullyQualifiedName() {
@@ -44,9 +50,6 @@ public class ExternalPaymentWorkflowDefinition implements Serializable
 		this.fullyQualifiedName = fullyQualifiedName;
 	}
 
-	/**
-	 * If true, the associated external payment workflow definition is enabled for the site.
-	 */
 	protected  Boolean isEnabled;
 
 	public Boolean getIsEnabled() {
@@ -57,9 +60,6 @@ public class ExternalPaymentWorkflowDefinition implements Serializable
 		this.isEnabled = isEnabled;
 	}
 
-	/**
-	 * The name of the external payment workflow definition.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -70,6 +70,9 @@ public class ExternalPaymentWorkflowDefinition implements Serializable
 		this.name = name;
 	}
 
+	/**
+	 * The namespace for the accessible APIs and source capabilities in the core of  APIs.
+	 */
 	protected  String namespace;
 
 	public String getNamespace() {
@@ -80,9 +83,6 @@ public class ExternalPaymentWorkflowDefinition implements Serializable
 		this.namespace = namespace;
 	}
 
-	/**
-	 * The credential fields required to communicate with the external payment processor.
-	 */
 	protected List<ThirdPartyCredentialField> credentials;
 	public List<ThirdPartyCredentialField> getCredentials() {
 		return this.credentials;

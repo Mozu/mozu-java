@@ -21,9 +21,6 @@ public class AuthTicketRequest implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The refresh token string from the application authentication ticket.
-	 */
 	protected  String refreshToken;
 
 	public String getRefreshToken() {

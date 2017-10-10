@@ -15,7 +15,7 @@ public class SiteShippingHandlingFeeUrl
 
 	/**
 	 * Get Resource Url for GetOrderHandlingFee
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getOrderHandlingFeeUrl(String responseFields)
@@ -27,7 +27,7 @@ public class SiteShippingHandlingFeeUrl
 
 	/**
 	 * Get Resource Url for CreateOrderHandlingFee
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl createOrderHandlingFeeUrl(String responseFields)
@@ -39,7 +39,7 @@ public class SiteShippingHandlingFeeUrl
 
 	/**
 	 * Get Resource Url for UpdateOrderHandlingFee
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateOrderHandlingFeeUrl(String responseFields)

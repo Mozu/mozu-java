@@ -20,7 +20,13 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the Order Attribute Definition resource to manage the attributes that uniquely describe orders, such as the associated shopping season or "How did you hear about us?". Merchants can display order attributes on the order summary, the order confirmation page, invoices, or packing slips.
+ * Attributes are used to add custom definitions and characteristics to the following objects:
+*  â€” are attributes that define the characteristics of products, enabling you to uniquely describe a product. They consist of options, properties, and extras. Refer to [Product Attributes](https://www.mozu.com/docs/guides/catalog/product-attributes.htm) in the Guides section for more information.
+
+*  â€” are custom attributes that you can apply to customer accounts to add further definition for special uses, such as marketing campaigns, or discounts. Refer to [Customer Attributes](https://www.mozu.com/docs/guides/customers/customers.htm#customer_attributes) in the Guides section for more information.
+
+*  â€” are custom attributes that enable you to uniquely describe an aspect of an order. Depending on the attribute definition, either you or a shopper can enter values for the order attribute. Refer to [Order Attributes](https://www.mozu.com/docs/guides/orders/order-attributes.htm) in the Guides section for more information.
+
  * </summary>
  */
 public class AttributeResource {
@@ -37,7 +43,7 @@ public class AttributeResource {
 
 	
 	/**
-	 * Retrieves a list of order attributes according to any filter criteria or sort options.
+	 * 
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
 	 *	AttributeCollection attributeCollection = attribute.getAttributes();
@@ -51,7 +57,7 @@ public class AttributeResource {
 	}
 
 	/**
-	 * Retrieves a list of order attributes according to any filter criteria or sort options.
+	 * 
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
 	 *	CountDownLatch latch = attribute.getAttributes( callback );
@@ -66,16 +72,16 @@ public class AttributeResource {
 	}
 
 	/**
-	 * Retrieves a list of order attributes according to any filter criteria or sort options.
+	 * 
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
 	 *	AttributeCollection attributeCollection = attribute.getAttributes( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return com.mozu.api.contracts.core.extensible.AttributeCollection
 	 * @see com.mozu.api.contracts.core.extensible.AttributeCollection
 	 */
@@ -89,16 +95,16 @@ public class AttributeResource {
 	}
 
 	/**
-	 * Retrieves a list of order attributes according to any filter criteria or sort options.
+	 * 
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
 	 *	CountDownLatch latch = attribute.getAttributes( startIndex,  pageSize,  sortBy,  filter,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.core.extensible.AttributeCollection
 	 * @see com.mozu.api.contracts.core.extensible.AttributeCollection
@@ -112,12 +118,12 @@ public class AttributeResource {
 	}
 
 	/**
-	 * Returns the list of vocabulary values defined for the order attribute specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
 	 *	AttributeVocabularyValue attributeVocabularyValue = attribute.getAttributeVocabularyValues( attributeFQN);
 	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @return List<com.mozu.api.contracts.core.extensible.AttributeVocabularyValue>
 	 * @see com.mozu.api.contracts.core.extensible.AttributeVocabularyValue
 	 */
@@ -131,12 +137,12 @@ public class AttributeResource {
 	}
 
 	/**
-	 * Returns the list of vocabulary values defined for the order attribute specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
 	 *	CountDownLatch latch = attribute.getAttributeVocabularyValues( attributeFQN, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return List<com.mozu.api.contracts.core.extensible.AttributeVocabularyValue>
 	 * @see com.mozu.api.contracts.core.extensible.AttributeVocabularyValue
@@ -150,12 +156,12 @@ public class AttributeResource {
 	}
 
 	/**
-	 * Retrieves the details of the order attribute specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
 	 *	Attribute attribute = attribute.getAttribute( attributeFQN);
 	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @return com.mozu.api.contracts.core.extensible.Attribute
 	 * @see com.mozu.api.contracts.core.extensible.Attribute
 	 */
@@ -165,12 +171,12 @@ public class AttributeResource {
 	}
 
 	/**
-	 * Retrieves the details of the order attribute specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
 	 *	CountDownLatch latch = attribute.getAttribute( attributeFQN, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.core.extensible.Attribute
 	 * @see com.mozu.api.contracts.core.extensible.Attribute
@@ -181,13 +187,13 @@ public class AttributeResource {
 	}
 
 	/**
-	 * Retrieves the details of the order attribute specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
 	 *	Attribute attribute = attribute.getAttribute( attributeFQN,  responseFields);
 	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.core.extensible.Attribute
 	 * @see com.mozu.api.contracts.core.extensible.Attribute
 	 */
@@ -201,13 +207,13 @@ public class AttributeResource {
 	}
 
 	/**
-	 * Retrieves the details of the order attribute specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
 	 *	CountDownLatch latch = attribute.getAttribute( attributeFQN,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.core.extensible.Attribute
 	 * @see com.mozu.api.contracts.core.extensible.Attribute
@@ -221,12 +227,12 @@ public class AttributeResource {
 	}
 
 	/**
-	 * Creates a new attribute to describe one aspect of an order.
+	 * 
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
 	 *	Attribute attribute = attribute.createAttribute( attribute);
 	 * </code></pre></p>
-	 * @param attribute The properties of the order attribute to create.
+	 * @param attribute Properties of an attribute used to describe customers or orders.
 	 * @return com.mozu.api.contracts.core.extensible.Attribute
 	 * @see com.mozu.api.contracts.core.extensible.Attribute
 	 * @see com.mozu.api.contracts.core.extensible.Attribute
@@ -237,13 +243,13 @@ public class AttributeResource {
 	}
 
 	/**
-	 * Creates a new attribute to describe one aspect of an order.
+	 * 
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
 	 *	CountDownLatch latch = attribute.createAttribute( attribute, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param attribute The properties of the order attribute to create.
+	 * @param attribute Properties of an attribute used to describe customers or orders.
 	 * @return com.mozu.api.contracts.core.extensible.Attribute
 	 * @see com.mozu.api.contracts.core.extensible.Attribute
 	 * @see com.mozu.api.contracts.core.extensible.Attribute
@@ -254,13 +260,13 @@ public class AttributeResource {
 	}
 
 	/**
-	 * Creates a new attribute to describe one aspect of an order.
+	 * 
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
 	 *	Attribute attribute = attribute.createAttribute( attribute,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param attribute The properties of the order attribute to create.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param attribute Properties of an attribute used to describe customers or orders.
 	 * @return com.mozu.api.contracts.core.extensible.Attribute
 	 * @see com.mozu.api.contracts.core.extensible.Attribute
 	 * @see com.mozu.api.contracts.core.extensible.Attribute
@@ -275,14 +281,14 @@ public class AttributeResource {
 	}
 
 	/**
-	 * Creates a new attribute to describe one aspect of an order.
+	 * 
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
 	 *	CountDownLatch latch = attribute.createAttribute( attribute,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param attribute The properties of the order attribute to create.
+	 * @param attribute Properties of an attribute used to describe customers or orders.
 	 * @return com.mozu.api.contracts.core.extensible.Attribute
 	 * @see com.mozu.api.contracts.core.extensible.Attribute
 	 * @see com.mozu.api.contracts.core.extensible.Attribute
@@ -296,13 +302,13 @@ public class AttributeResource {
 	}
 
 	/**
-	 * Updates one or more properties of an order attribute.
+	 * 
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
 	 *	Attribute attribute = attribute.updateAttribute( attribute,  attributeFQN);
 	 * </code></pre></p>
-	 * @param attributeFQN 
-	 * @param attribute The properties of the order attribute to update.
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param attribute Properties of an attribute used to describe customers or orders.
 	 * @return com.mozu.api.contracts.core.extensible.Attribute
 	 * @see com.mozu.api.contracts.core.extensible.Attribute
 	 * @see com.mozu.api.contracts.core.extensible.Attribute
@@ -313,14 +319,14 @@ public class AttributeResource {
 	}
 
 	/**
-	 * Updates one or more properties of an order attribute.
+	 * 
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
 	 *	CountDownLatch latch = attribute.updateAttribute( attribute,  attributeFQN, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param attributeFQN 
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param attribute The properties of the order attribute to update.
+	 * @param attribute Properties of an attribute used to describe customers or orders.
 	 * @return com.mozu.api.contracts.core.extensible.Attribute
 	 * @see com.mozu.api.contracts.core.extensible.Attribute
 	 * @see com.mozu.api.contracts.core.extensible.Attribute
@@ -331,14 +337,14 @@ public class AttributeResource {
 	}
 
 	/**
-	 * Updates one or more properties of an order attribute.
+	 * 
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
 	 *	Attribute attribute = attribute.updateAttribute( attribute,  attributeFQN,  responseFields);
 	 * </code></pre></p>
-	 * @param attributeFQN 
-	 * @param responseFields 
-	 * @param attribute The properties of the order attribute to update.
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param attribute Properties of an attribute used to describe customers or orders.
 	 * @return com.mozu.api.contracts.core.extensible.Attribute
 	 * @see com.mozu.api.contracts.core.extensible.Attribute
 	 * @see com.mozu.api.contracts.core.extensible.Attribute
@@ -353,15 +359,15 @@ public class AttributeResource {
 	}
 
 	/**
-	 * Updates one or more properties of an order attribute.
+	 * 
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
 	 *	CountDownLatch latch = attribute.updateAttribute( attribute,  attributeFQN,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param attributeFQN 
-	 * @param responseFields 
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param attribute The properties of the order attribute to update.
+	 * @param attribute Properties of an attribute used to describe customers or orders.
 	 * @return com.mozu.api.contracts.core.extensible.Attribute
 	 * @see com.mozu.api.contracts.core.extensible.Attribute
 	 * @see com.mozu.api.contracts.core.extensible.Attribute

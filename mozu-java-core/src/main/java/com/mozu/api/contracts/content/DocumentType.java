@@ -24,6 +24,9 @@ public class DocumentType implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The administrator name associated with the object/data.
+	 */
 	protected  String adminName;
 
 	public String getAdminName() {
@@ -34,6 +37,9 @@ public class DocumentType implements Serializable
 		this.adminName = adminName;
 	}
 
+	/**
+	 * Fully qualified name of the document type. 
+	 */
 	protected  String documentTypeFQN;
 
 	public String getDocumentTypeFQN() {
@@ -44,6 +50,9 @@ public class DocumentType implements Serializable
 		this.documentTypeFQN = documentTypeFQN;
 	}
 
+	/**
+	 * The package of document lists and content documents to be installed.
+	 */
 	protected  String installationPackage;
 
 	public String getInstallationPackage() {
@@ -54,9 +63,6 @@ public class DocumentType implements Serializable
 		this.installationPackage = installationPackage;
 	}
 
-	/**
-	 * The name of the document type.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -67,6 +73,9 @@ public class DocumentType implements Serializable
 		this.name = name;
 	}
 
+	/**
+	 * The namespace for the accessible APIs and source capabilities in the core of  APIs.
+	 */
 	protected  String namespace;
 
 	public String getNamespace() {
@@ -77,6 +86,9 @@ public class DocumentType implements Serializable
 		this.namespace = namespace;
 	}
 
+	/**
+	 * The current version number of the order, wish list, document list, or document type list.
+	 */
 	protected  String version;
 
 	public String getVersion() {
@@ -87,6 +99,9 @@ public class DocumentType implements Serializable
 		this.version = version;
 	}
 
+	/**
+	 * Metadata content for entities, used by document lists, document type lists, document type, views, entity lists, and list views.
+	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode metadata;
 
 	public com.fasterxml.jackson.databind.JsonNode getMetadata() {
@@ -97,6 +112,9 @@ public class DocumentType implements Serializable
 		this.metadata = metadata;
 	}
 
+	/**
+	 * Collection of property attributes defined for the object. Properties are associated to all objects within , including documents, products, and product types.
+	 */
 	protected List<Property> properties;
 	public List<Property> getProperties() {
 		return this.properties;

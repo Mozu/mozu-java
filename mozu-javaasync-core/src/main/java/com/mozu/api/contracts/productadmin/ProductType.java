@@ -26,7 +26,7 @@ public class ProductType implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The type of goods for this product.
+	 * The type of goods in a bundled product. A bundled product is composed of products associated to sell together. Possible values include â€œPhysicalâ€ and â€œDigitalCreditâ€. This comes from the `productType `of the product. Products are defaulted to a Physical `goodsType`. Gift cards have a `goodsType `of DigitalCredit.
 	 */
 	protected  String goodsType;
 
@@ -38,9 +38,6 @@ public class ProductType implements Serializable
 		this.goodsType = goodsType;
 	}
 
-	/**
-	 * Unique identifier of the product type.
-	 */
 	protected  Integer id;
 
 	public Integer getId() {
@@ -51,9 +48,6 @@ public class ProductType implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * If true, this product is associated with the overall product type. There is only one BaseProductType per site group. System-supplied and read-only.
-	 */
 	protected  Boolean isBaseProductType;
 
 	public Boolean getIsBaseProductType() {
@@ -64,9 +58,6 @@ public class ProductType implements Serializable
 		this.isBaseProductType = isBaseProductType;
 	}
 
-	/**
-	 * The unique identifier of the master catalog associated with the entity.
-	 */
 	protected  Integer masterCatalogId;
 
 	public Integer getMasterCatalogId() {
@@ -77,9 +68,6 @@ public class ProductType implements Serializable
 		this.masterCatalogId = masterCatalogId;
 	}
 
-	/**
-	 * Name of the product type, such as "Shoes" or "TVs."
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -90,9 +78,6 @@ public class ProductType implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * The number of products associated with this product type.
-	 */
 	protected  Integer productCount;
 
 	public Integer getProductCount() {
@@ -104,7 +89,7 @@ public class ProductType implements Serializable
 	}
 
 	/**
-	 * List of product usages that describe how products of this type are used. Products of this type can be Standard (a single product without configurable options), Configurable (a product that includes configurable option attributes), Bundle (a collection of products sold as a single entity), or Component (an invididual product that represents a component in a bundle). Product type usages cannot be both Bundle and Configurable.
+	 * List of product usages that describe how products of this type are used. Products of this type can be Standard (a single product without configurable options), Configurable (a product that includes configurable option attributes), Bundle (a collection of products sold as a single entity), or Component (an invididual product that represents a component in a bundle).
 	 */
 	protected List<String> productUsages;
 	public List<String> getProductUsages() {
@@ -114,9 +99,6 @@ public class ProductType implements Serializable
 		this.productUsages = productUsages;
 	}
 
-	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -127,9 +109,6 @@ public class ProductType implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * The list of product type attributes which exist as extras. Example: monogram
-	 */
 	protected List<AttributeInProductType> extras;
 	public List<AttributeInProductType> getExtras() {
 		return this.extras;
@@ -138,9 +117,6 @@ public class ProductType implements Serializable
 		this.extras = extras;
 	}
 
-	/**
-	 * The list of product type attributes which exist as options.
-	 */
 	protected List<AttributeInProductType> options;
 	public List<AttributeInProductType> getOptions() {
 		return this.options;
@@ -149,9 +125,6 @@ public class ProductType implements Serializable
 		this.options = options;
 	}
 
-	/**
-	 * The list of product type attributes which exist as properties, such as color.
-	 */
 	protected List<AttributeInProductType> properties;
 	public List<AttributeInProductType> getProperties() {
 		return this.properties;

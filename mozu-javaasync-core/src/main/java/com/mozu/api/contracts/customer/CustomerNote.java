@@ -22,9 +22,6 @@ public class CustomerNote implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The contents of a customer account note.
-	 */
 	protected  String content;
 
 	public String getContent() {
@@ -35,9 +32,6 @@ public class CustomerNote implements Serializable
 		this.content = content;
 	}
 
-	/**
-	 * Identifier of the customer account note.
-	 */
 	protected  Integer id;
 
 	public Integer getId() {
@@ -48,9 +42,6 @@ public class CustomerNote implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {

@@ -14,7 +14,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.commerceruntime.commerce.PackageMeasurements;
 
 /**
- *	Properties of a component product in a product bundle. A product bundle can represent either a collection of multiple products sold as a single entity, or a collection of the same product sold as a package. For example, a 10-pack of socks.
+ *	Properties of a component product in a product bundle. A product bundle can represent either a collection of multiple products sold as a single entity, or a collection of the same product sold as a package. For example, a 10-pack of socks or multiple parts and devices in a technology bundle for a computer.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class BundledProduct implements Serializable
@@ -22,6 +22,9 @@ public class BundledProduct implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Allocation ID associated with this product on this order.
+	 */
 	protected  DateTime allocationExpiration;
 
 	public DateTime getAllocationExpiration() {
@@ -32,6 +35,9 @@ public class BundledProduct implements Serializable
 		this.allocationExpiration = allocationExpiration;
 	}
 
+	/**
+	 * Allocation ID associated with this product on this order.
+	 */
 	protected  Integer allocationId;
 
 	public Integer getAllocationId() {
@@ -43,7 +49,7 @@ public class BundledProduct implements Serializable
 	}
 
 	/**
-	 * The credit value of the bundled product.
+	 * The credit value of the product or bundled product. When the `goodsType `is `DigitalCredit`, this value is populated to indicate the value of the credit. This is used to create store credit in the fulfillment of gift cards.
 	 */
 	protected  Double creditValue;
 
@@ -55,6 +61,9 @@ public class BundledProduct implements Serializable
 		this.creditValue = creditValue;
 	}
 
+	/**
+	 * If the product is in relative pricing mode, this is the difference between associated prices for a product, variation option, or extra. The difference is calculated by subtracting the base price from the associated price with this product, option, and/or extra. For example, if a product with a defined monogram extra costs an additional $10, the `deltaPrice `value is "10". Between options, a price for a medium may be $10 and a large $12 giving a `deltaPrice `value of "2".Refer to [Product Variant Pricing and Weight](../../../guides/catalog/products.htm#product_variant_pricing_and_weight) in the Products guides topic for more information.
+	 */
 	protected  Double deltaPrice;
 
 	public Double getDeltaPrice() {
@@ -66,7 +75,7 @@ public class BundledProduct implements Serializable
 	}
 
 	/**
-	 * The description defined for a component product in a product bundle. System-supplied and read only.
+	 * The localized description in text for the object, displayed per the locale code. For example, descriptions are used for product descriptions, attributes, and pre-authorization transaction types.
 	 */
 	protected  String description;
 
@@ -78,6 +87,9 @@ public class BundledProduct implements Serializable
 		this.description = description;
 	}
 
+	/**
+	 * Fulfillment status of the product.
+	 */
 	protected  String fulfillmentStatus;
 
 	public String getFulfillmentStatus() {
@@ -89,7 +101,7 @@ public class BundledProduct implements Serializable
 	}
 
 	/**
-	 * The type of goods in a bundled product. For example: physical, digital, or digital credit.
+	 * The type of goods in a bundled product. A bundled product is composed of products associated to sell together. Possible values include â€œPhysicalâ€ and â€œDigitalCreditâ€. This comes from the `productType `of the product. Products are defaulted to a Physical `goodsType`. Gift cards have a `goodsType `of DigitalCredit.
 	 */
 	protected  String goodsType;
 
@@ -102,7 +114,7 @@ public class BundledProduct implements Serializable
 	}
 
 	/**
-	 * If true, this product cannot be shipped in a package with other items and must ship in a package by itself.
+	 * Indicates if the product must be shipped alone in a container. This is used for products and products within a bundle. If true, this product cannot be shipped in a package with other items and must ship in a package by itself.
 	 */
 	protected  Boolean isPackagedStandAlone;
 
@@ -115,7 +127,7 @@ public class BundledProduct implements Serializable
 	}
 
 	/**
-	 * The name of a component product in a product bundle. System-supplied and read only.
+	 * The user supplied name that appears in . You can use this field for identification purposes.
 	 */
 	protected  String name;
 
@@ -141,7 +153,7 @@ public class BundledProduct implements Serializable
 	}
 
 	/**
-	 * The value of the bundled product.
+	 * The value of the option attribute. These values are associated and used by product bundles and options.
 	 */
 	protected  Object optionValue;
 
@@ -167,7 +179,7 @@ public class BundledProduct implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the product reservation associated with the component product in a product bundle. System-supplied and read only.
+	 * Unique identifier of the product reservation associated with the component product in a product bundle or item in a cart/order. System-supplied and read only.
 	 */
 	protected  Integer productReservationId;
 
@@ -180,7 +192,7 @@ public class BundledProduct implements Serializable
 	}
 
 	/**
-	 * The quantity of a component product in its product bundle. System-supplied and read only.
+	 * The specified quantity of objects and items. This property is used for numerous object types including products, options, components within a product bundle, cart and order items, returned items, shipping line items, items in a digital product. and items associated with types and reservations.
 	 */
 	protected  Integer quantity;
 

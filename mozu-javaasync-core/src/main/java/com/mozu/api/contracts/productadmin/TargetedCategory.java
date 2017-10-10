@@ -21,9 +21,6 @@ public class TargetedCategory implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Identifier of the product category associated with the targeted discount.
-	 */
 	protected  Integer id;
 
 	public Integer getId() {

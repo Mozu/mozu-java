@@ -57,7 +57,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * If true, the customer account associated with the order is opted in to receive marketing materials.
+	 * Indicates if the customer account is opted to receive marketing materials. If true, the customer account is opted in for receiving the content. 
 	 */
 	protected  Boolean acceptsMarketing;
 
@@ -82,6 +82,9 @@ public class Order implements Serializable
 		this.amountAvailableForRefund = amountAvailableForRefund;
 	}
 
+	/**
+	 * A counter for how much money has been issued in refunds. This calculated field does NOT include refunds issued in returns.
+	 */
 	protected  Double amountRefunded;
 
 	public Double getAmountRefunded() {
@@ -105,9 +108,6 @@ public class Order implements Serializable
 		this.amountRemainingForPayment = amountRemainingForPayment;
 	}
 
-	/**
-	 * The available order, payment, and shipment actions a user can perform for the order.
-	 */
 	protected List<String> availableActions;
 	public List<String> getAvailableActions() {
 		return this.availableActions;
@@ -116,9 +116,6 @@ public class Order implements Serializable
 		this.availableActions = availableActions;
 	}
 
-	/**
-	 * Date when the order was cancelled. System-supplied and read-only.
-	 */
 	protected  DateTime cancelledDate;
 
 	public DateTime getCancelledDate() {
@@ -129,9 +126,6 @@ public class Order implements Serializable
 		this.cancelledDate = cancelledDate;
 	}
 
-	/**
-	 * Code that identifies the channel associated with the site where the order was submitted.
-	 */
 	protected  String channelCode;
 
 	public String getChannelCode() {
@@ -142,9 +136,6 @@ public class Order implements Serializable
 		this.channelCode = channelCode;
 	}
 
-	/**
-	 * Date when the order was closed. Closed order is an order that has been processed and the items shipped. System-supplied and read-only.
-	 */
 	protected  DateTime closedDate;
 
 	public DateTime getClosedDate() {
@@ -155,9 +146,6 @@ public class Order implements Serializable
 		this.closedDate = closedDate;
 	}
 
-	/**
-	 * Array list of coupon codes associated with an order submitted using an external system. Mozu populates this list during the order import process.
-	 */
 	protected List<String> couponCodes;
 	public List<String> getCouponCodes() {
 		return this.couponCodes;
@@ -166,9 +154,6 @@ public class Order implements Serializable
 		this.couponCodes = couponCodes;
 	}
 
-	/**
-	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
-	 */
 	protected  String currencyCode;
 
 	public String getCurrencyCode() {
@@ -179,9 +164,6 @@ public class Order implements Serializable
 		this.currencyCode = currencyCode;
 	}
 
-	/**
-	 * Numeric identifer of the customer account.
-	 */
 	protected  Integer customerAccountId;
 
 	public Integer getCustomerAccountId() {
@@ -192,9 +174,6 @@ public class Order implements Serializable
 		this.customerAccountId = customerAccountId;
 	}
 
-	/**
-	 * The type of interaction the shopper used to submit the order. Possible values are Website, Call, Store, or Unknown.
-	 */
 	protected  String customerInteractionType;
 
 	public String getCustomerInteractionType() {
@@ -205,9 +184,6 @@ public class Order implements Serializable
 		this.customerInteractionType = customerInteractionType;
 	}
 
-	/**
-	 * The tax identification number (TIN) of the customer who submitted the order. If the customer who submitted the order has a customer account defined for the tenant, the system sets this value when the order is submitted.
-	 */
 	protected  String customerTaxId;
 
 	public String getCustomerTaxId() {
@@ -218,9 +194,6 @@ public class Order implements Serializable
 		this.customerTaxId = customerTaxId;
 	}
 
-	/**
-	 * The aggregate total for all line items in the order, including costs associated with shopper-defined options or extras and any applied discounts.
-	 */
 	protected  Double discountedSubtotal;
 
 	public Double getDiscountedSubtotal() {
@@ -231,9 +204,6 @@ public class Order implements Serializable
 		this.discountedSubtotal = discountedSubtotal;
 	}
 
-	/**
-	 * The subtotal of the order including any applied discount calculations.
-	 */
 	protected  Double discountedTotal;
 
 	public Double getDiscountedTotal() {
@@ -244,9 +214,6 @@ public class Order implements Serializable
 		this.discountedTotal = discountedTotal;
 	}
 
-	/**
-	 * Estimated amount of discounts applied to all items in the order, which is system-supplied and read-only.
-	 */
 	protected  Double discountTotal;
 
 	public Double getDiscountTotal() {
@@ -257,6 +224,9 @@ public class Order implements Serializable
 		this.discountTotal = discountTotal;
 	}
 
+	/**
+	 * Order level duty or tariff amount. Does not take into account duties or tariffs specifically on items on the order
+	 */
 	protected  Double dutyAmount;
 
 	public Double getDutyAmount() {
@@ -267,6 +237,9 @@ public class Order implements Serializable
 		this.dutyAmount = dutyAmount;
 	}
 
+	/**
+	 * Duties or tariffs for the Order as well as OrderItems (e.g. if the Order has a $5 duty or tariff for any reason and an OrderItem has a $2 duty or tariff then the value in this property would be $7)
+	 */
 	protected  Double dutyTotal;
 
 	public Double getDutyTotal() {
@@ -277,9 +250,6 @@ public class Order implements Serializable
 		this.dutyTotal = dutyTotal;
 	}
 
-	/**
-	 * The email address of the specified user or the email address associated with the specified entity.
-	 */
 	protected  String email;
 
 	public String getEmail() {
@@ -290,9 +260,6 @@ public class Order implements Serializable
 		this.email = email;
 	}
 
-	/**
-	 * The date when the order will no longer be active or considered abandoned. For example, if a guest or anonymous shopper has 14 days of inactivity, the order is considered abandoned after that period of inactivity. An order never expires for shoppers who are logged into their account. Date in UTC Date/Time. System-supplied and read-only.
-	 */
 	protected  DateTime expirationDate;
 
 	public DateTime getExpirationDate() {
@@ -304,7 +271,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * Unique identifier used by an external program to identify a Mozu order.
+	 * Unique identifier used by an external program to identify a  order, customer account, or wish list.
 	 */
 	protected  String externalId;
 
@@ -316,9 +283,6 @@ public class Order implements Serializable
 		this.externalId = externalId;
 	}
 
-	/**
-	 * The monetary sum of all fees incurred in the order.
-	 */
 	protected  Double feeTotal;
 
 	public Double getFeeTotal() {
@@ -329,9 +293,6 @@ public class Order implements Serializable
 		this.feeTotal = feeTotal;
 	}
 
-	/**
-	 * The current fulfillment status of the order, which is "Fulfilled," "NotFulfilled," or "PartiallyFulfilled." The order is considered fulfilled when all packages are shipped or all pickups are picked up.
-	 */
 	protected  String fulfillmentStatus;
 
 	public String getFulfillmentStatus() {
@@ -342,9 +303,6 @@ public class Order implements Serializable
 		this.fulfillmentStatus = fulfillmentStatus;
 	}
 
-	/**
-	 * The combined price for all items in the order, including all selected options but excluding any discounts.
-	 */
 	protected  Double handlingAmount;
 
 	public Double getHandlingAmount() {
@@ -365,9 +323,6 @@ public class Order implements Serializable
 		this.handlingSubTotal = handlingSubTotal;
 	}
 
-	/**
-	 * If the handling fee for the order is subject to sales tax, the total tax amount.
-	 */
 	protected  Double handlingTaxTotal;
 
 	public Double getHandlingTaxTotal() {
@@ -391,9 +346,6 @@ public class Order implements Serializable
 		this.handlingTotal = handlingTotal;
 	}
 
-	/**
-	 * If true, the order has a draft that may include one or more uncommitted changes to the order or its components.
-	 */
 	protected  Boolean hasDraft;
 
 	public Boolean getHasDraft() {
@@ -404,9 +356,6 @@ public class Order implements Serializable
 		this.hasDraft = hasDraft;
 	}
 
-	/**
-	 * Unique identifier of the order.
-	 */
 	protected  String id;
 
 	public String getId() {
@@ -418,7 +367,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * If the order was imported from an external program, the date and time the order was imported into Mozu.
+	 * The date and time an order or wish list is imported into . This is not the date and time it was created in the external application.
 	 */
 	protected  DateTime importDate;
 
@@ -430,9 +379,6 @@ public class Order implements Serializable
 		this.importDate = importDate;
 	}
 
-	/**
-	 * The IP address from which the order originated.
-	 */
 	protected  String ipAddress;
 
 	public String getIpAddress() {
@@ -443,9 +389,6 @@ public class Order implements Serializable
 		this.ipAddress = ipAddress;
 	}
 
-	/**
-	 * If true, this version of the order is a draft that might contain uncommitted changes.
-	 */
 	protected  Boolean isDraft;
 
 	public Boolean getIsDraft() {
@@ -469,9 +412,6 @@ public class Order implements Serializable
 		this.isEligibleForReturns = isEligibleForReturns;
 	}
 
-	/**
-	 * If true, this order was submitted using an external system, and the order record was imported into Mozu.
-	 */
 	protected  Boolean isImport;
 
 	public Boolean getIsImport() {
@@ -482,9 +422,16 @@ public class Order implements Serializable
 		this.isImport = isImport;
 	}
 
-	/**
-	 * If true, the order is exempt from applied sales tax.
-	 */
+	protected  Boolean isPartialOrder;
+
+	public Boolean getIsPartialOrder() {
+		return this.isPartialOrder;
+	}
+
+	public void setIsPartialOrder(Boolean isPartialOrder) {
+		this.isPartialOrder = isPartialOrder;
+	}
+
 	protected  Boolean isTaxExempt;
 
 	public Boolean getIsTaxExempt() {
@@ -495,9 +442,6 @@ public class Order implements Serializable
 		this.isTaxExempt = isTaxExempt;
 	}
 
-	/**
-	 * The total amount of tax applied to items in the order.
-	 */
 	protected  Double itemTaxTotal;
 
 	public Double getItemTaxTotal() {
@@ -508,9 +452,6 @@ public class Order implements Serializable
 		this.itemTaxTotal = itemTaxTotal;
 	}
 
-	/**
-	 * The date when the order was last validated against the product catalog. Date in UTC Date/Time. System-supplied and read-only.
-	 */
 	protected  DateTime lastValidationDate;
 
 	public DateTime getLastValidationDate() {
@@ -521,6 +462,9 @@ public class Order implements Serializable
 		this.lastValidationDate = lastValidationDate;
 	}
 
+	/**
+	 * The total charge for the line item with all weighted order level manual adjustments.
+	 */
 	protected  Double lineItemSubtotalWithOrderAdjustments;
 
 	public Double getLineItemSubtotalWithOrderAdjustments() {
@@ -531,9 +475,6 @@ public class Order implements Serializable
 		this.lineItemSubtotalWithOrderAdjustments = lineItemSubtotalWithOrderAdjustments;
 	}
 
-	/**
-	 * The unique code that identifies the location where the order was submitted.
-	 */
 	protected  String locationCode;
 
 	public String getLocationCode() {
@@ -544,9 +485,6 @@ public class Order implements Serializable
 		this.locationCode = locationCode;
 	}
 
-	/**
-	 * The order number that displays on the storefront which differs from the order ID.
-	 */
 	protected  Integer orderNumber;
 
 	public Integer getOrderNumber() {
@@ -557,9 +495,6 @@ public class Order implements Serializable
 		this.orderNumber = orderNumber;
 	}
 
-	/**
-	 * Identifier of the cart prior to the customer proceeding to checkout.
-	 */
 	protected  String originalCartId;
 
 	public String getOriginalCartId() {
@@ -590,6 +525,9 @@ public class Order implements Serializable
 		this.parentCheckoutNumber = parentCheckoutNumber;
 	}
 
+	/**
+	 * If this Order has a parent Order, the parent Order ID is recorded here.
+	 */
 	protected  String parentOrderId;
 
 	public String getParentOrderId() {
@@ -600,6 +538,9 @@ public class Order implements Serializable
 		this.parentOrderId = parentOrderId;
 	}
 
+	/**
+	 * If the Order has a parent Order, the order number is recorded here.
+	 */
 	protected  Integer parentOrderNumber;
 
 	public Integer getParentOrderNumber() {
@@ -610,9 +551,6 @@ public class Order implements Serializable
 		this.parentOrderNumber = parentOrderNumber;
 	}
 
-	/**
-	 * If this order was created to fulfill an item replacement as part of a return merchandise authorization (RMA), the unique identifier of the return.
-	 */
 	protected  String parentReturnId;
 
 	public String getParentReturnId() {
@@ -623,6 +561,9 @@ public class Order implements Serializable
 		this.parentReturnId = parentReturnId;
 	}
 
+	/**
+	 * If the Order has a parent Order with a return, the return number is recorded here.
+	 */
 	protected  Integer parentReturnNumber;
 
 	public Integer getParentReturnNumber() {
@@ -633,9 +574,26 @@ public class Order implements Serializable
 		this.parentReturnNumber = parentReturnNumber;
 	}
 
-	/**
-	 * Status of the payment for the specified order.
-	 */
+	protected  Integer partialOrderCount;
+
+	public Integer getPartialOrderCount() {
+		return this.partialOrderCount;
+	}
+
+	public void setPartialOrderCount(Integer partialOrderCount) {
+		this.partialOrderCount = partialOrderCount;
+	}
+
+	protected  Integer partialOrderNumber;
+
+	public Integer getPartialOrderNumber() {
+		return this.partialOrderNumber;
+	}
+
+	public void setPartialOrderNumber(Integer partialOrderNumber) {
+		this.partialOrderNumber = partialOrderNumber;
+	}
+
 	protected  String paymentStatus;
 
 	public String getPaymentStatus() {
@@ -646,6 +604,9 @@ public class Order implements Serializable
 		this.paymentStatus = paymentStatus;
 	}
 
+	/**
+	 * If the order is associated with a price list, this is the unique code of the price list.
+	 */
 	protected  String priceListCode;
 
 	public String getPriceListCode() {
@@ -656,9 +617,6 @@ public class Order implements Serializable
 		this.priceListCode = priceListCode;
 	}
 
-	/**
-	 * Status of any returns associated with this order after it was completed.
-	 */
 	protected  String returnStatus;
 
 	public String getReturnStatus() {
@@ -669,6 +627,9 @@ public class Order implements Serializable
 		this.returnStatus = returnStatus;
 	}
 
+	/**
+	 * The total shipping amount for the order before discounts and adjustments.
+	 */
 	protected  Double shippingAmountBeforeDiscountsAndAdjustments;
 
 	public Double getShippingAmountBeforeDiscountsAndAdjustments() {
@@ -679,9 +640,6 @@ public class Order implements Serializable
 		this.shippingAmountBeforeDiscountsAndAdjustments = shippingAmountBeforeDiscountsAndAdjustments;
 	}
 
-	/**
-	 * The shipping subtotal amount calculated without any applied discounts.
-	 */
 	protected  Double shippingSubTotal;
 
 	public Double getShippingSubTotal() {
@@ -692,9 +650,6 @@ public class Order implements Serializable
 		this.shippingSubTotal = shippingSubTotal;
 	}
 
-	/**
-	 * The total amount of sales tax incurred for shipping charges on the order.
-	 */
 	protected  Double shippingTaxTotal;
 
 	public Double getShippingTaxTotal() {
@@ -705,9 +660,6 @@ public class Order implements Serializable
 		this.shippingTaxTotal = shippingTaxTotal;
 	}
 
-	/**
-	 * Amount of the shipping fees for the order.
-	 */
 	protected  Double shippingTotal;
 
 	public Double getShippingTotal() {
@@ -718,9 +670,6 @@ public class Order implements Serializable
 		this.shippingTotal = shippingTotal;
 	}
 
-	/**
-	 * Unique identifier of the site.
-	 */
 	protected  Integer siteId;
 
 	public Integer getSiteId() {
@@ -731,9 +680,6 @@ public class Order implements Serializable
 		this.siteId = siteId;
 	}
 
-	/**
-	 * The device from which the order originated in the case of offline orders.
-	 */
 	protected  String sourceDevice;
 
 	public String getSourceDevice() {
@@ -744,9 +690,6 @@ public class Order implements Serializable
 		this.sourceDevice = sourceDevice;
 	}
 
-	/**
-	 * The current status of this order. Possible values are "Pending", "Submitted", "Processing", "Pending Review", "Closed", or "Cancelled". System-supplied and read-only.
-	 */
 	protected  String status;
 
 	public String getStatus() {
@@ -757,9 +700,6 @@ public class Order implements Serializable
 		this.status = status;
 	}
 
-	/**
-	 * The date and time the order was submitted. System-supplied and read-only.
-	 */
 	protected  DateTime submittedDate;
 
 	public DateTime getSubmittedDate() {
@@ -770,9 +710,6 @@ public class Order implements Serializable
 		this.submittedDate = submittedDate;
 	}
 
-	/**
-	 * Amount of the order without sales tax, shipping costs, and other fees.
-	 */
 	protected  Double subtotal;
 
 	public Double getSubtotal() {
@@ -783,9 +720,6 @@ public class Order implements Serializable
 		this.subtotal = subtotal;
 	}
 
-	/**
-	 * The total monetary sum of sales tax for the order.
-	 */
 	protected  Double taxTotal;
 
 	public Double getTaxTotal() {
@@ -796,9 +730,6 @@ public class Order implements Serializable
 		this.taxTotal = taxTotal;
 	}
 
-	/**
-	 * Unique identifier of the Mozu tenant.
-	 */
 	protected  Integer tenantId;
 
 	public Integer getTenantId() {
@@ -809,9 +740,6 @@ public class Order implements Serializable
 		this.tenantId = tenantId;
 	}
 
-	/**
-	 * Amount of the order, including items, sales tax, shipping costs, and other fees.
-	 */
 	protected  Double total;
 
 	public Double getTotal() {
@@ -822,9 +750,6 @@ public class Order implements Serializable
 		this.total = total;
 	}
 
-	/**
-	 * The total amount collected to date for the order.
-	 */
 	protected  Double totalCollected;
 
 	public Double getTotalCollected() {
@@ -848,9 +773,6 @@ public class Order implements Serializable
 		this.type = type;
 	}
 
-	/**
-	 * The current version number of the order.
-	 */
 	protected  String version;
 
 	public String getVersion() {
@@ -861,9 +783,6 @@ public class Order implements Serializable
 		this.version = version;
 	}
 
-	/**
-	 * Unique identifier of the customer visit in which the order was created or last updated.
-	 */
 	protected  String visitId;
 
 	public String getVisitId() {
@@ -874,9 +793,6 @@ public class Order implements Serializable
 		this.visitId = visitId;
 	}
 
-	/**
-	 * Unique identifier of the web session in which the order was created or last updated.
-	 */
 	protected  String webSessionId;
 
 	public String getWebSessionId() {
@@ -887,9 +803,6 @@ public class Order implements Serializable
 		this.webSessionId = webSessionId;
 	}
 
-	/**
-	 * Properties of an ad-hoc price adjustment for an order.
-	 */
 	protected  Adjustment adjustment;
 
 	public Adjustment getAdjustment() {
@@ -900,9 +813,6 @@ public class Order implements Serializable
 		this.adjustment = adjustment;
 	}
 
-	/**
-	 * Paged list collection of order attributes.
-	 */
 	protected List<OrderAttribute> attributes;
 	public List<OrderAttribute> getAttributes() {
 		return this.attributes;
@@ -911,9 +821,6 @@ public class Order implements Serializable
 		this.attributes = attributes;
 	}
 
-	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -924,9 +831,6 @@ public class Order implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * Container for the customer billing information associated with an order.
-	 */
 	protected  BillingInfo billingInfo;
 
 	public BillingInfo getBillingInfo() {
@@ -937,9 +841,6 @@ public class Order implements Serializable
 		this.billingInfo = billingInfo;
 	}
 
-	/**
-	 * Paged list of notes entered when the order was modified.
-	 */
 	protected List<ChangeMessage> changeMessages;
 	public List<ChangeMessage> getChangeMessages() {
 		return this.changeMessages;
@@ -948,6 +849,9 @@ public class Order implements Serializable
 		this.changeMessages = changeMessages;
 	}
 
+	/**
+	 * Custom data for a given vendor set within the commerce process.
+	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {
@@ -969,6 +873,9 @@ public class Order implements Serializable
 		this.digitalPackages = digitalPackages;
 	}
 
+	/**
+	 * Extra properties (key-value pairs) that extend the primary object. Think of this as a property bag of string keys and string values.
+	 */
 	protected List<ExtendedProperty> extendedProperties;
 	public List<ExtendedProperty> getExtendedProperties() {
 		return this.extendedProperties;
@@ -977,9 +884,6 @@ public class Order implements Serializable
 		this.extendedProperties = extendedProperties;
 	}
 
-	/**
-	 * Properties of the item fulfillment information associated with the order. Shoppers can fulfill order items using in-store pickup or direct shipping.
-	 */
 	protected  FulfillmentInfo fulfillmentInfo;
 
 	public FulfillmentInfo getFulfillmentInfo() {
@@ -990,6 +894,9 @@ public class Order implements Serializable
 		this.fulfillmentInfo = fulfillmentInfo;
 	}
 
+	/**
+	 * The amount to adjust the order handling fee.
+	 */
 	protected  Adjustment handlingAdjustment;
 
 	public Adjustment getHandlingAdjustment() {
@@ -1000,6 +907,9 @@ public class Order implements Serializable
 		this.handlingAdjustment = handlingAdjustment;
 	}
 
+	/**
+	 * The list of historically-applied handling discounts. The active one will have IsExcluded == false
+	 */
 	protected List<AppliedDiscount> handlingDiscounts;
 	public List<AppliedDiscount> getHandlingDiscounts() {
 		return this.handlingDiscounts;
@@ -1009,7 +919,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * List of invalid coupon codes the shopper entered for the order.
+	 * The list of invalid coupons the shopper attempted to enter for the cart or order. These coupons may no longer be valid or incorrectly entered.
 	 */
 	protected List<InvalidCoupon> invalidCoupons;
 	public List<InvalidCoupon> getInvalidCoupons() {
@@ -1019,9 +929,6 @@ public class Order implements Serializable
 		this.invalidCoupons = invalidCoupons;
 	}
 
-	/**
-	 * An array list of objects in the returned collection.
-	 */
 	protected List<OrderItem> items;
 	public List<OrderItem> getItems() {
 		return this.items;
@@ -1030,9 +937,6 @@ public class Order implements Serializable
 		this.items = items;
 	}
 
-	/**
-	 * Paged list collection of order notes.
-	 */
 	protected List<OrderNote> notes;
 	public List<OrderNote> getNotes() {
 		return this.notes;
@@ -1041,9 +945,6 @@ public class Order implements Serializable
 		this.notes = notes;
 	}
 
-	/**
-	 * List of order-level discounts that apply to the order.
-	 */
 	protected List<AppliedDiscount> orderDiscounts;
 	public List<AppliedDiscount> getOrderDiscounts() {
 		return this.orderDiscounts;
@@ -1052,9 +953,6 @@ public class Order implements Serializable
 		this.orderDiscounts = orderDiscounts;
 	}
 
-	/**
-	 * Array list of physical packages shipped for the specified order.
-	 */
 	protected List<Package> packages;
 	public List<Package> getPackages() {
 		return this.packages;
@@ -1063,9 +961,6 @@ public class Order implements Serializable
 		this.packages = packages;
 	}
 
-	/**
-	 * Wrapper for a collection of payments associated with this order. An order can include any number of payments.
-	 */
 	protected List<Payment> payments;
 	public List<Payment> getPayments() {
 		return this.payments;
@@ -1074,9 +969,6 @@ public class Order implements Serializable
 		this.payments = payments;
 	}
 
-	/**
-	 * Array list of the in-store pickups defined for the order.
-	 */
 	protected List<Pickup> pickups;
 	public List<Pickup> getPickups() {
 		return this.pickups;
@@ -1085,6 +977,9 @@ public class Order implements Serializable
 		this.pickups = pickups;
 	}
 
+	/**
+	 * Refunds associated with this order. A refund is a single exchange of money from merchant to customer that either encapsulates a refund to a credit card or an issuance of a store credit. Refunds does not reduce the 'amount collected' on an order and it is possible for refunds to exceed the total order amount.
+	 */
 	protected List<Refund> refunds;
 	public List<Refund> getRefunds() {
 		return this.refunds;
@@ -1093,9 +988,6 @@ public class Order implements Serializable
 		this.refunds = refunds;
 	}
 
-	/**
-	 * Array list of the shipments defined to fulfill items in this order using the direct ship fulfillment method.
-	 */
 	protected List<Shipment> shipments;
 	public List<Shipment> getShipments() {
 		return this.shipments;
@@ -1104,9 +996,6 @@ public class Order implements Serializable
 		this.shipments = shipments;
 	}
 
-	/**
-	 * Properties of an ad-hoc price adjustment made for an order.
-	 */
 	protected  Adjustment shippingAdjustment;
 
 	public Adjustment getShippingAdjustment() {
@@ -1117,9 +1006,6 @@ public class Order implements Serializable
 		this.shippingAdjustment = shippingAdjustment;
 	}
 
-	/**
-	 * List of shipping discounts to apply to the order.
-	 */
 	protected List<ShippingDiscount> shippingDiscounts;
 	public List<ShippingDiscount> getShippingDiscounts() {
 		return this.shippingDiscounts;
@@ -1128,9 +1014,6 @@ public class Order implements Serializable
 		this.shippingDiscounts = shippingDiscounts;
 	}
 
-	/**
-	 * A paged list collection of shopper notes for the order.
-	 */
 	protected  ShopperNotes shopperNotes;
 
 	public ShopperNotes getShopperNotes() {
@@ -1141,6 +1024,9 @@ public class Order implements Serializable
 		this.shopperNotes = shopperNotes;
 	}
 
+	/**
+	 * Leverage this property within a [tax Arc.js action](https://www.mozu.com/docs/arcjs/commerce-catalog-storefront-tax/commerce-catalog-storefront-tax.htm) to supplement the tax information for this item or object with custom JSON data.
+	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode taxData;
 
 	public com.fasterxml.jackson.databind.JsonNode getTaxData() {

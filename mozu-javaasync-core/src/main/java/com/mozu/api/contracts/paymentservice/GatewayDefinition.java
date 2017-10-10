@@ -26,9 +26,6 @@ public class GatewayDefinition implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The 2-letter geographic code representing the country for the physical or mailing address. Currently limited to the US.
-	 */
 	protected  String countryCode;
 
 	public String getCountryCode() {
@@ -39,9 +36,6 @@ public class GatewayDefinition implements Serializable
 		this.countryCode = countryCode;
 	}
 
-	/**
-	 * Unique identifier of the payment gateway definition.
-	 */
 	protected  String id;
 
 	public String getId() {
@@ -52,9 +46,6 @@ public class GatewayDefinition implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * The implementing type name of the integration with the payment gateway.
-	 */
 	protected  String integrationImplTypeName;
 
 	public String getIntegrationImplTypeName() {
@@ -65,9 +56,6 @@ public class GatewayDefinition implements Serializable
 		this.integrationImplTypeName = integrationImplTypeName;
 	}
 
-	/**
-	 * Name of the payment gateway.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -78,9 +66,6 @@ public class GatewayDefinition implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * URL of the production payment service.
-	 */
 	protected  String prodServiceURL;
 
 	public String getProdServiceURL() {
@@ -91,9 +76,6 @@ public class GatewayDefinition implements Serializable
 		this.prodServiceURL = prodServiceURL;
 	}
 
-	/**
-	 * URL of the test payment service environment.
-	 */
 	protected  String testServiceURL;
 
 	public String getTestServiceURL() {
@@ -104,9 +86,6 @@ public class GatewayDefinition implements Serializable
 		this.testServiceURL = testServiceURL;
 	}
 
-	/**
-	 * Credential fields for the payment gateway. For security purposes, Mozu does not return these credential fields.
-	 */
 	protected List<GatewayCredentialFieldDefinition> credentialDefinitions;
 	public List<GatewayCredentialFieldDefinition> getCredentialDefinitions() {
 		return this.credentialDefinitions;
@@ -115,9 +94,6 @@ public class GatewayDefinition implements Serializable
 		this.credentialDefinitions = credentialDefinitions;
 	}
 
-	/**
-	 * Definition of the preauthorization gateway.
-	 */
 	protected  PreAuthorizeDefinition preAuthorizeDefinition;
 
 	public PreAuthorizeDefinition getPreAuthorizeDefinition() {
@@ -128,9 +104,6 @@ public class GatewayDefinition implements Serializable
 		this.preAuthorizeDefinition = preAuthorizeDefinition;
 	}
 
-	/**
-	 * The types of credit cards supported by this payment gateway.
-	 */
 	protected List<SupportedCard> supportedCards;
 	public List<SupportedCard> getSupportedCards() {
 		return this.supportedCards;

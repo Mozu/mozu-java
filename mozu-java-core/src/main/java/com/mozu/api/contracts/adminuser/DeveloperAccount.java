@@ -21,9 +21,6 @@ public class DeveloperAccount implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Unique identifier of the developer account.
-	 */
 	protected  Integer id;
 
 	public Integer getId() {
@@ -34,9 +31,6 @@ public class DeveloperAccount implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * The name of the developer account.
-	 */
 	protected  String name;
 
 	public String getName() {

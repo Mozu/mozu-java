@@ -24,9 +24,6 @@ public class ProductOption implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 */
 	protected  String attributeFQN;
 
 	public String getAttributeFQN() {
@@ -37,9 +34,6 @@ public class ProductOption implements Serializable
 		this.attributeFQN = attributeFQN;
 	}
 
-	/**
-	 * List of values for the product option. Each value includes an attribute vocabulary value detail and value object.
-	 */
 	protected List<ProductOptionValue> values;
 	public List<ProductOptionValue> getValues() {
 		return this.values;

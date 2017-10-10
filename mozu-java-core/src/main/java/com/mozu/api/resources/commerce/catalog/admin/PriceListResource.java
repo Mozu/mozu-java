@@ -18,7 +18,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * 
+ * Use the Price Lists resource to view and create price lists. You can use price lists to override the catalog pricing of products for specific customer segments and/or sites. You can override products' list price, sale price, advanced pricing information such as MSRP, cost, MAP, and the catalog price of any extras associated with the product in a price list. You can also restrict discounts from applying to the overridden product pricing in a price list. Refer to [Price Lists](../../../guides/catalog/price-lists.htm) in the Guides section for more information about price lists.
  * </summary>
  */
 public class PriceListResource {
@@ -54,11 +54,11 @@ public class PriceListResource {
 	 *	PriceList pricelist = new PriceList();
 	 *	PriceListCollection priceListCollection = pricelist.getPriceLists( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param filter 
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return com.mozu.api.contracts.productadmin.PriceListCollection
 	 * @see com.mozu.api.contracts.productadmin.PriceListCollection
 	 */
@@ -77,7 +77,7 @@ public class PriceListResource {
 	 *	PriceList pricelist = new PriceList();
 	 *	PriceList priceList = pricelist.getPriceList( priceListCode);
 	 * </code></pre></p>
-	 * @param priceListCode 
+	 * @param priceListCode The unique, user-defined code of the price list.
 	 * @return com.mozu.api.contracts.productadmin.PriceList
 	 * @see com.mozu.api.contracts.productadmin.PriceList
 	 */
@@ -92,8 +92,8 @@ public class PriceListResource {
 	 *	PriceList pricelist = new PriceList();
 	 *	PriceList priceList = pricelist.getPriceList( priceListCode,  responseFields);
 	 * </code></pre></p>
-	 * @param priceListCode 
-	 * @param responseFields 
+	 * @param priceListCode The unique, user-defined code of the price list.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.productadmin.PriceList
 	 * @see com.mozu.api.contracts.productadmin.PriceList
 	 */
@@ -112,7 +112,7 @@ public class PriceListResource {
 	 *	PriceList pricelist = new PriceList();
 	 *	PriceList priceList = pricelist.addPriceList( priceList);
 	 * </code></pre></p>
-	 * @param priceList 
+	 * @param priceList The details of the new price list.
 	 * @return com.mozu.api.contracts.productadmin.PriceList
 	 * @see com.mozu.api.contracts.productadmin.PriceList
 	 * @see com.mozu.api.contracts.productadmin.PriceList
@@ -128,8 +128,8 @@ public class PriceListResource {
 	 *	PriceList pricelist = new PriceList();
 	 *	PriceList priceList = pricelist.addPriceList( priceList,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param priceList 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param priceList The details of the new price list.
 	 * @return com.mozu.api.contracts.productadmin.PriceList
 	 * @see com.mozu.api.contracts.productadmin.PriceList
 	 * @see com.mozu.api.contracts.productadmin.PriceList
@@ -164,8 +164,8 @@ public class PriceListResource {
 	 *	PriceList pricelist = new PriceList();
 	 *	pricelist.bulkAddPriceListEntries( priceListEntriesIn,  publishEvents,  invalidateCache);
 	 * </code></pre></p>
-	 * @param invalidateCache 
-	 * @param publishEvents 
+	 * @param invalidateCache Disable this property if you expect to encounter unacceptable performance hits related to clearing the cache for each product in the price list entries. Otherwise, leave this property enabled.
+	 * @param publishEvents Disable this property to prevent publishing the event related to adding price list entries to the system. Disabling this property helps you prevent performance delays if you expect the event to trigger the re-indexing of a large number of products, or if you want to postpone the operations of other applications and services listening for the event.
 	 * @param priceListEntriesIn 
 	 * @return 
 	 * @see com.mozu.api.contracts.productadmin.PriceListEntry
@@ -200,8 +200,8 @@ public class PriceListResource {
 	 *	PriceList pricelist = new PriceList();
 	 *	pricelist.bulkDeletePriceListEntries( priceListEntriesIn,  publishEvents,  invalidateCache);
 	 * </code></pre></p>
-	 * @param invalidateCache 
-	 * @param publishEvents 
+	 * @param invalidateCache Disable this property if you expect to encounter unacceptable performance hits related to clearing the cache for each product in the price list entries. Otherwise, leave this property enabled.
+	 * @param publishEvents Disable this property to prevent publishing the event related to deleting price list entries from the system. Disabling this property helps you prevent performance delays if you expect the event to trigger the re-indexing of a large number of products, or if you want to postpone the operations of other applications and services listening for the event.
 	 * @param priceListEntriesIn 
 	 * @return 
 	 * @see com.mozu.api.contracts.productadmin.PriceListEntry
@@ -236,8 +236,8 @@ public class PriceListResource {
 	 *	PriceList pricelist = new PriceList();
 	 *	pricelist.bulkUpdatePriceListEntries( priceListEntriesIn,  publishEvents,  invalidateCache);
 	 * </code></pre></p>
-	 * @param invalidateCache 
-	 * @param publishEvents 
+	 * @param invalidateCache Disable this property if you expect to encounter unacceptable performance hits related to clearing the cache for each product in the price list entries. Otherwise, leave this property enabled.
+	 * @param publishEvents Disable this property to prevent publishing the event related to updating price list entries in the system. Disabling this property helps you prevent performance delays if you expect the event to trigger the re-indexing of a large number of products, or if you want to postpone the operations of other applications and services listening for the event.
 	 * @param priceListEntriesIn 
 	 * @return 
 	 * @see com.mozu.api.contracts.productadmin.PriceListEntry
@@ -257,8 +257,8 @@ public class PriceListResource {
 	 *	PriceList pricelist = new PriceList();
 	 *	PriceList priceList = pricelist.updatePriceList( priceList,  priceListCode);
 	 * </code></pre></p>
-	 * @param priceListCode 
-	 * @param priceList 
+	 * @param priceListCode The unique, user-defined code of the price list.
+	 * @param priceList The details of the updated price list.
 	 * @return com.mozu.api.contracts.productadmin.PriceList
 	 * @see com.mozu.api.contracts.productadmin.PriceList
 	 * @see com.mozu.api.contracts.productadmin.PriceList
@@ -274,9 +274,9 @@ public class PriceListResource {
 	 *	PriceList pricelist = new PriceList();
 	 *	PriceList priceList = pricelist.updatePriceList( priceList,  priceListCode,  responseFields);
 	 * </code></pre></p>
-	 * @param priceListCode 
-	 * @param responseFields 
-	 * @param priceList 
+	 * @param priceListCode The unique, user-defined code of the price list.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param priceList The details of the updated price list.
 	 * @return com.mozu.api.contracts.productadmin.PriceList
 	 * @see com.mozu.api.contracts.productadmin.PriceList
 	 * @see com.mozu.api.contracts.productadmin.PriceList
@@ -296,7 +296,7 @@ public class PriceListResource {
 	 *	PriceList pricelist = new PriceList();
 	 *	pricelist.deletePriceList( priceListCode);
 	 * </code></pre></p>
-	 * @param priceListCode 
+	 * @param priceListCode The unique, user-defined code of the price list.
 	 * @return 
 	 */
 	public void deletePriceList(String priceListCode) throws Exception
@@ -310,8 +310,8 @@ public class PriceListResource {
 	 *	PriceList pricelist = new PriceList();
 	 *	pricelist.deletePriceList( priceListCode,  cascadeDeleteEntries);
 	 * </code></pre></p>
-	 * @param cascadeDeleteEntries 
-	 * @param priceListCode 
+	 * @param cascadeDeleteEntries Specifies whether to deletes all price list entries associated with the price list.
+	 * @param priceListCode The unique, user-defined code of the price list.
 	 * @return 
 	 */
 	public void deletePriceList(String priceListCode, Boolean cascadeDeleteEntries) throws Exception

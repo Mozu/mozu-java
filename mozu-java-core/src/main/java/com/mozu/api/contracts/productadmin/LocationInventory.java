@@ -22,6 +22,9 @@ public class LocationInventory implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Product code defined by the tenant administrator to use as a base prefix when generating product codes for any variations of this product.
+	 */
 	protected  String baseProductCode;
 
 	public String getBaseProductCode() {
@@ -32,9 +35,6 @@ public class LocationInventory implements Serializable
 		this.baseProductCode = baseProductCode;
 	}
 
-	/**
-	 * User-defined code that uniquely identifies the location.
-	 */
 	protected  String locationCode;
 
 	public String getLocationCode() {
@@ -45,9 +45,6 @@ public class LocationInventory implements Serializable
 		this.locationCode = locationCode;
 	}
 
-	/**
-	 * Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 */
 	protected  String productCode;
 
 	public String getProductCode() {
@@ -58,9 +55,6 @@ public class LocationInventory implements Serializable
 		this.productCode = productCode;
 	}
 
-	/**
-	 * The name defined in the product definition. System-supplied and read only.
-	 */
 	protected  String productName;
 
 	public String getProductName() {
@@ -71,9 +65,6 @@ public class LocationInventory implements Serializable
 		this.productName = productName;
 	}
 
-	/**
-	 * The stock level for the associated product currently available at this location, based on the number of pending product reservations. System-supplied and read only.
-	 */
 	protected  Integer stockAvailable;
 
 	public Integer getStockAvailable() {
@@ -84,9 +75,6 @@ public class LocationInventory implements Serializable
 		this.stockAvailable = stockAvailable;
 	}
 
-	/**
-	 * The stock level for the associated product currently on back order for this location, based on the number of pending product reservations. System-supplied and read only.
-	 */
 	protected  Integer stockOnBackOrder;
 
 	public Integer getStockOnBackOrder() {
@@ -97,9 +85,6 @@ public class LocationInventory implements Serializable
 		this.stockOnBackOrder = stockOnBackOrder;
 	}
 
-	/**
-	 * The current physical stock level for the associated product, which does not account for pending product reservations.
-	 */
 	protected  Integer stockOnHand;
 
 	public Integer getStockOnHand() {

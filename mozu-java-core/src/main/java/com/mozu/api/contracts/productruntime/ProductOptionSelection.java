@@ -21,9 +21,6 @@ public class ProductOptionSelection implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 */
 	protected  String attributeFQN;
 
 	public String getAttributeFQN() {
@@ -34,9 +31,6 @@ public class ProductOptionSelection implements Serializable
 		this.attributeFQN = attributeFQN;
 	}
 
-	/**
-	 * Identifier of the value of this attribute.
-	 */
 	protected  Integer attributeValueId;
 
 	public Integer getAttributeValueId() {
@@ -47,9 +41,6 @@ public class ProductOptionSelection implements Serializable
 		this.attributeValueId = attributeValueId;
 	}
 
-	/**
-	 * The custom value the shopper entered for an option set up in product admin.
-	 */
 	protected  Object shopperEnteredValue;
 
 	public Object getShopperEnteredValue() {
@@ -60,9 +51,6 @@ public class ProductOptionSelection implements Serializable
 		this.shopperEnteredValue = shopperEnteredValue;
 	}
 
-	/**
-	 * The attribute value.
-	 */
 	protected  Object value;
 
 	public Object getValue() {

@@ -25,7 +25,7 @@ import org.apache.commons.lang.StringUtils;
 public class PaymentClient {
 	
 	/**
-	 * Retrieves information about all payment transactions submitted for the specified order.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.payments.PaymentCollection> mozuClient=GetPaymentsClient( orderId);
 	 * client.setBaseAddress(url);
@@ -42,7 +42,7 @@ public class PaymentClient {
 	}
 
 	/**
-	 * Retrieves information about all payment transactions submitted for the specified order.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.payments.PaymentCollection> mozuClient=GetPaymentsClient( orderId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -50,7 +50,7 @@ public class PaymentClient {
 	 * PaymentCollection paymentCollection = client.Result();
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.payments.PaymentCollection>
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentCollection
 	 */
@@ -67,15 +67,15 @@ public class PaymentClient {
 	}
 
 	/**
-	 * Retrieves the list of all available payment actions dependent on the order payment status by specifying the order ID.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<String>> mozuClient=GetAvailablePaymentActionsClient( orderId,  paymentId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * string string = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with the payment.
-	 * @param paymentId Unique identifer of the payment for which to retrieve available actions.
+	 * @param orderId Unique identifier of the order.
+	 * @param paymentId Unique identifier of the payment for which to perform the action.
 	 * @return Mozu.Api.MozuClient <List<string>>
 	 * @see string
 	 */
@@ -92,15 +92,15 @@ public class PaymentClient {
 	}
 
 	/**
-	 * Retrieves information about a specific payment transaction submitted for the specified order.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.payments.Payment> mozuClient=GetPaymentClient( orderId,  paymentId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Payment payment = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with the payment transaction.
-	 * @param paymentId Unique identifier of the payment transaction submitted for the order.
+	 * @param orderId Unique identifier of the order.
+	 * @param paymentId Unique identifier of the payment for which to perform the action.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.payments.Payment>
 	 * @see com.mozu.api.contracts.commerceruntime.payments.Payment
 	 */
@@ -110,16 +110,16 @@ public class PaymentClient {
 	}
 
 	/**
-	 * Retrieves information about a specific payment transaction submitted for the specified order.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.payments.Payment> mozuClient=GetPaymentClient( orderId,  paymentId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Payment payment = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with the payment transaction.
-	 * @param paymentId Unique identifier of the payment transaction submitted for the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param orderId Unique identifier of the order.
+	 * @param paymentId Unique identifier of the payment for which to perform the action.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.payments.Payment>
 	 * @see com.mozu.api.contracts.commerceruntime.payments.Payment
 	 */
@@ -136,16 +136,16 @@ public class PaymentClient {
 	}
 
 	/**
-	 * Performs the specified action for an individual order payment transaction.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=PerformPaymentActionClient( action,  orderId,  paymentId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Order order = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with the payment.
-	 * @param paymentId Unique identifer of the payment for which to perform the action.
-	 * @param action The action to perform for the payment. Possible values are AuthAndCapture, AuthorizePayment, CapturePayment, VoidPayment, CreditPayment, RequestCheck, ApplyCheck, DeclineCheck.
+	 * @param orderId Unique identifier of the order.
+	 * @param paymentId Unique identifier of the payment for which to perform the action.
+	 * @param action Properties of the payment action performed for an order.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentAction
@@ -156,17 +156,17 @@ public class PaymentClient {
 	}
 
 	/**
-	 * Performs the specified action for an individual order payment transaction.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=PerformPaymentActionClient( action,  orderId,  paymentId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Order order = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with the payment.
-	 * @param paymentId Unique identifer of the payment for which to perform the action.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param action The action to perform for the payment. Possible values are AuthAndCapture, AuthorizePayment, CapturePayment, VoidPayment, CreditPayment, RequestCheck, ApplyCheck, DeclineCheck.
+	 * @param orderId Unique identifier of the order.
+	 * @param paymentId Unique identifier of the payment for which to perform the action.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param action Properties of the payment action performed for an order.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentAction
@@ -185,15 +185,15 @@ public class PaymentClient {
 	}
 
 	/**
-	 * Creates a new payment transaction for the specified order and performs the specified action.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=CreatePaymentActionClient( action,  orderId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Order order = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order for which to apply the payment.
-	 * @param action To action to perform for the newly created payment. Possible values are AuthAndCapture, AuthorizePayment, CapturePayment, VoidPayment, CreditPayment, RequestCheck, ApplyCheck, DeclineCheck.
+	 * @param orderId Unique identifier of the order.
+	 * @param action Properties of the payment action performed for an order.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentAction
@@ -204,16 +204,16 @@ public class PaymentClient {
 	}
 
 	/**
-	 * Creates a new payment transaction for the specified order and performs the specified action.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=CreatePaymentActionClient( action,  orderId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Order order = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order for which to apply the payment.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param action To action to perform for the newly created payment. Possible values are AuthAndCapture, AuthorizePayment, CapturePayment, VoidPayment, CreditPayment, RequestCheck, ApplyCheck, DeclineCheck.
+	 * @param orderId Unique identifier of the order.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param action Properties of the payment action performed for an order.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentAction

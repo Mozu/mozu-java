@@ -18,7 +18,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * 
+ * Use the Extensions resource to manage Arc.js configuration settings. These are the same settings you can configure through  in the Action Management JSON Editor.
  * </summary>
  */
 public class TenantExtensionsResource {
@@ -54,7 +54,7 @@ public class TenantExtensionsResource {
 	 *	TenantExtensions tenantextensions = new TenantExtensions();
 	 *	TenantExtensions tenantExtensions = tenantextensions.getExtensions( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.installedapplications.TenantExtensions
 	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
 	 */
@@ -73,7 +73,7 @@ public class TenantExtensionsResource {
 	 *	TenantExtensions tenantextensions = new TenantExtensions();
 	 *	TenantExtensions tenantExtensions = tenantextensions.updateExtensions( extensions);
 	 * </code></pre></p>
-	 * @param extensions 
+	 * @param extensions The updated details of the Arc.js configuration settings.
 	 * @return com.mozu.api.contracts.installedapplications.TenantExtensions
 	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
 	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
@@ -89,8 +89,8 @@ public class TenantExtensionsResource {
 	 *	TenantExtensions tenantextensions = new TenantExtensions();
 	 *	TenantExtensions tenantExtensions = tenantextensions.updateExtensions( extensions,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param extensions 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param extensions The updated details of the Arc.js configuration settings.
 	 * @return com.mozu.api.contracts.installedapplications.TenantExtensions
 	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
 	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions

@@ -37,7 +37,7 @@ public class SiteShippingHandlingFeeResource {
 
 	
 	/**
-	 * Retrieves the details of the order handling fee configured for the site.
+	 * 
 	 * <p><pre><code>
 	 *	SiteShippingHandlingFee siteshippinghandlingfee = new SiteShippingHandlingFee();
 	 *	SiteShippingHandlingFee siteShippingHandlingFee = siteshippinghandlingfee.getOrderHandlingFee();
@@ -51,7 +51,7 @@ public class SiteShippingHandlingFeeResource {
 	}
 
 	/**
-	 * Retrieves the details of the order handling fee configured for the site.
+	 * 
 	 * <p><pre><code>
 	 *	SiteShippingHandlingFee siteshippinghandlingfee = new SiteShippingHandlingFee();
 	 *	CountDownLatch latch = siteshippinghandlingfee.getOrderHandlingFee( callback );
@@ -66,12 +66,12 @@ public class SiteShippingHandlingFeeResource {
 	}
 
 	/**
-	 * Retrieves the details of the order handling fee configured for the site.
+	 * 
 	 * <p><pre><code>
 	 *	SiteShippingHandlingFee siteshippinghandlingfee = new SiteShippingHandlingFee();
 	 *	SiteShippingHandlingFee siteShippingHandlingFee = siteshippinghandlingfee.getOrderHandlingFee( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
 	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
 	 */
@@ -85,12 +85,12 @@ public class SiteShippingHandlingFeeResource {
 	}
 
 	/**
-	 * Retrieves the details of the order handling fee configured for the site.
+	 * 
 	 * <p><pre><code>
 	 *	SiteShippingHandlingFee siteshippinghandlingfee = new SiteShippingHandlingFee();
 	 *	CountDownLatch latch = siteshippinghandlingfee.getOrderHandlingFee( responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
 	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
@@ -104,12 +104,12 @@ public class SiteShippingHandlingFeeResource {
 	}
 
 	/**
-	 * Creates a new order handling fee for the site.
+	 * 
 	 * <p><pre><code>
 	 *	SiteShippingHandlingFee siteshippinghandlingfee = new SiteShippingHandlingFee();
 	 *	SiteShippingHandlingFee siteShippingHandlingFee = siteshippinghandlingfee.createOrderHandlingFee( orderHandlingFee);
 	 * </code></pre></p>
-	 * @param orderHandlingFee Properties of the order handling fee to assess for order shipment.
+	 * @param orderHandlingFee Properties of the handling fee to apply to order shipments for the site.
 	 * @return com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
 	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
 	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
@@ -120,13 +120,13 @@ public class SiteShippingHandlingFeeResource {
 	}
 
 	/**
-	 * Creates a new order handling fee for the site.
+	 * 
 	 * <p><pre><code>
 	 *	SiteShippingHandlingFee siteshippinghandlingfee = new SiteShippingHandlingFee();
 	 *	CountDownLatch latch = siteshippinghandlingfee.createOrderHandlingFee( orderHandlingFee, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param orderHandlingFee Properties of the order handling fee to assess for order shipment.
+	 * @param orderHandlingFee Properties of the handling fee to apply to order shipments for the site.
 	 * @return com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
 	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
 	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
@@ -137,13 +137,13 @@ public class SiteShippingHandlingFeeResource {
 	}
 
 	/**
-	 * Creates a new order handling fee for the site.
+	 * 
 	 * <p><pre><code>
 	 *	SiteShippingHandlingFee siteshippinghandlingfee = new SiteShippingHandlingFee();
 	 *	SiteShippingHandlingFee siteShippingHandlingFee = siteshippinghandlingfee.createOrderHandlingFee( orderHandlingFee,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param orderHandlingFee Properties of the order handling fee to assess for order shipment.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param orderHandlingFee Properties of the handling fee to apply to order shipments for the site.
 	 * @return com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
 	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
 	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
@@ -158,14 +158,14 @@ public class SiteShippingHandlingFeeResource {
 	}
 
 	/**
-	 * Creates a new order handling fee for the site.
+	 * 
 	 * <p><pre><code>
 	 *	SiteShippingHandlingFee siteshippinghandlingfee = new SiteShippingHandlingFee();
 	 *	CountDownLatch latch = siteshippinghandlingfee.createOrderHandlingFee( orderHandlingFee,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param orderHandlingFee Properties of the order handling fee to assess for order shipment.
+	 * @param orderHandlingFee Properties of the handling fee to apply to order shipments for the site.
 	 * @return com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
 	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
 	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
@@ -179,12 +179,12 @@ public class SiteShippingHandlingFeeResource {
 	}
 
 	/**
-	 * Updates the order handling fee amount for the site.
+	 * 
 	 * <p><pre><code>
 	 *	SiteShippingHandlingFee siteshippinghandlingfee = new SiteShippingHandlingFee();
 	 *	SiteShippingHandlingFee siteShippingHandlingFee = siteshippinghandlingfee.updateOrderHandlingFee( orderHandlingFee);
 	 * </code></pre></p>
-	 * @param orderHandlingFee The combined price for all items in the order, including all selected options but excluding any discounts.
+	 * @param orderHandlingFee Properties of the handling fee to apply to order shipments for the site.
 	 * @return com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
 	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
 	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
@@ -195,13 +195,13 @@ public class SiteShippingHandlingFeeResource {
 	}
 
 	/**
-	 * Updates the order handling fee amount for the site.
+	 * 
 	 * <p><pre><code>
 	 *	SiteShippingHandlingFee siteshippinghandlingfee = new SiteShippingHandlingFee();
 	 *	CountDownLatch latch = siteshippinghandlingfee.updateOrderHandlingFee( orderHandlingFee, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param orderHandlingFee The combined price for all items in the order, including all selected options but excluding any discounts.
+	 * @param orderHandlingFee Properties of the handling fee to apply to order shipments for the site.
 	 * @return com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
 	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
 	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
@@ -212,13 +212,13 @@ public class SiteShippingHandlingFeeResource {
 	}
 
 	/**
-	 * Updates the order handling fee amount for the site.
+	 * 
 	 * <p><pre><code>
 	 *	SiteShippingHandlingFee siteshippinghandlingfee = new SiteShippingHandlingFee();
 	 *	SiteShippingHandlingFee siteShippingHandlingFee = siteshippinghandlingfee.updateOrderHandlingFee( orderHandlingFee,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param orderHandlingFee The combined price for all items in the order, including all selected options but excluding any discounts.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param orderHandlingFee Properties of the handling fee to apply to order shipments for the site.
 	 * @return com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
 	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
 	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
@@ -233,14 +233,14 @@ public class SiteShippingHandlingFeeResource {
 	}
 
 	/**
-	 * Updates the order handling fee amount for the site.
+	 * 
 	 * <p><pre><code>
 	 *	SiteShippingHandlingFee siteshippinghandlingfee = new SiteShippingHandlingFee();
 	 *	CountDownLatch latch = siteshippinghandlingfee.updateOrderHandlingFee( orderHandlingFee,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param orderHandlingFee The combined price for all items in the order, including all selected options but excluding any discounts.
+	 * @param orderHandlingFee Properties of the handling fee to apply to order shipments for the site.
 	 * @return com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
 	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
 	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee

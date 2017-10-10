@@ -19,7 +19,7 @@ import com.mozu.api.contracts.productadmin.DiscountLocalizedContent;
 import com.mozu.api.contracts.productadmin.DiscountTarget;
 
 /**
- *	Discount used to calculate SalePrice. Includes coupon code if applicable, amount of the discount, and discount savings. Discounts can be either an absolute price or a percentage off. The sale price beats any discounts.
+ *	Name of the discount added and applied to a shopping cart and order for a shopper's purchase. 
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Discount implements Serializable
@@ -27,9 +27,6 @@ public class Discount implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The integer amount of the discount. For example, an entry of "10" could represent a discount of $10.00 or a discount of 10%, depending on the type.
-	 */
 	protected  Double amount;
 
 	public Double getAmount() {
@@ -40,9 +37,6 @@ public class Discount implements Serializable
 		this.amount = amount;
 	}
 
-	/**
-	 * The type of discount amount, such as an amount or a percentage.
-	 */
 	protected  String amountType;
 
 	public String getAmountType() {
@@ -53,16 +47,9 @@ public class Discount implements Serializable
 		this.amountType = amountType;
 	}
 
-	protected  Boolean appliesToMultiShipToOrders;
-
-	public Boolean getAppliesToMultiShipToOrders() {
-		return this.appliesToMultiShipToOrders;
-	}
-
-	public void setAppliesToMultiShipToOrders(Boolean appliesToMultiShipToOrders) {
-		this.appliesToMultiShipToOrders = appliesToMultiShipToOrders;
-	}
-
+	/**
+	 * Signifies that the discount is not referenced and can be hard deleted
+	 */
 	protected  Boolean canBeDeleted;
 
 	public Boolean getCanBeDeleted() {
@@ -73,9 +60,6 @@ public class Discount implements Serializable
 		this.canBeDeleted = canBeDeleted;
 	}
 
-	/**
-	 * The number of times this discount has been redeemed.
-	 */
 	protected  Integer currentRedemptionCount;
 
 	public Integer getCurrentRedemptionCount() {
@@ -86,6 +70,19 @@ public class Discount implements Serializable
 		this.currentRedemptionCount = currentRedemptionCount;
 	}
 
+	protected  Boolean doesNotApplyToMultiShipToOrders;
+
+	public Boolean getDoesNotApplyToMultiShipToOrders() {
+		return this.doesNotApplyToMultiShipToOrders;
+	}
+
+	public void setDoesNotApplyToMultiShipToOrders(Boolean doesNotApplyToMultiShipToOrders) {
+		this.doesNotApplyToMultiShipToOrders = doesNotApplyToMultiShipToOrders;
+	}
+
+	/**
+	 * Determines whether or not a discount applies to a items with a sale price. Applicable on order and line item discounts. For line items, when this is true, the discount will be disqualified. For order level discounts, when true, the discount will not be applied to those items have a sale price.
+	 */
 	protected  Boolean doesNotApplyToProductsWithSalePrice;
 
 	public Boolean getDoesNotApplyToProductsWithSalePrice() {
@@ -109,9 +106,6 @@ public class Discount implements Serializable
 		this.doesNotApplyToSalePrice = doesNotApplyToSalePrice;
 	}
 
-	/**
-	 * Unique identifier of the discount.
-	 */
 	protected  Integer id;
 
 	public Integer getId() {
@@ -122,6 +116,9 @@ public class Discount implements Serializable
 		this.id = id;
 	}
 
+	/**
+	 * Products receiving a price from a price list specified here or a child of a specified price list can be discounted.
+	 */
 	protected List<String> includedPriceLists;
 	public List<String> getIncludedPriceLists() {
 		return this.includedPriceLists;
@@ -130,6 +127,9 @@ public class Discount implements Serializable
 		this.includedPriceLists = includedPriceLists;
 	}
 
+	/**
+	 * Maximum impact this discount can apply on a single order. Must be either null or greater than zero.
+	 */
 	protected  Double maximumDiscountImpactPerOrder;
 
 	public Double getMaximumDiscountImpactPerOrder() {
@@ -140,6 +140,9 @@ public class Discount implements Serializable
 		this.maximumDiscountImpactPerOrder = maximumDiscountImpactPerOrder;
 	}
 
+	/**
+	 * Maximum impact this discount can apply on a single line item. Must be either null or greater than zero.
+	 */
 	protected  Double maximumDiscountImpactPerRedemption;
 
 	public Double getMaximumDiscountImpactPerRedemption() {
@@ -150,6 +153,9 @@ public class Discount implements Serializable
 		this.maximumDiscountImpactPerRedemption = maximumDiscountImpactPerRedemption;
 	}
 
+	/**
+	 * Maximum number of redemptions allowed per order. If null, defaults to unlimited.
+	 */
 	protected  Integer maximumRedemptionsPerOrder;
 
 	public Integer getMaximumRedemptionsPerOrder() {
@@ -173,9 +179,6 @@ public class Discount implements Serializable
 		this.maximumUsesPerUser = maximumUsesPerUser;
 	}
 
-	/**
-	 * The scope to which the discount applies, which is "Order" for order discounts or "LineItem" for individual product discounts.
-	 */
 	protected  String scope;
 
 	public String getScope() {
@@ -186,9 +189,6 @@ public class Discount implements Serializable
 		this.scope = scope;
 	}
 
-	/**
-	 * Current status of the product discount. Possible values are "Active", "Scheduled", or "Expired".
-	 */
 	protected  String status;
 
 	public String getStatus() {
@@ -199,9 +199,6 @@ public class Discount implements Serializable
 		this.status = status;
 	}
 
-	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -225,9 +222,6 @@ public class Discount implements Serializable
 		this.conditions = conditions;
 	}
 
-	/**
-	 * Complex type that contains content for a language specified by LocaleCode.
-	 */
 	protected  DiscountLocalizedContent content;
 
 	public DiscountLocalizedContent getContent() {
@@ -238,9 +232,6 @@ public class Discount implements Serializable
 		this.content = content;
 	}
 
-	/**
-	 * Properties of the target object to which the discount applies, such as a product or an order.
-	 */
 	protected  DiscountTarget target;
 
 	public DiscountTarget getTarget() {

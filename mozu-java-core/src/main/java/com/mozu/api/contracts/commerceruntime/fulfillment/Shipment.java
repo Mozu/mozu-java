@@ -25,9 +25,6 @@ public class Shipment implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Total cost of shipping the shipment to the shopper.
-	 */
 	protected  Double cost;
 
 	public Double getCost() {
@@ -38,9 +35,6 @@ public class Shipment implements Serializable
 		this.cost = cost;
 	}
 
-	/**
-	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
-	 */
 	protected  String currencyCode;
 
 	public String getCurrencyCode() {
@@ -51,9 +45,6 @@ public class Shipment implements Serializable
 		this.currencyCode = currencyCode;
 	}
 
-	/**
-	 * Unique identifier of the shipment.
-	 */
 	protected  String id;
 
 	public String getId() {
@@ -64,9 +55,6 @@ public class Shipment implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * Array list of identifiers that represent the packages in this shipment.
-	 */
 	protected List<String> packageIds;
 	public List<String> getPackageIds() {
 		return this.packageIds;
@@ -75,9 +63,6 @@ public class Shipment implements Serializable
 		this.packageIds = packageIds;
 	}
 
-	/**
-	 * Code that identifies the service type method used to perform the shipment, such as UPS_GROUND.
-	 */
 	protected  String shippingMethodCode;
 
 	public String getShippingMethodCode() {
@@ -88,9 +73,6 @@ public class Shipment implements Serializable
 		this.shippingMethodCode = shippingMethodCode;
 	}
 
-	/**
-	 * If true, a shopper signature is required to deliver this shipment.
-	 */
 	protected  Boolean signatureRequired;
 
 	public Boolean getSignatureRequired() {
@@ -101,9 +83,6 @@ public class Shipment implements Serializable
 		this.signatureRequired = signatureRequired;
 	}
 
-	/**
-	 * The shipping tracking number supplied by the shipping provider to track the shipment.
-	 */
 	protected  String trackingNumber;
 
 	public String getTrackingNumber() {
@@ -114,9 +93,6 @@ public class Shipment implements Serializable
 		this.trackingNumber = trackingNumber;
 	}
 
-	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -127,9 +103,6 @@ public class Shipment implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * The address to which to shipment will ship.
-	 */
 	protected  Contact destinationAddress;
 
 	public Contact getDestinationAddress() {
@@ -140,9 +113,6 @@ public class Shipment implements Serializable
 		this.destinationAddress = destinationAddress;
 	}
 
-	/**
-	 * The address from which the shipment will ship.
-	 */
 	protected  Contact originAddress;
 
 	public Contact getOriginAddress() {

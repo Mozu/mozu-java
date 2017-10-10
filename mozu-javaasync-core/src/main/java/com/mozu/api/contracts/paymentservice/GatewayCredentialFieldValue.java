@@ -21,9 +21,6 @@ public class GatewayCredentialFieldValue implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The name of the payment gateway field.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -34,9 +31,6 @@ public class GatewayCredentialFieldValue implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * The value of the payment gateway field.
-	 */
 	protected  String value;
 
 	public String getValue() {

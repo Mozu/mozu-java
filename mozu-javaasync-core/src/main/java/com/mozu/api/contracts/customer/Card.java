@@ -21,9 +21,6 @@ public class Card implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The masked credit card number part returned from the payment gateway.
-	 */
 	protected  String cardNumberPart;
 
 	public String getCardNumberPart() {
@@ -34,9 +31,6 @@ public class Card implements Serializable
 		this.cardNumberPart = cardNumberPart;
 	}
 
-	/**
-	 * The type of credit card, such as Visa or Amex.
-	 */
 	protected  String cardType;
 
 	public String getCardType() {
@@ -60,9 +54,6 @@ public class Card implements Serializable
 		this.contactId = contactId;
 	}
 
-	/**
-	 * The two-digit month the credit card expires.
-	 */
 	protected  short expireMonth;
 
 	public short getExpireMonth() {
@@ -73,9 +64,6 @@ public class Card implements Serializable
 		this.expireMonth = expireMonth;
 	}
 
-	/**
-	 * The four-digit year the credit card expires.
-	 */
 	protected  short expireYear;
 
 	public short getExpireYear() {
@@ -86,9 +74,6 @@ public class Card implements Serializable
 		this.expireYear = expireYear;
 	}
 
-	/**
-	 * Unique ID of the credit card for the customer account. This identifier is separate from the credit card number.
-	 */
 	protected  String id;
 
 	public String getId() {
@@ -99,6 +84,9 @@ public class Card implements Serializable
 		this.id = id;
 	}
 
+	/**
+	 * AÂ boolean that signals whether this credit card is the default payment method for this customer account.
+	 */
 	protected  Boolean isDefaultPayMethod;
 
 	public Boolean getIsDefaultPayMethod() {
@@ -109,9 +97,6 @@ public class Card implements Serializable
 		this.isDefaultPayMethod = isDefaultPayMethod;
 	}
 
-	/**
-	 * The name printed on the credit card.
-	 */
 	protected  String nameOnCard;
 
 	public String getNameOnCard() {

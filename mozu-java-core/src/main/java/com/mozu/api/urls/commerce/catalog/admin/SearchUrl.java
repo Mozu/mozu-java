@@ -15,8 +15,8 @@ public class SearchUrl
 
 	/**
 	 * Get Resource Url for GetSearchTuningRule
-	 * @param responseFields 
-	 * @param searchTuningRuleCode 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param searchTuningRuleCode The unique identifier of the search tuning rule.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getSearchTuningRuleUrl(String responseFields, String searchTuningRuleCode)
@@ -29,11 +29,11 @@ public class SearchUrl
 
 	/**
 	 * Get Resource Url for GetSearchTuningRules
-	 * @param filter 
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getSearchTuningRulesUrl(String filter, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
@@ -49,7 +49,7 @@ public class SearchUrl
 
 	/**
 	 * Get Resource Url for GetSearchTuningRuleSortFields
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getSearchTuningRuleSortFieldsUrl(String responseFields)
@@ -61,7 +61,7 @@ public class SearchUrl
 
 	/**
 	 * Get Resource Url for GetSettings
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getSettingsUrl(String responseFields)
@@ -73,8 +73,8 @@ public class SearchUrl
 
 	/**
 	 * Get Resource Url for GetSynonymDefinitionCollection
-	 * @param localeCode 
-	 * @param responseFields 
+	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getSynonymDefinitionCollectionUrl(String localeCode, String responseFields)
@@ -87,11 +87,11 @@ public class SearchUrl
 
 	/**
 	 * Get Resource Url for GetSynonymDefinitions
-	 * @param filter 
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getSynonymDefinitionsUrl(String filter, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
@@ -107,8 +107,8 @@ public class SearchUrl
 
 	/**
 	 * Get Resource Url for GetSynonymDefinition
-	 * @param responseFields 
-	 * @param synonymId 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param synonymId The unique identifier of the synonym definition.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getSynonymDefinitionUrl(String responseFields, Integer synonymId)
@@ -121,7 +121,7 @@ public class SearchUrl
 
 	/**
 	 * Get Resource Url for AddSearchTuningRule
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addSearchTuningRuleUrl(String responseFields)
@@ -133,7 +133,7 @@ public class SearchUrl
 
 	/**
 	 * Get Resource Url for UpdateSearchTuningRuleSortFields
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateSearchTuningRuleSortFieldsUrl(String responseFields)
@@ -145,8 +145,8 @@ public class SearchUrl
 
 	/**
 	 * Get Resource Url for UpdateSynonymDefinitionCollection
-	 * @param localeCode 
-	 * @param responseFields 
+	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateSynonymDefinitionCollectionUrl(String localeCode, String responseFields)
@@ -159,7 +159,7 @@ public class SearchUrl
 
 	/**
 	 * Get Resource Url for AddSynonymDefinition
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addSynonymDefinitionUrl(String responseFields)
@@ -171,8 +171,8 @@ public class SearchUrl
 
 	/**
 	 * Get Resource Url for UpdateSearchTuningRule
-	 * @param responseFields 
-	 * @param searchTuningRuleCode 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param searchTuningRuleCode The unique identifier of the search tuning rule.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateSearchTuningRuleUrl(String responseFields, String searchTuningRuleCode)
@@ -185,7 +185,7 @@ public class SearchUrl
 
 	/**
 	 * Get Resource Url for UpdateSettings
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateSettingsUrl(String responseFields)
@@ -197,8 +197,8 @@ public class SearchUrl
 
 	/**
 	 * Get Resource Url for UpdateSynonymDefinition
-	 * @param responseFields 
-	 * @param synonymId 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param synonymId The unique identifier of the synonym definition.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateSynonymDefinitionUrl(String responseFields, Integer synonymId)
@@ -211,7 +211,7 @@ public class SearchUrl
 
 	/**
 	 * Get Resource Url for DeleteSearchTuningRule
-	 * @param searchTuningRuleCode 
+	 * @param searchTuningRuleCode The unique identifier of the search tuning rule.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteSearchTuningRuleUrl(String searchTuningRuleCode)
@@ -223,7 +223,7 @@ public class SearchUrl
 
 	/**
 	 * Get Resource Url for DeleteSynonymDefinition
-	 * @param synonymId 
+	 * @param synonymId The unique identifier of the synonym definition.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteSynonymDefinitionUrl(Integer synonymId)

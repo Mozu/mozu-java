@@ -22,9 +22,6 @@ public class ShippingDiscount implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Carrier-supplied code that represents the shipping method service type associated with the shipping discount.
-	 */
 	protected  String methodCode;
 
 	public String getMethodCode() {
@@ -35,9 +32,6 @@ public class ShippingDiscount implements Serializable
 		this.methodCode = methodCode;
 	}
 
-	/**
-	 * Properties of the shipping discount.
-	 */
 	protected  AppliedDiscount discount;
 
 	public AppliedDiscount getDiscount() {

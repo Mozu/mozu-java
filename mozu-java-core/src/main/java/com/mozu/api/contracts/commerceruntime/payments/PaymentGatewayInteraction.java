@@ -21,9 +21,6 @@ public class PaymentGatewayInteraction implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * If required by the payment gateway, the authorization code of the transaction.
-	 */
 	protected  String gatewayAuthCode;
 
 	public String getGatewayAuthCode() {
@@ -34,9 +31,6 @@ public class PaymentGatewayInteraction implements Serializable
 		this.gatewayAuthCode = gatewayAuthCode;
 	}
 
-	/**
-	 * AVS codes supplied by the payment gateway.
-	 */
 	protected  String gatewayAVSCodes;
 
 	public String getGatewayAVSCodes() {
@@ -47,9 +41,6 @@ public class PaymentGatewayInteraction implements Serializable
 		this.gatewayAVSCodes = gatewayAVSCodes;
 	}
 
-	/**
-	 * CVV2 codes supplied by the payment gateway.
-	 */
 	protected  String gatewayCVV2Codes;
 
 	public String getGatewayCVV2Codes() {
@@ -60,9 +51,6 @@ public class PaymentGatewayInteraction implements Serializable
 		this.gatewayCVV2Codes = gatewayCVV2Codes;
 	}
 
-	/**
-	 * Unique identifier of the payment interaction from the payment gateway.
-	 */
 	protected  Integer gatewayInteractionId;
 
 	public Integer getGatewayInteractionId() {
@@ -73,9 +61,6 @@ public class PaymentGatewayInteraction implements Serializable
 		this.gatewayInteractionId = gatewayInteractionId;
 	}
 
-	/**
-	 * Response code from the gateway associated with the payment interaction. For example, if the gateway returns "Not Authorized," an interaction for voiding the payment transaction would result.
-	 */
 	protected  String gatewayResponseCode;
 
 	public String getGatewayResponseCode() {
@@ -87,7 +72,7 @@ public class PaymentGatewayInteraction implements Serializable
 	}
 
 	/**
-	 * Textual message returned by the payment gateway.
+	 * Textual message returned by the payment gateway for the associated .Refer to [Gateway Response Code and Text](https://www.mozu.com/docs/developer/api-guides/payment-gateways.htm#gateway_response_code_and_text) in the API Guides for more information.
 	 */
 	protected  String gatewayResponseText;
 
@@ -99,9 +84,6 @@ public class PaymentGatewayInteraction implements Serializable
 		this.gatewayResponseText = gatewayResponseText;
 	}
 
-	/**
-	 * Unique identifier of the gateway transaction associated with the payment interaction.
-	 */
 	protected  String gatewayTransactionId;
 
 	public String getGatewayTransactionId() {

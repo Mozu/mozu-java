@@ -23,9 +23,6 @@ public class ReturnAction implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The name of the action to perform for the return.
-	 */
 	protected  String actionName;
 
 	public String getActionName() {
@@ -36,9 +33,6 @@ public class ReturnAction implements Serializable
 		this.actionName = actionName;
 	}
 
-	/**
-	 * The list of returns for which to perform the action.
-	 */
 	protected List<String> returnIds;
 	public List<String> getReturnIds() {
 		return this.returnIds;

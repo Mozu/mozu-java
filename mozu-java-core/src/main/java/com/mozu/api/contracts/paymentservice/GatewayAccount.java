@@ -24,9 +24,6 @@ public class GatewayAccount implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The 2-letter geographic code representing the country for the physical or mailing address. Currently limited to the US.
-	 */
 	protected  String countryCode;
 
 	public String getCountryCode() {
@@ -37,9 +34,6 @@ public class GatewayAccount implements Serializable
 		this.countryCode = countryCode;
 	}
 
-	/**
-	 * Identifier of the payment gateway.
-	 */
 	protected  String gatewayDefinitionId;
 
 	public String getGatewayDefinitionId() {
@@ -50,9 +44,6 @@ public class GatewayAccount implements Serializable
 		this.gatewayDefinitionId = gatewayDefinitionId;
 	}
 
-	/**
-	 * Identifier of the entity.
-	 */
 	protected  String id;
 
 	public String getId() {
@@ -63,9 +54,6 @@ public class GatewayAccount implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * If true, the product is marked as available for sale. Setting a product to IsActive = false will prevent it from being shown on the customer facing storefront.
-	 */
 	protected  Boolean isActive;
 
 	public Boolean getIsActive() {
@@ -76,9 +64,6 @@ public class GatewayAccount implements Serializable
 		this.isActive = isActive;
 	}
 
-	/**
-	 * List of credential fields for the payment gateway account.
-	 */
 	protected List<GatewayCredentialFieldValue> credentialFields;
 	public List<GatewayCredentialFieldValue> getCredentialFields() {
 		return this.credentialFields;

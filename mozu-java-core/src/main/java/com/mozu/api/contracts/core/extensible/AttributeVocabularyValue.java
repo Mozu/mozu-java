@@ -23,7 +23,7 @@ public class AttributeVocabularyValue implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * If true, the attribute vocabulary value does not appear in the list when defining a value for the attribute.
+	 * Indicates if the object is hidden or breaks inheritance, primarily used by facets, products, and attribute vocabulary values. For example, if true, the attribute vocabulary value does not appear in the list when defining a value for an attribute.
 	 */
 	protected  Boolean isHidden;
 
@@ -35,9 +35,6 @@ public class AttributeVocabularyValue implements Serializable
 		this.isHidden = isHidden;
 	}
 
-	/**
-	 * The numeric order of a vocabulary value defined for an extensible attribute.
-	 */
 	protected  Integer sequence;
 
 	public Integer getSequence() {
@@ -48,9 +45,6 @@ public class AttributeVocabularyValue implements Serializable
 		this.sequence = sequence;
 	}
 
-	/**
-	 * Possible value associated with a vocabulary value defined for an extensible attribute.
-	 */
 	protected  String value;
 
 	public String getValue() {
@@ -61,9 +55,6 @@ public class AttributeVocabularyValue implements Serializable
 		this.value = value;
 	}
 
-	/**
-	 * List of content associated with a vocabulary value defined for an extensible attribute.
-	 */
 	protected  AttributeValueLocalizedContent content;
 
 	public AttributeValueLocalizedContent getContent() {

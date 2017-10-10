@@ -14,7 +14,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productruntime.AttributeVocabularyValueDisplayInfo;
 
 /**
- *	Values of a product property attribute.
+ *	Properties of a value for a product property.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductPropertyValue implements Serializable
@@ -22,9 +22,6 @@ public class ProductPropertyValue implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Property string value in the language specified in the locale code for the product storefront.
-	 */
 	protected  String stringValue;
 
 	public String getStringValue() {
@@ -35,9 +32,6 @@ public class ProductPropertyValue implements Serializable
 		this.stringValue = stringValue;
 	}
 
-	/**
-	 * Value of the product property.
-	 */
 	protected  Object value;
 
 	public Object getValue() {
@@ -48,6 +42,9 @@ public class ProductPropertyValue implements Serializable
 		this.value = value;
 	}
 
+	/**
+	 * Defines the intended display of this attribute in the storefront. Options include Drop Down, Image Picker, and Radio Buttons.
+	 */
 	protected  AttributeVocabularyValueDisplayInfo displayInfo;
 
 	public AttributeVocabularyValueDisplayInfo getDisplayInfo() {

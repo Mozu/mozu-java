@@ -20,7 +20,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Tenant administrators can add and view internal notes for a customer account. For example, a client can track a shopper's interests or complaints. Only clients can add and view notes. Shoppers cannot view these notes from the My Account page.
+ * This resources manages notes for a customer account. For example, a client can track a shopper's interests or complaints. Only clients can add and view notes. Shoppers cannot view these notes from the My Account page.
  * </summary>
  */
 public class CustomerNoteResource {
@@ -37,12 +37,12 @@ public class CustomerNoteResource {
 
 	
 	/**
-	 * Retrieves the contents of a particular note attached to a specified customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerNote customernote = new CustomerNote();
 	 *	CustomerNote customerNote = customernote.getAccountNote( accountId,  noteId);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account that contains the note being retrieved.
+	 * @param accountId Unique identifier of the customer account.
 	 * @param noteId Unique identifier of a particular note to retrieve.
 	 * @return com.mozu.api.contracts.customer.CustomerNote
 	 * @see com.mozu.api.contracts.customer.CustomerNote
@@ -53,12 +53,12 @@ public class CustomerNoteResource {
 	}
 
 	/**
-	 * Retrieves the contents of a particular note attached to a specified customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerNote customernote = new CustomerNote();
 	 *	CountDownLatch latch = customernote.getAccountNote( accountId,  noteId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account that contains the note being retrieved.
+	 * @param accountId Unique identifier of the customer account.
 	 * @param noteId Unique identifier of a particular note to retrieve.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.CustomerNote
@@ -70,14 +70,14 @@ public class CustomerNoteResource {
 	}
 
 	/**
-	 * Retrieves the contents of a particular note attached to a specified customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerNote customernote = new CustomerNote();
 	 *	CustomerNote customerNote = customernote.getAccountNote( accountId,  noteId,  responseFields);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account that contains the note being retrieved.
+	 * @param accountId Unique identifier of the customer account.
 	 * @param noteId Unique identifier of a particular note to retrieve.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.customer.CustomerNote
 	 * @see com.mozu.api.contracts.customer.CustomerNote
 	 */
@@ -91,14 +91,14 @@ public class CustomerNoteResource {
 	}
 
 	/**
-	 * Retrieves the contents of a particular note attached to a specified customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerNote customernote = new CustomerNote();
 	 *	CountDownLatch latch = customernote.getAccountNote( accountId,  noteId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account that contains the note being retrieved.
+	 * @param accountId Unique identifier of the customer account.
 	 * @param noteId Unique identifier of a particular note to retrieve.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.CustomerNote
 	 * @see com.mozu.api.contracts.customer.CustomerNote
@@ -112,7 +112,7 @@ public class CustomerNoteResource {
 	}
 
 	/**
-	 * Retrieves a list of notes added to a customer account according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerNote customernote = new CustomerNote();
 	 *	CustomerNoteCollection customerNoteCollection = customernote.getAccountNotes( accountId);
@@ -127,7 +127,7 @@ public class CustomerNoteResource {
 	}
 
 	/**
-	 * Retrieves a list of notes added to a customer account according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerNote customernote = new CustomerNote();
 	 *	CountDownLatch latch = customernote.getAccountNotes( accountId, callback );
@@ -143,17 +143,17 @@ public class CustomerNoteResource {
 	}
 
 	/**
-	 * Retrieves a list of notes added to a customer account according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerNote customernote = new CustomerNote();
 	 *	CustomerNoteCollection customerNoteCollection = customernote.getAccountNotes( accountId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return com.mozu.api.contracts.customer.CustomerNoteCollection
 	 * @see com.mozu.api.contracts.customer.CustomerNoteCollection
 	 */
@@ -167,17 +167,17 @@ public class CustomerNoteResource {
 	}
 
 	/**
-	 * Retrieves a list of notes added to a customer account according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerNote customernote = new CustomerNote();
 	 *	CountDownLatch latch = customernote.getAccountNotes( accountId,  startIndex,  pageSize,  sortBy,  filter,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.CustomerNoteCollection
 	 * @see com.mozu.api.contracts.customer.CustomerNoteCollection
@@ -191,13 +191,13 @@ public class CustomerNoteResource {
 	}
 
 	/**
-	 * Adds a new note to the specified customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerNote customernote = new CustomerNote();
 	 *	CustomerNote customerNote = customernote.addAccountNote( note,  accountId);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account for which to create the note.
-	 * @param note Properties of the customer account note to create.
+	 * @param accountId Unique identifier of the customer account.
+	 * @param note Properties of a note configured for a customer account.
 	 * @return com.mozu.api.contracts.customer.CustomerNote
 	 * @see com.mozu.api.contracts.customer.CustomerNote
 	 * @see com.mozu.api.contracts.customer.CustomerNote
@@ -208,14 +208,14 @@ public class CustomerNoteResource {
 	}
 
 	/**
-	 * Adds a new note to the specified customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerNote customernote = new CustomerNote();
 	 *	CountDownLatch latch = customernote.addAccountNote( note,  accountId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account for which to create the note.
+	 * @param accountId Unique identifier of the customer account.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param note Properties of the customer account note to create.
+	 * @param note Properties of a note configured for a customer account.
 	 * @return com.mozu.api.contracts.customer.CustomerNote
 	 * @see com.mozu.api.contracts.customer.CustomerNote
 	 * @see com.mozu.api.contracts.customer.CustomerNote
@@ -226,14 +226,14 @@ public class CustomerNoteResource {
 	}
 
 	/**
-	 * Adds a new note to the specified customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerNote customernote = new CustomerNote();
 	 *	CustomerNote customerNote = customernote.addAccountNote( note,  accountId,  responseFields);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account for which to create the note.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param note Properties of the customer account note to create.
+	 * @param accountId Unique identifier of the customer account.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param note Properties of a note configured for a customer account.
 	 * @return com.mozu.api.contracts.customer.CustomerNote
 	 * @see com.mozu.api.contracts.customer.CustomerNote
 	 * @see com.mozu.api.contracts.customer.CustomerNote
@@ -248,15 +248,15 @@ public class CustomerNoteResource {
 	}
 
 	/**
-	 * Adds a new note to the specified customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerNote customernote = new CustomerNote();
 	 *	CountDownLatch latch = customernote.addAccountNote( note,  accountId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account for which to create the note.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param accountId Unique identifier of the customer account.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param note Properties of the customer account note to create.
+	 * @param note Properties of a note configured for a customer account.
 	 * @return com.mozu.api.contracts.customer.CustomerNote
 	 * @see com.mozu.api.contracts.customer.CustomerNote
 	 * @see com.mozu.api.contracts.customer.CustomerNote
@@ -270,14 +270,14 @@ public class CustomerNoteResource {
 	}
 
 	/**
-	 * Modifies an existing note for a customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerNote customernote = new CustomerNote();
 	 *	CustomerNote customerNote = customernote.updateAccountNote( note,  accountId,  noteId);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account note to modify.
-	 * @param noteId Unique identifier of the note to update.
-	 * @param note The new content to replace the existing note.
+	 * @param accountId Unique identifier of the customer account.
+	 * @param noteId Unique identifier of a particular note to retrieve.
+	 * @param note Properties of a note configured for a customer account.
 	 * @return com.mozu.api.contracts.customer.CustomerNote
 	 * @see com.mozu.api.contracts.customer.CustomerNote
 	 * @see com.mozu.api.contracts.customer.CustomerNote
@@ -288,15 +288,15 @@ public class CustomerNoteResource {
 	}
 
 	/**
-	 * Modifies an existing note for a customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerNote customernote = new CustomerNote();
 	 *	CountDownLatch latch = customernote.updateAccountNote( note,  accountId,  noteId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account note to modify.
-	 * @param noteId Unique identifier of the note to update.
+	 * @param accountId Unique identifier of the customer account.
+	 * @param noteId Unique identifier of a particular note to retrieve.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param note The new content to replace the existing note.
+	 * @param note Properties of a note configured for a customer account.
 	 * @return com.mozu.api.contracts.customer.CustomerNote
 	 * @see com.mozu.api.contracts.customer.CustomerNote
 	 * @see com.mozu.api.contracts.customer.CustomerNote
@@ -307,15 +307,15 @@ public class CustomerNoteResource {
 	}
 
 	/**
-	 * Modifies an existing note for a customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerNote customernote = new CustomerNote();
 	 *	CustomerNote customerNote = customernote.updateAccountNote( note,  accountId,  noteId,  responseFields);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account note to modify.
-	 * @param noteId Unique identifier of the note to update.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param note The new content to replace the existing note.
+	 * @param accountId Unique identifier of the customer account.
+	 * @param noteId Unique identifier of a particular note to retrieve.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param note Properties of a note configured for a customer account.
 	 * @return com.mozu.api.contracts.customer.CustomerNote
 	 * @see com.mozu.api.contracts.customer.CustomerNote
 	 * @see com.mozu.api.contracts.customer.CustomerNote
@@ -330,16 +330,16 @@ public class CustomerNoteResource {
 	}
 
 	/**
-	 * Modifies an existing note for a customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerNote customernote = new CustomerNote();
 	 *	CountDownLatch latch = customernote.updateAccountNote( note,  accountId,  noteId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account note to modify.
-	 * @param noteId Unique identifier of the note to update.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param accountId Unique identifier of the customer account.
+	 * @param noteId Unique identifier of a particular note to retrieve.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param note The new content to replace the existing note.
+	 * @param note Properties of a note configured for a customer account.
 	 * @return com.mozu.api.contracts.customer.CustomerNote
 	 * @see com.mozu.api.contracts.customer.CustomerNote
 	 * @see com.mozu.api.contracts.customer.CustomerNote
@@ -353,13 +353,13 @@ public class CustomerNoteResource {
 	}
 
 	/**
-	 * Removes a note from the specified customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerNote customernote = new CustomerNote();
 	 *	customernote.deleteAccountNote( accountId,  noteId);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account that contains the note being deleted.
-	 * @param noteId Unique identifier of the customer account note being deleted.
+	 * @param accountId Unique identifier of the customer account.
+	 * @param noteId Unique identifier of a particular note to retrieve.
 	 * @return 
 	 */
 	public void deleteAccountNote(Integer accountId, Integer noteId) throws Exception

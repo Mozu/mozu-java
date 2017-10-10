@@ -21,9 +21,6 @@ public class PreAuthorizeTransactionTypeDataContract implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Description of the preauthorization transaction type.
-	 */
 	protected  String description;
 
 	public String getDescription() {
@@ -34,9 +31,6 @@ public class PreAuthorizeTransactionTypeDataContract implements Serializable
 		this.description = description;
 	}
 
-	/**
-	 * Identifier of the entity.
-	 */
 	protected  Integer id;
 
 	public Integer getId() {
@@ -47,9 +41,6 @@ public class PreAuthorizeTransactionTypeDataContract implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * The type of preauthorization transaction.
-	 */
 	protected  String type;
 
 	public String getType() {

@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Properties of the active inventory managed for the product.
+ *	Properties of the inventory behavior associated with a product definition.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductInventoryInfo implements Serializable
@@ -21,9 +21,6 @@ public class ProductInventoryInfo implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * If true, Mozu manages inventoried stock levels for this product.
-	 */
 	protected  Boolean manageStock;
 
 	public Boolean getManageStock() {
@@ -47,6 +44,9 @@ public class ProductInventoryInfo implements Serializable
 		this.onlineLocationCode = onlineLocationCode;
 	}
 
+	/**
+	 * Number of product items currently available for purchase.
+	 */
 	protected  Integer onlineSoftStockAvailable;
 
 	public Integer getOnlineSoftStockAvailable() {
@@ -57,9 +57,6 @@ public class ProductInventoryInfo implements Serializable
 		this.onlineSoftStockAvailable = onlineSoftStockAvailable;
 	}
 
-	/**
-	 * The current number of products that are available for purchase.
-	 */
 	protected  Integer onlineStockAvailable;
 
 	public Integer getOnlineStockAvailable() {
@@ -70,9 +67,6 @@ public class ProductInventoryInfo implements Serializable
 		this.onlineStockAvailable = onlineStockAvailable;
 	}
 
-	/**
-	 * Determines the method this product uses when active stock is depeleted. Options are "DisplayMessage" to display an out of stock message to the shopper, "HideProduct" to disable the product on the storefront, or "AllowBackOrder" to allow the shopper to back order the product. This property is required only if Mozu manages inventory for this product.
-	 */
 	protected  String outOfStockBehavior;
 
 	public String getOutOfStockBehavior() {

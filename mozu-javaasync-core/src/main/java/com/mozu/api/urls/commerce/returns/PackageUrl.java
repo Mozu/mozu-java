@@ -15,9 +15,9 @@ public class PackageUrl
 
 	/**
 	 * Get Resource Url for GetPackageLabel
-	 * @param packageId Unique identifier of the return replacement package for which to retrieve the label.
-	 * @param returnAsBase64Png 
-	 * @param returnId Unique identifier of the return associated with the replacement package label to retrieve.
+	 * @param packageId Unique identifier of the package for which to retrieve the label.
+	 * @param returnAsBase64Png Specifies whether to return the RMA label image as Base64-encoded PNG image instead of as a byte array encoded in the original image format. The default is .
+	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getPackageLabelUrl(String packageId, Boolean returnAsBase64Png, String returnId)
@@ -31,9 +31,9 @@ public class PackageUrl
 
 	/**
 	 * Get Resource Url for GetPackage
-	 * @param packageId Unique identifier of the return replacement package to retrieve.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param returnId Unique identifier of the return associated with the replacement package to retrieve.
+	 * @param packageId Unique identifier of the package for which to retrieve the label.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getPackageUrl(String packageId, String responseFields, String returnId)
@@ -47,8 +47,8 @@ public class PackageUrl
 
 	/**
 	 * Get Resource Url for CreatePackage
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param returnId Unique identifier of the return for which to create a replacement package.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl createPackageUrl(String responseFields, String returnId)
@@ -61,9 +61,9 @@ public class PackageUrl
 
 	/**
 	 * Get Resource Url for UpdatePackage
-	 * @param packageId Unique identifier of the return replacement package to update.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param returnId Unique identifier of the return associated with the replacement package to update.
+	 * @param packageId Unique identifier of the package for which to retrieve the label.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updatePackageUrl(String packageId, String responseFields, String returnId)
@@ -77,8 +77,8 @@ public class PackageUrl
 
 	/**
 	 * Get Resource Url for DeletePackage
-	 * @param packageId Unique identifier of the return replacement package to delete.
-	 * @param returnId Unique identifier of the return associated with the replacement package to delete.
+	 * @param packageId Unique identifier of the package for which to retrieve the label.
+	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deletePackageUrl(String packageId, String returnId)

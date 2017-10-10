@@ -25,9 +25,6 @@ public class ProductExtraValue implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The difference between the weight associated with this product extra and the base product. For example, if a product with a monogram weighs an extra 1/4 lb, the DeltaWeight value is "0.25".
-	 */
 	protected  Double deltaWeight;
 
 	public Double getDeltaWeight() {
@@ -38,9 +35,6 @@ public class ProductExtraValue implements Serializable
 		this.deltaWeight = deltaWeight;
 	}
 
-	/**
-	 * If true, the value for the product extra is selected by default. Shopper entered extras cannot be defaulted.
-	 */
 	protected  Boolean isDefaulted;
 
 	public Boolean getIsDefaulted() {
@@ -52,7 +46,7 @@ public class ProductExtraValue implements Serializable
 	}
 
 	/**
-	 * When setting up the extra on a parent product, you can specify a quantity. You can have an extra that is a quantity > 1 of another product.
+	 * The specified quantity of objects and items. This property is used for numerous object types including products, options, components within a product bundle, cart and order items, returned items, shipping line items, items in a digital product. and items associated with types and reservations.
 	 */
 	protected  Integer quantity;
 
@@ -64,9 +58,6 @@ public class ProductExtraValue implements Serializable
 		this.quantity = quantity;
 	}
 
-	/**
-	 * Properties of a defined value for a product extra attribute.
-	 */
 	protected  Object value;
 
 	public Object getValue() {
@@ -77,9 +68,6 @@ public class ProductExtraValue implements Serializable
 		this.value = value;
 	}
 
-	/**
-	 * Detail of the product extra attribute vocabulary value.
-	 */
 	protected  AttributeVocabularyValue attributeVocabularyValueDetail;
 
 	public AttributeVocabularyValue getAttributeVocabularyValueDetail() {
@@ -90,9 +78,6 @@ public class ProductExtraValue implements Serializable
 		this.attributeVocabularyValueDetail = attributeVocabularyValueDetail;
 	}
 
-	/**
-	 * The difference between the price associated with this product extra and the base product. For example, if a product with a defined monogram extra costs an additional $10, the DeltaPrice value is "10".
-	 */
 	protected  ProductExtraValueDeltaPrice deltaPrice;
 
 	public ProductExtraValueDeltaPrice getDeltaPrice() {
@@ -103,6 +88,9 @@ public class ProductExtraValue implements Serializable
 		this.deltaPrice = deltaPrice;
 	}
 
+	/**
+	 * The difference between associated prices for a product, variation option, or extra that is localized per the `localeCode`. The difference is calculated by subtracting the base price from the associated price with this product, option, and/or extra. Depending on the localeCode, the price may be converted such as from USD (USÂ Dollar) to EUR (euro).
+	 */
 	protected List<ProductExtraValueDeltaPrice> localizedDeltaPrice;
 	public List<ProductExtraValueDeltaPrice> getLocalizedDeltaPrice() {
 		return this.localizedDeltaPrice;

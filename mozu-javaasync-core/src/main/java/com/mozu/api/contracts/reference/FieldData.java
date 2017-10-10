@@ -21,9 +21,6 @@ public class FieldData implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Code of the field.
-	 */
 	protected  String code;
 
 	public String getCode() {
@@ -34,9 +31,6 @@ public class FieldData implements Serializable
 		this.code = code;
 	}
 
-	/**
-	 * The field value.
-	 */
 	protected  String value;
 
 	public String getValue() {

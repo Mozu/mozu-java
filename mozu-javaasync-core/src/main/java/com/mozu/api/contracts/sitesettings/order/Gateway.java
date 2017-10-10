@@ -25,9 +25,6 @@ public class Gateway implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * If true, the credential fields for the gateway are configured with valid values. For security purposes, Mozu does not return the credential fields for the gateway subresource.
-	 */
 	protected  Boolean areGatewayCredentialFieldsSet;
 
 	public Boolean getAreGatewayCredentialFieldsSet() {
@@ -38,9 +35,6 @@ public class Gateway implements Serializable
 		this.areGatewayCredentialFieldsSet = areGatewayCredentialFieldsSet;
 	}
 
-	/**
-	 * The types of credit cards the merchant supports using this payment gateway.
-	 */
 	protected List<String> supportedCards;
 	public List<String> getSupportedCards() {
 		return this.supportedCards;
@@ -49,9 +43,6 @@ public class Gateway implements Serializable
 		this.supportedCards = supportedCards;
 	}
 
-	/**
-	 * Account information associated with the specified payment gateway.
-	 */
 	protected  GatewayAccount gatewayAccount;
 
 	public GatewayAccount getGatewayAccount() {
@@ -62,9 +53,6 @@ public class Gateway implements Serializable
 		this.gatewayAccount = gatewayAccount;
 	}
 
-	/**
-	 * Properties of the payment gateway definition.
-	 */
 	protected  GatewayDefinition gatewayDefinition;
 
 	public GatewayDefinition getGatewayDefinition() {

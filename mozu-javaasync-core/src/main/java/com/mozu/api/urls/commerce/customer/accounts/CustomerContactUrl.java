@@ -15,9 +15,9 @@ public class CustomerContactUrl
 
 	/**
 	 * Get Resource Url for GetAccountContact
-	 * @param accountId Unique identifier of the customer account whose contact information is being retrieved.
-	 * @param contactId Unique identifier of the customer account contact to retrieve.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param accountId Unique identifier of the customer account.
+	 * @param contactId Unique identifer of the customer account contact being updated.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getAccountContactUrl(Integer accountId, Integer contactId, String responseFields)
@@ -31,12 +31,12 @@ public class CustomerContactUrl
 
 	/**
 	 * Get Resource Url for GetAccountContacts
-	 * @param accountId Unique identifier of the customer account associated with the contact information to retrieve.
-	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param accountId Unique identifier of the customer account.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getAccountContactsUrl(Integer accountId, String filter, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
@@ -53,8 +53,8 @@ public class CustomerContactUrl
 
 	/**
 	 * Get Resource Url for AddAccountContact
-	 * @param accountId Unique identifier of the customer account containing the new contact.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param accountId Unique identifier of the customer account.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addAccountContactUrl(Integer accountId, String responseFields)
@@ -66,24 +66,10 @@ public class CustomerContactUrl
 	}
 
 	/**
-	 * Get Resource Url for AddAccountContactList
-	 * @param accountId 
-	 * @param responseFields 
-	 * @return   String Resource Url
-	 */
-	public static MozuUrl addAccountContactListUrl(Integer accountId, String responseFields)
-	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}/contactslist?responseFields={responseFields}");
-		formatter.formatUrl("accountId", accountId);
-		formatter.formatUrl("responseFields", responseFields);
-		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
-	}
-
-	/**
 	 * Get Resource Url for UpdateAccountContact
-	 * @param accountId Unique identifier of the customer account whose contact information is being updated.
+	 * @param accountId Unique identifier of the customer account.
 	 * @param contactId Unique identifer of the customer account contact being updated.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateAccountContactUrl(Integer accountId, Integer contactId, String responseFields)
@@ -96,9 +82,23 @@ public class CustomerContactUrl
 	}
 
 	/**
+	 * Get Resource Url for AddAccountContactList
+	 * @param accountId 
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl addAccountContactListUrl(Integer accountId, String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}/contacts?responseFields={responseFields}");
+		formatter.formatUrl("accountId", accountId);
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for DeleteAccountContact
 	 * @param accountId Unique identifier of the customer account.
-	 * @param contactId Unique identifier of the customer account contact to delete.
+	 * @param contactId Unique identifer of the customer account contact being updated.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteAccountContactUrl(Integer accountId, Integer contactId)

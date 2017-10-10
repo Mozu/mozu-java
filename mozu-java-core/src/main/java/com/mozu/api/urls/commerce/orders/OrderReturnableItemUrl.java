@@ -15,8 +15,8 @@ public class OrderReturnableItemUrl
 
 	/**
 	 * Get Resource Url for GetOrderReturnableItems
-	 * @param orderId 
-	 * @param responseFields 
+	 * @param orderId Unique identifier of the order.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getOrderReturnableItemsUrl(String orderId, String responseFields)

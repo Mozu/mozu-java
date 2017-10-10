@@ -17,7 +17,7 @@ import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.event.EventExtendedProperty;
 
 /**
- *	Properties of an event the system creates each time a create, read, update, or delete operation is performed.
+ *	Mozu.AppDev.Contracts.Event ApiType DOCUMENT_HERE
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Event implements Serializable
@@ -25,9 +25,6 @@ public class Event implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The unique identifier of the catalog of products used by a site.
-	 */
 	protected  Integer catalogId;
 
 	public Integer getCatalogId() {
@@ -51,9 +48,6 @@ public class Event implements Serializable
 		this.correlationId = correlationId;
 	}
 
-	/**
-	 * The unique identifier of the entity that caused the event. For example, if the event is "product.created", the entity ID value represents the product code of the product that was created.
-	 */
 	protected  String entityId;
 
 	public String getEntityId() {
@@ -64,9 +58,6 @@ public class Event implements Serializable
 		this.entityId = entityId;
 	}
 
-	/**
-	 * The unique identifier of the event.
-	 */
 	protected  String id;
 
 	public String getId() {
@@ -77,9 +68,6 @@ public class Event implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * If true, the event record was generated as a test request for an application.
-	 */
 	protected  Boolean isTest;
 
 	public Boolean getIsTest() {
@@ -90,9 +78,6 @@ public class Event implements Serializable
 		this.isTest = isTest;
 	}
 
-	/**
-	 * The unique identifier of the master catalog associated with the entity.
-	 */
 	protected  Integer masterCatalogId;
 
 	public Integer getMasterCatalogId() {
@@ -113,9 +98,6 @@ public class Event implements Serializable
 		this.siteId = siteId;
 	}
 
-	/**
-	 * Unique identifier of the Mozu tenant.
-	 */
 	protected  Integer tenantId;
 
 	public Integer getTenantId() {
@@ -126,9 +108,6 @@ public class Event implements Serializable
 		this.tenantId = tenantId;
 	}
 
-	/**
-	 * The type of event that was performed, such as "product.created" or "category.deleted".
-	 */
 	protected  String topic;
 
 	public String getTopic() {
@@ -139,9 +118,6 @@ public class Event implements Serializable
 		this.topic = topic;
 	}
 
-	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -152,6 +128,9 @@ public class Event implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
+	/**
+	 * Extended properties. Note: This is purposefully not a CollectionBase type wrapper so consumers start to get used to not having counts returned.
+	 */
 	protected List<EventExtendedProperty> extendedProperties;
 	public List<EventExtendedProperty> getExtendedProperties() {
 		return this.extendedProperties;

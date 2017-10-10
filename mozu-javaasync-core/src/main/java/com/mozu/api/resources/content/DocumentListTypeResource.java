@@ -21,7 +21,7 @@ import org.apache.commons.lang.StringUtils;
 
 import com.mozu.api.DataViewMode;
 /** <summary>
- * 
+ * Use the Document List Types resource to manage the types of document lists in your site's document hierarchy. The type denotes a content type for that list of folders, sub-folders, and documents such as `web_pages`.
  * </summary>
  */
 public class DocumentListTypeResource {
@@ -79,9 +79,9 @@ public class DocumentListTypeResource {
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	DocumentListTypeCollection documentListTypeCollection = documentlisttype.getDocumentListTypes( pageSize,  startIndex,  responseFields);
 	 * </code></pre></p>
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param startIndex 
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return com.mozu.api.contracts.content.DocumentListTypeCollection
 	 * @see com.mozu.api.contracts.content.DocumentListTypeCollection
 	 */
@@ -100,9 +100,9 @@ public class DocumentListTypeResource {
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	CountDownLatch latch = documentlisttype.getDocumentListTypes( pageSize,  startIndex,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param startIndex 
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.content.DocumentListTypeCollection
 	 * @see com.mozu.api.contracts.content.DocumentListTypeCollection
@@ -153,7 +153,7 @@ public class DocumentListTypeResource {
 	 *	DocumentListType documentListType = documentlisttype.getDocumentListType( documentListTypeFQN,  responseFields);
 	 * </code></pre></p>
 	 * @param documentListTypeFQN 
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
 	 */
@@ -173,7 +173,7 @@ public class DocumentListTypeResource {
 	 *	CountDownLatch latch = documentlisttype.getDocumentListType( documentListTypeFQN,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param documentListTypeFQN 
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
@@ -192,7 +192,7 @@ public class DocumentListTypeResource {
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	DocumentListType documentListType = documentlisttype.createDocumentListType( list);
 	 * </code></pre></p>
-	 * @param list 
+	 * @param list Properties for the document list type. Document lists contain documents with an associated document type, such as web pages.
 	 * @return com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
@@ -209,7 +209,7 @@ public class DocumentListTypeResource {
 	 *	CountDownLatch latch = documentlisttype.createDocumentListType( list, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param list 
+	 * @param list Properties for the document list type. Document lists contain documents with an associated document type, such as web pages.
 	 * @return com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
@@ -225,8 +225,8 @@ public class DocumentListTypeResource {
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	DocumentListType documentListType = documentlisttype.createDocumentListType( list,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param list 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param list Properties for the document list type. Document lists contain documents with an associated document type, such as web pages.
 	 * @return com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
@@ -246,9 +246,9 @@ public class DocumentListTypeResource {
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	CountDownLatch latch = documentlisttype.createDocumentListType( list,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param list 
+	 * @param list Properties for the document list type. Document lists contain documents with an associated document type, such as web pages.
 	 * @return com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
@@ -268,7 +268,7 @@ public class DocumentListTypeResource {
 	 *	DocumentListType documentListType = documentlisttype.updateDocumentListType( list,  documentListTypeFQN);
 	 * </code></pre></p>
 	 * @param documentListTypeFQN 
-	 * @param list 
+	 * @param list Properties for the document list type. Document lists contain documents with an associated document type, such as web pages.
 	 * @return com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
@@ -286,7 +286,7 @@ public class DocumentListTypeResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param documentListTypeFQN 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param list 
+	 * @param list Properties for the document list type. Document lists contain documents with an associated document type, such as web pages.
 	 * @return com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
@@ -303,8 +303,8 @@ public class DocumentListTypeResource {
 	 *	DocumentListType documentListType = documentlisttype.updateDocumentListType( list,  documentListTypeFQN,  responseFields);
 	 * </code></pre></p>
 	 * @param documentListTypeFQN 
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param list 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param list Properties for the document list type. Document lists contain documents with an associated document type, such as web pages.
 	 * @return com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
@@ -325,9 +325,9 @@ public class DocumentListTypeResource {
 	 *	CountDownLatch latch = documentlisttype.updateDocumentListType( list,  documentListTypeFQN,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param documentListTypeFQN 
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param list 
+	 * @param list Properties for the document list type. Document lists contain documents with an associated document type, such as web pages.
 	 * @return com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType

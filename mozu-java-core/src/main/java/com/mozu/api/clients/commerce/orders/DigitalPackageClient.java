@@ -31,7 +31,7 @@ public class DigitalPackageClient {
 	 * string string = client.Result();
 	 * </code></pre></p>
 	 * @param digitalPackageId This parameter supplies package ID to get fulfillment actions for the digital package.
-	 * @param orderId This parameter provides the unique identifier of the order on which to get a list of available actions.
+	 * @param orderId Unique identifier of the order.
 	 * @return Mozu.Api.MozuClient <List<string>>
 	 * @see string
 	 */
@@ -48,15 +48,15 @@ public class DigitalPackageClient {
 	}
 
 	/**
-	 * This operation retreives a digital package within an order and it requires two parameters: orderId and digitalPackageId.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage> mozuClient=GetDigitalPackageClient( orderId,  digitalPackageId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DigitalPackage digitalPackage = client.Result();
 	 * </code></pre></p>
-	 * @param digitalPackageId This parameter provides the digital package Id.
-	 * @param orderId This parameter provides the unique identifier of the order with which to associate the digital package.
+	 * @param digitalPackageId This parameter supplies package ID to get fulfillment actions for the digital package.
+	 * @param orderId Unique identifier of the order.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
 	 */
@@ -66,16 +66,16 @@ public class DigitalPackageClient {
 	}
 
 	/**
-	 * This operation retreives a digital package within an order and it requires two parameters: orderId and digitalPackageId.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage> mozuClient=GetDigitalPackageClient( orderId,  digitalPackageId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DigitalPackage digitalPackage = client.Result();
 	 * </code></pre></p>
-	 * @param digitalPackageId This parameter provides the digital package Id.
-	 * @param orderId This parameter provides the unique identifier of the order with which to associate the digital package.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param digitalPackageId This parameter supplies package ID to get fulfillment actions for the digital package.
+	 * @param orderId Unique identifier of the order.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
 	 */
@@ -92,15 +92,15 @@ public class DigitalPackageClient {
 	}
 
 	/**
-	 * Lets you apply a digital package to the order using the orderId and digitalPackage parameters.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage> mozuClient=CreateDigitalPackageClient( digitalPackage,  orderId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DigitalPackage digitalPackage = client.Result();
 	 * </code></pre></p>
-	 * @param orderId The orderID is a required paramter for the digitalpackages operation. The orderId is a unique identifier of the order with which to associate the digital package.
-	 * @param digitalPackage The digitalPackage parameter is a required parameter for the CreateDigitalPackages operation. The digitalPackage is the digital package to create and add to the order.
+	 * @param orderId Unique identifier of the order.
+	 * @param digitalPackage Lets you manage an order's digital packages, by applying a digital package to the order.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
@@ -111,16 +111,16 @@ public class DigitalPackageClient {
 	}
 
 	/**
-	 * Lets you apply a digital package to the order using the orderId and digitalPackage parameters.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage> mozuClient=CreateDigitalPackageClient( digitalPackage,  orderId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DigitalPackage digitalPackage = client.Result();
 	 * </code></pre></p>
-	 * @param orderId The orderID is a required paramter for the digitalpackages operation. The orderId is a unique identifier of the order with which to associate the digital package.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param digitalPackage The digitalPackage parameter is a required parameter for the CreateDigitalPackages operation. The digitalPackage is the digital package to create and add to the order.
+	 * @param orderId Unique identifier of the order.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param digitalPackage Lets you manage an order's digital packages, by applying a digital package to the order.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
@@ -139,16 +139,16 @@ public class DigitalPackageClient {
 	}
 
 	/**
-	 * This method operates on one digital package, specified by the id given. This method ensures that the digital package ID provided is in the order with the id given, and then updates the properties of that package with the properties of the one passed in using the ‘digitalpackage’ parameter.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage> mozuClient=UpdateDigitalPackageClient( digitalPackage,  orderId,  digitalPackageId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DigitalPackage digitalPackage = client.Result();
 	 * </code></pre></p>
-	 * @param digitalPackageId This parameter specifies the digital package to update in the order.
-	 * @param orderId This parameter provides the unique identifier of the order with which to associate the digital package.
-	 * @param digitalPackage This parameter provides the package content to update in the order.
+	 * @param digitalPackageId This parameter supplies package ID to get fulfillment actions for the digital package.
+	 * @param orderId Unique identifier of the order.
+	 * @param digitalPackage Lets you manage an order's digital packages, by applying a digital package to the order.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
@@ -159,17 +159,17 @@ public class DigitalPackageClient {
 	}
 
 	/**
-	 * This method operates on one digital package, specified by the id given. This method ensures that the digital package ID provided is in the order with the id given, and then updates the properties of that package with the properties of the one passed in using the ‘digitalpackage’ parameter.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage> mozuClient=UpdateDigitalPackageClient( digitalPackage,  orderId,  digitalPackageId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DigitalPackage digitalPackage = client.Result();
 	 * </code></pre></p>
-	 * @param digitalPackageId This parameter specifies the digital package to update in the order.
-	 * @param orderId This parameter provides the unique identifier of the order with which to associate the digital package.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param digitalPackage This parameter provides the package content to update in the order.
+	 * @param digitalPackageId This parameter supplies package ID to get fulfillment actions for the digital package.
+	 * @param orderId Unique identifier of the order.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param digitalPackage Lets you manage an order's digital packages, by applying a digital package to the order.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
@@ -188,14 +188,14 @@ public class DigitalPackageClient {
 	}
 
 	/**
-	 * This operation deletes a digital package from an order. This operation requires three parameters: orderId, digitalPackageId, and digitalPackage.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteDigitalPackageClient( orderId,  digitalPackageId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param digitalPackageId The digitalPackage ID is unique package ID to update on the order.
-	 * @param orderId The orderId is unique identifier of the order with which to associate the package.
+	 * @param digitalPackageId This parameter supplies package ID to get fulfillment actions for the digital package.
+	 * @param orderId Unique identifier of the order.
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deleteDigitalPackageClient(String orderId, String digitalPackageId) throws Exception

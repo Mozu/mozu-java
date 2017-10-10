@@ -21,9 +21,6 @@ public class Facet implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The number of facet results.
-	 */
 	protected  Integer count;
 
 	public Integer getCount() {
@@ -34,9 +31,6 @@ public class Facet implements Serializable
 		this.count = count;
 	}
 
-	/**
-	 * The name of the facet.
-	 */
 	protected  String name;
 
 	public String getName() {

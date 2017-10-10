@@ -35,7 +35,7 @@ public class DocumentDraftSummaryResource {
 
 	
 	/**
-	 * Retrieves a list of the documents currently in draft state, according to any defined filter and sort criteria.
+	 * 
 	 * <p><pre><code>
 	 *	DocumentDraftSummary documentdraftsummary = new DocumentDraftSummary();
 	 *	DocumentDraftSummaryPagedCollection documentDraftSummaryPagedCollection = documentdraftsummary.listDocumentDraftSummaries();
@@ -49,15 +49,15 @@ public class DocumentDraftSummaryResource {
 	}
 
 	/**
-	 * Retrieves a list of the documents currently in draft state, according to any defined filter and sort criteria.
+	 * 
 	 * <p><pre><code>
 	 *	DocumentDraftSummary documentdraftsummary = new DocumentDraftSummary();
 	 *	DocumentDraftSummaryPagedCollection documentDraftSummaryPagedCollection = documentdraftsummary.listDocumentDraftSummaries( pageSize,  startIndex,  documentLists,  responseFields);
 	 * </code></pre></p>
-	 * @param documentLists Lists that contain the document drafts.
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
+	 * @param documentLists List of document lists that contain documents to delete.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection
 	 * @see com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection
 	 */
@@ -71,7 +71,7 @@ public class DocumentDraftSummaryResource {
 	}
 
 	/**
-	 * Deletes the drafts of the specified documents. Published documents cannot be deleted.
+	 * 
 	 * <p><pre><code>
 	 *	DocumentDraftSummary documentdraftsummary = new DocumentDraftSummary();
 	 *	documentdraftsummary.deleteDocumentDrafts( documentIds);
@@ -86,7 +86,7 @@ public class DocumentDraftSummaryResource {
 	}
 
 	/**
-	 * Deletes the drafts of the specified documents. Published documents cannot be deleted.
+	 * 
 	 * <p><pre><code>
 	 *	DocumentDraftSummary documentdraftsummary = new DocumentDraftSummary();
 	 *	documentdraftsummary.deleteDocumentDrafts( documentIds,  documentLists);
@@ -106,12 +106,12 @@ public class DocumentDraftSummaryResource {
 	}
 
 	/**
-	 * Publish one or more document drafts to live content on the site.
+	 * 
 	 * <p><pre><code>
 	 *	DocumentDraftSummary documentdraftsummary = new DocumentDraftSummary();
 	 *	documentdraftsummary.publishDocuments( documentIds);
 	 * </code></pre></p>
-	 * @param documentIds List of unique identifiers of the document drafts to publish.
+	 * @param documentIds Unique identifiers of the documents to delete.
 	 * @return 
 	 * @see string
 	 */
@@ -121,13 +121,13 @@ public class DocumentDraftSummaryResource {
 	}
 
 	/**
-	 * Publish one or more document drafts to live content on the site.
+	 * 
 	 * <p><pre><code>
 	 *	DocumentDraftSummary documentdraftsummary = new DocumentDraftSummary();
 	 *	documentdraftsummary.publishDocuments( documentIds,  documentLists);
 	 * </code></pre></p>
-	 * @param documentLists List of document lists that contain documents to publish.
-	 * @param documentIds List of unique identifiers of the document drafts to publish.
+	 * @param documentLists List of document lists that contain documents to delete.
+	 * @param documentIds Unique identifiers of the documents to delete.
 	 * @return 
 	 * @see string
 	 */
