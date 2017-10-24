@@ -15,9 +15,6 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.appdev.ApplicationCapabilityDomainValue;
 
-/**
- *	This property is not exposed in documentation.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ApplicationCapabilityDomain implements Serializable
 {
@@ -34,9 +31,6 @@ public class ApplicationCapabilityDomain implements Serializable
 		this.applicationCapabilityDomainId = applicationCapabilityDomainId;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationCapabilityDomain applicationCapabilityTypeId ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  Integer applicationCapabilityTypeId;
 
 	public Integer getApplicationCapabilityTypeId() {

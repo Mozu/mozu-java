@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Name of the discount added and applied to a shopping cart and order for a shopper's purchase. 
+ *	Properties of a defined product, order, or shipping discount.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Discount implements Serializable
@@ -42,7 +42,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * The localizable, shopper-facing description defined for a discount or a storefront message. 
+	 * Client-defined description that displays for the shopper on the web storefront.
 	 */
 	protected  String friendlyDescription;
 

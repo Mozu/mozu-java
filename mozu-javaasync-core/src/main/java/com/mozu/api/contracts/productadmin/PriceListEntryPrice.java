@@ -12,18 +12,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	Mozu.ProductAdmin.Contracts.PriceListEntryPrice ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PriceListEntryPrice implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The product's list price if  is set to .
-	 */
 	protected  Double listPrice;
 
 	public Double getListPrice() {
@@ -34,9 +28,6 @@ public class PriceListEntryPrice implements Serializable
 		this.listPrice = listPrice;
 	}
 
-	/**
-	 * Specifies whether to use the product's default catalog list price, or to override the product's default catalog list price.This property has the following valid values:* * 
-	 */
 	protected  String listPriceMode;
 
 	public String getListPriceMode() {
@@ -47,9 +38,6 @@ public class PriceListEntryPrice implements Serializable
 		this.listPriceMode = listPriceMode;
 	}
 
-	/**
-	 * This property is for future price list entry functionality and currently should always be 1.
-	 */
 	protected  Integer minQty;
 
 	public Integer getMinQty() {
@@ -60,9 +48,6 @@ public class PriceListEntryPrice implements Serializable
 		this.minQty = minQty;
 	}
 
-	/**
-	 * The set sale price for a product consisting of a price with a discount already applied.For price list entries, this property is the product's sale price if the  is set to .
-	 */
 	protected  Double salePrice;
 
 	public Double getSalePrice() {
@@ -73,9 +58,6 @@ public class PriceListEntryPrice implements Serializable
 		this.salePrice = salePrice;
 	}
 
-	/**
-	 * Specifies whether to use the product's default catalog sale price, or to override the product's default catalog sale price.This property has the following valid values:* * 
-	 */
 	protected  String salePriceMode;
 
 	public String getSalePriceMode() {

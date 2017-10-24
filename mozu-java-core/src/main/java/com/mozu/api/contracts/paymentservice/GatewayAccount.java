@@ -24,6 +24,24 @@ public class GatewayAccount implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected  String id;
+
+	public String getId() {
+		return this.id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	protected List<String> binPatterns;
+	public List<String> getBinPatterns() {
+		return this.binPatterns;
+	}
+	public void setBinPatterns(List<String> binPatterns) {
+		this.binPatterns = binPatterns;
+	}
+
 	protected  String countryCode;
 
 	public String getCountryCode() {
@@ -42,16 +60,6 @@ public class GatewayAccount implements Serializable
 
 	public void setGatewayDefinitionId(String gatewayDefinitionId) {
 		this.gatewayDefinitionId = gatewayDefinitionId;
-	}
-
-	protected  String id;
-
-	public String getId() {
-		return this.id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
 	}
 
 	protected  Boolean isActive;

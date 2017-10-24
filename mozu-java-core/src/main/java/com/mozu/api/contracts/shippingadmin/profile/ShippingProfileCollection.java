@@ -15,18 +15,12 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.shippingadmin.profile.ShippingProfile;
 
-/**
- *	Mozu.ShippingAdmin.Contracts.Profile.ShippingProfileCollection ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ShippingProfileCollection implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The total number of items in the list.
-	 */
 	protected  Integer totalCount;
 
 	public Integer getTotalCount() {
@@ -37,9 +31,6 @@ public class ShippingProfileCollection implements Serializable
 		this.totalCount = totalCount;
 	}
 
-	/**
-	 * A list of requested items. All returned data is provided in an items array.For a failed request, the returned response may be success with an empty item array.
-	 */
 	protected List<ShippingProfile> items;
 	public List<ShippingProfile> getItems() {
 		return this.items;

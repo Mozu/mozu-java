@@ -14,18 +14,22 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	Mozu.SiteSettings.General.Contracts.General.Routing.Mapping ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Mapping implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * beforeRouting ApiType DOCUMENT_HERE 
-	 */
+	protected  String type;
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
 	protected  Boolean beforeRouting;
 
 	public Boolean getBeforeRouting() {
@@ -36,9 +40,6 @@ public class Mapping implements Serializable
 		this.beforeRouting = beforeRouting;
 	}
 
-	/**
-	 * docId ApiType DOCUMENT_HERE 
-	 */
 	protected  String docId;
 
 	public String getDocId() {
@@ -49,9 +50,6 @@ public class Mapping implements Serializable
 		this.docId = docId;
 	}
 
-	/**
-	 * facetId ApiType DOCUMENT_HERE 
-	 */
 	protected  String facetId;
 
 	public String getFacetId() {
@@ -62,9 +60,6 @@ public class Mapping implements Serializable
 		this.facetId = facetId;
 	}
 
-	/**
-	 * The fully qualified name of the document list.
-	 */
 	protected  String listFqn;
 
 	public String getListFqn() {
@@ -75,9 +70,6 @@ public class Mapping implements Serializable
 		this.listFqn = listFqn;
 	}
 
-	/**
-	 * mappings ApiType DOCUMENT_HERE 
-	 */
 	public HashMap<String,Object> mappings;
 	public HashMap<String,Object> getMappings() {
 		return this.mappings;
@@ -86,9 +78,6 @@ public class Mapping implements Serializable
 		this.mappings = mappings;
 	}
 
-	/**
-	 * mapTo ApiType DOCUMENT_HERE 
-	 */
 	protected  String mapTo;
 
 	public String getMapTo() {
@@ -99,9 +88,6 @@ public class Mapping implements Serializable
 		this.mapTo = mapTo;
 	}
 
-	/**
-	 * pattern ApiType DOCUMENT_HERE 
-	 */
 	protected  String pattern;
 
 	public String getPattern() {
@@ -112,9 +98,6 @@ public class Mapping implements Serializable
 		this.pattern = pattern;
 	}
 
-	/**
-	 * replacement ApiType DOCUMENT_HERE 
-	 */
 	protected  String replacement;
 
 	public String getReplacement() {
@@ -123,19 +106,6 @@ public class Mapping implements Serializable
 
 	public void setReplacement(String replacement) {
 		this.replacement = replacement;
-	}
-
-	/**
-	 * type ApiType DOCUMENT_HERE 
-	 */
-	protected  String type;
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
 	}
 
 

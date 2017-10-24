@@ -47,7 +47,7 @@ public class OrderResource {
 	 */
 	public com.mozu.api.contracts.commerceruntime.orders.OrderCollection getOrders() throws Exception
 	{
-		return getOrders( null,  null,  null,  null,  null,  null,  null);
+		return getOrders( null,  null,  null,  null,  null,  null,  null,  null);
 	}
 
 	/**
@@ -62,28 +62,29 @@ public class OrderResource {
 	 */
 	public CountDownLatch getOrdersAsync( AsyncCallback<com.mozu.api.contracts.commerceruntime.orders.OrderCollection> callback) throws Exception
 	{
-		return getOrdersAsync( null,  null,  null,  null,  null,  null,  null, callback);
+		return getOrdersAsync( null,  null,  null,  null,  null,  null,  null,  null, callback);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	Order order = new Order();
-	 *	OrderCollection orderCollection = order.getOrders( startIndex,  pageSize,  sortBy,  filter,  q,  qLimit,  responseFields);
+	 *	OrderCollection orderCollection = order.getOrders( startIndex,  pageSize,  sortBy,  filter,  q,  qLimit,  includeBin,  responseFields);
 	 * </code></pre></p>
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param q A list of order search terms (not phrases) to use in the query when searching across order number and the name or email of the billing contact. When entering, separate multiple search terms with a space character.
+	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. You can filter an order's search results by any of its properties, including status, contact information, or total. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=Status+eq+Submitted"
+	 * @param includeBin 
+	 * @param pageSize Used to page results from a query. Indicates the maximum number of entities to return from a query. Default value: 20. Max value: 200.
+	 * @param q A list of order search terms to use in the query when searching across order number and the name or email of the billing contact. Separate multiple search terms with a space character.
 	 * @param qLimit The maximum number of search results to return in the response. You can limit any range between 1-100.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param responseFields 
+	 * @param sortBy The element to sort the results by and the order in which the results appear. Either ascending order (a-z) which accepts 'asc' or 'asc' or descending order (z-a) which accepts 'desc' or 'desc'. The sortBy parameter follows an available property. For examp
+	 * @param startIndex 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderCollection
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderCollection
 	 */
-	public com.mozu.api.contracts.commerceruntime.orders.OrderCollection getOrders(Integer startIndex, Integer pageSize, String sortBy, String filter, String q, Integer qLimit, String responseFields) throws Exception
+	public com.mozu.api.contracts.commerceruntime.orders.OrderCollection getOrders(Integer startIndex, Integer pageSize, String sortBy, String filter, String q, Integer qLimit, Boolean includeBin, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderCollection> client = com.mozu.api.clients.commerce.OrderClient.getOrdersClient( startIndex,  pageSize,  sortBy,  filter,  q,  qLimit,  responseFields);
+		MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderCollection> client = com.mozu.api.clients.commerce.OrderClient.getOrdersClient( startIndex,  pageSize,  sortBy,  filter,  q,  qLimit,  includeBin,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -94,22 +95,23 @@ public class OrderResource {
 	 * 
 	 * <p><pre><code>
 	 *	Order order = new Order();
-	 *	CountDownLatch latch = order.getOrders( startIndex,  pageSize,  sortBy,  filter,  q,  qLimit,  responseFields, callback );
+	 *	CountDownLatch latch = order.getOrders( startIndex,  pageSize,  sortBy,  filter,  q,  qLimit,  includeBin,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param q A list of order search terms (not phrases) to use in the query when searching across order number and the name or email of the billing contact. When entering, separate multiple search terms with a space character.
+	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. You can filter an order's search results by any of its properties, including status, contact information, or total. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=Status+eq+Submitted"
+	 * @param includeBin 
+	 * @param pageSize Used to page results from a query. Indicates the maximum number of entities to return from a query. Default value: 20. Max value: 200.
+	 * @param q A list of order search terms to use in the query when searching across order number and the name or email of the billing contact. Separate multiple search terms with a space character.
 	 * @param qLimit The maximum number of search results to return in the response. You can limit any range between 1-100.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param responseFields 
+	 * @param sortBy The element to sort the results by and the order in which the results appear. Either ascending order (a-z) which accepts 'asc' or 'asc' or descending order (z-a) which accepts 'desc' or 'desc'. The sortBy parameter follows an available property. For examp
+	 * @param startIndex 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderCollection
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderCollection
 	 */
-	public CountDownLatch getOrdersAsync(Integer startIndex, Integer pageSize, String sortBy, String filter, String q, Integer qLimit, String responseFields, AsyncCallback<com.mozu.api.contracts.commerceruntime.orders.OrderCollection> callback) throws Exception
+	public CountDownLatch getOrdersAsync(Integer startIndex, Integer pageSize, String sortBy, String filter, String q, Integer qLimit, Boolean includeBin, String responseFields, AsyncCallback<com.mozu.api.contracts.commerceruntime.orders.OrderCollection> callback) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderCollection> client = com.mozu.api.clients.commerce.OrderClient.getOrdersClient( startIndex,  pageSize,  sortBy,  filter,  q,  qLimit,  responseFields);
+		MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderCollection> client = com.mozu.api.clients.commerce.OrderClient.getOrdersClient( startIndex,  pageSize,  sortBy,  filter,  q,  qLimit,  includeBin,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 
@@ -121,7 +123,7 @@ public class OrderResource {
 	 *	Order order = new Order();
 	 *	string string = order.getAvailableActions( orderId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId Unique identifier of the available order actions to get.
 	 * @return List<string>
 	 * @see string
 	 */
@@ -140,7 +142,7 @@ public class OrderResource {
 	 *	Order order = new Order();
 	 *	CountDownLatch latch = order.getAvailableActions( orderId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId Unique identifier of the available order actions to get.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return List<string>
 	 * @see string
@@ -159,7 +161,7 @@ public class OrderResource {
 	 *	Order order = new Order();
 	 *	TaxableOrder taxableOrder = order.getTaxableOrders( orderId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId Unique identifier of the order to retrieve.
 	 * @return List<com.mozu.api.contracts.pricingruntime.TaxableOrder>
 	 * @see com.mozu.api.contracts.pricingruntime.TaxableOrder
 	 */
@@ -178,7 +180,7 @@ public class OrderResource {
 	 *	Order order = new Order();
 	 *	CountDownLatch latch = order.getTaxableOrders( orderId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId Unique identifier of the order to retrieve.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return List<com.mozu.api.contracts.pricingruntime.TaxableOrder>
 	 * @see com.mozu.api.contracts.pricingruntime.TaxableOrder
@@ -197,13 +199,13 @@ public class OrderResource {
 	 *	Order order = new Order();
 	 *	Order order = order.getOrder( orderId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId Unique identifier of the order details to get.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 */
 	public com.mozu.api.contracts.commerceruntime.orders.Order getOrder(String orderId) throws Exception
 	{
-		return getOrder( orderId,  null,  null);
+		return getOrder( orderId,  null,  null,  null);
 	}
 
 	/**
@@ -212,31 +214,32 @@ public class OrderResource {
 	 *	Order order = new Order();
 	 *	CountDownLatch latch = order.getOrder( orderId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId Unique identifier of the order details to get.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 */
 	public CountDownLatch getOrderAsync(String orderId, AsyncCallback<com.mozu.api.contracts.commerceruntime.orders.Order> callback) throws Exception
 	{
-		return getOrderAsync( orderId,  null,  null, callback);
+		return getOrderAsync( orderId,  null,  null,  null, callback);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	Order order = new Order();
-	 *	Order order = order.getOrder( orderId,  draft,  responseFields);
+	 *	Order order = order.getOrder( orderId,  draft,  includeBin,  responseFields);
 	 * </code></pre></p>
 	 * @param draft If true, retrieve the draft version of the order, which might include uncommitted changes to the order or its components.
-	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param includeBin 
+	 * @param orderId Unique identifier of the order details to get.
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 */
-	public com.mozu.api.contracts.commerceruntime.orders.Order getOrder(String orderId, Boolean draft, String responseFields) throws Exception
+	public com.mozu.api.contracts.commerceruntime.orders.Order getOrder(String orderId, Boolean draft, Boolean includeBin, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> client = com.mozu.api.clients.commerce.OrderClient.getOrderClient( orderId,  draft,  responseFields);
+		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> client = com.mozu.api.clients.commerce.OrderClient.getOrderClient( orderId,  draft,  includeBin,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -247,18 +250,19 @@ public class OrderResource {
 	 * 
 	 * <p><pre><code>
 	 *	Order order = new Order();
-	 *	CountDownLatch latch = order.getOrder( orderId,  draft,  responseFields, callback );
+	 *	CountDownLatch latch = order.getOrder( orderId,  draft,  includeBin,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param draft If true, retrieve the draft version of the order, which might include uncommitted changes to the order or its components.
-	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param includeBin 
+	 * @param orderId Unique identifier of the order details to get.
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 */
-	public CountDownLatch getOrderAsync(String orderId, Boolean draft, String responseFields, AsyncCallback<com.mozu.api.contracts.commerceruntime.orders.Order> callback) throws Exception
+	public CountDownLatch getOrderAsync(String orderId, Boolean draft, Boolean includeBin, String responseFields, AsyncCallback<com.mozu.api.contracts.commerceruntime.orders.Order> callback) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> client = com.mozu.api.clients.commerce.OrderClient.getOrderClient( orderId,  draft,  responseFields);
+		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> client = com.mozu.api.clients.commerce.OrderClient.getOrderClient( orderId,  draft,  includeBin,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 
@@ -270,7 +274,7 @@ public class OrderResource {
 	 *	Order order = new Order();
 	 *	Order order = order.createOrderFromCart( cartId);
 	 * </code></pre></p>
-	 * @param cartId Identifier of the cart to delete.
+	 * @param cartId Unique identifier of the cart. This is the original cart ID expressed as a GUID.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 */
@@ -285,7 +289,7 @@ public class OrderResource {
 	 *	Order order = new Order();
 	 *	CountDownLatch latch = order.createOrderFromCart( cartId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param cartId Identifier of the cart to delete.
+	 * @param cartId Unique identifier of the cart. This is the original cart ID expressed as a GUID.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
@@ -301,8 +305,8 @@ public class OrderResource {
 	 *	Order order = new Order();
 	 *	Order order = order.createOrderFromCart( cartId,  responseFields);
 	 * </code></pre></p>
-	 * @param cartId Identifier of the cart to delete.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param cartId Unique identifier of the cart. This is the original cart ID expressed as a GUID.
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 */
@@ -321,8 +325,8 @@ public class OrderResource {
 	 *	Order order = new Order();
 	 *	CountDownLatch latch = order.createOrderFromCart( cartId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param cartId Identifier of the cart to delete.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param cartId Unique identifier of the cart. This is the original cart ID expressed as a GUID.
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
@@ -341,7 +345,7 @@ public class OrderResource {
 	 *	Order order = new Order();
 	 *	Order order = order.createOrder( order);
 	 * </code></pre></p>
-	 * @param order Properties of an order, including its components.
+	 * @param order Properties of the order to create and submit.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
@@ -358,7 +362,7 @@ public class OrderResource {
 	 *	CountDownLatch latch = order.createOrder( order, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param order Properties of an order, including its components.
+	 * @param order Properties of the order to create and submit.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
@@ -374,8 +378,8 @@ public class OrderResource {
 	 *	Order order = new Order();
 	 *	Order order = order.createOrder( order,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param order Properties of an order, including its components.
+	 * @param responseFields 
+	 * @param order Properties of the order to create and submit.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
@@ -395,9 +399,9 @@ public class OrderResource {
 	 *	Order order = new Order();
 	 *	CountDownLatch latch = order.createOrder( order,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param order Properties of an order, including its components.
+	 * @param order Properties of the order to create and submit.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
@@ -452,7 +456,7 @@ public class OrderResource {
 	 *	Order order = order.performOrderAction( action,  orderId,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param action The action to perform for the order.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
@@ -474,7 +478,7 @@ public class OrderResource {
 	 *	CountDownLatch latch = order.performOrderAction( action,  orderId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @param action The action to perform for the order.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
@@ -495,9 +499,9 @@ public class OrderResource {
 	 *	Order order = new Order();
 	 *	Order order = order.processDigitalWallet( digitalWallet,  orderId,  digitalWalletType);
 	 * </code></pre></p>
-	 * @param digitalWalletType The type of digital wallet to be processed.
-	 * @param orderId Unique identifier of the order.
-	 * @param digitalWallet The details of the digitial wallet.
+	 * @param digitalWalletType 
+	 * @param orderId 
+	 * @param digitalWallet 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.DigitalWallet
@@ -513,10 +517,10 @@ public class OrderResource {
 	 *	Order order = new Order();
 	 *	CountDownLatch latch = order.processDigitalWallet( digitalWallet,  orderId,  digitalWalletType, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param digitalWalletType The type of digital wallet to be processed.
-	 * @param orderId Unique identifier of the order.
+	 * @param digitalWalletType 
+	 * @param orderId 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param digitalWallet The details of the digitial wallet.
+	 * @param digitalWallet 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.DigitalWallet
@@ -532,10 +536,10 @@ public class OrderResource {
 	 *	Order order = new Order();
 	 *	Order order = order.processDigitalWallet( digitalWallet,  orderId,  digitalWalletType,  responseFields);
 	 * </code></pre></p>
-	 * @param digitalWalletType The type of digital wallet to be processed.
-	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param digitalWallet The details of the digitial wallet.
+	 * @param digitalWalletType 
+	 * @param orderId 
+	 * @param responseFields 
+	 * @param digitalWallet 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.DigitalWallet
@@ -555,11 +559,11 @@ public class OrderResource {
 	 *	Order order = new Order();
 	 *	CountDownLatch latch = order.processDigitalWallet( digitalWallet,  orderId,  digitalWalletType,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param digitalWalletType The type of digital wallet to be processed.
-	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param digitalWalletType 
+	 * @param orderId 
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param digitalWallet The details of the digitial wallet.
+	 * @param digitalWallet 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.DigitalWallet
@@ -578,9 +582,9 @@ public class OrderResource {
 	 *	Order order = new Order();
 	 *	Order order = order.updateOrderDiscount( discount,  orderId,  discountId);
 	 * </code></pre></p>
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
-	 * @param orderId Unique identifier of the order.
-	 * @param discount Properties of all applied discounts for an associated cart, order, or product. 
+	 * @param discountId Unique identifier of the discount. System-supplied and read only.
+	 * @param orderId Unique identifier of the order discount. System-supplied and read only.
+	 * @param discount Properties of the order discount to update.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.discounts.AppliedDiscount
@@ -596,10 +600,10 @@ public class OrderResource {
 	 *	Order order = new Order();
 	 *	CountDownLatch latch = order.updateOrderDiscount( discount,  orderId,  discountId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
-	 * @param orderId Unique identifier of the order.
+	 * @param discountId Unique identifier of the discount. System-supplied and read only.
+	 * @param orderId Unique identifier of the order discount. System-supplied and read only.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param discount Properties of all applied discounts for an associated cart, order, or product. 
+	 * @param discount Properties of the order discount to update.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.discounts.AppliedDiscount
@@ -615,12 +619,12 @@ public class OrderResource {
 	 *	Order order = new Order();
 	 *	Order order = order.updateOrderDiscount( discount,  orderId,  discountId,  updateMode,  version,  responseFields);
 	 * </code></pre></p>
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
-	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
-	 * @param discount Properties of all applied discounts for an associated cart, order, or product. 
+	 * @param discountId Unique identifier of the discount. System-supplied and read only.
+	 * @param orderId Unique identifier of the order discount. System-supplied and read only.
+	 * @param responseFields 
+	 * @param updateMode Specifies whether to modify the discount by updating the original order, updating the order in draft mode, or updating the order in draft mode and then committing the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
+	 * @param version 
+	 * @param discount Properties of the order discount to update.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.discounts.AppliedDiscount
@@ -640,13 +644,13 @@ public class OrderResource {
 	 *	Order order = new Order();
 	 *	CountDownLatch latch = order.updateOrderDiscount( discount,  orderId,  discountId,  updateMode,  version,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
-	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
+	 * @param discountId Unique identifier of the discount. System-supplied and read only.
+	 * @param orderId Unique identifier of the order discount. System-supplied and read only.
+	 * @param responseFields 
+	 * @param updateMode Specifies whether to modify the discount by updating the original order, updating the order in draft mode, or updating the order in draft mode and then committing the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
+	 * @param version 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param discount Properties of all applied discounts for an associated cart, order, or product. 
+	 * @param discount Properties of the order discount to update.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.discounts.AppliedDiscount
@@ -665,7 +669,7 @@ public class OrderResource {
 	 *	Order order = new Order();
 	 *	order.deleteOrderDraft( orderId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId Unique identifier of the order associated with the draft to delete.
 	 * @return 
 	 */
 	public void deleteOrderDraft(String orderId) throws Exception
@@ -679,8 +683,8 @@ public class OrderResource {
 	 *	Order order = new Order();
 	 *	order.deleteOrderDraft( orderId,  version);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
+	 * @param orderId Unique identifier of the order associated with the draft to delete.
+	 * @param version If applicable, the version of the order draft to delete.
 	 * @return 
 	 */
 	public void deleteOrderDraft(String orderId, String version) throws Exception
@@ -698,8 +702,8 @@ public class OrderResource {
 	 *	Order order = new Order();
 	 *	order.resendOrderConfirmationEmail( action,  orderId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param action The action to perform for the order.
+	 * @param orderId 
+	 * @param action 
 	 * @return 
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderAction
 	 */
@@ -718,8 +722,8 @@ public class OrderResource {
 	 *	Order order = new Order();
 	 *	Order order = order.changeOrderPriceList( priceListCode,  orderId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param priceListCode The unique price list code.
+	 * @param orderId 
+	 * @param priceListCode 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see string
@@ -735,9 +739,9 @@ public class OrderResource {
 	 *	Order order = new Order();
 	 *	CountDownLatch latch = order.changeOrderPriceList( priceListCode,  orderId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param priceListCode The unique price list code.
+	 * @param priceListCode 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see string
@@ -753,11 +757,11 @@ public class OrderResource {
 	 *	Order order = new Order();
 	 *	Order order = order.changeOrderPriceList( priceListCode,  orderId,  updateMode,  version,  responseFields);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
-	 * @param priceListCode The unique price list code.
+	 * @param orderId 
+	 * @param responseFields 
+	 * @param updateMode 
+	 * @param version 
+	 * @param priceListCode 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see string
@@ -777,12 +781,12 @@ public class OrderResource {
 	 *	Order order = new Order();
 	 *	CountDownLatch latch = order.changeOrderPriceList( priceListCode,  orderId,  updateMode,  version,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
+	 * @param orderId 
+	 * @param responseFields 
+	 * @param updateMode 
+	 * @param version 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param priceListCode The unique price list code.
+	 * @param priceListCode 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see string
@@ -833,7 +837,7 @@ public class OrderResource {
 	 *	Order order = order.changeOrderUserId( orderId,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 */
@@ -853,7 +857,7 @@ public class OrderResource {
 	 *	CountDownLatch latch = order.changeOrderUserId( orderId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
@@ -872,8 +876,8 @@ public class OrderResource {
 	 *	Order order = new Order();
 	 *	Order order = order.updateOrder( order,  orderId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param order Properties of an order, including its components.
+	 * @param orderId Unique identifier of the order to update.
+	 * @param order The properties of the order to update.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
@@ -889,9 +893,9 @@ public class OrderResource {
 	 *	Order order = new Order();
 	 *	CountDownLatch latch = order.updateOrder( order,  orderId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId Unique identifier of the order to update.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param order Properties of an order, including its components.
+	 * @param order The properties of the order to update.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
@@ -907,11 +911,11 @@ public class OrderResource {
 	 *	Order order = new Order();
 	 *	Order order = order.updateOrder( order,  orderId,  updateMode,  version,  responseFields);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param orderId Unique identifier of the order to update.
+	 * @param responseFields 
 	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
-	 * @param order Properties of an order, including its components.
+	 * @param version 
+	 * @param order The properties of the order to update.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
@@ -931,12 +935,12 @@ public class OrderResource {
 	 *	Order order = new Order();
 	 *	CountDownLatch latch = order.updateOrder( order,  orderId,  updateMode,  version,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param orderId Unique identifier of the order to update.
+	 * @param responseFields 
 	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
+	 * @param version 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param order Properties of an order, including its components.
+	 * @param order The properties of the order to update.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order

@@ -13,18 +13,12 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 
-/**
- *	Mozu.ProductAdmin.Contracts.Coupon ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Coupon implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Specifies whether the coupon can be deleted and removed from a coupon set.
-	 */
 	protected  Boolean canBeDeleted;
 
 	public Boolean getCanBeDeleted() {
@@ -35,9 +29,6 @@ public class Coupon implements Serializable
 		this.canBeDeleted = canBeDeleted;
 	}
 
-	/**
-	 * The coupon code that a shopper uses to redeem an associated discount  on a purchase. This is also the unique identifier of the coupon itself.
-	 */
 	protected  String couponCode;
 
 	public String getCouponCode() {
@@ -48,9 +39,6 @@ public class Coupon implements Serializable
 		this.couponCode = couponCode;
 	}
 
-	/**
-	 * The unique identifier of the coupon set that the coupon belongs to.
-	 */
 	protected  String couponSetCode;
 
 	public String getCouponSetCode() {
@@ -61,9 +49,6 @@ public class Coupon implements Serializable
 		this.couponSetCode = couponSetCode;
 	}
 
-	/**
-	 * The unique, system generated id of the coupon set that contains the coupon.This value is read only.
-	 */
 	protected  Integer couponSetId;
 
 	public Integer getCouponSetId() {
@@ -74,9 +59,6 @@ public class Coupon implements Serializable
 		this.couponSetId = couponSetId;
 	}
 
-	/**
-	 * The total number of times the coupon has been redeemed. When you perform a GetCoupon or GetCoupons operation, set the includeCounts operation parameter to true to view this field.This field is read only.
-	 */
 	protected  Integer redemptionCount;
 
 	public Integer getRedemptionCount() {
@@ -87,9 +69,6 @@ public class Coupon implements Serializable
 		this.redemptionCount = redemptionCount;
 	}
 
-	/**
-	 * Basic audit info about the object, including date, time, and user account. This data may be captured when creating, updating, and removing data.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {

@@ -12,12 +12,12 @@ import java.util.ArrayList;
 import org.apache.http.HttpStatus;
 import org.joda.time.DateTime;
 import com.mozu.api.ApiException;
-import com.mozu.api.resources.platform.appdev.AppPackageResource;
 import com.mozu.api.ApiContext;
 import com.mozu.test.framework.core.TestFailException;
+import com.mozu.api.resources.platform.appdev.AppPackageResource;
 
 /** <summary>
- * This resource is not public.
+ * 
  * </summary>
  */
 public class AppPackageFactory

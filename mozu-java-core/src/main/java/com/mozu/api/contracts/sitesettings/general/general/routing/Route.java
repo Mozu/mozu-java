@@ -14,18 +14,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	Mozu.SiteSettings.General.Contracts.General.Routing.Route ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Route implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * When true, specifies that the route is a canonical route.
-	 */
 	protected  Boolean canonical;
 
 	public Boolean getCanonical() {
@@ -36,9 +30,6 @@ public class Route implements Serializable
 		this.canonical = canonical;
 	}
 
-	/**
-	 * An array of key-value pairs that provide default values for required route parameters.
-	 */
 	public HashMap<String,Object> defaults;
 	public HashMap<String,Object> getDefaults() {
 		return this.defaults;
@@ -47,9 +38,6 @@ public class Route implements Serializable
 		this.defaults = defaults;
 	}
 
-	/**
-	 * For Arc.js routes, specifies the Arc.js function name to create a route to. For example:
-	 */
 	protected  String functionId;
 
 	public String getFunctionId() {
@@ -60,9 +48,6 @@ public class Route implements Serializable
 		this.functionId = functionId;
 	}
 
-	/**
-	 * Specifies the internal route to use for a particular URL template. For example, the "ProductDetails" internal route routes matching URLs to a product page.
-	 */
 	protected  String internalRoute;
 
 	public String getInternalRoute() {
@@ -73,9 +58,6 @@ public class Route implements Serializable
 		this.internalRoute = internalRoute;
 	}
 
-	/**
-	 * The list of mappings that a particular route uses.
-	 */
 	public HashMap<String,List<String>> mappings;
 	public HashMap<String,List<String>> getMappings() {
 		return this.mappings;
@@ -84,9 +66,6 @@ public class Route implements Serializable
 		this.mappings = mappings;
 	}
 
-	/**
-	 * Specifies the pattern of URL constants, variables, and segments that result in a match for a particular route.
-	 */
 	protected  String template;
 
 	public String getTemplate() {
@@ -97,9 +76,6 @@ public class Route implements Serializable
 		this.template = template;
 	}
 
-	/**
-	 * Specifies whether a custom route uses an  or  protocol. This allows you to set encryption on a route generated from a non-secure request, or vice-versa.
-	 */
 	protected  String urlScheme;
 
 	public String getUrlScheme() {
@@ -110,9 +86,6 @@ public class Route implements Serializable
 		this.urlScheme = urlScheme;
 	}
 
-	/**
-	 * Specifies the validators that a particular route uses.
-	 */
 	public HashMap<String,List<String>> validators;
 	public HashMap<String,List<String>> getValidators() {
 		return this.validators;

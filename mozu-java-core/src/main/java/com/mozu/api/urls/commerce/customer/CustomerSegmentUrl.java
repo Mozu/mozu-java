@@ -15,11 +15,11 @@ public class CustomerSegmentUrl
 
 	/**
 	 * Get Resource Url for GetSegments
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param filter 
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getSegmentsUrl(String filter, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
@@ -36,7 +36,7 @@ public class CustomerSegmentUrl
 	/**
 	 * Get Resource Url for GetSegment
 	 * @param id Unique identifier of the customer segment to retrieve.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getSegmentUrl(Integer id, String responseFields)
@@ -49,7 +49,7 @@ public class CustomerSegmentUrl
 
 	/**
 	 * Get Resource Url for AddSegment
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addSegmentUrl(String responseFields)
@@ -61,7 +61,7 @@ public class CustomerSegmentUrl
 
 	/**
 	 * Get Resource Url for AddSegmentAccounts
-	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param id Unique identifier of the customer segment for which to add the associated customer accounts.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addSegmentAccountsUrl(Integer id)
@@ -73,8 +73,8 @@ public class CustomerSegmentUrl
 
 	/**
 	 * Get Resource Url for UpdateSegment
-	 * @param id Unique identifier of the customer segment to retrieve.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param id Unique identifier of the customer segment.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateSegmentUrl(Integer id, String responseFields)
@@ -87,7 +87,7 @@ public class CustomerSegmentUrl
 
 	/**
 	 * Get Resource Url for DeleteSegment
-	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param id Unique identifier of the customer segment to delete.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteSegmentUrl(Integer id)
@@ -99,8 +99,8 @@ public class CustomerSegmentUrl
 
 	/**
 	 * Get Resource Url for RemoveSegmentAccount
-	 * @param accountId Unique identifier of the customer account.
-	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param accountId 
+	 * @param id 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl removeSegmentAccountUrl(Integer accountId, Integer id)

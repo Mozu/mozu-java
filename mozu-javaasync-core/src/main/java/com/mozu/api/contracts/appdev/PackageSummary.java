@@ -12,18 +12,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	Mozu.AppDev.Contracts.PackageSummary ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PackageSummary implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The unique identifier of the application.
-	 */
 	protected  Integer applicationId;
 
 	public Integer getApplicationId() {
@@ -34,9 +28,6 @@ public class PackageSummary implements Serializable
 		this.applicationId = applicationId;
 	}
 
-	/**
-	 * Application Name
-	 */
 	protected  String applicationName;
 
 	public String getApplicationName() {
@@ -47,9 +38,6 @@ public class PackageSummary implements Serializable
 		this.applicationName = applicationName;
 	}
 
-	/**
-	 * Application Type Id
-	 */
 	protected  Integer applicationTypeId;
 
 	public Integer getApplicationTypeId() {
@@ -60,9 +48,6 @@ public class PackageSummary implements Serializable
 		this.applicationTypeId = applicationTypeId;
 	}
 
-	/**
-	 * Unique identifier of the source property, such as a catalog, discount, order, or email template.For a product field it will be the name of the field.For a category ID, must be a positive integer not greater than 2000000. By default,  auto-generates a category ID when categories are created. If you want to specify an ID during creation (which preserves category link relationships when migrating tenant data from one sandbox to another), you must also include the  query string in the endpoint. For example, . Then, use the  property to specify the desired category ID.For a product attribute it will be the Attribute FQN.For a document, the ID must be specified as a 32 character, case-insensitive, alphanumeric string. You can specify the ID as 32 sequential characters or as groups separated by dashes in the format 8-4-4-4-12. For example, or.For email templates, the ID must be one of the following values:			
-	 */
 	protected  Integer id;
 
 	public Integer getId() {
@@ -73,9 +58,6 @@ public class PackageSummary implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * Indicates if a customer account and associated data is locked. If true, the user account is locked due to multiple failed authentication attempts. The user cannot login until the account is unlocked.
-	 */
 	protected  Boolean isLocked;
 
 	public Boolean getIsLocked() {
@@ -86,9 +68,6 @@ public class PackageSummary implements Serializable
 		this.isLocked = isLocked;
 	}
 
-	/**
-	 * Application Major Version
-	 */
 	protected  Integer majorVersion;
 
 	public Integer getMajorVersion() {
@@ -99,9 +78,6 @@ public class PackageSummary implements Serializable
 		this.majorVersion = majorVersion;
 	}
 
-	/**
-	 * Application Minor Version
-	 */
 	protected  Integer minorVersion;
 
 	public Integer getMinorVersion() {
@@ -112,9 +88,6 @@ public class PackageSummary implements Serializable
 		this.minorVersion = minorVersion;
 	}
 
-	/**
-	 * The user supplied name that appears in . You can use this field for identification purposes.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -125,9 +98,6 @@ public class PackageSummary implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * Application Revision
-	 */
 	protected  Integer revision;
 
 	public Integer getRevision() {

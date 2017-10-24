@@ -16,7 +16,7 @@ public class FacetUrl
 	/**
 	 * Get Resource Url for GetFacet
 	 * @param facetId Unique identifier of the facet to retrieve.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param validate Validates that the product category associated with a facet is active. System-supplied and read only.
 	 * @return   String Resource Url
 	 */
@@ -31,9 +31,9 @@ public class FacetUrl
 
 	/**
 	 * Get Resource Url for GetFacetCategoryList
-	 * @param categoryId Unique identifier of the category to modify.
+	 * @param categoryId Unique identifier of the category associated with the facets to retrieve.
 	 * @param includeAvailable If true, returns a list of the attributes and categories associated with a product type that have not been defined as a facet for the category.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param validate Validates that the product category associated with a facet is active. System-supplied and read only.
 	 * @return   String Resource Url
 	 */
@@ -49,7 +49,7 @@ public class FacetUrl
 
 	/**
 	 * Get Resource Url for AddFacet
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addFacetUrl(String responseFields)
@@ -61,8 +61,8 @@ public class FacetUrl
 
 	/**
 	 * Get Resource Url for UpdateFacet
-	 * @param facetId Unique identifier of the facet to retrieve.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param facetId Unique identifier of the facet to modify.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateFacetUrl(Integer facetId, String responseFields)
@@ -75,7 +75,7 @@ public class FacetUrl
 
 	/**
 	 * Get Resource Url for DeleteFacetById
-	 * @param facetId Unique identifier of the facet to retrieve.
+	 * @param facetId Unique identifier of the facet to delete.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteFacetByIdUrl(Integer facetId)

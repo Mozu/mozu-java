@@ -18,7 +18,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * This resource is not public.
+ * 
  * </summary>
  */
 public class PackageResource {
@@ -44,7 +44,7 @@ public PackageResource(ApiContext apiContext)
 	 *	Package package = new Package();
 	 *	Stream stream = package.getFile( applicationKey,  fileName);
 	 * </code></pre></p>
-	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}. 
+	 * @param applicationKey 
 	 * @param fileName 
 	 * @return Stream
 	 * @see Stream

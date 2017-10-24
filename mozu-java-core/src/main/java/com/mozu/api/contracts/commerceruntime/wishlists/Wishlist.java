@@ -29,6 +29,19 @@ public class Wishlist implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * If this wish list was imported from an external program, the date and time the wish list was imported.
+	 */
+	protected  DateTime importDate;
+
+	public DateTime getImportDate() {
+		return this.importDate;
+	}
+
+	public void setImportDate(DateTime importDate) {
+		this.importDate = importDate;
+	}
+
 	protected  String channelCode;
 
 	public String getChannelCode() {
@@ -110,7 +123,7 @@ public class Wishlist implements Serializable
 	}
 
 	/**
-	 * Unique identifier used by an external program to identify a  order, customer account, or wish list.
+	 * The identifier an external program uses to identify the Mozu wish list.
 	 */
 	protected  String externalId;
 
@@ -153,20 +166,7 @@ public class Wishlist implements Serializable
 	}
 
 	/**
-	 * The date and time an order or wish list is imported into . This is not the date and time it was created in the external application.
-	 */
-	protected  DateTime importDate;
-
-	public DateTime getImportDate() {
-		return this.importDate;
-	}
-
-	public void setImportDate(DateTime importDate) {
-		this.importDate = importDate;
-	}
-
-	/**
-	 * Indicates if this object/data was imported from an outside source such as a data import or synchronization via an app or service. If true, this data was originally imported into  and accessible through your store database. Examples of imported objects/data include orders and customer accounts.
+	 * If true, this wish list was imported from an external program.
 	 */
 	protected  Boolean isImport;
 
@@ -198,9 +198,6 @@ public class Wishlist implements Serializable
 		this.lastValidationDate = lastValidationDate;
 	}
 
-	/**
-	 * The total charge for the line item with all weighted order level manual adjustments.
-	 */
 	protected  Double lineItemSubtotalWithOrderAdjustments;
 
 	public Double getLineItemSubtotalWithOrderAdjustments() {
@@ -231,9 +228,6 @@ public class Wishlist implements Serializable
 		this.privacyType = privacyType;
 	}
 
-	/**
-	 * The total shipping amount for the wishlist before discounts and adjustments.
-	 */
 	protected  Double shippingAmountBeforeDiscountsAndAdjustments;
 
 	public Double getShippingAmountBeforeDiscountsAndAdjustments() {
@@ -392,9 +386,6 @@ public class Wishlist implements Serializable
 		this.changeMessages = changeMessages;
 	}
 
-	/**
-	 * Custom data for a given vendor set within the commerce process.
-	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {
@@ -405,9 +396,6 @@ public class Wishlist implements Serializable
 		this.data = data;
 	}
 
-	/**
-	 * Extra properties (key-value pairs) that extend the primary object. Think of this as a property bag of string keys and string values.
-	 */
 	protected List<ExtendedProperty> extendedProperties;
 	public List<ExtendedProperty> getExtendedProperties() {
 		return this.extendedProperties;
@@ -442,9 +430,6 @@ public class Wishlist implements Serializable
 		this.orderDiscounts = orderDiscounts;
 	}
 
-	/**
-	 * Leverage this property within a [tax Arc.js action](https://www.mozu.com/docs/arcjs/commerce-catalog-storefront-tax/commerce-catalog-storefront-tax.htm) to supplement the tax information for this item or object with custom JSON data.
-	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode taxData;
 
 	public com.fasterxml.jackson.databind.JsonNode getTaxData() {

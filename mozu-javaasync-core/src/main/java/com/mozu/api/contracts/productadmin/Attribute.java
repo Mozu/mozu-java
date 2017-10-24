@@ -21,7 +21,7 @@ import com.mozu.api.contracts.productadmin.AttributeValidation;
 import com.mozu.api.contracts.productadmin.AttributeVocabularyValue;
 
 /**
- *	Properties of an attribute used to describe customers or orders.
+ *	Details of an attribute used to describe individual aspects of a product.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Attribute implements Serializable
@@ -187,9 +187,6 @@ public class Attribute implements Serializable
 		this.content = content;
 	}
 
-	/**
-	 * The localized content associated with the object.
-	 */
 	protected List<AttributeLocalizedContent> localizedContent;
 	public List<AttributeLocalizedContent> getLocalizedContent() {
 		return this.localizedContent;

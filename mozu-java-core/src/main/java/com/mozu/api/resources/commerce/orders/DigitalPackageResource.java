@@ -41,7 +41,7 @@ public class DigitalPackageResource {
 	 *	string string = digitalpackage.getAvailableDigitalPackageFulfillmentActions( orderId,  digitalPackageId);
 	 * </code></pre></p>
 	 * @param digitalPackageId This parameter supplies package ID to get fulfillment actions for the digital package.
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId This parameter provides the unique identifier of the order on which to get a list of available actions.
 	 * @return List<string>
 	 * @see string
 	 */
@@ -60,8 +60,8 @@ public class DigitalPackageResource {
 	 *	DigitalPackage digitalpackage = new DigitalPackage();
 	 *	DigitalPackage digitalPackage = digitalpackage.getDigitalPackage( orderId,  digitalPackageId);
 	 * </code></pre></p>
-	 * @param digitalPackageId This parameter supplies package ID to get fulfillment actions for the digital package.
-	 * @param orderId Unique identifier of the order.
+	 * @param digitalPackageId This parameter provides the digital package Id.
+	 * @param orderId This parameter provides the unique identifier of the order with which to associate the digital package.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
 	 */
@@ -76,9 +76,9 @@ public class DigitalPackageResource {
 	 *	DigitalPackage digitalpackage = new DigitalPackage();
 	 *	DigitalPackage digitalPackage = digitalpackage.getDigitalPackage( orderId,  digitalPackageId,  responseFields);
 	 * </code></pre></p>
-	 * @param digitalPackageId This parameter supplies package ID to get fulfillment actions for the digital package.
-	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param digitalPackageId This parameter provides the digital package Id.
+	 * @param orderId This parameter provides the unique identifier of the order with which to associate the digital package.
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
 	 */
@@ -97,8 +97,8 @@ public class DigitalPackageResource {
 	 *	DigitalPackage digitalpackage = new DigitalPackage();
 	 *	DigitalPackage digitalPackage = digitalpackage.createDigitalPackage( digitalPackage,  orderId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param digitalPackage Lets you manage an order's digital packages, by applying a digital package to the order.
+	 * @param orderId The orderID is a required paramter for the digitalpackages operation. The orderId is a unique identifier of the order with which to associate the digital package.
+	 * @param digitalPackage The digitalPackage parameter is a required parameter for the CreateDigitalPackages operation. The digitalPackage is the digital package to create and add to the order.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
@@ -114,9 +114,9 @@ public class DigitalPackageResource {
 	 *	DigitalPackage digitalpackage = new DigitalPackage();
 	 *	DigitalPackage digitalPackage = digitalpackage.createDigitalPackage( digitalPackage,  orderId,  responseFields);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param digitalPackage Lets you manage an order's digital packages, by applying a digital package to the order.
+	 * @param orderId The orderID is a required paramter for the digitalpackages operation. The orderId is a unique identifier of the order with which to associate the digital package.
+	 * @param responseFields 
+	 * @param digitalPackage The digitalPackage parameter is a required parameter for the CreateDigitalPackages operation. The digitalPackage is the digital package to create and add to the order.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
@@ -136,9 +136,9 @@ public class DigitalPackageResource {
 	 *	DigitalPackage digitalpackage = new DigitalPackage();
 	 *	DigitalPackage digitalPackage = digitalpackage.updateDigitalPackage( digitalPackage,  orderId,  digitalPackageId);
 	 * </code></pre></p>
-	 * @param digitalPackageId This parameter supplies package ID to get fulfillment actions for the digital package.
-	 * @param orderId Unique identifier of the order.
-	 * @param digitalPackage Lets you manage an order's digital packages, by applying a digital package to the order.
+	 * @param digitalPackageId This parameter specifies the digital package to update in the order.
+	 * @param orderId This parameter provides the unique identifier of the order with which to associate the digital package.
+	 * @param digitalPackage This parameter provides the package content to update in the order.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
@@ -154,10 +154,10 @@ public class DigitalPackageResource {
 	 *	DigitalPackage digitalpackage = new DigitalPackage();
 	 *	DigitalPackage digitalPackage = digitalpackage.updateDigitalPackage( digitalPackage,  orderId,  digitalPackageId,  responseFields);
 	 * </code></pre></p>
-	 * @param digitalPackageId This parameter supplies package ID to get fulfillment actions for the digital package.
-	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param digitalPackage Lets you manage an order's digital packages, by applying a digital package to the order.
+	 * @param digitalPackageId This parameter specifies the digital package to update in the order.
+	 * @param orderId This parameter provides the unique identifier of the order with which to associate the digital package.
+	 * @param responseFields 
+	 * @param digitalPackage This parameter provides the package content to update in the order.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
@@ -177,8 +177,8 @@ public class DigitalPackageResource {
 	 *	DigitalPackage digitalpackage = new DigitalPackage();
 	 *	digitalpackage.deleteDigitalPackage( orderId,  digitalPackageId);
 	 * </code></pre></p>
-	 * @param digitalPackageId This parameter supplies package ID to get fulfillment actions for the digital package.
-	 * @param orderId Unique identifier of the order.
+	 * @param digitalPackageId The digitalPackage ID is unique package ID to update on the order.
+	 * @param orderId The orderId is unique identifier of the order with which to associate the package.
 	 * @return 
 	 */
 	public void deleteDigitalPackage(String orderId, String digitalPackageId) throws Exception

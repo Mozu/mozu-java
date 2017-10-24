@@ -15,7 +15,7 @@ public class ProductOptionUrl
 
 	/**
 	 * Get Resource Url for GetOptions
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param productCode 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getOptionsUrl(String productCode)
@@ -27,9 +27,9 @@ public class ProductOptionUrl
 
 	/**
 	 * Get Resource Url for GetOption
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param attributeFQN 
+	 * @param productCode 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getOptionUrl(String attributeFQN, String productCode, String responseFields)
@@ -43,8 +43,8 @@ public class ProductOptionUrl
 
 	/**
 	 * Get Resource Url for AddOption
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param productCode 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addOptionUrl(String productCode, String responseFields)
@@ -57,9 +57,9 @@ public class ProductOptionUrl
 
 	/**
 	 * Get Resource Url for UpdateOption
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param attributeFQN 
+	 * @param productCode 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateOptionUrl(String attributeFQN, String productCode, String responseFields)
@@ -73,8 +73,8 @@ public class ProductOptionUrl
 
 	/**
 	 * Get Resource Url for DeleteOption
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param attributeFQN 
+	 * @param productCode 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteOptionUrl(String attributeFQN, String productCode)

@@ -57,7 +57,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * Indicates if the customer account is opted to receive marketing materials. If true, the customer account is opted in for receiving the content. 
+	 * If true, the customer account associated with the order is opted in to receive marketing materials.
 	 */
 	protected  Boolean acceptsMarketing;
 
@@ -82,9 +82,6 @@ public class Order implements Serializable
 		this.amountAvailableForRefund = amountAvailableForRefund;
 	}
 
-	/**
-	 * A counter for how much money has been issued in refunds. This calculated field does NOT include refunds issued in returns.
-	 */
 	protected  Double amountRefunded;
 
 	public Double getAmountRefunded() {
@@ -224,9 +221,6 @@ public class Order implements Serializable
 		this.discountTotal = discountTotal;
 	}
 
-	/**
-	 * Order level duty or tariff amount. Does not take into account duties or tariffs specifically on items on the order
-	 */
 	protected  Double dutyAmount;
 
 	public Double getDutyAmount() {
@@ -237,9 +231,6 @@ public class Order implements Serializable
 		this.dutyAmount = dutyAmount;
 	}
 
-	/**
-	 * Duties or tariffs for the Order as well as OrderItems (e.g. if the Order has a $5 duty or tariff for any reason and an OrderItem has a $2 duty or tariff then the value in this property would be $7)
-	 */
 	protected  Double dutyTotal;
 
 	public Double getDutyTotal() {
@@ -271,7 +262,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * Unique identifier used by an external program to identify a  order, customer account, or wish list.
+	 * Unique identifier used by an external program to identify a Mozu order.
 	 */
 	protected  String externalId;
 
@@ -367,7 +358,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * The date and time an order or wish list is imported into . This is not the date and time it was created in the external application.
+	 * If the order was imported from an external program, the date and time the order was imported into Mozu.
 	 */
 	protected  DateTime importDate;
 
@@ -462,9 +453,6 @@ public class Order implements Serializable
 		this.lastValidationDate = lastValidationDate;
 	}
 
-	/**
-	 * The total charge for the line item with all weighted order level manual adjustments.
-	 */
 	protected  Double lineItemSubtotalWithOrderAdjustments;
 
 	public Double getLineItemSubtotalWithOrderAdjustments() {
@@ -525,9 +513,6 @@ public class Order implements Serializable
 		this.parentCheckoutNumber = parentCheckoutNumber;
 	}
 
-	/**
-	 * If this Order has a parent Order, the parent Order ID is recorded here.
-	 */
 	protected  String parentOrderId;
 
 	public String getParentOrderId() {
@@ -538,9 +523,6 @@ public class Order implements Serializable
 		this.parentOrderId = parentOrderId;
 	}
 
-	/**
-	 * If the Order has a parent Order, the order number is recorded here.
-	 */
 	protected  Integer parentOrderNumber;
 
 	public Integer getParentOrderNumber() {
@@ -561,9 +543,6 @@ public class Order implements Serializable
 		this.parentReturnId = parentReturnId;
 	}
 
-	/**
-	 * If the Order has a parent Order with a return, the return number is recorded here.
-	 */
 	protected  Integer parentReturnNumber;
 
 	public Integer getParentReturnNumber() {
@@ -604,9 +583,6 @@ public class Order implements Serializable
 		this.paymentStatus = paymentStatus;
 	}
 
-	/**
-	 * If the order is associated with a price list, this is the unique code of the price list.
-	 */
 	protected  String priceListCode;
 
 	public String getPriceListCode() {
@@ -627,9 +603,6 @@ public class Order implements Serializable
 		this.returnStatus = returnStatus;
 	}
 
-	/**
-	 * The total shipping amount for the order before discounts and adjustments.
-	 */
 	protected  Double shippingAmountBeforeDiscountsAndAdjustments;
 
 	public Double getShippingAmountBeforeDiscountsAndAdjustments() {
@@ -849,9 +822,6 @@ public class Order implements Serializable
 		this.changeMessages = changeMessages;
 	}
 
-	/**
-	 * Custom data for a given vendor set within the commerce process.
-	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {
@@ -873,9 +843,6 @@ public class Order implements Serializable
 		this.digitalPackages = digitalPackages;
 	}
 
-	/**
-	 * Extra properties (key-value pairs) that extend the primary object. Think of this as a property bag of string keys and string values.
-	 */
 	protected List<ExtendedProperty> extendedProperties;
 	public List<ExtendedProperty> getExtendedProperties() {
 		return this.extendedProperties;
@@ -894,9 +861,6 @@ public class Order implements Serializable
 		this.fulfillmentInfo = fulfillmentInfo;
 	}
 
-	/**
-	 * The amount to adjust the order handling fee.
-	 */
 	protected  Adjustment handlingAdjustment;
 
 	public Adjustment getHandlingAdjustment() {
@@ -907,9 +871,6 @@ public class Order implements Serializable
 		this.handlingAdjustment = handlingAdjustment;
 	}
 
-	/**
-	 * The list of historically-applied handling discounts. The active one will have IsExcluded == false
-	 */
 	protected List<AppliedDiscount> handlingDiscounts;
 	public List<AppliedDiscount> getHandlingDiscounts() {
 		return this.handlingDiscounts;
@@ -919,7 +880,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * The list of invalid coupons the shopper attempted to enter for the cart or order. These coupons may no longer be valid or incorrectly entered.
+	 * List of invalid coupon codes the shopper entered for the order.
 	 */
 	protected List<InvalidCoupon> invalidCoupons;
 	public List<InvalidCoupon> getInvalidCoupons() {
@@ -977,9 +938,6 @@ public class Order implements Serializable
 		this.pickups = pickups;
 	}
 
-	/**
-	 * Refunds associated with this order. A refund is a single exchange of money from merchant to customer that either encapsulates a refund to a credit card or an issuance of a store credit. Refunds does not reduce the 'amount collected' on an order and it is possible for refunds to exceed the total order amount.
-	 */
 	protected List<Refund> refunds;
 	public List<Refund> getRefunds() {
 		return this.refunds;
@@ -1024,9 +982,6 @@ public class Order implements Serializable
 		this.shopperNotes = shopperNotes;
 	}
 
-	/**
-	 * Leverage this property within a [tax Arc.js action](https://www.mozu.com/docs/arcjs/commerce-catalog-storefront-tax/commerce-catalog-storefront-tax.htm) to supplement the tax information for this item or object with custom JSON data.
-	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode taxData;
 
 	public com.fasterxml.jackson.databind.JsonNode getTaxData() {

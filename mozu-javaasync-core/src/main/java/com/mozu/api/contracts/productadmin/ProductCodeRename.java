@@ -12,18 +12,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	Properties for a product code current and changed content.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductCodeRename implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The existing product code to be changed.
-	 */
 	protected  String existingProductCode;
 
 	public String getExistingProductCode() {
@@ -34,9 +28,6 @@ public class ProductCodeRename implements Serializable
 		this.existingProductCode = existingProductCode;
 	}
 
-	/**
-	 * The new product code for the product. This code must be unique across all catalogs.
-	 */
 	protected  String newProductCode;
 
 	public String getNewProductCode() {

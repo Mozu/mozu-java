@@ -48,11 +48,11 @@ public class CreditClient {
 	 * client.executeRequest();
 	 * CreditCollection creditCollection = client.Result();
 	 * </code></pre></p>
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param filter 
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.credit.CreditCollection>
 	 * @see com.mozu.api.contracts.customer.credit.CreditCollection
 	 */
@@ -76,7 +76,7 @@ public class CreditClient {
 	 * client.executeRequest();
 	 * Credit credit = client.Result();
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code User-defined code that identifies the store credit to retrieve.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.credit.Credit>
 	 * @see com.mozu.api.contracts.customer.credit.Credit
 	 */
@@ -93,8 +93,8 @@ public class CreditClient {
 	 * client.executeRequest();
 	 * Credit credit = client.Result();
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param code User-defined code that identifies the store credit to retrieve.
+	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.credit.Credit>
 	 * @see com.mozu.api.contracts.customer.credit.Credit
 	 */
@@ -118,7 +118,7 @@ public class CreditClient {
 	 * client.executeRequest();
 	 * Credit credit = client.Result();
 	 * </code></pre></p>
-	 * @param credit Properties of the store credit of gift card applied to a customer account. At this time, gift card functionality is reserved for future use.
+	 * @param credit Properties of the store credit to create.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.credit.Credit>
 	 * @see com.mozu.api.contracts.customer.credit.Credit
 	 * @see com.mozu.api.contracts.customer.credit.Credit
@@ -136,8 +136,8 @@ public class CreditClient {
 	 * client.executeRequest();
 	 * Credit credit = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param credit Properties of the store credit of gift card applied to a customer account. At this time, gift card functionality is reserved for future use.
+	 * @param responseFields 
+	 * @param credit Properties of the store credit to create.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.credit.Credit>
 	 * @see com.mozu.api.contracts.customer.credit.Credit
 	 * @see com.mozu.api.contracts.customer.credit.Credit
@@ -163,7 +163,7 @@ public class CreditClient {
 	 * client.executeRequest();
 	 * Credit credit = client.Result();
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code The code that represents the credit to claim for the shopper.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.credit.Credit>
 	 * @see com.mozu.api.contracts.customer.credit.Credit
 	 */
@@ -180,8 +180,8 @@ public class CreditClient {
 	 * client.executeRequest();
 	 * Credit credit = client.Result();
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param code The code that represents the credit to claim for the shopper.
+	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.credit.Credit>
 	 * @see com.mozu.api.contracts.customer.credit.Credit
 	 */
@@ -204,7 +204,7 @@ public class CreditClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code 
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient resendCreditCreatedEmailClient(String code) throws Exception
@@ -226,8 +226,8 @@ public class CreditClient {
 	 * client.executeRequest();
 	 * Credit credit = client.Result();
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param credit Properties of the store credit of gift card applied to a customer account. At this time, gift card functionality is reserved for future use.
+	 * @param code User-defined code of the store credit to update.
+	 * @param credit Properties of the store credit to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.credit.Credit>
 	 * @see com.mozu.api.contracts.customer.credit.Credit
 	 * @see com.mozu.api.contracts.customer.credit.Credit
@@ -245,9 +245,9 @@ public class CreditClient {
 	 * client.executeRequest();
 	 * Credit credit = client.Result();
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param credit Properties of the store credit of gift card applied to a customer account. At this time, gift card functionality is reserved for future use.
+	 * @param code User-defined code of the store credit to update.
+	 * @param responseFields 
+	 * @param credit Properties of the store credit to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.credit.Credit>
 	 * @see com.mozu.api.contracts.customer.credit.Credit
 	 * @see com.mozu.api.contracts.customer.credit.Credit
@@ -272,7 +272,7 @@ public class CreditClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code User-defined code of the store credit to delete.
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deleteCreditClient(String code) throws Exception

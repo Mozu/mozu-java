@@ -75,7 +75,7 @@ public class ShippingClient {
 	 * client.executeRequest();
 	 * RatesResponse ratesResponse = client.Result();
 	 * </code></pre></p>
-	 * @param rateRequest Properties required to request a shipping rate calculation.
+	 * @param rateRequest Properties of the shipping rate request sent on behalf of the storefront website.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.shippingruntime.RatesResponse>
 	 * @see com.mozu.api.contracts.shippingruntime.RatesResponse
 	 * @see com.mozu.api.contracts.shippingruntime.RateRequest
@@ -93,9 +93,9 @@ public class ShippingClient {
 	 * client.executeRequest();
 	 * RatesResponse ratesResponse = client.Result();
 	 * </code></pre></p>
-	 * @param includeRawResponse Set this parameter to  to retrieve the full raw JSON response from a shipping carrier (instead of just the shipping rate).
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param rateRequest Properties required to request a shipping rate calculation.
+	 * @param includeRawResponse 
+	 * @param responseFields 
+	 * @param rateRequest Properties of the shipping rate request sent on behalf of the storefront website.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.shippingruntime.RatesResponse>
 	 * @see com.mozu.api.contracts.shippingruntime.RatesResponse
 	 * @see com.mozu.api.contracts.shippingruntime.RateRequest

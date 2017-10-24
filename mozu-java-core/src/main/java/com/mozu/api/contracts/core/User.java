@@ -17,7 +17,7 @@ import com.mozu.api.contracts.core.UserRole;
 import com.mozu.api.contracts.core.UserSystemData;
 
 /**
- *	Properties of the user. Users include customers and  users.
+ *	Properties of the user.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class User implements Serializable

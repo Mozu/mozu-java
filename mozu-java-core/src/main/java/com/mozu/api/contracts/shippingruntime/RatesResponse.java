@@ -34,9 +34,6 @@ public class RatesResponse implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * Resolved Shipping Zone Code. This value can be null if the tenant/site does not have shipping zones defined or there are no matching shipping zones for the request (e.g. the only zone defined is "UNITED-STATES" and the destination address of the rate request is in Canada)
-	 */
 	protected  String resolvedShippingZoneCode;
 
 	public String getResolvedShippingZoneCode() {
@@ -47,9 +44,6 @@ public class RatesResponse implements Serializable
 		this.resolvedShippingZoneCode = resolvedShippingZoneCode;
 	}
 
-	/**
-	 * A code denoting a zone for shipping rates. Zip and postal codes are associated to these zones, determining set rates and costs for shipping origin and destination points.
-	 */
 	protected List<String> shippingZoneCodes;
 	public List<String> getShippingZoneCodes() {
 		return this.shippingZoneCodes;

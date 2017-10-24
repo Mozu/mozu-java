@@ -16,18 +16,12 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.extensible.Attribute;
 import com.mozu.api.contracts.core.AuditInfo;
 
-/**
- *	An attribute associated with the location.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class LocationAttribute implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Unique identifier of the attribute definition.
-	 */
 	protected  Integer attributeDefinitionId;
 
 	public Integer getAttributeDefinitionId() {
@@ -38,9 +32,6 @@ public class LocationAttribute implements Serializable
 		this.attributeDefinitionId = attributeDefinitionId;
 	}
 
-	/**
-	 * Fully qualified name of the attribute for the order or customer.
-	 */
 	protected  String fullyQualifiedName;
 
 	public String getFullyQualifiedName() {
@@ -51,9 +42,6 @@ public class LocationAttribute implements Serializable
 		this.fullyQualifiedName = fullyQualifiedName;
 	}
 
-	/**
-	 * List of value data for objects.
-	 */
 	protected List<Object> values;
 	public List<Object> getValues() {
 		return this.values;
@@ -72,9 +60,6 @@ public class LocationAttribute implements Serializable
 		this.attributeDefinition = attributeDefinition;
 	}
 
-	/**
-	 * Basic audit info about the object, including date, time, and user account. This data may be captured when creating, updating, and removing data.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {

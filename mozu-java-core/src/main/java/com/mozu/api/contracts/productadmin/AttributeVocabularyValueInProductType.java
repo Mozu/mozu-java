@@ -43,9 +43,6 @@ public class AttributeVocabularyValueInProductType implements Serializable
 		this.value = value;
 	}
 
-	/**
-	 * Defines the intended display of this attribute in the storefront. Options include Drop Down, Image Picker, and Radio Buttons.
-	 */
 	protected  AttributeVocabularyValueDisplayInfo displayInfo;
 
 	public AttributeVocabularyValueDisplayInfo getDisplayInfo() {

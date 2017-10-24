@@ -20,7 +20,7 @@ import com.mozu.api.resources.commerce.checkouts.OrderItemResource;
  * 
  * </summary>
  */
-public class OrderItemFactory
+public class CheckoutsOrderItemFactory
 {
 
 	public static com.mozu.api.contracts.commerceruntime.checkouts.Checkout splitItem(ApiContext apiContext, String checkoutId, String itemId, int expectedCode) throws Exception

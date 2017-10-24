@@ -15,7 +15,7 @@ import com.mozu.api.contracts.productruntime.BundledProduct;
 import com.mozu.api.contracts.productruntime.AttributeVocabularyValueDisplayInfo;
 
 /**
- *	Properties of a value associated with a product option attribute.
+ *	Represents the values that are the product option selections for a shopper to choose when ordering a product.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductOptionValue implements Serializable
@@ -113,9 +113,6 @@ public class ProductOptionValue implements Serializable
 		this.value = value;
 	}
 
-	/**
-	 * The bundled product of a product as extra
-	 */
 	protected  BundledProduct bundledProduct;
 
 	public BundledProduct getBundledProduct() {
@@ -126,9 +123,6 @@ public class ProductOptionValue implements Serializable
 		this.bundledProduct = bundledProduct;
 	}
 
-	/**
-	 * Defines the intended display of this attribute in the storefront. Options include Drop Down, Image Picker, and Radio Buttons.
-	 */
 	protected  AttributeVocabularyValueDisplayInfo displayInfo;
 
 	public AttributeVocabularyValueDisplayInfo getDisplayInfo() {

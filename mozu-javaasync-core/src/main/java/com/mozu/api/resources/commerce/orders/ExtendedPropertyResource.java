@@ -20,7 +20,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the Extended Properties resource to store tracking strings for your orders. Extended properties can help you track affiliate sources.
+ * 
  * </summary>
  */
 public class ExtendedPropertyResource {
@@ -42,7 +42,7 @@ public class ExtendedPropertyResource {
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	ExtendedProperty extendedProperty = extendedproperty.getExtendedProperties( orderId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId 
 	 * @return List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
 	 */
@@ -57,7 +57,7 @@ public class ExtendedPropertyResource {
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	CountDownLatch latch = extendedproperty.getExtendedProperties( orderId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
@@ -73,8 +73,8 @@ public class ExtendedPropertyResource {
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	ExtendedProperty extendedProperty = extendedproperty.getExtendedProperties( orderId,  draft);
 	 * </code></pre></p>
-	 * @param draft If true, retrieve the draft version of the order, which might include uncommitted changes to the order or its components.
-	 * @param orderId Unique identifier of the order.
+	 * @param draft 
+	 * @param orderId 
 	 * @return List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
 	 */
@@ -93,8 +93,8 @@ public class ExtendedPropertyResource {
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	CountDownLatch latch = extendedproperty.getExtendedProperties( orderId,  draft, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param draft If true, retrieve the draft version of the order, which might include uncommitted changes to the order or its components.
-	 * @param orderId Unique identifier of the order.
+	 * @param draft 
+	 * @param orderId 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
@@ -113,8 +113,8 @@ public class ExtendedPropertyResource {
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	ExtendedProperty extendedProperty = extendedproperty.addExtendedProperties( extendedProperties,  orderId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param extendedProperties The details of the extended property.
+	 * @param orderId 
+	 * @param extendedProperties 
 	 * @return List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
@@ -130,9 +130,9 @@ public class ExtendedPropertyResource {
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	CountDownLatch latch = extendedproperty.addExtendedProperties( extendedProperties,  orderId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param extendedProperties The details of the extended property.
+	 * @param extendedProperties 
 	 * @return List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
@@ -148,10 +148,10 @@ public class ExtendedPropertyResource {
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	ExtendedProperty extendedProperty = extendedproperty.addExtendedProperties( extendedProperties,  orderId,  updateMode,  version);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
-	 * @param extendedProperties The details of the extended property.
+	 * @param orderId 
+	 * @param updateMode 
+	 * @param version 
+	 * @param extendedProperties 
 	 * @return List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
@@ -171,11 +171,11 @@ public class ExtendedPropertyResource {
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	CountDownLatch latch = extendedproperty.addExtendedProperties( extendedProperties,  orderId,  updateMode,  version, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
+	 * @param orderId 
+	 * @param updateMode 
+	 * @param version 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param extendedProperties The details of the extended property.
+	 * @param extendedProperties 
 	 * @return List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
@@ -194,9 +194,9 @@ public class ExtendedPropertyResource {
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	ExtendedProperty extendedProperty = extendedproperty.updateExtendedProperty( extendedProperty,  orderId,  key);
 	 * </code></pre></p>
-	 * @param key The extended property key.
-	 * @param orderId Unique identifier of the order.
-	 * @param extendedProperty The details of the updated extended property.
+	 * @param key 
+	 * @param orderId 
+	 * @param extendedProperty 
 	 * @return com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
@@ -212,10 +212,10 @@ public class ExtendedPropertyResource {
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	CountDownLatch latch = extendedproperty.updateExtendedProperty( extendedProperty,  orderId,  key, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param key The extended property key.
-	 * @param orderId Unique identifier of the order.
+	 * @param key 
+	 * @param orderId 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param extendedProperty The details of the updated extended property.
+	 * @param extendedProperty 
 	 * @return com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
@@ -231,14 +231,13 @@ public class ExtendedPropertyResource {
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	ExtendedProperty extendedProperty = extendedproperty.updateExtendedProperty( extendedProperty,  orderId,  key,  updateMode,  version,  upsert,  responseFields);
 	 * </code></pre></p>
-	 * @param key The extended property key.
-	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param upsert Inserts and updates an extended property.
-        
-	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
-	 * @param extendedProperty The details of the updated extended property.
+	 * @param key 
+	 * @param orderId 
+	 * @param responseFields 
+	 * @param updateMode 
+	 * @param upsert 
+	 * @param version 
+	 * @param extendedProperty 
 	 * @return com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
@@ -258,15 +257,14 @@ public class ExtendedPropertyResource {
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	CountDownLatch latch = extendedproperty.updateExtendedProperty( extendedProperty,  orderId,  key,  updateMode,  version,  upsert,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param key The extended property key.
-	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param upsert Inserts and updates an extended property.
-        
-	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
+	 * @param key 
+	 * @param orderId 
+	 * @param responseFields 
+	 * @param updateMode 
+	 * @param upsert 
+	 * @param version 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param extendedProperty The details of the updated extended property.
+	 * @param extendedProperty 
 	 * @return com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
@@ -285,8 +283,8 @@ public class ExtendedPropertyResource {
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	ExtendedProperty extendedProperty = extendedproperty.updateExtendedProperties( extendedProperties,  orderId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param extendedProperties The details of the updated extended properties.
+	 * @param orderId 
+	 * @param extendedProperties 
 	 * @return List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
@@ -302,9 +300,9 @@ public class ExtendedPropertyResource {
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	CountDownLatch latch = extendedproperty.updateExtendedProperties( extendedProperties,  orderId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param extendedProperties The details of the updated extended properties.
+	 * @param extendedProperties 
 	 * @return List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
@@ -320,12 +318,11 @@ public class ExtendedPropertyResource {
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	ExtendedProperty extendedProperty = extendedproperty.updateExtendedProperties( extendedProperties,  orderId,  updateMode,  version,  upsert);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param upsert Inserts and updates the extended property.
-        
-	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
-	 * @param extendedProperties The details of the updated extended properties.
+	 * @param orderId 
+	 * @param updateMode 
+	 * @param upsert 
+	 * @param version 
+	 * @param extendedProperties 
 	 * @return List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
@@ -345,13 +342,12 @@ public class ExtendedPropertyResource {
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	CountDownLatch latch = extendedproperty.updateExtendedProperties( extendedProperties,  orderId,  updateMode,  version,  upsert, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param upsert Inserts and updates the extended property.
-        
-	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
+	 * @param orderId 
+	 * @param updateMode 
+	 * @param upsert 
+	 * @param version 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param extendedProperties The details of the updated extended properties.
+	 * @param extendedProperties 
 	 * @return List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
@@ -370,8 +366,8 @@ public class ExtendedPropertyResource {
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	extendedproperty.deleteExtendedProperty( orderId,  key);
 	 * </code></pre></p>
-	 * @param key The extended property key.
-	 * @param orderId Unique identifier of the order.
+	 * @param key 
+	 * @param orderId 
 	 * @return 
 	 */
 	public void deleteExtendedProperty(String orderId, String key) throws Exception
@@ -385,10 +381,10 @@ public class ExtendedPropertyResource {
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	extendedproperty.deleteExtendedProperty( orderId,  key,  updateMode,  version);
 	 * </code></pre></p>
-	 * @param key The extended property key.
-	 * @param orderId Unique identifier of the order.
-	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
+	 * @param key 
+	 * @param orderId 
+	 * @param updateMode 
+	 * @param version 
 	 * @return 
 	 */
 	public void deleteExtendedProperty(String orderId, String key, String updateMode, String version) throws Exception
@@ -406,8 +402,8 @@ public class ExtendedPropertyResource {
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	extendedproperty.deleteExtendedProperties( keys,  orderId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param keys The extended property keys.
+	 * @param orderId 
+	 * @param keys 
 	 * @return 
 	 * @see string
 	 */
@@ -422,10 +418,10 @@ public class ExtendedPropertyResource {
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	extendedproperty.deleteExtendedProperties( keys,  orderId,  updateMode,  version);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
-	 * @param keys The extended property keys.
+	 * @param orderId 
+	 * @param updateMode 
+	 * @param version 
+	 * @param keys 
 	 * @return 
 	 * @see string
 	 */

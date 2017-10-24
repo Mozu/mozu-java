@@ -228,7 +228,6 @@ import com.mozu.test.framework.datafactory.platform.TenantFactory;
 import com.mozu.test.framework.datafactory.platform.UserDataFactory;
 import com.mozu.test.framework.datafactory.platform.adminuser.AdminUserFactory;
 import com.mozu.test.framework.datafactory.platform.adminuser.TenantAdminUserAuthTicketFactory;
-import com.mozu.test.framework.datafactory.platform.appdev.FileFactory;
 import com.mozu.test.framework.datafactory.platform.applications.AuthTicketFactory;
 import com.mozu.test.framework.datafactory.platform.developer.DeveloperAdminUserAuthTicketFactory;
 import com.mozu.test.framework.datafactory.platform.entitylists.EntityContainerFactory;
@@ -359,7 +358,7 @@ public class GeneralTests extends MozuApiTestBase {
 		AuthenticationProfile profile = UserAuthenticator.authenticate(info, AuthenticationScope.Developer);
 		ApiContext localApiContext = new MozuApiContext();
 		localApiContext.setUserAuthTicket(profile.getAuthTicket());
-        FileFactory.getFile(localApiContext, Environment.getConfigValue("AppId"), Generator.randomString(5,  Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
+		com.mozu.test.framework.datafactory.platform.appdev.PackageFactory.getFile(localApiContext, Environment.getConfigValue("AppId"), Generator.randomString(5,  Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
     }
 
 	@Test

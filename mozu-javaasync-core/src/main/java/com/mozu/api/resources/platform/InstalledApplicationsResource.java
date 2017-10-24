@@ -42,7 +42,7 @@ public class InstalledApplicationsResource {
 	 *	InstalledApplications installedapplications = new InstalledApplications();
 	 *	Application application = installedapplications.getApplication( appId);
 	 * </code></pre></p>
-	 * @param appId appId parameter description DOCUMENT_HERE 
+	 * @param appId The application ID that represents the application to retrieve.
 	 * @return com.mozu.api.contracts.installedapplications.Application
 	 * @see com.mozu.api.contracts.installedapplications.Application
 	 */
@@ -57,7 +57,7 @@ public class InstalledApplicationsResource {
 	 *	InstalledApplications installedapplications = new InstalledApplications();
 	 *	CountDownLatch latch = installedapplications.getApplication( appId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param appId appId parameter description DOCUMENT_HERE 
+	 * @param appId The application ID that represents the application to retrieve.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.installedapplications.Application
 	 * @see com.mozu.api.contracts.installedapplications.Application
@@ -73,8 +73,8 @@ public class InstalledApplicationsResource {
 	 *	InstalledApplications installedapplications = new InstalledApplications();
 	 *	Application application = installedapplications.getApplication( appId,  responseFields);
 	 * </code></pre></p>
-	 * @param appId appId parameter description DOCUMENT_HERE 
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param appId The application ID that represents the application to retrieve.
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.installedapplications.Application
 	 * @see com.mozu.api.contracts.installedapplications.Application
 	 */
@@ -93,8 +93,8 @@ public class InstalledApplicationsResource {
 	 *	InstalledApplications installedapplications = new InstalledApplications();
 	 *	CountDownLatch latch = installedapplications.getApplication( appId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param appId appId parameter description DOCUMENT_HERE 
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param appId The application ID that represents the application to retrieve.
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.installedapplications.Application
 	 * @see com.mozu.api.contracts.installedapplications.Application
@@ -113,8 +113,8 @@ public class InstalledApplicationsResource {
 	 *	InstalledApplications installedapplications = new InstalledApplications();
 	 *	Application application = installedapplications.updateApplication( application,  appId);
 	 * </code></pre></p>
-	 * @param appId appId parameter description DOCUMENT_HERE 
-	 * @param application Properties of an app installed in a tenant.
+	 * @param appId The application ID that represents the application to update.
+	 * @param application Properties of the application to update.
 	 * @return com.mozu.api.contracts.installedapplications.Application
 	 * @see com.mozu.api.contracts.installedapplications.Application
 	 * @see com.mozu.api.contracts.installedapplications.Application
@@ -130,9 +130,9 @@ public class InstalledApplicationsResource {
 	 *	InstalledApplications installedapplications = new InstalledApplications();
 	 *	CountDownLatch latch = installedapplications.updateApplication( application,  appId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param appId appId parameter description DOCUMENT_HERE 
+	 * @param appId The application ID that represents the application to update.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param application Properties of an app installed in a tenant.
+	 * @param application Properties of the application to update.
 	 * @return com.mozu.api.contracts.installedapplications.Application
 	 * @see com.mozu.api.contracts.installedapplications.Application
 	 * @see com.mozu.api.contracts.installedapplications.Application
@@ -148,9 +148,9 @@ public class InstalledApplicationsResource {
 	 *	InstalledApplications installedapplications = new InstalledApplications();
 	 *	Application application = installedapplications.updateApplication( application,  appId,  responseFields);
 	 * </code></pre></p>
-	 * @param appId appId parameter description DOCUMENT_HERE 
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param application Properties of an app installed in a tenant.
+	 * @param appId The application ID that represents the application to update.
+	 * @param responseFields 
+	 * @param application Properties of the application to update.
 	 * @return com.mozu.api.contracts.installedapplications.Application
 	 * @see com.mozu.api.contracts.installedapplications.Application
 	 * @see com.mozu.api.contracts.installedapplications.Application
@@ -170,10 +170,10 @@ public class InstalledApplicationsResource {
 	 *	InstalledApplications installedapplications = new InstalledApplications();
 	 *	CountDownLatch latch = installedapplications.updateApplication( application,  appId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param appId appId parameter description DOCUMENT_HERE 
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param appId The application ID that represents the application to update.
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param application Properties of an app installed in a tenant.
+	 * @param application Properties of the application to update.
 	 * @return com.mozu.api.contracts.installedapplications.Application
 	 * @see com.mozu.api.contracts.installedapplications.Application
 	 * @see com.mozu.api.contracts.installedapplications.Application

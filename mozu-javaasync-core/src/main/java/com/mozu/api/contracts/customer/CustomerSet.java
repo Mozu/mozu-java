@@ -17,18 +17,12 @@ import com.mozu.api.contracts.customer.CustomerSetAggregateInfo;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.customer.CustomerSetSite;
 
-/**
- *	The details of the customer set.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CustomerSet implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The unique identifier of the customer set.
-	 */
 	protected  String code;
 
 	public String getCode() {
@@ -39,9 +33,6 @@ public class CustomerSet implements Serializable
 		this.code = code;
 	}
 
-	/**
-	 * The localized description in text for the object, displayed per the locale code. For example, descriptions are used for product descriptions, attributes, and pre-authorization transaction types.
-	 */
 	protected  String description;
 
 	public String getDescription() {
@@ -52,9 +43,6 @@ public class CustomerSet implements Serializable
 		this.description = description;
 	}
 
-	/**
-	 * Indicates if the object is default. This indicator is used for product variations and site search settings. If true, the value/object is the default option.
-	 */
 	protected  Boolean isDefault;
 
 	public Boolean getIsDefault() {
@@ -65,9 +53,6 @@ public class CustomerSet implements Serializable
 		this.isDefault = isDefault;
 	}
 
-	/**
-	 * The user supplied name that appears in . You can use this field for identification purposes.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -78,9 +63,6 @@ public class CustomerSet implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * A collection of aggregate information about the customer set, including the amount of sites and customers assocaited with the customer set.
-	 */
 	protected  CustomerSetAggregateInfo aggregateInfo;
 
 	public CustomerSetAggregateInfo getAggregateInfo() {
@@ -91,9 +73,6 @@ public class CustomerSet implements Serializable
 		this.aggregateInfo = aggregateInfo;
 	}
 
-	/**
-	 * Basic audit info about the object, including date, time, and user account. This data may be captured when creating, updating, and removing data.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -104,9 +83,6 @@ public class CustomerSet implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * Collection of sites associated with the tenant.
-	 */
 	protected List<CustomerSetSite> sites;
 	public List<CustomerSetSite> getSites() {
 		return this.sites;

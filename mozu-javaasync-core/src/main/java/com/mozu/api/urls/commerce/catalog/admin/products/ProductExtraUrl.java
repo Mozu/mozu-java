@@ -15,7 +15,7 @@ public class ProductExtraUrl
 
 	/**
 	 * Get Resource Url for GetExtras
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param productCode 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getExtrasUrl(String productCode)
@@ -27,9 +27,9 @@ public class ProductExtraUrl
 
 	/**
 	 * Get Resource Url for GetExtraValueLocalizedDeltaPrices
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param value The value string to create.
+	 * @param attributeFQN 
+	 * @param productCode 
+	 * @param value 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getExtraValueLocalizedDeltaPricesUrl(String attributeFQN, String productCode, String value)
@@ -43,11 +43,11 @@ public class ProductExtraUrl
 
 	/**
 	 * Get Resource Url for GetExtraValueLocalizedDeltaPrice
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param value The value string to create.
+	 * @param attributeFQN 
+	 * @param currencyCode 
+	 * @param productCode 
+	 * @param responseFields 
+	 * @param value 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getExtraValueLocalizedDeltaPriceUrl(String attributeFQN, String currencyCode, String productCode, String responseFields, String value)
@@ -63,9 +63,9 @@ public class ProductExtraUrl
 
 	/**
 	 * Get Resource Url for GetExtra
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param attributeFQN 
+	 * @param productCode 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getExtraUrl(String attributeFQN, String productCode, String responseFields)
@@ -79,10 +79,10 @@ public class ProductExtraUrl
 
 	/**
 	 * Get Resource Url for AddExtraValueLocalizedDeltaPrice
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param value The value string to create.
+	 * @param attributeFQN 
+	 * @param productCode 
+	 * @param responseFields 
+	 * @param value 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addExtraValueLocalizedDeltaPriceUrl(String attributeFQN, String productCode, String responseFields, String value)
@@ -97,8 +97,8 @@ public class ProductExtraUrl
 
 	/**
 	 * Get Resource Url for AddExtra
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param productCode 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addExtraUrl(String productCode, String responseFields)
@@ -111,9 +111,9 @@ public class ProductExtraUrl
 
 	/**
 	 * Get Resource Url for UpdateExtraValueLocalizedDeltaPrices
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param value The value string to create.
+	 * @param attributeFQN 
+	 * @param productCode 
+	 * @param value 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateExtraValueLocalizedDeltaPricesUrl(String attributeFQN, String productCode, String value)
@@ -127,11 +127,11 @@ public class ProductExtraUrl
 
 	/**
 	 * Get Resource Url for UpdateExtraValueLocalizedDeltaPrice
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param value The value string to create.
+	 * @param attributeFQN 
+	 * @param currencyCode 
+	 * @param productCode 
+	 * @param responseFields 
+	 * @param value 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateExtraValueLocalizedDeltaPriceUrl(String attributeFQN, String currencyCode, String productCode, String responseFields, String value)
@@ -147,9 +147,9 @@ public class ProductExtraUrl
 
 	/**
 	 * Get Resource Url for UpdateExtra
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param attributeFQN 
+	 * @param productCode 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateExtraUrl(String attributeFQN, String productCode, String responseFields)
@@ -163,8 +163,8 @@ public class ProductExtraUrl
 
 	/**
 	 * Get Resource Url for DeleteExtra
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param attributeFQN 
+	 * @param productCode 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteExtraUrl(String attributeFQN, String productCode)
@@ -177,10 +177,10 @@ public class ProductExtraUrl
 
 	/**
 	 * Get Resource Url for DeleteExtraValueLocalizedDeltaPrice
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param value The value string to create.
+	 * @param attributeFQN 
+	 * @param currencyCode 
+	 * @param productCode 
+	 * @param value 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteExtraValueLocalizedDeltaPriceUrl(String attributeFQN, String currencyCode, String productCode, String value)

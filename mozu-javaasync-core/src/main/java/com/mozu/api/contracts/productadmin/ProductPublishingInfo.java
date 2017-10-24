@@ -51,9 +51,6 @@ public class ProductPublishingInfo implements Serializable
 		this.publishedState = publishedState;
 	}
 
-	/**
-	 * The unique identifier of the publish set the pending product draft is assigned to. This field is not valid if the product is live.
-	 */
 	protected  String publishSetCode;
 
 	public String getPublishSetCode() {

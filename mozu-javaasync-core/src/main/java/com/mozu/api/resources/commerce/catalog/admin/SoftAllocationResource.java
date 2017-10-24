@@ -20,7 +20,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * The Soft Allocations resource allows you to temporarily hold a product from inventory while a shopper is filling out payment information. You create a product reservation when a shopper proceeds to check out and then release the reservation when the order process is complete.
+ * 
  * </summary>
  */
 public class SoftAllocationResource {
@@ -73,11 +73,11 @@ public class SoftAllocationResource {
 	 *	SoftAllocation softallocation = new SoftAllocation();
 	 *	SoftAllocationCollection softAllocationCollection = softallocation.getSoftAllocations( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param filter 
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.SoftAllocationCollection
 	 * @see com.mozu.api.contracts.productadmin.SoftAllocationCollection
@@ -97,11 +97,11 @@ public class SoftAllocationResource {
 	 *	SoftAllocation softallocation = new SoftAllocation();
 	 *	CountDownLatch latch = softallocation.getSoftAllocations( startIndex,  pageSize,  sortBy,  filter,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param filter 
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.SoftAllocationCollection
@@ -121,7 +121,7 @@ public class SoftAllocationResource {
 	 *	SoftAllocation softallocation = new SoftAllocation();
 	 *	SoftAllocation softAllocation = softallocation.getSoftAllocation( softAllocationId);
 	 * </code></pre></p>
-	 * @param softAllocationId The unique identifier of the soft allocation.
+	 * @param softAllocationId 
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.SoftAllocation
 	 * @see com.mozu.api.contracts.productadmin.SoftAllocation
@@ -137,7 +137,7 @@ public class SoftAllocationResource {
 	 *	SoftAllocation softallocation = new SoftAllocation();
 	 *	CountDownLatch latch = softallocation.getSoftAllocation( softAllocationId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param softAllocationId The unique identifier of the soft allocation.
+	 * @param softAllocationId 
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.SoftAllocation
@@ -154,8 +154,8 @@ public class SoftAllocationResource {
 	 *	SoftAllocation softallocation = new SoftAllocation();
 	 *	SoftAllocation softAllocation = softallocation.getSoftAllocation( softAllocationId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param softAllocationId The unique identifier of the soft allocation.
+	 * @param responseFields 
+	 * @param softAllocationId 
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.SoftAllocation
 	 * @see com.mozu.api.contracts.productadmin.SoftAllocation
@@ -175,8 +175,8 @@ public class SoftAllocationResource {
 	 *	SoftAllocation softallocation = new SoftAllocation();
 	 *	CountDownLatch latch = softallocation.getSoftAllocation( softAllocationId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param softAllocationId The unique identifier of the soft allocation.
+	 * @param responseFields 
+	 * @param softAllocationId 
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.SoftAllocation
@@ -197,7 +197,7 @@ public class SoftAllocationResource {
 	 *	SoftAllocation softAllocation = softallocation.addSoftAllocations( softAllocationsIn);
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param softAllocationsIn The details of the new soft allocation.
+	 * @param softAllocationsIn 
 	 * @return List<com.mozu.api.contracts.productadmin.SoftAllocation>
 	 * @see com.mozu.api.contracts.productadmin.SoftAllocation
 	 * @see com.mozu.api.contracts.productadmin.SoftAllocation
@@ -219,7 +219,7 @@ public class SoftAllocationResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
-	 * @param softAllocationsIn The details of the new soft allocation.
+	 * @param softAllocationsIn 
 	 * @return List<com.mozu.api.contracts.productadmin.SoftAllocation>
 	 * @see com.mozu.api.contracts.productadmin.SoftAllocation
 	 * @see com.mozu.api.contracts.productadmin.SoftAllocation
@@ -239,7 +239,7 @@ public class SoftAllocationResource {
 	 *	ProductReservation productReservation = softallocation.convertToProductReservation( softAllocations);
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param softAllocations The details of the soft allocation which you want to convert into product reservations.
+	 * @param softAllocations 
 	 * @return List<com.mozu.api.contracts.productadmin.ProductReservation>
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 * @see com.mozu.api.contracts.productadmin.SoftAllocation
@@ -261,7 +261,7 @@ public class SoftAllocationResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
-	 * @param softAllocations The details of the soft allocation which you want to convert into product reservations.
+	 * @param softAllocations 
 	 * @return List<com.mozu.api.contracts.productadmin.ProductReservation>
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 * @see com.mozu.api.contracts.productadmin.SoftAllocation
@@ -281,7 +281,7 @@ public class SoftAllocationResource {
 	 *	SoftAllocation softAllocation = softallocation.renewSoftAllocations( softAllocationRenew);
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param softAllocationRenew The details of the soft allocation that you want to renew.
+	 * @param softAllocationRenew 
 	 * @return List<com.mozu.api.contracts.productadmin.SoftAllocation>
 	 * @see com.mozu.api.contracts.productadmin.SoftAllocation
 	 * @see com.mozu.api.contracts.productadmin.SoftAllocationRenew
@@ -303,7 +303,7 @@ public class SoftAllocationResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
-	 * @param softAllocationRenew The details of the soft allocation that you want to renew.
+	 * @param softAllocationRenew 
 	 * @return List<com.mozu.api.contracts.productadmin.SoftAllocation>
 	 * @see com.mozu.api.contracts.productadmin.SoftAllocation
 	 * @see com.mozu.api.contracts.productadmin.SoftAllocationRenew
@@ -323,7 +323,7 @@ public class SoftAllocationResource {
 	 *	SoftAllocation softAllocation = softallocation.updateSoftAllocations( softAllocations);
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param softAllocations The details of the updated soft allocations.
+	 * @param softAllocations 
 	 * @return List<com.mozu.api.contracts.productadmin.SoftAllocation>
 	 * @see com.mozu.api.contracts.productadmin.SoftAllocation
 	 * @see com.mozu.api.contracts.productadmin.SoftAllocation
@@ -345,7 +345,7 @@ public class SoftAllocationResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
-	 * @param softAllocations The details of the updated soft allocations.
+	 * @param softAllocations 
 	 * @return List<com.mozu.api.contracts.productadmin.SoftAllocation>
 	 * @see com.mozu.api.contracts.productadmin.SoftAllocation
 	 * @see com.mozu.api.contracts.productadmin.SoftAllocation
@@ -364,7 +364,7 @@ public class SoftAllocationResource {
 	 *	SoftAllocation softallocation = new SoftAllocation();
 	 *	softallocation.deleteSoftAllocation( softAllocationId);
 	 * </code></pre></p>
-	 * @param softAllocationId The unique identifier of the soft allocation.
+	 * @param softAllocationId 
 	 * @param dataViewMode DataViewMode
 	 * @return 
 	 */

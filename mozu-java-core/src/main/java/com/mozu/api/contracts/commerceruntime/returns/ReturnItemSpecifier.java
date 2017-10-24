@@ -12,18 +12,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	Mozu.CommerceRuntime.Contracts.Returns.ReturnItemSpecifier ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ReturnItemSpecifier implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The specified quantity of objects and items. This property is used for numerous object types including products, options, components within a product bundle, cart and order items, returned items, shipping line items, items in a digital product. and items associated with types and reservations.
-	 */
 	protected  Integer quantity;
 
 	public Integer getQuantity() {
@@ -34,9 +28,6 @@ public class ReturnItemSpecifier implements Serializable
 		this.quantity = quantity;
 	}
 
-	/**
-	 * The ID of the return item to add to a replacement order.
-	 */
 	protected  String returnItemId;
 
 	public String getReturnItemId() {

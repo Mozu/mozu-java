@@ -12,9 +12,6 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	Address information to supply for a contact.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Address implements Serializable
 {

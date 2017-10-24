@@ -15,18 +15,12 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.mzdb.ListViewField;
 
-/**
- *	Properties for the list view that specifies what fields and content display per page load. All associated fields in the list view correspond with object data.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ListView implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Sets the default sorting for content. Sort does not use AND in determining the order.
-	 */
 	protected  String defaultSort;
 
 	public String getDefaultSort() {
@@ -50,9 +44,6 @@ public class ListView implements Serializable
 		this.filter = filter;
 	}
 
-	/**
-	 * The user supplied name that appears in . You can use this field for identification purposes.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -63,9 +54,6 @@ public class ListView implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * Indicates the security level for the document content as public, administrator, or owner.
-	 */
 	protected  String security;
 
 	public String getSecurity() {
@@ -76,9 +64,6 @@ public class ListView implements Serializable
 		this.security = security;
 	}
 
-	/**
-	 * A string array that determines where the document or entity list displays. The options are , for displaying content in the Custom Schema page in  , and , for displaying content in the site tree in Site Builder (applies only to document lists). The following example demonstrates how to display content across both options:
-	 */
 	protected List<String> usages;
 	public List<String> getUsages() {
 		return this.usages;
@@ -87,9 +72,6 @@ public class ListView implements Serializable
 		this.usages = usages;
 	}
 
-	/**
-	 * The list of fields to display for a view or an associated schema. For example, the address schema would display fields for postal addresses.
-	 */
 	protected List<ListViewField> fields;
 	public List<ListViewField> getFields() {
 		return this.fields;
@@ -98,9 +80,6 @@ public class ListView implements Serializable
 		this.fields = fields;
 	}
 
-	/**
-	 * Metadata content for entities, used by document lists, document type lists, document type, views, entity lists, and list views.
-	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode metaData;
 
 	public com.fasterxml.jackson.databind.JsonNode getMetaData() {

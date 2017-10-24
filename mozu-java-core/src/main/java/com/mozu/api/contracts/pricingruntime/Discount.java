@@ -12,18 +12,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	Name of the discount added and applied to a shopping cart and order for a shopper's purchase.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Discount implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The type of the discount, either  (meaning the discount amount value represents a percentage off the original price),  (meaning the discount amount value represents a dollar amount off the original price),  (meaning the discount amount value is ignored because the product is free), or  (meaning the discount amount value represents the discounted price of the item).
-	 */
 	protected  String amountType;
 
 	public String getAmountType() {
@@ -54,9 +48,6 @@ public class Discount implements Serializable
 		this.expirationDate = expirationDate;
 	}
 
-	/**
-	 * The localizable, shopper-facing description defined for a discount or a storefront message.
-	 */
 	protected  String friendlyDescription;
 
 	public String getFriendlyDescription() {

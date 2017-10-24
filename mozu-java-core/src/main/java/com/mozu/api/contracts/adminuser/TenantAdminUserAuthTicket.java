@@ -17,7 +17,7 @@ import com.mozu.api.contracts.tenant.Tenant;
 import com.mozu.api.contracts.core.UserProfile;
 
 /**
- *	Properties of the authentication ticket to be used in user claims with the  API.
+ *	Properties of the authentication ticket to be used in user claims with the Mozu API.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class TenantAdminUserAuthTicket implements Serializable
