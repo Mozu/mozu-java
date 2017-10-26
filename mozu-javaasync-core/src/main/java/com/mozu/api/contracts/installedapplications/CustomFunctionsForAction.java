@@ -25,7 +25,7 @@ public class CustomFunctionsForAction implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Mozu.InstalledApplications.Contracts.CustomFunctionsForAction actionId ApiTypeMember DOCUMENT_HERE 
+	 * The full action ID for a specific action.
 	 */
 	protected  String actionId;
 
@@ -38,7 +38,7 @@ public class CustomFunctionsForAction implements Serializable
 	}
 
 	/**
-	 * Mozu.InstalledApplications.Contracts.CustomFunctionsForAction contexts ApiTypeMember DOCUMENT_HERE 
+	 * An array of settings for a particular action.
 	 */
 	protected List<CustomFunctionsForContext> contexts;
 	public List<CustomFunctionsForContext> getContexts() {

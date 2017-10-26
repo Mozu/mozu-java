@@ -35,7 +35,7 @@ public class RefundResource {
 
 	
 	/**
-	 * Creates a refund based on the information supplied in the request.  
+	 * 
 	 * <p><pre><code>
 	 *	Refund refund = new Refund();
 	 *	Refund refund = refund.createRefund( refund,  orderId);
@@ -52,7 +52,7 @@ public class RefundResource {
 	}
 
 	/**
-	 * Creates a refund based on the information supplied in the request.  
+	 * 
 	 * <p><pre><code>
 	 *	Refund refund = new Refund();
 	 *	Refund refund = refund.createRefund( refund,  orderId,  responseFields);
@@ -74,7 +74,7 @@ public class RefundResource {
 	}
 
 	/**
-	 * Resends the order refund email previously sent to the shopper. 
+	 * 
 	 * <p><pre><code>
 	 *	Refund refund = new Refund();
 	 *	refund.resendRefundEmail( orderId,  refundId);

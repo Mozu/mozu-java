@@ -24,9 +24,6 @@ public class GatewayAccount implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The 2-letter geographic code representing the country for the physical or mailing address. Currently limited to the US.
-	 */
 	protected  String countryCode;
 
 	public String getCountryCode() {
@@ -37,9 +34,6 @@ public class GatewayAccount implements Serializable
 		this.countryCode = countryCode;
 	}
 
-	/**
-	 * Identifier of the payment gateway.
-	 */
 	protected  String gatewayDefinitionId;
 
 	public String getGatewayDefinitionId() {
@@ -50,9 +44,6 @@ public class GatewayAccount implements Serializable
 		this.gatewayDefinitionId = gatewayDefinitionId;
 	}
 
-	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
-	 */
 	protected  String id;
 
 	public String getId() {
@@ -63,9 +54,6 @@ public class GatewayAccount implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * Indicates if the object or feature is active. This indicator is used for subscriptions (at the site or tenant level), customer accounts, products and variations.
-	 */
 	protected  Boolean isActive;
 
 	public Boolean getIsActive() {
@@ -76,9 +64,6 @@ public class GatewayAccount implements Serializable
 		this.isActive = isActive;
 	}
 
-	/**
-	 * List of credential fields for the payment gateway account.
-	 */
 	protected List<GatewayCredentialFieldValue> credentialFields;
 	public List<GatewayCredentialFieldValue> getCredentialFields() {
 		return this.credentialFields;

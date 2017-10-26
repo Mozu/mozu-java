@@ -37,7 +37,7 @@ public class SecureAppDataResource {
 
 	
 	/**
-	 * platform-secureappdata Get GetDBValue description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	SecureAppData secureappdata = new SecureAppData();
 	 *	JObject json = secureappdata.getDBValue( appKeyId,  dbEntryQuery);
@@ -53,7 +53,7 @@ public class SecureAppDataResource {
 	}
 
 	/**
-	 * platform-secureappdata Get GetDBValue description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	SecureAppData secureappdata = new SecureAppData();
 	 *	CountDownLatch latch = secureappdata.getDBValue( appKeyId,  dbEntryQuery, callback );
@@ -70,7 +70,7 @@ public class SecureAppDataResource {
 	}
 
 	/**
-	 * platform-secureappdata Get GetDBValue description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	SecureAppData secureappdata = new SecureAppData();
 	 *	JObject json = secureappdata.getDBValue( appKeyId,  dbEntryQuery,  responseFields);
@@ -91,7 +91,7 @@ public class SecureAppDataResource {
 	}
 
 	/**
-	 * platform-secureappdata Get GetDBValue description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	SecureAppData secureappdata = new SecureAppData();
 	 *	CountDownLatch latch = secureappdata.getDBValue( appKeyId,  dbEntryQuery,  responseFields, callback );
@@ -112,14 +112,14 @@ public class SecureAppDataResource {
 	}
 
 	/**
-	 * platform-secureappdata Post CreateDBValue description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	SecureAppData secureappdata = new SecureAppData();
 	 *	secureappdata.createDBValue( value,  appKeyId,  dbEntryQuery);
 	 * </code></pre></p>
 	 * @param appKeyId 
 	 * @param dbEntryQuery The database entry string to create.
-	 * @param value JSON code for objects.
+	 * @param value The value string to create.
 	 * @return 
 	 * @see JObject
 	 */
@@ -133,14 +133,14 @@ public class SecureAppDataResource {
 	}
 
 	/**
-	 * platform-secureappdata Put UpdateDBValue description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	SecureAppData secureappdata = new SecureAppData();
 	 *	secureappdata.updateDBValue( value,  appKeyId,  dbEntryQuery);
 	 * </code></pre></p>
 	 * @param appKeyId 
 	 * @param dbEntryQuery The database entry string to create.
-	 * @param value JSON code for objects.
+	 * @param value The value string to create.
 	 * @return 
 	 * @see JObject
 	 */
@@ -154,7 +154,7 @@ public class SecureAppDataResource {
 	}
 
 	/**
-	 * platform-secureappdata Delete DeleteDBValue description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	SecureAppData secureappdata = new SecureAppData();
 	 *	secureappdata.deleteDBValue( appKeyId,  dbEntryQuery);

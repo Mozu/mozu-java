@@ -35,7 +35,7 @@ public class PaymentSettingsResource {
 
 	
 	/**
-	 * Retrieves the schema and definition along with the actual instance values of the third-party payment service workflow configured for the corresponding fully qualified name.
+	 * 
 	 * <p><pre><code>
 	 *	PaymentSettings paymentsettings = new PaymentSettings();
 	 *	ExternalPaymentWorkflowDefinition externalPaymentWorkflowDefinition = paymentsettings.getThirdPartyPaymentWorkflowWithValues( fullyQualifiedName);
@@ -50,7 +50,7 @@ public class PaymentSettingsResource {
 	}
 
 	/**
-	 * Retrieves the schema and definition along with the actual instance values of the third-party payment service workflow configured for the corresponding fully qualified name.
+	 * 
 	 * <p><pre><code>
 	 *	PaymentSettings paymentsettings = new PaymentSettings();
 	 *	ExternalPaymentWorkflowDefinition externalPaymentWorkflowDefinition = paymentsettings.getThirdPartyPaymentWorkflowWithValues( fullyQualifiedName,  responseFields);
@@ -70,7 +70,7 @@ public class PaymentSettingsResource {
 	}
 
 	/**
-	 * Retrieves the schema and definition of all third-party payment service workflows configured for the site.
+	 * 
 	 * <p><pre><code>
 	 *	PaymentSettings paymentsettings = new PaymentSettings();
 	 *	ExternalPaymentWorkflowDefinition externalPaymentWorkflowDefinition = paymentsettings.getThirdPartyPaymentWorkflows();
@@ -88,7 +88,7 @@ public class PaymentSettingsResource {
 	}
 
 	/**
-	 * Adds a third-party payment workflow to the site. A third-party payment workflow is a definition of a process by which a third-party payment provider (such as Amazon Payments or PayPal Express) interacts with the  platform.
+	 * 
 	 * <p><pre><code>
 	 *	PaymentSettings paymentsettings = new PaymentSettings();
 	 *	paymentsettings.addThirdPartyPaymentWorkflow( definition);
@@ -107,7 +107,7 @@ public class PaymentSettingsResource {
 	}
 
 	/**
-	 * Deletes a third-party payment workflow. A third-party payment workflow is a definition of a process by which a third-party payment provider (such as Amazon Payments or PayPal Express) interacts with the  platform. 
+	 * 
 	 * <p><pre><code>
 	 *	PaymentSettings paymentsettings = new PaymentSettings();
 	 *	paymentsettings.deleteThirdPartyPaymentWorkflow( fullyQualifiedName);

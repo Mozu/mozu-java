@@ -15,23 +15,27 @@ public class PublicCardUrl
 
 	/**
 	 * Get Resource Url for Create
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl createUrl()
+	public static MozuUrl createUrl(String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/payments/commerce/payments/cards/");
+		UrlFormatter formatter = new UrlFormatter("/payments/commerce/payments/cards/?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.PCI_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for Update
 	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl updateUrl(String cardId)
+	public static MozuUrl updateUrl(String cardId, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/payments/commerce/payments/cards/{cardId}");
+		UrlFormatter formatter = new UrlFormatter("/payments/commerce/payments/cards/{cardId}?responseFields={responseFields}");
 		formatter.formatUrl("cardId", cardId);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.PCI_POD) ;
 	}
 

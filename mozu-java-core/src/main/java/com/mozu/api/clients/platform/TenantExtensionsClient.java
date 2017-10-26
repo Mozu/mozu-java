@@ -23,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 public class TenantExtensionsClient {
 	
 	/**
-	 * Retrieves the Arc.js configuration settings for a site.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.installedapplications.TenantExtensions> mozuClient=GetExtensionsClient();
 	 * client.setBaseAddress(url);
@@ -39,7 +39,7 @@ public class TenantExtensionsClient {
 	}
 
 	/**
-	 * Retrieves the Arc.js configuration settings for a site.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.installedapplications.TenantExtensions> mozuClient=GetExtensionsClient( responseFields);
 	 * client.setBaseAddress(url);
@@ -63,7 +63,7 @@ public class TenantExtensionsClient {
 	}
 
 	/**
-	 * Updates the Arc.js configuration settings for a site.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.installedapplications.TenantExtensions> mozuClient=UpdateExtensionsClient( extensions);
 	 * client.setBaseAddress(url);
@@ -81,7 +81,7 @@ public class TenantExtensionsClient {
 	}
 
 	/**
-	 * Updates the Arc.js configuration settings for a site.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.installedapplications.TenantExtensions> mozuClient=UpdateExtensionsClient( extensions,  responseFields);
 	 * client.setBaseAddress(url);

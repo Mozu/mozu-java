@@ -43,7 +43,7 @@ public class PublishingScopeResource {
 	}
 		
 	/**
-	 * Retrieves the details of the specified product publish set.
+	 * 
 	 * <p><pre><code>
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	PublishSet publishSet = publishingscope.getPublishSet( publishSetCode);
@@ -59,7 +59,7 @@ public class PublishingScopeResource {
 	}
 
 	/**
-	 * Retrieves the details of the specified product publish set.
+	 * 
 	 * <p><pre><code>
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	PublishSet publishSet = publishingscope.getPublishSet( publishSetCode,  responseFields);
@@ -80,7 +80,7 @@ public class PublishingScopeResource {
 	}
 
 	/**
-	 * Retrieves a list of product publish sets and their properties, including the amount of pending product changes that are included in each one.
+	 * 
 	 * <p><pre><code>
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	PublishSetCollection publishSetCollection = publishingscope.getPublishSets();
@@ -95,7 +95,7 @@ public class PublishingScopeResource {
 	}
 
 	/**
-	 * Retrieves a list of product publish sets and their properties, including the amount of pending product changes that are included in each one.
+	 * 
 	 * <p><pre><code>
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	PublishSetCollection publishSetCollection = publishingscope.getPublishSets( responseFields);
@@ -115,7 +115,7 @@ public class PublishingScopeResource {
 	}
 
 	/**
-	 * Deletes the draft version of product changes (pending product changes) for each product code specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	publishingscope.discardDrafts( publishScope);
@@ -135,7 +135,7 @@ public class PublishingScopeResource {
 	}
 
 	/**
-	 * Publishes the draft version of product changes (pending product changes) for each product code specified in the request, and changes the product publish state to "live".
+	 * 
 	 * <p><pre><code>
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	publishingscope.publishDrafts( publishScope);
@@ -155,7 +155,7 @@ public class PublishingScopeResource {
 	}
 
 	/**
-	 * Assigns pending product changes to a specified product publish set. Use the code field to specify the product publish set.
+	 * 
 	 * <p><pre><code>
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	PublishSet publishSet = publishingscope.assignProductsToPublishSet( publishSet);
@@ -172,7 +172,7 @@ public class PublishingScopeResource {
 	}
 
 	/**
-	 * Assigns pending product changes to a specified product publish set. Use the code field to specify the product publish set.
+	 * 
 	 * <p><pre><code>
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	PublishSet publishSet = publishingscope.assignProductsToPublishSet( publishSet,  responseFields);
@@ -194,7 +194,7 @@ public class PublishingScopeResource {
 	}
 
 	/**
-	 * Deletes the specified product publish set. If you set the discardDrafts parameter to true, this operation also deletes the product drafts assigned to the publish set.
+	 * 
 	 * <p><pre><code>
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	publishingscope.deletePublishSet( publishSetCode);
@@ -209,7 +209,7 @@ public class PublishingScopeResource {
 	}
 
 	/**
-	 * Deletes the specified product publish set. If you set the discardDrafts parameter to true, this operation also deletes the product drafts assigned to the publish set.
+	 * 
 	 * <p><pre><code>
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	publishingscope.deletePublishSet( publishSetCode,  discardDrafts);

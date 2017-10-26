@@ -22,19 +22,6 @@ public class PropertyType implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The current version number of the order, wish list, document list, or document type list.
-	 */
-	protected  String version;
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-	}
-
-	/**
 	 * The administrator name associated with the object/data.
 	 */
 	protected  String adminName;
@@ -73,9 +60,6 @@ public class PropertyType implements Serializable
 		this.installationPackage = installationPackage;
 	}
 
-	/**
-	 * If true, this entity can be grouped.
-	 */
 	protected  Boolean isAggregatable;
 
 	public Boolean getIsAggregatable() {
@@ -86,9 +70,6 @@ public class PropertyType implements Serializable
 		this.isAggregatable = isAggregatable;
 	}
 
-	/**
-	 * Indicates if the entity can be located and returned in a search, used for fields and property types. If true, the entity can be searched. 
-	 */
 	protected  Boolean isQueryable;
 
 	public Boolean getIsQueryable() {
@@ -99,9 +80,6 @@ public class PropertyType implements Serializable
 		this.isQueryable = isQueryable;
 	}
 
-	/**
-	 * Indicates if the fields or property types are sortable on the page. If true, the property type results are sortable. If false, the property type results cannot be sorted by any options.
-	 */
 	protected  Boolean isSortable;
 
 	public Boolean getIsSortable() {
@@ -112,9 +90,6 @@ public class PropertyType implements Serializable
 		this.isSortable = isSortable;
 	}
 
-	/**
-	 * The user supplied name that appears in . You can use this field for identification purposes.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -149,6 +124,19 @@ public class PropertyType implements Serializable
 
 	public void setPropertyTypeFQN(String propertyTypeFQN) {
 		this.propertyTypeFQN = propertyTypeFQN;
+	}
+
+	/**
+	 * The current version number of the order, wish list, document list, or document type list.
+	 */
+	protected  String version;
+
+	public String getVersion() {
+		return this.version;
+	}
+
+	public void setVersion(String version) {
+		this.version = version;
 	}
 
 

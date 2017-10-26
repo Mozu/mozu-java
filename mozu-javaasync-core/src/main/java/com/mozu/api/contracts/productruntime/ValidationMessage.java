@@ -21,9 +21,6 @@ public class ValidationMessage implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The text of the change message, such as "This product is no longer available." System-supplied and read-only.
-	 */
 	protected  String message;
 
 	public String getMessage() {
@@ -34,9 +31,6 @@ public class ValidationMessage implements Serializable
 		this.message = message;
 	}
 
-	/**
-	 * The severity level of validation failures for shipping rates and products.
-	 */
 	protected  String severity;
 
 	public String getSeverity() {
@@ -47,9 +41,6 @@ public class ValidationMessage implements Serializable
 		this.severity = severity;
 	}
 
-	/**
-	 * Source for an action or container for originating content. Source is used as an origin for validation and notification messages based on successful or failed actions. For originating content, source is used for the facet source information, including the category, price, or attribute properties.
-	 */
 	protected  String source;
 
 	public String getSource() {
@@ -60,9 +51,6 @@ public class ValidationMessage implements Serializable
 		this.source = source;
 	}
 
-	/**
-	 * Unique identifier of the entity that triggered the validation.
-	 */
 	protected  String sourceId;
 
 	public String getSourceId() {
@@ -74,7 +62,7 @@ public class ValidationMessage implements Serializable
 	}
 
 	/**
-	 * Type of validation error that occurred. This can be checked programatically.              Must be one of the values in ValidationTypeConst.
+	 * Type of validation error that occurred. This can be checked programatically. Must be one of the values in ValidationTypeConst.
 	 */
 	protected  String validationType;
 

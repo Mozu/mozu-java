@@ -22,7 +22,7 @@ public class ListViewField implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
+	 * The user supplied name that appears in . You can use this field for identification purposes.
 	 */
 	protected  String name;
 
@@ -35,7 +35,7 @@ public class ListViewField implements Serializable
 	}
 
 	/**
-	 * Targets represent the object, such as an item to apply discounts (products or orders) or a view field for content. When accessing MZDB APIs for Mongo interactions, targets are the dot notation that links to the source document property. For example, firstitem for the direc level or firstitem.seconditem.thirditem for a deeper property.              
+	 * Targets represent the object, such as an item to apply discounts to(products or orders) or a view field for content. Targets are the dot notations that link to the source document property. For example, firstitem for the direct level or firstitem.seconditem.thirditem for a deeper property.
 	 */
 	protected  String target;
 

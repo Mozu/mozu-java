@@ -21,9 +21,6 @@ public class ProductAttribute implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The data type of the source product property, typically of type Bool, DateTime, Number, or String.
-	 */
 	protected  String dataType;
 
 	public String getDataType() {
@@ -34,9 +31,6 @@ public class ProductAttribute implements Serializable
 		this.dataType = dataType;
 	}
 
-	/**
-	 * The localized description in text for the object, displayed per the locale code. For example, descriptions are used for product descriptions, attributes, and pre-authorization transaction types.
-	 */
 	protected  String description;
 
 	public String getDescription() {
@@ -47,9 +41,6 @@ public class ProductAttribute implements Serializable
 		this.description = description;
 	}
 
-	/**
-	 * The type of input selection used to define a value for the attribute, including Yes/No, Date, DateTime, List, TextBox, or TextArea.
-	 */
 	protected  String inputType;
 
 	public String getInputType() {
@@ -60,9 +51,6 @@ public class ProductAttribute implements Serializable
 		this.inputType = inputType;
 	}
 
-	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -73,9 +61,6 @@ public class ProductAttribute implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * An attribute value type is either predefined vocabulary by the admin during attribute set up or user-defined with an appropriate type (AdminEntered or ShopperEntered depending on the user). These types are used by products and attributes. The difference between predefined values versus manually entered values is such that the first choice is a set of options to choose from. AdminEntered and ShopperEntered are values that are entered rather than system-supplied and are not stored in the database, but captured during a live commerce operations such as during an order.
-	 */
 	protected  String valueType;
 
 	public String getValueType() {

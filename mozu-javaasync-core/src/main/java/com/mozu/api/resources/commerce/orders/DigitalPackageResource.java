@@ -37,7 +37,7 @@ public class DigitalPackageResource {
 
 	
 	/**
-	 * Retrieves a collection of fulfillment options for digital packages. Options may include emailed files/links or provided links. 
+	 * 
 	 * <p><pre><code>
 	 *	DigitalPackage digitalpackage = new DigitalPackage();
 	 *	string string = digitalpackage.getAvailableDigitalPackageFulfillmentActions( orderId,  digitalPackageId);
@@ -57,7 +57,7 @@ public class DigitalPackageResource {
 	}
 
 	/**
-	 * Retrieves a collection of fulfillment options for digital packages. Options may include emailed files/links or provided links. 
+	 * 
 	 * <p><pre><code>
 	 *	DigitalPackage digitalpackage = new DigitalPackage();
 	 *	CountDownLatch latch = digitalpackage.getAvailableDigitalPackageFulfillmentActions( orderId,  digitalPackageId, callback );
@@ -77,7 +77,7 @@ public class DigitalPackageResource {
 	}
 
 	/**
-	 * This operation retreives a digital package within an order and it requires two parameters: orderId and digitalPackageId.
+	 * 
 	 * <p><pre><code>
 	 *	DigitalPackage digitalpackage = new DigitalPackage();
 	 *	DigitalPackage digitalPackage = digitalpackage.getDigitalPackage( orderId,  digitalPackageId);
@@ -93,7 +93,7 @@ public class DigitalPackageResource {
 	}
 
 	/**
-	 * This operation retreives a digital package within an order and it requires two parameters: orderId and digitalPackageId.
+	 * 
 	 * <p><pre><code>
 	 *	DigitalPackage digitalpackage = new DigitalPackage();
 	 *	CountDownLatch latch = digitalpackage.getDigitalPackage( orderId,  digitalPackageId, callback );
@@ -110,14 +110,14 @@ public class DigitalPackageResource {
 	}
 
 	/**
-	 * This operation retreives a digital package within an order and it requires two parameters: orderId and digitalPackageId.
+	 * 
 	 * <p><pre><code>
 	 *	DigitalPackage digitalpackage = new DigitalPackage();
 	 *	DigitalPackage digitalPackage = digitalpackage.getDigitalPackage( orderId,  digitalPackageId,  responseFields);
 	 * </code></pre></p>
 	 * @param digitalPackageId This parameter supplies package ID to get fulfillment actions for the digital package.
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
 	 */
@@ -131,14 +131,14 @@ public class DigitalPackageResource {
 	}
 
 	/**
-	 * This operation retreives a digital package within an order and it requires two parameters: orderId and digitalPackageId.
+	 * 
 	 * <p><pre><code>
 	 *	DigitalPackage digitalpackage = new DigitalPackage();
 	 *	CountDownLatch latch = digitalpackage.getDigitalPackage( orderId,  digitalPackageId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param digitalPackageId This parameter supplies package ID to get fulfillment actions for the digital package.
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
@@ -152,7 +152,7 @@ public class DigitalPackageResource {
 	}
 
 	/**
-	 * Lets you apply a digital package to the order using the orderId and digitalPackage parameters.
+	 * 
 	 * <p><pre><code>
 	 *	DigitalPackage digitalpackage = new DigitalPackage();
 	 *	DigitalPackage digitalPackage = digitalpackage.createDigitalPackage( digitalPackage,  orderId);
@@ -169,7 +169,7 @@ public class DigitalPackageResource {
 	}
 
 	/**
-	 * Lets you apply a digital package to the order using the orderId and digitalPackage parameters.
+	 * 
 	 * <p><pre><code>
 	 *	DigitalPackage digitalpackage = new DigitalPackage();
 	 *	CountDownLatch latch = digitalpackage.createDigitalPackage( digitalPackage,  orderId, callback );
@@ -187,13 +187,13 @@ public class DigitalPackageResource {
 	}
 
 	/**
-	 * Lets you apply a digital package to the order using the orderId and digitalPackage parameters.
+	 * 
 	 * <p><pre><code>
 	 *	DigitalPackage digitalpackage = new DigitalPackage();
 	 *	DigitalPackage digitalPackage = digitalpackage.createDigitalPackage( digitalPackage,  orderId,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param digitalPackage Lets you manage an order's digital packages, by applying a digital package to the order.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
@@ -209,13 +209,13 @@ public class DigitalPackageResource {
 	}
 
 	/**
-	 * Lets you apply a digital package to the order using the orderId and digitalPackage parameters.
+	 * 
 	 * <p><pre><code>
 	 *	DigitalPackage digitalpackage = new DigitalPackage();
 	 *	CountDownLatch latch = digitalpackage.createDigitalPackage( digitalPackage,  orderId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param digitalPackage Lets you manage an order's digital packages, by applying a digital package to the order.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
@@ -231,7 +231,7 @@ public class DigitalPackageResource {
 	}
 
 	/**
-	 * This method operates on one digital package, specified by the id given. This method ensures that the digital package ID provided is in the order with the id given, and then updates the properties of that package with the properties of the one passed in using the ‘digitalpackage’ parameter.
+	 * 
 	 * <p><pre><code>
 	 *	DigitalPackage digitalpackage = new DigitalPackage();
 	 *	DigitalPackage digitalPackage = digitalpackage.updateDigitalPackage( digitalPackage,  orderId,  digitalPackageId);
@@ -249,7 +249,7 @@ public class DigitalPackageResource {
 	}
 
 	/**
-	 * This method operates on one digital package, specified by the id given. This method ensures that the digital package ID provided is in the order with the id given, and then updates the properties of that package with the properties of the one passed in using the ‘digitalpackage’ parameter.
+	 * 
 	 * <p><pre><code>
 	 *	DigitalPackage digitalpackage = new DigitalPackage();
 	 *	CountDownLatch latch = digitalpackage.updateDigitalPackage( digitalPackage,  orderId,  digitalPackageId, callback );
@@ -268,14 +268,14 @@ public class DigitalPackageResource {
 	}
 
 	/**
-	 * This method operates on one digital package, specified by the id given. This method ensures that the digital package ID provided is in the order with the id given, and then updates the properties of that package with the properties of the one passed in using the ‘digitalpackage’ parameter.
+	 * 
 	 * <p><pre><code>
 	 *	DigitalPackage digitalpackage = new DigitalPackage();
 	 *	DigitalPackage digitalPackage = digitalpackage.updateDigitalPackage( digitalPackage,  orderId,  digitalPackageId,  responseFields);
 	 * </code></pre></p>
 	 * @param digitalPackageId This parameter supplies package ID to get fulfillment actions for the digital package.
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param digitalPackage Lets you manage an order's digital packages, by applying a digital package to the order.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
@@ -291,14 +291,14 @@ public class DigitalPackageResource {
 	}
 
 	/**
-	 * This method operates on one digital package, specified by the id given. This method ensures that the digital package ID provided is in the order with the id given, and then updates the properties of that package with the properties of the one passed in using the ‘digitalpackage’ parameter.
+	 * 
 	 * <p><pre><code>
 	 *	DigitalPackage digitalpackage = new DigitalPackage();
 	 *	CountDownLatch latch = digitalpackage.updateDigitalPackage( digitalPackage,  orderId,  digitalPackageId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param digitalPackageId This parameter supplies package ID to get fulfillment actions for the digital package.
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param digitalPackage Lets you manage an order's digital packages, by applying a digital package to the order.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
@@ -314,7 +314,7 @@ public class DigitalPackageResource {
 	}
 
 	/**
-	 * This operation deletes a digital package from an order. This operation requires three parameters: orderId, digitalPackageId, and digitalPackage.
+	 * 
 	 * <p><pre><code>
 	 *	DigitalPackage digitalpackage = new DigitalPackage();
 	 *	digitalpackage.deleteDigitalPackage( orderId,  digitalPackageId);

@@ -21,9 +21,6 @@ public class ProductLocalizedSEOContent implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Language used for the entity. Currently, only "en-US" is supported.
-	 */
 	protected  String localeCode;
 
 	public String getLocaleCode() {
@@ -34,9 +31,6 @@ public class ProductLocalizedSEOContent implements Serializable
 		this.localeCode = localeCode;
 	}
 
-	/**
-	 * Description defined for metadata, used to interally manage data, in the language specified by the `localeCode`. This content is used by categories, products, localized content, and SEO content.
-	 */
 	protected  String metaTagDescription;
 
 	public String getMetaTagDescription() {
@@ -47,9 +41,6 @@ public class ProductLocalizedSEOContent implements Serializable
 		this.metaTagDescription = metaTagDescription;
 	}
 
-	/**
-	 * Keywords defined for metadata, used to internally manage data, in the language specified by the `localeCode`. Keywords are used by content for categories, products, localized content, and SEO content.
-	 */
 	protected  String metaTagKeywords;
 
 	public String getMetaTagKeywords() {
@@ -60,9 +51,6 @@ public class ProductLocalizedSEOContent implements Serializable
 		this.metaTagKeywords = metaTagKeywords;
 	}
 
-	/**
-	 * Title defined for metadata, used to internally manage data, in the language specified by the `localeCode`. Titles are used by content for categories, products, localized content, and SEO content.
-	 */
 	protected  String metaTagTitle;
 
 	public String getMetaTagTitle() {
@@ -73,9 +61,6 @@ public class ProductLocalizedSEOContent implements Serializable
 		this.metaTagTitle = metaTagTitle;
 	}
 
-	/**
-	 * The search engine optimized, human-readable portion of the URL. The content is localized according to the product's `localeCode`.
-	 */
 	protected  String seoFriendlyUrl;
 
 	public String getSeoFriendlyUrl() {
@@ -86,9 +71,6 @@ public class ProductLocalizedSEOContent implements Serializable
 		this.seoFriendlyUrl = seoFriendlyUrl;
 	}
 
-	/**
-	 * Customizes the HTML title tag within the header section of the product details page for the specified product.
-	 */
 	protected  String titleTagTitle;
 
 	public String getTitleTagTitle() {

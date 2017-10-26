@@ -15,12 +15,12 @@ public class ReturnUrl
 
 	/**
 	 * Get Resource Url for GetReturns
-	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
 	 * @param q A list of order search terms (not phrases) to use in the query when searching across order number and the name or email of the billing contact. When entering, separate multiple search terms with a space character.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getReturnsUrl(String filter, Integer pageSize, String q, String responseFields, String sortBy, Integer startIndex)
@@ -49,7 +49,7 @@ public class ReturnUrl
 
 	/**
 	 * Get Resource Url for GetReturnItem
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @param returnItemId Unique identifier of the return item whose details you want to get.
 	 * @return   String Resource Url
@@ -65,7 +65,7 @@ public class ReturnUrl
 
 	/**
 	 * Get Resource Url for GetReturnItems
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @return   String Resource Url
 	 */
@@ -94,7 +94,7 @@ public class ReturnUrl
 	/**
 	 * Get Resource Url for GetPayment
 	 * @param paymentId Unique identifier of the payment for which to perform the action.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @return   String Resource Url
 	 */
@@ -109,7 +109,7 @@ public class ReturnUrl
 
 	/**
 	 * Get Resource Url for GetPayments
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @return   String Resource Url
 	 */
@@ -123,7 +123,7 @@ public class ReturnUrl
 
 	/**
 	 * Get Resource Url for GetReturn
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @return   String Resource Url
 	 */
@@ -149,7 +149,7 @@ public class ReturnUrl
 
 	/**
 	 * Get Resource Url for CreateReturn
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl createReturnUrl(String responseFields)
@@ -161,7 +161,7 @@ public class ReturnUrl
 
 	/**
 	 * Get Resource Url for CreateReturnItem
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @return   String Resource Url
 	 */
@@ -176,7 +176,7 @@ public class ReturnUrl
 	/**
 	 * Get Resource Url for PerformPaymentActionForReturn
 	 * @param paymentId Unique identifier of the payment for which to perform the action.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @return   String Resource Url
 	 */
@@ -191,7 +191,7 @@ public class ReturnUrl
 
 	/**
 	 * Get Resource Url for CreatePaymentActionForReturn
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @return   String Resource Url
 	 */
@@ -219,7 +219,7 @@ public class ReturnUrl
 
 	/**
 	 * Get Resource Url for PerformReturnActions
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl performReturnActionsUrl(String responseFields)
@@ -231,7 +231,7 @@ public class ReturnUrl
 
 	/**
 	 * Get Resource Url for UpdateReturn
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @return   String Resource Url
 	 */

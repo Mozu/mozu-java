@@ -23,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 public class DigitalPackageClient {
 	
 	/**
-	 * Retrieves a collection of fulfillment options for digital packages. Options may include emailed files/links or provided links. 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<String>> mozuClient=GetAvailableDigitalPackageFulfillmentActionsClient( orderId,  digitalPackageId);
 	 * client.setBaseAddress(url);
@@ -48,7 +48,7 @@ public class DigitalPackageClient {
 	}
 
 	/**
-	 * This operation retreives a digital package within an order and it requires two parameters: orderId and digitalPackageId.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage> mozuClient=GetDigitalPackageClient( orderId,  digitalPackageId);
 	 * client.setBaseAddress(url);
@@ -66,7 +66,7 @@ public class DigitalPackageClient {
 	}
 
 	/**
-	 * This operation retreives a digital package within an order and it requires two parameters: orderId and digitalPackageId.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage> mozuClient=GetDigitalPackageClient( orderId,  digitalPackageId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -75,7 +75,7 @@ public class DigitalPackageClient {
 	 * </code></pre></p>
 	 * @param digitalPackageId This parameter supplies package ID to get fulfillment actions for the digital package.
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
 	 */
@@ -92,7 +92,7 @@ public class DigitalPackageClient {
 	}
 
 	/**
-	 * Lets you apply a digital package to the order using the orderId and digitalPackage parameters.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage> mozuClient=CreateDigitalPackageClient( digitalPackage,  orderId);
 	 * client.setBaseAddress(url);
@@ -111,7 +111,7 @@ public class DigitalPackageClient {
 	}
 
 	/**
-	 * Lets you apply a digital package to the order using the orderId and digitalPackage parameters.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage> mozuClient=CreateDigitalPackageClient( digitalPackage,  orderId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -119,7 +119,7 @@ public class DigitalPackageClient {
 	 * DigitalPackage digitalPackage = client.Result();
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param digitalPackage Lets you manage an order's digital packages, by applying a digital package to the order.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
@@ -139,7 +139,7 @@ public class DigitalPackageClient {
 	}
 
 	/**
-	 * This method operates on one digital package, specified by the id given. This method ensures that the digital package ID provided is in the order with the id given, and then updates the properties of that package with the properties of the one passed in using the ‘digitalpackage’ parameter.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage> mozuClient=UpdateDigitalPackageClient( digitalPackage,  orderId,  digitalPackageId);
 	 * client.setBaseAddress(url);
@@ -159,7 +159,7 @@ public class DigitalPackageClient {
 	}
 
 	/**
-	 * This method operates on one digital package, specified by the id given. This method ensures that the digital package ID provided is in the order with the id given, and then updates the properties of that package with the properties of the one passed in using the ‘digitalpackage’ parameter.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage> mozuClient=UpdateDigitalPackageClient( digitalPackage,  orderId,  digitalPackageId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -168,7 +168,7 @@ public class DigitalPackageClient {
 	 * </code></pre></p>
 	 * @param digitalPackageId This parameter supplies package ID to get fulfillment actions for the digital package.
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param digitalPackage Lets you manage an order's digital packages, by applying a digital package to the order.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
@@ -188,7 +188,7 @@ public class DigitalPackageClient {
 	}
 
 	/**
-	 * This operation deletes a digital package from an order. This operation requires three parameters: orderId, digitalPackageId, and digitalPackage.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteDigitalPackageClient( orderId,  digitalPackageId);
 	 * client.setBaseAddress(url);

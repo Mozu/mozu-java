@@ -23,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 public class PackageClient {
 	
 	/**
-	 * This operation is not public.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<java.io.InputStream> mozuClient=GetFileClient( applicationKey,  fileName);
 	 * client.setBaseAddress(url);

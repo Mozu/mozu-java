@@ -43,7 +43,7 @@ public class ProductTypeResource {
 	}
 		
 	/**
-	 * Retrieves a list of product types according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 *	ProductType producttype = new ProductType();
 	 *	ProductTypeCollection productTypeCollection = producttype.getProductTypes();
@@ -58,16 +58,16 @@ public class ProductTypeResource {
 	}
 
 	/**
-	 * Retrieves a list of product types according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 *	ProductType producttype = new ProductType();
 	 *	ProductTypeCollection productTypeCollection = producttype.getProductTypes( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.ProductTypeCollection
 	 * @see com.mozu.api.contracts.productadmin.ProductTypeCollection
@@ -82,7 +82,7 @@ public class ProductTypeResource {
 	}
 
 	/**
-	 * Retrieves the details of the product type specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	ProductType producttype = new ProductType();
 	 *	ProductType productType = producttype.getProductType( productTypeId);
@@ -98,13 +98,13 @@ public class ProductTypeResource {
 	}
 
 	/**
-	 * Retrieves the details of the product type specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	ProductType producttype = new ProductType();
 	 *	ProductType productType = producttype.getProductType( productTypeId,  responseFields);
 	 * </code></pre></p>
 	 * @param productTypeId Identifier of the product type.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.ProductType
 	 * @see com.mozu.api.contracts.productadmin.ProductType
@@ -119,7 +119,7 @@ public class ProductTypeResource {
 	}
 
 	/**
-	 * Creates a new product type based on the information supplied in the request.
+	 * 
 	 * <p><pre><code>
 	 *	ProductType producttype = new ProductType();
 	 *	ProductType productType = producttype.addProductType( productType);
@@ -136,12 +136,12 @@ public class ProductTypeResource {
 	}
 
 	/**
-	 * Creates a new product type based on the information supplied in the request.
+	 * 
 	 * <p><pre><code>
 	 *	ProductType producttype = new ProductType();
 	 *	ProductType productType = producttype.addProductType( productType,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
 	 * @param productType A product type is like a product template.
 	 * @return com.mozu.api.contracts.productadmin.ProductType
@@ -158,7 +158,7 @@ public class ProductTypeResource {
 	}
 
 	/**
-	 * Updates one or more properties of a product type.
+	 * 
 	 * <p><pre><code>
 	 *	ProductType producttype = new ProductType();
 	 *	ProductType productType = producttype.updateProductType( productType,  productTypeId);
@@ -176,13 +176,13 @@ public class ProductTypeResource {
 	}
 
 	/**
-	 * Updates one or more properties of a product type.
+	 * 
 	 * <p><pre><code>
 	 *	ProductType producttype = new ProductType();
 	 *	ProductType productType = producttype.updateProductType( productType,  productTypeId,  responseFields);
 	 * </code></pre></p>
 	 * @param productTypeId Identifier of the product type.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
 	 * @param productType A product type is like a product template.
 	 * @return com.mozu.api.contracts.productadmin.ProductType
@@ -199,7 +199,7 @@ public class ProductTypeResource {
 	}
 
 	/**
-	 * Deletes the product type by providing the product type ID.
+	 * 
 	 * <p><pre><code>
 	 *	ProductType producttype = new ProductType();
 	 *	producttype.deleteProductType( productTypeId);

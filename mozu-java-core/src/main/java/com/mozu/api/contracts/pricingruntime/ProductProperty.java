@@ -25,9 +25,6 @@ public class ProductProperty implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 */
 	protected  String attributeFQN;
 
 	public String getAttributeFQN() {
@@ -38,9 +35,6 @@ public class ProductProperty implements Serializable
 		this.attributeFQN = attributeFQN;
 	}
 
-	/**
-	 * Indicates if the object is hidden or breaks inheritance, primarily used by facets, products, and attribute vocabulary values. For example, if true, the attribute vocabulary value does not appear in the list when defining a value for an attribute.
-	 */
 	protected  Boolean isHidden;
 
 	public Boolean getIsHidden() {
@@ -51,9 +45,6 @@ public class ProductProperty implements Serializable
 		this.isHidden = isHidden;
 	}
 
-	/**
-	 * Indicates if the object has or can have multiple properties or values. If true, the object can have more than one value, selectable by shoppers through the storefront or configurable through the catalogs. 
-	 */
 	protected  Boolean isMultiValue;
 
 	public Boolean getIsMultiValue() {
@@ -64,9 +55,6 @@ public class ProductProperty implements Serializable
 		this.isMultiValue = isMultiValue;
 	}
 
-	/**
-	 * The product attribute details common between all attribute types - properties, options, and extras.
-	 */
 	protected  ProductAttribute attributeDetail;
 
 	public ProductAttribute getAttributeDetail() {
@@ -77,9 +65,6 @@ public class ProductProperty implements Serializable
 		this.attributeDetail = attributeDetail;
 	}
 
-	/**
-	 * List of value data for objects.
-	 */
 	protected List<ProductPropertyValue> values;
 	public List<ProductPropertyValue> getValues() {
 		return this.values;

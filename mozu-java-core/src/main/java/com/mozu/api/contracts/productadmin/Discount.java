@@ -27,9 +27,6 @@ public class Discount implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The integer amount of the discount. For example, an entry of "10" could represent a discount of $10.00 or a discount of 10%, depending on the type.
-	 */
 	protected  Double amount;
 
 	public Double getAmount() {
@@ -40,9 +37,6 @@ public class Discount implements Serializable
 		this.amount = amount;
 	}
 
-	/**
-	 * The type of discount amount, such as an amount or a percentage.
-	 */
 	protected  String amountType;
 
 	public String getAmountType() {
@@ -66,9 +60,6 @@ public class Discount implements Serializable
 		this.canBeDeleted = canBeDeleted;
 	}
 
-	/**
-	 * The number of times this discount has been redeemed.
-	 */
 	protected  Integer currentRedemptionCount;
 
 	public Integer getCurrentRedemptionCount() {
@@ -77,6 +68,16 @@ public class Discount implements Serializable
 
 	public void setCurrentRedemptionCount(Integer currentRedemptionCount) {
 		this.currentRedemptionCount = currentRedemptionCount;
+	}
+
+	protected  Boolean doesNotApplyToMultiShipToOrders;
+
+	public Boolean getDoesNotApplyToMultiShipToOrders() {
+		return this.doesNotApplyToMultiShipToOrders;
+	}
+
+	public void setDoesNotApplyToMultiShipToOrders(Boolean doesNotApplyToMultiShipToOrders) {
+		this.doesNotApplyToMultiShipToOrders = doesNotApplyToMultiShipToOrders;
 	}
 
 	/**
@@ -105,9 +106,6 @@ public class Discount implements Serializable
 		this.doesNotApplyToSalePrice = doesNotApplyToSalePrice;
 	}
 
-	/**
-	 * Unique identifier of the source property, such as a catalog, discount, order, or email template.For a product field it will be the name of the field.For a category ID, must be a positive integer not greater than 2000000. By default,  auto-generates a category ID when categories are created. If you want to specify an ID during creation (which preserves category link relationships when migrating tenant data from one sandbox to another), you must also include the  query string in the endpoint. For example, . Then, use the  property to specify the desired category ID.For a product attribute it will be the Attribute FQN.For a document, the ID must be specified as a 32 character, case-insensitive, alphanumeric string. You can specify the ID as 32 sequential characters or as groups separated by dashes in the format 8-4-4-4-12. For example, or.For email templates, the ID must be one of the following values:			
-	 */
 	protected  Integer id;
 
 	public Integer getId() {
@@ -181,9 +179,6 @@ public class Discount implements Serializable
 		this.maximumUsesPerUser = maximumUsesPerUser;
 	}
 
-	/**
-	 * The scope to which the discount applies, which is "Order" for order discounts or "LineItem" for individual product discounts.
-	 */
 	protected  String scope;
 
 	public String getScope() {
@@ -194,9 +189,6 @@ public class Discount implements Serializable
 		this.scope = scope;
 	}
 
-	/**
-	 * The current status of the object.This value is read only. Valid values for this field are: "Active", "Expired", and "Inactive".
-	 */
 	protected  String status;
 
 	public String getStatus() {
@@ -207,9 +199,6 @@ public class Discount implements Serializable
 		this.status = status;
 	}
 
-	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -233,9 +222,6 @@ public class Discount implements Serializable
 		this.conditions = conditions;
 	}
 
-	/**
-	 * Complex type that contains content for a language specified by LocaleCode.
-	 */
 	protected  DiscountLocalizedContent content;
 
 	public DiscountLocalizedContent getContent() {
@@ -246,9 +232,6 @@ public class Discount implements Serializable
 		this.content = content;
 	}
 
-	/**
-	 * Targets represent the object, such as an item to apply discounts to(products or orders) or a view field for content. Targets are the dot notations that link to the source document property. For example, firstitem for the direct level or firstitem.seconditem.thirditem for a deeper property.
-	 */
 	protected  DiscountTarget target;
 
 	public DiscountTarget getTarget() {

@@ -24,9 +24,6 @@ public class ThirdPartyCredentialField implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * System-supplied API name required to communicate with the external payment processor.
-	 */
 	protected  String apiName;
 
 	public String getApiName() {
@@ -37,9 +34,6 @@ public class ThirdPartyCredentialField implements Serializable
 		this.apiName = apiName;
 	}
 
-	/**
-	 * The name that displays for the payment gateway or third-party credentials field. 
-	 */
 	protected  String displayName;
 
 	public String getDisplayName() {
@@ -76,9 +70,6 @@ public class ThirdPartyCredentialField implements Serializable
 		this.isSensitive = isSensitive;
 	}
 
-	/**
-	 * The value of a property, used by numerous objects within  including facets, attributes, products, localized content, metadata, capabilities ( and third-party), location inventory adjustment, and more. The value may be a string, integer, or double. Validation may be run against the entered and saved values depending on the object type.
-	 */
 	protected  String value;
 
 	public String getValue() {

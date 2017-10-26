@@ -23,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 public class PriceListClient {
 	
 	/**
-	 * Retrieves the details of the specified price list.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productruntime.PriceList> mozuClient=GetPriceListClient( priceListCode);
 	 * client.setBaseAddress(url);
@@ -40,7 +40,7 @@ public class PriceListClient {
 	}
 
 	/**
-	 * Retrieves the details of the specified price list.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productruntime.PriceList> mozuClient=GetPriceListClient( priceListCode,  responseFields);
 	 * client.setBaseAddress(url);
@@ -65,7 +65,7 @@ public class PriceListClient {
 	}
 
 	/**
-	 * Retrieves the details of a price list to which the specified customer resolves. This is primarly used when creating an offline order for a shopper.You can use this operation alongside custom Arc.js actions to alter the price list to which a shopper resolves.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productruntime.ResolvedPriceList> mozuClient=GetResolvedPriceListClient();
 	 * client.setBaseAddress(url);
@@ -81,7 +81,7 @@ public class PriceListClient {
 	}
 
 	/**
-	 * Retrieves the details of a price list to which the specified customer resolves. This is primarly used when creating an offline order for a shopper.You can use this operation alongside custom Arc.js actions to alter the price list to which a shopper resolves.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productruntime.ResolvedPriceList> mozuClient=GetResolvedPriceListClient( customerAccountId,  responseFields);
 	 * client.setBaseAddress(url);

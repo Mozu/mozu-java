@@ -35,7 +35,7 @@ public class ChangeMessageResource {
 
 	
 	/**
-	 * Retrieves the messages associated with the current shopper's cart.
+	 * 
 	 * <p><pre><code>
 	 *	ChangeMessage changemessage = new ChangeMessage();
 	 *	CartChangeMessageCollection cartChangeMessageCollection = changemessage.getMessages();
@@ -49,12 +49,12 @@ public class ChangeMessageResource {
 	}
 
 	/**
-	 * Retrieves the messages associated with the current shopper's cart.
+	 * 
 	 * <p><pre><code>
 	 *	ChangeMessage changemessage = new ChangeMessage();
 	 *	CartChangeMessageCollection cartChangeMessageCollection = changemessage.getMessages( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection
 	 */
@@ -68,7 +68,7 @@ public class ChangeMessageResource {
 	}
 
 	/**
-	 * Deletes all messages associated with the cart of the current shopper.
+	 * 
 	 * <p><pre><code>
 	 *	ChangeMessage changemessage = new ChangeMessage();
 	 *	changemessage.removeAllMessages();
@@ -85,7 +85,7 @@ public class ChangeMessageResource {
 	}
 
 	/**
-	 * Removes a single message associated with the cart of the current shopper.
+	 * 
 	 * <p><pre><code>
 	 *	ChangeMessage changemessage = new ChangeMessage();
 	 *	changemessage.removeMessage( messageId);

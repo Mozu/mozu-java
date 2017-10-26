@@ -25,7 +25,7 @@ import org.apache.commons.lang.StringUtils;
 public class FulfillmentActionClient {
 	
 	/**
-	 * Sets the fulfillment action to "Ship" or "PickUp". To ship an order or prepare it for in-store pickup, the order must have a customer name, the "Open" or "OpenAndProcessing" status. To ship the order, it must also have the full shipping address and shipping method. Shipping all packages or picking up all pickups for an order will complete a paid order.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=PerformFulfillmentActionClient( action,  orderId);
 	 * client.setBaseAddress(url);
@@ -44,7 +44,7 @@ public class FulfillmentActionClient {
 	}
 
 	/**
-	 * Sets the fulfillment action to "Ship" or "PickUp". To ship an order or prepare it for in-store pickup, the order must have a customer name, the "Open" or "OpenAndProcessing" status. To ship the order, it must also have the full shipping address and shipping method. Shipping all packages or picking up all pickups for an order will complete a paid order.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=PerformFulfillmentActionClient( action,  orderId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -72,7 +72,7 @@ public class FulfillmentActionClient {
 	}
 
 	/**
-	 * Resends an email with details about the package fulfillment to the shopper. 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=ResendPackageFulfillmentEmailClient( action,  orderId);
 	 * client.setBaseAddress(url);
@@ -91,7 +91,7 @@ public class FulfillmentActionClient {
 	}
 
 	/**
-	 * Resends an email with details about the package fulfillment to the shopper. 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=ResendPackageFulfillmentEmailClient( action,  orderId,  responseFields);
 	 * client.setBaseAddress(url);

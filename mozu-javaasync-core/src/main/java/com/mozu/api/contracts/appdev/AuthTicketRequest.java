@@ -21,9 +21,6 @@ public class AuthTicketRequest implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Alphanumeric string used for access tokens. This token refreshes access for accounts by generating a new developer or application account authentication ticket after an access token expires.
-	 */
 	protected  String refreshToken;
 
 	public String getRefreshToken() {

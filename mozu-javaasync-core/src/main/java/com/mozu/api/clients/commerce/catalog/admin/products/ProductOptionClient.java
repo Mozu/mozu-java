@@ -26,14 +26,14 @@ import com.mozu.api.DataViewMode;
 public class ProductOptionClient {
 	
 	/**
-	 * Retrieves a list of all option attributes configured for the product specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.productadmin.ProductOption>> mozuClient=GetOptionsClient(dataViewMode,  productCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ProductOption productOption = client.Result();
 	 * </code></pre></p>
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.ProductOption>>
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
 	 */
@@ -51,15 +51,15 @@ public class ProductOptionClient {
 	}
 
 	/**
-	 * Retrieves the details of an option attribute configuration for the specified product.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.ProductOption> mozuClient=GetOptionClient(dataViewMode,  productCode,  attributeFQN);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ProductOption productOption = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductOption>
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
 	 */
@@ -69,16 +69,16 @@ public class ProductOptionClient {
 	}
 
 	/**
-	 * Retrieves the details of an option attribute configuration for the specified product.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.ProductOption> mozuClient=GetOptionClient(dataViewMode,  productCode,  attributeFQN,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ProductOption productOption = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductOption>
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
 	 */
@@ -96,14 +96,14 @@ public class ProductOptionClient {
 	}
 
 	/**
-	 * Configures an option attribute for the product specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.ProductOption> mozuClient=AddOptionClient(dataViewMode,  productOption,  productCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ProductOption productOption = client.Result();
 	 * </code></pre></p>
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param productOption Properties of the product option to create such as attribute detail, fully qualified name, and list of product option values.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductOption>
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
@@ -115,15 +115,15 @@ public class ProductOptionClient {
 	}
 
 	/**
-	 * Configures an option attribute for the product specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.ProductOption> mozuClient=AddOptionClient(dataViewMode,  productOption,  productCode,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ProductOption productOption = client.Result();
 	 * </code></pre></p>
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param productOption Properties of the product option to create such as attribute detail, fully qualified name, and list of product option values.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductOption>
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
@@ -144,15 +144,15 @@ public class ProductOptionClient {
 	}
 
 	/**
-	 * Updates one or more properties of an option attribute configured for a product.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.ProductOption> mozuClient=UpdateOptionClient(dataViewMode,  productOption,  productCode,  attributeFQN);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ProductOption productOption = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param productOption Properties of the product option to create such as attribute detail, fully qualified name, and list of product option values.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductOption>
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
@@ -164,16 +164,16 @@ public class ProductOptionClient {
 	}
 
 	/**
-	 * Updates one or more properties of an option attribute configured for a product.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.ProductOption> mozuClient=UpdateOptionClient(dataViewMode,  productOption,  productCode,  attributeFQN,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ProductOption productOption = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param productOption Properties of the product option to create such as attribute detail, fully qualified name, and list of product option values.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductOption>
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
@@ -194,14 +194,14 @@ public class ProductOptionClient {
 	}
 
 	/**
-	 * Deletes the configuration of an option attribute for the product specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteOptionClient(dataViewMode,  productCode,  attributeFQN);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deleteOptionClient(com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN) throws Exception

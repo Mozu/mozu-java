@@ -37,7 +37,7 @@ public class ShipmentResource {
 
 	
 	/**
-	 * Retrieves the details of the order shipment specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	Shipment shipment = new Shipment();
 	 *	Shipment shipment = shipment.getShipment( orderId,  shipmentId);
@@ -53,7 +53,7 @@ public class ShipmentResource {
 	}
 
 	/**
-	 * Retrieves the details of the order shipment specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	Shipment shipment = new Shipment();
 	 *	CountDownLatch latch = shipment.getShipment( orderId,  shipmentId, callback );
@@ -70,13 +70,13 @@ public class ShipmentResource {
 	}
 
 	/**
-	 * Retrieves the details of the order shipment specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	Shipment shipment = new Shipment();
 	 *	Shipment shipment = shipment.getShipment( orderId,  shipmentId,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param shipmentId Unique identifier of the shipment to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Shipment
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Shipment
@@ -91,13 +91,13 @@ public class ShipmentResource {
 	}
 
 	/**
-	 * Retrieves the details of the order shipment specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	Shipment shipment = new Shipment();
 	 *	CountDownLatch latch = shipment.getShipment( orderId,  shipmentId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param shipmentId Unique identifier of the shipment to retrieve.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Shipment
@@ -112,7 +112,7 @@ public class ShipmentResource {
 	}
 
 	/**
-	 * Retrieves the available shipping methods applicable to the order. Typically used to display available shipping method options on the checkout page.
+	 * 
 	 * <p><pre><code>
 	 *	Shipment shipment = new Shipment();
 	 *	ShippingRate shippingRate = shipment.getAvailableShipmentMethods( orderId);
@@ -127,7 +127,7 @@ public class ShipmentResource {
 	}
 
 	/**
-	 * Retrieves the available shipping methods applicable to the order. Typically used to display available shipping method options on the checkout page.
+	 * 
 	 * <p><pre><code>
 	 *	Shipment shipment = new Shipment();
 	 *	CountDownLatch latch = shipment.getAvailableShipmentMethods( orderId, callback );
@@ -143,7 +143,7 @@ public class ShipmentResource {
 	}
 
 	/**
-	 * Retrieves the available shipping methods applicable to the order. Typically used to display available shipping method options on the checkout page.
+	 * 
 	 * <p><pre><code>
 	 *	Shipment shipment = new Shipment();
 	 *	ShippingRate shippingRate = shipment.getAvailableShipmentMethods( orderId,  draft);
@@ -163,7 +163,7 @@ public class ShipmentResource {
 	}
 
 	/**
-	 * Retrieves the available shipping methods applicable to the order. Typically used to display available shipping method options on the checkout page.
+	 * 
 	 * <p><pre><code>
 	 *	Shipment shipment = new Shipment();
 	 *	CountDownLatch latch = shipment.getAvailableShipmentMethods( orderId,  draft, callback );
@@ -183,7 +183,7 @@ public class ShipmentResource {
 	}
 
 	/**
-	 * Creates a shipment from one or more package associated with an order and assign a label and tracking number to an order shipment.
+	 * 
 	 * <p><pre><code>
 	 *	Shipment shipment = new Shipment();
 	 *	Package package = shipment.createPackageShipments( packageIds,  orderId);
@@ -204,7 +204,7 @@ public class ShipmentResource {
 	}
 
 	/**
-	 * Creates a shipment from one or more package associated with an order and assign a label and tracking number to an order shipment.
+	 * 
 	 * <p><pre><code>
 	 *	Shipment shipment = new Shipment();
 	 *	CountDownLatch latch = shipment.createPackageShipments( packageIds,  orderId, callback );
@@ -225,7 +225,7 @@ public class ShipmentResource {
 	}
 
 	/**
-	 * Deletes the shipment specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	Shipment shipment = new Shipment();
 	 *	shipment.deleteShipment( orderId,  shipmentId);

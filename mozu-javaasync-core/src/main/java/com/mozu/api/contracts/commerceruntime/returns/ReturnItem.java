@@ -28,7 +28,20 @@ public class ReturnItem implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
+	 * Specifies whether to exclude product extras when you return a product or bundle. For example, assume the following order items:* Product A (bundle item)* Product B (bundle item)* Product C (bundle item)* Product D (extra on bundle)* Product F (extra on product)If this property is , Products D or F are included when the bundle or Product E are added to a return. If this property is , Products D or F are not included unless added individually.
+	 */
+	protected  Boolean excludeProductExtras;
+
+	public Boolean getExcludeProductExtras() {
+		return this.excludeProductExtras;
+	}
+
+	public void setExcludeProductExtras(Boolean excludeProductExtras) {
+		this.excludeProductExtras = excludeProductExtras;
+	}
+
+	/**
+	 * Unique identifier of the source property, such as a catalog, discount, order, or email template.For a product field it will be the name of the field.For a category ID, must be a positive integer not greater than 2000000. By default,  auto-generates a category ID when categories are created. If you want to specify an ID during creation (which preserves category link relationships when migrating tenant data from one sandbox to another), you must also include the  query string in the endpoint. For example, . Then, use the  property to specify the desired category ID.For a product attribute it will be the Attribute FQN.For a document, the ID must be specified as a 32 character, case-insensitive, alphanumeric string. You can specify the ID as 32 sequential characters or as groups separated by dashes in the format 8-4-4-4-12. For example, or.For email templates, the ID must be one of the following values:			
 	 */
 	protected  String id;
 
@@ -40,9 +53,6 @@ public class ReturnItem implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * Unique identifier of the order item associated with a validation message, order, or return.
-	 */
 	protected  String orderItemId;
 
 	public String getOrderItemId() {
@@ -79,9 +89,6 @@ public class ReturnItem implements Serializable
 		this.orderLineId = orderLineId;
 	}
 
-	/**
-	 * The total value of the product returned to the merchant for accounting purposes, calculated by multiplying the cost of the item by its quantity returned.
-	 */
 	protected  Double productLossAmount;
 
 	public Double getProductLossAmount() {
@@ -92,9 +99,6 @@ public class ReturnItem implements Serializable
 		this.productLossAmount = productLossAmount;
 	}
 
-	/**
-	 * The total tax amount levied on the product loss amount.
-	 */
 	protected  Double productLossTaxAmount;
 
 	public Double getProductLossTaxAmount() {
@@ -105,9 +109,6 @@ public class ReturnItem implements Serializable
 		this.productLossTaxAmount = productLossTaxAmount;
 	}
 
-	/**
-	 * The actual quantity received for the return item.
-	 */
 	protected  Integer quantityReceived;
 
 	public Integer getQuantityReceived() {
@@ -118,6 +119,9 @@ public class ReturnItem implements Serializable
 		this.quantityReceived = quantityReceived;
 	}
 
+	/**
+	 * The quantity of the given line item that will be replaced.
+	 */
 	protected  Integer quantityReplaced;
 
 	public Integer getQuantityReplaced() {
@@ -128,9 +132,6 @@ public class ReturnItem implements Serializable
 		this.quantityReplaced = quantityReplaced;
 	}
 
-	/**
-	 * The quantity of returned items that can be returned to active product stock.
-	 */
 	protected  Integer quantityRestockable;
 
 	public Integer getQuantityRestockable() {
@@ -141,9 +142,6 @@ public class ReturnItem implements Serializable
 		this.quantityRestockable = quantityRestockable;
 	}
 
-	/**
-	 * The quantity of the item shipped to the shopper in the event of a return item replacement.
-	 */
 	protected  Integer quantityShipped;
 
 	public Integer getQuantityShipped() {
@@ -154,6 +152,9 @@ public class ReturnItem implements Serializable
 		this.quantityShipped = quantityShipped;
 	}
 
+	/**
+	 * The status that indicates whether the shopper has returned the item. The accepted values are , , or .
+	 */
 	protected  String receiveStatus;
 
 	public String getReceiveStatus() {
@@ -164,6 +165,9 @@ public class ReturnItem implements Serializable
 		this.receiveStatus = receiveStatus;
 	}
 
+	/**
+	 * The amount of the refund.
+	 */
 	protected  Double refundAmount;
 
 	public Double getRefundAmount() {
@@ -174,6 +178,9 @@ public class ReturnItem implements Serializable
 		this.refundAmount = refundAmount;
 	}
 
+	/**
+	 * The status of the refund for the item. The accepted values are  if the shopper only wants a replacement or  if either a partial or full refund is applied to the item.
+	 */
 	protected  String refundStatus;
 
 	public String getRefundStatus() {
@@ -184,6 +191,9 @@ public class ReturnItem implements Serializable
 		this.refundStatus = refundStatus;
 	}
 
+	/**
+	 * The status of the replacement order for the item. The accepted values are  if there is no replacement order or  if a replacement order exits.
+	 */
 	protected  String replaceStatus;
 
 	public String getReplaceStatus() {
@@ -194,6 +204,9 @@ public class ReturnItem implements Serializable
 		this.replaceStatus = replaceStatus;
 	}
 
+	/**
+	 * A Boolean that indicates whether the item requires the shopper to return the item.
+	 */
 	protected  Boolean returnNotRequired;
 
 	public Boolean getReturnNotRequired() {
@@ -204,6 +217,9 @@ public class ReturnItem implements Serializable
 		this.returnNotRequired = returnNotRequired;
 	}
 
+	/**
+	 * The type of the return for the item. Either  or .
+	 */
 	protected  String returnType;
 
 	public String getReturnType() {
@@ -214,9 +230,6 @@ public class ReturnItem implements Serializable
 		this.returnType = returnType;
 	}
 
-	/**
-	 * The total value of shipping the returned product to the merchant for accounting purposes, calculated by multiplying the shipping cost of the item by its quantity returned.
-	 */
 	protected  Double shippingLossAmount;
 
 	public Double getShippingLossAmount() {
@@ -227,9 +240,6 @@ public class ReturnItem implements Serializable
 		this.shippingLossAmount = shippingLossAmount;
 	}
 
-	/**
-	 * The total tax amount levied on the shipping loss amount.
-	 */
 	protected  Double shippingLossTaxAmount;
 
 	public Double getShippingLossTaxAmount() {
@@ -240,6 +250,9 @@ public class ReturnItem implements Serializable
 		this.shippingLossTaxAmount = shippingLossTaxAmount;
 	}
 
+	/**
+	 * The total cost without shipping and handling applied.
+	 */
 	protected  Double totalWithoutWeightedShippingAndHandling;
 
 	public Double getTotalWithoutWeightedShippingAndHandling() {
@@ -250,6 +263,9 @@ public class ReturnItem implements Serializable
 		this.totalWithoutWeightedShippingAndHandling = totalWithoutWeightedShippingAndHandling;
 	}
 
+	/**
+	 * The total cost with shipping and handling applied.
+	 */
 	protected  Double totalWithWeightedShippingAndHandling;
 
 	public Double getTotalWithWeightedShippingAndHandling() {
@@ -271,9 +287,6 @@ public class ReturnItem implements Serializable
 		this.bundledProducts = bundledProducts;
 	}
 
-	/**
-	 * Paged list collection of note content for objects including customers, orders, and returns. 
-	 */
 	protected List<OrderNote> notes;
 	public List<OrderNote> getNotes() {
 		return this.notes;
@@ -282,9 +295,6 @@ public class ReturnItem implements Serializable
 		this.notes = notes;
 	}
 
-	/**
-	 * The properties of a product, referenced and used by carts, orders, wish lists, and returns.
-	 */
 	protected  Product product;
 
 	public Product getProduct() {
@@ -295,9 +305,6 @@ public class ReturnItem implements Serializable
 		this.product = product;
 	}
 
-	/**
-	 * The list of return reasons for the item and the quantity associated with each return reason.
-	 */
 	protected List<ReturnReason> reasons;
 	public List<ReturnReason> getReasons() {
 		return this.reasons;

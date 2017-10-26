@@ -35,7 +35,7 @@ public class ExtendedPropertyResource {
 
 	
 	/**
-	 * Retrieves a list of cart extended properties specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	ExtendedProperty extendedProperty = extendedproperty.getExtendedProperties();
@@ -53,7 +53,7 @@ public class ExtendedPropertyResource {
 	}
 
 	/**
-	 * Adds one or more specified extended properties to the carts extended properties collection.
+	 * 
 	 * <p><pre><code>
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	ExtendedProperty extendedProperty = extendedproperty.addExtendedProperties( extendedProperties);
@@ -73,7 +73,7 @@ public class ExtendedPropertyResource {
 	}
 
 	/**
-	 * Updates one or more details of the extended property specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	ExtendedProperty extendedProperty = extendedproperty.updateExtendedProperty( extendedProperty,  key);
@@ -90,7 +90,7 @@ public class ExtendedPropertyResource {
 	}
 
 	/**
-	 * Updates one or more details of the extended property specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	ExtendedProperty extendedProperty = extendedproperty.updateExtendedProperty( extendedProperty,  key,  upsert,  responseFields);
@@ -113,7 +113,7 @@ public class ExtendedPropertyResource {
 	}
 
 	/**
-	 * Updates one or more details of the extended properties specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	ExtendedProperty extendedProperty = extendedproperty.updateExtendedProperties( extendedProperties);
@@ -129,7 +129,7 @@ public class ExtendedPropertyResource {
 	}
 
 	/**
-	 * Updates one or more details of the extended properties specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	ExtendedProperty extendedProperty = extendedproperty.updateExtendedProperties( extendedProperties,  upsert);
@@ -150,7 +150,7 @@ public class ExtendedPropertyResource {
 	}
 
 	/**
-	 * Deletes the extended properties cart extended properties collection.
+	 * 
 	 * <p><pre><code>
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	extendedproperty.deleteExtendedProperties( keys);
@@ -169,7 +169,7 @@ public class ExtendedPropertyResource {
 	}
 
 	/**
-	 * Deletes a specific extended property from the cart extended property collection.
+	 * 
 	 * <p><pre><code>
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	extendedproperty.deleteExtendedProperty( key);

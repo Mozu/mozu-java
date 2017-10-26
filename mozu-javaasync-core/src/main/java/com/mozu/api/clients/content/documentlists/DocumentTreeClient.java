@@ -26,7 +26,7 @@ import com.mozu.api.DataViewMode;
 public class DocumentTreeClient {
 	
 	/**
-	 * Retrieve the content associated with the document, such as a product image or PDF specifications file.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<java.io.InputStream> mozuClient=GetTreeDocumentContentClient(dataViewMode,  documentListName,  documentName);
 	 * client.setBaseAddress(url);
@@ -52,7 +52,7 @@ public class DocumentTreeClient {
 	}
 
 	/**
-	 * Performs transformations on a document. For example, resizing an image.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<java.io.InputStream> mozuClient=TransformTreeDocumentContentClient( documentListName,  documentName);
 	 * client.setBaseAddress(url);
@@ -70,7 +70,7 @@ public class DocumentTreeClient {
 	}
 
 	/**
-	 * Performs transformations on a document. For example, resizing an image.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<java.io.InputStream> mozuClient=TransformTreeDocumentContentClient( documentListName,  documentName,  width,  height,  max,  maxWidth,  maxHeight,  crop,  quality);
 	 * client.setBaseAddress(url);
@@ -102,7 +102,7 @@ public class DocumentTreeClient {
 	}
 
 	/**
-	 * Retrieves a document based on its document list and folder path in the document hierarchy.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.Document> mozuClient=GetTreeDocumentClient(dataViewMode,  documentListName,  documentName);
 	 * client.setBaseAddress(url);
@@ -120,7 +120,7 @@ public class DocumentTreeClient {
 	}
 
 	/**
-	 * Retrieves a document based on its document list and folder path in the document hierarchy.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.Document> mozuClient=GetTreeDocumentClient(dataViewMode,  documentListName,  documentName,  includeInactive,  responseFields);
 	 * client.setBaseAddress(url);
@@ -130,7 +130,7 @@ public class DocumentTreeClient {
 	 * @param documentListName Name of content documentListName to delete
 	 * @param documentName The name of the document in the site.
 	 * @param includeInactive Include inactive content.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.Document>
 	 * @see com.mozu.api.contracts.content.Document
 	 */
@@ -148,7 +148,7 @@ public class DocumentTreeClient {
 	}
 
 	/**
-	 * Updates the binary data or content associated with a document, such as a product image or PDF specifications file, by supplying the document name.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=UpdateTreeDocumentContentClient( stream,  documentListName,  documentName,  contentType);
 	 * client.setBaseAddress(url);
@@ -175,7 +175,7 @@ public class DocumentTreeClient {
 	}
 
 	/**
-	 * Deletes the content associated with a document, such as a product image or PDF specifications file.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteTreeDocumentContentClient( stream,  documentListName,  documentName,  contentType);
 	 * client.setBaseAddress(url);

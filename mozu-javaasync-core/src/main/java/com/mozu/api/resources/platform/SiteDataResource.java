@@ -20,7 +20,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the site data resource to store site-level information required for a third-party application in the Mozu database.
+ * Use the site data resource to store site-level information required for a third-party application in the  database.
  * </summary>
  */
 public class SiteDataResource {
@@ -37,7 +37,7 @@ public class SiteDataResource {
 
 	
 	/**
-	 * Retrieves the value of a record in the Mozu database.
+	 * 
 	 * <p><pre><code>
 	 *	SiteData sitedata = new SiteData();
 	 *	string string = sitedata.getDBValue( dbEntryQuery);
@@ -52,7 +52,7 @@ public class SiteDataResource {
 	}
 
 	/**
-	 * Retrieves the value of a record in the Mozu database.
+	 * 
 	 * <p><pre><code>
 	 *	SiteData sitedata = new SiteData();
 	 *	CountDownLatch latch = sitedata.getDBValue( dbEntryQuery, callback );
@@ -68,13 +68,13 @@ public class SiteDataResource {
 	}
 
 	/**
-	 * Retrieves the value of a record in the Mozu database.
+	 * 
 	 * <p><pre><code>
 	 *	SiteData sitedata = new SiteData();
 	 *	string string = sitedata.getDBValue( dbEntryQuery,  responseFields);
 	 * </code></pre></p>
 	 * @param dbEntryQuery The database entry string to create.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return string
 	 * @see string
 	 */
@@ -88,13 +88,13 @@ public class SiteDataResource {
 	}
 
 	/**
-	 * Retrieves the value of a record in the Mozu database.
+	 * 
 	 * <p><pre><code>
 	 *	SiteData sitedata = new SiteData();
 	 *	CountDownLatch latch = sitedata.getDBValue( dbEntryQuery,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param dbEntryQuery The database entry string to create.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return string
 	 * @see string
@@ -108,7 +108,7 @@ public class SiteDataResource {
 	}
 
 	/**
-	 * Creates a new record in the Mozu database based on the information supplied in the request.
+	 * 
 	 * <p><pre><code>
 	 *	SiteData sitedata = new SiteData();
 	 *	sitedata.createDBValue( value,  dbEntryQuery);
@@ -128,7 +128,7 @@ public class SiteDataResource {
 	}
 
 	/**
-	 * Updates a record in the Mozu database based on the information supplied in the request.
+	 * 
 	 * <p><pre><code>
 	 *	SiteData sitedata = new SiteData();
 	 *	sitedata.updateDBValue( value,  dbEntryQuery);
@@ -148,7 +148,7 @@ public class SiteDataResource {
 	}
 
 	/**
-	 * Removes a previously defined record in the Mozu database.
+	 * 
 	 * <p><pre><code>
 	 *	SiteData sitedata = new SiteData();
 	 *	sitedata.deleteDBValue( dbEntryQuery);

@@ -32,7 +32,7 @@ public class PackageUrl
 	/**
 	 * Get Resource Url for GetPackage
 	 * @param packageId Unique identifier of the package for which to retrieve the label.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @return   String Resource Url
 	 */
@@ -47,7 +47,7 @@ public class PackageUrl
 
 	/**
 	 * Get Resource Url for CreatePackage
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @return   String Resource Url
 	 */
@@ -62,7 +62,7 @@ public class PackageUrl
 	/**
 	 * Get Resource Url for UpdatePackage
 	 * @param packageId Unique identifier of the package for which to retrieve the label.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @return   String Resource Url
 	 */

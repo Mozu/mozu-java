@@ -21,9 +21,6 @@ public class Country implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The 2-letter geographic code representing the country for the physical or mailing address. Currently limited to the US.
-	 */
 	protected  String code;
 
 	public String getCode() {
@@ -34,9 +31,6 @@ public class Country implements Serializable
 		this.code = code;
 	}
 
-	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
-	 */
 	protected  String name;
 
 	public String getName() {

@@ -24,9 +24,6 @@ public class LocationUsage implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * List of location codes to associate with the location usage. At this time, you can only specify one location code in the request for the direct ship location usage type.
-	 */
 	protected List<String> locationCodes;
 	public List<String> getLocationCodes() {
 		return this.locationCodes;
@@ -35,9 +32,6 @@ public class LocationUsage implements Serializable
 		this.locationCodes = locationCodes;
 	}
 
-	/**
-	 * List of location type codes associated with the location usage. The location service identifies the locations of the designated type. The in-store pickup (SP) and store finder (storeFinder) location usage types allow specification or multiple location type codes.
-	 */
 	protected List<String> locationTypeCodes;
 	public List<String> getLocationTypeCodes() {
 		return this.locationTypeCodes;
@@ -46,9 +40,6 @@ public class LocationUsage implements Serializable
 		this.locationTypeCodes = locationTypeCodes;
 	}
 
-	/**
-	 * The system-defined code used to identify the location usage type, which is "DS" for direct ship, "SP" for in-store pickup, or "storeFinder".
-	 */
 	protected  String locationUsageTypeCode;
 
 	public String getLocationUsageTypeCode() {

@@ -37,7 +37,7 @@ public class LocationUsageResource {
 
 	
 	/**
-	 * Retrieves the configured site location usages for the location usage code specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	LocationUsage locationusage = new LocationUsage();
 	 *	LocationUsageCollection locationUsageCollection = locationusage.getLocationUsages();
@@ -51,7 +51,7 @@ public class LocationUsageResource {
 	}
 
 	/**
-	 * Retrieves the configured site location usages for the location usage code specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	LocationUsage locationusage = new LocationUsage();
 	 *	CountDownLatch latch = locationusage.getLocationUsages( callback );
@@ -66,12 +66,12 @@ public class LocationUsageResource {
 	}
 
 	/**
-	 * Retrieves the configured site location usages for the location usage code specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	LocationUsage locationusage = new LocationUsage();
 	 *	LocationUsageCollection locationUsageCollection = locationusage.getLocationUsages( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.location.LocationUsageCollection
 	 * @see com.mozu.api.contracts.location.LocationUsageCollection
 	 */
@@ -85,12 +85,12 @@ public class LocationUsageResource {
 	}
 
 	/**
-	 * Retrieves the configured site location usages for the location usage code specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	LocationUsage locationusage = new LocationUsage();
 	 *	CountDownLatch latch = locationusage.getLocationUsages( responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.location.LocationUsageCollection
 	 * @see com.mozu.api.contracts.location.LocationUsageCollection
@@ -104,7 +104,7 @@ public class LocationUsageResource {
 	}
 
 	/**
-	 * Retrieves the location usages for the site specified in the request header.
+	 * 
 	 * <p><pre><code>
 	 *	LocationUsage locationusage = new LocationUsage();
 	 *	LocationUsage locationUsage = locationusage.getLocationUsage( code);
@@ -119,7 +119,7 @@ public class LocationUsageResource {
 	}
 
 	/**
-	 * Retrieves the location usages for the site specified in the request header.
+	 * 
 	 * <p><pre><code>
 	 *	LocationUsage locationusage = new LocationUsage();
 	 *	CountDownLatch latch = locationusage.getLocationUsage( code, callback );
@@ -135,13 +135,13 @@ public class LocationUsageResource {
 	}
 
 	/**
-	 * Retrieves the location usages for the site specified in the request header.
+	 * 
 	 * <p><pre><code>
 	 *	LocationUsage locationusage = new LocationUsage();
 	 *	LocationUsage locationUsage = locationusage.getLocationUsage( code,  responseFields);
 	 * </code></pre></p>
 	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.location.LocationUsage
 	 * @see com.mozu.api.contracts.location.LocationUsage
 	 */
@@ -155,13 +155,13 @@ public class LocationUsageResource {
 	}
 
 	/**
-	 * Retrieves the location usages for the site specified in the request header.
+	 * 
 	 * <p><pre><code>
 	 *	LocationUsage locationusage = new LocationUsage();
 	 *	CountDownLatch latch = locationusage.getLocationUsage( code,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.location.LocationUsage
 	 * @see com.mozu.api.contracts.location.LocationUsage
@@ -175,7 +175,7 @@ public class LocationUsageResource {
 	}
 
 	/**
-	 * Updates the location usage for the site based on the location usage code specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	LocationUsage locationusage = new LocationUsage();
 	 *	LocationUsage locationUsage = locationusage.updateLocationUsage( usage,  code);
@@ -192,7 +192,7 @@ public class LocationUsageResource {
 	}
 
 	/**
-	 * Updates the location usage for the site based on the location usage code specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	LocationUsage locationusage = new LocationUsage();
 	 *	CountDownLatch latch = locationusage.updateLocationUsage( usage,  code, callback );
@@ -210,13 +210,13 @@ public class LocationUsageResource {
 	}
 
 	/**
-	 * Updates the location usage for the site based on the location usage code specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	LocationUsage locationusage = new LocationUsage();
 	 *	LocationUsage locationUsage = locationusage.updateLocationUsage( usage,  code,  responseFields);
 	 * </code></pre></p>
 	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param usage Configuration properties of a location usage type for a specified site. The direct ship location usage type consists of a single location that represents location that supports direct ship (DS) fulfillment. The in-store pickup location usage type consists of a list of location types that represent locations that support in-store pickup (SP) fulfillment. The store finder location usage type consists of a list of location codes, location types, or both.
 	 * @return com.mozu.api.contracts.location.LocationUsage
 	 * @see com.mozu.api.contracts.location.LocationUsage
@@ -232,13 +232,13 @@ public class LocationUsageResource {
 	}
 
 	/**
-	 * Updates the location usage for the site based on the location usage code specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	LocationUsage locationusage = new LocationUsage();
 	 *	CountDownLatch latch = locationusage.updateLocationUsage( usage,  code,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param usage Configuration properties of a location usage type for a specified site. The direct ship location usage type consists of a single location that represents location that supports direct ship (DS) fulfillment. The in-store pickup location usage type consists of a list of location types that represent locations that support in-store pickup (SP) fulfillment. The store finder location usage type consists of a list of location codes, location types, or both.
 	 * @return com.mozu.api.contracts.location.LocationUsage

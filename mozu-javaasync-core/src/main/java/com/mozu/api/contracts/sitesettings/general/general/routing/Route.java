@@ -24,7 +24,7 @@ public class Route implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Mozu.SiteSettings.General.Contracts.General.Routing.Route canonical ApiTypeMember DOCUMENT_HERE 
+	 * When true, specifies that the route is a canonical route.
 	 */
 	protected  Boolean canonical;
 
@@ -37,7 +37,7 @@ public class Route implements Serializable
 	}
 
 	/**
-	 * Mozu.SiteSettings.General.Contracts.General.Routing.Route defaults ApiTypeMember DOCUMENT_HERE 
+	 * An array of key-value pairs that provide default values for required route parameters.
 	 */
 	public HashMap<String,Object> defaults;
 	public HashMap<String,Object> getDefaults() {
@@ -48,7 +48,7 @@ public class Route implements Serializable
 	}
 
 	/**
-	 * Mozu.SiteSettings.General.Contracts.General.Routing.Route functionId ApiTypeMember DOCUMENT_HERE 
+	 * For Arc.js routes, specifies the Arc.js function name to create a route to. For example:
 	 */
 	protected  String functionId;
 
@@ -61,7 +61,7 @@ public class Route implements Serializable
 	}
 
 	/**
-	 * Mozu.SiteSettings.General.Contracts.General.Routing.Route internalRoute ApiTypeMember DOCUMENT_HERE 
+	 * Specifies the internal route to use for a particular URL template. For example, the "ProductDetails" internal route routes matching URLs to a product page.
 	 */
 	protected  String internalRoute;
 
@@ -74,7 +74,7 @@ public class Route implements Serializable
 	}
 
 	/**
-	 * Mozu.SiteSettings.General.Contracts.General.Routing.Route mappings ApiTypeMember DOCUMENT_HERE 
+	 * The list of mappings that a particular route uses.
 	 */
 	public HashMap<String,List<String>> mappings;
 	public HashMap<String,List<String>> getMappings() {
@@ -85,7 +85,7 @@ public class Route implements Serializable
 	}
 
 	/**
-	 * Mozu.SiteSettings.General.Contracts.General.Routing.Route template ApiTypeMember DOCUMENT_HERE 
+	 * Specifies the pattern of URL constants, variables, and segments that result in a match for a particular route.
 	 */
 	protected  String template;
 
@@ -98,7 +98,7 @@ public class Route implements Serializable
 	}
 
 	/**
-	 * Mozu.SiteSettings.General.Contracts.General.Routing.Route urlScheme ApiTypeMember DOCUMENT_HERE 
+	 * Specifies whether a custom route uses an  or  protocol. This allows you to set encryption on a route generated from a non-secure request, or vice-versa.
 	 */
 	protected  String urlScheme;
 
@@ -111,7 +111,7 @@ public class Route implements Serializable
 	}
 
 	/**
-	 * Mozu.SiteSettings.General.Contracts.General.Routing.Route validators ApiTypeMember DOCUMENT_HERE 
+	 * Specifies the validators that a particular route uses.
 	 */
 	public HashMap<String,List<String>> validators;
 	public HashMap<String,List<String>> getValidators() {

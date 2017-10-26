@@ -35,7 +35,7 @@ public class CredentialStoreEntryResource {
 
 	
 	/**
-	 * Encrypts and stores data contained in the  JSON object. You can decrypt and access the secured data using an Arc.js application, as described in the Arc.js [Programming Patterns](https://www.mozu.com/docs/developer/arcjs-guides/programming-patterns.htm#securely_store_and_access_sensitive_data) topic.
+	 * 
 	 * <p><pre><code>
 	 *	CredentialStoreEntry credentialstoreentry = new CredentialStoreEntry();
 	 *	credentialstoreentry.storeCredentials( credentials);

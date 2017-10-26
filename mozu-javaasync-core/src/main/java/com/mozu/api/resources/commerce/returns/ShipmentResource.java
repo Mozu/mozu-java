@@ -37,7 +37,7 @@ public class ShipmentResource {
 
 	
 	/**
-	 * Retrieves the details of the specified return replacement shipment.
+	 * 
 	 * <p><pre><code>
 	 *	Shipment shipment = new Shipment();
 	 *	Shipment shipment = shipment.getShipment( returnId,  shipmentId);
@@ -53,7 +53,7 @@ public class ShipmentResource {
 	}
 
 	/**
-	 * Retrieves the details of the specified return replacement shipment.
+	 * 
 	 * <p><pre><code>
 	 *	Shipment shipment = new Shipment();
 	 *	CountDownLatch latch = shipment.getShipment( returnId,  shipmentId, callback );
@@ -70,12 +70,12 @@ public class ShipmentResource {
 	}
 
 	/**
-	 * Retrieves the details of the specified return replacement shipment.
+	 * 
 	 * <p><pre><code>
 	 *	Shipment shipment = new Shipment();
 	 *	Shipment shipment = shipment.getShipment( returnId,  shipmentId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @param shipmentId Unique identifier of the shipment to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Shipment
@@ -91,12 +91,12 @@ public class ShipmentResource {
 	}
 
 	/**
-	 * Retrieves the details of the specified return replacement shipment.
+	 * 
 	 * <p><pre><code>
 	 *	Shipment shipment = new Shipment();
 	 *	CountDownLatch latch = shipment.getShipment( returnId,  shipmentId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @param shipmentId Unique identifier of the shipment to retrieve.
 	 * @param  callback callback handler for asynchronous operations
@@ -112,7 +112,7 @@ public class ShipmentResource {
 	}
 
 	/**
-	 * Creates a shipment from one or more packages associated with a return replacement.
+	 * 
 	 * <p><pre><code>
 	 *	Shipment shipment = new Shipment();
 	 *	Package package = shipment.createPackageShipments( packageIds,  returnId);
@@ -133,7 +133,7 @@ public class ShipmentResource {
 	}
 
 	/**
-	 * Creates a shipment from one or more packages associated with a return replacement.
+	 * 
 	 * <p><pre><code>
 	 *	Shipment shipment = new Shipment();
 	 *	CountDownLatch latch = shipment.createPackageShipments( packageIds,  returnId, callback );
@@ -154,7 +154,7 @@ public class ShipmentResource {
 	}
 
 	/**
-	 * Deletes a shipment for a return replacement.
+	 * 
 	 * <p><pre><code>
 	 *	Shipment shipment = new Shipment();
 	 *	shipment.deleteShipment( returnId,  shipmentId);

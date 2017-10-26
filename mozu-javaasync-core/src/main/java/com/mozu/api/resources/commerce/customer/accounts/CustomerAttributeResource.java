@@ -37,13 +37,13 @@ public class CustomerAttributeResource {
 
 	
 	/**
-	 * Retrieves the contents of an attribute associated with the specified customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAttribute customerattribute = new CustomerAttribute();
 	 *	CustomerAttribute customerAttribute = customerattribute.getAccountAttribute( accountId,  attributeFQN);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @return com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
 	 */
@@ -53,13 +53,13 @@ public class CustomerAttributeResource {
 	}
 
 	/**
-	 * Retrieves the contents of an attribute associated with the specified customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAttribute customerattribute = new CustomerAttribute();
 	 *	CountDownLatch latch = customerattribute.getAccountAttribute( accountId,  attributeFQN, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
@@ -70,14 +70,14 @@ public class CustomerAttributeResource {
 	}
 
 	/**
-	 * Retrieves the contents of an attribute associated with the specified customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAttribute customerattribute = new CustomerAttribute();
 	 *	CustomerAttribute customerAttribute = customerattribute.getAccountAttribute( accountId,  attributeFQN,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
 	 */
@@ -91,14 +91,14 @@ public class CustomerAttributeResource {
 	}
 
 	/**
-	 * Retrieves the contents of an attribute associated with the specified customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAttribute customerattribute = new CustomerAttribute();
 	 *	CountDownLatch latch = customerattribute.getAccountAttribute( accountId,  attributeFQN,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
@@ -112,7 +112,7 @@ public class CustomerAttributeResource {
 	}
 
 	/**
-	 * Retrieves the list of customer account attributes.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAttribute customerattribute = new CustomerAttribute();
 	 *	CustomerAttributeCollection customerAttributeCollection = customerattribute.getAccountAttributes( accountId);
@@ -127,7 +127,7 @@ public class CustomerAttributeResource {
 	}
 
 	/**
-	 * Retrieves the list of customer account attributes.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAttribute customerattribute = new CustomerAttribute();
 	 *	CountDownLatch latch = customerattribute.getAccountAttributes( accountId, callback );
@@ -143,17 +143,17 @@ public class CustomerAttributeResource {
 	}
 
 	/**
-	 * Retrieves the list of customer account attributes.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAttribute customerattribute = new CustomerAttribute();
 	 *	CustomerAttributeCollection customerAttributeCollection = customerattribute.getAccountAttributes( accountId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param filter 
-	 * @param pageSize 
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return com.mozu.api.contracts.customer.CustomerAttributeCollection
 	 * @see com.mozu.api.contracts.customer.CustomerAttributeCollection
 	 */
@@ -167,17 +167,17 @@ public class CustomerAttributeResource {
 	}
 
 	/**
-	 * Retrieves the list of customer account attributes.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAttribute customerattribute = new CustomerAttribute();
 	 *	CountDownLatch latch = customerattribute.getAccountAttributes( accountId,  startIndex,  pageSize,  sortBy,  filter,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param filter 
-	 * @param pageSize 
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.CustomerAttributeCollection
 	 * @see com.mozu.api.contracts.customer.CustomerAttributeCollection
@@ -191,7 +191,7 @@ public class CustomerAttributeResource {
 	}
 
 	/**
-	 * Applies a defined attribute to the customer account specified in the request and assigns a value to the customer attribute.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAttribute customerattribute = new CustomerAttribute();
 	 *	CustomerAttribute customerAttribute = customerattribute.addAccountAttribute( attribute,  accountId);
@@ -208,7 +208,7 @@ public class CustomerAttributeResource {
 	}
 
 	/**
-	 * Applies a defined attribute to the customer account specified in the request and assigns a value to the customer attribute.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAttribute customerattribute = new CustomerAttribute();
 	 *	CountDownLatch latch = customerattribute.addAccountAttribute( attribute,  accountId, callback );
@@ -226,13 +226,13 @@ public class CustomerAttributeResource {
 	}
 
 	/**
-	 * Applies a defined attribute to the customer account specified in the request and assigns a value to the customer attribute.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAttribute customerattribute = new CustomerAttribute();
 	 *	CustomerAttribute customerAttribute = customerattribute.addAccountAttribute( attribute,  accountId,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param attribute Properties of an attribute associated with a customer account.
 	 * @return com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
@@ -248,13 +248,13 @@ public class CustomerAttributeResource {
 	}
 
 	/**
-	 * Applies a defined attribute to the customer account specified in the request and assigns a value to the customer attribute.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAttribute customerattribute = new CustomerAttribute();
 	 *	CountDownLatch latch = customerattribute.addAccountAttribute( attribute,  accountId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param attribute Properties of an attribute associated with a customer account.
 	 * @return com.mozu.api.contracts.customer.CustomerAttribute
@@ -270,13 +270,13 @@ public class CustomerAttributeResource {
 	}
 
 	/**
-	 * Updates one or more details of a customer account attribute.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAttribute customerattribute = new CustomerAttribute();
 	 *	CustomerAttribute customerAttribute = customerattribute.updateAccountAttribute( attribute,  accountId,  attributeFQN);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param attribute Properties of an attribute associated with a customer account.
 	 * @return com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
@@ -288,13 +288,13 @@ public class CustomerAttributeResource {
 	}
 
 	/**
-	 * Updates one or more details of a customer account attribute.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAttribute customerattribute = new CustomerAttribute();
 	 *	CountDownLatch latch = customerattribute.updateAccountAttribute( attribute,  accountId,  attributeFQN, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param attribute Properties of an attribute associated with a customer account.
 	 * @return com.mozu.api.contracts.customer.CustomerAttribute
@@ -307,14 +307,14 @@ public class CustomerAttributeResource {
 	}
 
 	/**
-	 * Updates one or more details of a customer account attribute.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAttribute customerattribute = new CustomerAttribute();
 	 *	CustomerAttribute customerAttribute = customerattribute.updateAccountAttribute( attribute,  accountId,  attributeFQN,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param attribute Properties of an attribute associated with a customer account.
 	 * @return com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
@@ -330,14 +330,14 @@ public class CustomerAttributeResource {
 	}
 
 	/**
-	 * Updates one or more details of a customer account attribute.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAttribute customerattribute = new CustomerAttribute();
 	 *	CountDownLatch latch = customerattribute.updateAccountAttribute( attribute,  accountId,  attributeFQN,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param attribute Properties of an attribute associated with a customer account.
 	 * @return com.mozu.api.contracts.customer.CustomerAttribute
@@ -353,13 +353,13 @@ public class CustomerAttributeResource {
 	}
 
 	/**
-	 * Removes the attribute specified in the request from the customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAttribute customerattribute = new CustomerAttribute();
 	 *	customerattribute.deleteAccountAttribute( accountId,  attributeFQN);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @return 
 	 */
 	public void deleteAccountAttribute(Integer accountId, String attributeFQN) throws Exception

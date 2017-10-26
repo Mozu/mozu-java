@@ -23,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 public class SecureAppDataClient {
 	
 	/**
-	 * platform-secureappdata Get GetDBValue description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.fasterxml.jackson.databind.JsonNode> mozuClient=GetDBValueClient( appKeyId,  dbEntryQuery);
 	 * client.setBaseAddress(url);
@@ -41,7 +41,7 @@ public class SecureAppDataClient {
 	}
 
 	/**
-	 * platform-secureappdata Get GetDBValue description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.fasterxml.jackson.databind.JsonNode> mozuClient=GetDBValueClient( appKeyId,  dbEntryQuery,  responseFields);
 	 * client.setBaseAddress(url);
@@ -67,7 +67,7 @@ public class SecureAppDataClient {
 	}
 
 	/**
-	 * platform-secureappdata Post CreateDBValue description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=CreateDBValueClient( value,  appKeyId,  dbEntryQuery);
 	 * client.setBaseAddress(url);
@@ -92,7 +92,7 @@ public class SecureAppDataClient {
 	}
 
 	/**
-	 * platform-secureappdata Put UpdateDBValue description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=UpdateDBValueClient( value,  appKeyId,  dbEntryQuery);
 	 * client.setBaseAddress(url);
@@ -117,7 +117,7 @@ public class SecureAppDataClient {
 	}
 
 	/**
-	 * platform-secureappdata Delete DeleteDBValue description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteDBValueClient( appKeyId,  dbEntryQuery);
 	 * client.setBaseAddress(url);

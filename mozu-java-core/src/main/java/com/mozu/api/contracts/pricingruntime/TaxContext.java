@@ -22,9 +22,6 @@ public class TaxContext implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Unique identifier of the customer in , used to associate customers with data, orders, returns, and in-store credit.
-	 */
 	protected  String customerId;
 
 	public String getCustomerId() {
@@ -35,9 +32,6 @@ public class TaxContext implements Serializable
 		this.customerId = customerId;
 	}
 
-	/**
-	 * Unique identifier of the tax context.
-	 */
 	protected  String taxContextId;
 
 	public String getTaxContextId() {
@@ -48,9 +42,6 @@ public class TaxContext implements Serializable
 		this.taxContextId = taxContextId;
 	}
 
-	/**
-	 * If the order is exempt from sales tax, the unique identifier of the tax exempt entity.
-	 */
 	protected  String taxExemptId;
 
 	public String getTaxExemptId() {
@@ -61,9 +52,6 @@ public class TaxContext implements Serializable
 		this.taxExemptId = taxExemptId;
 	}
 
-	/**
-	 * The physical address orders are sent to as a shipping destination. This address may contain multiple lines, city, state/province, country, and zip/postal code. The destination is used to calculate shipping costs.
-	 */
 	protected  Address destinationAddress;
 
 	public Address getDestinationAddress() {
@@ -74,9 +62,6 @@ public class TaxContext implements Serializable
 		this.destinationAddress = destinationAddress;
 	}
 
-	/**
-	 * The physical address from which the order or shipment will ship.
-	 */
 	protected  Address originAddress;
 
 	public Address getOriginAddress() {

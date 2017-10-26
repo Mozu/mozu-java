@@ -24,7 +24,7 @@ import com.mozu.api.DataViewMode;
 public class DiscountClient {
 	
 	/**
-	 * Retrieves a list of discounts according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.DiscountCollection> mozuClient=GetDiscountsClient(dataViewMode);
 	 * client.setBaseAddress(url);
@@ -40,18 +40,18 @@ public class DiscountClient {
 	}
 
 	/**
-	 * Retrieves a list of discounts according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.DiscountCollection> mozuClient=GetDiscountsClient(dataViewMode,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DiscountCollection discountCollection = client.Result();
 	 * </code></pre></p>
-	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.DiscountCollection>
 	 * @see com.mozu.api.contracts.productadmin.DiscountCollection
 	 */
@@ -69,7 +69,7 @@ public class DiscountClient {
 	}
 
 	/**
-	 * Retrieves the localized content specified for the specified discount.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.DiscountLocalizedContent> mozuClient=GetDiscountContentClient(dataViewMode,  discountId);
 	 * client.setBaseAddress(url);
@@ -86,7 +86,7 @@ public class DiscountClient {
 	}
 
 	/**
-	 * Retrieves the localized content specified for the specified discount.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.DiscountLocalizedContent> mozuClient=GetDiscountContentClient(dataViewMode,  discountId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -94,7 +94,7 @@ public class DiscountClient {
 	 * DiscountLocalizedContent discountLocalizedContent = client.Result();
 	 * </code></pre></p>
 	 * @param discountId discountId parameter description DOCUMENT_HERE 
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.DiscountLocalizedContent>
 	 * @see com.mozu.api.contracts.productadmin.DiscountLocalizedContent
 	 */
@@ -112,7 +112,7 @@ public class DiscountClient {
 	}
 
 	/**
-	 * Retrieves the details of a single discount.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.Discount> mozuClient=GetDiscountClient(dataViewMode,  discountId);
 	 * client.setBaseAddress(url);
@@ -129,7 +129,7 @@ public class DiscountClient {
 	}
 
 	/**
-	 * Retrieves the details of a single discount.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.Discount> mozuClient=GetDiscountClient(dataViewMode,  discountId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -137,7 +137,7 @@ public class DiscountClient {
 	 * Discount discount = client.Result();
 	 * </code></pre></p>
 	 * @param discountId discountId parameter description DOCUMENT_HERE 
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Discount>
 	 * @see com.mozu.api.contracts.productadmin.Discount
 	 */
@@ -155,7 +155,7 @@ public class DiscountClient {
 	}
 
 	/**
-	 * Generates a random code for a coupon.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<String> mozuClient=GenerateRandomCouponClient();
 	 * client.setBaseAddress(url);
@@ -171,14 +171,14 @@ public class DiscountClient {
 	}
 
 	/**
-	 * Generates a random code for a coupon.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<String> mozuClient=GenerateRandomCouponClient( responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * string string = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <string>
 	 * @see string
 	 */
@@ -195,7 +195,7 @@ public class DiscountClient {
 	}
 
 	/**
-	 * Creates a new discount or coupon to apply to a product, category, order, or shipping.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.Discount> mozuClient=CreateDiscountClient( discount);
 	 * client.setBaseAddress(url);
@@ -213,14 +213,14 @@ public class DiscountClient {
 	}
 
 	/**
-	 * Creates a new discount or coupon to apply to a product, category, order, or shipping.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.Discount> mozuClient=CreateDiscountClient( discount,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Discount discount = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param discount Name of the discount added and applied to a shopping cart and order for a shopper's purchase. 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Discount>
 	 * @see com.mozu.api.contracts.productadmin.Discount
@@ -240,7 +240,7 @@ public class DiscountClient {
 	}
 
 	/**
-	 * Updates the localizable content for the specified discount or renames the discount without modifying its other properties.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.DiscountLocalizedContent> mozuClient=UpdateDiscountContentClient( content,  discountId);
 	 * client.setBaseAddress(url);
@@ -259,7 +259,7 @@ public class DiscountClient {
 	}
 
 	/**
-	 * Updates the localizable content for the specified discount or renames the discount without modifying its other properties.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.DiscountLocalizedContent> mozuClient=UpdateDiscountContentClient( content,  discountId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -267,7 +267,7 @@ public class DiscountClient {
 	 * DiscountLocalizedContent discountLocalizedContent = client.Result();
 	 * </code></pre></p>
 	 * @param discountId discountId parameter description DOCUMENT_HERE 
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param content The container for the language-specific name of the discount. A container exists for each supported language (LocaleCode). This parameter enables you to display the discount name in multiple languages yet manage it as a single discount internally.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.DiscountLocalizedContent>
 	 * @see com.mozu.api.contracts.productadmin.DiscountLocalizedContent
@@ -287,7 +287,7 @@ public class DiscountClient {
 	}
 
 	/**
-	 * Updates one or more properties of the specified discount.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.Discount> mozuClient=UpdateDiscountClient( discount,  discountId);
 	 * client.setBaseAddress(url);
@@ -306,7 +306,7 @@ public class DiscountClient {
 	}
 
 	/**
-	 * Updates one or more properties of the specified discount.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.Discount> mozuClient=UpdateDiscountClient( discount,  discountId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -314,7 +314,7 @@ public class DiscountClient {
 	 * Discount discount = client.Result();
 	 * </code></pre></p>
 	 * @param discountId discountId parameter description DOCUMENT_HERE 
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param discount Name of the discount added and applied to a shopping cart and order for a shopper's purchase. 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Discount>
 	 * @see com.mozu.api.contracts.productadmin.Discount
@@ -334,7 +334,7 @@ public class DiscountClient {
 	}
 
 	/**
-	 * Deletes a discount specified by its discount ID.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteDiscountClient( discountId);
 	 * client.setBaseAddress(url);

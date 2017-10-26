@@ -14,7 +14,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.customer.CustomerAccount;
 
 /**
- *	The authentication information associated with a customer account. The data includes the account properties such as the name, username, authorization access, and email address, the required password to match, and indicates if the account was imported from a third party resource. 
+ *	The authentication information associated with a customer account.Â The data includes the account properties such as the name, username, authorization access, and email address, the required password to match, and indicates if the account was imported from a third party resource. 
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CustomerAccountAndAuthInfo implements Serializable
@@ -23,7 +23,7 @@ public class CustomerAccountAndAuthInfo implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * If you are importing existing customer accounts to  or using two customer systems simultaneously, you use this property to store an external password hash that helps you migrate existing customer accounts seamlessly into , without having to require shoppers to create new passwords for the platform.  If you set this property, you must use the [embedded.verifyExternalPassword](http://developer.mozu.com/content/arcjs/Reference/commerce-customer-accounts/Actions/verifyExternalPassword.htm) action to verify that the hashed version of a cleartext password provided by a shopper matches the external password hash specified in this property.
+	 * If you are importing existing customer accounts to  or using two customer systems simultaneously, you use this property to store an external password hash that helps you migrate existing customer accounts seamlessly into , without having to require shoppers to create new passwords for the platform.  If you set this property, you must use the [embedded.verifyExternalPassword](https://www.mozu.com/docs/arcjs/commerce-customer/actions/verifyexternalpassword.htm) action to verify that the hashed version of a cleartext password provided by a shopper matches the external password hash specified in this property.
 	 */
 	protected  String externalPassword;
 

@@ -22,9 +22,6 @@ public class Category implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
-	 */
 	protected  Integer id;
 
 	public Integer getId() {
@@ -35,9 +32,6 @@ public class Category implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * If applicable, the parent category in the category tree. This can be associated to a product as the parent category.
-	 */
 	protected  Category parent;
 
 	public Category getParent() {

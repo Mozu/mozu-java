@@ -24,9 +24,6 @@ public class ProductOptionSelections implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Merchant-created code associated with a specific product variation. Variation product codes maintain an association with the base product code.
-	 */
 	protected  String variationProductCode;
 
 	public String getVariationProductCode() {
@@ -37,9 +34,6 @@ public class ProductOptionSelections implements Serializable
 		this.variationProductCode = variationProductCode;
 	}
 
-	/**
-	 * List of option attributes configured for an object. These values are associated and used by products, product bundles, and product types.
-	 */
 	protected List<ProductOptionSelection> options;
 	public List<ProductOptionSelection> getOptions() {
 		return this.options;

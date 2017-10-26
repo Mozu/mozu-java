@@ -24,7 +24,7 @@ import com.mozu.api.DataViewMode;
 public class DocumentTypeClient {
 	
 	/**
-	 * Retrieves a paged list of the system-defined document types.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.DocumentTypeCollection> mozuClient=GetDocumentTypesClient(dataViewMode);
 	 * client.setBaseAddress(url);
@@ -40,16 +40,16 @@ public class DocumentTypeClient {
 	}
 
 	/**
-	 * Retrieves a paged list of the system-defined document types.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.DocumentTypeCollection> mozuClient=GetDocumentTypesClient(dataViewMode,  pageSize,  startIndex,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DocumentTypeCollection documentTypeCollection = client.Result();
 	 * </code></pre></p>
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentTypeCollection>
 	 * @see com.mozu.api.contracts.content.DocumentTypeCollection
 	 */
@@ -67,7 +67,7 @@ public class DocumentTypeClient {
 	}
 
 	/**
-	 * Retrieves a system-defined document type.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.DocumentType> mozuClient=GetDocumentTypeClient(dataViewMode,  documentTypeName);
 	 * client.setBaseAddress(url);
@@ -84,7 +84,7 @@ public class DocumentTypeClient {
 	}
 
 	/**
-	 * Retrieves a system-defined document type.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.DocumentType> mozuClient=GetDocumentTypeClient(dataViewMode,  documentTypeName,  responseFields);
 	 * client.setBaseAddress(url);
@@ -92,7 +92,7 @@ public class DocumentTypeClient {
 	 * DocumentType documentType = client.Result();
 	 * </code></pre></p>
 	 * @param documentTypeName The name of the document type to retrieve.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentType>
 	 * @see com.mozu.api.contracts.content.DocumentType
 	 */
@@ -110,7 +110,7 @@ public class DocumentTypeClient {
 	}
 
 	/**
-	 * Creates a new DocumentType
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.DocumentType> mozuClient=CreateDocumentTypeClient(dataViewMode,  documentType);
 	 * client.setBaseAddress(url);
@@ -128,14 +128,14 @@ public class DocumentTypeClient {
 	}
 
 	/**
-	 * Creates a new DocumentType
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.DocumentType> mozuClient=CreateDocumentTypeClient(dataViewMode,  documentType,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DocumentType documentType = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param documentType The type of documents used in the CMS such as "web_page" or "template" or "image_url".
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentType>
 	 * @see com.mozu.api.contracts.content.DocumentType
@@ -156,7 +156,7 @@ public class DocumentTypeClient {
 	}
 
 	/**
-	 * Updates a DocumentType
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.DocumentType> mozuClient=UpdateDocumentTypeClient( documentType,  documentTypeName);
 	 * client.setBaseAddress(url);
@@ -175,7 +175,7 @@ public class DocumentTypeClient {
 	}
 
 	/**
-	 * Updates a DocumentType
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.DocumentType> mozuClient=UpdateDocumentTypeClient( documentType,  documentTypeName,  responseFields);
 	 * client.setBaseAddress(url);
@@ -183,7 +183,7 @@ public class DocumentTypeClient {
 	 * DocumentType documentType = client.Result();
 	 * </code></pre></p>
 	 * @param documentTypeName The name of the document type to retrieve.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param documentType The type of documents used in the CMS such as "web_page" or "template" or "image_url".
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentType>
 	 * @see com.mozu.api.contracts.content.DocumentType

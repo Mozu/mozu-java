@@ -23,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 public class ShippingProfileClient {
 	
 	/**
-	 * Retrieves a list of shipping profiles.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.profile.ShippingProfileCollection> mozuClient=GetProfilesClient();
 	 * client.setBaseAddress(url);
@@ -40,7 +40,7 @@ public class ShippingProfileClient {
 	}
 
 	/**
-	 * Retrieves a list of shipping profiles.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.profile.ShippingProfileCollection> mozuClient=GetProfilesClient( responseFields);
 	 * client.setBaseAddress(url);

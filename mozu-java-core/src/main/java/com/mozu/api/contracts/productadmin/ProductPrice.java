@@ -34,9 +34,6 @@ public class ProductPrice implements Serializable
 		this.creditValue = creditValue;
 	}
 
-	/**
-	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
-	 */
 	protected  String isoCurrencyCode;
 
 	public String getIsoCurrencyCode() {
@@ -99,9 +96,6 @@ public class ProductPrice implements Serializable
 		this.msrp = msrp;
 	}
 
-	/**
-	 * Price that the merchant intends to sell the product which is not necessarily the list price. This is the price the merchant intends to sell the product if no sale price is present.
-	 */
 	protected  Double price;
 
 	public Double getPrice() {
@@ -112,9 +106,6 @@ public class ProductPrice implements Serializable
 		this.price = price;
 	}
 
-	/**
-	 * The set sale price for a product consisting of a price with a discount already applied.For price list entries, this property is the product's sale price if the  is set to .
-	 */
 	protected  Double salePrice;
 
 	public Double getSalePrice() {

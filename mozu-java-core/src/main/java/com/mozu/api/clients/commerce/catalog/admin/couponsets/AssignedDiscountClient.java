@@ -23,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 public class AssignedDiscountClient {
 	
 	/**
-	 * Retrieves the discountIds of any assigned discounts for the specified coupon set.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.productadmin.AssignedDiscount>> mozuClient=GetAssignedDiscountsClient( couponSetCode);
 	 * client.setBaseAddress(url);
@@ -47,7 +47,7 @@ public class AssignedDiscountClient {
 	}
 
 	/**
-	 * Assigns or associates an existing discount to a specified coupon set. Use the couponSetCode parameter to specify the coupon set.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=AssignDiscountClient( assignedDiscount,  couponSetCode);
 	 * client.setBaseAddress(url);
@@ -71,7 +71,7 @@ public class AssignedDiscountClient {
 	}
 
 	/**
-	 * Unassigns or disassociates the specified discount with the specified coupon set.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=UnAssignDiscountClient( couponSetCode,  discountId);
 	 * client.setBaseAddress(url);

@@ -21,9 +21,6 @@ public class Hours implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Descriptive text used as a label for objects, such as field names, facets, date ranges, contact information, and package information.
-	 */
 	protected  String label;
 
 	public String getLabel() {

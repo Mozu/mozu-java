@@ -15,7 +15,7 @@ public class LocationUsageUrl
 
 	/**
 	 * Get Resource Url for GetLocationUsages
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getLocationUsagesUrl(String responseFields)
@@ -28,7 +28,7 @@ public class LocationUsageUrl
 	/**
 	 * Get Resource Url for GetLocationUsage
 	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getLocationUsageUrl(String code, String responseFields)
@@ -42,7 +42,7 @@ public class LocationUsageUrl
 	/**
 	 * Get Resource Url for UpdateLocationUsage
 	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateLocationUsageUrl(String code, String responseFields)

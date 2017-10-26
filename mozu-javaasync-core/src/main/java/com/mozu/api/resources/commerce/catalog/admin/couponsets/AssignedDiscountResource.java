@@ -37,7 +37,7 @@ public class AssignedDiscountResource {
 
 	
 	/**
-	 * Retrieves the discountIds of any assigned discounts for the specified coupon set.
+	 * 
 	 * <p><pre><code>
 	 *	AssignedDiscount assigneddiscount = new AssignedDiscount();
 	 *	AssignedDiscount assignedDiscount = assigneddiscount.getAssignedDiscounts( couponSetCode);
@@ -56,7 +56,7 @@ public class AssignedDiscountResource {
 	}
 
 	/**
-	 * Retrieves the discountIds of any assigned discounts for the specified coupon set.
+	 * 
 	 * <p><pre><code>
 	 *	AssignedDiscount assigneddiscount = new AssignedDiscount();
 	 *	CountDownLatch latch = assigneddiscount.getAssignedDiscounts( couponSetCode, callback );
@@ -75,13 +75,13 @@ public class AssignedDiscountResource {
 	}
 
 	/**
-	 * Assigns or associates an existing discount to a specified coupon set. Use the couponSetCode parameter to specify the coupon set.
+	 * 
 	 * <p><pre><code>
 	 *	AssignedDiscount assigneddiscount = new AssignedDiscount();
 	 *	assigneddiscount.assignDiscount( assignedDiscount,  couponSetCode);
 	 * </code></pre></p>
 	 * @param couponSetCode The unique identifier of the coupon set.
-	 * @param assignedDiscount Mozu.ProductAdmin.Contracts.AssignedDiscount ApiType DOCUMENT_HERE 
+	 * @param assignedDiscount The details of the discount assigned to the coupon set.
 	 * @return 
 	 * @see com.mozu.api.contracts.productadmin.AssignedDiscount
 	 */
@@ -95,7 +95,7 @@ public class AssignedDiscountResource {
 	}
 
 	/**
-	 * Unassigns or disassociates the specified discount with the specified coupon set.
+	 * 
 	 * <p><pre><code>
 	 *	AssignedDiscount assigneddiscount = new AssignedDiscount();
 	 *	assigneddiscount.unAssignDiscount( couponSetCode,  discountId);

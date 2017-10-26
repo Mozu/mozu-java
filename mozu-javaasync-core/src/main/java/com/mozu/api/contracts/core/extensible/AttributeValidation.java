@@ -21,9 +21,6 @@ public class AttributeValidation implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The latest possible date and time the extensible attribute can be validated.
-	 */
 	protected  DateTime maxDateTime;
 
 	public DateTime getMaxDateTime() {
@@ -34,9 +31,6 @@ public class AttributeValidation implements Serializable
 		this.maxDateTime = maxDateTime;
 	}
 
-	/**
-	 * The maximum number that can be entered as a value for an extensible attribute.
-	 */
 	protected  Double maxNumericValue;
 
 	public Double getMaxNumericValue() {
@@ -47,9 +41,6 @@ public class AttributeValidation implements Serializable
 		this.maxNumericValue = maxNumericValue;
 	}
 
-	/**
-	 * The maximum character length possible for a string value entered for an extensible attribute.
-	 */
 	protected  Integer maxStringLength;
 
 	public Integer getMaxStringLength() {
@@ -60,9 +51,6 @@ public class AttributeValidation implements Serializable
 		this.maxStringLength = maxStringLength;
 	}
 
-	/**
-	 * The earliest date and time an extensible attribute can be validated.
-	 */
 	protected  DateTime minDateTime;
 
 	public DateTime getMinDateTime() {
@@ -73,9 +61,6 @@ public class AttributeValidation implements Serializable
 		this.minDateTime = minDateTime;
 	}
 
-	/**
-	 * The minimum numeric value required to validate an extensible attribute.
-	 */
 	protected  Double minNumericValue;
 
 	public Double getMinNumericValue() {
@@ -86,9 +71,6 @@ public class AttributeValidation implements Serializable
 		this.minNumericValue = minNumericValue;
 	}
 
-	/**
-	 * The minimum character length possible for a string value entered for an extensible attribute.
-	 */
 	protected  Integer minStringLength;
 
 	public Integer getMinStringLength() {
@@ -99,9 +81,6 @@ public class AttributeValidation implements Serializable
 		this.minStringLength = minStringLength;
 	}
 
-	/**
-	 * Regular expression used to process and validate an extensible attribute value that require special formatting, such as phone numbers.
-	 */
 	protected  String regularExpression;
 
 	public String getRegularExpression() {

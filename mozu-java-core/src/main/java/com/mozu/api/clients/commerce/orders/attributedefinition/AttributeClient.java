@@ -18,18 +18,18 @@ import org.apache.commons.lang.StringUtils;
 
 /** <summary>
  * Attributes are used to add custom definitions and characteristics to the following objects:
-*  — are attributes that define the characteristics of products, enabling you to uniquely describe a product. They consist of options, properties, and extras. Refer to [Product Attributes](https://www.mozu.com/docs/guides/catalog/product-attributes.htm) in the Guides section for more information.
+*  â€” are attributes that define the characteristics of products, enabling you to uniquely describe a product. They consist of options, properties, and extras. Refer to [Product Attributes](https://www.mozu.com/docs/guides/catalog/product-attributes.htm) in the Guides section for more information.
 
-*  — are custom attributes that you can apply to customer accounts to add further definition for special uses, such as marketing campaigns, or discounts. Refer to [Customer Attributes](https://www.mozu.com/docs/guides/customers/customers.htm#customer_attributes) in the Guides section for more information.
+*  â€” are custom attributes that you can apply to customer accounts to add further definition for special uses, such as marketing campaigns, or discounts. Refer to [Customer Attributes](https://www.mozu.com/docs/guides/customers/customers.htm#customer_attributes) in the Guides section for more information.
 
-*  — are custom attributes that enable you to uniquely describe an aspect of an order. Depending on the attribute definition, either you or a shopper can enter values for the order attribute. Refer to [Order Attributes](https://www.mozu.com/docs/guides/orders/order-attributes.htm) in the Guides section for more information.
+*  â€” are custom attributes that enable you to uniquely describe an aspect of an order. Depending on the attribute definition, either you or a shopper can enter values for the order attribute. Refer to [Order Attributes](https://www.mozu.com/docs/guides/orders/order-attributes.htm) in the Guides section for more information.
 
  * </summary>
  */
 public class AttributeClient {
 	
 	/**
-	 * Retrieves a paged list of attributes according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.core.extensible.AttributeCollection> mozuClient=GetAttributesClient();
 	 * client.setBaseAddress(url);
@@ -45,18 +45,18 @@ public class AttributeClient {
 	}
 
 	/**
-	 * Retrieves a paged list of attributes according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.core.extensible.AttributeCollection> mozuClient=GetAttributesClient( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * AttributeCollection attributeCollection = client.Result();
 	 * </code></pre></p>
-	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.core.extensible.AttributeCollection>
 	 * @see com.mozu.api.contracts.core.extensible.AttributeCollection
 	 */
@@ -73,14 +73,14 @@ public class AttributeClient {
 	}
 
 	/**
-	 * Retrieve a list of the vocabulary values defined for the customer attribute specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.core.extensible.AttributeVocabularyValue>> mozuClient=GetAttributeVocabularyValuesClient( attributeFQN);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * AttributeVocabularyValue attributeVocabularyValue = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.core.extensible.AttributeVocabularyValue>>
 	 * @see com.mozu.api.contracts.core.extensible.AttributeVocabularyValue
 	 */
@@ -97,14 +97,14 @@ public class AttributeClient {
 	}
 
 	/**
-	 * Retrieves the details of the specified product attribute.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.core.extensible.Attribute> mozuClient=GetAttributeClient( attributeFQN);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Attribute attribute = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.core.extensible.Attribute>
 	 * @see com.mozu.api.contracts.core.extensible.Attribute
 	 */
@@ -114,15 +114,15 @@ public class AttributeClient {
 	}
 
 	/**
-	 * Retrieves the details of the specified product attribute.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.core.extensible.Attribute> mozuClient=GetAttributeClient( attributeFQN,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Attribute attribute = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.core.extensible.Attribute>
 	 * @see com.mozu.api.contracts.core.extensible.Attribute
 	 */
@@ -139,7 +139,7 @@ public class AttributeClient {
 	}
 
 	/**
-	 * Create and save a new attribute. These attributes are used in products and product options.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.core.extensible.Attribute> mozuClient=CreateAttributeClient( attribute);
 	 * client.setBaseAddress(url);
@@ -157,7 +157,7 @@ public class AttributeClient {
 	}
 
 	/**
-	 * Create and save a new attribute. These attributes are used in products and product options.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.core.extensible.Attribute> mozuClient=CreateAttributeClient( attribute,  responseFields);
 	 * client.setBaseAddress(url);
@@ -184,7 +184,7 @@ public class AttributeClient {
 	}
 
 	/**
-	 * Updates an existing attribute with attribute properties to set.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.core.extensible.Attribute> mozuClient=UpdateAttributeClient( attribute,  attributeFQN);
 	 * client.setBaseAddress(url);
@@ -203,7 +203,7 @@ public class AttributeClient {
 	}
 
 	/**
-	 * Updates an existing attribute with attribute properties to set.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.core.extensible.Attribute> mozuClient=UpdateAttributeClient( attribute,  attributeFQN,  responseFields);
 	 * client.setBaseAddress(url);

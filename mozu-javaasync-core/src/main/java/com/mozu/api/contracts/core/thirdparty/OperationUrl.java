@@ -21,9 +21,6 @@ public class OperationUrl implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -34,9 +31,6 @@ public class OperationUrl implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * The URL endpoint address.
-	 */
 	protected  String url;
 
 	public String getUrl() {

@@ -29,9 +29,6 @@ public class Attribute implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The administrator name associated with the object/data.
-	 */
 	protected  String adminName;
 
 	public String getAdminName() {
@@ -42,9 +39,6 @@ public class Attribute implements Serializable
 		this.adminName = adminName;
 	}
 
-	/**
-	 * Merchant-defined code for an extensible attribute. This code may be used to generate an object's fully qualified name, such as for products.
-	 */
 	protected  String attributeCode;
 
 	public String getAttributeCode() {
@@ -55,9 +49,6 @@ public class Attribute implements Serializable
 		this.attributeCode = attributeCode;
 	}
 
-	/**
-	 * Generated sequence that increments for each attribute and data type combination created. This value is system-supplied and read-only.
-	 */
 	protected  Integer attributeDataTypeSequence;
 
 	public Integer getAttributeDataTypeSequence() {
@@ -68,9 +59,6 @@ public class Attribute implements Serializable
 		this.attributeDataTypeSequence = attributeDataTypeSequence;
 	}
 
-	/**
-	 * The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 */
 	protected  String attributeFQN;
 
 	public String getAttributeFQN() {
@@ -81,9 +69,6 @@ public class Attribute implements Serializable
 		this.attributeFQN = attributeFQN;
 	}
 
-	/**
-	 * Generated sequence that increments for each product attribute created. This value is system-supplied and read-only.
-	 */
 	protected  Integer attributeSequence;
 
 	public Integer getAttributeSequence() {
@@ -94,9 +79,6 @@ public class Attribute implements Serializable
 		this.attributeSequence = attributeSequence;
 	}
 
-	/**
-	 * The data type of the source product property, typically of type Bool, DateTime, Number, or String.
-	 */
 	protected  String dataType;
 
 	public String getDataType() {
@@ -107,9 +89,6 @@ public class Attribute implements Serializable
 		this.dataType = dataType;
 	}
 
-	/**
-	 * The type of input selection used to define a value for the attribute, including Yes/No, Date, DateTime, List, TextBox, or TextArea.
-	 */
 	protected  String inputType;
 
 	public String getInputType() {
@@ -120,9 +99,6 @@ public class Attribute implements Serializable
 		this.inputType = inputType;
 	}
 
-	/**
-	 * If true, the product attribute is an add-on configuration made by the shopper that does not represent a product variation, such as a monogram.
-	 */
 	protected  Boolean isExtra;
 
 	public Boolean getIsExtra() {
@@ -133,9 +109,6 @@ public class Attribute implements Serializable
 		this.isExtra = isExtra;
 	}
 
-	/**
-	 * If true, the product attribute is a merchant- or shopper-configurable option, such as size or color, that represents a product variation.
-	 */
 	protected  Boolean isOption;
 
 	public Boolean getIsOption() {
@@ -146,9 +119,6 @@ public class Attribute implements Serializable
 		this.isOption = isOption;
 	}
 
-	/**
-	 * If true, the product attribute describes aspects of the product that do not represent an option configurable by the shopper, such as screen resolution or brand.
-	 */
 	protected  Boolean isProperty;
 
 	public Boolean getIsProperty() {
@@ -159,9 +129,6 @@ public class Attribute implements Serializable
 		this.isProperty = isProperty;
 	}
 
-	/**
-	 * The unique identifier of the master catalog associated with the entity.
-	 */
 	protected  Integer masterCatalogId;
 
 	public Integer getMasterCatalogId() {
@@ -172,9 +139,6 @@ public class Attribute implements Serializable
 		this.masterCatalogId = masterCatalogId;
 	}
 
-	/**
-	 * The namespace for the accessible APIs and source capabilities in the core of  APIs.
-	 */
 	protected  String namespace;
 
 	public String getNamespace() {
@@ -185,9 +149,6 @@ public class Attribute implements Serializable
 		this.namespace = namespace;
 	}
 
-	/**
-	 * An attribute value type is either predefined vocabulary by the admin during attribute set up or user-defined with an appropriate type (AdminEntered or ShopperEntered depending on the user). These types are used by products and attributes. The difference between predefined values versus manually entered values is such that the first choice is a set of options to choose from. AdminEntered and ShopperEntered are values that are entered rather than system-supplied and are not stored in the database, but captured during a live commerce operations such as during an order.
-	 */
 	protected  String valueType;
 
 	public String getValueType() {
@@ -198,9 +159,6 @@ public class Attribute implements Serializable
 		this.valueType = valueType;
 	}
 
-	/**
-	 * List of metadata key-value pairs defined for an extensible attribute.
-	 */
 	protected List<AttributeMetadataItem> attributeMetadata;
 	public List<AttributeMetadataItem> getAttributeMetadata() {
 		return this.attributeMetadata;
@@ -209,9 +167,6 @@ public class Attribute implements Serializable
 		this.attributeMetadata = attributeMetadata;
 	}
 
-	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -222,9 +177,6 @@ public class Attribute implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * Complex type that contains content for a language specified by LocaleCode.
-	 */
 	protected  AttributeLocalizedContent content;
 
 	public AttributeLocalizedContent getContent() {
@@ -259,9 +211,6 @@ public class Attribute implements Serializable
 		this.searchSettings = searchSettings;
 	}
 
-	/**
-	 * Properties used when validating a value entered for an object, including extensible attributes, products attributes, and database entries.
-	 */
 	protected  AttributeValidation validation;
 
 	public AttributeValidation getValidation() {
@@ -272,9 +221,6 @@ public class Attribute implements Serializable
 		this.validation = validation;
 	}
 
-	/**
-	 * List of valid vocabulary values defined for an attribute.
-	 */
 	protected List<AttributeVocabularyValue> vocabularyValues;
 	public List<AttributeVocabularyValue> getVocabularyValues() {
 		return this.vocabularyValues;

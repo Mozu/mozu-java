@@ -6,11 +6,14 @@
  */
 package com.mozu.api.contracts.paymentservice;
 
+import java.util.List;
+import java.util.HashMap;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
+import com.mozu.api.contracts.paymentservice.CustomData;
 import com.mozu.api.contracts.paymentservice.Product;
 
 /**
@@ -85,6 +88,17 @@ public class OrderItem implements Serializable
 
 	public void setUnitPrice(Double unitPrice) {
 		this.unitPrice = unitPrice;
+	}
+
+	/**
+	 * customData ApiType DOCUMENT_HERE 
+	 */
+	protected List<CustomData> customData;
+	public List<CustomData> getCustomData() {
+		return this.customData;
+	}
+	public void setCustomData(List<CustomData> customData) {
+		this.customData = customData;
 	}
 
 	/**

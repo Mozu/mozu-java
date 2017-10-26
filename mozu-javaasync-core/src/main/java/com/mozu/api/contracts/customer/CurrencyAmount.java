@@ -21,9 +21,6 @@ public class CurrencyAmount implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The monetary amount in the specified currency locale code.
-	 */
 	protected  Double amount;
 
 	public Double getAmount() {
@@ -34,9 +31,6 @@ public class CurrencyAmount implements Serializable
 		this.amount = amount;
 	}
 
-	/**
-	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
-	 */
 	protected  String currencyCode;
 
 	public String getCurrencyCode() {

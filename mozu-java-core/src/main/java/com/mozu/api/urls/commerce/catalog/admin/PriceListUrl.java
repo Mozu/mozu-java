@@ -60,6 +60,48 @@ public class PriceListUrl
 	}
 
 	/**
+	 * Get Resource Url for BulkAddPriceListEntries
+	 * @param invalidateCache Disable this property if you expect to encounter unacceptable performance hits related to clearing the cache for each product in the price list entries. Otherwise, leave this property enabled.
+	 * @param publishEvents Disable this property to prevent publishing the event related to adding price list entries to the system. Disabling this property helps you prevent performance delays if you expect the event to trigger the re-indexing of a large number of products, or if you want to postpone the operations of other applications and services listening for the event.
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl bulkAddPriceListEntriesUrl(Boolean invalidateCache, Boolean publishEvents)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/pricelists/bulkaddentries?publishEvents={publishEvents}&invalidateCache={invalidateCache}");
+		formatter.formatUrl("invalidateCache", invalidateCache);
+		formatter.formatUrl("publishEvents", publishEvents);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for BulkDeletePriceListEntries
+	 * @param invalidateCache Disable this property if you expect to encounter unacceptable performance hits related to clearing the cache for each product in the price list entries. Otherwise, leave this property enabled.
+	 * @param publishEvents Disable this property to prevent publishing the event related to deleting price list entries from the system. Disabling this property helps you prevent performance delays if you expect the event to trigger the re-indexing of a large number of products, or if you want to postpone the operations of other applications and services listening for the event.
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl bulkDeletePriceListEntriesUrl(Boolean invalidateCache, Boolean publishEvents)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/pricelists/bulkdeleteentries?publishEvents={publishEvents}&invalidateCache={invalidateCache}");
+		formatter.formatUrl("invalidateCache", invalidateCache);
+		formatter.formatUrl("publishEvents", publishEvents);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for BulkUpdatePriceListEntries
+	 * @param invalidateCache Disable this property if you expect to encounter unacceptable performance hits related to clearing the cache for each product in the price list entries. Otherwise, leave this property enabled.
+	 * @param publishEvents Disable this property to prevent publishing the event related to updating price list entries in the system. Disabling this property helps you prevent performance delays if you expect the event to trigger the re-indexing of a large number of products, or if you want to postpone the operations of other applications and services listening for the event.
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl bulkUpdatePriceListEntriesUrl(Boolean invalidateCache, Boolean publishEvents)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/pricelists/bulkupdateentries?publishEvents={publishEvents}&invalidateCache={invalidateCache}");
+		formatter.formatUrl("invalidateCache", invalidateCache);
+		formatter.formatUrl("publishEvents", publishEvents);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for UpdatePriceList
 	 * @param priceListCode The unique, user-defined code of the price list.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.

@@ -17,8 +17,8 @@ import com.mozu.api.MozuApiContext;
 import com.mozu.api.contracts.location.Location;
 import com.mozu.api.contracts.location.LocationType;
 import com.mozu.test.framework.core.MozuApiTestBase;
-import com.mozu.test.framework.datafactory.LocationFactory;
-import com.mozu.test.framework.datafactory.LocationTypeFactory;
+import com.mozu.test.framework.datafactory.commerce.admin.LocationFactory;
+import com.mozu.test.framework.datafactory.commerce.admin.LocationTypeFactory;
 import com.mozu.test.framework.helper.LocationGenerator;
 
 public class LocationTests extends MozuApiTestBase  {

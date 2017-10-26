@@ -24,9 +24,6 @@ public class ProductPurchasableState implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * If true, the entity has met all requirements and considered a purchasable entity.
-	 */
 	protected  Boolean isPurchasable;
 
 	public Boolean getIsPurchasable() {
@@ -37,9 +34,6 @@ public class ProductPurchasableState implements Serializable
 		this.isPurchasable = isPurchasable;
 	}
 
-	/**
-	 * Array list of validation and status messages associated with shipping rates, orders, and product purchasable state.
-	 */
 	protected List<ValidationMessage> messages;
 	public List<ValidationMessage> getMessages() {
 		return this.messages;

@@ -23,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 public class SearchClient {
 	
 	/**
-	 * Retrieves the details of the specified search tuning rule.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRule> mozuClient=GetSearchTuningRuleClient( searchTuningRuleCode);
 	 * client.setBaseAddress(url);
@@ -40,7 +40,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * Retrieves the details of the specified search tuning rule.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRule> mozuClient=GetSearchTuningRuleClient( searchTuningRuleCode,  responseFields);
 	 * client.setBaseAddress(url);
@@ -65,7 +65,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * Retrieves a list of search tuning rules and their properties.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRuleCollection> mozuClient=GetSearchTuningRulesClient();
 	 * client.setBaseAddress(url);
@@ -81,7 +81,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * Retrieves a list of search tuning rules and their properties.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRuleCollection> mozuClient=GetSearchTuningRulesClient( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * client.setBaseAddress(url);
@@ -109,7 +109,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * Retrieves the details of the specified search tuning rule sort fields. Sort fields allow you to control the product relevance whenver shoppers sort products on a page. For more information about sort relevance, refer to [Search Tuning Rules and Sorting](../../../developer/api-guides/search-tuning-rules.htm#search_tuning_rules_and_sorting).
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields> mozuClient=GetSearchTuningRuleSortFieldsClient();
 	 * client.setBaseAddress(url);
@@ -125,7 +125,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * Retrieves the details of the specified search tuning rule sort fields. Sort fields allow you to control the product relevance whenver shoppers sort products on a page. For more information about sort relevance, refer to [Search Tuning Rules and Sorting](../../../developer/api-guides/search-tuning-rules.htm#search_tuning_rules_and_sorting).
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields> mozuClient=GetSearchTuningRuleSortFieldsClient( responseFields);
 	 * client.setBaseAddress(url);
@@ -149,7 +149,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * Retrieves the search settings for the specified site.Refer to [Search Settings API Overview](../../../../developer/api-guides/search-settings.htm) for more information about 's search settings.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.SearchSettings> mozuClient=GetSettingsClient();
 	 * client.setBaseAddress(url);
@@ -165,7 +165,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * Retrieves the search settings for the specified site.Refer to [Search Settings API Overview](../../../../developer/api-guides/search-settings.htm) for more information about 's search settings.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.SearchSettings> mozuClient=GetSettingsClient( responseFields);
 	 * client.setBaseAddress(url);
@@ -189,7 +189,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * Retrieves a collection of synonyms definitions for product searches.Refer to [Search Synonyms](../../../../developer/api-guides/search-settings.htm#search_synonyms) for more information about search synonyms.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> mozuClient=GetSynonymDefinitionCollectionClient( localeCode);
 	 * client.setBaseAddress(url);
@@ -206,7 +206,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * Retrieves a collection of synonyms definitions for product searches.Refer to [Search Synonyms](../../../../developer/api-guides/search-settings.htm#search_synonyms) for more information about search synonyms.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> mozuClient=GetSynonymDefinitionCollectionClient( localeCode,  responseFields);
 	 * client.setBaseAddress(url);
@@ -231,7 +231,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * Retrieves a list of synonym definitions according to any specified filter criteria and sort options.Refer to [Search Synonyms](../../../../developer/api-guides/search-settings.htm#search_synonyms) for more information about search synonyms.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionPagedCollection> mozuClient=GetSynonymDefinitionsClient();
 	 * client.setBaseAddress(url);
@@ -247,7 +247,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * Retrieves a list of synonym definitions according to any specified filter criteria and sort options.Refer to [Search Synonyms](../../../../developer/api-guides/search-settings.htm#search_synonyms) for more information about search synonyms.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionPagedCollection> mozuClient=GetSynonymDefinitionsClient( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * client.setBaseAddress(url);
@@ -275,7 +275,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * Retrieves the details of the specified synonym defintion.Refer to [Search Synonyms](../../../../developer/api-guides/search-settings.htm#search_synonyms) for more information about search synonyms.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinition> mozuClient=GetSynonymDefinitionClient( synonymId);
 	 * client.setBaseAddress(url);
@@ -292,7 +292,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * Retrieves the details of the specified synonym defintion.Refer to [Search Synonyms](../../../../developer/api-guides/search-settings.htm#search_synonyms) for more information about search synonyms.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinition> mozuClient=GetSynonymDefinitionClient( synonymId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -317,7 +317,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * Creates a search tuning rule for your site. You can use search tuning rules to fine tune the product search results that appear when a shopper searches for a specific keyword, or navigates to a category page.For more information on search tuning rules, refer to [Search Tuning Rules](../../../../developer/api-guides/search-tuning-rules.htm).
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRule> mozuClient=AddSearchTuningRuleClient( searchTuningRuleIn);
 	 * client.setBaseAddress(url);
@@ -335,7 +335,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * Creates a search tuning rule for your site. You can use search tuning rules to fine tune the product search results that appear when a shopper searches for a specific keyword, or navigates to a category page.For more information on search tuning rules, refer to [Search Tuning Rules](../../../../developer/api-guides/search-tuning-rules.htm).
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRule> mozuClient=AddSearchTuningRuleClient( searchTuningRuleIn,  responseFields);
 	 * client.setBaseAddress(url);
@@ -362,7 +362,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * Updates the details of the search tuning rule sort fields.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields> mozuClient=UpdateSearchTuningRuleSortFieldsClient( searchTuningRuleSortFieldsIn);
 	 * client.setBaseAddress(url);
@@ -380,7 +380,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * Updates the details of the search tuning rule sort fields.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields> mozuClient=UpdateSearchTuningRuleSortFieldsClient( searchTuningRuleSortFieldsIn,  responseFields);
 	 * client.setBaseAddress(url);
@@ -407,7 +407,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * Updates a collection of synonym definitions.Refer to [Search Synonyms](../../../../developer/api-guides/search-settings.htm#search_synonyms) for more information about search synonyms.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> mozuClient=UpdateSynonymDefinitionCollectionClient( collection,  localeCode);
 	 * client.setBaseAddress(url);
@@ -426,7 +426,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * Updates a collection of synonym definitions.Refer to [Search Synonyms](../../../../developer/api-guides/search-settings.htm#search_synonyms) for more information about search synonyms.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> mozuClient=UpdateSynonymDefinitionCollectionClient( collection,  localeCode,  responseFields);
 	 * client.setBaseAddress(url);
@@ -454,7 +454,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * Creates a new synonym definition.Refer to [Search Synonyms](../../../../developer/api-guides/search-settings.htm#search_synonyms) for more information about search synonyms.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinition> mozuClient=AddSynonymDefinitionClient( synonymDefinition);
 	 * client.setBaseAddress(url);
@@ -472,7 +472,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * Creates a new synonym definition.Refer to [Search Synonyms](../../../../developer/api-guides/search-settings.htm#search_synonyms) for more information about search synonyms.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinition> mozuClient=AddSynonymDefinitionClient( synonymDefinition,  responseFields);
 	 * client.setBaseAddress(url);
@@ -499,7 +499,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * Updates the details of the specified search tuning rule.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRule> mozuClient=UpdateSearchTuningRuleClient( searchTuningRuleIn,  searchTuningRuleCode);
 	 * client.setBaseAddress(url);
@@ -518,7 +518,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * Updates the details of the specified search tuning rule.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRule> mozuClient=UpdateSearchTuningRuleClient( searchTuningRuleIn,  searchTuningRuleCode,  responseFields);
 	 * client.setBaseAddress(url);
@@ -546,7 +546,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * Updates the search setting properties for a specific site.Refer to [Search Settings API Overview](../../../../developer/api-guides/search-settings.htm) for more information about 's search settings.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.SearchSettings> mozuClient=UpdateSettingsClient( settings);
 	 * client.setBaseAddress(url);
@@ -564,7 +564,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * Updates the search setting properties for a specific site.Refer to [Search Settings API Overview](../../../../developer/api-guides/search-settings.htm) for more information about 's search settings.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.SearchSettings> mozuClient=UpdateSettingsClient( settings,  responseFields);
 	 * client.setBaseAddress(url);
@@ -591,7 +591,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * Updates the details of a synonym definition.Refer to [Search Synonyms](../../../../developer/api-guides/search-settings.htm#search_synonyms) for more information about search synonyms.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinition> mozuClient=UpdateSynonymDefinitionClient( synonymDefinition,  synonymId);
 	 * client.setBaseAddress(url);
@@ -610,7 +610,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * Updates the details of a synonym definition.Refer to [Search Synonyms](../../../../developer/api-guides/search-settings.htm#search_synonyms) for more information about search synonyms.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinition> mozuClient=UpdateSynonymDefinitionClient( synonymDefinition,  synonymId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -638,7 +638,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * Deletes the specified search tuning rule from the site.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteSearchTuningRuleClient( searchTuningRuleCode);
 	 * client.setBaseAddress(url);
@@ -659,7 +659,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * Deletes the specified synonym definition.Refer to [Search Synonyms](../../../../developer/api-guides/search-settings.htm#search_synonyms) for more information about search synonyms.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteSynonymDefinitionClient( synonymId);
 	 * client.setBaseAddress(url);

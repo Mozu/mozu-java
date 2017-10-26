@@ -47,9 +47,6 @@ public class ProductPrice implements Serializable
 		this.msrp = msrp;
 	}
 
-	/**
-	 * The price the merchant charges for a product on a storefront if no sales price is defined.
-	 */
 	protected  Double price;
 
 	public Double getPrice() {
@@ -86,9 +83,6 @@ public class ProductPrice implements Serializable
 		this.priceListEntryMode = priceListEntryMode;
 	}
 
-	/**
-	 * The set sale price for a product consisting of a price with a discount already applied.For price list entries, this property is the product's sale price if the  is set to .
-	 */
 	protected  Double salePrice;
 
 	public Double getSalePrice() {
@@ -99,9 +93,6 @@ public class ProductPrice implements Serializable
 		this.salePrice = salePrice;
 	}
 
-	/**
-	 * The override price defined by the tenant for this cart or order item.
-	 */
 	protected  Double tenantOverridePrice;
 
 	public Double getTenantOverridePrice() {

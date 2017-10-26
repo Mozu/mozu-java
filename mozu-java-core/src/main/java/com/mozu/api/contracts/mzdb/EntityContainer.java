@@ -48,7 +48,7 @@ public class EntityContainer implements Serializable
 	}
 
 	/**
-	 * The date and time in UTC format set when the object was created.
+	 * The date and time in UTCÂ format set when the object was created.
 	 */
 	protected  DateTime createDate;
 
@@ -113,7 +113,7 @@ public class EntityContainer implements Serializable
 	}
 
 	/**
-	 * Unique identifier for the site. This ID is used at all levels of a store, catalog, and tenant to associate objects to a site.
+	 * Unique identifier for the site. This IDÂ is used at all levels of a store, catalog, and tenant to associate objects to a site.
 	 */
 	protected  Integer siteId;
 

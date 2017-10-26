@@ -21,9 +21,6 @@ public class FacetValidity implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Indicates if the facet is currently valid.
-	 */
 	protected  Boolean isValid;
 
 	public Boolean getIsValid() {
@@ -34,9 +31,6 @@ public class FacetValidity implements Serializable
 		this.isValid = isValid;
 	}
 
-	/**
-	 * A code indicating the reason why a facet is invalid.
-	 */
 	protected  String reasonCode;
 
 	public String getReasonCode() {

@@ -25,7 +25,7 @@ public class CustomFunctionsForContext implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Mozu.InstalledApplications.Contracts.CustomFunctionsForContext context ApiTypeMember DOCUMENT_HERE 
+	 * The site ID for the site you want to apply a group of settings to. You do not need to provide this value if you want to apply the same settings to a particular action across all your sites.
 	 */
 	protected  Integer context;
 
@@ -38,7 +38,7 @@ public class CustomFunctionsForContext implements Serializable
 	}
 
 	/**
-	 * Mozu.InstalledApplications.Contracts.CustomFunctionsForContext customFunctions ApiTypeMember DOCUMENT_HERE 
+	 * An array of custom functions tied to a particular action.
 	 */
 	protected List<CustomFunction> customFunctions;
 	public List<CustomFunction> getCustomFunctions() {

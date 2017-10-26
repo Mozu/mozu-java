@@ -27,9 +27,6 @@ public class Facet implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Unique identifier for the storefront container used to organize products.
-	 */
 	protected  Integer categoryId;
 
 	public Integer getCategoryId() {
@@ -40,9 +37,6 @@ public class Facet implements Serializable
 		this.categoryId = categoryId;
 	}
 
-	/**
-	 * Unique identifier of the facet.
-	 */
 	protected  Integer facetId;
 
 	public Integer getFacetId() {
@@ -53,9 +47,6 @@ public class Facet implements Serializable
 		this.facetId = facetId;
 	}
 
-	/**
-	 * The type of facet. Valid values are "range" (enables creation of a range of values) or "value" (populates the facet values based on the associated attribute or category).
-	 */
 	protected  String facetType;
 
 	public String getFacetType() {
@@ -66,9 +57,6 @@ public class Facet implements Serializable
 		this.facetType = facetType;
 	}
 
-	/**
-	 * Indicates if the object is hidden or breaks inheritance, primarily used by facets, products, and attribute vocabulary values. For example, if true, the attribute vocabulary value does not appear in the list when defining a value for an attribute.
-	 */
 	protected  Boolean isHidden;
 
 	public Boolean getIsHidden() {
@@ -79,9 +67,6 @@ public class Facet implements Serializable
 		this.isHidden = isHidden;
 	}
 
-	/**
-	 * Integer that represents the sequence order of the attribute.
-	 */
 	protected  Integer order;
 
 	public Integer getOrder() {
@@ -92,9 +77,6 @@ public class Facet implements Serializable
 		this.order = order;
 	}
 
-	/**
-	 * Indicates the specific facet inherited from a parent category that is overridden by this facet. System-supplied and read only.
-	 */
 	protected  Integer overrideFacetId;
 
 	public Integer getOverrideFacetId() {
@@ -118,9 +100,6 @@ public class Facet implements Serializable
 		this.valueSortType = valueSortType;
 	}
 
-	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -131,9 +110,6 @@ public class Facet implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * For range type facets, an array of ranges to use for the facet values. For example, a price facet might have range queries for $0-$25, $25-$50, and $50-$100.
-	 */
 	protected List<FacetRangeQuery> rangeQueries;
 	public List<FacetRangeQuery> getRangeQueries() {
 		return this.rangeQueries;
@@ -142,9 +118,6 @@ public class Facet implements Serializable
 		this.rangeQueries = rangeQueries;
 	}
 
-	/**
-	 * Source for an action or container for originating content. Source is used as an origin for validation and notification messages based on successful or failed actions. For originating content, source is used for the facet source information, including the category, price, or attribute properties.
-	 */
 	protected  FacetSource source;
 
 	public FacetSource getSource() {
@@ -155,9 +128,6 @@ public class Facet implements Serializable
 		this.source = source;
 	}
 
-	/**
-	 * System-supplied and read only indicator of whether a facet is currently valid and if not indicates the reason why. A facet may become invalid if the source data is changed in some ways (for example if the category tree structure is changed).
-	 */
 	protected  FacetValidity validity;
 
 	public FacetValidity getValidity() {

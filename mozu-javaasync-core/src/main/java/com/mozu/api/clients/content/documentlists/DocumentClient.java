@@ -26,7 +26,7 @@ import com.mozu.api.DataViewMode;
 public class DocumentClient {
 	
 	/**
-	 * Retrieve the content associated with a document, such as a product image or PDF specifications file, by supplying the document ID.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<java.io.InputStream> mozuClient=GetDocumentContentClient(dataViewMode,  documentListName,  documentId);
 	 * client.setBaseAddress(url);
@@ -52,7 +52,7 @@ public class DocumentClient {
 	}
 
 	/**
-	 * Performs transformations on a document. For example, resizing an image.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<java.io.InputStream> mozuClient=TransformDocumentContentClient( documentListName,  documentId);
 	 * client.setBaseAddress(url);
@@ -70,7 +70,7 @@ public class DocumentClient {
 	}
 
 	/**
-	 * Performs transformations on a document. For example, resizing an image.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<java.io.InputStream> mozuClient=TransformDocumentContentClient( documentListName,  documentId,  width,  height,  max,  maxWidth,  maxHeight,  crop,  quality);
 	 * client.setBaseAddress(url);
@@ -102,7 +102,7 @@ public class DocumentClient {
 	}
 
 	/**
-	 * Retrieves a document within the specified document list.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.Document> mozuClient=GetDocumentClient(dataViewMode,  documentListName,  documentId);
 	 * client.setBaseAddress(url);
@@ -120,7 +120,7 @@ public class DocumentClient {
 	}
 
 	/**
-	 * Retrieves a document within the specified document list.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.Document> mozuClient=GetDocumentClient(dataViewMode,  documentListName,  documentId,  includeInactive,  responseFields);
 	 * client.setBaseAddress(url);
@@ -130,7 +130,7 @@ public class DocumentClient {
 	 * @param documentId Unique identifier for a document, used by content and document calls. Document IDs are associated with document types, document type lists, sites, and tenants.
 	 * @param documentListName Name of content documentListName to delete
 	 * @param includeInactive Include inactive content.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.Document>
 	 * @see com.mozu.api.contracts.content.Document
 	 */
@@ -148,7 +148,7 @@ public class DocumentClient {
 	}
 
 	/**
-	 * Retrieves a collection of documents according to any filter and sort criteria.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.DocumentCollection> mozuClient=GetDocumentsClient(dataViewMode,  documentListName);
 	 * client.setBaseAddress(url);
@@ -165,7 +165,7 @@ public class DocumentClient {
 	}
 
 	/**
-	 * Retrieves a collection of documents according to any filter and sort criteria.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.DocumentCollection> mozuClient=GetDocumentsClient(dataViewMode,  documentListName,  filter,  sortBy,  pageSize,  startIndex,  includeInactive,  responseFields);
 	 * client.setBaseAddress(url);
@@ -173,12 +173,12 @@ public class DocumentClient {
 	 * DocumentCollection documentCollection = client.Result();
 	 * </code></pre></p>
 	 * @param documentListName Name of content documentListName to delete
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/applications/sorting-filtering.htm) for a list of supported filters.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
 	 * @param includeInactive Include inactive content.
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentCollection>
 	 * @see com.mozu.api.contracts.content.DocumentCollection
 	 */
@@ -196,7 +196,7 @@ public class DocumentClient {
 	}
 
 	/**
-	 * Creates a new document in an defined document list.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.Document> mozuClient=CreateDocumentClient(dataViewMode,  document,  documentListName);
 	 * client.setBaseAddress(url);
@@ -215,7 +215,7 @@ public class DocumentClient {
 	}
 
 	/**
-	 * Creates a new document in an defined document list.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.Document> mozuClient=CreateDocumentClient(dataViewMode,  document,  documentListName,  responseFields);
 	 * client.setBaseAddress(url);
@@ -223,7 +223,7 @@ public class DocumentClient {
 	 * Document document = client.Result();
 	 * </code></pre></p>
 	 * @param documentListName Name of content documentListName to delete
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param document The document properties that define the content used by the content management system (CMS).
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.Document>
 	 * @see com.mozu.api.contracts.content.Document
@@ -244,7 +244,7 @@ public class DocumentClient {
 	}
 
 	/**
-	 * Updates the binary data or content associated with a document, such as a product image or PDF specifications file, by supplying the document ID.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=UpdateDocumentContentClient( stream,  documentListName,  documentId,  contentType);
 	 * client.setBaseAddress(url);
@@ -271,7 +271,7 @@ public class DocumentClient {
 	}
 
 	/**
-	 * Updates a document in a document list.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.Document> mozuClient=UpdateDocumentClient( document,  documentListName,  documentId);
 	 * client.setBaseAddress(url);
@@ -291,7 +291,7 @@ public class DocumentClient {
 	}
 
 	/**
-	 * Updates a document in a document list.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.Document> mozuClient=UpdateDocumentClient( document,  documentListName,  documentId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -300,7 +300,7 @@ public class DocumentClient {
 	 * </code></pre></p>
 	 * @param documentId Unique identifier for a document, used by content and document calls. Document IDs are associated with document types, document type lists, sites, and tenants.
 	 * @param documentListName Name of content documentListName to delete
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param document The document properties that define the content used by the content management system (CMS).
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.Document>
 	 * @see com.mozu.api.contracts.content.Document
@@ -320,7 +320,7 @@ public class DocumentClient {
 	}
 
 	/**
-	 * Deletes a specific document based on the specified document ID.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteDocumentClient( documentListName,  documentId);
 	 * client.setBaseAddress(url);
@@ -342,7 +342,7 @@ public class DocumentClient {
 	}
 
 	/**
-	 * Deletes the content associated with a document, such as a product image or PDF specification, by supplying the document ID.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteDocumentContentClient( documentListName,  documentId);
 	 * client.setBaseAddress(url);

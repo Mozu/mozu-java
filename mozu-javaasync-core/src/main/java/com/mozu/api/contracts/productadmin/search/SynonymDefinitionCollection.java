@@ -16,7 +16,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productadmin.search.SynonymDefinition;
 
 /**
- *	Collection of synonym definitions used for determining search results.
+ *	A collection of synonym definitions.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SynonymDefinitionCollection implements Serializable
@@ -38,7 +38,7 @@ public class SynonymDefinitionCollection implements Serializable
 	}
 
 	/**
-	 * Unique identifier for the site. This ID is used at all levels of a store, catalog, and tenant to associate objects to a site.
+	 * Unique identifier for the site. This IDÂ is used at all levels of a store, catalog, and tenant to associate objects to a site.
 	 */
 	protected  Integer siteId;
 

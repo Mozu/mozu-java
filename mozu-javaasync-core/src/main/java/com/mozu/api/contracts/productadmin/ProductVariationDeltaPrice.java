@@ -34,9 +34,6 @@ public class ProductVariationDeltaPrice implements Serializable
 		this.creditValue = creditValue;
 	}
 
-	/**
-	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
-	 */
 	protected  String currencyCode;
 
 	public String getCurrencyCode() {
@@ -48,7 +45,7 @@ public class ProductVariationDeltaPrice implements Serializable
 	}
 
 	/**
-	 * The manufacturer's suggested retail price for the product. This content may be defined by the supplier.
+	 * The manufacturer's suggested retail price (MSRP) for the product. This content may be defined by the supplier.
 	 */
 	protected  Double msrp;
 
@@ -60,9 +57,6 @@ public class ProductVariationDeltaPrice implements Serializable
 		this.msrp = msrp;
 	}
 
-	/**
-	 * The value of a property, used by numerous objects within Mozu including facets, attributes, products, localized content, metadata, capabilities (Mozu and third-party), location inventory adjustment, and more. The value may be a string, integer, or double. Validation may be run against the entered and saved values depending on the object type.
-	 */
 	protected  Double value;
 
 	public Double getValue() {

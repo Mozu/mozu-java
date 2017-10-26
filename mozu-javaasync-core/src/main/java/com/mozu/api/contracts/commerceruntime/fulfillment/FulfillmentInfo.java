@@ -23,9 +23,6 @@ public class FulfillmentInfo implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * If true, the shipping destination for a shipment is a commercial address.
-	 */
 	protected  Boolean isDestinationCommercial;
 
 	public Boolean getIsDestinationCommercial() {
@@ -36,9 +33,6 @@ public class FulfillmentInfo implements Serializable
 		this.isDestinationCommercial = isDestinationCommercial;
 	}
 
-	/**
-	 * The code associated with a carrier's shipping method service type, used during fulfillment of packages and shipments. Service type codes include a prefix that indicates the carrier. For example: FEDEX_INTERNATIONAL_STANDARD and UPS_GROUND.
-	 */
 	protected  String shippingMethodCode;
 
 	public String getShippingMethodCode() {
@@ -49,9 +43,6 @@ public class FulfillmentInfo implements Serializable
 		this.shippingMethodCode = shippingMethodCode;
 	}
 
-	/**
-	 * The carrier-supplied name for the shipping service type, such as "UPS Ground" or "2nd Day Air".
-	 */
 	protected  String shippingMethodName;
 
 	public String getShippingMethodName() {
@@ -62,9 +53,6 @@ public class FulfillmentInfo implements Serializable
 		this.shippingMethodName = shippingMethodName;
 	}
 
-	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -88,9 +76,6 @@ public class FulfillmentInfo implements Serializable
 		this.data = data;
 	}
 
-	/**
-	 * The contact information of the person receiving the shipment or performing the pickup.
-	 */
 	protected  Contact fulfillmentContact;
 
 	public Contact getFulfillmentContact() {

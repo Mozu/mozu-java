@@ -23,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 public class CouponClient {
 	
 	/**
-	 * Retrieves the details of the specified coupon. Use the couponSetCode and the couponCode parameter to specify the coupon within a coupon set. Use the includeCounts paramter to specify whether to return the redemptionCount property in the response body object.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.Coupon> mozuClient=GetCouponClient( couponSetCode,  couponCode);
 	 * client.setBaseAddress(url);
@@ -41,7 +41,7 @@ public class CouponClient {
 	}
 
 	/**
-	 * Retrieves the details of the specified coupon. Use the couponSetCode and the couponCode parameter to specify the coupon within a coupon set. Use the includeCounts paramter to specify whether to return the redemptionCount property in the response body object.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.Coupon> mozuClient=GetCouponClient( couponSetCode,  couponCode,  includeCounts,  responseFields);
 	 * client.setBaseAddress(url);
@@ -68,7 +68,7 @@ public class CouponClient {
 	}
 
 	/**
-	 * Retrieves a list of coupons in a specified coupon set according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.CouponCollection> mozuClient=GetCouponsClient( couponSetCode);
 	 * client.setBaseAddress(url);
@@ -85,7 +85,7 @@ public class CouponClient {
 	}
 
 	/**
-	 * Retrieves a list of coupons in a specified coupon set according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.CouponCollection> mozuClient=GetCouponsClient( couponSetCode,  startIndex,  pageSize,  sortBy,  filter,  includeCounts,  responseFields);
 	 * client.setBaseAddress(url);
@@ -115,7 +115,7 @@ public class CouponClient {
 	}
 
 	/**
-	 * Adds coupons  to a specified manual coupon set. Use the couponSetCode parameter to specify the manual coupon set.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=AddCouponsClient( coupons,  couponSetCode);
 	 * client.setBaseAddress(url);
@@ -139,7 +139,7 @@ public class CouponClient {
 	}
 
 	/**
-	 * Deletes the specified coupons and removes them from the coupon set. You can only delete a coupon if it has not been redeemed. Use the canBeDeleted property to determine whether a coupon can be deleted.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteCouponsClient( couponCodes,  couponSetCode);
 	 * client.setBaseAddress(url);
@@ -163,7 +163,7 @@ public class CouponClient {
 	}
 
 	/**
-	 * Deletes the specified coupon and remove it from the coupon set. You can only delete a coupon if it has not been redeemed. Use the canBeDeleted property to determine whether a coupon can be deleted.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteCouponClient( couponSetCode,  couponCode);
 	 * client.setBaseAddress(url);

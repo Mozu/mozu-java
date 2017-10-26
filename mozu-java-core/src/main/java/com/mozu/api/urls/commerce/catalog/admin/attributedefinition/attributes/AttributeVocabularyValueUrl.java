@@ -15,7 +15,7 @@ public class AttributeVocabularyValueUrl
 
 	/**
 	 * Get Resource Url for GetAttributeVocabularyValues
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getAttributeVocabularyValuesUrl(String attributeFQN)
@@ -42,8 +42,8 @@ public class AttributeVocabularyValueUrl
 	/**
 	 * Get Resource Url for GetAttributeVocabularyValueLocalizedContent
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param value The value string to create.
 	 * @return   String Resource Url
 	 */
@@ -59,8 +59,8 @@ public class AttributeVocabularyValueUrl
 
 	/**
 	 * Get Resource Url for GetAttributeVocabularyValue
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param value The value string to create.
 	 * @return   String Resource Url
 	 */
@@ -76,7 +76,7 @@ public class AttributeVocabularyValueUrl
 	/**
 	 * Get Resource Url for AddAttributeVocabularyValueLocalizedContent
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param value The value string to create.
 	 * @return   String Resource Url
 	 */
@@ -91,8 +91,8 @@ public class AttributeVocabularyValueUrl
 
 	/**
 	 * Get Resource Url for AddAttributeVocabularyValue
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addAttributeVocabularyValueUrl(String attributeFQN, String responseFields)
@@ -105,7 +105,7 @@ public class AttributeVocabularyValueUrl
 
 	/**
 	 * Get Resource Url for UpdateAttributeVocabularyValues
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateAttributeVocabularyValuesUrl(String attributeFQN)
@@ -133,7 +133,7 @@ public class AttributeVocabularyValueUrl
 	 * Get Resource Url for UpdateAttributeVocabularyValueLocalizedContent
 	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param value The value string to create.
 	 * @return   String Resource Url
 	 */
@@ -149,8 +149,8 @@ public class AttributeVocabularyValueUrl
 
 	/**
 	 * Get Resource Url for UpdateAttributeVocabularyValue
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param value The value string to create.
 	 * @return   String Resource Url
 	 */
@@ -165,7 +165,7 @@ public class AttributeVocabularyValueUrl
 
 	/**
 	 * Get Resource Url for DeleteAttributeVocabularyValue
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param value The value string to create.
 	 * @return   String Resource Url
 	 */
@@ -180,7 +180,7 @@ public class AttributeVocabularyValueUrl
 	/**
 	 * Get Resource Url for DeleteAttributeVocabularyValueLocalizedContent
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
+	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
 	 * @param value The value string to create.
 	 * @return   String Resource Url
 	 */

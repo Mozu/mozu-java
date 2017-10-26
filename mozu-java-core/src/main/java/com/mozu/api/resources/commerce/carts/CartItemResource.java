@@ -35,7 +35,7 @@ public class CartItemResource {
 
 	
 	/**
-	 * Retrieves a particular cart item by providing the cart item ID.
+	 * 
 	 * <p><pre><code>
 	 *	CartItem cartitem = new CartItem();
 	 *	CartItem cartItem = cartitem.getCartItem( cartItemId);
@@ -50,13 +50,13 @@ public class CartItemResource {
 	}
 
 	/**
-	 * Retrieves a particular cart item by providing the cart item ID.
+	 * 
 	 * <p><pre><code>
 	 *	CartItem cartitem = new CartItem();
 	 *	CartItem cartItem = cartitem.getCartItem( cartItemId,  responseFields);
 	 * </code></pre></p>
 	 * @param cartItemId Identifier of the cart item to delete.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 */
@@ -70,7 +70,7 @@ public class CartItemResource {
 	}
 
 	/**
-	 * Retrieves a list of cart items including the total number of items in the cart.
+	 * 
 	 * <p><pre><code>
 	 *	CartItem cartitem = new CartItem();
 	 *	CartItemCollection cartItemCollection = cartitem.getCartItems();
@@ -84,12 +84,12 @@ public class CartItemResource {
 	}
 
 	/**
-	 * Retrieves a list of cart items including the total number of items in the cart.
+	 * 
 	 * <p><pre><code>
 	 *	CartItem cartitem = new CartItem();
 	 *	CartItemCollection cartItemCollection = cartitem.getCartItems( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItemCollection
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItemCollection
 	 */
@@ -103,7 +103,7 @@ public class CartItemResource {
 	}
 
 	/**
-	 * Adds a product to the current shopper's cart.
+	 * 
 	 * <p><pre><code>
 	 *	CartItem cartitem = new CartItem();
 	 *	CartItem cartItem = cartitem.addItemToCart( cartItem);
@@ -119,12 +119,12 @@ public class CartItemResource {
 	}
 
 	/**
-	 * Adds a product to the current shopper's cart.
+	 * 
 	 * <p><pre><code>
 	 *	CartItem cartitem = new CartItem();
 	 *	CartItem cartItem = cartitem.addItemToCart( cartItem,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param cartItem Properties of an item added to an active shopping cart.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
@@ -140,7 +140,7 @@ public class CartItemResource {
 	}
 
 	/**
-	 * Update the quantity of an individual cart item in the cart of the current shopper.
+	 * 
 	 * <p><pre><code>
 	 *	CartItem cartitem = new CartItem();
 	 *	CartItem cartItem = cartitem.updateCartItemQuantity( cartItemId,  quantity);
@@ -156,14 +156,14 @@ public class CartItemResource {
 	}
 
 	/**
-	 * Update the quantity of an individual cart item in the cart of the current shopper.
+	 * 
 	 * <p><pre><code>
 	 *	CartItem cartitem = new CartItem();
 	 *	CartItem cartItem = cartitem.updateCartItemQuantity( cartItemId,  quantity,  responseFields);
 	 * </code></pre></p>
 	 * @param cartItemId Identifier of the cart item to delete.
 	 * @param quantity The number of cart items in the shopper's active cart.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 */
@@ -177,7 +177,7 @@ public class CartItemResource {
 	}
 
 	/**
-	 * Update the product or product quantity of an item in the current shopper's cart.
+	 * 
 	 * <p><pre><code>
 	 *	CartItem cartitem = new CartItem();
 	 *	CartItem cartItem = cartitem.updateCartItem( cartItem,  cartItemId);
@@ -194,13 +194,13 @@ public class CartItemResource {
 	}
 
 	/**
-	 * Update the product or product quantity of an item in the current shopper's cart.
+	 * 
 	 * <p><pre><code>
 	 *	CartItem cartitem = new CartItem();
 	 *	CartItem cartItem = cartitem.updateCartItem( cartItem,  cartItemId,  responseFields);
 	 * </code></pre></p>
 	 * @param cartItemId Identifier of the cart item to delete.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param cartItem Properties of an item added to an active shopping cart.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
@@ -216,7 +216,7 @@ public class CartItemResource {
 	}
 
 	/**
-	 * Removes all items in the current shopper's active cart.
+	 * 
 	 * <p><pre><code>
 	 *	CartItem cartitem = new CartItem();
 	 *	Cart cart = cartitem.removeAllCartItems();
@@ -234,7 +234,7 @@ public class CartItemResource {
 	}
 
 	/**
-	 * Deletes a specific cart item by providing the cart item ID.
+	 * 
 	 * <p><pre><code>
 	 *	CartItem cartitem = new CartItem();
 	 *	cartitem.deleteCartItem( cartItemId);

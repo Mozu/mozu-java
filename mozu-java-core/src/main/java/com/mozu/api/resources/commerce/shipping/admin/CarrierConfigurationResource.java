@@ -35,7 +35,7 @@ public class CarrierConfigurationResource {
 
 	
 	/**
-	 * Retrieves a list of carrier configurations and their details according to any specified facets, filter criteria, and sort options.
+	 * 
 	 * <p><pre><code>
 	 *	CarrierConfiguration carrierconfiguration = new CarrierConfiguration();
 	 *	CarrierConfigurationCollection carrierConfigurationCollection = carrierconfiguration.getConfigurations();
@@ -49,7 +49,7 @@ public class CarrierConfigurationResource {
 	}
 
 	/**
-	 * Retrieves a list of carrier configurations and their details according to any specified facets, filter criteria, and sort options.
+	 * 
 	 * <p><pre><code>
 	 *	CarrierConfiguration carrierconfiguration = new CarrierConfiguration();
 	 *	CarrierConfigurationCollection carrierConfigurationCollection = carrierconfiguration.getConfigurations( startIndex,  pageSize,  sortBy,  filter,  responseFields);
@@ -72,7 +72,7 @@ public class CarrierConfigurationResource {
 	}
 
 	/**
-	 * Retrieves the details of the specified carrier configuration.
+	 * 
 	 * <p><pre><code>
 	 *	CarrierConfiguration carrierconfiguration = new CarrierConfiguration();
 	 *	CarrierConfiguration carrierConfiguration = carrierconfiguration.getConfiguration( carrierId);
@@ -87,7 +87,7 @@ public class CarrierConfigurationResource {
 	}
 
 	/**
-	 * Retrieves the details of the specified carrier configuration.
+	 * 
 	 * <p><pre><code>
 	 *	CarrierConfiguration carrierconfiguration = new CarrierConfiguration();
 	 *	CarrierConfiguration carrierConfiguration = carrierconfiguration.getConfiguration( carrierId,  responseFields);
@@ -107,7 +107,7 @@ public class CarrierConfigurationResource {
 	}
 
 	/**
-	 * Creates a new carrier configuration.
+	 * 
 	 * <p><pre><code>
 	 *	CarrierConfiguration carrierconfiguration = new CarrierConfiguration();
 	 *	CarrierConfiguration carrierConfiguration = carrierconfiguration.createConfiguration( carrierConfiguration,  carrierId);
@@ -124,7 +124,7 @@ public class CarrierConfigurationResource {
 	}
 
 	/**
-	 * Creates a new carrier configuration.
+	 * 
 	 * <p><pre><code>
 	 *	CarrierConfiguration carrierconfiguration = new CarrierConfiguration();
 	 *	CarrierConfiguration carrierConfiguration = carrierconfiguration.createConfiguration( carrierConfiguration,  carrierId,  responseFields);
@@ -146,7 +146,7 @@ public class CarrierConfigurationResource {
 	}
 
 	/**
-	 * Updates the details of the specified carrier configuration.
+	 * 
 	 * <p><pre><code>
 	 *	CarrierConfiguration carrierconfiguration = new CarrierConfiguration();
 	 *	CarrierConfiguration carrierConfiguration = carrierconfiguration.updateConfiguration( carrierConfiguration,  carrierId);
@@ -163,7 +163,7 @@ public class CarrierConfigurationResource {
 	}
 
 	/**
-	 * Updates the details of the specified carrier configuration.
+	 * 
 	 * <p><pre><code>
 	 *	CarrierConfiguration carrierconfiguration = new CarrierConfiguration();
 	 *	CarrierConfiguration carrierConfiguration = carrierconfiguration.updateConfiguration( carrierConfiguration,  carrierId,  responseFields);
@@ -185,7 +185,7 @@ public class CarrierConfigurationResource {
 	}
 
 	/**
-	 * Deletes the specified carrier configuration.
+	 * 
 	 * <p><pre><code>
 	 *	CarrierConfiguration carrierconfiguration = new CarrierConfiguration();
 	 *	carrierconfiguration.deleteConfiguration( carrierId);

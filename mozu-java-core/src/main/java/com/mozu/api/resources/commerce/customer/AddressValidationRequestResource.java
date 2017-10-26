@@ -35,7 +35,7 @@ public class AddressValidationRequestResource {
 
 	
 	/**
-	 * Validates the customer address supplied in the request.
+	 * 
 	 * <p><pre><code>
 	 *	AddressValidationRequest addressvalidationrequest = new AddressValidationRequest();
 	 *	AddressValidationResponse addressValidationResponse = addressvalidationrequest.validateAddress( addressValidationRequest);
@@ -51,12 +51,12 @@ public class AddressValidationRequestResource {
 	}
 
 	/**
-	 * Validates the customer address supplied in the request.
+	 * 
 	 * <p><pre><code>
 	 *	AddressValidationRequest addressvalidationrequest = new AddressValidationRequest();
 	 *	AddressValidationResponse addressValidationResponse = addressvalidationrequest.validateAddress( addressValidationRequest,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param addressValidationRequest Properties of the address used for validation of the account's full address. This content may include multiple lines of an address, city, state/province, zip/postal code, and country.
 	 * @return com.mozu.api.contracts.customer.AddressValidationResponse
 	 * @see com.mozu.api.contracts.customer.AddressValidationResponse

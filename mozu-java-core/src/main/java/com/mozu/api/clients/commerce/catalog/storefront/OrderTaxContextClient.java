@@ -23,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 public class OrderTaxContextClient {
 	
 	/**
-	 * Retrieves tax information applicable to the site.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.pricingruntime.OrderTaxContext> mozuClient=EstimateTaxesClient( taxableOrder);
 	 * client.setBaseAddress(url);
@@ -41,7 +41,7 @@ public class OrderTaxContextClient {
 	}
 
 	/**
-	 * Retrieves tax information applicable to the site.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.pricingruntime.OrderTaxContext> mozuClient=EstimateTaxesClient( taxableOrder,  responseFields);
 	 * client.setBaseAddress(url);

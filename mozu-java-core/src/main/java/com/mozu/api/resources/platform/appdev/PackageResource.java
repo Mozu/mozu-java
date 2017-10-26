@@ -39,7 +39,7 @@ public PackageResource(ApiContext apiContext)
 
 	
 	/**
-	 * This operation is not public.
+	 * 
 	 * <p><pre><code>
 	 *	Package package = new Package();
 	 *	Stream stream = package.getFile( applicationKey,  fileName);

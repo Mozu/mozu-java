@@ -22,9 +22,6 @@ public class PreAuthorizeDefinition implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
-	 */
 	protected  Integer id;
 
 	public Integer getId() {
@@ -35,9 +32,6 @@ public class PreAuthorizeDefinition implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * The product environment URL associated with the preauthorization gateway.
-	 */
 	protected  String preAuthorizeProdUrl;
 
 	public String getPreAuthorizeProdUrl() {
@@ -48,9 +42,6 @@ public class PreAuthorizeDefinition implements Serializable
 		this.preAuthorizeProdUrl = preAuthorizeProdUrl;
 	}
 
-	/**
-	 * The test environment URL associated with the preauthorization gateway.
-	 */
 	protected  String preAuthorizeTestUrl;
 
 	public String getPreAuthorizeTestUrl() {
@@ -61,9 +52,6 @@ public class PreAuthorizeDefinition implements Serializable
 		this.preAuthorizeTestUrl = preAuthorizeTestUrl;
 	}
 
-	/**
-	 * The type of preauthorization gateway.
-	 */
 	protected  PreAuthorizeTransactionTypeDataContract type;
 
 	public PreAuthorizeTransactionTypeDataContract getType() {

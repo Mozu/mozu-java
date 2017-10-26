@@ -37,7 +37,7 @@ public class FulfillmentActionResource {
 
 	
 	/**
-	 * Sets the fulfillment action to "Ship" or "PickUp". To ship an order or prepare it for in-store pickup, the order must have a customer name, the "Open" or "OpenAndProcessing" status. To ship the order, it must also have the full shipping address and shipping method. Shipping all packages or picking up all pickups for an order will complete a paid order.
+	 * 
 	 * <p><pre><code>
 	 *	FulfillmentAction fulfillmentaction = new FulfillmentAction();
 	 *	Order order = fulfillmentaction.performFulfillmentAction( action,  orderId);
@@ -54,7 +54,7 @@ public class FulfillmentActionResource {
 	}
 
 	/**
-	 * Sets the fulfillment action to "Ship" or "PickUp". To ship an order or prepare it for in-store pickup, the order must have a customer name, the "Open" or "OpenAndProcessing" status. To ship the order, it must also have the full shipping address and shipping method. Shipping all packages or picking up all pickups for an order will complete a paid order.
+	 * 
 	 * <p><pre><code>
 	 *	FulfillmentAction fulfillmentaction = new FulfillmentAction();
 	 *	CountDownLatch latch = fulfillmentaction.performFulfillmentAction( action,  orderId, callback );
@@ -72,7 +72,7 @@ public class FulfillmentActionResource {
 	}
 
 	/**
-	 * Sets the fulfillment action to "Ship" or "PickUp". To ship an order or prepare it for in-store pickup, the order must have a customer name, the "Open" or "OpenAndProcessing" status. To ship the order, it must also have the full shipping address and shipping method. Shipping all packages or picking up all pickups for an order will complete a paid order.
+	 * 
 	 * <p><pre><code>
 	 *	FulfillmentAction fulfillmentaction = new FulfillmentAction();
 	 *	Order order = fulfillmentaction.performFulfillmentAction( action,  orderId,  responseFields);
@@ -94,7 +94,7 @@ public class FulfillmentActionResource {
 	}
 
 	/**
-	 * Sets the fulfillment action to "Ship" or "PickUp". To ship an order or prepare it for in-store pickup, the order must have a customer name, the "Open" or "OpenAndProcessing" status. To ship the order, it must also have the full shipping address and shipping method. Shipping all packages or picking up all pickups for an order will complete a paid order.
+	 * 
 	 * <p><pre><code>
 	 *	FulfillmentAction fulfillmentaction = new FulfillmentAction();
 	 *	CountDownLatch latch = fulfillmentaction.performFulfillmentAction( action,  orderId,  responseFields, callback );
@@ -116,7 +116,7 @@ public class FulfillmentActionResource {
 	}
 
 	/**
-	 * Resends an email with details about the package fulfillment to the shopper. 
+	 * 
 	 * <p><pre><code>
 	 *	FulfillmentAction fulfillmentaction = new FulfillmentAction();
 	 *	Order order = fulfillmentaction.resendPackageFulfillmentEmail( action,  orderId);
@@ -133,7 +133,7 @@ public class FulfillmentActionResource {
 	}
 
 	/**
-	 * Resends an email with details about the package fulfillment to the shopper. 
+	 * 
 	 * <p><pre><code>
 	 *	FulfillmentAction fulfillmentaction = new FulfillmentAction();
 	 *	CountDownLatch latch = fulfillmentaction.resendPackageFulfillmentEmail( action,  orderId, callback );
@@ -151,7 +151,7 @@ public class FulfillmentActionResource {
 	}
 
 	/**
-	 * Resends an email with details about the package fulfillment to the shopper. 
+	 * 
 	 * <p><pre><code>
 	 *	FulfillmentAction fulfillmentaction = new FulfillmentAction();
 	 *	Order order = fulfillmentaction.resendPackageFulfillmentEmail( action,  orderId,  responseFields);
@@ -173,7 +173,7 @@ public class FulfillmentActionResource {
 	}
 
 	/**
-	 * Resends an email with details about the package fulfillment to the shopper. 
+	 * 
 	 * <p><pre><code>
 	 *	FulfillmentAction fulfillmentaction = new FulfillmentAction();
 	 *	CountDownLatch latch = fulfillmentaction.resendPackageFulfillmentEmail( action,  orderId,  responseFields, callback );

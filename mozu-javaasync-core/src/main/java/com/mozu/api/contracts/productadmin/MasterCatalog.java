@@ -22,7 +22,7 @@ public class MasterCatalog implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * If the publishingMode is Pending and LiveEditsEnabled = true, DataViewMode live can be passed in the header and live products can be directly edited.
+	 * Enables the live editing of products feature. If you set the productPublishingMode field to Pending, set this field to true, and set the DataViewMode in the context header to live, you can edit the live version of products instead of the pending draft.This should only be enabled for immediate changes to the live version of products. Any edits made to the live version are not applied to the pending draft version, so when you publish the pending draft version, your edits to the live version are overwritten.
 	 */
 	protected  Boolean enableLiveEdit;
 
@@ -34,9 +34,6 @@ public class MasterCatalog implements Serializable
 		this.enableLiveEdit = enableLiveEdit;
 	}
 
-	/**
-	 * The unique identifier of the master catalog associated with the entity.
-	 */
 	protected  Integer id;
 
 	public Integer getId() {
@@ -60,9 +57,6 @@ public class MasterCatalog implements Serializable
 		this.isDeleted = isDeleted;
 	}
 
-	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -73,9 +67,6 @@ public class MasterCatalog implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * The mode this master catalog uses for product updates. Possible values are "Pending" which saves product updates as a draft until they are published, and "Live" which publishes all product updates immediately.
-	 */
 	protected  String productPublishingMode;
 
 	public String getProductPublishingMode() {

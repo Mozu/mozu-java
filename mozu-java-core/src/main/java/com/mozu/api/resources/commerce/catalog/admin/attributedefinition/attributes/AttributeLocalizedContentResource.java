@@ -35,7 +35,7 @@ public class AttributeLocalizedContentResource {
 
 	
 	/**
-	 * Retrieves a collection of localized content for attributes based on a `localeCode`.
+	 * 
 	 * <p><pre><code>
 	 *	AttributeLocalizedContent attributelocalizedcontent = new AttributeLocalizedContent();
 	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.getAttributeLocalizedContents( attributeFQN);
@@ -55,13 +55,13 @@ public class AttributeLocalizedContentResource {
 	}
 
 	/**
-	 * Retrieves the localized content for an attribute based on a `localeCode`.
+	 * 
 	 * <p><pre><code>
 	 *	AttributeLocalizedContent attributelocalizedcontent = new AttributeLocalizedContent();
 	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.getAttributeLocalizedContent( attributeFQN,  localeCode);
 	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
+	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.AttributeLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.AttributeLocalizedContent
@@ -72,14 +72,14 @@ public class AttributeLocalizedContentResource {
 	}
 
 	/**
-	 * Retrieves the localized content for an attribute based on a `localeCode`.
+	 * 
 	 * <p><pre><code>
 	 *	AttributeLocalizedContent attributelocalizedcontent = new AttributeLocalizedContent();
 	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.getAttributeLocalizedContent( attributeFQN,  localeCode,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.AttributeLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.AttributeLocalizedContent
@@ -94,7 +94,7 @@ public class AttributeLocalizedContentResource {
 	}
 
 	/**
-	 * Adds new localized content for an attribute based on a `localeCode`.
+	 * 
 	 * <p><pre><code>
 	 *	AttributeLocalizedContent attributelocalizedcontent = new AttributeLocalizedContent();
 	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.addLocalizedContent( localizedContent,  attributeFQN);
@@ -112,13 +112,13 @@ public class AttributeLocalizedContentResource {
 	}
 
 	/**
-	 * Adds new localized content for an attribute based on a `localeCode`.
+	 * 
 	 * <p><pre><code>
 	 *	AttributeLocalizedContent attributelocalizedcontent = new AttributeLocalizedContent();
 	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.addLocalizedContent( localizedContent,  attributeFQN,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
 	 * @param localizedContent The localized name and description of the attribute, displayed in the locale defined for the master catalog.
 	 * @return com.mozu.api.contracts.productadmin.AttributeLocalizedContent
@@ -135,7 +135,7 @@ public class AttributeLocalizedContentResource {
 	}
 
 	/**
-	 * Updates the localized content for a collection of existing attributes based on a `localeCode`.
+	 * 
 	 * <p><pre><code>
 	 *	AttributeLocalizedContent attributelocalizedcontent = new AttributeLocalizedContent();
 	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.updateLocalizedContents( localizedContent,  attributeFQN);
@@ -157,13 +157,13 @@ public class AttributeLocalizedContentResource {
 	}
 
 	/**
-	 * Updates the localized content for an existing attribute based on a `localeCode`.
+	 * 
 	 * <p><pre><code>
 	 *	AttributeLocalizedContent attributelocalizedcontent = new AttributeLocalizedContent();
 	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.updateLocalizedContent( localizedContent,  attributeFQN,  localeCode);
 	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
+	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
 	 * @param dataViewMode DataViewMode
 	 * @param localizedContent The localized name and description of the attribute, displayed in the locale defined for the master catalog.
 	 * @return com.mozu.api.contracts.productadmin.AttributeLocalizedContent
@@ -176,14 +176,14 @@ public class AttributeLocalizedContentResource {
 	}
 
 	/**
-	 * Updates the localized content for an existing attribute based on a `localeCode`.
+	 * 
 	 * <p><pre><code>
 	 *	AttributeLocalizedContent attributelocalizedcontent = new AttributeLocalizedContent();
 	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.updateLocalizedContent( localizedContent,  attributeFQN,  localeCode,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
 	 * @param localizedContent The localized name and description of the attribute, displayed in the locale defined for the master catalog.
 	 * @return com.mozu.api.contracts.productadmin.AttributeLocalizedContent
@@ -200,13 +200,13 @@ public class AttributeLocalizedContentResource {
 	}
 
 	/**
-	 * Removes all localized content. Localized content is translated text information and data based on a `localeCode`. 
+	 * 
 	 * <p><pre><code>
 	 *	AttributeLocalizedContent attributelocalizedcontent = new AttributeLocalizedContent();
 	 *	attributelocalizedcontent.deleteLocalizedContent( attributeFQN,  localeCode);
 	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
+	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
 	 * @param dataViewMode DataViewMode
 	 * @return 
 	 */

@@ -23,19 +23,6 @@ public class OrderProcessingSettings implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * If true, use the override price defined for products in the order to calculate discounts for the order.
-	 */
-	protected  Boolean useOverridePriceToCalculateDiscounts;
-
-	public Boolean getUseOverridePriceToCalculateDiscounts() {
-		return this.useOverridePriceToCalculateDiscounts;
-	}
-
-	public void setUseOverridePriceToCalculateDiscounts(Boolean useOverridePriceToCalculateDiscounts) {
-		this.useOverridePriceToCalculateDiscounts = useOverridePriceToCalculateDiscounts;
-	}
-
-	/**
 	 * Abandoned order threshold in minutes indicates the number of minutes until a pending order is considered abandoned.
 	 */
 	protected  Integer abandonedOrderThresholdInMinutes;
@@ -48,9 +35,6 @@ public class OrderProcessingSettings implements Serializable
 		this.abandonedOrderThresholdInMinutes = abandonedOrderThresholdInMinutes;
 	}
 
-	/**
-	 * Determines whether payment authorization occurs when the order is placed or when the order is shipped.
-	 */
 	protected  String paymentProcessingFlowType;
 
 	public String getPaymentProcessingFlowType() {
@@ -61,9 +45,16 @@ public class OrderProcessingSettings implements Serializable
 		this.paymentProcessingFlowType = paymentProcessingFlowType;
 	}
 
-	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
+	protected  Boolean useOverridePriceToCalculateDiscounts;
+
+	public Boolean getUseOverridePriceToCalculateDiscounts() {
+		return this.useOverridePriceToCalculateDiscounts;
+	}
+
+	public void setUseOverridePriceToCalculateDiscounts(Boolean useOverridePriceToCalculateDiscounts) {
+		this.useOverridePriceToCalculateDiscounts = useOverridePriceToCalculateDiscounts;
+	}
+
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {

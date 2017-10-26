@@ -34,9 +34,6 @@ public class MasterCatalog implements Serializable
 		this.enableLiveEdit = enableLiveEdit;
 	}
 
-	/**
-	 * The unique identifier of the master catalog associated with the entity.
-	 */
 	protected  Integer id;
 
 	public Integer getId() {
@@ -60,9 +57,6 @@ public class MasterCatalog implements Serializable
 		this.isDeleted = isDeleted;
 	}
 
-	/**
-	 * The user supplied name that appears in . You can use this field for identification purposes.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -73,9 +67,6 @@ public class MasterCatalog implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * The mode this master catalog uses for product updates. Possible values are "Pending" which saves product updates as a draft until they are published, and "Live" which publishes all product updates immediately.
-	 */
 	protected  String productPublishingMode;
 
 	public String getProductPublishingMode() {

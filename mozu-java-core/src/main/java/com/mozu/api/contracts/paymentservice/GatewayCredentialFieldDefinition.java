@@ -21,9 +21,6 @@ public class GatewayCredentialFieldDefinition implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The sequential display order of the gateway in .
-	 */
 	protected  Integer adminDisplayOrder;
 
 	public Integer getAdminDisplayOrder() {
@@ -34,9 +31,6 @@ public class GatewayCredentialFieldDefinition implements Serializable
 		this.adminDisplayOrder = adminDisplayOrder;
 	}
 
-	/**
-	 * The name that displays for the payment gateway or third-party credentials field. 
-	 */
 	protected  String displayName;
 
 	public String getDisplayName() {
@@ -47,9 +41,6 @@ public class GatewayCredentialFieldDefinition implements Serializable
 		this.displayName = displayName;
 	}
 
-	/**
-	 * The user supplied name that appears in . You can use this field for identification purposes.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -60,9 +51,6 @@ public class GatewayCredentialFieldDefinition implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * The name of the Volusion store.
-	 */
 	protected  String volusionStoreName;
 
 	public String getVolusionStoreName() {

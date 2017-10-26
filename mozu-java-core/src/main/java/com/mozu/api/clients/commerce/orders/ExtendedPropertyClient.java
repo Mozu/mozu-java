@@ -23,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 public class ExtendedPropertyClient {
 	
 	/**
-	 * Retrieves the extended property string associated with the order. 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>> mozuClient=GetExtendedPropertiesClient( orderId);
 	 * client.setBaseAddress(url);
@@ -40,7 +40,7 @@ public class ExtendedPropertyClient {
 	}
 
 	/**
-	 * Retrieves the extended property string associated with the order. 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>> mozuClient=GetExtendedPropertiesClient( orderId,  draft);
 	 * client.setBaseAddress(url);
@@ -65,7 +65,7 @@ public class ExtendedPropertyClient {
 	}
 
 	/**
-	 * Creates an extended property for the order.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>> mozuClient=AddExtendedPropertiesClient( extendedProperties,  orderId);
 	 * client.setBaseAddress(url);
@@ -84,7 +84,7 @@ public class ExtendedPropertyClient {
 	}
 
 	/**
-	 * Creates an extended property for the order.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>> mozuClient=AddExtendedPropertiesClient( extendedProperties,  orderId,  updateMode,  version);
 	 * client.setBaseAddress(url);
@@ -113,7 +113,7 @@ public class ExtendedPropertyClient {
 	}
 
 	/**
-	 * Updates one ore more extended properties.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty> mozuClient=UpdateExtendedPropertyClient( extendedProperty,  orderId,  key);
 	 * client.setBaseAddress(url);
@@ -133,7 +133,7 @@ public class ExtendedPropertyClient {
 	}
 
 	/**
-	 * Updates one ore more extended properties.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty> mozuClient=UpdateExtendedPropertyClient( extendedProperty,  orderId,  key,  updateMode,  version,  upsert,  responseFields);
 	 * client.setBaseAddress(url);
@@ -166,7 +166,7 @@ public class ExtendedPropertyClient {
 	}
 
 	/**
-	 * Updates one or more extended properties.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>> mozuClient=UpdateExtendedPropertiesClient( extendedProperties,  orderId);
 	 * client.setBaseAddress(url);
@@ -185,7 +185,7 @@ public class ExtendedPropertyClient {
 	}
 
 	/**
-	 * Updates one or more extended properties.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>> mozuClient=UpdateExtendedPropertiesClient( extendedProperties,  orderId,  updateMode,  version,  upsert);
 	 * client.setBaseAddress(url);
@@ -216,7 +216,7 @@ public class ExtendedPropertyClient {
 	}
 
 	/**
-	 * Deletes one or more extended properties.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteExtendedPropertyClient( orderId,  key);
 	 * client.setBaseAddress(url);
@@ -232,7 +232,7 @@ public class ExtendedPropertyClient {
 	}
 
 	/**
-	 * Deletes one or more extended properties.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteExtendedPropertyClient( orderId,  key,  updateMode,  version);
 	 * client.setBaseAddress(url);
@@ -256,7 +256,7 @@ public class ExtendedPropertyClient {
 	}
 
 	/**
-	 * Deletes the extended property associated with the order. 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteExtendedPropertiesClient( keys,  orderId);
 	 * client.setBaseAddress(url);
@@ -273,7 +273,7 @@ public class ExtendedPropertyClient {
 	}
 
 	/**
-	 * Deletes the extended property associated with the order. 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteExtendedPropertiesClient( keys,  orderId,  updateMode,  version);
 	 * client.setBaseAddress(url);

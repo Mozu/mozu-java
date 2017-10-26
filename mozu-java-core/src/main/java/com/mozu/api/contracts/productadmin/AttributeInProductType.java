@@ -26,9 +26,6 @@ public class AttributeInProductType implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 */
 	protected  String attributeFQN;
 
 	public String getAttributeFQN() {
@@ -52,9 +49,6 @@ public class AttributeInProductType implements Serializable
 		this.isAdminOnlyProperty = isAdminOnlyProperty;
 	}
 
-	/**
-	 * If true, this property is hidden on the storefront. If false, this property is not hidden from the storefront.
-	 */
 	protected  Boolean isHiddenProperty;
 
 	public Boolean getIsHiddenProperty() {
@@ -65,9 +59,6 @@ public class AttributeInProductType implements Serializable
 		this.isHiddenProperty = isHiddenProperty;
 	}
 
-	/**
-	 * If true, this entity is inherited from the base type. If false, this entity is not inherited from the base type.
-	 */
 	protected  Boolean isInheritedFromBaseType;
 
 	public Boolean getIsInheritedFromBaseType() {
@@ -78,9 +69,6 @@ public class AttributeInProductType implements Serializable
 		this.isInheritedFromBaseType = isInheritedFromBaseType;
 	}
 
-	/**
-	 * If true, this attribute has more than one possible value.
-	 */
 	protected  Boolean isMultiValueProperty;
 
 	public Boolean getIsMultiValueProperty() {
@@ -104,9 +92,6 @@ public class AttributeInProductType implements Serializable
 		this.isProductDetailsOnlyProperty = isProductDetailsOnlyProperty;
 	}
 
-	/**
-	 * If true, the entity is required by the admin. If false, the entity is not required by the admin.
-	 */
 	protected  Boolean isRequiredByAdmin;
 
 	public Boolean getIsRequiredByAdmin() {
@@ -117,9 +102,6 @@ public class AttributeInProductType implements Serializable
 		this.isRequiredByAdmin = isRequiredByAdmin;
 	}
 
-	/**
-	 * Integer that represents the sequence order of the attribute.
-	 */
 	protected  Integer order;
 
 	public Integer getOrder() {
@@ -130,9 +112,6 @@ public class AttributeInProductType implements Serializable
 		this.order = order;
 	}
 
-	/**
-	 * The product attribute details common between all attribute types - properties, options, and extras.
-	 */
 	protected  Attribute attributeDetail;
 
 	public Attribute getAttributeDetail() {
@@ -156,9 +135,6 @@ public class AttributeInProductType implements Serializable
 		this.displayInfo = displayInfo;
 	}
 
-	/**
-	 * List of valid vocabulary values defined for an attribute.
-	 */
 	protected List<AttributeVocabularyValueInProductType> vocabularyValues;
 	public List<AttributeVocabularyValueInProductType> getVocabularyValues() {
 		return this.vocabularyValues;

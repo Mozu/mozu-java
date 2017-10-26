@@ -45,7 +45,7 @@ public class DocumentListTypeUrl
 
 	/**
 	 * Get Resource Url for CreateDocumentListType
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl createDocumentListTypeUrl(String responseFields)
@@ -58,7 +58,7 @@ public class DocumentListTypeUrl
 	/**
 	 * Get Resource Url for UpdateDocumentListType
 	 * @param documentListTypeFQN 
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateDocumentListTypeUrl(String documentListTypeFQN, String responseFields)

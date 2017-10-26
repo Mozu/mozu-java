@@ -12,16 +12,14 @@ import org.junit.Test;
 import com.mozu.api.ApiContext;
 import com.mozu.api.DataViewMode;
 import com.mozu.api.MozuApiContext;
-import com.mozu.api.cache.impl.CacheManagerImpl;
-import com.mozu.api.contracts.core.extensible.Attribute;
+import com.mozu.api.contracts.productadmin.Attribute;
 import com.mozu.api.contracts.productadmin.AttributeInProductType;
 import com.mozu.api.contracts.productadmin.ProductType;
 import com.mozu.api.contracts.productadmin.ProductTypeCollection;
 import com.mozu.test.framework.core.MozuApiTestBase;
 import com.mozu.test.framework.core.TestFailException;
-import com.mozu.test.framework.datafactory.AttributeFactory;
-import com.mozu.test.framework.datafactory.AttributedefinitionAttributeFactory;
-import com.mozu.test.framework.datafactory.ProductTypeFactory;
+import com.mozu.test.framework.datafactory.commerce.catalog.admin.attributedefinition.AttributeFactory;
+import com.mozu.test.framework.datafactory.commerce.catalog.admin.attributedefinition.ProductTypeFactory;
 import com.mozu.test.framework.helper.Generator;
 import com.mozu.test.framework.helper.ProductAttributeGenerator;
 
@@ -125,13 +123,13 @@ public class PopulateCAAttributes extends MozuApiTestBase {
 	    {
 			createdAttr = AttributeFactory.getAttribute(apiContext, name.replaceAll("\\s+",""), HttpStatus.SC_OK);
 			attr.setAttributeFQN(createdAttr.getAttributeFQN());
-			updatedAttr = AttributedefinitionAttributeFactory.updateAttribute(apiContext, attr, createdAttr.getAttributeFQN(), HttpStatus.SC_OK);
+			updatedAttr = AttributeFactory.updateAttribute(apiContext, attr, createdAttr.getAttributeFQN(), HttpStatus.SC_OK);
 	    }
 	    catch (TestFailException te)
 	    {
 	    	if (te.getActualReturnCode().equals("" + HttpStatus.SC_NOT_FOUND))
 	    	{
-	    		updatedAttr = AttributedefinitionAttributeFactory.addAttribute(apiContext, attr, HttpStatus.SC_CREATED);
+	    		updatedAttr = AttributeFactory.addAttribute(apiContext, attr, HttpStatus.SC_CREATED);
 	    	}
 	    }
 		

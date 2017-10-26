@@ -21,9 +21,6 @@ public class OrderAction implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The name of the fulfillment action to perform for the purchased product. Options include "Ship" or "PickUp" (in-store pick-up).
-	 */
 	protected  String actionName;
 
 	public String getActionName() {

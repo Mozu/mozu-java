@@ -35,7 +35,7 @@ public class CustomerPurchaseOrderAccountResource {
 
 	
 	/**
-	 * Retrieves the details of the specified customer purchase order account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerPurchaseOrderAccount customerpurchaseorderaccount = new CustomerPurchaseOrderAccount();
 	 *	CustomerPurchaseOrderAccount customerPurchaseOrderAccount = customerpurchaseorderaccount.getCustomerPurchaseOrderAccount( accountId);
@@ -50,7 +50,7 @@ public class CustomerPurchaseOrderAccountResource {
 	}
 
 	/**
-	 * Retrieves the details of the specified customer purchase order account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerPurchaseOrderAccount customerpurchaseorderaccount = new CustomerPurchaseOrderAccount();
 	 *	CustomerPurchaseOrderAccount customerPurchaseOrderAccount = customerpurchaseorderaccount.getCustomerPurchaseOrderAccount( accountId,  responseFields);
@@ -70,7 +70,7 @@ public class CustomerPurchaseOrderAccountResource {
 	}
 
 	/**
-	 * Retrieves a list of purchase order transactions for the specified customer account according to any specified sort options.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerPurchaseOrderAccount customerpurchaseorderaccount = new CustomerPurchaseOrderAccount();
 	 *	PurchaseOrderTransactionCollection purchaseOrderTransactionCollection = customerpurchaseorderaccount.getCustomerPurchaseOrderTransactions( accountId);
@@ -85,7 +85,7 @@ public class CustomerPurchaseOrderAccountResource {
 	}
 
 	/**
-	 * Retrieves a list of purchase order transactions for the specified customer account according to any specified sort options.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerPurchaseOrderAccount customerpurchaseorderaccount = new CustomerPurchaseOrderAccount();
 	 *	PurchaseOrderTransactionCollection purchaseOrderTransactionCollection = customerpurchaseorderaccount.getCustomerPurchaseOrderTransactions( accountId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
@@ -109,7 +109,7 @@ public class CustomerPurchaseOrderAccountResource {
 	}
 
 	/**
-	 * Adds a purchase order account to the specified customer account.This adds the ability for the specified customer account to use the purchase order payment method.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerPurchaseOrderAccount customerpurchaseorderaccount = new CustomerPurchaseOrderAccount();
 	 *	CustomerPurchaseOrderAccount customerPurchaseOrderAccount = customerpurchaseorderaccount.createCustomerPurchaseOrderAccount( customerPurchaseOrderAccount,  accountId);
@@ -126,7 +126,7 @@ public class CustomerPurchaseOrderAccountResource {
 	}
 
 	/**
-	 * Adds a purchase order account to the specified customer account.This adds the ability for the specified customer account to use the purchase order payment method.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerPurchaseOrderAccount customerpurchaseorderaccount = new CustomerPurchaseOrderAccount();
 	 *	CustomerPurchaseOrderAccount customerPurchaseOrderAccount = customerpurchaseorderaccount.createCustomerPurchaseOrderAccount( customerPurchaseOrderAccount,  accountId,  responseFields);
@@ -148,7 +148,7 @@ public class CustomerPurchaseOrderAccountResource {
 	}
 
 	/**
-	 * Creates a purchase order transaction on the specified customer purchase order account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerPurchaseOrderAccount customerpurchaseorderaccount = new CustomerPurchaseOrderAccount();
 	 *	PurchaseOrderTransaction purchaseOrderTransaction = customerpurchaseorderaccount.createPurchaseOrderTransaction( purchaseOrderTransaction,  accountId);
@@ -165,7 +165,7 @@ public class CustomerPurchaseOrderAccountResource {
 	}
 
 	/**
-	 * Creates a purchase order transaction on the specified customer purchase order account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerPurchaseOrderAccount customerpurchaseorderaccount = new CustomerPurchaseOrderAccount();
 	 *	PurchaseOrderTransaction purchaseOrderTransaction = customerpurchaseorderaccount.createPurchaseOrderTransaction( purchaseOrderTransaction,  accountId,  responseFields);
@@ -187,7 +187,7 @@ public class CustomerPurchaseOrderAccountResource {
 	}
 
 	/**
-	 * Updates the details of the purchase order account for the specified customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerPurchaseOrderAccount customerpurchaseorderaccount = new CustomerPurchaseOrderAccount();
 	 *	CustomerPurchaseOrderAccount customerPurchaseOrderAccount = customerpurchaseorderaccount.updateCustomerPurchaseOrderAccount( customerPurchaseOrderAccount,  accountId);
@@ -204,7 +204,7 @@ public class CustomerPurchaseOrderAccountResource {
 	}
 
 	/**
-	 * Updates the details of the purchase order account for the specified customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerPurchaseOrderAccount customerpurchaseorderaccount = new CustomerPurchaseOrderAccount();
 	 *	CustomerPurchaseOrderAccount customerPurchaseOrderAccount = customerpurchaseorderaccount.updateCustomerPurchaseOrderAccount( customerPurchaseOrderAccount,  accountId,  responseFields);
@@ -226,7 +226,7 @@ public class CustomerPurchaseOrderAccountResource {
 	}
 
 	/**
-	 * Deletes the specified customer purchase order account.This removes the ability for the specified customer account to use the purchase order payment method.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerPurchaseOrderAccount customerpurchaseorderaccount = new CustomerPurchaseOrderAccount();
 	 *	customerpurchaseorderaccount.deleteCustomerPurchaseOrderAccount( accountId);

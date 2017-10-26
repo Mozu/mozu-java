@@ -21,9 +21,6 @@ public class DocumentDraftSummary implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Detailed information of the date and time for the active update date for the document draft summary. This data is associated to document and content data.
-	 */
 	protected  DateTime activeUpdateDate;
 
 	public DateTime getActiveUpdateDate() {
@@ -35,7 +32,7 @@ public class DocumentDraftSummary implements Serializable
 	}
 
 	/**
-	 * Mozu.Content.Contracts.DocumentDraftSummary activeUpdatedBy ApiTypeMember DOCUMENT_HERE 
+	 * The unique identifier of the user that last updated the content or document draft.
 	 */
 	protected  String activeUpdatedBy;
 
@@ -73,9 +70,6 @@ public class DocumentDraftSummary implements Serializable
 		this.documentTypeFQN = documentTypeFQN;
 	}
 
-	/**
-	 * Detailed information of the date and time for the draft update date for the document draft summary. This data is associated to document and content data.
-	 */
 	protected  DateTime draftUpdateDate;
 
 	public DateTime getDraftUpdateDate() {
@@ -86,9 +80,6 @@ public class DocumentDraftSummary implements Serializable
 		this.draftUpdateDate = draftUpdateDate;
 	}
 
-	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
-	 */
 	protected  String id;
 
 	public String getId() {
@@ -125,9 +116,6 @@ public class DocumentDraftSummary implements Serializable
 		this.masterCatalogId = masterCatalogId;
 	}
 
-	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -139,7 +127,7 @@ public class DocumentDraftSummary implements Serializable
 	}
 
 	/**
-	 * Mozu.Content.Contracts.DocumentDraftSummary publishSetCode ApiTypeMember DOCUMENT_HERE 
+	 * The unique identifier of the publish set.
 	 */
 	protected  String publishSetCode;
 
@@ -151,9 +139,6 @@ public class DocumentDraftSummary implements Serializable
 		this.publishSetCode = publishSetCode;
 	}
 
-	/**
-	 * Whether the draft has been published.
-	 */
 	protected  String publishType;
 
 	public String getPublishType() {
@@ -165,7 +150,7 @@ public class DocumentDraftSummary implements Serializable
 	}
 
 	/**
-	 * Unique identifier for the site. This ID is used at all levels of a store, catalog, and tenant to associate objects to a site.
+	 * Unique identifier for the site. This IDÂ is used at all levels of a store, catalog, and tenant to associate objects to a site.
 	 */
 	protected  Integer siteId;
 
@@ -177,9 +162,6 @@ public class DocumentDraftSummary implements Serializable
 		this.siteId = siteId;
 	}
 
-	/**
-	 * Unique identifier of the user who last modified the item. This value is system-supplied and read-only.
-	 */
 	protected  String updatedBy;
 
 	public String getUpdatedBy() {

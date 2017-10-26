@@ -19,13 +19,13 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Allows you to get a price list. This may contain a hierarchy of price lists dependent on setup.
+ * Retrieves the details of a price list. The details may contain a hierarchy of ancestor and/or descendant price lists dependening on your configuration.
  * </summary>
  */
 public class PriceListClient {
 	
 	/**
-	 * Retrieves the price list for the given priceListCode
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productruntime.PriceList> mozuClient=GetPriceListClient( priceListCode);
 	 * client.setBaseAddress(url);
@@ -42,7 +42,7 @@ public class PriceListClient {
 	}
 
 	/**
-	 * Retrieves the price list for the given priceListCode
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productruntime.PriceList> mozuClient=GetPriceListClient( priceListCode,  responseFields);
 	 * client.setBaseAddress(url);
@@ -67,7 +67,7 @@ public class PriceListClient {
 	}
 
 	/**
-	 * storefront-pricelists Get GetResolvedPriceList description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productruntime.ResolvedPriceList> mozuClient=GetResolvedPriceListClient();
 	 * client.setBaseAddress(url);
@@ -83,7 +83,7 @@ public class PriceListClient {
 	}
 
 	/**
-	 * storefront-pricelists Get GetResolvedPriceList description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productruntime.ResolvedPriceList> mozuClient=GetResolvedPriceListClient( customerAccountId,  responseFields);
 	 * client.setBaseAddress(url);

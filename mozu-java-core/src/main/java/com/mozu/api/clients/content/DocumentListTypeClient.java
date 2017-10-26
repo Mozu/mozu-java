@@ -24,7 +24,7 @@ import com.mozu.api.DataViewMode;
 public class DocumentListTypeClient {
 	
 	/**
-	 * Gets all the available documentListTypes.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.DocumentListTypeCollection> mozuClient=GetDocumentListTypesClient(dataViewMode);
 	 * client.setBaseAddress(url);
@@ -40,7 +40,7 @@ public class DocumentListTypeClient {
 	}
 
 	/**
-	 * Gets all the available documentListTypes.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.DocumentListTypeCollection> mozuClient=GetDocumentListTypesClient(dataViewMode,  pageSize,  startIndex,  responseFields);
 	 * client.setBaseAddress(url);
@@ -67,7 +67,7 @@ public class DocumentListTypeClient {
 	}
 
 	/**
-	 * Gets a documentListType.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.DocumentListType> mozuClient=GetDocumentListTypeClient(dataViewMode,  documentListTypeFQN);
 	 * client.setBaseAddress(url);
@@ -84,7 +84,7 @@ public class DocumentListTypeClient {
 	}
 
 	/**
-	 * Gets a documentListType.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.DocumentListType> mozuClient=GetDocumentListTypeClient(dataViewMode,  documentListTypeFQN,  responseFields);
 	 * client.setBaseAddress(url);
@@ -110,7 +110,7 @@ public class DocumentListTypeClient {
 	}
 
 	/**
-	 * Creates a new documentListType.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.DocumentListType> mozuClient=CreateDocumentListTypeClient(dataViewMode,  list);
 	 * client.setBaseAddress(url);
@@ -128,14 +128,14 @@ public class DocumentListTypeClient {
 	}
 
 	/**
-	 * Creates a new documentListType.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.DocumentListType> mozuClient=CreateDocumentListTypeClient(dataViewMode,  list,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DocumentListType documentListType = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param list Properties for the document list type. Document lists contain documents with an associated document type, such as web pages.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentListType>
 	 * @see com.mozu.api.contracts.content.DocumentListType
@@ -156,7 +156,7 @@ public class DocumentListTypeClient {
 	}
 
 	/**
-	 * Updates a DocumentListType
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.DocumentListType> mozuClient=UpdateDocumentListTypeClient( list,  documentListTypeFQN);
 	 * client.setBaseAddress(url);
@@ -175,7 +175,7 @@ public class DocumentListTypeClient {
 	}
 
 	/**
-	 * Updates a DocumentListType
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.DocumentListType> mozuClient=UpdateDocumentListTypeClient( list,  documentListTypeFQN,  responseFields);
 	 * client.setBaseAddress(url);
@@ -183,7 +183,7 @@ public class DocumentListTypeClient {
 	 * DocumentListType documentListType = client.Result();
 	 * </code></pre></p>
 	 * @param documentListTypeFQN 
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param list Properties for the document list type. Document lists contain documents with an associated document type, such as web pages.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentListType>
 	 * @see com.mozu.api.contracts.content.DocumentListType

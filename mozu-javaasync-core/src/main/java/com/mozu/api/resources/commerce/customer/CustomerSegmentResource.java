@@ -37,7 +37,7 @@ public class CustomerSegmentResource {
 
 	
 	/**
-	 * Retrieves a list of defined customer segments according to any filter and sort criteria.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerSegment customersegment = new CustomerSegment();
 	 *	CustomerSegmentCollection customerSegmentCollection = customersegment.getSegments();
@@ -51,7 +51,7 @@ public class CustomerSegmentResource {
 	}
 
 	/**
-	 * Retrieves a list of defined customer segments according to any filter and sort criteria.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerSegment customersegment = new CustomerSegment();
 	 *	CountDownLatch latch = customersegment.getSegments( callback );
@@ -66,16 +66,16 @@ public class CustomerSegmentResource {
 	}
 
 	/**
-	 * Retrieves a list of defined customer segments according to any filter and sort criteria.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerSegment customersegment = new CustomerSegment();
 	 *	CustomerSegmentCollection customerSegmentCollection = customersegment.getSegments( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return com.mozu.api.contracts.customer.CustomerSegmentCollection
 	 * @see com.mozu.api.contracts.customer.CustomerSegmentCollection
 	 */
@@ -89,16 +89,16 @@ public class CustomerSegmentResource {
 	}
 
 	/**
-	 * Retrieves a list of defined customer segments according to any filter and sort criteria.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerSegment customersegment = new CustomerSegment();
 	 *	CountDownLatch latch = customersegment.getSegments( startIndex,  pageSize,  sortBy,  filter,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.CustomerSegmentCollection
 	 * @see com.mozu.api.contracts.customer.CustomerSegmentCollection
@@ -112,7 +112,7 @@ public class CustomerSegmentResource {
 	}
 
 	/**
-	 * Retrieves the details of the customer segment specified in the request. This operation does not return a list of the customer accounts associated with the segment.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerSegment customersegment = new CustomerSegment();
 	 *	CustomerSegment customerSegment = customersegment.getSegment( id);
@@ -127,7 +127,7 @@ public class CustomerSegmentResource {
 	}
 
 	/**
-	 * Retrieves the details of the customer segment specified in the request. This operation does not return a list of the customer accounts associated with the segment.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerSegment customersegment = new CustomerSegment();
 	 *	CountDownLatch latch = customersegment.getSegment( id, callback );
@@ -143,13 +143,13 @@ public class CustomerSegmentResource {
 	}
 
 	/**
-	 * Retrieves the details of the customer segment specified in the request. This operation does not return a list of the customer accounts associated with the segment.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerSegment customersegment = new CustomerSegment();
 	 *	CustomerSegment customerSegment = customersegment.getSegment( id,  responseFields);
 	 * </code></pre></p>
 	 * @param id Unique identifier of the customer segment to retrieve.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.customer.CustomerSegment
 	 * @see com.mozu.api.contracts.customer.CustomerSegment
 	 */
@@ -163,13 +163,13 @@ public class CustomerSegmentResource {
 	}
 
 	/**
-	 * Retrieves the details of the customer segment specified in the request. This operation does not return a list of the customer accounts associated with the segment.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerSegment customersegment = new CustomerSegment();
 	 *	CountDownLatch latch = customersegment.getSegment( id,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param id Unique identifier of the customer segment to retrieve.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.CustomerSegment
 	 * @see com.mozu.api.contracts.customer.CustomerSegment
@@ -183,7 +183,7 @@ public class CustomerSegmentResource {
 	}
 
 	/**
-	 * Creates a new customer segments. New customer segments do not have any associated customer accounts.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerSegment customersegment = new CustomerSegment();
 	 *	CustomerSegment customerSegment = customersegment.addSegment( segment);
@@ -199,7 +199,7 @@ public class CustomerSegmentResource {
 	}
 
 	/**
-	 * Creates a new customer segments. New customer segments do not have any associated customer accounts.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerSegment customersegment = new CustomerSegment();
 	 *	CountDownLatch latch = customersegment.addSegment( segment, callback );
@@ -216,12 +216,12 @@ public class CustomerSegmentResource {
 	}
 
 	/**
-	 * Creates a new customer segments. New customer segments do not have any associated customer accounts.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerSegment customersegment = new CustomerSegment();
 	 *	CustomerSegment customerSegment = customersegment.addSegment( segment,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param segment The Customer Segment object includes properties of a defined customer segment used to group customer accounts.
 	 * @return com.mozu.api.contracts.customer.CustomerSegment
 	 * @see com.mozu.api.contracts.customer.CustomerSegment
@@ -237,12 +237,12 @@ public class CustomerSegmentResource {
 	}
 
 	/**
-	 * Creates a new customer segments. New customer segments do not have any associated customer accounts.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerSegment customersegment = new CustomerSegment();
 	 *	CountDownLatch latch = customersegment.addSegment( segment,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param segment The Customer Segment object includes properties of a defined customer segment used to group customer accounts.
 	 * @return com.mozu.api.contracts.customer.CustomerSegment
@@ -258,7 +258,7 @@ public class CustomerSegmentResource {
 	}
 
 	/**
-	 * Adds one or more customer accounts to a defined customer segment.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerSegment customersegment = new CustomerSegment();
 	 *	customersegment.addSegmentAccounts( accountIds,  id);
@@ -278,7 +278,7 @@ public class CustomerSegmentResource {
 	}
 
 	/**
-	 * Updates the details of the customer segment specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerSegment customersegment = new CustomerSegment();
 	 *	CustomerSegment customerSegment = customersegment.updateSegment( segment,  id);
@@ -295,7 +295,7 @@ public class CustomerSegmentResource {
 	}
 
 	/**
-	 * Updates the details of the customer segment specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerSegment customersegment = new CustomerSegment();
 	 *	CountDownLatch latch = customersegment.updateSegment( segment,  id, callback );
@@ -313,13 +313,13 @@ public class CustomerSegmentResource {
 	}
 
 	/**
-	 * Updates the details of the customer segment specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerSegment customersegment = new CustomerSegment();
 	 *	CustomerSegment customerSegment = customersegment.updateSegment( segment,  id,  responseFields);
 	 * </code></pre></p>
 	 * @param id Unique identifier of the customer segment to retrieve.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param segment The Customer Segment object includes properties of a defined customer segment used to group customer accounts.
 	 * @return com.mozu.api.contracts.customer.CustomerSegment
 	 * @see com.mozu.api.contracts.customer.CustomerSegment
@@ -335,13 +335,13 @@ public class CustomerSegmentResource {
 	}
 
 	/**
-	 * Updates the details of the customer segment specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerSegment customersegment = new CustomerSegment();
 	 *	CountDownLatch latch = customersegment.updateSegment( segment,  id,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param id Unique identifier of the customer segment to retrieve.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param segment The Customer Segment object includes properties of a defined customer segment used to group customer accounts.
 	 * @return com.mozu.api.contracts.customer.CustomerSegment
@@ -357,7 +357,7 @@ public class CustomerSegmentResource {
 	}
 
 	/**
-	 * Deletes a customer segment specified by its unique identifier. Deleting a segment removes any customer account associations, but does not delete the customer account itself.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerSegment customersegment = new CustomerSegment();
 	 *	customersegment.deleteSegment( id);
@@ -375,7 +375,7 @@ public class CustomerSegmentResource {
 	}
 
 	/**
-	 * Removes single account from a segment.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerSegment customersegment = new CustomerSegment();
 	 *	customersegment.removeSegmentAccount( id,  accountId);

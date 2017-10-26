@@ -21,9 +21,6 @@ public class ProductInventoryInfo implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Indicates is the item's stock is managed. If true, Mozu manages inventory levels for this product.
-	 */
 	protected  Boolean manageStock;
 
 	public Boolean getManageStock() {
@@ -34,9 +31,6 @@ public class ProductInventoryInfo implements Serializable
 		this.manageStock = manageStock;
 	}
 
-	/**
-	 * Determines the method this product uses when active stock is depeleted. Options include "DisplayMessage" to display an out of stock message to the shopper, "HideProduct" to disable the product on the storefront, or "AllowBackOrder" to allow the shopper to back order the product. This property is required only if Mozu manages inventory for this product.
-	 */
 	protected  String outOfStockBehavior;
 
 	public String getOutOfStockBehavior() {

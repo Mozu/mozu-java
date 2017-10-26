@@ -22,9 +22,6 @@ public class LocationType implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * User-defined identifying code for the location type.
-	 */
 	protected  String code;
 
 	public String getCode() {
@@ -35,9 +32,6 @@ public class LocationType implements Serializable
 		this.code = code;
 	}
 
-	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
-	 */
 	protected  String name;
 
 	public String getName() {

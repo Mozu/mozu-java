@@ -23,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 public class CarrierConfigurationClient {
 	
 	/**
-	 * Retrieves a list of carrier configurations and their details according to any specified facets, filter criteria, and sort options.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.CarrierConfigurationCollection> mozuClient=GetConfigurationsClient();
 	 * client.setBaseAddress(url);
@@ -39,7 +39,7 @@ public class CarrierConfigurationClient {
 	}
 
 	/**
-	 * Retrieves a list of carrier configurations and their details according to any specified facets, filter criteria, and sort options.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.CarrierConfigurationCollection> mozuClient=GetConfigurationsClient( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * client.setBaseAddress(url);
@@ -67,7 +67,7 @@ public class CarrierConfigurationClient {
 	}
 
 	/**
-	 * Retrieves the details of the specified carrier configuration.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.CarrierConfiguration> mozuClient=GetConfigurationClient( carrierId);
 	 * client.setBaseAddress(url);
@@ -84,7 +84,7 @@ public class CarrierConfigurationClient {
 	}
 
 	/**
-	 * Retrieves the details of the specified carrier configuration.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.CarrierConfiguration> mozuClient=GetConfigurationClient( carrierId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -109,7 +109,7 @@ public class CarrierConfigurationClient {
 	}
 
 	/**
-	 * Creates a new carrier configuration.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.CarrierConfiguration> mozuClient=CreateConfigurationClient( carrierConfiguration,  carrierId);
 	 * client.setBaseAddress(url);
@@ -128,7 +128,7 @@ public class CarrierConfigurationClient {
 	}
 
 	/**
-	 * Creates a new carrier configuration.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.CarrierConfiguration> mozuClient=CreateConfigurationClient( carrierConfiguration,  carrierId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -156,7 +156,7 @@ public class CarrierConfigurationClient {
 	}
 
 	/**
-	 * Updates the details of the specified carrier configuration.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.CarrierConfiguration> mozuClient=UpdateConfigurationClient( carrierConfiguration,  carrierId);
 	 * client.setBaseAddress(url);
@@ -175,7 +175,7 @@ public class CarrierConfigurationClient {
 	}
 
 	/**
-	 * Updates the details of the specified carrier configuration.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.CarrierConfiguration> mozuClient=UpdateConfigurationClient( carrierConfiguration,  carrierId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -203,7 +203,7 @@ public class CarrierConfigurationClient {
 	}
 
 	/**
-	 * Deletes the specified carrier configuration.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteConfigurationClient( carrierId);
 	 * client.setBaseAddress(url);

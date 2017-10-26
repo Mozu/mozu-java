@@ -23,9 +23,6 @@ public class Contact implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The legal or doing business as (DBA) or tradestyle name of the business or organization. The maximum character length is 200.
-	 */
 	protected  String companyOrOrganization;
 
 	public String getCompanyOrOrganization() {
@@ -36,9 +33,6 @@ public class Contact implements Serializable
 		this.companyOrOrganization = companyOrOrganization;
 	}
 
-	/**
-	 * The email address of the specified user or the email address associated with the specified entity.
-	 */
 	protected  String email;
 
 	public String getEmail() {
@@ -49,9 +43,6 @@ public class Contact implements Serializable
 		this.email = email;
 	}
 
-	/**
-	 * The first name of the contact. The maximum character length is 200.
-	 */
 	protected  String firstName;
 
 	public String getFirstName() {
@@ -62,9 +53,6 @@ public class Contact implements Serializable
 		this.firstName = firstName;
 	}
 
-	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
-	 */
 	protected  Integer id;
 
 	public Integer getId() {
@@ -75,9 +63,6 @@ public class Contact implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * The last name or surname of the contact. The maximum character length is 200.
-	 */
 	protected  String lastNameOrSurname;
 
 	public String getLastNameOrSurname() {
@@ -88,9 +73,6 @@ public class Contact implements Serializable
 		this.lastNameOrSurname = lastNameOrSurname;
 	}
 
-	/**
-	 * The middle name or the first initial of the middle name of the contact. The maximum character length is 100.
-	 */
 	protected  String middleNameOrInitial;
 
 	public String getMiddleNameOrInitial() {
@@ -101,9 +83,6 @@ public class Contact implements Serializable
 		this.middleNameOrInitial = middleNameOrInitial;
 	}
 
-	/**
-	 * All address information for the contact. This data is used to validate the address for the customer account and includes the full address.
-	 */
 	protected  Address address;
 
 	public Address getAddress() {
@@ -114,9 +93,6 @@ public class Contact implements Serializable
 		this.address = address;
 	}
 
-	/**
-	 * List of phone numbers associated with the customer account contact. The phone numbers include area codes.
-	 */
 	protected  Phone phoneNumbers;
 
 	public Phone getPhoneNumbers() {

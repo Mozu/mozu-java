@@ -39,7 +39,7 @@ public AuthTicketResource(ApiContext apiContext)
 
 	
 	/**
-	 * Generate an authentication ticket for an application.
+	 * 
 	 * <p><pre><code>
 	 *	AuthTicket authticket = new AuthTicket();
 	 *	AuthTicket authTicket = authticket.authenticateApp( appAuthInfo);
@@ -55,12 +55,12 @@ public AuthTicketResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Generate an authentication ticket for an application.
+	 * 
 	 * <p><pre><code>
 	 *	AuthTicket authticket = new AuthTicket();
 	 *	AuthTicket authTicket = authticket.authenticateApp( appAuthInfo,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param appAuthInfo The information required to authenticate third party applications against the  API.
 	 * @return com.mozu.api.contracts.appdev.AuthTicket
 	 * @see com.mozu.api.contracts.appdev.AuthTicket
@@ -76,7 +76,7 @@ public AuthTicketResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Refreshes the application's authentication ticket and generates a new access token by providing the refresh token string.
+	 * 
 	 * <p><pre><code>
 	 *	AuthTicket authticket = new AuthTicket();
 	 *	AuthTicket authTicket = authticket.refreshAppAuthTicket( authTicketRequest);
@@ -92,12 +92,12 @@ public AuthTicketResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Refreshes the application's authentication ticket and generates a new access token by providing the refresh token string.
+	 * 
 	 * <p><pre><code>
 	 *	AuthTicket authticket = new AuthTicket();
 	 *	AuthTicket authTicket = authticket.refreshAppAuthTicket( authTicketRequest,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param authTicketRequest Properties of the authentication ticket refresh requests, which includes the refresh token string.
 	 * @return com.mozu.api.contracts.appdev.AuthTicket
 	 * @see com.mozu.api.contracts.appdev.AuthTicket
@@ -113,7 +113,7 @@ public AuthTicketResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Deletes an authentication for an application based on the specified refresh token.
+	 * 
 	 * <p><pre><code>
 	 *	AuthTicket authticket = new AuthTicket();
 	 *	authticket.deleteAppAuthTicket( refreshToken);

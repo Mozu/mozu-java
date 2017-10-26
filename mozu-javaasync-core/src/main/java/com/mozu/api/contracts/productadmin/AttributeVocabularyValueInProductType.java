@@ -23,9 +23,6 @@ public class AttributeVocabularyValueInProductType implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Integer that represents the sequence order of the attribute.
-	 */
 	protected  Integer order;
 
 	public Integer getOrder() {
@@ -36,9 +33,6 @@ public class AttributeVocabularyValueInProductType implements Serializable
 		this.order = order;
 	}
 
-	/**
-	 * The value of a property, used by numerous objects within Mozu including facets, attributes, products, localized content, metadata, capabilities (Mozu and third-party), location inventory adjustment, and more. The value may be a string, integer, or double. Validation may be run against the entered and saved values depending on the object type.
-	 */
 	protected  Object value;
 
 	public Object getValue() {
@@ -62,9 +56,6 @@ public class AttributeVocabularyValueInProductType implements Serializable
 		this.displayInfo = displayInfo;
 	}
 
-	/**
-	 * Navigates vocabulary value details for an attribute defined for a product type.
-	 */
 	protected  AttributeVocabularyValue vocabularyValueDetail;
 
 	public AttributeVocabularyValue getVocabularyValueDetail() {

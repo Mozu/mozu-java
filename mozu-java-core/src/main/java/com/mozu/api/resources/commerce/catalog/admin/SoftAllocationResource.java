@@ -35,7 +35,7 @@ public class SoftAllocationResource {
 
 	
 	/**
-	 * Retrieves a list of sof allocations according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 *	SoftAllocation softallocation = new SoftAllocation();
 	 *	SoftAllocationCollection softAllocationCollection = softallocation.getSoftAllocations();
@@ -50,7 +50,7 @@ public class SoftAllocationResource {
 	}
 
 	/**
-	 * Retrieves a list of sof allocations according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 *	SoftAllocation softallocation = new SoftAllocation();
 	 *	SoftAllocationCollection softAllocationCollection = softallocation.getSoftAllocations( startIndex,  pageSize,  sortBy,  filter,  responseFields);
@@ -74,7 +74,7 @@ public class SoftAllocationResource {
 	}
 
 	/**
-	 * Retrieves the details of a soft allocation.
+	 * 
 	 * <p><pre><code>
 	 *	SoftAllocation softallocation = new SoftAllocation();
 	 *	SoftAllocation softAllocation = softallocation.getSoftAllocation( softAllocationId);
@@ -90,7 +90,7 @@ public class SoftAllocationResource {
 	}
 
 	/**
-	 * Retrieves the details of a soft allocation.
+	 * 
 	 * <p><pre><code>
 	 *	SoftAllocation softallocation = new SoftAllocation();
 	 *	SoftAllocation softAllocation = softallocation.getSoftAllocation( softAllocationId,  responseFields);
@@ -111,7 +111,7 @@ public class SoftAllocationResource {
 	}
 
 	/**
-	 * Creates a new soft allocation for a product. This places a hold on the product inventory for the quantity specified during the ordering process.
+	 * 
 	 * <p><pre><code>
 	 *	SoftAllocation softallocation = new SoftAllocation();
 	 *	SoftAllocation softAllocation = softallocation.addSoftAllocations( softAllocationsIn);
@@ -132,7 +132,7 @@ public class SoftAllocationResource {
 	}
 
 	/**
-	 * Converts a set of existing soft product allocations into product reservations.
+	 * 
 	 * <p><pre><code>
 	 *	SoftAllocation softallocation = new SoftAllocation();
 	 *	ProductReservation productReservation = softallocation.convertToProductReservation( softAllocations);
@@ -153,7 +153,7 @@ public class SoftAllocationResource {
 	}
 
 	/**
-	 * Updates the expiration time for a set of soft allocations in a non-transactional batch.
+	 * 
 	 * <p><pre><code>
 	 *	SoftAllocation softallocation = new SoftAllocation();
 	 *	SoftAllocation softAllocation = softallocation.renewSoftAllocations( softAllocationRenew);
@@ -174,7 +174,7 @@ public class SoftAllocationResource {
 	}
 
 	/**
-	 * Updates a soft allocation. This updates a hold on the product inventory for the quantity specified during the ordering process.
+	 * 
 	 * <p><pre><code>
 	 *	SoftAllocation softallocation = new SoftAllocation();
 	 *	SoftAllocation softAllocation = softallocation.updateSoftAllocations( softAllocations);
@@ -195,7 +195,7 @@ public class SoftAllocationResource {
 	}
 
 	/**
-	 * Deletes a soft allocation. You might delete a soft allocation when an order or cart is not processed in order to return the product quantity back to inventory.
+	 * 
 	 * <p><pre><code>
 	 *	SoftAllocation softallocation = new SoftAllocation();
 	 *	softallocation.deleteSoftAllocation( softAllocationId);

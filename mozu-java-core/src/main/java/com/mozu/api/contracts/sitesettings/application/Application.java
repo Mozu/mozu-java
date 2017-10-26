@@ -24,9 +24,6 @@ public class Application implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Unique identifier of an app available in your  tenant or within  Dev Center. This ID is unique across all apps installed, initialized, and enabled in the  and those in development through the Dev Center Console.
-	 */
 	protected  String appId;
 
 	public String getAppId() {
@@ -50,9 +47,6 @@ public class Application implements Serializable
 		this.appKey = appKey;
 	}
 
-	/**
-	 * Indicates if a capability, function tied to an Arc.js action, application, or price list is enabled for the tenant/site. If true, the capability/application/function/price list is enabled for the tenant. System-supplied and read-only with the exception of functions tied to an Arc.js action and price lists.
-	 */
 	protected  Boolean enabled;
 
 	public Boolean getEnabled() {
@@ -63,9 +57,6 @@ public class Application implements Serializable
 		this.enabled = enabled;
 	}
 
-	/**
-	 * Indicates if an app is initialized and capable of being enabled in the tenant and site. Apps will need to be installed and configured to become initialized, such as validating credentials and/or API keys with a third-party service. If true, the app is initialized and can be enabled for usage.
-	 */
 	protected  Boolean initialized;
 
 	public Boolean getInitialized() {
@@ -102,9 +93,6 @@ public class Application implements Serializable
 		this.isExtensionCertified = isExtensionCertified;
 	}
 
-	/**
-	 * The URL defined for the application that represents the configuration website for the capability. This value is used by installed applications or the site.
-	 */
 	protected  String uiConfigurationUrl;
 
 	public String getUiConfigurationUrl() {
@@ -115,9 +103,6 @@ public class Application implements Serializable
 		this.uiConfigurationUrl = uiConfigurationUrl;
 	}
 
-	/**
-	 * List of capabilities installed in a tenant.
-	 */
 	protected List<Capability> capabilities;
 	public List<Capability> getCapabilities() {
 		return this.capabilities;

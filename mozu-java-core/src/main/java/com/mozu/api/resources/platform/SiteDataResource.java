@@ -35,7 +35,7 @@ public class SiteDataResource {
 
 	
 	/**
-	 * Retrieves the value of a record in the  database.
+	 * 
 	 * <p><pre><code>
 	 *	SiteData sitedata = new SiteData();
 	 *	string string = sitedata.getDBValue( dbEntryQuery);
@@ -50,13 +50,13 @@ public class SiteDataResource {
 	}
 
 	/**
-	 * Retrieves the value of a record in the  database.
+	 * 
 	 * <p><pre><code>
 	 *	SiteData sitedata = new SiteData();
 	 *	string string = sitedata.getDBValue( dbEntryQuery,  responseFields);
 	 * </code></pre></p>
 	 * @param dbEntryQuery The database entry string to create.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return string
 	 * @see string
 	 */
@@ -70,7 +70,7 @@ public class SiteDataResource {
 	}
 
 	/**
-	 * Creates a new record in the  database based on the information supplied in the request.
+	 * 
 	 * <p><pre><code>
 	 *	SiteData sitedata = new SiteData();
 	 *	sitedata.createDBValue( value,  dbEntryQuery);
@@ -90,7 +90,7 @@ public class SiteDataResource {
 	}
 
 	/**
-	 * Updates a record in the  database based on the information supplied in the request.
+	 * 
 	 * <p><pre><code>
 	 *	SiteData sitedata = new SiteData();
 	 *	sitedata.updateDBValue( value,  dbEntryQuery);
@@ -110,7 +110,7 @@ public class SiteDataResource {
 	}
 
 	/**
-	 * Removes a previously defined record in the  database.
+	 * 
 	 * <p><pre><code>
 	 *	SiteData sitedata = new SiteData();
 	 *	sitedata.deleteDBValue( dbEntryQuery);

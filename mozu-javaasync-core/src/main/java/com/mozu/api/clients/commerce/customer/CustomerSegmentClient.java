@@ -25,7 +25,7 @@ import org.apache.commons.lang.StringUtils;
 public class CustomerSegmentClient {
 	
 	/**
-	 * Retrieves a list of defined customer segments according to any filter and sort criteria.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerSegmentCollection> mozuClient=GetSegmentsClient();
 	 * client.setBaseAddress(url);
@@ -41,18 +41,18 @@ public class CustomerSegmentClient {
 	}
 
 	/**
-	 * Retrieves a list of defined customer segments according to any filter and sort criteria.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerSegmentCollection> mozuClient=GetSegmentsClient( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * CustomerSegmentCollection customerSegmentCollection = client.Result();
 	 * </code></pre></p>
-	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerSegmentCollection>
 	 * @see com.mozu.api.contracts.customer.CustomerSegmentCollection
 	 */
@@ -69,7 +69,7 @@ public class CustomerSegmentClient {
 	}
 
 	/**
-	 * Retrieves the details of the customer segment specified in the request. This operation does not return a list of the customer accounts associated with the segment.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerSegment> mozuClient=GetSegmentClient( id);
 	 * client.setBaseAddress(url);
@@ -86,7 +86,7 @@ public class CustomerSegmentClient {
 	}
 
 	/**
-	 * Retrieves the details of the customer segment specified in the request. This operation does not return a list of the customer accounts associated with the segment.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerSegment> mozuClient=GetSegmentClient( id,  responseFields);
 	 * client.setBaseAddress(url);
@@ -94,7 +94,7 @@ public class CustomerSegmentClient {
 	 * CustomerSegment customerSegment = client.Result();
 	 * </code></pre></p>
 	 * @param id Unique identifier of the customer segment to retrieve.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerSegment>
 	 * @see com.mozu.api.contracts.customer.CustomerSegment
 	 */
@@ -111,7 +111,7 @@ public class CustomerSegmentClient {
 	}
 
 	/**
-	 * Creates a new customer segments. New customer segments do not have any associated customer accounts.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerSegment> mozuClient=AddSegmentClient( segment);
 	 * client.setBaseAddress(url);
@@ -129,14 +129,14 @@ public class CustomerSegmentClient {
 	}
 
 	/**
-	 * Creates a new customer segments. New customer segments do not have any associated customer accounts.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerSegment> mozuClient=AddSegmentClient( segment,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * CustomerSegment customerSegment = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param segment The Customer Segment object includes properties of a defined customer segment used to group customer accounts.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerSegment>
 	 * @see com.mozu.api.contracts.customer.CustomerSegment
@@ -156,7 +156,7 @@ public class CustomerSegmentClient {
 	}
 
 	/**
-	 * Adds one or more customer accounts to a defined customer segment.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=AddSegmentAccountsClient( accountIds,  id);
 	 * client.setBaseAddress(url);
@@ -180,7 +180,7 @@ public class CustomerSegmentClient {
 	}
 
 	/**
-	 * Updates the details of the customer segment specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerSegment> mozuClient=UpdateSegmentClient( segment,  id);
 	 * client.setBaseAddress(url);
@@ -199,7 +199,7 @@ public class CustomerSegmentClient {
 	}
 
 	/**
-	 * Updates the details of the customer segment specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerSegment> mozuClient=UpdateSegmentClient( segment,  id,  responseFields);
 	 * client.setBaseAddress(url);
@@ -207,7 +207,7 @@ public class CustomerSegmentClient {
 	 * CustomerSegment customerSegment = client.Result();
 	 * </code></pre></p>
 	 * @param id Unique identifier of the customer segment to retrieve.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param segment The Customer Segment object includes properties of a defined customer segment used to group customer accounts.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerSegment>
 	 * @see com.mozu.api.contracts.customer.CustomerSegment
@@ -227,7 +227,7 @@ public class CustomerSegmentClient {
 	}
 
 	/**
-	 * Deletes a customer segment specified by its unique identifier. Deleting a segment removes any customer account associations, but does not delete the customer account itself.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteSegmentClient( id);
 	 * client.setBaseAddress(url);
@@ -248,7 +248,7 @@ public class CustomerSegmentClient {
 	}
 
 	/**
-	 * Removes single account from a segment.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=RemoveSegmentAccountClient( id,  accountId);
 	 * client.setBaseAddress(url);

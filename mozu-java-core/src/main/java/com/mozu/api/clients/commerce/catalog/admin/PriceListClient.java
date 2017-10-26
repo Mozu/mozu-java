@@ -23,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 public class PriceListClient {
 	
 	/**
-	 * Retrieves a list of price lists according to any specified facets, filter criteria, and sort options.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.PriceListCollection> mozuClient=GetPriceListsClient();
 	 * client.setBaseAddress(url);
@@ -39,7 +39,7 @@ public class PriceListClient {
 	}
 
 	/**
-	 * Retrieves a list of price lists according to any specified facets, filter criteria, and sort options.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.PriceListCollection> mozuClient=GetPriceListsClient( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * client.setBaseAddress(url);
@@ -67,7 +67,7 @@ public class PriceListClient {
 	}
 
 	/**
-	 * Retrieves the details of the specified price list.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.PriceList> mozuClient=GetPriceListClient( priceListCode);
 	 * client.setBaseAddress(url);
@@ -84,7 +84,7 @@ public class PriceListClient {
 	}
 
 	/**
-	 * Retrieves the details of the specified price list.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.PriceList> mozuClient=GetPriceListClient( priceListCode,  responseFields);
 	 * client.setBaseAddress(url);
@@ -109,7 +109,7 @@ public class PriceListClient {
 	}
 
 	/**
-	 * Adds a new price list to the tenant.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.PriceList> mozuClient=AddPriceListClient( priceList);
 	 * client.setBaseAddress(url);
@@ -127,7 +127,7 @@ public class PriceListClient {
 	}
 
 	/**
-	 * Adds a new price list to the tenant.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.PriceList> mozuClient=AddPriceListClient( priceList,  responseFields);
 	 * client.setBaseAddress(url);
@@ -154,7 +154,130 @@ public class PriceListClient {
 	}
 
 	/**
-	 * Updates the details of the specified price list.
+	 * 
+	 * <p><pre><code>
+	 * MozuClient mozuClient=BulkAddPriceListEntriesClient( priceListEntriesIn);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * </code></pre></p>
+	 * @param priceListEntriesIn 
+	 * @return Mozu.Api.MozuClient 
+	 * @see com.mozu.api.contracts.productadmin.PriceListEntry
+	 */
+	public static MozuClient bulkAddPriceListEntriesClient(List<com.mozu.api.contracts.productadmin.PriceListEntry> priceListEntriesIn) throws Exception
+	{
+		return bulkAddPriceListEntriesClient( priceListEntriesIn,  null,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient mozuClient=BulkAddPriceListEntriesClient( priceListEntriesIn,  publishEvents,  invalidateCache);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * </code></pre></p>
+	 * @param invalidateCache Disable this property if you expect to encounter unacceptable performance hits related to clearing the cache for each product in the price list entries. Otherwise, leave this property enabled.
+	 * @param publishEvents Disable this property to prevent publishing the event related to adding price list entries to the system. Disabling this property helps you prevent performance delays if you expect the event to trigger the re-indexing of a large number of products, or if you want to postpone the operations of other applications and services listening for the event.
+	 * @param priceListEntriesIn 
+	 * @return Mozu.Api.MozuClient 
+	 * @see com.mozu.api.contracts.productadmin.PriceListEntry
+	 */
+	public static MozuClient bulkAddPriceListEntriesClient(List<com.mozu.api.contracts.productadmin.PriceListEntry> priceListEntriesIn, Boolean publishEvents, Boolean invalidateCache) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.PriceListUrl.bulkAddPriceListEntriesUrl(invalidateCache, publishEvents);
+		String verb = "POST";
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(priceListEntriesIn);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient mozuClient=BulkDeletePriceListEntriesClient( priceListEntriesIn);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * </code></pre></p>
+	 * @param priceListEntriesIn 
+	 * @return Mozu.Api.MozuClient 
+	 * @see com.mozu.api.contracts.productadmin.PriceListEntry
+	 */
+	public static MozuClient bulkDeletePriceListEntriesClient(List<com.mozu.api.contracts.productadmin.PriceListEntry> priceListEntriesIn) throws Exception
+	{
+		return bulkDeletePriceListEntriesClient( priceListEntriesIn,  null,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient mozuClient=BulkDeletePriceListEntriesClient( priceListEntriesIn,  publishEvents,  invalidateCache);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * </code></pre></p>
+	 * @param invalidateCache Disable this property if you expect to encounter unacceptable performance hits related to clearing the cache for each product in the price list entries. Otherwise, leave this property enabled.
+	 * @param publishEvents Disable this property to prevent publishing the event related to deleting price list entries from the system. Disabling this property helps you prevent performance delays if you expect the event to trigger the re-indexing of a large number of products, or if you want to postpone the operations of other applications and services listening for the event.
+	 * @param priceListEntriesIn 
+	 * @return Mozu.Api.MozuClient 
+	 * @see com.mozu.api.contracts.productadmin.PriceListEntry
+	 */
+	public static MozuClient bulkDeletePriceListEntriesClient(List<com.mozu.api.contracts.productadmin.PriceListEntry> priceListEntriesIn, Boolean publishEvents, Boolean invalidateCache) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.PriceListUrl.bulkDeletePriceListEntriesUrl(invalidateCache, publishEvents);
+		String verb = "POST";
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(priceListEntriesIn);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient mozuClient=BulkUpdatePriceListEntriesClient( priceListEntriesIn);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * </code></pre></p>
+	 * @param priceListEntriesIn 
+	 * @return Mozu.Api.MozuClient 
+	 * @see com.mozu.api.contracts.productadmin.PriceListEntry
+	 */
+	public static MozuClient bulkUpdatePriceListEntriesClient(List<com.mozu.api.contracts.productadmin.PriceListEntry> priceListEntriesIn) throws Exception
+	{
+		return bulkUpdatePriceListEntriesClient( priceListEntriesIn,  null,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient mozuClient=BulkUpdatePriceListEntriesClient( priceListEntriesIn,  publishEvents,  invalidateCache);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * </code></pre></p>
+	 * @param invalidateCache Disable this property if you expect to encounter unacceptable performance hits related to clearing the cache for each product in the price list entries. Otherwise, leave this property enabled.
+	 * @param publishEvents Disable this property to prevent publishing the event related to updating price list entries in the system. Disabling this property helps you prevent performance delays if you expect the event to trigger the re-indexing of a large number of products, or if you want to postpone the operations of other applications and services listening for the event.
+	 * @param priceListEntriesIn 
+	 * @return Mozu.Api.MozuClient 
+	 * @see com.mozu.api.contracts.productadmin.PriceListEntry
+	 */
+	public static MozuClient bulkUpdatePriceListEntriesClient(List<com.mozu.api.contracts.productadmin.PriceListEntry> priceListEntriesIn, Boolean publishEvents, Boolean invalidateCache) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.PriceListUrl.bulkUpdatePriceListEntriesUrl(invalidateCache, publishEvents);
+		String verb = "POST";
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(priceListEntriesIn);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.PriceList> mozuClient=UpdatePriceListClient( priceList,  priceListCode);
 	 * client.setBaseAddress(url);
@@ -173,7 +296,7 @@ public class PriceListClient {
 	}
 
 	/**
-	 * Updates the details of the specified price list.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.PriceList> mozuClient=UpdatePriceListClient( priceList,  priceListCode,  responseFields);
 	 * client.setBaseAddress(url);
@@ -201,7 +324,7 @@ public class PriceListClient {
 	}
 
 	/**
-	 * Deletes the specified price list from the tenant.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeletePriceListClient( priceListCode);
 	 * client.setBaseAddress(url);
@@ -216,7 +339,7 @@ public class PriceListClient {
 	}
 
 	/**
-	 * Deletes the specified price list from the tenant.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeletePriceListClient( priceListCode,  cascadeDeleteEntries);
 	 * client.setBaseAddress(url);

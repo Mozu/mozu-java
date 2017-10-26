@@ -23,14 +23,14 @@ import org.apache.commons.lang.StringUtils;
 public class PriceListEntryClient {
 	
 	/**
-	 * Retrieves the details of a price list entry.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.PriceListEntry> mozuClient=GetPriceListEntryClient( priceListCode,  productCode,  currencyCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * PriceListEntry priceListEntry = client.Result();
 	 * </code></pre></p>
-	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
 	 * @param priceListCode The unique code of the price list associated with the price list entry.
 	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.PriceListEntry>
@@ -42,14 +42,14 @@ public class PriceListEntryClient {
 	}
 
 	/**
-	 * Retrieves the details of a price list entry.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.PriceListEntry> mozuClient=GetPriceListEntryClient( priceListCode,  productCode,  currencyCode,  startDate,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * PriceListEntry priceListEntry = client.Result();
 	 * </code></pre></p>
-	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
 	 * @param priceListCode The unique code of the price list associated with the price list entry.
 	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
@@ -70,7 +70,7 @@ public class PriceListEntryClient {
 	}
 
 	/**
-	 * Retrieves a list of price list entries associated with the specified price list according to any specified facets, filter criteria, and sort options.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.PriceListEntryCollection> mozuClient=GetPriceListEntriesClient( priceListCode);
 	 * client.setBaseAddress(url);
@@ -87,7 +87,7 @@ public class PriceListEntryClient {
 	}
 
 	/**
-	 * Retrieves a list of price list entries associated with the specified price list according to any specified facets, filter criteria, and sort options.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.PriceListEntryCollection> mozuClient=GetPriceListEntriesClient( priceListCode,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * client.setBaseAddress(url);
@@ -116,7 +116,7 @@ public class PriceListEntryClient {
 	}
 
 	/**
-	 * Adds a new price list entry to the specified price list.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.PriceListEntry> mozuClient=AddPriceListEntryClient( priceListEntryIn,  priceListCode);
 	 * client.setBaseAddress(url);
@@ -135,7 +135,7 @@ public class PriceListEntryClient {
 	}
 
 	/**
-	 * Adds a new price list entry to the specified price list.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.PriceListEntry> mozuClient=AddPriceListEntryClient( priceListEntryIn,  priceListCode,  responseFields);
 	 * client.setBaseAddress(url);
@@ -163,14 +163,14 @@ public class PriceListEntryClient {
 	}
 
 	/**
-	 * Updates the details of a price list entry.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.PriceListEntry> mozuClient=UpdatePriceListEntryClient( priceListEntryIn,  priceListCode,  productCode,  currencyCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * PriceListEntry priceListEntry = client.Result();
 	 * </code></pre></p>
-	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
 	 * @param priceListCode The unique code of the price list associated with the price list entry.
 	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param priceListEntryIn The updated details of the price list entry.
@@ -184,14 +184,14 @@ public class PriceListEntryClient {
 	}
 
 	/**
-	 * Updates the details of a price list entry.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.PriceListEntry> mozuClient=UpdatePriceListEntryClient( priceListEntryIn,  priceListCode,  productCode,  currencyCode,  startDate,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * PriceListEntry priceListEntry = client.Result();
 	 * </code></pre></p>
-	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
 	 * @param priceListCode The unique code of the price list associated with the price list entry.
 	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
@@ -215,13 +215,13 @@ public class PriceListEntryClient {
 	}
 
 	/**
-	 * Deletes a price list entry.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeletePriceListEntryClient( priceListCode,  productCode,  currencyCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
 	 * @param priceListCode The code of the specified price list associated with the price list entry.
 	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @return Mozu.Api.MozuClient 
@@ -232,13 +232,13 @@ public class PriceListEntryClient {
 	}
 
 	/**
-	 * Deletes a price list entry.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeletePriceListEntryClient( priceListCode,  productCode,  currencyCode,  startDate);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
 	 * @param priceListCode The code of the specified price list associated with the price list entry.
 	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param startDate The start date of the price list entry.

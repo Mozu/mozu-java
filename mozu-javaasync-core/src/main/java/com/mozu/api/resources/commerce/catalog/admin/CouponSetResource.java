@@ -20,7 +20,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the Coupon Sets resource to view and create coupon sets. You can use coupon sets to group multiple coupon codes together and associate them with one or more discounts.
+ * Use the Coupon Sets resource to view and create coupon sets. You can use coupon sets to group multiple coupon codes together and associate them with one or more discounts. Use the  subresource to manage the coupon codes within manual coupon sets. Use the  subresource to mange the discounts assigned to coupon sets.
  * </summary>
  */
 public class CouponSetResource {
@@ -37,7 +37,7 @@ public class CouponSetResource {
 
 	
 	/**
-	 * Retrieves a list of coupon sets according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	CouponSetCollection couponSetCollection = couponset.getCouponSets();
@@ -51,7 +51,7 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * Retrieves a list of coupon sets according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	CountDownLatch latch = couponset.getCouponSets( callback );
@@ -66,16 +66,16 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * Retrieves a list of coupon sets according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	CouponSetCollection couponSetCollection = couponset.getCouponSets( startIndex,  pageSize,  sortBy,  filter,  includeCounts,  responseFields);
 	 * </code></pre></p>
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/applications/sorting-filtering.htm) for a list of supported filters.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
 	 * @param includeCounts Specifies whether to include the number of redeemed coupons, existing coupon codes, and assigned discounts in the response body.
 	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/applications/sorting-filtering.htm) for more information.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return com.mozu.api.contracts.productadmin.CouponSetCollection
 	 * @see com.mozu.api.contracts.productadmin.CouponSetCollection
@@ -90,16 +90,16 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * Retrieves a list of coupon sets according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	CountDownLatch latch = couponset.getCouponSets( startIndex,  pageSize,  sortBy,  filter,  includeCounts,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/applications/sorting-filtering.htm) for a list of supported filters.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
 	 * @param includeCounts Specifies whether to include the number of redeemed coupons, existing coupon codes, and assigned discounts in the response body.
 	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/applications/sorting-filtering.htm) for more information.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.CouponSetCollection
@@ -114,7 +114,7 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * Returns a single
+	 * 
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	CouponSet couponSet = couponset.getCouponSet( couponSetCode);
@@ -129,7 +129,7 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * Returns a single
+	 * 
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	CountDownLatch latch = couponset.getCouponSet( couponSetCode, callback );
@@ -145,7 +145,7 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * Returns a single
+	 * 
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	CouponSet couponSet = couponset.getCouponSet( couponSetCode,  includeCounts,  responseFields);
@@ -166,7 +166,7 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * Returns a single
+	 * 
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	CountDownLatch latch = couponset.getCouponSet( couponSetCode,  includeCounts,  responseFields, callback );
@@ -187,7 +187,7 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * Returns a random, unique four character coupon set code.
+	 * 
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	string string = couponset.getUniqueCouponSetCode();
@@ -201,7 +201,7 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * Returns a random, unique four character coupon set code.
+	 * 
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	CountDownLatch latch = couponset.getUniqueCouponSetCode( callback );
@@ -216,7 +216,7 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * Returns a random, unique four character coupon set code.
+	 * 
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	string string = couponset.getUniqueCouponSetCode( responseFields);
@@ -235,7 +235,7 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * Returns a random, unique four character coupon set code.
+	 * 
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	CountDownLatch latch = couponset.getUniqueCouponSetCode( responseFields, callback );
@@ -254,12 +254,12 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * Adds a new coupon set.
+	 * 
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	CouponSet couponSet = couponset.addCouponSet( couponSet);
 	 * </code></pre></p>
-	 * @param couponSet Mozu.ProductAdmin.Contracts.CouponSet ApiType DOCUMENT_HERE 
+	 * @param couponSet The details of the new coupon set.
 	 * @return com.mozu.api.contracts.productadmin.CouponSet
 	 * @see com.mozu.api.contracts.productadmin.CouponSet
 	 * @see com.mozu.api.contracts.productadmin.CouponSet
@@ -270,13 +270,13 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * Adds a new coupon set.
+	 * 
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	CountDownLatch latch = couponset.addCouponSet( couponSet, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param couponSet Mozu.ProductAdmin.Contracts.CouponSet ApiType DOCUMENT_HERE 
+	 * @param couponSet The details of the new coupon set.
 	 * @return com.mozu.api.contracts.productadmin.CouponSet
 	 * @see com.mozu.api.contracts.productadmin.CouponSet
 	 * @see com.mozu.api.contracts.productadmin.CouponSet
@@ -287,13 +287,13 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * Adds a new coupon set.
+	 * 
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	CouponSet couponSet = couponset.addCouponSet( couponSet,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param couponSet Mozu.ProductAdmin.Contracts.CouponSet ApiType DOCUMENT_HERE 
+	 * @param couponSet The details of the new coupon set.
 	 * @return com.mozu.api.contracts.productadmin.CouponSet
 	 * @see com.mozu.api.contracts.productadmin.CouponSet
 	 * @see com.mozu.api.contracts.productadmin.CouponSet
@@ -308,14 +308,14 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * Adds a new coupon set.
+	 * 
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	CountDownLatch latch = couponset.addCouponSet( couponSet,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param couponSet Mozu.ProductAdmin.Contracts.CouponSet ApiType DOCUMENT_HERE 
+	 * @param couponSet The details of the new coupon set.
 	 * @return com.mozu.api.contracts.productadmin.CouponSet
 	 * @see com.mozu.api.contracts.productadmin.CouponSet
 	 * @see com.mozu.api.contracts.productadmin.CouponSet
@@ -329,7 +329,7 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * Validates the coupon set code and tests it for uniqueness.
+	 * 
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	couponset.validateUniqueCouponSetCode( code);
@@ -347,13 +347,13 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * Update a representation. You can not update the Code or ID once the set is created.
+	 * 
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	CouponSet couponSet = couponset.updateCouponSet( couponSet,  couponSetCode);
 	 * </code></pre></p>
 	 * @param couponSetCode The unique identifier of the coupon set.
-	 * @param couponSet Mozu.ProductAdmin.Contracts.CouponSet ApiType DOCUMENT_HERE 
+	 * @param couponSet The details of the updated coupon set.
 	 * @return com.mozu.api.contracts.productadmin.CouponSet
 	 * @see com.mozu.api.contracts.productadmin.CouponSet
 	 * @see com.mozu.api.contracts.productadmin.CouponSet
@@ -364,14 +364,14 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * Update a representation. You can not update the Code or ID once the set is created.
+	 * 
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	CountDownLatch latch = couponset.updateCouponSet( couponSet,  couponSetCode, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param couponSetCode The unique identifier of the coupon set.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param couponSet Mozu.ProductAdmin.Contracts.CouponSet ApiType DOCUMENT_HERE 
+	 * @param couponSet The details of the updated coupon set.
 	 * @return com.mozu.api.contracts.productadmin.CouponSet
 	 * @see com.mozu.api.contracts.productadmin.CouponSet
 	 * @see com.mozu.api.contracts.productadmin.CouponSet
@@ -382,14 +382,14 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * Update a representation. You can not update the Code or ID once the set is created.
+	 * 
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	CouponSet couponSet = couponset.updateCouponSet( couponSet,  couponSetCode,  responseFields);
 	 * </code></pre></p>
 	 * @param couponSetCode The unique identifier of the coupon set.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param couponSet Mozu.ProductAdmin.Contracts.CouponSet ApiType DOCUMENT_HERE 
+	 * @param couponSet The details of the updated coupon set.
 	 * @return com.mozu.api.contracts.productadmin.CouponSet
 	 * @see com.mozu.api.contracts.productadmin.CouponSet
 	 * @see com.mozu.api.contracts.productadmin.CouponSet
@@ -404,7 +404,7 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * Update a representation. You can not update the Code or ID once the set is created.
+	 * 
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	CountDownLatch latch = couponset.updateCouponSet( couponSet,  couponSetCode,  responseFields, callback );
@@ -412,7 +412,7 @@ public class CouponSetResource {
 	 * @param couponSetCode The unique identifier of the coupon set.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param couponSet Mozu.ProductAdmin.Contracts.CouponSet ApiType DOCUMENT_HERE 
+	 * @param couponSet The details of the updated coupon set.
 	 * @return com.mozu.api.contracts.productadmin.CouponSet
 	 * @see com.mozu.api.contracts.productadmin.CouponSet
 	 * @see com.mozu.api.contracts.productadmin.CouponSet
@@ -426,7 +426,7 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * admin-couponsets Delete DeleteCouponSet description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	couponset.deleteCouponSet( couponSetCode);

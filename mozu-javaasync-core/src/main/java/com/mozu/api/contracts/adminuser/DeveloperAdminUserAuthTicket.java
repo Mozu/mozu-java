@@ -17,7 +17,7 @@ import com.mozu.api.contracts.adminuser.DeveloperAccount;
 import com.mozu.api.contracts.core.UserProfile;
 
 /**
- *	Properties of the authentication ticket to be used in developer account claims with the Mozu API.
+ *	Properties of the authentication ticket to be used in developer account claims with the  API.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DeveloperAdminUserAuthTicket implements Serializable
@@ -25,9 +25,6 @@ public class DeveloperAdminUserAuthTicket implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Alphanumeric string used to authenticate the user in API request headers. The token stores an encrypted list of the application's configured behaviors and authenticates the application.
-	 */
 	protected  String accessToken;
 
 	public String getAccessToken() {
@@ -38,9 +35,6 @@ public class DeveloperAdminUserAuthTicket implements Serializable
 		this.accessToken = accessToken;
 	}
 
-	/**
-	 * The date and time the user access token expires. If the token will expire, a new token will need to be generated and assigned to the account to continue and restore access to the store, data, and account.
-	 */
 	protected  DateTime accessTokenExpiration;
 
 	public DateTime getAccessTokenExpiration() {
@@ -51,9 +45,6 @@ public class DeveloperAdminUserAuthTicket implements Serializable
 		this.accessTokenExpiration = accessTokenExpiration;
 	}
 
-	/**
-	 * Date and time when the entity was created, represented in UTC Date/Time.
-	 */
 	protected  DateTime createdOn;
 
 	public DateTime getCreatedOn() {
@@ -64,9 +55,6 @@ public class DeveloperAdminUserAuthTicket implements Serializable
 		this.createdOn = createdOn;
 	}
 
-	/**
-	 * Collection of behaviors encrypted in the developer account authentication ticket. Behaviors are granted to users as part of the role assigned for the given developer account.
-	 */
 	protected List<Integer> grantedBehaviors;
 	public List<Integer> getGrantedBehaviors() {
 		return this.grantedBehaviors;
@@ -75,9 +63,6 @@ public class DeveloperAdminUserAuthTicket implements Serializable
 		this.grantedBehaviors = grantedBehaviors;
 	}
 
-	/**
-	 * Alphanumeric string used for access tokens. This token refreshes access for accounts by generating a new developer or application account authentication ticket after an access token expires.
-	 */
 	protected  String refreshToken;
 
 	public String getRefreshToken() {
@@ -88,9 +73,6 @@ public class DeveloperAdminUserAuthTicket implements Serializable
 		this.refreshToken = refreshToken;
 	}
 
-	/**
-	 * The date and time the developer account or application refresh token expires.
-	 */
 	protected  DateTime refreshTokenExpiration;
 
 	public DateTime getRefreshTokenExpiration() {
@@ -101,9 +83,6 @@ public class DeveloperAdminUserAuthTicket implements Serializable
 		this.refreshTokenExpiration = refreshTokenExpiration;
 	}
 
-	/**
-	 * Properties of the developer account for which the user authentication ticket grants access.
-	 */
 	protected  DeveloperAccount account;
 
 	public DeveloperAccount getAccount() {
@@ -114,9 +93,6 @@ public class DeveloperAdminUserAuthTicket implements Serializable
 		this.account = account;
 	}
 
-	/**
-	 * Collection of developer accounts for which the user authentication ticket grants access.
-	 */
 	protected List<DeveloperAccount> availableAccounts;
 	public List<DeveloperAccount> getAvailableAccounts() {
 		return this.availableAccounts;
@@ -125,9 +101,6 @@ public class DeveloperAdminUserAuthTicket implements Serializable
 		this.availableAccounts = availableAccounts;
 	}
 
-	/**
-	 * User information associated with the authentication ticket.
-	 */
 	protected  UserProfile user;
 
 	public UserProfile getUser() {

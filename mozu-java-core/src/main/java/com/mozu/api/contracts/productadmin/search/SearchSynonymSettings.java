@@ -22,19 +22,6 @@ public class SearchSynonymSettings implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Boosts the synonyms to affect rankings for search results.
-	 */
-	protected  Double synonymPartBoost;
-
-	public Double getSynonymPartBoost() {
-		return this.synonymPartBoost;
-	}
-
-	public void setSynonymPartBoost(Double synonymPartBoost) {
-		this.synonymPartBoost = synonymPartBoost;
-	}
-
-	/**
 	 * Indicates if synonyms should be expanded.
 	 */
 	protected  Boolean expandSynonyms;
@@ -58,6 +45,19 @@ public class SearchSynonymSettings implements Serializable
 
 	public void setMainPartBoost(Double mainPartBoost) {
 		this.mainPartBoost = mainPartBoost;
+	}
+
+	/**
+	 * Boosts the synonyms to affect rankings for search results.
+	 */
+	protected  Double synonymPartBoost;
+
+	public Double getSynonymPartBoost() {
+		return this.synonymPartBoost;
+	}
+
+	public void setSynonymPartBoost(Double synonymPartBoost) {
+		this.synonymPartBoost = synonymPartBoost;
 	}
 
 

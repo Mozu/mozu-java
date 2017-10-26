@@ -37,9 +37,6 @@ public class DocumentList implements Serializable
 		this.documentListType = documentListType;
 	}
 
-	/**
-	 * List of document types associated with this document list.
-	 */
 	protected List<String> documentTypes;
 	public List<String> getDocumentTypes() {
 		return this.documentTypes;
@@ -61,9 +58,6 @@ public class DocumentList implements Serializable
 		this.enableActiveDateRanges = enableActiveDateRanges;
 	}
 
-	/**
-	 * Indicates if the document list and document list type are enabled to publish. If true, publishing of draft documents in this document list/document list type is enabled for the site. If false, all document changes are immediately published in live mode.
-	 */
 	protected  Boolean enablePublishing;
 
 	public Boolean getEnablePublishing() {
@@ -87,9 +81,6 @@ public class DocumentList implements Serializable
 		this.listFQN = listFQN;
 	}
 
-	/**
-	 * The user supplied name that appears in . You can use this field for identification purposes.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -165,9 +156,6 @@ public class DocumentList implements Serializable
 		this.supportsActiveDateRanges = supportsActiveDateRanges;
 	}
 
-	/**
-	 * Indicates if modified documents are published automatically or saved to publish at a later time. If true, changed documents in this list can be saved as drafts until they are published to the site. If false, all document changes are immediately published in live mode. System-supplied and read only.
-	 */
 	protected  Boolean supportsPublishing;
 
 	public Boolean getSupportsPublishing() {
@@ -189,9 +177,6 @@ public class DocumentList implements Serializable
 		this.usages = usages;
 	}
 
-	/**
-	 * Metadata content for entities, used by document lists, document type lists, document type, views, entity lists, and list views.
-	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode metadata;
 
 	public com.fasterxml.jackson.databind.JsonNode getMetadata() {

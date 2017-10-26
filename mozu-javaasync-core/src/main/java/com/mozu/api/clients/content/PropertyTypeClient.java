@@ -26,7 +26,7 @@ import com.mozu.api.DataViewMode;
 public class PropertyTypeClient {
 	
 	/**
-	 * Retrieves a list of the content property types.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.PropertyTypeCollection> mozuClient=GetPropertyTypesClient(dataViewMode);
 	 * client.setBaseAddress(url);
@@ -42,16 +42,16 @@ public class PropertyTypeClient {
 	}
 
 	/**
-	 * Retrieves a list of the content property types.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.PropertyTypeCollection> mozuClient=GetPropertyTypesClient(dataViewMode,  pageSize,  startIndex,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * PropertyTypeCollection propertyTypeCollection = client.Result();
 	 * </code></pre></p>
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.PropertyTypeCollection>
 	 * @see com.mozu.api.contracts.content.PropertyTypeCollection
 	 */
@@ -69,7 +69,7 @@ public class PropertyTypeClient {
 	}
 
 	/**
-	 * Retrieves the details of the content property type.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.PropertyType> mozuClient=GetPropertyTypeClient(dataViewMode,  propertyTypeName);
 	 * client.setBaseAddress(url);
@@ -86,7 +86,7 @@ public class PropertyTypeClient {
 	}
 
 	/**
-	 * Retrieves the details of the content property type.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.PropertyType> mozuClient=GetPropertyTypeClient(dataViewMode,  propertyTypeName,  responseFields);
 	 * client.setBaseAddress(url);
@@ -94,7 +94,7 @@ public class PropertyTypeClient {
 	 * PropertyType propertyType = client.Result();
 	 * </code></pre></p>
 	 * @param propertyTypeName The name of the property type.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.PropertyType>
 	 * @see com.mozu.api.contracts.content.PropertyType
 	 */
@@ -112,7 +112,7 @@ public class PropertyTypeClient {
 	}
 
 	/**
-	 * Creates a new
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.PropertyType> mozuClient=CreatePropertyTypeClient( propertyType);
 	 * client.setBaseAddress(url);
@@ -130,14 +130,14 @@ public class PropertyTypeClient {
 	}
 
 	/**
-	 * Creates a new
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.PropertyType> mozuClient=CreatePropertyTypeClient( propertyType,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * PropertyType propertyType = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param propertyType Property type available for content. Property types are like templates that can be reused.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.PropertyType>
 	 * @see com.mozu.api.contracts.content.PropertyType
@@ -157,7 +157,7 @@ public class PropertyTypeClient {
 	}
 
 	/**
-	 * Updates a
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.PropertyType> mozuClient=UpdatePropertyTypeClient(dataViewMode,  propertyType,  propertyTypeName);
 	 * client.setBaseAddress(url);
@@ -176,7 +176,7 @@ public class PropertyTypeClient {
 	}
 
 	/**
-	 * Updates a
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.PropertyType> mozuClient=UpdatePropertyTypeClient(dataViewMode,  propertyType,  propertyTypeName,  responseFields);
 	 * client.setBaseAddress(url);
@@ -184,7 +184,7 @@ public class PropertyTypeClient {
 	 * PropertyType propertyType = client.Result();
 	 * </code></pre></p>
 	 * @param propertyTypeName The name of the property type.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param propertyType Property type available for content. Property types are like templates that can be reused.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.PropertyType>
 	 * @see com.mozu.api.contracts.content.PropertyType
@@ -205,7 +205,7 @@ public class PropertyTypeClient {
 	}
 
 	/**
-	 * Delete a specific
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeletePropertyTypeClient(dataViewMode,  propertyTypeName);
 	 * client.setBaseAddress(url);

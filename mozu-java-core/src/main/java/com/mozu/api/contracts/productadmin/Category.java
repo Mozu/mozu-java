@@ -60,9 +60,6 @@ public class Category implements Serializable
 		this.categoryType = categoryType;
 	}
 
-	/**
-	 * The number of children (subcategories, for example) that stem from a parent (top-level category).
-	 */
 	protected  Integer childCount;
 
 	public Integer getChildCount() {
@@ -73,9 +70,6 @@ public class Category implements Serializable
 		this.childCount = childCount;
 	}
 
-	/**
-	 * Unique identifier of the source property, such as a catalog, discount, order, or email template.For a product field it will be the name of the field.For a category ID, must be a positive integer not greater than 2000000. By default,  auto-generates a category ID when categories are created. If you want to specify an ID during creation (which preserves category link relationships when migrating tenant data from one sandbox to another), you must also include the  query string in the endpoint. For example, . Then, use the  property to specify the desired category ID.For a product attribute it will be the Attribute FQN.For a document, the ID must be specified as a 32 character, case-insensitive, alphanumeric string. You can specify the ID as 32 sequential characters or as groups separated by dashes in the format 8-4-4-4-12. For example, or.For email templates, the ID must be one of the following values:			
-	 */
 	protected  Integer id;
 
 	public Integer getId() {
@@ -99,9 +93,6 @@ public class Category implements Serializable
 		this.isActive = isActive;
 	}
 
-	/**
-	 * Indicates if the object is displayed on the storefront. If true, the admin product category is displayed in the store. If false, the category is not displayed.
-	 */
 	protected  Boolean isDisplayed;
 
 	public Boolean getIsDisplayed() {
@@ -125,9 +116,6 @@ public class Category implements Serializable
 		this.parentCategoryCode = parentCategoryCode;
 	}
 
-	/**
-	 * If the current category has a parent, the identifier of the category's parent category.
-	 */
 	protected  Integer parentCategoryId;
 
 	public Integer getParentCategoryId() {
@@ -164,9 +152,6 @@ public class Category implements Serializable
 		this.parentIsActive = parentIsActive;
 	}
 
-	/**
-	 * The total number of products. This total may indicate the total products associate with a product type or number of products in a list.
-	 */
 	protected  Integer productCount;
 
 	public Integer getProductCount() {
@@ -177,9 +162,6 @@ public class Category implements Serializable
 		this.productCount = productCount;
 	}
 
-	/**
-	 * The numeric order of objects, used by a vocabulary value defined for an extensible attribute, images, and categories.
-	 */
 	protected  Integer sequence;
 
 	public Integer getSequence() {
@@ -190,9 +172,6 @@ public class Category implements Serializable
 		this.sequence = sequence;
 	}
 
-	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -203,9 +182,6 @@ public class Category implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * Complex type that contains content for a language specified by LocaleCode.
-	 */
 	protected  CategoryLocalizedContent content;
 
 	public CategoryLocalizedContent getContent() {

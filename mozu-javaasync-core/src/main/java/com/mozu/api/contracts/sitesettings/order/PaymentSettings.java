@@ -27,9 +27,6 @@ public class PaymentSettings implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Settings that provide for the ability to pay for an order by mail.
-	 */
 	protected  Boolean payByMail;
 
 	public Boolean getPayByMail() {
@@ -40,9 +37,6 @@ public class PaymentSettings implements Serializable
 		this.payByMail = payByMail;
 	}
 
-	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -53,9 +47,6 @@ public class PaymentSettings implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * The external payment workflwo definitions configured for the site's payment settings. At this time, only PayPal Express is supported.
-	 */
 	protected List<ExternalPaymentWorkflowDefinition> externalPaymentWorkflowDefinitions;
 	public List<ExternalPaymentWorkflowDefinition> getExternalPaymentWorkflowDefinitions() {
 		return this.externalPaymentWorkflowDefinitions;
@@ -64,9 +55,6 @@ public class PaymentSettings implements Serializable
 		this.externalPaymentWorkflowDefinitions = externalPaymentWorkflowDefinitions;
 	}
 
-	/**
-	 * List of name and account information for a payment gateway.
-	 */
 	protected List<Gateway> gateways;
 	public List<Gateway> getGateways() {
 		return this.gateways;
@@ -76,7 +64,7 @@ public class PaymentSettings implements Serializable
 	}
 
 	/**
-	 * Mozu.SiteSettings.Order.Contracts.PaymentSettings purchaseOrder ApiTypeMember DOCUMENT_HERE 
+	 * The purchase order payment type settings associated with a site.Refer to [Enable the Purchase Order Payment Type](https://www.mozu.com/docs/guides/orders/purchase-order.htm#enable_the_purchase_order_payment_type) in the Purchase Orders guides topic for more information.
 	 */
 	protected  PurchaseOrderPaymentDefinition purchaseOrder;
 

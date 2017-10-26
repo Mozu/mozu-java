@@ -37,7 +37,7 @@ public class ShippingInclusionRuleResource {
 
 	
 	/**
-	 * Retrieves the details of the specified shipping inclusion rule.
+	 * 
 	 * <p><pre><code>
 	 *	ShippingInclusionRule shippinginclusionrule = new ShippingInclusionRule();
 	 *	ShippingInclusionRule shippingInclusionRule = shippinginclusionrule.getShippingInclusionRule( profilecode,  id);
@@ -54,7 +54,7 @@ public class ShippingInclusionRuleResource {
 	}
 
 	/**
-	 * Retrieves the details of the specified shipping inclusion rule.
+	 * 
 	 * <p><pre><code>
 	 *	ShippingInclusionRule shippinginclusionrule = new ShippingInclusionRule();
 	 *	CountDownLatch latch = shippinginclusionrule.getShippingInclusionRule( profilecode,  id, callback );
@@ -72,7 +72,7 @@ public class ShippingInclusionRuleResource {
 	}
 
 	/**
-	 * Retrieves the details of the specified shipping inclusion rule.
+	 * 
 	 * <p><pre><code>
 	 *	ShippingInclusionRule shippinginclusionrule = new ShippingInclusionRule();
 	 *	ShippingInclusionRule shippingInclusionRule = shippinginclusionrule.getShippingInclusionRule( profilecode,  id,  responseFields);
@@ -94,7 +94,7 @@ public class ShippingInclusionRuleResource {
 	}
 
 	/**
-	 * Retrieves the details of the specified shipping inclusion rule.
+	 * 
 	 * <p><pre><code>
 	 *	ShippingInclusionRule shippinginclusionrule = new ShippingInclusionRule();
 	 *	CountDownLatch latch = shippinginclusionrule.getShippingInclusionRule( profilecode,  id,  responseFields, callback );
@@ -116,7 +116,7 @@ public class ShippingInclusionRuleResource {
 	}
 
 	/**
-	 * Retrieves a list of shipping inclusion rules and their details.
+	 * 
 	 * <p><pre><code>
 	 *	ShippingInclusionRule shippinginclusionrule = new ShippingInclusionRule();
 	 *	ShippingInclusionRuleCollection shippingInclusionRuleCollection = shippinginclusionrule.getShippingInclusionRules( profilecode);
@@ -132,7 +132,7 @@ public class ShippingInclusionRuleResource {
 	}
 
 	/**
-	 * Retrieves a list of shipping inclusion rules and their details.
+	 * 
 	 * <p><pre><code>
 	 *	ShippingInclusionRule shippinginclusionrule = new ShippingInclusionRule();
 	 *	CountDownLatch latch = shippinginclusionrule.getShippingInclusionRules( profilecode, callback );
@@ -149,7 +149,7 @@ public class ShippingInclusionRuleResource {
 	}
 
 	/**
-	 * Retrieves a list of shipping inclusion rules and their details.
+	 * 
 	 * <p><pre><code>
 	 *	ShippingInclusionRule shippinginclusionrule = new ShippingInclusionRule();
 	 *	ShippingInclusionRuleCollection shippingInclusionRuleCollection = shippinginclusionrule.getShippingInclusionRules( profilecode,  responseFields);
@@ -170,7 +170,7 @@ public class ShippingInclusionRuleResource {
 	}
 
 	/**
-	 * Retrieves a list of shipping inclusion rules and their details.
+	 * 
 	 * <p><pre><code>
 	 *	ShippingInclusionRule shippinginclusionrule = new ShippingInclusionRule();
 	 *	CountDownLatch latch = shippinginclusionrule.getShippingInclusionRules( profilecode,  responseFields, callback );
@@ -191,14 +191,14 @@ public class ShippingInclusionRuleResource {
 	}
 
 	/**
-	 * Creates a new shipping inclusion rule.
+	 * 
 	 * <p><pre><code>
 	 *	ShippingInclusionRule shippinginclusionrule = new ShippingInclusionRule();
 	 *	ShippingInclusionRule shippingInclusionRule = shippinginclusionrule.createShippingInclusionRule( rule,  profilecode);
 	 * </code></pre></p>
 	 * @param profilecode The unique, user-defined code of the profile with which the shipping inclusion rule is associated.
 	 * @param dataViewMode DataViewMode
-	 * @param rule Mozu.ShippingAdmin.Contracts.Profile.ShippingInclusionRule ApiType DOCUMENT_HERE 
+	 * @param rule The details of the new shipping inclusion rule.
 	 * @return com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
@@ -209,7 +209,7 @@ public class ShippingInclusionRuleResource {
 	}
 
 	/**
-	 * Creates a new shipping inclusion rule.
+	 * 
 	 * <p><pre><code>
 	 *	ShippingInclusionRule shippinginclusionrule = new ShippingInclusionRule();
 	 *	CountDownLatch latch = shippinginclusionrule.createShippingInclusionRule( rule,  profilecode, callback );
@@ -217,7 +217,7 @@ public class ShippingInclusionRuleResource {
 	 * @param profilecode The unique, user-defined code of the profile with which the shipping inclusion rule is associated.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
-	 * @param rule Mozu.ShippingAdmin.Contracts.Profile.ShippingInclusionRule ApiType DOCUMENT_HERE 
+	 * @param rule The details of the new shipping inclusion rule.
 	 * @return com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
@@ -228,7 +228,7 @@ public class ShippingInclusionRuleResource {
 	}
 
 	/**
-	 * Creates a new shipping inclusion rule.
+	 * 
 	 * <p><pre><code>
 	 *	ShippingInclusionRule shippinginclusionrule = new ShippingInclusionRule();
 	 *	ShippingInclusionRule shippingInclusionRule = shippinginclusionrule.createShippingInclusionRule( rule,  profilecode,  responseFields);
@@ -236,7 +236,7 @@ public class ShippingInclusionRuleResource {
 	 * @param profilecode The unique, user-defined code of the profile with which the shipping inclusion rule is associated.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
-	 * @param rule Mozu.ShippingAdmin.Contracts.Profile.ShippingInclusionRule ApiType DOCUMENT_HERE 
+	 * @param rule The details of the new shipping inclusion rule.
 	 * @return com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
@@ -251,7 +251,7 @@ public class ShippingInclusionRuleResource {
 	}
 
 	/**
-	 * Creates a new shipping inclusion rule.
+	 * 
 	 * <p><pre><code>
 	 *	ShippingInclusionRule shippinginclusionrule = new ShippingInclusionRule();
 	 *	CountDownLatch latch = shippinginclusionrule.createShippingInclusionRule( rule,  profilecode,  responseFields, callback );
@@ -260,7 +260,7 @@ public class ShippingInclusionRuleResource {
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
-	 * @param rule Mozu.ShippingAdmin.Contracts.Profile.ShippingInclusionRule ApiType DOCUMENT_HERE 
+	 * @param rule The details of the new shipping inclusion rule.
 	 * @return com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
@@ -274,7 +274,7 @@ public class ShippingInclusionRuleResource {
 	}
 
 	/**
-	 * Updates the details of the specified shipping inclusion rule.
+	 * 
 	 * <p><pre><code>
 	 *	ShippingInclusionRule shippinginclusionrule = new ShippingInclusionRule();
 	 *	ShippingInclusionRule shippingInclusionRule = shippinginclusionrule.updateShippingInclusionRule( rule,  profilecode,  id);
@@ -282,7 +282,7 @@ public class ShippingInclusionRuleResource {
 	 * @param id Unique identifier of the customer segment to retrieve.
 	 * @param profilecode The unique, user-defined code of the profile with which the shipping inclusion rule is associated.
 	 * @param dataViewMode DataViewMode
-	 * @param rule Mozu.ShippingAdmin.Contracts.Profile.ShippingInclusionRule ApiType DOCUMENT_HERE 
+	 * @param rule The updated details of the shipping inclusion rule.
 	 * @return com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
@@ -293,7 +293,7 @@ public class ShippingInclusionRuleResource {
 	}
 
 	/**
-	 * Updates the details of the specified shipping inclusion rule.
+	 * 
 	 * <p><pre><code>
 	 *	ShippingInclusionRule shippinginclusionrule = new ShippingInclusionRule();
 	 *	CountDownLatch latch = shippinginclusionrule.updateShippingInclusionRule( rule,  profilecode,  id, callback );
@@ -302,7 +302,7 @@ public class ShippingInclusionRuleResource {
 	 * @param profilecode The unique, user-defined code of the profile with which the shipping inclusion rule is associated.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
-	 * @param rule Mozu.ShippingAdmin.Contracts.Profile.ShippingInclusionRule ApiType DOCUMENT_HERE 
+	 * @param rule The updated details of the shipping inclusion rule.
 	 * @return com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
@@ -313,7 +313,7 @@ public class ShippingInclusionRuleResource {
 	}
 
 	/**
-	 * Updates the details of the specified shipping inclusion rule.
+	 * 
 	 * <p><pre><code>
 	 *	ShippingInclusionRule shippinginclusionrule = new ShippingInclusionRule();
 	 *	ShippingInclusionRule shippingInclusionRule = shippinginclusionrule.updateShippingInclusionRule( rule,  profilecode,  id,  responseFields);
@@ -322,7 +322,7 @@ public class ShippingInclusionRuleResource {
 	 * @param profilecode The unique, user-defined code of the profile with which the shipping inclusion rule is associated.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
-	 * @param rule Mozu.ShippingAdmin.Contracts.Profile.ShippingInclusionRule ApiType DOCUMENT_HERE 
+	 * @param rule The updated details of the shipping inclusion rule.
 	 * @return com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
@@ -337,7 +337,7 @@ public class ShippingInclusionRuleResource {
 	}
 
 	/**
-	 * Updates the details of the specified shipping inclusion rule.
+	 * 
 	 * <p><pre><code>
 	 *	ShippingInclusionRule shippinginclusionrule = new ShippingInclusionRule();
 	 *	CountDownLatch latch = shippinginclusionrule.updateShippingInclusionRule( rule,  profilecode,  id,  responseFields, callback );
@@ -347,7 +347,7 @@ public class ShippingInclusionRuleResource {
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
-	 * @param rule Mozu.ShippingAdmin.Contracts.Profile.ShippingInclusionRule ApiType DOCUMENT_HERE 
+	 * @param rule The updated details of the shipping inclusion rule.
 	 * @return com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
@@ -361,7 +361,7 @@ public class ShippingInclusionRuleResource {
 	}
 
 	/**
-	 * Deletes the specified shipping inclusion rule.
+	 * 
 	 * <p><pre><code>
 	 *	ShippingInclusionRule shippinginclusionrule = new ShippingInclusionRule();
 	 *	shippinginclusionrule.deleteShippingInclusionRule( profilecode,  id);

@@ -21,9 +21,6 @@ public class ShopperNotes implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Notes entered and saved with an order. These notes may be entered by a shopper on a wishlist or for an order. Comments may also be entered by Mozu Admins on an order that may be visible only to authorized shoppers and users.
-	 */
 	protected  String comments;
 
 	public String getComments() {
@@ -34,9 +31,6 @@ public class ShopperNotes implements Serializable
 		this.comments = comments;
 	}
 
-	/**
-	 * Shopper-entered gift message for the associated order.
-	 */
 	protected  String giftMessage;
 
 	public String getGiftMessage() {

@@ -37,7 +37,7 @@ public class PickupResource {
 
 	
 	/**
-	 * Retrieves a list of the actions available to perform for the pickup specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	Pickup pickup = new Pickup();
 	 *	string string = pickup.getAvailablePickupFulfillmentActions( orderId,  pickupId);
@@ -57,7 +57,7 @@ public class PickupResource {
 	}
 
 	/**
-	 * Retrieves a list of the actions available to perform for the pickup specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	Pickup pickup = new Pickup();
 	 *	CountDownLatch latch = pickup.getAvailablePickupFulfillmentActions( orderId,  pickupId, callback );
@@ -77,7 +77,7 @@ public class PickupResource {
 	}
 
 	/**
-	 * Retrieves the details of the in-store pickup specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	Pickup pickup = new Pickup();
 	 *	Pickup pickup = pickup.getPickup( orderId,  pickupId);
@@ -93,7 +93,7 @@ public class PickupResource {
 	}
 
 	/**
-	 * Retrieves the details of the in-store pickup specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	Pickup pickup = new Pickup();
 	 *	CountDownLatch latch = pickup.getPickup( orderId,  pickupId, callback );
@@ -110,14 +110,14 @@ public class PickupResource {
 	}
 
 	/**
-	 * Retrieves the details of the in-store pickup specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	Pickup pickup = new Pickup();
 	 *	Pickup pickup = pickup.getPickup( orderId,  pickupId,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
 	 * @param pickupId Unique identifier of the pickup to remove.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 */
@@ -131,14 +131,14 @@ public class PickupResource {
 	}
 
 	/**
-	 * Retrieves the details of the in-store pickup specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	Pickup pickup = new Pickup();
 	 *	CountDownLatch latch = pickup.getPickup( orderId,  pickupId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
 	 * @param pickupId Unique identifier of the pickup to remove.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
@@ -152,7 +152,7 @@ public class PickupResource {
 	}
 
 	/**
-	 * Create a new pickup for the order specified in the request for in-store fufillment.
+	 * 
 	 * <p><pre><code>
 	 *	Pickup pickup = new Pickup();
 	 *	Pickup pickup = pickup.createPickup( pickup,  orderId);
@@ -169,7 +169,7 @@ public class PickupResource {
 	}
 
 	/**
-	 * Create a new pickup for the order specified in the request for in-store fufillment.
+	 * 
 	 * <p><pre><code>
 	 *	Pickup pickup = new Pickup();
 	 *	CountDownLatch latch = pickup.createPickup( pickup,  orderId, callback );
@@ -187,13 +187,13 @@ public class PickupResource {
 	}
 
 	/**
-	 * Create a new pickup for the order specified in the request for in-store fufillment.
+	 * 
 	 * <p><pre><code>
 	 *	Pickup pickup = new Pickup();
 	 *	Pickup pickup = pickup.createPickup( pickup,  orderId,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param pickup Properties of an in-store pickup defined to fulfill items in an order.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
@@ -209,13 +209,13 @@ public class PickupResource {
 	}
 
 	/**
-	 * Create a new pickup for the order specified in the request for in-store fufillment.
+	 * 
 	 * <p><pre><code>
 	 *	Pickup pickup = new Pickup();
 	 *	CountDownLatch latch = pickup.createPickup( pickup,  orderId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param pickup Properties of an in-store pickup defined to fulfill items in an order.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
@@ -231,7 +231,7 @@ public class PickupResource {
 	}
 
 	/**
-	 * Updates one or more details of a defined in-store pickup.
+	 * 
 	 * <p><pre><code>
 	 *	Pickup pickup = new Pickup();
 	 *	Pickup pickup = pickup.updatePickup( pickup,  orderId,  pickupId);
@@ -249,7 +249,7 @@ public class PickupResource {
 	}
 
 	/**
-	 * Updates one or more details of a defined in-store pickup.
+	 * 
 	 * <p><pre><code>
 	 *	Pickup pickup = new Pickup();
 	 *	CountDownLatch latch = pickup.updatePickup( pickup,  orderId,  pickupId, callback );
@@ -268,14 +268,14 @@ public class PickupResource {
 	}
 
 	/**
-	 * Updates one or more details of a defined in-store pickup.
+	 * 
 	 * <p><pre><code>
 	 *	Pickup pickup = new Pickup();
 	 *	Pickup pickup = pickup.updatePickup( pickup,  orderId,  pickupId,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
 	 * @param pickupId Unique identifier of the pickup to remove.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param pickup Properties of an in-store pickup defined to fulfill items in an order.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
@@ -291,14 +291,14 @@ public class PickupResource {
 	}
 
 	/**
-	 * Updates one or more details of a defined in-store pickup.
+	 * 
 	 * <p><pre><code>
 	 *	Pickup pickup = new Pickup();
 	 *	CountDownLatch latch = pickup.updatePickup( pickup,  orderId,  pickupId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
 	 * @param pickupId Unique identifier of the pickup to remove.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param pickup Properties of an in-store pickup defined to fulfill items in an order.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
@@ -314,7 +314,7 @@ public class PickupResource {
 	}
 
 	/**
-	 * Removes a pickup previously defined for order item in-store pickup fulfillment.
+	 * 
 	 * <p><pre><code>
 	 *	Pickup pickup = new Pickup();
 	 *	pickup.deletePickup( orderId,  pickupId);

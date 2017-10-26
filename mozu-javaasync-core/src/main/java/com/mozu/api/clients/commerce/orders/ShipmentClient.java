@@ -25,7 +25,7 @@ import org.apache.commons.lang.StringUtils;
 public class ShipmentClient {
 	
 	/**
-	 * Retrieves the details of the order shipment specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Shipment> mozuClient=GetShipmentClient( orderId,  shipmentId);
 	 * client.setBaseAddress(url);
@@ -43,7 +43,7 @@ public class ShipmentClient {
 	}
 
 	/**
-	 * Retrieves the details of the order shipment specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Shipment> mozuClient=GetShipmentClient( orderId,  shipmentId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -51,7 +51,7 @@ public class ShipmentClient {
 	 * Shipment shipment = client.Result();
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param shipmentId Unique identifier of the shipment to retrieve.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Shipment>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Shipment
@@ -69,7 +69,7 @@ public class ShipmentClient {
 	}
 
 	/**
-	 * Retrieves the available shipping methods applicable to the order. Typically used to display available shipping method options on the checkout page.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate>> mozuClient=GetAvailableShipmentMethodsClient( orderId);
 	 * client.setBaseAddress(url);
@@ -86,7 +86,7 @@ public class ShipmentClient {
 	}
 
 	/**
-	 * Retrieves the available shipping methods applicable to the order. Typically used to display available shipping method options on the checkout page.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate>> mozuClient=GetAvailableShipmentMethodsClient( orderId,  draft);
 	 * client.setBaseAddress(url);
@@ -111,7 +111,7 @@ public class ShipmentClient {
 	}
 
 	/**
-	 * Creates a shipment from one or more package associated with an order and assign a label and tracking number to an order shipment.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.commerceruntime.fulfillment.Package>> mozuClient=CreatePackageShipmentsClient( packageIds,  orderId);
 	 * client.setBaseAddress(url);
@@ -138,7 +138,7 @@ public class ShipmentClient {
 	}
 
 	/**
-	 * Deletes the shipment specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteShipmentClient( orderId,  shipmentId);
 	 * client.setBaseAddress(url);

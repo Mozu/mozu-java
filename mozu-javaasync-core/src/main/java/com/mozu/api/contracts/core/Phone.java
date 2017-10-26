@@ -21,9 +21,6 @@ public class Phone implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Home phone number.
-	 */
 	protected  String home;
 
 	public String getHome() {
@@ -34,9 +31,6 @@ public class Phone implements Serializable
 		this.home = home;
 	}
 
-	/**
-	 * Mobile phone number.
-	 */
 	protected  String mobile;
 
 	public String getMobile() {
@@ -47,9 +41,6 @@ public class Phone implements Serializable
 		this.mobile = mobile;
 	}
 
-	/**
-	 * Work phone number.
-	 */
 	protected  String work;
 
 	public String getWork() {

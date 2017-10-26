@@ -23,7 +23,7 @@ public class AssignedDiscount implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * ReadOnly, CouponSetCode copied from URI
+	 * The unique identifier of the coupon set.
 	 */
 	protected  String couponSetCode;
 
@@ -36,7 +36,7 @@ public class AssignedDiscount implements Serializable
 	}
 
 	/**
-	 * ReadOnly, CouponSetId
+	 * The unique, system generated id. You can use this value to further identify the coupon set.This value is ready only.
 	 */
 	protected  Integer couponSetId;
 
@@ -49,7 +49,7 @@ public class AssignedDiscount implements Serializable
 	}
 
 	/**
-	 * Unique identifier for the discount in the storefront.
+	 * The unique identifier of the discount.
 	 */
 	protected  Integer discountId;
 
@@ -62,7 +62,7 @@ public class AssignedDiscount implements Serializable
 	}
 
 	/**
-	 * Basic audit info about the object, including date, time, and user account. Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
+	 * Basic audit info about the object, including date, time, and user account. This data may be captured when creating, updating, and removing data.
 	 */
 	protected  AuditInfo auditInfo;
 

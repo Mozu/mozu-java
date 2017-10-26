@@ -27,9 +27,6 @@ public class ShippingRate implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The total calculated shipping amount requested for the package or shipment.
-	 */
 	protected  Double amount;
 
 	public Double getAmount() {
@@ -40,9 +37,6 @@ public class ShippingRate implements Serializable
 		this.amount = amount;
 	}
 
-	/**
-	 * The carrier-defined alphanumeric code associated with this shipping rate.
-	 */
 	protected  String code;
 
 	public String getCode() {
@@ -66,9 +60,6 @@ public class ShippingRate implements Serializable
 		this.daysInTransit = daysInTransit;
 	}
 
-	/**
-	 * Localizable content (such as a name and/or description) for an attribute. The content may be localized when displayed according to the locale code specified by the master catalog. Content can include descriptive text for product extensible attributes, catalog-level descriptions (displayed if isContentOverriden is true), product bundles, and customer account notes.
-	 */
 	protected  ShippingRateLocalizedContent content;
 
 	public ShippingRateLocalizedContent getContent() {
@@ -79,9 +70,6 @@ public class ShippingRate implements Serializable
 		this.content = content;
 	}
 
-	/**
-	 * Collection of carrier-specific key-value attribute pairs associated with a shipping carrier. These are required to retrieve a shipping rate request and are returned for the generated shipping label.
-	 */
 	protected List<CustomAttribute> customAttributes;
 	public List<CustomAttribute> getCustomAttributes() {
 		return this.customAttributes;
@@ -103,9 +91,6 @@ public class ShippingRate implements Serializable
 		this.data = data;
 	}
 
-	/**
-	 * Array list of validation and status messages associated with shipping rates, orders, and product purchasable state.
-	 */
 	protected List<ShippingRateValidationMessage> messages;
 	public List<ShippingRateValidationMessage> getMessages() {
 		return this.messages;
@@ -114,9 +99,6 @@ public class ShippingRate implements Serializable
 		this.messages = messages;
 	}
 
-	/**
-	 * Properties of a calculated shipping rate for individual line items in a shipment.
-	 */
 	protected List<ShippingItemRate> shippingItemRates;
 	public List<ShippingItemRate> getShippingItemRates() {
 		return this.shippingItemRates;

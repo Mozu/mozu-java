@@ -14,13 +14,27 @@ public class ShippingUrl
 {
 
 	/**
-	 * Get Resource Url for GetRates
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * Get Resource Url for GetMultiRates
+	 * @param includeRawResponse 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getRatesUrl(String responseFields)
+	public static MozuUrl getMultiRatesUrl(Boolean includeRawResponse)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/storefront/shipping/request-multi-rates");
+		formatter.formatUrl("includeRawResponse", includeRawResponse);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for GetRates
+	 * @param includeRawResponse Set this parameter to  to retrieve the full raw JSON response from a shipping carrier (instead of just the shipping rate).
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getRatesUrl(Boolean includeRawResponse, String responseFields)
 	{
 		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/storefront/shipping/request-rates?responseFields={responseFields}");
+		formatter.formatUrl("includeRawResponse", includeRawResponse);
 		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}

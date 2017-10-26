@@ -23,9 +23,6 @@ public class ActiveShippingCountry implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Array list of the active shipping carriers for the country.
-	 */
 	protected List<String> activeCarriers;
 	public List<String> getActiveCarriers() {
 		return this.activeCarriers;

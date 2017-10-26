@@ -35,7 +35,7 @@ public class PackageResource {
 
 	
 	/**
-	 * Retrieves the package label image supplied by the carrier for a return replacement.
+	 * 
 	 * <p><pre><code>
 	 *	Package package = new Package();
 	 *	Stream stream = package.getPackageLabel( returnId,  packageId);
@@ -51,7 +51,7 @@ public class PackageResource {
 	}
 
 	/**
-	 * Retrieves the package label image supplied by the carrier for a return replacement.
+	 * 
 	 * <p><pre><code>
 	 *	Package package = new Package();
 	 *	Stream stream = package.getPackageLabel( returnId,  packageId,  returnAsBase64Png);
@@ -72,7 +72,7 @@ public class PackageResource {
 	}
 
 	/**
-	 * Retrieves the details of a package of return replacement items.
+	 * 
 	 * <p><pre><code>
 	 *	Package package = new Package();
 	 *	Package package = package.getPackage( returnId,  packageId);
@@ -88,13 +88,13 @@ public class PackageResource {
 	}
 
 	/**
-	 * Retrieves the details of a package of return replacement items.
+	 * 
 	 * <p><pre><code>
 	 *	Package package = new Package();
 	 *	Package package = package.getPackage( returnId,  packageId,  responseFields);
 	 * </code></pre></p>
 	 * @param packageId Unique identifier of the package for which to retrieve the label.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
@@ -109,7 +109,7 @@ public class PackageResource {
 	}
 
 	/**
-	 * Creates a new physical package of return replacement items.
+	 * 
 	 * <p><pre><code>
 	 *	Package package = new Package();
 	 *	Package package = package.createPackage( pkg,  returnId);
@@ -126,12 +126,12 @@ public class PackageResource {
 	}
 
 	/**
-	 * Creates a new physical package of return replacement items.
+	 * 
 	 * <p><pre><code>
 	 *	Package package = new Package();
 	 *	Package package = package.createPackage( pkg,  returnId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @param package Properties of a physical package shipped for an order.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Package
@@ -148,7 +148,7 @@ public class PackageResource {
 	}
 
 	/**
-	 * Updates one or more properties of a package associated with a return replacement.
+	 * 
 	 * <p><pre><code>
 	 *	Package package = new Package();
 	 *	Package package = package.updatePackage( pkg,  returnId,  packageId);
@@ -166,13 +166,13 @@ public class PackageResource {
 	}
 
 	/**
-	 * Updates one or more properties of a package associated with a return replacement.
+	 * 
 	 * <p><pre><code>
 	 *	Package package = new Package();
 	 *	Package package = package.updatePackage( pkg,  returnId,  packageId,  responseFields);
 	 * </code></pre></p>
 	 * @param packageId Unique identifier of the package for which to retrieve the label.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @param package Properties of a physical package shipped for an order.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Package
@@ -189,7 +189,7 @@ public class PackageResource {
 	}
 
 	/**
-	 * Deletes a package associated with a return replacement.
+	 * 
 	 * <p><pre><code>
 	 *	Package package = new Package();
 	 *	package.deletePackage( returnId,  packageId);

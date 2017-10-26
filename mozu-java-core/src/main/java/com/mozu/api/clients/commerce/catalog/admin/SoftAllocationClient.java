@@ -23,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 public class SoftAllocationClient {
 	
 	/**
-	 * Retrieves a list of sof allocations according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.SoftAllocationCollection> mozuClient=GetSoftAllocationsClient();
 	 * client.setBaseAddress(url);
@@ -40,7 +40,7 @@ public class SoftAllocationClient {
 	}
 
 	/**
-	 * Retrieves a list of sof allocations according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.SoftAllocationCollection> mozuClient=GetSoftAllocationsClient( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * client.setBaseAddress(url);
@@ -69,7 +69,7 @@ public class SoftAllocationClient {
 	}
 
 	/**
-	 * Retrieves the details of a soft allocation.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.SoftAllocation> mozuClient=GetSoftAllocationClient( softAllocationId);
 	 * client.setBaseAddress(url);
@@ -87,7 +87,7 @@ public class SoftAllocationClient {
 	}
 
 	/**
-	 * Retrieves the details of a soft allocation.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.SoftAllocation> mozuClient=GetSoftAllocationClient( softAllocationId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -113,7 +113,7 @@ public class SoftAllocationClient {
 	}
 
 	/**
-	 * Creates a new soft allocation for a product. This places a hold on the product inventory for the quantity specified during the ordering process.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.productadmin.SoftAllocation>> mozuClient=AddSoftAllocationsClient( softAllocationsIn);
 	 * client.setBaseAddress(url);
@@ -140,7 +140,7 @@ public class SoftAllocationClient {
 	}
 
 	/**
-	 * Converts a set of existing soft product allocations into product reservations.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.productadmin.ProductReservation>> mozuClient=ConvertToProductReservationClient( softAllocations);
 	 * client.setBaseAddress(url);
@@ -167,7 +167,7 @@ public class SoftAllocationClient {
 	}
 
 	/**
-	 * Updates the expiration time for a set of soft allocations in a non-transactional batch.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.productadmin.SoftAllocation>> mozuClient=RenewSoftAllocationsClient( softAllocationRenew);
 	 * client.setBaseAddress(url);
@@ -194,7 +194,7 @@ public class SoftAllocationClient {
 	}
 
 	/**
-	 * Updates a soft allocation. This updates a hold on the product inventory for the quantity specified during the ordering process.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.productadmin.SoftAllocation>> mozuClient=UpdateSoftAllocationsClient( softAllocations);
 	 * client.setBaseAddress(url);
@@ -221,7 +221,7 @@ public class SoftAllocationClient {
 	}
 
 	/**
-	 * Deletes a soft allocation. You might delete a soft allocation when an order or cart is not processed in order to return the product quantity back to inventory.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteSoftAllocationClient( softAllocationId);
 	 * client.setBaseAddress(url);

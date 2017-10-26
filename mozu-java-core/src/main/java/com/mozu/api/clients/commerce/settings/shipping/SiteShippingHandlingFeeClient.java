@@ -23,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 public class SiteShippingHandlingFeeClient {
 	
 	/**
-	 * Retrieves the details of the order handling fee configured for the site.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee> mozuClient=GetOrderHandlingFeeClient();
 	 * client.setBaseAddress(url);
@@ -39,14 +39,14 @@ public class SiteShippingHandlingFeeClient {
 	}
 
 	/**
-	 * Retrieves the details of the order handling fee configured for the site.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee> mozuClient=GetOrderHandlingFeeClient( responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * SiteShippingHandlingFee siteShippingHandlingFee = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee>
 	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
 	 */
@@ -63,7 +63,7 @@ public class SiteShippingHandlingFeeClient {
 	}
 
 	/**
-	 * Creates a new order handling fee for the site.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee> mozuClient=CreateOrderHandlingFeeClient( orderHandlingFee);
 	 * client.setBaseAddress(url);
@@ -81,14 +81,14 @@ public class SiteShippingHandlingFeeClient {
 	}
 
 	/**
-	 * Creates a new order handling fee for the site.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee> mozuClient=CreateOrderHandlingFeeClient( orderHandlingFee,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * SiteShippingHandlingFee siteShippingHandlingFee = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param orderHandlingFee Properties of the handling fee to apply to order shipments for the site.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee>
 	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
@@ -108,7 +108,7 @@ public class SiteShippingHandlingFeeClient {
 	}
 
 	/**
-	 * Updates the order handling fee amount for the site.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee> mozuClient=UpdateOrderHandlingFeeClient( orderHandlingFee);
 	 * client.setBaseAddress(url);
@@ -126,14 +126,14 @@ public class SiteShippingHandlingFeeClient {
 	}
 
 	/**
-	 * Updates the order handling fee amount for the site.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee> mozuClient=UpdateOrderHandlingFeeClient( orderHandlingFee,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * SiteShippingHandlingFee siteShippingHandlingFee = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param orderHandlingFee Properties of the handling fee to apply to order shipments for the site.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee>
 	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee

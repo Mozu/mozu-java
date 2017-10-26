@@ -37,7 +37,7 @@ public class ShippingStatesResource {
 
 	
 	/**
-	 * Retrieves a list of shipping states and their details.
+	 * 
 	 * <p><pre><code>
 	 *	ShippingStates shippingstates = new ShippingStates();
 	 *	ShippingStates shippingStates = shippingstates.getStates( profileCode);
@@ -57,7 +57,7 @@ public class ShippingStatesResource {
 	}
 
 	/**
-	 * Retrieves a list of shipping states and their details.
+	 * 
 	 * <p><pre><code>
 	 *	ShippingStates shippingstates = new ShippingStates();
 	 *	CountDownLatch latch = shippingstates.getStates( profileCode, callback );
@@ -77,14 +77,14 @@ public class ShippingStatesResource {
 	}
 
 	/**
-	 * Updates the details of the shipping states.
+	 * 
 	 * <p><pre><code>
 	 *	ShippingStates shippingstates = new ShippingStates();
 	 *	ShippingStates shippingStates = shippingstates.updateStates( states,  profilecode);
 	 * </code></pre></p>
 	 * @param profilecode The unique, user-defined code of the profile with which the shipping state is associated.
 	 * @param dataViewMode DataViewMode
-	 * @param states Mozu.ShippingAdmin.Contracts.Profile.ShippingStates ApiType DOCUMENT_HERE 
+	 * @param states The updated details of the shipping states associated with the specified profilecode.
 	 * @return List<com.mozu.api.contracts.shippingadmin.profile.ShippingStates>
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingStates
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingStates
@@ -99,7 +99,7 @@ public class ShippingStatesResource {
 	}
 
 	/**
-	 * Updates the details of the shipping states.
+	 * 
 	 * <p><pre><code>
 	 *	ShippingStates shippingstates = new ShippingStates();
 	 *	CountDownLatch latch = shippingstates.updateStates( states,  profilecode, callback );
@@ -107,7 +107,7 @@ public class ShippingStatesResource {
 	 * @param profilecode The unique, user-defined code of the profile with which the shipping state is associated.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
-	 * @param states Mozu.ShippingAdmin.Contracts.Profile.ShippingStates ApiType DOCUMENT_HERE 
+	 * @param states The updated details of the shipping states associated with the specified profilecode.
 	 * @return List<com.mozu.api.contracts.shippingadmin.profile.ShippingStates>
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingStates
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingStates

@@ -25,7 +25,7 @@ import org.apache.commons.lang.StringUtils;
 public class ShipmentClient {
 	
 	/**
-	 * Retrieves the details of the specified return replacement shipment.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Shipment> mozuClient=GetShipmentClient( returnId,  shipmentId);
 	 * client.setBaseAddress(url);
@@ -43,14 +43,14 @@ public class ShipmentClient {
 	}
 
 	/**
-	 * Retrieves the details of the specified return replacement shipment.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Shipment> mozuClient=GetShipmentClient( returnId,  shipmentId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Shipment shipment = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @param shipmentId Unique identifier of the shipment to retrieve.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Shipment>
@@ -69,7 +69,7 @@ public class ShipmentClient {
 	}
 
 	/**
-	 * Creates a shipment from one or more packages associated with a return replacement.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.commerceruntime.fulfillment.Package>> mozuClient=CreatePackageShipmentsClient( packageIds,  returnId);
 	 * client.setBaseAddress(url);
@@ -96,7 +96,7 @@ public class ShipmentClient {
 	}
 
 	/**
-	 * Deletes a shipment for a return replacement.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteShipmentClient( returnId,  shipmentId);
 	 * client.setBaseAddress(url);

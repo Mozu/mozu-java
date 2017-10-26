@@ -25,7 +25,7 @@ import org.apache.commons.lang.StringUtils;
 public class ApplicationClient {
 	
 	/**
-	 * Retrieve the settings of a third-party application.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.sitesettings.application.Application> mozuClient=ThirdPartyGetApplicationClient();
 	 * client.setBaseAddress(url);
@@ -41,14 +41,14 @@ public class ApplicationClient {
 	}
 
 	/**
-	 * Retrieve the settings of a third-party application.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.sitesettings.application.Application> mozuClient=ThirdPartyGetApplicationClient( responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Application application = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.application.Application>
 	 * @see com.mozu.api.contracts.sitesettings.application.Application
 	 */
@@ -65,7 +65,7 @@ public class ApplicationClient {
 	}
 
 	/**
-	 * Initializes an application with the necessary configured settings.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.sitesettings.application.Application> mozuClient=ThirdPartyUpdateApplicationClient( application);
 	 * client.setBaseAddress(url);
@@ -83,14 +83,14 @@ public class ApplicationClient {
 	}
 
 	/**
-	 * Initializes an application with the necessary configured settings.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.sitesettings.application.Application> mozuClient=ThirdPartyUpdateApplicationClient( application,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Application application = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param application Properties of an application installed in a tenant.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.application.Application>
 	 * @see com.mozu.api.contracts.sitesettings.application.Application

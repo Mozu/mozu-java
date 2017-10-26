@@ -23,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 public class ShippingInclusionRuleClient {
 	
 	/**
-	 * Retrieves the details of the specified shipping inclusion rule.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule> mozuClient=GetShippingInclusionRuleClient( profilecode,  id);
 	 * client.setBaseAddress(url);
@@ -42,7 +42,7 @@ public class ShippingInclusionRuleClient {
 	}
 
 	/**
-	 * Retrieves the details of the specified shipping inclusion rule.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule> mozuClient=GetShippingInclusionRuleClient( profilecode,  id,  responseFields);
 	 * client.setBaseAddress(url);
@@ -69,7 +69,7 @@ public class ShippingInclusionRuleClient {
 	}
 
 	/**
-	 * Retrieves a list of shipping inclusion rules and their details.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRuleCollection> mozuClient=GetShippingInclusionRulesClient( profilecode);
 	 * client.setBaseAddress(url);
@@ -87,7 +87,7 @@ public class ShippingInclusionRuleClient {
 	}
 
 	/**
-	 * Retrieves a list of shipping inclusion rules and their details.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRuleCollection> mozuClient=GetShippingInclusionRulesClient( profilecode,  responseFields);
 	 * client.setBaseAddress(url);
@@ -113,7 +113,7 @@ public class ShippingInclusionRuleClient {
 	}
 
 	/**
-	 * Creates a new shipping inclusion rule.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule> mozuClient=CreateShippingInclusionRuleClient( rule,  profilecode);
 	 * client.setBaseAddress(url);
@@ -133,7 +133,7 @@ public class ShippingInclusionRuleClient {
 	}
 
 	/**
-	 * Creates a new shipping inclusion rule.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule> mozuClient=CreateShippingInclusionRuleClient( rule,  profilecode,  responseFields);
 	 * client.setBaseAddress(url);
@@ -162,7 +162,7 @@ public class ShippingInclusionRuleClient {
 	}
 
 	/**
-	 * Updates the details of the specified shipping inclusion rule.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule> mozuClient=UpdateShippingInclusionRuleClient( rule,  profilecode,  id);
 	 * client.setBaseAddress(url);
@@ -183,7 +183,7 @@ public class ShippingInclusionRuleClient {
 	}
 
 	/**
-	 * Updates the details of the specified shipping inclusion rule.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule> mozuClient=UpdateShippingInclusionRuleClient( rule,  profilecode,  id,  responseFields);
 	 * client.setBaseAddress(url);
@@ -213,7 +213,7 @@ public class ShippingInclusionRuleClient {
 	}
 
 	/**
-	 * Deletes the specified shipping inclusion rule.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteShippingInclusionRuleClient( profilecode,  id);
 	 * client.setBaseAddress(url);

@@ -35,7 +35,7 @@ public class PublishSetSummaryResource {
 
 	
 	/**
-	 * Returns a list of content publish sets.
+	 * 
 	 * <p><pre><code>
 	 *	PublishSetSummary publishsetsummary = new PublishSetSummary();
 	 *	PublishSetSummaryPagedCollection publishSetSummaryPagedCollection = publishsetsummary.getPublishSets();
@@ -49,7 +49,7 @@ public class PublishSetSummaryResource {
 	}
 
 	/**
-	 * Returns a list of content publish sets.
+	 * 
 	 * <p><pre><code>
 	 *	PublishSetSummary publishsetsummary = new PublishSetSummary();
 	 *	PublishSetSummaryPagedCollection publishSetSummaryPagedCollection = publishsetsummary.getPublishSets( pageSize,  startIndex,  responseFields);
@@ -70,7 +70,7 @@ public class PublishSetSummaryResource {
 	}
 
 	/**
-	 * Retrieves a list of content publish sets and their properties.
+	 * 
 	 * <p><pre><code>
 	 *	PublishSetSummary publishsetsummary = new PublishSetSummary();
 	 *	DocumentDraftSummaryPagedCollection documentDraftSummaryPagedCollection = publishsetsummary.getPublishSetItems( code);
@@ -85,7 +85,7 @@ public class PublishSetSummaryResource {
 	}
 
 	/**
-	 * Retrieves a list of content publish sets and their properties.
+	 * 
 	 * <p><pre><code>
 	 *	PublishSetSummary publishsetsummary = new PublishSetSummary();
 	 *	DocumentDraftSummaryPagedCollection documentDraftSummaryPagedCollection = publishsetsummary.getPublishSetItems( code,  pageSize,  startIndex,  sortBy,  filter,  responseFields);
@@ -109,7 +109,7 @@ public class PublishSetSummaryResource {
 	}
 
 	/**
-	 * Deletes the specified content publish set. You can use the shouldDiscard parameter to specify whether to discard the content drafts assigned to the content publish set.
+	 * 
 	 * <p><pre><code>
 	 *	PublishSetSummary publishsetsummary = new PublishSetSummary();
 	 *	object object = publishsetsummary.deletePublishSet( code);
@@ -124,7 +124,7 @@ public class PublishSetSummaryResource {
 	}
 
 	/**
-	 * Deletes the specified content publish set. You can use the shouldDiscard parameter to specify whether to discard the content drafts assigned to the content publish set.
+	 * 
 	 * <p><pre><code>
 	 *	PublishSetSummary publishsetsummary = new PublishSetSummary();
 	 *	object object = publishsetsummary.deletePublishSet( code,  shouldDiscard,  responseFields);
@@ -145,7 +145,7 @@ public class PublishSetSummaryResource {
 	}
 
 	/**
-	 * Adds a set of documents by id to a specified publish set.
+	 * 
 	 * <p><pre><code>
 	 *	PublishSetSummary publishsetsummary = new PublishSetSummary();
 	 *	object object = publishsetsummary.addPublishSetItems( itemsToPublish,  code);
@@ -162,7 +162,7 @@ public class PublishSetSummaryResource {
 	}
 
 	/**
-	 * Adds a set of documents by id to a specified publish set.
+	 * 
 	 * <p><pre><code>
 	 *	PublishSetSummary publishsetsummary = new PublishSetSummary();
 	 *	object object = publishsetsummary.addPublishSetItems( itemsToPublish,  code,  responseFields);

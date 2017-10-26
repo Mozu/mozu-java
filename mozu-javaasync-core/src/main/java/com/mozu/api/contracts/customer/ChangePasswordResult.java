@@ -35,7 +35,7 @@ public class ChangePasswordResult implements Serializable
 	}
 
 	/**
-	 * Mozu.Customer.Contracts.ChangePasswordResult errorMessage ApiTypeMember DOCUMENT_HERE 
+	 * A message describing why the operation failed.
 	 */
 	protected  String errorMessage;
 
@@ -48,7 +48,7 @@ public class ChangePasswordResult implements Serializable
 	}
 
 	/**
-	 * Mozu.Customer.Contracts.ChangePasswordResult succeeded ApiTypeMember DOCUMENT_HERE 
+	 * TRUE if the operation completes without error.
 	 */
 	protected  Boolean succeeded;
 

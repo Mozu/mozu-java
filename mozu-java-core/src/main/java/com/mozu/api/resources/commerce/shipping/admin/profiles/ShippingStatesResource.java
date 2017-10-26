@@ -35,7 +35,7 @@ public class ShippingStatesResource {
 
 	
 	/**
-	 * Retrieves a list of shipping states and their details.
+	 * 
 	 * <p><pre><code>
 	 *	ShippingStates shippingstates = new ShippingStates();
 	 *	ShippingStates shippingStates = shippingstates.getStates( profileCode);
@@ -55,7 +55,7 @@ public class ShippingStatesResource {
 	}
 
 	/**
-	 * Updates the details of the shipping states.
+	 * 
 	 * <p><pre><code>
 	 *	ShippingStates shippingstates = new ShippingStates();
 	 *	ShippingStates shippingStates = shippingstates.updateStates( states,  profilecode);

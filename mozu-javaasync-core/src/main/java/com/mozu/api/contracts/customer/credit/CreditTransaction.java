@@ -23,7 +23,7 @@ public class CreditTransaction implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Notes entered and saved with an order. These notes may be entered by a shopper on a wishlist or for an order. Comments may also be entered by Mozu Admins on an order that may be visible only to authorized shoppers and users.
+	 * Notes entered and saved with an order. These notes may be entered by a shopper on a wishlist or for an order. Comments may also be entered by  Admins on an order that may be visible only to authorized shoppers and users.
 	 */
 	protected  String comments;
 
@@ -36,7 +36,7 @@ public class CreditTransaction implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
+	 * Unique identifier of the source property, such as a catalog, discount, order, or email template.For a product field it will be the name of the field.For a category ID, must be a positive integer not greater than 2000000. By default,  auto-generates a category ID when categories are created. If you want to specify an ID during creation (which preserves category link relationships when migrating tenant data from one sandbox to another), you must also include the  query string in the endpoint. For example, . Then, use the  property to specify the desired category ID.For a product attribute it will be the Attribute FQN.For a document, the ID must be specified as a 32 character, case-insensitive, alphanumeric string. You can specify the ID as 32 sequential characters or as groups separated by dashes in the format 8-4-4-4-12. For example, or.For email templates, the ID must be one of the following values:			
 	 */
 	protected  Integer id;
 
@@ -61,6 +61,9 @@ public class CreditTransaction implements Serializable
 		this.impactAmount = impactAmount;
 	}
 
+	/**
+	 * Unique identifier of the order associated with the payment.
+	 */
 	protected  String orderId;
 
 	public String getOrderId() {
@@ -72,7 +75,7 @@ public class CreditTransaction implements Serializable
 	}
 
 	/**
-	 * The type of transaction, pertaining to the transaction a customer performed or the type of customer credit. For customer credit, you will set the data to Debit to decrease or Credit to update. For the type of transaction, the type includes Order, Return, OrderPickup, or Wishlist.
+	 * Specifies the type of transaction, including customer transactions and credit transactions.Valid values for credit transactions are the following:* â€”decreases the credit amount* â€”updates the credit amountValid values for customer transaction types are the following:* * * * 
 	 */
 	protected  String transactionType;
 

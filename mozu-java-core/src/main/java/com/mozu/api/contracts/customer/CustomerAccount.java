@@ -29,9 +29,6 @@ public class CustomerAccount implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Indicates if the customer account is opted to receive marketing materials. If true, the customer account is opted in for receiving the content. 
-	 */
 	protected  Boolean acceptsMarketing;
 
 	public Boolean getAcceptsMarketing() {
@@ -42,9 +39,6 @@ public class CustomerAccount implements Serializable
 		this.acceptsMarketing = acceptsMarketing;
 	}
 
-	/**
-	 * The legal or doing business as (DBA) or tradestyle name of the business or organization. The maximum character length is 200.
-	 */
 	protected  String companyOrOrganization;
 
 	public String getCompanyOrOrganization() {
@@ -69,7 +63,7 @@ public class CustomerAccount implements Serializable
 	}
 
 	/**
-	 * This property tracks the customer account creation date. This date can be set manually via the API for customer accounts that are imported into . 
+	 * This property tracks the customer account creation date. This date can be set manually via the APIÂ for customer accounts that are imported into . 
 	 */
 	protected  DateTime customerSinceDate;
 
@@ -133,9 +127,6 @@ public class CustomerAccount implements Serializable
 		this.hasExternalPassword = hasExternalPassword;
 	}
 
-	/**
-	 * Unique identifier of the source property, such as a catalog, discount, order, or email template.For a product field it will be the name of the field.For a category ID, must be a positive integer not greater than 2000000. By default,  auto-generates a category ID when categories are created. If you want to specify an ID during creation (which preserves category link relationships when migrating tenant data from one sandbox to another), you must also include the  query string in the endpoint. For example, . Then, use the  property to specify the desired category ID.For a product attribute it will be the Attribute FQN.For a document, the ID must be specified as a 32 character, case-insensitive, alphanumeric string. You can specify the ID as 32 sequential characters or as groups separated by dashes in the format 8-4-4-4-12. For example, or.For email templates, the ID must be one of the following values:			
-	 */
 	protected  Integer id;
 
 	public Integer getId() {
@@ -211,9 +202,6 @@ public class CustomerAccount implements Serializable
 		this.localeCode = localeCode;
 	}
 
-	/**
-	 * If true, this customer account has tax exempt status.
-	 */
 	protected  Boolean taxExempt;
 
 	public Boolean getTaxExempt() {
@@ -224,9 +212,6 @@ public class CustomerAccount implements Serializable
 		this.taxExempt = taxExempt;
 	}
 
-	/**
-	 * The tax identification number associated with the customer account.
-	 */
 	protected  String taxId;
 
 	public String getTaxId() {
@@ -237,9 +222,6 @@ public class CustomerAccount implements Serializable
 		this.taxId = taxId;
 	}
 
-	/**
-	 * Unique identifier of the customer account (shopper or system user). System-supplied and read-only. If the shopper user is anonymous, the user ID represents a system-generated user ID string.
-	 */
 	protected  String userId;
 
 	public String getUserId() {
@@ -263,9 +245,6 @@ public class CustomerAccount implements Serializable
 		this.userName = userName;
 	}
 
-	/**
-	 * Collection of attributes that may be paged list or a list, depending on the usage per object and API type. 
-	 */
 	protected List<CustomerAttribute> attributes;
 	public List<CustomerAttribute> getAttributes() {
 		return this.attributes;
@@ -274,9 +253,6 @@ public class CustomerAccount implements Serializable
 		this.attributes = attributes;
 	}
 
-	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -287,9 +263,6 @@ public class CustomerAccount implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * Properties of the commerce summary associated with a customer account, which includes details about the shopper's most recent order, wish lists, and total order value over time.
-	 */
 	protected  CommerceSummary commerceSummary;
 
 	public CommerceSummary getCommerceSummary() {
@@ -300,9 +273,6 @@ public class CustomerAccount implements Serializable
 		this.commerceSummary = commerceSummary;
 	}
 
-	/**
-	 * Contact information, including the contact's name, address, phone numbers, email addresses, and company (if supplied). Also indicates whether this is a billing, shipping, or billing and shipping contact.
-	 */
 	protected List<CustomerContact> contacts;
 	public List<CustomerContact> getContacts() {
 		return this.contacts;
@@ -311,9 +281,6 @@ public class CustomerAccount implements Serializable
 		this.contacts = contacts;
 	}
 
-	/**
-	 * Paged list collection of note content for objects including customers, orders, and returns. 
-	 */
 	protected List<CustomerNote> notes;
 	public List<CustomerNote> getNotes() {
 		return this.notes;

@@ -37,7 +37,7 @@ public class OrderValidationResultResource {
 
 	
 	/**
-	 * Retrieves a list of the validation results associated with the order.
+	 * 
 	 * <p><pre><code>
 	 *	OrderValidationResult ordervalidationresult = new OrderValidationResult();
 	 *	OrderValidationResult orderValidationResult = ordervalidationresult.getValidationResults( orderId);
@@ -56,7 +56,7 @@ public class OrderValidationResultResource {
 	}
 
 	/**
-	 * Retrieves a list of the validation results associated with the order.
+	 * 
 	 * <p><pre><code>
 	 *	OrderValidationResult ordervalidationresult = new OrderValidationResult();
 	 *	CountDownLatch latch = ordervalidationresult.getValidationResults( orderId, callback );
@@ -75,7 +75,7 @@ public class OrderValidationResultResource {
 	}
 
 	/**
-	 * Add a new order validation result to a submitted order.
+	 * 
 	 * <p><pre><code>
 	 *	OrderValidationResult ordervalidationresult = new OrderValidationResult();
 	 *	OrderValidationResult orderValidationResult = ordervalidationresult.addValidationResult( validationResult,  orderId);
@@ -92,7 +92,7 @@ public class OrderValidationResultResource {
 	}
 
 	/**
-	 * Add a new order validation result to a submitted order.
+	 * 
 	 * <p><pre><code>
 	 *	OrderValidationResult ordervalidationresult = new OrderValidationResult();
 	 *	CountDownLatch latch = ordervalidationresult.addValidationResult( validationResult,  orderId, callback );
@@ -110,13 +110,13 @@ public class OrderValidationResultResource {
 	}
 
 	/**
-	 * Add a new order validation result to a submitted order.
+	 * 
 	 * <p><pre><code>
 	 *	OrderValidationResult ordervalidationresult = new OrderValidationResult();
 	 *	OrderValidationResult orderValidationResult = ordervalidationresult.addValidationResult( validationResult,  orderId,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param validationResult Properties of the resulting order validation performed by an order validation capability.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult
@@ -132,13 +132,13 @@ public class OrderValidationResultResource {
 	}
 
 	/**
-	 * Add a new order validation result to a submitted order.
+	 * 
 	 * <p><pre><code>
 	 *	OrderValidationResult ordervalidationresult = new OrderValidationResult();
 	 *	CountDownLatch latch = ordervalidationresult.addValidationResult( validationResult,  orderId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param validationResult Properties of the resulting order validation performed by an order validation capability.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult

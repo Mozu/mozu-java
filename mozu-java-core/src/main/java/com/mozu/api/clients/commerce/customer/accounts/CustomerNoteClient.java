@@ -23,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 public class CustomerNoteClient {
 	
 	/**
-	 * Retrieves the contents of a particular note attached to a specified customer account.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerNote> mozuClient=GetAccountNoteClient( accountId,  noteId);
 	 * client.setBaseAddress(url);
@@ -41,7 +41,7 @@ public class CustomerNoteClient {
 	}
 
 	/**
-	 * Retrieves the contents of a particular note attached to a specified customer account.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerNote> mozuClient=GetAccountNoteClient( accountId,  noteId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -50,7 +50,7 @@ public class CustomerNoteClient {
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param noteId Unique identifier of a particular note to retrieve.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerNote>
 	 * @see com.mozu.api.contracts.customer.CustomerNote
 	 */
@@ -67,7 +67,7 @@ public class CustomerNoteClient {
 	}
 
 	/**
-	 * Retrieves a list of notes added to a customer account according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerNoteCollection> mozuClient=GetAccountNotesClient( accountId);
 	 * client.setBaseAddress(url);
@@ -84,7 +84,7 @@ public class CustomerNoteClient {
 	}
 
 	/**
-	 * Retrieves a list of notes added to a customer account according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerNoteCollection> mozuClient=GetAccountNotesClient( accountId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * client.setBaseAddress(url);
@@ -92,11 +92,11 @@ public class CustomerNoteClient {
 	 * CustomerNoteCollection customerNoteCollection = client.Result();
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerNoteCollection>
 	 * @see com.mozu.api.contracts.customer.CustomerNoteCollection
 	 */
@@ -113,7 +113,7 @@ public class CustomerNoteClient {
 	}
 
 	/**
-	 * Adds a new note to the specified customer account.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerNote> mozuClient=AddAccountNoteClient( note,  accountId);
 	 * client.setBaseAddress(url);
@@ -132,7 +132,7 @@ public class CustomerNoteClient {
 	}
 
 	/**
-	 * Adds a new note to the specified customer account.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerNote> mozuClient=AddAccountNoteClient( note,  accountId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -140,7 +140,7 @@ public class CustomerNoteClient {
 	 * CustomerNote customerNote = client.Result();
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param note Properties of a note configured for a customer account.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerNote>
 	 * @see com.mozu.api.contracts.customer.CustomerNote
@@ -160,7 +160,7 @@ public class CustomerNoteClient {
 	}
 
 	/**
-	 * Modifies an existing note for a customer account.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerNote> mozuClient=UpdateAccountNoteClient( note,  accountId,  noteId);
 	 * client.setBaseAddress(url);
@@ -180,7 +180,7 @@ public class CustomerNoteClient {
 	}
 
 	/**
-	 * Modifies an existing note for a customer account.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerNote> mozuClient=UpdateAccountNoteClient( note,  accountId,  noteId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -189,7 +189,7 @@ public class CustomerNoteClient {
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param noteId Unique identifier of a particular note to retrieve.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param note Properties of a note configured for a customer account.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerNote>
 	 * @see com.mozu.api.contracts.customer.CustomerNote
@@ -209,7 +209,7 @@ public class CustomerNoteClient {
 	}
 
 	/**
-	 * Removes a note from the specified customer account.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteAccountNoteClient( accountId,  noteId);
 	 * client.setBaseAddress(url);

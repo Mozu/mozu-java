@@ -23,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 public class LocationClient {
 	
 	/**
-	 * Retrieves a list of all locations associated with a tenant, according to any filter and sort criteria specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.location.LocationCollection> mozuClient=GetLocationsClient();
 	 * client.setBaseAddress(url);
@@ -39,18 +39,18 @@ public class LocationClient {
 	}
 
 	/**
-	 * Retrieves a list of all locations associated with a tenant, according to any filter and sort criteria specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.location.LocationCollection> mozuClient=GetLocationsClient( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * LocationCollection locationCollection = client.Result();
 	 * </code></pre></p>
-	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.LocationCollection>
 	 * @see com.mozu.api.contracts.location.LocationCollection
 	 */
@@ -67,7 +67,7 @@ public class LocationClient {
 	}
 
 	/**
-	 * Retrieves the details of the location specified in the request by location code.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.location.Location> mozuClient=GetLocationClient( locationCode);
 	 * client.setBaseAddress(url);
@@ -84,7 +84,7 @@ public class LocationClient {
 	}
 
 	/**
-	 * Retrieves the details of the location specified in the request by location code.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.location.Location> mozuClient=GetLocationClient( locationCode,  responseFields);
 	 * client.setBaseAddress(url);
@@ -109,7 +109,7 @@ public class LocationClient {
 	}
 
 	/**
-	 * Creates a new physical location for the tenant specified in the request header.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.location.Location> mozuClient=AddLocationClient( location);
 	 * client.setBaseAddress(url);
@@ -127,7 +127,7 @@ public class LocationClient {
 	}
 
 	/**
-	 * Creates a new physical location for the tenant specified in the request header.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.location.Location> mozuClient=AddLocationClient( location,  responseFields);
 	 * client.setBaseAddress(url);
@@ -154,7 +154,7 @@ public class LocationClient {
 	}
 
 	/**
-	 * Updates one or more details of a the location specified in the request by location code.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.location.Location> mozuClient=UpdateLocationClient( location,  locationCode);
 	 * client.setBaseAddress(url);
@@ -173,7 +173,7 @@ public class LocationClient {
 	}
 
 	/**
-	 * Updates one or more details of a the location specified in the request by location code.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.location.Location> mozuClient=UpdateLocationClient( location,  locationCode,  responseFields);
 	 * client.setBaseAddress(url);
@@ -181,7 +181,7 @@ public class LocationClient {
 	 * Location location = client.Result();
 	 * </code></pre></p>
 	 * @param locationCode The unique, user-defined code that identifies a location. 
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param location Properties of a physical location a tenant uses to manage inventory and fulfills orders, provide store finder functionality, or both.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.Location>
 	 * @see com.mozu.api.contracts.location.Location
@@ -201,7 +201,7 @@ public class LocationClient {
 	}
 
 	/**
-	 * Deletes the location specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteLocationClient( locationCode);
 	 * client.setBaseAddress(url);

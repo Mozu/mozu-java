@@ -15,7 +15,7 @@ public class MasterCatalogUrl
 
 	/**
 	 * Get Resource Url for GetMasterCatalogs
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getMasterCatalogsUrl(String responseFields)
@@ -27,8 +27,8 @@ public class MasterCatalogUrl
 
 	/**
 	 * Get Resource Url for GetMasterCatalog
-	 * @param masterCatalogId The unique identifier of the master catalog associated with the entity.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param masterCatalogId Unique identifier for the master catalog. The master catalog contains all products accessible per catalogs and the site/tenant.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getMasterCatalogUrl(Integer masterCatalogId, String responseFields)
@@ -41,8 +41,8 @@ public class MasterCatalogUrl
 
 	/**
 	 * Get Resource Url for UpdateMasterCatalog
-	 * @param masterCatalogId 
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param masterCatalogId Unique identifier for the master catalog. The master catalog contains all products accessible per catalogs and the site/tenant.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateMasterCatalogUrl(Integer masterCatalogId, String responseFields)

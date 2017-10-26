@@ -35,7 +35,7 @@ public class CustomRouteSettingsResource {
 
 	
 	/**
-	 * Retrieves the custom route settings configured for a site. These are the same settings configured through  in the Custom Routing JSON Editor.
+	 * 
 	 * <p><pre><code>
 	 *	CustomRouteSettings customroutesettings = new CustomRouteSettings();
 	 *	CustomRouteSettings customRouteSettings = customroutesettings.getCustomRouteSettings();
@@ -49,7 +49,7 @@ public class CustomRouteSettingsResource {
 	}
 
 	/**
-	 * Retrieves the custom route settings configured for a site. These are the same settings configured through  in the Custom Routing JSON Editor.
+	 * 
 	 * <p><pre><code>
 	 *	CustomRouteSettings customroutesettings = new CustomRouteSettings();
 	 *	CustomRouteSettings customRouteSettings = customroutesettings.getCustomRouteSettings( responseFields);
@@ -68,7 +68,7 @@ public class CustomRouteSettingsResource {
 	}
 
 	/**
-	 * Create new custom route settings.
+	 * 
 	 * <p><pre><code>
 	 *	CustomRouteSettings customroutesettings = new CustomRouteSettings();
 	 *	CustomRouteSettings customRouteSettings = customroutesettings.createCustomRouteSettings( settings);
@@ -84,7 +84,7 @@ public class CustomRouteSettingsResource {
 	}
 
 	/**
-	 * Create new custom route settings.
+	 * 
 	 * <p><pre><code>
 	 *	CustomRouteSettings customroutesettings = new CustomRouteSettings();
 	 *	CustomRouteSettings customRouteSettings = customroutesettings.createCustomRouteSettings( settings,  responseFields);
@@ -105,7 +105,7 @@ public class CustomRouteSettingsResource {
 	}
 
 	/**
-	 * Updates custom route settings.
+	 * 
 	 * <p><pre><code>
 	 *	CustomRouteSettings customroutesettings = new CustomRouteSettings();
 	 *	CustomRouteSettings customRouteSettings = customroutesettings.updateCustomRouteSettings( settings);
@@ -121,7 +121,7 @@ public class CustomRouteSettingsResource {
 	}
 
 	/**
-	 * Updates custom route settings.
+	 * 
 	 * <p><pre><code>
 	 *	CustomRouteSettings customroutesettings = new CustomRouteSettings();
 	 *	CustomRouteSettings customRouteSettings = customroutesettings.updateCustomRouteSettings( settings,  responseFields);
@@ -142,7 +142,7 @@ public class CustomRouteSettingsResource {
 	}
 
 	/**
-	 * Deletes all the custom route settings for a site, returning all routes to their  defaults.
+	 * 
 	 * <p><pre><code>
 	 *	CustomRouteSettings customroutesettings = new CustomRouteSettings();
 	 *	customroutesettings.deleteCustomRouteSettings();

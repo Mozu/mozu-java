@@ -51,7 +51,7 @@ public class ListView implements Serializable
 	}
 
 	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
+	 * The user supplied name that appears in . You can use this field for identification purposes.
 	 */
 	protected  String name;
 
@@ -77,7 +77,7 @@ public class ListView implements Serializable
 	}
 
 	/**
-	 * List description of usages for content within a view and scope.
+	 * A string array that determines where the document or entity list displays. The options are , for displaying content in the Custom Schema page in  , and , for displaying content in the site tree in Site Builder (applies only to document lists). The following example demonstrates how to display content across both options:
 	 */
 	protected List<String> usages;
 	public List<String> getUsages() {

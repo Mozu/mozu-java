@@ -35,7 +35,7 @@ public class ChangeMessage implements Serializable
 	}
 
 	/**
-	 * Unique identifier of an app available in your Mozu tenant or within Mozu Dev Center. This ID is unique across all apps installed, initialized, and enabled in the Mozu Admin and those in development through the Dev Center Console.
+	 * Unique identifier of an app available in your  tenant or within  Dev Center. This ID is unique across all apps installed, initialized, and enabled in the  and those in development through the Dev Center Console.
 	 */
 	protected  String appId;
 
@@ -86,9 +86,6 @@ public class ChangeMessage implements Serializable
 		this.correlationId = correlationId;
 	}
 
-	/**
-	 * Date and time when the entity was created, represented in UTC Date/Time.
-	 */
 	protected  DateTime createDate;
 
 	public DateTime getCreateDate() {
@@ -99,9 +96,6 @@ public class ChangeMessage implements Serializable
 		this.createDate = createDate;
 	}
 
-	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
-	 */
 	protected  String id;
 
 	public String getId() {
@@ -112,9 +106,6 @@ public class ChangeMessage implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * Identifier for the object associated with the change message, which can represent a cart, cart item, or an order.
-	 */
 	protected  String identifier;
 
 	public String getIdentifier() {
@@ -125,9 +116,6 @@ public class ChangeMessage implements Serializable
 		this.identifier = identifier;
 	}
 
-	/**
-	 * The text of the change message, such as "This product is no longer available." System-supplied and read-only.
-	 */
 	protected  String message;
 
 	public String getMessage() {
@@ -151,9 +139,6 @@ public class ChangeMessage implements Serializable
 		this.metadata = metadata;
 	}
 
-	/**
-	 * The new value of the object affected by the change, such as the new price of the product. System-supplied and read-only.
-	 */
 	protected  String newValue;
 
 	public String getNewValue() {
@@ -164,9 +149,6 @@ public class ChangeMessage implements Serializable
 		this.newValue = newValue;
 	}
 
-	/**
-	 * The prior value of the object affected by the change, such as the price of the product when it was added to the cart. System-supplied and read-only.
-	 */
 	protected  String oldValue;
 
 	public String getOldValue() {
@@ -177,9 +159,6 @@ public class ChangeMessage implements Serializable
 		this.oldValue = oldValue;
 	}
 
-	/**
-	 * The text that appears on the subject line of the message, such as "The product price has changed."
-	 */
 	protected  String subject;
 
 	public String getSubject() {
@@ -190,9 +169,6 @@ public class ChangeMessage implements Serializable
 		this.subject = subject;
 	}
 
-	/**
-	 * Represents the type of object affected by the change, such as Cart Item or Product. System-supplied and read-only.
-	 */
 	protected  String subjectType;
 
 	public String getSubjectType() {
@@ -268,9 +244,6 @@ public class ChangeMessage implements Serializable
 		this.userScopeType = userScopeType;
 	}
 
-	/**
-	 * The action associated with this message. For example, if the price of a product changes, the verb could be "Increased" or "Decreased". If the product is no longer available, the verb could be "Invalidated". System-supplied and read-only.
-	 */
 	protected  String verb;
 
 	public String getVerb() {

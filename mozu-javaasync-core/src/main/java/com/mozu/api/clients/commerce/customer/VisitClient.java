@@ -25,7 +25,7 @@ import org.apache.commons.lang.StringUtils;
 public class VisitClient {
 	
 	/**
-	 * Retrieves a list of customer visits according to any filter or sort criteria specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.VisitCollection> mozuClient=GetVisitsClient();
 	 * client.setBaseAddress(url);
@@ -41,18 +41,18 @@ public class VisitClient {
 	}
 
 	/**
-	 * Retrieves a list of customer visits according to any filter or sort criteria specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.VisitCollection> mozuClient=GetVisitsClient( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * VisitCollection visitCollection = client.Result();
 	 * </code></pre></p>
-	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.VisitCollection>
 	 * @see com.mozu.api.contracts.customer.VisitCollection
 	 */
@@ -69,7 +69,7 @@ public class VisitClient {
 	}
 
 	/**
-	 * Retrieves the details of the customer visit specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.Visit> mozuClient=GetVisitClient( visitId);
 	 * client.setBaseAddress(url);
@@ -86,14 +86,14 @@ public class VisitClient {
 	}
 
 	/**
-	 * Retrieves the details of the customer visit specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.Visit> mozuClient=GetVisitClient( visitId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Visit visit = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param visitId Unique identifier of the customer visit to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.Visit>
 	 * @see com.mozu.api.contracts.customer.Visit
@@ -111,7 +111,7 @@ public class VisitClient {
 	}
 
 	/**
-	 * Creates a new visit for the customer account specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.Visit> mozuClient=AddVisitClient( visit);
 	 * client.setBaseAddress(url);
@@ -129,14 +129,14 @@ public class VisitClient {
 	}
 
 	/**
-	 * Creates a new visit for the customer account specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.Visit> mozuClient=AddVisitClient( visit,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Visit visit = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param visit Properties of a customer visit to one of a company's sites.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.Visit>
 	 * @see com.mozu.api.contracts.customer.Visit
@@ -156,7 +156,7 @@ public class VisitClient {
 	}
 
 	/**
-	 * Updates one or more properties of a defined customer visit.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.Visit> mozuClient=UpdateVisitClient( visit,  visitId);
 	 * client.setBaseAddress(url);
@@ -175,14 +175,14 @@ public class VisitClient {
 	}
 
 	/**
-	 * Updates one or more properties of a defined customer visit.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.Visit> mozuClient=UpdateVisitClient( visit,  visitId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Visit visit = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param visitId Unique identifier of the customer visit to update.
 	 * @param visit Properties of a customer visit to one of a company's sites.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.Visit>

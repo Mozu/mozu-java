@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Mozu.ProductAdmin.Contracts.ActiveDateRange ApiType DOCUMENT_HERE 
+ *	Specifies a start date and end date for when associated object is on the live site, if  is set to .If  is set to  ignores this property.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ActiveDateRange implements Serializable
@@ -22,7 +22,7 @@ public class ActiveDateRange implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Mozu.ProductAdmin.Contracts.ActiveDateRange endDate ApiTypeMember DOCUMENT_HERE 
+	 * The date that the product is no longer active on the site.
 	 */
 	protected  DateTime endDate;
 
@@ -35,7 +35,7 @@ public class ActiveDateRange implements Serializable
 	}
 
 	/**
-	 * Mozu.ProductAdmin.Contracts.ActiveDateRange startDate ApiTypeMember DOCUMENT_HERE 
+	 * The date that the product starts being active on the site.
 	 */
 	protected  DateTime startDate;
 

@@ -21,9 +21,6 @@ public class UnitOfMeasure implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -34,9 +31,6 @@ public class UnitOfMeasure implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * The plural name of the unit of measure, such as "feet".
-	 */
 	protected  String pluralName;
 
 	public String getPluralName() {
@@ -47,9 +41,6 @@ public class UnitOfMeasure implements Serializable
 		this.pluralName = pluralName;
 	}
 
-	/**
-	 * The abbreviated symbol for the unit of measure, such as "ft".
-	 */
 	protected  String symbol;
 
 	public String getSymbol() {
@@ -60,9 +51,6 @@ public class UnitOfMeasure implements Serializable
 		this.symbol = symbol;
 	}
 
-	/**
-	 * The type of measurement, such as length or volume.
-	 */
 	protected  String unitOfMeasureType;
 
 	public String getUnitOfMeasureType() {

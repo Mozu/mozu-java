@@ -24,6 +24,16 @@ public class RatesResponse implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected  String id;
+
+	public String getId() {
+		return this.id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
 	/**
 	 * Resolved Shipping Zone Code. This value can be null if the tenant/site does not have shipping zones defined or there are no matching shipping zones for the request (e.g. the only zone defined is "UNITED-STATES" and the destination address of the rate request is in Canada)
 	 */
@@ -48,9 +58,6 @@ public class RatesResponse implements Serializable
 		this.shippingZoneCodes = shippingZoneCodes;
 	}
 
-	/**
-	 * Arrayed list of calculated shipping rates for each assocuated carrier.
-	 */
 	protected List<CarrierRatesResponse> rates;
 	public List<CarrierRatesResponse> getRates() {
 		return this.rates;

@@ -50,9 +50,6 @@ public class AttributeVocabularyValue implements Serializable
 		this.productName = productName;
 	}
 
-	/**
-	 * The value of a property, used by numerous objects within  including facets, attributes, products, localized content, metadata, capabilities ( and third-party), location inventory adjustment, and more. The value may be a string, integer, or double. Validation may be run against the entered and saved values depending on the object type.
-	 */
 	protected  Object value;
 
 	public Object getValue() {
@@ -63,9 +60,6 @@ public class AttributeVocabularyValue implements Serializable
 		this.value = value;
 	}
 
-	/**
-	 * The number that denotes the order of the entity value within a list of entity values.
-	 */
 	protected  Integer valueSequence;
 
 	public Integer getValueSequence() {
@@ -76,9 +70,6 @@ public class AttributeVocabularyValue implements Serializable
 		this.valueSequence = valueSequence;
 	}
 
-	/**
-	 * Complex type that contains content for a language specified by LocaleCode.
-	 */
 	protected  AttributeVocabularyValueLocalizedContent content;
 
 	public AttributeVocabularyValueLocalizedContent getContent() {

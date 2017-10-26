@@ -35,7 +35,7 @@ public class FacetResource {
 
 	
 	/**
-	 * Retrieves the properties of facets that aid in indexing and searching.
+	 * 
 	 * <p><pre><code>
 	 *	Facet facet = new Facet();
 	 *	Facet facet = facet.getFacets( documentListName,  propertyName);

@@ -21,9 +21,6 @@ public class UserProfile implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The email address of the specified user or the email address associated with the specified entity.
-	 */
 	protected  String emailAddress;
 
 	public String getEmailAddress() {
@@ -34,9 +31,6 @@ public class UserProfile implements Serializable
 		this.emailAddress = emailAddress;
 	}
 
-	/**
-	 * The first name of the contact. The maximum character length is 200.
-	 */
 	protected  String firstName;
 
 	public String getFirstName() {
@@ -47,9 +41,6 @@ public class UserProfile implements Serializable
 		this.firstName = firstName;
 	}
 
-	/**
-	 * The last name or surname of the contact. The maximum character length is 200.
-	 */
 	protected  String lastName;
 
 	public String getLastName() {
@@ -60,9 +51,6 @@ public class UserProfile implements Serializable
 		this.lastName = lastName;
 	}
 
-	/**
-	 * Unique identifier of the customer account (shopper or system user). System-supplied and read-only. If the shopper user is anonymous, the user ID represents a system-generated user ID string.
-	 */
 	protected  String userId;
 
 	public String getUserId() {

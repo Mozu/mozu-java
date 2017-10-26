@@ -13,7 +13,7 @@ import com.mozu.api.ApiContext;
 import com.mozu.api.MozuApiContext;
 import com.mozu.api.contracts.customer.AddressValidationRequest;
 import com.mozu.test.framework.core.MozuApiTestBase;
-import com.mozu.test.framework.datafactory.AddressValidationRequestFactory;
+import com.mozu.test.framework.datafactory.commerce.customer.AddressValidationRequestFactory;
 import com.mozu.test.framework.helper.CustomerGenerator;
 
 public class AddressValidateTests extends MozuApiTestBase {

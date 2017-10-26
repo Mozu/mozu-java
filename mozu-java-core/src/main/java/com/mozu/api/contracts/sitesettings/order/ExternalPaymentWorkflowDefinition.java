@@ -50,9 +50,6 @@ public class ExternalPaymentWorkflowDefinition implements Serializable
 		this.fullyQualifiedName = fullyQualifiedName;
 	}
 
-	/**
-	 * Indicates if the object or process is enabled. This indicator is used on external payment workflows and product option values. For product options, if true, the product option value is available for a shopper to choose. During configuration, this property will be false if the option value is invalid with other selected options. For external payment workflows, if true, the workflow is enabled and available for routing payments for the submitted order.
-	 */
 	protected  Boolean isEnabled;
 
 	public Boolean getIsEnabled() {
@@ -63,9 +60,6 @@ public class ExternalPaymentWorkflowDefinition implements Serializable
 		this.isEnabled = isEnabled;
 	}
 
-	/**
-	 * The user supplied name that appears in . You can use this field for identification purposes.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -89,9 +83,6 @@ public class ExternalPaymentWorkflowDefinition implements Serializable
 		this.namespace = namespace;
 	}
 
-	/**
-	 * The credential fields required to communicate with the external payment processor.
-	 */
 	protected List<ThirdPartyCredentialField> credentials;
 	public List<ThirdPartyCredentialField> getCredentials() {
 		return this.credentials;

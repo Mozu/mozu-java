@@ -60,9 +60,6 @@ public class PropertyType implements Serializable
 		this.installationPackage = installationPackage;
 	}
 
-	/**
-	 * If true, this entity can be grouped.
-	 */
 	protected  Boolean isAggregatable;
 
 	public Boolean getIsAggregatable() {
@@ -73,9 +70,6 @@ public class PropertyType implements Serializable
 		this.isAggregatable = isAggregatable;
 	}
 
-	/**
-	 * Indicates if the entity can be located and returned in a search, used for fields and property types. If true, the entity can be searched. 
-	 */
 	protected  Boolean isQueryable;
 
 	public Boolean getIsQueryable() {
@@ -86,9 +80,6 @@ public class PropertyType implements Serializable
 		this.isQueryable = isQueryable;
 	}
 
-	/**
-	 * Indicates if the fields or property types are sortable on the page. If true, the property type results are sortable. If false, the property type results cannot be sorted by any options.
-	 */
 	protected  Boolean isSortable;
 
 	public Boolean getIsSortable() {
@@ -99,9 +90,6 @@ public class PropertyType implements Serializable
 		this.isSortable = isSortable;
 	}
 
-	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -113,7 +101,7 @@ public class PropertyType implements Serializable
 	}
 
 	/**
-	 * If applicable, the registered namespace associated with objects, used to generate the fully qualified name. If no namespace is defined, the namespace associated with the tenant is automatically assigned.
+	 * The namespace for the accessible APIs and source capabilities in the core of  APIs.
 	 */
 	protected  String namespace;
 

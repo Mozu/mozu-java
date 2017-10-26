@@ -23,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 public class CustomRouteSettingsClient {
 	
 	/**
-	 * Retrieves the custom route settings configured for a site. These are the same settings configured through  in the Custom Routing JSON Editor.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings> mozuClient=GetCustomRouteSettingsClient();
 	 * client.setBaseAddress(url);
@@ -39,7 +39,7 @@ public class CustomRouteSettingsClient {
 	}
 
 	/**
-	 * Retrieves the custom route settings configured for a site. These are the same settings configured through  in the Custom Routing JSON Editor.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings> mozuClient=GetCustomRouteSettingsClient( responseFields);
 	 * client.setBaseAddress(url);
@@ -63,7 +63,7 @@ public class CustomRouteSettingsClient {
 	}
 
 	/**
-	 * Create new custom route settings.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings> mozuClient=CreateCustomRouteSettingsClient( settings);
 	 * client.setBaseAddress(url);
@@ -81,7 +81,7 @@ public class CustomRouteSettingsClient {
 	}
 
 	/**
-	 * Create new custom route settings.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings> mozuClient=CreateCustomRouteSettingsClient( settings,  responseFields);
 	 * client.setBaseAddress(url);
@@ -108,7 +108,7 @@ public class CustomRouteSettingsClient {
 	}
 
 	/**
-	 * Updates custom route settings.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings> mozuClient=UpdateCustomRouteSettingsClient( settings);
 	 * client.setBaseAddress(url);
@@ -126,7 +126,7 @@ public class CustomRouteSettingsClient {
 	}
 
 	/**
-	 * Updates custom route settings.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings> mozuClient=UpdateCustomRouteSettingsClient( settings,  responseFields);
 	 * client.setBaseAddress(url);
@@ -153,7 +153,7 @@ public class CustomRouteSettingsClient {
 	}
 
 	/**
-	 * Deletes all the custom route settings for a site, returning all routes to their  defaults.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteCustomRouteSettingsClient();
 	 * client.setBaseAddress(url);

@@ -23,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 public class CustomerPurchaseOrderAccountClient {
 	
 	/**
-	 * Retrieves the details of the specified customer purchase order account.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount> mozuClient=GetCustomerPurchaseOrderAccountClient( accountId);
 	 * client.setBaseAddress(url);
@@ -40,7 +40,7 @@ public class CustomerPurchaseOrderAccountClient {
 	}
 
 	/**
-	 * Retrieves the details of the specified customer purchase order account.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount> mozuClient=GetCustomerPurchaseOrderAccountClient( accountId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -65,7 +65,7 @@ public class CustomerPurchaseOrderAccountClient {
 	}
 
 	/**
-	 * Retrieves a list of purchase order transactions for the specified customer account according to any specified sort options.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.PurchaseOrderTransactionCollection> mozuClient=GetCustomerPurchaseOrderTransactionsClient( accountId);
 	 * client.setBaseAddress(url);
@@ -82,7 +82,7 @@ public class CustomerPurchaseOrderAccountClient {
 	}
 
 	/**
-	 * Retrieves a list of purchase order transactions for the specified customer account according to any specified sort options.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.PurchaseOrderTransactionCollection> mozuClient=GetCustomerPurchaseOrderTransactionsClient( accountId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * client.setBaseAddress(url);
@@ -111,7 +111,7 @@ public class CustomerPurchaseOrderAccountClient {
 	}
 
 	/**
-	 * Adds a purchase order account to the specified customer account.This adds the ability for the specified customer account to use the purchase order payment method.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount> mozuClient=CreateCustomerPurchaseOrderAccountClient( customerPurchaseOrderAccount,  accountId);
 	 * client.setBaseAddress(url);
@@ -130,7 +130,7 @@ public class CustomerPurchaseOrderAccountClient {
 	}
 
 	/**
-	 * Adds a purchase order account to the specified customer account.This adds the ability for the specified customer account to use the purchase order payment method.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount> mozuClient=CreateCustomerPurchaseOrderAccountClient( customerPurchaseOrderAccount,  accountId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -158,7 +158,7 @@ public class CustomerPurchaseOrderAccountClient {
 	}
 
 	/**
-	 * Creates a purchase order transaction on the specified customer purchase order account.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.PurchaseOrderTransaction> mozuClient=CreatePurchaseOrderTransactionClient( purchaseOrderTransaction,  accountId);
 	 * client.setBaseAddress(url);
@@ -177,7 +177,7 @@ public class CustomerPurchaseOrderAccountClient {
 	}
 
 	/**
-	 * Creates a purchase order transaction on the specified customer purchase order account.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.PurchaseOrderTransaction> mozuClient=CreatePurchaseOrderTransactionClient( purchaseOrderTransaction,  accountId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -205,7 +205,7 @@ public class CustomerPurchaseOrderAccountClient {
 	}
 
 	/**
-	 * Updates the details of the purchase order account for the specified customer account.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount> mozuClient=UpdateCustomerPurchaseOrderAccountClient( customerPurchaseOrderAccount,  accountId);
 	 * client.setBaseAddress(url);
@@ -224,7 +224,7 @@ public class CustomerPurchaseOrderAccountClient {
 	}
 
 	/**
-	 * Updates the details of the purchase order account for the specified customer account.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount> mozuClient=UpdateCustomerPurchaseOrderAccountClient( customerPurchaseOrderAccount,  accountId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -252,7 +252,7 @@ public class CustomerPurchaseOrderAccountClient {
 	}
 
 	/**
-	 * Deletes the specified customer purchase order account.This removes the ability for the specified customer account to use the purchase order payment method.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteCustomerPurchaseOrderAccountClient( accountId);
 	 * client.setBaseAddress(url);

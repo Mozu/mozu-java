@@ -29,9 +29,6 @@ public class CustomerAccount implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Indicates if the customer account is opted to receive marketing materials. If true, the customer account is opted in for receiving the content. 
-	 */
 	protected  Boolean acceptsMarketing;
 
 	public Boolean getAcceptsMarketing() {
@@ -42,9 +39,6 @@ public class CustomerAccount implements Serializable
 		this.acceptsMarketing = acceptsMarketing;
 	}
 
-	/**
-	 * The legal or doing business as (DBA) or tradestyle name of the business or organization. The maximum character length is 200.
-	 */
 	protected  String companyOrOrganization;
 
 	public String getCompanyOrOrganization() {
@@ -55,6 +49,9 @@ public class CustomerAccount implements Serializable
 		this.companyOrOrganization = companyOrOrganization;
 	}
 
+	/**
+	 * customerSet ApiType DOCUMENT_HERE 
+	 */
 	protected  String customerSet;
 
 	public String getCustomerSet() {
@@ -66,7 +63,7 @@ public class CustomerAccount implements Serializable
 	}
 
 	/**
-	 * Mozu.Customer.Contracts.CustomerAccount customerSinceDate ApiTypeMember DOCUMENT_HERE 
+	 * This property tracks the customer account creation date. This date can be set manually via the APIÂ for customer accounts that are imported into . 
 	 */
 	protected  DateTime customerSinceDate;
 
@@ -92,7 +89,7 @@ public class CustomerAccount implements Serializable
 	}
 
 	/**
-	 * Unique identifier used by an external program to identify a Mozu order, customer account, or wish list.
+	 * Unique identifier used by an external program to identify a  order, customer account, or wish list.
 	 */
 	protected  String externalId;
 
@@ -118,7 +115,7 @@ public class CustomerAccount implements Serializable
 	}
 
 	/**
-	 * Indicates if an external password is set on this account
+	 * Indicates if an external password is set on this account.
 	 */
 	protected  Boolean hasExternalPassword;
 
@@ -130,9 +127,6 @@ public class CustomerAccount implements Serializable
 		this.hasExternalPassword = hasExternalPassword;
 	}
 
-	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
-	 */
 	protected  Integer id;
 
 	public Integer getId() {
@@ -144,7 +138,7 @@ public class CustomerAccount implements Serializable
 	}
 
 	/**
-	 * Indicates if the object or feature is active. This indicator is used for subscriptions (at the site or tenant level), customer accounts, products and variations.
+	 * Indicates if the object or feature is active.
 	 */
 	protected  Boolean isActive;
 
@@ -208,9 +202,6 @@ public class CustomerAccount implements Serializable
 		this.localeCode = localeCode;
 	}
 
-	/**
-	 * If true, this customer account has tax exempt status.
-	 */
 	protected  Boolean taxExempt;
 
 	public Boolean getTaxExempt() {
@@ -221,9 +212,6 @@ public class CustomerAccount implements Serializable
 		this.taxExempt = taxExempt;
 	}
 
-	/**
-	 * The tax identification number associated with the customer account.
-	 */
 	protected  String taxId;
 
 	public String getTaxId() {
@@ -234,9 +222,6 @@ public class CustomerAccount implements Serializable
 		this.taxId = taxId;
 	}
 
-	/**
-	 * Unique identifier of the customer account (shopper or system user). System-supplied and read-only. If the shopper user is anonymous, the user ID represents a system-generated user ID string.
-	 */
 	protected  String userId;
 
 	public String getUserId() {
@@ -260,9 +245,6 @@ public class CustomerAccount implements Serializable
 		this.userName = userName;
 	}
 
-	/**
-	 * Collection of attributes that may be paged list or a list, depending on the usage per object and API type. 
-	 */
 	protected List<CustomerAttribute> attributes;
 	public List<CustomerAttribute> getAttributes() {
 		return this.attributes;
@@ -271,9 +253,6 @@ public class CustomerAccount implements Serializable
 		this.attributes = attributes;
 	}
 
-	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -284,9 +263,6 @@ public class CustomerAccount implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * Properties of the commerce summary associated with a customer account, which includes details about the shopper's most recent order, wish lists, and total order value over time.
-	 */
 	protected  CommerceSummary commerceSummary;
 
 	public CommerceSummary getCommerceSummary() {
@@ -297,9 +273,6 @@ public class CustomerAccount implements Serializable
 		this.commerceSummary = commerceSummary;
 	}
 
-	/**
-	 * Contact information, including the contact's name, address, phone numbers, email addresses, and company (if supplied). Also indicates whether this is a billing, shipping, or billing and shipping contact.
-	 */
 	protected List<CustomerContact> contacts;
 	public List<CustomerContact> getContacts() {
 		return this.contacts;
@@ -308,9 +281,6 @@ public class CustomerAccount implements Serializable
 		this.contacts = contacts;
 	}
 
-	/**
-	 * Paged list collection of note content for objects including customers, orders, and returns. 
-	 */
 	protected List<CustomerNote> notes;
 	public List<CustomerNote> getNotes() {
 		return this.notes;

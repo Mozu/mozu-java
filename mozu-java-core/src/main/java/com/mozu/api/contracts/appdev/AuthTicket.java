@@ -21,9 +21,6 @@ public class AuthTicket implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Alphanumeric string used to authenticate the user in API request headers. The token stores an encrypted list of the application's configured behaviors and authenticates the application.
-	 */
 	protected  String accessToken;
 
 	public String getAccessToken() {
@@ -34,9 +31,6 @@ public class AuthTicket implements Serializable
 		this.accessToken = accessToken;
 	}
 
-	/**
-	 * The date and time the user access token expires. If the token will expire, a new token will need to be generated and assigned to the account to continue and restore access to the store, data, and account.
-	 */
 	protected  DateTime accessTokenExpiration;
 
 	public DateTime getAccessTokenExpiration() {
@@ -47,9 +41,6 @@ public class AuthTicket implements Serializable
 		this.accessTokenExpiration = accessTokenExpiration;
 	}
 
-	/**
-	 * Alphanumeric string used for access tokens. This token refreshes access for accounts by generating a new developer or application account authentication ticket after an access token expires.
-	 */
 	protected  String refreshToken;
 
 	public String getRefreshToken() {
@@ -60,9 +51,6 @@ public class AuthTicket implements Serializable
 		this.refreshToken = refreshToken;
 	}
 
-	/**
-	 * The date and time the developer account or application refresh token expires.
-	 */
 	protected  DateTime refreshTokenExpiration;
 
 	public DateTime getRefreshTokenExpiration() {

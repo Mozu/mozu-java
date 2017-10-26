@@ -24,9 +24,6 @@ public class MasterCatalog implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The date and time in UTC format set when the object was created.
-	 */
 	protected  DateTime createDate;
 
 	public DateTime getCreateDate() {
@@ -37,9 +34,6 @@ public class MasterCatalog implements Serializable
 		this.createDate = createDate;
 	}
 
-	/**
-	 * The default three-letter ISO currency code for monetary amounts. Currently, only "USD" is supported for U.S. Dollar.
-	 */
 	protected  String defaultCurrencyCode;
 
 	public String getDefaultCurrencyCode() {
@@ -50,9 +44,6 @@ public class MasterCatalog implements Serializable
 		this.defaultCurrencyCode = defaultCurrencyCode;
 	}
 
-	/**
-	 * The two-letter default locale code for setting the localized text content. Currently, only "en-US" is supported for U.S. English.
-	 */
 	protected  String defaultLocaleCode;
 
 	public String getDefaultLocaleCode() {
@@ -63,9 +54,6 @@ public class MasterCatalog implements Serializable
 		this.defaultLocaleCode = defaultLocaleCode;
 	}
 
-	/**
-	 * The date and time the object was deleted. 
-	 */
 	protected  DateTime deleteDate;
 
 	public DateTime getDeleteDate() {
@@ -76,9 +64,6 @@ public class MasterCatalog implements Serializable
 		this.deleteDate = deleteDate;
 	}
 
-	/**
-	 * Unique identifier of the source property, such as a catalog, discount, order, or email template.For a product field it will be the name of the field.For a category ID, must be a positive integer not greater than 2000000. By default,  auto-generates a category ID when categories are created. If you want to specify an ID during creation (which preserves category link relationships when migrating tenant data from one sandbox to another), you must also include the  query string in the endpoint. For example, . Then, use the  property to specify the desired category ID.For a product attribute it will be the Attribute FQN.For a document, the ID must be specified as a 32 character, case-insensitive, alphanumeric string. You can specify the ID as 32 sequential characters or as groups separated by dashes in the format 8-4-4-4-12. For example, or.For email templates, the ID must be one of the following values:			
-	 */
 	protected  Integer id;
 
 	public Integer getId() {
@@ -89,9 +74,6 @@ public class MasterCatalog implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * Indicates if the object is deleted. If true, the object has been deleted. This may affect associated child members and objects. For example, a deleted master catalog affects all associated catalogs. 
-	 */
 	protected  Boolean isDeleted;
 
 	public Boolean getIsDeleted() {
@@ -102,9 +84,6 @@ public class MasterCatalog implements Serializable
 		this.isDeleted = isDeleted;
 	}
 
-	/**
-	 * The user supplied name that appears in . You can use this field for identification purposes.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -141,9 +120,6 @@ public class MasterCatalog implements Serializable
 		this.tenantId = tenantId;
 	}
 
-	/**
-	 * The date and time in UTC format the object was updated most recently.
-	 */
 	protected  DateTime updateDate;
 
 	public DateTime getUpdateDate() {
@@ -154,9 +130,6 @@ public class MasterCatalog implements Serializable
 		this.updateDate = updateDate;
 	}
 
-	/**
-	 * Collection of product catalogs that use product definitions from the master catalog.
-	 */
 	protected List<Catalog> catalogs;
 	public List<Catalog> getCatalogs() {
 		return this.catalogs;

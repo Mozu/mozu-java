@@ -21,9 +21,6 @@ public class LocationInventory implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The unique, user-defined code that identifies a location. This location can be the location where the order was entered, location for newly in-stock products, and where products are returned.
-	 */
 	protected  String locationCode;
 
 	public String getLocationCode() {
@@ -35,7 +32,7 @@ public class LocationInventory implements Serializable
 	}
 
 	/**
-	 * The unique, user-defined  product code of a product, used throughout Mozu to reference and associate to a product.
+	 * The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 */
 	protected  String productCode;
 
@@ -48,7 +45,7 @@ public class LocationInventory implements Serializable
 	}
 
 	/**
-	 * Mozu.ProductRuntime.Contracts.LocationInventory softStockAvailable ApiTypeMember DOCUMENT_HERE 
+	 * The soft stock level for the associated product currently available, at specified locations, and based on the number of pending soft product allocations as applicable. This value is associated with the  resource and operations.
 	 */
 	protected  Integer softStockAvailable;
 
@@ -60,9 +57,6 @@ public class LocationInventory implements Serializable
 		this.softStockAvailable = softStockAvailable;
 	}
 
-	/**
-	 * The stock level for the associated product currently available, at specified locations, and based on the number of pending product reservations as applicable. System-supplied and read only.
-	 */
 	protected  Integer stockAvailable;
 
 	public Integer getStockAvailable() {

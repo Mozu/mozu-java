@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Properties for the HTTP status for an event.
+ *	Properties for the HTTPÂ status for an event.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class HttpStatus implements Serializable

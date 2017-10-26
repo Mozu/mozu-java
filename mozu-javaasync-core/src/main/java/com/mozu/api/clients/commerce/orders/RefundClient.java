@@ -25,7 +25,7 @@ import org.apache.commons.lang.StringUtils;
 public class RefundClient {
 	
 	/**
-	 * Creates a refund based on the information supplied in the request.  
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.refunds.Refund> mozuClient=CreateRefundClient( refund,  orderId);
 	 * client.setBaseAddress(url);
@@ -33,7 +33,7 @@ public class RefundClient {
 	 * Refund refund = client.Result();
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param refund Mozu.CommerceRuntime.Contracts.Refunds.Refund ApiType DOCUMENT_HERE 
+	 * @param refund The details of the refund.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.refunds.Refund>
 	 * @see com.mozu.api.contracts.commerceruntime.refunds.Refund
 	 * @see com.mozu.api.contracts.commerceruntime.refunds.Refund
@@ -44,7 +44,7 @@ public class RefundClient {
 	}
 
 	/**
-	 * Creates a refund based on the information supplied in the request.  
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.refunds.Refund> mozuClient=CreateRefundClient( refund,  orderId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -53,7 +53,7 @@ public class RefundClient {
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param refund Mozu.CommerceRuntime.Contracts.Refunds.Refund ApiType DOCUMENT_HERE 
+	 * @param refund The details of the refund.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.refunds.Refund>
 	 * @see com.mozu.api.contracts.commerceruntime.refunds.Refund
 	 * @see com.mozu.api.contracts.commerceruntime.refunds.Refund
@@ -72,7 +72,7 @@ public class RefundClient {
 	}
 
 	/**
-	 * Resends the order refund email previously sent to the shopper. 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=ResendRefundEmailClient( orderId,  refundId);
 	 * client.setBaseAddress(url);

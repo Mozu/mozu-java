@@ -20,7 +20,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * platform/developer related resources. DOCUMENT_HERE 
+ * Use the Developer resource to view and update information and files related to application packages.
  * </summary>
  */
 public class ApplicationResource {
@@ -41,7 +41,7 @@ public ApplicationResource(ApiContext apiContext)
 
 	
 	/**
-	 * platform-developer Get GetAppPackageNames description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	PackageNamesCollection packageNamesCollection = application.getAppPackageNames( applicationKey);
@@ -56,7 +56,7 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * platform-developer Get GetAppPackageNames description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	CountDownLatch latch = application.getAppPackageNames( applicationKey, callback );
@@ -72,7 +72,7 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * platform-developer Get GetAppPackageNames description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	PackageNamesCollection packageNamesCollection = application.getAppPackageNames( applicationKey,  responseFields);
@@ -92,7 +92,7 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * platform-developer Get GetAppPackageNames description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	CountDownLatch latch = application.getAppPackageNames( applicationKey,  responseFields, callback );
@@ -112,7 +112,7 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * platform-developer Get GetAppVersions description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	ApplicationVersionsCollection applicationVersionsCollection = application.getAppVersions( nsAndAppId);
@@ -127,7 +127,7 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * platform-developer Get GetAppVersions description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	CountDownLatch latch = application.getAppVersions( nsAndAppId, callback );
@@ -143,7 +143,7 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * platform-developer Get GetAppVersions description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	ApplicationVersionsCollection applicationVersionsCollection = application.getAppVersions( nsAndAppId,  responseFields);
@@ -163,7 +163,7 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * platform-developer Get GetAppVersions description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	CountDownLatch latch = application.getAppVersions( nsAndAppId,  responseFields, callback );
@@ -183,7 +183,7 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * platform-developer Get GetPackageFileMetadata description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	FileMetadata fileMetadata = application.getPackageFileMetadata( applicationKey,  filepath);
@@ -199,7 +199,7 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * platform-developer Get GetPackageFileMetadata description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	CountDownLatch latch = application.getPackageFileMetadata( applicationKey,  filepath, callback );
@@ -216,7 +216,7 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * platform-developer Get GetPackageFileMetadata description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	FileMetadata fileMetadata = application.getPackageFileMetadata( applicationKey,  filepath,  responseFields);
@@ -237,7 +237,7 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * platform-developer Get GetPackageFileMetadata description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	CountDownLatch latch = application.getPackageFileMetadata( applicationKey,  filepath,  responseFields, callback );
@@ -258,7 +258,7 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * platform-developer Get GetPackageMetadata description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	FolderMetadata folderMetadata = application.getPackageMetadata( applicationKey);
@@ -273,7 +273,7 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * platform-developer Get GetPackageMetadata description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	CountDownLatch latch = application.getPackageMetadata( applicationKey, callback );
@@ -289,7 +289,7 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * platform-developer Get GetPackageMetadata description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	FolderMetadata folderMetadata = application.getPackageMetadata( applicationKey,  responseFields);
@@ -309,7 +309,7 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * platform-developer Get GetPackageMetadata description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	CountDownLatch latch = application.getPackageMetadata( applicationKey,  responseFields, callback );
@@ -329,7 +329,7 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * platform-developer Post UpsertPackageFile description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	FileMetadata fileMetadata = application.upsertPackageFile( stream,  applicationKey,  filepath,  contentType);
@@ -347,7 +347,7 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * platform-developer Post UpsertPackageFile description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	CountDownLatch latch = application.upsertPackageFile( stream,  applicationKey,  filepath,  contentType, callback );
@@ -366,7 +366,7 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * platform-developer Post UpsertPackageFile description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	FileMetadata fileMetadata = application.upsertPackageFile( stream,  applicationKey,  filepath,  lastModifiedTime,  responseFields,  contentType);
@@ -390,7 +390,7 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * platform-developer Post UpsertPackageFile description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	CountDownLatch latch = application.upsertPackageFile( stream,  applicationKey,  filepath,  lastModifiedTime,  responseFields,  contentType, callback );
@@ -414,7 +414,7 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * platform-developer Post RenamePackageFile description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	FileMetadata fileMetadata = application.renamePackageFile( renameInfo,  applicationKey);
@@ -431,7 +431,7 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * platform-developer Post RenamePackageFile description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	CountDownLatch latch = application.renamePackageFile( renameInfo,  applicationKey, callback );
@@ -449,7 +449,7 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * platform-developer Post RenamePackageFile description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	FileMetadata fileMetadata = application.renamePackageFile( renameInfo,  applicationKey,  responseFields);
@@ -471,7 +471,7 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * platform-developer Post RenamePackageFile description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	CountDownLatch latch = application.renamePackageFile( renameInfo,  applicationKey,  responseFields, callback );
@@ -493,7 +493,7 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * platform-developer Delete DeletePackageFile description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	application.deletePackageFile( applicationKey,  filepath);

@@ -25,14 +25,14 @@ import org.apache.commons.lang.StringUtils;
 public class AuthTicketClient {
 	
 	/**
-	 * Generate an authentication ticket for an application.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.appdev.AuthTicket> mozuClient=AuthenticateAppClient( appAuthInfo);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * AuthTicket authTicket = client.Result();
 	 * </code></pre></p>
-	 * @param appAuthInfo The information required to authenticate third party applications against the Mozu API.
+	 * @param appAuthInfo The information required to authenticate third party applications against the  API.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.AuthTicket>
 	 * @see com.mozu.api.contracts.appdev.AuthTicket
 	 * @see com.mozu.api.contracts.appdev.AppAuthInfo
@@ -43,15 +43,15 @@ public class AuthTicketClient {
 	}
 
 	/**
-	 * Generate an authentication ticket for an application.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.appdev.AuthTicket> mozuClient=AuthenticateAppClient( appAuthInfo,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * AuthTicket authTicket = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param appAuthInfo The information required to authenticate third party applications against the Mozu API.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param appAuthInfo The information required to authenticate third party applications against the  API.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.AuthTicket>
 	 * @see com.mozu.api.contracts.appdev.AuthTicket
 	 * @see com.mozu.api.contracts.appdev.AppAuthInfo
@@ -70,7 +70,7 @@ public class AuthTicketClient {
 	}
 
 	/**
-	 * Refreshes the application's authentication ticket and generates a new access token by providing the refresh token string.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.appdev.AuthTicket> mozuClient=RefreshAppAuthTicketClient( authTicketRequest);
 	 * client.setBaseAddress(url);
@@ -88,14 +88,14 @@ public class AuthTicketClient {
 	}
 
 	/**
-	 * Refreshes the application's authentication ticket and generates a new access token by providing the refresh token string.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.appdev.AuthTicket> mozuClient=RefreshAppAuthTicketClient( authTicketRequest,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * AuthTicket authTicket = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param authTicketRequest Properties of the authentication ticket refresh requests, which includes the refresh token string.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.AuthTicket>
 	 * @see com.mozu.api.contracts.appdev.AuthTicket
@@ -115,7 +115,7 @@ public class AuthTicketClient {
 	}
 
 	/**
-	 * Deletes an authentication for an application based on the specified refresh token.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteAppAuthTicketClient( refreshToken);
 	 * client.setBaseAddress(url);

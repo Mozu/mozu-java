@@ -37,12 +37,12 @@ public class AttributeVocabularyValueResource {
 
 	
 	/**
-	 * Retrieves a list of vocabulary values defined for the attribute specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
 	 *	AttributeVocabularyValue attributeVocabularyValue = attributevocabularyvalue.getAttributeVocabularyValues( attributeFQN);
 	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param dataViewMode DataViewMode
 	 * @return List<com.mozu.api.contracts.productadmin.AttributeVocabularyValue>
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValue
@@ -57,12 +57,12 @@ public class AttributeVocabularyValueResource {
 	}
 
 	/**
-	 * Retrieves a list of vocabulary values defined for the attribute specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
 	 *	CountDownLatch latch = attributevocabularyvalue.getAttributeVocabularyValues( attributeFQN, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
 	 * @return List<com.mozu.api.contracts.productadmin.AttributeVocabularyValue>
@@ -77,7 +77,7 @@ public class AttributeVocabularyValueResource {
 	}
 
 	/**
-	 * Retrieves a collection of localized content for vocabulary value attributes based on a `localeCode`. 
+	 * 
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
 	 *	AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = attributevocabularyvalue.getAttributeVocabularyValueLocalizedContents( attributeFQN,  value);
@@ -98,7 +98,7 @@ public class AttributeVocabularyValueResource {
 	}
 
 	/**
-	 * Retrieves a collection of localized content for vocabulary value attributes based on a `localeCode`. 
+	 * 
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
 	 *	CountDownLatch latch = attributevocabularyvalue.getAttributeVocabularyValueLocalizedContents( attributeFQN,  value, callback );
@@ -119,13 +119,13 @@ public class AttributeVocabularyValueResource {
 	}
 
 	/**
-	 * Retrieves the localized content for a vocabulary value attribute based on a `localeCode`. 
+	 * 
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
 	 *	AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = attributevocabularyvalue.getAttributeVocabularyValueLocalizedContent( attributeFQN,  value,  localeCode);
 	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
+	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
 	 * @param value The value string to create.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent
@@ -137,13 +137,13 @@ public class AttributeVocabularyValueResource {
 	}
 
 	/**
-	 * Retrieves the localized content for a vocabulary value attribute based on a `localeCode`. 
+	 * 
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
 	 *	CountDownLatch latch = attributevocabularyvalue.getAttributeVocabularyValueLocalizedContent( attributeFQN,  value,  localeCode, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
+	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
 	 * @param value The value string to create.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
@@ -156,14 +156,14 @@ public class AttributeVocabularyValueResource {
 	}
 
 	/**
-	 * Retrieves the localized content for a vocabulary value attribute based on a `localeCode`. 
+	 * 
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
 	 *	AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = attributevocabularyvalue.getAttributeVocabularyValueLocalizedContent( attributeFQN,  value,  localeCode,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param value The value string to create.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent
@@ -179,14 +179,14 @@ public class AttributeVocabularyValueResource {
 	}
 
 	/**
-	 * Retrieves the localized content for a vocabulary value attribute based on a `localeCode`. 
+	 * 
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
 	 *	CountDownLatch latch = attributevocabularyvalue.getAttributeVocabularyValueLocalizedContent( attributeFQN,  value,  localeCode,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param value The value string to create.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
@@ -202,12 +202,12 @@ public class AttributeVocabularyValueResource {
 	}
 
 	/**
-	 * Retrieves the details of a vocabulary value defined for an attribute by providing the attribute's fully qualified name and the value to retrieve.
+	 * 
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
 	 *	AttributeVocabularyValue attributeVocabularyValue = attributevocabularyvalue.getAttributeVocabularyValue( attributeFQN,  value);
 	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param value The value string to create.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.AttributeVocabularyValue
@@ -219,12 +219,12 @@ public class AttributeVocabularyValueResource {
 	}
 
 	/**
-	 * Retrieves the details of a vocabulary value defined for an attribute by providing the attribute's fully qualified name and the value to retrieve.
+	 * 
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
 	 *	CountDownLatch latch = attributevocabularyvalue.getAttributeVocabularyValue( attributeFQN,  value, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param value The value string to create.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
@@ -237,13 +237,13 @@ public class AttributeVocabularyValueResource {
 	}
 
 	/**
-	 * Retrieves the details of a vocabulary value defined for an attribute by providing the attribute's fully qualified name and the value to retrieve.
+	 * 
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
 	 *	AttributeVocabularyValue attributeVocabularyValue = attributevocabularyvalue.getAttributeVocabularyValue( attributeFQN,  value,  responseFields);
 	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param value The value string to create.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.AttributeVocabularyValue
@@ -259,13 +259,13 @@ public class AttributeVocabularyValueResource {
 	}
 
 	/**
-	 * Retrieves the details of a vocabulary value defined for an attribute by providing the attribute's fully qualified name and the value to retrieve.
+	 * 
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
 	 *	CountDownLatch latch = attributevocabularyvalue.getAttributeVocabularyValue( attributeFQN,  value,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param value The value string to create.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
@@ -281,7 +281,7 @@ public class AttributeVocabularyValueResource {
 	}
 
 	/**
-	 * Creates and saves localized vocabulary value content for an attribute, based on the `localeCode`.
+	 * 
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
 	 *	AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = attributevocabularyvalue.addAttributeVocabularyValueLocalizedContent( localizedContent,  attributeFQN,  value);
@@ -300,7 +300,7 @@ public class AttributeVocabularyValueResource {
 	}
 
 	/**
-	 * Creates and saves localized vocabulary value content for an attribute, based on the `localeCode`.
+	 * 
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
 	 *	CountDownLatch latch = attributevocabularyvalue.addAttributeVocabularyValueLocalizedContent( localizedContent,  attributeFQN,  value, callback );
@@ -320,13 +320,13 @@ public class AttributeVocabularyValueResource {
 	}
 
 	/**
-	 * Creates and saves localized vocabulary value content for an attribute, based on the `localeCode`.
+	 * 
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
 	 *	AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = attributevocabularyvalue.addAttributeVocabularyValueLocalizedContent( localizedContent,  attributeFQN,  value,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param value The value string to create.
 	 * @param dataViewMode DataViewMode
 	 * @param localizedContent The localized text for the string value of a product attribute.
@@ -344,13 +344,13 @@ public class AttributeVocabularyValueResource {
 	}
 
 	/**
-	 * Creates and saves localized vocabulary value content for an attribute, based on the `localeCode`.
+	 * 
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
 	 *	CountDownLatch latch = attributevocabularyvalue.addAttributeVocabularyValueLocalizedContent( localizedContent,  attributeFQN,  value,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param value The value string to create.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
@@ -368,12 +368,12 @@ public class AttributeVocabularyValueResource {
 	}
 
 	/**
-	 * Creates a vocabulary value for a defined product attribute.
+	 * 
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
 	 *	AttributeVocabularyValue attributeVocabularyValue = attributevocabularyvalue.addAttributeVocabularyValue( attributeVocabularyValue,  attributeFQN);
 	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param dataViewMode DataViewMode
 	 * @param attributeVocabularyValue Properties of a vocabulary value defined for an extensible attribute.
 	 * @return com.mozu.api.contracts.productadmin.AttributeVocabularyValue
@@ -386,12 +386,12 @@ public class AttributeVocabularyValueResource {
 	}
 
 	/**
-	 * Creates a vocabulary value for a defined product attribute.
+	 * 
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
 	 *	CountDownLatch latch = attributevocabularyvalue.addAttributeVocabularyValue( attributeVocabularyValue,  attributeFQN, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
 	 * @param attributeVocabularyValue Properties of a vocabulary value defined for an extensible attribute.
@@ -405,13 +405,13 @@ public class AttributeVocabularyValueResource {
 	}
 
 	/**
-	 * Creates a vocabulary value for a defined product attribute.
+	 * 
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
 	 *	AttributeVocabularyValue attributeVocabularyValue = attributevocabularyvalue.addAttributeVocabularyValue( attributeVocabularyValue,  attributeFQN,  responseFields);
 	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
 	 * @param attributeVocabularyValue Properties of a vocabulary value defined for an extensible attribute.
 	 * @return com.mozu.api.contracts.productadmin.AttributeVocabularyValue
@@ -428,13 +428,13 @@ public class AttributeVocabularyValueResource {
 	}
 
 	/**
-	 * Creates a vocabulary value for a defined product attribute.
+	 * 
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
 	 *	CountDownLatch latch = attributevocabularyvalue.addAttributeVocabularyValue( attributeVocabularyValue,  attributeFQN,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
 	 * @param attributeVocabularyValue Properties of a vocabulary value defined for an extensible attribute.
@@ -451,12 +451,12 @@ public class AttributeVocabularyValueResource {
 	}
 
 	/**
-	 * Update existing vocabulary values for an attribute.
+	 * 
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
 	 *	AttributeVocabularyValue attributeVocabularyValue = attributevocabularyvalue.updateAttributeVocabularyValues( vocabularyValues,  attributeFQN);
 	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param dataViewMode DataViewMode
 	 * @param vocabularyValues Properties of a vocabulary value defined for an extensible attribute.
 	 * @return List<com.mozu.api.contracts.productadmin.AttributeVocabularyValue>
@@ -473,12 +473,12 @@ public class AttributeVocabularyValueResource {
 	}
 
 	/**
-	 * Update existing vocabulary values for an attribute.
+	 * 
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
 	 *	CountDownLatch latch = attributevocabularyvalue.updateAttributeVocabularyValues( vocabularyValues,  attributeFQN, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
 	 * @param vocabularyValues Properties of a vocabulary value defined for an extensible attribute.
@@ -495,7 +495,7 @@ public class AttributeVocabularyValueResource {
 	}
 
 	/**
-	 * Updates a collection of localized vocabulary value content for existing attributes, based on the `localeCode`.
+	 * 
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
 	 *	AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = attributevocabularyvalue.updateAttributeVocabularyValueLocalizedContents( localizedContent,  attributeFQN,  value);
@@ -518,7 +518,7 @@ public class AttributeVocabularyValueResource {
 	}
 
 	/**
-	 * Updates a collection of localized vocabulary value content for existing attributes, based on the `localeCode`.
+	 * 
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
 	 *	CountDownLatch latch = attributevocabularyvalue.updateAttributeVocabularyValueLocalizedContents( localizedContent,  attributeFQN,  value, callback );
@@ -541,7 +541,7 @@ public class AttributeVocabularyValueResource {
 	}
 
 	/**
-	 * Updates localized vocabulary value content for an existing attribute, based on the `localeCode`.
+	 * 
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
 	 *	AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = attributevocabularyvalue.updateAttributeVocabularyValueLocalizedContent( localizedContent,  attributeFQN,  value,  localeCode);
@@ -561,7 +561,7 @@ public class AttributeVocabularyValueResource {
 	}
 
 	/**
-	 * Updates localized vocabulary value content for an existing attribute, based on the `localeCode`.
+	 * 
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
 	 *	CountDownLatch latch = attributevocabularyvalue.updateAttributeVocabularyValueLocalizedContent( localizedContent,  attributeFQN,  value,  localeCode, callback );
@@ -582,14 +582,14 @@ public class AttributeVocabularyValueResource {
 	}
 
 	/**
-	 * Updates localized vocabulary value content for an existing attribute, based on the `localeCode`.
+	 * 
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
 	 *	AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = attributevocabularyvalue.updateAttributeVocabularyValueLocalizedContent( localizedContent,  attributeFQN,  value,  localeCode,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param value The value string to create.
 	 * @param dataViewMode DataViewMode
 	 * @param localizedContent The localized text for the string value of a product attribute.
@@ -607,14 +607,14 @@ public class AttributeVocabularyValueResource {
 	}
 
 	/**
-	 * Updates localized vocabulary value content for an existing attribute, based on the `localeCode`.
+	 * 
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
 	 *	CountDownLatch latch = attributevocabularyvalue.updateAttributeVocabularyValueLocalizedContent( localizedContent,  attributeFQN,  value,  localeCode,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param value The value string to create.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
@@ -632,12 +632,12 @@ public class AttributeVocabularyValueResource {
 	}
 
 	/**
-	 * Updates existing attribute vocabulary values.
+	 * 
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
 	 *	AttributeVocabularyValue attributeVocabularyValue = attributevocabularyvalue.updateAttributeVocabularyValue( attributeVocabularyValue,  attributeFQN,  value);
 	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param value The value string to create.
 	 * @param dataViewMode DataViewMode
 	 * @param attributeVocabularyValue Properties of a vocabulary value defined for an extensible attribute.
@@ -651,12 +651,12 @@ public class AttributeVocabularyValueResource {
 	}
 
 	/**
-	 * Updates existing attribute vocabulary values.
+	 * 
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
 	 *	CountDownLatch latch = attributevocabularyvalue.updateAttributeVocabularyValue( attributeVocabularyValue,  attributeFQN,  value, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param value The value string to create.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
@@ -671,13 +671,13 @@ public class AttributeVocabularyValueResource {
 	}
 
 	/**
-	 * Updates existing attribute vocabulary values.
+	 * 
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
 	 *	AttributeVocabularyValue attributeVocabularyValue = attributevocabularyvalue.updateAttributeVocabularyValue( attributeVocabularyValue,  attributeFQN,  value,  responseFields);
 	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param value The value string to create.
 	 * @param dataViewMode DataViewMode
 	 * @param attributeVocabularyValue Properties of a vocabulary value defined for an extensible attribute.
@@ -695,13 +695,13 @@ public class AttributeVocabularyValueResource {
 	}
 
 	/**
-	 * Updates existing attribute vocabulary values.
+	 * 
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
 	 *	CountDownLatch latch = attributevocabularyvalue.updateAttributeVocabularyValue( attributeVocabularyValue,  attributeFQN,  value,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param value The value string to create.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
@@ -719,12 +719,12 @@ public class AttributeVocabularyValueResource {
 	}
 
 	/**
-	 * Deletes an attribute's vocabulary value.
+	 * 
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
 	 *	attributevocabularyvalue.deleteAttributeVocabularyValue( attributeFQN,  value);
 	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param value The value string to create.
 	 * @param dataViewMode DataViewMode
 	 * @return 
@@ -739,13 +739,13 @@ public class AttributeVocabularyValueResource {
 	}
 
 	/**
-	 * Removes localized content for a vocabulary value attribute. 
+	 * 
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
 	 *	attributevocabularyvalue.deleteAttributeVocabularyValueLocalizedContent( attributeFQN,  value,  localeCode);
 	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
+	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
 	 * @param value The value string to create.
 	 * @param dataViewMode DataViewMode
 	 * @return 

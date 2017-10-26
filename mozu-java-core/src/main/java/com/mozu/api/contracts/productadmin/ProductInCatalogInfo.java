@@ -29,9 +29,6 @@ public class ProductInCatalogInfo implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The unique identifier of the catalog of products used by a site.
-	 */
 	protected  Integer catalogId;
 
 	public Integer getCatalogId() {
@@ -55,9 +52,6 @@ public class ProductInCatalogInfo implements Serializable
 		this.dateFirstAvailableInCatalog = dateFirstAvailableInCatalog;
 	}
 
-	/**
-	 * Indicates if the object or feature is active.
-	 */
 	protected  Boolean isActive;
 
 	public Boolean getIsActive() {
@@ -68,9 +62,6 @@ public class ProductInCatalogInfo implements Serializable
 		this.isActive = isActive;
 	}
 
-	/**
-	 * If true, the content defined for this product in the master catalog in overridden in the catalog with the content specified in the request body. If false, this catalog uses the content defined in the master catalog for the product.
-	 */
 	protected  Boolean isContentOverridden;
 
 	public Boolean getIsContentOverridden() {
@@ -81,9 +72,6 @@ public class ProductInCatalogInfo implements Serializable
 		this.isContentOverridden = isContentOverridden;
 	}
 
-	/**
-	 * If true, the price defined for this product in the master catalog in overridden in the catalog with the price specified in the request body. If false, this catalog uses the price defined in the master catalog for the product.
-	 */
 	protected  Boolean isPriceOverridden;
 
 	public Boolean getIsPriceOverridden() {
@@ -94,9 +82,6 @@ public class ProductInCatalogInfo implements Serializable
 		this.isPriceOverridden = isPriceOverridden;
 	}
 
-	/**
-	 * If true, the SEO content defined for this product in the master catalog in overridden in the catalog with the SEO content specified in the request body. If false, this catalog uses the SEO content defined in the master catalog for the product.
-	 */
 	protected  Boolean isseoContentOverridden;
 
 	public Boolean getIsseoContentOverridden() {
@@ -120,9 +105,6 @@ public class ProductInCatalogInfo implements Serializable
 		this.activeDateRange = activeDateRange;
 	}
 
-	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -133,9 +115,6 @@ public class ProductInCatalogInfo implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * Localizable content (such as a name and/or description) for an attribute. The content may be localized when displayed according to the locale code specified by the master catalog. Content can include descriptive text for product extensible attributes, catalog-level descriptions (displayed if isContentOverriden is true), product bundles, and customer account notes.
-	 */
 	protected  ProductLocalizedContent content;
 
 	public ProductLocalizedContent getContent() {
@@ -146,9 +125,6 @@ public class ProductInCatalogInfo implements Serializable
 		this.content = content;
 	}
 
-	/**
-	 * The price of the product associated with the specified catalog. If no price is specified in the request, this catalog uses the price defined in the master catalog. To override the product price for this catalog, the IsPriceOverridden flag must be set to "true".
-	 */
 	protected  ProductPrice price;
 
 	public ProductPrice getPrice() {
@@ -172,9 +148,6 @@ public class ProductInCatalogInfo implements Serializable
 		this.primaryProductCategory = primaryProductCategory;
 	}
 
-	/**
-	 * The product categories to define for the product associated with the specified catalog.
-	 */
 	protected List<ProductCategory> productCategories;
 	public List<ProductCategory> getProductCategories() {
 		return this.productCategories;
@@ -183,9 +156,6 @@ public class ProductInCatalogInfo implements Serializable
 		this.productCategories = productCategories;
 	}
 
-	/**
-	 * The search engine optimized content defined for products or products associated with a catalog. If no SEO content is specified in the request for products associated with a catalog, this catalog uses the SEO content defined in the master catalog. To override the SEO content for this catalog, the `IsSEOContentOverridden `flag must be set to "true".
-	 */
 	protected  ProductLocalizedSEOContent seoContent;
 
 	public ProductLocalizedSEOContent getSeoContent() {

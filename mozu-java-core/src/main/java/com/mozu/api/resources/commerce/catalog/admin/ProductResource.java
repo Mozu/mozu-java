@@ -43,7 +43,7 @@ public class ProductResource {
 	}
 		
 	/**
-	 * Retrieves a list of products according to any specified facets, filter criteria, and sort options.
+	 * 
 	 * <p><pre><code>
 	 *	Product product = new Product();
 	 *	ProductCollection productCollection = product.getProducts();
@@ -57,19 +57,19 @@ public class ProductResource {
 	}
 
 	/**
-	 * Retrieves a list of products according to any specified facets, filter criteria, and sort options.
+	 * 
 	 * <p><pre><code>
 	 *	Product product = new Product();
 	 *	ProductCollection productCollection = product.getProducts( startIndex,  pageSize,  sortBy,  filter,  q,  qLimit,  noCount,  responseFields);
 	 * </code></pre></p>
-	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
 	 * @param noCount If true, the operation does not return the TotalCount number of results.
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
 	 * @param q A list of order search terms (not phrases) to use in the query when searching across order number and the name or email of the billing contact. When entering, separate multiple search terms with a space character.
 	 * @param qLimit The maximum number of search results to return in the response. You can limit any range between 1-100.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return com.mozu.api.contracts.productadmin.ProductCollection
 	 * @see com.mozu.api.contracts.productadmin.ProductCollection
 	 */
@@ -83,12 +83,12 @@ public class ProductResource {
 	}
 
 	/**
-	 * Retrieves a product that is associated with one or more specific catalogs.
+	 * 
 	 * <p><pre><code>
 	 *	Product product = new Product();
 	 *	ProductInCatalogInfo productInCatalogInfo = product.getProductInCatalogs( productCode);
 	 * </code></pre></p>
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @return List<com.mozu.api.contracts.productadmin.ProductInCatalogInfo>
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 */
@@ -102,13 +102,13 @@ public class ProductResource {
 	}
 
 	/**
-	 * Retrieves the details of a product associated with a specific catalog.
+	 * 
 	 * <p><pre><code>
 	 *	Product product = new Product();
 	 *	ProductInCatalogInfo productInCatalogInfo = product.getProductInCatalog( productCode,  catalogId);
 	 * </code></pre></p>
-	 * @param catalogId The unique identifier of the catalog of products used by a site.
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param catalogId Unique identifier for a catalog.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @return com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 */
@@ -118,14 +118,14 @@ public class ProductResource {
 	}
 
 	/**
-	 * Retrieves the details of a product associated with a specific catalog.
+	 * 
 	 * <p><pre><code>
 	 *	Product product = new Product();
 	 *	ProductInCatalogInfo productInCatalogInfo = product.getProductInCatalog( productCode,  catalogId,  responseFields);
 	 * </code></pre></p>
-	 * @param catalogId The unique identifier of the catalog of products used by a site.
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param catalogId Unique identifier for a catalog.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 */
@@ -139,12 +139,12 @@ public class ProductResource {
 	}
 
 	/**
-	 * Retrieves the details of a product definition.
+	 * 
 	 * <p><pre><code>
 	 *	Product product = new Product();
 	 *	Product product = product.getProduct( productCode);
 	 * </code></pre></p>
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @return com.mozu.api.contracts.productadmin.Product
 	 * @see com.mozu.api.contracts.productadmin.Product
 	 */
@@ -154,13 +154,13 @@ public class ProductResource {
 	}
 
 	/**
-	 * Retrieves the details of a product definition.
+	 * 
 	 * <p><pre><code>
 	 *	Product product = new Product();
 	 *	Product product = product.getProduct( productCode,  responseFields);
 	 * </code></pre></p>
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.productadmin.Product
 	 * @see com.mozu.api.contracts.productadmin.Product
 	 */
@@ -174,7 +174,7 @@ public class ProductResource {
 	}
 
 	/**
-	 * Creates a new product definition in the specified master catalog.
+	 * 
 	 * <p><pre><code>
 	 *	Product product = new Product();
 	 *	Product product = product.addProduct( product);
@@ -190,12 +190,12 @@ public class ProductResource {
 	}
 
 	/**
-	 * Creates a new product definition in the specified master catalog.
+	 * 
 	 * <p><pre><code>
 	 *	Product product = new Product();
 	 *	Product product = product.addProduct( product,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param product The properties of a product, referenced and used by carts, orders, wish lists, and returns.
 	 * @return com.mozu.api.contracts.productadmin.Product
 	 * @see com.mozu.api.contracts.productadmin.Product
@@ -211,12 +211,12 @@ public class ProductResource {
 	}
 
 	/**
-	 * Associates a new product defined in the master catalog with a specific catalog.
+	 * 
 	 * <p><pre><code>
 	 *	Product product = new Product();
 	 *	ProductInCatalogInfo productInCatalogInfo = product.addProductInCatalog( productInCatalogInfoIn,  productCode);
 	 * </code></pre></p>
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param productInCatalogInfoIn Properties of a product associated with a specific catalog.
 	 * @return com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
@@ -228,13 +228,13 @@ public class ProductResource {
 	}
 
 	/**
-	 * Associates a new product defined in the master catalog with a specific catalog.
+	 * 
 	 * <p><pre><code>
 	 *	Product product = new Product();
 	 *	ProductInCatalogInfo productInCatalogInfo = product.addProductInCatalog( productInCatalogInfoIn,  productCode,  responseFields);
 	 * </code></pre></p>
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param productInCatalogInfoIn Properties of a product associated with a specific catalog.
 	 * @return com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
@@ -250,7 +250,7 @@ public class ProductResource {
 	}
 
 	/**
-	 * Performs an update to a product code by renaming or replacing the current product code with a new one.
+	 * 
 	 * <p><pre><code>
 	 *	Product product = new Product();
 	 *	product.renameProductCodes( productCodeRenames);
@@ -269,12 +269,12 @@ public class ProductResource {
 	}
 
 	/**
-	 * Updates the properties of a product specific to each catalog associated with the product.
+	 * 
 	 * <p><pre><code>
 	 *	Product product = new Product();
 	 *	ProductInCatalogInfo productInCatalogInfo = product.updateProductInCatalogs( productInCatalogsIn,  productCode);
 	 * </code></pre></p>
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param productInCatalogsIn Properties of a product associated with a specific catalog.
 	 * @return List<com.mozu.api.contracts.productadmin.ProductInCatalogInfo>
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
@@ -290,13 +290,13 @@ public class ProductResource {
 	}
 
 	/**
-	 * Updates one or more properties of a product associated with a specific catalog.
+	 * 
 	 * <p><pre><code>
 	 *	Product product = new Product();
 	 *	ProductInCatalogInfo productInCatalogInfo = product.updateProductInCatalog( productInCatalogInfoIn,  productCode,  catalogId);
 	 * </code></pre></p>
-	 * @param catalogId The unique identifier of the catalog of products used by a site.
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param catalogId Unique identifier for a catalog.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param productInCatalogInfoIn Properties of a product associated with a specific catalog.
 	 * @return com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
@@ -308,14 +308,14 @@ public class ProductResource {
 	}
 
 	/**
-	 * Updates one or more properties of a product associated with a specific catalog.
+	 * 
 	 * <p><pre><code>
 	 *	Product product = new Product();
 	 *	ProductInCatalogInfo productInCatalogInfo = product.updateProductInCatalog( productInCatalogInfoIn,  productCode,  catalogId,  responseFields);
 	 * </code></pre></p>
-	 * @param catalogId The unique identifier of the catalog of products used by a site.
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param catalogId Unique identifier for a catalog.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param productInCatalogInfoIn Properties of a product associated with a specific catalog.
 	 * @return com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
@@ -331,12 +331,12 @@ public class ProductResource {
 	}
 
 	/**
-	 * Updates one or more properties of a product definition in a master catalog.
+	 * 
 	 * <p><pre><code>
 	 *	Product product = new Product();
 	 *	Product product = product.updateProduct( product,  productCode);
 	 * </code></pre></p>
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param product The properties of a product, referenced and used by carts, orders, wish lists, and returns.
 	 * @return com.mozu.api.contracts.productadmin.Product
 	 * @see com.mozu.api.contracts.productadmin.Product
@@ -348,13 +348,13 @@ public class ProductResource {
 	}
 
 	/**
-	 * Updates one or more properties of a product definition in a master catalog.
+	 * 
 	 * <p><pre><code>
 	 *	Product product = new Product();
 	 *	Product product = product.updateProduct( product,  productCode,  responseFields);
 	 * </code></pre></p>
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param product The properties of a product, referenced and used by carts, orders, wish lists, and returns.
 	 * @return com.mozu.api.contracts.productadmin.Product
 	 * @see com.mozu.api.contracts.productadmin.Product
@@ -370,7 +370,7 @@ public class ProductResource {
 	}
 
 	/**
-	 * Deletes the specified product from a master catalog.
+	 * 
 	 * <p><pre><code>
 	 *	Product product = new Product();
 	 *	product.deleteProduct( productCode);
@@ -388,13 +388,13 @@ public class ProductResource {
 	}
 
 	/**
-	 * Removes the product association defined for a specific catalog.
+	 * 
 	 * <p><pre><code>
 	 *	Product product = new Product();
 	 *	product.deleteProductInCatalog( productCode,  catalogId);
 	 * </code></pre></p>
-	 * @param catalogId The unique identifier of the catalog of products used by a site.
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param catalogId Unique identifier for a catalog.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @return 
 	 */
 	public void deleteProductInCatalog(String productCode, Integer catalogId) throws Exception

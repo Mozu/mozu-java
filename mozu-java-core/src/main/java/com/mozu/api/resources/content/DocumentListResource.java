@@ -43,7 +43,7 @@ public class DocumentListResource {
 	}
 		
 	/**
-	 * Retrieves a collection of document lists.
+	 * 
 	 * <p><pre><code>
 	 *	DocumentList documentlist = new DocumentList();
 	 *	DocumentListCollection documentListCollection = documentlist.getDocumentLists();
@@ -57,14 +57,14 @@ public class DocumentListResource {
 	}
 
 	/**
-	 * Retrieves a collection of document lists.
+	 * 
 	 * <p><pre><code>
 	 *	DocumentList documentlist = new DocumentList();
 	 *	DocumentListCollection documentListCollection = documentlist.getDocumentLists( pageSize,  startIndex,  responseFields);
 	 * </code></pre></p>
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param startIndex 
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return com.mozu.api.contracts.content.DocumentListCollection
 	 * @see com.mozu.api.contracts.content.DocumentListCollection
 	 */
@@ -78,7 +78,7 @@ public class DocumentListResource {
 	}
 
 	/**
-	 * Retrieve the details of a document list by providing the list name.
+	 * 
 	 * <p><pre><code>
 	 *	DocumentList documentlist = new DocumentList();
 	 *	DocumentList documentList = documentlist.getDocumentList( documentListName);
@@ -93,13 +93,13 @@ public class DocumentListResource {
 	}
 
 	/**
-	 * Retrieve the details of a document list by providing the list name.
+	 * 
 	 * <p><pre><code>
 	 *	DocumentList documentlist = new DocumentList();
 	 *	DocumentList documentList = documentlist.getDocumentList( documentListName,  responseFields);
 	 * </code></pre></p>
 	 * @param documentListName Name of content documentListName to delete
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.content.DocumentList
 	 * @see com.mozu.api.contracts.content.DocumentList
 	 */
@@ -113,7 +113,7 @@ public class DocumentListResource {
 	}
 
 	/**
-	 * Creates a new documentList
+	 * 
 	 * <p><pre><code>
 	 *	DocumentList documentlist = new DocumentList();
 	 *	DocumentList documentList = documentlist.createDocumentList( list);
@@ -129,12 +129,12 @@ public class DocumentListResource {
 	}
 
 	/**
-	 * Creates a new documentList
+	 * 
 	 * <p><pre><code>
 	 *	DocumentList documentlist = new DocumentList();
 	 *	DocumentList documentList = documentlist.createDocumentList( list,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param list The list of document types and related properties that define content used by the content management system (CMS).
 	 * @return com.mozu.api.contracts.content.DocumentList
 	 * @see com.mozu.api.contracts.content.DocumentList
@@ -150,7 +150,7 @@ public class DocumentListResource {
 	}
 
 	/**
-	 * Updates a `DocumentListName`.
+	 * 
 	 * <p><pre><code>
 	 *	DocumentList documentlist = new DocumentList();
 	 *	DocumentList documentList = documentlist.updateDocumentList( list,  documentListName);
@@ -167,13 +167,13 @@ public class DocumentListResource {
 	}
 
 	/**
-	 * Updates a `DocumentListName`.
+	 * 
 	 * <p><pre><code>
 	 *	DocumentList documentlist = new DocumentList();
 	 *	DocumentList documentList = documentlist.updateDocumentList( list,  documentListName,  responseFields);
 	 * </code></pre></p>
 	 * @param documentListName Name of content documentListName to delete
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param list The list of document types and related properties that define content used by the content management system (CMS).
 	 * @return com.mozu.api.contracts.content.DocumentList
 	 * @see com.mozu.api.contracts.content.DocumentList
@@ -189,7 +189,7 @@ public class DocumentListResource {
 	}
 
 	/**
-	 * Deletes the specified `DocumentListName`.
+	 * 
 	 * <p><pre><code>
 	 *	DocumentList documentlist = new DocumentList();
 	 *	documentlist.deleteDocumentList( documentListName);

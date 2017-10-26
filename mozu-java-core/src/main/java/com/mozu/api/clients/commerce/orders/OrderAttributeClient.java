@@ -23,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 public class OrderAttributeClient {
 	
 	/**
-	 * Retrieves a list of the attributes defined for the order specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute>> mozuClient=GetOrderAttributesClient( orderId);
 	 * client.setBaseAddress(url);
@@ -47,7 +47,7 @@ public class OrderAttributeClient {
 	}
 
 	/**
-	 * Applies a list of attributes to the order specified in the request and defines a value for each attribute in the request body.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute>> mozuClient=CreateOrderAttributesClient( orderAttributes,  orderId);
 	 * client.setBaseAddress(url);
@@ -74,7 +74,7 @@ public class OrderAttributeClient {
 	}
 
 	/**
-	 * Updates one or more properties of an attribute defined for the order specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute>> mozuClient=UpdateOrderAttributesClient( orderAttributes,  orderId);
 	 * client.setBaseAddress(url);
@@ -93,7 +93,7 @@ public class OrderAttributeClient {
 	}
 
 	/**
-	 * Updates one or more properties of an attribute defined for the order specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute>> mozuClient=UpdateOrderAttributesClient( orderAttributes,  orderId,  removeMissing);
 	 * client.setBaseAddress(url);

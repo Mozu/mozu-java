@@ -21,9 +21,6 @@ public class ProductImage implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Descriptive text associated with the image or video that appears on the web storefront. This text displays on a hover-over in the browser, providing further information on the content displayed. The alternate text should be plain alphanumeric text without special characters or HTML coding.
-	 */
 	protected  String altText;
 
 	public String getAltText() {
@@ -47,9 +44,6 @@ public class ProductImage implements Serializable
 		this.cmsId = cmsId;
 	}
 
-	/**
-	 * The localized title for an image that displays on the storefront. If localized, the displayed content is set per the locale code for the site.
-	 */
 	protected  String imageLabel;
 
 	public String getImageLabel() {
@@ -60,9 +54,6 @@ public class ProductImage implements Serializable
 		this.imageLabel = imageLabel;
 	}
 
-	/**
-	 * The URL link for the image file associated with a product or category.
-	 */
 	protected  String imageUrl;
 
 	public String getImageUrl() {
@@ -73,9 +64,6 @@ public class ProductImage implements Serializable
 		this.imageUrl = imageUrl;
 	}
 
-	/**
-	 * Type of media specification required to successfully render the image, video, or other media content for products and categories.
-	 */
 	protected  String mediaType;
 
 	public String getMediaType() {
@@ -86,9 +74,6 @@ public class ProductImage implements Serializable
 		this.mediaType = mediaType;
 	}
 
-	/**
-	 * The numeric order of objects, used by a vocabulary value defined for an extensible attribute, images, and categories.
-	 */
 	protected  Integer sequence;
 
 	public Integer getSequence() {
@@ -99,9 +84,6 @@ public class ProductImage implements Serializable
 		this.sequence = sequence;
 	}
 
-	/**
-	 * The URL of a video files for a product or category. The path name is set in the language specified by the LocaleCode.
-	 */
 	protected  String videoUrl;
 
 	public String getVideoUrl() {

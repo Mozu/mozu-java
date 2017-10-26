@@ -24,9 +24,6 @@ public class ProductLocalizedContent implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Language used for the entity. Currently, only "en-US" is supported.
-	 */
 	protected  String localeCode;
 
 	public String getLocaleCode() {
@@ -37,9 +34,6 @@ public class ProductLocalizedContent implements Serializable
 		this.localeCode = localeCode;
 	}
 
-	/**
-	 * Lengthy full description for a product description, displayed on product detail pages within the storefront.
-	 */
 	protected  String productFullDescription;
 
 	public String getProductFullDescription() {
@@ -50,9 +44,6 @@ public class ProductLocalizedContent implements Serializable
 		this.productFullDescription = productFullDescription;
 	}
 
-	/**
-	 * The name of the product that represents a line item in a taxable order or product bundle.
-	 */
 	protected  String productName;
 
 	public String getProductName() {
@@ -63,9 +54,6 @@ public class ProductLocalizedContent implements Serializable
 		this.productName = productName;
 	}
 
-	/**
-	 * Brief text description of the product or component in a product bundle, typically used when the product is displayed in a list or in search results.
-	 */
 	protected  String productShortDescription;
 
 	public String getProductShortDescription() {
@@ -76,9 +64,6 @@ public class ProductLocalizedContent implements Serializable
 		this.productShortDescription = productShortDescription;
 	}
 
-	/**
-	 * List of image files associated with a product. This content may include the image file URL, name, and other information as available.
-	 */
 	protected List<ProductLocalizedImage> productImages;
 	public List<ProductLocalizedImage> getProductImages() {
 		return this.productImages;

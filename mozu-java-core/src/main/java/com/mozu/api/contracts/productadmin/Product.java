@@ -39,9 +39,6 @@ public class Product implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Product code defined by the tenant administrator to use as a base prefix when generating product codes for any variations of this product.
-	 */
 	protected  String baseProductCode;
 
 	public String getBaseProductCode() {
@@ -63,9 +60,6 @@ public class Product implements Serializable
 		this.fulfillmentTypesSupported = fulfillmentTypesSupported;
 	}
 
-	/**
-	 * If true, the product has configurable options. This option means that a product is not purchasable until the shopper selects options that resolve into a product variation. Configurable options for a product are the choices a shopper makes when ordering a product. Size and color are configurable options. System-supplied and read-only.
-	 */
 	protected  Boolean hasConfigurableOptions;
 
 	public Boolean getHasConfigurableOptions() {
@@ -76,9 +70,6 @@ public class Product implements Serializable
 		this.hasConfigurableOptions = hasConfigurableOptions;
 	}
 
-	/**
-	 * If true, this product has standalone options that a shopper can select without configuring a defined product variations. System-supplied and read only.
-	 */
 	protected  Boolean hasStandAloneOptions;
 
 	public Boolean getHasStandAloneOptions() {
@@ -89,9 +80,6 @@ public class Product implements Serializable
 		this.hasStandAloneOptions = hasStandAloneOptions;
 	}
 
-	/**
-	 * Indicates if the product must be shipped alone in a container. This is used for products and products within a bundle. If true, this product cannot be shipped in a package with other items and must ship in a package by itself.
-	 */
 	protected  Boolean isPackagedStandAlone;
 
 	public Boolean getIsPackagedStandAlone() {
@@ -102,9 +90,6 @@ public class Product implements Serializable
 		this.isPackagedStandAlone = isPackagedStandAlone;
 	}
 
-	/**
-	 * Indicates if the product in a cart, order, or wish list is purchased on a recurring schedule. If true, the item can be purchased or fulfilled at regular intervals, such as a monthly billing cycle. For example, digital or physical product subscriptions are recurring cart items. This property is not used at this time and is reserved for future functionality.
-	 */
 	protected  Boolean isRecurring;
 
 	public Boolean getIsRecurring() {
@@ -115,9 +100,6 @@ public class Product implements Serializable
 		this.isRecurring = isRecurring;
 	}
 
-	/**
-	 * Indicates if the item is subject to taxation, used by products, options, extras, cart and order items, line items, and wish lists. If true, the entity is subject to tax based on the relevant tax rate and rules.
-	 */
 	protected  Boolean isTaxable;
 
 	public Boolean getIsTaxable() {
@@ -128,9 +110,6 @@ public class Product implements Serializable
 		this.isTaxable = isTaxable;
 	}
 
-	/**
-	 * If true, this product is valid for the assigned product type.
-	 */
 	protected  Boolean isValidForProductType;
 
 	public Boolean getIsValidForProductType() {
@@ -141,9 +120,6 @@ public class Product implements Serializable
 		this.isValidForProductType = isValidForProductType;
 	}
 
-	/**
-	 * If true, this configured product represents a product variation defined with configurable options. System-supplied and read only.
-	 */
 	protected  Boolean isVariation;
 
 	public Boolean getIsVariation() {
@@ -154,9 +130,6 @@ public class Product implements Serializable
 		this.isVariation = isVariation;
 	}
 
-	/**
-	 * The unique identifier of the master catalog associated with the entity.
-	 */
 	protected  Integer masterCatalogId;
 
 	public Integer getMasterCatalogId() {
@@ -167,9 +140,6 @@ public class Product implements Serializable
 		this.masterCatalogId = masterCatalogId;
 	}
 
-	/**
-	 * Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 */
 	protected  String productCode;
 
 	public String getProductCode() {
@@ -180,9 +150,6 @@ public class Product implements Serializable
 		this.productCode = productCode;
 	}
 
-	/**
-	 * Integer that represents the sequential order of the product.
-	 */
 	protected  Integer productSequence;
 
 	public Integer getProductSequence() {
@@ -193,9 +160,6 @@ public class Product implements Serializable
 		this.productSequence = productSequence;
 	}
 
-	/**
-	 * Unique identifier of the product type assigned for this product. Tenant administrators can only define one product type per product.
-	 */
 	protected  Integer productTypeId;
 
 	public Integer getProductTypeId() {
@@ -219,9 +183,6 @@ public class Product implements Serializable
 		this.productUsage = productUsage;
 	}
 
-	/**
-	 * Identifier of the shipping class.
-	 */
 	protected  Integer shippingClassId;
 
 	public Integer getShippingClassId() {
@@ -232,9 +193,6 @@ public class Product implements Serializable
 		this.shippingClassId = shippingClassId;
 	}
 
-	/**
-	 * If the product must be packaged separately, the type of standalone package to use.
-	 */
 	protected  String standAlonePackageType;
 
 	public String getStandAlonePackageType() {
@@ -245,9 +203,6 @@ public class Product implements Serializable
 		this.standAlonePackageType = standAlonePackageType;
 	}
 
-	/**
-	 * The universal product code (UPC) is the barcode defined for the product. The UPC is unique across all sales channels. 
-	 */
 	protected  String upc;
 
 	public String getUpc() {
@@ -258,9 +213,6 @@ public class Product implements Serializable
 		this.upc = upc;
 	}
 
-	/**
-	 * System-generated key that represents the attribute values that uniquely identify a specific product variation.
-	 */
 	protected  String variationKey;
 
 	public String getVariationKey() {
@@ -271,9 +223,6 @@ public class Product implements Serializable
 		this.variationKey = variationKey;
 	}
 
-	/**
-	 * List of discounts available per configured conditions and criteria. These discounts are associated with products, orders, and shipping costs. Shoppers can view these discounts per order, per product in an order, or for their shipping depending on the configuration.
-	 */
 	protected List<Discount> applicableDiscounts;
 	public List<Discount> getApplicableDiscounts() {
 		return this.applicableDiscounts;
@@ -282,9 +231,6 @@ public class Product implements Serializable
 		this.applicableDiscounts = applicableDiscounts;
 	}
 
-	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -316,9 +262,6 @@ public class Product implements Serializable
 		this.content = content;
 	}
 
-	/**
-	 * List of extra product attributes defined for this product. For example, monogram could be a possible extra for a shirt product.
-	 */
 	protected List<ProductExtra> extras;
 	public List<ProductExtra> getExtras() {
 		return this.extras;
@@ -327,9 +270,6 @@ public class Product implements Serializable
 		this.extras = extras;
 	}
 
-	/**
-	 * Properties and data of inventory information for configured and bundled products. If product stock is managed, the data specifies out of stock behavior.
-	 */
 	protected  ProductInventoryInfo inventoryInfo;
 
 	public ProductInventoryInfo getInventoryInfo() {
@@ -340,9 +280,6 @@ public class Product implements Serializable
 		this.inventoryInfo = inventoryInfo;
 	}
 
-	/**
-	 * List of option attributes configured for an object. These values are associated and used by products, product bundles, and product types.
-	 */
 	protected List<ProductOption> options;
 	public List<ProductOption> getOptions() {
 		return this.options;
@@ -351,9 +288,6 @@ public class Product implements Serializable
 		this.options = options;
 	}
 
-	/**
-	 * Height of a package or bundle package in imperial units of feet and inches.
-	 */
 	protected  Measurement packageHeight;
 
 	public Measurement getPackageHeight() {
@@ -364,9 +298,6 @@ public class Product implements Serializable
 		this.packageHeight = packageHeight;
 	}
 
-	/**
-	 * Length of a package or bundle package in imperial units of feet and inches.
-	 */
 	protected  Measurement packageLength;
 
 	public Measurement getPackageLength() {
@@ -377,9 +308,6 @@ public class Product implements Serializable
 		this.packageLength = packageLength;
 	}
 
-	/**
-	 * Weight of a package or bundle package in imperial units of pounds and ounces.
-	 */
 	protected  Measurement packageWeight;
 
 	public Measurement getPackageWeight() {
@@ -390,9 +318,6 @@ public class Product implements Serializable
 		this.packageWeight = packageWeight;
 	}
 
-	/**
-	 * Width of a package or bundle package in imperial units of feet and inches.
-	 */
 	protected  Measurement packageWidth;
 
 	public Measurement getPackageWidth() {
@@ -403,9 +328,6 @@ public class Product implements Serializable
 		this.packageWidth = packageWidth;
 	}
 
-	/**
-	 * Unit price that the client intends to sell the product if no sale price is set.
-	 */
 	protected  ProductPrice price;
 
 	public ProductPrice getPrice() {
@@ -429,9 +351,6 @@ public class Product implements Serializable
 		this.pricingBehavior = pricingBehavior;
 	}
 
-	/**
-	 * Properties defined for a product as they appear in its associated catalogs.
-	 */
 	protected List<ProductInCatalogInfo> productInCatalogs;
 	public List<ProductInCatalogInfo> getProductInCatalogs() {
 		return this.productInCatalogs;
@@ -440,9 +359,6 @@ public class Product implements Serializable
 		this.productInCatalogs = productInCatalogs;
 	}
 
-	/**
-	 * Collection of property attributes defined for the object. Properties are associated to all objects within , including documents, products, and product types.
-	 */
 	protected List<ProductProperty> properties;
 	public List<ProductProperty> getProperties() {
 		return this.properties;
@@ -451,9 +367,6 @@ public class Product implements Serializable
 		this.properties = properties;
 	}
 
-	/**
-	 * Properties of the product publishing settings for the associated product.
-	 */
 	protected  ProductPublishingInfo publishingInfo;
 
 	public ProductPublishingInfo getPublishingInfo() {
@@ -464,9 +377,6 @@ public class Product implements Serializable
 		this.publishingInfo = publishingInfo;
 	}
 
-	/**
-	 * The search engine optimized content defined for products or products associated with a catalog. If no SEO content is specified in the request for products associated with a catalog, this catalog uses the SEO content defined in the master catalog. To override the SEO content for this catalog, the `IsSEOContentOverridden `flag must be set to "true".
-	 */
 	protected  ProductLocalizedSEOContent seoContent;
 
 	public ProductLocalizedSEOContent getSeoContent() {
@@ -490,9 +400,6 @@ public class Product implements Serializable
 		this.supplierInfo = supplierInfo;
 	}
 
-	/**
-	 * The list of product variation configurations defined for this product based on its available product option attributes.
-	 */
 	protected List<ProductVariationOption> variationOptions;
 	public List<ProductVariationOption> getVariationOptions() {
 		return this.variationOptions;

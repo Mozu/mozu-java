@@ -23,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 public class AppliedDiscountClient {
 	
 	/**
-	 * Applies a defined coupon to the cart specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> mozuClient=ApplyCouponClient( cartId,  couponCode);
 	 * client.setBaseAddress(url);
@@ -41,7 +41,7 @@ public class AppliedDiscountClient {
 	}
 
 	/**
-	 * Applies a defined coupon to the cart specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> mozuClient=ApplyCouponClient( cartId,  couponCode,  responseFields);
 	 * client.setBaseAddress(url);
@@ -50,7 +50,7 @@ public class AppliedDiscountClient {
 	 * </code></pre></p>
 	 * @param cartId Identifier of the cart to delete.
 	 * @param couponCode Code associated with the coupon to remove from the cart.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.carts.Cart>
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
 	 */
@@ -67,7 +67,7 @@ public class AppliedDiscountClient {
 	}
 
 	/**
-	 * Removes all coupons from the cart specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> mozuClient=RemoveCouponsClient( cartId);
 	 * client.setBaseAddress(url);
@@ -91,7 +91,7 @@ public class AppliedDiscountClient {
 	}
 
 	/**
-	 * Removes an applied coupon from the cart specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> mozuClient=RemoveCouponClient( cartId,  couponCode);
 	 * client.setBaseAddress(url);

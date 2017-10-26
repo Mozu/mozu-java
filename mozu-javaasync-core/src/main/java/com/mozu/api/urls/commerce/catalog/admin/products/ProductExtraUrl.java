@@ -15,7 +15,7 @@ public class ProductExtraUrl
 
 	/**
 	 * Get Resource Url for GetExtras
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getExtrasUrl(String productCode)
@@ -28,7 +28,7 @@ public class ProductExtraUrl
 	/**
 	 * Get Resource Url for GetExtraValueLocalizedDeltaPrices
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param value The value string to create.
 	 * @return   String Resource Url
 	 */
@@ -44,9 +44,9 @@ public class ProductExtraUrl
 	/**
 	 * Get Resource Url for GetExtraValueLocalizedDeltaPrice
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param value The value string to create.
 	 * @return   String Resource Url
 	 */
@@ -63,9 +63,9 @@ public class ProductExtraUrl
 
 	/**
 	 * Get Resource Url for GetExtra
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getExtraUrl(String attributeFQN, String productCode, String responseFields)
@@ -80,8 +80,8 @@ public class ProductExtraUrl
 	/**
 	 * Get Resource Url for AddExtraValueLocalizedDeltaPrice
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param value The value string to create.
 	 * @return   String Resource Url
 	 */
@@ -97,8 +97,8 @@ public class ProductExtraUrl
 
 	/**
 	 * Get Resource Url for AddExtra
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addExtraUrl(String productCode, String responseFields)
@@ -112,7 +112,7 @@ public class ProductExtraUrl
 	/**
 	 * Get Resource Url for UpdateExtraValueLocalizedDeltaPrices
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param value The value string to create.
 	 * @return   String Resource Url
 	 */
@@ -128,9 +128,9 @@ public class ProductExtraUrl
 	/**
 	 * Get Resource Url for UpdateExtraValueLocalizedDeltaPrice
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param value The value string to create.
 	 * @return   String Resource Url
 	 */
@@ -147,9 +147,9 @@ public class ProductExtraUrl
 
 	/**
 	 * Get Resource Url for UpdateExtra
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateExtraUrl(String attributeFQN, String productCode, String responseFields)
@@ -163,8 +163,8 @@ public class ProductExtraUrl
 
 	/**
 	 * Get Resource Url for DeleteExtra
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteExtraUrl(String attributeFQN, String productCode)
@@ -178,9 +178,9 @@ public class ProductExtraUrl
 	/**
 	 * Get Resource Url for DeleteExtraValueLocalizedDeltaPrice
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
-	 * @param value Use this field to include those fields which are not included by default.
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param value The value string to create.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteExtraValueLocalizedDeltaPriceUrl(String attributeFQN, String currencyCode, String productCode, String value)

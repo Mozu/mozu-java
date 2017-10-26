@@ -24,35 +24,6 @@ public class CategoryContent implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Title that appears on new product category pages, in the language specified by the `localeCode`.
-	 */
-	protected  String pageTitle;
-
-	public String getPageTitle() {
-		return this.pageTitle;
-	}
-
-	public void setPageTitle(String pageTitle) {
-		this.pageTitle = pageTitle;
-	}
-
-	/**
-	 * Slug is used in place of a name, code, or ID to give an SEO, human-friendly URL link for an object, used by categories.
-	 */
-	protected  String slug;
-
-	public String getSlug() {
-		return this.slug;
-	}
-
-	public void setSlug(String slug) {
-		this.slug = slug;
-	}
-
-	/**
-	 * The localized description in text for the object, displayed per the locale code. For example, descriptions are used for product descriptions, attributes, and pre-authorization transaction types.
-	 */
 	protected  String description;
 
 	public String getDescription() {
@@ -63,9 +34,6 @@ public class CategoryContent implements Serializable
 		this.description = description;
 	}
 
-	/**
-	 * Description defined for metadata, used to interally manage data, in the language specified by the `localeCode`. This content is used by categories, products, localized content, and SEO content.
-	 */
 	protected  String metaTagDescription;
 
 	public String getMetaTagDescription() {
@@ -76,9 +44,6 @@ public class CategoryContent implements Serializable
 		this.metaTagDescription = metaTagDescription;
 	}
 
-	/**
-	 * Keywords defined for metadata, used to internally manage data, in the language specified by the `localeCode`. Keywords are used by content for categories, products, localized content, and SEO content.
-	 */
 	protected  String metaTagKeywords;
 
 	public String getMetaTagKeywords() {
@@ -89,9 +54,6 @@ public class CategoryContent implements Serializable
 		this.metaTagKeywords = metaTagKeywords;
 	}
 
-	/**
-	 * Title defined for metadata, used to internally manage data, in the language specified by the `localeCode`. Titles are used by content for categories, products, localized content, and SEO content.
-	 */
 	protected  String metaTagTitle;
 
 	public String getMetaTagTitle() {
@@ -102,9 +64,6 @@ public class CategoryContent implements Serializable
 		this.metaTagTitle = metaTagTitle;
 	}
 
-	/**
-	 * The user supplied name that appears in . You can use this field for identification purposes.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -115,9 +74,26 @@ public class CategoryContent implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * Array list of media images associated to a product category. These images may be localized in the language specified by the LocaleCode. Images display with the category on the storefront according to the code and formatting of your site theme. Each image includes the name, alt text, and URL location.
-	 */
+	protected  String pageTitle;
+
+	public String getPageTitle() {
+		return this.pageTitle;
+	}
+
+	public void setPageTitle(String pageTitle) {
+		this.pageTitle = pageTitle;
+	}
+
+	protected  String slug;
+
+	public String getSlug() {
+		return this.slug;
+	}
+
+	public void setSlug(String slug) {
+		this.slug = slug;
+	}
+
 	protected List<CategoryImage> categoryImages;
 	public List<CategoryImage> getCategoryImages() {
 		return this.categoryImages;

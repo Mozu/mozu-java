@@ -23,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 public class ExtendedPropertyClient {
 	
 	/**
-	 * Retrieves a list of cart extended properties specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>> mozuClient=GetExtendedPropertiesClient();
 	 * client.setBaseAddress(url);
@@ -46,7 +46,7 @@ public class ExtendedPropertyClient {
 	}
 
 	/**
-	 * Adds one or more specified extended properties to the carts extended properties collection.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>> mozuClient=AddExtendedPropertiesClient( extendedProperties);
 	 * client.setBaseAddress(url);
@@ -72,7 +72,7 @@ public class ExtendedPropertyClient {
 	}
 
 	/**
-	 * Updates one or more details of the extended property specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty> mozuClient=UpdateExtendedPropertyClient( extendedProperty,  key);
 	 * client.setBaseAddress(url);
@@ -91,7 +91,7 @@ public class ExtendedPropertyClient {
 	}
 
 	/**
-	 * Updates one or more details of the extended property specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty> mozuClient=UpdateExtendedPropertyClient( extendedProperty,  key,  upsert,  responseFields);
 	 * client.setBaseAddress(url);
@@ -120,7 +120,7 @@ public class ExtendedPropertyClient {
 	}
 
 	/**
-	 * Updates one or more details of the extended properties specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>> mozuClient=UpdateExtendedPropertiesClient( extendedProperties);
 	 * client.setBaseAddress(url);
@@ -138,7 +138,7 @@ public class ExtendedPropertyClient {
 	}
 
 	/**
-	 * Updates one or more details of the extended properties specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>> mozuClient=UpdateExtendedPropertiesClient( extendedProperties,  upsert);
 	 * client.setBaseAddress(url);
@@ -165,7 +165,7 @@ public class ExtendedPropertyClient {
 	}
 
 	/**
-	 * Deletes the extended properties cart extended properties collection.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteExtendedPropertiesClient( keys);
 	 * client.setBaseAddress(url);
@@ -188,7 +188,7 @@ public class ExtendedPropertyClient {
 	}
 
 	/**
-	 * Deletes a specific extended property from the cart extended property collection.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteExtendedPropertyClient( key);
 	 * client.setBaseAddress(url);

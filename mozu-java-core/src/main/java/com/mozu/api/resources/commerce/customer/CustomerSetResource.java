@@ -35,7 +35,7 @@ public class CustomerSetResource {
 
 	
 	/**
-	 * Retrieves a collection of customer sets according to any specified filter criteria.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerSet customerset = new CustomerSet();
 	 *	CustomerSetCollection customerSetCollection = customerset.getCustomerSets();
@@ -49,7 +49,7 @@ public class CustomerSetResource {
 	}
 
 	/**
-	 * Retrieves a collection of customer sets according to any specified filter criteria.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerSet customerset = new CustomerSet();
 	 *	CustomerSetCollection customerSetCollection = customerset.getCustomerSets( startIndex,  pageSize,  sortBy,  responseFields);
@@ -71,7 +71,7 @@ public class CustomerSetResource {
 	}
 
 	/**
-	 * Retrieves the details of the specified customer set.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerSet customerset = new CustomerSet();
 	 *	CustomerSet customerSet = customerset.getCustomerSet( code);
@@ -86,7 +86,7 @@ public class CustomerSetResource {
 	}
 
 	/**
-	 * Retrieves the details of the specified customer set.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerSet customerset = new CustomerSet();
 	 *	CustomerSet customerSet = customerset.getCustomerSet( code,  responseFields);

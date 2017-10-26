@@ -21,9 +21,6 @@ public class Discount implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Unique identifier for the discount in the storefront.
-	 */
 	protected  Integer discountId;
 
 	public Integer getDiscountId() {
@@ -34,9 +31,6 @@ public class Discount implements Serializable
 		this.discountId = discountId;
 	}
 
-	/**
-	 * Date and time in UTC format when a discount, credit, wish list, or cart expires. An expired discount no longer can be redeemed. An expired wish list is no longer available. An expired credit can no longer be redeemed for a purchase. Acart becomes inactive and expired based on a system-calculated interval. For example, if an anonymous shopper has 14 days of inactivity, the cart is considered abandoned after that period of inactivity. System-supplied and read-only.
-	 */
 	protected  DateTime expirationDate;
 
 	public DateTime getExpirationDate() {
@@ -60,9 +54,6 @@ public class Discount implements Serializable
 		this.friendlyDescription = friendlyDescription;
 	}
 
-	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
-	 */
 	protected  String name;
 
 	public String getName() {

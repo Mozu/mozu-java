@@ -21,9 +21,6 @@ public class ShippingItemRate implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The calculated shipping amount for an item in a shipment.
-	 */
 	protected  Double amount;
 
 	public Double getAmount() {
@@ -34,9 +31,6 @@ public class ShippingItemRate implements Serializable
 		this.amount = amount;
 	}
 
-	/**
-	 * Unique identifier of an item used to calculate or request a shipping rate.
-	 */
 	protected  String itemId;
 
 	public String getItemId() {
@@ -47,9 +41,6 @@ public class ShippingItemRate implements Serializable
 		this.itemId = itemId;
 	}
 
-	/**
-	 * The specified quantity of objects and items. This property is used for numerous object types including products, options, components within a product bundle, cart and order items, returned items, shipping line items, items in a digital product. and items associated with types and reservations.
-	 */
 	protected  Integer quantity;
 
 	public Integer getQuantity() {

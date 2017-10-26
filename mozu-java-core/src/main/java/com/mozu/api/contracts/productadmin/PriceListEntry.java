@@ -262,6 +262,19 @@ public class PriceListEntry implements Serializable
 	}
 
 	/**
+	 * The unique identifier of the price list entry type.
+	 */
+	protected  String priceListEntryTypeCode;
+
+	public String getPriceListEntryTypeCode() {
+		return this.priceListEntryTypeCode;
+	}
+
+	public void setPriceListEntryTypeCode(String priceListEntryTypeCode) {
+		this.priceListEntryTypeCode = priceListEntryTypeCode;
+	}
+
+	/**
 	 * The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 */
 	protected  String productCode;

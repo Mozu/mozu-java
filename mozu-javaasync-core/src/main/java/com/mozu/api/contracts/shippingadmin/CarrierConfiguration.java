@@ -27,7 +27,7 @@ public class CarrierConfiguration implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Indicates whether the credentials/passwords are set. Credetials are updated only if this flag is set to true
+	 * Specifies whether credentials for the carrier are set.
 	 */
 	protected  Boolean areCredentialsSet;
 
@@ -40,7 +40,7 @@ public class CarrierConfiguration implements Serializable
 	}
 
 	/**
-	 * Indicates if the capability or app is enabled for the tenant/site. If true, the capability/application is enabled for the tenant. System-supplied and read-only.
+	 * Indicates if a capability, function tied to an Arc.js action, application, or price list is enabled for the tenant/site. If true, the capability/application/function/price list is enabled for the tenant. System-supplied and read-only with the exception of functions tied to an Arc.js action and price lists.
 	 */
 	protected  Boolean enabled;
 
@@ -52,6 +52,9 @@ public class CarrierConfiguration implements Serializable
 		this.enabled = enabled;
 	}
 
+	/**
+	 * Specifies whether the carrier is enabled for creating RMA labels.
+	 */
 	protected  Boolean enabledForReturns;
 
 	public Boolean getEnabledForReturns() {
@@ -62,9 +65,6 @@ public class CarrierConfiguration implements Serializable
 		this.enabledForReturns = enabledForReturns;
 	}
 
-	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
-	 */
 	protected  String id;
 
 	public String getId() {
@@ -75,9 +75,6 @@ public class CarrierConfiguration implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -89,7 +86,7 @@ public class CarrierConfiguration implements Serializable
 	}
 
 	/**
-	 * A list of custom table rates for the 'Custom' carrier only use this if Id == 'Custom'
+	 * A list of any custom table rates for the carrier.
 	 */
 	protected List<CustomTableRate> customTableRates;
 	public List<CustomTableRate> getCustomTableRates() {
@@ -99,9 +96,6 @@ public class CarrierConfiguration implements Serializable
 		this.customTableRates = customTableRates;
 	}
 
-	/**
-	 * Wrapper for a group of properties such as a label that includes a value and a locale code, audit information, and a key-value pair.
-	 */
 	protected List<Setting> settings;
 	public List<Setting> getSettings() {
 		return this.settings;

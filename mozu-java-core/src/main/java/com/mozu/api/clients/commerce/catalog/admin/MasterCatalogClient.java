@@ -23,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 public class MasterCatalogClient {
 	
 	/**
-	 * Retrieve the details of all master catalog associated with a tenant.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.MasterCatalogCollection> mozuClient=GetMasterCatalogsClient();
 	 * client.setBaseAddress(url);
@@ -39,14 +39,14 @@ public class MasterCatalogClient {
 	}
 
 	/**
-	 * Retrieve the details of all master catalog associated with a tenant.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.MasterCatalogCollection> mozuClient=GetMasterCatalogsClient( responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * MasterCatalogCollection masterCatalogCollection = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.MasterCatalogCollection>
 	 * @see com.mozu.api.contracts.productadmin.MasterCatalogCollection
 	 */
@@ -63,14 +63,14 @@ public class MasterCatalogClient {
 	}
 
 	/**
-	 * Retrieve the details of the master catalog specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.MasterCatalog> mozuClient=GetMasterCatalogClient( masterCatalogId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * MasterCatalog masterCatalog = client.Result();
 	 * </code></pre></p>
-	 * @param masterCatalogId The unique identifier of the master catalog associated with the entity.
+	 * @param masterCatalogId Unique identifier for the master catalog. The master catalog contains all products accessible per catalogs and the site/tenant.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.MasterCatalog>
 	 * @see com.mozu.api.contracts.productadmin.MasterCatalog
 	 */
@@ -80,15 +80,15 @@ public class MasterCatalogClient {
 	}
 
 	/**
-	 * Retrieve the details of the master catalog specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.MasterCatalog> mozuClient=GetMasterCatalogClient( masterCatalogId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * MasterCatalog masterCatalog = client.Result();
 	 * </code></pre></p>
-	 * @param masterCatalogId The unique identifier of the master catalog associated with the entity.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param masterCatalogId Unique identifier for the master catalog. The master catalog contains all products accessible per catalogs and the site/tenant.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.MasterCatalog>
 	 * @see com.mozu.api.contracts.productadmin.MasterCatalog
 	 */
@@ -105,14 +105,14 @@ public class MasterCatalogClient {
 	}
 
 	/**
-	 * Updates the product publishing mode for the master catalog specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.MasterCatalog> mozuClient=UpdateMasterCatalogClient( masterCatalog,  masterCatalogId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * MasterCatalog masterCatalog = client.Result();
 	 * </code></pre></p>
-	 * @param masterCatalogId 
+	 * @param masterCatalogId Unique identifier for the master catalog. The master catalog contains all products accessible per catalogs and the site/tenant.
 	 * @param masterCatalog Properties of a master product catalog defined for a tenant. All catalogs and sites associated with a master catalog share product definitions.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.MasterCatalog>
 	 * @see com.mozu.api.contracts.productadmin.MasterCatalog
@@ -124,15 +124,15 @@ public class MasterCatalogClient {
 	}
 
 	/**
-	 * Updates the product publishing mode for the master catalog specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.MasterCatalog> mozuClient=UpdateMasterCatalogClient( masterCatalog,  masterCatalogId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * MasterCatalog masterCatalog = client.Result();
 	 * </code></pre></p>
-	 * @param masterCatalogId 
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param masterCatalogId Unique identifier for the master catalog. The master catalog contains all products accessible per catalogs and the site/tenant.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param masterCatalog Properties of a master product catalog defined for a tenant. All catalogs and sites associated with a master catalog share product definitions.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.MasterCatalog>
 	 * @see com.mozu.api.contracts.productadmin.MasterCatalog

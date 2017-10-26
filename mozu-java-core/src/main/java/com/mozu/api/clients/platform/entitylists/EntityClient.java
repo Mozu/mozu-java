@@ -17,13 +17,13 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Entities are JSON entries within the MZDB ( Mongo DB) for handling large data sets to heavily filter (&gt;2,000 items). Each entity is associated to an EntityList with schema, rules, and formatting for storing the content. This content can be accessed via the  API and  Hypr tags.
+ * Entities are JSON entries within the MZDBÂ ( Mongo DB) for handling large data sets to heavily filter (&gt;2,000 items). Each entity is associated to an EntityList with schema, rules, and formatting for storing the content. This content can be accessed via the  API and  Hypr tags.
  * </summary>
  */
 public class EntityClient {
 	
 	/**
-	 * Retrieves an entity with an associated entity list and context level at tenant, master catalog, catalog, or site. 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.fasterxml.jackson.databind.JsonNode> mozuClient=GetEntityClient( entityListFullName,  id);
 	 * client.setBaseAddress(url);
@@ -41,7 +41,7 @@ public class EntityClient {
 	}
 
 	/**
-	 * Retrieves an entity with an associated entity list and context level at tenant, master catalog, catalog, or site. 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.fasterxml.jackson.databind.JsonNode> mozuClient=GetEntityClient( entityListFullName,  id,  responseFields);
 	 * client.setBaseAddress(url);
@@ -50,7 +50,7 @@ public class EntityClient {
 	 * </code></pre></p>
 	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
 	 * @param id Unique identifier of the customer segment to retrieve.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <JObject>
 	 * @see JObject
 	 */
@@ -67,7 +67,7 @@ public class EntityClient {
 	}
 
 	/**
-	 * Retrieves a collection of entities with an associated entity list and context level at tenant, master catalog, catalog, or site. 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.mzdb.EntityCollection> mozuClient=GetEntitiesClient( entityListFullName);
 	 * client.setBaseAddress(url);
@@ -84,7 +84,7 @@ public class EntityClient {
 	}
 
 	/**
-	 * Retrieves a collection of entities with an associated entity list and context level at tenant, master catalog, catalog, or site. 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.mzdb.EntityCollection> mozuClient=GetEntitiesClient( entityListFullName,  pageSize,  startIndex,  filter,  sortBy,  responseFields);
 	 * client.setBaseAddress(url);
@@ -92,9 +92,9 @@ public class EntityClient {
 	 * EntityCollection entityCollection = client.Result();
 	 * </code></pre></p>
 	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
 	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.EntityCollection>
@@ -113,7 +113,7 @@ public class EntityClient {
 	}
 
 	/**
-	 * Inserts a new entity per the entered item, the entity list full name, and associated response fields. 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.fasterxml.jackson.databind.JsonNode> mozuClient=InsertEntityClient( item,  entityListFullName);
 	 * client.setBaseAddress(url);
@@ -132,7 +132,7 @@ public class EntityClient {
 	}
 
 	/**
-	 * Inserts a new entity per the entered item, the entity list full name, and associated response fields. 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.fasterxml.jackson.databind.JsonNode> mozuClient=InsertEntityClient( item,  entityListFullName,  responseFields);
 	 * client.setBaseAddress(url);
@@ -140,7 +140,7 @@ public class EntityClient {
 	 * JObject json = client.Result();
 	 * </code></pre></p>
 	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param item JSON code for objects.
 	 * @return Mozu.Api.MozuClient <JObject>
 	 * @see JObject
@@ -160,7 +160,7 @@ public class EntityClient {
 	}
 
 	/**
-	 * Updates the content and associations for an existing entity.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.fasterxml.jackson.databind.JsonNode> mozuClient=UpdateEntityClient( item,  entityListFullName,  id);
 	 * client.setBaseAddress(url);
@@ -180,7 +180,7 @@ public class EntityClient {
 	}
 
 	/**
-	 * Updates the content and associations for an existing entity.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.fasterxml.jackson.databind.JsonNode> mozuClient=UpdateEntityClient( item,  entityListFullName,  id,  responseFields);
 	 * client.setBaseAddress(url);
@@ -189,7 +189,7 @@ public class EntityClient {
 	 * </code></pre></p>
 	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
 	 * @param id Unique identifier of the customer segment to retrieve.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param item JSON code for objects.
 	 * @return Mozu.Api.MozuClient <JObject>
 	 * @see JObject
@@ -209,7 +209,7 @@ public class EntityClient {
 	}
 
 	/**
-	 * Deletes an entity depending on the context of tenant, master catalog, catalog, or site level. Entities are associated to an entity list (schema and formatting) for displaying within a namespace and context level.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteEntityClient( entityListFullName,  id);
 	 * client.setBaseAddress(url);

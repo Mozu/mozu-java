@@ -45,7 +45,7 @@ public class DocumentListTypeResource {
 	}
 		
 	/**
-	 * content-documentlistTypes Get GetDocumentListTypes description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	DocumentListTypeCollection documentListTypeCollection = documentlisttype.getDocumentListTypes();
@@ -59,7 +59,7 @@ public class DocumentListTypeResource {
 	}
 
 	/**
-	 * content-documentlistTypes Get GetDocumentListTypes description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	CountDownLatch latch = documentlisttype.getDocumentListTypes( callback );
@@ -74,7 +74,7 @@ public class DocumentListTypeResource {
 	}
 
 	/**
-	 * content-documentlistTypes Get GetDocumentListTypes description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	DocumentListTypeCollection documentListTypeCollection = documentlisttype.getDocumentListTypes( pageSize,  startIndex,  responseFields);
@@ -95,7 +95,7 @@ public class DocumentListTypeResource {
 	}
 
 	/**
-	 * content-documentlistTypes Get GetDocumentListTypes description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	CountDownLatch latch = documentlisttype.getDocumentListTypes( pageSize,  startIndex,  responseFields, callback );
@@ -116,7 +116,7 @@ public class DocumentListTypeResource {
 	}
 
 	/**
-	 * content-documentlistTypes Get GetDocumentListType description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	DocumentListType documentListType = documentlisttype.getDocumentListType( documentListTypeFQN);
@@ -131,7 +131,7 @@ public class DocumentListTypeResource {
 	}
 
 	/**
-	 * content-documentlistTypes Get GetDocumentListType description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	CountDownLatch latch = documentlisttype.getDocumentListType( documentListTypeFQN, callback );
@@ -147,7 +147,7 @@ public class DocumentListTypeResource {
 	}
 
 	/**
-	 * content-documentlistTypes Get GetDocumentListType description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	DocumentListType documentListType = documentlisttype.getDocumentListType( documentListTypeFQN,  responseFields);
@@ -167,7 +167,7 @@ public class DocumentListTypeResource {
 	}
 
 	/**
-	 * content-documentlistTypes Get GetDocumentListType description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	CountDownLatch latch = documentlisttype.getDocumentListType( documentListTypeFQN,  responseFields, callback );
@@ -187,7 +187,7 @@ public class DocumentListTypeResource {
 	}
 
 	/**
-	 * Creates a new documentListType
+	 * 
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	DocumentListType documentListType = documentlisttype.createDocumentListType( list);
@@ -203,7 +203,7 @@ public class DocumentListTypeResource {
 	}
 
 	/**
-	 * Creates a new documentListType
+	 * 
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	CountDownLatch latch = documentlisttype.createDocumentListType( list, callback );
@@ -220,12 +220,12 @@ public class DocumentListTypeResource {
 	}
 
 	/**
-	 * Creates a new documentListType
+	 * 
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	DocumentListType documentListType = documentlisttype.createDocumentListType( list,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param list Properties for the document list type. Document lists contain documents with an associated document type, such as web pages.
 	 * @return com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
@@ -241,12 +241,12 @@ public class DocumentListTypeResource {
 	}
 
 	/**
-	 * Creates a new documentListType
+	 * 
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	CountDownLatch latch = documentlisttype.createDocumentListType( list,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param list Properties for the document list type. Document lists contain documents with an associated document type, such as web pages.
 	 * @return com.mozu.api.contracts.content.DocumentListType
@@ -262,7 +262,7 @@ public class DocumentListTypeResource {
 	}
 
 	/**
-	 * Updates a DocumentListType
+	 * 
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	DocumentListType documentListType = documentlisttype.updateDocumentListType( list,  documentListTypeFQN);
@@ -279,7 +279,7 @@ public class DocumentListTypeResource {
 	}
 
 	/**
-	 * Updates a DocumentListType
+	 * 
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	CountDownLatch latch = documentlisttype.updateDocumentListType( list,  documentListTypeFQN, callback );
@@ -297,13 +297,13 @@ public class DocumentListTypeResource {
 	}
 
 	/**
-	 * Updates a DocumentListType
+	 * 
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	DocumentListType documentListType = documentlisttype.updateDocumentListType( list,  documentListTypeFQN,  responseFields);
 	 * </code></pre></p>
 	 * @param documentListTypeFQN 
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param list Properties for the document list type. Document lists contain documents with an associated document type, such as web pages.
 	 * @return com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
@@ -319,13 +319,13 @@ public class DocumentListTypeResource {
 	}
 
 	/**
-	 * Updates a DocumentListType
+	 * 
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	CountDownLatch latch = documentlisttype.updateDocumentListType( list,  documentListTypeFQN,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param documentListTypeFQN 
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param list Properties for the document list type. Document lists contain documents with an associated document type, such as web pages.
 	 * @return com.mozu.api.contracts.content.DocumentListType

@@ -21,9 +21,6 @@ public class CategoryLocalizedImage implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Descriptive text associated with the image or video that appears on the web storefront. This text displays on a hover-over in the browser, providing further information on the content displayed. The alternate text should be plain alphanumeric text without special characters or HTML coding.
-	 */
 	protected  String altText;
 
 	public String getAltText() {
@@ -47,9 +44,6 @@ public class CategoryLocalizedImage implements Serializable
 		this.cmsId = cmsId;
 	}
 
-	/**
-	 * Unique identifier of the source property, such as a catalog, discount, order, or email template.For a product field it will be the name of the field.For a category ID, must be a positive integer not greater than 2000000. By default,  auto-generates a category ID when categories are created. If you want to specify an ID during creation (which preserves category link relationships when migrating tenant data from one sandbox to another), you must also include the  query string in the endpoint. For example, . Then, use the  property to specify the desired category ID.For a product attribute it will be the Attribute FQN.For a document, the ID must be specified as a 32 character, case-insensitive, alphanumeric string. You can specify the ID as 32 sequential characters or as groups separated by dashes in the format 8-4-4-4-12. For example, or.For email templates, the ID must be one of the following values:			
-	 */
 	protected  Integer id;
 
 	public Integer getId() {
@@ -60,9 +54,6 @@ public class CategoryLocalizedImage implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * The localized title for an image that displays on the storefront. If localized, the displayed content is set per the locale code for the site.
-	 */
 	protected  String imageLabel;
 
 	public String getImageLabel() {
@@ -73,9 +64,6 @@ public class CategoryLocalizedImage implements Serializable
 		this.imageLabel = imageLabel;
 	}
 
-	/**
-	 * The URL link for the image file associated with a product or category.
-	 */
 	protected  String imageUrl;
 
 	public String getImageUrl() {
@@ -86,9 +74,6 @@ public class CategoryLocalizedImage implements Serializable
 		this.imageUrl = imageUrl;
 	}
 
-	/**
-	 * Language used for the entity. Currently, only "en-US" is supported.
-	 */
 	protected  String localeCode;
 
 	public String getLocaleCode() {
@@ -99,9 +84,6 @@ public class CategoryLocalizedImage implements Serializable
 		this.localeCode = localeCode;
 	}
 
-	/**
-	 * Type of media specification required to successfully render the image, video, or other media content for products and categories.
-	 */
 	protected  String mediaType;
 
 	public String getMediaType() {
@@ -112,9 +94,6 @@ public class CategoryLocalizedImage implements Serializable
 		this.mediaType = mediaType;
 	}
 
-	/**
-	 * The numeric order of objects, used by a vocabulary value defined for an extensible attribute, images, and categories.
-	 */
 	protected  Integer sequence;
 
 	public Integer getSequence() {
@@ -125,9 +104,6 @@ public class CategoryLocalizedImage implements Serializable
 		this.sequence = sequence;
 	}
 
-	/**
-	 * The URL of a video files for a product or category. The path name is set in the language specified by the LocaleCode.
-	 */
 	protected  String videoUrl;
 
 	public String getVideoUrl() {

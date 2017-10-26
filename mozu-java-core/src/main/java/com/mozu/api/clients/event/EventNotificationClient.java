@@ -23,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 public class EventNotificationClient {
 	
 	/**
-	 * Retrieves a list of events.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.event.EventCollection> mozuClient=GetEventsClient();
 	 * client.setBaseAddress(url);
@@ -39,18 +39,18 @@ public class EventNotificationClient {
 	}
 
 	/**
-	 * Retrieves a list of events.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.event.EventCollection> mozuClient=GetEventsClient( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * EventCollection eventCollection = client.Result();
 	 * </code></pre></p>
-	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.event.EventCollection>
 	 * @see com.mozu.api.contracts.event.EventCollection
 	 */
@@ -67,7 +67,7 @@ public class EventNotificationClient {
 	}
 
 	/**
-	 * Retrieves an event by providing the event ID.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.event.Event> mozuClient=GetEventClient( eventId);
 	 * client.setBaseAddress(url);
@@ -84,7 +84,7 @@ public class EventNotificationClient {
 	}
 
 	/**
-	 * Retrieves an event by providing the event ID.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.event.Event> mozuClient=GetEventClient( eventId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -92,7 +92,7 @@ public class EventNotificationClient {
 	 * Event event = client.Result();
 	 * </code></pre></p>
 	 * @param eventId The unique identifier of the event being retrieved. An event is a notification about a create, read, update, or delete on an order, product, discount or category.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.event.Event>
 	 * @see com.mozu.api.contracts.event.Event
 	 */

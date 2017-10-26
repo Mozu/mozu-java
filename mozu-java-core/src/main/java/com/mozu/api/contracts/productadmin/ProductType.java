@@ -26,7 +26,7 @@ public class ProductType implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The type of goods in a bundled product. A bundled product is composed of products associated to sell together. Possible values include “Physical” and “DigitalCredit”. This comes from the `productType `of the product. Products are defaulted to a Physical `goodsType`. Gift cards have a `goodsType `of DigitalCredit.
+	 * The type of goods in a bundled product. A bundled product is composed of products associated to sell together. Possible values include â€œPhysicalâ€ and â€œDigitalCreditâ€. This comes from the `productType `of the product. Products are defaulted to a Physical `goodsType`. Gift cards have a `goodsType `of DigitalCredit.
 	 */
 	protected  String goodsType;
 
@@ -38,9 +38,6 @@ public class ProductType implements Serializable
 		this.goodsType = goodsType;
 	}
 
-	/**
-	 * Unique identifier of the source property, such as a catalog, discount, order, or email template.For a product field it will be the name of the field.For a category ID, must be a positive integer not greater than 2000000. By default,  auto-generates a category ID when categories are created. If you want to specify an ID during creation (which preserves category link relationships when migrating tenant data from one sandbox to another), you must also include the  query string in the endpoint. For example, . Then, use the  property to specify the desired category ID.For a product attribute it will be the Attribute FQN.For a document, the ID must be specified as a 32 character, case-insensitive, alphanumeric string. You can specify the ID as 32 sequential characters or as groups separated by dashes in the format 8-4-4-4-12. For example, or.For email templates, the ID must be one of the following values:			
-	 */
 	protected  Integer id;
 
 	public Integer getId() {
@@ -51,9 +48,6 @@ public class ProductType implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * If true, this product is associated with the overall product type. There is only one BaseProductType per site group. System-supplied and read-only.
-	 */
 	protected  Boolean isBaseProductType;
 
 	public Boolean getIsBaseProductType() {
@@ -64,9 +58,6 @@ public class ProductType implements Serializable
 		this.isBaseProductType = isBaseProductType;
 	}
 
-	/**
-	 * The unique identifier of the master catalog associated with the entity.
-	 */
 	protected  Integer masterCatalogId;
 
 	public Integer getMasterCatalogId() {
@@ -77,9 +68,6 @@ public class ProductType implements Serializable
 		this.masterCatalogId = masterCatalogId;
 	}
 
-	/**
-	 * The user supplied name that appears in . You can use this field for identification purposes.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -90,9 +78,6 @@ public class ProductType implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * The total number of products. This total may indicate the total products associate with a product type or number of products in a list.
-	 */
 	protected  Integer productCount;
 
 	public Integer getProductCount() {
@@ -114,9 +99,6 @@ public class ProductType implements Serializable
 		this.productUsages = productUsages;
 	}
 
-	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -127,9 +109,6 @@ public class ProductType implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * List of extra product attributes defined for this product. For example, monogram could be a possible extra for a shirt product.
-	 */
 	protected List<AttributeInProductType> extras;
 	public List<AttributeInProductType> getExtras() {
 		return this.extras;
@@ -138,9 +117,6 @@ public class ProductType implements Serializable
 		this.extras = extras;
 	}
 
-	/**
-	 * List of option attributes configured for an object. These values are associated and used by products, product bundles, and product types.
-	 */
 	protected List<AttributeInProductType> options;
 	public List<AttributeInProductType> getOptions() {
 		return this.options;
@@ -149,9 +125,6 @@ public class ProductType implements Serializable
 		this.options = options;
 	}
 
-	/**
-	 * Collection of property attributes defined for the object. Properties are associated to all objects within , including documents, products, and product types.
-	 */
 	protected List<AttributeInProductType> properties;
 	public List<AttributeInProductType> getProperties() {
 		return this.properties;

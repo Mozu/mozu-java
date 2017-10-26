@@ -49,7 +49,7 @@ public class CustomerPurchaseOrderPaymentTerm implements Serializable
 	}
 
 	/**
-	 * Unique identifier for the site. This ID is used at all levels of a store, catalog, and tenant to associate objects to a site.
+	 * Unique identifier for the site. This IDÂ is used at all levels of a store, catalog, and tenant to associate objects to a site.
 	 */
 	protected  Integer siteId;
 

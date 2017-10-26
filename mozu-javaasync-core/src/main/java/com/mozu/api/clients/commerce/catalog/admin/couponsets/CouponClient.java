@@ -25,7 +25,7 @@ import org.apache.commons.lang.StringUtils;
 public class CouponClient {
 	
 	/**
-	 * Retrieves the details of the specified coupon. Use the couponSetCode and the couponCode parameter to specify the coupon within a coupon set. Use the includeCounts paramter to specify whether to return the redemptionCount property in the response body object.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.Coupon> mozuClient=GetCouponClient( couponSetCode,  couponCode);
 	 * client.setBaseAddress(url);
@@ -43,7 +43,7 @@ public class CouponClient {
 	}
 
 	/**
-	 * Retrieves the details of the specified coupon. Use the couponSetCode and the couponCode parameter to specify the coupon within a coupon set. Use the includeCounts paramter to specify whether to return the redemptionCount property in the response body object.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.Coupon> mozuClient=GetCouponClient( couponSetCode,  couponCode,  includeCounts,  responseFields);
 	 * client.setBaseAddress(url);
@@ -70,7 +70,7 @@ public class CouponClient {
 	}
 
 	/**
-	 * Retrieves a list of coupons in a specified coupon set according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.CouponCollection> mozuClient=GetCouponsClient( couponSetCode);
 	 * client.setBaseAddress(url);
@@ -87,7 +87,7 @@ public class CouponClient {
 	}
 
 	/**
-	 * Retrieves a list of coupons in a specified coupon set according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.CouponCollection> mozuClient=GetCouponsClient( couponSetCode,  startIndex,  pageSize,  sortBy,  filter,  includeCounts,  responseFields);
 	 * client.setBaseAddress(url);
@@ -95,11 +95,11 @@ public class CouponClient {
 	 * CouponCollection couponCollection = client.Result();
 	 * </code></pre></p>
 	 * @param couponSetCode The unique identifier of the coupon set that the coupons belongs to.
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/applications/sorting-filtering.htm) for a list of supported filters.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
 	 * @param includeCounts Specifies whether to include the redemptionCount property in the response body object.
 	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/applications/sorting-filtering.htm) for more information.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.CouponCollection>
 	 * @see com.mozu.api.contracts.productadmin.CouponCollection
@@ -117,14 +117,14 @@ public class CouponClient {
 	}
 
 	/**
-	 * Adds coupons  to a specified manual coupon set. Use the couponSetCode parameter to specify the manual coupon set.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=AddCouponsClient( coupons,  couponSetCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
 	 * @param couponSetCode The unique identifier of the coupon set.
-	 * @param coupons Mozu.ProductAdmin.Contracts.Coupon ApiType DOCUMENT_HERE 
+	 * @param coupons The details necessary to assign the discount to a coupon set, including .
 	 * @return Mozu.Api.MozuClient 
 	 * @see com.mozu.api.contracts.productadmin.Coupon
 	 */
@@ -141,7 +141,7 @@ public class CouponClient {
 	}
 
 	/**
-	 * Deletes the specified coupons and removes them from the coupon set. You can only delete a coupon if it has not been redeemed. Use the canBeDeleted property to determine whether a coupon can be deleted.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteCouponsClient( couponCodes,  couponSetCode);
 	 * client.setBaseAddress(url);
@@ -165,7 +165,7 @@ public class CouponClient {
 	}
 
 	/**
-	 * Deletes the specified coupon and remove it from the coupon set. You can only delete a coupon if it has not been redeemed. Use the canBeDeleted property to determine whether a coupon can be deleted.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteCouponClient( couponSetCode,  couponCode);
 	 * client.setBaseAddress(url);

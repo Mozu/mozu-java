@@ -35,7 +35,7 @@ public class ExtendedPropertyResource {
 
 	
 	/**
-	 * Retrieves the extended property string associated with the order. 
+	 * 
 	 * <p><pre><code>
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	ExtendedProperty extendedProperty = extendedproperty.getExtendedProperties( orderId);
@@ -50,7 +50,7 @@ public class ExtendedPropertyResource {
 	}
 
 	/**
-	 * Retrieves the extended property string associated with the order. 
+	 * 
 	 * <p><pre><code>
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	ExtendedProperty extendedProperty = extendedproperty.getExtendedProperties( orderId,  draft);
@@ -70,7 +70,7 @@ public class ExtendedPropertyResource {
 	}
 
 	/**
-	 * Creates an extended property for the order.
+	 * 
 	 * <p><pre><code>
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	ExtendedProperty extendedProperty = extendedproperty.addExtendedProperties( extendedProperties,  orderId);
@@ -87,7 +87,7 @@ public class ExtendedPropertyResource {
 	}
 
 	/**
-	 * Creates an extended property for the order.
+	 * 
 	 * <p><pre><code>
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	ExtendedProperty extendedProperty = extendedproperty.addExtendedProperties( extendedProperties,  orderId,  updateMode,  version);
@@ -110,7 +110,7 @@ public class ExtendedPropertyResource {
 	}
 
 	/**
-	 * Updates one ore more extended properties.
+	 * 
 	 * <p><pre><code>
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	ExtendedProperty extendedProperty = extendedproperty.updateExtendedProperty( extendedProperty,  orderId,  key);
@@ -128,7 +128,7 @@ public class ExtendedPropertyResource {
 	}
 
 	/**
-	 * Updates one ore more extended properties.
+	 * 
 	 * <p><pre><code>
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	ExtendedProperty extendedProperty = extendedproperty.updateExtendedProperty( extendedProperty,  orderId,  key,  updateMode,  version,  upsert,  responseFields);
@@ -155,7 +155,7 @@ public class ExtendedPropertyResource {
 	}
 
 	/**
-	 * Updates one or more extended properties.
+	 * 
 	 * <p><pre><code>
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	ExtendedProperty extendedProperty = extendedproperty.updateExtendedProperties( extendedProperties,  orderId);
@@ -172,7 +172,7 @@ public class ExtendedPropertyResource {
 	}
 
 	/**
-	 * Updates one or more extended properties.
+	 * 
 	 * <p><pre><code>
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	ExtendedProperty extendedProperty = extendedproperty.updateExtendedProperties( extendedProperties,  orderId,  updateMode,  version,  upsert);
@@ -197,7 +197,7 @@ public class ExtendedPropertyResource {
 	}
 
 	/**
-	 * Deletes one or more extended properties.
+	 * 
 	 * <p><pre><code>
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	extendedproperty.deleteExtendedProperty( orderId,  key);
@@ -212,7 +212,7 @@ public class ExtendedPropertyResource {
 	}
 
 	/**
-	 * Deletes one or more extended properties.
+	 * 
 	 * <p><pre><code>
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	extendedproperty.deleteExtendedProperty( orderId,  key,  updateMode,  version);
@@ -233,7 +233,7 @@ public class ExtendedPropertyResource {
 	}
 
 	/**
-	 * Deletes the extended property associated with the order. 
+	 * 
 	 * <p><pre><code>
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	extendedproperty.deleteExtendedProperties( keys,  orderId);
@@ -249,7 +249,7 @@ public class ExtendedPropertyResource {
 	}
 
 	/**
-	 * Deletes the extended property associated with the order. 
+	 * 
 	 * <p><pre><code>
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	extendedproperty.deleteExtendedProperties( keys,  orderId,  updateMode,  version);

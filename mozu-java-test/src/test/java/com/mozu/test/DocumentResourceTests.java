@@ -22,9 +22,9 @@ import com.mozu.api.contracts.content.DocumentType;
 import com.mozu.api.security.AppAuthenticator;
 import com.mozu.api.utils.MozuHttpClientPool;
 import com.mozu.test.framework.core.MozuApiTestBase;
-import com.mozu.test.framework.datafactory.DocumentFactory;
-import com.mozu.test.framework.datafactory.DocumentListFactory;
-import com.mozu.test.framework.datafactory.DocumentTypeFactory;
+import com.mozu.test.framework.datafactory.content.DocumentListFactory;
+import com.mozu.test.framework.datafactory.content.DocumentTypeFactory;
+import com.mozu.test.framework.datafactory.content.documentlists.DocumentFactory;
 import com.mozu.test.framework.helper.Generator;
 
 public class DocumentResourceTests extends MozuApiTestBase {

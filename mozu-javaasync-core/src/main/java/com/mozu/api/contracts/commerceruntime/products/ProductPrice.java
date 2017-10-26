@@ -35,7 +35,7 @@ public class ProductPrice implements Serializable
 	}
 
 	/**
-	 * The manufacturer's suggested retail price for the product. This content may be defined by the supplier.
+	 * The manufacturer's suggested retail price (MSRP) for the product. This content may be defined by the supplier.
 	 */
 	protected  Double msrp;
 
@@ -47,9 +47,6 @@ public class ProductPrice implements Serializable
 		this.msrp = msrp;
 	}
 
-	/**
-	 * The price the merchant charges for a product on a storefront if no sales price is defined.
-	 */
 	protected  Double price;
 
 	public Double getPrice() {
@@ -61,7 +58,7 @@ public class ProductPrice implements Serializable
 	}
 
 	/**
-	 * Pricelist code for the product
+	 * If the product's price comes from a price list, this property is the code of the price list with which the product is associated.
 	 */
 	protected  String priceListCode;
 
@@ -74,7 +71,7 @@ public class ProductPrice implements Serializable
 	}
 
 	/**
-	 * Pricelist entry mode of the product. Note: possible values are below 1. null : Product doesn't participate in pricelist 2. Bulk : Bulk volume price available(unit price vary based on quantity) 3. Simple:
+	 * The price list entry mode of the product. This property is for future funtionality and currently should only be .
 	 */
 	protected  String priceListEntryMode;
 
@@ -86,9 +83,6 @@ public class ProductPrice implements Serializable
 		this.priceListEntryMode = priceListEntryMode;
 	}
 
-	/**
-	 * The set sale price for a product consisting of a price with a discount already applied.
-	 */
 	protected  Double salePrice;
 
 	public Double getSalePrice() {
@@ -99,9 +93,6 @@ public class ProductPrice implements Serializable
 		this.salePrice = salePrice;
 	}
 
-	/**
-	 * The override price defined by the tenant for this cart or order item.
-	 */
 	protected  Double tenantOverridePrice;
 
 	public Double getTenantOverridePrice() {

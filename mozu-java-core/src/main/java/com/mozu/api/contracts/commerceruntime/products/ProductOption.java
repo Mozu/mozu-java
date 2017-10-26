@@ -21,9 +21,6 @@ public class ProductOption implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 */
 	protected  String attributeFQN;
 
 	public String getAttributeFQN() {
@@ -34,9 +31,6 @@ public class ProductOption implements Serializable
 		this.attributeFQN = attributeFQN;
 	}
 
-	/**
-	 * The data type of the source product property, typically of type Bool, DateTime, Number, or String.
-	 */
 	protected  String dataType;
 
 	public String getDataType() {
@@ -47,9 +41,6 @@ public class ProductOption implements Serializable
 		this.dataType = dataType;
 	}
 
-	/**
-	 * The user supplied name that appears in . You can use this field for identification purposes.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -60,9 +51,6 @@ public class ProductOption implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * The value a shopper entered for an attribute that requires additional input for the product on a storefront. This entered value is a selected option or entered content for an extra, such as selecting a color or entering content for a monogram.
-	 */
 	protected  Object shopperEnteredValue;
 
 	public Object getShopperEnteredValue() {
@@ -73,9 +61,6 @@ public class ProductOption implements Serializable
 		this.shopperEnteredValue = shopperEnteredValue;
 	}
 
-	/**
-	 * If the object value is a String, this value provides that string value, used by vocabulary property values, products, and options.
-	 */
 	protected  String stringValue;
 
 	public String getStringValue() {
@@ -86,9 +71,6 @@ public class ProductOption implements Serializable
 		this.stringValue = stringValue;
 	}
 
-	/**
-	 * The value of a property, used by numerous objects within  including facets, attributes, products, localized content, metadata, capabilities ( and third-party), location inventory adjustment, and more. The value may be a string, integer, or double. Validation may be run against the entered and saved values depending on the object type.
-	 */
 	protected  Object value;
 
 	public Object getValue() {

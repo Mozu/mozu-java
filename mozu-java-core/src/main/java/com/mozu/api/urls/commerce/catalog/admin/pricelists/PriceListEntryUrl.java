@@ -15,7 +15,7 @@ public class PriceListEntryUrl
 
 	/**
 	 * Get Resource Url for GetPriceListEntry
-	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
 	 * @param priceListCode The unique code of the price list associated with the price list entry.
 	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
@@ -71,7 +71,7 @@ public class PriceListEntryUrl
 
 	/**
 	 * Get Resource Url for UpdatePriceListEntry
-	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
 	 * @param priceListCode The unique code of the price list associated with the price list entry.
 	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
@@ -91,7 +91,7 @@ public class PriceListEntryUrl
 
 	/**
 	 * Get Resource Url for DeletePriceListEntry
-	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
 	 * @param priceListCode The code of the specified price list associated with the price list entry.
 	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param startDate The start date of the price list entry.

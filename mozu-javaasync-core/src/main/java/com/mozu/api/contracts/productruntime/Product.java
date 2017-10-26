@@ -38,7 +38,7 @@ public class Product implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Mozu.ProductRuntime.Contracts.Product catalogEndDate ApiTypeMember DOCUMENT_HERE 
+	 * The date and time in UTC when the product is no longer active in the catalog.
 	 */
 	protected  DateTime catalogEndDate;
 
@@ -51,7 +51,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * Mozu.ProductRuntime.Contracts.Product catalogStartDate ApiTypeMember DOCUMENT_HERE 
+	 * The date and time in UTC format when the product is active in the catalog.
 	 */
 	protected  DateTime catalogStartDate;
 
@@ -63,9 +63,6 @@ public class Product implements Serializable
 		this.catalogStartDate = catalogStartDate;
 	}
 
-	/**
-	 * Date and time when the entity was created, represented in UTC Date/Time.
-	 */
 	protected  DateTime createDate;
 
 	public DateTime getCreateDate() {
@@ -77,7 +74,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * Mozu.ProductRuntime.Contracts.Product dateFirstAvailableInCatalog ApiTypeMember DOCUMENT_HERE 
+	 * The date and time in UTC format when the product first became available in the catalog. This field is used to calculate the number of days the product has been available in the catalog for a dynamic expression.
 	 */
 	protected  DateTime dateFirstAvailableInCatalog;
 
@@ -90,7 +87,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * Mozu.ProductRuntime.Contracts.Product daysAvailableInCatalog ApiTypeMember DOCUMENT_HERE 
+	 * The total number of days the product has been available in the catalog. This field is related to the DaysAvailableInCatalog field in a dynamic expression.
 	 */
 	protected  Integer daysAvailableInCatalog;
 
@@ -103,7 +100,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * List of supported types of fulfillment  for the product or variation. The types include direct ship, in-store pickup, or both. 
+	 * List of supported types of fulfillment for the product or variation. The types include direct ship, in-store pickup, or both.
 	 */
 	protected List<String> fulfillmentTypesSupported;
 	public List<String> getFulfillmentTypesSupported() {
@@ -114,7 +111,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * The type of goods in a bundled product. A bundled product is composed of products associated to sell together. Possible values include “Physical” and “DigitalCredit”. This comes from the `productType `of the product. Products are defaulted to a Physical `goodsType`. Gift cards have a `goodsType `of DigitalCredit.
+	 * The type of goods in a bundled product. A bundled product is composed of products associated to sell together. Possible values include â€œPhysicalâ€ and â€œDigitalCreditâ€. This comes from the `productType `of the product. Products are defaulted to a Physical `goodsType`. Gift cards have a `goodsType `of DigitalCredit.
 	 */
 	protected  String goodsType;
 
@@ -126,9 +123,6 @@ public class Product implements Serializable
 		this.goodsType = goodsType;
 	}
 
-	/**
-	 * Indicates if the object or feature is active. This indicator is used for subscriptions (at the site or tenant level), customer accounts, products and variations.
-	 */
 	protected  Boolean isActive;
 
 	public Boolean getIsActive() {
@@ -152,9 +146,6 @@ public class Product implements Serializable
 		this.isPackagedStandAlone = isPackagedStandAlone;
 	}
 
-	/**
-	 * Indicates if the product in a cart, order, or wish list is purchased on a recurring schedule. If true, the item can be purchased or fulfilled at regular intervals, such as a monthly billing cycle. For example, digital or physical product subscriptions are recurring cart items. This property is not used at this time and is reserved for future functionality.
-	 */
 	protected  Boolean isRecurring;
 
 	public Boolean getIsRecurring() {
@@ -165,9 +156,6 @@ public class Product implements Serializable
 		this.isRecurring = isRecurring;
 	}
 
-	/**
-	 * Indicates if the item is subject to taxation, used by products, options, extras, cart and order items, line items, and wish lists. If true, the entity is subject to tax based on the relevant tax rate and rules.
-	 */
 	protected  Boolean isTaxable;
 
 	public Boolean getIsTaxable() {
@@ -202,9 +190,6 @@ public class Product implements Serializable
 		this.mfgPartNumbers = mfgPartNumbers;
 	}
 
-	/**
-	 * Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 */
 	protected  String productCode;
 
 	public String getProductCode() {
@@ -215,9 +200,6 @@ public class Product implements Serializable
 		this.productCode = productCode;
 	}
 
-	/**
-	 * Integer that represents the sequential order of the product.
-	 */
 	protected  Integer productSequence;
 
 	public Integer getProductSequence() {
@@ -228,9 +210,6 @@ public class Product implements Serializable
 		this.productSequence = productSequence;
 	}
 
-	/**
-	 * The product type template associated with the product on the storefront.
-	 */
 	protected  String productType;
 
 	public String getProductType() {
@@ -242,7 +221,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * Mozu.ProductRuntime.Contracts.Product productTypeId ApiTypeMember DOCUMENT_HERE 
+	 * The unique identifier of the product type of the product.
 	 */
 	protected  Integer productTypeId;
 
@@ -267,9 +246,6 @@ public class Product implements Serializable
 		this.productUsage = productUsage;
 	}
 
-	/**
-	 * The current state of the document or product definition. States for documents include Active, Draft, or Latest. Active documents are published and cannot be deleted. Querying Latest returns the most recent version of the document, regardless of whether it is published or a draft. States for product include New, Draft, or Live.
-	 */
 	protected  String publishState;
 
 	public String getPublishState() {
@@ -280,9 +256,16 @@ public class Product implements Serializable
 		this.publishState = publishState;
 	}
 
-	/**
-	 * The universal product code (UPC) is the barcode defined for the product. The UPC is unique across all sales channels. 
-	 */
+	protected  String purchaseLocation;
+
+	public String getPurchaseLocation() {
+		return this.purchaseLocation;
+	}
+
+	public void setPurchaseLocation(String purchaseLocation) {
+		this.purchaseLocation = purchaseLocation;
+	}
+
 	protected  String upc;
 
 	public String getUpc() {
@@ -304,6 +287,9 @@ public class Product implements Serializable
 		this.upCs = upCs;
 	}
 
+	/**
+	 * The date and time in UTC format the object was updated most recently.
+	 */
 	protected  DateTime updateDate;
 
 	public DateTime getUpdateDate() {
@@ -315,7 +301,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * Mozu.ProductRuntime.Contracts.Product validPriceLists ApiTypeMember DOCUMENT_HERE 
+	 * A list of price lists for which the product is valid.
 	 */
 	protected List<String> validPriceLists;
 	public List<String> getValidPriceLists() {
@@ -325,9 +311,6 @@ public class Product implements Serializable
 		this.validPriceLists = validPriceLists;
 	}
 
-	/**
-	 * Merchant-created code associated with a specific product variation. Variation product codes maintain an association with the base product code.
-	 */
 	protected  String variationProductCode;
 
 	public String getVariationProductCode() {
@@ -338,9 +321,6 @@ public class Product implements Serializable
 		this.variationProductCode = variationProductCode;
 	}
 
-	/**
-	 * List of shipping discounts that can be applied to the configured product. These discounts are calculated and updated as shoppers add content to their cart and continue checkout steps to order submission.
-	 */
 	protected List<Discount> availableShippingDiscounts;
 	public List<Discount> getAvailableShippingDiscounts() {
 		return this.availableShippingDiscounts;
@@ -360,9 +340,6 @@ public class Product implements Serializable
 		this.bundledProducts = bundledProducts;
 	}
 
-	/**
-	 * The list of all categories associated with the product. These categories contain products, can have discounts associated, and define the grouping of products to display on the storefront.
-	 */
 	protected List<Category> categories;
 	public List<Category> getCategories() {
 		return this.categories;
@@ -371,9 +348,6 @@ public class Product implements Serializable
 		this.categories = categories;
 	}
 
-	/**
-	 * Complex type that contains content for a language specified by LocaleCode.
-	 */
 	protected  ProductContent content;
 
 	public ProductContent getContent() {
@@ -384,9 +358,6 @@ public class Product implements Serializable
 		this.content = content;
 	}
 
-	/**
-	 * Properties and data of inventory information for configured and bundled products. If product stock is managed, the data specifies out of stock behavior.
-	 */
 	protected  ProductInventoryInfo inventoryInfo;
 
 	public ProductInventoryInfo getInventoryInfo() {
@@ -397,9 +368,6 @@ public class Product implements Serializable
 		this.inventoryInfo = inventoryInfo;
 	}
 
-	/**
-	 * Dimensions of the packaged product.
-	 */
 	protected  PackageMeasurements measurements;
 
 	public PackageMeasurements getMeasurements() {
@@ -410,9 +378,6 @@ public class Product implements Serializable
 		this.measurements = measurements;
 	}
 
-	/**
-	 * List of option attributes configured for an object. These values are associated and used by products, product bundles, and product types.
-	 */
 	protected List<ProductOption> options;
 	public List<ProductOption> getOptions() {
 		return this.options;
@@ -421,9 +386,6 @@ public class Product implements Serializable
 		this.options = options;
 	}
 
-	/**
-	 * Unit price that the tenant intends to sell the product if no sale price is set.
-	 */
 	protected  ProductPrice price;
 
 	public ProductPrice getPrice() {
@@ -434,9 +396,6 @@ public class Product implements Serializable
 		this.price = price;
 	}
 
-	/**
-	 * For products with options that vary the cost of the product, the range between lowest and highest possible price of the product based on the current selection of options.
-	 */
 	protected  ProductPriceRange priceRange;
 
 	public ProductPriceRange getPriceRange() {
@@ -460,9 +419,6 @@ public class Product implements Serializable
 		this.pricingBehavior = pricingBehavior;
 	}
 
-	/**
-	 * Collection of property attributes defined for the object. Properties are associated to all objects within Mozu, including documents, products, and product types.
-	 */
 	protected List<ProductProperty> properties;
 	public List<ProductProperty> getProperties() {
 		return this.properties;
@@ -471,9 +427,6 @@ public class Product implements Serializable
 		this.properties = properties;
 	}
 
-	/**
-	 * The current state of the configured product determines whether or not the product is eligible for purchase. Products with options are only purchasable if the shopper has selected all required options. If the product is not ready for purchase, a message lists missing options that are required.
-	 */
 	protected  ProductPurchasableState purchasableState;
 
 	public ProductPurchasableState getPurchasableState() {
@@ -495,6 +448,9 @@ public class Product implements Serializable
 		this.variations = variations;
 	}
 
+	/**
+	 * The details of any volume price bands associated with the product.Refer to [Volume Pricing](https://www.mozu.com/docs/guides/catalog/price-lists.htm#volume_pricing) for more information.
+	 */
 	protected List<ProductVolumePrice> volumePriceBands;
 	public List<ProductVolumePrice> getVolumePriceBands() {
 		return this.volumePriceBands;
@@ -503,6 +459,9 @@ public class Product implements Serializable
 		this.volumePriceBands = volumePriceBands;
 	}
 
+	/**
+	 * The details of the volume price range associated with the product. Volume price ranges consist of a lower price and an upper price, and either lower or upper prices can be affected by discounts.You can display the volume price range on product listing pages, such as category and search result pages, and product detail pages.Refer to [Volume Pricing Storefront Behavior](https://www.mozu.com/docs/guides/catalog/price-lists.htm#volume_pricing_storefront_behavior) for more information.
+	 */
 	protected  ProductPriceRange volumePriceRange;
 
 	public ProductPriceRange getVolumePriceRange() {

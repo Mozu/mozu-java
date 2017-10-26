@@ -23,9 +23,6 @@ public class PublishingScope implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Specifies whether all the pending product drafts are affected by the operation performed. For example, when you perform the PublishDrafts operation and you set this field to true, all pending product changes in the master catalog or in a publish set are published.
-	 */
 	protected  Boolean allPending;
 
 	public Boolean getAllPending() {
@@ -36,9 +33,6 @@ public class PublishingScope implements Serializable
 		this.allPending = allPending;
 	}
 
-	/**
-	 * A list of product codes of associated products. When this field is in the Product Publishing resource, you can use this field  to publish or delete individual pending product changes, or assign individual pending product changes to a publish set.
-	 */
 	protected List<String> productCodes;
 	public List<String> getProductCodes() {
 		return this.productCodes;

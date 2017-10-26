@@ -23,14 +23,14 @@ import org.apache.commons.lang.StringUtils;
 public class TenantClient {
 	
 	/**
-	 * Retrieve details about a specific tenant by providing the tenant ID.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.tenant.Tenant> mozuClient=GetTenantClient( tenantId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Tenant tenant = client.Result();
 	 * </code></pre></p>
-	 * @param tenantId Unique identifier of the Mozu tenant.
+	 * @param tenantId Unique identifier of the development or production tenant for which to generate the user authentication ticket.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.tenant.Tenant>
 	 * @see com.mozu.api.contracts.tenant.Tenant
 	 */
@@ -40,15 +40,15 @@ public class TenantClient {
 	}
 
 	/**
-	 * Retrieve details about a specific tenant by providing the tenant ID.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.tenant.Tenant> mozuClient=GetTenantClient( tenantId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Tenant tenant = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param tenantId Unique identifier of the Mozu tenant.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param tenantId Unique identifier of the development or production tenant for which to generate the user authentication ticket.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.tenant.Tenant>
 	 * @see com.mozu.api.contracts.tenant.Tenant
 	 */

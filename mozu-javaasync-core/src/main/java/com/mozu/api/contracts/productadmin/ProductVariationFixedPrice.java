@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Mozu.ProductAdmin.Contracts.ProductVariationFixedPrice ApiType DOCUMENT_HERE 
+ *	The details of the product variation localized price.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductVariationFixedPrice implements Serializable
@@ -48,7 +48,7 @@ public class ProductVariationFixedPrice implements Serializable
 	}
 
 	/**
-	 * Variation price for fixed pricing
+	 * If the product is in explicit pricing mode, this is the list price of the variation.
 	 */
 	protected  Double listPrice;
 
@@ -61,7 +61,7 @@ public class ProductVariationFixedPrice implements Serializable
 	}
 
 	/**
-	 * The manufacturer's suggested retail price for the product. This content may be defined by the supplier.
+	 * The manufacturer's suggested retail price (MSRP) for the product. This content may be defined by the supplier.
 	 */
 	protected  Double msrp;
 
@@ -74,7 +74,7 @@ public class ProductVariationFixedPrice implements Serializable
 	}
 
 	/**
-	 * The set sale price for a product consisting of a price with a discount already applied.
+	 * The set sale price for a product consisting of a price with a discount already applied.For price list entries, this property is the product's sale price if the  is set to .
 	 */
 	protected  Double salePrice;
 

@@ -35,7 +35,7 @@ public class OrderNoteResource {
 
 	
 	/**
-	 * Retrieves all internal notes associated with a return.
+	 * 
 	 * <p><pre><code>
 	 *	OrderNote ordernote = new OrderNote();
 	 *	OrderNote orderNote = ordernote.getReturnNotes( returnId);
@@ -54,7 +54,7 @@ public class OrderNoteResource {
 	}
 
 	/**
-	 * Retrieves a specific internal note from a return.
+	 * 
 	 * <p><pre><code>
 	 *	OrderNote ordernote = new OrderNote();
 	 *	OrderNote orderNote = ordernote.getReturnNote( returnId,  noteId);
@@ -70,7 +70,7 @@ public class OrderNoteResource {
 	}
 
 	/**
-	 * Retrieves a specific internal note from a return.
+	 * 
 	 * <p><pre><code>
 	 *	OrderNote ordernote = new OrderNote();
 	 *	OrderNote orderNote = ordernote.getReturnNote( returnId,  noteId,  responseFields);
@@ -91,7 +91,7 @@ public class OrderNoteResource {
 	}
 
 	/**
-	 * Creates an internal note on a given return. This note is visible in  for customer service representatives to see.
+	 * 
 	 * <p><pre><code>
 	 *	OrderNote ordernote = new OrderNote();
 	 *	OrderNote orderNote = ordernote.createReturnNote( returnNote,  returnId);
@@ -108,7 +108,7 @@ public class OrderNoteResource {
 	}
 
 	/**
-	 * Creates an internal note on a given return. This note is visible in  for customer service representatives to see.
+	 * 
 	 * <p><pre><code>
 	 *	OrderNote ordernote = new OrderNote();
 	 *	OrderNote orderNote = ordernote.createReturnNote( returnNote,  returnId,  responseFields);
@@ -130,7 +130,7 @@ public class OrderNoteResource {
 	}
 
 	/**
-	 * Updates an internal note on a given return. This note is visible in  for customer service representatives to see.
+	 * 
 	 * <p><pre><code>
 	 *	OrderNote ordernote = new OrderNote();
 	 *	OrderNote orderNote = ordernote.updateReturnNote( returnNote,  returnId,  noteId);
@@ -148,7 +148,7 @@ public class OrderNoteResource {
 	}
 
 	/**
-	 * Updates an internal note on a given return. This note is visible in  for customer service representatives to see.
+	 * 
 	 * <p><pre><code>
 	 *	OrderNote ordernote = new OrderNote();
 	 *	OrderNote orderNote = ordernote.updateReturnNote( returnNote,  returnId,  noteId,  responseFields);
@@ -171,7 +171,7 @@ public class OrderNoteResource {
 	}
 
 	/**
-	 * Deletes an internal note from a given return.
+	 * 
 	 * <p><pre><code>
 	 *	OrderNote ordernote = new OrderNote();
 	 *	ordernote.deleteReturnNote( returnId,  noteId);

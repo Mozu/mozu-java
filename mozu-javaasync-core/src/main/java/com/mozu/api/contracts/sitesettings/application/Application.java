@@ -24,9 +24,6 @@ public class Application implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Unique identifier of an app available in your Mozu tenant or within Mozu Dev Center. This ID is unique across all apps installed, initialized, and enabled in the Mozu Admin and those in development through the Dev Center Console.
-	 */
 	protected  String appId;
 
 	public String getAppId() {
@@ -50,9 +47,6 @@ public class Application implements Serializable
 		this.appKey = appKey;
 	}
 
-	/**
-	 * Indicates if the capability or app is enabled for the tenant/site. If true, the capability/application is enabled for the tenant. System-supplied and read-only.
-	 */
 	protected  Boolean enabled;
 
 	public Boolean getEnabled() {
@@ -63,9 +57,6 @@ public class Application implements Serializable
 		this.enabled = enabled;
 	}
 
-	/**
-	 * Indicates if an app is initialized and capable of being enabled in the tenant and site. Apps will need to be installed and configured to become initialized, such as validating credentials and/or API keys with a third-party service. If true, the app is initialized and can be enabled for usage.
-	 */
 	protected  Boolean initialized;
 
 	public Boolean getInitialized() {
@@ -77,7 +68,7 @@ public class Application implements Serializable
 	}
 
 	/**
-	 * Indicates if the installed application is of type extension. If true, the application type is Extension.
+	 * Indicates if the installed application is of type extension. An extension is an application that extends upon the  infrastructure. Examples of extensions include Arc.js applications and applications that integrate third-party services.
 	 */
 	protected  Boolean isExtension;
 
@@ -90,7 +81,7 @@ public class Application implements Serializable
 	}
 
 	/**
-	 * denotes if the Application is certified to use extension
+	 * Indicates if the installed application is a  certified application.
 	 */
 	protected  Boolean isExtensionCertified;
 
@@ -102,9 +93,6 @@ public class Application implements Serializable
 		this.isExtensionCertified = isExtensionCertified;
 	}
 
-	/**
-	 * The URL defined for the application that represents the configuration website for the capability. This value is used by installed applications or the site.
-	 */
 	protected  String uiConfigurationUrl;
 
 	public String getUiConfigurationUrl() {
@@ -115,9 +103,6 @@ public class Application implements Serializable
 		this.uiConfigurationUrl = uiConfigurationUrl;
 	}
 
-	/**
-	 * List of capabilities installed in a tenant.
-	 */
 	protected List<Capability> capabilities;
 	public List<Capability> getCapabilities() {
 		return this.capabilities;

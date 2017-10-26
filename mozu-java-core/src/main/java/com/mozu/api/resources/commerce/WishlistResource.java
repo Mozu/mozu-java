@@ -35,7 +35,7 @@ public class WishlistResource {
 
 	
 	/**
-	 * Retrieves a list of shopper wish lists according to any filter and sort criteria.
+	 * 
 	 * <p><pre><code>
 	 *	Wishlist wishlist = new Wishlist();
 	 *	WishlistCollection wishlistCollection = wishlist.getWishlists();
@@ -49,18 +49,18 @@ public class WishlistResource {
 	}
 
 	/**
-	 * Retrieves a list of shopper wish lists according to any filter and sort criteria.
+	 * 
 	 * <p><pre><code>
 	 *	Wishlist wishlist = new Wishlist();
 	 *	WishlistCollection wishlistCollection = wishlist.getWishlists( startIndex,  pageSize,  sortBy,  filter,  q,  qLimit,  responseFields);
 	 * </code></pre></p>
-	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
 	 * @param q A list of order search terms (not phrases) to use in the query when searching across order number and the name or email of the billing contact. When entering, separate multiple search terms with a space character.
 	 * @param qLimit The maximum number of search results to return in the response. You can limit any range between 1-100.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.WishlistCollection
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.WishlistCollection
 	 */
@@ -74,7 +74,7 @@ public class WishlistResource {
 	}
 
 	/**
-	 * Retrieves the details of the shopper wish list specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	Wishlist wishlist = new Wishlist();
 	 *	Wishlist wishlist = wishlist.getWishlist( wishlistId);
@@ -89,12 +89,12 @@ public class WishlistResource {
 	}
 
 	/**
-	 * Retrieves the details of the shopper wish list specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	Wishlist wishlist = new Wishlist();
 	 *	Wishlist wishlist = wishlist.getWishlist( wishlistId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param wishlistId Unique identifier of the wish list.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
@@ -109,7 +109,7 @@ public class WishlistResource {
 	}
 
 	/**
-	 * Retrieves the details of a wish list by supplying the wish list name.
+	 * 
 	 * <p><pre><code>
 	 *	Wishlist wishlist = new Wishlist();
 	 *	Wishlist wishlist = wishlist.getWishlistByName( customerAccountId,  wishlistName);
@@ -125,13 +125,13 @@ public class WishlistResource {
 	}
 
 	/**
-	 * Retrieves the details of a wish list by supplying the wish list name.
+	 * 
 	 * <p><pre><code>
 	 *	Wishlist wishlist = new Wishlist();
 	 *	Wishlist wishlist = wishlist.getWishlistByName( customerAccountId,  wishlistName,  responseFields);
 	 * </code></pre></p>
 	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param wishlistName The name of the wish list to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
@@ -146,7 +146,7 @@ public class WishlistResource {
 	}
 
 	/**
-	 * Creates a new shopper wish list for the associated customer account. Although customer accounts are maintained at the tenant level, the system stores wish lists at the site level. Newly created wish lists do not have any items.
+	 * 
 	 * <p><pre><code>
 	 *	Wishlist wishlist = new Wishlist();
 	 *	Wishlist wishlist = wishlist.createWishlist( wishlist);
@@ -162,12 +162,12 @@ public class WishlistResource {
 	}
 
 	/**
-	 * Creates a new shopper wish list for the associated customer account. Although customer accounts are maintained at the tenant level, the system stores wish lists at the site level. Newly created wish lists do not have any items.
+	 * 
 	 * <p><pre><code>
 	 *	Wishlist wishlist = new Wishlist();
 	 *	Wishlist wishlist = wishlist.createWishlist( wishlist,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param wishlist Properties of a shopper wish list defined for a site, associated with a customer account.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
@@ -183,7 +183,7 @@ public class WishlistResource {
 	}
 
 	/**
-	 * Updates one or more properties of a shopper wish list defined for a customer account.
+	 * 
 	 * <p><pre><code>
 	 *	Wishlist wishlist = new Wishlist();
 	 *	Wishlist wishlist = wishlist.updateWishlist( wishlist,  wishlistId);
@@ -200,12 +200,12 @@ public class WishlistResource {
 	}
 
 	/**
-	 * Updates one or more properties of a shopper wish list defined for a customer account.
+	 * 
 	 * <p><pre><code>
 	 *	Wishlist wishlist = new Wishlist();
 	 *	Wishlist wishlist = wishlist.updateWishlist( wishlist,  wishlistId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param wishlistId Unique identifier of the wish list.
 	 * @param wishlist Properties of a shopper wish list defined for a site, associated with a customer account.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
@@ -222,7 +222,7 @@ public class WishlistResource {
 	}
 
 	/**
-	 * Deletes the shopper wish list specified in the request and all items associated with it.
+	 * 
 	 * <p><pre><code>
 	 *	Wishlist wishlist = new Wishlist();
 	 *	wishlist.deleteWishlist( wishlistId);

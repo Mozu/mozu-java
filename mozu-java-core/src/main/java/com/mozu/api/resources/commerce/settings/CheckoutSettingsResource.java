@@ -35,7 +35,7 @@ public class CheckoutSettingsResource {
 
 	
 	/**
-	 * Retrieves all checkout settings defined for the site including payment settings (payment gateway ID and credentials), shopper checkout settings (login requirement or guest mode and custom attributes), and order processing settings (when payment is authorized and captured plus any custom attributes).
+	 * 
 	 * <p><pre><code>
 	 *	CheckoutSettings checkoutsettings = new CheckoutSettings();
 	 *	CheckoutSettings checkoutSettings = checkoutsettings.getCheckoutSettings();
@@ -49,12 +49,12 @@ public class CheckoutSettingsResource {
 	}
 
 	/**
-	 * Retrieves all checkout settings defined for the site including payment settings (payment gateway ID and credentials), shopper checkout settings (login requirement or guest mode and custom attributes), and order processing settings (when payment is authorized and captured plus any custom attributes).
+	 * 
 	 * <p><pre><code>
 	 *	CheckoutSettings checkoutsettings = new CheckoutSettings();
 	 *	CheckoutSettings checkoutSettings = checkoutsettings.getCheckoutSettings( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.sitesettings.order.CheckoutSettings
 	 * @see com.mozu.api.contracts.sitesettings.order.CheckoutSettings
 	 */

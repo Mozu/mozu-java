@@ -19,13 +19,13 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * The Search resource manages all settings and options for providing product search on your site.
+ * Use the Search resource to manage all settings and options for providing product search on your site, as well as search tuning rules.
  * </summary>
  */
 public class SearchClient {
 	
 	/**
-	 * Retrieves the details of the specified search tuning rule.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRule> mozuClient=GetSearchTuningRuleClient( searchTuningRuleCode);
 	 * client.setBaseAddress(url);
@@ -42,7 +42,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * Retrieves the details of the specified search tuning rule.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRule> mozuClient=GetSearchTuningRuleClient( searchTuningRuleCode,  responseFields);
 	 * client.setBaseAddress(url);
@@ -67,7 +67,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * admin-search Get GetSearchTuningRules description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRuleCollection> mozuClient=GetSearchTuningRulesClient();
 	 * client.setBaseAddress(url);
@@ -83,17 +83,17 @@ public class SearchClient {
 	}
 
 	/**
-	 * admin-search Get GetSearchTuningRules description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRuleCollection> mozuClient=GetSearchTuningRulesClient( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * SearchTuningRuleCollection searchTuningRuleCollection = client.Result();
 	 * </code></pre></p>
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/applications/sorting-filtering.htm) for a list of supported filters.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
 	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/applications/sorting-filtering.htm) for more information.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SearchTuningRuleCollection>
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleCollection
@@ -111,7 +111,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * admin-search Get GetSearchTuningRuleSortFields description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields> mozuClient=GetSearchTuningRuleSortFieldsClient();
 	 * client.setBaseAddress(url);
@@ -127,7 +127,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * admin-search Get GetSearchTuningRuleSortFields description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields> mozuClient=GetSearchTuningRuleSortFieldsClient( responseFields);
 	 * client.setBaseAddress(url);
@@ -151,7 +151,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * Get site search settings
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.SearchSettings> mozuClient=GetSettingsClient();
 	 * client.setBaseAddress(url);
@@ -167,7 +167,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * Get site search settings
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.SearchSettings> mozuClient=GetSettingsClient( responseFields);
 	 * client.setBaseAddress(url);
@@ -191,7 +191,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * Retrieves a collection of synonyms definitions for product searches. Synonyms aid with determining matches for entered searches.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> mozuClient=GetSynonymDefinitionCollectionClient( localeCode);
 	 * client.setBaseAddress(url);
@@ -208,7 +208,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * Retrieves a collection of synonyms definitions for product searches. Synonyms aid with determining matches for entered searches.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> mozuClient=GetSynonymDefinitionCollectionClient( localeCode,  responseFields);
 	 * client.setBaseAddress(url);
@@ -256,11 +256,11 @@ public class SearchClient {
 	 * client.executeRequest();
 	 * SynonymDefinitionPagedCollection synonymDefinitionPagedCollection = client.Result();
 	 * </code></pre></p>
-	 * @param filter 
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SynonymDefinitionPagedCollection>
 	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionPagedCollection
 	 */
@@ -284,7 +284,7 @@ public class SearchClient {
 	 * client.executeRequest();
 	 * SynonymDefinition synonymDefinition = client.Result();
 	 * </code></pre></p>
-	 * @param synonymId 
+	 * @param synonymId The unique identifier of the synonym definition.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SynonymDefinition>
 	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinition
 	 */
@@ -301,8 +301,8 @@ public class SearchClient {
 	 * client.executeRequest();
 	 * SynonymDefinition synonymDefinition = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param synonymId 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param synonymId The unique identifier of the synonym definition.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SynonymDefinition>
 	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinition
 	 */
@@ -319,14 +319,14 @@ public class SearchClient {
 	}
 
 	/**
-	 * admin-search Post AddSearchTuningRule description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRule> mozuClient=AddSearchTuningRuleClient( searchTuningRuleIn);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * SearchTuningRule searchTuningRule = client.Result();
 	 * </code></pre></p>
-	 * @param searchTuningRuleIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRule ApiType DOCUMENT_HERE 
+	 * @param searchTuningRuleIn The details of the new search tuning rule.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SearchTuningRule>
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
@@ -337,7 +337,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * admin-search Post AddSearchTuningRule description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRule> mozuClient=AddSearchTuningRuleClient( searchTuningRuleIn,  responseFields);
 	 * client.setBaseAddress(url);
@@ -345,7 +345,7 @@ public class SearchClient {
 	 * SearchTuningRule searchTuningRule = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param searchTuningRuleIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRule ApiType DOCUMENT_HERE 
+	 * @param searchTuningRuleIn The details of the new search tuning rule.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SearchTuningRule>
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
@@ -364,14 +364,14 @@ public class SearchClient {
 	}
 
 	/**
-	 * admin-search Post UpdateSearchTuningRuleSortFields description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields> mozuClient=UpdateSearchTuningRuleSortFieldsClient( searchTuningRuleSortFieldsIn);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * SearchTuningRuleSortFields searchTuningRuleSortFields = client.Result();
 	 * </code></pre></p>
-	 * @param searchTuningRuleSortFieldsIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRuleSortFields ApiType DOCUMENT_HERE 
+	 * @param searchTuningRuleSortFieldsIn The details of the updated search tuning rule sort fields.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields>
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
@@ -382,7 +382,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * admin-search Post UpdateSearchTuningRuleSortFields description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields> mozuClient=UpdateSearchTuningRuleSortFieldsClient( searchTuningRuleSortFieldsIn,  responseFields);
 	 * client.setBaseAddress(url);
@@ -390,7 +390,7 @@ public class SearchClient {
 	 * SearchTuningRuleSortFields searchTuningRuleSortFields = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param searchTuningRuleSortFieldsIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRuleSortFields ApiType DOCUMENT_HERE 
+	 * @param searchTuningRuleSortFieldsIn The details of the updated search tuning rule sort fields.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields>
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
@@ -409,7 +409,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * Updates synonym definitions for product searches. Synonyms aid with determining matches for entered searches.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> mozuClient=UpdateSynonymDefinitionCollectionClient( collection,  localeCode);
 	 * client.setBaseAddress(url);
@@ -417,7 +417,7 @@ public class SearchClient {
 	 * SynonymDefinitionCollection synonymDefinitionCollection = client.Result();
 	 * </code></pre></p>
 	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
-	 * @param collection Collection of synonym definitions used for determining search results.
+	 * @param collection The updated details of the synonym definition collection.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection>
 	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
 	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
@@ -428,7 +428,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * Updates synonym definitions for product searches. Synonyms aid with determining matches for entered searches.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> mozuClient=UpdateSynonymDefinitionCollectionClient( collection,  localeCode,  responseFields);
 	 * client.setBaseAddress(url);
@@ -437,7 +437,7 @@ public class SearchClient {
 	 * </code></pre></p>
 	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param collection Collection of synonym definitions used for determining search results.
+	 * @param collection The updated details of the synonym definition collection.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection>
 	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
 	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
@@ -463,7 +463,7 @@ public class SearchClient {
 	 * client.executeRequest();
 	 * SynonymDefinition synonymDefinition = client.Result();
 	 * </code></pre></p>
-	 * @param synonymDefinition 
+	 * @param synonymDefinition The details of the new synonym definition.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SynonymDefinition>
 	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinition
 	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinition
@@ -481,8 +481,8 @@ public class SearchClient {
 	 * client.executeRequest();
 	 * SynonymDefinition synonymDefinition = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param synonymDefinition 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param synonymDefinition The details of the new synonym definition.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SynonymDefinition>
 	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinition
 	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinition
@@ -501,7 +501,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * admin-search Put UpdateSearchTuningRule description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRule> mozuClient=UpdateSearchTuningRuleClient( searchTuningRuleIn,  searchTuningRuleCode);
 	 * client.setBaseAddress(url);
@@ -509,7 +509,7 @@ public class SearchClient {
 	 * SearchTuningRule searchTuningRule = client.Result();
 	 * </code></pre></p>
 	 * @param searchTuningRuleCode The unique identifier of the search tuning rule.
-	 * @param searchTuningRuleIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRule ApiType DOCUMENT_HERE 
+	 * @param searchTuningRuleIn The details of the updated search tuning rule.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SearchTuningRule>
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
@@ -520,7 +520,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * admin-search Put UpdateSearchTuningRule description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRule> mozuClient=UpdateSearchTuningRuleClient( searchTuningRuleIn,  searchTuningRuleCode,  responseFields);
 	 * client.setBaseAddress(url);
@@ -529,7 +529,7 @@ public class SearchClient {
 	 * </code></pre></p>
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param searchTuningRuleCode The unique identifier of the search tuning rule.
-	 * @param searchTuningRuleIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRule ApiType DOCUMENT_HERE 
+	 * @param searchTuningRuleIn The details of the updated search tuning rule.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SearchTuningRule>
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
@@ -548,14 +548,14 @@ public class SearchClient {
 	}
 
 	/**
-	 * Adds or Updates (Upsert) the Search Settings for a specific site
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.SearchSettings> mozuClient=UpdateSettingsClient( settings);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * SearchSettings searchSettings = client.Result();
 	 * </code></pre></p>
-	 * @param settings The settings to control product search and indexing behavior.
+	 * @param settings The search settings to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.SearchSettings>
 	 * @see com.mozu.api.contracts.productadmin.SearchSettings
 	 * @see com.mozu.api.contracts.productadmin.SearchSettings
@@ -566,7 +566,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * Adds or Updates (Upsert) the Search Settings for a specific site
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.SearchSettings> mozuClient=UpdateSettingsClient( settings,  responseFields);
 	 * client.setBaseAddress(url);
@@ -574,7 +574,7 @@ public class SearchClient {
 	 * SearchSettings searchSettings = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param settings The settings to control product search and indexing behavior.
+	 * @param settings The search settings to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.SearchSettings>
 	 * @see com.mozu.api.contracts.productadmin.SearchSettings
 	 * @see com.mozu.api.contracts.productadmin.SearchSettings
@@ -600,8 +600,8 @@ public class SearchClient {
 	 * client.executeRequest();
 	 * SynonymDefinition synonymDefinition = client.Result();
 	 * </code></pre></p>
-	 * @param synonymId 
-	 * @param synonymDefinition 
+	 * @param synonymId The unique identifier of the synonym definition.
+	 * @param synonymDefinition The updated synonym definition details.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SynonymDefinition>
 	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinition
 	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinition
@@ -619,9 +619,9 @@ public class SearchClient {
 	 * client.executeRequest();
 	 * SynonymDefinition synonymDefinition = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param synonymId 
-	 * @param synonymDefinition 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param synonymId The unique identifier of the synonym definition.
+	 * @param synonymDefinition The updated synonym definition details.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SynonymDefinition>
 	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinition
 	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinition
@@ -640,7 +640,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * Deletes the specified search tuning rule.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteSearchTuningRuleClient( searchTuningRuleCode);
 	 * client.setBaseAddress(url);
@@ -667,7 +667,7 @@ public class SearchClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param synonymId 
+	 * @param synonymId The unique identifier of the synonym definition.
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deleteSynonymDefinitionClient(Integer synonymId) throws Exception

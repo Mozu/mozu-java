@@ -19,13 +19,13 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the tenant data resource to store tenant-level information required for a third-party application in the Mozu database.
+ * Use the tenant data resource to store tenant-level information required for a third-party application in the  database.
  * </summary>
  */
 public class TenantDataClient {
 	
 	/**
-	 * Retrieves the value of a record in the Mozu database.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<String> mozuClient=GetDBValueClient( dbEntryQuery);
 	 * client.setBaseAddress(url);
@@ -42,7 +42,7 @@ public class TenantDataClient {
 	}
 
 	/**
-	 * Retrieves the value of a record in the Mozu database.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<String> mozuClient=GetDBValueClient( dbEntryQuery,  responseFields);
 	 * client.setBaseAddress(url);
@@ -50,7 +50,7 @@ public class TenantDataClient {
 	 * string string = client.Result();
 	 * </code></pre></p>
 	 * @param dbEntryQuery The database entry string to create.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <string>
 	 * @see string
 	 */
@@ -67,7 +67,7 @@ public class TenantDataClient {
 	}
 
 	/**
-	 * Creates a new record in the Mozu database based on the information supplied in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=CreateDBValueClient( value,  dbEntryQuery);
 	 * client.setBaseAddress(url);
@@ -91,7 +91,7 @@ public class TenantDataClient {
 	}
 
 	/**
-	 * Updates a record in the Mozu database based on the information supplied in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=UpdateDBValueClient( value,  dbEntryQuery);
 	 * client.setBaseAddress(url);
@@ -115,7 +115,7 @@ public class TenantDataClient {
 	}
 
 	/**
-	 * Removes a previously defined record in the Mozu database.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteDBValueClient( dbEntryQuery);
 	 * client.setBaseAddress(url);

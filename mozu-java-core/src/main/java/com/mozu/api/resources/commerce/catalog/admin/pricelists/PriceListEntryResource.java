@@ -35,12 +35,12 @@ public class PriceListEntryResource {
 
 	
 	/**
-	 * Retrieves the details of a price list entry.
+	 * 
 	 * <p><pre><code>
 	 *	PriceListEntry pricelistentry = new PriceListEntry();
 	 *	PriceListEntry priceListEntry = pricelistentry.getPriceListEntry( priceListCode,  productCode,  currencyCode);
 	 * </code></pre></p>
-	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
 	 * @param priceListCode The unique code of the price list associated with the price list entry.
 	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @return com.mozu.api.contracts.productadmin.PriceListEntry
@@ -52,12 +52,12 @@ public class PriceListEntryResource {
 	}
 
 	/**
-	 * Retrieves the details of a price list entry.
+	 * 
 	 * <p><pre><code>
 	 *	PriceListEntry pricelistentry = new PriceListEntry();
 	 *	PriceListEntry priceListEntry = pricelistentry.getPriceListEntry( priceListCode,  productCode,  currencyCode,  startDate,  responseFields);
 	 * </code></pre></p>
-	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
 	 * @param priceListCode The unique code of the price list associated with the price list entry.
 	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
@@ -75,7 +75,7 @@ public class PriceListEntryResource {
 	}
 
 	/**
-	 * Retrieves a list of price list entries associated with the specified price list according to any specified facets, filter criteria, and sort options.
+	 * 
 	 * <p><pre><code>
 	 *	PriceListEntry pricelistentry = new PriceListEntry();
 	 *	PriceListEntryCollection priceListEntryCollection = pricelistentry.getPriceListEntries( priceListCode);
@@ -90,7 +90,7 @@ public class PriceListEntryResource {
 	}
 
 	/**
-	 * Retrieves a list of price list entries associated with the specified price list according to any specified facets, filter criteria, and sort options.
+	 * 
 	 * <p><pre><code>
 	 *	PriceListEntry pricelistentry = new PriceListEntry();
 	 *	PriceListEntryCollection priceListEntryCollection = pricelistentry.getPriceListEntries( priceListCode,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
@@ -114,7 +114,7 @@ public class PriceListEntryResource {
 	}
 
 	/**
-	 * Adds a new price list entry to the specified price list.
+	 * 
 	 * <p><pre><code>
 	 *	PriceListEntry pricelistentry = new PriceListEntry();
 	 *	PriceListEntry priceListEntry = pricelistentry.addPriceListEntry( priceListEntryIn,  priceListCode);
@@ -131,7 +131,7 @@ public class PriceListEntryResource {
 	}
 
 	/**
-	 * Adds a new price list entry to the specified price list.
+	 * 
 	 * <p><pre><code>
 	 *	PriceListEntry pricelistentry = new PriceListEntry();
 	 *	PriceListEntry priceListEntry = pricelistentry.addPriceListEntry( priceListEntryIn,  priceListCode,  responseFields);
@@ -153,12 +153,12 @@ public class PriceListEntryResource {
 	}
 
 	/**
-	 * Updates the details of a price list entry.
+	 * 
 	 * <p><pre><code>
 	 *	PriceListEntry pricelistentry = new PriceListEntry();
 	 *	PriceListEntry priceListEntry = pricelistentry.updatePriceListEntry( priceListEntryIn,  priceListCode,  productCode,  currencyCode);
 	 * </code></pre></p>
-	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
 	 * @param priceListCode The unique code of the price list associated with the price list entry.
 	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param priceListEntryIn The updated details of the price list entry.
@@ -172,12 +172,12 @@ public class PriceListEntryResource {
 	}
 
 	/**
-	 * Updates the details of a price list entry.
+	 * 
 	 * <p><pre><code>
 	 *	PriceListEntry pricelistentry = new PriceListEntry();
 	 *	PriceListEntry priceListEntry = pricelistentry.updatePriceListEntry( priceListEntryIn,  priceListCode,  productCode,  currencyCode,  startDate,  responseFields);
 	 * </code></pre></p>
-	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
 	 * @param priceListCode The unique code of the price list associated with the price list entry.
 	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
@@ -197,12 +197,12 @@ public class PriceListEntryResource {
 	}
 
 	/**
-	 * Deletes a price list entry.
+	 * 
 	 * <p><pre><code>
 	 *	PriceListEntry pricelistentry = new PriceListEntry();
 	 *	pricelistentry.deletePriceListEntry( priceListCode,  productCode,  currencyCode);
 	 * </code></pre></p>
-	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
 	 * @param priceListCode The code of the specified price list associated with the price list entry.
 	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @return 
@@ -213,12 +213,12 @@ public class PriceListEntryResource {
 	}
 
 	/**
-	 * Deletes a price list entry.
+	 * 
 	 * <p><pre><code>
 	 *	PriceListEntry pricelistentry = new PriceListEntry();
 	 *	pricelistentry.deletePriceListEntry( priceListCode,  productCode,  currencyCode,  startDate);
 	 * </code></pre></p>
-	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
 	 * @param priceListCode The code of the specified price list associated with the price list entry.
 	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param startDate The start date of the price list entry.

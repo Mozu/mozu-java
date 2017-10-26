@@ -25,9 +25,6 @@ public class FacetSet implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The list of subcategories and attributes that have not been defined as facets for the category.
-	 */
 	protected List<FacetSource> available;
 	public List<FacetSource> getAvailable() {
 		return this.available;
@@ -36,9 +33,6 @@ public class FacetSet implements Serializable
 		this.available = available;
 	}
 
-	/**
-	 * The list of category, price, and attribute facets defined for the category.
-	 */
 	protected List<Facet> configured;
 	public List<Facet> getConfigured() {
 		return this.configured;

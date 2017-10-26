@@ -24,7 +24,7 @@ import com.mozu.api.DataViewMode;
 public class ProductTypeOptionClient {
 	
 	/**
-	 * Retrieves a list of option product attributes defined for the specified product type.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.productadmin.AttributeInProductType>> mozuClient=GetOptionsClient(dataViewMode,  productTypeId);
 	 * client.setBaseAddress(url);
@@ -50,14 +50,14 @@ public class ProductTypeOptionClient {
 	}
 
 	/**
-	 * Retrieves the details of an option attribute defined for the specified product type.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeInProductType> mozuClient=GetOptionClient(dataViewMode,  productTypeId,  attributeFQN);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * AttributeInProductType attributeInProductType = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param productTypeId Identifier of the product type.
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeInProductType>
@@ -69,16 +69,16 @@ public class ProductTypeOptionClient {
 	}
 
 	/**
-	 * Retrieves the details of an option attribute defined for the specified product type.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeInProductType> mozuClient=GetOptionClient(dataViewMode,  productTypeId,  attributeFQN,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * AttributeInProductType attributeInProductType = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param productTypeId Identifier of the product type.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeInProductType>
 	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
@@ -97,7 +97,7 @@ public class ProductTypeOptionClient {
 	}
 
 	/**
-	 * Assigns an option attribute to the product type based on the information supplied in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeInProductType> mozuClient=AddOptionClient(dataViewMode,  attributeInProductType,  productTypeId);
 	 * client.setBaseAddress(url);
@@ -117,7 +117,7 @@ public class ProductTypeOptionClient {
 	}
 
 	/**
-	 * Assigns an option attribute to the product type based on the information supplied in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeInProductType> mozuClient=AddOptionClient(dataViewMode,  attributeInProductType,  productTypeId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -125,7 +125,7 @@ public class ProductTypeOptionClient {
 	 * AttributeInProductType attributeInProductType = client.Result();
 	 * </code></pre></p>
 	 * @param productTypeId Identifier of the product type.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
 	 * @param attributeInProductType Properties of an attribute definition associated with a specific product type. When an attribute is applied to a product type, each product of that type maintains the same set of attributes.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeInProductType>
@@ -147,14 +147,14 @@ public class ProductTypeOptionClient {
 	}
 
 	/**
-	 * Updates an option attribute definition for the specified product type.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeInProductType> mozuClient=UpdateOptionClient(dataViewMode,  attributeInProductType,  productTypeId,  attributeFQN);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * AttributeInProductType attributeInProductType = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param productTypeId Identifier of the product type.
 	 * @param dataViewMode DataViewMode
 	 * @param attributeInProductType Properties of an attribute definition associated with a specific product type. When an attribute is applied to a product type, each product of that type maintains the same set of attributes.
@@ -168,16 +168,16 @@ public class ProductTypeOptionClient {
 	}
 
 	/**
-	 * Updates an option attribute definition for the specified product type.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeInProductType> mozuClient=UpdateOptionClient(dataViewMode,  attributeInProductType,  productTypeId,  attributeFQN,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * AttributeInProductType attributeInProductType = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param productTypeId Identifier of the product type.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
 	 * @param attributeInProductType Properties of an attribute definition associated with a specific product type. When an attribute is applied to a product type, each product of that type maintains the same set of attributes.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeInProductType>
@@ -199,13 +199,13 @@ public class ProductTypeOptionClient {
 	}
 
 	/**
-	 * Removes an option attribute definition for the specified product type.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteOptionClient(dataViewMode,  productTypeId,  attributeFQN);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param productTypeId Identifier of the product type.
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient 

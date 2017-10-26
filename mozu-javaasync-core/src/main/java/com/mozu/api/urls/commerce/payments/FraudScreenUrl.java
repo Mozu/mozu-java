@@ -15,11 +15,13 @@ public class FraudScreenUrl
 
 	/**
 	 * Get Resource Url for Screen
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl screenUrl()
+	public static MozuUrl screenUrl(String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/payments/commerce/payments/fraudscreen/screen");
+		UrlFormatter formatter = new UrlFormatter("/payments/commerce/payments/fraudscreen/screen?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.PCI_POD) ;
 	}
 

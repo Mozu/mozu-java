@@ -23,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 public class UserDataClient {
 	
 	/**
-	 * Retrieves the value of a record in the  database.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<String> mozuClient=GetDBValueClient( dbEntryQuery);
 	 * client.setBaseAddress(url);
@@ -40,7 +40,7 @@ public class UserDataClient {
 	}
 
 	/**
-	 * Retrieves the value of a record in the  database.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<String> mozuClient=GetDBValueClient( dbEntryQuery,  responseFields);
 	 * client.setBaseAddress(url);
@@ -48,7 +48,7 @@ public class UserDataClient {
 	 * string string = client.Result();
 	 * </code></pre></p>
 	 * @param dbEntryQuery The database entry string to create.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <string>
 	 * @see string
 	 */
@@ -65,7 +65,7 @@ public class UserDataClient {
 	}
 
 	/**
-	 * Creates a new record in the  database based on the information supplied in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=CreateDBValueClient( value,  dbEntryQuery);
 	 * client.setBaseAddress(url);
@@ -89,7 +89,7 @@ public class UserDataClient {
 	}
 
 	/**
-	 * Updates a record in the  database based on the information supplied in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=UpdateDBValueClient( value,  dbEntryQuery);
 	 * client.setBaseAddress(url);
@@ -113,7 +113,7 @@ public class UserDataClient {
 	}
 
 	/**
-	 * Removes a previously defined record in the  database.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteDBValueClient( dbEntryQuery);
 	 * client.setBaseAddress(url);

@@ -22,19 +22,6 @@ public class Attribute implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * List of valid vocabulary values defined for an attribute.
-	 */
-	protected  String vocabularyValues;
-
-	public String getVocabularyValues() {
-		return this.vocabularyValues;
-	}
-
-	public void setVocabularyValues(String vocabularyValues) {
-		this.vocabularyValues = vocabularyValues;
-	}
-
-	/**
 	 * The administrator name associated with the object/data.
 	 */
 	protected  String adminName;
@@ -113,7 +100,7 @@ public class Attribute implements Serializable
 	}
 
 	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
+	 * The user supplied name that appears in . You can use this field for identification purposes.
 	 */
 	protected  String name;
 
@@ -162,6 +149,19 @@ public class Attribute implements Serializable
 
 	public void setVocabularyJson(String vocabularyJson) {
 		this.vocabularyJson = vocabularyJson;
+	}
+
+	/**
+	 * List of valid vocabulary values defined for an attribute.
+	 */
+	protected  String vocabularyValues;
+
+	public String getVocabularyValues() {
+		return this.vocabularyValues;
+	}
+
+	public void setVocabularyValues(String vocabularyValues) {
+		this.vocabularyValues = vocabularyValues;
 	}
 
 

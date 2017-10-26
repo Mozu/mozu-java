@@ -27,9 +27,6 @@ public class Payment implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The total monetary amount collected in this payment transaction for the order.
-	 */
 	protected  Double amountCollected;
 
 	public Double getAmountCollected() {
@@ -40,9 +37,6 @@ public class Payment implements Serializable
 		this.amountCollected = amountCollected;
 	}
 
-	/**
-	 * If the payment transaction is a shopper store credit, the total monetary amount credited in this payment transaction for the order.
-	 */
 	protected  Double amountCredited;
 
 	public Double getAmountCredited() {
@@ -66,9 +60,6 @@ public class Payment implements Serializable
 		this.amountRequested = amountRequested;
 	}
 
-	/**
-	 * Available actions you can complete for an order. These actions may differ depending on the status of the order, such as actions required to enter a payment, return of a package, and fulfillment of a shipment.
-	 */
 	protected List<String> availableActions;
 	public List<String> getAvailableActions() {
 		return this.availableActions;
@@ -90,9 +81,6 @@ public class Payment implements Serializable
 		this.externalTransactionId = externalTransactionId;
 	}
 
-	/**
-	 * Unique identifier of the source property, such as a catalog, discount, order, or email template.For a product field it will be the name of the field.For a category ID, must be a positive integer not greater than 2000000. By default,  auto-generates a category ID when categories are created. If you want to specify an ID during creation (which preserves category link relationships when migrating tenant data from one sandbox to another), you must also include the  query string in the endpoint. For example, . Then, use the  property to specify the desired category ID.For a product attribute it will be the Attribute FQN.For a document, the ID must be specified as a 32 character, case-insensitive, alphanumeric string. You can specify the ID as 32 sequential characters or as groups separated by dashes in the format 8-4-4-4-12. For example, or.For email templates, the ID must be one of the following values:			
-	 */
 	protected  String id;
 
 	public String getId() {
@@ -103,9 +91,6 @@ public class Payment implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * Indicates if the product in a cart, order, or wish list is purchased on a recurring schedule. If true, the item can be purchased or fulfilled at regular intervals, such as a monthly billing cycle. For example, digital or physical product subscriptions are recurring cart items. This property is not used at this time and is reserved for future functionality.
-	 */
 	protected  Boolean isRecurring;
 
 	public Boolean getIsRecurring() {
@@ -116,9 +101,6 @@ public class Payment implements Serializable
 		this.isRecurring = isRecurring;
 	}
 
-	/**
-	 * Unique identifier of the order associated with the payment.
-	 */
 	protected  String orderId;
 
 	public String getOrderId() {
@@ -129,9 +111,6 @@ public class Payment implements Serializable
 		this.orderId = orderId;
 	}
 
-	/**
-	 * The transaction ID supplied by the payment service to associate with this order payment.
-	 */
 	protected  String paymentServiceTransactionId;
 
 	public String getPaymentServiceTransactionId() {
@@ -142,9 +121,6 @@ public class Payment implements Serializable
 		this.paymentServiceTransactionId = paymentServiceTransactionId;
 	}
 
-	/**
-	 * The type of payment, such as credit card, check, or PayPal Express. Additional payment types will be supported in future releases.
-	 */
 	protected  String paymentType;
 
 	public String getPaymentType() {
@@ -168,9 +144,6 @@ public class Payment implements Serializable
 		this.paymentWorkflow = paymentWorkflow;
 	}
 
-	/**
-	 * The current status of the object.This value is read only. Valid values for this field are: "Active", "Expired", and "Inactive".
-	 */
 	protected  String status;
 
 	public String getStatus() {
@@ -181,9 +154,6 @@ public class Payment implements Serializable
 		this.status = status;
 	}
 
-	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -194,9 +164,6 @@ public class Payment implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * Properties for the customer's billing information associated with an order or specific payment.
-	 */
 	protected  BillingInfo billingInfo;
 
 	public BillingInfo getBillingInfo() {
@@ -231,9 +198,6 @@ public class Payment implements Serializable
 		this.data = data;
 	}
 
-	/**
-	 * Container for the interactions associated with the payment, which includes details for each action performed for the payment.
-	 */
 	protected List<PaymentInteraction> interactions;
 	public List<PaymentInteraction> getInteractions() {
 		return this.interactions;

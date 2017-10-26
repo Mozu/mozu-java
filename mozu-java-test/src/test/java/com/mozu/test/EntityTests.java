@@ -17,8 +17,8 @@ import com.mozu.api.contracts.mzdb.EntityList;
 import com.mozu.api.security.AppAuthenticator;
 import com.mozu.api.utils.MozuHttpClientPool;
 import com.mozu.test.framework.core.MozuApiTestBase;
-import com.mozu.test.framework.datafactory.EntityFactory;
-import com.mozu.test.framework.datafactory.EntityListFactory;
+import com.mozu.test.framework.datafactory.platform.EntityListFactory;
+import com.mozu.test.framework.datafactory.platform.entitylists.EntityFactory;
 
 public class EntityTests extends MozuApiTestBase {
 	

@@ -37,7 +37,7 @@ public class WishlistItemResource {
 
 	
 	/**
-	 * Retrieves the details of an item in a shopper wish list.
+	 * 
 	 * <p><pre><code>
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	WishlistItem wishlistItem = wishlistitem.getWishlistItem( wishlistId,  wishlistItemId);
@@ -53,7 +53,7 @@ public class WishlistItemResource {
 	}
 
 	/**
-	 * Retrieves the details of an item in a shopper wish list.
+	 * 
 	 * <p><pre><code>
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	CountDownLatch latch = wishlistitem.getWishlistItem( wishlistId,  wishlistItemId, callback );
@@ -70,12 +70,12 @@ public class WishlistItemResource {
 	}
 
 	/**
-	 * Retrieves the details of an item in a shopper wish list.
+	 * 
 	 * <p><pre><code>
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	WishlistItem wishlistItem = wishlistitem.getWishlistItem( wishlistId,  wishlistItemId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param wishlistId Unique identifier of the wish list.
 	 * @param wishlistItemId Unique identifier of the item to remove from the shopper wish list.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem
@@ -91,12 +91,12 @@ public class WishlistItemResource {
 	}
 
 	/**
-	 * Retrieves the details of an item in a shopper wish list.
+	 * 
 	 * <p><pre><code>
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	CountDownLatch latch = wishlistitem.getWishlistItem( wishlistId,  wishlistItemId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param wishlistId Unique identifier of the wish list.
 	 * @param wishlistItemId Unique identifier of the item to remove from the shopper wish list.
 	 * @param  callback callback handler for asynchronous operations
@@ -112,7 +112,7 @@ public class WishlistItemResource {
 	}
 
 	/**
-	 * Retrieves a list of items in a shopper wish list according to any specified filter and sort criteria.
+	 * 
 	 * <p><pre><code>
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	WishlistItemCollection wishlistItemCollection = wishlistitem.getWishlistItems( wishlistId);
@@ -127,7 +127,7 @@ public class WishlistItemResource {
 	}
 
 	/**
-	 * Retrieves a list of items in a shopper wish list according to any specified filter and sort criteria.
+	 * 
 	 * <p><pre><code>
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	CountDownLatch latch = wishlistitem.getWishlistItems( wishlistId, callback );
@@ -143,16 +143,16 @@ public class WishlistItemResource {
 	}
 
 	/**
-	 * Retrieves a list of items in a shopper wish list according to any specified filter and sort criteria.
+	 * 
 	 * <p><pre><code>
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	WishlistItemCollection wishlistItemCollection = wishlistitem.getWishlistItems( wishlistId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @param wishlistId Unique identifier of the wish list.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.WishlistItemCollection
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.WishlistItemCollection
@@ -167,16 +167,16 @@ public class WishlistItemResource {
 	}
 
 	/**
-	 * Retrieves a list of items in a shopper wish list according to any specified filter and sort criteria.
+	 * 
 	 * <p><pre><code>
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	CountDownLatch latch = wishlistitem.getWishlistItems( wishlistId,  startIndex,  pageSize,  sortBy,  filter,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @param wishlistId Unique identifier of the wish list.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.WishlistItemCollection
@@ -191,7 +191,7 @@ public class WishlistItemResource {
 	}
 
 	/**
-	 * Retrieve a list of items in a customer wish list by supplying the wish list name.
+	 * 
 	 * <p><pre><code>
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	WishlistItemCollection wishlistItemCollection = wishlistitem.getWishlistItemsByWishlistName( customerAccountId,  wishlistName);
@@ -207,7 +207,7 @@ public class WishlistItemResource {
 	}
 
 	/**
-	 * Retrieve a list of items in a customer wish list by supplying the wish list name.
+	 * 
 	 * <p><pre><code>
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	CountDownLatch latch = wishlistitem.getWishlistItemsByWishlistName( customerAccountId,  wishlistName, callback );
@@ -224,17 +224,17 @@ public class WishlistItemResource {
 	}
 
 	/**
-	 * Retrieve a list of items in a customer wish list by supplying the wish list name.
+	 * 
 	 * <p><pre><code>
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	WishlistItemCollection wishlistItemCollection = wishlistitem.getWishlistItemsByWishlistName( customerAccountId,  wishlistName,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
-	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @param wishlistName The name of the wish list to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.WishlistItemCollection
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.WishlistItemCollection
@@ -249,17 +249,17 @@ public class WishlistItemResource {
 	}
 
 	/**
-	 * Retrieve a list of items in a customer wish list by supplying the wish list name.
+	 * 
 	 * <p><pre><code>
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	CountDownLatch latch = wishlistitem.getWishlistItemsByWishlistName( customerAccountId,  wishlistName,  startIndex,  pageSize,  sortBy,  filter,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
-	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @param wishlistName The name of the wish list to retrieve.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.WishlistItemCollection
@@ -274,7 +274,7 @@ public class WishlistItemResource {
 	}
 
 	/**
-	 * Adds a product in a site's catalog as an item in a shopper wish list.
+	 * 
 	 * <p><pre><code>
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	WishlistItem wishlistItem = wishlistitem.addItemToWishlist( wishlistItem,  wishlistId);
@@ -291,7 +291,7 @@ public class WishlistItemResource {
 	}
 
 	/**
-	 * Adds a product in a site's catalog as an item in a shopper wish list.
+	 * 
 	 * <p><pre><code>
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	CountDownLatch latch = wishlistitem.addItemToWishlist( wishlistItem,  wishlistId, callback );
@@ -309,12 +309,12 @@ public class WishlistItemResource {
 	}
 
 	/**
-	 * Adds a product in a site's catalog as an item in a shopper wish list.
+	 * 
 	 * <p><pre><code>
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	WishlistItem wishlistItem = wishlistitem.addItemToWishlist( wishlistItem,  wishlistId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param wishlistId Unique identifier of the wish list.
 	 * @param wishlistItem Properties of an item in a shopper wish list.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem
@@ -331,12 +331,12 @@ public class WishlistItemResource {
 	}
 
 	/**
-	 * Adds a product in a site's catalog as an item in a shopper wish list.
+	 * 
 	 * <p><pre><code>
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	CountDownLatch latch = wishlistitem.addItemToWishlist( wishlistItem,  wishlistId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param wishlistId Unique identifier of the wish list.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param wishlistItem Properties of an item in a shopper wish list.
@@ -353,7 +353,7 @@ public class WishlistItemResource {
 	}
 
 	/**
-	 * Updates the quantity of an item in a shopper wish list.
+	 * 
 	 * <p><pre><code>
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	WishlistItem wishlistItem = wishlistitem.updateWishlistItemQuantity( wishlistId,  wishlistItemId,  quantity);
@@ -370,7 +370,7 @@ public class WishlistItemResource {
 	}
 
 	/**
-	 * Updates the quantity of an item in a shopper wish list.
+	 * 
 	 * <p><pre><code>
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	CountDownLatch latch = wishlistitem.updateWishlistItemQuantity( wishlistId,  wishlistItemId,  quantity, callback );
@@ -388,13 +388,13 @@ public class WishlistItemResource {
 	}
 
 	/**
-	 * Updates the quantity of an item in a shopper wish list.
+	 * 
 	 * <p><pre><code>
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	WishlistItem wishlistItem = wishlistitem.updateWishlistItemQuantity( wishlistId,  wishlistItemId,  quantity,  responseFields);
 	 * </code></pre></p>
 	 * @param quantity The number of cart items in the shopper's active cart.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param wishlistId Unique identifier of the wish list.
 	 * @param wishlistItemId Unique identifier of the item to remove from the shopper wish list.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem
@@ -410,13 +410,13 @@ public class WishlistItemResource {
 	}
 
 	/**
-	 * Updates the quantity of an item in a shopper wish list.
+	 * 
 	 * <p><pre><code>
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	CountDownLatch latch = wishlistitem.updateWishlistItemQuantity( wishlistId,  wishlistItemId,  quantity,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param quantity The number of cart items in the shopper's active cart.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param wishlistId Unique identifier of the wish list.
 	 * @param wishlistItemId Unique identifier of the item to remove from the shopper wish list.
 	 * @param  callback callback handler for asynchronous operations
@@ -432,7 +432,7 @@ public class WishlistItemResource {
 	}
 
 	/**
-	 * Updates the details of an item in a shopper wish list.
+	 * 
 	 * <p><pre><code>
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	WishlistItem wishlistItem = wishlistitem.updateWishlistItem( wishlistItem,  wishlistId,  wishlistItemId);
@@ -450,7 +450,7 @@ public class WishlistItemResource {
 	}
 
 	/**
-	 * Updates the details of an item in a shopper wish list.
+	 * 
 	 * <p><pre><code>
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	CountDownLatch latch = wishlistitem.updateWishlistItem( wishlistItem,  wishlistId,  wishlistItemId, callback );
@@ -469,12 +469,12 @@ public class WishlistItemResource {
 	}
 
 	/**
-	 * Updates the details of an item in a shopper wish list.
+	 * 
 	 * <p><pre><code>
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	WishlistItem wishlistItem = wishlistitem.updateWishlistItem( wishlistItem,  wishlistId,  wishlistItemId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param wishlistId Unique identifier of the wish list.
 	 * @param wishlistItemId Unique identifier of the item to remove from the shopper wish list.
 	 * @param wishlistItem Properties of an item in a shopper wish list.
@@ -492,12 +492,12 @@ public class WishlistItemResource {
 	}
 
 	/**
-	 * Updates the details of an item in a shopper wish list.
+	 * 
 	 * <p><pre><code>
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	CountDownLatch latch = wishlistitem.updateWishlistItem( wishlistItem,  wishlistId,  wishlistItemId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param wishlistId Unique identifier of the wish list.
 	 * @param wishlistItemId Unique identifier of the item to remove from the shopper wish list.
 	 * @param  callback callback handler for asynchronous operations
@@ -515,7 +515,7 @@ public class WishlistItemResource {
 	}
 
 	/**
-	 * Removes all items associated with a shopper wish list.
+	 * 
 	 * <p><pre><code>
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	Wishlist wishlist = wishlistitem.removeAllWishlistItems( wishlistId);
@@ -534,7 +534,7 @@ public class WishlistItemResource {
 	}
 
 	/**
-	 * Removes all items associated with a shopper wish list.
+	 * 
 	 * <p><pre><code>
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	CountDownLatch latch = wishlistitem.removeAllWishlistItems( wishlistId, callback );
@@ -553,7 +553,7 @@ public class WishlistItemResource {
 	}
 
 	/**
-	 * Removes an item from the wish list specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	wishlistitem.deleteWishlistItem( wishlistId,  wishlistItemId);

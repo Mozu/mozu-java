@@ -35,7 +35,7 @@ public class ShippingInclusionRuleResource {
 
 	
 	/**
-	 * Retrieves the details of the specified shipping inclusion rule.
+	 * 
 	 * <p><pre><code>
 	 *	ShippingInclusionRule shippinginclusionrule = new ShippingInclusionRule();
 	 *	ShippingInclusionRule shippingInclusionRule = shippinginclusionrule.getShippingInclusionRule( profilecode,  id);
@@ -52,7 +52,7 @@ public class ShippingInclusionRuleResource {
 	}
 
 	/**
-	 * Retrieves the details of the specified shipping inclusion rule.
+	 * 
 	 * <p><pre><code>
 	 *	ShippingInclusionRule shippinginclusionrule = new ShippingInclusionRule();
 	 *	ShippingInclusionRule shippingInclusionRule = shippinginclusionrule.getShippingInclusionRule( profilecode,  id,  responseFields);
@@ -74,7 +74,7 @@ public class ShippingInclusionRuleResource {
 	}
 
 	/**
-	 * Retrieves a list of shipping inclusion rules and their details.
+	 * 
 	 * <p><pre><code>
 	 *	ShippingInclusionRule shippinginclusionrule = new ShippingInclusionRule();
 	 *	ShippingInclusionRuleCollection shippingInclusionRuleCollection = shippinginclusionrule.getShippingInclusionRules( profilecode);
@@ -90,7 +90,7 @@ public class ShippingInclusionRuleResource {
 	}
 
 	/**
-	 * Retrieves a list of shipping inclusion rules and their details.
+	 * 
 	 * <p><pre><code>
 	 *	ShippingInclusionRule shippinginclusionrule = new ShippingInclusionRule();
 	 *	ShippingInclusionRuleCollection shippingInclusionRuleCollection = shippinginclusionrule.getShippingInclusionRules( profilecode,  responseFields);
@@ -111,7 +111,7 @@ public class ShippingInclusionRuleResource {
 	}
 
 	/**
-	 * Creates a new shipping inclusion rule.
+	 * 
 	 * <p><pre><code>
 	 *	ShippingInclusionRule shippinginclusionrule = new ShippingInclusionRule();
 	 *	ShippingInclusionRule shippingInclusionRule = shippinginclusionrule.createShippingInclusionRule( rule,  profilecode);
@@ -129,7 +129,7 @@ public class ShippingInclusionRuleResource {
 	}
 
 	/**
-	 * Creates a new shipping inclusion rule.
+	 * 
 	 * <p><pre><code>
 	 *	ShippingInclusionRule shippinginclusionrule = new ShippingInclusionRule();
 	 *	ShippingInclusionRule shippingInclusionRule = shippinginclusionrule.createShippingInclusionRule( rule,  profilecode,  responseFields);
@@ -152,7 +152,7 @@ public class ShippingInclusionRuleResource {
 	}
 
 	/**
-	 * Updates the details of the specified shipping inclusion rule.
+	 * 
 	 * <p><pre><code>
 	 *	ShippingInclusionRule shippinginclusionrule = new ShippingInclusionRule();
 	 *	ShippingInclusionRule shippingInclusionRule = shippinginclusionrule.updateShippingInclusionRule( rule,  profilecode,  id);
@@ -171,7 +171,7 @@ public class ShippingInclusionRuleResource {
 	}
 
 	/**
-	 * Updates the details of the specified shipping inclusion rule.
+	 * 
 	 * <p><pre><code>
 	 *	ShippingInclusionRule shippinginclusionrule = new ShippingInclusionRule();
 	 *	ShippingInclusionRule shippingInclusionRule = shippinginclusionrule.updateShippingInclusionRule( rule,  profilecode,  id,  responseFields);
@@ -195,7 +195,7 @@ public class ShippingInclusionRuleResource {
 	}
 
 	/**
-	 * Deletes the specified shipping inclusion rule.
+	 * 
 	 * <p><pre><code>
 	 *	ShippingInclusionRule shippinginclusionrule = new ShippingInclusionRule();
 	 *	shippinginclusionrule.deleteShippingInclusionRule( profilecode,  id);

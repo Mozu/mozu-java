@@ -21,9 +21,6 @@ public class ProductPublishingInfo implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The user ID of the user who last published changes for this product in the catalog.
-	 */
 	protected  String lastPublishedBy;
 
 	public String getLastPublishedBy() {
@@ -34,9 +31,6 @@ public class ProductPublishingInfo implements Serializable
 		this.lastPublishedBy = lastPublishedBy;
 	}
 
-	/**
-	 * The date and time a draft change for this product was published to the catalog.
-	 */
 	protected  DateTime lastPublishedDate;
 
 	public DateTime getLastPublishedDate() {
@@ -47,9 +41,6 @@ public class ProductPublishingInfo implements Serializable
 		this.lastPublishedDate = lastPublishedDate;
 	}
 
-	/**
-	 * The current publishing state of this product in the catalog, which is Live, New, or Draft. Live products appear on the storefront and have no pending changes. New products have been created but do not yet appear on the storefront. Draft products appear on the storefront but have pending changes that have not yet been published.
-	 */
 	protected  String publishedState;
 
 	public String getPublishedState() {
@@ -61,7 +52,7 @@ public class ProductPublishingInfo implements Serializable
 	}
 
 	/**
-	 * Mozu.ProductAdmin.Contracts.ProductPublishingInfo publishSetCode ApiTypeMember DOCUMENT_HERE 
+	 * The unique identifier of the publish set the pending product draft is assigned to. This field is not valid if the product is live.
 	 */
 	protected  String publishSetCode;
 

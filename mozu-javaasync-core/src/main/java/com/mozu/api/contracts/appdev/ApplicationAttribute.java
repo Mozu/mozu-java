@@ -16,7 +16,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.appdev.Attribute;
 
 /**
- *	Mozu.AppDev.Contracts.ApplicationAttribute ApiType DOCUMENT_HERE 
+ *	This property is not exposed in documentation.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ApplicationAttribute implements Serializable

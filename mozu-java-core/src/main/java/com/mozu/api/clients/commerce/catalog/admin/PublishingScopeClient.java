@@ -24,7 +24,7 @@ import com.mozu.api.DataViewMode;
 public class PublishingScopeClient {
 	
 	/**
-	 * Retrieves the details of the specified product publish set.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.PublishSet> mozuClient=GetPublishSetClient( publishSetCode);
 	 * client.setBaseAddress(url);
@@ -42,7 +42,7 @@ public class PublishingScopeClient {
 	}
 
 	/**
-	 * Retrieves the details of the specified product publish set.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.PublishSet> mozuClient=GetPublishSetClient( publishSetCode,  responseFields);
 	 * client.setBaseAddress(url);
@@ -68,7 +68,7 @@ public class PublishingScopeClient {
 	}
 
 	/**
-	 * Retrieves a list of product publish sets and their properties, including the amount of pending product changes that are included in each one.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.PublishSetCollection> mozuClient=GetPublishSetsClient();
 	 * client.setBaseAddress(url);
@@ -85,7 +85,7 @@ public class PublishingScopeClient {
 	}
 
 	/**
-	 * Retrieves a list of product publish sets and their properties, including the amount of pending product changes that are included in each one.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.PublishSetCollection> mozuClient=GetPublishSetsClient( responseFields);
 	 * client.setBaseAddress(url);
@@ -110,7 +110,7 @@ public class PublishingScopeClient {
 	}
 
 	/**
-	 * Deletes the draft version of product changes (pending product changes) for each product code specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DiscardDraftsClient(dataViewMode,  publishScope);
 	 * client.setBaseAddress(url);
@@ -135,7 +135,7 @@ public class PublishingScopeClient {
 	}
 
 	/**
-	 * Publishes the draft version of product changes (pending product changes) for each product code specified in the request, and changes the product publish state to "live".
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=PublishDraftsClient(dataViewMode,  publishScope);
 	 * client.setBaseAddress(url);
@@ -160,7 +160,7 @@ public class PublishingScopeClient {
 	}
 
 	/**
-	 * Assigns pending product changes to a specified product publish set. Use the code field to specify the product publish set.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.PublishSet> mozuClient=AssignProductsToPublishSetClient( publishSet);
 	 * client.setBaseAddress(url);
@@ -179,7 +179,7 @@ public class PublishingScopeClient {
 	}
 
 	/**
-	 * Assigns pending product changes to a specified product publish set. Use the code field to specify the product publish set.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.PublishSet> mozuClient=AssignProductsToPublishSetClient( publishSet,  responseFields);
 	 * client.setBaseAddress(url);
@@ -207,7 +207,7 @@ public class PublishingScopeClient {
 	}
 
 	/**
-	 * Deletes the specified product publish set. If you set the discardDrafts parameter to true, this operation also deletes the product drafts assigned to the publish set.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeletePublishSetClient( publishSetCode);
 	 * client.setBaseAddress(url);
@@ -223,7 +223,7 @@ public class PublishingScopeClient {
 	}
 
 	/**
-	 * Deletes the specified product publish set. If you set the discardDrafts parameter to true, this operation also deletes the product drafts assigned to the publish set.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeletePublishSetClient( publishSetCode,  discardDrafts);
 	 * client.setBaseAddress(url);

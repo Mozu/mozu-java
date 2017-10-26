@@ -13,8 +13,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
-import com.mozu.api.contracts.productruntime.CategoryContent;
 import com.mozu.api.contracts.productruntime.Category;
+import com.mozu.api.contracts.productruntime.CategoryContent;
 
 /**
  *	A descriptive container that groups products. A category is merchant defined with associated products and discounts as configured. GThe storefront displays products in a hierarchy of categories. As such, categories can include a nesting of sub-categories to organize products and product options per set guidelines such as color, brand, material, and size.
@@ -38,9 +38,6 @@ public class Category implements Serializable
 		this.categoryCode = categoryCode;
 	}
 
-	/**
-	 * Unique identifier for the storefront container used to organize products.
-	 */
 	protected  Integer categoryId;
 
 	public Integer getCategoryId() {
@@ -77,9 +74,6 @@ public class Category implements Serializable
 		this.isDisplayed = isDisplayed;
 	}
 
-	/**
-	 * The numeric order of objects, used by a vocabulary value defined for an extensible attribute, images, and categories.
-	 */
 	protected  Integer sequence;
 
 	public Integer getSequence() {
@@ -90,22 +84,6 @@ public class Category implements Serializable
 		this.sequence = sequence;
 	}
 
-	/**
-	 * Complex type that contains content for a language specified by LocaleCode.
-	 */
-	protected  CategoryContent content;
-
-	public CategoryContent getContent() {
-		return this.content;
-	}
-
-	public void setContent(CategoryContent content) {
-		this.content = content;
-	}
-
-	/**
-	 * List of the subcategories in the hierarchy for the specified categories.
-	 */
 	protected List<Category> childrenCategories;
 	public List<Category> getChildrenCategories() {
 		return this.childrenCategories;
@@ -114,9 +92,6 @@ public class Category implements Serializable
 		this.childrenCategories = childrenCategories;
 	}
 
-	/**
-	 * If applicable, the parent category in the hierarchy for the specified category.
-	 */
 	protected  Category parentCategory;
 
 	public Category getParentCategory() {
@@ -125,6 +100,16 @@ public class Category implements Serializable
 
 	public void setParentCategory(Category parentCategory) {
 		this.parentCategory = parentCategory;
+	}
+
+	protected  CategoryContent content;
+
+	public CategoryContent getContent() {
+		return this.content;
+	}
+
+	public void setContent(CategoryContent content) {
+		this.content = content;
 	}
 
 

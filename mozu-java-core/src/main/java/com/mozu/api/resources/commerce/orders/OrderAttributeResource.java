@@ -35,7 +35,7 @@ public class OrderAttributeResource {
 
 	
 	/**
-	 * Retrieves a list of the attributes defined for the order specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	OrderAttribute orderattribute = new OrderAttribute();
 	 *	OrderAttribute orderAttribute = orderattribute.getOrderAttributes( orderId);
@@ -54,7 +54,7 @@ public class OrderAttributeResource {
 	}
 
 	/**
-	 * Applies a list of attributes to the order specified in the request and defines a value for each attribute in the request body.
+	 * 
 	 * <p><pre><code>
 	 *	OrderAttribute orderattribute = new OrderAttribute();
 	 *	OrderAttribute orderAttribute = orderattribute.createOrderAttributes( orderAttributes,  orderId);
@@ -75,7 +75,7 @@ public class OrderAttributeResource {
 	}
 
 	/**
-	 * Updates one or more properties of an attribute defined for the order specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	OrderAttribute orderattribute = new OrderAttribute();
 	 *	OrderAttribute orderAttribute = orderattribute.updateOrderAttributes( orderAttributes,  orderId);
@@ -92,7 +92,7 @@ public class OrderAttributeResource {
 	}
 
 	/**
-	 * Updates one or more properties of an attribute defined for the order specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	OrderAttribute orderattribute = new OrderAttribute();
 	 *	OrderAttribute orderAttribute = orderattribute.updateOrderAttributes( orderAttributes,  orderId,  removeMissing);

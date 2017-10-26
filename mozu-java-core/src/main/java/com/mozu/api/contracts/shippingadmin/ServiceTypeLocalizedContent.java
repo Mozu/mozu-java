@@ -21,9 +21,6 @@ public class ServiceTypeLocalizedContent implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Language used for the entity. Currently, only "en-US" is supported.
-	 */
 	protected  String localeCode;
 
 	public String getLocaleCode() {
@@ -34,9 +31,6 @@ public class ServiceTypeLocalizedContent implements Serializable
 		this.localeCode = localeCode;
 	}
 
-	/**
-	 * The user supplied name that appears in . You can use this field for identification purposes.
-	 */
 	protected  String name;
 
 	public String getName() {

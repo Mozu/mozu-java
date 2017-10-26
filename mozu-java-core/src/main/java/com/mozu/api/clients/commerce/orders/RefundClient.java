@@ -23,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 public class RefundClient {
 	
 	/**
-	 * Creates a refund based on the information supplied in the request.  
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.refunds.Refund> mozuClient=CreateRefundClient( refund,  orderId);
 	 * client.setBaseAddress(url);
@@ -42,7 +42,7 @@ public class RefundClient {
 	}
 
 	/**
-	 * Creates a refund based on the information supplied in the request.  
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.refunds.Refund> mozuClient=CreateRefundClient( refund,  orderId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -70,7 +70,7 @@ public class RefundClient {
 	}
 
 	/**
-	 * Resends the order refund email previously sent to the shopper. 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=ResendRefundEmailClient( orderId,  refundId);
 	 * client.setBaseAddress(url);

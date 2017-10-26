@@ -24,7 +24,7 @@ import com.mozu.api.DataViewMode;
 public class CategoryClient {
 	
 	/**
-	 * Retrieves a list of categories according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.CategoryPagedCollection> mozuClient=GetCategoriesClient(dataViewMode);
 	 * client.setBaseAddress(url);
@@ -40,7 +40,7 @@ public class CategoryClient {
 	}
 
 	/**
-	 * Retrieves a list of categories according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.CategoryPagedCollection> mozuClient=GetCategoriesClient(dataViewMode,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * client.setBaseAddress(url);
@@ -48,10 +48,10 @@ public class CategoryClient {
 	 * CategoryPagedCollection categoryPagedCollection = client.Result();
 	 * </code></pre></p>
 	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.CategoryPagedCollection>
 	 * @see com.mozu.api.contracts.productadmin.CategoryPagedCollection
 	 */
@@ -69,7 +69,7 @@ public class CategoryClient {
 	}
 
 	/**
-	 * Retrieves the list of subcategories within a category.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.CategoryCollection> mozuClient=GetChildCategoriesClient( categoryId);
 	 * client.setBaseAddress(url);
@@ -86,7 +86,7 @@ public class CategoryClient {
 	}
 
 	/**
-	 * Retrieves the list of subcategories within a category.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.CategoryCollection> mozuClient=GetChildCategoriesClient( categoryId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -94,7 +94,7 @@ public class CategoryClient {
 	 * CategoryCollection categoryCollection = client.Result();
 	 * </code></pre></p>
 	 * @param categoryId Unique identifier of the category to modify.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.CategoryCollection>
 	 * @see com.mozu.api.contracts.productadmin.CategoryCollection
 	 */
@@ -111,7 +111,7 @@ public class CategoryClient {
 	}
 
 	/**
-	 * Retrieves the details of a single category.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.Category> mozuClient=GetCategoryClient(dataViewMode,  categoryId);
 	 * client.setBaseAddress(url);
@@ -128,7 +128,7 @@ public class CategoryClient {
 	}
 
 	/**
-	 * Retrieves the details of a single category.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.Category> mozuClient=GetCategoryClient(dataViewMode,  categoryId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -136,7 +136,7 @@ public class CategoryClient {
 	 * Category category = client.Result();
 	 * </code></pre></p>
 	 * @param categoryId Unique identifier of the category to modify.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Category>
 	 * @see com.mozu.api.contracts.productadmin.Category
 	 */
@@ -154,7 +154,7 @@ public class CategoryClient {
 	}
 
 	/**
-	 * Adds a new category to the site's category hierarchy.Specify a  to determine where to place the category in the hierarchy. If no  is specified, the new category is a top-level category.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.Category> mozuClient=AddCategoryClient( category);
 	 * client.setBaseAddress(url);
@@ -172,7 +172,7 @@ public class CategoryClient {
 	}
 
 	/**
-	 * Adds a new category to the site's category hierarchy.Specify a  to determine where to place the category in the hierarchy. If no  is specified, the new category is a top-level category.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.Category> mozuClient=AddCategoryClient( category,  incrementSequence,  useProvidedId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -180,7 +180,7 @@ public class CategoryClient {
 	 * Category category = client.Result();
 	 * </code></pre></p>
 	 * @param incrementSequence If true, when adding a new product category, set the sequence number of the new category to an increment of one integer greater than the maximum available sequence number across all product categories. If false, set the sequence number to zero.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param useProvidedId Optional. If ,  uses the  you specify in the request as the category's id. If ,  generates an  for the category regardless if you specify an id in the request.If you specify an id already in use and set this parameter to ,  returns an error.
 	 * @param category A descriptive container that groups products. A category is merchant defined with associated products and discounts as configured. GThe storefront displays products in a hierarchy of categories. As such, categories can include a nesting of sub-categories to organize products and product options per set guidelines such as color, brand, material, and size.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Category>
@@ -201,7 +201,7 @@ public class CategoryClient {
 	}
 
 	/**
-	 * Validate the precomputed dynamic category expression for correctness.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.DynamicExpression> mozuClient=ValidateDynamicExpressionClient( dynamicExpressionIn);
 	 * client.setBaseAddress(url);
@@ -219,7 +219,7 @@ public class CategoryClient {
 	}
 
 	/**
-	 * Validate the precomputed dynamic category expression for correctness.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.DynamicExpression> mozuClient=ValidateDynamicExpressionClient( dynamicExpressionIn,  responseFields);
 	 * client.setBaseAddress(url);
@@ -246,7 +246,7 @@ public class CategoryClient {
 	}
 
 	/**
-	 * Validates the readltime dynamic category expression for correctness.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.DynamicExpression> mozuClient=ValidateRealTimeDynamicExpressionClient( dynamicExpressionIn);
 	 * client.setBaseAddress(url);
@@ -264,7 +264,7 @@ public class CategoryClient {
 	}
 
 	/**
-	 * Validates the readltime dynamic category expression for correctness.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.DynamicExpression> mozuClient=ValidateRealTimeDynamicExpressionClient( dynamicExpressionIn,  responseFields);
 	 * client.setBaseAddress(url);
@@ -291,7 +291,7 @@ public class CategoryClient {
 	}
 
 	/**
-	 * Update the properties of a defined category or move it to another location in the category hierarchy. Because this operation replaces the defined resource,include all the information to maintain for the category in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.Category> mozuClient=UpdateCategoryClient( category,  categoryId);
 	 * client.setBaseAddress(url);
@@ -310,7 +310,7 @@ public class CategoryClient {
 	}
 
 	/**
-	 * Update the properties of a defined category or move it to another location in the category hierarchy. Because this operation replaces the defined resource,include all the information to maintain for the category in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.Category> mozuClient=UpdateCategoryClient( category,  categoryId,  cascadeVisibility,  responseFields);
 	 * client.setBaseAddress(url);
@@ -319,7 +319,7 @@ public class CategoryClient {
 	 * </code></pre></p>
 	 * @param cascadeVisibility If true, when changing the display option for the category, change it for all subcategories also. The default value is false.
 	 * @param categoryId Unique identifier of the category to modify.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param category A descriptive container that groups products. A category is merchant defined with associated products and discounts as configured. GThe storefront displays products in a hierarchy of categories. As such, categories can include a nesting of sub-categories to organize products and product options per set guidelines such as color, brand, material, and size.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Category>
 	 * @see com.mozu.api.contracts.productadmin.Category
@@ -339,7 +339,7 @@ public class CategoryClient {
 	}
 
 	/**
-	 * Deletes the specified category. Use the categoryId parameter to specify the category.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteCategoryByIdClient( categoryId);
 	 * client.setBaseAddress(url);
@@ -354,7 +354,7 @@ public class CategoryClient {
 	}
 
 	/**
-	 * Deletes the specified category. Use the categoryId parameter to specify the category.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteCategoryByIdClient( categoryId,  cascadeDelete,  forceDelete,  reassignToParent);
 	 * client.setBaseAddress(url);

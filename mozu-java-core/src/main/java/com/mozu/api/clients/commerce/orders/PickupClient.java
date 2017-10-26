@@ -23,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 public class PickupClient {
 	
 	/**
-	 * Retrieves a list of the actions available to perform for the pickup specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<String>> mozuClient=GetAvailablePickupFulfillmentActionsClient( orderId,  pickupId);
 	 * client.setBaseAddress(url);
@@ -48,7 +48,7 @@ public class PickupClient {
 	}
 
 	/**
-	 * Retrieves the details of the in-store pickup specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Pickup> mozuClient=GetPickupClient( orderId,  pickupId);
 	 * client.setBaseAddress(url);
@@ -66,7 +66,7 @@ public class PickupClient {
 	}
 
 	/**
-	 * Retrieves the details of the in-store pickup specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Pickup> mozuClient=GetPickupClient( orderId,  pickupId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -75,7 +75,7 @@ public class PickupClient {
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
 	 * @param pickupId Unique identifier of the pickup to remove.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Pickup>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 */
@@ -92,7 +92,7 @@ public class PickupClient {
 	}
 
 	/**
-	 * Create a new pickup for the order specified in the request for in-store fufillment.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Pickup> mozuClient=CreatePickupClient( pickup,  orderId);
 	 * client.setBaseAddress(url);
@@ -111,7 +111,7 @@ public class PickupClient {
 	}
 
 	/**
-	 * Create a new pickup for the order specified in the request for in-store fufillment.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Pickup> mozuClient=CreatePickupClient( pickup,  orderId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -119,7 +119,7 @@ public class PickupClient {
 	 * Pickup pickup = client.Result();
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param pickup Properties of an in-store pickup defined to fulfill items in an order.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Pickup>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
@@ -139,7 +139,7 @@ public class PickupClient {
 	}
 
 	/**
-	 * Updates one or more details of a defined in-store pickup.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Pickup> mozuClient=UpdatePickupClient( pickup,  orderId,  pickupId);
 	 * client.setBaseAddress(url);
@@ -159,7 +159,7 @@ public class PickupClient {
 	}
 
 	/**
-	 * Updates one or more details of a defined in-store pickup.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Pickup> mozuClient=UpdatePickupClient( pickup,  orderId,  pickupId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -168,7 +168,7 @@ public class PickupClient {
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
 	 * @param pickupId Unique identifier of the pickup to remove.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param pickup Properties of an in-store pickup defined to fulfill items in an order.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Pickup>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
@@ -188,7 +188,7 @@ public class PickupClient {
 	}
 
 	/**
-	 * Removes a pickup previously defined for order item in-store pickup fulfillment.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeletePickupClient( orderId,  pickupId);
 	 * client.setBaseAddress(url);

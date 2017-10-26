@@ -43,7 +43,7 @@ public class DocumentListTypeResource {
 	}
 		
 	/**
-	 * Gets all the available documentListTypes.
+	 * 
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	DocumentListTypeCollection documentListTypeCollection = documentlisttype.getDocumentListTypes();
@@ -57,7 +57,7 @@ public class DocumentListTypeResource {
 	}
 
 	/**
-	 * Gets all the available documentListTypes.
+	 * 
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	DocumentListTypeCollection documentListTypeCollection = documentlisttype.getDocumentListTypes( pageSize,  startIndex,  responseFields);
@@ -78,7 +78,7 @@ public class DocumentListTypeResource {
 	}
 
 	/**
-	 * Gets a documentListType.
+	 * 
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	DocumentListType documentListType = documentlisttype.getDocumentListType( documentListTypeFQN);
@@ -93,7 +93,7 @@ public class DocumentListTypeResource {
 	}
 
 	/**
-	 * Gets a documentListType.
+	 * 
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	DocumentListType documentListType = documentlisttype.getDocumentListType( documentListTypeFQN,  responseFields);
@@ -113,7 +113,7 @@ public class DocumentListTypeResource {
 	}
 
 	/**
-	 * Creates a new documentListType.
+	 * 
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	DocumentListType documentListType = documentlisttype.createDocumentListType( list);
@@ -129,12 +129,12 @@ public class DocumentListTypeResource {
 	}
 
 	/**
-	 * Creates a new documentListType.
+	 * 
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	DocumentListType documentListType = documentlisttype.createDocumentListType( list,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param list Properties for the document list type. Document lists contain documents with an associated document type, such as web pages.
 	 * @return com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
@@ -150,7 +150,7 @@ public class DocumentListTypeResource {
 	}
 
 	/**
-	 * Updates a DocumentListType
+	 * 
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	DocumentListType documentListType = documentlisttype.updateDocumentListType( list,  documentListTypeFQN);
@@ -167,13 +167,13 @@ public class DocumentListTypeResource {
 	}
 
 	/**
-	 * Updates a DocumentListType
+	 * 
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	DocumentListType documentListType = documentlisttype.updateDocumentListType( list,  documentListTypeFQN,  responseFields);
 	 * </code></pre></p>
 	 * @param documentListTypeFQN 
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param list Properties for the document list type. Document lists contain documents with an associated document type, such as web pages.
 	 * @return com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType

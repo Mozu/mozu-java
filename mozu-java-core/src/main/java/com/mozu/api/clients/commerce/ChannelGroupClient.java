@@ -23,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 public class ChannelGroupClient {
 	
 	/**
-	 * Retrieves a list of defined channel groups according to any filter and sort criteria specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.channels.ChannelGroupCollection> mozuClient=GetChannelGroupsClient();
 	 * client.setBaseAddress(url);
@@ -39,18 +39,18 @@ public class ChannelGroupClient {
 	}
 
 	/**
-	 * Retrieves a list of defined channel groups according to any filter and sort criteria specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.channels.ChannelGroupCollection> mozuClient=GetChannelGroupsClient( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ChannelGroupCollection channelGroupCollection = client.Result();
 	 * </code></pre></p>
-	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.channels.ChannelGroupCollection>
 	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroupCollection
 	 */
@@ -67,7 +67,7 @@ public class ChannelGroupClient {
 	}
 
 	/**
-	 * Retrieves the details of a defined channel group.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.channels.ChannelGroup> mozuClient=GetChannelGroupClient( code);
 	 * client.setBaseAddress(url);
@@ -84,7 +84,7 @@ public class ChannelGroupClient {
 	}
 
 	/**
-	 * Retrieves the details of a defined channel group.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.channels.ChannelGroup> mozuClient=GetChannelGroupClient( code,  responseFields);
 	 * client.setBaseAddress(url);
@@ -92,7 +92,7 @@ public class ChannelGroupClient {
 	 * ChannelGroup channelGroup = client.Result();
 	 * </code></pre></p>
 	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.channels.ChannelGroup>
 	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
 	 */
@@ -109,7 +109,7 @@ public class ChannelGroupClient {
 	}
 
 	/**
-	 * Creates a new group of channels with common information.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.channels.ChannelGroup> mozuClient=CreateChannelGroupClient( channelGroup);
 	 * client.setBaseAddress(url);
@@ -127,14 +127,14 @@ public class ChannelGroupClient {
 	}
 
 	/**
-	 * Creates a new group of channels with common information.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.channels.ChannelGroup> mozuClient=CreateChannelGroupClient( channelGroup,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ChannelGroup channelGroup = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param channelGroup Properties of a group of channels that share common information.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.channels.ChannelGroup>
 	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
@@ -154,7 +154,7 @@ public class ChannelGroupClient {
 	}
 
 	/**
-	 * Updates one or more properties of a defined channel group.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.channels.ChannelGroup> mozuClient=UpdateChannelGroupClient( channelGroup,  code);
 	 * client.setBaseAddress(url);
@@ -173,7 +173,7 @@ public class ChannelGroupClient {
 	}
 
 	/**
-	 * Updates one or more properties of a defined channel group.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.channels.ChannelGroup> mozuClient=UpdateChannelGroupClient( channelGroup,  code,  responseFields);
 	 * client.setBaseAddress(url);
@@ -181,7 +181,7 @@ public class ChannelGroupClient {
 	 * ChannelGroup channelGroup = client.Result();
 	 * </code></pre></p>
 	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param channelGroup Properties of a group of channels that share common information.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.channels.ChannelGroup>
 	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
@@ -201,7 +201,7 @@ public class ChannelGroupClient {
 	}
 
 	/**
-	 * Deletes a defined group of channels, which removes the group association with each channel in the group but does not delete the channel definitions themselves.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteChannelGroupClient( code);
 	 * client.setBaseAddress(url);

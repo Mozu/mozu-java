@@ -35,7 +35,7 @@ public class SearchResource {
 
 	
 	/**
-	 * Retrieves the details of the specified search tuning rule.
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchTuningRule searchTuningRule = search.getSearchTuningRule( searchTuningRuleCode);
@@ -50,7 +50,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * Retrieves the details of the specified search tuning rule.
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchTuningRule searchTuningRule = search.getSearchTuningRule( searchTuningRuleCode,  responseFields);
@@ -70,7 +70,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * Retrieves a list of search tuning rules and their properties.
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchTuningRuleCollection searchTuningRuleCollection = search.getSearchTuningRules();
@@ -84,7 +84,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * Retrieves a list of search tuning rules and their properties.
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchTuningRuleCollection searchTuningRuleCollection = search.getSearchTuningRules( startIndex,  pageSize,  sortBy,  filter,  responseFields);
@@ -107,7 +107,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * Retrieves the details of the specified search tuning rule sort fields. Sort fields allow you to control the product relevance whenver shoppers sort products on a page. For more information about sort relevance, refer to [Search Tuning Rules and Sorting](../../../developer/api-guides/search-tuning-rules.htm#search_tuning_rules_and_sorting).
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchTuningRuleSortFields searchTuningRuleSortFields = search.getSearchTuningRuleSortFields();
@@ -121,7 +121,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * Retrieves the details of the specified search tuning rule sort fields. Sort fields allow you to control the product relevance whenver shoppers sort products on a page. For more information about sort relevance, refer to [Search Tuning Rules and Sorting](../../../developer/api-guides/search-tuning-rules.htm#search_tuning_rules_and_sorting).
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchTuningRuleSortFields searchTuningRuleSortFields = search.getSearchTuningRuleSortFields( responseFields);
@@ -140,7 +140,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * Retrieves the search settings for the specified site.Refer to [Search Settings API Overview](../../../../developer/api-guides/search-settings.htm) for more information about 's search settings.
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchSettings searchSettings = search.getSettings();
@@ -154,7 +154,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * Retrieves the search settings for the specified site.Refer to [Search Settings API Overview](../../../../developer/api-guides/search-settings.htm) for more information about 's search settings.
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchSettings searchSettings = search.getSettings( responseFields);
@@ -173,7 +173,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * Retrieves a collection of synonyms definitions for product searches.Refer to [Search Synonyms](../../../../developer/api-guides/search-settings.htm#search_synonyms) for more information about search synonyms.
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SynonymDefinitionCollection synonymDefinitionCollection = search.getSynonymDefinitionCollection( localeCode);
@@ -188,7 +188,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * Retrieves a collection of synonyms definitions for product searches.Refer to [Search Synonyms](../../../../developer/api-guides/search-settings.htm#search_synonyms) for more information about search synonyms.
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SynonymDefinitionCollection synonymDefinitionCollection = search.getSynonymDefinitionCollection( localeCode,  responseFields);
@@ -208,7 +208,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * Retrieves a list of synonym definitions according to any specified filter criteria and sort options.Refer to [Search Synonyms](../../../../developer/api-guides/search-settings.htm#search_synonyms) for more information about search synonyms.
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SynonymDefinitionPagedCollection synonymDefinitionPagedCollection = search.getSynonymDefinitions();
@@ -222,7 +222,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * Retrieves a list of synonym definitions according to any specified filter criteria and sort options.Refer to [Search Synonyms](../../../../developer/api-guides/search-settings.htm#search_synonyms) for more information about search synonyms.
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SynonymDefinitionPagedCollection synonymDefinitionPagedCollection = search.getSynonymDefinitions( startIndex,  pageSize,  sortBy,  filter,  responseFields);
@@ -245,7 +245,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * Retrieves the details of the specified synonym defintion.Refer to [Search Synonyms](../../../../developer/api-guides/search-settings.htm#search_synonyms) for more information about search synonyms.
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SynonymDefinition synonymDefinition = search.getSynonymDefinition( synonymId);
@@ -260,7 +260,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * Retrieves the details of the specified synonym defintion.Refer to [Search Synonyms](../../../../developer/api-guides/search-settings.htm#search_synonyms) for more information about search synonyms.
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SynonymDefinition synonymDefinition = search.getSynonymDefinition( synonymId,  responseFields);
@@ -280,7 +280,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * Creates a search tuning rule for your site. You can use search tuning rules to fine tune the product search results that appear when a shopper searches for a specific keyword, or navigates to a category page.For more information on search tuning rules, refer to [Search Tuning Rules](../../../../developer/api-guides/search-tuning-rules.htm).
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchTuningRule searchTuningRule = search.addSearchTuningRule( searchTuningRuleIn);
@@ -296,7 +296,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * Creates a search tuning rule for your site. You can use search tuning rules to fine tune the product search results that appear when a shopper searches for a specific keyword, or navigates to a category page.For more information on search tuning rules, refer to [Search Tuning Rules](../../../../developer/api-guides/search-tuning-rules.htm).
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchTuningRule searchTuningRule = search.addSearchTuningRule( searchTuningRuleIn,  responseFields);
@@ -317,7 +317,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * Updates the details of the search tuning rule sort fields.
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchTuningRuleSortFields searchTuningRuleSortFields = search.updateSearchTuningRuleSortFields( searchTuningRuleSortFieldsIn);
@@ -333,7 +333,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * Updates the details of the search tuning rule sort fields.
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchTuningRuleSortFields searchTuningRuleSortFields = search.updateSearchTuningRuleSortFields( searchTuningRuleSortFieldsIn,  responseFields);
@@ -354,7 +354,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * Updates a collection of synonym definitions.Refer to [Search Synonyms](../../../../developer/api-guides/search-settings.htm#search_synonyms) for more information about search synonyms.
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SynonymDefinitionCollection synonymDefinitionCollection = search.updateSynonymDefinitionCollection( collection,  localeCode);
@@ -371,7 +371,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * Updates a collection of synonym definitions.Refer to [Search Synonyms](../../../../developer/api-guides/search-settings.htm#search_synonyms) for more information about search synonyms.
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SynonymDefinitionCollection synonymDefinitionCollection = search.updateSynonymDefinitionCollection( collection,  localeCode,  responseFields);
@@ -393,7 +393,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * Creates a new synonym definition.Refer to [Search Synonyms](../../../../developer/api-guides/search-settings.htm#search_synonyms) for more information about search synonyms.
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SynonymDefinition synonymDefinition = search.addSynonymDefinition( synonymDefinition);
@@ -409,7 +409,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * Creates a new synonym definition.Refer to [Search Synonyms](../../../../developer/api-guides/search-settings.htm#search_synonyms) for more information about search synonyms.
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SynonymDefinition synonymDefinition = search.addSynonymDefinition( synonymDefinition,  responseFields);
@@ -430,7 +430,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * Updates the details of the specified search tuning rule.
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchTuningRule searchTuningRule = search.updateSearchTuningRule( searchTuningRuleIn,  searchTuningRuleCode);
@@ -447,7 +447,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * Updates the details of the specified search tuning rule.
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchTuningRule searchTuningRule = search.updateSearchTuningRule( searchTuningRuleIn,  searchTuningRuleCode,  responseFields);
@@ -469,7 +469,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * Updates the search setting properties for a specific site.Refer to [Search Settings API Overview](../../../../developer/api-guides/search-settings.htm) for more information about 's search settings.
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchSettings searchSettings = search.updateSettings( settings);
@@ -485,7 +485,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * Updates the search setting properties for a specific site.Refer to [Search Settings API Overview](../../../../developer/api-guides/search-settings.htm) for more information about 's search settings.
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchSettings searchSettings = search.updateSettings( settings,  responseFields);
@@ -506,7 +506,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * Updates the details of a synonym definition.Refer to [Search Synonyms](../../../../developer/api-guides/search-settings.htm#search_synonyms) for more information about search synonyms.
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SynonymDefinition synonymDefinition = search.updateSynonymDefinition( synonymDefinition,  synonymId);
@@ -523,7 +523,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * Updates the details of a synonym definition.Refer to [Search Synonyms](../../../../developer/api-guides/search-settings.htm#search_synonyms) for more information about search synonyms.
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SynonymDefinition synonymDefinition = search.updateSynonymDefinition( synonymDefinition,  synonymId,  responseFields);
@@ -545,7 +545,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * Deletes the specified search tuning rule from the site.
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	search.deleteSearchTuningRule( searchTuningRuleCode);
@@ -563,7 +563,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * Deletes the specified synonym definition.Refer to [Search Synonyms](../../../../developer/api-guides/search-settings.htm#search_synonyms) for more information about search synonyms.
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	search.deleteSynonymDefinition( synonymId);

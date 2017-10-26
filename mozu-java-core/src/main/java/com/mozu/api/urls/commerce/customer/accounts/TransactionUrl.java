@@ -28,7 +28,7 @@ public class TransactionUrl
 	/**
 	 * Get Resource Url for AddTransaction
 	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addTransactionUrl(Integer accountId, String responseFields)

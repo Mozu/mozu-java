@@ -35,7 +35,7 @@ public class CouponSetResource {
 
 	
 	/**
-	 * Retrieves a list of coupon sets in the catalog according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	CouponSetCollection couponSetCollection = couponset.getCouponSets();
@@ -49,7 +49,7 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * Retrieves a list of coupon sets in the catalog according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	CouponSetCollection couponSetCollection = couponset.getCouponSets( startIndex,  pageSize,  sortBy,  filter,  includeCounts,  responseFields);
@@ -73,7 +73,7 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * Retrieves the details of a single coupon set. Use the couponSetCode parameter to specify the coupon set. Use the includeCounts parameter to specify whether to include the number of redeemed coupons, existing coupon codes, and assigned discounts.
+	 * 
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	CouponSet couponSet = couponset.getCouponSet( couponSetCode);
@@ -88,7 +88,7 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * Retrieves the details of a single coupon set. Use the couponSetCode parameter to specify the coupon set. Use the includeCounts parameter to specify whether to include the number of redeemed coupons, existing coupon codes, and assigned discounts.
+	 * 
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	CouponSet couponSet = couponset.getCouponSet( couponSetCode,  includeCounts,  responseFields);
@@ -109,7 +109,7 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * Returns a unique, random four character code to use for the couponSetCode.
+	 * 
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	string string = couponset.getUniqueCouponSetCode();
@@ -123,7 +123,7 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * Returns a unique, random four character code to use for the couponSetCode.
+	 * 
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	string string = couponset.getUniqueCouponSetCode( responseFields);
@@ -142,7 +142,7 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * Adds a single coupon set to the catalog.
+	 * 
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	CouponSet couponSet = couponset.addCouponSet( couponSet);
@@ -158,7 +158,7 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * Adds a single coupon set to the catalog.
+	 * 
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	CouponSet couponSet = couponset.addCouponSet( couponSet,  responseFields);
@@ -179,7 +179,7 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * Validates the couponSetCode and tests it for uniqueness.
+	 * 
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	couponset.validateUniqueCouponSetCode( code);
@@ -197,7 +197,7 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * Updates one or more properties of a coupon set in the catalog.
+	 * 
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	CouponSet couponSet = couponset.updateCouponSet( couponSet,  couponSetCode);
@@ -214,7 +214,7 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * Updates one or more properties of a coupon set in the catalog.
+	 * 
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	CouponSet couponSet = couponset.updateCouponSet( couponSet,  couponSetCode,  responseFields);
@@ -236,7 +236,7 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * Deletes a specified coupon set from the catalog. Use the couponSetCode parameter to specify the coupon set to delete.
+	 * 
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	couponset.deleteCouponSet( couponSetCode);

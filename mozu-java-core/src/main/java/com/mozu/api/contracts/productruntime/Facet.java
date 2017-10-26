@@ -24,9 +24,6 @@ public class Facet implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The type of facet. Valid values are "range" (enables creation of a range of values) or "value" (populates the facet values based on the associated attribute or category).
-	 */
 	protected  String facetType;
 
 	public String getFacetType() {
@@ -37,9 +34,6 @@ public class Facet implements Serializable
 		this.facetType = facetType;
 	}
 
-	/**
-	 * The field name associated with the facet.
-	 */
 	protected  String field;
 
 	public String getField() {
@@ -50,9 +44,6 @@ public class Facet implements Serializable
 		this.field = field;
 	}
 
-	/**
-	 * Descriptive text used as a label for objects, such as field names, facets, date ranges, contact information, and package information.
-	 */
 	protected  String label;
 
 	public String getLabel() {
@@ -63,9 +54,6 @@ public class Facet implements Serializable
 		this.label = label;
 	}
 
-	/**
-	 * List of value data for objects.
-	 */
 	protected List<FacetValue> values;
 	public List<FacetValue> getValues() {
 		return this.values;

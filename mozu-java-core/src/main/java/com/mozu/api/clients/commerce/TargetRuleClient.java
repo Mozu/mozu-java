@@ -23,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 public class TargetRuleClient {
 	
 	/**
-	 * Retrieves a list of target rules and their details according to any specified facets, filter criteria, and sort options.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.TargetRuleCollection> mozuClient=GetTargetRulesClient();
 	 * client.setBaseAddress(url);
@@ -40,7 +40,7 @@ public class TargetRuleClient {
 	}
 
 	/**
-	 * Retrieves a list of target rules and their details according to any specified facets, filter criteria, and sort options.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.TargetRuleCollection> mozuClient=GetTargetRulesClient( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * client.setBaseAddress(url);
@@ -69,7 +69,7 @@ public class TargetRuleClient {
 	}
 
 	/**
-	 * Retrieves the details of the specified target rule.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.TargetRule> mozuClient=GetTargetRuleClient( code);
 	 * client.setBaseAddress(url);
@@ -87,7 +87,7 @@ public class TargetRuleClient {
 	}
 
 	/**
-	 * Retrieves the details of the specified target rule.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.TargetRule> mozuClient=GetTargetRuleClient( code,  responseFields);
 	 * client.setBaseAddress(url);
@@ -113,7 +113,7 @@ public class TargetRuleClient {
 	}
 
 	/**
-	 * Creates a new target rule.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.TargetRule> mozuClient=CreateTargetRuleClient( targetRule);
 	 * client.setBaseAddress(url);
@@ -132,7 +132,7 @@ public class TargetRuleClient {
 	}
 
 	/**
-	 * Creates a new target rule.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.TargetRule> mozuClient=CreateTargetRuleClient( targetRule,  responseFields);
 	 * client.setBaseAddress(url);
@@ -160,7 +160,7 @@ public class TargetRuleClient {
 	}
 
 	/**
-	 * Validates the details of a target rule.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=ValidateTargetRuleClient( targetRule);
 	 * client.setBaseAddress(url);
@@ -184,7 +184,7 @@ public class TargetRuleClient {
 	}
 
 	/**
-	 * Updates the details of the specified target rule.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.TargetRule> mozuClient=UpdateTargetRuleClient( targetRule,  code);
 	 * client.setBaseAddress(url);
@@ -204,7 +204,7 @@ public class TargetRuleClient {
 	}
 
 	/**
-	 * Updates the details of the specified target rule.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.TargetRule> mozuClient=UpdateTargetRuleClient( targetRule,  code,  responseFields);
 	 * client.setBaseAddress(url);
@@ -233,7 +233,7 @@ public class TargetRuleClient {
 	}
 
 	/**
-	 * Deletes the specified target rule.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteTargetRuleClient( code);
 	 * client.setBaseAddress(url);

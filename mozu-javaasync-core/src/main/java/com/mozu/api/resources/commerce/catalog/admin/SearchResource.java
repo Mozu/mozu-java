@@ -20,7 +20,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * The Search resource manages all settings and options for providing product search on your site.
+ * Use the Search resource to manage all settings and options for providing product search on your site, as well as search tuning rules.
  * </summary>
  */
 public class SearchResource {
@@ -37,7 +37,7 @@ public class SearchResource {
 
 	
 	/**
-	 * Retrieves the details of the specified search tuning rule.
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchTuningRule searchTuningRule = search.getSearchTuningRule( searchTuningRuleCode);
@@ -52,7 +52,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * Retrieves the details of the specified search tuning rule.
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.getSearchTuningRule( searchTuningRuleCode, callback );
@@ -68,7 +68,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * Retrieves the details of the specified search tuning rule.
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchTuningRule searchTuningRule = search.getSearchTuningRule( searchTuningRuleCode,  responseFields);
@@ -88,7 +88,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * Retrieves the details of the specified search tuning rule.
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.getSearchTuningRule( searchTuningRuleCode,  responseFields, callback );
@@ -108,7 +108,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * admin-search Get GetSearchTuningRules description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchTuningRuleCollection searchTuningRuleCollection = search.getSearchTuningRules();
@@ -122,7 +122,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * admin-search Get GetSearchTuningRules description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.getSearchTuningRules( callback );
@@ -137,15 +137,15 @@ public class SearchResource {
 	}
 
 	/**
-	 * admin-search Get GetSearchTuningRules description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchTuningRuleCollection searchTuningRuleCollection = search.getSearchTuningRules( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/applications/sorting-filtering.htm) for a list of supported filters.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
 	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/applications/sorting-filtering.htm) for more information.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRuleCollection
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleCollection
@@ -160,15 +160,15 @@ public class SearchResource {
 	}
 
 	/**
-	 * admin-search Get GetSearchTuningRules description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.getSearchTuningRules( startIndex,  pageSize,  sortBy,  filter,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/applications/sorting-filtering.htm) for a list of supported filters.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
 	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/applications/sorting-filtering.htm) for more information.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRuleCollection
@@ -183,7 +183,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * admin-search Get GetSearchTuningRuleSortFields description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchTuningRuleSortFields searchTuningRuleSortFields = search.getSearchTuningRuleSortFields();
@@ -197,7 +197,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * admin-search Get GetSearchTuningRuleSortFields description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.getSearchTuningRuleSortFields( callback );
@@ -212,7 +212,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * admin-search Get GetSearchTuningRuleSortFields description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchTuningRuleSortFields searchTuningRuleSortFields = search.getSearchTuningRuleSortFields( responseFields);
@@ -231,7 +231,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * admin-search Get GetSearchTuningRuleSortFields description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.getSearchTuningRuleSortFields( responseFields, callback );
@@ -250,7 +250,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * Get site search settings
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchSettings searchSettings = search.getSettings();
@@ -264,7 +264,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * Get site search settings
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.getSettings( callback );
@@ -279,7 +279,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * Get site search settings
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchSettings searchSettings = search.getSettings( responseFields);
@@ -298,7 +298,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * Get site search settings
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.getSettings( responseFields, callback );
@@ -317,7 +317,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * Retrieves a collection of synonyms definitions for product searches. Synonyms aid with determining matches for entered searches.
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SynonymDefinitionCollection synonymDefinitionCollection = search.getSynonymDefinitionCollection( localeCode);
@@ -332,7 +332,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * Retrieves a collection of synonyms definitions for product searches. Synonyms aid with determining matches for entered searches.
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.getSynonymDefinitionCollection( localeCode, callback );
@@ -348,7 +348,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * Retrieves a collection of synonyms definitions for product searches. Synonyms aid with determining matches for entered searches.
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SynonymDefinitionCollection synonymDefinitionCollection = search.getSynonymDefinitionCollection( localeCode,  responseFields);
@@ -368,7 +368,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * Retrieves a collection of synonyms definitions for product searches. Synonyms aid with determining matches for entered searches.
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.getSynonymDefinitionCollection( localeCode,  responseFields, callback );
@@ -422,11 +422,11 @@ public class SearchResource {
 	 *	Search search = new Search();
 	 *	SynonymDefinitionPagedCollection synonymDefinitionPagedCollection = search.getSynonymDefinitions( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param filter 
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return com.mozu.api.contracts.productadmin.search.SynonymDefinitionPagedCollection
 	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionPagedCollection
 	 */
@@ -445,11 +445,11 @@ public class SearchResource {
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.getSynonymDefinitions( startIndex,  pageSize,  sortBy,  filter,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param filter 
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.search.SynonymDefinitionPagedCollection
 	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionPagedCollection
@@ -468,7 +468,7 @@ public class SearchResource {
 	 *	Search search = new Search();
 	 *	SynonymDefinition synonymDefinition = search.getSynonymDefinition( synonymId);
 	 * </code></pre></p>
-	 * @param synonymId 
+	 * @param synonymId The unique identifier of the synonym definition.
 	 * @return com.mozu.api.contracts.productadmin.search.SynonymDefinition
 	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinition
 	 */
@@ -483,7 +483,7 @@ public class SearchResource {
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.getSynonymDefinition( synonymId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param synonymId 
+	 * @param synonymId The unique identifier of the synonym definition.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.search.SynonymDefinition
 	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinition
@@ -499,8 +499,8 @@ public class SearchResource {
 	 *	Search search = new Search();
 	 *	SynonymDefinition synonymDefinition = search.getSynonymDefinition( synonymId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param synonymId 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param synonymId The unique identifier of the synonym definition.
 	 * @return com.mozu.api.contracts.productadmin.search.SynonymDefinition
 	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinition
 	 */
@@ -519,8 +519,8 @@ public class SearchResource {
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.getSynonymDefinition( synonymId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param synonymId 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param synonymId The unique identifier of the synonym definition.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.search.SynonymDefinition
 	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinition
@@ -534,12 +534,12 @@ public class SearchResource {
 	}
 
 	/**
-	 * admin-search Post AddSearchTuningRule description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchTuningRule searchTuningRule = search.addSearchTuningRule( searchTuningRuleIn);
 	 * </code></pre></p>
-	 * @param searchTuningRuleIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRule ApiType DOCUMENT_HERE 
+	 * @param searchTuningRuleIn The details of the new search tuning rule.
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
@@ -550,13 +550,13 @@ public class SearchResource {
 	}
 
 	/**
-	 * admin-search Post AddSearchTuningRule description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.addSearchTuningRule( searchTuningRuleIn, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param searchTuningRuleIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRule ApiType DOCUMENT_HERE 
+	 * @param searchTuningRuleIn The details of the new search tuning rule.
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
@@ -567,13 +567,13 @@ public class SearchResource {
 	}
 
 	/**
-	 * admin-search Post AddSearchTuningRule description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchTuningRule searchTuningRule = search.addSearchTuningRule( searchTuningRuleIn,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param searchTuningRuleIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRule ApiType DOCUMENT_HERE 
+	 * @param searchTuningRuleIn The details of the new search tuning rule.
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
@@ -588,14 +588,14 @@ public class SearchResource {
 	}
 
 	/**
-	 * admin-search Post AddSearchTuningRule description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.addSearchTuningRule( searchTuningRuleIn,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param searchTuningRuleIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRule ApiType DOCUMENT_HERE 
+	 * @param searchTuningRuleIn The details of the new search tuning rule.
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
@@ -609,12 +609,12 @@ public class SearchResource {
 	}
 
 	/**
-	 * admin-search Post UpdateSearchTuningRuleSortFields description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchTuningRuleSortFields searchTuningRuleSortFields = search.updateSearchTuningRuleSortFields( searchTuningRuleSortFieldsIn);
 	 * </code></pre></p>
-	 * @param searchTuningRuleSortFieldsIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRuleSortFields ApiType DOCUMENT_HERE 
+	 * @param searchTuningRuleSortFieldsIn The details of the updated search tuning rule sort fields.
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
@@ -625,13 +625,13 @@ public class SearchResource {
 	}
 
 	/**
-	 * admin-search Post UpdateSearchTuningRuleSortFields description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.updateSearchTuningRuleSortFields( searchTuningRuleSortFieldsIn, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param searchTuningRuleSortFieldsIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRuleSortFields ApiType DOCUMENT_HERE 
+	 * @param searchTuningRuleSortFieldsIn The details of the updated search tuning rule sort fields.
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
@@ -642,13 +642,13 @@ public class SearchResource {
 	}
 
 	/**
-	 * admin-search Post UpdateSearchTuningRuleSortFields description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchTuningRuleSortFields searchTuningRuleSortFields = search.updateSearchTuningRuleSortFields( searchTuningRuleSortFieldsIn,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param searchTuningRuleSortFieldsIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRuleSortFields ApiType DOCUMENT_HERE 
+	 * @param searchTuningRuleSortFieldsIn The details of the updated search tuning rule sort fields.
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
@@ -663,14 +663,14 @@ public class SearchResource {
 	}
 
 	/**
-	 * admin-search Post UpdateSearchTuningRuleSortFields description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.updateSearchTuningRuleSortFields( searchTuningRuleSortFieldsIn,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param searchTuningRuleSortFieldsIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRuleSortFields ApiType DOCUMENT_HERE 
+	 * @param searchTuningRuleSortFieldsIn The details of the updated search tuning rule sort fields.
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
@@ -684,13 +684,13 @@ public class SearchResource {
 	}
 
 	/**
-	 * Updates synonym definitions for product searches. Synonyms aid with determining matches for entered searches.
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SynonymDefinitionCollection synonymDefinitionCollection = search.updateSynonymDefinitionCollection( collection,  localeCode);
 	 * </code></pre></p>
 	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
-	 * @param collection Collection of synonym definitions used for determining search results.
+	 * @param collection The updated details of the synonym definition collection.
 	 * @return com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
 	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
 	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
@@ -701,14 +701,14 @@ public class SearchResource {
 	}
 
 	/**
-	 * Updates synonym definitions for product searches. Synonyms aid with determining matches for entered searches.
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.updateSynonymDefinitionCollection( collection,  localeCode, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param collection Collection of synonym definitions used for determining search results.
+	 * @param collection The updated details of the synonym definition collection.
 	 * @return com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
 	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
 	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
@@ -719,14 +719,14 @@ public class SearchResource {
 	}
 
 	/**
-	 * Updates synonym definitions for product searches. Synonyms aid with determining matches for entered searches.
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SynonymDefinitionCollection synonymDefinitionCollection = search.updateSynonymDefinitionCollection( collection,  localeCode,  responseFields);
 	 * </code></pre></p>
 	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param collection Collection of synonym definitions used for determining search results.
+	 * @param collection The updated details of the synonym definition collection.
 	 * @return com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
 	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
 	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
@@ -741,7 +741,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * Updates synonym definitions for product searches. Synonyms aid with determining matches for entered searches.
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.updateSynonymDefinitionCollection( collection,  localeCode,  responseFields, callback );
@@ -749,7 +749,7 @@ public class SearchResource {
 	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param collection Collection of synonym definitions used for determining search results.
+	 * @param collection The updated details of the synonym definition collection.
 	 * @return com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
 	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
 	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
@@ -768,7 +768,7 @@ public class SearchResource {
 	 *	Search search = new Search();
 	 *	SynonymDefinition synonymDefinition = search.addSynonymDefinition( synonymDefinition);
 	 * </code></pre></p>
-	 * @param synonymDefinition 
+	 * @param synonymDefinition The details of the new synonym definition.
 	 * @return com.mozu.api.contracts.productadmin.search.SynonymDefinition
 	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinition
 	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinition
@@ -785,7 +785,7 @@ public class SearchResource {
 	 *	CountDownLatch latch = search.addSynonymDefinition( synonymDefinition, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param synonymDefinition 
+	 * @param synonymDefinition The details of the new synonym definition.
 	 * @return com.mozu.api.contracts.productadmin.search.SynonymDefinition
 	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinition
 	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinition
@@ -801,8 +801,8 @@ public class SearchResource {
 	 *	Search search = new Search();
 	 *	SynonymDefinition synonymDefinition = search.addSynonymDefinition( synonymDefinition,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param synonymDefinition 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param synonymDefinition The details of the new synonym definition.
 	 * @return com.mozu.api.contracts.productadmin.search.SynonymDefinition
 	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinition
 	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinition
@@ -822,9 +822,9 @@ public class SearchResource {
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.addSynonymDefinition( synonymDefinition,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param synonymDefinition 
+	 * @param synonymDefinition The details of the new synonym definition.
 	 * @return com.mozu.api.contracts.productadmin.search.SynonymDefinition
 	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinition
 	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinition
@@ -838,13 +838,13 @@ public class SearchResource {
 	}
 
 	/**
-	 * admin-search Put UpdateSearchTuningRule description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchTuningRule searchTuningRule = search.updateSearchTuningRule( searchTuningRuleIn,  searchTuningRuleCode);
 	 * </code></pre></p>
 	 * @param searchTuningRuleCode The unique identifier of the search tuning rule.
-	 * @param searchTuningRuleIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRule ApiType DOCUMENT_HERE 
+	 * @param searchTuningRuleIn The details of the updated search tuning rule.
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
@@ -855,14 +855,14 @@ public class SearchResource {
 	}
 
 	/**
-	 * admin-search Put UpdateSearchTuningRule description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.updateSearchTuningRule( searchTuningRuleIn,  searchTuningRuleCode, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param searchTuningRuleCode The unique identifier of the search tuning rule.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param searchTuningRuleIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRule ApiType DOCUMENT_HERE 
+	 * @param searchTuningRuleIn The details of the updated search tuning rule.
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
@@ -873,14 +873,14 @@ public class SearchResource {
 	}
 
 	/**
-	 * admin-search Put UpdateSearchTuningRule description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchTuningRule searchTuningRule = search.updateSearchTuningRule( searchTuningRuleIn,  searchTuningRuleCode,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param searchTuningRuleCode The unique identifier of the search tuning rule.
-	 * @param searchTuningRuleIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRule ApiType DOCUMENT_HERE 
+	 * @param searchTuningRuleIn The details of the updated search tuning rule.
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
@@ -895,7 +895,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * admin-search Put UpdateSearchTuningRule description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.updateSearchTuningRule( searchTuningRuleIn,  searchTuningRuleCode,  responseFields, callback );
@@ -903,7 +903,7 @@ public class SearchResource {
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param searchTuningRuleCode The unique identifier of the search tuning rule.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param searchTuningRuleIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRule ApiType DOCUMENT_HERE 
+	 * @param searchTuningRuleIn The details of the updated search tuning rule.
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
@@ -917,12 +917,12 @@ public class SearchResource {
 	}
 
 	/**
-	 * Adds or Updates (Upsert) the Search Settings for a specific site
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchSettings searchSettings = search.updateSettings( settings);
 	 * </code></pre></p>
-	 * @param settings The settings to control product search and indexing behavior.
+	 * @param settings The search settings to update.
 	 * @return com.mozu.api.contracts.productadmin.SearchSettings
 	 * @see com.mozu.api.contracts.productadmin.SearchSettings
 	 * @see com.mozu.api.contracts.productadmin.SearchSettings
@@ -933,13 +933,13 @@ public class SearchResource {
 	}
 
 	/**
-	 * Adds or Updates (Upsert) the Search Settings for a specific site
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.updateSettings( settings, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param settings The settings to control product search and indexing behavior.
+	 * @param settings The search settings to update.
 	 * @return com.mozu.api.contracts.productadmin.SearchSettings
 	 * @see com.mozu.api.contracts.productadmin.SearchSettings
 	 * @see com.mozu.api.contracts.productadmin.SearchSettings
@@ -950,13 +950,13 @@ public class SearchResource {
 	}
 
 	/**
-	 * Adds or Updates (Upsert) the Search Settings for a specific site
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchSettings searchSettings = search.updateSettings( settings,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param settings The settings to control product search and indexing behavior.
+	 * @param settings The search settings to update.
 	 * @return com.mozu.api.contracts.productadmin.SearchSettings
 	 * @see com.mozu.api.contracts.productadmin.SearchSettings
 	 * @see com.mozu.api.contracts.productadmin.SearchSettings
@@ -971,14 +971,14 @@ public class SearchResource {
 	}
 
 	/**
-	 * Adds or Updates (Upsert) the Search Settings for a specific site
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.updateSettings( settings,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param settings The settings to control product search and indexing behavior.
+	 * @param settings The search settings to update.
 	 * @return com.mozu.api.contracts.productadmin.SearchSettings
 	 * @see com.mozu.api.contracts.productadmin.SearchSettings
 	 * @see com.mozu.api.contracts.productadmin.SearchSettings
@@ -997,8 +997,8 @@ public class SearchResource {
 	 *	Search search = new Search();
 	 *	SynonymDefinition synonymDefinition = search.updateSynonymDefinition( synonymDefinition,  synonymId);
 	 * </code></pre></p>
-	 * @param synonymId 
-	 * @param synonymDefinition 
+	 * @param synonymId The unique identifier of the synonym definition.
+	 * @param synonymDefinition The updated synonym definition details.
 	 * @return com.mozu.api.contracts.productadmin.search.SynonymDefinition
 	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinition
 	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinition
@@ -1014,9 +1014,9 @@ public class SearchResource {
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.updateSynonymDefinition( synonymDefinition,  synonymId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param synonymId 
+	 * @param synonymId The unique identifier of the synonym definition.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param synonymDefinition 
+	 * @param synonymDefinition The updated synonym definition details.
 	 * @return com.mozu.api.contracts.productadmin.search.SynonymDefinition
 	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinition
 	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinition
@@ -1032,9 +1032,9 @@ public class SearchResource {
 	 *	Search search = new Search();
 	 *	SynonymDefinition synonymDefinition = search.updateSynonymDefinition( synonymDefinition,  synonymId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param synonymId 
-	 * @param synonymDefinition 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param synonymId The unique identifier of the synonym definition.
+	 * @param synonymDefinition The updated synonym definition details.
 	 * @return com.mozu.api.contracts.productadmin.search.SynonymDefinition
 	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinition
 	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinition
@@ -1054,10 +1054,10 @@ public class SearchResource {
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.updateSynonymDefinition( synonymDefinition,  synonymId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param synonymId 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param synonymId The unique identifier of the synonym definition.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param synonymDefinition 
+	 * @param synonymDefinition The updated synonym definition details.
 	 * @return com.mozu.api.contracts.productadmin.search.SynonymDefinition
 	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinition
 	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinition
@@ -1071,7 +1071,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * Deletes the specified search tuning rule.
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	search.deleteSearchTuningRule( searchTuningRuleCode);
@@ -1094,7 +1094,7 @@ public class SearchResource {
 	 *	Search search = new Search();
 	 *	search.deleteSynonymDefinition( synonymId);
 	 * </code></pre></p>
-	 * @param synonymId 
+	 * @param synonymId The unique identifier of the synonym definition.
 	 * @return 
 	 */
 	public void deleteSynonymDefinition(Integer synonymId) throws Exception

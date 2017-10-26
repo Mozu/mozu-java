@@ -23,9 +23,6 @@ public class PublishingScope implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * If true, publish or discard all pending product changes in the master catalog.
-	 */
 	protected  Boolean allPending;
 
 	public Boolean getAllPending() {
@@ -36,9 +33,6 @@ public class PublishingScope implements Serializable
 		this.allPending = allPending;
 	}
 
-	/**
-	 * List of product codes of associated products, used for pending product changes to publish or delete and returned in a product inventory location query.
-	 */
 	protected List<String> productCodes;
 	public List<String> getProductCodes() {
 		return this.productCodes;
@@ -48,7 +42,7 @@ public class PublishingScope implements Serializable
 	}
 
 	/**
-	 * The Publish Set to publish
+	 * The unique identifier of the product publish set.You can use this field to perform operations on all the pending product changes assigned to a publish set. For example, when you perform the PublishDrafts operation, you can specify the publish set that the pending product changes are assigned to in order to publish all of the pending changes. If you specify a publishSetCode, the respecting operation is performed on all pending product changes assigned to the publish set, even if you specify individual productCodes.
 	 */
 	protected  String publishSetCode;
 

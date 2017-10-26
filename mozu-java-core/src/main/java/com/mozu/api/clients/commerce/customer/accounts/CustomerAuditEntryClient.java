@@ -23,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 public class CustomerAuditEntryClient {
 	
 	/**
-	 * Retrieves audit log entries for the specified customer account.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerAuditEntryCollection> mozuClient=GetAccountAuditLogClient( accountId);
 	 * client.setBaseAddress(url);
@@ -40,7 +40,7 @@ public class CustomerAuditEntryClient {
 	}
 
 	/**
-	 * Retrieves audit log entries for the specified customer account.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerAuditEntryCollection> mozuClient=GetAccountAuditLogClient( accountId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * client.setBaseAddress(url);

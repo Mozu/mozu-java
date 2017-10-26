@@ -23,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 public class CardClient {
 	
 	/**
-	 * Retrieves the details of a credit card stored with a customer account billing contact.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.Card> mozuClient=GetAccountCardClient( accountId,  cardId);
 	 * client.setBaseAddress(url);
@@ -41,7 +41,7 @@ public class CardClient {
 	}
 
 	/**
-	 * Retrieves the details of a credit card stored with a customer account billing contact.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.Card> mozuClient=GetAccountCardClient( accountId,  cardId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -50,7 +50,7 @@ public class CardClient {
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.Card>
 	 * @see com.mozu.api.contracts.customer.Card
 	 */
@@ -67,7 +67,7 @@ public class CardClient {
 	}
 
 	/**
-	 * Retrieves all stored credit cards for the customer account.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CardCollection> mozuClient=GetAccountCardsClient( accountId);
 	 * client.setBaseAddress(url);
@@ -84,7 +84,7 @@ public class CardClient {
 	}
 
 	/**
-	 * Retrieves all stored credit cards for the customer account.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CardCollection> mozuClient=GetAccountCardsClient( accountId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -92,7 +92,7 @@ public class CardClient {
 	 * CardCollection cardCollection = client.Result();
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CardCollection>
 	 * @see com.mozu.api.contracts.customer.CardCollection
 	 */
@@ -109,7 +109,7 @@ public class CardClient {
 	}
 
 	/**
-	 * Creates a new credit card record and stores it for the customer account.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.Card> mozuClient=AddAccountCardClient( card,  accountId);
 	 * client.setBaseAddress(url);
@@ -128,7 +128,7 @@ public class CardClient {
 	}
 
 	/**
-	 * Creates a new credit card record and stores it for the customer account.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.Card> mozuClient=AddAccountCardClient( card,  accountId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -136,7 +136,7 @@ public class CardClient {
 	 * Card card = client.Result();
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param card Properties of a credit card used to submit payment for an order.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.Card>
 	 * @see com.mozu.api.contracts.customer.Card
@@ -156,7 +156,7 @@ public class CardClient {
 	}
 
 	/**
-	 * Update one or more properties of a credit card defined for a customer account.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.Card> mozuClient=UpdateAccountCardClient( card,  accountId,  cardId);
 	 * client.setBaseAddress(url);
@@ -176,7 +176,7 @@ public class CardClient {
 	}
 
 	/**
-	 * Update one or more properties of a credit card defined for a customer account.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.Card> mozuClient=UpdateAccountCardClient( card,  accountId,  cardId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -185,7 +185,7 @@ public class CardClient {
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param card Properties of a credit card used to submit payment for an order.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.Card>
 	 * @see com.mozu.api.contracts.customer.Card
@@ -205,7 +205,7 @@ public class CardClient {
 	}
 
 	/**
-	 * Removes a stored credit card from a customer account.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteAccountCardClient( accountId,  cardId);
 	 * client.setBaseAddress(url);

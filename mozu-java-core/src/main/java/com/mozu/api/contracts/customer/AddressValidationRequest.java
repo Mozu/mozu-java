@@ -22,9 +22,6 @@ public class AddressValidationRequest implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Address information to supply for a contact.
-	 */
 	protected  Address address;
 
 	public Address getAddress() {

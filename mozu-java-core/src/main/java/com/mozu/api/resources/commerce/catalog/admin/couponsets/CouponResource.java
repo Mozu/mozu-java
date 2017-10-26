@@ -35,7 +35,7 @@ public class CouponResource {
 
 	
 	/**
-	 * Retrieves the details of the specified coupon. Use the couponSetCode and the couponCode parameter to specify the coupon within a coupon set. Use the includeCounts paramter to specify whether to return the redemptionCount property in the response body object.
+	 * 
 	 * <p><pre><code>
 	 *	Coupon coupon = new Coupon();
 	 *	Coupon coupon = coupon.getCoupon( couponSetCode,  couponCode);
@@ -51,7 +51,7 @@ public class CouponResource {
 	}
 
 	/**
-	 * Retrieves the details of the specified coupon. Use the couponSetCode and the couponCode parameter to specify the coupon within a coupon set. Use the includeCounts paramter to specify whether to return the redemptionCount property in the response body object.
+	 * 
 	 * <p><pre><code>
 	 *	Coupon coupon = new Coupon();
 	 *	Coupon coupon = coupon.getCoupon( couponSetCode,  couponCode,  includeCounts,  responseFields);
@@ -73,7 +73,7 @@ public class CouponResource {
 	}
 
 	/**
-	 * Retrieves a list of coupons in a specified coupon set according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 *	Coupon coupon = new Coupon();
 	 *	CouponCollection couponCollection = coupon.getCoupons( couponSetCode);
@@ -88,7 +88,7 @@ public class CouponResource {
 	}
 
 	/**
-	 * Retrieves a list of coupons in a specified coupon set according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 *	Coupon coupon = new Coupon();
 	 *	CouponCollection couponCollection = coupon.getCoupons( couponSetCode,  startIndex,  pageSize,  sortBy,  filter,  includeCounts,  responseFields);
@@ -113,7 +113,7 @@ public class CouponResource {
 	}
 
 	/**
-	 * Adds coupons  to a specified manual coupon set. Use the couponSetCode parameter to specify the manual coupon set.
+	 * 
 	 * <p><pre><code>
 	 *	Coupon coupon = new Coupon();
 	 *	coupon.addCoupons( coupons,  couponSetCode);
@@ -133,7 +133,7 @@ public class CouponResource {
 	}
 
 	/**
-	 * Deletes the specified coupons and removes them from the coupon set. You can only delete a coupon if it has not been redeemed. Use the canBeDeleted property to determine whether a coupon can be deleted.
+	 * 
 	 * <p><pre><code>
 	 *	Coupon coupon = new Coupon();
 	 *	coupon.deleteCoupons( couponCodes,  couponSetCode);
@@ -153,7 +153,7 @@ public class CouponResource {
 	}
 
 	/**
-	 * Deletes the specified coupon and remove it from the coupon set. You can only delete a coupon if it has not been redeemed. Use the canBeDeleted property to determine whether a coupon can be deleted.
+	 * 
 	 * <p><pre><code>
 	 *	Coupon coupon = new Coupon();
 	 *	coupon.deleteCoupon( couponSetCode,  couponCode);

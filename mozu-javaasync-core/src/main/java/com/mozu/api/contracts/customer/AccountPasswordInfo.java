@@ -14,7 +14,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.customer.PasswordInfo;
 
 /**
- *	Mozu.Customer.Contracts.AccountPasswordInfo ApiType DOCUMENT_HERE 
+ *	The details of the account password.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AccountPasswordInfo implements Serializable

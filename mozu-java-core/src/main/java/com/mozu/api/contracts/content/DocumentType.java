@@ -63,9 +63,6 @@ public class DocumentType implements Serializable
 		this.installationPackage = installationPackage;
 	}
 
-	/**
-	 * The user supplied name that appears in . You can use this field for identification purposes.
-	 */
 	protected  String name;
 
 	public String getName() {

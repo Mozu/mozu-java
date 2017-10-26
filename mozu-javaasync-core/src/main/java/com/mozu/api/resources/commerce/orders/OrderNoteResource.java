@@ -37,7 +37,7 @@ public class OrderNoteResource {
 
 	
 	/**
-	 * Retrieves a list of all notes for an order.
+	 * 
 	 * <p><pre><code>
 	 *	OrderNote ordernote = new OrderNote();
 	 *	OrderNote orderNote = ordernote.getOrderNotes( orderId);
@@ -56,7 +56,7 @@ public class OrderNoteResource {
 	}
 
 	/**
-	 * Retrieves a list of all notes for an order.
+	 * 
 	 * <p><pre><code>
 	 *	OrderNote ordernote = new OrderNote();
 	 *	CountDownLatch latch = ordernote.getOrderNotes( orderId, callback );
@@ -75,7 +75,7 @@ public class OrderNoteResource {
 	}
 
 	/**
-	 * Retrieves the details of a specific order note.
+	 * 
 	 * <p><pre><code>
 	 *	OrderNote ordernote = new OrderNote();
 	 *	OrderNote orderNote = ordernote.getOrderNote( orderId,  noteId);
@@ -91,7 +91,7 @@ public class OrderNoteResource {
 	}
 
 	/**
-	 * Retrieves the details of a specific order note.
+	 * 
 	 * <p><pre><code>
 	 *	OrderNote ordernote = new OrderNote();
 	 *	CountDownLatch latch = ordernote.getOrderNote( orderId,  noteId, callback );
@@ -108,14 +108,14 @@ public class OrderNoteResource {
 	}
 
 	/**
-	 * Retrieves the details of a specific order note.
+	 * 
 	 * <p><pre><code>
 	 *	OrderNote ordernote = new OrderNote();
 	 *	OrderNote orderNote = ordernote.getOrderNote( orderId,  noteId,  responseFields);
 	 * </code></pre></p>
 	 * @param noteId Unique identifier of a particular note to retrieve.
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 */
@@ -129,14 +129,14 @@ public class OrderNoteResource {
 	}
 
 	/**
-	 * Retrieves the details of a specific order note.
+	 * 
 	 * <p><pre><code>
 	 *	OrderNote ordernote = new OrderNote();
 	 *	CountDownLatch latch = ordernote.getOrderNote( orderId,  noteId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param noteId Unique identifier of a particular note to retrieve.
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
@@ -150,7 +150,7 @@ public class OrderNoteResource {
 	}
 
 	/**
-	 * Creates a new merchant note for the specified order.
+	 * 
 	 * <p><pre><code>
 	 *	OrderNote ordernote = new OrderNote();
 	 *	OrderNote orderNote = ordernote.createOrderNote( orderNote,  orderId);
@@ -167,7 +167,7 @@ public class OrderNoteResource {
 	}
 
 	/**
-	 * Creates a new merchant note for the specified order.
+	 * 
 	 * <p><pre><code>
 	 *	OrderNote ordernote = new OrderNote();
 	 *	CountDownLatch latch = ordernote.createOrderNote( orderNote,  orderId, callback );
@@ -185,13 +185,13 @@ public class OrderNoteResource {
 	}
 
 	/**
-	 * Creates a new merchant note for the specified order.
+	 * 
 	 * <p><pre><code>
 	 *	OrderNote ordernote = new OrderNote();
 	 *	OrderNote orderNote = ordernote.createOrderNote( orderNote,  orderId,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param orderNote Properties of an order note for a merchant, which is internal only for administrative purposes and not available to the shopper.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
@@ -207,13 +207,13 @@ public class OrderNoteResource {
 	}
 
 	/**
-	 * Creates a new merchant note for the specified order.
+	 * 
 	 * <p><pre><code>
 	 *	OrderNote ordernote = new OrderNote();
 	 *	CountDownLatch latch = ordernote.createOrderNote( orderNote,  orderId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param orderNote Properties of an order note for a merchant, which is internal only for administrative purposes and not available to the shopper.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderNote
@@ -229,7 +229,7 @@ public class OrderNoteResource {
 	}
 
 	/**
-	 * Updates a specific note for an order.
+	 * 
 	 * <p><pre><code>
 	 *	OrderNote ordernote = new OrderNote();
 	 *	OrderNote orderNote = ordernote.updateOrderNote( orderNote,  orderId,  noteId);
@@ -247,7 +247,7 @@ public class OrderNoteResource {
 	}
 
 	/**
-	 * Updates a specific note for an order.
+	 * 
 	 * <p><pre><code>
 	 *	OrderNote ordernote = new OrderNote();
 	 *	CountDownLatch latch = ordernote.updateOrderNote( orderNote,  orderId,  noteId, callback );
@@ -266,14 +266,14 @@ public class OrderNoteResource {
 	}
 
 	/**
-	 * Updates a specific note for an order.
+	 * 
 	 * <p><pre><code>
 	 *	OrderNote ordernote = new OrderNote();
 	 *	OrderNote orderNote = ordernote.updateOrderNote( orderNote,  orderId,  noteId,  responseFields);
 	 * </code></pre></p>
 	 * @param noteId Unique identifier of a particular note to retrieve.
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param orderNote Properties of an order note for a merchant, which is internal only for administrative purposes and not available to the shopper.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
@@ -289,14 +289,14 @@ public class OrderNoteResource {
 	}
 
 	/**
-	 * Updates a specific note for an order.
+	 * 
 	 * <p><pre><code>
 	 *	OrderNote ordernote = new OrderNote();
 	 *	CountDownLatch latch = ordernote.updateOrderNote( orderNote,  orderId,  noteId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param noteId Unique identifier of a particular note to retrieve.
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param orderNote Properties of an order note for a merchant, which is internal only for administrative purposes and not available to the shopper.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderNote
@@ -312,7 +312,7 @@ public class OrderNoteResource {
 	}
 
 	/**
-	 * Deletes the specified order note.
+	 * 
 	 * <p><pre><code>
 	 *	OrderNote ordernote = new OrderNote();
 	 *	ordernote.deleteOrderNote( orderId,  noteId);

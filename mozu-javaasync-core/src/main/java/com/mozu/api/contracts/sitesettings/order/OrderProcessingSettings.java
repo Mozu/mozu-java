@@ -35,9 +35,6 @@ public class OrderProcessingSettings implements Serializable
 		this.abandonedOrderThresholdInMinutes = abandonedOrderThresholdInMinutes;
 	}
 
-	/**
-	 * Determines whether payment authorization occurs when the order is placed or when the order is shipped.
-	 */
 	protected  String paymentProcessingFlowType;
 
 	public String getPaymentProcessingFlowType() {
@@ -48,9 +45,6 @@ public class OrderProcessingSettings implements Serializable
 		this.paymentProcessingFlowType = paymentProcessingFlowType;
 	}
 
-	/**
-	 * If true, use the override price defined for products in the order to calculate discounts for the order.
-	 */
 	protected  Boolean useOverridePriceToCalculateDiscounts;
 
 	public Boolean getUseOverridePriceToCalculateDiscounts() {
@@ -61,9 +55,6 @@ public class OrderProcessingSettings implements Serializable
 		this.useOverridePriceToCalculateDiscounts = useOverridePriceToCalculateDiscounts;
 	}
 
-	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {

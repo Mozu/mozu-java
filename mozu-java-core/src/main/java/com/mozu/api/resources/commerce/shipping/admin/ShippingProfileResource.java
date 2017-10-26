@@ -35,7 +35,7 @@ public class ShippingProfileResource {
 
 	
 	/**
-	 * Retrieves a list of shipping profiles.
+	 * 
 	 * <p><pre><code>
 	 *	ShippingProfile shippingprofile = new ShippingProfile();
 	 *	ShippingProfileCollection shippingProfileCollection = shippingprofile.getProfiles();
@@ -50,7 +50,7 @@ public class ShippingProfileResource {
 	}
 
 	/**
-	 * Retrieves a list of shipping profiles.
+	 * 
 	 * <p><pre><code>
 	 *	ShippingProfile shippingprofile = new ShippingProfile();
 	 *	ShippingProfileCollection shippingProfileCollection = shippingprofile.getProfiles( responseFields);

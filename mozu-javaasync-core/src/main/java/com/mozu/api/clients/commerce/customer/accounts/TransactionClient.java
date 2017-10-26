@@ -25,7 +25,7 @@ import org.apache.commons.lang.StringUtils;
 public class TransactionClient {
 	
 	/**
-	 * Retrieves a list of transactions associated with the customer account specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.customer.Transaction>> mozuClient=GetTransactionsClient( accountId);
 	 * client.setBaseAddress(url);
@@ -49,7 +49,7 @@ public class TransactionClient {
 	}
 
 	/**
-	 * Creates a new transaction for the customer account specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.Transaction> mozuClient=AddTransactionClient( transaction,  accountId);
 	 * client.setBaseAddress(url);
@@ -68,7 +68,7 @@ public class TransactionClient {
 	}
 
 	/**
-	 * Creates a new transaction for the customer account specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.Transaction> mozuClient=AddTransactionClient( transaction,  accountId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -76,7 +76,7 @@ public class TransactionClient {
 	 * Transaction transaction = client.Result();
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param transaction Properties of a transaction performed by a customer account. The system creates a transaction each time the customer submits an order, returns an item, picks up items for an order, or manages items on a wish list.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.Transaction>
 	 * @see com.mozu.api.contracts.customer.Transaction
@@ -96,7 +96,7 @@ public class TransactionClient {
 	}
 
 	/**
-	 * Deletes a transaction from the customer account specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=RemoveTransactionClient( accountId,  transactionId);
 	 * client.setBaseAddress(url);

@@ -37,9 +37,6 @@ public class ApplicationEntitlement implements Serializable
 		this.appKey = appKey;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationEntitlement applicationEntitlementId ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  Integer applicationEntitlementId;
 
 	public Integer getApplicationEntitlementId() {
@@ -63,9 +60,6 @@ public class ApplicationEntitlement implements Serializable
 		this.applicationId = applicationId;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationEntitlement applicationLicenseType ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String applicationLicenseType;
 
 	public String getApplicationLicenseType() {
@@ -141,9 +135,6 @@ public class ApplicationEntitlement implements Serializable
 		this.devAccountId = devAccountId;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationEntitlement effectiveEndDate ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  DateTime effectiveEndDate;
 
 	public DateTime getEffectiveEndDate() {
@@ -154,9 +145,6 @@ public class ApplicationEntitlement implements Serializable
 		this.effectiveEndDate = effectiveEndDate;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationEntitlement effectiveStartDate ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  DateTime effectiveStartDate;
 
 	public DateTime getEffectiveStartDate() {
@@ -167,9 +155,6 @@ public class ApplicationEntitlement implements Serializable
 		this.effectiveStartDate = effectiveStartDate;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationEntitlement entitlementStatus ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String entitlementStatus;
 
 	public String getEntitlementStatus() {
@@ -258,9 +243,6 @@ public class ApplicationEntitlement implements Serializable
 		this.packageName = packageName;
 	}
 
-	/**
-	 * Unique identifier for the site. This ID is used at all levels of a store, catalog, and tenant to associate objects to a site.
-	 */
 	protected  Integer siteId;
 
 	public Integer getSiteId() {
@@ -271,9 +253,6 @@ public class ApplicationEntitlement implements Serializable
 		this.siteId = siteId;
 	}
 
-	/**
-	 * Unique identifier of the Mozu tenant.
-	 */
 	protected  Integer tenantId;
 
 	public Integer getTenantId() {
@@ -297,9 +276,6 @@ public class ApplicationEntitlement implements Serializable
 		this.tenantName = tenantName;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationEntitlement applicationTransactions ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected List<ApplicationTransaction> applicationTransactions;
 	public List<ApplicationTransaction> getApplicationTransactions() {
 		return this.applicationTransactions;

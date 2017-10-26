@@ -37,7 +37,7 @@ public class PaymentResource {
 
 	
 	/**
-	 * Retrieves information about all payment transactions submitted for the specified order.
+	 * 
 	 * <p><pre><code>
 	 *	Payment payment = new Payment();
 	 *	PaymentCollection paymentCollection = payment.getPayments( orderId);
@@ -52,7 +52,7 @@ public class PaymentResource {
 	}
 
 	/**
-	 * Retrieves information about all payment transactions submitted for the specified order.
+	 * 
 	 * <p><pre><code>
 	 *	Payment payment = new Payment();
 	 *	CountDownLatch latch = payment.getPayments( orderId, callback );
@@ -68,13 +68,13 @@ public class PaymentResource {
 	}
 
 	/**
-	 * Retrieves information about all payment transactions submitted for the specified order.
+	 * 
 	 * <p><pre><code>
 	 *	Payment payment = new Payment();
 	 *	PaymentCollection paymentCollection = payment.getPayments( orderId,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.commerceruntime.payments.PaymentCollection
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentCollection
 	 */
@@ -88,13 +88,13 @@ public class PaymentResource {
 	}
 
 	/**
-	 * Retrieves information about all payment transactions submitted for the specified order.
+	 * 
 	 * <p><pre><code>
 	 *	Payment payment = new Payment();
 	 *	CountDownLatch latch = payment.getPayments( orderId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.payments.PaymentCollection
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentCollection
@@ -108,7 +108,7 @@ public class PaymentResource {
 	}
 
 	/**
-	 * Retrieves the list of all available payment actions dependent on the order payment status by specifying the order ID.
+	 * 
 	 * <p><pre><code>
 	 *	Payment payment = new Payment();
 	 *	string string = payment.getAvailablePaymentActions( orderId,  paymentId);
@@ -128,7 +128,7 @@ public class PaymentResource {
 	}
 
 	/**
-	 * Retrieves the list of all available payment actions dependent on the order payment status by specifying the order ID.
+	 * 
 	 * <p><pre><code>
 	 *	Payment payment = new Payment();
 	 *	CountDownLatch latch = payment.getAvailablePaymentActions( orderId,  paymentId, callback );
@@ -148,7 +148,7 @@ public class PaymentResource {
 	}
 
 	/**
-	 * Retrieves information about a specific payment transaction submitted for the specified order.
+	 * 
 	 * <p><pre><code>
 	 *	Payment payment = new Payment();
 	 *	Payment payment = payment.getPayment( orderId,  paymentId);
@@ -164,7 +164,7 @@ public class PaymentResource {
 	}
 
 	/**
-	 * Retrieves information about a specific payment transaction submitted for the specified order.
+	 * 
 	 * <p><pre><code>
 	 *	Payment payment = new Payment();
 	 *	CountDownLatch latch = payment.getPayment( orderId,  paymentId, callback );
@@ -181,14 +181,14 @@ public class PaymentResource {
 	}
 
 	/**
-	 * Retrieves information about a specific payment transaction submitted for the specified order.
+	 * 
 	 * <p><pre><code>
 	 *	Payment payment = new Payment();
 	 *	Payment payment = payment.getPayment( orderId,  paymentId,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
 	 * @param paymentId Unique identifier of the payment for which to perform the action.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.commerceruntime.payments.Payment
 	 * @see com.mozu.api.contracts.commerceruntime.payments.Payment
 	 */
@@ -202,14 +202,14 @@ public class PaymentResource {
 	}
 
 	/**
-	 * Retrieves information about a specific payment transaction submitted for the specified order.
+	 * 
 	 * <p><pre><code>
 	 *	Payment payment = new Payment();
 	 *	CountDownLatch latch = payment.getPayment( orderId,  paymentId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
 	 * @param paymentId Unique identifier of the payment for which to perform the action.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.payments.Payment
 	 * @see com.mozu.api.contracts.commerceruntime.payments.Payment
@@ -223,7 +223,7 @@ public class PaymentResource {
 	}
 
 	/**
-	 * Performs the specified action for an individual order payment transaction.
+	 * 
 	 * <p><pre><code>
 	 *	Payment payment = new Payment();
 	 *	Order order = payment.performPaymentAction( action,  orderId,  paymentId);
@@ -241,7 +241,7 @@ public class PaymentResource {
 	}
 
 	/**
-	 * Performs the specified action for an individual order payment transaction.
+	 * 
 	 * <p><pre><code>
 	 *	Payment payment = new Payment();
 	 *	CountDownLatch latch = payment.performPaymentAction( action,  orderId,  paymentId, callback );
@@ -260,14 +260,14 @@ public class PaymentResource {
 	}
 
 	/**
-	 * Performs the specified action for an individual order payment transaction.
+	 * 
 	 * <p><pre><code>
 	 *	Payment payment = new Payment();
 	 *	Order order = payment.performPaymentAction( action,  orderId,  paymentId,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
 	 * @param paymentId Unique identifier of the payment for which to perform the action.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param action Properties of the payment action performed for an order.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
@@ -283,14 +283,14 @@ public class PaymentResource {
 	}
 
 	/**
-	 * Performs the specified action for an individual order payment transaction.
+	 * 
 	 * <p><pre><code>
 	 *	Payment payment = new Payment();
 	 *	CountDownLatch latch = payment.performPaymentAction( action,  orderId,  paymentId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
 	 * @param paymentId Unique identifier of the payment for which to perform the action.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param action Properties of the payment action performed for an order.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
@@ -306,7 +306,7 @@ public class PaymentResource {
 	}
 
 	/**
-	 * Creates a new payment transaction for the specified order and performs the specified action.
+	 * 
 	 * <p><pre><code>
 	 *	Payment payment = new Payment();
 	 *	Order order = payment.createPaymentAction( action,  orderId);
@@ -323,7 +323,7 @@ public class PaymentResource {
 	}
 
 	/**
-	 * Creates a new payment transaction for the specified order and performs the specified action.
+	 * 
 	 * <p><pre><code>
 	 *	Payment payment = new Payment();
 	 *	CountDownLatch latch = payment.createPaymentAction( action,  orderId, callback );
@@ -341,13 +341,13 @@ public class PaymentResource {
 	}
 
 	/**
-	 * Creates a new payment transaction for the specified order and performs the specified action.
+	 * 
 	 * <p><pre><code>
 	 *	Payment payment = new Payment();
 	 *	Order order = payment.createPaymentAction( action,  orderId,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param action Properties of the payment action performed for an order.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
@@ -363,13 +363,13 @@ public class PaymentResource {
 	}
 
 	/**
-	 * Creates a new payment transaction for the specified order and performs the specified action.
+	 * 
 	 * <p><pre><code>
 	 *	Payment payment = new Payment();
 	 *	CountDownLatch latch = payment.createPaymentAction( action,  orderId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param action Properties of the payment action performed for an order.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order

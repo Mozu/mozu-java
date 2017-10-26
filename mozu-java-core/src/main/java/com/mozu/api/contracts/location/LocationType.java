@@ -22,9 +22,6 @@ public class LocationType implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * User-defined identifying code for the location type.
-	 */
 	protected  String code;
 
 	public String getCode() {
@@ -35,9 +32,6 @@ public class LocationType implements Serializable
 		this.code = code;
 	}
 
-	/**
-	 * The user supplied name that appears in . You can use this field for identification purposes.
-	 */
 	protected  String name;
 
 	public String getName() {

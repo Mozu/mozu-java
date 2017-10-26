@@ -35,7 +35,7 @@ public class TenantExtensionsResource {
 
 	
 	/**
-	 * Retrieves the Arc.js configuration settings for a site.
+	 * 
 	 * <p><pre><code>
 	 *	TenantExtensions tenantextensions = new TenantExtensions();
 	 *	TenantExtensions tenantExtensions = tenantextensions.getExtensions();
@@ -49,7 +49,7 @@ public class TenantExtensionsResource {
 	}
 
 	/**
-	 * Retrieves the Arc.js configuration settings for a site.
+	 * 
 	 * <p><pre><code>
 	 *	TenantExtensions tenantextensions = new TenantExtensions();
 	 *	TenantExtensions tenantExtensions = tenantextensions.getExtensions( responseFields);
@@ -68,7 +68,7 @@ public class TenantExtensionsResource {
 	}
 
 	/**
-	 * Updates the Arc.js configuration settings for a site.
+	 * 
 	 * <p><pre><code>
 	 *	TenantExtensions tenantextensions = new TenantExtensions();
 	 *	TenantExtensions tenantExtensions = tenantextensions.updateExtensions( extensions);
@@ -84,7 +84,7 @@ public class TenantExtensionsResource {
 	}
 
 	/**
-	 * Updates the Arc.js configuration settings for a site.
+	 * 
 	 * <p><pre><code>
 	 *	TenantExtensions tenantextensions = new TenantExtensions();
 	 *	TenantExtensions tenantExtensions = tenantextensions.updateExtensions( extensions,  responseFields);

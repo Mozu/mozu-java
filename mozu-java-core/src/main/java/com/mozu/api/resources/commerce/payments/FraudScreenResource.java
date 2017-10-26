@@ -35,7 +35,7 @@ public class FraudScreenResource {
 
 	
 	/**
-	 * payments-fraudscreen Post Screen description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	FraudScreen fraudscreen = new FraudScreen();
 	 *	FraudScreen fraudScreen = fraudscreen.screen( request);
@@ -47,7 +47,24 @@ public class FraudScreenResource {
 	 */
 	public com.mozu.api.contracts.paymentservice.response.FraudScreen screen(com.mozu.api.contracts.paymentservice.request.FraudScreenRequest request) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.paymentservice.response.FraudScreen> client = com.mozu.api.clients.commerce.payments.FraudScreenClient.screenClient( request);
+		return screen( request,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	FraudScreen fraudscreen = new FraudScreen();
+	 *	FraudScreen fraudScreen = fraudscreen.screen( request,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param request Mozu.PaymentService.Contracts.Request.FraudScreenRequest ApiType DOCUMENT_HERE 
+	 * @return com.mozu.api.contracts.paymentservice.response.FraudScreen
+	 * @see com.mozu.api.contracts.paymentservice.response.FraudScreen
+	 * @see com.mozu.api.contracts.paymentservice.request.FraudScreenRequest
+	 */
+	public com.mozu.api.contracts.paymentservice.response.FraudScreen screen(com.mozu.api.contracts.paymentservice.request.FraudScreenRequest request, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.paymentservice.response.FraudScreen> client = com.mozu.api.clients.commerce.payments.FraudScreenClient.screenClient( request,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

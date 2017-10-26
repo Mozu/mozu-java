@@ -22,9 +22,6 @@ public class ProductPriceRange implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The lowest possible price value for a product with options that vary the cost of the product.
-	 */
 	protected  ProductPrice lower;
 
 	public ProductPrice getLower() {
@@ -35,9 +32,6 @@ public class ProductPriceRange implements Serializable
 		this.lower = lower;
 	}
 
-	/**
-	 * The highest possible price value for a product with options that vary the cost of the product.
-	 */
 	protected  ProductPrice upper;
 
 	public ProductPrice getUpper() {

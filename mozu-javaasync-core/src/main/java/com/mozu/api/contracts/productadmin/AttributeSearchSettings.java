@@ -35,6 +35,19 @@ public class AttributeSearchSettings implements Serializable
 	}
 
 	/**
+	 * Specifies whether to create a case-sensitive Solr search index. The default is .
+	 */
+	protected  Boolean indexValueWithCase;
+
+	public Boolean getIndexValueWithCase() {
+		return this.indexValueWithCase;
+	}
+
+	public void setIndexValueWithCase(Boolean indexValueWithCase) {
+		this.indexValueWithCase = indexValueWithCase;
+	}
+
+	/**
 	 * Indicates whether the attribute value is searchable in the merchant catalog admin.
 	 */
 	protected  Boolean searchableInAdmin;

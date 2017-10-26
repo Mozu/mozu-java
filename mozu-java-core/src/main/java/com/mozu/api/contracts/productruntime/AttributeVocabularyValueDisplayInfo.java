@@ -35,7 +35,7 @@ public class AttributeVocabularyValueDisplayInfo implements Serializable
 	}
 
 	/**
-	 * Hex value for a color to display in a color picker. This is an HTML supported code for color.
+	 * Hex value for a color to display in a color picker. This is an HTMLÂ supported code for color.
 	 */
 	protected  String colorValue;
 

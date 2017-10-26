@@ -23,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 public class CustomerSetClient {
 	
 	/**
-	 * Retrieves a collection of customer sets according to any specified filter criteria.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerSetCollection> mozuClient=GetCustomerSetsClient();
 	 * client.setBaseAddress(url);
@@ -39,7 +39,7 @@ public class CustomerSetClient {
 	}
 
 	/**
-	 * Retrieves a collection of customer sets according to any specified filter criteria.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerSetCollection> mozuClient=GetCustomerSetsClient( startIndex,  pageSize,  sortBy,  responseFields);
 	 * client.setBaseAddress(url);
@@ -66,7 +66,7 @@ public class CustomerSetClient {
 	}
 
 	/**
-	 * Retrieves the details of the specified customer set.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerSet> mozuClient=GetCustomerSetClient( code);
 	 * client.setBaseAddress(url);
@@ -83,7 +83,7 @@ public class CustomerSetClient {
 	}
 
 	/**
-	 * Retrieves the details of the specified customer set.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerSet> mozuClient=GetCustomerSetClient( code,  responseFields);
 	 * client.setBaseAddress(url);

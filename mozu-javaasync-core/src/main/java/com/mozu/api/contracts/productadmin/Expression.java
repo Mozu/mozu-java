@@ -16,7 +16,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productadmin.Expression;
 
 /**
- *	Mozu.ProductAdmin.Contracts.Expression ApiType DOCUMENT_HERE 
+ *	The expression you want for the target rule. Refer to [Product Rules](https://www.mozu.com/docs/Guides/settings/shipping.htm#product_rules) in the Shipping Settings guides topic for more information.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Expression implements Serializable
@@ -25,7 +25,7 @@ public class Expression implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The field target of a predicate
+	 * The expression field you wish to target. For example, if you wish to target the productCode field, this value would be productCode.Refer to [Dynamic Category Expressions](../../../developer/api-guides/dynamic-category-exp.htm) for more information about the supported expression fields.
 	 */
 	protected  String left;
 
@@ -38,7 +38,7 @@ public class Expression implements Serializable
 	}
 
 	/**
-	 * And or Or (if Container with More than one Node)
+	 * The logical operator you wish to perform on the nodes within the dynamic expression. Valid values are: "And", and "Or".
 	 */
 	protected  String logicalOperator;
 
@@ -51,7 +51,7 @@ public class Expression implements Serializable
 	}
 
 	/**
-	 * The operator of a predicate
+	 * The operator you wish to perform on the left field. The valid values of this field are dependent on the left expression field. Refer to [Dynamic Category Expressions](../../../developer/api-guides/dynamic-category-exp.htm) for more information about the supported expression field operators.
 	 */
 	protected  String operator;
 
@@ -64,7 +64,10 @@ public class Expression implements Serializable
 	}
 
 	/**
-	 * The literal values of a predicate
+	 * The literal values of the predicate that is validated against the combined values of the left and operator fields. For example, you wish to validate on products that have a product code of "shoe". You would write the following expression:`"type": "predicate",
+			"left": "productCode",
+			"operator": "eq",
+			"right": "shoe".`
 	 */
 	protected  Object right;
 
@@ -77,7 +80,7 @@ public class Expression implements Serializable
 	}
 
 	/**
-	 * Container or Predicate
+	 * Specifies either the container of the dynamic expression, or the predicate of the node. Depending on where this is specified in the dynamic expression, the valid values are "container", and "predicate".Refer to [Dynamic Category Expressions](../../../../developer/api-guides/dynamic-category-exp.htm) for more information about using the type field.
 	 */
 	protected  String type;
 
@@ -90,7 +93,10 @@ public class Expression implements Serializable
 	}
 
 	/**
-	 * Mozu.ProductAdmin.Contracts.Expression nodes ApiTypeMember DOCUMENT_HERE 
+	 * The node or container of the self-contained dynamic expression. The node contains the following expression fields in order: "type", "left", "operator", and "right".For example, a dynamic expression that specifies to include all products that are in the apparel category  would have the following node:`"type": "predicate",
+			"left": "Categories.CategoryCode",
+			"operator": "eq",
+			"right": "apparel".`
 	 */
 	protected List<Expression> nodes;
 	public List<Expression> getNodes() {

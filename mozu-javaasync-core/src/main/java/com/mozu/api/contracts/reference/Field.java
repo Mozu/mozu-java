@@ -24,9 +24,6 @@ public class Field implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
-	 */
 	protected  Integer id;
 
 	public Integer getId() {
@@ -37,9 +34,6 @@ public class Field implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * Descriptive text used as a label for objects, such as field names, facets, date ranges, contact information, and package information.
-	 */
 	protected  String label;
 
 	public String getLabel() {
@@ -50,9 +44,6 @@ public class Field implements Serializable
 		this.label = label;
 	}
 
-	/**
-	 * Integer that represents the sequence order of the attribute.
-	 */
 	protected  Integer order;
 
 	public Integer getOrder() {
@@ -63,9 +54,6 @@ public class Field implements Serializable
 		this.order = order;
 	}
 
-	/**
-	 * Type of field.
-	 */
 	protected  String type;
 
 	public String getType() {
@@ -76,9 +64,6 @@ public class Field implements Serializable
 		this.type = type;
 	}
 
-	/**
-	 * Data for the field property.
-	 */
 	protected List<FieldData> data;
 	public List<FieldData> getData() {
 		return this.data;

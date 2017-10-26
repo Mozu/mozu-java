@@ -26,7 +26,7 @@ public class BundledProduct implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * List of supported types of fulfillment  for the product or variation. The types include direct ship, in-store pickup, or both. 
+	 * List of supported types of fulfillment for the product or variation. The types include direct ship, in-store pickup, or both.
 	 */
 	protected List<String> fulfillmentTypesSupported;
 	public List<String> getFulfillmentTypesSupported() {

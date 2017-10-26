@@ -35,7 +35,7 @@ public class TaxableTerritoryResource {
 
 	
 	/**
-	 * Retrieves a list of the taxable territories configured for the site.
+	 * 
 	 * <p><pre><code>
 	 *	TaxableTerritory taxableterritory = new TaxableTerritory();
 	 *	TaxableTerritory taxableTerritory = taxableterritory.getTaxableTerritories();
@@ -53,7 +53,7 @@ public class TaxableTerritoryResource {
 	}
 
 	/**
-	 * Creates a new territory for which to calculate sales tax.
+	 * 
 	 * <p><pre><code>
 	 *	TaxableTerritory taxableterritory = new TaxableTerritory();
 	 *	TaxableTerritory taxableTerritory = taxableterritory.addTaxableTerritory( taxableTerritory);
@@ -69,12 +69,12 @@ public class TaxableTerritoryResource {
 	}
 
 	/**
-	 * Creates a new territory for which to calculate sales tax.
+	 * 
 	 * <p><pre><code>
 	 *	TaxableTerritory taxableterritory = new TaxableTerritory();
 	 *	TaxableTerritory taxableTerritory = taxableterritory.addTaxableTerritory( taxableTerritory,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param taxableTerritory Properties of the territory which is subject to sales tax.
 	 * @return com.mozu.api.contracts.sitesettings.general.TaxableTerritory
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
@@ -90,7 +90,7 @@ public class TaxableTerritoryResource {
 	}
 
 	/**
-	 * Updates one or more taxable territories configured for a site.
+	 * 
 	 * <p><pre><code>
 	 *	TaxableTerritory taxableterritory = new TaxableTerritory();
 	 *	TaxableTerritory taxableTerritory = taxableterritory.updateTaxableTerritories( taxableterritories);

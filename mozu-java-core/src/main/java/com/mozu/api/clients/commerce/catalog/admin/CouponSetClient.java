@@ -23,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 public class CouponSetClient {
 	
 	/**
-	 * Retrieves a list of coupon sets in the catalog according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.CouponSetCollection> mozuClient=GetCouponSetsClient();
 	 * client.setBaseAddress(url);
@@ -39,7 +39,7 @@ public class CouponSetClient {
 	}
 
 	/**
-	 * Retrieves a list of coupon sets in the catalog according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.CouponSetCollection> mozuClient=GetCouponSetsClient( startIndex,  pageSize,  sortBy,  filter,  includeCounts,  responseFields);
 	 * client.setBaseAddress(url);
@@ -68,7 +68,7 @@ public class CouponSetClient {
 	}
 
 	/**
-	 * Retrieves the details of a single coupon set. Use the couponSetCode parameter to specify the coupon set. Use the includeCounts parameter to specify whether to include the number of redeemed coupons, existing coupon codes, and assigned discounts.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.CouponSet> mozuClient=GetCouponSetClient( couponSetCode);
 	 * client.setBaseAddress(url);
@@ -85,7 +85,7 @@ public class CouponSetClient {
 	}
 
 	/**
-	 * Retrieves the details of a single coupon set. Use the couponSetCode parameter to specify the coupon set. Use the includeCounts parameter to specify whether to include the number of redeemed coupons, existing coupon codes, and assigned discounts.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.CouponSet> mozuClient=GetCouponSetClient( couponSetCode,  includeCounts,  responseFields);
 	 * client.setBaseAddress(url);
@@ -111,7 +111,7 @@ public class CouponSetClient {
 	}
 
 	/**
-	 * Returns a unique, random four character code to use for the couponSetCode.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<String> mozuClient=GetUniqueCouponSetCodeClient();
 	 * client.setBaseAddress(url);
@@ -127,7 +127,7 @@ public class CouponSetClient {
 	}
 
 	/**
-	 * Returns a unique, random four character code to use for the couponSetCode.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<String> mozuClient=GetUniqueCouponSetCodeClient( responseFields);
 	 * client.setBaseAddress(url);
@@ -151,7 +151,7 @@ public class CouponSetClient {
 	}
 
 	/**
-	 * Adds a single coupon set to the catalog.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.CouponSet> mozuClient=AddCouponSetClient( couponSet);
 	 * client.setBaseAddress(url);
@@ -169,7 +169,7 @@ public class CouponSetClient {
 	}
 
 	/**
-	 * Adds a single coupon set to the catalog.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.CouponSet> mozuClient=AddCouponSetClient( couponSet,  responseFields);
 	 * client.setBaseAddress(url);
@@ -196,7 +196,7 @@ public class CouponSetClient {
 	}
 
 	/**
-	 * Validates the couponSetCode and tests it for uniqueness.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=ValidateUniqueCouponSetCodeClient( code);
 	 * client.setBaseAddress(url);
@@ -217,7 +217,7 @@ public class CouponSetClient {
 	}
 
 	/**
-	 * Updates one or more properties of a coupon set in the catalog.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.CouponSet> mozuClient=UpdateCouponSetClient( couponSet,  couponSetCode);
 	 * client.setBaseAddress(url);
@@ -236,7 +236,7 @@ public class CouponSetClient {
 	}
 
 	/**
-	 * Updates one or more properties of a coupon set in the catalog.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.CouponSet> mozuClient=UpdateCouponSetClient( couponSet,  couponSetCode,  responseFields);
 	 * client.setBaseAddress(url);
@@ -264,7 +264,7 @@ public class CouponSetClient {
 	}
 
 	/**
-	 * Deletes a specified coupon set from the catalog. Use the couponSetCode parameter to specify the coupon set to delete.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteCouponSetClient( couponSetCode);
 	 * client.setBaseAddress(url);

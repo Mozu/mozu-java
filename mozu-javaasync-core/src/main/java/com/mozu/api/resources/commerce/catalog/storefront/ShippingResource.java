@@ -37,7 +37,82 @@ public class ShippingResource {
 
 	
 	/**
-	 * Retrieves the shipping rates applicable for the site.
+	 * 
+	 * <p><pre><code>
+	 *	Shipping shipping = new Shipping();
+	 *	RatesResponseGroup ratesResponseGroup = shipping.getMultiRates( rateRequestGroupList);
+	 * </code></pre></p>
+	 * @param rateRequestGroupList 
+	 * @return List<com.mozu.api.contracts.shippingruntime.RatesResponseGroup>
+	 * @see com.mozu.api.contracts.shippingruntime.RatesResponseGroup
+	 * @see com.mozu.api.contracts.shippingruntime.RateRequestGroup
+	 */
+	public List<com.mozu.api.contracts.shippingruntime.RatesResponseGroup> getMultiRates(List<com.mozu.api.contracts.shippingruntime.RateRequestGroup> rateRequestGroupList) throws Exception
+	{
+		return getMultiRates( rateRequestGroupList,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Shipping shipping = new Shipping();
+	 *	CountDownLatch latch = shipping.getMultiRates( rateRequestGroupList, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param  callback callback handler for asynchronous operations
+	 * @param rateRequestGroupList 
+	 * @return List<com.mozu.api.contracts.shippingruntime.RatesResponseGroup>
+	 * @see com.mozu.api.contracts.shippingruntime.RatesResponseGroup
+	 * @see com.mozu.api.contracts.shippingruntime.RateRequestGroup
+	 */
+	public CountDownLatch getMultiRatesAsync(List<com.mozu.api.contracts.shippingruntime.RateRequestGroup> rateRequestGroupList, AsyncCallback<List<com.mozu.api.contracts.shippingruntime.RatesResponseGroup>> callback) throws Exception
+	{
+		return getMultiRatesAsync( rateRequestGroupList,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Shipping shipping = new Shipping();
+	 *	RatesResponseGroup ratesResponseGroup = shipping.getMultiRates( rateRequestGroupList,  includeRawResponse);
+	 * </code></pre></p>
+	 * @param includeRawResponse 
+	 * @param rateRequestGroupList 
+	 * @return List<com.mozu.api.contracts.shippingruntime.RatesResponseGroup>
+	 * @see com.mozu.api.contracts.shippingruntime.RatesResponseGroup
+	 * @see com.mozu.api.contracts.shippingruntime.RateRequestGroup
+	 */
+	public List<com.mozu.api.contracts.shippingruntime.RatesResponseGroup> getMultiRates(List<com.mozu.api.contracts.shippingruntime.RateRequestGroup> rateRequestGroupList, Boolean includeRawResponse) throws Exception
+	{
+		MozuClient<List<com.mozu.api.contracts.shippingruntime.RatesResponseGroup>> client = com.mozu.api.clients.commerce.catalog.storefront.ShippingClient.getMultiRatesClient( rateRequestGroupList,  includeRawResponse);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Shipping shipping = new Shipping();
+	 *	CountDownLatch latch = shipping.getMultiRates( rateRequestGroupList,  includeRawResponse, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param includeRawResponse 
+	 * @param  callback callback handler for asynchronous operations
+	 * @param rateRequestGroupList 
+	 * @return List<com.mozu.api.contracts.shippingruntime.RatesResponseGroup>
+	 * @see com.mozu.api.contracts.shippingruntime.RatesResponseGroup
+	 * @see com.mozu.api.contracts.shippingruntime.RateRequestGroup
+	 */
+	public CountDownLatch getMultiRatesAsync(List<com.mozu.api.contracts.shippingruntime.RateRequestGroup> rateRequestGroupList, Boolean includeRawResponse, AsyncCallback<List<com.mozu.api.contracts.shippingruntime.RatesResponseGroup>> callback) throws Exception
+	{
+		MozuClient<List<com.mozu.api.contracts.shippingruntime.RatesResponseGroup>> client = com.mozu.api.clients.commerce.catalog.storefront.ShippingClient.getMultiRatesClient( rateRequestGroupList,  includeRawResponse);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
 	 * <p><pre><code>
 	 *	Shipping shipping = new Shipping();
 	 *	RatesResponse ratesResponse = shipping.getRates( rateRequest);
@@ -49,11 +124,11 @@ public class ShippingResource {
 	 */
 	public com.mozu.api.contracts.shippingruntime.RatesResponse getRates(com.mozu.api.contracts.shippingruntime.RateRequest rateRequest) throws Exception
 	{
-		return getRates( rateRequest,  null);
+		return getRates( rateRequest,  null,  null);
 	}
 
 	/**
-	 * Retrieves the shipping rates applicable for the site.
+	 * 
 	 * <p><pre><code>
 	 *	Shipping shipping = new Shipping();
 	 *	CountDownLatch latch = shipping.getRates( rateRequest, callback );
@@ -66,24 +141,25 @@ public class ShippingResource {
 	 */
 	public CountDownLatch getRatesAsync(com.mozu.api.contracts.shippingruntime.RateRequest rateRequest, AsyncCallback<com.mozu.api.contracts.shippingruntime.RatesResponse> callback) throws Exception
 	{
-		return getRatesAsync( rateRequest,  null, callback);
+		return getRatesAsync( rateRequest,  null,  null, callback);
 	}
 
 	/**
-	 * Retrieves the shipping rates applicable for the site.
+	 * 
 	 * <p><pre><code>
 	 *	Shipping shipping = new Shipping();
-	 *	RatesResponse ratesResponse = shipping.getRates( rateRequest,  responseFields);
+	 *	RatesResponse ratesResponse = shipping.getRates( rateRequest,  includeRawResponse,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param includeRawResponse Set this parameter to  to retrieve the full raw JSON response from a shipping carrier (instead of just the shipping rate).
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param rateRequest Properties required to request a shipping rate calculation.
 	 * @return com.mozu.api.contracts.shippingruntime.RatesResponse
 	 * @see com.mozu.api.contracts.shippingruntime.RatesResponse
 	 * @see com.mozu.api.contracts.shippingruntime.RateRequest
 	 */
-	public com.mozu.api.contracts.shippingruntime.RatesResponse getRates(com.mozu.api.contracts.shippingruntime.RateRequest rateRequest, String responseFields) throws Exception
+	public com.mozu.api.contracts.shippingruntime.RatesResponse getRates(com.mozu.api.contracts.shippingruntime.RateRequest rateRequest, Boolean includeRawResponse, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.shippingruntime.RatesResponse> client = com.mozu.api.clients.commerce.catalog.storefront.ShippingClient.getRatesClient( rateRequest,  responseFields);
+		MozuClient<com.mozu.api.contracts.shippingruntime.RatesResponse> client = com.mozu.api.clients.commerce.catalog.storefront.ShippingClient.getRatesClient( rateRequest,  includeRawResponse,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -91,21 +167,22 @@ public class ShippingResource {
 	}
 
 	/**
-	 * Retrieves the shipping rates applicable for the site.
+	 * 
 	 * <p><pre><code>
 	 *	Shipping shipping = new Shipping();
-	 *	CountDownLatch latch = shipping.getRates( rateRequest,  responseFields, callback );
+	 *	CountDownLatch latch = shipping.getRates( rateRequest,  includeRawResponse,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param includeRawResponse Set this parameter to  to retrieve the full raw JSON response from a shipping carrier (instead of just the shipping rate).
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param rateRequest Properties required to request a shipping rate calculation.
 	 * @return com.mozu.api.contracts.shippingruntime.RatesResponse
 	 * @see com.mozu.api.contracts.shippingruntime.RatesResponse
 	 * @see com.mozu.api.contracts.shippingruntime.RateRequest
 	 */
-	public CountDownLatch getRatesAsync(com.mozu.api.contracts.shippingruntime.RateRequest rateRequest, String responseFields, AsyncCallback<com.mozu.api.contracts.shippingruntime.RatesResponse> callback) throws Exception
+	public CountDownLatch getRatesAsync(com.mozu.api.contracts.shippingruntime.RateRequest rateRequest, Boolean includeRawResponse, String responseFields, AsyncCallback<com.mozu.api.contracts.shippingruntime.RatesResponse> callback) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.shippingruntime.RatesResponse> client = com.mozu.api.clients.commerce.catalog.storefront.ShippingClient.getRatesClient( rateRequest,  responseFields);
+		MozuClient<com.mozu.api.contracts.shippingruntime.RatesResponse> client = com.mozu.api.clients.commerce.catalog.storefront.ShippingClient.getRatesClient( rateRequest,  includeRawResponse,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 

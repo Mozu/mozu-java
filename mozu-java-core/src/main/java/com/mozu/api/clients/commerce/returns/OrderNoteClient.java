@@ -23,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 public class OrderNoteClient {
 	
 	/**
-	 * Retrieves all internal notes associated with a return.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.commerceruntime.orders.OrderNote>> mozuClient=GetReturnNotesClient( returnId);
 	 * client.setBaseAddress(url);
@@ -47,7 +47,7 @@ public class OrderNoteClient {
 	}
 
 	/**
-	 * Retrieves a specific internal note from a return.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderNote> mozuClient=GetReturnNoteClient( returnId,  noteId);
 	 * client.setBaseAddress(url);
@@ -65,7 +65,7 @@ public class OrderNoteClient {
 	}
 
 	/**
-	 * Retrieves a specific internal note from a return.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderNote> mozuClient=GetReturnNoteClient( returnId,  noteId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -91,7 +91,7 @@ public class OrderNoteClient {
 	}
 
 	/**
-	 * Creates an internal note on a given return. This note is visible in  for customer service representatives to see.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderNote> mozuClient=CreateReturnNoteClient( returnNote,  returnId);
 	 * client.setBaseAddress(url);
@@ -110,7 +110,7 @@ public class OrderNoteClient {
 	}
 
 	/**
-	 * Creates an internal note on a given return. This note is visible in  for customer service representatives to see.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderNote> mozuClient=CreateReturnNoteClient( returnNote,  returnId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -138,7 +138,7 @@ public class OrderNoteClient {
 	}
 
 	/**
-	 * Updates an internal note on a given return. This note is visible in  for customer service representatives to see.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderNote> mozuClient=UpdateReturnNoteClient( returnNote,  returnId,  noteId);
 	 * client.setBaseAddress(url);
@@ -158,7 +158,7 @@ public class OrderNoteClient {
 	}
 
 	/**
-	 * Updates an internal note on a given return. This note is visible in  for customer service representatives to see.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderNote> mozuClient=UpdateReturnNoteClient( returnNote,  returnId,  noteId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -187,7 +187,7 @@ public class OrderNoteClient {
 	}
 
 	/**
-	 * Deletes an internal note from a given return.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteReturnNoteClient( returnId,  noteId);
 	 * client.setBaseAddress(url);

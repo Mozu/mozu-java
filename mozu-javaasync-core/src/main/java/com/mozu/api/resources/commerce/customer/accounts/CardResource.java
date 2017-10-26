@@ -20,7 +20,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the Cards subresource to manage stored credit cards for customer accounts. Mozu stores limited card data in the Customer service for expedited ordering purposes; however, the complete card data is stored in the Payment service.
+ * Use the Cards subresource to manage stored credit cards for customer accounts.  stores limited card data in the Customer service for expedited ordering purposes; however, the complete card data is stored in the Payment service.
  * </summary>
  */
 public class CardResource {
@@ -37,7 +37,7 @@ public class CardResource {
 
 	
 	/**
-	 * Retrieves the details of a credit card stored with a customer account billing contact.
+	 * 
 	 * <p><pre><code>
 	 *	Card card = new Card();
 	 *	Card card = card.getAccountCard( accountId,  cardId);
@@ -53,7 +53,7 @@ public class CardResource {
 	}
 
 	/**
-	 * Retrieves the details of a credit card stored with a customer account billing contact.
+	 * 
 	 * <p><pre><code>
 	 *	Card card = new Card();
 	 *	CountDownLatch latch = card.getAccountCard( accountId,  cardId, callback );
@@ -70,14 +70,14 @@ public class CardResource {
 	}
 
 	/**
-	 * Retrieves the details of a credit card stored with a customer account billing contact.
+	 * 
 	 * <p><pre><code>
 	 *	Card card = new Card();
 	 *	Card card = card.getAccountCard( accountId,  cardId,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.customer.Card
 	 * @see com.mozu.api.contracts.customer.Card
 	 */
@@ -91,14 +91,14 @@ public class CardResource {
 	}
 
 	/**
-	 * Retrieves the details of a credit card stored with a customer account billing contact.
+	 * 
 	 * <p><pre><code>
 	 *	Card card = new Card();
 	 *	CountDownLatch latch = card.getAccountCard( accountId,  cardId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.Card
 	 * @see com.mozu.api.contracts.customer.Card
@@ -112,7 +112,7 @@ public class CardResource {
 	}
 
 	/**
-	 * Retrieves all stored credit cards for the customer account.
+	 * 
 	 * <p><pre><code>
 	 *	Card card = new Card();
 	 *	CardCollection cardCollection = card.getAccountCards( accountId);
@@ -127,7 +127,7 @@ public class CardResource {
 	}
 
 	/**
-	 * Retrieves all stored credit cards for the customer account.
+	 * 
 	 * <p><pre><code>
 	 *	Card card = new Card();
 	 *	CountDownLatch latch = card.getAccountCards( accountId, callback );
@@ -143,13 +143,13 @@ public class CardResource {
 	}
 
 	/**
-	 * Retrieves all stored credit cards for the customer account.
+	 * 
 	 * <p><pre><code>
 	 *	Card card = new Card();
 	 *	CardCollection cardCollection = card.getAccountCards( accountId,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.customer.CardCollection
 	 * @see com.mozu.api.contracts.customer.CardCollection
 	 */
@@ -163,13 +163,13 @@ public class CardResource {
 	}
 
 	/**
-	 * Retrieves all stored credit cards for the customer account.
+	 * 
 	 * <p><pre><code>
 	 *	Card card = new Card();
 	 *	CountDownLatch latch = card.getAccountCards( accountId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.CardCollection
 	 * @see com.mozu.api.contracts.customer.CardCollection
@@ -183,7 +183,7 @@ public class CardResource {
 	}
 
 	/**
-	 * Creates a new credit card record and stores it for the customer account.
+	 * 
 	 * <p><pre><code>
 	 *	Card card = new Card();
 	 *	Card card = card.addAccountCard( card,  accountId);
@@ -200,7 +200,7 @@ public class CardResource {
 	}
 
 	/**
-	 * Creates a new credit card record and stores it for the customer account.
+	 * 
 	 * <p><pre><code>
 	 *	Card card = new Card();
 	 *	CountDownLatch latch = card.addAccountCard( card,  accountId, callback );
@@ -218,13 +218,13 @@ public class CardResource {
 	}
 
 	/**
-	 * Creates a new credit card record and stores it for the customer account.
+	 * 
 	 * <p><pre><code>
 	 *	Card card = new Card();
 	 *	Card card = card.addAccountCard( card,  accountId,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param card Properties of a credit card used to submit payment for an order.
 	 * @return com.mozu.api.contracts.customer.Card
 	 * @see com.mozu.api.contracts.customer.Card
@@ -240,13 +240,13 @@ public class CardResource {
 	}
 
 	/**
-	 * Creates a new credit card record and stores it for the customer account.
+	 * 
 	 * <p><pre><code>
 	 *	Card card = new Card();
 	 *	CountDownLatch latch = card.addAccountCard( card,  accountId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param card Properties of a credit card used to submit payment for an order.
 	 * @return com.mozu.api.contracts.customer.Card
@@ -262,7 +262,7 @@ public class CardResource {
 	}
 
 	/**
-	 * Update one or more properties of a credit card defined for a customer account.
+	 * 
 	 * <p><pre><code>
 	 *	Card card = new Card();
 	 *	Card card = card.updateAccountCard( card,  accountId,  cardId);
@@ -280,7 +280,7 @@ public class CardResource {
 	}
 
 	/**
-	 * Update one or more properties of a credit card defined for a customer account.
+	 * 
 	 * <p><pre><code>
 	 *	Card card = new Card();
 	 *	CountDownLatch latch = card.updateAccountCard( card,  accountId,  cardId, callback );
@@ -299,14 +299,14 @@ public class CardResource {
 	}
 
 	/**
-	 * Update one or more properties of a credit card defined for a customer account.
+	 * 
 	 * <p><pre><code>
 	 *	Card card = new Card();
 	 *	Card card = card.updateAccountCard( card,  accountId,  cardId,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param card Properties of a credit card used to submit payment for an order.
 	 * @return com.mozu.api.contracts.customer.Card
 	 * @see com.mozu.api.contracts.customer.Card
@@ -322,14 +322,14 @@ public class CardResource {
 	}
 
 	/**
-	 * Update one or more properties of a credit card defined for a customer account.
+	 * 
 	 * <p><pre><code>
 	 *	Card card = new Card();
 	 *	CountDownLatch latch = card.updateAccountCard( card,  accountId,  cardId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param card Properties of a credit card used to submit payment for an order.
 	 * @return com.mozu.api.contracts.customer.Card
@@ -345,7 +345,7 @@ public class CardResource {
 	}
 
 	/**
-	 * Removes a stored credit card from a customer account.
+	 * 
 	 * <p><pre><code>
 	 *	Card card = new Card();
 	 *	card.deleteAccountCard( accountId,  cardId);

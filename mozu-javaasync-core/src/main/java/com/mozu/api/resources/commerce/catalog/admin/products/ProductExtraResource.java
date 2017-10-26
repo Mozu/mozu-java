@@ -45,12 +45,12 @@ public class ProductExtraResource {
 	}
 		
 	/**
-	 * Retrieves a list of extras configured for the product according to any defined filter and sort criteria.
+	 * 
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
 	 *	ProductExtra productExtra = productextra.getExtras( productCode);
 	 * </code></pre></p>
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @return List<com.mozu.api.contracts.productadmin.ProductExtra>
 	 * @see com.mozu.api.contracts.productadmin.ProductExtra
 	 */
@@ -64,12 +64,12 @@ public class ProductExtraResource {
 	}
 
 	/**
-	 * Retrieves a list of extras configured for the product according to any defined filter and sort criteria.
+	 * 
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
 	 *	CountDownLatch latch = productextra.getExtras( productCode, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return List<com.mozu.api.contracts.productadmin.ProductExtra>
 	 * @see com.mozu.api.contracts.productadmin.ProductExtra
@@ -83,13 +83,13 @@ public class ProductExtraResource {
 	}
 
 	/**
-	 * Retrieves a collection of all localized delta price values for a product extra. Localized delta prices are deltas between two differing monetary conversion amounts between countries, such as US Dollar vs Euro.
+	 * 
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
 	 *	ProductExtraValueDeltaPrice productExtraValueDeltaPrice = productextra.getExtraValueLocalizedDeltaPrices( productCode,  attributeFQN,  value);
 	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param value The value string to create.
 	 * @return List<com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice>
 	 * @see com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice
@@ -104,13 +104,13 @@ public class ProductExtraResource {
 	}
 
 	/**
-	 * Retrieves a collection of all localized delta price values for a product extra. Localized delta prices are deltas between two differing monetary conversion amounts between countries, such as US Dollar vs Euro.
+	 * 
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
 	 *	CountDownLatch latch = productextra.getExtraValueLocalizedDeltaPrices( productCode,  attributeFQN,  value, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param value The value string to create.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return List<com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice>
@@ -125,14 +125,14 @@ public class ProductExtraResource {
 	}
 
 	/**
-	 * Retrieves the localized delta price value for a product extra. Localized delta prices are deltas between two differing monetary conversion amounts between countries, such as US Dollar vs Euro.
+	 * 
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
 	 *	ProductExtraValueDeltaPrice productExtraValueDeltaPrice = productextra.getExtraValueLocalizedDeltaPrice( productCode,  attributeFQN,  value,  currencyCode);
 	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param value The value string to create.
 	 * @return com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice
@@ -143,14 +143,14 @@ public class ProductExtraResource {
 	}
 
 	/**
-	 * Retrieves the localized delta price value for a product extra. Localized delta prices are deltas between two differing monetary conversion amounts between countries, such as US Dollar vs Euro.
+	 * 
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
 	 *	CountDownLatch latch = productextra.getExtraValueLocalizedDeltaPrice( productCode,  attributeFQN,  value,  currencyCode, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param value The value string to create.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice
@@ -162,15 +162,15 @@ public class ProductExtraResource {
 	}
 
 	/**
-	 * Retrieves the localized delta price value for a product extra. Localized delta prices are deltas between two differing monetary conversion amounts between countries, such as US Dollar vs Euro.
+	 * 
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
 	 *	ProductExtraValueDeltaPrice productExtraValueDeltaPrice = productextra.getExtraValueLocalizedDeltaPrice( productCode,  attributeFQN,  value,  currencyCode,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param value The value string to create.
 	 * @return com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice
@@ -185,15 +185,15 @@ public class ProductExtraResource {
 	}
 
 	/**
-	 * Retrieves the localized delta price value for a product extra. Localized delta prices are deltas between two differing monetary conversion amounts between countries, such as US Dollar vs Euro.
+	 * 
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
 	 *	CountDownLatch latch = productextra.getExtraValueLocalizedDeltaPrice( productCode,  attributeFQN,  value,  currencyCode,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param value The value string to create.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice
@@ -208,13 +208,13 @@ public class ProductExtraResource {
 	}
 
 	/**
-	 * Retrieves the details of an extra attribute configuration for the product specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
 	 *	ProductExtra productExtra = productextra.getExtra( productCode,  attributeFQN);
 	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @return com.mozu.api.contracts.productadmin.ProductExtra
 	 * @see com.mozu.api.contracts.productadmin.ProductExtra
 	 */
@@ -224,13 +224,13 @@ public class ProductExtraResource {
 	}
 
 	/**
-	 * Retrieves the details of an extra attribute configuration for the product specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
 	 *	CountDownLatch latch = productextra.getExtra( productCode,  attributeFQN, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.ProductExtra
 	 * @see com.mozu.api.contracts.productadmin.ProductExtra
@@ -241,14 +241,14 @@ public class ProductExtraResource {
 	}
 
 	/**
-	 * Retrieves the details of an extra attribute configuration for the product specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
 	 *	ProductExtra productExtra = productextra.getExtra( productCode,  attributeFQN,  responseFields);
 	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.productadmin.ProductExtra
 	 * @see com.mozu.api.contracts.productadmin.ProductExtra
 	 */
@@ -262,14 +262,14 @@ public class ProductExtraResource {
 	}
 
 	/**
-	 * Retrieves the details of an extra attribute configuration for the product specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
 	 *	CountDownLatch latch = productextra.getExtra( productCode,  attributeFQN,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.ProductExtra
 	 * @see com.mozu.api.contracts.productadmin.ProductExtra
@@ -283,13 +283,13 @@ public class ProductExtraResource {
 	}
 
 	/**
-	 * Adds a localized delta price value for a product extra. Localized delta prices are deltas between two differing monetary conversion amounts between countries, such as US Dollar vs Euro.
+	 * 
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
 	 *	ProductExtraValueDeltaPrice productExtraValueDeltaPrice = productextra.addExtraValueLocalizedDeltaPrice( localizedDeltaPrice,  productCode,  attributeFQN,  value);
 	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param value The value string to create.
 	 * @param localizedDeltaPrice The properties of the price difference between the product extra and the base product.
 	 * @return com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice
@@ -302,13 +302,13 @@ public class ProductExtraResource {
 	}
 
 	/**
-	 * Adds a localized delta price value for a product extra. Localized delta prices are deltas between two differing monetary conversion amounts between countries, such as US Dollar vs Euro.
+	 * 
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
 	 *	CountDownLatch latch = productextra.addExtraValueLocalizedDeltaPrice( localizedDeltaPrice,  productCode,  attributeFQN,  value, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param value The value string to create.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param localizedDeltaPrice The properties of the price difference between the product extra and the base product.
@@ -322,14 +322,14 @@ public class ProductExtraResource {
 	}
 
 	/**
-	 * Adds a localized delta price value for a product extra. Localized delta prices are deltas between two differing monetary conversion amounts between countries, such as US Dollar vs Euro.
+	 * 
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
 	 *	ProductExtraValueDeltaPrice productExtraValueDeltaPrice = productextra.addExtraValueLocalizedDeltaPrice( localizedDeltaPrice,  productCode,  attributeFQN,  value,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param value The value string to create.
 	 * @param localizedDeltaPrice The properties of the price difference between the product extra and the base product.
 	 * @return com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice
@@ -346,14 +346,14 @@ public class ProductExtraResource {
 	}
 
 	/**
-	 * Adds a localized delta price value for a product extra. Localized delta prices are deltas between two differing monetary conversion amounts between countries, such as US Dollar vs Euro.
+	 * 
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
 	 *	CountDownLatch latch = productextra.addExtraValueLocalizedDeltaPrice( localizedDeltaPrice,  productCode,  attributeFQN,  value,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param value The value string to create.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param localizedDeltaPrice The properties of the price difference between the product extra and the base product.
@@ -370,12 +370,12 @@ public class ProductExtraResource {
 	}
 
 	/**
-	 * Configure an extra attribute for the product specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
 	 *	ProductExtra productExtra = productextra.addExtra( productExtra,  productCode);
 	 * </code></pre></p>
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param productExtra Properties of an extra attribute to defined for a product that is associated with a product type that uses the extra. Setting up extras for a product enables shopper-entered information, such as initials for a monogram.
 	 * @return com.mozu.api.contracts.productadmin.ProductExtra
 	 * @see com.mozu.api.contracts.productadmin.ProductExtra
@@ -387,12 +387,12 @@ public class ProductExtraResource {
 	}
 
 	/**
-	 * Configure an extra attribute for the product specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
 	 *	CountDownLatch latch = productextra.addExtra( productExtra,  productCode, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param productExtra Properties of an extra attribute to defined for a product that is associated with a product type that uses the extra. Setting up extras for a product enables shopper-entered information, such as initials for a monogram.
 	 * @return com.mozu.api.contracts.productadmin.ProductExtra
@@ -405,13 +405,13 @@ public class ProductExtraResource {
 	}
 
 	/**
-	 * Configure an extra attribute for the product specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
 	 *	ProductExtra productExtra = productextra.addExtra( productExtra,  productCode,  responseFields);
 	 * </code></pre></p>
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param productExtra Properties of an extra attribute to defined for a product that is associated with a product type that uses the extra. Setting up extras for a product enables shopper-entered information, such as initials for a monogram.
 	 * @return com.mozu.api.contracts.productadmin.ProductExtra
 	 * @see com.mozu.api.contracts.productadmin.ProductExtra
@@ -427,13 +427,13 @@ public class ProductExtraResource {
 	}
 
 	/**
-	 * Configure an extra attribute for the product specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
 	 *	CountDownLatch latch = productextra.addExtra( productExtra,  productCode,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param productExtra Properties of an extra attribute to defined for a product that is associated with a product type that uses the extra. Setting up extras for a product enables shopper-entered information, such as initials for a monogram.
 	 * @return com.mozu.api.contracts.productadmin.ProductExtra
@@ -449,13 +449,13 @@ public class ProductExtraResource {
 	}
 
 	/**
-	 * Updates all localized delta price values for a product extra. Localized delta prices are deltas between two differing monetary conversion amounts between countries, such as US Dollar vs Euro.
+	 * 
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
 	 *	ProductExtraValueDeltaPrice productExtraValueDeltaPrice = productextra.updateExtraValueLocalizedDeltaPrices( localizedDeltaPrice,  productCode,  attributeFQN,  value);
 	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param value The value string to create.
 	 * @param localizedDeltaPrice The properties of the price difference between the product extra and the base product.
 	 * @return List<com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice>
@@ -472,13 +472,13 @@ public class ProductExtraResource {
 	}
 
 	/**
-	 * Updates all localized delta price values for a product extra. Localized delta prices are deltas between two differing monetary conversion amounts between countries, such as US Dollar vs Euro.
+	 * 
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
 	 *	CountDownLatch latch = productextra.updateExtraValueLocalizedDeltaPrices( localizedDeltaPrice,  productCode,  attributeFQN,  value, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param value The value string to create.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param localizedDeltaPrice The properties of the price difference between the product extra and the base product.
@@ -495,14 +495,14 @@ public class ProductExtraResource {
 	}
 
 	/**
-	 * Updates the localized delta price value for a product extra. Localized delta prices are deltas between two differing monetary conversion amounts between countries, such as US Dollar vs Euro.
+	 * 
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
 	 *	ProductExtraValueDeltaPrice productExtraValueDeltaPrice = productextra.updateExtraValueLocalizedDeltaPrice( localizedDeltaPrice,  productCode,  attributeFQN,  value,  currencyCode);
 	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param value The value string to create.
 	 * @param localizedDeltaPrice The properties of the price difference between the product extra and the base product.
 	 * @return com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice
@@ -515,14 +515,14 @@ public class ProductExtraResource {
 	}
 
 	/**
-	 * Updates the localized delta price value for a product extra. Localized delta prices are deltas between two differing monetary conversion amounts between countries, such as US Dollar vs Euro.
+	 * 
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
 	 *	CountDownLatch latch = productextra.updateExtraValueLocalizedDeltaPrice( localizedDeltaPrice,  productCode,  attributeFQN,  value,  currencyCode, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param value The value string to create.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param localizedDeltaPrice The properties of the price difference between the product extra and the base product.
@@ -536,15 +536,15 @@ public class ProductExtraResource {
 	}
 
 	/**
-	 * Updates the localized delta price value for a product extra. Localized delta prices are deltas between two differing monetary conversion amounts between countries, such as US Dollar vs Euro.
+	 * 
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
 	 *	ProductExtraValueDeltaPrice productExtraValueDeltaPrice = productextra.updateExtraValueLocalizedDeltaPrice( localizedDeltaPrice,  productCode,  attributeFQN,  value,  currencyCode,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param value The value string to create.
 	 * @param localizedDeltaPrice The properties of the price difference between the product extra and the base product.
 	 * @return com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice
@@ -561,15 +561,15 @@ public class ProductExtraResource {
 	}
 
 	/**
-	 * Updates the localized delta price value for a product extra. Localized delta prices are deltas between two differing monetary conversion amounts between countries, such as US Dollar vs Euro.
+	 * 
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
 	 *	CountDownLatch latch = productextra.updateExtraValueLocalizedDeltaPrice( localizedDeltaPrice,  productCode,  attributeFQN,  value,  currencyCode,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param value The value string to create.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param localizedDeltaPrice The properties of the price difference between the product extra and the base product.
@@ -586,13 +586,13 @@ public class ProductExtraResource {
 	}
 
 	/**
-	 * Updates the configuration of an extra attribute for the product specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
 	 *	ProductExtra productExtra = productextra.updateExtra( productExtra,  productCode,  attributeFQN);
 	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param productExtra Properties of an extra attribute to defined for a product that is associated with a product type that uses the extra. Setting up extras for a product enables shopper-entered information, such as initials for a monogram.
 	 * @return com.mozu.api.contracts.productadmin.ProductExtra
 	 * @see com.mozu.api.contracts.productadmin.ProductExtra
@@ -604,13 +604,13 @@ public class ProductExtraResource {
 	}
 
 	/**
-	 * Updates the configuration of an extra attribute for the product specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
 	 *	CountDownLatch latch = productextra.updateExtra( productExtra,  productCode,  attributeFQN, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param productExtra Properties of an extra attribute to defined for a product that is associated with a product type that uses the extra. Setting up extras for a product enables shopper-entered information, such as initials for a monogram.
 	 * @return com.mozu.api.contracts.productadmin.ProductExtra
@@ -623,14 +623,14 @@ public class ProductExtraResource {
 	}
 
 	/**
-	 * Updates the configuration of an extra attribute for the product specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
 	 *	ProductExtra productExtra = productextra.updateExtra( productExtra,  productCode,  attributeFQN,  responseFields);
 	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param productExtra Properties of an extra attribute to defined for a product that is associated with a product type that uses the extra. Setting up extras for a product enables shopper-entered information, such as initials for a monogram.
 	 * @return com.mozu.api.contracts.productadmin.ProductExtra
 	 * @see com.mozu.api.contracts.productadmin.ProductExtra
@@ -646,14 +646,14 @@ public class ProductExtraResource {
 	}
 
 	/**
-	 * Updates the configuration of an extra attribute for the product specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
 	 *	CountDownLatch latch = productextra.updateExtra( productExtra,  productCode,  attributeFQN,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param productExtra Properties of an extra attribute to defined for a product that is associated with a product type that uses the extra. Setting up extras for a product enables shopper-entered information, such as initials for a monogram.
 	 * @return com.mozu.api.contracts.productadmin.ProductExtra
@@ -669,13 +669,13 @@ public class ProductExtraResource {
 	}
 
 	/**
-	 * Delete a product extra configuration for the product specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
 	 *	productextra.deleteExtra( productCode,  attributeFQN);
 	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @return 
 	 */
 	public void deleteExtra(String productCode, String attributeFQN) throws Exception
@@ -688,15 +688,15 @@ public class ProductExtraResource {
 	}
 
 	/**
-	 * Deletes the localized delta price value for a product extra. Localized delta prices are deltas between two differing monetary conversion amounts between countries, such as US Dollar vs Euro.
+	 * 
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
 	 *	productextra.deleteExtraValueLocalizedDeltaPrice( productCode,  attributeFQN,  value,  currencyCode);
 	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
-	 * @param value Use this field to include those fields which are not included by default.
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param value The value string to create.
 	 * @return 
 	 */
 	public void deleteExtraValueLocalizedDeltaPrice(String productCode, String attributeFQN, String value, String currencyCode) throws Exception

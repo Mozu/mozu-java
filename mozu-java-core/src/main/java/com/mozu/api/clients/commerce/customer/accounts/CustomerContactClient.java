@@ -23,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 public class CustomerContactClient {
 	
 	/**
-	 * Retrieves the specified contact for a customer account such as a billing or shipping contact.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerContact> mozuClient=GetAccountContactClient( accountId,  contactId);
 	 * client.setBaseAddress(url);
@@ -41,7 +41,7 @@ public class CustomerContactClient {
 	}
 
 	/**
-	 * Retrieves the specified contact for a customer account such as a billing or shipping contact.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerContact> mozuClient=GetAccountContactClient( accountId,  contactId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -50,7 +50,7 @@ public class CustomerContactClient {
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param contactId Unique identifer of the customer account contact being updated.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerContact>
 	 * @see com.mozu.api.contracts.customer.CustomerContact
 	 */
@@ -67,7 +67,7 @@ public class CustomerContactClient {
 	}
 
 	/**
-	 * Retrieves a list of contacts for a customer according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerContactCollection> mozuClient=GetAccountContactsClient( accountId);
 	 * client.setBaseAddress(url);
@@ -84,7 +84,7 @@ public class CustomerContactClient {
 	}
 
 	/**
-	 * Retrieves a list of contacts for a customer according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerContactCollection> mozuClient=GetAccountContactsClient( accountId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * client.setBaseAddress(url);
@@ -92,11 +92,11 @@ public class CustomerContactClient {
 	 * CustomerContactCollection customerContactCollection = client.Result();
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerContactCollection>
 	 * @see com.mozu.api.contracts.customer.CustomerContactCollection
 	 */
@@ -113,7 +113,7 @@ public class CustomerContactClient {
 	}
 
 	/**
-	 * Creates a new contact for a customer account such as a new shipping address.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerContact> mozuClient=AddAccountContactClient( contact,  accountId);
 	 * client.setBaseAddress(url);
@@ -132,7 +132,7 @@ public class CustomerContactClient {
 	}
 
 	/**
-	 * Creates a new contact for a customer account such as a new shipping address.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerContact> mozuClient=AddAccountContactClient( contact,  accountId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -140,7 +140,7 @@ public class CustomerContactClient {
 	 * CustomerContact customerContact = client.Result();
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param contact Contact information, including the contact's name, address, phone numbers, email addresses, and company (if supplied). Also indicates whether this is a billing, shipping, or billing and shipping contact.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerContact>
 	 * @see com.mozu.api.contracts.customer.CustomerContact
@@ -160,7 +160,7 @@ public class CustomerContactClient {
 	}
 
 	/**
-	 * Updates a contact for a specified customer account such as to update addresses or change which contact is the primary contact for billing.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerContact> mozuClient=UpdateAccountContactClient( contact,  accountId,  contactId);
 	 * client.setBaseAddress(url);
@@ -180,7 +180,7 @@ public class CustomerContactClient {
 	}
 
 	/**
-	 * Updates a contact for a specified customer account such as to update addresses or change which contact is the primary contact for billing.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerContact> mozuClient=UpdateAccountContactClient( contact,  accountId,  contactId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -189,7 +189,7 @@ public class CustomerContactClient {
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param contactId Unique identifer of the customer account contact being updated.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param contact Contact information, including the contact's name, address, phone numbers, email addresses, and company (if supplied). Also indicates whether this is a billing, shipping, or billing and shipping contact.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerContact>
 	 * @see com.mozu.api.contracts.customer.CustomerContact
@@ -209,7 +209,54 @@ public class CustomerContactClient {
 	}
 
 	/**
-	 * Deletes a contact for the specified customer account.
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.customer.CustomerContactCollection> mozuClient=AddAccountContactListClient( contactList,  accountId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * CustomerContactCollection customerContactCollection = client.Result();
+	 * </code></pre></p>
+	 * @param accountId 
+	 * @param contactList 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerContactCollection>
+	 * @see com.mozu.api.contracts.customer.CustomerContactCollection
+	 * @see com.mozu.api.contracts.customer.CustomerContact
+	 */
+	public static MozuClient<com.mozu.api.contracts.customer.CustomerContactCollection> addAccountContactListClient(List<com.mozu.api.contracts.customer.CustomerContact> contactList, Integer accountId) throws Exception
+	{
+		return addAccountContactListClient( contactList,  accountId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.customer.CustomerContactCollection> mozuClient=AddAccountContactListClient( contactList,  accountId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * CustomerContactCollection customerContactCollection = client.Result();
+	 * </code></pre></p>
+	 * @param accountId 
+	 * @param responseFields 
+	 * @param contactList 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerContactCollection>
+	 * @see com.mozu.api.contracts.customer.CustomerContactCollection
+	 * @see com.mozu.api.contracts.customer.CustomerContact
+	 */
+	public static MozuClient<com.mozu.api.contracts.customer.CustomerContactCollection> addAccountContactListClient(List<com.mozu.api.contracts.customer.CustomerContact> contactList, Integer accountId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.customer.accounts.CustomerContactUrl.addAccountContactListUrl(accountId, responseFields);
+		String verb = "PUT";
+		Class<?> clz = com.mozu.api.contracts.customer.CustomerContactCollection.class;
+		MozuClient<com.mozu.api.contracts.customer.CustomerContactCollection> mozuClient = (MozuClient<com.mozu.api.contracts.customer.CustomerContactCollection>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(contactList);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteAccountContactClient( accountId,  contactId);
 	 * client.setBaseAddress(url);

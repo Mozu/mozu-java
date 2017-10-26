@@ -35,7 +35,7 @@ public class SecureAppDataResource {
 
 	
 	/**
-	 * platform-secureappdata Get GetDBValue description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	SecureAppData secureappdata = new SecureAppData();
 	 *	JObject json = secureappdata.getDBValue( appKeyId,  dbEntryQuery);
@@ -51,7 +51,7 @@ public class SecureAppDataResource {
 	}
 
 	/**
-	 * platform-secureappdata Get GetDBValue description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	SecureAppData secureappdata = new SecureAppData();
 	 *	JObject json = secureappdata.getDBValue( appKeyId,  dbEntryQuery,  responseFields);
@@ -72,7 +72,7 @@ public class SecureAppDataResource {
 	}
 
 	/**
-	 * platform-secureappdata Post CreateDBValue description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	SecureAppData secureappdata = new SecureAppData();
 	 *	secureappdata.createDBValue( value,  appKeyId,  dbEntryQuery);
@@ -93,7 +93,7 @@ public class SecureAppDataResource {
 	}
 
 	/**
-	 * platform-secureappdata Put UpdateDBValue description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	SecureAppData secureappdata = new SecureAppData();
 	 *	secureappdata.updateDBValue( value,  appKeyId,  dbEntryQuery);
@@ -114,7 +114,7 @@ public class SecureAppDataResource {
 	}
 
 	/**
-	 * platform-secureappdata Delete DeleteDBValue description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	SecureAppData secureappdata = new SecureAppData();
 	 *	secureappdata.deleteDBValue( appKeyId,  dbEntryQuery);

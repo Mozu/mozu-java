@@ -35,7 +35,7 @@ public class ApplicationResource {
 
 	
 	/**
-	 * Retrieve the settings of a third-party application.
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	Application application = application.thirdPartyGetApplication();
@@ -49,12 +49,12 @@ public class ApplicationResource {
 	}
 
 	/**
-	 * Retrieve the settings of a third-party application.
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	Application application = application.thirdPartyGetApplication( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.sitesettings.application.Application
 	 * @see com.mozu.api.contracts.sitesettings.application.Application
 	 */
@@ -68,7 +68,7 @@ public class ApplicationResource {
 	}
 
 	/**
-	 * Initializes an application with the necessary configured settings.
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	Application application = application.thirdPartyUpdateApplication( application);
@@ -84,12 +84,12 @@ public class ApplicationResource {
 	}
 
 	/**
-	 * Initializes an application with the necessary configured settings.
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	Application application = application.thirdPartyUpdateApplication( application,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param application Properties of an application installed in a tenant.
 	 * @return com.mozu.api.contracts.sitesettings.application.Application
 	 * @see com.mozu.api.contracts.sitesettings.application.Application

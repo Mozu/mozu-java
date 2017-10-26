@@ -35,7 +35,7 @@ public class OrderTaxContextResource {
 
 	
 	/**
-	 * Retrieves tax information applicable to the site.
+	 * 
 	 * <p><pre><code>
 	 *	OrderTaxContext ordertaxcontext = new OrderTaxContext();
 	 *	OrderTaxContext orderTaxContext = ordertaxcontext.estimateTaxes( taxableOrder);
@@ -51,7 +51,7 @@ public class OrderTaxContextResource {
 	}
 
 	/**
-	 * Retrieves tax information applicable to the site.
+	 * 
 	 * <p><pre><code>
 	 *	OrderTaxContext ordertaxcontext = new OrderTaxContext();
 	 *	OrderTaxContext orderTaxContext = ordertaxcontext.estimateTaxes( taxableOrder,  responseFields);

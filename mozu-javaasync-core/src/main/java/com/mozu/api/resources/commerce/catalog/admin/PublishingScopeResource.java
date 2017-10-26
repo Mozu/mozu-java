@@ -21,7 +21,7 @@ import org.apache.commons.lang.StringUtils;
 
 import com.mozu.api.DataViewMode;
 /** <summary>
- * Use the Product Publishing resource to publish or discard pending changes to product definitions in the master catalog.
+ * Use the Product Publishing resource to publish or discard pending changes to products in a master catalog, or to add or remove pending changes to and from product publish sets.You can use product publish sets to group pending product changes together and publish them all at the same time.
  * </summary>
  */
 public class PublishingScopeResource {
@@ -45,7 +45,7 @@ public class PublishingScopeResource {
 	}
 		
 	/**
-	 * Retrieves the details of a single PublishSet.
+	 * 
 	 * <p><pre><code>
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	PublishSet publishSet = publishingscope.getPublishSet( publishSetCode);
@@ -61,7 +61,7 @@ public class PublishingScopeResource {
 	}
 
 	/**
-	 * Retrieves the details of a single PublishSet.
+	 * 
 	 * <p><pre><code>
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	CountDownLatch latch = publishingscope.getPublishSet( publishSetCode, callback );
@@ -78,7 +78,7 @@ public class PublishingScopeResource {
 	}
 
 	/**
-	 * Retrieves the details of a single PublishSet.
+	 * 
 	 * <p><pre><code>
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	PublishSet publishSet = publishingscope.getPublishSet( publishSetCode,  responseFields);
@@ -99,7 +99,7 @@ public class PublishingScopeResource {
 	}
 
 	/**
-	 * Retrieves the details of a single PublishSet.
+	 * 
 	 * <p><pre><code>
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	CountDownLatch latch = publishingscope.getPublishSet( publishSetCode,  responseFields, callback );
@@ -120,7 +120,7 @@ public class PublishingScopeResource {
 	}
 
 	/**
-	 * Retrieves a list of PublishSets including the product counts.
+	 * 
 	 * <p><pre><code>
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	PublishSetCollection publishSetCollection = publishingscope.getPublishSets();
@@ -135,7 +135,7 @@ public class PublishingScopeResource {
 	}
 
 	/**
-	 * Retrieves a list of PublishSets including the product counts.
+	 * 
 	 * <p><pre><code>
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	CountDownLatch latch = publishingscope.getPublishSets( callback );
@@ -151,7 +151,7 @@ public class PublishingScopeResource {
 	}
 
 	/**
-	 * Retrieves a list of PublishSets including the product counts.
+	 * 
 	 * <p><pre><code>
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	PublishSetCollection publishSetCollection = publishingscope.getPublishSets( responseFields);
@@ -171,7 +171,7 @@ public class PublishingScopeResource {
 	}
 
 	/**
-	 * Retrieves a list of PublishSets including the product counts.
+	 * 
 	 * <p><pre><code>
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	CountDownLatch latch = publishingscope.getPublishSets( responseFields, callback );
@@ -191,7 +191,7 @@ public class PublishingScopeResource {
 	}
 
 	/**
-	 * Deletes the draft version of product changes for each product code specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	publishingscope.discardDrafts( publishScope);
@@ -211,7 +211,7 @@ public class PublishingScopeResource {
 	}
 
 	/**
-	 * Publishes the draft version of product changes for each product code specified in the request, and changes the product publish state to "live".
+	 * 
 	 * <p><pre><code>
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	publishingscope.publishDrafts( publishScope);
@@ -231,13 +231,13 @@ public class PublishingScopeResource {
 	}
 
 	/**
-	 * Assigns a product draft to a specified publish set.
+	 * 
 	 * <p><pre><code>
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	PublishSet publishSet = publishingscope.assignProductsToPublishSet( publishSet);
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param publishSet Mozu.ProductAdmin.Contracts.PublishSet ApiType DOCUMENT_HERE 
+	 * @param publishSet The details of the publish to which you want to assign products.
 	 * @return com.mozu.api.contracts.productadmin.PublishSet
 	 * @see com.mozu.api.contracts.productadmin.PublishSet
 	 * @see com.mozu.api.contracts.productadmin.PublishSet
@@ -248,14 +248,14 @@ public class PublishingScopeResource {
 	}
 
 	/**
-	 * Assigns a product draft to a specified publish set.
+	 * 
 	 * <p><pre><code>
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	CountDownLatch latch = publishingscope.assignProductsToPublishSet( publishSet, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
-	 * @param publishSet Mozu.ProductAdmin.Contracts.PublishSet ApiType DOCUMENT_HERE 
+	 * @param publishSet The details of the publish to which you want to assign products.
 	 * @return com.mozu.api.contracts.productadmin.PublishSet
 	 * @see com.mozu.api.contracts.productadmin.PublishSet
 	 * @see com.mozu.api.contracts.productadmin.PublishSet
@@ -266,14 +266,14 @@ public class PublishingScopeResource {
 	}
 
 	/**
-	 * Assigns a product draft to a specified publish set.
+	 * 
 	 * <p><pre><code>
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	PublishSet publishSet = publishingscope.assignProductsToPublishSet( publishSet,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
-	 * @param publishSet Mozu.ProductAdmin.Contracts.PublishSet ApiType DOCUMENT_HERE 
+	 * @param publishSet The details of the publish to which you want to assign products.
 	 * @return com.mozu.api.contracts.productadmin.PublishSet
 	 * @see com.mozu.api.contracts.productadmin.PublishSet
 	 * @see com.mozu.api.contracts.productadmin.PublishSet
@@ -288,7 +288,7 @@ public class PublishingScopeResource {
 	}
 
 	/**
-	 * Assigns a product draft to a specified publish set.
+	 * 
 	 * <p><pre><code>
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	CountDownLatch latch = publishingscope.assignProductsToPublishSet( publishSet,  responseFields, callback );
@@ -296,7 +296,7 @@ public class PublishingScopeResource {
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
-	 * @param publishSet Mozu.ProductAdmin.Contracts.PublishSet ApiType DOCUMENT_HERE 
+	 * @param publishSet The details of the publish to which you want to assign products.
 	 * @return com.mozu.api.contracts.productadmin.PublishSet
 	 * @see com.mozu.api.contracts.productadmin.PublishSet
 	 * @see com.mozu.api.contracts.productadmin.PublishSet
@@ -310,7 +310,7 @@ public class PublishingScopeResource {
 	}
 
 	/**
-	 * Removes all details about a PublishSet from the product service. If the discardDrafts param is true, it also deletes the product drafts.
+	 * 
 	 * <p><pre><code>
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	publishingscope.deletePublishSet( publishSetCode);
@@ -325,7 +325,7 @@ public class PublishingScopeResource {
 	}
 
 	/**
-	 * Removes all details about a PublishSet from the product service. If the discardDrafts param is true, it also deletes the product drafts.
+	 * 
 	 * <p><pre><code>
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	publishingscope.deletePublishSet( publishSetCode,  discardDrafts);

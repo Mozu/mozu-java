@@ -37,12 +37,12 @@ public class OrderItemResource {
 
 	
 	/**
-	 * Retrieves an order item with the order line ID.
+	 * 
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
 	 *	OrderItem orderItem = orderitem.getOrderItemViaLineId( orderId,  lineId);
 	 * </code></pre></p>
-	 * @param lineId 
+	 * @param lineId The specific line id that's associated with the order item.
 	 * @param orderId Unique identifier of the order.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderItem
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItem
@@ -53,12 +53,12 @@ public class OrderItemResource {
 	}
 
 	/**
-	 * Retrieves an order item with the order line ID.
+	 * 
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
 	 *	CountDownLatch latch = orderitem.getOrderItemViaLineId( orderId,  lineId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param lineId 
+	 * @param lineId The specific line id that's associated with the order item.
 	 * @param orderId Unique identifier of the order.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderItem
@@ -70,13 +70,13 @@ public class OrderItemResource {
 	}
 
 	/**
-	 * Retrieves an order item with the order line ID.
+	 * 
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
 	 *	OrderItem orderItem = orderitem.getOrderItemViaLineId( orderId,  lineId,  draft,  responseFields);
 	 * </code></pre></p>
 	 * @param draft If true, retrieve the draft version of the order, which might include uncommitted changes to the order or its components.
-	 * @param lineId 
+	 * @param lineId The specific line id that's associated with the order item.
 	 * @param orderId Unique identifier of the order.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderItem
@@ -92,13 +92,13 @@ public class OrderItemResource {
 	}
 
 	/**
-	 * Retrieves an order item with the order line ID.
+	 * 
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
 	 *	CountDownLatch latch = orderitem.getOrderItemViaLineId( orderId,  lineId,  draft,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param draft If true, retrieve the draft version of the order, which might include uncommitted changes to the order or its components.
-	 * @param lineId 
+	 * @param lineId The specific line id that's associated with the order item.
 	 * @param orderId Unique identifier of the order.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
@@ -114,7 +114,7 @@ public class OrderItemResource {
 	}
 
 	/**
-	 * Retrieves the details of a single order item.
+	 * 
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
 	 *	OrderItem orderItem = orderitem.getOrderItem( orderId,  orderItemId);
@@ -130,7 +130,7 @@ public class OrderItemResource {
 	}
 
 	/**
-	 * Retrieves the details of a single order item.
+	 * 
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
 	 *	CountDownLatch latch = orderitem.getOrderItem( orderId,  orderItemId, callback );
@@ -147,7 +147,7 @@ public class OrderItemResource {
 	}
 
 	/**
-	 * Retrieves the details of a single order item.
+	 * 
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
 	 *	OrderItem orderItem = orderitem.getOrderItem( orderId,  orderItemId,  draft,  responseFields);
@@ -155,7 +155,7 @@ public class OrderItemResource {
 	 * @param draft If true, retrieve the draft version of the order, which might include uncommitted changes to the order or its components.
 	 * @param orderId Unique identifier of the order.
 	 * @param orderItemId Unique identifier of the item to remove from the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderItem
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItem
 	 */
@@ -169,7 +169,7 @@ public class OrderItemResource {
 	}
 
 	/**
-	 * Retrieves the details of a single order item.
+	 * 
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
 	 *	CountDownLatch latch = orderitem.getOrderItem( orderId,  orderItemId,  draft,  responseFields, callback );
@@ -177,7 +177,7 @@ public class OrderItemResource {
 	 * @param draft If true, retrieve the draft version of the order, which might include uncommitted changes to the order or its components.
 	 * @param orderId Unique identifier of the order.
 	 * @param orderItemId Unique identifier of the item to remove from the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderItem
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItem
@@ -191,7 +191,7 @@ public class OrderItemResource {
 	}
 
 	/**
-	 * Retrieves the details of all items in an order.
+	 * 
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
 	 *	OrderItemCollection orderItemCollection = orderitem.getOrderItems( orderId);
@@ -206,7 +206,7 @@ public class OrderItemResource {
 	}
 
 	/**
-	 * Retrieves the details of all items in an order.
+	 * 
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
 	 *	CountDownLatch latch = orderitem.getOrderItems( orderId, callback );
@@ -222,14 +222,14 @@ public class OrderItemResource {
 	}
 
 	/**
-	 * Retrieves the details of all items in an order.
+	 * 
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
 	 *	OrderItemCollection orderItemCollection = orderitem.getOrderItems( orderId,  draft,  responseFields);
 	 * </code></pre></p>
 	 * @param draft If true, retrieve the draft version of the order, which might include uncommitted changes to the order or its components.
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderItemCollection
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItemCollection
 	 */
@@ -243,14 +243,14 @@ public class OrderItemResource {
 	}
 
 	/**
-	 * Retrieves the details of all items in an order.
+	 * 
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
 	 *	CountDownLatch latch = orderitem.getOrderItems( orderId,  draft,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param draft If true, retrieve the draft version of the order, which might include uncommitted changes to the order or its components.
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderItemCollection
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItemCollection
@@ -264,7 +264,7 @@ public class OrderItemResource {
 	}
 
 	/**
-	 * Adds a new item to a defined order.
+	 * 
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
 	 *	Order order = orderitem.createOrderItem( orderItem,  orderId);
@@ -281,7 +281,7 @@ public class OrderItemResource {
 	}
 
 	/**
-	 * Adds a new item to a defined order.
+	 * 
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
 	 *	CountDownLatch latch = orderitem.createOrderItem( orderItem,  orderId, callback );
@@ -299,16 +299,16 @@ public class OrderItemResource {
 	}
 
 	/**
-	 * Adds a new item to a defined order.
+	 * 
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
 	 *	Order order = orderitem.createOrderItem( orderItem,  orderId,  updateMode,  version,  skipInventoryCheck,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
 	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param version System-supplied integer that represents the current version of the order, which prevents users from unintentionally overriding changes to the order. When a user performs an operation for a defined order, the system validates that the version of the updated order matches the version of the order on the server. After the operation completes successfully, the system increments the version number by one.
+	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
 	 * @param orderItem The details associated with a specific item in an order.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
@@ -324,16 +324,16 @@ public class OrderItemResource {
 	}
 
 	/**
-	 * Adds a new item to a defined order.
+	 * 
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
 	 *	CountDownLatch latch = orderitem.createOrderItem( orderItem,  orderId,  updateMode,  version,  skipInventoryCheck,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
 	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param version System-supplied integer that represents the current version of the order, which prevents users from unintentionally overriding changes to the order. When a user performs an operation for a defined order, the system validates that the version of the updated order matches the version of the order on the server. After the operation completes successfully, the system increments the version number by one.
+	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param orderItem The details associated with a specific item in an order.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
@@ -349,7 +349,7 @@ public class OrderItemResource {
 	}
 
 	/**
-	 * Update the discount applied to an item in an order.
+	 * 
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
 	 *	Order order = orderitem.updateOrderItemDiscount( discount,  orderId,  orderItemId,  discountId);
@@ -368,7 +368,7 @@ public class OrderItemResource {
 	}
 
 	/**
-	 * Update the discount applied to an item in an order.
+	 * 
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
 	 *	CountDownLatch latch = orderitem.updateOrderItemDiscount( discount,  orderId,  orderItemId,  discountId, callback );
@@ -388,7 +388,7 @@ public class OrderItemResource {
 	}
 
 	/**
-	 * Update the discount applied to an item in an order.
+	 * 
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
 	 *	Order order = orderitem.updateOrderItemDiscount( discount,  orderId,  orderItemId,  discountId,  updateMode,  version,  responseFields);
@@ -396,9 +396,9 @@ public class OrderItemResource {
 	 * @param discountId discountId parameter description DOCUMENT_HERE 
 	 * @param orderId Unique identifier of the order.
 	 * @param orderItemId Unique identifier of the item to remove from the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param version System-supplied integer that represents the current version of the order, which prevents users from unintentionally overriding changes to the order. When a user performs an operation for a defined order, the system validates that the version of the updated order matches the version of the order on the server. After the operation completes successfully, the system increments the version number by one.
+	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
 	 * @param discount Properties of all applied discounts for an associated cart, order, or product. 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
@@ -414,7 +414,7 @@ public class OrderItemResource {
 	}
 
 	/**
-	 * Update the discount applied to an item in an order.
+	 * 
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
 	 *	CountDownLatch latch = orderitem.updateOrderItemDiscount( discount,  orderId,  orderItemId,  discountId,  updateMode,  version,  responseFields, callback );
@@ -422,9 +422,9 @@ public class OrderItemResource {
 	 * @param discountId discountId parameter description DOCUMENT_HERE 
 	 * @param orderId Unique identifier of the order.
 	 * @param orderItemId Unique identifier of the item to remove from the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param version System-supplied integer that represents the current version of the order, which prevents users from unintentionally overriding changes to the order. When a user performs an operation for a defined order, the system validates that the version of the updated order matches the version of the order on the server. After the operation completes successfully, the system increments the version number by one.
+	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param discount Properties of all applied discounts for an associated cart, order, or product. 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
@@ -440,7 +440,7 @@ public class OrderItemResource {
 	}
 
 	/**
-	 * Update the duty fee information for an order item.
+	 * 
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
 	 *	Order order = orderitem.updateItemDuty( orderId,  orderItemId,  dutyAmount);
@@ -458,7 +458,7 @@ public class OrderItemResource {
 	}
 
 	/**
-	 * Update the duty fee information for an order item.
+	 * 
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
 	 *	CountDownLatch latch = orderitem.updateItemDuty( orderId,  orderItemId,  dutyAmount, callback );
@@ -477,7 +477,7 @@ public class OrderItemResource {
 	}
 
 	/**
-	 * Update the duty fee information for an order item.
+	 * 
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
 	 *	Order order = orderitem.updateItemDuty( orderId,  orderItemId,  dutyAmount,  updateMode,  version,  responseFields);
@@ -502,7 +502,7 @@ public class OrderItemResource {
 	}
 
 	/**
-	 * Update the duty fee information for an order item.
+	 * 
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
 	 *	CountDownLatch latch = orderitem.updateItemDuty( orderId,  orderItemId,  dutyAmount,  updateMode,  version,  responseFields, callback );
@@ -527,7 +527,7 @@ public class OrderItemResource {
 	}
 
 	/**
-	 * Updates the item fulfillment information for the order specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
 	 *	Order order = orderitem.updateItemFulfillment( orderItem,  orderId,  orderItemId);
@@ -545,7 +545,7 @@ public class OrderItemResource {
 	}
 
 	/**
-	 * Updates the item fulfillment information for the order specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
 	 *	CountDownLatch latch = orderitem.updateItemFulfillment( orderItem,  orderId,  orderItemId, callback );
@@ -564,16 +564,16 @@ public class OrderItemResource {
 	}
 
 	/**
-	 * Updates the item fulfillment information for the order specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
 	 *	Order order = orderitem.updateItemFulfillment( orderItem,  orderId,  orderItemId,  updateMode,  version,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
 	 * @param orderItemId Unique identifier of the item to remove from the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param version System-supplied integer that represents the current version of the order, which prevents users from unintentionally overriding changes to the order. When a user performs an operation for a defined order, the system validates that the version of the updated order matches the version of the order on the server. After the operation completes successfully, the system increments the version number by one.
+	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
 	 * @param orderItem The details associated with a specific item in an order.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
@@ -589,16 +589,16 @@ public class OrderItemResource {
 	}
 
 	/**
-	 * Updates the item fulfillment information for the order specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
 	 *	CountDownLatch latch = orderitem.updateItemFulfillment( orderItem,  orderId,  orderItemId,  updateMode,  version,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
 	 * @param orderItemId Unique identifier of the item to remove from the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param version System-supplied integer that represents the current version of the order, which prevents users from unintentionally overriding changes to the order. When a user performs an operation for a defined order, the system validates that the version of the updated order matches the version of the order on the server. After the operation completes successfully, the system increments the version number by one.
+	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param orderItem The details associated with a specific item in an order.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
@@ -614,7 +614,7 @@ public class OrderItemResource {
 	}
 
 	/**
-	 * Override the price of an individual product on a line item in the specified order.
+	 * 
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
 	 *	Order order = orderitem.updateItemProductPrice( orderId,  orderItemId,  price);
@@ -631,7 +631,7 @@ public class OrderItemResource {
 	}
 
 	/**
-	 * Override the price of an individual product on a line item in the specified order.
+	 * 
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
 	 *	CountDownLatch latch = orderitem.updateItemProductPrice( orderId,  orderItemId,  price, callback );
@@ -649,7 +649,7 @@ public class OrderItemResource {
 	}
 
 	/**
-	 * Override the price of an individual product on a line item in the specified order.
+	 * 
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
 	 *	Order order = orderitem.updateItemProductPrice( orderId,  orderItemId,  price,  updateMode,  version,  responseFields);
@@ -657,9 +657,9 @@ public class OrderItemResource {
 	 * @param orderId Unique identifier of the order.
 	 * @param orderItemId Unique identifier of the item to remove from the order.
 	 * @param price The override price to specify for this item in the specified order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param version System-supplied integer that represents the current version of the order, which prevents users from unintentionally overriding changes to the order. When a user performs an operation for a defined order, the system validates that the version of the updated order matches the version of the order on the server. After the operation completes successfully, the system increments the version number by one.
+	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 */
@@ -673,7 +673,7 @@ public class OrderItemResource {
 	}
 
 	/**
-	 * Override the price of an individual product on a line item in the specified order.
+	 * 
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
 	 *	CountDownLatch latch = orderitem.updateItemProductPrice( orderId,  orderItemId,  price,  updateMode,  version,  responseFields, callback );
@@ -681,9 +681,9 @@ public class OrderItemResource {
 	 * @param orderId Unique identifier of the order.
 	 * @param orderItemId Unique identifier of the item to remove from the order.
 	 * @param price The override price to specify for this item in the specified order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param version System-supplied integer that represents the current version of the order, which prevents users from unintentionally overriding changes to the order. When a user performs an operation for a defined order, the system validates that the version of the updated order matches the version of the order on the server. After the operation completes successfully, the system increments the version number by one.
+	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
@@ -697,7 +697,7 @@ public class OrderItemResource {
 	}
 
 	/**
-	 * Update the quantity of an item in an order.
+	 * 
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
 	 *	Order order = orderitem.updateItemQuantity( orderId,  orderItemId,  quantity);
@@ -714,7 +714,7 @@ public class OrderItemResource {
 	}
 
 	/**
-	 * Update the quantity of an item in an order.
+	 * 
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
 	 *	CountDownLatch latch = orderitem.updateItemQuantity( orderId,  orderItemId,  quantity, callback );
@@ -732,7 +732,7 @@ public class OrderItemResource {
 	}
 
 	/**
-	 * Update the quantity of an item in an order.
+	 * 
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
 	 *	Order order = orderitem.updateItemQuantity( orderId,  orderItemId,  quantity,  updateMode,  version,  responseFields);
@@ -740,9 +740,9 @@ public class OrderItemResource {
 	 * @param orderId Unique identifier of the order.
 	 * @param orderItemId Unique identifier of the item to remove from the order.
 	 * @param quantity The number of cart items in the shopper's active cart.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param version System-supplied integer that represents the current version of the order, which prevents users from unintentionally overriding changes to the order. When a user performs an operation for a defined order, the system validates that the version of the updated order matches the version of the order on the server. After the operation completes successfully, the system increments the version number by one.
+	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 */
@@ -756,7 +756,7 @@ public class OrderItemResource {
 	}
 
 	/**
-	 * Update the quantity of an item in an order.
+	 * 
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
 	 *	CountDownLatch latch = orderitem.updateItemQuantity( orderId,  orderItemId,  quantity,  updateMode,  version,  responseFields, callback );
@@ -764,9 +764,9 @@ public class OrderItemResource {
 	 * @param orderId Unique identifier of the order.
 	 * @param orderItemId Unique identifier of the item to remove from the order.
 	 * @param quantity The number of cart items in the shopper's active cart.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param version System-supplied integer that represents the current version of the order, which prevents users from unintentionally overriding changes to the order. When a user performs an operation for a defined order, the system validates that the version of the updated order matches the version of the order on the server. After the operation completes successfully, the system increments the version number by one.
+	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
@@ -780,7 +780,7 @@ public class OrderItemResource {
 	}
 
 	/**
-	 * Removes a previously added item from a defined order.
+	 * 
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
 	 *	Order order = orderitem.deleteOrderItem( orderId,  orderItemId);
@@ -796,7 +796,7 @@ public class OrderItemResource {
 	}
 
 	/**
-	 * Removes a previously added item from a defined order.
+	 * 
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
 	 *	CountDownLatch latch = orderitem.deleteOrderItem( orderId,  orderItemId, callback );
@@ -813,7 +813,7 @@ public class OrderItemResource {
 	}
 
 	/**
-	 * Removes a previously added item from a defined order.
+	 * 
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
 	 *	Order order = orderitem.deleteOrderItem( orderId,  orderItemId,  updateMode,  version);
@@ -821,7 +821,7 @@ public class OrderItemResource {
 	 * @param orderId Unique identifier of the order.
 	 * @param orderItemId Unique identifier of the item to remove from the order.
 	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param version System-supplied integer that represents the current version of the order, which prevents users from unintentionally overriding changes to the order. When a user performs an operation for a defined order, the system validates that the version of the updated order matches the version of the order on the server. After the operation completes successfully, the system increments the version number by one.
+	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 */
@@ -835,7 +835,7 @@ public class OrderItemResource {
 	}
 
 	/**
-	 * Removes a previously added item from a defined order.
+	 * 
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
 	 *	CountDownLatch latch = orderitem.deleteOrderItem( orderId,  orderItemId,  updateMode,  version, callback );
@@ -843,7 +843,7 @@ public class OrderItemResource {
 	 * @param orderId Unique identifier of the order.
 	 * @param orderItemId Unique identifier of the item to remove from the order.
 	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param version System-supplied integer that represents the current version of the order, which prevents users from unintentionally overriding changes to the order. When a user performs an operation for a defined order, the system validates that the version of the updated order matches the version of the order on the server. After the operation completes successfully, the system increments the version number by one.
+	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order

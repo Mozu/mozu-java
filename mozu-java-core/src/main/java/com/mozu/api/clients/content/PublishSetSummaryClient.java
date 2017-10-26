@@ -23,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 public class PublishSetSummaryClient {
 	
 	/**
-	 * Returns a list of content publish sets.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.PublishSetSummaryPagedCollection> mozuClient=GetPublishSetsClient();
 	 * client.setBaseAddress(url);
@@ -39,7 +39,7 @@ public class PublishSetSummaryClient {
 	}
 
 	/**
-	 * Returns a list of content publish sets.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.PublishSetSummaryPagedCollection> mozuClient=GetPublishSetsClient( pageSize,  startIndex,  responseFields);
 	 * client.setBaseAddress(url);
@@ -65,7 +65,7 @@ public class PublishSetSummaryClient {
 	}
 
 	/**
-	 * Retrieves a list of content publish sets and their properties.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection> mozuClient=GetPublishSetItemsClient( code);
 	 * client.setBaseAddress(url);
@@ -82,7 +82,7 @@ public class PublishSetSummaryClient {
 	}
 
 	/**
-	 * Retrieves a list of content publish sets and their properties.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection> mozuClient=GetPublishSetItemsClient( code,  pageSize,  startIndex,  sortBy,  filter,  responseFields);
 	 * client.setBaseAddress(url);
@@ -111,7 +111,7 @@ public class PublishSetSummaryClient {
 	}
 
 	/**
-	 * Deletes the specified content publish set. You can use the shouldDiscard parameter to specify whether to discard the content drafts assigned to the content publish set.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<Object> mozuClient=DeletePublishSetClient( code);
 	 * client.setBaseAddress(url);
@@ -128,7 +128,7 @@ public class PublishSetSummaryClient {
 	}
 
 	/**
-	 * Deletes the specified content publish set. You can use the shouldDiscard parameter to specify whether to discard the content drafts assigned to the content publish set.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<Object> mozuClient=DeletePublishSetClient( code,  shouldDiscard,  responseFields);
 	 * client.setBaseAddress(url);
@@ -154,7 +154,7 @@ public class PublishSetSummaryClient {
 	}
 
 	/**
-	 * Adds a set of documents by id to a specified publish set.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<Object> mozuClient=AddPublishSetItemsClient( itemsToPublish,  code);
 	 * client.setBaseAddress(url);
@@ -173,7 +173,7 @@ public class PublishSetSummaryClient {
 	}
 
 	/**
-	 * Adds a set of documents by id to a specified publish set.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<Object> mozuClient=AddPublishSetItemsClient( itemsToPublish,  code,  responseFields);
 	 * client.setBaseAddress(url);

@@ -30,9 +30,6 @@ public class Return implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Available actions you can complete for an order. These actions may differ depending on the status of the order, such as actions required to enter a payment, return of a package, and fulfillment of a shipment.
-	 */
 	protected List<String> availableActions;
 	public List<String> getAvailableActions() {
 		return this.availableActions;
@@ -41,9 +38,6 @@ public class Return implements Serializable
 		this.availableActions = availableActions;
 	}
 
-	/**
-	 * Code that identifies the channel associated with the site for the shopper's created shopping cart, order, and return.
-	 */
 	protected  String channelCode;
 
 	public String getChannelCode() {
@@ -54,9 +48,6 @@ public class Return implements Serializable
 		this.channelCode = channelCode;
 	}
 
-	/**
-	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
-	 */
 	protected  String currencyCode;
 
 	public String getCurrencyCode() {
@@ -67,9 +58,6 @@ public class Return implements Serializable
 		this.currencyCode = currencyCode;
 	}
 
-	/**
-	 * Unique identifer of the customer account. This ID is used to associate numerous types of data and object with the customer account, including orders, returns, wish lists, and in-store credit.
-	 */
 	protected  Integer customerAccountId;
 
 	public Integer getCustomerAccountId() {
@@ -80,9 +68,6 @@ public class Return implements Serializable
 		this.customerAccountId = customerAccountId;
 	}
 
-	/**
-	 * The type of customer interaction used to create this shopping cart. Possible values are Website, Call, Store, or Unknown.
-	 */
 	protected  String customerInteractionType;
 
 	public String getCustomerInteractionType() {
@@ -93,9 +78,6 @@ public class Return implements Serializable
 		this.customerInteractionType = customerInteractionType;
 	}
 
-	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
-	 */
 	protected  String id;
 
 	public String getId() {
@@ -106,9 +88,6 @@ public class Return implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * The unique, user-defined code that identifies a location. This location can be the location where the order was entered, location for newly in-stock products, and where products are returned.
-	 */
 	protected  String locationCode;
 
 	public String getLocationCode() {
@@ -119,9 +98,6 @@ public class Return implements Serializable
 		this.locationCode = locationCode;
 	}
 
-	/**
-	 * The total value of the return to the merchant for accounting purposes. This total represents the combined product loss and shipping loss associated with the return.
-	 */
 	protected  Double lossTotal;
 
 	public Double getLossTotal() {
@@ -132,9 +108,6 @@ public class Return implements Serializable
 		this.lossTotal = lossTotal;
 	}
 
-	/**
-	 * If this return is associated with a previously completed order, the unique identifier of the original order.
-	 */
 	protected  String originalOrderId;
 
 	public String getOriginalOrderId() {
@@ -145,6 +118,9 @@ public class Return implements Serializable
 		this.originalOrderId = originalOrderId;
 	}
 
+	/**
+	 * The order number of the original order where the return was created.
+	 */
 	protected  Integer originalOrderNumber;
 
 	public Integer getOriginalOrderNumber() {
@@ -155,9 +131,6 @@ public class Return implements Serializable
 		this.originalOrderNumber = originalOrderNumber;
 	}
 
-	/**
-	 * The total tax amount levied on the product loss amount.
-	 */
 	protected  Double productLossTaxTotal;
 
 	public Double getProductLossTaxTotal() {
@@ -168,9 +141,6 @@ public class Return implements Serializable
 		this.productLossTaxTotal = productLossTaxTotal;
 	}
 
-	/**
-	 * The total value of the product returned to the merchant for accounting purposes, calculated by multiplying the cost of the item by its quantity returned.
-	 */
 	protected  Double productLossTotal;
 
 	public Double getProductLossTotal() {
@@ -181,6 +151,9 @@ public class Return implements Serializable
 		this.productLossTotal = productLossTotal;
 	}
 
+	/**
+	 * The status that indicates whether you have received the return item from the shopper. The accepted values are , , or .
+	 */
 	protected  String receiveStatus;
 
 	public String getReceiveStatus() {
@@ -191,9 +164,6 @@ public class Return implements Serializable
 		this.receiveStatus = receiveStatus;
 	}
 
-	/**
-	 * If a refund action was performed for this return, the total amount refunded to the shopper. The refund amount can differ from the sum of the price of the returned items.
-	 */
 	protected  Double refundAmount;
 
 	public Double getRefundAmount() {
@@ -204,6 +174,9 @@ public class Return implements Serializable
 		this.refundAmount = refundAmount;
 	}
 
+	/**
+	 * The status of the refund. The accepted values are  if the shopper only wants a replacement or  if either a partial or full refund is applied to the return.
+	 */
 	protected  String refundStatus;
 
 	public String getRefundStatus() {
@@ -214,6 +187,9 @@ public class Return implements Serializable
 		this.refundStatus = refundStatus;
 	}
 
+	/**
+	 * The status of the replacement order. The accepted values are  if there is no replacement order or  if a replacement order exits.
+	 */
 	protected  String replaceStatus;
 
 	public String getReplaceStatus() {
@@ -224,9 +200,6 @@ public class Return implements Serializable
 		this.replaceStatus = replaceStatus;
 	}
 
-	/**
-	 * A merchant-specific identifier used to sequentially order returns.
-	 */
 	protected  Integer returnNumber;
 
 	public Integer getReturnNumber() {
@@ -237,9 +210,6 @@ public class Return implements Serializable
 		this.returnNumber = returnNumber;
 	}
 
-	/**
-	 * Unique identifier for the order created as a result of the return. If the return results in shipping a replacement item, the order includes shipment information for the replaced items. If the return results in a refund, the order includes payment transactions to credit the shopper.
-	 */
 	protected  String returnOrderId;
 
 	public String getReturnOrderId() {
@@ -250,9 +220,6 @@ public class Return implements Serializable
 		this.returnOrderId = returnOrderId;
 	}
 
-	/**
-	 * The type of return, which is "Refund" or "Replace".
-	 */
 	protected  String returnType;
 
 	public String getReturnType() {
@@ -263,9 +230,6 @@ public class Return implements Serializable
 		this.returnType = returnType;
 	}
 
-	/**
-	 * The date by which a shopper must ship items associated with a return in an "awaiting items" state to the merchant.
-	 */
 	protected  DateTime rmaDeadline;
 
 	public DateTime getRmaDeadline() {
@@ -276,9 +240,6 @@ public class Return implements Serializable
 		this.rmaDeadline = rmaDeadline;
 	}
 
-	/**
-	 * The total tax amount levied on the shipping loss amount.
-	 */
 	protected  Double shippingLossTaxTotal;
 
 	public Double getShippingLossTaxTotal() {
@@ -289,9 +250,6 @@ public class Return implements Serializable
 		this.shippingLossTaxTotal = shippingLossTaxTotal;
 	}
 
-	/**
-	 * The total value of shipping the returned product to the merchant for accounting purposes, calculated by multiplying the shipping cost of the item by its quantity returned.
-	 */
 	protected  Double shippingLossTotal;
 
 	public Double getShippingLossTotal() {
@@ -302,9 +260,6 @@ public class Return implements Serializable
 		this.shippingLossTotal = shippingLossTotal;
 	}
 
-	/**
-	 * Unique identifier of the site.
-	 */
 	protected  Integer siteId;
 
 	public Integer getSiteId() {
@@ -315,9 +270,6 @@ public class Return implements Serializable
 		this.siteId = siteId;
 	}
 
-	/**
-	 * The current status of an object. This status is specific to the object including payment (New, Authorized, Captured, Declined, Failed, Voided, Credited, CheckRequested, or RolledBack), discount (Active, Scheduled, or Expired), returns (ReturnAuthorized), tenant, package (Fulfilled or NotFulfilled), application, master and product catalogs, orders (Pending, Submitted, Processing, Pending Review, Closed, or Canceled), and order validation results (Pass, Fail, Error, or Review).
-	 */
 	protected  String status;
 
 	public String getStatus() {
@@ -328,9 +280,6 @@ public class Return implements Serializable
 		this.status = status;
 	}
 
-	/**
-	 * Unique identifier of the Mozu tenant.
-	 */
 	protected  Integer tenantId;
 
 	public Integer getTenantId() {
@@ -341,9 +290,6 @@ public class Return implements Serializable
 		this.tenantId = tenantId;
 	}
 
-	/**
-	 * Unique identifier of the customer account (shopper or system user). System-supplied and read-only. If the shopper user is anonymous, the user ID represents a system-generated user ID string.
-	 */
 	protected  String userId;
 
 	public String getUserId() {
@@ -354,9 +300,6 @@ public class Return implements Serializable
 		this.userId = userId;
 	}
 
-	/**
-	 * Unique identifier of the customer visit in which the cart was created or last modified.
-	 */
 	protected  String visitId;
 
 	public String getVisitId() {
@@ -367,9 +310,6 @@ public class Return implements Serializable
 		this.visitId = visitId;
 	}
 
-	/**
-	 * Unique identifier of the web session in which the cart, order, return, or wish list was created or last modified.
-	 */
 	protected  String webSessionId;
 
 	public String getWebSessionId() {
@@ -380,9 +320,6 @@ public class Return implements Serializable
 		this.webSessionId = webSessionId;
 	}
 
-	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -404,6 +341,9 @@ public class Return implements Serializable
 		this.changeMessages = changeMessages;
 	}
 
+	/**
+	 * contact ApiType DOCUMENT_HERE 
+	 */
 	protected  Contact contact;
 
 	public Contact getContact() {
@@ -414,9 +354,6 @@ public class Return implements Serializable
 		this.contact = contact;
 	}
 
-	/**
-	 * An array list of objects in the returned collection.
-	 */
 	protected List<ReturnItem> items;
 	public List<ReturnItem> getItems() {
 		return this.items;
@@ -425,9 +362,6 @@ public class Return implements Serializable
 		this.items = items;
 	}
 
-	/**
-	 * Paged list collection of note content for objects including customers, orders, and returns. 
-	 */
 	protected List<OrderNote> notes;
 	public List<OrderNote> getNotes() {
 		return this.notes;
@@ -436,9 +370,6 @@ public class Return implements Serializable
 		this.notes = notes;
 	}
 
-	/**
-	 * Array list of physical packages shipped for a specified order.
-	 */
 	protected List<Package> packages;
 	public List<Package> getPackages() {
 		return this.packages;
@@ -447,9 +378,6 @@ public class Return implements Serializable
 		this.packages = packages;
 	}
 
-	/**
-	 * Wrapper for a collection of payments associated with an order or return. An order can include a number of payments until the full total is covered. 
-	 */
 	protected List<Payment> payments;
 	public List<Payment> getPayments() {
 		return this.payments;

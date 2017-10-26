@@ -35,7 +35,7 @@ public class AssignedDiscountResource {
 
 	
 	/**
-	 * Retrieves the discountIds of any assigned discounts for the specified coupon set.
+	 * 
 	 * <p><pre><code>
 	 *	AssignedDiscount assigneddiscount = new AssignedDiscount();
 	 *	AssignedDiscount assignedDiscount = assigneddiscount.getAssignedDiscounts( couponSetCode);
@@ -54,7 +54,7 @@ public class AssignedDiscountResource {
 	}
 
 	/**
-	 * Assigns or associates an existing discount to a specified coupon set. Use the couponSetCode parameter to specify the coupon set.
+	 * 
 	 * <p><pre><code>
 	 *	AssignedDiscount assigneddiscount = new AssignedDiscount();
 	 *	assigneddiscount.assignDiscount( assignedDiscount,  couponSetCode);
@@ -74,7 +74,7 @@ public class AssignedDiscountResource {
 	}
 
 	/**
-	 * Unassigns or disassociates the specified discount with the specified coupon set.
+	 * 
 	 * <p><pre><code>
 	 *	AssignedDiscount assigneddiscount = new AssignedDiscount();
 	 *	assigneddiscount.unAssignDiscount( couponSetCode,  discountId);

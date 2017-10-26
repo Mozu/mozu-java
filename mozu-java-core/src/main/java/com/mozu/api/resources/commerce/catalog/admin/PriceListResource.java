@@ -35,7 +35,7 @@ public class PriceListResource {
 
 	
 	/**
-	 * Retrieves a list of price lists according to any specified facets, filter criteria, and sort options.
+	 * 
 	 * <p><pre><code>
 	 *	PriceList pricelist = new PriceList();
 	 *	PriceListCollection priceListCollection = pricelist.getPriceLists();
@@ -49,7 +49,7 @@ public class PriceListResource {
 	}
 
 	/**
-	 * Retrieves a list of price lists according to any specified facets, filter criteria, and sort options.
+	 * 
 	 * <p><pre><code>
 	 *	PriceList pricelist = new PriceList();
 	 *	PriceListCollection priceListCollection = pricelist.getPriceLists( startIndex,  pageSize,  sortBy,  filter,  responseFields);
@@ -72,7 +72,7 @@ public class PriceListResource {
 	}
 
 	/**
-	 * Retrieves the details of the specified price list.
+	 * 
 	 * <p><pre><code>
 	 *	PriceList pricelist = new PriceList();
 	 *	PriceList priceList = pricelist.getPriceList( priceListCode);
@@ -87,7 +87,7 @@ public class PriceListResource {
 	}
 
 	/**
-	 * Retrieves the details of the specified price list.
+	 * 
 	 * <p><pre><code>
 	 *	PriceList pricelist = new PriceList();
 	 *	PriceList priceList = pricelist.getPriceList( priceListCode,  responseFields);
@@ -107,7 +107,7 @@ public class PriceListResource {
 	}
 
 	/**
-	 * Adds a new price list to the tenant.
+	 * 
 	 * <p><pre><code>
 	 *	PriceList pricelist = new PriceList();
 	 *	PriceList priceList = pricelist.addPriceList( priceList);
@@ -123,7 +123,7 @@ public class PriceListResource {
 	}
 
 	/**
-	 * Adds a new price list to the tenant.
+	 * 
 	 * <p><pre><code>
 	 *	PriceList pricelist = new PriceList();
 	 *	PriceList priceList = pricelist.addPriceList( priceList,  responseFields);
@@ -144,7 +144,115 @@ public class PriceListResource {
 	}
 
 	/**
-	 * Updates the details of the specified price list.
+	 * 
+	 * <p><pre><code>
+	 *	PriceList pricelist = new PriceList();
+	 *	pricelist.bulkAddPriceListEntries( priceListEntriesIn);
+	 * </code></pre></p>
+	 * @param priceListEntriesIn 
+	 * @return 
+	 * @see com.mozu.api.contracts.productadmin.PriceListEntry
+	 */
+	public void bulkAddPriceListEntries(List<com.mozu.api.contracts.productadmin.PriceListEntry> priceListEntriesIn) throws Exception
+	{
+		bulkAddPriceListEntries( priceListEntriesIn,  null,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	PriceList pricelist = new PriceList();
+	 *	pricelist.bulkAddPriceListEntries( priceListEntriesIn,  publishEvents,  invalidateCache);
+	 * </code></pre></p>
+	 * @param invalidateCache Disable this property if you expect to encounter unacceptable performance hits related to clearing the cache for each product in the price list entries. Otherwise, leave this property enabled.
+	 * @param publishEvents Disable this property to prevent publishing the event related to adding price list entries to the system. Disabling this property helps you prevent performance delays if you expect the event to trigger the re-indexing of a large number of products, or if you want to postpone the operations of other applications and services listening for the event.
+	 * @param priceListEntriesIn 
+	 * @return 
+	 * @see com.mozu.api.contracts.productadmin.PriceListEntry
+	 */
+	public void bulkAddPriceListEntries(List<com.mozu.api.contracts.productadmin.PriceListEntry> priceListEntriesIn, Boolean publishEvents, Boolean invalidateCache) throws Exception
+	{
+		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.PriceListClient.bulkAddPriceListEntriesClient( priceListEntriesIn,  publishEvents,  invalidateCache);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		client.cleanupHttpConnection();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	PriceList pricelist = new PriceList();
+	 *	pricelist.bulkDeletePriceListEntries( priceListEntriesIn);
+	 * </code></pre></p>
+	 * @param priceListEntriesIn 
+	 * @return 
+	 * @see com.mozu.api.contracts.productadmin.PriceListEntry
+	 */
+	public void bulkDeletePriceListEntries(List<com.mozu.api.contracts.productadmin.PriceListEntry> priceListEntriesIn) throws Exception
+	{
+		bulkDeletePriceListEntries( priceListEntriesIn,  null,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	PriceList pricelist = new PriceList();
+	 *	pricelist.bulkDeletePriceListEntries( priceListEntriesIn,  publishEvents,  invalidateCache);
+	 * </code></pre></p>
+	 * @param invalidateCache Disable this property if you expect to encounter unacceptable performance hits related to clearing the cache for each product in the price list entries. Otherwise, leave this property enabled.
+	 * @param publishEvents Disable this property to prevent publishing the event related to deleting price list entries from the system. Disabling this property helps you prevent performance delays if you expect the event to trigger the re-indexing of a large number of products, or if you want to postpone the operations of other applications and services listening for the event.
+	 * @param priceListEntriesIn 
+	 * @return 
+	 * @see com.mozu.api.contracts.productadmin.PriceListEntry
+	 */
+	public void bulkDeletePriceListEntries(List<com.mozu.api.contracts.productadmin.PriceListEntry> priceListEntriesIn, Boolean publishEvents, Boolean invalidateCache) throws Exception
+	{
+		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.PriceListClient.bulkDeletePriceListEntriesClient( priceListEntriesIn,  publishEvents,  invalidateCache);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		client.cleanupHttpConnection();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	PriceList pricelist = new PriceList();
+	 *	pricelist.bulkUpdatePriceListEntries( priceListEntriesIn);
+	 * </code></pre></p>
+	 * @param priceListEntriesIn 
+	 * @return 
+	 * @see com.mozu.api.contracts.productadmin.PriceListEntry
+	 */
+	public void bulkUpdatePriceListEntries(List<com.mozu.api.contracts.productadmin.PriceListEntry> priceListEntriesIn) throws Exception
+	{
+		bulkUpdatePriceListEntries( priceListEntriesIn,  null,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	PriceList pricelist = new PriceList();
+	 *	pricelist.bulkUpdatePriceListEntries( priceListEntriesIn,  publishEvents,  invalidateCache);
+	 * </code></pre></p>
+	 * @param invalidateCache Disable this property if you expect to encounter unacceptable performance hits related to clearing the cache for each product in the price list entries. Otherwise, leave this property enabled.
+	 * @param publishEvents Disable this property to prevent publishing the event related to updating price list entries in the system. Disabling this property helps you prevent performance delays if you expect the event to trigger the re-indexing of a large number of products, or if you want to postpone the operations of other applications and services listening for the event.
+	 * @param priceListEntriesIn 
+	 * @return 
+	 * @see com.mozu.api.contracts.productadmin.PriceListEntry
+	 */
+	public void bulkUpdatePriceListEntries(List<com.mozu.api.contracts.productadmin.PriceListEntry> priceListEntriesIn, Boolean publishEvents, Boolean invalidateCache) throws Exception
+	{
+		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.PriceListClient.bulkUpdatePriceListEntriesClient( priceListEntriesIn,  publishEvents,  invalidateCache);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		client.cleanupHttpConnection();
+
+	}
+
+	/**
+	 * 
 	 * <p><pre><code>
 	 *	PriceList pricelist = new PriceList();
 	 *	PriceList priceList = pricelist.updatePriceList( priceList,  priceListCode);
@@ -161,7 +269,7 @@ public class PriceListResource {
 	}
 
 	/**
-	 * Updates the details of the specified price list.
+	 * 
 	 * <p><pre><code>
 	 *	PriceList pricelist = new PriceList();
 	 *	PriceList priceList = pricelist.updatePriceList( priceList,  priceListCode,  responseFields);
@@ -183,7 +291,7 @@ public class PriceListResource {
 	}
 
 	/**
-	 * Deletes the specified price list from the tenant.
+	 * 
 	 * <p><pre><code>
 	 *	PriceList pricelist = new PriceList();
 	 *	pricelist.deletePriceList( priceListCode);
@@ -197,7 +305,7 @@ public class PriceListResource {
 	}
 
 	/**
-	 * Deletes the specified price list from the tenant.
+	 * 
 	 * <p><pre><code>
 	 *	PriceList pricelist = new PriceList();
 	 *	pricelist.deletePriceList( priceListCode,  cascadeDeleteEntries);

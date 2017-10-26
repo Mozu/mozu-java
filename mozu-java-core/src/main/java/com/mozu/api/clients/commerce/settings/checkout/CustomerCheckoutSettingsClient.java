@@ -23,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 public class CustomerCheckoutSettingsClient {
 	
 	/**
-	 * Retrieves all checkout settings defined for the site: Payment settings, such as the payment gateway ID and credentials, supported credit cards, and more; Customer Checkout settings, such as whether login is required, and any custom attributes; and Order Processing settings, such as when payment is authorized and captured, and any custom attributes.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings> mozuClient=GetCustomerCheckoutSettingsClient();
 	 * client.setBaseAddress(url);
@@ -39,14 +39,14 @@ public class CustomerCheckoutSettingsClient {
 	}
 
 	/**
-	 * Retrieves all checkout settings defined for the site: Payment settings, such as the payment gateway ID and credentials, supported credit cards, and more; Customer Checkout settings, such as whether login is required, and any custom attributes; and Order Processing settings, such as when payment is authorized and captured, and any custom attributes.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings> mozuClient=GetCustomerCheckoutSettingsClient( responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * CustomerCheckoutSettings customerCheckoutSettings = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings>
 	 * @see com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings
 	 */
@@ -63,7 +63,7 @@ public class CustomerCheckoutSettingsClient {
 	}
 
 	/**
-	 * Modifies existing site checkout settings. Modify Payment, Customer Checkout, and Order Processing settings in one PUT.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings> mozuClient=UpdateCustomerCheckoutSettingsClient( customerCheckoutSettings);
 	 * client.setBaseAddress(url);
@@ -81,14 +81,14 @@ public class CustomerCheckoutSettingsClient {
 	}
 
 	/**
-	 * Modifies existing site checkout settings. Modify Payment, Customer Checkout, and Order Processing settings in one PUT.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings> mozuClient=UpdateCustomerCheckoutSettingsClient( customerCheckoutSettings,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * CustomerCheckoutSettings customerCheckoutSettings = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param customerCheckoutSettings The properties of the customer checkout settings such as whether shoppers must be logged in.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings>
 	 * @see com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings

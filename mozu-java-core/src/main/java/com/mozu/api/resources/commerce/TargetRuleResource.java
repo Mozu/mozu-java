@@ -35,7 +35,7 @@ public class TargetRuleResource {
 
 	
 	/**
-	 * Retrieves a list of target rules and their details according to any specified facets, filter criteria, and sort options.
+	 * 
 	 * <p><pre><code>
 	 *	TargetRule targetrule = new TargetRule();
 	 *	TargetRuleCollection targetRuleCollection = targetrule.getTargetRules();
@@ -50,7 +50,7 @@ public class TargetRuleResource {
 	}
 
 	/**
-	 * Retrieves a list of target rules and their details according to any specified facets, filter criteria, and sort options.
+	 * 
 	 * <p><pre><code>
 	 *	TargetRule targetrule = new TargetRule();
 	 *	TargetRuleCollection targetRuleCollection = targetrule.getTargetRules( startIndex,  pageSize,  sortBy,  filter,  responseFields);
@@ -74,7 +74,7 @@ public class TargetRuleResource {
 	}
 
 	/**
-	 * Retrieves the details of the specified target rule.
+	 * 
 	 * <p><pre><code>
 	 *	TargetRule targetrule = new TargetRule();
 	 *	TargetRule targetRule = targetrule.getTargetRule( code);
@@ -90,7 +90,7 @@ public class TargetRuleResource {
 	}
 
 	/**
-	 * Retrieves the details of the specified target rule.
+	 * 
 	 * <p><pre><code>
 	 *	TargetRule targetrule = new TargetRule();
 	 *	TargetRule targetRule = targetrule.getTargetRule( code,  responseFields);
@@ -111,7 +111,7 @@ public class TargetRuleResource {
 	}
 
 	/**
-	 * Creates a new target rule.
+	 * 
 	 * <p><pre><code>
 	 *	TargetRule targetrule = new TargetRule();
 	 *	TargetRule targetRule = targetrule.createTargetRule( targetRule);
@@ -128,7 +128,7 @@ public class TargetRuleResource {
 	}
 
 	/**
-	 * Creates a new target rule.
+	 * 
 	 * <p><pre><code>
 	 *	TargetRule targetrule = new TargetRule();
 	 *	TargetRule targetRule = targetrule.createTargetRule( targetRule,  responseFields);
@@ -150,7 +150,7 @@ public class TargetRuleResource {
 	}
 
 	/**
-	 * Validates the details of a target rule.
+	 * 
 	 * <p><pre><code>
 	 *	TargetRule targetrule = new TargetRule();
 	 *	targetrule.validateTargetRule( targetRule);
@@ -170,7 +170,7 @@ public class TargetRuleResource {
 	}
 
 	/**
-	 * Updates the details of the specified target rule.
+	 * 
 	 * <p><pre><code>
 	 *	TargetRule targetrule = new TargetRule();
 	 *	TargetRule targetRule = targetrule.updateTargetRule( targetRule,  code);
@@ -188,7 +188,7 @@ public class TargetRuleResource {
 	}
 
 	/**
-	 * Updates the details of the specified target rule.
+	 * 
 	 * <p><pre><code>
 	 *	TargetRule targetrule = new TargetRule();
 	 *	TargetRule targetRule = targetrule.updateTargetRule( targetRule,  code,  responseFields);
@@ -211,7 +211,7 @@ public class TargetRuleResource {
 	}
 
 	/**
-	 * Deletes the specified target rule.
+	 * 
 	 * <p><pre><code>
 	 *	TargetRule targetrule = new TargetRule();
 	 *	targetrule.deleteTargetRule( code);

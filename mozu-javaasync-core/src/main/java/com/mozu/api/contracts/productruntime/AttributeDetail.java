@@ -35,9 +35,6 @@ public class AttributeDetail implements Serializable
 		this.allowFilteringAndSortingInStorefront = allowFilteringAndSortingInStorefront;
 	}
 
-	/**
-	 * The data type of the source product property, typically of type Bool, DateTime, Number, or String.
-	 */
 	protected  String dataType;
 
 	public String getDataType() {
@@ -48,9 +45,6 @@ public class AttributeDetail implements Serializable
 		this.dataType = dataType;
 	}
 
-	/**
-	 * Unique sequence of the attribute for its data type.
-	 */
 	protected  Integer dataTypeSequence;
 
 	public Integer getDataTypeSequence() {
@@ -61,9 +55,6 @@ public class AttributeDetail implements Serializable
 		this.dataTypeSequence = dataTypeSequence;
 	}
 
-	/**
-	 * The localized description in text for the object, displayed per the locale code. For example, descriptions are used for product descriptions, attributes, and pre-authorization transaction types.
-	 */
 	protected  String description;
 
 	public String getDescription() {
@@ -88,8 +79,18 @@ public class AttributeDetail implements Serializable
 	}
 
 	/**
-	 * The type of input selection used to define a value for the attribute, including Yes/No, Date, DateTime, List, TextBox, or TextArea.
+	 * Specifies whether to create a case-sensitive Solr search index. The default is .
 	 */
+	protected  Boolean indexValueWithCase;
+
+	public Boolean getIndexValueWithCase() {
+		return this.indexValueWithCase;
+	}
+
+	public void setIndexValueWithCase(Boolean indexValueWithCase) {
+		this.indexValueWithCase = indexValueWithCase;
+	}
+
 	protected  String inputType;
 
 	public String getInputType() {
@@ -100,9 +101,6 @@ public class AttributeDetail implements Serializable
 		this.inputType = inputType;
 	}
 
-	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -139,9 +137,6 @@ public class AttributeDetail implements Serializable
 		this.searchDisplayValue = searchDisplayValue;
 	}
 
-	/**
-	 * The usage type of the product attribute, which is property, option, or extra.
-	 */
 	protected  String usageType;
 
 	public String getUsageType() {
@@ -152,9 +147,6 @@ public class AttributeDetail implements Serializable
 		this.usageType = usageType;
 	}
 
-	/**
-	 * An attribute value type is either predefined vocabulary by the admin during attribute set up or user-defined with an appropriate type (AdminEntered or ShopperEntered depending on the user). These types are used by products and attributes. The difference between predefined values versus manually entered values is such that the first choice is a set of options to choose from. AdminEntered and ShopperEntered are values that are entered rather than system-supplied and are not stored in the database, but captured during a live commerce operations such as during an order.
-	 */
 	protected  String valueType;
 
 	public String getValueType() {
@@ -165,9 +157,6 @@ public class AttributeDetail implements Serializable
 		this.valueType = valueType;
 	}
 
-	/**
-	 * Properties used when validating a value entered for an object, including extensible attributes, products attributes, and database entries.
-	 */
 	protected  AttributeValidation validation;
 
 	public AttributeValidation getValidation() {

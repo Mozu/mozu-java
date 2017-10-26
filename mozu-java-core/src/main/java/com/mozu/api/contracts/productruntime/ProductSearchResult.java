@@ -39,9 +39,6 @@ public class ProductSearchResult implements Serializable
 		this.nextCursorMark = nextCursorMark;
 	}
 
-	/**
-	 * The number of pages returned based on the startIndex and pageSize values specified. This value is system-supplied and read-only.
-	 */
 	protected  Integer pageCount;
 
 	public Integer getPageCount() {
@@ -52,9 +49,6 @@ public class ProductSearchResult implements Serializable
 		this.pageCount = pageCount;
 	}
 
-	/**
-	 * The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 */
 	protected  Integer pageSize;
 
 	public Integer getPageSize() {
@@ -75,9 +69,6 @@ public class ProductSearchResult implements Serializable
 		this.startIndex = startIndex;
 	}
 
-	/**
-	 * The number of results listed in the query collection, represented by a signed 64-bit (8-byte) integer. This value is system-supplied and read-only.
-	 */
 	protected  Integer totalCount;
 
 	public Integer getTotalCount() {
@@ -88,9 +79,6 @@ public class ProductSearchResult implements Serializable
 		this.totalCount = totalCount;
 	}
 
-	/**
-	 * The facets applied to index products in the product search result.
-	 */
 	protected List<Facet> facets;
 	public List<Facet> getFacets() {
 		return this.facets;
@@ -99,9 +87,6 @@ public class ProductSearchResult implements Serializable
 		this.facets = facets;
 	}
 
-	/**
-	 * An array list of objects in the returned collection.
-	 */
 	protected List<Product> items;
 	public List<Product> getItems() {
 		return this.items;

@@ -22,9 +22,6 @@ public class ChannelGroup implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * User-defined code that identifies the channel group.
-	 */
 	protected  String code;
 
 	public String getCode() {
@@ -35,9 +32,6 @@ public class ChannelGroup implements Serializable
 		this.code = code;
 	}
 
-	/**
-	 * The user supplied name that appears in . You can use this field for identification purposes.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -48,9 +42,6 @@ public class ChannelGroup implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * Unique identifier of the Mozu tenant.
-	 */
 	protected  Integer tenantId;
 
 	public Integer getTenantId() {
@@ -61,9 +52,6 @@ public class ChannelGroup implements Serializable
 		this.tenantId = tenantId;
 	}
 
-	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {

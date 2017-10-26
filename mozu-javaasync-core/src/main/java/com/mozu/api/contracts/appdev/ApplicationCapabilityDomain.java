@@ -16,7 +16,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.appdev.ApplicationCapabilityDomainValue;
 
 /**
- *	Mozu.AppDev.Contracts.ApplicationCapabilityDomain ApiType DOCUMENT_HERE 
+ *	This property is not exposed in documentation.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ApplicationCapabilityDomain implements Serializable
@@ -24,9 +24,6 @@ public class ApplicationCapabilityDomain implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationCapabilityDomain applicationCapabilityDomainId ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  Integer applicationCapabilityDomainId;
 
 	public Integer getApplicationCapabilityDomainId() {
@@ -50,9 +47,6 @@ public class ApplicationCapabilityDomain implements Serializable
 		this.applicationCapabilityTypeId = applicationCapabilityTypeId;
 	}
 
-	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -63,9 +57,6 @@ public class ApplicationCapabilityDomain implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationCapabilityDomain applicationCapabilityDomainValues1 ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected List<ApplicationCapabilityDomainValue> applicationCapabilityDomainValues1;
 	public List<ApplicationCapabilityDomainValue> getApplicationCapabilityDomainValues1() {
 		return this.applicationCapabilityDomainValues1;
@@ -74,9 +65,6 @@ public class ApplicationCapabilityDomain implements Serializable
 		this.applicationCapabilityDomainValues1 = applicationCapabilityDomainValues1;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationCapabilityDomain applicationCapabilityDomainValues2 ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected List<ApplicationCapabilityDomainValue> applicationCapabilityDomainValues2;
 	public List<ApplicationCapabilityDomainValue> getApplicationCapabilityDomainValues2() {
 		return this.applicationCapabilityDomainValues2;

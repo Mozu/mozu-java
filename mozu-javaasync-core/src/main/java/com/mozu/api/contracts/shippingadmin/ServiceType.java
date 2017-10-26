@@ -22,9 +22,6 @@ public class ServiceType implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The service type code supplied by the carrier. Service type codes include a prefix that indicates the carrier name. For example: FEDEX_INTERNATIONAL_STANDARD.
-	 */
 	protected  String code;
 
 	public String getCode() {
@@ -35,9 +32,6 @@ public class ServiceType implements Serializable
 		this.code = code;
 	}
 
-	/**
-	 * Complex type that contains content for a language specified by LocaleCode.
-	 */
 	protected  ServiceTypeLocalizedContent content;
 
 	public ServiceTypeLocalizedContent getContent() {

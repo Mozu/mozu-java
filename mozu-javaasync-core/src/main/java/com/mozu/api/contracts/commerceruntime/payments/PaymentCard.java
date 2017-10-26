@@ -21,9 +21,6 @@ public class PaymentCard implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The masked credit card number part returned from the payment gateway.
-	 */
 	protected  String cardNumberPartOrMask;
 
 	public String getCardNumberPartOrMask() {
@@ -34,9 +31,6 @@ public class PaymentCard implements Serializable
 		this.cardNumberPartOrMask = cardNumberPartOrMask;
 	}
 
-	/**
-	 * The two-digit month a credit card expires for a payment method.
-	 */
 	protected  short expireMonth;
 
 	public short getExpireMonth() {
@@ -47,9 +41,6 @@ public class PaymentCard implements Serializable
 		this.expireMonth = expireMonth;
 	}
 
-	/**
-	 * The four-digit year the credit card expires for a payment method.
-	 */
 	protected  short expireYear;
 
 	public short getExpireYear() {
@@ -60,9 +51,6 @@ public class PaymentCard implements Serializable
 		this.expireYear = expireYear;
 	}
 
-	/**
-	 * If true, the credit card information is saved to the customer account for future use.
-	 */
 	protected  Boolean isCardInfoSaved;
 
 	public Boolean getIsCardInfoSaved() {
@@ -73,9 +61,6 @@ public class PaymentCard implements Serializable
 		this.isCardInfoSaved = isCardInfoSaved;
 	}
 
-	/**
-	 * If true, the credit card is used for a recurring order payment.
-	 */
 	protected  Boolean isUsedRecurring;
 
 	public Boolean getIsUsedRecurring() {
@@ -86,9 +71,6 @@ public class PaymentCard implements Serializable
 		this.isUsedRecurring = isUsedRecurring;
 	}
 
-	/**
-	 * The full name printed on a credit card. The name should match what is printed on the card exactly, used in validation during a payment.
-	 */
 	protected  String nameOnCard;
 
 	public String getNameOnCard() {
@@ -99,9 +81,6 @@ public class PaymentCard implements Serializable
 		this.nameOnCard = nameOnCard;
 	}
 
-	/**
-	 * The type of credit card, such as Visa or Amex.
-	 */
 	protected  String paymentOrCardType;
 
 	public String getPaymentOrCardType() {
@@ -112,9 +91,6 @@ public class PaymentCard implements Serializable
 		this.paymentOrCardType = paymentOrCardType;
 	}
 
-	/**
-	 * Unique identifier of the credit card from the payment service.
-	 */
 	protected  String paymentServiceCardId;
 
 	public String getPaymentServiceCardId() {

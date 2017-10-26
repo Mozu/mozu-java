@@ -37,7 +37,7 @@ public class PackageResource {
 
 	
 	/**
-	 * Retrieves a list of the actions available to perform for a package associated with order fulfillment.
+	 * 
 	 * <p><pre><code>
 	 *	Package package = new Package();
 	 *	string string = package.getAvailablePackageFulfillmentActions( orderId,  packageId);
@@ -57,7 +57,7 @@ public class PackageResource {
 	}
 
 	/**
-	 * Retrieves a list of the actions available to perform for a package associated with order fulfillment.
+	 * 
 	 * <p><pre><code>
 	 *	Package package = new Package();
 	 *	CountDownLatch latch = package.getAvailablePackageFulfillmentActions( orderId,  packageId, callback );
@@ -77,7 +77,7 @@ public class PackageResource {
 	}
 
 	/**
-	 * Retrieves the package label image supplied by the carrier.
+	 * 
 	 * <p><pre><code>
 	 *	Package package = new Package();
 	 *	Stream stream = package.getPackageLabel( orderId,  packageId);
@@ -97,7 +97,7 @@ public class PackageResource {
 	}
 
 	/**
-	 * Retrieves the package label image supplied by the carrier.
+	 * 
 	 * <p><pre><code>
 	 *	Package package = new Package();
 	 *	CountDownLatch latch = package.getPackageLabel( orderId,  packageId, callback );
@@ -117,7 +117,7 @@ public class PackageResource {
 	}
 
 	/**
-	 * Retrieves the details of a package of order items.
+	 * 
 	 * <p><pre><code>
 	 *	Package package = new Package();
 	 *	Package package = package.getPackage( orderId,  packageId);
@@ -133,7 +133,7 @@ public class PackageResource {
 	}
 
 	/**
-	 * Retrieves the details of a package of order items.
+	 * 
 	 * <p><pre><code>
 	 *	Package package = new Package();
 	 *	CountDownLatch latch = package.getPackage( orderId,  packageId, callback );
@@ -150,14 +150,14 @@ public class PackageResource {
 	}
 
 	/**
-	 * Retrieves the details of a package of order items.
+	 * 
 	 * <p><pre><code>
 	 *	Package package = new Package();
 	 *	Package package = package.getPackage( orderId,  packageId,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
 	 * @param packageId Unique identifier of the package for which to retrieve the label.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 */
@@ -171,14 +171,14 @@ public class PackageResource {
 	}
 
 	/**
-	 * Retrieves the details of a package of order items.
+	 * 
 	 * <p><pre><code>
 	 *	Package package = new Package();
 	 *	CountDownLatch latch = package.getPackage( orderId,  packageId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
 	 * @param packageId Unique identifier of the package for which to retrieve the label.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
@@ -192,7 +192,7 @@ public class PackageResource {
 	}
 
 	/**
-	 * Creates a new physical package of order items.
+	 * 
 	 * <p><pre><code>
 	 *	Package package = new Package();
 	 *	Package package = package.createPackage( pkg,  orderId);
@@ -209,7 +209,7 @@ public class PackageResource {
 	}
 
 	/**
-	 * Creates a new physical package of order items.
+	 * 
 	 * <p><pre><code>
 	 *	Package package = new Package();
 	 *	CountDownLatch latch = package.createPackage( pkg,  orderId, callback );
@@ -227,13 +227,13 @@ public class PackageResource {
 	}
 
 	/**
-	 * Creates a new physical package of order items.
+	 * 
 	 * <p><pre><code>
 	 *	Package package = new Package();
 	 *	Package package = package.createPackage( pkg,  orderId,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param package Properties of a physical package shipped for an order.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
@@ -249,13 +249,13 @@ public class PackageResource {
 	}
 
 	/**
-	 * Creates a new physical package of order items.
+	 * 
 	 * <p><pre><code>
 	 *	Package package = new Package();
 	 *	CountDownLatch latch = package.createPackage( pkg,  orderId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param package Properties of a physical package shipped for an order.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Package
@@ -271,7 +271,7 @@ public class PackageResource {
 	}
 
 	/**
-	 * Updates one or more properties of a physical package of order items.
+	 * 
 	 * <p><pre><code>
 	 *	Package package = new Package();
 	 *	Package package = package.updatePackage( pkg,  orderId,  packageId);
@@ -289,7 +289,7 @@ public class PackageResource {
 	}
 
 	/**
-	 * Updates one or more properties of a physical package of order items.
+	 * 
 	 * <p><pre><code>
 	 *	Package package = new Package();
 	 *	CountDownLatch latch = package.updatePackage( pkg,  orderId,  packageId, callback );
@@ -308,14 +308,14 @@ public class PackageResource {
 	}
 
 	/**
-	 * Updates one or more properties of a physical package of order items.
+	 * 
 	 * <p><pre><code>
 	 *	Package package = new Package();
 	 *	Package package = package.updatePackage( pkg,  orderId,  packageId,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
 	 * @param packageId Unique identifier of the package for which to retrieve the label.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param package Properties of a physical package shipped for an order.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
@@ -331,14 +331,14 @@ public class PackageResource {
 	}
 
 	/**
-	 * Updates one or more properties of a physical package of order items.
+	 * 
 	 * <p><pre><code>
 	 *	Package package = new Package();
 	 *	CountDownLatch latch = package.updatePackage( pkg,  orderId,  packageId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
 	 * @param packageId Unique identifier of the package for which to retrieve the label.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param package Properties of a physical package shipped for an order.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Package
@@ -354,7 +354,7 @@ public class PackageResource {
 	}
 
 	/**
-	 * Removes a physical package of items from the specified order.
+	 * 
 	 * <p><pre><code>
 	 *	Package package = new Package();
 	 *	package.deletePackage( orderId,  packageId);

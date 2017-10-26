@@ -62,7 +62,7 @@ public class ProductPrice implements Serializable
 	}
 
 	/**
-	 * The priceList that was applied to this product
+	 * The price list code if a price list is applield to the product's pricing.
 	 */
 	protected  String effectivePricelistCode;
 
@@ -75,7 +75,7 @@ public class ProductPrice implements Serializable
 	}
 
 	/**
-	 * The manufacturer's suggested retail price for the product. This content may be defined by the supplier.
+	 * The manufacturer's suggested retail price (MSRP) for the product. This content may be defined by the supplier.
 	 */
 	protected  Double msrp;
 
@@ -87,9 +87,6 @@ public class ProductPrice implements Serializable
 		this.msrp = msrp;
 	}
 
-	/**
-	 * The price the merchant intends to charge for the product.
-	 */
 	protected  Double price;
 
 	public Double getPrice() {
@@ -101,7 +98,7 @@ public class ProductPrice implements Serializable
 	}
 
 	/**
-	 * The specific PriceListCode that was applied (includes inheritence
+	 * The price list entry code that controls the product pricing, if a price list is applied to the product pricing.
 	 */
 	protected  String priceListEntryCode;
 
@@ -114,7 +111,7 @@ public class ProductPrice implements Serializable
 	}
 
 	/**
-	 * IF a PriceList Entry was applied to this price it will be (simple, bulk...)
+	 * The pricing mode of the price list entry, if a price list is applied to the product pricing.The valid values are:* * A value of  indicates the product has volume pricing.
 	 */
 	protected  String priceListEntryMode;
 
@@ -127,7 +124,7 @@ public class ProductPrice implements Serializable
 	}
 
 	/**
-	 * The price type that displays on the storefront website for the Price field, which is List, MAP, or CatalogSalePrice
+	 * The price type that displays in the price field on product listing pages and product detail pages on the storefront.The valid values are:* * * 
 	 */
 	protected  String priceType;
 
@@ -139,9 +136,6 @@ public class ProductPrice implements Serializable
 		this.priceType = priceType;
 	}
 
-	/**
-	 * The set sale price for a product consisting of a price with a discount already applied.
-	 */
 	protected  Double salePrice;
 
 	public Double getSalePrice() {
@@ -153,7 +147,7 @@ public class ProductPrice implements Serializable
 	}
 
 	/**
-	 * The price type that displays on the storefront website for the Sale Price field, which is CatalogSalePrice, DiscountedList, or DiscountedCatalogSalePrice
+	 * The sale price type that displays in the sale price field on product listing pages and product detail pages on the storefront.The valid values are:* * * 
 	 */
 	protected  String salePriceType;
 
@@ -165,9 +159,6 @@ public class ProductPrice implements Serializable
 		this.salePriceType = salePriceType;
 	}
 
-	/**
-	 * Name of the discount added and applied to a shopping cart and order for a shopper's purchase. 
-	 */
 	protected  AppliedDiscount discount;
 
 	public AppliedDiscount getDiscount() {

@@ -28,9 +28,6 @@ public class Attribute implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The administrator name associated with the object/data.
-	 */
 	protected  String adminName;
 
 	public String getAdminName() {
@@ -41,9 +38,6 @@ public class Attribute implements Serializable
 		this.adminName = adminName;
 	}
 
-	/**
-	 * Merchant-defined code for an extensible attribute. This code may be used to generate an object's fully qualified name, such as for products.
-	 */
 	protected  String attributeCode;
 
 	public String getAttributeCode() {
@@ -54,9 +48,6 @@ public class Attribute implements Serializable
 		this.attributeCode = attributeCode;
 	}
 
-	/**
-	 * The fully qualified name of the attribute. The attributeDefiniteId may be used to generate this name.
-	 */
 	protected  String attributeFQN;
 
 	public String getAttributeFQN() {
@@ -67,9 +58,6 @@ public class Attribute implements Serializable
 		this.attributeFQN = attributeFQN;
 	}
 
-	/**
-	 * The data type of the source product property, typically of type Bool, DateTime, Number, or String.
-	 */
 	protected  String dataType;
 
 	public String getDataType() {
@@ -93,9 +81,6 @@ public class Attribute implements Serializable
 		this.displayGroup = displayGroup;
 	}
 
-	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
-	 */
 	protected  Integer id;
 
 	public Integer getId() {
@@ -106,9 +91,6 @@ public class Attribute implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * The type of input selection used to define a value for the attribute, including Yes/No, Date, DateTime, List, TextBox, or TextArea.
-	 */
 	protected  String inputType;
 
 	public String getInputType() {
@@ -119,9 +101,6 @@ public class Attribute implements Serializable
 		this.inputType = inputType;
 	}
 
-	/**
-	 * Indicates if the object or feature is active. This indicator is used for subscriptions (at the site or tenant level), customer accounts, products and variations.
-	 */
 	protected  Boolean isActive;
 
 	public Boolean getIsActive() {
@@ -184,9 +163,6 @@ public class Attribute implements Serializable
 		this.isVisible = isVisible;
 	}
 
-	/**
-	 * If applicable, the registered namespace associated with objects, used to generate the fully qualified name. If no namespace is defined, the namespace associated with the tenant is automatically assigned.
-	 */
 	protected  String namespace;
 
 	public String getNamespace() {
@@ -223,9 +199,6 @@ public class Attribute implements Serializable
 		this.valueType = valueType;
 	}
 
-	/**
-	 * List of metadata key-value pairs defined for an extensible attribute.
-	 */
 	protected List<AttributeMetadataItem> attributeMetadata;
 	public List<AttributeMetadataItem> getAttributeMetadata() {
 		return this.attributeMetadata;
@@ -234,9 +207,6 @@ public class Attribute implements Serializable
 		this.attributeMetadata = attributeMetadata;
 	}
 
-	/**
-	 * Basic audit info about the object, including date, time, and user account. Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -247,9 +217,6 @@ public class Attribute implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * Localizable content (such as a name and/or description) for an attribute. The content may be localized when displayed according to the locale code specified by the master catalog. Content can include descriptive text for product extensible attributes, catalog-level descriptions (displayed if isContentOverriden is true), product bundles, and customer account notes.
-	 */
 	protected  AttributeLocalizedContent content;
 
 	public AttributeLocalizedContent getContent() {
@@ -260,9 +227,6 @@ public class Attribute implements Serializable
 		this.content = content;
 	}
 
-	/**
-	 * Properties used when validating a value entered for an object, including extensible attributes, products attributes, and database entries.
-	 */
 	protected  AttributeValidation validation;
 
 	public AttributeValidation getValidation() {
@@ -273,9 +237,6 @@ public class Attribute implements Serializable
 		this.validation = validation;
 	}
 
-	/**
-	 * List of valid vocabulary values defined for an attribute.
-	 */
 	protected List<AttributeVocabularyValue> vocabularyValues;
 	public List<AttributeVocabularyValue> getVocabularyValues() {
 		return this.vocabularyValues;

@@ -15,7 +15,7 @@ public class TenantAdminUserAuthTicketUrl
 
 	/**
 	 * Get Resource Url for CreateUserAuthTicket
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param tenantId Unique identifier of the development or production tenant for which to generate the user authentication ticket.
 	 * @return   String Resource Url
 	 */
@@ -29,8 +29,8 @@ public class TenantAdminUserAuthTicketUrl
 
 	/**
 	 * Get Resource Url for RefreshAuthTicket
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param tenantId 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param tenantId Unique identifier of the development or production tenant for which to generate the user authentication ticket.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl refreshAuthTicketUrl(String responseFields, Integer tenantId)

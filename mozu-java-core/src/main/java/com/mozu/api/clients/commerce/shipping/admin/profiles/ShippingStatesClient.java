@@ -23,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 public class ShippingStatesClient {
 	
 	/**
-	 * Retrieves a list of shipping states and their details.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.shippingadmin.profile.ShippingStates>> mozuClient=GetStatesClient( profileCode);
 	 * client.setBaseAddress(url);
@@ -48,7 +48,7 @@ public class ShippingStatesClient {
 	}
 
 	/**
-	 * Updates the details of the shipping states.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.shippingadmin.profile.ShippingStates>> mozuClient=UpdateStatesClient( states,  profilecode);
 	 * client.setBaseAddress(url);

@@ -55,9 +55,6 @@ public class Product implements Serializable
 		this.allocationId = allocationId;
 	}
 
-	/**
-	 * The localized description in text for the object, displayed per the locale code. For example, descriptions are used for product descriptions, attributes, and pre-authorization transaction types.
-	 */
 	protected  String description;
 
 	public String getDescription() {
@@ -69,7 +66,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * Indicates if the discount is restricted. If true, the system cannot apply any discounts to this product. Discount restrictions are defined at the master catalog level. Client administrators cannot override discount restrictions at the catalog level, but they can limit the restriction to a defined time interval.
+	 * Indicates if the discount is restricted. If true, the system cannot apply any discounts to this product. Discount restrictions are defined at the master catalog level. Client administrators cannot override discount restrictions at the catalog level, but they can limit the restriction to a defined time interval.For price list entries, specifies whether discounts are restricted for the specific entry if  is set to .Refer to [Discount Restriction](../../../guides/catalog/price-lists.htm#discountrestriction) in the Price Lists guides topic for more information.
 	 */
 	protected  Boolean discountsRestricted;
 
@@ -121,7 +118,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * List of supported types of fulfillment  for the product or variation. The types include direct ship, in-store pickup, or both. 
+	 * List of supported types of fulfillment for the product or variation. The types include direct ship, in-store pickup, or both.
 	 */
 	protected List<String> fulfillmentTypesSupported;
 	public List<String> getFulfillmentTypesSupported() {
@@ -132,7 +129,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * The type of goods in a bundled product. A bundled product is composed of products associated to sell together. Possible values include “Physical” and “DigitalCredit”. This comes from the `productType `of the product. Products are defaulted to a Physical `goodsType`. Gift cards have a `goodsType `of DigitalCredit.
+	 * The type of goods in a bundled product. A bundled product is composed of products associated to sell together. Possible values include â€œPhysicalâ€ and â€œDigitalCreditâ€. This comes from the `productType `of the product. Products are defaulted to a Physical `goodsType`. Gift cards have a `goodsType `of DigitalCredit.
 	 */
 	protected  String goodsType;
 
@@ -144,9 +141,6 @@ public class Product implements Serializable
 		this.goodsType = goodsType;
 	}
 
-	/**
-	 * The alternate image description defined for the product, in the language specified in the locale code for the storefront.
-	 */
 	protected  String imageAlternateText;
 
 	public String getImageAlternateText() {
@@ -183,9 +177,6 @@ public class Product implements Serializable
 		this.isPackagedStandAlone = isPackagedStandAlone;
 	}
 
-	/**
-	 * Indicates if the product in a cart, order, or wish list is purchased on a recurring schedule. If true, the item can be purchased or fulfilled at regular intervals, such as a monthly billing cycle. For example, digital or physical product subscriptions are recurring cart items. This property is not used at this time and is reserved for future functionality.
-	 */
 	protected  Boolean isRecurring;
 
 	public Boolean getIsRecurring() {
@@ -196,9 +187,6 @@ public class Product implements Serializable
 		this.isRecurring = isRecurring;
 	}
 
-	/**
-	 * Indicates if the item is subject to taxation, used by products, options, extras, cart and order items, line items, and wish lists. If true, the entity is subject to tax based on the relevant tax rate and rules.
-	 */
 	protected  Boolean isTaxable;
 
 	public Boolean getIsTaxable() {
@@ -222,9 +210,6 @@ public class Product implements Serializable
 		this.mfgPartNumber = mfgPartNumber;
 	}
 
-	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -235,9 +220,6 @@ public class Product implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 */
 	protected  String productCode;
 
 	public String getProductCode() {
@@ -261,9 +243,6 @@ public class Product implements Serializable
 		this.productReservationId = productReservationId;
 	}
 
-	/**
-	 * The product type template associated with the product on the storefront.
-	 */
 	protected  String productType;
 
 	public String getProductType() {
@@ -300,9 +279,6 @@ public class Product implements Serializable
 		this.upc = upc;
 	}
 
-	/**
-	 * Merchant-created code associated with a specific product variation. Variation product codes maintain an association with the base product code.
-	 */
 	protected  String variationProductCode;
 
 	public String getVariationProductCode() {
@@ -324,9 +300,6 @@ public class Product implements Serializable
 		this.bundledProducts = bundledProducts;
 	}
 
-	/**
-	 * The list of all categories associated with the product. These categories contain products, can have discounts associated, and define the grouping of products to display on the storefront.
-	 */
 	protected List<Category> categories;
 	public List<Category> getCategories() {
 		return this.categories;
@@ -335,9 +308,6 @@ public class Product implements Serializable
 		this.categories = categories;
 	}
 
-	/**
-	 * Dimensions of the packaged product.
-	 */
 	protected  PackageMeasurements measurements;
 
 	public PackageMeasurements getMeasurements() {
@@ -348,9 +318,6 @@ public class Product implements Serializable
 		this.measurements = measurements;
 	}
 
-	/**
-	 * List of option attributes configured for an object. These values are associated and used by products, product bundles, and product types.
-	 */
 	protected List<ProductOption> options;
 	public List<ProductOption> getOptions() {
 		return this.options;
@@ -359,9 +326,6 @@ public class Product implements Serializable
 		this.options = options;
 	}
 
-	/**
-	 * The price of the product that appears on the storefront including any applied discounts.
-	 */
 	protected  ProductPrice price;
 
 	public ProductPrice getPrice() {
@@ -372,9 +336,6 @@ public class Product implements Serializable
 		this.price = price;
 	}
 
-	/**
-	 * Collection of property attributes defined for the object. Properties are associated to all objects within Mozu, including documents, products, and product types.
-	 */
 	protected List<ProductProperty> properties;
 	public List<ProductProperty> getProperties() {
 		return this.properties;

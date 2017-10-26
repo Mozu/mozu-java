@@ -87,9 +87,6 @@ public class ProductPrice implements Serializable
 		this.msrp = msrp;
 	}
 
-	/**
-	 * The price the merchant intends to charge for the product.
-	 */
 	protected  Double price;
 
 	public Double getPrice() {
@@ -139,9 +136,6 @@ public class ProductPrice implements Serializable
 		this.priceType = priceType;
 	}
 
-	/**
-	 * The set sale price for a product consisting of a price with a discount already applied.For price list entries, this property is the product's sale price if the  is set to .
-	 */
 	protected  Double salePrice;
 
 	public Double getSalePrice() {
@@ -165,9 +159,6 @@ public class ProductPrice implements Serializable
 		this.salePriceType = salePriceType;
 	}
 
-	/**
-	 * Name of the discount added and applied to a shopping cart and order for a shopper's purchase. 
-	 */
 	protected  AppliedDiscount discount;
 
 	public AppliedDiscount getDiscount() {

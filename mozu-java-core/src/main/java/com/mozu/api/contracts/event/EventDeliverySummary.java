@@ -26,7 +26,7 @@ public class EventDeliverySummary implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The date and time in UTC format set when the object was created.
+	 * The date and time in UTCÂ format set when the object was created.
 	 */
 	protected  DateTime createDate;
 

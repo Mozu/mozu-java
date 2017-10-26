@@ -23,9 +23,6 @@ public class UserRole implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Unique identifier of the user role.
-	 */
 	protected  Integer roleId;
 
 	public Integer getRoleId() {
@@ -36,9 +33,6 @@ public class UserRole implements Serializable
 		this.roleId = roleId;
 	}
 
-	/**
-	 * The name of the user role, such as "developer" or "administrator".
-	 */
 	protected  String roleName;
 
 	public String getRoleName() {
@@ -49,9 +43,6 @@ public class UserRole implements Serializable
 		this.roleName = roleName;
 	}
 
-	/**
-	 * Unique identifier of the customer account (shopper or system user). System-supplied and read-only. If the shopper user is anonymous, the user ID represents a system-generated user ID string.
-	 */
 	protected  String userId;
 
 	public String getUserId() {
@@ -62,9 +53,6 @@ public class UserRole implements Serializable
 		this.userId = userId;
 	}
 
-	/**
-	 * Properties of the developer account or Mozu tenant associated with the user role.
-	 */
 	protected  UserScope assignedInScope;
 
 	public UserScope getAssignedInScope() {
@@ -75,9 +63,6 @@ public class UserRole implements Serializable
 		this.assignedInScope = assignedInScope;
 	}
 
-	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {

@@ -25,9 +25,6 @@ public class ProductOption implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 */
 	protected  String attributeFQN;
 
 	public String getAttributeFQN() {
@@ -38,9 +35,6 @@ public class ProductOption implements Serializable
 		this.attributeFQN = attributeFQN;
 	}
 
-	/**
-	 * Indicates if the object has or can have multiple properties or values. If true, the object can have more than one value, selectable by shoppers through the storefront or configurable through the catalogs. 
-	 */
 	protected  Boolean isMultiValue;
 
 	public Boolean getIsMultiValue() {
@@ -51,9 +45,6 @@ public class ProductOption implements Serializable
 		this.isMultiValue = isMultiValue;
 	}
 
-	/**
-	 * Indicates if the property, attribute, product option, or product extra is required. If true, the object must have a defined value.
-	 */
 	protected  Boolean isRequired;
 
 	public Boolean getIsRequired() {
@@ -64,9 +55,6 @@ public class ProductOption implements Serializable
 		this.isRequired = isRequired;
 	}
 
-	/**
-	 * Detail data for a product or product options attribute. This acts as a wrapper for the properties to configure or generate from the system in the product Admin. Properties may include namespace, attribute code, attribute sequence, site group ID, input type, and value.
-	 */
 	protected  AttributeDetail attributeDetail;
 
 	public AttributeDetail getAttributeDetail() {
@@ -77,9 +65,6 @@ public class ProductOption implements Serializable
 		this.attributeDetail = attributeDetail;
 	}
 
-	/**
-	 * List of value data for objects.
-	 */
 	protected List<ProductOptionValue> values;
 	public List<ProductOptionValue> getValues() {
 		return this.values;

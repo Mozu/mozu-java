@@ -28,9 +28,6 @@ public class Attribute implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The administrator name associated with the object/data.
-	 */
 	protected  String adminName;
 
 	public String getAdminName() {
@@ -41,9 +38,6 @@ public class Attribute implements Serializable
 		this.adminName = adminName;
 	}
 
-	/**
-	 * Merchant-defined code for an extensible attribute. This code may be used to generate an object's fully qualified name, such as for products.
-	 */
 	protected  String attributeCode;
 
 	public String getAttributeCode() {
@@ -54,9 +48,6 @@ public class Attribute implements Serializable
 		this.attributeCode = attributeCode;
 	}
 
-	/**
-	 * The fully qualified name of the attribute. The attributeDefiniteId may be used to generate this name.
-	 */
 	protected  String attributeFQN;
 
 	public String getAttributeFQN() {
@@ -67,9 +58,6 @@ public class Attribute implements Serializable
 		this.attributeFQN = attributeFQN;
 	}
 
-	/**
-	 * The data type of the source product property, typically of type Bool, DateTime, Number, or String.
-	 */
 	protected  String dataType;
 
 	public String getDataType() {
@@ -93,9 +81,6 @@ public class Attribute implements Serializable
 		this.displayGroup = displayGroup;
 	}
 
-	/**
-	 * Unique identifier of the source property, such as a catalog, discount, order, or email template.For a product field it will be the name of the field.For a category ID, must be a positive integer not greater than 2000000. By default,  auto-generates a category ID when categories are created. If you want to specify an ID during creation (which preserves category link relationships when migrating tenant data from one sandbox to another), you must also include the  query string in the endpoint. For example, . Then, use the  property to specify the desired category ID.For a product attribute it will be the Attribute FQN.For a document, the ID must be specified as a 32 character, case-insensitive, alphanumeric string. You can specify the ID as 32 sequential characters or as groups separated by dashes in the format 8-4-4-4-12. For example, or.For email templates, the ID must be one of the following values:			
-	 */
 	protected  Integer id;
 
 	public Integer getId() {
@@ -106,9 +91,6 @@ public class Attribute implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * The type of input selection used to define a value for the attribute, including Yes/No, Date, DateTime, List, TextBox, or TextArea.
-	 */
 	protected  String inputType;
 
 	public String getInputType() {
@@ -119,9 +101,6 @@ public class Attribute implements Serializable
 		this.inputType = inputType;
 	}
 
-	/**
-	 * Indicates if the object or feature is active.
-	 */
 	protected  Boolean isActive;
 
 	public Boolean getIsActive() {
@@ -184,9 +163,6 @@ public class Attribute implements Serializable
 		this.isVisible = isVisible;
 	}
 
-	/**
-	 * The namespace for the accessible APIs and source capabilities in the core of  APIs.
-	 */
 	protected  String namespace;
 
 	public String getNamespace() {
@@ -223,9 +199,6 @@ public class Attribute implements Serializable
 		this.valueType = valueType;
 	}
 
-	/**
-	 * List of metadata key-value pairs defined for an extensible attribute.
-	 */
 	protected List<AttributeMetadataItem> attributeMetadata;
 	public List<AttributeMetadataItem> getAttributeMetadata() {
 		return this.attributeMetadata;
@@ -234,9 +207,6 @@ public class Attribute implements Serializable
 		this.attributeMetadata = attributeMetadata;
 	}
 
-	/**
-	 * Basic audit info about the object, including date, time, and user account. This data may be captured when creating, updating, and removing data.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -247,9 +217,6 @@ public class Attribute implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * Localizable content (such as a name and/or description) for an attribute. The content may be localized when displayed according to the locale code specified by the master catalog. Content can include descriptive text for product extensible attributes, catalog-level descriptions (displayed if isContentOverriden is true), product bundles, and customer account notes.
-	 */
 	protected  AttributeLocalizedContent content;
 
 	public AttributeLocalizedContent getContent() {
@@ -260,9 +227,6 @@ public class Attribute implements Serializable
 		this.content = content;
 	}
 
-	/**
-	 * Properties used when validating a value entered for an object, including extensible attributes, products attributes, and database entries.
-	 */
 	protected  AttributeValidation validation;
 
 	public AttributeValidation getValidation() {
@@ -273,9 +237,6 @@ public class Attribute implements Serializable
 		this.validation = validation;
 	}
 
-	/**
-	 * List of valid vocabulary values defined for an attribute.
-	 */
 	protected List<AttributeVocabularyValue> vocabularyValues;
 	public List<AttributeVocabularyValue> getVocabularyValues() {
 		return this.vocabularyValues;

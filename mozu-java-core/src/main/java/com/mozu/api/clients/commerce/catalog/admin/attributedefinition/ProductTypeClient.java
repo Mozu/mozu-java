@@ -24,7 +24,7 @@ import com.mozu.api.DataViewMode;
 public class ProductTypeClient {
 	
 	/**
-	 * Retrieves a list of product types according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.ProductTypeCollection> mozuClient=GetProductTypesClient(dataViewMode);
 	 * client.setBaseAddress(url);
@@ -41,7 +41,7 @@ public class ProductTypeClient {
 	}
 
 	/**
-	 * Retrieves a list of product types according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.ProductTypeCollection> mozuClient=GetProductTypesClient(dataViewMode,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * client.setBaseAddress(url);
@@ -49,10 +49,10 @@ public class ProductTypeClient {
 	 * ProductTypeCollection productTypeCollection = client.Result();
 	 * </code></pre></p>
 	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductTypeCollection>
 	 * @see com.mozu.api.contracts.productadmin.ProductTypeCollection
@@ -71,7 +71,7 @@ public class ProductTypeClient {
 	}
 
 	/**
-	 * Retrieves the details of the product type specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.ProductType> mozuClient=GetProductTypeClient(dataViewMode,  productTypeId);
 	 * client.setBaseAddress(url);
@@ -89,7 +89,7 @@ public class ProductTypeClient {
 	}
 
 	/**
-	 * Retrieves the details of the product type specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.ProductType> mozuClient=GetProductTypeClient(dataViewMode,  productTypeId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -97,7 +97,7 @@ public class ProductTypeClient {
 	 * ProductType productType = client.Result();
 	 * </code></pre></p>
 	 * @param productTypeId Identifier of the product type.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductType>
 	 * @see com.mozu.api.contracts.productadmin.ProductType
@@ -116,7 +116,7 @@ public class ProductTypeClient {
 	}
 
 	/**
-	 * Creates a new product type based on the information supplied in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.ProductType> mozuClient=AddProductTypeClient(dataViewMode,  productType);
 	 * client.setBaseAddress(url);
@@ -135,14 +135,14 @@ public class ProductTypeClient {
 	}
 
 	/**
-	 * Creates a new product type based on the information supplied in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.ProductType> mozuClient=AddProductTypeClient(dataViewMode,  productType,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ProductType productType = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
 	 * @param productType A product type is like a product template.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductType>
@@ -164,7 +164,7 @@ public class ProductTypeClient {
 	}
 
 	/**
-	 * Updates one or more properties of a product type.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.ProductType> mozuClient=UpdateProductTypeClient(dataViewMode,  productType,  productTypeId);
 	 * client.setBaseAddress(url);
@@ -184,7 +184,7 @@ public class ProductTypeClient {
 	}
 
 	/**
-	 * Updates one or more properties of a product type.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.ProductType> mozuClient=UpdateProductTypeClient(dataViewMode,  productType,  productTypeId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -192,7 +192,7 @@ public class ProductTypeClient {
 	 * ProductType productType = client.Result();
 	 * </code></pre></p>
 	 * @param productTypeId Identifier of the product type.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
 	 * @param productType A product type is like a product template.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductType>
@@ -214,7 +214,7 @@ public class ProductTypeClient {
 	}
 
 	/**
-	 * Deletes the product type by providing the product type ID.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteProductTypeClient(dataViewMode,  productTypeId);
 	 * client.setBaseAddress(url);

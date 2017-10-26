@@ -19,13 +19,13 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * commerce/customer/accounts/purchaseOrder related resources. DOCUMENT_HERE 
+ * Use the Customer Account Purchase Order resource to manage purchase order details for specific customer acocunts.
  * </summary>
  */
 public class CustomerPurchaseOrderAccountClient {
 	
 	/**
-	 * accounts-purchaseOrder Get GetCustomerPurchaseOrderAccount description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount> mozuClient=GetCustomerPurchaseOrderAccountClient( accountId);
 	 * client.setBaseAddress(url);
@@ -42,7 +42,7 @@ public class CustomerPurchaseOrderAccountClient {
 	}
 
 	/**
-	 * accounts-purchaseOrder Get GetCustomerPurchaseOrderAccount description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount> mozuClient=GetCustomerPurchaseOrderAccountClient( accountId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -67,7 +67,7 @@ public class CustomerPurchaseOrderAccountClient {
 	}
 
 	/**
-	 * accounts-purchaseOrder Get GetCustomerPurchaseOrderTransactions description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.PurchaseOrderTransactionCollection> mozuClient=GetCustomerPurchaseOrderTransactionsClient( accountId);
 	 * client.setBaseAddress(url);
@@ -84,7 +84,7 @@ public class CustomerPurchaseOrderAccountClient {
 	}
 
 	/**
-	 * accounts-purchaseOrder Get GetCustomerPurchaseOrderTransactions description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.PurchaseOrderTransactionCollection> mozuClient=GetCustomerPurchaseOrderTransactionsClient( accountId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * client.setBaseAddress(url);
@@ -92,10 +92,10 @@ public class CustomerPurchaseOrderAccountClient {
 	 * PurchaseOrderTransactionCollection purchaseOrderTransactionCollection = client.Result();
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param filter 
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
 	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/applications/sorting-filtering.htm) for more information.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.PurchaseOrderTransactionCollection>
 	 * @see com.mozu.api.contracts.customer.PurchaseOrderTransactionCollection
@@ -113,7 +113,7 @@ public class CustomerPurchaseOrderAccountClient {
 	}
 
 	/**
-	 * accounts-purchaseOrder Post CreateCustomerPurchaseOrderAccount description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount> mozuClient=CreateCustomerPurchaseOrderAccountClient( customerPurchaseOrderAccount,  accountId);
 	 * client.setBaseAddress(url);
@@ -121,7 +121,7 @@ public class CustomerPurchaseOrderAccountClient {
 	 * CustomerPurchaseOrderAccount customerPurchaseOrderAccount = client.Result();
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param customerPurchaseOrderAccount Mozu.Customer.Contracts.CustomerPurchaseOrderAccount ApiType DOCUMENT_HERE 
+	 * @param customerPurchaseOrderAccount Unique identifier of the customer purchase order account.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount>
 	 * @see com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount
 	 * @see com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount
@@ -132,7 +132,7 @@ public class CustomerPurchaseOrderAccountClient {
 	}
 
 	/**
-	 * accounts-purchaseOrder Post CreateCustomerPurchaseOrderAccount description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount> mozuClient=CreateCustomerPurchaseOrderAccountClient( customerPurchaseOrderAccount,  accountId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -141,7 +141,7 @@ public class CustomerPurchaseOrderAccountClient {
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param customerPurchaseOrderAccount Mozu.Customer.Contracts.CustomerPurchaseOrderAccount ApiType DOCUMENT_HERE 
+	 * @param customerPurchaseOrderAccount Unique identifier of the customer purchase order account.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount>
 	 * @see com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount
 	 * @see com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount
@@ -160,7 +160,7 @@ public class CustomerPurchaseOrderAccountClient {
 	}
 
 	/**
-	 * accounts-purchaseOrder Post CreatePurchaseOrderTransaction description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.PurchaseOrderTransaction> mozuClient=CreatePurchaseOrderTransactionClient( purchaseOrderTransaction,  accountId);
 	 * client.setBaseAddress(url);
@@ -168,7 +168,7 @@ public class CustomerPurchaseOrderAccountClient {
 	 * PurchaseOrderTransaction purchaseOrderTransaction = client.Result();
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param purchaseOrderTransaction Mozu.Customer.Contracts.PurchaseOrderTransaction ApiType DOCUMENT_HERE 
+	 * @param purchaseOrderTransaction The purchase order transaction type to add to the specified customer account.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.PurchaseOrderTransaction>
 	 * @see com.mozu.api.contracts.customer.PurchaseOrderTransaction
 	 * @see com.mozu.api.contracts.customer.PurchaseOrderTransaction
@@ -179,7 +179,7 @@ public class CustomerPurchaseOrderAccountClient {
 	}
 
 	/**
-	 * accounts-purchaseOrder Post CreatePurchaseOrderTransaction description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.PurchaseOrderTransaction> mozuClient=CreatePurchaseOrderTransactionClient( purchaseOrderTransaction,  accountId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -188,7 +188,7 @@ public class CustomerPurchaseOrderAccountClient {
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param purchaseOrderTransaction Mozu.Customer.Contracts.PurchaseOrderTransaction ApiType DOCUMENT_HERE 
+	 * @param purchaseOrderTransaction The purchase order transaction type to add to the specified customer account.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.PurchaseOrderTransaction>
 	 * @see com.mozu.api.contracts.customer.PurchaseOrderTransaction
 	 * @see com.mozu.api.contracts.customer.PurchaseOrderTransaction
@@ -207,7 +207,7 @@ public class CustomerPurchaseOrderAccountClient {
 	}
 
 	/**
-	 * accounts-purchaseOrder Put UpdateCustomerPurchaseOrderAccount description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount> mozuClient=UpdateCustomerPurchaseOrderAccountClient( customerPurchaseOrderAccount,  accountId);
 	 * client.setBaseAddress(url);
@@ -215,7 +215,7 @@ public class CustomerPurchaseOrderAccountClient {
 	 * CustomerPurchaseOrderAccount customerPurchaseOrderAccount = client.Result();
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param customerPurchaseOrderAccount Mozu.Customer.Contracts.CustomerPurchaseOrderAccount ApiType DOCUMENT_HERE 
+	 * @param customerPurchaseOrderAccount Unique identifier of the customer purchase order account.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount>
 	 * @see com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount
 	 * @see com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount
@@ -226,7 +226,7 @@ public class CustomerPurchaseOrderAccountClient {
 	}
 
 	/**
-	 * accounts-purchaseOrder Put UpdateCustomerPurchaseOrderAccount description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount> mozuClient=UpdateCustomerPurchaseOrderAccountClient( customerPurchaseOrderAccount,  accountId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -235,7 +235,7 @@ public class CustomerPurchaseOrderAccountClient {
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param customerPurchaseOrderAccount Mozu.Customer.Contracts.CustomerPurchaseOrderAccount ApiType DOCUMENT_HERE 
+	 * @param customerPurchaseOrderAccount Unique identifier of the customer purchase order account.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount>
 	 * @see com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount
 	 * @see com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount
@@ -254,7 +254,7 @@ public class CustomerPurchaseOrderAccountClient {
 	}
 
 	/**
-	 * accounts-purchaseOrder Delete DeleteCustomerPurchaseOrderAccount description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteCustomerPurchaseOrderAccountClient( accountId);
 	 * client.setBaseAddress(url);

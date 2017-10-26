@@ -26,9 +26,6 @@ public class Pickup implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Available actions you can complete for an order. These actions may differ depending on the status of the order, such as actions required to enter a payment, return of a package, and fulfillment of a shipment.
-	 */
 	protected List<String> availableActions;
 	public List<String> getAvailableActions() {
 		return this.availableActions;
@@ -50,9 +47,6 @@ public class Pickup implements Serializable
 		this.code = code;
 	}
 
-	/**
-	 * Date and time when a shipment completes fulfillment by delivery to a customer's physical address, picked up by a customer at a store, or delivered digitally for downloadable products.
-	 */
 	protected  DateTime fulfillmentDate;
 
 	public DateTime getFulfillmentDate() {
@@ -76,9 +70,6 @@ public class Pickup implements Serializable
 		this.fulfillmentLocationCode = fulfillmentLocationCode;
 	}
 
-	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
-	 */
 	protected  String id;
 
 	public String getId() {
@@ -89,9 +80,6 @@ public class Pickup implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * The current status of an object. This status is specific to the object including payment (New, Authorized, Captured, Declined, Failed, Voided, Credited, CheckRequested, or RolledBack), discount (Active, Scheduled, or Expired), returns (ReturnAuthorized), tenant, package (Fulfilled or NotFulfilled), application, master and product catalogs, orders (Pending, Submitted, Processing, Pending Review, Closed, or Canceled), and order validation results (Pass, Fail, Error, or Review).
-	 */
 	protected  String status;
 
 	public String getStatus() {
@@ -102,9 +90,6 @@ public class Pickup implements Serializable
 		this.status = status;
 	}
 
-	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -126,9 +111,6 @@ public class Pickup implements Serializable
 		this.changeMessages = changeMessages;
 	}
 
-	/**
-	 * An array list of objects in the returned collection.
-	 */
 	protected List<PickupItem> items;
 	public List<PickupItem> getItems() {
 		return this.items;

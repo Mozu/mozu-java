@@ -19,13 +19,13 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * commerce/shipping/admin/profiles related resources. DOCUMENT_HERE 
+ * Use the Profiles resource to manage your shipping profiles.
  * </summary>
  */
 public class ShippingProfileClient {
 	
 	/**
-	 * Get Shipping Profiles for the Tenant/Master Catalog
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.profile.ShippingProfileCollection> mozuClient=GetProfilesClient();
 	 * client.setBaseAddress(url);
@@ -42,7 +42,7 @@ public class ShippingProfileClient {
 	}
 
 	/**
-	 * Get Shipping Profiles for the Tenant/Master Catalog
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.profile.ShippingProfileCollection> mozuClient=GetProfilesClient( responseFields);
 	 * client.setBaseAddress(url);

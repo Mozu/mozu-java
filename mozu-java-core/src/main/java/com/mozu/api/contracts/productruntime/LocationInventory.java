@@ -21,9 +21,6 @@ public class LocationInventory implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The unique, user-defined code that identifies a location. This location can be the location where the order was entered, location for newly in-stock products, and where products are returned.
-	 */
 	protected  String locationCode;
 
 	public String getLocationCode() {
@@ -60,9 +57,6 @@ public class LocationInventory implements Serializable
 		this.softStockAvailable = softStockAvailable;
 	}
 
-	/**
-	 * The stock level for the associated product currently available, at specified locations, and based on the number of pending product reservations as applicable. System-supplied and read only.
-	 */
 	protected  Integer stockAvailable;
 
 	public Integer getStockAvailable() {

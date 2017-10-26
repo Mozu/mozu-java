@@ -21,9 +21,6 @@ public class ProductOptionSelection implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 */
 	protected  String attributeFQN;
 
 	public String getAttributeFQN() {
@@ -34,9 +31,6 @@ public class ProductOptionSelection implements Serializable
 		this.attributeFQN = attributeFQN;
 	}
 
-	/**
-	 * Unique identifier of the attribute's value.
-	 */
 	protected  Integer attributeValueId;
 
 	public Integer getAttributeValueId() {
@@ -47,9 +41,6 @@ public class ProductOptionSelection implements Serializable
 		this.attributeValueId = attributeValueId;
 	}
 
-	/**
-	 * The value a shopper entered for an attribute that requires additional input for the product on a storefront. This entered value is a selected option or entered content for an extra, such as selecting a color or entering content for a monogram.
-	 */
 	protected  Object shopperEnteredValue;
 
 	public Object getShopperEnteredValue() {
@@ -60,9 +51,6 @@ public class ProductOptionSelection implements Serializable
 		this.shopperEnteredValue = shopperEnteredValue;
 	}
 
-	/**
-	 * The value of a property, used by numerous objects within  including facets, attributes, products, localized content, metadata, capabilities ( and third-party), location inventory adjustment, and more. The value may be a string, integer, or double. Validation may be run against the entered and saved values depending on the object type.
-	 */
 	protected  Object value;
 
 	public Object getValue() {

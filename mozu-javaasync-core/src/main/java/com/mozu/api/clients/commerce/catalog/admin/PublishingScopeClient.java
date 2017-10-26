@@ -20,13 +20,13 @@ import org.apache.commons.lang.StringUtils;
 
 import com.mozu.api.DataViewMode;
 /** <summary>
- * Use the Product Publishing resource to publish or discard pending changes to product definitions in the master catalog.
+ * Use the Product Publishing resource to publish or discard pending changes to products in a master catalog, or to add or remove pending changes to and from product publish sets.You can use product publish sets to group pending product changes together and publish them all at the same time.
  * </summary>
  */
 public class PublishingScopeClient {
 	
 	/**
-	 * Retrieves the details of a single PublishSet.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.PublishSet> mozuClient=GetPublishSetClient( publishSetCode);
 	 * client.setBaseAddress(url);
@@ -44,7 +44,7 @@ public class PublishingScopeClient {
 	}
 
 	/**
-	 * Retrieves the details of a single PublishSet.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.PublishSet> mozuClient=GetPublishSetClient( publishSetCode,  responseFields);
 	 * client.setBaseAddress(url);
@@ -70,7 +70,7 @@ public class PublishingScopeClient {
 	}
 
 	/**
-	 * Retrieves a list of PublishSets including the product counts.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.PublishSetCollection> mozuClient=GetPublishSetsClient();
 	 * client.setBaseAddress(url);
@@ -87,7 +87,7 @@ public class PublishingScopeClient {
 	}
 
 	/**
-	 * Retrieves a list of PublishSets including the product counts.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.PublishSetCollection> mozuClient=GetPublishSetsClient( responseFields);
 	 * client.setBaseAddress(url);
@@ -112,7 +112,7 @@ public class PublishingScopeClient {
 	}
 
 	/**
-	 * Deletes the draft version of product changes for each product code specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DiscardDraftsClient(dataViewMode,  publishScope);
 	 * client.setBaseAddress(url);
@@ -137,7 +137,7 @@ public class PublishingScopeClient {
 	}
 
 	/**
-	 * Publishes the draft version of product changes for each product code specified in the request, and changes the product publish state to "live".
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=PublishDraftsClient(dataViewMode,  publishScope);
 	 * client.setBaseAddress(url);
@@ -162,7 +162,7 @@ public class PublishingScopeClient {
 	}
 
 	/**
-	 * Assigns a product draft to a specified publish set.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.PublishSet> mozuClient=AssignProductsToPublishSetClient( publishSet);
 	 * client.setBaseAddress(url);
@@ -170,7 +170,7 @@ public class PublishingScopeClient {
 	 * PublishSet publishSet = client.Result();
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param publishSet Mozu.ProductAdmin.Contracts.PublishSet ApiType DOCUMENT_HERE 
+	 * @param publishSet The details of the publish to which you want to assign products.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.PublishSet>
 	 * @see com.mozu.api.contracts.productadmin.PublishSet
 	 * @see com.mozu.api.contracts.productadmin.PublishSet
@@ -181,7 +181,7 @@ public class PublishingScopeClient {
 	}
 
 	/**
-	 * Assigns a product draft to a specified publish set.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.PublishSet> mozuClient=AssignProductsToPublishSetClient( publishSet,  responseFields);
 	 * client.setBaseAddress(url);
@@ -190,7 +190,7 @@ public class PublishingScopeClient {
 	 * </code></pre></p>
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
-	 * @param publishSet Mozu.ProductAdmin.Contracts.PublishSet ApiType DOCUMENT_HERE 
+	 * @param publishSet The details of the publish to which you want to assign products.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.PublishSet>
 	 * @see com.mozu.api.contracts.productadmin.PublishSet
 	 * @see com.mozu.api.contracts.productadmin.PublishSet
@@ -209,7 +209,7 @@ public class PublishingScopeClient {
 	}
 
 	/**
-	 * Removes all details about a PublishSet from the product service. If the discardDrafts param is true, it also deletes the product drafts.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeletePublishSetClient( publishSetCode);
 	 * client.setBaseAddress(url);
@@ -225,7 +225,7 @@ public class PublishingScopeClient {
 	}
 
 	/**
-	 * Removes all details about a PublishSet from the product service. If the discardDrafts param is true, it also deletes the product drafts.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeletePublishSetClient( publishSetCode,  discardDrafts);
 	 * client.setBaseAddress(url);

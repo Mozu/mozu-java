@@ -35,7 +35,7 @@ public class CustomerAuditEntryResource {
 
 	
 	/**
-	 * Retrieves audit log entries for the specified customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAuditEntry customerauditentry = new CustomerAuditEntry();
 	 *	CustomerAuditEntryCollection customerAuditEntryCollection = customerauditentry.getAccountAuditLog( accountId);
@@ -50,7 +50,7 @@ public class CustomerAuditEntryResource {
 	}
 
 	/**
-	 * Retrieves audit log entries for the specified customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAuditEntry customerauditentry = new CustomerAuditEntry();
 	 *	CustomerAuditEntryCollection customerAuditEntryCollection = customerauditentry.getAccountAuditLog( accountId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);

@@ -22,9 +22,6 @@ public class ProductReservation implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
-	 */
 	protected  Integer id;
 
 	public Integer getId() {
@@ -35,9 +32,6 @@ public class ProductReservation implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * The unique, user-defined code that identifies a location. This location can be the location where the order was entered, location for newly in-stock products, and where products are returned.
-	 */
 	protected  String locationCode;
 
 	public String getLocationCode() {
@@ -48,9 +42,6 @@ public class ProductReservation implements Serializable
 		this.locationCode = locationCode;
 	}
 
-	/**
-	 * Unique identifier of the order associated with the payment.
-	 */
 	protected  String orderId;
 
 	public String getOrderId() {
@@ -61,9 +52,6 @@ public class ProductReservation implements Serializable
 		this.orderId = orderId;
 	}
 
-	/**
-	 * Unique identifier of the order item associated with a validation message, order, or return.
-	 */
 	protected  String orderItemId;
 
 	public String getOrderItemId() {
@@ -74,9 +62,6 @@ public class ProductReservation implements Serializable
 		this.orderItemId = orderItemId;
 	}
 
-	/**
-	 * Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 */
 	protected  String productCode;
 
 	public String getProductCode() {
@@ -87,9 +72,6 @@ public class ProductReservation implements Serializable
 		this.productCode = productCode;
 	}
 
-	/**
-	 * The specified quantity of objects and items. This property is used for numerous object types including products, options, components within a product bundle, cart and order items, returned items, shipping line items, items in a digital product. and items associated with types and reservations.
-	 */
 	protected  Integer quantity;
 
 	public Integer getQuantity() {
@@ -100,9 +82,6 @@ public class ProductReservation implements Serializable
 		this.quantity = quantity;
 	}
 
-	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {

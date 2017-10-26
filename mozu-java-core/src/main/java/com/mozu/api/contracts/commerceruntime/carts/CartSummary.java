@@ -21,9 +21,6 @@ public class CartSummary implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * If true, this shopping cart is active.
-	 */
 	protected  Boolean hasActiveCart;
 
 	public Boolean getHasActiveCart() {
@@ -34,9 +31,6 @@ public class CartSummary implements Serializable
 		this.hasActiveCart = hasActiveCart;
 	}
 
-	/**
-	 * suaIf true, the cart's period of inactivity is past its calculated expiration date and the cart is considered abandoned.
-	 */
 	protected  Boolean isExpired;
 
 	public Boolean getIsExpired() {
@@ -47,9 +41,6 @@ public class CartSummary implements Serializable
 		this.isExpired = isExpired;
 	}
 
-	/**
-	 * The total number of line items in the cart. Each line item can have multiple quantities.
-	 */
 	protected  Integer itemCount;
 
 	public Integer getItemCount() {
@@ -60,9 +51,6 @@ public class CartSummary implements Serializable
 		this.itemCount = itemCount;
 	}
 
-	/**
-	 * Total is used to indicate the monetary, estimated total amount of the cart or order, including items, sales tax, shipping costs, and other fees. Totals are not estimated for wish lists at this time.
-	 */
 	protected  Double total;
 
 	public Double getTotal() {

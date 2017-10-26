@@ -51,9 +51,16 @@ public class RateRequest implements Serializable
 		this.estimatedShipmentDate = estimatedShipmentDate;
 	}
 
-	/**
-	 * If true, the destination address associated with the shipping rate request is a commercial address.
-	 */
+	protected  String id;
+
+	public String getId() {
+		return this.id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
 	protected  Boolean isDestinationAddressCommercial;
 
 	public Boolean getIsDestinationAddressCommercial() {
@@ -64,9 +71,6 @@ public class RateRequest implements Serializable
 		this.isDestinationAddressCommercial = isDestinationAddressCommercial;
 	}
 
-	/**
-	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
-	 */
 	protected  String isoCurrencyCode;
 
 	public String getIsoCurrencyCode() {
@@ -78,7 +82,7 @@ public class RateRequest implements Serializable
 	}
 
 	/**
-	 * The Order SubTotal After Discounts to be used in rate calculation
+	 * The sub total of the order including all applicable discounts.
 	 */
 	protected  Double orderDiscountedSubTotal;
 
@@ -90,9 +94,6 @@ public class RateRequest implements Serializable
 		this.orderDiscountedSubTotal = orderDiscountedSubTotal;
 	}
 
-	/**
-	 * The total monetary amount of the order. This amount is used to calculate the shipping rate estimate.
-	 */
 	protected  Double orderTotal;
 
 	public Double getOrderTotal() {
@@ -104,7 +105,7 @@ public class RateRequest implements Serializable
 	}
 
 	/**
-	 * The Order ID to be used in rate calculation Information al only
+	 * The unique identifier of the order to which the shipping rate is related.You can use Arc.js in combination with this property to retrieve other properties of the related order.
 	 */
 	protected  String relatedOrderId;
 
@@ -116,6 +117,9 @@ public class RateRequest implements Serializable
 		this.relatedOrderId = relatedOrderId;
 	}
 
+	/**
+	 * The order number that the customer sees on the storefront when they place the order.
+	 */
 	protected  Integer relatedOrderNumber;
 
 	public Integer getRelatedOrderNumber() {
@@ -137,6 +141,9 @@ public class RateRequest implements Serializable
 		this.shippingServiceTypes = shippingServiceTypes;
 	}
 
+	/**
+	 * Collection of attributes that may be paged list or a list, depending on the usage per object and API type.
+	 */
 	protected List<RateRequestAttribute> attributes;
 	public List<RateRequestAttribute> getAttributes() {
 		return this.attributes;
@@ -157,7 +164,7 @@ public class RateRequest implements Serializable
 	}
 
 	/**
-	 * Mozu.ShippingRuntime.Contracts.RateRequest data ApiTypeMember DOCUMENT_HERE 
+	 * Data included in the shipping rate information.
 	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
@@ -169,9 +176,6 @@ public class RateRequest implements Serializable
 		this.data = data;
 	}
 
-	/**
-	 * The physical address orders are sent to as a shipping destination. This address may contain multiple lines, city, state/province, country, and zip/postal code. The destination is used to calculate shipping costs.
-	 */
 	protected  Address destinationAddress;
 
 	public Address getDestinationAddress() {
@@ -182,9 +186,6 @@ public class RateRequest implements Serializable
 		this.destinationAddress = destinationAddress;
 	}
 
-	/**
-	 * Collection list of items. All returned data is provided in an items array. For a failed request, the returned response may be success with an empty item collection. Items are used throughout APIs for carts, wish lists, documents, payments, returns, properties, and more.
-	 */
 	protected List<RateRequestItem> items;
 	public List<RateRequestItem> getItems() {
 		return this.items;

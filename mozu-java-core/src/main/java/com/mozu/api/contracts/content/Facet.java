@@ -21,9 +21,6 @@ public class Facet implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The total number of associated items.
-	 */
 	protected  Integer count;
 
 	public Integer getCount() {
@@ -34,9 +31,6 @@ public class Facet implements Serializable
 		this.count = count;
 	}
 
-	/**
-	 * The user supplied name that appears in . You can use this field for identification purposes.
-	 */
 	protected  String name;
 
 	public String getName() {

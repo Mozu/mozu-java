@@ -38,7 +38,7 @@ public class View implements Serializable
 	}
 
 	/**
-	 * Specifies how to filter views based on the status of a document.You can specify the following values for this property: or null—all documents return in the view.—only documents within the active date range (or documents without an active date range specified) return in the view.—only documents with an active date range set in the future return in the view.—only scheduled and active documents return in the view.—only documents with an active date range set in the past return in the view.
+	 * Specifies how to filter views based on the status of a document.You can specify the following values for this property: or nullâ€”all documents return in the view.â€”only documents within the active date range (or documents without an active date range specified) return in the view.â€”only documents with an active date range set in the future return in the view.â€”only scheduled and active documents return in the view.â€”only documents with an active date range set in the past return in the view.
 	 */
 	protected  String includeInactiveMode;
 

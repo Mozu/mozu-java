@@ -23,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 public class FacetClient {
 	
 	/**
-	 * Retrieves the properties of facets that aid in indexing and searching.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.content.Facet>> mozuClient=GetFacetsClient( documentListName,  propertyName);
 	 * client.setBaseAddress(url);

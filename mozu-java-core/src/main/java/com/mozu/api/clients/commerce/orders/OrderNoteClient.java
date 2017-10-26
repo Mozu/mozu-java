@@ -23,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 public class OrderNoteClient {
 	
 	/**
-	 * Retrieves a list of all notes for an order.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.commerceruntime.orders.OrderNote>> mozuClient=GetOrderNotesClient( orderId);
 	 * client.setBaseAddress(url);
@@ -47,7 +47,7 @@ public class OrderNoteClient {
 	}
 
 	/**
-	 * Retrieves the details of a specific order note.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderNote> mozuClient=GetOrderNoteClient( orderId,  noteId);
 	 * client.setBaseAddress(url);
@@ -65,7 +65,7 @@ public class OrderNoteClient {
 	}
 
 	/**
-	 * Retrieves the details of a specific order note.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderNote> mozuClient=GetOrderNoteClient( orderId,  noteId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -74,7 +74,7 @@ public class OrderNoteClient {
 	 * </code></pre></p>
 	 * @param noteId Unique identifier of a particular note to retrieve.
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.OrderNote>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 */
@@ -91,7 +91,7 @@ public class OrderNoteClient {
 	}
 
 	/**
-	 * Creates a new merchant note for the specified order.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderNote> mozuClient=CreateOrderNoteClient( orderNote,  orderId);
 	 * client.setBaseAddress(url);
@@ -110,7 +110,7 @@ public class OrderNoteClient {
 	}
 
 	/**
-	 * Creates a new merchant note for the specified order.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderNote> mozuClient=CreateOrderNoteClient( orderNote,  orderId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -118,7 +118,7 @@ public class OrderNoteClient {
 	 * OrderNote orderNote = client.Result();
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param orderNote Properties of an order note for a merchant, which is internal only for administrative purposes and not available to the shopper.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.OrderNote>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
@@ -138,7 +138,7 @@ public class OrderNoteClient {
 	}
 
 	/**
-	 * Updates a specific note for an order.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderNote> mozuClient=UpdateOrderNoteClient( orderNote,  orderId,  noteId);
 	 * client.setBaseAddress(url);
@@ -158,7 +158,7 @@ public class OrderNoteClient {
 	}
 
 	/**
-	 * Updates a specific note for an order.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderNote> mozuClient=UpdateOrderNoteClient( orderNote,  orderId,  noteId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -167,7 +167,7 @@ public class OrderNoteClient {
 	 * </code></pre></p>
 	 * @param noteId Unique identifier of a particular note to retrieve.
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param orderNote Properties of an order note for a merchant, which is internal only for administrative purposes and not available to the shopper.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.OrderNote>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
@@ -187,7 +187,7 @@ public class OrderNoteClient {
 	}
 
 	/**
-	 * Deletes the specified order note.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteOrderNoteClient( orderId,  noteId);
 	 * client.setBaseAddress(url);

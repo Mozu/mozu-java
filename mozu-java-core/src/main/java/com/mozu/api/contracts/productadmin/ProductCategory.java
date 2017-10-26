@@ -21,9 +21,6 @@ public class ProductCategory implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Unique identifier for the storefront container used to organize products.
-	 */
 	protected  Integer categoryId;
 
 	public Integer getCategoryId() {

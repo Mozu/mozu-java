@@ -27,9 +27,6 @@ public class ProductVariation implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The difference between the weight associated with this product, variation option, or extra and the base product. For example, if a product with a monogram weighs an extra 1/4 lb, the DeltaWeight value is "0.25". The amount of the delta is set by the weight type for the storefront.
-	 */
 	protected  Double deltaWeight;
 
 	public Double getDeltaWeight() {
@@ -41,7 +38,7 @@ public class ProductVariation implements Serializable
 	}
 
 	/**
-	 * Fixed weight of the product with this variation.
+	 * If the product is in explicit pricing mode, this is the fixed weight of the variation.
 	 */
 	protected  Double fixedWeight;
 
@@ -54,7 +51,7 @@ public class ProductVariation implements Serializable
 	}
 
 	/**
-	 * List of supported types of fulfillment  for the product or variation. The types include direct ship, in-store pickup, or both. 
+	 * List of supported types of fulfillment for the product or variation. The types include direct ship, in-store pickup, or both.
 	 */
 	protected List<String> fulfillmentTypesSupported;
 	public List<String> getFulfillmentTypesSupported() {
@@ -64,9 +61,6 @@ public class ProductVariation implements Serializable
 		this.fulfillmentTypesSupported = fulfillmentTypesSupported;
 	}
 
-	/**
-	 * Indicates if the object or feature is active. This indicator is used for subscriptions (at the site or tenant level), customer accounts, products and variations.
-	 */
 	protected  Boolean isActive;
 
 	public Boolean getIsActive() {
@@ -77,9 +71,6 @@ public class ProductVariation implements Serializable
 		this.isActive = isActive;
 	}
 
-	/**
-	 * If true, the production variation is no longer available for sale. For example, if a client stops selling all "small" shirts, all product variations with the "small" option are set to IsOrphan. System-supplied and read only.
-	 */
 	protected  Boolean isOrphan;
 
 	public Boolean getIsOrphan() {
@@ -103,9 +94,6 @@ public class ProductVariation implements Serializable
 		this.upc = upc;
 	}
 
-	/**
-	 * If true, one or more product variations are configured for the specified product code.
-	 */
 	protected  Boolean variationExists;
 
 	public Boolean getVariationExists() {
@@ -116,9 +104,6 @@ public class ProductVariation implements Serializable
 		this.variationExists = variationExists;
 	}
 
-	/**
-	 * System-generated key that represents the attribute values that uniquely identify a specific product variation.
-	 */
 	protected  String variationkey;
 
 	public String getVariationkey() {
@@ -129,9 +114,6 @@ public class ProductVariation implements Serializable
 		this.variationkey = variationkey;
 	}
 
-	/**
-	 * Merchant-created code associated with a specific product variation. Variation product codes maintain an association with the base product code.
-	 */
 	protected  String variationProductCode;
 
 	public String getVariationProductCode() {
@@ -142,9 +124,6 @@ public class ProductVariation implements Serializable
 		this.variationProductCode = variationProductCode;
 	}
 
-	/**
-	 * The difference between associated prices for a product, variation option, or extra. The difference is calculated by subtracting the base price from the associated price with this product, option, and/or extra. For example, if a product with a defined monogram extra costs an additional $10, the `deltaPrice `value is "10". Between options, a price for a medium may be $10 and a large $12 giving a `deltaPrice `value of "2".
-	 */
 	protected  ProductVariationDeltaPrice deltaPrice;
 
 	public ProductVariationDeltaPrice getDeltaPrice() {
@@ -156,7 +135,7 @@ public class ProductVariation implements Serializable
 	}
 
 	/**
-	 * Price of the variation using fixed price
+	 * If the product is in Explicit pricing mode, this is the price of the variation.Refer to [Product Variant Pricing and Weight](../../../guides/catalog/products.htm#product_variant_pricing_and_weight) in the Products guides topic for more information.
 	 */
 	protected  ProductVariationFixedPrice fixedPrice;
 
@@ -169,7 +148,7 @@ public class ProductVariation implements Serializable
 	}
 
 	/**
-	 * The difference between associated prices for a product, variation option, or extra that is localized per the `localeCode`. The difference is calculated by subtracting the base price from the associated price with this product, option, and/or extra. Depending on the localeCode, the price may be converted such as from USD (US Dollar) to EUR (euro).
+	 * The difference between associated prices for a product, variation option, or extra that is localized per the `localeCode`. The difference is calculated by subtracting the base price from the associated price with this product, option, and/or extra. Depending on the localeCode, the price may be converted such as from USD (USÂ Dollar) to EUR (euro).
 	 */
 	protected List<ProductVariationDeltaPrice> localizedDeltaPrice;
 	public List<ProductVariationDeltaPrice> getLocalizedDeltaPrice() {
@@ -190,9 +169,6 @@ public class ProductVariation implements Serializable
 		this.localizedFixedPrice = localizedFixedPrice;
 	}
 
-	/**
-	 * List of option attributes configured for an object. These values are associated and used by products, product bundles, and product types.
-	 */
 	protected List<ProductVariationOption> options;
 	public List<ProductVariationOption> getOptions() {
 		return this.options;

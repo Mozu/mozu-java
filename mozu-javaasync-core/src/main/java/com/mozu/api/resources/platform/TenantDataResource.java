@@ -20,7 +20,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the tenant data resource to store tenant-level information required for a third-party application in the Mozu database.
+ * Use the tenant data resource to store tenant-level information required for a third-party application in the  database.
  * </summary>
  */
 public class TenantDataResource {
@@ -37,7 +37,7 @@ public class TenantDataResource {
 
 	
 	/**
-	 * Retrieves the value of a record in the Mozu database.
+	 * 
 	 * <p><pre><code>
 	 *	TenantData tenantdata = new TenantData();
 	 *	string string = tenantdata.getDBValue( dbEntryQuery);
@@ -52,7 +52,7 @@ public class TenantDataResource {
 	}
 
 	/**
-	 * Retrieves the value of a record in the Mozu database.
+	 * 
 	 * <p><pre><code>
 	 *	TenantData tenantdata = new TenantData();
 	 *	CountDownLatch latch = tenantdata.getDBValue( dbEntryQuery, callback );
@@ -68,13 +68,13 @@ public class TenantDataResource {
 	}
 
 	/**
-	 * Retrieves the value of a record in the Mozu database.
+	 * 
 	 * <p><pre><code>
 	 *	TenantData tenantdata = new TenantData();
 	 *	string string = tenantdata.getDBValue( dbEntryQuery,  responseFields);
 	 * </code></pre></p>
 	 * @param dbEntryQuery The database entry string to create.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return string
 	 * @see string
 	 */
@@ -88,13 +88,13 @@ public class TenantDataResource {
 	}
 
 	/**
-	 * Retrieves the value of a record in the Mozu database.
+	 * 
 	 * <p><pre><code>
 	 *	TenantData tenantdata = new TenantData();
 	 *	CountDownLatch latch = tenantdata.getDBValue( dbEntryQuery,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param dbEntryQuery The database entry string to create.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return string
 	 * @see string
@@ -108,7 +108,7 @@ public class TenantDataResource {
 	}
 
 	/**
-	 * Creates a new record in the Mozu database based on the information supplied in the request.
+	 * 
 	 * <p><pre><code>
 	 *	TenantData tenantdata = new TenantData();
 	 *	tenantdata.createDBValue( value,  dbEntryQuery);
@@ -128,7 +128,7 @@ public class TenantDataResource {
 	}
 
 	/**
-	 * Updates a record in the Mozu database based on the information supplied in the request.
+	 * 
 	 * <p><pre><code>
 	 *	TenantData tenantdata = new TenantData();
 	 *	tenantdata.updateDBValue( value,  dbEntryQuery);
@@ -148,7 +148,7 @@ public class TenantDataResource {
 	}
 
 	/**
-	 * Removes a previously defined record in the Mozu database.
+	 * 
 	 * <p><pre><code>
 	 *	TenantData tenantdata = new TenantData();
 	 *	tenantdata.deleteDBValue( dbEntryQuery);

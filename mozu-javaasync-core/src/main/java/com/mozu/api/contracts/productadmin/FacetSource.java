@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Describes the source of the facet data. It can be a product field (such as price and category) or a product attribute. 			All fields are System-supplied and read only.		
+ *	Describes the source of the facet data. It can be a product field (such as price and category) or a product attribute. All fields are System-supplied and read only.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class FacetSource implements Serializable
@@ -21,9 +21,6 @@ public class FacetSource implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * If true, the facet allows for values that consist of one or more ranges, such as 0-100, 100-200, and 200-300. This is only allowed for numeric and date fields. 
-	 */
 	protected  Boolean allowsRangeQuery;
 
 	public Boolean getAllowsRangeQuery() {
@@ -34,9 +31,6 @@ public class FacetSource implements Serializable
 		this.allowsRangeQuery = allowsRangeQuery;
 	}
 
-	/**
-	 * The data type of the source product property, typically of type Bool, DateTime, Number, or String.
-	 */
 	protected  String dataType;
 
 	public String getDataType() {
@@ -47,9 +41,6 @@ public class FacetSource implements Serializable
 		this.dataType = dataType;
 	}
 
-	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
-	 */
 	protected  String id;
 
 	public String getId() {
@@ -60,9 +51,6 @@ public class FacetSource implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -73,9 +61,6 @@ public class FacetSource implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * The source type for the facet, either "Attribute" or "Element".  Elements are direct properties of the product and include category and price.
-	 */
 	protected  String type;
 
 	public String getType() {

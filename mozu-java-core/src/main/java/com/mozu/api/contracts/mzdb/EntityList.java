@@ -39,7 +39,7 @@ public class EntityList implements Serializable
 	}
 
 	/**
-	 * The date and time in UTC format set when the object was created.
+	 * The date and time in UTCÂ format set when the object was created.
 	 */
 	protected  DateTime createDate;
 
@@ -180,32 +180,6 @@ public class EntityList implements Serializable
 	}
 
 	/**
-	 * An IndexedProperty defintion which indicates a property on every entity provided that should be indexed to enable querying and sorting. Non-indexed properties may be used in queries as long as at least one indexed property is also provided in the query.
-	 */
-	protected  IndexedProperty indexB;
-
-	public IndexedProperty getIndexB() {
-		return this.indexB;
-	}
-
-	public void setIndexB(IndexedProperty indexB) {
-		this.indexB = indexB;
-	}
-
-	/**
-	 * An IndexedProperty defintion which indicates a property on every entity provided that should be indexed to enable querying and sorting. Non-indexed properties may be used in queries as long as at least one indexed property is also provided in the query.
-	 */
-	protected  IndexedProperty indexC;
-
-	public IndexedProperty getIndexC() {
-		return this.indexC;
-	}
-
-	public void setIndexC(IndexedProperty indexC) {
-		this.indexC = indexC;
-	}
-
-	/**
 	 * An IndexedProperty defintion which indicates the property on every entity provided should be used as the unique identifier for the document. Within an EntityList instance each entity must have a unique identifier.
 	 */
 	protected  IndexedProperty idProperty;
@@ -229,6 +203,32 @@ public class EntityList implements Serializable
 
 	public void setIndexA(IndexedProperty indexA) {
 		this.indexA = indexA;
+	}
+
+	/**
+	 * An IndexedProperty defintion which indicates a property on every entity provided that should be indexed to enable querying and sorting. Non-indexed properties may be used in queries as long as at least one indexed property is also provided in the query.
+	 */
+	protected  IndexedProperty indexB;
+
+	public IndexedProperty getIndexB() {
+		return this.indexB;
+	}
+
+	public void setIndexB(IndexedProperty indexB) {
+		this.indexB = indexB;
+	}
+
+	/**
+	 * An IndexedProperty defintion which indicates a property on every entity provided that should be indexed to enable querying and sorting. Non-indexed properties may be used in queries as long as at least one indexed property is also provided in the query.
+	 */
+	protected  IndexedProperty indexC;
+
+	public IndexedProperty getIndexC() {
+		return this.indexC;
+	}
+
+	public void setIndexC(IndexedProperty indexC) {
+		this.indexC = indexC;
 	}
 
 	/**

@@ -24,9 +24,6 @@ public class Subscription implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * ApiVersion
-	 */
 	protected  String apiVersion;
 
 	public String getApiVersion() {
@@ -37,9 +34,6 @@ public class Subscription implements Serializable
 		this.apiVersion = apiVersion;
 	}
 
-	/**
-	 * Unique identifier of an app available in your Mozu tenant or within Mozu Dev Center. This ID is unique across all apps installed, initialized, and enabled in the Mozu Admin and those in development through the Dev Center Console.
-	 */
 	protected  String appId;
 
 	public String getAppId() {
@@ -50,9 +44,6 @@ public class Subscription implements Serializable
 		this.appId = appId;
 	}
 
-	/**
-	 * A boolean value that indicates if the subscription endpoint has been confirmed
-	 */
 	protected  Boolean confirmed;
 
 	public Boolean getConfirmed() {
@@ -63,9 +54,6 @@ public class Subscription implements Serializable
 		this.confirmed = confirmed;
 	}
 
-	/**
-	 * Content type of the payload that will be delivered.  This is utilized in combination with the notification delivery type.  Example:  A HTTP Post (notification delivery type) is performed with a JSON representation of the event data (content type).
-	 */
 	protected  String contentType;
 
 	public String getContentType() {
@@ -76,9 +64,6 @@ public class Subscription implements Serializable
 		this.contentType = contentType;
 	}
 
-	/**
-	 * Identifier of the user that created the object. System created and read only.
-	 */
 	protected  String createBy;
 
 	public String getCreateBy() {
@@ -89,9 +74,6 @@ public class Subscription implements Serializable
 		this.createBy = createBy;
 	}
 
-	/**
-	 * The date time in UTC format set when the object was created. 
-	 */
 	protected  DateTime createDate;
 
 	public DateTime getCreateDate() {
@@ -102,9 +84,6 @@ public class Subscription implements Serializable
 		this.createDate = createDate;
 	}
 
-	/**
-	 * The delivery endpoint that will receive notifications when events concerning the specified topics on the subscription occur.  The format of the endpoint may differ depending on the notification type.  For example, the endpoint may be a URL in some cases and an email address in others if multiple notification types are available.
-	 */
 	protected  String endpoint;
 
 	public String getEndpoint() {
@@ -115,9 +94,6 @@ public class Subscription implements Serializable
 		this.endpoint = endpoint;
 	}
 
-	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
-	 */
 	protected  String id;
 
 	public String getId() {
@@ -128,9 +104,6 @@ public class Subscription implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * Indicates if the object or feature is active. This indicator is used for subscriptions (at the site or tenant level), customer accounts, products and variations.
-	 */
 	protected  Boolean isActive;
 
 	public Boolean getIsActive() {
@@ -142,7 +115,7 @@ public class Subscription implements Serializable
 	}
 
 	/**
-	 * A boolean value that indicates if events should be delivered that resulted from an API call by the application.  If true, any events that occur as a result of a direct API call by the same application will not be delivered. This can prevent an endless loop in certain scenarios.
+	 * A boolean value that indicates if events should be delivered that resulted from an API call by the application. If true, any events that occur as a result of a direct API call by the same application will not be delivered. This can prevent an endless loop in certain scenarios.
 	 */
 	protected  Boolean noCallback;
 
@@ -154,9 +127,6 @@ public class Subscription implements Serializable
 		this.noCallback = noCallback;
 	}
 
-	/**
-	 * Notification delivery type which is a string representation of an enumeration of values.  Example: Http (this is case insensitive, so http may also be passed in)
-	 */
 	protected  String notificationDeliveryType;
 
 	public String getNotificationDeliveryType() {
@@ -167,9 +137,6 @@ public class Subscription implements Serializable
 		this.notificationDeliveryType = notificationDeliveryType;
 	}
 
-	/**
-	 * A list of topics that the subscription relates to
-	 */
 	protected List<String> topics;
 	public List<String> getTopics() {
 		return this.topics;
@@ -178,9 +145,6 @@ public class Subscription implements Serializable
 		this.topics = topics;
 	}
 
-	/**
-	 * Identifier of the user that updated the entity most recently.
-	 */
 	protected  String updateBy;
 
 	public String getUpdateBy() {
@@ -191,9 +155,6 @@ public class Subscription implements Serializable
 		this.updateBy = updateBy;
 	}
 
-	/**
-	 * The date and time the object was updated most recently. The date is in UTC format.
-	 */
 	protected  DateTime updateDate;
 
 	public DateTime getUpdateDate() {

@@ -37,7 +37,7 @@ public class TransactionResource {
 
 	
 	/**
-	 * Retrieves a list of transactions associated with the customer account specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	Transaction transaction = new Transaction();
 	 *	Transaction transaction = transaction.getTransactions( accountId);
@@ -56,7 +56,7 @@ public class TransactionResource {
 	}
 
 	/**
-	 * Retrieves a list of transactions associated with the customer account specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	Transaction transaction = new Transaction();
 	 *	CountDownLatch latch = transaction.getTransactions( accountId, callback );
@@ -75,7 +75,7 @@ public class TransactionResource {
 	}
 
 	/**
-	 * Creates a new transaction for the customer account specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	Transaction transaction = new Transaction();
 	 *	Transaction transaction = transaction.addTransaction( transaction,  accountId);
@@ -92,7 +92,7 @@ public class TransactionResource {
 	}
 
 	/**
-	 * Creates a new transaction for the customer account specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	Transaction transaction = new Transaction();
 	 *	CountDownLatch latch = transaction.addTransaction( transaction,  accountId, callback );
@@ -110,13 +110,13 @@ public class TransactionResource {
 	}
 
 	/**
-	 * Creates a new transaction for the customer account specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	Transaction transaction = new Transaction();
 	 *	Transaction transaction = transaction.addTransaction( transaction,  accountId,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param transaction Properties of a transaction performed by a customer account. The system creates a transaction each time the customer submits an order, returns an item, picks up items for an order, or manages items on a wish list.
 	 * @return com.mozu.api.contracts.customer.Transaction
 	 * @see com.mozu.api.contracts.customer.Transaction
@@ -132,13 +132,13 @@ public class TransactionResource {
 	}
 
 	/**
-	 * Creates a new transaction for the customer account specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	Transaction transaction = new Transaction();
 	 *	CountDownLatch latch = transaction.addTransaction( transaction,  accountId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param transaction Properties of a transaction performed by a customer account. The system creates a transaction each time the customer submits an order, returns an item, picks up items for an order, or manages items on a wish list.
 	 * @return com.mozu.api.contracts.customer.Transaction
@@ -154,7 +154,7 @@ public class TransactionResource {
 	}
 
 	/**
-	 * Deletes a transaction from the customer account specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	Transaction transaction = new Transaction();
 	 *	transaction.removeTransaction( accountId,  transactionId);

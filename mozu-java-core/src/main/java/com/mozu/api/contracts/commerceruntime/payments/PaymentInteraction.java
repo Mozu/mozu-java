@@ -25,9 +25,6 @@ public class PaymentInteraction implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * If applicable, the total monetary amount associated with this payment interaction.
-	 */
 	protected  Double amount;
 
 	public Double getAmount() {
@@ -38,9 +35,6 @@ public class PaymentInteraction implements Serializable
 		this.amount = amount;
 	}
 
-	/**
-	 * If applicable, the check number associated with the payment action or interaction.
-	 */
 	protected  String checkNumber;
 
 	public String getCheckNumber() {
@@ -51,9 +45,6 @@ public class PaymentInteraction implements Serializable
 		this.checkNumber = checkNumber;
 	}
 
-	/**
-	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
-	 */
 	protected  String currencyCode;
 
 	public String getCurrencyCode() {
@@ -64,9 +55,6 @@ public class PaymentInteraction implements Serializable
 		this.currencyCode = currencyCode;
 	}
 
-	/**
-	 * If required by the payment gateway, the authorization code of the transaction.
-	 */
 	protected  String gatewayAuthCode;
 
 	public String getGatewayAuthCode() {
@@ -77,9 +65,6 @@ public class PaymentInteraction implements Serializable
 		this.gatewayAuthCode = gatewayAuthCode;
 	}
 
-	/**
-	 * AVS (Address Verification Service) codes supplied by the payment gateway. The codes indicate partial to complete or failed matches against the billing address for the shopper against the financial institute data through the gateway.
-	 */
 	protected  String gatewayAVSCodes;
 
 	public String getGatewayAVSCodes() {
@@ -90,9 +75,6 @@ public class PaymentInteraction implements Serializable
 		this.gatewayAVSCodes = gatewayAVSCodes;
 	}
 
-	/**
-	 * CVV2 (Card Verification Value) codes supplied by the payment gateway. The codes indicate a verified or failed match of the encrypted code entered against the financial institution data through the gateway.
-	 */
 	protected  String gatewayCVV2Codes;
 
 	public String getGatewayCVV2Codes() {
@@ -103,9 +85,6 @@ public class PaymentInteraction implements Serializable
 		this.gatewayCVV2Codes = gatewayCVV2Codes;
 	}
 
-	/**
-	 * Unique identifier of the payment interaction from the payment gateway.
-	 */
 	protected  Integer gatewayInteractionId;
 
 	public Integer getGatewayInteractionId() {
@@ -116,9 +95,6 @@ public class PaymentInteraction implements Serializable
 		this.gatewayInteractionId = gatewayInteractionId;
 	}
 
-	/**
-	 * Response code from the gateway associated with the payment interaction. The response code is unique to the gateway.The response code is associated with the , which contains the textual response message.Refer to [Gateway Response Code and Text](https://www.mozu.com/docs/developer/api-guides/payment-gateways.htm#gateway_response_code_and_text) in the API Guides for more information.
-	 */
 	protected  String gatewayResponseCode;
 
 	public String getGatewayResponseCode() {
@@ -142,9 +118,6 @@ public class PaymentInteraction implements Serializable
 		this.gatewayResponseText = gatewayResponseText;
 	}
 
-	/**
-	 * Unique identifier of the gateway transaction associated with the payment interaction.
-	 */
 	protected  String gatewayTransactionId;
 
 	public String getGatewayTransactionId() {
@@ -155,9 +128,6 @@ public class PaymentInteraction implements Serializable
 		this.gatewayTransactionId = gatewayTransactionId;
 	}
 
-	/**
-	 * Unique identifier of the source property, such as a catalog, discount, order, or email template.For a product field it will be the name of the field.For a category ID, must be a positive integer not greater than 2000000. By default,  auto-generates a category ID when categories are created. If you want to specify an ID during creation (which preserves category link relationships when migrating tenant data from one sandbox to another), you must also include the  query string in the endpoint. For example, . Then, use the  property to specify the desired category ID.For a product attribute it will be the Attribute FQN.For a document, the ID must be specified as a 32 character, case-insensitive, alphanumeric string. You can specify the ID as 32 sequential characters or as groups separated by dashes in the format 8-4-4-4-12. For example, or.For email templates, the ID must be one of the following values:			
-	 */
 	protected  String id;
 
 	public String getId() {
@@ -168,9 +138,6 @@ public class PaymentInteraction implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * Date and time of a payment interaction, including handling and processing a payment and validating and completing a payment with a payment gateway.
-	 */
 	protected  DateTime interactionDate;
 
 	public DateTime getInteractionDate() {
@@ -181,9 +148,6 @@ public class PaymentInteraction implements Serializable
 		this.interactionDate = interactionDate;
 	}
 
-	/**
-	 * The type of payment interaction. The payment can be Capture or CheckReceived. The value also includes customer payment interactions such as Website, Call, Store, or Unknown.
-	 */
 	protected  String interactionType;
 
 	public String getInteractionType() {
@@ -194,9 +158,6 @@ public class PaymentInteraction implements Serializable
 		this.interactionType = interactionType;
 	}
 
-	/**
-	 * If true, the payment interaction was manually defined s part of offline order processing.
-	 */
 	protected  Boolean isManual;
 
 	public Boolean getIsManual() {
@@ -207,9 +168,6 @@ public class PaymentInteraction implements Serializable
 		this.isManual = isManual;
 	}
 
-	/**
-	 * Indicates if the product in a cart, order, or wish list is purchased on a recurring schedule. If true, the item can be purchased or fulfilled at regular intervals, such as a monthly billing cycle. For example, digital or physical product subscriptions are recurring cart items. This property is not used at this time and is reserved for future functionality.
-	 */
 	protected  Boolean isRecurring;
 
 	public Boolean getIsRecurring() {
@@ -220,9 +178,6 @@ public class PaymentInteraction implements Serializable
 		this.isRecurring = isRecurring;
 	}
 
-	/**
-	 * User-entered notation content for an object, used to save information such as payment, return, account, and order notes.
-	 */
 	protected  String note;
 
 	public String getNote() {
@@ -233,9 +188,6 @@ public class PaymentInteraction implements Serializable
 		this.note = note;
 	}
 
-	/**
-	 * Unique identifier of the order associated with the payment.
-	 */
 	protected  String orderId;
 
 	public String getOrderId() {
@@ -246,9 +198,6 @@ public class PaymentInteraction implements Serializable
 		this.orderId = orderId;
 	}
 
-	/**
-	 * The status of the payment prior to the interaction being performed, which enables manual rollback of previous transactions.
-	 */
 	protected  String paymentEntryStatus;
 
 	public String getPaymentEntryStatus() {
@@ -259,9 +208,6 @@ public class PaymentInteraction implements Serializable
 		this.paymentEntryStatus = paymentEntryStatus;
 	}
 
-	/**
-	 * Unique identifier of the payment associated with this transaction.
-	 */
 	protected  String paymentId;
 
 	public String getPaymentId() {
@@ -272,9 +218,6 @@ public class PaymentInteraction implements Serializable
 		this.paymentId = paymentId;
 	}
 
-	/**
-	 * Unique identifier of previous interaction that this payment interaction is modifying. For example, when refunding a payment, the crediting interaction would reference the capture interaction.
-	 */
 	protected  Integer paymentTransactionInteractionIdReference;
 
 	public Integer getPaymentTransactionInteractionIdReference() {
@@ -286,8 +229,31 @@ public class PaymentInteraction implements Serializable
 	}
 
 	/**
-	 * The current status of the object.This value is read only. Valid values for this field are: "Active", "Expired", and "Inactive".
+	 * The unique identifier of the refund for a given interaction.
 	 */
+	protected  String refundId;
+
+	public String getRefundId() {
+		return this.refundId;
+	}
+
+	public void setRefundId(String refundId) {
+		this.refundId = refundId;
+	}
+
+	/**
+	 * The unique identifier of the return associated with a given interaction.
+	 */
+	protected  String returnId;
+
+	public String getReturnId() {
+		return this.returnId;
+	}
+
+	public void setReturnId(String returnId) {
+		this.returnId = returnId;
+	}
+
 	protected  String status;
 
 	public String getStatus() {
@@ -298,9 +264,6 @@ public class PaymentInteraction implements Serializable
 		this.status = status;
 	}
 
-	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {

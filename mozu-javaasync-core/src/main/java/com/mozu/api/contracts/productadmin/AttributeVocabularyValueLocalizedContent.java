@@ -21,9 +21,6 @@ public class AttributeVocabularyValueLocalizedContent implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Language used for the entity. Currently, only "en-US" is supported.
-	 */
 	protected  String localeCode;
 
 	public String getLocaleCode() {
@@ -34,9 +31,6 @@ public class AttributeVocabularyValueLocalizedContent implements Serializable
 		this.localeCode = localeCode;
 	}
 
-	/**
-	 * If the object value is a String, this value provides that string value, used by vocabulary property values, products, and options.
-	 */
 	protected  String stringValue;
 
 	public String getStringValue() {

@@ -25,7 +25,7 @@ import org.apache.commons.lang.StringUtils;
 public class OrderClient {
 	
 	/**
-	 * Retrieves a list of orders according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderCollection> mozuClient=GetOrdersClient();
 	 * client.setBaseAddress(url);
@@ -41,20 +41,20 @@ public class OrderClient {
 	}
 
 	/**
-	 * Retrieves a list of orders according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderCollection> mozuClient=GetOrdersClient( startIndex,  pageSize,  sortBy,  filter,  q,  qLimit,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * OrderCollection orderCollection = client.Result();
 	 * </code></pre></p>
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/applications/sorting-filtering.htm) for a list of supported filters.
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
 	 * @param q A list of order search terms (not phrases) to use in the query when searching across order number and the name or email of the billing contact. When entering, separate multiple search terms with a space character.
 	 * @param qLimit The maximum number of search results to return in the response. You can limit any range between 1-100.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.OrderCollection>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderCollection
 	 */
@@ -71,7 +71,7 @@ public class OrderClient {
 	}
 
 	/**
-	 * Retrieves the actions available to perform for an order based on its current status.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<String>> mozuClient=GetAvailableActionsClient( orderId);
 	 * client.setBaseAddress(url);
@@ -95,7 +95,7 @@ public class OrderClient {
 	}
 
 	/**
-	 * Retrieves an order for the purpose of splitting it into multiple taxable orders in order to fulfill the order in multiple locations.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.pricingruntime.TaxableOrder>> mozuClient=GetTaxableOrdersClient( orderId);
 	 * client.setBaseAddress(url);
@@ -119,7 +119,7 @@ public class OrderClient {
 	}
 
 	/**
-	 * Retrieves the details of an order specified by the order ID.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=GetOrderClient( orderId);
 	 * client.setBaseAddress(url);
@@ -136,7 +136,7 @@ public class OrderClient {
 	}
 
 	/**
-	 * Retrieves the details of an order specified by the order ID.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=GetOrderClient( orderId,  draft,  responseFields);
 	 * client.setBaseAddress(url);
@@ -145,7 +145,7 @@ public class OrderClient {
 	 * </code></pre></p>
 	 * @param draft If true, retrieve the draft version of the order, which might include uncommitted changes to the order or its components.
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 */
@@ -162,7 +162,7 @@ public class OrderClient {
 	}
 
 	/**
-	 * Creates a new order from an existing cart when the customer chooses to proceed to checkout.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=CreateOrderFromCartClient( cartId);
 	 * client.setBaseAddress(url);
@@ -179,7 +179,7 @@ public class OrderClient {
 	}
 
 	/**
-	 * Creates a new order from an existing cart when the customer chooses to proceed to checkout.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=CreateOrderFromCartClient( cartId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -187,7 +187,7 @@ public class OrderClient {
 	 * Order order = client.Result();
 	 * </code></pre></p>
 	 * @param cartId Identifier of the cart to delete.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 */
@@ -204,7 +204,7 @@ public class OrderClient {
 	}
 
 	/**
-	 * Creates a new order for no-cart quick-ordering scenarios.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=CreateOrderClient( order);
 	 * client.setBaseAddress(url);
@@ -222,14 +222,14 @@ public class OrderClient {
 	}
 
 	/**
-	 * Creates a new order for no-cart quick-ordering scenarios.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=CreateOrderClient( order,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Order order = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param order Properties of an order, including its components.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
@@ -249,7 +249,7 @@ public class OrderClient {
 	}
 
 	/**
-	 * Perform the specified action for an order. The actions you can perform depend on the current status of the order.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=PerformOrderActionClient( action,  orderId);
 	 * client.setBaseAddress(url);
@@ -268,7 +268,7 @@ public class OrderClient {
 	}
 
 	/**
-	 * Perform the specified action for an order. The actions you can perform depend on the current status of the order.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=PerformOrderActionClient( action,  orderId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -276,7 +276,7 @@ public class OrderClient {
 	 * Order order = client.Result();
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param action The action to perform for the order.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
@@ -296,7 +296,7 @@ public class OrderClient {
 	}
 
 	/**
-	 * commerce-orders Put ProcessDigitalWallet description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=ProcessDigitalWalletClient( digitalWallet,  orderId,  digitalWalletType);
 	 * client.setBaseAddress(url);
@@ -305,7 +305,7 @@ public class OrderClient {
 	 * </code></pre></p>
 	 * @param digitalWalletType The type of digital wallet to be processed.
 	 * @param orderId Unique identifier of the order.
-	 * @param digitalWallet Mozu.CommerceRuntime.Contracts.Orders.DigitalWallet ApiType DOCUMENT_HERE 
+	 * @param digitalWallet The details of the digitial wallet.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.DigitalWallet
@@ -316,7 +316,7 @@ public class OrderClient {
 	}
 
 	/**
-	 * commerce-orders Put ProcessDigitalWallet description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=ProcessDigitalWalletClient( digitalWallet,  orderId,  digitalWalletType,  responseFields);
 	 * client.setBaseAddress(url);
@@ -326,7 +326,7 @@ public class OrderClient {
 	 * @param digitalWalletType The type of digital wallet to be processed.
 	 * @param orderId Unique identifier of the order.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param digitalWallet Mozu.CommerceRuntime.Contracts.Orders.DigitalWallet ApiType DOCUMENT_HERE 
+	 * @param digitalWallet The details of the digitial wallet.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.DigitalWallet
@@ -345,7 +345,7 @@ public class OrderClient {
 	}
 
 	/**
-	 * Update the properties of a discount applied to an order.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=UpdateOrderDiscountClient( discount,  orderId,  discountId);
 	 * client.setBaseAddress(url);
@@ -365,7 +365,7 @@ public class OrderClient {
 	}
 
 	/**
-	 * Update the properties of a discount applied to an order.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=UpdateOrderDiscountClient( discount,  orderId,  discountId,  updateMode,  version,  responseFields);
 	 * client.setBaseAddress(url);
@@ -374,9 +374,9 @@ public class OrderClient {
 	 * </code></pre></p>
 	 * @param discountId discountId parameter description DOCUMENT_HERE 
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param version System-supplied integer that represents the current version of the order, which prevents users from unintentionally overriding changes to the order. When a user performs an operation for a defined order, the system validates that the version of the updated order matches the version of the order on the server. After the operation completes successfully, the system increments the version number by one.
+	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
 	 * @param discount Properties of all applied discounts for an associated cart, order, or product. 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
@@ -396,7 +396,7 @@ public class OrderClient {
 	}
 
 	/**
-	 * Deletes the current draft version of the order, which also deletes any uncommitted changes made to the order in draft mode.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteOrderDraftClient( orderId);
 	 * client.setBaseAddress(url);
@@ -411,7 +411,7 @@ public class OrderClient {
 	}
 
 	/**
-	 * Deletes the current draft version of the order, which also deletes any uncommitted changes made to the order in draft mode.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteOrderDraftClient( orderId,  version);
 	 * client.setBaseAddress(url);
@@ -433,7 +433,7 @@ public class OrderClient {
 	}
 
 	/**
-	 * commerce-orders Put ResendOrderConfirmationEmail description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=ResendOrderConfirmationEmailClient( action,  orderId);
 	 * client.setBaseAddress(url);
@@ -457,7 +457,7 @@ public class OrderClient {
 	}
 
 	/**
-	 * Changes the pricelist associated with an order. The desired price list code should be specified on the ApiContext.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=ChangeOrderPriceListClient( priceListCode,  orderId);
 	 * client.setBaseAddress(url);
@@ -476,7 +476,7 @@ public class OrderClient {
 	}
 
 	/**
-	 * Changes the pricelist associated with an order. The desired price list code should be specified on the ApiContext.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=ChangeOrderPriceListClient( priceListCode,  orderId,  updateMode,  version,  responseFields);
 	 * client.setBaseAddress(url);
@@ -506,7 +506,7 @@ public class OrderClient {
 	}
 
 	/**
-	 * Updates the user ID of the shopper who placed the order to the current user.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=ChangeOrderUserIdClient( orderId);
 	 * client.setBaseAddress(url);
@@ -523,7 +523,7 @@ public class OrderClient {
 	}
 
 	/**
-	 * Updates the user ID of the shopper who placed the order to the current user.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=ChangeOrderUserIdClient( orderId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -531,7 +531,7 @@ public class OrderClient {
 	 * Order order = client.Result();
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 */
@@ -548,7 +548,7 @@ public class OrderClient {
 	}
 
 	/**
-	 * Updates the specified order when additional order information, such as shipping or billing information, is modified during the checkout process.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=UpdateOrderClient( order,  orderId);
 	 * client.setBaseAddress(url);
@@ -567,7 +567,7 @@ public class OrderClient {
 	}
 
 	/**
-	 * Updates the specified order when additional order information, such as shipping or billing information, is modified during the checkout process.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=UpdateOrderClient( order,  orderId,  updateMode,  version,  responseFields);
 	 * client.setBaseAddress(url);
@@ -575,9 +575,9 @@ public class OrderClient {
 	 * Order order = client.Result();
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param version System-supplied integer that represents the current version of the order, which prevents users from unintentionally overriding changes to the order. When a user performs an operation for a defined order, the system validates that the version of the updated order matches the version of the order on the server. After the operation completes successfully, the system increments the version number by one.
+	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
 	 * @param order Properties of an order, including its components.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order

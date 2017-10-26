@@ -23,7 +23,7 @@ public class TaxContext implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Unique identifier of the customer in Mozu, used to associate customers with data, orders, returns, and in-store credit.
+	 * Unique identifier of the customer in , used to associate customers with data, orders, returns, and in-store credit.
 	 */
 	protected  String customerId;
 

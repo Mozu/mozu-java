@@ -27,7 +27,7 @@ public class DiscountCondition implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Code of a discount coupon. This code can be used by a shopper when a coupon code is required to earn the associated discount on a purchase.
+	 * The coupon code that a shopper uses to redeem an associated discount  on a purchase. This is also the unique identifier of the coupon itself.
 	 */
 	protected  String couponCode;
 
@@ -77,7 +77,7 @@ public class DiscountCondition implements Serializable
 	}
 
 	/**
-	 * This pecifies the minimum amount that must be purchased in the combined categories defined in IncludedCategories. This amount is calculated before discounting and it is not used if IncludedCategories is empty.
+	 * This specifies the minimum amount that must be purchased in the combined categories defined in IncludedCategories. This amount is calculated before discounting and it is not used if IncludedCategories is empty.
 	 */
 	protected  Double minimumCategorySubtotalBeforeDiscounts;
 
@@ -116,7 +116,7 @@ public class DiscountCondition implements Serializable
 	}
 
 	/**
-	 * This specifies the minimum quantity of products in the categories specified in IncludedCategories, which must be purchased to qualify for the associated discount. This defaults to 1 if  null, and IncludedCategories has values.
+	 * This specifies the minimum quantity of products in the categories specified in IncludedCategories, which must be purchased to qualify for the associated discount. This defaults to 1 if null, and IncludedCategories has values.
 	 */
 	protected  Integer minimumQuantityProductsRequiredInCategories;
 
@@ -129,7 +129,7 @@ public class DiscountCondition implements Serializable
 	}
 
 	/**
-	 * This specifies the minimum quantity of products in the specified IncludedProducts that must be purchased to qualify for the associated discount. This defaults to 1 if  null, and IncludedProducts has values.
+	 * This specifies the minimum quantity of products in the specified IncludedProducts that must be purchased to qualify for the associated discount. This defaults to 1 if null, and IncludedProducts has values.
 	 */
 	protected  Integer minimumQuantityRequiredProducts;
 

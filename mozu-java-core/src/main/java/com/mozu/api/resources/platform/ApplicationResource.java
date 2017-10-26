@@ -39,7 +39,7 @@ public ApplicationResource(ApiContext apiContext)
 
 	
 	/**
-	 * Returns a collection of package names for the application specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	PackageNamesCollection packageNamesCollection = application.getAppPackageNames( applicationKey);
@@ -54,7 +54,7 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Returns a collection of package names for the application specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	PackageNamesCollection packageNamesCollection = application.getAppPackageNames( applicationKey,  responseFields);
@@ -74,7 +74,7 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the available versions for the application specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	ApplicationVersionsCollection applicationVersionsCollection = application.getAppVersions( nsAndAppId);
@@ -89,7 +89,7 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the available versions for the application specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	ApplicationVersionsCollection applicationVersionsCollection = application.getAppVersions( nsAndAppId,  responseFields);
@@ -109,7 +109,7 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the metadata for a file in an application package.
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	FileMetadata fileMetadata = application.getPackageFileMetadata( applicationKey,  filepath);
@@ -125,7 +125,7 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the metadata for a file in an application package.
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	FileMetadata fileMetadata = application.getPackageFileMetadata( applicationKey,  filepath,  responseFields);
@@ -146,7 +146,7 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the metadata for a folder in an application package.
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	FolderMetadata folderMetadata = application.getPackageMetadata( applicationKey);
@@ -161,7 +161,7 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the metadata for a folder in an application package.
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	FolderMetadata folderMetadata = application.getPackageMetadata( applicationKey,  responseFields);
@@ -181,7 +181,7 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Insert or update the specified file into the specified application package.
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	FileMetadata fileMetadata = application.upsertPackageFile( stream,  applicationKey,  filepath,  contentType);
@@ -199,7 +199,7 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Insert or update the specified file into the specified application package.
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	FileMetadata fileMetadata = application.upsertPackageFile( stream,  applicationKey,  filepath,  lastModifiedTime,  responseFields,  contentType);
@@ -223,7 +223,7 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Renames a file in an application package.
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	FileMetadata fileMetadata = application.renamePackageFile( renameInfo,  applicationKey);
@@ -240,7 +240,7 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Renames a file in an application package.
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	FileMetadata fileMetadata = application.renamePackageFile( renameInfo,  applicationKey,  responseFields);
@@ -262,7 +262,7 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Deletes the specified file from the specified application package.
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	application.deletePackageFile( applicationKey,  filepath);

@@ -23,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 public class PackageClient {
 	
 	/**
-	 * Retrieves the package label image supplied by the carrier for a return replacement.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<java.io.InputStream> mozuClient=GetPackageLabelClient( returnId,  packageId);
 	 * client.setBaseAddress(url);
@@ -41,7 +41,7 @@ public class PackageClient {
 	}
 
 	/**
-	 * Retrieves the package label image supplied by the carrier for a return replacement.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<java.io.InputStream> mozuClient=GetPackageLabelClient( returnId,  packageId,  returnAsBase64Png);
 	 * client.setBaseAddress(url);
@@ -67,7 +67,7 @@ public class PackageClient {
 	}
 
 	/**
-	 * Retrieves the details of a package of return replacement items.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Package> mozuClient=GetPackageClient( returnId,  packageId);
 	 * client.setBaseAddress(url);
@@ -85,7 +85,7 @@ public class PackageClient {
 	}
 
 	/**
-	 * Retrieves the details of a package of return replacement items.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Package> mozuClient=GetPackageClient( returnId,  packageId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -93,7 +93,7 @@ public class PackageClient {
 	 * Package package = client.Result();
 	 * </code></pre></p>
 	 * @param packageId Unique identifier of the package for which to retrieve the label.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Package>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
@@ -111,7 +111,7 @@ public class PackageClient {
 	}
 
 	/**
-	 * Creates a new physical package of return replacement items.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Package> mozuClient=CreatePackageClient( pkg,  returnId);
 	 * client.setBaseAddress(url);
@@ -130,14 +130,14 @@ public class PackageClient {
 	}
 
 	/**
-	 * Creates a new physical package of return replacement items.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Package> mozuClient=CreatePackageClient( pkg,  returnId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Package package = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @param package Properties of a physical package shipped for an order.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Package>
@@ -158,7 +158,7 @@ public class PackageClient {
 	}
 
 	/**
-	 * Updates one or more properties of a package associated with a return replacement.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Package> mozuClient=UpdatePackageClient( pkg,  returnId,  packageId);
 	 * client.setBaseAddress(url);
@@ -178,7 +178,7 @@ public class PackageClient {
 	}
 
 	/**
-	 * Updates one or more properties of a package associated with a return replacement.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Package> mozuClient=UpdatePackageClient( pkg,  returnId,  packageId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -186,7 +186,7 @@ public class PackageClient {
 	 * Package package = client.Result();
 	 * </code></pre></p>
 	 * @param packageId Unique identifier of the package for which to retrieve the label.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @param package Properties of a physical package shipped for an order.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Package>
@@ -207,7 +207,7 @@ public class PackageClient {
 	}
 
 	/**
-	 * Deletes a package associated with a return replacement.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeletePackageClient( returnId,  packageId);
 	 * client.setBaseAddress(url);

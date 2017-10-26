@@ -15,7 +15,7 @@ public class ShipmentUrl
 
 	/**
 	 * Get Resource Url for GetShipment
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @param shipmentId Unique identifier of the shipment to retrieve.
 	 * @return   String Resource Url

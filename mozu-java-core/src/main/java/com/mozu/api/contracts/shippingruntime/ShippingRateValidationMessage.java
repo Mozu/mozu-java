@@ -21,9 +21,6 @@ public class ShippingRateValidationMessage implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * URL displayed with the shipping validation message that links to help information.
-	 */
 	protected  String helpLink;
 
 	public String getHelpLink() {
@@ -34,9 +31,6 @@ public class ShippingRateValidationMessage implements Serializable
 		this.helpLink = helpLink;
 	}
 
-	/**
-	 * The text of the change message, such as "This product is no longer available." System-supplied and read-only.
-	 */
 	protected  String message;
 
 	public String getMessage() {
@@ -47,9 +41,6 @@ public class ShippingRateValidationMessage implements Serializable
 		this.message = message;
 	}
 
-	/**
-	 * The severity level of validation failures for shipping rates and products.
-	 */
 	protected  String severity;
 
 	public String getSeverity() {

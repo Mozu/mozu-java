@@ -27,9 +27,9 @@ public class ProductTypeExtraUrl
 
 	/**
 	 * Get Resource Url for GetExtra
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param productTypeId Identifier of the product type.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getExtraUrl(String attributeFQN, Integer productTypeId, String responseFields)
@@ -44,7 +44,7 @@ public class ProductTypeExtraUrl
 	/**
 	 * Get Resource Url for AddExtra
 	 * @param productTypeId Identifier of the product type.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addExtraUrl(Integer productTypeId, String responseFields)
@@ -57,9 +57,9 @@ public class ProductTypeExtraUrl
 
 	/**
 	 * Get Resource Url for UpdateExtra
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param productTypeId Identifier of the product type.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateExtraUrl(String attributeFQN, Integer productTypeId, String responseFields)
@@ -73,7 +73,7 @@ public class ProductTypeExtraUrl
 
 	/**
 	 * Get Resource Url for DeleteExtra
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param productTypeId Identifier of the product type.
 	 * @return   String Resource Url
 	 */

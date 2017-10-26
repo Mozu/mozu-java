@@ -43,7 +43,7 @@ public class DocumentTreeResource {
 	}
 		
 	/**
-	 * Retrieve the content associated with the document, such as a product image or PDF specifications file.
+	 * 
 	 * <p><pre><code>
 	 *	DocumentTree documenttree = new DocumentTree();
 	 *	Stream stream = documenttree.getTreeDocumentContent( documentListName,  documentName);
@@ -63,7 +63,7 @@ public class DocumentTreeResource {
 	}
 
 	/**
-	 * Performs transformations on a document. For example, resizing an image.
+	 * 
 	 * <p><pre><code>
 	 *	DocumentTree documenttree = new DocumentTree();
 	 *	Stream stream = documenttree.transformTreeDocumentContent( documentListName,  documentName);
@@ -79,7 +79,7 @@ public class DocumentTreeResource {
 	}
 
 	/**
-	 * Performs transformations on a document. For example, resizing an image.
+	 * 
 	 * <p><pre><code>
 	 *	DocumentTree documenttree = new DocumentTree();
 	 *	Stream stream = documenttree.transformTreeDocumentContent( documentListName,  documentName,  width,  height,  max,  maxWidth,  maxHeight,  crop,  quality);
@@ -106,7 +106,7 @@ public class DocumentTreeResource {
 	}
 
 	/**
-	 * Retrieves a document based on its document list and folder path in the document hierarchy.
+	 * 
 	 * <p><pre><code>
 	 *	DocumentTree documenttree = new DocumentTree();
 	 *	Document document = documenttree.getTreeDocument( documentListName,  documentName);
@@ -122,7 +122,7 @@ public class DocumentTreeResource {
 	}
 
 	/**
-	 * Retrieves a document based on its document list and folder path in the document hierarchy.
+	 * 
 	 * <p><pre><code>
 	 *	DocumentTree documenttree = new DocumentTree();
 	 *	Document document = documenttree.getTreeDocument( documentListName,  documentName,  includeInactive,  responseFields);
@@ -130,7 +130,7 @@ public class DocumentTreeResource {
 	 * @param documentListName Name of content documentListName to delete
 	 * @param documentName The name of the document in the site.
 	 * @param includeInactive Include inactive content.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.content.Document
 	 * @see com.mozu.api.contracts.content.Document
 	 */
@@ -144,7 +144,7 @@ public class DocumentTreeResource {
 	}
 
 	/**
-	 * Updates the binary data or content associated with a document, such as a product image or PDF specifications file, by supplying the document name.
+	 * 
 	 * <p><pre><code>
 	 *	DocumentTree documenttree = new DocumentTree();
 	 *	documenttree.updateTreeDocumentContent( stream,  documentListName,  documentName,  contentType);
@@ -165,7 +165,7 @@ public class DocumentTreeResource {
 	}
 
 	/**
-	 * Deletes the content associated with a document, such as a product image or PDF specifications file.
+	 * 
 	 * <p><pre><code>
 	 *	DocumentTree documenttree = new DocumentTree();
 	 *	documenttree.deleteTreeDocumentContent( stream,  documentListName,  documentName,  contentType);

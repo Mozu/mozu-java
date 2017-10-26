@@ -35,7 +35,7 @@ public class AppliedDiscountResource {
 
 	
 	/**
-	 * Applies a defined coupon to the cart specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	AppliedDiscount applieddiscount = new AppliedDiscount();
 	 *	Cart cart = applieddiscount.applyCoupon( cartId,  couponCode);
@@ -51,14 +51,14 @@ public class AppliedDiscountResource {
 	}
 
 	/**
-	 * Applies a defined coupon to the cart specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	AppliedDiscount applieddiscount = new AppliedDiscount();
 	 *	Cart cart = applieddiscount.applyCoupon( cartId,  couponCode,  responseFields);
 	 * </code></pre></p>
 	 * @param cartId Identifier of the cart to delete.
 	 * @param couponCode Code associated with the coupon to remove from the cart.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
 	 */
@@ -72,7 +72,7 @@ public class AppliedDiscountResource {
 	}
 
 	/**
-	 * Removes all coupons from the cart specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	AppliedDiscount applieddiscount = new AppliedDiscount();
 	 *	Cart cart = applieddiscount.removeCoupons( cartId);
@@ -91,7 +91,7 @@ public class AppliedDiscountResource {
 	}
 
 	/**
-	 * Removes an applied coupon from the cart specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	AppliedDiscount applieddiscount = new AppliedDiscount();
 	 *	Cart cart = applieddiscount.removeCoupon( cartId,  couponCode);

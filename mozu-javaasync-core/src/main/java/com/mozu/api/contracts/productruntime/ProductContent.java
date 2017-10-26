@@ -24,9 +24,6 @@ public class ProductContent implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Description defined for metadata, used to interally manage data, in the language specified by the `localeCode`. This content is used by categories, products, localized content, and SEO content.
-	 */
 	protected  String metaTagDescription;
 
 	public String getMetaTagDescription() {
@@ -37,9 +34,6 @@ public class ProductContent implements Serializable
 		this.metaTagDescription = metaTagDescription;
 	}
 
-	/**
-	 * Keywords defined for  metadata, used to internally manage data, in the language specified by the `localeCode`. Keywords are used by content for categories, products, localized content, and SEO content.
-	 */
 	protected  String metaTagKeywords;
 
 	public String getMetaTagKeywords() {
@@ -50,9 +44,6 @@ public class ProductContent implements Serializable
 		this.metaTagKeywords = metaTagKeywords;
 	}
 
-	/**
-	 * Title defined for  metadata, used to internally manage data, in the language specified by the `localeCode`. Titles are used by content for categories, products, localized content, and SEO content.
-	 */
 	protected  String metaTagTitle;
 
 	public String getMetaTagTitle() {
@@ -63,9 +54,6 @@ public class ProductContent implements Serializable
 		this.metaTagTitle = metaTagTitle;
 	}
 
-	/**
-	 * Lengthy full description for a product description, displayed on product detail pages within the storefront.
-	 */
 	protected  String productFullDescription;
 
 	public String getProductFullDescription() {
@@ -76,9 +64,6 @@ public class ProductContent implements Serializable
 		this.productFullDescription = productFullDescription;
 	}
 
-	/**
-	 * The name of the product that represents a line item in a taxable order or product bundle.
-	 */
 	protected  String productName;
 
 	public String getProductName() {
@@ -89,9 +74,6 @@ public class ProductContent implements Serializable
 		this.productName = productName;
 	}
 
-	/**
-	 * Brief text description of the product or component in a product bundle, typically used when the product is displayed in a list or in search results.
-	 */
 	protected  String productShortDescription;
 
 	public String getProductShortDescription() {
@@ -102,9 +84,6 @@ public class ProductContent implements Serializable
 		this.productShortDescription = productShortDescription;
 	}
 
-	/**
-	 * The search engine optimized, human-readable portion of the URL. The content is localized according to the product's `localeCode`.
-	 */
 	protected  String seoFriendlyUrl;
 
 	public String getSeoFriendlyUrl() {
@@ -115,9 +94,6 @@ public class ProductContent implements Serializable
 		this.seoFriendlyUrl = seoFriendlyUrl;
 	}
 
-	/**
-	 * List of image files associated with a product. This content may include the image file URL, name, and other information as available.
-	 */
 	protected List<ProductImage> productImages;
 	public List<ProductImage> getProductImages() {
 		return this.productImages;

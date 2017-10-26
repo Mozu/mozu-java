@@ -23,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 public class FraudScreenClient {
 	
 	/**
-	 * payments-fraudscreen Post Screen description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.paymentservice.response.FraudScreen> mozuClient=ScreenClient( request);
 	 * client.setBaseAddress(url);
@@ -37,7 +37,26 @@ public class FraudScreenClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.paymentservice.response.FraudScreen> screenClient(com.mozu.api.contracts.paymentservice.request.FraudScreenRequest request) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.payments.FraudScreenUrl.screenUrl();
+		return screenClient( request,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.paymentservice.response.FraudScreen> mozuClient=ScreenClient( request,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * FraudScreen fraudScreen = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param request Mozu.PaymentService.Contracts.Request.FraudScreenRequest ApiType DOCUMENT_HERE 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.paymentservice.response.FraudScreen>
+	 * @see com.mozu.api.contracts.paymentservice.response.FraudScreen
+	 * @see com.mozu.api.contracts.paymentservice.request.FraudScreenRequest
+	 */
+	public static MozuClient<com.mozu.api.contracts.paymentservice.response.FraudScreen> screenClient(com.mozu.api.contracts.paymentservice.request.FraudScreenRequest request, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.payments.FraudScreenUrl.screenUrl(responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.paymentservice.response.FraudScreen.class;
 		MozuClient<com.mozu.api.contracts.paymentservice.response.FraudScreen> mozuClient = (MozuClient<com.mozu.api.contracts.paymentservice.response.FraudScreen>) MozuClientFactory.getInstance(clz);

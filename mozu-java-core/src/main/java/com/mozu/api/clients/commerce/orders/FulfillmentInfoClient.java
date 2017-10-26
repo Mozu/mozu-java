@@ -23,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 public class FulfillmentInfoClient {
 	
 	/**
-	 * Retrieves a list of the fulfillment information for the specified order.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo> mozuClient=GetFulfillmentInfoClient( orderId);
 	 * client.setBaseAddress(url);
@@ -40,7 +40,7 @@ public class FulfillmentInfoClient {
 	}
 
 	/**
-	 * Retrieves a list of the fulfillment information for the specified order.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo> mozuClient=GetFulfillmentInfoClient( orderId,  draft,  responseFields);
 	 * client.setBaseAddress(url);
@@ -49,7 +49,7 @@ public class FulfillmentInfoClient {
 	 * </code></pre></p>
 	 * @param draft If true, retrieve the draft version of the order, which might include uncommitted changes to the order or its components.
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo
 	 */
@@ -66,7 +66,7 @@ public class FulfillmentInfoClient {
 	}
 
 	/**
-	 * Updates one or more properties of fulfillment information for the specified order.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo> mozuClient=SetFulFillmentInfoClient( fulfillmentInfo,  orderId);
 	 * client.setBaseAddress(url);
@@ -85,7 +85,7 @@ public class FulfillmentInfoClient {
 	}
 
 	/**
-	 * Updates one or more properties of fulfillment information for the specified order.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo> mozuClient=SetFulFillmentInfoClient( fulfillmentInfo,  orderId,  updateMode,  version,  responseFields);
 	 * client.setBaseAddress(url);
@@ -93,9 +93,9 @@ public class FulfillmentInfoClient {
 	 * FulfillmentInfo fulfillmentInfo = client.Result();
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param version System-supplied integer that represents the current version of the order, which prevents users from unintentionally overriding changes to the order. When a user performs an operation for a defined order, the system validates that the version of the updated order matches the version of the order on the server. After the operation completes successfully, the system increments the version number by one.
+	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
 	 * @param fulfillmentInfo Properties of the information needed to fulfill an order, whether via in-store pickup or direct shipping.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo

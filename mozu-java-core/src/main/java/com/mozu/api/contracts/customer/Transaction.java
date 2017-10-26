@@ -21,9 +21,6 @@ public class Transaction implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * If applicable, the amount of the transaction.
-	 */
 	protected  Double amount;
 
 	public Double getAmount() {
@@ -47,9 +44,6 @@ public class Transaction implements Serializable
 		this.currencyCode = currencyCode;
 	}
 
-	/**
-	 * The date and time recording for a customer action including a transaction and storefront visit.
-	 */
 	protected  DateTime date;
 
 	public DateTime getDate() {
@@ -60,9 +54,6 @@ public class Transaction implements Serializable
 		this.date = date;
 	}
 
-	/**
-	 * The type of payment interaction. The payment can be Capture or CheckReceived. The value also includes customer payment interactions such as Website, Call, Store, or Unknown.
-	 */
 	protected  String interactionType;
 
 	public String getInteractionType() {
@@ -73,9 +64,6 @@ public class Transaction implements Serializable
 		this.interactionType = interactionType;
 	}
 
-	/**
-	 * The unique identifier of the transaction.
-	 */
 	protected  String transactionId;
 
 	public String getTransactionId() {
@@ -86,9 +74,6 @@ public class Transaction implements Serializable
 		this.transactionId = transactionId;
 	}
 
-	/**
-	 * Specifies the type of transaction, including customer transactions and credit transactions.Valid values for credit transactions are the following:* —decreases the credit amount* —updates the credit amountValid values for customer transaction types are the following:* * * * 
-	 */
 	protected  String transactionType;
 
 	public String getTransactionType() {
@@ -99,9 +84,6 @@ public class Transaction implements Serializable
 		this.transactionType = transactionType;
 	}
 
-	/**
-	 * Unique identifier of the customer visit in which the cart was created or last modified.
-	 */
 	protected  String visitId;
 
 	public String getVisitId() {

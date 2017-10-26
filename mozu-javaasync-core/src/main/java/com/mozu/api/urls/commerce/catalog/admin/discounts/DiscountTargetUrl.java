@@ -16,7 +16,7 @@ public class DiscountTargetUrl
 	/**
 	 * Get Resource Url for GetDiscountTarget
 	 * @param discountId discountId parameter description DOCUMENT_HERE 
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getDiscountTargetUrl(Integer discountId, String responseFields)
@@ -30,7 +30,7 @@ public class DiscountTargetUrl
 	/**
 	 * Get Resource Url for UpdateDiscountTarget
 	 * @param discountId discountId parameter description DOCUMENT_HERE 
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateDiscountTargetUrl(Integer discountId, String responseFields)

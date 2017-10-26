@@ -51,9 +51,16 @@ public class RateRequest implements Serializable
 		this.estimatedShipmentDate = estimatedShipmentDate;
 	}
 
-	/**
-	 * If true, the destination address associated with the shipping rate request is a commercial address.
-	 */
+	protected  String id;
+
+	public String getId() {
+		return this.id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
 	protected  Boolean isDestinationAddressCommercial;
 
 	public Boolean getIsDestinationAddressCommercial() {
@@ -64,9 +71,6 @@ public class RateRequest implements Serializable
 		this.isDestinationAddressCommercial = isDestinationAddressCommercial;
 	}
 
-	/**
-	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
-	 */
 	protected  String isoCurrencyCode;
 
 	public String getIsoCurrencyCode() {
@@ -90,9 +94,6 @@ public class RateRequest implements Serializable
 		this.orderDiscountedSubTotal = orderDiscountedSubTotal;
 	}
 
-	/**
-	 * The total monetary amount of the order. This amount is used to calculate the shipping rate estimate.
-	 */
 	protected  Double orderTotal;
 
 	public Double getOrderTotal() {
@@ -175,9 +176,6 @@ public class RateRequest implements Serializable
 		this.data = data;
 	}
 
-	/**
-	 * The physical address orders are sent to as a shipping destination. This address may contain multiple lines, city, state/province, country, and zip/postal code. The destination is used to calculate shipping costs.
-	 */
 	protected  Address destinationAddress;
 
 	public Address getDestinationAddress() {
@@ -188,9 +186,6 @@ public class RateRequest implements Serializable
 		this.destinationAddress = destinationAddress;
 	}
 
-	/**
-	 * A list of requested items. All returned data is provided in an items array.For a failed request, the returned response may be success with an empty item array.
-	 */
 	protected List<RateRequestItem> items;
 	public List<RateRequestItem> getItems() {
 		return this.items;
