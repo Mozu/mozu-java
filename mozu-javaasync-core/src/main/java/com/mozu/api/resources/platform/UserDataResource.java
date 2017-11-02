@@ -20,7 +20,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the user data subresource to store user-level data required for a third-party application in the Mozu database.
+ * Use the user data subresource to store user-level data required for a third-party application in the  database.
  * </summary>
  */
 public class UserDataResource {
@@ -42,7 +42,7 @@ public class UserDataResource {
 	 *	UserData userdata = new UserData();
 	 *	string string = userdata.getDBValue( dbEntryQuery);
 	 * </code></pre></p>
-	 * @param dbEntryQuery The database entry query string used to retrieve the record information.
+	 * @param dbEntryQuery The database entry string to create.
 	 * @return string
 	 * @see string
 	 */
@@ -57,7 +57,7 @@ public class UserDataResource {
 	 *	UserData userdata = new UserData();
 	 *	CountDownLatch latch = userdata.getDBValue( dbEntryQuery, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param dbEntryQuery The database entry query string used to retrieve the record information.
+	 * @param dbEntryQuery The database entry string to create.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return string
 	 * @see string
@@ -73,8 +73,8 @@ public class UserDataResource {
 	 *	UserData userdata = new UserData();
 	 *	string string = userdata.getDBValue( dbEntryQuery,  responseFields);
 	 * </code></pre></p>
-	 * @param dbEntryQuery The database entry query string used to retrieve the record information.
-	 * @param responseFields 
+	 * @param dbEntryQuery The database entry string to create.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return string
 	 * @see string
 	 */
@@ -93,8 +93,8 @@ public class UserDataResource {
 	 *	UserData userdata = new UserData();
 	 *	CountDownLatch latch = userdata.getDBValue( dbEntryQuery,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param dbEntryQuery The database entry query string used to retrieve the record information.
-	 * @param responseFields 
+	 * @param dbEntryQuery The database entry string to create.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return string
 	 * @see string
@@ -133,8 +133,8 @@ public class UserDataResource {
 	 *	UserData userdata = new UserData();
 	 *	userdata.updateDBValue( value,  dbEntryQuery);
 	 * </code></pre></p>
-	 * @param dbEntryQuery The database entry query string used to update the record information.
-	 * @param value The database value to update.
+	 * @param dbEntryQuery The database entry string to create.
+	 * @param value The value string to create.
 	 * @return 
 	 * @see string
 	 */
@@ -153,7 +153,7 @@ public class UserDataResource {
 	 *	UserData userdata = new UserData();
 	 *	userdata.deleteDBValue( dbEntryQuery);
 	 * </code></pre></p>
-	 * @param dbEntryQuery The database entry string to delete.
+	 * @param dbEntryQuery The database entry string to create.
 	 * @return 
 	 */
 	public void deleteDBValue(String dbEntryQuery) throws Exception

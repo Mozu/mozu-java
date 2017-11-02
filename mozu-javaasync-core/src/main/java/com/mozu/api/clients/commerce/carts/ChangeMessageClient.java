@@ -48,7 +48,7 @@ public class ChangeMessageClient {
 	 * client.executeRequest();
 	 * CartChangeMessageCollection cartChangeMessageCollection = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection>
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection
 	 */

@@ -50,8 +50,8 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariationDeltaPrice productVariationDeltaPrice = productvariation.getProductVariationLocalizedDeltaPrices( productCode,  variationKey);
 	 * </code></pre></p>
-	 * @param productCode 
-	 * @param variationKey 
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @return List<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice>
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
 	 */
@@ -70,8 +70,8 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	CountDownLatch latch = productvariation.getProductVariationLocalizedDeltaPrices( productCode,  variationKey, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param productCode 
-	 * @param variationKey 
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return List<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice>
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
@@ -90,9 +90,9 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariationDeltaPrice productVariationDeltaPrice = productvariation.getProductVariationLocalizedDeltaPrice( productCode,  variationKey,  currencyCode);
 	 * </code></pre></p>
-	 * @param currencyCode 
-	 * @param productCode 
-	 * @param variationKey 
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
 	 */
@@ -107,9 +107,9 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	CountDownLatch latch = productvariation.getProductVariationLocalizedDeltaPrice( productCode,  variationKey,  currencyCode, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param currencyCode 
-	 * @param productCode 
-	 * @param variationKey 
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
@@ -125,10 +125,10 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariationDeltaPrice productVariationDeltaPrice = productvariation.getProductVariationLocalizedDeltaPrice( productCode,  variationKey,  currencyCode,  responseFields);
 	 * </code></pre></p>
-	 * @param currencyCode 
-	 * @param productCode 
-	 * @param responseFields 
-	 * @param variationKey 
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
 	 */
@@ -147,10 +147,10 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	CountDownLatch latch = productvariation.getProductVariationLocalizedDeltaPrice( productCode,  variationKey,  currencyCode,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param currencyCode 
-	 * @param productCode 
-	 * @param responseFields 
-	 * @param variationKey 
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
@@ -169,8 +169,8 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariationFixedPrice productVariationFixedPrice = productvariation.getProductVariationLocalizedPrices( productCode,  variationKey);
 	 * </code></pre></p>
-	 * @param productCode 
-	 * @param variationKey 
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @return List<com.mozu.api.contracts.productadmin.ProductVariationFixedPrice>
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
 	 */
@@ -189,8 +189,8 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	CountDownLatch latch = productvariation.getProductVariationLocalizedPrices( productCode,  variationKey, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param productCode 
-	 * @param variationKey 
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return List<com.mozu.api.contracts.productadmin.ProductVariationFixedPrice>
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
@@ -209,9 +209,9 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariationFixedPrice productVariationFixedPrice = productvariation.getProductVariationLocalizedPrice( productCode,  variationKey,  currencyCode);
 	 * </code></pre></p>
-	 * @param currencyCode 
-	 * @param productCode 
-	 * @param variationKey 
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
 	 */
@@ -226,9 +226,9 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	CountDownLatch latch = productvariation.getProductVariationLocalizedPrice( productCode,  variationKey,  currencyCode, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param currencyCode 
-	 * @param productCode 
-	 * @param variationKey 
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
@@ -244,10 +244,10 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariationFixedPrice productVariationFixedPrice = productvariation.getProductVariationLocalizedPrice( productCode,  variationKey,  currencyCode,  responseFields);
 	 * </code></pre></p>
-	 * @param currencyCode 
-	 * @param productCode 
-	 * @param responseFields 
-	 * @param variationKey 
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
 	 */
@@ -266,10 +266,10 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	CountDownLatch latch = productvariation.getProductVariationLocalizedPrice( productCode,  variationKey,  currencyCode,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param currencyCode 
-	 * @param productCode 
-	 * @param responseFields 
-	 * @param variationKey 
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
@@ -288,7 +288,7 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariation productVariation = productvariation.getProductVariation( productCode,  variationKey);
 	 * </code></pre></p>
-	 * @param productCode 
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @return com.mozu.api.contracts.productadmin.ProductVariation
 	 * @see com.mozu.api.contracts.productadmin.ProductVariation
@@ -304,7 +304,7 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	CountDownLatch latch = productvariation.getProductVariation( productCode,  variationKey, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param productCode 
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.ProductVariation
@@ -321,8 +321,8 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariation productVariation = productvariation.getProductVariation( productCode,  variationKey,  responseFields);
 	 * </code></pre></p>
-	 * @param productCode 
-	 * @param responseFields 
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @return com.mozu.api.contracts.productadmin.ProductVariation
 	 * @see com.mozu.api.contracts.productadmin.ProductVariation
@@ -342,8 +342,8 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	CountDownLatch latch = productvariation.getProductVariation( productCode,  variationKey,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param productCode 
-	 * @param responseFields 
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.ProductVariation
@@ -363,7 +363,7 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariationPagedCollection productVariationPagedCollection = productvariation.getProductVariations( productCode);
 	 * </code></pre></p>
-	 * @param productCode 
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationPagedCollection
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationPagedCollection
 	 */
@@ -378,7 +378,7 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	CountDownLatch latch = productvariation.getProductVariations( productCode, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param productCode 
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationPagedCollection
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationPagedCollection
@@ -394,12 +394,12 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariationPagedCollection productVariationPagedCollection = productvariation.getProductVariations( productCode,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param filter 
-	 * @param pageSize 
-	 * @param productCode 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationPagedCollection
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationPagedCollection
 	 */
@@ -418,12 +418,12 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	CountDownLatch latch = productvariation.getProductVariations( productCode,  startIndex,  pageSize,  sortBy,  filter,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param filter 
-	 * @param pageSize 
-	 * @param productCode 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationPagedCollection
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationPagedCollection
@@ -442,9 +442,9 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariationDeltaPrice productVariationDeltaPrice = productvariation.addProductVariationLocalizedDeltaPrice( localizedDeltaPrice,  productCode,  variationKey);
 	 * </code></pre></p>
-	 * @param productCode 
-	 * @param variationKey 
-	 * @param localizedDeltaPrice 
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
+	 * @param localizedDeltaPrice The difference between the base price for the product and this variation of the product, which can be a positive or negative decimal value. For example, if the base price for a t-shirt product is $10, but the XL variation should cost $12, the DeltaPrice value should be "2". However, if the XS variation should only cost $8, the DeltaPrice value should be "-2".
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
@@ -460,10 +460,10 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	CountDownLatch latch = productvariation.addProductVariationLocalizedDeltaPrice( localizedDeltaPrice,  productCode,  variationKey, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param productCode 
-	 * @param variationKey 
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param localizedDeltaPrice 
+	 * @param localizedDeltaPrice The difference between the base price for the product and this variation of the product, which can be a positive or negative decimal value. For example, if the base price for a t-shirt product is $10, but the XL variation should cost $12, the DeltaPrice value should be "2". However, if the XS variation should only cost $8, the DeltaPrice value should be "-2".
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
@@ -479,10 +479,10 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariationDeltaPrice productVariationDeltaPrice = productvariation.addProductVariationLocalizedDeltaPrice( localizedDeltaPrice,  productCode,  variationKey,  responseFields);
 	 * </code></pre></p>
-	 * @param productCode 
-	 * @param responseFields 
-	 * @param variationKey 
-	 * @param localizedDeltaPrice 
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
+	 * @param localizedDeltaPrice The difference between the base price for the product and this variation of the product, which can be a positive or negative decimal value. For example, if the base price for a t-shirt product is $10, but the XL variation should cost $12, the DeltaPrice value should be "2". However, if the XS variation should only cost $8, the DeltaPrice value should be "-2".
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
@@ -502,11 +502,11 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	CountDownLatch latch = productvariation.addProductVariationLocalizedDeltaPrice( localizedDeltaPrice,  productCode,  variationKey,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param productCode 
-	 * @param responseFields 
-	 * @param variationKey 
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param localizedDeltaPrice 
+	 * @param localizedDeltaPrice The difference between the base price for the product and this variation of the product, which can be a positive or negative decimal value. For example, if the base price for a t-shirt product is $10, but the XL variation should cost $12, the DeltaPrice value should be "2". However, if the XS variation should only cost $8, the DeltaPrice value should be "-2".
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
@@ -525,9 +525,9 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariationFixedPrice productVariationFixedPrice = productvariation.addProductVariationLocalizedPrice( localizedPrice,  productCode,  variationKey);
 	 * </code></pre></p>
-	 * @param productCode 
-	 * @param variationKey 
-	 * @param localizedPrice 
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
+	 * @param localizedPrice The details of the product variation localized price.
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
@@ -543,10 +543,10 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	CountDownLatch latch = productvariation.addProductVariationLocalizedPrice( localizedPrice,  productCode,  variationKey, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param productCode 
-	 * @param variationKey 
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param localizedPrice 
+	 * @param localizedPrice The details of the product variation localized price.
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
@@ -562,10 +562,10 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariationFixedPrice productVariationFixedPrice = productvariation.addProductVariationLocalizedPrice( localizedPrice,  productCode,  variationKey,  responseFields);
 	 * </code></pre></p>
-	 * @param productCode 
-	 * @param responseFields 
-	 * @param variationKey 
-	 * @param localizedPrice 
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
+	 * @param localizedPrice The details of the product variation localized price.
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
@@ -585,11 +585,11 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	CountDownLatch latch = productvariation.addProductVariationLocalizedPrice( localizedPrice,  productCode,  variationKey,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param productCode 
-	 * @param responseFields 
-	 * @param variationKey 
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param localizedPrice 
+	 * @param localizedPrice The details of the product variation localized price.
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
@@ -608,9 +608,9 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariationDeltaPrice productVariationDeltaPrice = productvariation.updateProductVariationLocalizedDeltaPrices( localizedDeltaPrice,  productCode,  variationKey);
 	 * </code></pre></p>
-	 * @param productCode 
-	 * @param variationKey 
-	 * @param localizedDeltaPrice 
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
+	 * @param localizedDeltaPrice The difference between the base price for the product and this variation of the product, which can be a positive or negative decimal value. For example, if the base price for a t-shirt product is $10, but the XL variation should cost $12, the DeltaPrice value should be "2". However, if the XS variation should only cost $8, the DeltaPrice value should be "-2".
 	 * @return List<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice>
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
@@ -630,10 +630,10 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	CountDownLatch latch = productvariation.updateProductVariationLocalizedDeltaPrices( localizedDeltaPrice,  productCode,  variationKey, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param productCode 
-	 * @param variationKey 
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param localizedDeltaPrice 
+	 * @param localizedDeltaPrice The difference between the base price for the product and this variation of the product, which can be a positive or negative decimal value. For example, if the base price for a t-shirt product is $10, but the XL variation should cost $12, the DeltaPrice value should be "2". However, if the XS variation should only cost $8, the DeltaPrice value should be "-2".
 	 * @return List<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice>
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
@@ -652,10 +652,10 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariationDeltaPrice productVariationDeltaPrice = productvariation.updateProductVariationLocalizedDeltaPrice( localizedDeltaPrice,  productCode,  variationKey,  currencyCode);
 	 * </code></pre></p>
-	 * @param currencyCode 
-	 * @param productCode 
-	 * @param variationKey 
-	 * @param localizedDeltaPrice 
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
+	 * @param localizedDeltaPrice The difference between the base price for the product and this variation of the product, which can be a positive or negative decimal value. For example, if the base price for a t-shirt product is $10, but the XL variation should cost $12, the DeltaPrice value should be "2". However, if the XS variation should only cost $8, the DeltaPrice value should be "-2".
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
@@ -671,11 +671,11 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	CountDownLatch latch = productvariation.updateProductVariationLocalizedDeltaPrice( localizedDeltaPrice,  productCode,  variationKey,  currencyCode, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param currencyCode 
-	 * @param productCode 
-	 * @param variationKey 
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param localizedDeltaPrice 
+	 * @param localizedDeltaPrice The difference between the base price for the product and this variation of the product, which can be a positive or negative decimal value. For example, if the base price for a t-shirt product is $10, but the XL variation should cost $12, the DeltaPrice value should be "2". However, if the XS variation should only cost $8, the DeltaPrice value should be "-2".
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
@@ -691,11 +691,11 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariationDeltaPrice productVariationDeltaPrice = productvariation.updateProductVariationLocalizedDeltaPrice( localizedDeltaPrice,  productCode,  variationKey,  currencyCode,  responseFields);
 	 * </code></pre></p>
-	 * @param currencyCode 
-	 * @param productCode 
-	 * @param responseFields 
-	 * @param variationKey 
-	 * @param localizedDeltaPrice 
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
+	 * @param localizedDeltaPrice The difference between the base price for the product and this variation of the product, which can be a positive or negative decimal value. For example, if the base price for a t-shirt product is $10, but the XL variation should cost $12, the DeltaPrice value should be "2". However, if the XS variation should only cost $8, the DeltaPrice value should be "-2".
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
@@ -715,12 +715,12 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	CountDownLatch latch = productvariation.updateProductVariationLocalizedDeltaPrice( localizedDeltaPrice,  productCode,  variationKey,  currencyCode,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param currencyCode 
-	 * @param productCode 
-	 * @param responseFields 
-	 * @param variationKey 
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param localizedDeltaPrice 
+	 * @param localizedDeltaPrice The difference between the base price for the product and this variation of the product, which can be a positive or negative decimal value. For example, if the base price for a t-shirt product is $10, but the XL variation should cost $12, the DeltaPrice value should be "2". However, if the XS variation should only cost $8, the DeltaPrice value should be "-2".
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
@@ -739,9 +739,9 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariationFixedPrice productVariationFixedPrice = productvariation.updateProductVariationLocalizedPrices( localizedPrice,  productCode,  variationKey);
 	 * </code></pre></p>
-	 * @param productCode 
-	 * @param variationKey 
-	 * @param localizedPrice 
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
+	 * @param localizedPrice The details of the product variation localized price.
 	 * @return List<com.mozu.api.contracts.productadmin.ProductVariationFixedPrice>
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
@@ -761,10 +761,10 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	CountDownLatch latch = productvariation.updateProductVariationLocalizedPrices( localizedPrice,  productCode,  variationKey, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param productCode 
-	 * @param variationKey 
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param localizedPrice 
+	 * @param localizedPrice The details of the product variation localized price.
 	 * @return List<com.mozu.api.contracts.productadmin.ProductVariationFixedPrice>
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
@@ -783,10 +783,10 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariationFixedPrice productVariationFixedPrice = productvariation.updateProductVariationLocalizedPrice( localizedPrice,  productCode,  variationKey,  currencyCode);
 	 * </code></pre></p>
-	 * @param currencyCode 
-	 * @param productCode 
-	 * @param variationKey 
-	 * @param localizedPrice 
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
+	 * @param localizedPrice The details of the product variation localized price.
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
@@ -802,11 +802,11 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	CountDownLatch latch = productvariation.updateProductVariationLocalizedPrice( localizedPrice,  productCode,  variationKey,  currencyCode, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param currencyCode 
-	 * @param productCode 
-	 * @param variationKey 
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param localizedPrice 
+	 * @param localizedPrice The details of the product variation localized price.
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
@@ -822,11 +822,11 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariationFixedPrice productVariationFixedPrice = productvariation.updateProductVariationLocalizedPrice( localizedPrice,  productCode,  variationKey,  currencyCode,  responseFields);
 	 * </code></pre></p>
-	 * @param currencyCode 
-	 * @param productCode 
-	 * @param responseFields 
-	 * @param variationKey 
-	 * @param localizedPrice 
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
+	 * @param localizedPrice The details of the product variation localized price.
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
@@ -846,12 +846,12 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	CountDownLatch latch = productvariation.updateProductVariationLocalizedPrice( localizedPrice,  productCode,  variationKey,  currencyCode,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param currencyCode 
-	 * @param productCode 
-	 * @param responseFields 
-	 * @param variationKey 
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param localizedPrice 
+	 * @param localizedPrice The details of the product variation localized price.
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
@@ -870,9 +870,9 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariation productVariation = productvariation.updateProductVariation( productVariation,  productCode,  variationKey);
 	 * </code></pre></p>
-	 * @param productCode 
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
-	 * @param productVariation Wrapper for the properties of the specified product variation.
+	 * @param productVariation Properties of a specific product variation.
 	 * @return com.mozu.api.contracts.productadmin.ProductVariation
 	 * @see com.mozu.api.contracts.productadmin.ProductVariation
 	 * @see com.mozu.api.contracts.productadmin.ProductVariation
@@ -888,10 +888,10 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	CountDownLatch latch = productvariation.updateProductVariation( productVariation,  productCode,  variationKey, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param productCode 
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param productVariation Wrapper for the properties of the specified product variation.
+	 * @param productVariation Properties of a specific product variation.
 	 * @return com.mozu.api.contracts.productadmin.ProductVariation
 	 * @see com.mozu.api.contracts.productadmin.ProductVariation
 	 * @see com.mozu.api.contracts.productadmin.ProductVariation
@@ -907,10 +907,10 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariation productVariation = productvariation.updateProductVariation( productVariation,  productCode,  variationKey,  responseFields);
 	 * </code></pre></p>
-	 * @param productCode 
-	 * @param responseFields 
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
-	 * @param productVariation Wrapper for the properties of the specified product variation.
+	 * @param productVariation Properties of a specific product variation.
 	 * @return com.mozu.api.contracts.productadmin.ProductVariation
 	 * @see com.mozu.api.contracts.productadmin.ProductVariation
 	 * @see com.mozu.api.contracts.productadmin.ProductVariation
@@ -930,11 +930,11 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	CountDownLatch latch = productvariation.updateProductVariation( productVariation,  productCode,  variationKey,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param productCode 
-	 * @param responseFields 
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param productVariation Wrapper for the properties of the specified product variation.
+	 * @param productVariation Properties of a specific product variation.
 	 * @return com.mozu.api.contracts.productadmin.ProductVariation
 	 * @see com.mozu.api.contracts.productadmin.ProductVariation
 	 * @see com.mozu.api.contracts.productadmin.ProductVariation
@@ -953,8 +953,8 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariationCollection productVariationCollection = productvariation.updateProductVariations( productVariations,  productCode);
 	 * </code></pre></p>
-	 * @param productCode 
-	 * @param productVariations Wrapper for the collection of variations configured for the specified product code.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param productVariations Collection of variations configured for a product.
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationCollection
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationCollection
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationCollection
@@ -970,9 +970,9 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	CountDownLatch latch = productvariation.updateProductVariations( productVariations,  productCode, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param productCode 
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param productVariations Wrapper for the collection of variations configured for the specified product code.
+	 * @param productVariations Collection of variations configured for a product.
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationCollection
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationCollection
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationCollection
@@ -988,9 +988,9 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariationCollection productVariationCollection = productvariation.updateProductVariations( productVariations,  productCode,  responseFields);
 	 * </code></pre></p>
-	 * @param productCode 
-	 * @param responseFields 
-	 * @param productVariations Wrapper for the collection of variations configured for the specified product code.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param productVariations Collection of variations configured for a product.
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationCollection
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationCollection
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationCollection
@@ -1010,10 +1010,10 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	CountDownLatch latch = productvariation.updateProductVariations( productVariations,  productCode,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param productCode 
-	 * @param responseFields 
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param productVariations Wrapper for the collection of variations configured for the specified product code.
+	 * @param productVariations Collection of variations configured for a product.
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationCollection
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationCollection
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationCollection
@@ -1032,7 +1032,7 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	productvariation.deleteProductVariation( productCode,  variationKey);
 	 * </code></pre></p>
-	 * @param productCode 
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @return 
 	 */
@@ -1051,9 +1051,9 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	productvariation.deleteProductVariationLocalizedDeltaPrice( productCode,  variationKey,  currencyCode);
 	 * </code></pre></p>
-	 * @param currencyCode 
-	 * @param productCode 
-	 * @param variationKey 
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @return 
 	 */
 	public void deleteProductVariationLocalizedDeltaPrice(String productCode, String variationKey, String currencyCode) throws Exception
@@ -1071,9 +1071,9 @@ public class ProductVariationResource {
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	productvariation.deleteProductVariationLocalizedPrice( productCode,  variationKey,  currencyCode);
 	 * </code></pre></p>
-	 * @param currencyCode 
-	 * @param productCode 
-	 * @param variationKey 
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @return 
 	 */
 	public void deleteProductVariationLocalizedPrice(String productCode, String variationKey, String currencyCode) throws Exception

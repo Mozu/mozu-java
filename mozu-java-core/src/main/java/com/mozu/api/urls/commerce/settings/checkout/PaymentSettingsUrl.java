@@ -15,8 +15,8 @@ public class PaymentSettingsUrl
 
 	/**
 	 * Get Resource Url for GetThirdPartyPaymentWorkflowWithValues
-	 * @param fullyQualifiedName 
-	 * @param responseFields 
+	 * @param fullyQualifiedName Fully qualified name of the attribute for the third-party payment workflow.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getThirdPartyPaymentWorkflowWithValuesUrl(String fullyQualifiedName, String responseFields)
@@ -49,7 +49,7 @@ public class PaymentSettingsUrl
 
 	/**
 	 * Get Resource Url for DeleteThirdPartyPaymentWorkflow
-	 * @param fullyQualifiedName 
+	 * @param fullyQualifiedName Fully qualified name of the attribute for the third-party payment workflow.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteThirdPartyPaymentWorkflowUrl(String fullyQualifiedName)

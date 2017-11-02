@@ -42,8 +42,8 @@ public class FulfillmentActionResource {
 	 *	FulfillmentAction fulfillmentaction = new FulfillmentAction();
 	 *	Order order = fulfillmentaction.performFulfillmentAction( action,  orderId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order for which to perform the fulfillment action.
-	 * @param action The action to perform for the order fulfillment.
+	 * @param orderId Unique identifier of the order.
+	 * @param action Properties of an action to perform when fulfilling an item in an order, whether through in-store pickup or direct shipping.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentAction
@@ -59,9 +59,9 @@ public class FulfillmentActionResource {
 	 *	FulfillmentAction fulfillmentaction = new FulfillmentAction();
 	 *	CountDownLatch latch = fulfillmentaction.performFulfillmentAction( action,  orderId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order for which to perform the fulfillment action.
+	 * @param orderId Unique identifier of the order.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param action The action to perform for the order fulfillment.
+	 * @param action Properties of an action to perform when fulfilling an item in an order, whether through in-store pickup or direct shipping.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentAction
@@ -77,9 +77,9 @@ public class FulfillmentActionResource {
 	 *	FulfillmentAction fulfillmentaction = new FulfillmentAction();
 	 *	Order order = fulfillmentaction.performFulfillmentAction( action,  orderId,  responseFields);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order for which to perform the fulfillment action.
-	 * @param responseFields Updated order with a new fulfillment status resulting from the action supplied in the request.
-	 * @param action The action to perform for the order fulfillment.
+	 * @param orderId Unique identifier of the order.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param action Properties of an action to perform when fulfilling an item in an order, whether through in-store pickup or direct shipping.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentAction
@@ -99,10 +99,10 @@ public class FulfillmentActionResource {
 	 *	FulfillmentAction fulfillmentaction = new FulfillmentAction();
 	 *	CountDownLatch latch = fulfillmentaction.performFulfillmentAction( action,  orderId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order for which to perform the fulfillment action.
-	 * @param responseFields Updated order with a new fulfillment status resulting from the action supplied in the request.
+	 * @param orderId Unique identifier of the order.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param action The action to perform for the order fulfillment.
+	 * @param action Properties of an action to perform when fulfilling an item in an order, whether through in-store pickup or direct shipping.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentAction
@@ -121,8 +121,8 @@ public class FulfillmentActionResource {
 	 *	FulfillmentAction fulfillmentaction = new FulfillmentAction();
 	 *	Order order = fulfillmentaction.resendPackageFulfillmentEmail( action,  orderId);
 	 * </code></pre></p>
-	 * @param orderId 
-	 * @param action 
+	 * @param orderId Unique identifier of the order.
+	 * @param action Properties of an action to perform when fulfilling an item in an order, whether through in-store pickup or direct shipping.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentAction
@@ -138,9 +138,9 @@ public class FulfillmentActionResource {
 	 *	FulfillmentAction fulfillmentaction = new FulfillmentAction();
 	 *	CountDownLatch latch = fulfillmentaction.resendPackageFulfillmentEmail( action,  orderId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param orderId 
+	 * @param orderId Unique identifier of the order.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param action 
+	 * @param action Properties of an action to perform when fulfilling an item in an order, whether through in-store pickup or direct shipping.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentAction
@@ -156,9 +156,9 @@ public class FulfillmentActionResource {
 	 *	FulfillmentAction fulfillmentaction = new FulfillmentAction();
 	 *	Order order = fulfillmentaction.resendPackageFulfillmentEmail( action,  orderId,  responseFields);
 	 * </code></pre></p>
-	 * @param orderId 
-	 * @param responseFields 
-	 * @param action 
+	 * @param orderId Unique identifier of the order.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param action Properties of an action to perform when fulfilling an item in an order, whether through in-store pickup or direct shipping.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentAction
@@ -178,10 +178,10 @@ public class FulfillmentActionResource {
 	 *	FulfillmentAction fulfillmentaction = new FulfillmentAction();
 	 *	CountDownLatch latch = fulfillmentaction.resendPackageFulfillmentEmail( action,  orderId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param orderId 
-	 * @param responseFields 
+	 * @param orderId Unique identifier of the order.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param action 
+	 * @param action Properties of an action to perform when fulfilling an item in an order, whether through in-store pickup or direct shipping.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentAction

@@ -19,7 +19,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * 
+ * Use the Storefront Tax resource to retrieve tax information from the storefront.
  * </summary>
  */
 public class OrderTaxContextClient {
@@ -50,7 +50,7 @@ public class OrderTaxContextClient {
 	 * client.executeRequest();
 	 * OrderTaxContext orderTaxContext = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param taxableOrder 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.pricingruntime.OrderTaxContext>
 	 * @see com.mozu.api.contracts.pricingruntime.OrderTaxContext

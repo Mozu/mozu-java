@@ -39,6 +39,9 @@ public class ProductInCatalogInfo implements Serializable
 		this.catalogId = catalogId;
 	}
 
+	/**
+	 * Date this product was first Available for sale in the catalog. This is utilized in expressions that refrence DaysInCatloag.
+	 */
 	protected  DateTime dateFirstAvailableInCatalog;
 
 	public DateTime getDateFirstAvailableInCatalog() {
@@ -89,6 +92,9 @@ public class ProductInCatalogInfo implements Serializable
 		this.isseoContentOverridden = isseoContentOverridden;
 	}
 
+	/**
+	 * If true, the product is marked as available for sale in the catalog. Setting a product to IsActive = false will prevent it from being shown on the customer facing storefront.
+	 */
 	protected  ActiveDateRange activeDateRange;
 
 	public ActiveDateRange getActiveDateRange() {
@@ -129,6 +135,9 @@ public class ProductInCatalogInfo implements Serializable
 		this.price = price;
 	}
 
+	/**
+	 * Specifies which static category to use in the navigation breadcrumb, regardless of how shoppers navigate to the product. If not set, or if the product belongs only to dynamic categories, the default is to use the category with the smallest ID.
+	 */
 	protected  ProductCategory primaryProductCategory;
 
 	public ProductCategory getPrimaryProductCategory() {

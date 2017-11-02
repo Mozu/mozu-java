@@ -42,7 +42,7 @@ public class Cart implements Serializable
 	}
 
 	/**
-	 * The coupon codes applied to the cart. When the customer proceeds to checkout, the coupons applied to the cart apply to the order.
+	 * Array list of coupon codes associated with a shopping cart and the associated order. These codes are entered by a shopper when proceeding to checkout. 
 	 */
 	protected List<String> couponCodes;
 	public List<String> getCouponCodes() {
@@ -122,6 +122,9 @@ public class Cart implements Serializable
 		this.feeTotal = feeTotal;
 	}
 
+	/**
+	 * The combined price for all handling costs calculated together for shipped orders, not for digital or in-store pickup. This includes all handling costs per the product line items and options, excluding taxes and discounts.
+	 */
 	protected  Double handlingAmount;
 
 	public Double getHandlingAmount() {
@@ -132,6 +135,9 @@ public class Cart implements Serializable
 		this.handlingAmount = handlingAmount;
 	}
 
+	/**
+	 * The handling fee subtotal included in the cart calculation.
+	 */
 	protected  Double handlingSubTotal;
 
 	public Double getHandlingSubTotal() {
@@ -152,6 +158,9 @@ public class Cart implements Serializable
 		this.handlingTaxTotal = handlingTaxTotal;
 	}
 
+	/**
+	 * The handling fee total included in the cart calculation.
+	 */
 	protected  Double handlingTotal;
 
 	public Double getHandlingTotal() {
@@ -192,6 +201,9 @@ public class Cart implements Serializable
 		this.lastValidationDate = lastValidationDate;
 	}
 
+	/**
+	 * The total charge for the line item with all weighted order level manual adjustments.
+	 */
 	protected  Double lineItemSubtotalWithOrderAdjustments;
 
 	public Double getLineItemSubtotalWithOrderAdjustments() {
@@ -202,6 +214,9 @@ public class Cart implements Serializable
 		this.lineItemSubtotalWithOrderAdjustments = lineItemSubtotalWithOrderAdjustments;
 	}
 
+	/**
+	 * Pricelist code
+	 */
 	protected  String priceListCode;
 
 	public String getPriceListCode() {
@@ -212,6 +227,9 @@ public class Cart implements Serializable
 		this.priceListCode = priceListCode;
 	}
 
+	/**
+	 * The total shipping amount for the cart before discounts and adjustments.
+	 */
 	protected  Double shippingAmountBeforeDiscountsAndAdjustments;
 
 	public Double getShippingAmountBeforeDiscountsAndAdjustments() {
@@ -342,6 +360,9 @@ public class Cart implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
+	/**
+	 * An array of message details associated with the cart.
+	 */
 	protected  CartMessage cartMessage;
 
 	public CartMessage getCartMessage() {
@@ -352,6 +373,9 @@ public class Cart implements Serializable
 		this.cartMessage = cartMessage;
 	}
 
+	/**
+	 * A list of cart messages associated with the cart.
+	 */
 	protected List<CartMessage> cartMessages;
 	public List<CartMessage> getCartMessages() {
 		return this.cartMessages;
@@ -368,6 +392,9 @@ public class Cart implements Serializable
 		this.changeMessages = changeMessages;
 	}
 
+	/**
+	 * Custom data for a given vendor set within the commerce process.
+	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {
@@ -378,6 +405,9 @@ public class Cart implements Serializable
 		this.data = data;
 	}
 
+	/**
+	 * Extra properties (key-value pairs) that extend the primary object. Think of this as a property bag of string keys and string values.
+	 */
 	protected List<ExtendedProperty> extendedProperties;
 	public List<ExtendedProperty> getExtendedProperties() {
 		return this.extendedProperties;
@@ -397,7 +427,7 @@ public class Cart implements Serializable
 	}
 
 	/**
-	 * The list of invalid coupons the shopper attempted to enter for the cart.
+	 * The list of invalid coupons the shopper attempted to enter for the cart or order. These coupons may no longer be valid or incorrectly entered.
 	 */
 	protected List<InvalidCoupon> invalidCoupons;
 	public List<InvalidCoupon> getInvalidCoupons() {
@@ -423,6 +453,9 @@ public class Cart implements Serializable
 		this.orderDiscounts = orderDiscounts;
 	}
 
+	/**
+	 * Leverage this property within a [tax Arc.js action](https://www.mozu.com/docs/arcjs/commerce-catalog-storefront-tax/commerce-catalog-storefront-tax.htm) to supplement the tax information for this item or object with custom JSON data.
+	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode taxData;
 
 	public com.fasterxml.jackson.databind.JsonNode getTaxData() {

@@ -42,7 +42,7 @@ public class CartItemResource {
 	 *	CartItem cartitem = new CartItem();
 	 *	CartItem cartItem = cartitem.getCartItem( cartItemId);
 	 * </code></pre></p>
-	 * @param cartItemId Identifier of the cart item to retrieve.
+	 * @param cartItemId Identifier of the cart item to delete.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 */
@@ -57,7 +57,7 @@ public class CartItemResource {
 	 *	CartItem cartitem = new CartItem();
 	 *	CountDownLatch latch = cartitem.getCartItem( cartItemId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param cartItemId Identifier of the cart item to retrieve.
+	 * @param cartItemId Identifier of the cart item to delete.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
@@ -73,8 +73,8 @@ public class CartItemResource {
 	 *	CartItem cartitem = new CartItem();
 	 *	CartItem cartItem = cartitem.getCartItem( cartItemId,  responseFields);
 	 * </code></pre></p>
-	 * @param cartItemId Identifier of the cart item to retrieve.
-	 * @param responseFields 
+	 * @param cartItemId Identifier of the cart item to delete.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 */
@@ -93,8 +93,8 @@ public class CartItemResource {
 	 *	CartItem cartitem = new CartItem();
 	 *	CountDownLatch latch = cartitem.getCartItem( cartItemId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param cartItemId Identifier of the cart item to retrieve.
-	 * @param responseFields 
+	 * @param cartItemId Identifier of the cart item to delete.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
@@ -142,7 +142,7 @@ public class CartItemResource {
 	 *	CartItem cartitem = new CartItem();
 	 *	CartItemCollection cartItemCollection = cartitem.getCartItems( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItemCollection
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItemCollection
 	 */
@@ -161,7 +161,7 @@ public class CartItemResource {
 	 *	CartItem cartitem = new CartItem();
 	 *	CountDownLatch latch = cartitem.getCartItems( responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItemCollection
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItemCollection
@@ -180,7 +180,7 @@ public class CartItemResource {
 	 *	CartItem cartitem = new CartItem();
 	 *	CartItem cartItem = cartitem.addItemToCart( cartItem);
 	 * </code></pre></p>
-	 * @param cartItem All properties of the new cart item. The product code is required.
+	 * @param cartItem Properties of an item added to an active shopping cart.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
@@ -197,7 +197,7 @@ public class CartItemResource {
 	 *	CountDownLatch latch = cartitem.addItemToCart( cartItem, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param cartItem All properties of the new cart item. The product code is required.
+	 * @param cartItem Properties of an item added to an active shopping cart.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
@@ -213,8 +213,8 @@ public class CartItemResource {
 	 *	CartItem cartitem = new CartItem();
 	 *	CartItem cartItem = cartitem.addItemToCart( cartItem,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param cartItem All properties of the new cart item. The product code is required.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param cartItem Properties of an item added to an active shopping cart.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
@@ -234,9 +234,9 @@ public class CartItemResource {
 	 *	CartItem cartitem = new CartItem();
 	 *	CountDownLatch latch = cartitem.addItemToCart( cartItem,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param cartItem All properties of the new cart item. The product code is required.
+	 * @param cartItem Properties of an item added to an active shopping cart.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
@@ -255,7 +255,7 @@ public class CartItemResource {
 	 *	CartItem cartitem = new CartItem();
 	 *	CartItem cartItem = cartitem.updateCartItemQuantity( cartItemId,  quantity);
 	 * </code></pre></p>
-	 * @param cartItemId Identifier of the cart item to update quantity.
+	 * @param cartItemId Identifier of the cart item to delete.
 	 * @param quantity The number of cart items in the shopper's active cart.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
@@ -271,7 +271,7 @@ public class CartItemResource {
 	 *	CartItem cartitem = new CartItem();
 	 *	CountDownLatch latch = cartitem.updateCartItemQuantity( cartItemId,  quantity, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param cartItemId Identifier of the cart item to update quantity.
+	 * @param cartItemId Identifier of the cart item to delete.
 	 * @param quantity The number of cart items in the shopper's active cart.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItem
@@ -288,9 +288,9 @@ public class CartItemResource {
 	 *	CartItem cartitem = new CartItem();
 	 *	CartItem cartItem = cartitem.updateCartItemQuantity( cartItemId,  quantity,  responseFields);
 	 * </code></pre></p>
-	 * @param cartItemId Identifier of the cart item to update quantity.
+	 * @param cartItemId Identifier of the cart item to delete.
 	 * @param quantity The number of cart items in the shopper's active cart.
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 */
@@ -309,9 +309,9 @@ public class CartItemResource {
 	 *	CartItem cartitem = new CartItem();
 	 *	CountDownLatch latch = cartitem.updateCartItemQuantity( cartItemId,  quantity,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param cartItemId Identifier of the cart item to update quantity.
+	 * @param cartItemId Identifier of the cart item to delete.
 	 * @param quantity The number of cart items in the shopper's active cart.
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
@@ -330,8 +330,8 @@ public class CartItemResource {
 	 *	CartItem cartitem = new CartItem();
 	 *	CartItem cartItem = cartitem.updateCartItem( cartItem,  cartItemId);
 	 * </code></pre></p>
-	 * @param cartItemId Identifier of the cart item to update.
-	 * @param cartItem The properties of the cart item to update.
+	 * @param cartItemId Identifier of the cart item to delete.
+	 * @param cartItem Properties of an item added to an active shopping cart.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
@@ -347,9 +347,9 @@ public class CartItemResource {
 	 *	CartItem cartitem = new CartItem();
 	 *	CountDownLatch latch = cartitem.updateCartItem( cartItem,  cartItemId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param cartItemId Identifier of the cart item to update.
+	 * @param cartItemId Identifier of the cart item to delete.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param cartItem The properties of the cart item to update.
+	 * @param cartItem Properties of an item added to an active shopping cart.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
@@ -365,9 +365,9 @@ public class CartItemResource {
 	 *	CartItem cartitem = new CartItem();
 	 *	CartItem cartItem = cartitem.updateCartItem( cartItem,  cartItemId,  responseFields);
 	 * </code></pre></p>
-	 * @param cartItemId Identifier of the cart item to update.
-	 * @param responseFields 
-	 * @param cartItem The properties of the cart item to update.
+	 * @param cartItemId Identifier of the cart item to delete.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param cartItem Properties of an item added to an active shopping cart.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
@@ -387,10 +387,10 @@ public class CartItemResource {
 	 *	CartItem cartitem = new CartItem();
 	 *	CountDownLatch latch = cartitem.updateCartItem( cartItem,  cartItemId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param cartItemId Identifier of the cart item to update.
-	 * @param responseFields 
+	 * @param cartItemId Identifier of the cart item to delete.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param cartItem The properties of the cart item to update.
+	 * @param cartItem Properties of an item added to an active shopping cart.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem

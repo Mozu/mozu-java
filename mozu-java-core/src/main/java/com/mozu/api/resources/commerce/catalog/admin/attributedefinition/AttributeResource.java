@@ -18,7 +18,13 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the Attribute Definition resource to manage the properties, options, and extras that uniquely describe products of a specific type. Attributes can be associated with a product type, assigned values by a client or shopper, and added as faceted search filters for a product category. Options are product attributes that describe unique configurations made by the shopper, such as size or color, and generate a new product variation (or unique SKU). Properties are product attributes that describe aspects of the product that do not represent an option configurable by the shopper, such as screen resolution or brand. Extras are product attributes that describe add-on configurations made by the shopper that do not represent a product variation, such as a monogram.
+ * Attributes are used to add custom definitions and characteristics to the following objects:
+*  â€” are attributes that define the characteristics of products, enabling you to uniquely describe a product. They consist of options, properties, and extras. Refer to [Product Attributes](https://www.mozu.com/docs/guides/catalog/product-attributes.htm) in the Guides section for more information.
+
+*  â€” are custom attributes that you can apply to customer accounts to add further definition for special uses, such as marketing campaigns, or discounts. Refer to [Customer Attributes](https://www.mozu.com/docs/guides/customers/customers.htm#customer_attributes) in the Guides section for more information.
+
+*  â€” are custom attributes that enable you to uniquely describe an aspect of an order. Depending on the attribute definition, either you or a shopper can enter values for the order attribute. Refer to [Order Attributes](https://www.mozu.com/docs/guides/orders/order-attributes.htm) in the Guides section for more information.
+
  * </summary>
  */
 public class AttributeResource {
@@ -55,11 +61,11 @@ public class AttributeResource {
 	 *	Attribute attribute = new Attribute();
 	 *	AttributeCollection attributeCollection = attribute.getAttributes( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param filter 
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.AttributeCollection
 	 * @see com.mozu.api.contracts.productadmin.AttributeCollection
@@ -79,7 +85,7 @@ public class AttributeResource {
 	 *	Attribute attribute = new Attribute();
 	 *	Attribute attribute = attribute.getAttribute( attributeFQN);
 	 * </code></pre></p>
-	 * @param attributeFQN 
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.Attribute
 	 * @see com.mozu.api.contracts.productadmin.Attribute
@@ -95,8 +101,8 @@ public class AttributeResource {
 	 *	Attribute attribute = new Attribute();
 	 *	Attribute attribute = attribute.getAttribute( attributeFQN,  responseFields);
 	 * </code></pre></p>
-	 * @param attributeFQN 
-	 * @param responseFields 
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.Attribute
 	 * @see com.mozu.api.contracts.productadmin.Attribute
@@ -117,7 +123,7 @@ public class AttributeResource {
 	 *	Attribute attribute = attribute.addAttribute( attribute);
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param attribute Properties of the new product attribute to create.
+	 * @param attribute Properties of an attribute used to describe customers or orders.
 	 * @return com.mozu.api.contracts.productadmin.Attribute
 	 * @see com.mozu.api.contracts.productadmin.Attribute
 	 * @see com.mozu.api.contracts.productadmin.Attribute
@@ -133,9 +139,9 @@ public class AttributeResource {
 	 *	Attribute attribute = new Attribute();
 	 *	Attribute attribute = attribute.addAttribute( attribute,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
-	 * @param attribute Properties of the new product attribute to create.
+	 * @param attribute Properties of an attribute used to describe customers or orders.
 	 * @return com.mozu.api.contracts.productadmin.Attribute
 	 * @see com.mozu.api.contracts.productadmin.Attribute
 	 * @see com.mozu.api.contracts.productadmin.Attribute
@@ -155,9 +161,9 @@ public class AttributeResource {
 	 *	Attribute attribute = new Attribute();
 	 *	Attribute attribute = attribute.updateAttribute( attribute,  attributeFQN);
 	 * </code></pre></p>
-	 * @param attributeFQN 
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param dataViewMode DataViewMode
-	 * @param attribute Any properties of the attribute that to update.
+	 * @param attribute Properties of an attribute used to describe customers or orders.
 	 * @return com.mozu.api.contracts.productadmin.Attribute
 	 * @see com.mozu.api.contracts.productadmin.Attribute
 	 * @see com.mozu.api.contracts.productadmin.Attribute
@@ -173,10 +179,10 @@ public class AttributeResource {
 	 *	Attribute attribute = new Attribute();
 	 *	Attribute attribute = attribute.updateAttribute( attribute,  attributeFQN,  responseFields);
 	 * </code></pre></p>
-	 * @param attributeFQN 
-	 * @param responseFields 
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
-	 * @param attribute Any properties of the attribute that to update.
+	 * @param attribute Properties of an attribute used to describe customers or orders.
 	 * @return com.mozu.api.contracts.productadmin.Attribute
 	 * @see com.mozu.api.contracts.productadmin.Attribute
 	 * @see com.mozu.api.contracts.productadmin.Attribute
@@ -196,7 +202,7 @@ public class AttributeResource {
 	 *	Attribute attribute = new Attribute();
 	 *	attribute.deleteAttribute( attributeFQN);
 	 * </code></pre></p>
-	 * @param attributeFQN 
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param dataViewMode DataViewMode
 	 * @return 
 	 */

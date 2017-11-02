@@ -31,7 +31,7 @@ import com.mozu.api.contracts.productadmin.ProductSupplierInfo;
 import com.mozu.api.contracts.productadmin.ProductVariationOption;
 
 /**
- *	Properties of a product in a master catalog. Product properties include discounts, localizable content, inventory information, attribute configurations, price data, and the catalogs associated with a product.
+ *	The properties of a product, referenced and used by carts, orders, wish lists, and returns.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Product implements Serializable
@@ -49,18 +49,8 @@ public class Product implements Serializable
 		this.baseProductCode = baseProductCode;
 	}
 
-	protected  Integer shippingClassId;
-
-	public Integer getShippingClassId() {
-		return this.shippingClassId;
-	}
-
-	public void setShippingClassId(Integer shippingClassId) {
-		this.shippingClassId = shippingClassId;
-	}
-
 	/**
-	 * Describes the types of fulfillment that are supported for this product. A product can support direct ship, in-store pickup, or both. Supported fulfillment types are defined at the master catalog level. Client administrators cannot override the supported fulfillment types at the catalog level.
+	 * List of supported types of fulfillment for the product or variation. The types include direct ship, in-store pickup, or both.
 	 */
 	protected List<String> fulfillmentTypesSupported;
 	public List<String> getFulfillmentTypesSupported() {
@@ -191,6 +181,16 @@ public class Product implements Serializable
 
 	public void setProductUsage(String productUsage) {
 		this.productUsage = productUsage;
+	}
+
+	protected  Integer shippingClassId;
+
+	public Integer getShippingClassId() {
+		return this.shippingClassId;
+	}
+
+	public void setShippingClassId(Integer shippingClassId) {
+		this.shippingClassId = shippingClassId;
 	}
 
 	protected  String standAlonePackageType;
@@ -339,7 +339,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * Describes the behavior the system uses when determining the price of the product.
+	 * Properties that describe the behavior the system uses when determining the price of products.
 	 */
 	protected  ProductPricingBehaviorInfo pricingBehavior;
 

@@ -15,7 +15,7 @@ public class GeneralSettingsUrl
 
 	/**
 	 * Get Resource Url for GetGeneralSettings
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getGeneralSettingsUrl(String responseFields)
@@ -27,7 +27,7 @@ public class GeneralSettingsUrl
 
 	/**
 	 * Get Resource Url for UpdateGeneralSettings
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateGeneralSettingsUrl(String responseFields)

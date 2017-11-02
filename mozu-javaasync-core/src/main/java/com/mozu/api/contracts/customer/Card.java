@@ -84,6 +84,9 @@ public class Card implements Serializable
 		this.id = id;
 	}
 
+	/**
+	 * AÂ boolean that signals whether this credit card is the default payment method for this customer account.
+	 */
 	protected  Boolean isDefaultPayMethod;
 
 	public Boolean getIsDefaultPayMethod() {

@@ -42,8 +42,8 @@ public class PackageResource {
 	 *	Package package = new Package();
 	 *	Stream stream = package.getPackageLabel( returnId,  packageId);
 	 * </code></pre></p>
-	 * @param packageId Unique identifier of the return replacement package for which to retrieve the label.
-	 * @param returnId Unique identifier of the return associated with the replacement package label to retrieve.
+	 * @param packageId Unique identifier of the package for which to retrieve the label.
+	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @return Stream
 	 * @see Stream
 	 */
@@ -58,8 +58,8 @@ public class PackageResource {
 	 *	Package package = new Package();
 	 *	CountDownLatch latch = package.getPackageLabel( returnId,  packageId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param packageId Unique identifier of the return replacement package for which to retrieve the label.
-	 * @param returnId Unique identifier of the return associated with the replacement package label to retrieve.
+	 * @param packageId Unique identifier of the package for which to retrieve the label.
+	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return Stream
 	 * @see Stream
@@ -75,9 +75,9 @@ public class PackageResource {
 	 *	Package package = new Package();
 	 *	Stream stream = package.getPackageLabel( returnId,  packageId,  returnAsBase64Png);
 	 * </code></pre></p>
-	 * @param packageId Unique identifier of the return replacement package for which to retrieve the label.
-	 * @param returnAsBase64Png 
-	 * @param returnId Unique identifier of the return associated with the replacement package label to retrieve.
+	 * @param packageId Unique identifier of the package for which to retrieve the label.
+	 * @param returnAsBase64Png Specifies whether to return the RMA label image as Base64-encoded PNG image instead of as a byte array encoded in the original image format. The default is .
+	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @return Stream
 	 * @see Stream
 	 */
@@ -96,9 +96,9 @@ public class PackageResource {
 	 *	Package package = new Package();
 	 *	CountDownLatch latch = package.getPackageLabel( returnId,  packageId,  returnAsBase64Png, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param packageId Unique identifier of the return replacement package for which to retrieve the label.
-	 * @param returnAsBase64Png 
-	 * @param returnId Unique identifier of the return associated with the replacement package label to retrieve.
+	 * @param packageId Unique identifier of the package for which to retrieve the label.
+	 * @param returnAsBase64Png Specifies whether to return the RMA label image as Base64-encoded PNG image instead of as a byte array encoded in the original image format. The default is .
+	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return Stream
 	 * @see Stream
@@ -117,8 +117,8 @@ public class PackageResource {
 	 *	Package package = new Package();
 	 *	Package package = package.getPackage( returnId,  packageId);
 	 * </code></pre></p>
-	 * @param packageId Unique identifier of the return replacement package to retrieve.
-	 * @param returnId Unique identifier of the return associated with the replacement package to retrieve.
+	 * @param packageId Unique identifier of the package for which to retrieve the label.
+	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 */
@@ -133,8 +133,8 @@ public class PackageResource {
 	 *	Package package = new Package();
 	 *	CountDownLatch latch = package.getPackage( returnId,  packageId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param packageId Unique identifier of the return replacement package to retrieve.
-	 * @param returnId Unique identifier of the return associated with the replacement package to retrieve.
+	 * @param packageId Unique identifier of the package for which to retrieve the label.
+	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
@@ -150,9 +150,9 @@ public class PackageResource {
 	 *	Package package = new Package();
 	 *	Package package = package.getPackage( returnId,  packageId,  responseFields);
 	 * </code></pre></p>
-	 * @param packageId Unique identifier of the return replacement package to retrieve.
-	 * @param responseFields 
-	 * @param returnId Unique identifier of the return associated with the replacement package to retrieve.
+	 * @param packageId Unique identifier of the package for which to retrieve the label.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 */
@@ -171,9 +171,9 @@ public class PackageResource {
 	 *	Package package = new Package();
 	 *	CountDownLatch latch = package.getPackage( returnId,  packageId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param packageId Unique identifier of the return replacement package to retrieve.
-	 * @param responseFields 
-	 * @param returnId Unique identifier of the return associated with the replacement package to retrieve.
+	 * @param packageId Unique identifier of the package for which to retrieve the label.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
@@ -192,8 +192,8 @@ public class PackageResource {
 	 *	Package package = new Package();
 	 *	Package package = package.createPackage( pkg,  returnId);
 	 * </code></pre></p>
-	 * @param returnId Unique identifier of the return for which to create a replacement package.
-	 * @param package Properties of the physical package for a return replacement.
+	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param package Properties of a physical package shipped for an order.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
@@ -209,9 +209,9 @@ public class PackageResource {
 	 *	Package package = new Package();
 	 *	CountDownLatch latch = package.createPackage( pkg,  returnId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param returnId Unique identifier of the return for which to create a replacement package.
+	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param package Properties of the physical package for a return replacement.
+	 * @param package Properties of a physical package shipped for an order.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
@@ -227,9 +227,9 @@ public class PackageResource {
 	 *	Package package = new Package();
 	 *	Package package = package.createPackage( pkg,  returnId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param returnId Unique identifier of the return for which to create a replacement package.
-	 * @param package Properties of the physical package for a return replacement.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param package Properties of a physical package shipped for an order.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
@@ -249,10 +249,10 @@ public class PackageResource {
 	 *	Package package = new Package();
 	 *	CountDownLatch latch = package.createPackage( pkg,  returnId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param returnId Unique identifier of the return for which to create a replacement package.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param package Properties of the physical package for a return replacement.
+	 * @param package Properties of a physical package shipped for an order.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
@@ -271,9 +271,9 @@ public class PackageResource {
 	 *	Package package = new Package();
 	 *	Package package = package.updatePackage( pkg,  returnId,  packageId);
 	 * </code></pre></p>
-	 * @param packageId Unique identifier of the return replacement package to update.
-	 * @param returnId Unique identifier of the return associated with the replacement package to update.
-	 * @param package Properties of the return replacement package to update.
+	 * @param packageId Unique identifier of the package for which to retrieve the label.
+	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param package Properties of a physical package shipped for an order.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
@@ -289,10 +289,10 @@ public class PackageResource {
 	 *	Package package = new Package();
 	 *	CountDownLatch latch = package.updatePackage( pkg,  returnId,  packageId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param packageId Unique identifier of the return replacement package to update.
-	 * @param returnId Unique identifier of the return associated with the replacement package to update.
+	 * @param packageId Unique identifier of the package for which to retrieve the label.
+	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param package Properties of the return replacement package to update.
+	 * @param package Properties of a physical package shipped for an order.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
@@ -308,10 +308,10 @@ public class PackageResource {
 	 *	Package package = new Package();
 	 *	Package package = package.updatePackage( pkg,  returnId,  packageId,  responseFields);
 	 * </code></pre></p>
-	 * @param packageId Unique identifier of the return replacement package to update.
-	 * @param responseFields 
-	 * @param returnId Unique identifier of the return associated with the replacement package to update.
-	 * @param package Properties of the return replacement package to update.
+	 * @param packageId Unique identifier of the package for which to retrieve the label.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param package Properties of a physical package shipped for an order.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
@@ -331,11 +331,11 @@ public class PackageResource {
 	 *	Package package = new Package();
 	 *	CountDownLatch latch = package.updatePackage( pkg,  returnId,  packageId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param packageId Unique identifier of the return replacement package to update.
-	 * @param responseFields 
-	 * @param returnId Unique identifier of the return associated with the replacement package to update.
+	 * @param packageId Unique identifier of the package for which to retrieve the label.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param package Properties of the return replacement package to update.
+	 * @param package Properties of a physical package shipped for an order.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
@@ -354,8 +354,8 @@ public class PackageResource {
 	 *	Package package = new Package();
 	 *	package.deletePackage( returnId,  packageId);
 	 * </code></pre></p>
-	 * @param packageId Unique identifier of the return replacement package to delete.
-	 * @param returnId Unique identifier of the return associated with the replacement package to delete.
+	 * @param packageId Unique identifier of the package for which to retrieve the label.
+	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @return 
 	 */
 	public void deletePackage(String returnId, String packageId) throws Exception

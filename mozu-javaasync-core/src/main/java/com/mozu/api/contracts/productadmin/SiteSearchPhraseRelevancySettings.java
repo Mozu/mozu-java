@@ -12,12 +12,18 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
+/**
+ *	Properties for the site search phrase relevancy settings. Relevancy determines the calculated matched of entered search phrase strings against keywords. The relevancy weight can determine the order of importance for matching a search term such as categories before or after product names.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SiteSearchPhraseRelevancySettings implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The considered relevancy weight for the attributes phrase.
+	 */
 	protected  Integer attributeWeight;
 
 	public Integer getAttributeWeight() {
@@ -28,6 +34,9 @@ public class SiteSearchPhraseRelevancySettings implements Serializable
 		this.attributeWeight = attributeWeight;
 	}
 
+	/**
+	 * The considered relevancy weight for descriptions.
+	 */
 	protected  Integer descriptionWeight;
 
 	public Integer getDescriptionWeight() {
@@ -38,6 +47,9 @@ public class SiteSearchPhraseRelevancySettings implements Serializable
 		this.descriptionWeight = descriptionWeight;
 	}
 
+	/**
+	 * The weight for the name used in ranking search results.
+	 */
 	protected  Integer nameWeight;
 
 	public Integer getNameWeight() {

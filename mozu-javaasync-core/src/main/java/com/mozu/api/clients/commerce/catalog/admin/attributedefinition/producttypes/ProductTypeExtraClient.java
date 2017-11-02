@@ -59,8 +59,8 @@ public class ProductTypeExtraClient {
 	 * client.executeRequest();
 	 * AttributeInProductType attributeInProductType = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN 
-	 * @param productTypeId Identifier of the product type whose extra is being retrieved.
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param productTypeId Identifier of the product type.
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeInProductType>
 	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
@@ -78,9 +78,9 @@ public class ProductTypeExtraClient {
 	 * client.executeRequest();
 	 * AttributeInProductType attributeInProductType = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN 
-	 * @param productTypeId Identifier of the product type whose extra is being retrieved.
-	 * @param responseFields 
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param productTypeId Identifier of the product type.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeInProductType>
 	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
@@ -108,7 +108,7 @@ public class ProductTypeExtraClient {
 	 * </code></pre></p>
 	 * @param productTypeId Identifier of the product type.
 	 * @param dataViewMode DataViewMode
-	 * @param attributeInProductType The properties of the extra attribute definition for this product type assignment.
+	 * @param attributeInProductType Properties of an attribute definition associated with a specific product type. When an attribute is applied to a product type, each product of that type maintains the same set of attributes.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeInProductType>
 	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
 	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
@@ -127,9 +127,9 @@ public class ProductTypeExtraClient {
 	 * AttributeInProductType attributeInProductType = client.Result();
 	 * </code></pre></p>
 	 * @param productTypeId Identifier of the product type.
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
-	 * @param attributeInProductType The properties of the extra attribute definition for this product type assignment.
+	 * @param attributeInProductType Properties of an attribute definition associated with a specific product type. When an attribute is applied to a product type, each product of that type maintains the same set of attributes.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeInProductType>
 	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
 	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
@@ -156,10 +156,10 @@ public class ProductTypeExtraClient {
 	 * client.executeRequest();
 	 * AttributeInProductType attributeInProductType = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN 
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param productTypeId Identifier of the product type.
 	 * @param dataViewMode DataViewMode
-	 * @param attributeInProductType The properties of the extra attribute definition to update for the product type.
+	 * @param attributeInProductType Properties of an attribute definition associated with a specific product type. When an attribute is applied to a product type, each product of that type maintains the same set of attributes.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeInProductType>
 	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
 	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
@@ -177,11 +177,11 @@ public class ProductTypeExtraClient {
 	 * client.executeRequest();
 	 * AttributeInProductType attributeInProductType = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN 
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param productTypeId Identifier of the product type.
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
-	 * @param attributeInProductType The properties of the extra attribute definition to update for the product type.
+	 * @param attributeInProductType Properties of an attribute definition associated with a specific product type. When an attribute is applied to a product type, each product of that type maintains the same set of attributes.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeInProductType>
 	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
 	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
@@ -207,7 +207,7 @@ public class ProductTypeExtraClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param attributeFQN 
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param productTypeId Identifier of the product type.
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient 

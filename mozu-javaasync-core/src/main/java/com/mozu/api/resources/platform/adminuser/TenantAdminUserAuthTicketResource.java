@@ -20,7 +20,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the Admin User authentication tickets resource to generate and refresh authentication tickets that enable Mozu administrator or developer account users to access development or production tenants.
+ * Use the Admin User authentication tickets resource to generate and refresh authentication tickets that enable  administrator or developer account users to access development or production tenants.
  * </summary>
  */
 public class TenantAdminUserAuthTicketResource {
@@ -46,7 +46,7 @@ public TenantAdminUserAuthTicketResource(ApiContext apiContext)
 	 *	TenantAdminUserAuthTicket tenantadminuserauthticket = new TenantAdminUserAuthTicket();
 	 *	TenantAdminUserAuthTicket tenantAdminUserAuthTicket = tenantadminuserauthticket.createUserAuthTicket( userAuthInfo);
 	 * </code></pre></p>
-	 * @param userAuthInfo The user authentication information required to generate the user authentication ticket, which consists of a user name and password.
+	 * @param userAuthInfo Information required to authenticate a user.
 	 * @return com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.core.UserAuthInfo
@@ -63,7 +63,7 @@ public TenantAdminUserAuthTicketResource(ApiContext apiContext)
 	 *	CountDownLatch latch = tenantadminuserauthticket.createUserAuthTicket( userAuthInfo, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param userAuthInfo The user authentication information required to generate the user authentication ticket, which consists of a user name and password.
+	 * @param userAuthInfo Information required to authenticate a user.
 	 * @return com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.core.UserAuthInfo
@@ -79,9 +79,9 @@ public TenantAdminUserAuthTicketResource(ApiContext apiContext)
 	 *	TenantAdminUserAuthTicket tenantadminuserauthticket = new TenantAdminUserAuthTicket();
 	 *	TenantAdminUserAuthTicket tenantAdminUserAuthTicket = tenantadminuserauthticket.createUserAuthTicket( userAuthInfo,  tenantId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param tenantId Unique identifier of the development or production tenant for which to generate the user authentication ticket.
-	 * @param userAuthInfo The user authentication information required to generate the user authentication ticket, which consists of a user name and password.
+	 * @param userAuthInfo Information required to authenticate a user.
 	 * @return com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.core.UserAuthInfo
@@ -101,10 +101,10 @@ public TenantAdminUserAuthTicketResource(ApiContext apiContext)
 	 *	TenantAdminUserAuthTicket tenantadminuserauthticket = new TenantAdminUserAuthTicket();
 	 *	CountDownLatch latch = tenantadminuserauthticket.createUserAuthTicket( userAuthInfo,  tenantId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param tenantId Unique identifier of the development or production tenant for which to generate the user authentication ticket.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param userAuthInfo The user authentication information required to generate the user authentication ticket, which consists of a user name and password.
+	 * @param userAuthInfo Information required to authenticate a user.
 	 * @return com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.core.UserAuthInfo
@@ -123,7 +123,7 @@ public TenantAdminUserAuthTicketResource(ApiContext apiContext)
 	 *	TenantAdminUserAuthTicket tenantadminuserauthticket = new TenantAdminUserAuthTicket();
 	 *	TenantAdminUserAuthTicket tenantAdminUserAuthTicket = tenantadminuserauthticket.refreshAuthTicket( existingAuthTicket);
 	 * </code></pre></p>
-	 * @param existingAuthTicket Properties of the authentication ticket to refresh. The refresh token is required to complete this request.
+	 * @param existingAuthTicket Properties of the authentication ticket to be used in user claims with the  API.
 	 * @return com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
@@ -140,7 +140,7 @@ public TenantAdminUserAuthTicketResource(ApiContext apiContext)
 	 *	CountDownLatch latch = tenantadminuserauthticket.refreshAuthTicket( existingAuthTicket, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param existingAuthTicket Properties of the authentication ticket to refresh. The refresh token is required to complete this request.
+	 * @param existingAuthTicket Properties of the authentication ticket to be used in user claims with the  API.
 	 * @return com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
@@ -156,9 +156,9 @@ public TenantAdminUserAuthTicketResource(ApiContext apiContext)
 	 *	TenantAdminUserAuthTicket tenantadminuserauthticket = new TenantAdminUserAuthTicket();
 	 *	TenantAdminUserAuthTicket tenantAdminUserAuthTicket = tenantadminuserauthticket.refreshAuthTicket( existingAuthTicket,  tenantId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param tenantId 
-	 * @param existingAuthTicket Properties of the authentication ticket to refresh. The refresh token is required to complete this request.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param tenantId Unique identifier of the development or production tenant for which to generate the user authentication ticket.
+	 * @param existingAuthTicket Properties of the authentication ticket to be used in user claims with the  API.
 	 * @return com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
@@ -178,10 +178,10 @@ public TenantAdminUserAuthTicketResource(ApiContext apiContext)
 	 *	TenantAdminUserAuthTicket tenantadminuserauthticket = new TenantAdminUserAuthTicket();
 	 *	CountDownLatch latch = tenantadminuserauthticket.refreshAuthTicket( existingAuthTicket,  tenantId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param tenantId 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param tenantId Unique identifier of the development or production tenant for which to generate the user authentication ticket.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param existingAuthTicket Properties of the authentication ticket to refresh. The refresh token is required to complete this request.
+	 * @param existingAuthTicket Properties of the authentication ticket to be used in user claims with the  API.
 	 * @return com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
@@ -200,7 +200,7 @@ public TenantAdminUserAuthTicketResource(ApiContext apiContext)
 	 *	TenantAdminUserAuthTicket tenantadminuserauthticket = new TenantAdminUserAuthTicket();
 	 *	tenantadminuserauthticket.deleteUserAuthTicket( refreshToken);
 	 * </code></pre></p>
-	 * @param refreshToken Refresh token string associated with the user authentication ticket.
+	 * @param refreshToken Alphanumeric string used for access tokens. This token refreshes access for accounts by generating a new developer or application account authentication ticket after an access token expires.
 	 * @return 
 	 */
 	public void deleteUserAuthTicket(String refreshToken) throws Exception

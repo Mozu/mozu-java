@@ -17,7 +17,7 @@ import com.mozu.api.contracts.productruntime.AttributeDetail;
 import com.mozu.api.contracts.productruntime.ProductOptionValue;
 
 /**
- *	Represents configurable options that a shopper can choose when ordering a product, such as a t-shirt color and size.
+ *	Properties of the product option to create such as attribute detail, fully qualified name, and list of product option values.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductOption implements Serializable

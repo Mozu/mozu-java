@@ -49,9 +49,9 @@ public class FulfillmentInfoClient {
 	 * client.executeRequest();
 	 * FulfillmentInfo fulfillmentInfo = client.Result();
 	 * </code></pre></p>
-	 * @param draft If true, retrieve the draft version of the order's fulfillment information, which might include uncommitted changes.
+	 * @param draft If true, retrieve the draft version of the order, which might include uncommitted changes to the order or its components.
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo
 	 */
@@ -76,7 +76,7 @@ public class FulfillmentInfoClient {
 	 * FulfillmentInfo fulfillmentInfo = client.Result();
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param fulfillmentInfo Array list of fulfillment information associated with an order.
+	 * @param fulfillmentInfo Properties of the information needed to fulfill an order, whether via in-store pickup or direct shipping.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo
@@ -95,10 +95,10 @@ public class FulfillmentInfoClient {
 	 * FulfillmentInfo fulfillmentInfo = client.Result();
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields 
-	 * @param updateMode Specifies whether to set the fulfillment information by updating the original order, updating the order in draft mode, or updating the order in draft mode and then committing the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param version 
-	 * @param fulfillmentInfo Array list of fulfillment information associated with an order.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
+	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
+	 * @param fulfillmentInfo Properties of the information needed to fulfill an order, whether via in-store pickup or direct shipping.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo

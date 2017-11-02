@@ -42,7 +42,7 @@ public class CreditTransactionResource {
 	 *	CreditTransaction credittransaction = new CreditTransaction();
 	 *	CreditTransactionCollection creditTransactionCollection = credittransaction.getTransactions( code);
 	 * </code></pre></p>
-	 * @param code User-defined code that identifies the customer credit.
+	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @return com.mozu.api.contracts.customer.credit.CreditTransactionCollection
 	 * @see com.mozu.api.contracts.customer.credit.CreditTransactionCollection
 	 */
@@ -57,7 +57,7 @@ public class CreditTransactionResource {
 	 *	CreditTransaction credittransaction = new CreditTransaction();
 	 *	CountDownLatch latch = credittransaction.getTransactions( code, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param code User-defined code that identifies the customer credit.
+	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.credit.CreditTransactionCollection
 	 * @see com.mozu.api.contracts.customer.credit.CreditTransactionCollection
@@ -73,12 +73,12 @@ public class CreditTransactionResource {
 	 *	CreditTransaction credittransaction = new CreditTransaction();
 	 *	CreditTransactionCollection creditTransactionCollection = credittransaction.getTransactions( code,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param code User-defined code that identifies the customer credit.
-	 * @param filter 
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return com.mozu.api.contracts.customer.credit.CreditTransactionCollection
 	 * @see com.mozu.api.contracts.customer.credit.CreditTransactionCollection
 	 */
@@ -97,12 +97,12 @@ public class CreditTransactionResource {
 	 *	CreditTransaction credittransaction = new CreditTransaction();
 	 *	CountDownLatch latch = credittransaction.getTransactions( code,  startIndex,  pageSize,  sortBy,  filter,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param code User-defined code that identifies the customer credit.
-	 * @param filter 
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.credit.CreditTransactionCollection
 	 * @see com.mozu.api.contracts.customer.credit.CreditTransactionCollection
@@ -121,8 +121,8 @@ public class CreditTransactionResource {
 	 *	CreditTransaction credittransaction = new CreditTransaction();
 	 *	CreditTransaction creditTransaction = credittransaction.addTransaction( creditTransaction,  code);
 	 * </code></pre></p>
-	 * @param code User-defined code that identifies the customer credit to update.
-	 * @param creditTransaction Properties of the transaction to create for the customer credit.
+	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param creditTransaction Properties of a transaction performed for a customer credit that update the remaining balance of the credit.
 	 * @return com.mozu.api.contracts.customer.credit.CreditTransaction
 	 * @see com.mozu.api.contracts.customer.credit.CreditTransaction
 	 * @see com.mozu.api.contracts.customer.credit.CreditTransaction
@@ -138,9 +138,9 @@ public class CreditTransactionResource {
 	 *	CreditTransaction credittransaction = new CreditTransaction();
 	 *	CountDownLatch latch = credittransaction.addTransaction( creditTransaction,  code, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param code User-defined code that identifies the customer credit to update.
+	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param creditTransaction Properties of the transaction to create for the customer credit.
+	 * @param creditTransaction Properties of a transaction performed for a customer credit that update the remaining balance of the credit.
 	 * @return com.mozu.api.contracts.customer.credit.CreditTransaction
 	 * @see com.mozu.api.contracts.customer.credit.CreditTransaction
 	 * @see com.mozu.api.contracts.customer.credit.CreditTransaction
@@ -156,9 +156,9 @@ public class CreditTransactionResource {
 	 *	CreditTransaction credittransaction = new CreditTransaction();
 	 *	CreditTransaction creditTransaction = credittransaction.addTransaction( creditTransaction,  code,  responseFields);
 	 * </code></pre></p>
-	 * @param code User-defined code that identifies the customer credit to update.
-	 * @param responseFields 
-	 * @param creditTransaction Properties of the transaction to create for the customer credit.
+	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param creditTransaction Properties of a transaction performed for a customer credit that update the remaining balance of the credit.
 	 * @return com.mozu.api.contracts.customer.credit.CreditTransaction
 	 * @see com.mozu.api.contracts.customer.credit.CreditTransaction
 	 * @see com.mozu.api.contracts.customer.credit.CreditTransaction
@@ -178,10 +178,10 @@ public class CreditTransactionResource {
 	 *	CreditTransaction credittransaction = new CreditTransaction();
 	 *	CountDownLatch latch = credittransaction.addTransaction( creditTransaction,  code,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param code User-defined code that identifies the customer credit to update.
-	 * @param responseFields 
+	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param creditTransaction Properties of the transaction to create for the customer credit.
+	 * @param creditTransaction Properties of a transaction performed for a customer credit that update the remaining balance of the credit.
 	 * @return com.mozu.api.contracts.customer.credit.CreditTransaction
 	 * @see com.mozu.api.contracts.customer.credit.CreditTransaction
 	 * @see com.mozu.api.contracts.customer.credit.CreditTransaction

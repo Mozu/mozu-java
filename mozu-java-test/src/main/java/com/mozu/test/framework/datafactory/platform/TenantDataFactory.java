@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.platform.TenantDataResource;
 
 /** <summary>
- * Use the tenant data resource to store tenant-level information required for a third-party application in the Mozu database.
+ * Use the tenant data resource to store tenant-level information required for a third-party application in the  database.
  * </summary>
  */
 public class TenantDataFactory

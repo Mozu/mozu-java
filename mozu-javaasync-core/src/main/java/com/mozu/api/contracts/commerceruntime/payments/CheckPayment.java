@@ -12,12 +12,18 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
+/**
+ *	Mozu.CommerceRuntime.Contracts.Payments.CheckPayment ApiType DOCUMENT_HERE 
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CheckPayment implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * If applicable, the check number associated with the payment action or interaction.
+	 */
 	protected  String checkNumber;
 
 	public String getCheckNumber() {

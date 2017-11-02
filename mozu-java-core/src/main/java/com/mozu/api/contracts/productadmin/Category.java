@@ -16,7 +16,7 @@ import com.mozu.api.contracts.productadmin.CategoryLocalizedContent;
 import com.mozu.api.contracts.productadmin.DynamicExpression;
 
 /**
- *	A descriptive container in a storefront hierarchy to organize collections of products.
+ *	A descriptive container that groups products. A category is merchant defined with associated products and discounts as configured. GThe storefront displays products in a hierarchy of categories. As such, categories can include a nesting of sub-categories to organize products and product options per set guidelines such as color, brand, material, and size.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Category implements Serializable
@@ -34,6 +34,9 @@ public class Category implements Serializable
 		this.catalogId = catalogId;
 	}
 
+	/**
+	 * External unique identifier of the category.
+	 */
 	protected  String categoryCode;
 
 	public String getCategoryCode() {
@@ -44,6 +47,9 @@ public class Category implements Serializable
 		this.categoryCode = categoryCode;
 	}
 
+	/**
+	 * Specifies the type of category. The following are the valid values:* * * 
+	 */
 	protected  String categoryType;
 
 	public String getCategoryType() {
@@ -74,6 +80,9 @@ public class Category implements Serializable
 		this.id = id;
 	}
 
+	/**
+	 * Indicates if the object or feature is active.
+	 */
 	protected  Boolean isActive;
 
 	public Boolean getIsActive() {
@@ -94,6 +103,9 @@ public class Category implements Serializable
 		this.isDisplayed = isDisplayed;
 	}
 
+	/**
+	 * The code of the current category's parent category.
+	 */
 	protected  String parentCategoryCode;
 
 	public String getParentCategoryCode() {
@@ -114,6 +126,9 @@ public class Category implements Serializable
 		this.parentCategoryId = parentCategoryId;
 	}
 
+	/**
+	 * If the current category has a parent, the name of the category's parent category.
+	 */
 	protected  String parentCategoryName;
 
 	public String getParentCategoryName() {
@@ -124,6 +139,9 @@ public class Category implements Serializable
 		this.parentCategoryName = parentCategoryName;
 	}
 
+	/**
+	 * Indicates whether the parent category is active.
+	 */
 	protected  Boolean parentIsActive;
 
 	public Boolean getParentIsActive() {
@@ -174,6 +192,9 @@ public class Category implements Serializable
 		this.content = content;
 	}
 
+	/**
+	 * Mozu.ProductAdmin.Contracts.Category dynamicExpression ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected  DynamicExpression dynamicExpression;
 
 	public DynamicExpression getDynamicExpression() {

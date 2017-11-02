@@ -71,7 +71,7 @@ public class MasterCatalogResource {
 	 *	MasterCatalog mastercatalog = new MasterCatalog();
 	 *	MasterCatalogCollection masterCatalogCollection = mastercatalog.getMasterCatalogs( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.productadmin.MasterCatalogCollection
 	 * @see com.mozu.api.contracts.productadmin.MasterCatalogCollection
 	 */
@@ -90,7 +90,7 @@ public class MasterCatalogResource {
 	 *	MasterCatalog mastercatalog = new MasterCatalog();
 	 *	CountDownLatch latch = mastercatalog.getMasterCatalogs( responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.MasterCatalogCollection
 	 * @see com.mozu.api.contracts.productadmin.MasterCatalogCollection
@@ -109,7 +109,7 @@ public class MasterCatalogResource {
 	 *	MasterCatalog mastercatalog = new MasterCatalog();
 	 *	MasterCatalog masterCatalog = mastercatalog.getMasterCatalog( masterCatalogId);
 	 * </code></pre></p>
-	 * @param masterCatalogId 
+	 * @param masterCatalogId Unique identifier for the master catalog. The master catalog contains all products accessible per catalogs and the site/tenant.
 	 * @return com.mozu.api.contracts.productadmin.MasterCatalog
 	 * @see com.mozu.api.contracts.productadmin.MasterCatalog
 	 */
@@ -124,7 +124,7 @@ public class MasterCatalogResource {
 	 *	MasterCatalog mastercatalog = new MasterCatalog();
 	 *	CountDownLatch latch = mastercatalog.getMasterCatalog( masterCatalogId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param masterCatalogId 
+	 * @param masterCatalogId Unique identifier for the master catalog. The master catalog contains all products accessible per catalogs and the site/tenant.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.MasterCatalog
 	 * @see com.mozu.api.contracts.productadmin.MasterCatalog
@@ -140,8 +140,8 @@ public class MasterCatalogResource {
 	 *	MasterCatalog mastercatalog = new MasterCatalog();
 	 *	MasterCatalog masterCatalog = mastercatalog.getMasterCatalog( masterCatalogId,  responseFields);
 	 * </code></pre></p>
-	 * @param masterCatalogId 
-	 * @param responseFields 
+	 * @param masterCatalogId Unique identifier for the master catalog. The master catalog contains all products accessible per catalogs and the site/tenant.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.productadmin.MasterCatalog
 	 * @see com.mozu.api.contracts.productadmin.MasterCatalog
 	 */
@@ -160,8 +160,8 @@ public class MasterCatalogResource {
 	 *	MasterCatalog mastercatalog = new MasterCatalog();
 	 *	CountDownLatch latch = mastercatalog.getMasterCatalog( masterCatalogId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param masterCatalogId 
-	 * @param responseFields 
+	 * @param masterCatalogId Unique identifier for the master catalog. The master catalog contains all products accessible per catalogs and the site/tenant.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.MasterCatalog
 	 * @see com.mozu.api.contracts.productadmin.MasterCatalog
@@ -180,8 +180,8 @@ public class MasterCatalogResource {
 	 *	MasterCatalog mastercatalog = new MasterCatalog();
 	 *	MasterCatalog masterCatalog = mastercatalog.updateMasterCatalog( masterCatalog,  masterCatalogId);
 	 * </code></pre></p>
-	 * @param masterCatalogId 
-	 * @param masterCatalog Properties of the master catalog to update, which consists of the product publishing mode. Possible values are "Pending" which saves product updates in draft mode until they are published, and "Live" which publishes all product changes immediately.
+	 * @param masterCatalogId Unique identifier for the master catalog. The master catalog contains all products accessible per catalogs and the site/tenant.
+	 * @param masterCatalog Properties of a master product catalog defined for a tenant. All catalogs and sites associated with a master catalog share product definitions.
 	 * @return com.mozu.api.contracts.productadmin.MasterCatalog
 	 * @see com.mozu.api.contracts.productadmin.MasterCatalog
 	 * @see com.mozu.api.contracts.productadmin.MasterCatalog
@@ -197,9 +197,9 @@ public class MasterCatalogResource {
 	 *	MasterCatalog mastercatalog = new MasterCatalog();
 	 *	CountDownLatch latch = mastercatalog.updateMasterCatalog( masterCatalog,  masterCatalogId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param masterCatalogId 
+	 * @param masterCatalogId Unique identifier for the master catalog. The master catalog contains all products accessible per catalogs and the site/tenant.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param masterCatalog Properties of the master catalog to update, which consists of the product publishing mode. Possible values are "Pending" which saves product updates in draft mode until they are published, and "Live" which publishes all product changes immediately.
+	 * @param masterCatalog Properties of a master product catalog defined for a tenant. All catalogs and sites associated with a master catalog share product definitions.
 	 * @return com.mozu.api.contracts.productadmin.MasterCatalog
 	 * @see com.mozu.api.contracts.productadmin.MasterCatalog
 	 * @see com.mozu.api.contracts.productadmin.MasterCatalog
@@ -215,9 +215,9 @@ public class MasterCatalogResource {
 	 *	MasterCatalog mastercatalog = new MasterCatalog();
 	 *	MasterCatalog masterCatalog = mastercatalog.updateMasterCatalog( masterCatalog,  masterCatalogId,  responseFields);
 	 * </code></pre></p>
-	 * @param masterCatalogId 
-	 * @param responseFields 
-	 * @param masterCatalog Properties of the master catalog to update, which consists of the product publishing mode. Possible values are "Pending" which saves product updates in draft mode until they are published, and "Live" which publishes all product changes immediately.
+	 * @param masterCatalogId Unique identifier for the master catalog. The master catalog contains all products accessible per catalogs and the site/tenant.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param masterCatalog Properties of a master product catalog defined for a tenant. All catalogs and sites associated with a master catalog share product definitions.
 	 * @return com.mozu.api.contracts.productadmin.MasterCatalog
 	 * @see com.mozu.api.contracts.productadmin.MasterCatalog
 	 * @see com.mozu.api.contracts.productadmin.MasterCatalog
@@ -237,10 +237,10 @@ public class MasterCatalogResource {
 	 *	MasterCatalog mastercatalog = new MasterCatalog();
 	 *	CountDownLatch latch = mastercatalog.updateMasterCatalog( masterCatalog,  masterCatalogId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param masterCatalogId 
-	 * @param responseFields 
+	 * @param masterCatalogId Unique identifier for the master catalog. The master catalog contains all products accessible per catalogs and the site/tenant.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param masterCatalog Properties of the master catalog to update, which consists of the product publishing mode. Possible values are "Pending" which saves product updates in draft mode until they are published, and "Live" which publishes all product changes immediately.
+	 * @param masterCatalog Properties of a master product catalog defined for a tenant. All catalogs and sites associated with a master catalog share product definitions.
 	 * @return com.mozu.api.contracts.productadmin.MasterCatalog
 	 * @see com.mozu.api.contracts.productadmin.MasterCatalog
 	 * @see com.mozu.api.contracts.productadmin.MasterCatalog

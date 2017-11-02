@@ -46,7 +46,7 @@ public class ProductExtraValue implements Serializable
 	}
 
 	/**
-	 * When setting up the extra on a parent product, you can specify a quantity. You can have an extra that is a quantity > 1 of another product.
+	 * The specified quantity of objects and items. This property is used for numerous object types including products, options, components within a product bundle, cart and order items, returned items, shipping line items, items in a digital product. and items associated with types and reservations.
 	 */
 	protected  Integer quantity;
 
@@ -88,6 +88,9 @@ public class ProductExtraValue implements Serializable
 		this.deltaPrice = deltaPrice;
 	}
 
+	/**
+	 * The difference between associated prices for a product, variation option, or extra that is localized per the `localeCode`. The difference is calculated by subtracting the base price from the associated price with this product, option, and/or extra. Depending on the localeCode, the price may be converted such as from USD (USÂ Dollar) to EUR (euro).
+	 */
 	protected List<ProductExtraValueDeltaPrice> localizedDeltaPrice;
 	public List<ProductExtraValueDeltaPrice> getLocalizedDeltaPrice() {
 		return this.localizedDeltaPrice;

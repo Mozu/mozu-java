@@ -71,13 +71,13 @@ public class WishlistResource {
 	 *	Wishlist wishlist = new Wishlist();
 	 *	WishlistCollection wishlistCollection = wishlist.getWishlists( startIndex,  pageSize,  sortBy,  filter,  q,  qLimit,  responseFields);
 	 * </code></pre></p>
-	 * @param filter 
-	 * @param pageSize 
-	 * @param q A list of search terms to use in the query when searching across wish list name. Separate multiple search terms with a space character.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param q A list of order search terms (not phrases) to use in the query when searching across order number and the name or email of the billing contact. When entering, separate multiple search terms with a space character.
 	 * @param qLimit The maximum number of search results to return in the response. You can limit any range between 1-100.
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.WishlistCollection
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.WishlistCollection
 	 */
@@ -96,13 +96,13 @@ public class WishlistResource {
 	 *	Wishlist wishlist = new Wishlist();
 	 *	CountDownLatch latch = wishlist.getWishlists( startIndex,  pageSize,  sortBy,  filter,  q,  qLimit,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param filter 
-	 * @param pageSize 
-	 * @param q A list of search terms to use in the query when searching across wish list name. Separate multiple search terms with a space character.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param q A list of order search terms (not phrases) to use in the query when searching across order number and the name or email of the billing contact. When entering, separate multiple search terms with a space character.
 	 * @param qLimit The maximum number of search results to return in the response. You can limit any range between 1-100.
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.WishlistCollection
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.WishlistCollection
@@ -121,7 +121,7 @@ public class WishlistResource {
 	 *	Wishlist wishlist = new Wishlist();
 	 *	Wishlist wishlist = wishlist.getWishlist( wishlistId);
 	 * </code></pre></p>
-	 * @param wishlistId Unique identifier of the shopper wish list to retrieve.
+	 * @param wishlistId Unique identifier of the wish list.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 */
@@ -136,7 +136,7 @@ public class WishlistResource {
 	 *	Wishlist wishlist = new Wishlist();
 	 *	CountDownLatch latch = wishlist.getWishlist( wishlistId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param wishlistId Unique identifier of the shopper wish list to retrieve.
+	 * @param wishlistId Unique identifier of the wish list.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
@@ -152,8 +152,8 @@ public class WishlistResource {
 	 *	Wishlist wishlist = new Wishlist();
 	 *	Wishlist wishlist = wishlist.getWishlist( wishlistId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param wishlistId Unique identifier of the shopper wish list to retrieve.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param wishlistId Unique identifier of the wish list.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 */
@@ -172,8 +172,8 @@ public class WishlistResource {
 	 *	Wishlist wishlist = new Wishlist();
 	 *	CountDownLatch latch = wishlist.getWishlist( wishlistId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param wishlistId Unique identifier of the shopper wish list to retrieve.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param wishlistId Unique identifier of the wish list.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
@@ -226,7 +226,7 @@ public class WishlistResource {
 	 *	Wishlist wishlist = wishlist.getWishlistByName( customerAccountId,  wishlistName,  responseFields);
 	 * </code></pre></p>
 	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param wishlistName The name of the wish list to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
@@ -247,7 +247,7 @@ public class WishlistResource {
 	 *	CountDownLatch latch = wishlist.getWishlistByName( customerAccountId,  wishlistName,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param wishlistName The name of the wish list to retrieve.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
@@ -267,7 +267,7 @@ public class WishlistResource {
 	 *	Wishlist wishlist = new Wishlist();
 	 *	Wishlist wishlist = wishlist.createWishlist( wishlist);
 	 * </code></pre></p>
-	 * @param wishlist Properties of the wish list to create.
+	 * @param wishlist Properties of a shopper wish list defined for a site, associated with a customer account.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
@@ -284,7 +284,7 @@ public class WishlistResource {
 	 *	CountDownLatch latch = wishlist.createWishlist( wishlist, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param wishlist Properties of the wish list to create.
+	 * @param wishlist Properties of a shopper wish list defined for a site, associated with a customer account.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
@@ -300,8 +300,8 @@ public class WishlistResource {
 	 *	Wishlist wishlist = new Wishlist();
 	 *	Wishlist wishlist = wishlist.createWishlist( wishlist,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param wishlist Properties of the wish list to create.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param wishlist Properties of a shopper wish list defined for a site, associated with a customer account.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
@@ -321,9 +321,9 @@ public class WishlistResource {
 	 *	Wishlist wishlist = new Wishlist();
 	 *	CountDownLatch latch = wishlist.createWishlist( wishlist,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param wishlist Properties of the wish list to create.
+	 * @param wishlist Properties of a shopper wish list defined for a site, associated with a customer account.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
@@ -342,8 +342,8 @@ public class WishlistResource {
 	 *	Wishlist wishlist = new Wishlist();
 	 *	Wishlist wishlist = wishlist.updateWishlist( wishlist,  wishlistId);
 	 * </code></pre></p>
-	 * @param wishlistId Unique identifier of the shopper wish list to update.
-	 * @param wishlist Properties of the shopper wish list to update.
+	 * @param wishlistId Unique identifier of the wish list.
+	 * @param wishlist Properties of a shopper wish list defined for a site, associated with a customer account.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
@@ -359,9 +359,9 @@ public class WishlistResource {
 	 *	Wishlist wishlist = new Wishlist();
 	 *	CountDownLatch latch = wishlist.updateWishlist( wishlist,  wishlistId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param wishlistId Unique identifier of the shopper wish list to update.
+	 * @param wishlistId Unique identifier of the wish list.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param wishlist Properties of the shopper wish list to update.
+	 * @param wishlist Properties of a shopper wish list defined for a site, associated with a customer account.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
@@ -377,9 +377,9 @@ public class WishlistResource {
 	 *	Wishlist wishlist = new Wishlist();
 	 *	Wishlist wishlist = wishlist.updateWishlist( wishlist,  wishlistId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param wishlistId Unique identifier of the shopper wish list to update.
-	 * @param wishlist Properties of the shopper wish list to update.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param wishlistId Unique identifier of the wish list.
+	 * @param wishlist Properties of a shopper wish list defined for a site, associated with a customer account.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
@@ -399,10 +399,10 @@ public class WishlistResource {
 	 *	Wishlist wishlist = new Wishlist();
 	 *	CountDownLatch latch = wishlist.updateWishlist( wishlist,  wishlistId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param wishlistId Unique identifier of the shopper wish list to update.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param wishlistId Unique identifier of the wish list.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param wishlist Properties of the shopper wish list to update.
+	 * @param wishlist Properties of a shopper wish list defined for a site, associated with a customer account.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
@@ -421,7 +421,7 @@ public class WishlistResource {
 	 *	Wishlist wishlist = new Wishlist();
 	 *	wishlist.deleteWishlist( wishlistId);
 	 * </code></pre></p>
-	 * @param wishlistId Unique identifier of the wish list to delete.
+	 * @param wishlistId Unique identifier of the wish list.
 	 * @return 
 	 */
 	public void deleteWishlist(String wishlistId) throws Exception

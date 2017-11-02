@@ -15,9 +15,9 @@ public class LocationInventoryUrl
 
 	/**
 	 * Get Resource Url for GetLocationInventory
-	 * @param locationCode User-defined code that uniquely identifies the location.
-	 * @param productCode 
-	 * @param responseFields 
+	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getLocationInventoryUrl(String locationCode, String productCode, String responseFields)
@@ -31,13 +31,13 @@ public class LocationInventoryUrl
 
 	/**
 	 * Get Resource Url for GetLocationInventories
-	 * @param filter 
-	 * @param filterFunctions 
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param filterFunctions Functions that optimize commonly used filters for efficiency.For the  operation, you have access to the  filter function. For example, use  to filter only for product inventory that is currently active.
 	 * @param locationCode 
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getLocationInventoriesUrl(String filter, String filterFunctions, String locationCode, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
@@ -55,8 +55,8 @@ public class LocationInventoryUrl
 
 	/**
 	 * Get Resource Url for AddLocationInventory
-	 * @param locationCode User-defined code that uniquely identifies the location.
-	 * @param performUpserts 
+	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param performUpserts Query string parameter lets the service perform an update for a new or existing record. When run, the update occurs without throwing a conflict exception that the record exists. If true, the updates completes regardless of the record currently existing. By default, if no value is specified, the service assumes this value is false.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addLocationInventoryUrl(String locationCode, Boolean performUpserts)
@@ -69,7 +69,7 @@ public class LocationInventoryUrl
 
 	/**
 	 * Get Resource Url for UpdateLocationInventory
-	 * @param locationCode User-defined code that uniquely identifies the location.
+	 * @param locationCode The unique, user-defined code that identifies a location. 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateLocationInventoryUrl(String locationCode)
@@ -81,8 +81,8 @@ public class LocationInventoryUrl
 
 	/**
 	 * Get Resource Url for DeleteLocationInventory
-	 * @param locationCode User-defined code that uniquely identifies the location.
-	 * @param productCode 
+	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteLocationInventoryUrl(String locationCode, String productCode)

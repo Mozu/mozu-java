@@ -54,11 +54,11 @@ public class CreditResource {
 	 *	Credit credit = new Credit();
 	 *	CreditCollection creditCollection = credit.getCredits( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param filter 
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return com.mozu.api.contracts.customer.credit.CreditCollection
 	 * @see com.mozu.api.contracts.customer.credit.CreditCollection
 	 */
@@ -77,7 +77,7 @@ public class CreditResource {
 	 *	Credit credit = new Credit();
 	 *	Credit credit = credit.getCredit( code);
 	 * </code></pre></p>
-	 * @param code User-defined code that identifies the store credit to retrieve.
+	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @return com.mozu.api.contracts.customer.credit.Credit
 	 * @see com.mozu.api.contracts.customer.credit.Credit
 	 */
@@ -92,8 +92,8 @@ public class CreditResource {
 	 *	Credit credit = new Credit();
 	 *	Credit credit = credit.getCredit( code,  responseFields);
 	 * </code></pre></p>
-	 * @param code User-defined code that identifies the store credit to retrieve.
-	 * @param responseFields 
+	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.customer.credit.Credit
 	 * @see com.mozu.api.contracts.customer.credit.Credit
 	 */
@@ -112,7 +112,7 @@ public class CreditResource {
 	 *	Credit credit = new Credit();
 	 *	Credit credit = credit.addCredit( credit);
 	 * </code></pre></p>
-	 * @param credit Properties of the store credit to create.
+	 * @param credit Properties of the store credit of gift card applied to a customer account. At this time, gift card functionality is reserved for future use.
 	 * @return com.mozu.api.contracts.customer.credit.Credit
 	 * @see com.mozu.api.contracts.customer.credit.Credit
 	 * @see com.mozu.api.contracts.customer.credit.Credit
@@ -128,8 +128,8 @@ public class CreditResource {
 	 *	Credit credit = new Credit();
 	 *	Credit credit = credit.addCredit( credit,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param credit Properties of the store credit to create.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param credit Properties of the store credit of gift card applied to a customer account. At this time, gift card functionality is reserved for future use.
 	 * @return com.mozu.api.contracts.customer.credit.Credit
 	 * @see com.mozu.api.contracts.customer.credit.Credit
 	 * @see com.mozu.api.contracts.customer.credit.Credit
@@ -149,7 +149,7 @@ public class CreditResource {
 	 *	Credit credit = new Credit();
 	 *	Credit credit = credit.associateCreditToShopper( code);
 	 * </code></pre></p>
-	 * @param code The code that represents the credit to claim for the shopper.
+	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @return com.mozu.api.contracts.customer.credit.Credit
 	 * @see com.mozu.api.contracts.customer.credit.Credit
 	 */
@@ -164,8 +164,8 @@ public class CreditResource {
 	 *	Credit credit = new Credit();
 	 *	Credit credit = credit.associateCreditToShopper( code,  responseFields);
 	 * </code></pre></p>
-	 * @param code The code that represents the credit to claim for the shopper.
-	 * @param responseFields 
+	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.customer.credit.Credit
 	 * @see com.mozu.api.contracts.customer.credit.Credit
 	 */
@@ -184,7 +184,7 @@ public class CreditResource {
 	 *	Credit credit = new Credit();
 	 *	credit.resendCreditCreatedEmail( code);
 	 * </code></pre></p>
-	 * @param code 
+	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @return 
 	 */
 	public void resendCreditCreatedEmail(String code) throws Exception
@@ -202,8 +202,8 @@ public class CreditResource {
 	 *	Credit credit = new Credit();
 	 *	Credit credit = credit.updateCredit( credit,  code);
 	 * </code></pre></p>
-	 * @param code User-defined code of the store credit to update.
-	 * @param credit Properties of the store credit to update.
+	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param credit Properties of the store credit of gift card applied to a customer account. At this time, gift card functionality is reserved for future use.
 	 * @return com.mozu.api.contracts.customer.credit.Credit
 	 * @see com.mozu.api.contracts.customer.credit.Credit
 	 * @see com.mozu.api.contracts.customer.credit.Credit
@@ -219,9 +219,9 @@ public class CreditResource {
 	 *	Credit credit = new Credit();
 	 *	Credit credit = credit.updateCredit( credit,  code,  responseFields);
 	 * </code></pre></p>
-	 * @param code User-defined code of the store credit to update.
-	 * @param responseFields 
-	 * @param credit Properties of the store credit to update.
+	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param credit Properties of the store credit of gift card applied to a customer account. At this time, gift card functionality is reserved for future use.
 	 * @return com.mozu.api.contracts.customer.credit.Credit
 	 * @see com.mozu.api.contracts.customer.credit.Credit
 	 * @see com.mozu.api.contracts.customer.credit.Credit
@@ -241,7 +241,7 @@ public class CreditResource {
 	 *	Credit credit = new Credit();
 	 *	credit.deleteCredit( code);
 	 * </code></pre></p>
-	 * @param code User-defined code of the store credit to delete.
+	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @return 
 	 */
 	public void deleteCredit(String code) throws Exception

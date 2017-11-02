@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.platform.entitylists.ListViewResource;
 
 /** <summary>
- * 
+ * Provides settings and options for displaying associated content within a context level of site, tenant, catalog, or master catalog. ListViews can be associated with entity lists and entities.
  * </summary>
  */
 public class ListViewFactory

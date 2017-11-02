@@ -15,7 +15,7 @@ public class CustomRouteSettingsUrl
 
 	/**
 	 * Get Resource Url for GetCustomRouteSettings
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getCustomRouteSettingsUrl(String responseFields)
@@ -27,7 +27,7 @@ public class CustomRouteSettingsUrl
 
 	/**
 	 * Get Resource Url for CreateCustomRouteSettings
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl createCustomRouteSettingsUrl(String responseFields)
@@ -39,7 +39,7 @@ public class CustomRouteSettingsUrl
 
 	/**
 	 * Get Resource Url for UpdateCustomRouteSettings
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateCustomRouteSettingsUrl(String responseFields)

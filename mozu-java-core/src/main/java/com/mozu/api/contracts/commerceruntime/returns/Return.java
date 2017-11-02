@@ -118,6 +118,9 @@ public class Return implements Serializable
 		this.originalOrderId = originalOrderId;
 	}
 
+	/**
+	 * The order number of the original order where the return was created.
+	 */
 	protected  Integer originalOrderNumber;
 
 	public Integer getOriginalOrderNumber() {
@@ -148,6 +151,9 @@ public class Return implements Serializable
 		this.productLossTotal = productLossTotal;
 	}
 
+	/**
+	 * The status that indicates whether you have received the return item from the shopper. The accepted values are , , or .
+	 */
 	protected  String receiveStatus;
 
 	public String getReceiveStatus() {
@@ -168,6 +174,9 @@ public class Return implements Serializable
 		this.refundAmount = refundAmount;
 	}
 
+	/**
+	 * The status of the refund. The accepted values are  if the shopper only wants a replacement or  if either a partial or full refund is applied to the return.
+	 */
 	protected  String refundStatus;
 
 	public String getRefundStatus() {
@@ -178,6 +187,9 @@ public class Return implements Serializable
 		this.refundStatus = refundStatus;
 	}
 
+	/**
+	 * The status of the replacement order. The accepted values are  if there is no replacement order or  if a replacement order exits.
+	 */
 	protected  String replaceStatus;
 
 	public String getReplaceStatus() {
@@ -319,7 +331,7 @@ public class Return implements Serializable
 	}
 
 	/**
-	 * List of change messages associated with the return.
+	 * Collection (list or paged) of change messages logged for each modification made by a shopper to their carts, wishlists, orders, package, payment, pickup, and returns. Change log messages are system-supplied based on shopper actions and read only.
 	 */
 	protected List<ChangeMessage> changeMessages;
 	public List<ChangeMessage> getChangeMessages() {
@@ -329,6 +341,9 @@ public class Return implements Serializable
 		this.changeMessages = changeMessages;
 	}
 
+	/**
+	 * contact ApiType DOCUMENT_HERE 
+	 */
 	protected  Contact contact;
 
 	public Contact getContact() {

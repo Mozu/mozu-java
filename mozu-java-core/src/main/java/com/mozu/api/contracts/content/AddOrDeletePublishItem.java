@@ -12,12 +12,18 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
+/**
+ *	This property is not exposed in documentation.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AddOrDeletePublishItem implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The fully qualified name of the document list that the pending content change is associated with.
+	 */
 	protected  String docListFQN;
 
 	public String getDocListFQN() {
@@ -28,6 +34,9 @@ public class AddOrDeletePublishItem implements Serializable
 		this.docListFQN = docListFQN;
 	}
 
+	/**
+	 * The unique identifier of the pending content change or the document.
+	 */
 	protected  String documentId;
 
 	public String getDocumentId() {
@@ -38,6 +47,9 @@ public class AddOrDeletePublishItem implements Serializable
 		this.documentId = documentId;
 	}
 
+	/**
+	 * The unique identifier of the scope. For example, if your scope type is site, then this value would be the site id.
+	 */
 	protected  Integer scopeId;
 
 	public Integer getScopeId() {
@@ -48,6 +60,9 @@ public class AddOrDeletePublishItem implements Serializable
 		this.scopeId = scopeId;
 	}
 
+	/**
+	 * The type of scope associated with the documentList. For example, if the documentList is pageTemplateContent, the scopeType is Site.Valid values are: "Tenant", "MasterCatalog", and "Site".
+	 */
 	protected  String scopeType;
 
 	public String getScopeType() {

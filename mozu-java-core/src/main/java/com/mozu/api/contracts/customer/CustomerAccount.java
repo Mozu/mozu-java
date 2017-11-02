@@ -49,6 +49,9 @@ public class CustomerAccount implements Serializable
 		this.companyOrOrganization = companyOrOrganization;
 	}
 
+	/**
+	 * customerSet ApiType DOCUMENT_HERE 
+	 */
 	protected  String customerSet;
 
 	public String getCustomerSet() {
@@ -59,6 +62,9 @@ public class CustomerAccount implements Serializable
 		this.customerSet = customerSet;
 	}
 
+	/**
+	 * This property tracks the customer account creation date. This date can be set manually via the APIÂ for customer accounts that are imported into . 
+	 */
 	protected  DateTime customerSinceDate;
 
 	public DateTime getCustomerSinceDate() {
@@ -70,7 +76,7 @@ public class CustomerAccount implements Serializable
 	}
 
 	/**
-	 * The email address associated with the customer account.
+	 * The email address for the customer account and contact. This email may be used for login to the storefront and for subscription mailing lists.
 	 */
 	protected  String emailAddress;
 
@@ -83,7 +89,7 @@ public class CustomerAccount implements Serializable
 	}
 
 	/**
-	 * Unique identifier an external system uses to identify this customer account.
+	 * Unique identifier used by an external program to identify a  order, customer account, or wish list.
 	 */
 	protected  String externalId;
 
@@ -96,7 +102,7 @@ public class CustomerAccount implements Serializable
 	}
 
 	/**
-	 * The first name associated with the customer account.
+	 * The full first name of a customer or contact name.
 	 */
 	protected  String firstName;
 
@@ -108,6 +114,9 @@ public class CustomerAccount implements Serializable
 		this.firstName = firstName;
 	}
 
+	/**
+	 * Indicates if an external password is set on this account.
+	 */
 	protected  Boolean hasExternalPassword;
 
 	public Boolean getHasExternalPassword() {
@@ -128,6 +137,9 @@ public class CustomerAccount implements Serializable
 		this.id = id;
 	}
 
+	/**
+	 * Indicates if the object or feature is active.
+	 */
 	protected  Boolean isActive;
 
 	public Boolean getIsActive() {
@@ -151,6 +163,9 @@ public class CustomerAccount implements Serializable
 		this.isAnonymous = isAnonymous;
 	}
 
+	/**
+	 * Indicates if a customer account and associated data is locked. If true, the user account is locked due to multiple failed authentication attempts. The user cannot login until the account is unlocked.
+	 */
 	protected  Boolean isLocked;
 
 	public Boolean getIsLocked() {
@@ -162,7 +177,7 @@ public class CustomerAccount implements Serializable
 	}
 
 	/**
-	 * The last name associated with the customer account.
+	 * The full last name of a customer or contact name.
 	 */
 	protected  String lastName;
 
@@ -218,7 +233,7 @@ public class CustomerAccount implements Serializable
 	}
 
 	/**
-	 * The user name of the user associated with the customer account.
+	 * The user name associated with the user profile. The customer uses the user name to access the account.
 	 */
 	protected  String userName;
 

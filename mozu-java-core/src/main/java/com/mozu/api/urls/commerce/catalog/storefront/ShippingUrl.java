@@ -27,8 +27,8 @@ public class ShippingUrl
 
 	/**
 	 * Get Resource Url for GetRates
-	 * @param includeRawResponse 
-	 * @param responseFields 
+	 * @param includeRawResponse Set this parameter to  to retrieve the full raw JSON response from a shipping carrier (instead of just the shipping rate).
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getRatesUrl(Boolean includeRawResponse, String responseFields)

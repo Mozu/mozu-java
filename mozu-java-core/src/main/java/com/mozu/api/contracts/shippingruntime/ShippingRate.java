@@ -78,6 +78,9 @@ public class ShippingRate implements Serializable
 		this.customAttributes = customAttributes;
 	}
 
+	/**
+	 * Shipping rate data.
+	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {

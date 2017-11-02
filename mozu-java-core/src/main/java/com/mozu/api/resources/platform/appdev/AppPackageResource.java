@@ -18,7 +18,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * 
+ * This resource is not public.
  * </summary>
  */
 public class AppPackageResource {
@@ -54,11 +54,11 @@ public class AppPackageResource {
 	 *	AppPackage apppackage = new AppPackage();
 	 *	PackageSummaryCollection packageSummaryCollection = apppackage.getAllPackages( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param filter 
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return com.mozu.api.contracts.appdev.PackageSummaryCollection
 	 * @see com.mozu.api.contracts.appdev.PackageSummaryCollection
 	 */
@@ -94,7 +94,7 @@ public class AppPackageResource {
 	 * </code></pre></p>
 	 * @param applicationKey 
 	 * @param includeChildren 
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param skipDevAccountCheck 
 	 * @return com.mozu.api.contracts.appdev.Package
 	 * @see com.mozu.api.contracts.appdev.Package
@@ -114,7 +114,7 @@ public class AppPackageResource {
 	 *	AppPackage apppackage = new AppPackage();
 	 *	PackageCollection packageCollection = apppackage.getPackages( applicationKey);
 	 * </code></pre></p>
-	 * @param applicationKey 
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
 	 * @return com.mozu.api.contracts.appdev.PackageCollection
 	 * @see com.mozu.api.contracts.appdev.PackageCollection
 	 */
@@ -129,12 +129,12 @@ public class AppPackageResource {
 	 *	AppPackage apppackage = new AppPackage();
 	 *	PackageCollection packageCollection = apppackage.getPackages( applicationKey,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param applicationKey 
-	 * @param filter 
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return com.mozu.api.contracts.appdev.PackageCollection
 	 * @see com.mozu.api.contracts.appdev.PackageCollection
 	 */
@@ -153,7 +153,7 @@ public class AppPackageResource {
 	 *	AppPackage apppackage = new AppPackage();
 	 *	ApplicationSummary applicationSummary = apppackage.getApplicationSummaryChildren( appId);
 	 * </code></pre></p>
-	 * @param appId 
+	 * @param appId appId parameter description DOCUMENT_HERE 
 	 * @return List<com.mozu.api.contracts.appdev.ApplicationSummary>
 	 * @see com.mozu.api.contracts.appdev.ApplicationSummary
 	 */
@@ -186,11 +186,11 @@ public class AppPackageResource {
 	 *	AppPackage apppackage = new AppPackage();
 	 *	ApplicationSummaryCollection applicationSummaryCollection = apppackage.getApplicationSummaryParents( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param filter 
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return com.mozu.api.contracts.appdev.ApplicationSummaryCollection
 	 * @see com.mozu.api.contracts.appdev.ApplicationSummaryCollection
 	 */
@@ -209,7 +209,7 @@ public class AppPackageResource {
 	 *	AppPackage apppackage = new AppPackage();
 	 *	Package package = apppackage.clonePackage( applicationKey,  packageName);
 	 * </code></pre></p>
-	 * @param applicationKey 
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}. 
 	 * @param packageName 
 	 * @return com.mozu.api.contracts.appdev.Package
 	 * @see com.mozu.api.contracts.appdev.Package
@@ -225,9 +225,9 @@ public class AppPackageResource {
 	 *	AppPackage apppackage = new AppPackage();
 	 *	Package package = apppackage.clonePackage( applicationKey,  packageName,  responseFields);
 	 * </code></pre></p>
-	 * @param applicationKey 
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}. 
 	 * @param packageName 
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.appdev.Package
 	 * @see com.mozu.api.contracts.appdev.Package
 	 */
@@ -246,7 +246,7 @@ public class AppPackageResource {
 	 *	AppPackage apppackage = new AppPackage();
 	 *	Package package = apppackage.createNewCorePackage( packageRequest);
 	 * </code></pre></p>
-	 * @param packageRequest 
+	 * @param packageRequest This operation is not public.
 	 * @return com.mozu.api.contracts.appdev.Package
 	 * @see com.mozu.api.contracts.appdev.Package
 	 * @see com.mozu.api.contracts.appdev.PackageRequest
@@ -262,8 +262,8 @@ public class AppPackageResource {
 	 *	AppPackage apppackage = new AppPackage();
 	 *	Package package = apppackage.createNewCorePackage( packageRequest,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param packageRequest 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param packageRequest This operation is not public.
 	 * @return com.mozu.api.contracts.appdev.Package
 	 * @see com.mozu.api.contracts.appdev.Package
 	 * @see com.mozu.api.contracts.appdev.PackageRequest
@@ -283,7 +283,7 @@ public class AppPackageResource {
 	 *	AppPackage apppackage = new AppPackage();
 	 *	Package package = apppackage.createPackage( pkg);
 	 * </code></pre></p>
-	 * @param package 
+	 * @param package Properties for a package for fulfillment and shipment. A package may include one to many products, or a bundle of products.
 	 * @return com.mozu.api.contracts.appdev.Package
 	 * @see com.mozu.api.contracts.appdev.Package
 	 * @see com.mozu.api.contracts.appdev.Package
@@ -300,8 +300,8 @@ public class AppPackageResource {
 	 *	Package package = apppackage.createPackage( pkg,  projectId,  responseFields);
 	 * </code></pre></p>
 	 * @param projectId 
-	 * @param responseFields 
-	 * @param package 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param package Properties for a package for fulfillment and shipment. A package may include one to many products, or a bundle of products.
 	 * @return com.mozu.api.contracts.appdev.Package
 	 * @see com.mozu.api.contracts.appdev.Package
 	 * @see com.mozu.api.contracts.appdev.Package
@@ -321,8 +321,8 @@ public class AppPackageResource {
 	 *	AppPackage apppackage = new AppPackage();
 	 *	Package package = apppackage.updatePackage( pkg,  applicationKey);
 	 * </code></pre></p>
-	 * @param applicationKey 
-	 * @param package 
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}. 
+	 * @param package Properties for a package for fulfillment and shipment. A package may include one to many products, or a bundle of products.
 	 * @return com.mozu.api.contracts.appdev.Package
 	 * @see com.mozu.api.contracts.appdev.Package
 	 * @see com.mozu.api.contracts.appdev.Package
@@ -338,9 +338,9 @@ public class AppPackageResource {
 	 *	AppPackage apppackage = new AppPackage();
 	 *	Package package = apppackage.updatePackage( pkg,  applicationKey,  responseFields);
 	 * </code></pre></p>
-	 * @param applicationKey 
-	 * @param responseFields 
-	 * @param package 
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}. 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param package Properties for a package for fulfillment and shipment. A package may include one to many products, or a bundle of products.
 	 * @return com.mozu.api.contracts.appdev.Package
 	 * @see com.mozu.api.contracts.appdev.Package
 	 * @see com.mozu.api.contracts.appdev.Package
@@ -360,7 +360,7 @@ public class AppPackageResource {
 	 *	AppPackage apppackage = new AppPackage();
 	 *	apppackage.deletePackage( applicationKey);
 	 * </code></pre></p>
-	 * @param applicationKey 
+	 * @param applicationKey : The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
 	 * @return 
 	 */
 	public void deletePackage(String applicationKey) throws Exception

@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Container for the facet source information, which includes the category, price, or attribute properties.
+ *	Describes the source of the facet data. It can be a product field (such as price and category) or a product attribute. All fields are System-supplied and read only.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class FacetSource implements Serializable

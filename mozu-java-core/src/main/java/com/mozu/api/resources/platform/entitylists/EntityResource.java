@@ -18,7 +18,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * 
+ * Entities are JSON entries within the MZDBÂ ( Mongo DB) for handling large data sets to heavily filter (&gt;2,000 items). Each entity is associated to an EntityList with schema, rules, and formatting for storing the content. This content can be accessed via the  API and  Hypr tags.
  * </summary>
  */
 public class EntityResource {
@@ -40,8 +40,8 @@ public class EntityResource {
 	 *	Entity entity = new Entity();
 	 *	JObject json = entity.getEntity( entityListFullName,  id);
 	 * </code></pre></p>
-	 * @param entityListFullName 
-	 * @param id 
+	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param id Unique identifier of the customer segment to retrieve.
 	 * @return JObject
 	 * @see JObject
 	 */
@@ -56,9 +56,9 @@ public class EntityResource {
 	 *	Entity entity = new Entity();
 	 *	JObject json = entity.getEntity( entityListFullName,  id,  responseFields);
 	 * </code></pre></p>
-	 * @param entityListFullName 
-	 * @param id 
-	 * @param responseFields 
+	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return JObject
 	 * @see JObject
 	 */
@@ -77,7 +77,7 @@ public class EntityResource {
 	 *	Entity entity = new Entity();
 	 *	EntityCollection entityCollection = entity.getEntities( entityListFullName);
 	 * </code></pre></p>
-	 * @param entityListFullName 
+	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
 	 * @return com.mozu.api.contracts.mzdb.EntityCollection
 	 * @see com.mozu.api.contracts.mzdb.EntityCollection
 	 */
@@ -92,12 +92,12 @@ public class EntityResource {
 	 *	Entity entity = new Entity();
 	 *	EntityCollection entityCollection = entity.getEntities( entityListFullName,  pageSize,  startIndex,  filter,  sortBy,  responseFields);
 	 * </code></pre></p>
-	 * @param entityListFullName 
-	 * @param filter 
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return com.mozu.api.contracts.mzdb.EntityCollection
 	 * @see com.mozu.api.contracts.mzdb.EntityCollection
 	 */
@@ -116,8 +116,8 @@ public class EntityResource {
 	 *	Entity entity = new Entity();
 	 *	JObject json = entity.insertEntity( item,  entityListFullName);
 	 * </code></pre></p>
-	 * @param entityListFullName 
-	 * @param item 
+	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param item JSON code for objects.
 	 * @return JObject
 	 * @see JObject
 	 * @see JObject
@@ -133,9 +133,9 @@ public class EntityResource {
 	 *	Entity entity = new Entity();
 	 *	JObject json = entity.insertEntity( item,  entityListFullName,  responseFields);
 	 * </code></pre></p>
-	 * @param entityListFullName 
-	 * @param responseFields 
-	 * @param item 
+	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param item JSON code for objects.
 	 * @return JObject
 	 * @see JObject
 	 * @see JObject
@@ -155,9 +155,9 @@ public class EntityResource {
 	 *	Entity entity = new Entity();
 	 *	JObject json = entity.updateEntity( item,  entityListFullName,  id);
 	 * </code></pre></p>
-	 * @param entityListFullName 
-	 * @param id 
-	 * @param item 
+	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param item JSON code for objects.
 	 * @return JObject
 	 * @see JObject
 	 * @see JObject
@@ -173,10 +173,10 @@ public class EntityResource {
 	 *	Entity entity = new Entity();
 	 *	JObject json = entity.updateEntity( item,  entityListFullName,  id,  responseFields);
 	 * </code></pre></p>
-	 * @param entityListFullName 
-	 * @param id 
-	 * @param responseFields 
-	 * @param item 
+	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param item JSON code for objects.
 	 * @return JObject
 	 * @see JObject
 	 * @see JObject
@@ -196,8 +196,8 @@ public class EntityResource {
 	 *	Entity entity = new Entity();
 	 *	entity.deleteEntity( entityListFullName,  id);
 	 * </code></pre></p>
-	 * @param entityListFullName 
-	 * @param id 
+	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param id Unique identifier of the customer segment to retrieve.
 	 * @return 
 	 */
 	public void deleteEntity(String entityListFullName, String id) throws Exception

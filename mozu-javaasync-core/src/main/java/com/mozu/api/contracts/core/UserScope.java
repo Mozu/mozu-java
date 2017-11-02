@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Properties of the scope in which a user operates, which represents a developer account or Mozu production tenant.
+ *	Properties of the scope in which a user operates, which represents a developer account or  production tenant.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class UserScope implements Serializable

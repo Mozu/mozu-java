@@ -54,7 +54,7 @@ public class ApplicationResource {
 	 *	Application application = new Application();
 	 *	Application application = application.thirdPartyGetApplication( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.sitesettings.application.Application
 	 * @see com.mozu.api.contracts.sitesettings.application.Application
 	 */
@@ -73,7 +73,7 @@ public class ApplicationResource {
 	 *	Application application = new Application();
 	 *	Application application = application.thirdPartyUpdateApplication( application);
 	 * </code></pre></p>
-	 * @param application Properties of the application to update.
+	 * @param application Properties of an application installed in a tenant.
 	 * @return com.mozu.api.contracts.sitesettings.application.Application
 	 * @see com.mozu.api.contracts.sitesettings.application.Application
 	 * @see com.mozu.api.contracts.sitesettings.application.Application
@@ -89,8 +89,8 @@ public class ApplicationResource {
 	 *	Application application = new Application();
 	 *	Application application = application.thirdPartyUpdateApplication( application,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param application Properties of the application to update.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param application Properties of an application installed in a tenant.
 	 * @return com.mozu.api.contracts.sitesettings.application.Application
 	 * @see com.mozu.api.contracts.sitesettings.application.Application
 	 * @see com.mozu.api.contracts.sitesettings.application.Application

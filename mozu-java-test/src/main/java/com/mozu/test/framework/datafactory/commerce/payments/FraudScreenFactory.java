@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.payments.FraudScreenResource;
 
 /** <summary>
- * 
+ * commerce/payments/fraudscreen related resources. DOCUMENT_HERE 
  * </summary>
  */
 public class FraudScreenFactory

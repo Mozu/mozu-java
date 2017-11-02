@@ -12,12 +12,18 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
+/**
+ *	Mozu.ShippingAdmin.Contracts.CustomTableRateContent ApiType DOCUMENT_HERE 
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CustomTableRateContent implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The two character locale code, per the country code provided. This code determines the localized content to use and display.
+	 */
 	protected  String localeCode;
 
 	public String getLocaleCode() {
@@ -28,6 +34,9 @@ public class CustomTableRateContent implements Serializable
 		this.localeCode = localeCode;
 	}
 
+	/**
+	 * The user supplied name that appears in . You can use this field for identification purposes.
+	 */
 	protected  String name;
 
 	public String getName() {

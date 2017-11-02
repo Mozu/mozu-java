@@ -55,9 +55,9 @@ public class BillingInfoResource {
 	 *	BillingInfo billinginfo = new BillingInfo();
 	 *	BillingInfo billingInfo = billinginfo.getBillingInfo( orderId,  draft,  responseFields);
 	 * </code></pre></p>
-	 * @param draft If true, retrieve the draft version of the order billing information, which might include uncommitted changes.
+	 * @param draft If true, retrieve the draft version of the order, which might include uncommitted changes to the order or its components.
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.commerceruntime.payments.BillingInfo
 	 * @see com.mozu.api.contracts.commerceruntime.payments.BillingInfo
 	 */
@@ -77,7 +77,7 @@ public class BillingInfoResource {
 	 *	BillingInfo billingInfo = billinginfo.setBillingInfo( billingInfo,  orderId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param billingInfo The properties of the order billing information to update.
+	 * @param billingInfo Properties of the billing information entered for an order during checkout.
 	 * @return com.mozu.api.contracts.commerceruntime.payments.BillingInfo
 	 * @see com.mozu.api.contracts.commerceruntime.payments.BillingInfo
 	 * @see com.mozu.api.contracts.commerceruntime.payments.BillingInfo
@@ -94,10 +94,10 @@ public class BillingInfoResource {
 	 *	BillingInfo billingInfo = billinginfo.setBillingInfo( billingInfo,  orderId,  updateMode,  version,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields 
-	 * @param updateMode Specifies whether to set the billing information by updating the original order, updating the order in draft mode, or updating the order in draft mode and then committing the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param version 
-	 * @param billingInfo The properties of the order billing information to update.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
+	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
+	 * @param billingInfo Properties of the billing information entered for an order during checkout.
 	 * @return com.mozu.api.contracts.commerceruntime.payments.BillingInfo
 	 * @see com.mozu.api.contracts.commerceruntime.payments.BillingInfo
 	 * @see com.mozu.api.contracts.commerceruntime.payments.BillingInfo

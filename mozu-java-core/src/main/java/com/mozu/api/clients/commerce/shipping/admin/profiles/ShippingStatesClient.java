@@ -17,7 +17,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * 
+ * Use the ShippingStates sub-resource to manage the states your shipping profile supports. For example, you can specify one of your shipping profiles to only support Texas, Oklahoma, Arkansas, Louisiana, and New Mexico.Each shipping state is composed of a user-definied code and name.
  * </summary>
  */
 public class ShippingStatesClient {
@@ -30,7 +30,7 @@ public class ShippingStatesClient {
 	 * client.executeRequest();
 	 * ShippingStates shippingStates = client.Result();
 	 * </code></pre></p>
-	 * @param profileCode 
+	 * @param profileCode The unique, user-defined code of the profile with which the shipping state is associated.
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.shippingadmin.profile.ShippingStates>>
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingStates
@@ -55,9 +55,9 @@ public class ShippingStatesClient {
 	 * client.executeRequest();
 	 * ShippingStates shippingStates = client.Result();
 	 * </code></pre></p>
-	 * @param profilecode 
+	 * @param profilecode The unique, user-defined code of the profile with which the shipping state is associated.
 	 * @param dataViewMode DataViewMode
-	 * @param states 
+	 * @param states The updated details of the shipping states associated with the specified profilecode.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.shippingadmin.profile.ShippingStates>>
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingStates
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingStates

@@ -12,12 +12,18 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
+/**
+ *	Set whether you require users to be authenticated to preview content or view the live site.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ViewAuthorizations implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Specifies whether to enable secure communication across your entire site, using the SSL (Secure Socket Layer) security protocol. Every page on your site will display as an HTTPS page and contain an SSL certificate.
+	 */
 	protected  Boolean enforceSitewideSSL;
 
 	public Boolean getEnforceSitewideSSL() {
@@ -28,6 +34,9 @@ public class ViewAuthorizations implements Serializable
 		this.enforceSitewideSSL = enforceSitewideSSL;
 	}
 
+	/**
+	 * Require log in to view live storefront site.
+	 */
 	protected  Boolean requireAuthForLive;
 
 	public Boolean getRequireAuthForLive() {
@@ -38,6 +47,9 @@ public class ViewAuthorizations implements Serializable
 		this.requireAuthForLive = requireAuthForLive;
 	}
 
+	/**
+	 * Require log in to view pending storefront site.
+	 */
 	protected  Boolean requireAuthForPending;
 
 	public Boolean getRequireAuthForPending() {

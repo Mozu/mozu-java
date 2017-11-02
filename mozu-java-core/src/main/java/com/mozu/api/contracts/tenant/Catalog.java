@@ -13,13 +13,23 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Properties of a product catalog associated with a tenant.
+ *	Properties of an individual product catalog.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Catalog implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
+
+	protected  DateTime createDate;
+
+	public DateTime getCreateDate() {
+		return this.createDate;
+	}
+
+	public void setCreateDate(DateTime createDate) {
+		this.createDate = createDate;
+	}
 
 	protected  String defaultCurrencyCode;
 
@@ -41,6 +51,16 @@ public class Catalog implements Serializable
 		this.defaultLocaleCode = defaultLocaleCode;
 	}
 
+	protected  DateTime deleteDate;
+
+	public DateTime getDeleteDate() {
+		return this.deleteDate;
+	}
+
+	public void setDeleteDate(DateTime deleteDate) {
+		this.deleteDate = deleteDate;
+	}
+
 	protected  Integer id;
 
 	public Integer getId() {
@@ -49,6 +69,16 @@ public class Catalog implements Serializable
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	protected  Boolean isDeleted;
+
+	public Boolean getIsDeleted() {
+		return this.isDeleted;
+	}
+
+	public void setIsDeleted(Boolean isDeleted) {
+		this.isDeleted = isDeleted;
 	}
 
 	protected  Integer masterCatalogId;
@@ -71,6 +101,22 @@ public class Catalog implements Serializable
 		this.name = name;
 	}
 
+	/**
+	 * The current status of the object.This value is read only. Valid values for this field are: "Active", "Expired", and "Inactive".
+	 */
+	protected  String status;
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	/**
+	 * Unique identifier of the Mozu tenant.
+	 */
 	protected  Integer tenantId;
 
 	public Integer getTenantId() {
@@ -79,6 +125,16 @@ public class Catalog implements Serializable
 
 	public void setTenantId(Integer tenantId) {
 		this.tenantId = tenantId;
+	}
+
+	protected  DateTime updateDate;
+
+	public DateTime getUpdateDate() {
+		return this.updateDate;
+	}
+
+	public void setUpdateDate(DateTime updateDate) {
+		this.updateDate = updateDate;
 	}
 
 

@@ -17,7 +17,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * 
+ * This resource is not public.
  * </summary>
  */
 public class PackageClient {
@@ -30,7 +30,7 @@ public class PackageClient {
 	 * client.executeRequest();
 	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param applicationKey 
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}. 
 	 * @param fileName 
 	 * @return Mozu.Api.MozuClient <Stream>
 	 * @see Stream

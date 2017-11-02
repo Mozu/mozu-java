@@ -12,12 +12,18 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
+/**
+ *	The site identifier assigned to the customer set.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CustomerSetSite implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The unique code of the customer set.
+	 */
 	protected  String customerSetCode;
 
 	public String getCustomerSetCode() {
@@ -28,6 +34,9 @@ public class CustomerSetSite implements Serializable
 		this.customerSetCode = customerSetCode;
 	}
 
+	/**
+	 * The user supplied name that appears in . You can use this field for identification purposes.
+	 */
 	protected  String name;
 
 	public String getName() {
@@ -38,6 +47,9 @@ public class CustomerSetSite implements Serializable
 		this.name = name;
 	}
 
+	/**
+	 * Unique identifier for the site. This IDÂ is used at all levels of a store, catalog, and tenant to associate objects to a site.
+	 */
 	protected  Integer siteId;
 
 	public Integer getSiteId() {

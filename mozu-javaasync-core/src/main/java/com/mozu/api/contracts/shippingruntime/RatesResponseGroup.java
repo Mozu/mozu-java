@@ -15,6 +15,9 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.shippingruntime.RatesResponse;
 
+/**
+ *	Mozu.ShippingRuntime.Contracts.RatesResponseGroup ApiType DOCUMENT_HERE 
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class RatesResponseGroup implements Serializable
 {

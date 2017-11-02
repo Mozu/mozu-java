@@ -12,12 +12,18 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
+/**
+ *	Mozu.InstalledApplications.Contracts.ExtensionConfiguration ApiType DOCUMENT_HERE 
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ExtensionConfiguration implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The Arc.js application key.
+	 */
 	protected  String applicationKey;
 
 	public String getApplicationKey() {
@@ -28,6 +34,9 @@ public class ExtensionConfiguration implements Serializable
 		this.applicationKey = applicationKey;
 	}
 
+	/**
+	 * Custom application-level settings specified as key-value pairs.
+	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode configuration;
 
 	public com.fasterxml.jackson.databind.JsonNode getConfiguration() {

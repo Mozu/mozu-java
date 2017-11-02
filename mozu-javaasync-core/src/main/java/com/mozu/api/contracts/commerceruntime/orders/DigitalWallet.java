@@ -12,12 +12,18 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
+/**
+ *	Mozu.CommerceRuntime.Contracts.Orders.DigitalWallet ApiType DOCUMENT_HERE 
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DigitalWallet implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * ID of the cart being used to create the order.
+	 */
 	protected  String cartId;
 
 	public String getCartId() {
@@ -28,6 +34,9 @@ public class DigitalWallet implements Serializable
 		this.cartId = cartId;
 	}
 
+	/**
+	 * Digital wallet data.
+	 */
 	protected  String digitalWalletData;
 
 	public String getDigitalWalletData() {

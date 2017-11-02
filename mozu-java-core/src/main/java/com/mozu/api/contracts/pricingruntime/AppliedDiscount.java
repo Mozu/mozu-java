@@ -13,6 +13,9 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.pricingruntime.Discount;
 
+/**
+ *	Properties for the applied discounts to a cart, order, or product.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AppliedDiscount implements Serializable
 {
@@ -29,6 +32,9 @@ public class AppliedDiscount implements Serializable
 		this.couponCode = couponCode;
 	}
 
+	/**
+	 * The unique identifier of the coupon set for the applied discount.
+	 */
 	protected  Integer couponSetId;
 
 	public Integer getCouponSetId() {

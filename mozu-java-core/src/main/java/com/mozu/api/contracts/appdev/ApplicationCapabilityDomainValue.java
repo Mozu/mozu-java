@@ -12,6 +12,9 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
+/**
+ *	This property is not exposed in documentation.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ApplicationCapabilityDomainValue implements Serializable
 {

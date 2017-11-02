@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.platform.developer.DeveloperAdminUserAuthTicketResource;
 
 /** <summary>
- * Use this resource to manage authentication tickets for your developer account.
+ * Use the Authtickets resource to manage authentication tickets for your developer account.
  * </summary>
  */
 public class DeveloperAdminUserAuthTicketFactory

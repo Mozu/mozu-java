@@ -20,7 +20,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * 
+ * Use the Cart Extended Properties subresource to store an arbitrary number of cart extended properties such as tracking strings, marketing sources, affiliates, sales personnel/data, and so on, on a per cart basis. Each cart may have none, one, or more than one entry in the extended properties collection, and all values in the extended properties collection are represented as strings. When you create an order from a cart, all extended properties are retained from the cart and copied to the order. Refer to the subresource for more information about order extended properties.
  * </summary>
  */
 public class ExtendedPropertyResource {
@@ -78,7 +78,7 @@ public class ExtendedPropertyResource {
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	ExtendedProperty extendedProperty = extendedproperty.addExtendedProperties( extendedProperties);
 	 * </code></pre></p>
-	 * @param extendedProperties 
+	 * @param extendedProperties The details of the new extended property.
 	 * @return List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
@@ -99,7 +99,7 @@ public class ExtendedPropertyResource {
 	 *	CountDownLatch latch = extendedproperty.addExtendedProperties( extendedProperties, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param extendedProperties 
+	 * @param extendedProperties The details of the new extended property.
 	 * @return List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
@@ -118,8 +118,8 @@ public class ExtendedPropertyResource {
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	ExtendedProperty extendedProperty = extendedproperty.updateExtendedProperty( extendedProperty,  key);
 	 * </code></pre></p>
-	 * @param key 
-	 * @param extendedProperty 
+	 * @param key Key used for metadata defined for objects, including extensible attributes, custom attributes associated with a shipping provider, and search synonyms definitions. This content may be user-defined depending on the object and usage.
+	 * @param extendedProperty The details of the updated extended property.
 	 * @return com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
@@ -135,9 +135,9 @@ public class ExtendedPropertyResource {
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	CountDownLatch latch = extendedproperty.updateExtendedProperty( extendedProperty,  key, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param key 
+	 * @param key Key used for metadata defined for objects, including extensible attributes, custom attributes associated with a shipping provider, and search synonyms definitions. This content may be user-defined depending on the object and usage.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param extendedProperty 
+	 * @param extendedProperty The details of the updated extended property.
 	 * @return com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
@@ -153,10 +153,10 @@ public class ExtendedPropertyResource {
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	ExtendedProperty extendedProperty = extendedproperty.updateExtendedProperty( extendedProperty,  key,  upsert,  responseFields);
 	 * </code></pre></p>
-	 * @param key 
-	 * @param responseFields 
-	 * @param upsert 
-	 * @param extendedProperty 
+	 * @param key Key used for metadata defined for objects, including extensible attributes, custom attributes associated with a shipping provider, and search synonyms definitions. This content may be user-defined depending on the object and usage.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param upsert Any set of key value pairs to be stored in the extended properties of a cart.
+	 * @param extendedProperty The details of the updated extended property.
 	 * @return com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
@@ -176,11 +176,11 @@ public class ExtendedPropertyResource {
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	CountDownLatch latch = extendedproperty.updateExtendedProperty( extendedProperty,  key,  upsert,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param key 
-	 * @param responseFields 
-	 * @param upsert 
+	 * @param key Key used for metadata defined for objects, including extensible attributes, custom attributes associated with a shipping provider, and search synonyms definitions. This content may be user-defined depending on the object and usage.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param upsert Any set of key value pairs to be stored in the extended properties of a cart.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param extendedProperty 
+	 * @param extendedProperty The details of the updated extended property.
 	 * @return com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
@@ -199,7 +199,7 @@ public class ExtendedPropertyResource {
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	ExtendedProperty extendedProperty = extendedproperty.updateExtendedProperties( extendedProperties);
 	 * </code></pre></p>
-	 * @param extendedProperties 
+	 * @param extendedProperties The details of the updated extended properties.
 	 * @return List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
@@ -216,7 +216,7 @@ public class ExtendedPropertyResource {
 	 *	CountDownLatch latch = extendedproperty.updateExtendedProperties( extendedProperties, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param extendedProperties 
+	 * @param extendedProperties The details of the updated extended properties.
 	 * @return List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
@@ -232,8 +232,8 @@ public class ExtendedPropertyResource {
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	ExtendedProperty extendedProperty = extendedproperty.updateExtendedProperties( extendedProperties,  upsert);
 	 * </code></pre></p>
-	 * @param upsert 
-	 * @param extendedProperties 
+	 * @param upsert Any set of key value pairs to be stored in the extended properties of a cart.
+	 * @param extendedProperties The details of the updated extended properties.
 	 * @return List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
@@ -253,9 +253,9 @@ public class ExtendedPropertyResource {
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	CountDownLatch latch = extendedproperty.updateExtendedProperties( extendedProperties,  upsert, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param upsert 
+	 * @param upsert Any set of key value pairs to be stored in the extended properties of a cart.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param extendedProperties 
+	 * @param extendedProperties The details of the updated extended properties.
 	 * @return List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty

@@ -73,6 +73,9 @@ public class PaymentAction implements Serializable
 		this.currencyCode = currencyCode;
 	}
 
+	/**
+	 * An IDÂ provided by a third party external payment service to identify a transaction.
+	 */
 	protected  String externalTransactionId;
 
 	public String getExternalTransactionId() {
@@ -113,6 +116,9 @@ public class PaymentAction implements Serializable
 		this.returnUrl = returnUrl;
 	}
 
+	/**
+	 * AÂ general field for data to be communicated from an external payment service. 
+	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {

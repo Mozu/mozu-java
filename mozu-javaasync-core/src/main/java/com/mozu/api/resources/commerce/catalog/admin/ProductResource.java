@@ -79,14 +79,14 @@ public class ProductResource {
 	 *	Product product = new Product();
 	 *	ProductCollection productCollection = product.getProducts( startIndex,  pageSize,  sortBy,  filter,  q,  qLimit,  noCount,  responseFields);
 	 * </code></pre></p>
-	 * @param filter 
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
 	 * @param noCount If true, the operation does not return the TotalCount number of results.
-	 * @param pageSize 
-	 * @param q A list of product search terms to use in the query when searching across product code and product name. Separate multiple search terms with a space character.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param q A list of order search terms (not phrases) to use in the query when searching across order number and the name or email of the billing contact. When entering, separate multiple search terms with a space character.
 	 * @param qLimit The maximum number of search results to return in the response. You can limit any range between 1-100.
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return com.mozu.api.contracts.productadmin.ProductCollection
 	 * @see com.mozu.api.contracts.productadmin.ProductCollection
 	 */
@@ -105,14 +105,14 @@ public class ProductResource {
 	 *	Product product = new Product();
 	 *	CountDownLatch latch = product.getProducts( startIndex,  pageSize,  sortBy,  filter,  q,  qLimit,  noCount,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param filter 
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
 	 * @param noCount If true, the operation does not return the TotalCount number of results.
-	 * @param pageSize 
-	 * @param q A list of product search terms to use in the query when searching across product code and product name. Separate multiple search terms with a space character.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param q A list of order search terms (not phrases) to use in the query when searching across order number and the name or email of the billing contact. When entering, separate multiple search terms with a space character.
 	 * @param qLimit The maximum number of search results to return in the response. You can limit any range between 1-100.
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.ProductCollection
 	 * @see com.mozu.api.contracts.productadmin.ProductCollection
@@ -131,7 +131,7 @@ public class ProductResource {
 	 *	Product product = new Product();
 	 *	ProductInCatalogInfo productInCatalogInfo = product.getProductInCatalogs( productCode);
 	 * </code></pre></p>
-	 * @param productCode 
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @return List<com.mozu.api.contracts.productadmin.ProductInCatalogInfo>
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 */
@@ -150,7 +150,7 @@ public class ProductResource {
 	 *	Product product = new Product();
 	 *	CountDownLatch latch = product.getProductInCatalogs( productCode, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param productCode 
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return List<com.mozu.api.contracts.productadmin.ProductInCatalogInfo>
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
@@ -169,8 +169,8 @@ public class ProductResource {
 	 *	Product product = new Product();
 	 *	ProductInCatalogInfo productInCatalogInfo = product.getProductInCatalog( productCode,  catalogId);
 	 * </code></pre></p>
-	 * @param catalogId 
-	 * @param productCode 
+	 * @param catalogId Unique identifier for a catalog.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @return com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 */
@@ -185,8 +185,8 @@ public class ProductResource {
 	 *	Product product = new Product();
 	 *	CountDownLatch latch = product.getProductInCatalog( productCode,  catalogId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param catalogId 
-	 * @param productCode 
+	 * @param catalogId Unique identifier for a catalog.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
@@ -202,9 +202,9 @@ public class ProductResource {
 	 *	Product product = new Product();
 	 *	ProductInCatalogInfo productInCatalogInfo = product.getProductInCatalog( productCode,  catalogId,  responseFields);
 	 * </code></pre></p>
-	 * @param catalogId 
-	 * @param productCode 
-	 * @param responseFields 
+	 * @param catalogId Unique identifier for a catalog.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 */
@@ -223,9 +223,9 @@ public class ProductResource {
 	 *	Product product = new Product();
 	 *	CountDownLatch latch = product.getProductInCatalog( productCode,  catalogId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param catalogId 
-	 * @param productCode 
-	 * @param responseFields 
+	 * @param catalogId Unique identifier for a catalog.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
@@ -244,7 +244,7 @@ public class ProductResource {
 	 *	Product product = new Product();
 	 *	Product product = product.getProduct( productCode);
 	 * </code></pre></p>
-	 * @param productCode 
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @return com.mozu.api.contracts.productadmin.Product
 	 * @see com.mozu.api.contracts.productadmin.Product
 	 */
@@ -259,7 +259,7 @@ public class ProductResource {
 	 *	Product product = new Product();
 	 *	CountDownLatch latch = product.getProduct( productCode, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param productCode 
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.Product
 	 * @see com.mozu.api.contracts.productadmin.Product
@@ -275,8 +275,8 @@ public class ProductResource {
 	 *	Product product = new Product();
 	 *	Product product = product.getProduct( productCode,  responseFields);
 	 * </code></pre></p>
-	 * @param productCode 
-	 * @param responseFields 
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.productadmin.Product
 	 * @see com.mozu.api.contracts.productadmin.Product
 	 */
@@ -295,8 +295,8 @@ public class ProductResource {
 	 *	Product product = new Product();
 	 *	CountDownLatch latch = product.getProduct( productCode,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param productCode 
-	 * @param responseFields 
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.Product
 	 * @see com.mozu.api.contracts.productadmin.Product
@@ -315,7 +315,7 @@ public class ProductResource {
 	 *	Product product = new Product();
 	 *	Product product = product.addProduct( product);
 	 * </code></pre></p>
-	 * @param product Properties of the new product. You must supply values for the product code, product name, and price.
+	 * @param product The properties of a product, referenced and used by carts, orders, wish lists, and returns.
 	 * @return com.mozu.api.contracts.productadmin.Product
 	 * @see com.mozu.api.contracts.productadmin.Product
 	 * @see com.mozu.api.contracts.productadmin.Product
@@ -332,7 +332,7 @@ public class ProductResource {
 	 *	CountDownLatch latch = product.addProduct( product, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param product Properties of the new product. You must supply values for the product code, product name, and price.
+	 * @param product The properties of a product, referenced and used by carts, orders, wish lists, and returns.
 	 * @return com.mozu.api.contracts.productadmin.Product
 	 * @see com.mozu.api.contracts.productadmin.Product
 	 * @see com.mozu.api.contracts.productadmin.Product
@@ -348,8 +348,8 @@ public class ProductResource {
 	 *	Product product = new Product();
 	 *	Product product = product.addProduct( product,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param product Properties of the new product. You must supply values for the product code, product name, and price.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param product The properties of a product, referenced and used by carts, orders, wish lists, and returns.
 	 * @return com.mozu.api.contracts.productadmin.Product
 	 * @see com.mozu.api.contracts.productadmin.Product
 	 * @see com.mozu.api.contracts.productadmin.Product
@@ -369,9 +369,9 @@ public class ProductResource {
 	 *	Product product = new Product();
 	 *	CountDownLatch latch = product.addProduct( product,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param product Properties of the new product. You must supply values for the product code, product name, and price.
+	 * @param product The properties of a product, referenced and used by carts, orders, wish lists, and returns.
 	 * @return com.mozu.api.contracts.productadmin.Product
 	 * @see com.mozu.api.contracts.productadmin.Product
 	 * @see com.mozu.api.contracts.productadmin.Product
@@ -390,8 +390,8 @@ public class ProductResource {
 	 *	Product product = new Product();
 	 *	ProductInCatalogInfo productInCatalogInfo = product.addProductInCatalog( productInCatalogInfoIn,  productCode);
 	 * </code></pre></p>
-	 * @param productCode 
-	 * @param productInCatalogInfoIn Properties of the product to define for the specific catalog association.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param productInCatalogInfoIn Properties of a product associated with a specific catalog.
 	 * @return com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
@@ -407,9 +407,9 @@ public class ProductResource {
 	 *	Product product = new Product();
 	 *	CountDownLatch latch = product.addProductInCatalog( productInCatalogInfoIn,  productCode, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param productCode 
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param productInCatalogInfoIn Properties of the product to define for the specific catalog association.
+	 * @param productInCatalogInfoIn Properties of a product associated with a specific catalog.
 	 * @return com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
@@ -425,9 +425,9 @@ public class ProductResource {
 	 *	Product product = new Product();
 	 *	ProductInCatalogInfo productInCatalogInfo = product.addProductInCatalog( productInCatalogInfoIn,  productCode,  responseFields);
 	 * </code></pre></p>
-	 * @param productCode 
-	 * @param responseFields 
-	 * @param productInCatalogInfoIn Properties of the product to define for the specific catalog association.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param productInCatalogInfoIn Properties of a product associated with a specific catalog.
 	 * @return com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
@@ -447,10 +447,10 @@ public class ProductResource {
 	 *	Product product = new Product();
 	 *	CountDownLatch latch = product.addProductInCatalog( productInCatalogInfoIn,  productCode,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param productCode 
-	 * @param responseFields 
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param productInCatalogInfoIn Properties of the product to define for the specific catalog association.
+	 * @param productInCatalogInfoIn Properties of a product associated with a specific catalog.
 	 * @return com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
@@ -469,7 +469,7 @@ public class ProductResource {
 	 *	Product product = new Product();
 	 *	product.renameProductCodes( productCodeRenames);
 	 * </code></pre></p>
-	 * @param productCodeRenames 
+	 * @param productCodeRenames Properties for a product code current and changed content.
 	 * @return 
 	 * @see com.mozu.api.contracts.productadmin.ProductCodeRename
 	 */
@@ -488,8 +488,8 @@ public class ProductResource {
 	 *	Product product = new Product();
 	 *	ProductInCatalogInfo productInCatalogInfo = product.updateProductInCatalogs( productInCatalogsIn,  productCode);
 	 * </code></pre></p>
-	 * @param productCode 
-	 * @param productInCatalogsIn Properties of the product to update for each associated catalog.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param productInCatalogsIn Properties of a product associated with a specific catalog.
 	 * @return List<com.mozu.api.contracts.productadmin.ProductInCatalogInfo>
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
@@ -509,9 +509,9 @@ public class ProductResource {
 	 *	Product product = new Product();
 	 *	CountDownLatch latch = product.updateProductInCatalogs( productInCatalogsIn,  productCode, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param productCode 
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param productInCatalogsIn Properties of the product to update for each associated catalog.
+	 * @param productInCatalogsIn Properties of a product associated with a specific catalog.
 	 * @return List<com.mozu.api.contracts.productadmin.ProductInCatalogInfo>
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
@@ -530,9 +530,9 @@ public class ProductResource {
 	 *	Product product = new Product();
 	 *	ProductInCatalogInfo productInCatalogInfo = product.updateProductInCatalog( productInCatalogInfoIn,  productCode,  catalogId);
 	 * </code></pre></p>
-	 * @param catalogId 
-	 * @param productCode 
-	 * @param productInCatalogInfoIn Properties of the product associated with the catalog specified in the request.
+	 * @param catalogId Unique identifier for a catalog.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param productInCatalogInfoIn Properties of a product associated with a specific catalog.
 	 * @return com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
@@ -548,10 +548,10 @@ public class ProductResource {
 	 *	Product product = new Product();
 	 *	CountDownLatch latch = product.updateProductInCatalog( productInCatalogInfoIn,  productCode,  catalogId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param catalogId 
-	 * @param productCode 
+	 * @param catalogId Unique identifier for a catalog.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param productInCatalogInfoIn Properties of the product associated with the catalog specified in the request.
+	 * @param productInCatalogInfoIn Properties of a product associated with a specific catalog.
 	 * @return com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
@@ -567,10 +567,10 @@ public class ProductResource {
 	 *	Product product = new Product();
 	 *	ProductInCatalogInfo productInCatalogInfo = product.updateProductInCatalog( productInCatalogInfoIn,  productCode,  catalogId,  responseFields);
 	 * </code></pre></p>
-	 * @param catalogId 
-	 * @param productCode 
-	 * @param responseFields 
-	 * @param productInCatalogInfoIn Properties of the product associated with the catalog specified in the request.
+	 * @param catalogId Unique identifier for a catalog.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param productInCatalogInfoIn Properties of a product associated with a specific catalog.
 	 * @return com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
@@ -590,11 +590,11 @@ public class ProductResource {
 	 *	Product product = new Product();
 	 *	CountDownLatch latch = product.updateProductInCatalog( productInCatalogInfoIn,  productCode,  catalogId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param catalogId 
-	 * @param productCode 
-	 * @param responseFields 
+	 * @param catalogId Unique identifier for a catalog.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param productInCatalogInfoIn Properties of the product associated with the catalog specified in the request.
+	 * @param productInCatalogInfoIn Properties of a product associated with a specific catalog.
 	 * @return com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
@@ -613,8 +613,8 @@ public class ProductResource {
 	 *	Product product = new Product();
 	 *	Product product = product.updateProduct( product,  productCode);
 	 * </code></pre></p>
-	 * @param productCode 
-	 * @param product Properties of the product definition to update in the master catalog.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param product The properties of a product, referenced and used by carts, orders, wish lists, and returns.
 	 * @return com.mozu.api.contracts.productadmin.Product
 	 * @see com.mozu.api.contracts.productadmin.Product
 	 * @see com.mozu.api.contracts.productadmin.Product
@@ -630,9 +630,9 @@ public class ProductResource {
 	 *	Product product = new Product();
 	 *	CountDownLatch latch = product.updateProduct( product,  productCode, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param productCode 
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param product Properties of the product definition to update in the master catalog.
+	 * @param product The properties of a product, referenced and used by carts, orders, wish lists, and returns.
 	 * @return com.mozu.api.contracts.productadmin.Product
 	 * @see com.mozu.api.contracts.productadmin.Product
 	 * @see com.mozu.api.contracts.productadmin.Product
@@ -648,9 +648,9 @@ public class ProductResource {
 	 *	Product product = new Product();
 	 *	Product product = product.updateProduct( product,  productCode,  responseFields);
 	 * </code></pre></p>
-	 * @param productCode 
-	 * @param responseFields 
-	 * @param product Properties of the product definition to update in the master catalog.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param product The properties of a product, referenced and used by carts, orders, wish lists, and returns.
 	 * @return com.mozu.api.contracts.productadmin.Product
 	 * @see com.mozu.api.contracts.productadmin.Product
 	 * @see com.mozu.api.contracts.productadmin.Product
@@ -670,10 +670,10 @@ public class ProductResource {
 	 *	Product product = new Product();
 	 *	CountDownLatch latch = product.updateProduct( product,  productCode,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param productCode 
-	 * @param responseFields 
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param product Properties of the product definition to update in the master catalog.
+	 * @param product The properties of a product, referenced and used by carts, orders, wish lists, and returns.
 	 * @return com.mozu.api.contracts.productadmin.Product
 	 * @see com.mozu.api.contracts.productadmin.Product
 	 * @see com.mozu.api.contracts.productadmin.Product
@@ -692,7 +692,7 @@ public class ProductResource {
 	 *	Product product = new Product();
 	 *	product.deleteProduct( productCode);
 	 * </code></pre></p>
-	 * @param productCode 
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @return 
 	 */
 	public void deleteProduct(String productCode) throws Exception
@@ -710,8 +710,8 @@ public class ProductResource {
 	 *	Product product = new Product();
 	 *	product.deleteProductInCatalog( productCode,  catalogId);
 	 * </code></pre></p>
-	 * @param catalogId 
-	 * @param productCode 
+	 * @param catalogId Unique identifier for a catalog.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @return 
 	 */
 	public void deleteProductInCatalog(String productCode, Integer catalogId) throws Exception

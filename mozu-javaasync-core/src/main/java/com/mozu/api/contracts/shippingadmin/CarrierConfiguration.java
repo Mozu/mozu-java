@@ -26,6 +26,9 @@ public class CarrierConfiguration implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Specifies whether credentials for the carrier are set.
+	 */
 	protected  Boolean areCredentialsSet;
 
 	public Boolean getAreCredentialsSet() {
@@ -36,6 +39,9 @@ public class CarrierConfiguration implements Serializable
 		this.areCredentialsSet = areCredentialsSet;
 	}
 
+	/**
+	 * Indicates if a capability, function tied to an Arc.js action, application, or price list is enabled for the tenant/site. If true, the capability/application/function/price list is enabled for the tenant. System-supplied and read-only with the exception of functions tied to an Arc.js action and price lists.
+	 */
 	protected  Boolean enabled;
 
 	public Boolean getEnabled() {
@@ -46,6 +52,9 @@ public class CarrierConfiguration implements Serializable
 		this.enabled = enabled;
 	}
 
+	/**
+	 * Specifies whether the carrier is enabled for creating RMA labels.
+	 */
 	protected  Boolean enabledForReturns;
 
 	public Boolean getEnabledForReturns() {
@@ -76,6 +85,9 @@ public class CarrierConfiguration implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
+	/**
+	 * A list of any custom table rates for the carrier.
+	 */
 	protected List<CustomTableRate> customTableRates;
 	public List<CustomTableRate> getCustomTableRates() {
 		return this.customTableRates;

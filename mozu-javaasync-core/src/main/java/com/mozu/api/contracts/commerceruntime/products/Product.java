@@ -29,6 +29,9 @@ public class Product implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Allocation ID associated with this product on this order.
+	 */
 	protected  DateTime allocationExpiration;
 
 	public DateTime getAllocationExpiration() {
@@ -39,6 +42,9 @@ public class Product implements Serializable
 		this.allocationExpiration = allocationExpiration;
 	}
 
+	/**
+	 * Allocation ID associated with this product on this order.
+	 */
 	protected  Integer allocationId;
 
 	public Integer getAllocationId() {
@@ -60,7 +66,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * If true, the system cannot apply any discounts to this product. Discount restrictions are defined at the master catalog level. Client administrators cannot override discount restrictions at the catalog level, but they can limit the restriction to a defined time interval.
+	 * Indicates if the discount is restricted. If true, the system cannot apply any discounts to this product. Discount restrictions are defined at the master catalog level. Client administrators cannot override discount restrictions at the catalog level, but they can limit the restriction to a defined time interval.For price list entries, specifies whether discounts are restricted for the specific entry if  is set to .Refer to [Discount Restriction](../../../guides/catalog/price-lists.htm#discountrestriction) in the Price Lists guides topic for more information.
 	 */
 	protected  Boolean discountsRestricted;
 
@@ -98,6 +104,9 @@ public class Product implements Serializable
 		this.discountsRestrictedStartDate = discountsRestrictedStartDate;
 	}
 
+	/**
+	 * Fulfillment status of the product.
+	 */
 	protected  String fulfillmentStatus;
 
 	public String getFulfillmentStatus() {
@@ -109,7 +118,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * List of fulfillment types that the product supports.
+	 * List of supported types of fulfillment for the product or variation. The types include direct ship, in-store pickup, or both.
 	 */
 	protected List<String> fulfillmentTypesSupported;
 	public List<String> getFulfillmentTypesSupported() {
@@ -120,7 +129,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * The type of goods of a product. For example: physical, digital, or digital credit.
+	 * The type of goods in a bundled product. A bundled product is composed of products associated to sell together. Possible values include â€œPhysicalâ€ and â€œDigitalCreditâ€. This comes from the `productType `of the product. Products are defaulted to a Physical `goodsType`. Gift cards have a `goodsType `of DigitalCredit.
 	 */
 	protected  String goodsType;
 
@@ -143,7 +152,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * The URL of the image file associated with a product on a storefront.
+	 * The URL link for the image file associated with a product or category.
 	 */
 	protected  String imageUrl;
 
@@ -156,7 +165,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * If true, this product cannot ship in a package with other items and must ship in a package by itself.
+	 * Indicates if the product must be shipped alone in a container. This is used for products and products within a bundle. If true, this product cannot be shipped in a package with other items and must ship in a package by itself.
 	 */
 	protected  Boolean isPackagedStandAlone;
 
@@ -222,7 +231,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * The unique identifier of the product reservation created for this item in the cart or order.
+	 * Unique identifier of the product reservation associated with the component product in a product bundle or item in a cart/order. System-supplied and read only.
 	 */
 	protected  Integer productReservationId;
 
@@ -258,7 +267,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * The universal product code defined for the product.
+	 * The universal product code (UPC) is the barcode defined for the product. The UPC is unique across all sales channels. 
 	 */
 	protected  String upc;
 
@@ -281,7 +290,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * Collection of component products that make up a single product bundle with its own product code, added to a cart or order.
+	 * Properties of a collection of component products that make up a single product bundle with its own product code. Tenants can define product bundles for any product type that supports the Bundle product usage.
 	 */
 	protected List<BundledProduct> bundledProducts;
 	public List<BundledProduct> getBundledProducts() {

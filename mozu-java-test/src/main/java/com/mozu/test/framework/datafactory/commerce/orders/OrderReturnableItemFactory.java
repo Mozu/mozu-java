@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.orders.OrderReturnableItemResource;
 
 /** <summary>
- * 
+ * Use this subresource to view which order items are eligible for return.
  * </summary>
  */
 public class OrderReturnableItemFactory

@@ -58,7 +58,7 @@ public class Pickup implements Serializable
 	}
 
 	/**
-	 * The location code that represents the location where the shopper will fulfill this pickup.
+	 * The code that identifies the location used to fulfill the cart/cart item or order/order item. This code can include physical store locations for in-store pickup, warehouse locations providing the products for shipment, or the location for the digital file(s).
 	 */
 	protected  String fulfillmentLocationCode;
 
@@ -101,7 +101,7 @@ public class Pickup implements Serializable
 	}
 
 	/**
-	 * List of change messages associated with the pickup.
+	 * Collection (list or paged) of change messages logged for each modification made by a shopper to their carts, wishlists, orders, package, payment, pickup, and returns. Change log messages are system-supplied based on shopper actions and read only.
 	 */
 	protected List<ChangeMessage> changeMessages;
 	public List<ChangeMessage> getChangeMessages() {

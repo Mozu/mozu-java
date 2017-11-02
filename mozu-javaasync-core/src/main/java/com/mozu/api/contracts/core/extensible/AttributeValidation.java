@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Validates the attribute configured for the customer in the storefront against the attribute configured in Mozu admin.
+ *	Validates the attribute configured for the customer in the storefront against the attribute configured in .
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AttributeValidation implements Serializable

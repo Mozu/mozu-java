@@ -20,7 +20,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * 
+ * Manage Secure App Settings. Expose via arc.js so that arc apps can securely access secrets. Third-party extensions can also access their data. Secured via AppKey.AppId
  * </summary>
  */
 public class SecureAppDataResource {
@@ -43,7 +43,7 @@ public class SecureAppDataResource {
 	 *	JObject json = secureappdata.getDBValue( appKeyId,  dbEntryQuery);
 	 * </code></pre></p>
 	 * @param appKeyId 
-	 * @param dbEntryQuery 
+	 * @param dbEntryQuery The database entry string to create.
 	 * @return JObject
 	 * @see JObject
 	 */
@@ -59,7 +59,7 @@ public class SecureAppDataResource {
 	 *	CountDownLatch latch = secureappdata.getDBValue( appKeyId,  dbEntryQuery, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param appKeyId 
-	 * @param dbEntryQuery 
+	 * @param dbEntryQuery The database entry string to create.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return JObject
 	 * @see JObject
@@ -76,8 +76,8 @@ public class SecureAppDataResource {
 	 *	JObject json = secureappdata.getDBValue( appKeyId,  dbEntryQuery,  responseFields);
 	 * </code></pre></p>
 	 * @param appKeyId 
-	 * @param dbEntryQuery 
-	 * @param responseFields 
+	 * @param dbEntryQuery The database entry string to create.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return JObject
 	 * @see JObject
 	 */
@@ -97,8 +97,8 @@ public class SecureAppDataResource {
 	 *	CountDownLatch latch = secureappdata.getDBValue( appKeyId,  dbEntryQuery,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param appKeyId 
-	 * @param dbEntryQuery 
-	 * @param responseFields 
+	 * @param dbEntryQuery The database entry string to create.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return JObject
 	 * @see JObject
@@ -118,8 +118,8 @@ public class SecureAppDataResource {
 	 *	secureappdata.createDBValue( value,  appKeyId,  dbEntryQuery);
 	 * </code></pre></p>
 	 * @param appKeyId 
-	 * @param dbEntryQuery 
-	 * @param value 
+	 * @param dbEntryQuery The database entry string to create.
+	 * @param value The value string to create.
 	 * @return 
 	 * @see JObject
 	 */
@@ -139,8 +139,8 @@ public class SecureAppDataResource {
 	 *	secureappdata.updateDBValue( value,  appKeyId,  dbEntryQuery);
 	 * </code></pre></p>
 	 * @param appKeyId 
-	 * @param dbEntryQuery 
-	 * @param value 
+	 * @param dbEntryQuery The database entry string to create.
+	 * @param value The value string to create.
 	 * @return 
 	 * @see JObject
 	 */
@@ -160,7 +160,7 @@ public class SecureAppDataResource {
 	 *	secureappdata.deleteDBValue( appKeyId,  dbEntryQuery);
 	 * </code></pre></p>
 	 * @param appKeyId 
-	 * @param dbEntryQuery 
+	 * @param dbEntryQuery The database entry string to create.
 	 * @return 
 	 */
 	public void deleteDBValue(String appKeyId, String dbEntryQuery) throws Exception

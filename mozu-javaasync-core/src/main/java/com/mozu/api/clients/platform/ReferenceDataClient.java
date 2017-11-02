@@ -19,7 +19,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * The Reference resource retrieves collections of standards the Mozu system currently supports. This includes content locales, top-level domains, units of measure, countries, currencies, time zones, and shipping or billing address schemas.
+ * The Reference resource retrieves collections of standards the  system currently supports. This includes content locales, top-level domains, units of measure, countries, currencies, time zones, and shipping or billing address schemas.
  * </summary>
  */
 public class ReferenceDataClient {
@@ -49,7 +49,7 @@ public class ReferenceDataClient {
 	 * AddressSchema addressSchema = client.Result();
 	 * </code></pre></p>
 	 * @param countryCode The 2-letter country code used to retrieve a specified address schema.
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.reference.AddressSchema>
 	 * @see com.mozu.api.contracts.reference.AddressSchema
 	 */
@@ -89,7 +89,7 @@ public class ReferenceDataClient {
 	 * client.executeRequest();
 	 * AddressSchemaCollection addressSchemaCollection = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.reference.AddressSchemaCollection>
 	 * @see com.mozu.api.contracts.reference.AddressSchemaCollection
 	 */
@@ -131,7 +131,7 @@ public class ReferenceDataClient {
 	 * Behavior behavior = client.Result();
 	 * </code></pre></p>
 	 * @param behaviorId Unique identifier of the behavior.
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.core.Behavior>
 	 * @see com.mozu.api.contracts.core.Behavior
 	 */
@@ -155,7 +155,7 @@ public class ReferenceDataClient {
 	 * client.executeRequest();
 	 * BehaviorCategory behaviorCategory = client.Result();
 	 * </code></pre></p>
-	 * @param categoryId Unique identifier of the behavior category.
+	 * @param categoryId Unique identifier of the category to modify.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.core.BehaviorCategory>
 	 * @see com.mozu.api.contracts.core.BehaviorCategory
 	 */
@@ -172,8 +172,8 @@ public class ReferenceDataClient {
 	 * client.executeRequest();
 	 * BehaviorCategory behaviorCategory = client.Result();
 	 * </code></pre></p>
-	 * @param categoryId Unique identifier of the behavior category.
-	 * @param responseFields 
+	 * @param categoryId Unique identifier of the category to modify.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.core.BehaviorCategory>
 	 * @see com.mozu.api.contracts.core.BehaviorCategory
 	 */
@@ -213,7 +213,7 @@ public class ReferenceDataClient {
 	 * client.executeRequest();
 	 * BehaviorCategoryCollection behaviorCategoryCollection = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.core.BehaviorCategoryCollection>
 	 * @see com.mozu.api.contracts.core.BehaviorCategoryCollection
 	 */
@@ -253,7 +253,7 @@ public class ReferenceDataClient {
 	 * client.executeRequest();
 	 * BehaviorCollection behaviorCollection = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param userType The user type associated with the behaviors to retrieve.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.core.BehaviorCollection>
 	 * @see com.mozu.api.contracts.core.BehaviorCollection
@@ -294,7 +294,7 @@ public class ReferenceDataClient {
 	 * client.executeRequest();
 	 * ContentLocaleCollection contentLocaleCollection = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.reference.ContentLocaleCollection>
 	 * @see com.mozu.api.contracts.reference.ContentLocaleCollection
 	 */
@@ -334,7 +334,7 @@ public class ReferenceDataClient {
 	 * client.executeRequest();
 	 * CountryCollection countryCollection = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.reference.CountryCollection>
 	 * @see com.mozu.api.contracts.reference.CountryCollection
 	 */
@@ -374,7 +374,7 @@ public class ReferenceDataClient {
 	 * client.executeRequest();
 	 * CountryWithStatesCollection countryWithStatesCollection = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.reference.CountryWithStatesCollection>
 	 * @see com.mozu.api.contracts.reference.CountryWithStatesCollection
 	 */
@@ -414,7 +414,7 @@ public class ReferenceDataClient {
 	 * client.executeRequest();
 	 * CurrencyCollection currencyCollection = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.reference.CurrencyCollection>
 	 * @see com.mozu.api.contracts.reference.CurrencyCollection
 	 */
@@ -454,7 +454,7 @@ public class ReferenceDataClient {
 	 * client.executeRequest();
 	 * TimeZoneCollection timeZoneCollection = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.reference.TimeZoneCollection>
 	 * @see com.mozu.api.contracts.reference.TimeZoneCollection
 	 */
@@ -494,7 +494,7 @@ public class ReferenceDataClient {
 	 * client.executeRequest();
 	 * TopLevelDomainCollection topLevelDomainCollection = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.reference.TopLevelDomainCollection>
 	 * @see com.mozu.api.contracts.reference.TopLevelDomainCollection
 	 */
@@ -534,8 +534,8 @@ public class ReferenceDataClient {
 	 * client.executeRequest();
 	 * UnitOfMeasureCollection unitOfMeasureCollection = client.Result();
 	 * </code></pre></p>
-	 * @param filter 
-	 * @param responseFields 
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.reference.UnitOfMeasureCollection>
 	 * @see com.mozu.api.contracts.reference.UnitOfMeasureCollection
 	 */

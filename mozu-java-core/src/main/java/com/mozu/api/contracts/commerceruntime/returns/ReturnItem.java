@@ -27,6 +27,9 @@ public class ReturnItem implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Specifies whether to exclude product extras when you return a product or bundle. For example, assume the following order items:* Product A (bundle item)* Product B (bundle item)* Product C (bundle item)* Product D (extra on bundle)* Product F (extra on product)If this property is , Products D or F are included when the bundle or Product E are added to a return. If this property is , Products D or F are not included unless added individually.
+	 */
 	protected  Boolean excludeProductExtras;
 
 	public Boolean getExcludeProductExtras() {
@@ -38,7 +41,7 @@ public class ReturnItem implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the return whose items you want to get.
+	 * Unique identifier of the source property, such as a catalog, discount, order, or email template.For a product field it will be the name of the field.For a category ID, must be a positive integer not greater than 2000000. By default,  auto-generates a category ID when categories are created. If you want to specify an ID during creation (which preserves category link relationships when migrating tenant data from one sandbox to another), you must also include the  query string in the endpoint. For example, . Then, use the  property to specify the desired category ID.For a product attribute it will be the Attribute FQN.For a document, the ID must be specified as a 32 character, case-insensitive, alphanumeric string. You can specify the ID as 32 sequential characters or as groups separated by dashes in the format 8-4-4-4-12. For example, or.For email templates, the ID must be one of the following values:			
 	 */
 	protected  String id;
 
@@ -60,6 +63,9 @@ public class ReturnItem implements Serializable
 		this.orderItemId = orderItemId;
 	}
 
+	/**
+	 * This is the Option attribute FQN for the item being returned .. typically only when the return item is a product bundle item.
+	 */
 	protected  String orderItemOptionAttributeFQN;
 
 	public String getOrderItemOptionAttributeFQN() {
@@ -70,6 +76,9 @@ public class ReturnItem implements Serializable
 		this.orderItemOptionAttributeFQN = orderItemOptionAttributeFQN;
 	}
 
+	/**
+	 * The OrderLineId that this ReturnItem is associated with. If order item is present, the orderLineId should be present also.
+	 */
 	protected  Integer orderLineId;
 
 	public Integer getOrderLineId() {
@@ -110,6 +119,9 @@ public class ReturnItem implements Serializable
 		this.quantityReceived = quantityReceived;
 	}
 
+	/**
+	 * The quantity of the given line item that will be replaced.
+	 */
 	protected  Integer quantityReplaced;
 
 	public Integer getQuantityReplaced() {
@@ -140,6 +152,9 @@ public class ReturnItem implements Serializable
 		this.quantityShipped = quantityShipped;
 	}
 
+	/**
+	 * The status that indicates whether the shopper has returned the item. The accepted values are , , or .
+	 */
 	protected  String receiveStatus;
 
 	public String getReceiveStatus() {
@@ -150,6 +165,9 @@ public class ReturnItem implements Serializable
 		this.receiveStatus = receiveStatus;
 	}
 
+	/**
+	 * The amount of the refund.
+	 */
 	protected  Double refundAmount;
 
 	public Double getRefundAmount() {
@@ -160,6 +178,9 @@ public class ReturnItem implements Serializable
 		this.refundAmount = refundAmount;
 	}
 
+	/**
+	 * The status of the refund for the item. The accepted values are  if the shopper only wants a replacement or  if either a partial or full refund is applied to the item.
+	 */
 	protected  String refundStatus;
 
 	public String getRefundStatus() {
@@ -170,6 +191,9 @@ public class ReturnItem implements Serializable
 		this.refundStatus = refundStatus;
 	}
 
+	/**
+	 * The status of the replacement order for the item. The accepted values are  if there is no replacement order or  if a replacement order exits.
+	 */
 	protected  String replaceStatus;
 
 	public String getReplaceStatus() {
@@ -180,6 +204,9 @@ public class ReturnItem implements Serializable
 		this.replaceStatus = replaceStatus;
 	}
 
+	/**
+	 * A Boolean that indicates whether the item requires the shopper to return the item.
+	 */
 	protected  Boolean returnNotRequired;
 
 	public Boolean getReturnNotRequired() {
@@ -190,6 +217,9 @@ public class ReturnItem implements Serializable
 		this.returnNotRequired = returnNotRequired;
 	}
 
+	/**
+	 * The type of the return for the item. Either  or .
+	 */
 	protected  String returnType;
 
 	public String getReturnType() {
@@ -220,6 +250,9 @@ public class ReturnItem implements Serializable
 		this.shippingLossTaxAmount = shippingLossTaxAmount;
 	}
 
+	/**
+	 * The total cost without shipping and handling applied.
+	 */
 	protected  Double totalWithoutWeightedShippingAndHandling;
 
 	public Double getTotalWithoutWeightedShippingAndHandling() {
@@ -230,6 +263,9 @@ public class ReturnItem implements Serializable
 		this.totalWithoutWeightedShippingAndHandling = totalWithoutWeightedShippingAndHandling;
 	}
 
+	/**
+	 * The total cost with shipping and handling applied.
+	 */
 	protected  Double totalWithWeightedShippingAndHandling;
 
 	public Double getTotalWithWeightedShippingAndHandling() {
@@ -241,7 +277,7 @@ public class ReturnItem implements Serializable
 	}
 
 	/**
-	 * Properties of a collection of component products that make up a single returned product bundle with its own product code.
+	 * Properties of a collection of component products that make up a single product bundle with its own product code. Tenants can define product bundles for any product type that supports the Bundle product usage.
 	 */
 	protected List<ReturnBundle> bundledProducts;
 	public List<ReturnBundle> getBundledProducts() {
