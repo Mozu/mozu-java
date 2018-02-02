@@ -41,6 +41,19 @@ public class DiscountTarget implements Serializable
 	}
 
 	/**
+	 * Specifies whether the discount applies to the discount condition items as well. If , the shopper must purchase the required amount of the discount condition before the discount applies.
+	 */
+	protected  Boolean appliesToPurchaseConditionItems;
+
+	public Boolean getAppliesToPurchaseConditionItems() {
+		return this.appliesToPurchaseConditionItems;
+	}
+
+	public void setAppliesToPurchaseConditionItems(Boolean appliesToPurchaseConditionItems) {
+		this.appliesToPurchaseConditionItems = appliesToPurchaseConditionItems;
+	}
+
+	/**
 	 * The operator to use on the excludedCategories field. Valid values are: "All" and "Any".
 	 */
 	protected  String excludedCategoriesOperator;

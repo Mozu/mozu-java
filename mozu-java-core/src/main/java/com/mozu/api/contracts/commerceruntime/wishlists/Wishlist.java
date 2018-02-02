@@ -19,6 +19,7 @@ import com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty;
 import com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo;
 import com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem;
 import com.mozu.api.contracts.commerceruntime.discounts.AppliedDiscount;
+import com.mozu.api.contracts.commerceruntime.discounts.SuggestedDiscount;
 
 /**
  *	Properties of a shopper wish list defined for a site, associated with a customer account.
@@ -440,6 +441,17 @@ public class Wishlist implements Serializable
 	}
 	public void setOrderDiscounts(List<AppliedDiscount> orderDiscounts) {
 		this.orderDiscounts = orderDiscounts;
+	}
+
+	/**
+	 * suggestedDiscounts ApiType DOCUMENT_HERE 
+	 */
+	protected List<SuggestedDiscount> suggestedDiscounts;
+	public List<SuggestedDiscount> getSuggestedDiscounts() {
+		return this.suggestedDiscounts;
+	}
+	public void setSuggestedDiscounts(List<SuggestedDiscount> suggestedDiscounts) {
+		this.suggestedDiscounts = suggestedDiscounts;
 	}
 
 	/**

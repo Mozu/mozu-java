@@ -358,8 +358,8 @@ public class CustomerContactResource {
 	 *	CustomerContact customercontact = new CustomerContact();
 	 *	CustomerContactCollection customerContactCollection = customercontact.addAccountContactList( contactList,  accountId);
 	 * </code></pre></p>
-	 * @param accountId 
-	 * @param contactList 
+	 * @param accountId Unique identifier of the customer account.
+	 * @param contactList The list of contacts.
 	 * @return com.mozu.api.contracts.customer.CustomerContactCollection
 	 * @see com.mozu.api.contracts.customer.CustomerContactCollection
 	 * @see com.mozu.api.contracts.customer.CustomerContact
@@ -375,9 +375,9 @@ public class CustomerContactResource {
 	 *	CustomerContact customercontact = new CustomerContact();
 	 *	CountDownLatch latch = customercontact.addAccountContactList( contactList,  accountId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param accountId 
+	 * @param accountId Unique identifier of the customer account.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param contactList 
+	 * @param contactList The list of contacts.
 	 * @return com.mozu.api.contracts.customer.CustomerContactCollection
 	 * @see com.mozu.api.contracts.customer.CustomerContactCollection
 	 * @see com.mozu.api.contracts.customer.CustomerContact
@@ -393,9 +393,9 @@ public class CustomerContactResource {
 	 *	CustomerContact customercontact = new CustomerContact();
 	 *	CustomerContactCollection customerContactCollection = customercontact.addAccountContactList( contactList,  accountId,  responseFields);
 	 * </code></pre></p>
-	 * @param accountId 
-	 * @param responseFields 
-	 * @param contactList 
+	 * @param accountId Unique identifier of the customer account.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param contactList The list of contacts.
 	 * @return com.mozu.api.contracts.customer.CustomerContactCollection
 	 * @see com.mozu.api.contracts.customer.CustomerContactCollection
 	 * @see com.mozu.api.contracts.customer.CustomerContact
@@ -415,10 +415,10 @@ public class CustomerContactResource {
 	 *	CustomerContact customercontact = new CustomerContact();
 	 *	CountDownLatch latch = customercontact.addAccountContactList( contactList,  accountId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param accountId 
-	 * @param responseFields 
+	 * @param accountId Unique identifier of the customer account.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param contactList 
+	 * @param contactList The list of contacts.
 	 * @return com.mozu.api.contracts.customer.CustomerContactCollection
 	 * @see com.mozu.api.contracts.customer.CustomerContactCollection
 	 * @see com.mozu.api.contracts.customer.CustomerContact

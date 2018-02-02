@@ -41,6 +41,22 @@ public class OrderItem implements Serializable
 		this.adjustedLineItemSubtotal = adjustedLineItemSubtotal;
 	}
 
+	/**
+	 * autoAddDiscountId ApiType DOCUMENT_HERE 
+	 */
+	protected  Integer autoAddDiscountId;
+
+	public Integer getAutoAddDiscountId() {
+		return this.autoAddDiscountId;
+	}
+
+	public void setAutoAddDiscountId(Integer autoAddDiscountId) {
+		this.autoAddDiscountId = autoAddDiscountId;
+	}
+
+	/**
+	 * The destination the order item will ship to.
+	 */
 	protected  String destinationId;
 
 	public String getDestinationId() {
@@ -208,6 +224,19 @@ public class OrderItem implements Serializable
 
 	public void setOriginalCartItemId(String originalCartItemId) {
 		this.originalCartItemId = originalCartItemId;
+	}
+
+	/**
+	 * The location where the item was purchased.
+	 */
+	protected  String purchaseLocation;
+
+	public String getPurchaseLocation() {
+		return this.purchaseLocation;
+	}
+
+	public void setPurchaseLocation(String purchaseLocation) {
+		this.purchaseLocation = purchaseLocation;
 	}
 
 	protected  Integer quantity;

@@ -59,5 +59,31 @@ public class AttributeUrl
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
+	/**
+	 * Get Resource Url for CreateAttribute
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl createAttributeUrl(String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/attributedefinition/attributes/?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for UpdateAttribute
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl updateAttributeUrl(String attributeFQN, String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/attributedefinition/attributes/{attributeFQN}?responseFields={responseFields}");
+		formatter.formatUrl("attributeFQN", attributeFQN);
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
 }
 

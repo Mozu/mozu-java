@@ -70,6 +70,9 @@ public class Discount implements Serializable
 		this.currentRedemptionCount = currentRedemptionCount;
 	}
 
+	/**
+	 * True if the discount should not apply to orders with multiple shipments. For more information, refer to the topic on [multiple shipments](https://www.mozu.com/docs/Guides/orders/multi-ship.htm#effect_on_discounts).
+	 */
 	protected  Boolean doesNotApplyToMultiShipToOrders;
 
 	public Boolean getDoesNotApplyToMultiShipToOrders() {
@@ -125,6 +128,19 @@ public class Discount implements Serializable
 	}
 	public void setIncludedPriceLists(List<String> includedPriceLists) {
 		this.includedPriceLists = includedPriceLists;
+	}
+
+	/**
+	 * This field is read-only and specifies whether the discount condition is one product or category, and matches the discount target.
+	 */
+	protected  Boolean isBxGx;
+
+	public Boolean getIsBxGx() {
+		return this.isBxGx;
+	}
+
+	public void setIsBxGx(Boolean isBxGx) {
+		this.isBxGx = isBxGx;
 	}
 
 	/**

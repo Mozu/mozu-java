@@ -18,7 +18,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * 
+ * Use this resource to manage custom attributes attached to the Checkouts resource.
  * </summary>
  */
 public class OrderAttributeResource {
@@ -40,7 +40,7 @@ public class OrderAttributeResource {
 	 *	OrderAttribute orderattribute = new OrderAttribute();
 	 *	OrderAttribute orderAttribute = orderattribute.getCheckoutAttributes( checkoutId);
 	 * </code></pre></p>
-	 * @param checkoutId 
+	 * @param checkoutId The unique identifier of the checkout.
 	 * @return List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderAttribute
 	 */
@@ -59,8 +59,8 @@ public class OrderAttributeResource {
 	 *	OrderAttribute orderattribute = new OrderAttribute();
 	 *	OrderAttribute orderAttribute = orderattribute.createCheckoutAttributes( checkoutAttributes,  checkoutId);
 	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param checkoutAttributes 
+	 * @param checkoutId The unique identifier of the checkout.
+	 * @param checkoutAttributes The custom attribute definition.
 	 * @return List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderAttribute
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderAttribute
@@ -80,8 +80,8 @@ public class OrderAttributeResource {
 	 *	OrderAttribute orderattribute = new OrderAttribute();
 	 *	OrderAttribute orderAttribute = orderattribute.updateCheckoutAttribute( checkoutAttributes,  checkoutId);
 	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param checkoutAttributes 
+	 * @param checkoutId The unique identifier of the checkout.
+	 * @param checkoutAttributes The custom attribute definition.
 	 * @return List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderAttribute
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderAttribute
@@ -97,9 +97,9 @@ public class OrderAttributeResource {
 	 *	OrderAttribute orderattribute = new OrderAttribute();
 	 *	OrderAttribute orderAttribute = orderattribute.updateCheckoutAttribute( checkoutAttributes,  checkoutId,  removeMissing);
 	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param removeMissing 
-	 * @param checkoutAttributes 
+	 * @param checkoutId The unique identifier of the checkout.
+	 * @param removeMissing If true, the operation removes missing properties so that the updated checkout attributes will not show properties with a null value.
+	 * @param checkoutAttributes The custom attribute definition.
 	 * @return List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderAttribute
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderAttribute

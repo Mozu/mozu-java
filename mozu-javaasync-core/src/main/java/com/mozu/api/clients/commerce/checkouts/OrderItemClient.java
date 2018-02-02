@@ -19,7 +19,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * 
+ * Use this resource to manage the items a shopper adds to their cart while the Checkouts resource is active (the Checkouts resource only applies to sites that enable shipping to multiple destinations within the same order). The Checkouts resource remains active until the shopper submits their order.
  * </summary>
  */
 public class OrderItemClient {
@@ -32,8 +32,8 @@ public class OrderItemClient {
 	 * client.executeRequest();
 	 * Checkout checkout = client.Result();
 	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param itemId 
+	 * @param checkoutId The unique identifier of the checkout.
+	 * @param itemId The unique identifier of the item.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.checkouts.Checkout>
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 */
@@ -50,10 +50,10 @@ public class OrderItemClient {
 	 * client.executeRequest();
 	 * Checkout checkout = client.Result();
 	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param itemId 
-	 * @param quantity 
-	 * @param responseFields 
+	 * @param checkoutId The unique identifier of the checkout.
+	 * @param itemId The unique identifier of the item.
+	 * @param quantity The number of cart items in the shopper's active cart.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.checkouts.Checkout>
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 */
@@ -77,8 +77,8 @@ public class OrderItemClient {
 	 * client.executeRequest();
 	 * Checkout checkout = client.Result();
 	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param itemsForDestination 
+	 * @param checkoutId The unique identifier of the checkout.
+	 * @param itemsForDestination A collection of items to be associated with a destination.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.checkouts.Checkout>
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.ItemsForDestination
@@ -96,9 +96,9 @@ public class OrderItemClient {
 	 * client.executeRequest();
 	 * Checkout checkout = client.Result();
 	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param responseFields 
-	 * @param itemsForDestination 
+	 * @param checkoutId The unique identifier of the checkout.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param itemsForDestination A collection of items to be associated with a destination.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.checkouts.Checkout>
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.ItemsForDestination
@@ -124,9 +124,9 @@ public class OrderItemClient {
 	 * client.executeRequest();
 	 * Checkout checkout = client.Result();
 	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param destinationId 
-	 * @param itemId 
+	 * @param checkoutId The unique identifier of the checkout.
+	 * @param destinationId The unique identifier of the destination.
+	 * @param itemId The unique identifier of the item.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.checkouts.Checkout>
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 */
@@ -143,10 +143,10 @@ public class OrderItemClient {
 	 * client.executeRequest();
 	 * Checkout checkout = client.Result();
 	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param destinationId 
-	 * @param itemId 
-	 * @param responseFields 
+	 * @param checkoutId The unique identifier of the checkout.
+	 * @param destinationId The unique identifier of the destination.
+	 * @param itemId The unique identifier of the item.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.checkouts.Checkout>
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 */

@@ -27,6 +27,19 @@ public class BillingInfo implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * customCreditType ApiType DOCUMENT_HERE 
+	 */
+	protected  String customCreditType;
+
+	public String getCustomCreditType() {
+		return this.customCreditType;
+	}
+
+	public void setCustomCreditType(String customCreditType) {
+		this.customCreditType = customCreditType;
+	}
+
+	/**
 	 * Holds the transaction IDÂ for an external payment type service.
 	 */
 	protected  String externalTransactionId;
@@ -83,6 +96,19 @@ public class BillingInfo implements Serializable
 
 	public void setStoreCreditCode(String storeCreditCode) {
 		this.storeCreditCode = storeCreditCode;
+	}
+
+	/**
+	 * storeCreditType ApiType DOCUMENT_HERE 
+	 */
+	protected  String storeCreditType;
+
+	public String getStoreCreditType() {
+		return this.storeCreditType;
+	}
+
+	public void setStoreCreditType(String storeCreditType) {
+		this.storeCreditType = storeCreditType;
 	}
 
 	protected  AuditInfo auditInfo;

@@ -16,6 +16,7 @@ public class OrderUrl
 	/**
 	 * Get Resource Url for GetOrders
 	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param includeBin 
 	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
 	 * @param q A list of order search terms (not phrases) to use in the query when searching across order number and the name or email of the billing contact. When entering, separate multiple search terms with a space character.
 	 * @param qLimit The maximum number of search results to return in the response. You can limit any range between 1-100.
@@ -24,10 +25,11 @@ public class OrderUrl
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getOrdersUrl(String filter, Integer pageSize, String q, Integer qLimit, String responseFields, String sortBy, Integer startIndex)
+	public static MozuUrl getOrdersUrl(String filter, Boolean includeBin, Integer pageSize, String q, Integer qLimit, String responseFields, String sortBy, Integer startIndex)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}&q={q}&qLimit={qLimit}&responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}&q={q}&qLimit={qLimit}&includeBin={includeBin}&responseFields={responseFields}");
 		formatter.formatUrl("filter", filter);
+		formatter.formatUrl("includeBin", includeBin);
 		formatter.formatUrl("pageSize", pageSize);
 		formatter.formatUrl("q", q);
 		formatter.formatUrl("qLimit", qLimit);
@@ -64,14 +66,16 @@ public class OrderUrl
 	/**
 	 * Get Resource Url for GetOrder
 	 * @param draft If true, retrieve the draft version of the order, which might include uncommitted changes to the order or its components.
+	 * @param includeBin 
 	 * @param orderId Unique identifier of the order.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getOrderUrl(Boolean draft, String orderId, String responseFields)
+	public static MozuUrl getOrderUrl(Boolean draft, Boolean includeBin, String orderId, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}?draft={draft}&responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}?draft={draft}&includeBin={includeBin}&responseFields={responseFields}");
 		formatter.formatUrl("draft", draft);
+		formatter.formatUrl("includeBin", includeBin);
 		formatter.formatUrl("orderId", orderId);
 		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
@@ -113,6 +117,22 @@ public class OrderUrl
 	{
 		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/actions?responseFields={responseFields}");
 		formatter.formatUrl("orderId", orderId);
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for PriceOrder
+	 * @param couponCodeToApply 
+	 * @param refreshShipping 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl priceOrderUrl(String couponCodeToApply, Boolean refreshShipping, String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/price?refreshShipping={refreshShipping}&couponCodeToApply={couponCodeToApply}&responseFields={responseFields}");
+		formatter.formatUrl("couponCodeToApply", couponCodeToApply);
+		formatter.formatUrl("refreshShipping", refreshShipping);
 		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}

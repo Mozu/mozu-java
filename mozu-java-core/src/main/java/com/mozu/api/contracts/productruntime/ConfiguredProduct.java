@@ -66,6 +66,9 @@ public class ConfiguredProduct implements Serializable
 		this.productCode = productCode;
 	}
 
+	/**
+	 * The location where the order item(s) was purchased.
+	 */
 	protected  String purchaseLocation;
 
 	public String getPurchaseLocation() {

@@ -42,7 +42,7 @@ public class ShippingResource {
 	 *	Shipping shipping = new Shipping();
 	 *	RatesResponseGroup ratesResponseGroup = shipping.getMultiRates( rateRequestGroupList);
 	 * </code></pre></p>
-	 * @param rateRequestGroupList 
+	 * @param rateRequestGroupList The shipping rates available for the grouping.
 	 * @return List<com.mozu.api.contracts.shippingruntime.RatesResponseGroup>
 	 * @see com.mozu.api.contracts.shippingruntime.RatesResponseGroup
 	 * @see com.mozu.api.contracts.shippingruntime.RateRequestGroup
@@ -59,7 +59,7 @@ public class ShippingResource {
 	 *	CountDownLatch latch = shipping.getMultiRates( rateRequestGroupList, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param rateRequestGroupList 
+	 * @param rateRequestGroupList The shipping rates available for the grouping.
 	 * @return List<com.mozu.api.contracts.shippingruntime.RatesResponseGroup>
 	 * @see com.mozu.api.contracts.shippingruntime.RatesResponseGroup
 	 * @see com.mozu.api.contracts.shippingruntime.RateRequestGroup
@@ -75,8 +75,8 @@ public class ShippingResource {
 	 *	Shipping shipping = new Shipping();
 	 *	RatesResponseGroup ratesResponseGroup = shipping.getMultiRates( rateRequestGroupList,  includeRawResponse);
 	 * </code></pre></p>
-	 * @param includeRawResponse 
-	 * @param rateRequestGroupList 
+	 * @param includeRawResponse Set this parameter to  to retrieve the full raw JSON response from a shipping carrier (instead of just the shipping rate).
+	 * @param rateRequestGroupList The shipping rates available for the grouping.
 	 * @return List<com.mozu.api.contracts.shippingruntime.RatesResponseGroup>
 	 * @see com.mozu.api.contracts.shippingruntime.RatesResponseGroup
 	 * @see com.mozu.api.contracts.shippingruntime.RateRequestGroup
@@ -96,9 +96,9 @@ public class ShippingResource {
 	 *	Shipping shipping = new Shipping();
 	 *	CountDownLatch latch = shipping.getMultiRates( rateRequestGroupList,  includeRawResponse, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param includeRawResponse 
+	 * @param includeRawResponse Set this parameter to  to retrieve the full raw JSON response from a shipping carrier (instead of just the shipping rate).
 	 * @param  callback callback handler for asynchronous operations
-	 * @param rateRequestGroupList 
+	 * @param rateRequestGroupList The shipping rates available for the grouping.
 	 * @return List<com.mozu.api.contracts.shippingruntime.RatesResponseGroup>
 	 * @see com.mozu.api.contracts.shippingruntime.RatesResponseGroup
 	 * @see com.mozu.api.contracts.shippingruntime.RateRequestGroup

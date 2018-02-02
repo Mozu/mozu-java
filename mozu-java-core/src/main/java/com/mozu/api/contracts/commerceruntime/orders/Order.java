@@ -32,6 +32,7 @@ import com.mozu.api.contracts.commerceruntime.refunds.Refund;
 import com.mozu.api.contracts.commerceruntime.fulfillment.Shipment;
 import com.mozu.api.contracts.commerceruntime.discounts.ShippingDiscount;
 import com.mozu.api.contracts.commerceruntime.orders.ShopperNotes;
+import com.mozu.api.contracts.commerceruntime.discounts.SuggestedDiscount;
 import com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult;
 
 /**
@@ -422,6 +423,9 @@ public class Order implements Serializable
 		this.isImport = isImport;
 	}
 
+	/**
+	 * True if the order is one of multiple orders created to fulfill as parent order that supports shipping to multiple adresses.
+	 */
 	protected  Boolean isPartialOrder;
 
 	public Boolean getIsPartialOrder() {
@@ -505,6 +509,9 @@ public class Order implements Serializable
 		this.originalCartId = originalCartId;
 	}
 
+	/**
+	 * The unique identifier of the checkout that created the parent order (if the order is one of multiple orders created to fulfill a parent order that support shipping to multiple addresses).
+	 */
 	protected  String parentCheckoutId;
 
 	public String getParentCheckoutId() {
@@ -515,6 +522,9 @@ public class Order implements Serializable
 		this.parentCheckoutId = parentCheckoutId;
 	}
 
+	/**
+	 * The checkout number from the checkout that created the parent order (if the order is one of multiple orders created to fulfill a parent order that support shipping to multiple addresses).
+	 */
 	protected  Integer parentCheckoutNumber;
 
 	public Integer getParentCheckoutNumber() {
@@ -574,6 +584,9 @@ public class Order implements Serializable
 		this.parentReturnNumber = parentReturnNumber;
 	}
 
+	/**
+	 * The number of partial orders that make up the parent order.
+	 */
 	protected  Integer partialOrderCount;
 
 	public Integer getPartialOrderCount() {
@@ -584,6 +597,9 @@ public class Order implements Serializable
 		this.partialOrderCount = partialOrderCount;
 	}
 
+	/**
+	 * The order number for the partial order.
+	 */
 	protected  Integer partialOrderNumber;
 
 	public Integer getPartialOrderNumber() {
@@ -1022,6 +1038,17 @@ public class Order implements Serializable
 
 	public void setShopperNotes(ShopperNotes shopperNotes) {
 		this.shopperNotes = shopperNotes;
+	}
+
+	/**
+	 * suggestedDiscounts ApiType DOCUMENT_HERE 
+	 */
+	protected List<SuggestedDiscount> suggestedDiscounts;
+	public List<SuggestedDiscount> getSuggestedDiscounts() {
+		return this.suggestedDiscounts;
+	}
+	public void setSuggestedDiscounts(List<SuggestedDiscount> suggestedDiscounts) {
+		this.suggestedDiscounts = suggestedDiscounts;
 	}
 
 	/**

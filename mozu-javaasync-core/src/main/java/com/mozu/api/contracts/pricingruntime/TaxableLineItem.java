@@ -191,6 +191,9 @@ public class TaxableLineItem implements Serializable
 		this.data = data;
 	}
 
+	/**
+	 * The physical address orders are sent to as a shipping destination. This address may contain multiple lines, city, state/province, country, and zip/postal code. The destination is used to calculate shipping costs.
+	 */
 	protected  Address destinationAddress;
 
 	public Address getDestinationAddress() {
@@ -201,6 +204,9 @@ public class TaxableLineItem implements Serializable
 		this.destinationAddress = destinationAddress;
 	}
 
+	/**
+	 * The physical address from which the order or shipment will ship.
+	 */
 	protected  Address originAddress;
 
 	public Address getOriginAddress() {

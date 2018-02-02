@@ -226,6 +226,160 @@ public class AttributeResource {
 
 	}
 
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Attribute attribute = new Attribute();
+	 *	Attribute attribute = attribute.createAttribute( attribute);
+	 * </code></pre></p>
+	 * @param attribute Properties of an attribute used to describe customers or orders.
+	 * @return com.mozu.api.contracts.core.extensible.Attribute
+	 * @see com.mozu.api.contracts.core.extensible.Attribute
+	 * @see com.mozu.api.contracts.core.extensible.Attribute
+	 */
+	public com.mozu.api.contracts.core.extensible.Attribute createAttribute(com.mozu.api.contracts.core.extensible.Attribute attribute) throws Exception
+	{
+		return createAttribute( attribute,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Attribute attribute = new Attribute();
+	 *	CountDownLatch latch = attribute.createAttribute( attribute, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param  callback callback handler for asynchronous operations
+	 * @param attribute Properties of an attribute used to describe customers or orders.
+	 * @return com.mozu.api.contracts.core.extensible.Attribute
+	 * @see com.mozu.api.contracts.core.extensible.Attribute
+	 * @see com.mozu.api.contracts.core.extensible.Attribute
+	 */
+	public CountDownLatch createAttributeAsync(com.mozu.api.contracts.core.extensible.Attribute attribute, AsyncCallback<com.mozu.api.contracts.core.extensible.Attribute> callback) throws Exception
+	{
+		return createAttributeAsync( attribute,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Attribute attribute = new Attribute();
+	 *	Attribute attribute = attribute.createAttribute( attribute,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param attribute Properties of an attribute used to describe customers or orders.
+	 * @return com.mozu.api.contracts.core.extensible.Attribute
+	 * @see com.mozu.api.contracts.core.extensible.Attribute
+	 * @see com.mozu.api.contracts.core.extensible.Attribute
+	 */
+	public com.mozu.api.contracts.core.extensible.Attribute createAttribute(com.mozu.api.contracts.core.extensible.Attribute attribute, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.core.extensible.Attribute> client = com.mozu.api.clients.commerce.customer.attributedefinition.AttributeClient.createAttributeClient( attribute,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Attribute attribute = new Attribute();
+	 *	CountDownLatch latch = attribute.createAttribute( attribute,  responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param  callback callback handler for asynchronous operations
+	 * @param attribute Properties of an attribute used to describe customers or orders.
+	 * @return com.mozu.api.contracts.core.extensible.Attribute
+	 * @see com.mozu.api.contracts.core.extensible.Attribute
+	 * @see com.mozu.api.contracts.core.extensible.Attribute
+	 */
+	public CountDownLatch createAttributeAsync(com.mozu.api.contracts.core.extensible.Attribute attribute, String responseFields, AsyncCallback<com.mozu.api.contracts.core.extensible.Attribute> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.core.extensible.Attribute> client = com.mozu.api.clients.commerce.customer.attributedefinition.AttributeClient.createAttributeClient( attribute,  responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Attribute attribute = new Attribute();
+	 *	Attribute attribute = attribute.updateAttribute( attribute,  attributeFQN);
+	 * </code></pre></p>
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param attribute Properties of an attribute used to describe customers or orders.
+	 * @return com.mozu.api.contracts.core.extensible.Attribute
+	 * @see com.mozu.api.contracts.core.extensible.Attribute
+	 * @see com.mozu.api.contracts.core.extensible.Attribute
+	 */
+	public com.mozu.api.contracts.core.extensible.Attribute updateAttribute(com.mozu.api.contracts.core.extensible.Attribute attribute, String attributeFQN) throws Exception
+	{
+		return updateAttribute( attribute,  attributeFQN,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Attribute attribute = new Attribute();
+	 *	CountDownLatch latch = attribute.updateAttribute( attribute,  attributeFQN, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param  callback callback handler for asynchronous operations
+	 * @param attribute Properties of an attribute used to describe customers or orders.
+	 * @return com.mozu.api.contracts.core.extensible.Attribute
+	 * @see com.mozu.api.contracts.core.extensible.Attribute
+	 * @see com.mozu.api.contracts.core.extensible.Attribute
+	 */
+	public CountDownLatch updateAttributeAsync(com.mozu.api.contracts.core.extensible.Attribute attribute, String attributeFQN, AsyncCallback<com.mozu.api.contracts.core.extensible.Attribute> callback) throws Exception
+	{
+		return updateAttributeAsync( attribute,  attributeFQN,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Attribute attribute = new Attribute();
+	 *	Attribute attribute = attribute.updateAttribute( attribute,  attributeFQN,  responseFields);
+	 * </code></pre></p>
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param attribute Properties of an attribute used to describe customers or orders.
+	 * @return com.mozu.api.contracts.core.extensible.Attribute
+	 * @see com.mozu.api.contracts.core.extensible.Attribute
+	 * @see com.mozu.api.contracts.core.extensible.Attribute
+	 */
+	public com.mozu.api.contracts.core.extensible.Attribute updateAttribute(com.mozu.api.contracts.core.extensible.Attribute attribute, String attributeFQN, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.core.extensible.Attribute> client = com.mozu.api.clients.commerce.customer.attributedefinition.AttributeClient.updateAttributeClient( attribute,  attributeFQN,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Attribute attribute = new Attribute();
+	 *	CountDownLatch latch = attribute.updateAttribute( attribute,  attributeFQN,  responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param  callback callback handler for asynchronous operations
+	 * @param attribute Properties of an attribute used to describe customers or orders.
+	 * @return com.mozu.api.contracts.core.extensible.Attribute
+	 * @see com.mozu.api.contracts.core.extensible.Attribute
+	 * @see com.mozu.api.contracts.core.extensible.Attribute
+	 */
+	public CountDownLatch updateAttributeAsync(com.mozu.api.contracts.core.extensible.Attribute attribute, String attributeFQN, String responseFields, AsyncCallback<com.mozu.api.contracts.core.extensible.Attribute> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.core.extensible.Attribute> client = com.mozu.api.clients.commerce.customer.attributedefinition.AttributeClient.updateAttributeClient( attribute,  attributeFQN,  responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
 }
 
 

@@ -99,6 +99,56 @@ public class AttributeFactory
 		return returnObj;
 	}
 
+	public static com.mozu.api.contracts.core.extensible.Attribute createAttribute(ApiContext apiContext, com.mozu.api.contracts.core.extensible.Attribute attribute, int expectedCode) throws Exception
+	{
+		return createAttribute(apiContext,  attribute,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.core.extensible.Attribute createAttribute(ApiContext apiContext, com.mozu.api.contracts.core.extensible.Attribute attribute, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.core.extensible.Attribute returnObj = new com.mozu.api.contracts.core.extensible.Attribute();
+		AttributeResource resource = new AttributeResource(apiContext);
+		try
+		{
+			returnObj = resource.createAttribute( attribute,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
+	public static com.mozu.api.contracts.core.extensible.Attribute updateAttribute(ApiContext apiContext, com.mozu.api.contracts.core.extensible.Attribute attribute, String attributeFQN, int expectedCode) throws Exception
+	{
+		return updateAttribute(apiContext,  attribute,  attributeFQN,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.core.extensible.Attribute updateAttribute(ApiContext apiContext, com.mozu.api.contracts.core.extensible.Attribute attribute, String attributeFQN, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.core.extensible.Attribute returnObj = new com.mozu.api.contracts.core.extensible.Attribute();
+		AttributeResource resource = new AttributeResource(apiContext);
+		try
+		{
+			returnObj = resource.updateAttribute( attribute,  attributeFQN,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
 }
 
 

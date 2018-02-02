@@ -88,6 +88,19 @@ public class Credit implements Serializable
 	}
 
 	/**
+	 * customCreditType ApiType DOCUMENT_HERE 
+	 */
+	protected  String customCreditType;
+
+	public String getCustomCreditType() {
+		return this.customCreditType;
+	}
+
+	public void setCustomCreditType(String customCreditType) {
+		this.customCreditType = customCreditType;
+	}
+
+	/**
 	 * Unique identifier of the customer in , used to associate customers with data, orders, returns, and in-store credit.
 	 */
 	protected  Integer customerId;

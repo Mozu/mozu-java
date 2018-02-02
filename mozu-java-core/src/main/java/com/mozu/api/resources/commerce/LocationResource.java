@@ -40,7 +40,7 @@ public class LocationResource {
 	 *	Location location = new Location();
 	 *	Location location = location.getLocation( locationCode);
 	 * </code></pre></p>
-	 * @param locationCode 
+	 * @param locationCode The unique, user-defined code that identifies a location.
 	 * @return com.mozu.api.contracts.location.Location
 	 * @see com.mozu.api.contracts.location.Location
 	 */
@@ -55,8 +55,8 @@ public class LocationResource {
 	 *	Location location = new Location();
 	 *	Location location = location.getLocation( locationCode,  includeAttributeDefinition,  responseFields);
 	 * </code></pre></p>
-	 * @param includeAttributeDefinition 
-	 * @param locationCode 
+	 * @param includeAttributeDefinition True if you want to include the custom attribute defintion for the location.
+	 * @param locationCode The unique, user-defined code that identifies a location.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.location.Location
 	 * @see com.mozu.api.contracts.location.Location
@@ -92,7 +92,7 @@ public class LocationResource {
 	 *	LocationCollection locationCollection = location.getLocationsInUsageType( locationUsageType,  startIndex,  pageSize,  sortBy,  filter,  includeAttributeDefinition,  responseFields);
 	 * </code></pre></p>
 	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param includeAttributeDefinition 
+	 * @param includeAttributeDefinition True if you want to include the custom attribute defintion for the location.
 	 * @param locationUsageType System-defined location usage type code, which is DS for direct ship, SP for in-store pickup, or storeFinder.
 	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
@@ -150,7 +150,7 @@ public class LocationResource {
 	 *	Location location = new Location();
 	 *	Location location = location.getInStorePickupLocation( locationCode);
 	 * </code></pre></p>
-	 * @param locationCode 
+	 * @param locationCode The unique, user-defined code that identifies a location.
 	 * @return com.mozu.api.contracts.location.Location
 	 * @see com.mozu.api.contracts.location.Location
 	 */
@@ -165,8 +165,8 @@ public class LocationResource {
 	 *	Location location = new Location();
 	 *	Location location = location.getInStorePickupLocation( locationCode,  includeAttributeDefinition,  responseFields);
 	 * </code></pre></p>
-	 * @param includeAttributeDefinition 
-	 * @param locationCode 
+	 * @param includeAttributeDefinition True if you want to include the custom attribute definition for the location.
+	 * @param locationCode The unique, user-defined code that identifies a location.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.location.Location
 	 * @see com.mozu.api.contracts.location.Location
@@ -201,7 +201,7 @@ public class LocationResource {
 	 *	LocationCollection locationCollection = location.getInStorePickupLocations( startIndex,  pageSize,  sortBy,  filter,  includeAttributeDefinition,  responseFields);
 	 * </code></pre></p>
 	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param includeAttributeDefinition 
+	 * @param includeAttributeDefinition True if you want to include the custom attribute definition for the location.
 	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
