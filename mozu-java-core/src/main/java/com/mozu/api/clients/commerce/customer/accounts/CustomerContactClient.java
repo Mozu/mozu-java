@@ -216,8 +216,8 @@ public class CustomerContactClient {
 	 * client.executeRequest();
 	 * CustomerContactCollection customerContactCollection = client.Result();
 	 * </code></pre></p>
-	 * @param accountId 
-	 * @param contactList 
+	 * @param accountId Unique identifier of the customer account.
+	 * @param contactList The list of contacts.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerContactCollection>
 	 * @see com.mozu.api.contracts.customer.CustomerContactCollection
 	 * @see com.mozu.api.contracts.customer.CustomerContact
@@ -235,9 +235,9 @@ public class CustomerContactClient {
 	 * client.executeRequest();
 	 * CustomerContactCollection customerContactCollection = client.Result();
 	 * </code></pre></p>
-	 * @param accountId 
-	 * @param responseFields 
-	 * @param contactList 
+	 * @param accountId Unique identifier of the customer account.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param contactList The list of contacts.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerContactCollection>
 	 * @see com.mozu.api.contracts.customer.CustomerContactCollection
 	 * @see com.mozu.api.contracts.customer.CustomerContact

@@ -25,16 +25,16 @@ public class OrderFactory
 
 	public static com.mozu.api.contracts.commerceruntime.orders.OrderCollection getOrders(ApiContext apiContext, int expectedCode) throws Exception
 	{
-		return getOrders(apiContext,  null,  null,  null,  null,  null,  null,  null, expectedCode);
+		return getOrders(apiContext,  null,  null,  null,  null,  null,  null,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.orders.OrderCollection getOrders(ApiContext apiContext, Integer startIndex, Integer pageSize, String sortBy, String filter, String q, Integer qLimit, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.orders.OrderCollection getOrders(ApiContext apiContext, Integer startIndex, Integer pageSize, String sortBy, String filter, String q, Integer qLimit, Boolean includeBin, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.orders.OrderCollection returnObj = new com.mozu.api.contracts.commerceruntime.orders.OrderCollection();
 		OrderResource resource = new OrderResource(apiContext);
 		try
 		{
-			returnObj = resource.getOrders( startIndex,  pageSize,  sortBy,  filter,  q,  qLimit,  responseFields);
+			returnObj = resource.getOrders( startIndex,  pageSize,  sortBy,  filter,  q,  qLimit,  includeBin,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -90,16 +90,16 @@ public class OrderFactory
 
 	public static com.mozu.api.contracts.commerceruntime.orders.Order getOrder(ApiContext apiContext, String orderId, int expectedCode) throws Exception
 	{
-		return getOrder(apiContext,  orderId,  null,  null, expectedCode);
+		return getOrder(apiContext,  orderId,  null,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.orders.Order getOrder(ApiContext apiContext, String orderId, Boolean draft, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.orders.Order getOrder(ApiContext apiContext, String orderId, Boolean draft, Boolean includeBin, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.orders.Order returnObj = new com.mozu.api.contracts.commerceruntime.orders.Order();
 		OrderResource resource = new OrderResource(apiContext);
 		try
 		{
-			returnObj = resource.getOrder( orderId,  draft,  responseFields);
+			returnObj = resource.getOrder( orderId,  draft,  includeBin,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -175,6 +175,31 @@ public class OrderFactory
 		try
 		{
 			returnObj = resource.performOrderAction( action,  orderId,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.orders.Order priceOrder(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.orders.Order order, Boolean refreshShipping, int expectedCode) throws Exception
+	{
+		return priceOrder(apiContext,  order,  refreshShipping,  null,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.orders.Order priceOrder(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.orders.Order order, Boolean refreshShipping, String couponCodeToApply, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.commerceruntime.orders.Order returnObj = new com.mozu.api.contracts.commerceruntime.orders.Order();
+		OrderResource resource = new OrderResource(apiContext);
+		try
+		{
+			returnObj = resource.priceOrder( order,  refreshShipping,  couponCodeToApply,  responseFields);
 		}
 		catch (ApiException e)
 		{

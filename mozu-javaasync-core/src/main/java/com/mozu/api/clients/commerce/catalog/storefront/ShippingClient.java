@@ -32,7 +32,7 @@ public class ShippingClient {
 	 * client.executeRequest();
 	 * RatesResponseGroup ratesResponseGroup = client.Result();
 	 * </code></pre></p>
-	 * @param rateRequestGroupList 
+	 * @param rateRequestGroupList The shipping rates available for the grouping.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.shippingruntime.RatesResponseGroup>>
 	 * @see com.mozu.api.contracts.shippingruntime.RatesResponseGroup
 	 * @see com.mozu.api.contracts.shippingruntime.RateRequestGroup
@@ -50,8 +50,8 @@ public class ShippingClient {
 	 * client.executeRequest();
 	 * RatesResponseGroup ratesResponseGroup = client.Result();
 	 * </code></pre></p>
-	 * @param includeRawResponse 
-	 * @param rateRequestGroupList 
+	 * @param includeRawResponse Set this parameter to  to retrieve the full raw JSON response from a shipping carrier (instead of just the shipping rate).
+	 * @param rateRequestGroupList The shipping rates available for the grouping.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.shippingruntime.RatesResponseGroup>>
 	 * @see com.mozu.api.contracts.shippingruntime.RatesResponseGroup
 	 * @see com.mozu.api.contracts.shippingruntime.RateRequestGroup

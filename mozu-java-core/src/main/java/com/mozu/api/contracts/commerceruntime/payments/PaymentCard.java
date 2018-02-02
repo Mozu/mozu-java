@@ -21,6 +21,19 @@ public class PaymentCard implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The bin number of a branded credit card.
+	 */
+	protected  String bin;
+
+	public String getBin() {
+		return this.bin;
+	}
+
+	public void setBin(String bin) {
+		this.bin = bin;
+	}
+
 	protected  String cardNumberPartOrMask;
 
 	public String getCardNumberPartOrMask() {

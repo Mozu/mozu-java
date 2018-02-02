@@ -148,6 +148,9 @@ public class ProductValidationSummary implements Serializable
 		this.productUsage = productUsage;
 	}
 
+	/**
+	 * The location where the order item(s) was purchased.
+	 */
 	protected  String purchaseLocation;
 
 	public String getPurchaseLocation() {

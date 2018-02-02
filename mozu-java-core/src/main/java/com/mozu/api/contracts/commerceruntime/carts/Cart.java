@@ -21,6 +21,7 @@ import com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo;
 import com.mozu.api.contracts.commerceruntime.discounts.InvalidCoupon;
 import com.mozu.api.contracts.commerceruntime.carts.CartItem;
 import com.mozu.api.contracts.commerceruntime.discounts.AppliedDiscount;
+import com.mozu.api.contracts.commerceruntime.discounts.SuggestedDiscount;
 
 /**
  *	Properties of a shopping cart.
@@ -451,6 +452,17 @@ public class Cart implements Serializable
 	}
 	public void setOrderDiscounts(List<AppliedDiscount> orderDiscounts) {
 		this.orderDiscounts = orderDiscounts;
+	}
+
+	/**
+	 * suggestedDiscounts ApiType DOCUMENT_HERE 
+	 */
+	protected List<SuggestedDiscount> suggestedDiscounts;
+	public List<SuggestedDiscount> getSuggestedDiscounts() {
+		return this.suggestedDiscounts;
+	}
+	public void setSuggestedDiscounts(List<SuggestedDiscount> suggestedDiscounts) {
+		this.suggestedDiscounts = suggestedDiscounts;
 	}
 
 	/**

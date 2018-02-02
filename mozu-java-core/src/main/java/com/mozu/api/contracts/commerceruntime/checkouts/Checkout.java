@@ -22,13 +22,20 @@ import com.mozu.api.contracts.commerceruntime.orders.OrderItem;
 import com.mozu.api.contracts.commerceruntime.discounts.AppliedDiscount;
 import com.mozu.api.contracts.commerceruntime.payments.Payment;
 import com.mozu.api.contracts.commerceruntime.orders.ShopperNotes;
+import com.mozu.api.contracts.commerceruntime.discounts.SuggestedDiscount;
 
+/**
+ *	Mozu.CommerceRuntime.Contracts.Checkouts.Checkout ApiType DOCUMENT_HERE 
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Checkout implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Indicates if the customer account is opted to receive marketing materials. If true, the customer account is opted in for receiving the content.
+	 */
 	protected  Boolean acceptsMarketing;
 
 	public Boolean getAcceptsMarketing() {
@@ -39,6 +46,9 @@ public class Checkout implements Serializable
 		this.acceptsMarketing = acceptsMarketing;
 	}
 
+	/**
+	 * The total amount of the order not currently associated with a payment. The shopper must create one or more payments to satisfy this amount before the order can be fully paid.
+	 */
 	protected  Double amountRemainingForPayment;
 
 	public Double getAmountRemainingForPayment() {
@@ -49,6 +59,9 @@ public class Checkout implements Serializable
 		this.amountRemainingForPayment = amountRemainingForPayment;
 	}
 
+	/**
+	 * Available actions you can complete for an order. These actions may differ depending on the status of the order, such as actions required to enter a payment, return of a package, and fulfillment of a shipment.
+	 */
 	protected List<String> availableActions;
 	public List<String> getAvailableActions() {
 		return this.availableActions;
@@ -57,6 +70,9 @@ public class Checkout implements Serializable
 		this.availableActions = availableActions;
 	}
 
+	/**
+	 * Code that identifies the channel associated with the site for the shopper's created shopping cart, order, and return.
+	 */
 	protected  String channelCode;
 
 	public String getChannelCode() {
@@ -67,6 +83,9 @@ public class Checkout implements Serializable
 		this.channelCode = channelCode;
 	}
 
+	/**
+	 * Array list of coupon codes associated with a shopping cart and the associated order. These codes are entered by a shopper when proceeding to checkout.
+	 */
 	protected List<String> couponCodes;
 	public List<String> getCouponCodes() {
 		return this.couponCodes;
@@ -75,6 +94,9 @@ public class Checkout implements Serializable
 		this.couponCodes = couponCodes;
 	}
 
+	/**
+	 * The localized currency code for the monetary amount.
+	 */
 	protected  String currencyCode;
 
 	public String getCurrencyCode() {
@@ -85,6 +107,9 @@ public class Checkout implements Serializable
 		this.currencyCode = currencyCode;
 	}
 
+	/**
+	 * Unique identifer of the customer account. This ID is used to associate numerous types of data and object with the customer account, including orders, returns, wish lists, and in-store credit.
+	 */
 	protected  Integer customerAccountId;
 
 	public Integer getCustomerAccountId() {
@@ -95,6 +120,9 @@ public class Checkout implements Serializable
 		this.customerAccountId = customerAccountId;
 	}
 
+	/**
+	 * The type of customer interaction used to create this shopping cart. Possible values are Website, Call, Store, or Unknown.
+	 */
 	protected  String customerInteractionType;
 
 	public String getCustomerInteractionType() {
@@ -105,6 +133,9 @@ public class Checkout implements Serializable
 		this.customerInteractionType = customerInteractionType;
 	}
 
+	/**
+	 * The tax identification number (TIN) of the customer who submitted the order. If the customer who submitted the order has a customer account defined for the tenant, the system sets this value when the order is submitted.
+	 */
 	protected  String customerTaxId;
 
 	public String getCustomerTaxId() {
@@ -115,6 +146,9 @@ public class Checkout implements Serializable
 		this.customerTaxId = customerTaxId;
 	}
 
+	/**
+	 * Duties or tariffs for the Order as well as OrderItems (e.g. if the Order has a $5 duty or tariff for any reason and an OrderItem has a $2 duty or tariff then the value in this property would be $7).
+	 */
 	protected  Double dutyTotal;
 
 	public Double getDutyTotal() {
@@ -125,6 +159,9 @@ public class Checkout implements Serializable
 		this.dutyTotal = dutyTotal;
 	}
 
+	/**
+	 * The email address for the customer account and contact. This email may be used for login to the storefront, receiving in-stock product notifications, and subscription mailing lists.
+	 */
 	protected  String email;
 
 	public String getEmail() {
@@ -135,6 +172,9 @@ public class Checkout implements Serializable
 		this.email = email;
 	}
 
+	/**
+	 * The monetary sum of all fees incurred in the cart, order, line item in a cart, or line item in an order. This value is not calculated for wish lists at this time.
+	 */
 	protected  Double feeTotal;
 
 	public Double getFeeTotal() {
@@ -145,6 +185,9 @@ public class Checkout implements Serializable
 		this.feeTotal = feeTotal;
 	}
 
+	/**
+	 * Handling fees for the Order as well as OrderItems (e.g. if the Order has a $5 handling fee and an OrderItem has a $2 handling fee per item quantity then the value in this property would be $9).
+	 */
 	protected  Double handlingSubTotal;
 
 	public Double getHandlingSubTotal() {
@@ -155,6 +198,9 @@ public class Checkout implements Serializable
 		this.handlingSubTotal = handlingSubTotal;
 	}
 
+	/**
+	 * Calculated total tax amount for handling costs if the cart/order is subject to sales tax.
+	 */
 	protected  Double handlingTaxTotal;
 
 	public Double getHandlingTaxTotal() {
@@ -165,6 +211,9 @@ public class Checkout implements Serializable
 		this.handlingTaxTotal = handlingTaxTotal;
 	}
 
+	/**
+	 * This total represents the handling amount value with any applied discounts.
+	 */
 	protected  Double handlingTotal;
 
 	public Double getHandlingTotal() {
@@ -175,6 +224,9 @@ public class Checkout implements Serializable
 		this.handlingTotal = handlingTotal;
 	}
 
+	/**
+	 * Unique identifier of the source property, such as a catalog, discount, order, or email template.For a product field it will be the name of the field.For a category ID, must be a positive integer not greater than 2000000. By default,  auto-generates a category ID when categories are created. If you want to specify an ID during creation (which preserves category link relationships when migrating tenant data from one sandbox to another), you must also include the  query string in the endpoint. For example, . Then, use the  property to specify the desired category ID.For a product attribute it will be the Attribute FQN.For a document, the ID must be specified as a 32 character, case-insensitive, alphanumeric string. You can specify the ID as 32 sequential characters or as groups separated by dashes in the format 8-4-4-4-12. For example, or.For email templates, the ID must be one of the following values:			
+	 */
 	protected  String id;
 
 	public String getId() {
@@ -185,6 +237,9 @@ public class Checkout implements Serializable
 		this.id = id;
 	}
 
+	/**
+	 * A captured and stored IP address. IP addresses are stored for the origin location of submitted orders and the tenant domain.
+	 */
 	protected  String ipAddress;
 
 	public String getIpAddress() {
@@ -195,6 +250,9 @@ public class Checkout implements Serializable
 		this.ipAddress = ipAddress;
 	}
 
+	/**
+	 * If true, the order is exempt from applied sales tax.
+	 */
 	protected  Boolean isTaxExempt;
 
 	public Boolean getIsTaxExempt() {
@@ -205,6 +263,9 @@ public class Checkout implements Serializable
 		this.isTaxExempt = isTaxExempt;
 	}
 
+	/**
+	 * The list of historically-applied handling discounts at the order item level. The active one will have IsExcluded == false.
+	 */
 	protected  Double itemLevelHandlingDiscountTotal;
 
 	public Double getItemLevelHandlingDiscountTotal() {
@@ -215,6 +276,9 @@ public class Checkout implements Serializable
 		this.itemLevelHandlingDiscountTotal = itemLevelHandlingDiscountTotal;
 	}
 
+	/**
+	 * The applicable product discount for the order item.
+	 */
 	protected  Double itemLevelProductDiscountTotal;
 
 	public Double getItemLevelProductDiscountTotal() {
@@ -225,6 +289,9 @@ public class Checkout implements Serializable
 		this.itemLevelProductDiscountTotal = itemLevelProductDiscountTotal;
 	}
 
+	/**
+	 * The applicable shipping discount for the order item.
+	 */
 	protected  Double itemLevelShippingDiscountTotal;
 
 	public Double getItemLevelShippingDiscountTotal() {
@@ -235,6 +302,9 @@ public class Checkout implements Serializable
 		this.itemLevelShippingDiscountTotal = itemLevelShippingDiscountTotal;
 	}
 
+	/**
+	 * The total amount of calculated tax for items, used by carts, orders, and wish lists.
+	 */
 	protected  Double itemTaxTotal;
 
 	public Double getItemTaxTotal() {
@@ -245,6 +315,9 @@ public class Checkout implements Serializable
 		this.itemTaxTotal = itemTaxTotal;
 	}
 
+	/**
+	 * The total cost for the item.
+	 */
 	protected  Double itemTotal;
 
 	public Double getItemTotal() {
@@ -255,6 +328,9 @@ public class Checkout implements Serializable
 		this.itemTotal = itemTotal;
 	}
 
+	/**
+	 * The unique, user-defined code that identifies a location. This location can be the location where the order was entered, location for newly in-stock products, and where products are returned.
+	 */
 	protected  String locationCode;
 
 	public String getLocationCode() {
@@ -265,6 +341,9 @@ public class Checkout implements Serializable
 		this.locationCode = locationCode;
 	}
 
+	/**
+	 * The order item number.
+	 */
 	protected  Integer number;
 
 	public Integer getNumber() {
@@ -275,6 +354,9 @@ public class Checkout implements Serializable
 		this.number = number;
 	}
 
+	/**
+	 * The list of historically-applied handling discounts at the order level. The active one will have IsExcluded == false.
+	 */
 	protected  Double orderLevelHandlingDiscountTotal;
 
 	public Double getOrderLevelHandlingDiscountTotal() {
@@ -285,6 +367,9 @@ public class Checkout implements Serializable
 		this.orderLevelHandlingDiscountTotal = orderLevelHandlingDiscountTotal;
 	}
 
+	/**
+	 * The applicable product discount for the order.
+	 */
 	protected  Double orderLevelProductDiscountTotal;
 
 	public Double getOrderLevelProductDiscountTotal() {
@@ -295,6 +380,9 @@ public class Checkout implements Serializable
 		this.orderLevelProductDiscountTotal = orderLevelProductDiscountTotal;
 	}
 
+	/**
+	 * The applicable shipping discount for the order.
+	 */
 	protected  Double orderLevelShippingDiscountTotal;
 
 	public Double getOrderLevelShippingDiscountTotal() {
@@ -305,6 +393,9 @@ public class Checkout implements Serializable
 		this.orderLevelShippingDiscountTotal = orderLevelShippingDiscountTotal;
 	}
 
+	/**
+	 * The unique identifier of the item when it was applied to a cart.
+	 */
 	protected  String originalCartId;
 
 	public String getOriginalCartId() {
@@ -315,6 +406,9 @@ public class Checkout implements Serializable
 		this.originalCartId = originalCartId;
 	}
 
+	/**
+	 * If the order is associated with a price list, this is the unique code of the price list.
+	 */
 	protected  String priceListCode;
 
 	public String getPriceListCode() {
@@ -325,6 +419,9 @@ public class Checkout implements Serializable
 		this.priceListCode = priceListCode;
 	}
 
+	/**
+	 * The shipping subtotal amount calculated without any applied discounts for line item and entire amounts of carts and orders. This property is not calculated for wish lists at this time.
+	 */
 	protected  Double shippingSubTotal;
 
 	public Double getShippingSubTotal() {
@@ -335,6 +432,9 @@ public class Checkout implements Serializable
 		this.shippingSubTotal = shippingSubTotal;
 	}
 
+	/**
+	 * The total amount of tax incurred on the shipping charges in the cart and order. This property is not calculated at this time for wish lists.
+	 */
 	protected  Double shippingTaxTotal;
 
 	public Double getShippingTaxTotal() {
@@ -345,6 +445,9 @@ public class Checkout implements Serializable
 		this.shippingTaxTotal = shippingTaxTotal;
 	}
 
+	/**
+	 * The calculated total shipping amount estimated for carts or orders, including tax. This amount is not calculated for wish lists at this time.
+	 */
 	protected  Double shippingTotal;
 
 	public Double getShippingTotal() {
@@ -355,6 +458,9 @@ public class Checkout implements Serializable
 		this.shippingTotal = shippingTotal;
 	}
 
+	/**
+	 * Unique identifier for the site. This IDÂ is used at all levels of a store, catalog, and tenant to associate objects to a site.
+	 */
 	protected  Integer siteId;
 
 	public Integer getSiteId() {
@@ -365,6 +471,9 @@ public class Checkout implements Serializable
 		this.siteId = siteId;
 	}
 
+	/**
+	 * The device from which the order originated in the case of offline orders.
+	 */
 	protected  String sourceDevice;
 
 	public String getSourceDevice() {
@@ -375,6 +484,9 @@ public class Checkout implements Serializable
 		this.sourceDevice = sourceDevice;
 	}
 
+	/**
+	 * The date and time the order was submitted. System-supplied and read-only.
+	 */
 	protected  DateTime submittedDate;
 
 	public DateTime getSubmittedDate() {
@@ -385,6 +497,9 @@ public class Checkout implements Serializable
 		this.submittedDate = submittedDate;
 	}
 
+	/**
+	 * Estimated amount of the cart or order without sales tax, shipping costs, and other fees. This amount is not calculated for wish lists at this time.
+	 */
 	protected  Double subTotal;
 
 	public Double getSubTotal() {
@@ -395,6 +510,9 @@ public class Checkout implements Serializable
 		this.subTotal = subTotal;
 	}
 
+	/**
+	 * Unique identifier for the tenant.
+	 */
 	protected  Integer tenantId;
 
 	public Integer getTenantId() {
@@ -405,6 +523,9 @@ public class Checkout implements Serializable
 		this.tenantId = tenantId;
 	}
 
+	/**
+	 * Total is used to indicate the monetary, estimated total amount of the cart or order, including items, sales tax, shipping costs, and other fees. Totals are not estimated for wish lists at this time.
+	 */
 	protected  Double total;
 
 	public Double getTotal() {
@@ -415,6 +536,9 @@ public class Checkout implements Serializable
 		this.total = total;
 	}
 
+	/**
+	 * The type of scope, which is a developer account or production tenant.
+	 */
 	protected  String type;
 
 	public String getType() {
@@ -425,6 +549,9 @@ public class Checkout implements Serializable
 		this.type = type;
 	}
 
+	/**
+	 * Unique identifier of the customer visit in which the cart was created or last modified.
+	 */
 	protected  String visitId;
 
 	public String getVisitId() {
@@ -435,6 +562,9 @@ public class Checkout implements Serializable
 		this.visitId = visitId;
 	}
 
+	/**
+	 * Unique identifier of the web session in which the cart, order, return, or wish list was created or last modified.
+	 */
 	protected  String webSessionId;
 
 	public String getWebSessionId() {
@@ -445,6 +575,9 @@ public class Checkout implements Serializable
 		this.webSessionId = webSessionId;
 	}
 
+	/**
+	 * Collection of attributes that may be paged list or a list, depending on the usage per object and API type.
+	 */
 	protected List<OrderAttribute> attributes;
 	public List<OrderAttribute> getAttributes() {
 		return this.attributes;
@@ -453,6 +586,9 @@ public class Checkout implements Serializable
 		this.attributes = attributes;
 	}
 
+	/**
+	 * Basic audit info about the object, including date, time, and user account. This data may be captured when creating, updating, and removing data.
+	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -463,6 +599,9 @@ public class Checkout implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
+	/**
+	 * Custom data for a given vendor set within the commerce process.
+	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {
@@ -473,6 +612,9 @@ public class Checkout implements Serializable
 		this.data = data;
 	}
 
+	/**
+	 * The collection of destinations available for the checkout.
+	 */
 	protected List<Destination> destinations;
 	public List<Destination> getDestinations() {
 		return this.destinations;
@@ -481,6 +623,9 @@ public class Checkout implements Serializable
 		this.destinations = destinations;
 	}
 
+	/**
+	 * Groupings bundle items together that have the same fulfillment type and destination. Direct ship items going to the same destination are grouped together, in-store pickup items are grouped together, and gift card items are grouped together.
+	 */
 	protected List<CheckoutGrouping> groupings;
 	public List<CheckoutGrouping> getGroupings() {
 		return this.groupings;
@@ -489,6 +634,9 @@ public class Checkout implements Serializable
 		this.groupings = groupings;
 	}
 
+	/**
+	 * The list of invalid coupons the shopper attempted to enter for the cart or order. These coupons may no longer be valid or incorrectly entered.
+	 */
 	protected List<InvalidCoupon> invalidCoupons;
 	public List<InvalidCoupon> getInvalidCoupons() {
 		return this.invalidCoupons;
@@ -497,6 +645,9 @@ public class Checkout implements Serializable
 		this.invalidCoupons = invalidCoupons;
 	}
 
+	/**
+	 * A list of requested items. All returned data is provided in an items array.For a failed request, the returned response may be success with an empty item array.
+	 */
 	protected List<OrderItem> items;
 	public List<OrderItem> getItems() {
 		return this.items;
@@ -505,6 +656,9 @@ public class Checkout implements Serializable
 		this.items = items;
 	}
 
+	/**
+	 * List of order-level discounts projected to apply to the cart at checkout or order.
+	 */
 	protected List<AppliedDiscount> orderDiscounts;
 	public List<AppliedDiscount> getOrderDiscounts() {
 		return this.orderDiscounts;
@@ -513,6 +667,9 @@ public class Checkout implements Serializable
 		this.orderDiscounts = orderDiscounts;
 	}
 
+	/**
+	 * Wrapper for a collection of payments associated with an order or return. An order can include a number of payments until the full total is covered.
+	 */
 	protected List<Payment> payments;
 	public List<Payment> getPayments() {
 		return this.payments;
@@ -521,6 +678,9 @@ public class Checkout implements Serializable
 		this.payments = payments;
 	}
 
+	/**
+	 * A paged list collection of shopper notes for the order.
+	 */
 	protected  ShopperNotes shopperNotes;
 
 	public ShopperNotes getShopperNotes() {
@@ -531,6 +691,20 @@ public class Checkout implements Serializable
 		this.shopperNotes = shopperNotes;
 	}
 
+	/**
+	 * suggestedDiscounts ApiType DOCUMENT_HERE 
+	 */
+	protected List<SuggestedDiscount> suggestedDiscounts;
+	public List<SuggestedDiscount> getSuggestedDiscounts() {
+		return this.suggestedDiscounts;
+	}
+	public void setSuggestedDiscounts(List<SuggestedDiscount> suggestedDiscounts) {
+		this.suggestedDiscounts = suggestedDiscounts;
+	}
+
+	/**
+	 * Leverage this property within a [tax Arc.js action](https://www.mozu.com/docs/arcjs/commerce-catalog-storefront-tax/commerce-catalog-storefront-tax.htm) to supplement the tax information for this item or object with custom JSON data.
+	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode taxData;
 
 	public com.fasterxml.jackson.databind.JsonNode getTaxData() {

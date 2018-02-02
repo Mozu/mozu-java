@@ -100,5 +100,34 @@ public class CreditTransaction implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
+	/**
+	 * data ApiType DOCUMENT_HERE 
+	 */
+	protected transient com.fasterxml.jackson.databind.JsonNode data;
+
+	public com.fasterxml.jackson.databind.JsonNode getData() {
+		return this.data;
+	}
+
+	public void setData(com.fasterxml.jackson.databind.JsonNode data) {
+		this.data = data;
+	}
+
+	private void writeObject(java.io.ObjectOutputStream out) throws IOException {
+		out.defaultWriteObject();
+		if(data == null){
+			out.writeBoolean(false);
+		} else {
+			out.writeBoolean(true);
+			new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonGenerator.Feature.AUTO_CLOSE_TARGET, false).writeValue(out, data);
+		}
+	}
+
+	private void readObject(java.io.ObjectInputStream in) throws IOException, ClassNotFoundException {
+		in.defaultReadObject();
+		if(in.readBoolean()){
+			this.data = new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonParser.Feature.AUTO_CLOSE_SOURCE, false).readValue(in, com.fasterxml.jackson.databind.JsonNode.class);
+		}
+	}
 
 }

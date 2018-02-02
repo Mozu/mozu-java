@@ -136,6 +136,9 @@ public class GeneralSettings implements Serializable
 		this.isMozuWebSite = isMozuWebSite;
 	}
 
+	/**
+	 * True if the site supports [shipping to multiple addresses](https://www.mozu.com/docs/Guides/orders/multi-ship.htm) within one order.
+	 */
 	protected  Boolean isMultishipEnabled;
 
 	public Boolean getIsMultishipEnabled() {

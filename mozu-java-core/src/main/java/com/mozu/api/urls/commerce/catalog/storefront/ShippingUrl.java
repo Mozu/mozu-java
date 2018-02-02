@@ -15,7 +15,7 @@ public class ShippingUrl
 
 	/**
 	 * Get Resource Url for GetMultiRates
-	 * @param includeRawResponse 
+	 * @param includeRawResponse Set this parameter to  to retrieve the full raw JSON response from a shipping carrier (instead of just the shipping rate).
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getMultiRatesUrl(Boolean includeRawResponse)

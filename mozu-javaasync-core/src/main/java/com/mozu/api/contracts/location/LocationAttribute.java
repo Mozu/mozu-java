@@ -62,6 +62,9 @@ public class LocationAttribute implements Serializable
 		this.values = values;
 	}
 
+	/**
+	 * The custom attribute object for the location.
+	 */
 	protected  Attribute attributeDefinition;
 
 	public Attribute getAttributeDefinition() {

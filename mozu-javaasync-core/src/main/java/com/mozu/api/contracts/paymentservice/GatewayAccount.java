@@ -24,6 +24,17 @@ public class GatewayAccount implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The bin patterns for a branded credit card.
+	 */
+	protected List<String> binPatterns;
+	public List<String> getBinPatterns() {
+		return this.binPatterns;
+	}
+	public void setBinPatterns(List<String> binPatterns) {
+		this.binPatterns = binPatterns;
+	}
+
 	protected  String countryCode;
 
 	public String getCountryCode() {

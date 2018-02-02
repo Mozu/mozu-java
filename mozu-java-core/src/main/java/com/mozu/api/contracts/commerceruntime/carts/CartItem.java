@@ -41,6 +41,19 @@ public class CartItem implements Serializable
 		this.adjustedLineItemSubtotal = adjustedLineItemSubtotal;
 	}
 
+	/**
+	 * autoAddDiscountId ApiType DOCUMENT_HERE 
+	 */
+	protected  Integer autoAddDiscountId;
+
+	public Integer getAutoAddDiscountId() {
+		return this.autoAddDiscountId;
+	}
+
+	public void setAutoAddDiscountId(Integer autoAddDiscountId) {
+		this.autoAddDiscountId = autoAddDiscountId;
+	}
+
 	protected  Double discountedTotal;
 
 	public Double getDiscountedTotal() {
@@ -175,6 +188,19 @@ public class CartItem implements Serializable
 
 	public void setLocaleCode(String localeCode) {
 		this.localeCode = localeCode;
+	}
+
+	/**
+	 * The location where the order item(s) was purchased.
+	 */
+	protected  String purchaseLocation;
+
+	public String getPurchaseLocation() {
+		return this.purchaseLocation;
+	}
+
+	public void setPurchaseLocation(String purchaseLocation) {
+		this.purchaseLocation = purchaseLocation;
 	}
 
 	protected  Integer quantity;

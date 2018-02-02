@@ -37,18 +37,19 @@ public class OrderClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderCollection> getOrdersClient() throws Exception
 	{
-		return getOrdersClient( null,  null,  null,  null,  null,  null,  null);
+		return getOrdersClient( null,  null,  null,  null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderCollection> mozuClient=GetOrdersClient( startIndex,  pageSize,  sortBy,  filter,  q,  qLimit,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderCollection> mozuClient=GetOrdersClient( startIndex,  pageSize,  sortBy,  filter,  q,  qLimit,  includeBin,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * OrderCollection orderCollection = client.Result();
 	 * </code></pre></p>
 	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param includeBin 
 	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
 	 * @param q A list of order search terms (not phrases) to use in the query when searching across order number and the name or email of the billing contact. When entering, separate multiple search terms with a space character.
 	 * @param qLimit The maximum number of search results to return in the response. You can limit any range between 1-100.
@@ -58,9 +59,9 @@ public class OrderClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.OrderCollection>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderCollection
 	 */
-	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderCollection> getOrdersClient(Integer startIndex, Integer pageSize, String sortBy, String filter, String q, Integer qLimit, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderCollection> getOrdersClient(Integer startIndex, Integer pageSize, String sortBy, String filter, String q, Integer qLimit, Boolean includeBin, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.OrderUrl.getOrdersUrl(filter, pageSize, q, qLimit, responseFields, sortBy, startIndex);
+		MozuUrl url = com.mozu.api.urls.commerce.OrderUrl.getOrdersUrl(filter, includeBin, pageSize, q, qLimit, responseFields, sortBy, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.orders.OrderCollection.class;
 		MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderCollection> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderCollection>) MozuClientFactory.getInstance(clz);
@@ -132,26 +133,27 @@ public class OrderClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> getOrderClient(String orderId) throws Exception
 	{
-		return getOrderClient( orderId,  null,  null);
+		return getOrderClient( orderId,  null,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=GetOrderClient( orderId,  draft,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=GetOrderClient( orderId,  draft,  includeBin,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Order order = client.Result();
 	 * </code></pre></p>
 	 * @param draft If true, retrieve the draft version of the order, which might include uncommitted changes to the order or its components.
+	 * @param includeBin 
 	 * @param orderId Unique identifier of the order.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 */
-	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> getOrderClient(String orderId, Boolean draft, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> getOrderClient(String orderId, Boolean draft, Boolean includeBin, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.OrderUrl.getOrderUrl(draft, orderId, responseFields);
+		MozuUrl url = com.mozu.api.urls.commerce.OrderUrl.getOrderUrl(draft, includeBin, orderId, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.orders.Order.class;
 		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order>) MozuClientFactory.getInstance(clz);
@@ -291,6 +293,54 @@ public class OrderClient {
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(action);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=PriceOrderClient( order,  refreshShipping);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Order order = client.Result();
+	 * </code></pre></p>
+	 * @param refreshShipping 
+	 * @param order 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
+	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> priceOrderClient(com.mozu.api.contracts.commerceruntime.orders.Order order, Boolean refreshShipping) throws Exception
+	{
+		return priceOrderClient( order,  refreshShipping,  null,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=PriceOrderClient( order,  refreshShipping,  couponCodeToApply,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Order order = client.Result();
+	 * </code></pre></p>
+	 * @param couponCodeToApply 
+	 * @param refreshShipping 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param order 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
+	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> priceOrderClient(com.mozu.api.contracts.commerceruntime.orders.Order order, Boolean refreshShipping, String couponCodeToApply, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.OrderUrl.priceOrderUrl(couponCodeToApply, refreshShipping, responseFields);
+		String verb = "POST";
+		Class<?> clz = com.mozu.api.contracts.commerceruntime.orders.Order.class;
+		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(order);
 		return mozuClient;
 
 	}
