@@ -30,7 +30,7 @@ public class TenantDataClient {
 	 * client.executeRequest();
 	 * string string = client.Result();
 	 * </code></pre></p>
-	 * @param dbEntryQuery The database entry string to create.
+	 * @param dbEntryQuery The database entry query string used to retrieve the record information.
 	 * @return Mozu.Api.MozuClient <string>
 	 * @see string
 	 */
@@ -47,8 +47,8 @@ public class TenantDataClient {
 	 * client.executeRequest();
 	 * string string = client.Result();
 	 * </code></pre></p>
-	 * @param dbEntryQuery The database entry string to create.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param dbEntryQuery The database entry query string used to retrieve the record information.
+	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <string>
 	 * @see string
 	 */
@@ -95,8 +95,8 @@ public class TenantDataClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param dbEntryQuery The database entry string to create.
-	 * @param value The value string to create.
+	 * @param dbEntryQuery The database entry query string used to update the record information.
+	 * @param value The database value to update.
 	 * @return Mozu.Api.MozuClient 
 	 * @see string
 	 */
@@ -119,7 +119,7 @@ public class TenantDataClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param dbEntryQuery The database entry string to create.
+	 * @param dbEntryQuery The database entry string to delete.
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deleteDBValueClient(String dbEntryQuery) throws Exception

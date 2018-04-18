@@ -58,7 +58,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * Indicates if the customer account is opted to receive marketing materials. If true, the customer account is opted in for receiving the content. 
+	 * Indicates if the customer account is opted to receive marketing materials. If true, the customer account is opted in for receiving the content.
 	 */
 	protected  Boolean acceptsMarketing;
 
@@ -424,7 +424,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * True if the order is one of multiple orders created to fulfill as parent order that supports shipping to multiple adresses.
+	 * isPartialOrder ApiType DOCUMENT_HERE 
 	 */
 	protected  Boolean isPartialOrder;
 
@@ -510,7 +510,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * The unique identifier of the checkout that created the parent order (if the order is one of multiple orders created to fulfill a parent order that support shipping to multiple addresses).
+	 * parentCheckoutId ApiType DOCUMENT_HERE 
 	 */
 	protected  String parentCheckoutId;
 
@@ -523,7 +523,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * The checkout number from the checkout that created the parent order (if the order is one of multiple orders created to fulfill a parent order that support shipping to multiple addresses).
+	 * parentCheckoutNumber ApiType DOCUMENT_HERE 
 	 */
 	protected  Integer parentCheckoutNumber;
 
@@ -585,7 +585,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * The number of partial orders that make up the parent order.
+	 * partialOrderCount ApiType DOCUMENT_HERE 
 	 */
 	protected  Integer partialOrderCount;
 
@@ -598,7 +598,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * The order number for the partial order.
+	 * partialOrderNumber ApiType DOCUMENT_HERE 
 	 */
 	protected  Integer partialOrderNumber;
 
@@ -1040,9 +1040,6 @@ public class Order implements Serializable
 		this.shopperNotes = shopperNotes;
 	}
 
-	/**
-	 * suggestedDiscounts ApiType DOCUMENT_HERE 
-	 */
 	protected List<SuggestedDiscount> suggestedDiscounts;
 	public List<SuggestedDiscount> getSuggestedDiscounts() {
 		return this.suggestedDiscounts;

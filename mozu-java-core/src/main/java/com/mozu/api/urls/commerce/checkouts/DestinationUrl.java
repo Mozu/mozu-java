@@ -15,7 +15,7 @@ public class DestinationUrl
 
 	/**
 	 * Get Resource Url for GetDestinations
-	 * @param checkoutId The unique identifier of the checkout.
+	 * @param checkoutId 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getDestinationsUrl(String checkoutId)
@@ -27,8 +27,8 @@ public class DestinationUrl
 
 	/**
 	 * Get Resource Url for GetDestination
-	 * @param checkoutId The unique identifier of the checkout.
-	 * @param destinationId The unique identifier of the destination.
+	 * @param checkoutId 
+	 * @param destinationId 
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
@@ -43,7 +43,7 @@ public class DestinationUrl
 
 	/**
 	 * Get Resource Url for AddDestination
-	 * @param checkoutId The unique identifier of the checkout.
+	 * @param checkoutId 
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
@@ -57,8 +57,8 @@ public class DestinationUrl
 
 	/**
 	 * Get Resource Url for UpdateDestination
-	 * @param checkoutId The unique identifier of the checkout.
-	 * @param destinationId The unique identifier of the destination.
+	 * @param checkoutId 
+	 * @param destinationId 
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
@@ -73,8 +73,8 @@ public class DestinationUrl
 
 	/**
 	 * Get Resource Url for RemoveDestination
-	 * @param checkoutId The unique identifier of the checkout.
-	 * @param destinationId The unique identifier of the destination.
+	 * @param checkoutId 
+	 * @param destinationId 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl removeDestinationUrl(String checkoutId, String destinationId)

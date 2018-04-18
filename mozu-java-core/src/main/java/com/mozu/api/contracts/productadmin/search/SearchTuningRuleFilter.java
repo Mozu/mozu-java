@@ -22,7 +22,7 @@ public class SearchTuningRuleFilter implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Mozu.ProductAdmin.Contracts.Search.SearchTuningRuleFilter field ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.ProductAdmin.Contracts.Search.SearchTuningRuleFilter field ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  String field;
 

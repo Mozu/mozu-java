@@ -24,7 +24,7 @@ public class ProductSearchRandomAccessCursor implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * A calculated set of cursor marks for a given query that can be accessed in any order, providing the ability to page through all results in a random or parallelized order. You provide one of the generated cursor mark sets to the  parameter of the  operation in the  resource or the  operation in the  resource.
+	 * A calculated set of cursor marks for a given query that can be accessed in any order, providing the ability to page through all results in a random or parallelized order. You provide one of the generated cursor mark sets to the  parameter of the  operation in the  resource or the  operation in the  resource.        
 	 */
 	protected List<String> cursorMarks;
 	public List<String> getCursorMarks() {

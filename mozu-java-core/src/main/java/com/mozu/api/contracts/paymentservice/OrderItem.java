@@ -52,7 +52,7 @@ public class OrderItem implements Serializable
 	}
 
 	/**
-	 * Mozu.PaymentService.Contracts.OrderItem taxAmount ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.PaymentService.Contracts.OrderItem taxAmount ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  Double taxAmount;
 
@@ -65,7 +65,7 @@ public class OrderItem implements Serializable
 	}
 
 	/**
-	 * Mozu.PaymentService.Contracts.OrderItem totalAmount ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.PaymentService.Contracts.OrderItem totalAmount ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  Double totalAmount;
 

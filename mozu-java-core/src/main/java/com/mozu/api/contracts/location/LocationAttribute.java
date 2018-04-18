@@ -63,7 +63,7 @@ public class LocationAttribute implements Serializable
 	}
 
 	/**
-	 * The custom attribute object for the location.
+	 * attributeDefinition ApiType DOCUMENT_HERE 
 	 */
 	protected  Attribute attributeDefinition;
 

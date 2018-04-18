@@ -40,9 +40,6 @@ public class DiscountTarget implements Serializable
 		this.appliesToLeastExpensiveProductsFirst = appliesToLeastExpensiveProductsFirst;
 	}
 
-	/**
-	 * Specifies whether the discount applies to the discount condition items as well. If , the shopper must purchase the required amount of the discount condition before the discount applies.
-	 */
 	protected  Boolean appliesToPurchaseConditionItems;
 
 	public Boolean getAppliesToPurchaseConditionItems() {

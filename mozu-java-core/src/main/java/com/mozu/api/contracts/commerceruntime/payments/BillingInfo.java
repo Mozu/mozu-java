@@ -26,9 +26,6 @@ public class BillingInfo implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * customCreditType ApiType DOCUMENT_HERE 
-	 */
 	protected  String customCreditType;
 
 	public String getCustomCreditType() {
@@ -98,9 +95,6 @@ public class BillingInfo implements Serializable
 		this.storeCreditCode = storeCreditCode;
 	}
 
-	/**
-	 * storeCreditType ApiType DOCUMENT_HERE 
-	 */
 	protected  String storeCreditType;
 
 	public String getStoreCreditType() {

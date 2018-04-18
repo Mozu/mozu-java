@@ -40,7 +40,7 @@ public class FraudScreenResource {
 	 *	FraudScreen fraudscreen = new FraudScreen();
 	 *	FraudScreen fraudScreen = fraudscreen.screen( request);
 	 * </code></pre></p>
-	 * @param request Mozu.PaymentService.Contracts.Request.FraudScreenRequest ApiType DOCUMENT_HERE 
+	 * @param request 
 	 * @return com.mozu.api.contracts.paymentservice.response.FraudScreen
 	 * @see com.mozu.api.contracts.paymentservice.response.FraudScreen
 	 * @see com.mozu.api.contracts.paymentservice.request.FraudScreenRequest
@@ -56,8 +56,8 @@ public class FraudScreenResource {
 	 *	FraudScreen fraudscreen = new FraudScreen();
 	 *	FraudScreen fraudScreen = fraudscreen.screen( request,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param request Mozu.PaymentService.Contracts.Request.FraudScreenRequest ApiType DOCUMENT_HERE 
+	 * @param responseFields 
+	 * @param request 
 	 * @return com.mozu.api.contracts.paymentservice.response.FraudScreen
 	 * @see com.mozu.api.contracts.paymentservice.response.FraudScreen
 	 * @see com.mozu.api.contracts.paymentservice.request.FraudScreenRequest

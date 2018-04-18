@@ -137,7 +137,7 @@ public class GeneralSettings implements Serializable
 	}
 
 	/**
-	 * True if the site supports [shipping to multiple addresses](https://www.mozu.com/docs/Guides/orders/multi-ship.htm) within one order.
+	 * isMultishipEnabled ApiType DOCUMENT_HERE 
 	 */
 	protected  Boolean isMultishipEnabled;
 

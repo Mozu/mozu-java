@@ -15,8 +15,8 @@ public class OrderItemUrl
 
 	/**
 	 * Get Resource Url for SplitItem
-	 * @param checkoutId The unique identifier of the checkout.
-	 * @param itemId The unique identifier of the item.
+	 * @param checkoutId 
+	 * @param itemId 
 	 * @param quantity The number of cart items in the shopper's active cart.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
@@ -33,7 +33,7 @@ public class OrderItemUrl
 
 	/**
 	 * Get Resource Url for BulkUpdateItemDestinations
-	 * @param checkoutId The unique identifier of the checkout.
+	 * @param checkoutId 
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
@@ -47,9 +47,9 @@ public class OrderItemUrl
 
 	/**
 	 * Get Resource Url for UpdateItemDestination
-	 * @param checkoutId The unique identifier of the checkout.
-	 * @param destinationId The unique identifier of the destination.
-	 * @param itemId The unique identifier of the item.
+	 * @param checkoutId 
+	 * @param destinationId 
+	 * @param itemId 
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */

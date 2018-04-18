@@ -25,6 +25,16 @@ public class ProductType implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected  String name;
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	/**
 	 * The type of goods in a bundled product. A bundled product is composed of products associated to sell together. Possible values include â€œPhysicalâ€ and â€œDigitalCreditâ€. This comes from the `productType `of the product. Products are defaulted to a Physical `goodsType`. Gift cards have a `goodsType `of DigitalCredit.
 	 */
@@ -66,16 +76,6 @@ public class ProductType implements Serializable
 
 	public void setMasterCatalogId(Integer masterCatalogId) {
 		this.masterCatalogId = masterCatalogId;
-	}
-
-	protected  String name;
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
 	}
 
 	protected  Integer productCount;

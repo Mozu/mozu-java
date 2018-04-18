@@ -443,9 +443,6 @@ public class Wishlist implements Serializable
 		this.orderDiscounts = orderDiscounts;
 	}
 
-	/**
-	 * suggestedDiscounts ApiType DOCUMENT_HERE 
-	 */
 	protected List<SuggestedDiscount> suggestedDiscounts;
 	public List<SuggestedDiscount> getSuggestedDiscounts() {
 		return this.suggestedDiscounts;

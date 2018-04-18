@@ -30,7 +30,7 @@ public class Package implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Mozu.AppDev.Contracts.Package apiVersion ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.Package apiVersion ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  String apiVersion;
 
@@ -82,7 +82,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.Package applicationDescription ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.Package applicationDescription ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  String applicationDescription;
 
@@ -95,7 +95,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.Package applicationDetailId ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.Package applicationDetailId ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  Integer applicationDetailId;
 
@@ -108,7 +108,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.Package applicationId ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.Package applicationId ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  Integer applicationId;
 
@@ -121,7 +121,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.Package applicationName ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.Package applicationName ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  String applicationName;
 
@@ -147,7 +147,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.Package applicationStatus ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.Package applicationStatus ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  String applicationStatus;
 
@@ -160,7 +160,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.Package applicationStatusId ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.Package applicationStatusId ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  Integer applicationStatusId;
 
@@ -173,7 +173,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.Package applicationStatusName ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.Package applicationStatusName ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  String applicationStatusName;
 
@@ -186,7 +186,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.Package applicationTypeId ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.Package applicationTypeId ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  Integer applicationTypeId;
 
@@ -199,7 +199,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.Package applicationTypeName ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.Package applicationTypeName ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  String applicationTypeName;
 
@@ -225,7 +225,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.Package appSchemeVersion ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.Package appSchemeVersion ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  Byte appSchemeVersion;
 
@@ -238,7 +238,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.Package assetFileCount ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.Package assetFileCount ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  Integer assetFileCount;
 
@@ -251,7 +251,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.Package attributeNamespace ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.Package attributeNamespace ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  String attributeNamespace;
 
@@ -264,7 +264,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.Package dataNamespace ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.Package dataNamespace ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  String dataNamespace;
 
@@ -277,7 +277,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.Package hasApplicationVersions ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.Package hasApplicationVersions ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  Boolean hasApplicationVersions;
 
@@ -303,7 +303,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * Indicates if the object is deleted. If true, the object has been deleted. This may affect associated child members and objects. For example, a deleted master catalog affects all associated catalogs. 
+	 * Indicates if the object is deleted. If true, the object has been deleted. This may affect associated child members and objects. For example, a deleted master catalog affects all associated catalogs.
 	 */
 	protected  Boolean isDeleted;
 
@@ -329,7 +329,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.Package isReleasePackage ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.Package isReleasePackage ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  Boolean isReleasePackage;
 
@@ -342,7 +342,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.Package legacyNamespace ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.Package legacyNamespace ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  String legacyNamespace;
 
@@ -355,7 +355,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.Package majorVersion ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.Package majorVersion ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  Integer majorVersion;
 
@@ -368,7 +368,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.Package minorVersion ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.Package minorVersion ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  Integer minorVersion;
 
@@ -394,7 +394,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.Package namespaceRegistryId ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.Package namespaceRegistryId ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  String namespaceRegistryId;
 
@@ -407,7 +407,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.Package packageDescription ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.Package packageDescription ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  String packageDescription;
 
@@ -420,7 +420,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.Package packageGuid ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.Package packageGuid ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  String packageGuid;
 
@@ -433,7 +433,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.Package packageName ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.Package packageName ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  String packageName;
 
@@ -459,7 +459,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.Package parentThemeName ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.Package parentThemeName ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  String parentThemeName;
 
@@ -472,7 +472,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.Package publishedParentSemanticVersion ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.Package publishedParentSemanticVersion ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  String publishedParentSemanticVersion;
 
@@ -485,7 +485,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.Package publishedParentThemeId ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.Package publishedParentThemeId ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  Integer publishedParentThemeId;
 
@@ -498,7 +498,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.Package revision ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.Package revision ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  Integer revision;
 
@@ -511,7 +511,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.Package semanticVersionRange ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.Package semanticVersionRange ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  String semanticVersionRange;
 
@@ -524,7 +524,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.Package sharedSecret ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.Package sharedSecret ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  String sharedSecret;
 
@@ -537,7 +537,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.Package themeEngineVersion ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.Package themeEngineVersion ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  String themeEngineVersion;
 
@@ -639,7 +639,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.Package applicationAttributes ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.Package applicationAttributes ApiTypeMember DOCUMENT_HERE
 	 */
 	protected List<ApplicationAttribute> applicationAttributes;
 	public List<ApplicationAttribute> getApplicationAttributes() {
@@ -661,7 +661,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.Package applicationCapabilities ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.Package applicationCapabilities ApiTypeMember DOCUMENT_HERE
 	 */
 	protected List<ApplicationCapability> applicationCapabilities;
 	public List<ApplicationCapability> getApplicationCapabilities() {
@@ -672,7 +672,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.Package applicationCapabilityTypes ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.Package applicationCapabilityTypes ApiTypeMember DOCUMENT_HERE
 	 */
 	protected List<ApplicationCapabilityType> applicationCapabilityTypes;
 	public List<ApplicationCapabilityType> getApplicationCapabilityTypes() {
@@ -683,7 +683,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.Package applicationEntitlements ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.Package applicationEntitlements ApiTypeMember DOCUMENT_HERE
 	 */
 	protected List<ApplicationEntitlement> applicationEntitlements;
 	public List<ApplicationEntitlement> getApplicationEntitlements() {
@@ -694,7 +694,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.Package applicationSubscriptions ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.Package applicationSubscriptions ApiTypeMember DOCUMENT_HERE
 	 */
 	protected List<ApplicationSubscription> applicationSubscriptions;
 	public List<ApplicationSubscription> getApplicationSubscriptions() {

@@ -33,6 +33,19 @@ public class ProductValidationSummary implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * The universal product code (UPC) is the barcode defined for the product. The UPC is unique across all sales channels.
+	 */
+	protected  String upc;
+
+	public String getUpc() {
+		return this.upc;
+	}
+
+	public void setUpc(String upc) {
+		this.upc = upc;
+	}
+
+	/**
 	 * List of supported types of fulfillment for the product or variation. The types include direct ship, in-store pickup, or both.
 	 */
 	protected List<String> fulfillmentTypesSupported;
@@ -148,9 +161,6 @@ public class ProductValidationSummary implements Serializable
 		this.productUsage = productUsage;
 	}
 
-	/**
-	 * The location where the order item(s) was purchased.
-	 */
 	protected  String purchaseLocation;
 
 	public String getPurchaseLocation() {
@@ -159,19 +169,6 @@ public class ProductValidationSummary implements Serializable
 
 	public void setPurchaseLocation(String purchaseLocation) {
 		this.purchaseLocation = purchaseLocation;
-	}
-
-	/**
-	 * The universal product code (UPC) is the barcode defined for the product. The UPC is unique across all sales channels. 
-	 */
-	protected  String upc;
-
-	public String getUpc() {
-		return this.upc;
-	}
-
-	public void setUpc(String upc) {
-		this.upc = upc;
 	}
 
 	protected  String variationProductCode;

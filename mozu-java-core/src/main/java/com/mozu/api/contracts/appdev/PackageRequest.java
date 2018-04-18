@@ -22,7 +22,7 @@ public class PackageRequest implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Mozu.AppDev.Contracts.PackageRequest appKey ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.PackageRequest appKey ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  String appKey;
 
@@ -35,7 +35,7 @@ public class PackageRequest implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.PackageRequest parentThemeAppKey ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.PackageRequest parentThemeAppKey ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  String parentThemeAppKey;
 

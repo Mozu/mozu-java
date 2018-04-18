@@ -15,9 +15,9 @@ public class DocumentListUrl
 
 	/**
 	 * Get Resource Url for GetDocumentLists
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param startIndex 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getDocumentListsUrl(Integer pageSize, String responseFields, Integer startIndex)
@@ -31,8 +31,8 @@ public class DocumentListUrl
 
 	/**
 	 * Get Resource Url for GetDocumentList
-	 * @param documentListName Name of content documentListName to delete
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param documentListName The name of the document list.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getDocumentListUrl(String documentListName, String responseFields)
@@ -45,7 +45,7 @@ public class DocumentListUrl
 
 	/**
 	 * Get Resource Url for CreateDocumentList
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl createDocumentListUrl(String responseFields)
@@ -57,8 +57,8 @@ public class DocumentListUrl
 
 	/**
 	 * Get Resource Url for UpdateDocumentList
-	 * @param documentListName Name of content documentListName to delete
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param documentListName 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateDocumentListUrl(String documentListName, String responseFields)
@@ -71,7 +71,7 @@ public class DocumentListUrl
 
 	/**
 	 * Get Resource Url for DeleteDocumentList
-	 * @param documentListName Name of content documentListName to delete
+	 * @param documentListName 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteDocumentListUrl(String documentListName)

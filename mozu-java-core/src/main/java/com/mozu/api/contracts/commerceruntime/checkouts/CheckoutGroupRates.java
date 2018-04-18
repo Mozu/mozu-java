@@ -25,7 +25,7 @@ public class CheckoutGroupRates implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The unique identifier of the grouping.
+	 * groupingId ApiType DOCUMENT_HERE 
 	 */
 	protected  String groupingId;
 
@@ -38,7 +38,7 @@ public class CheckoutGroupRates implements Serializable
 	}
 
 	/**
-	 * The shipping rates available to the grouping.
+	 * shippingRates ApiType DOCUMENT_HERE 
 	 */
 	protected List<ShippingRate> shippingRates;
 	public List<ShippingRate> getShippingRates() {

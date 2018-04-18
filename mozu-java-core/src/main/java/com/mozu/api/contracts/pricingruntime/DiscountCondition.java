@@ -14,18 +14,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	Properties of the conditions that must be met for a discount to apply to an order.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DiscountCondition implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The coupon code that a shopper uses to redeem an associated discount  on a purchase. This is also the unique identifier of the coupon itself.
-	 */
 	protected  String couponCode;
 
 	public String getCouponCode() {
@@ -36,9 +30,6 @@ public class DiscountCondition implements Serializable
 		this.couponCode = couponCode;
 	}
 
-	/**
-	 * customerSegmentIds ApiType DOCUMENT_HERE 
-	 */
 	protected List<Integer> customerSegmentIds;
 	public List<Integer> getCustomerSegmentIds() {
 		return this.customerSegmentIds;
@@ -47,9 +38,6 @@ public class DiscountCondition implements Serializable
 		this.customerSegmentIds = customerSegmentIds;
 	}
 
-	/**
-	 * excludedCategoryIds ApiType DOCUMENT_HERE 
-	 */
 	protected List<Integer> excludedCategoryIds;
 	public List<Integer> getExcludedCategoryIds() {
 		return this.excludedCategoryIds;
@@ -58,9 +46,6 @@ public class DiscountCondition implements Serializable
 		this.excludedCategoryIds = excludedCategoryIds;
 	}
 
-	/**
-	 * excludedProductCodes ApiType DOCUMENT_HERE 
-	 */
 	protected List<String> excludedProductCodes;
 	public List<String> getExcludedProductCodes() {
 		return this.excludedProductCodes;
@@ -69,9 +54,6 @@ public class DiscountCondition implements Serializable
 		this.excludedProductCodes = excludedProductCodes;
 	}
 
-	/**
-	 * Date and time in UTC format when a discount, credit, wish list, or cart expires. An expired discount no longer can be redeemed. An expired wish list is no longer available. An expired credit can no longer be redeemed for a purchase. Acart becomes inactive and expired based on a system-calculated interval. For example, if an anonymous shopper has 14 days of inactivity, the cart is considered abandoned after that period of inactivity. System-supplied and read-only.
-	 */
 	protected  DateTime expirationDate;
 
 	public DateTime getExpirationDate() {
@@ -82,9 +64,6 @@ public class DiscountCondition implements Serializable
 		this.expirationDate = expirationDate;
 	}
 
-	/**
-	 * includedCategoryIds ApiType DOCUMENT_HERE 
-	 */
 	protected List<Integer> includedCategoryIds;
 	public List<Integer> getIncludedCategoryIds() {
 		return this.includedCategoryIds;
@@ -93,9 +72,6 @@ public class DiscountCondition implements Serializable
 		this.includedCategoryIds = includedCategoryIds;
 	}
 
-	/**
-	 * includedProductCodes ApiType DOCUMENT_HERE 
-	 */
 	protected List<String> includedProductCodes;
 	public List<String> getIncludedProductCodes() {
 		return this.includedProductCodes;
@@ -104,9 +80,6 @@ public class DiscountCondition implements Serializable
 		this.includedProductCodes = includedProductCodes;
 	}
 
-	/**
-	 * minimumCategorySubtotalBeforeDiscounts ApiType DOCUMENT_HERE 
-	 */
 	protected  Double minimumCategorySubtotalBeforeDiscounts;
 
 	public Double getMinimumCategorySubtotalBeforeDiscounts() {
@@ -117,9 +90,6 @@ public class DiscountCondition implements Serializable
 		this.minimumCategorySubtotalBeforeDiscounts = minimumCategorySubtotalBeforeDiscounts;
 	}
 
-	/**
-	 * minimumLifetimeValueAmount ApiType DOCUMENT_HERE 
-	 */
 	protected  Double minimumLifetimeValueAmount;
 
 	public Double getMinimumLifetimeValueAmount() {
@@ -130,9 +100,6 @@ public class DiscountCondition implements Serializable
 		this.minimumLifetimeValueAmount = minimumLifetimeValueAmount;
 	}
 
-	/**
-	 * minimumOrderAmount ApiType DOCUMENT_HERE 
-	 */
 	protected  Double minimumOrderAmount;
 
 	public Double getMinimumOrderAmount() {
@@ -143,9 +110,6 @@ public class DiscountCondition implements Serializable
 		this.minimumOrderAmount = minimumOrderAmount;
 	}
 
-	/**
-	 * minimumQuantityProductsRequiredInCategories ApiType DOCUMENT_HERE 
-	 */
 	protected  Integer minimumQuantityProductsRequiredInCategories;
 
 	public Integer getMinimumQuantityProductsRequiredInCategories() {
@@ -156,9 +120,6 @@ public class DiscountCondition implements Serializable
 		this.minimumQuantityProductsRequiredInCategories = minimumQuantityProductsRequiredInCategories;
 	}
 
-	/**
-	 * minimumQuantityRequiredProducts ApiType DOCUMENT_HERE 
-	 */
 	protected  Integer minimumQuantityRequiredProducts;
 
 	public Integer getMinimumQuantityRequiredProducts() {
@@ -169,9 +130,6 @@ public class DiscountCondition implements Serializable
 		this.minimumQuantityRequiredProducts = minimumQuantityRequiredProducts;
 	}
 
-	/**
-	 * paymentWorkflows ApiType DOCUMENT_HERE 
-	 */
 	protected List<String> paymentWorkflows;
 	public List<String> getPaymentWorkflows() {
 		return this.paymentWorkflows;
@@ -180,9 +138,6 @@ public class DiscountCondition implements Serializable
 		this.paymentWorkflows = paymentWorkflows;
 	}
 
-	/**
-	 * requiresCoupon ApiType DOCUMENT_HERE 
-	 */
 	protected  Boolean requiresCoupon;
 
 	public Boolean getRequiresCoupon() {
@@ -193,9 +148,6 @@ public class DiscountCondition implements Serializable
 		this.requiresCoupon = requiresCoupon;
 	}
 
-	/**
-	 * startDate ApiType DOCUMENT_HERE 
-	 */
 	protected  DateTime startDate;
 
 	public DateTime getStartDate() {

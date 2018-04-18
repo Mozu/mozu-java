@@ -48,11 +48,11 @@ public class ProductReservationClient {
 	 * client.executeRequest();
 	 * ProductReservationCollection productReservationCollection = client.Result();
 	 * </code></pre></p>
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param filter 
+	 * @param pageSize Used to page results from a query. Indicates the maximum number of entities to return from a query. Default value: 20. Max value: 200.
+	 * @param responseFields 
+	 * @param sortBy The element to sort the results by and the order in which the results appear. Either ascending order (a-z) which accepts 'asc' or 'asc' or descending order (z-a) which accepts 'desc' or 'desc'. The sortBy parameter follows an available property.
+	 * @param startIndex 
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductReservationCollection>
 	 * @see com.mozu.api.contracts.productadmin.ProductReservationCollection
@@ -97,7 +97,7 @@ public class ProductReservationClient {
 	 * ProductReservation productReservation = client.Result();
 	 * </code></pre></p>
 	 * @param productReservationId Unique identifier of the product reservation.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductReservation>
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
@@ -124,7 +124,7 @@ public class ProductReservationClient {
 	 * ProductReservation productReservation = client.Result();
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param productReservations A hold placed on product inventory for a particular product so that the quantity specified is set aside and available for purchase during the ordering process.
+	 * @param productReservations Details of the product reservations to add.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.ProductReservation>>
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
@@ -144,7 +144,7 @@ public class ProductReservationClient {
 	 * </code></pre></p>
 	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
 	 * @param dataViewMode DataViewMode
-	 * @param productReservations A hold placed on product inventory for a particular product so that the quantity specified is set aside and available for purchase during the ordering process.
+	 * @param productReservations Details of the product reservations to add.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.ProductReservation>>
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
@@ -171,7 +171,7 @@ public class ProductReservationClient {
 	 * client.executeRequest();
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param productReservations A hold placed on product inventory for a particular product so that the quantity specified is set aside and available for purchase during the ordering process.
+	 * @param productReservations List of unique identifiers of the reservations to commit.
 	 * @return Mozu.Api.MozuClient 
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 */
@@ -197,7 +197,7 @@ public class ProductReservationClient {
 	 * ProductReservation productReservation = client.Result();
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param productReservations A hold placed on product inventory for a particular product so that the quantity specified is set aside and available for purchase during the ordering process.
+	 * @param productReservations Properties of the product reservations to update.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.ProductReservation>>
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
@@ -215,9 +215,9 @@ public class ProductReservationClient {
 	 * client.executeRequest();
 	 * ProductReservation productReservation = client.Result();
 	 * </code></pre></p>
-	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
+	 * @param skipInventoryCheck If true, skip the inventory validation process when updating this product reservation.
 	 * @param dataViewMode DataViewMode
-	 * @param productReservations A hold placed on product inventory for a particular product so that the quantity specified is set aside and available for purchase during the ordering process.
+	 * @param productReservations Properties of the product reservations to update.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.ProductReservation>>
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
@@ -243,7 +243,7 @@ public class ProductReservationClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param productReservationId Unique identifier of the product reservation.
+	 * @param productReservationId Unique identifier of the reservation.
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient 
 	 */

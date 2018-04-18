@@ -46,7 +46,7 @@ public class CustomRouteSettingsClient {
 	 * client.executeRequest();
 	 * CustomRouteSettings customRouteSettings = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings>
 	 * @see com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
 	 */
@@ -70,7 +70,7 @@ public class CustomRouteSettingsClient {
 	 * client.executeRequest();
 	 * CustomRouteSettings customRouteSettings = client.Result();
 	 * </code></pre></p>
-	 * @param settings The details of the new custom route setting.
+	 * @param settings 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings>
 	 * @see com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
@@ -88,8 +88,8 @@ public class CustomRouteSettingsClient {
 	 * client.executeRequest();
 	 * CustomRouteSettings customRouteSettings = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param settings The details of the new custom route setting.
+	 * @param responseFields 
+	 * @param settings 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings>
 	 * @see com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
@@ -115,7 +115,7 @@ public class CustomRouteSettingsClient {
 	 * client.executeRequest();
 	 * CustomRouteSettings customRouteSettings = client.Result();
 	 * </code></pre></p>
-	 * @param settings The updated details of the custom route settings.
+	 * @param settings 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings>
 	 * @see com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
@@ -133,8 +133,8 @@ public class CustomRouteSettingsClient {
 	 * client.executeRequest();
 	 * CustomRouteSettings customRouteSettings = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param settings The updated details of the custom route settings.
+	 * @param responseFields 
+	 * @param settings 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings>
 	 * @see com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings

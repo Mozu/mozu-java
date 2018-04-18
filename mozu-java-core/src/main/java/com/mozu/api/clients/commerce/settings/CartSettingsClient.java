@@ -46,7 +46,7 @@ public class CartSettingsClient {
 	 * client.executeRequest();
 	 * CartSettings cartSettings = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.order.CartSettings>
 	 * @see com.mozu.api.contracts.sitesettings.order.CartSettings
 	 */
@@ -88,7 +88,7 @@ public class CartSettingsClient {
 	 * client.executeRequest();
 	 * CartSettings cartSettings = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param cartSettings 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.order.CartSettings>
 	 * @see com.mozu.api.contracts.sitesettings.order.CartSettings
@@ -133,7 +133,7 @@ public class CartSettingsClient {
 	 * client.executeRequest();
 	 * CartSettings cartSettings = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param cartSettings 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.order.CartSettings>
 	 * @see com.mozu.api.contracts.sitesettings.order.CartSettings

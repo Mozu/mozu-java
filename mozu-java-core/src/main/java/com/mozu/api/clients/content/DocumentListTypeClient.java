@@ -47,9 +47,9 @@ public class DocumentListTypeClient {
 	 * client.executeRequest();
 	 * DocumentListTypeCollection documentListTypeCollection = client.Result();
 	 * </code></pre></p>
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param startIndex 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentListTypeCollection>
 	 * @see com.mozu.api.contracts.content.DocumentListTypeCollection
 	 */
@@ -92,7 +92,7 @@ public class DocumentListTypeClient {
 	 * DocumentListType documentListType = client.Result();
 	 * </code></pre></p>
 	 * @param documentListTypeFQN 
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentListType>
 	 * @see com.mozu.api.contracts.content.DocumentListType
 	 */
@@ -117,7 +117,7 @@ public class DocumentListTypeClient {
 	 * client.executeRequest();
 	 * DocumentListType documentListType = client.Result();
 	 * </code></pre></p>
-	 * @param list Properties for the document list type. Document lists contain documents with an associated document type, such as web pages.
+	 * @param list 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentListType>
 	 * @see com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
@@ -135,8 +135,8 @@ public class DocumentListTypeClient {
 	 * client.executeRequest();
 	 * DocumentListType documentListType = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param list Properties for the document list type. Document lists contain documents with an associated document type, such as web pages.
+	 * @param responseFields 
+	 * @param list 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentListType>
 	 * @see com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
@@ -164,7 +164,7 @@ public class DocumentListTypeClient {
 	 * DocumentListType documentListType = client.Result();
 	 * </code></pre></p>
 	 * @param documentListTypeFQN 
-	 * @param list Properties for the document list type. Document lists contain documents with an associated document type, such as web pages.
+	 * @param list 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentListType>
 	 * @see com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
@@ -183,8 +183,8 @@ public class DocumentListTypeClient {
 	 * DocumentListType documentListType = client.Result();
 	 * </code></pre></p>
 	 * @param documentListTypeFQN 
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param list Properties for the document list type. Document lists contain documents with an associated document type, such as web pages.
+	 * @param responseFields 
+	 * @param list 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentListType>
 	 * @see com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType

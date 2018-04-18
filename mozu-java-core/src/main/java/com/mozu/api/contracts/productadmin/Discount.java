@@ -19,7 +19,7 @@ import com.mozu.api.contracts.productadmin.DiscountLocalizedContent;
 import com.mozu.api.contracts.productadmin.DiscountTarget;
 
 /**
- *	Name of the discount added and applied to a shopping cart and order for a shopper's purchase. 
+ *	Name of the discount added and applied to a shopping cart and order for a shopper's purchase.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Discount implements Serializable
@@ -71,7 +71,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * True if the discount should not apply to orders with multiple shipments. For more information, refer to the topic on [multiple shipments](https://www.mozu.com/docs/Guides/orders/multi-ship.htm#effect_on_discounts).
+	 * doesNotApplyToMultiShipToOrders ApiType DOCUMENT_HERE 
 	 */
 	protected  Boolean doesNotApplyToMultiShipToOrders;
 
@@ -130,9 +130,6 @@ public class Discount implements Serializable
 		this.includedPriceLists = includedPriceLists;
 	}
 
-	/**
-	 * This field is read-only and specifies whether the discount condition is one product or category, and matches the discount target.
-	 */
 	protected  Boolean isBxGx;
 
 	public Boolean getIsBxGx() {

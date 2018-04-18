@@ -23,16 +23,6 @@ public class Contact implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected  String companyOrOrganization;
-
-	public String getCompanyOrOrganization() {
-		return this.companyOrOrganization;
-	}
-
-	public void setCompanyOrOrganization(String companyOrOrganization) {
-		this.companyOrOrganization = companyOrOrganization;
-	}
-
 	protected  String email;
 
 	public String getEmail() {
@@ -41,6 +31,16 @@ public class Contact implements Serializable
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	protected  String companyOrOrganization;
+
+	public String getCompanyOrOrganization() {
+		return this.companyOrOrganization;
+	}
+
+	public void setCompanyOrOrganization(String companyOrOrganization) {
+		this.companyOrOrganization = companyOrOrganization;
 	}
 
 	protected  String firstName;

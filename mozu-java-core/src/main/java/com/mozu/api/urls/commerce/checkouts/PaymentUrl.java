@@ -15,7 +15,7 @@ public class PaymentUrl
 
 	/**
 	 * Get Resource Url for PerformPaymentAction
-	 * @param checkoutId The unique identifier of the checkout.
+	 * @param checkoutId 
 	 * @param paymentId Unique identifier of the payment for which to perform the action.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
@@ -31,7 +31,7 @@ public class PaymentUrl
 
 	/**
 	 * Get Resource Url for CreatePaymentAction
-	 * @param checkoutId The unique identifier of the checkout.
+	 * @param checkoutId 
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */

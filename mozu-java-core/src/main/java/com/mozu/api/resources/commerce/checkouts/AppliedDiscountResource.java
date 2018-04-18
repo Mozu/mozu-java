@@ -18,7 +18,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use this resource to manage discounts on the Checkouts resource.
+ * commerce/checkouts/checkoutcoupons related resources. DOCUMENT_HERE 
  * </summary>
  */
 public class AppliedDiscountResource {
@@ -40,7 +40,7 @@ public class AppliedDiscountResource {
 	 *	AppliedDiscount applieddiscount = new AppliedDiscount();
 	 *	Checkout checkout = applieddiscount.applyCoupon( checkoutId,  couponCode);
 	 * </code></pre></p>
-	 * @param checkoutId The unique identifier of the checkout.
+	 * @param checkoutId 
 	 * @param couponCode Code associated with the coupon to remove from the cart.
 	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
@@ -56,7 +56,7 @@ public class AppliedDiscountResource {
 	 *	AppliedDiscount applieddiscount = new AppliedDiscount();
 	 *	Checkout checkout = applieddiscount.applyCoupon( checkoutId,  couponCode,  responseFields);
 	 * </code></pre></p>
-	 * @param checkoutId The unique identifier of the checkout.
+	 * @param checkoutId 
 	 * @param couponCode Code associated with the coupon to remove from the cart.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
@@ -77,7 +77,7 @@ public class AppliedDiscountResource {
 	 *	AppliedDiscount applieddiscount = new AppliedDiscount();
 	 *	Checkout checkout = applieddiscount.removeCoupons( checkoutId);
 	 * </code></pre></p>
-	 * @param checkoutId The unique identifier of the checkout.
+	 * @param checkoutId 
 	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 */
@@ -96,7 +96,7 @@ public class AppliedDiscountResource {
 	 *	AppliedDiscount applieddiscount = new AppliedDiscount();
 	 *	Checkout checkout = applieddiscount.removeCoupon( checkoutId,  couponCode);
 	 * </code></pre></p>
-	 * @param checkoutId The unique identifier of the checkout.
+	 * @param checkoutId 
 	 * @param couponCode Code associated with the coupon to remove from the cart.
 	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout

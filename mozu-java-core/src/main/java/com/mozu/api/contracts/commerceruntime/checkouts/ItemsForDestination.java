@@ -24,7 +24,7 @@ public class ItemsForDestination implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The ID of the destination the order items will ship to.
+	 * destinationId ApiType DOCUMENT_HERE 
 	 */
 	protected  String destinationId;
 
@@ -37,7 +37,7 @@ public class ItemsForDestination implements Serializable
 	}
 
 	/**
-	 * The order item IDs of the items associated with a destination.
+	 * itemIds ApiType DOCUMENT_HERE 
 	 */
 	protected List<String> itemIds;
 	public List<String> getItemIds() {

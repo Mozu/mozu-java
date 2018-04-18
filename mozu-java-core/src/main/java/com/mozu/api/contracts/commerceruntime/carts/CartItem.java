@@ -41,9 +41,6 @@ public class CartItem implements Serializable
 		this.adjustedLineItemSubtotal = adjustedLineItemSubtotal;
 	}
 
-	/**
-	 * autoAddDiscountId ApiType DOCUMENT_HERE 
-	 */
 	protected  Integer autoAddDiscountId;
 
 	public Integer getAutoAddDiscountId() {
@@ -115,7 +112,7 @@ public class CartItem implements Serializable
 	}
 
 	/**
-	 * The combined price for all handling costs calculated together for shipped orders, not for digital or in-store pickup. This includes all handling costs per the product line items and options, excluding taxes and discounts. 
+	 * The combined price for all handling costs calculated together for shipped orders, not for digital or in-store pickup. This includes all handling costs per the product line items and options, excluding taxes and discounts.
 	 */
 	protected  Double handlingAmount;
 
@@ -190,9 +187,6 @@ public class CartItem implements Serializable
 		this.localeCode = localeCode;
 	}
 
-	/**
-	 * The location where the order item(s) was purchased.
-	 */
 	protected  String purchaseLocation;
 
 	public String getPurchaseLocation() {
@@ -492,7 +486,7 @@ public class CartItem implements Serializable
 	}
 
 	/**
-	 * The applicable product discount for an associated cart, order, or wish list. 
+	 * The applicable product discount for an associated cart, order, or wish list.
 	 */
 	protected  AppliedLineItemProductDiscount productDiscount;
 

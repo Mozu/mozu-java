@@ -38,7 +38,7 @@ public class RateRequestGroup implements Serializable
 	}
 
 	/**
-	 * The properties required to request shipping rates.
+	 * rateRequests ApiType DOCUMENT_HERE 
 	 */
 	protected List<RateRequest> rateRequests;
 	public List<RateRequest> getRateRequests() {

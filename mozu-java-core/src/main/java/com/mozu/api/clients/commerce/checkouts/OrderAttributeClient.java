@@ -17,7 +17,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use this resource to manage custom attributes attached to the Checkouts resource.
+ * commerce/checkouts/checkoutattributes related resources. DOCUMENT_HERE 
  * </summary>
  */
 public class OrderAttributeClient {
@@ -30,7 +30,7 @@ public class OrderAttributeClient {
 	 * client.executeRequest();
 	 * OrderAttribute orderAttribute = client.Result();
 	 * </code></pre></p>
-	 * @param checkoutId The unique identifier of the checkout.
+	 * @param checkoutId 
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute>>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderAttribute
 	 */
@@ -54,8 +54,8 @@ public class OrderAttributeClient {
 	 * client.executeRequest();
 	 * OrderAttribute orderAttribute = client.Result();
 	 * </code></pre></p>
-	 * @param checkoutId The unique identifier of the checkout.
-	 * @param checkoutAttributes The custom attribute definition.
+	 * @param checkoutId 
+	 * @param checkoutAttributes 
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute>>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderAttribute
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderAttribute
@@ -81,8 +81,8 @@ public class OrderAttributeClient {
 	 * client.executeRequest();
 	 * OrderAttribute orderAttribute = client.Result();
 	 * </code></pre></p>
-	 * @param checkoutId The unique identifier of the checkout.
-	 * @param checkoutAttributes The custom attribute definition.
+	 * @param checkoutId 
+	 * @param checkoutAttributes 
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute>>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderAttribute
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderAttribute
@@ -100,9 +100,9 @@ public class OrderAttributeClient {
 	 * client.executeRequest();
 	 * OrderAttribute orderAttribute = client.Result();
 	 * </code></pre></p>
-	 * @param checkoutId The unique identifier of the checkout.
-	 * @param removeMissing If true, the operation removes missing properties so that the updated checkout attributes will not show properties with a null value.
-	 * @param checkoutAttributes The custom attribute definition.
+	 * @param checkoutId 
+	 * @param removeMissing 
+	 * @param checkoutAttributes 
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute>>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderAttribute
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderAttribute

@@ -26,7 +26,7 @@ public class CheckoutGrouping implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The unique identifier of the destination.
+	 * destinationId ApiType DOCUMENT_HERE 
 	 */
 	protected  String destinationId;
 
@@ -39,7 +39,7 @@ public class CheckoutGrouping implements Serializable
 	}
 
 	/**
-	 * Grouping-level duty or tariff amount.
+	 * dutyAmount ApiType DOCUMENT_HERE 
 	 */
 	protected  Double dutyAmount;
 
@@ -52,7 +52,7 @@ public class CheckoutGrouping implements Serializable
 	}
 
 	/**
-	 * Duties or tariff totals for the grouping.
+	 * dutyTotal ApiType DOCUMENT_HERE 
 	 */
 	protected  Double dutyTotal;
 
@@ -91,7 +91,7 @@ public class CheckoutGrouping implements Serializable
 	}
 
 	/**
-	 * Handling fees for the grouping.
+	 * handlingSubTotal ApiType DOCUMENT_HERE 
 	 */
 	protected  Double handlingSubTotal;
 
@@ -104,7 +104,7 @@ public class CheckoutGrouping implements Serializable
 	}
 
 	/**
-	 * Calculated total tax amount for handling costs of the grouping if the cart/order is subject to sales tax.
+	 * handlingTax ApiType DOCUMENT_HERE 
 	 */
 	protected  Double handlingTax;
 
@@ -130,7 +130,7 @@ public class CheckoutGrouping implements Serializable
 	}
 
 	/**
-	 * The total handling cost for the grouping.
+	 * handlingTotal ApiType DOCUMENT_HERE 
 	 */
 	protected  Double handlingTotal;
 
@@ -156,7 +156,7 @@ public class CheckoutGrouping implements Serializable
 	}
 
 	/**
-	 * The handling discount total for the grouping item.
+	 * itemLevelHandlingDiscountTotal ApiType DOCUMENT_HERE 
 	 */
 	protected  Double itemLevelHandlingDiscountTotal;
 
@@ -169,7 +169,7 @@ public class CheckoutGrouping implements Serializable
 	}
 
 	/**
-	 * The applicable shipping discount for the grouping item.
+	 * itemLevelShippingDiscountTotal ApiType DOCUMENT_HERE 
 	 */
 	protected  Double itemLevelShippingDiscountTotal;
 
@@ -182,7 +182,7 @@ public class CheckoutGrouping implements Serializable
 	}
 
 	/**
-	 * The list of order item IDs that belong to the grouping.
+	 * orderItemIds ApiType DOCUMENT_HERE 
 	 */
 	protected List<String> orderItemIds;
 	public List<String> getOrderItemIds() {
@@ -193,7 +193,7 @@ public class CheckoutGrouping implements Serializable
 	}
 
 	/**
-	 * The handling discount total at the order level.
+	 * orderLevelHandlingDiscountTotal ApiType DOCUMENT_HERE 
 	 */
 	protected  Double orderLevelHandlingDiscountTotal;
 
@@ -206,7 +206,7 @@ public class CheckoutGrouping implements Serializable
 	}
 
 	/**
-	 * The shipping level discount at the order level.
+	 * orderLevelShippingDiscountTotal ApiType DOCUMENT_HERE 
 	 */
 	protected  Double orderLevelShippingDiscountTotal;
 
@@ -309,9 +309,6 @@ public class CheckoutGrouping implements Serializable
 		this.shippingTotal = shippingTotal;
 	}
 
-	/**
-	 * standaloneGroup ApiType DOCUMENT_HERE 
-	 */
 	protected  Boolean standaloneGroup;
 
 	public Boolean getStandaloneGroup() {
@@ -323,7 +320,7 @@ public class CheckoutGrouping implements Serializable
 	}
 
 	/**
-	 * The list of historically-applied handling discounts for the grouping. The active one will have IsExcluded == false.
+	 * handlingDiscounts ApiType DOCUMENT_HERE 
 	 */
 	protected List<AppliedDiscount> handlingDiscounts;
 	public List<AppliedDiscount> getHandlingDiscounts() {
@@ -345,7 +342,7 @@ public class CheckoutGrouping implements Serializable
 	}
 
 	/**
-	 * Leverage this property within a [tax Arc.js action](https://www.mozu.com/docs/arcjs/commerce-catalog-storefront-tax/commerce-catalog-storefront-tax.htm) to supplement the tax information for this item or object with custom JSON data.
+	 * taxData ApiType DOCUMENT_HERE 
 	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode taxData;
 

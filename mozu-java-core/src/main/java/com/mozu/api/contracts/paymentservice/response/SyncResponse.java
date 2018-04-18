@@ -35,7 +35,7 @@ public class SyncResponse implements Serializable
 	}
 
 	/**
-	 * Mozu.PaymentService.Contracts.Response.SyncResponse isSuccessful ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.PaymentService.Contracts.Response.SyncResponse isSuccessful ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  Boolean isSuccessful;
 

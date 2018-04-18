@@ -32,7 +32,7 @@ public class ApplicationTransaction implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.ApplicationTransaction applicationId ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.ApplicationTransaction applicationId ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  Integer applicationId;
 

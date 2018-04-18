@@ -66,9 +66,6 @@ public class ConfiguredProduct implements Serializable
 		this.productCode = productCode;
 	}
 
-	/**
-	 * The location where the order item(s) was purchased.
-	 */
 	protected  String purchaseLocation;
 
 	public String getPurchaseLocation() {
@@ -80,7 +77,7 @@ public class ConfiguredProduct implements Serializable
 	}
 
 	/**
-	 * The universal product code (UPC) is the barcode defined for the product. The UPC is unique across all sales channels. 
+	 * The universal product code (UPC) is the barcode defined for the product. The UPC is unique across all sales channels.
 	 */
 	protected  String upc;
 

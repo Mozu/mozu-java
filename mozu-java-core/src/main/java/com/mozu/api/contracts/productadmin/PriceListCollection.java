@@ -25,6 +25,19 @@ public class PriceListCollection implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * The total number of items in the list.
+	 */
+	protected  Integer totalCount;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
+
+	/**
 	 * The total number of pages of the results divided per the `pageSize`.
 	 */
 	protected  Integer pageCount;
@@ -61,19 +74,6 @@ public class PriceListCollection implements Serializable
 
 	public void setStartIndex(Integer startIndex) {
 		this.startIndex = startIndex;
-	}
-
-	/**
-	 * The total number of items in the list.
-	 */
-	protected  Integer totalCount;
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	/**

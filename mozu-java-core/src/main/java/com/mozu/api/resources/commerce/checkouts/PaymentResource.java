@@ -18,7 +18,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use this resource to manage payments while the Checkouts resource is active (the Checkouts resource only applies to sites that enable shipping to multiple destinations within the same order). The Checkouts resource remains active until the shopper submits their order.
+ * commerce/checkouts/checkoutpayments related resources. DOCUMENT_HERE 
  * </summary>
  */
 public class PaymentResource {
@@ -40,9 +40,9 @@ public class PaymentResource {
 	 *	Payment payment = new Payment();
 	 *	Checkout checkout = payment.performPaymentAction( action,  checkoutId,  paymentId);
 	 * </code></pre></p>
-	 * @param checkoutId The unique identifier of the checkout.
+	 * @param checkoutId 
 	 * @param paymentId Unique identifier of the payment for which to perform the action.
-	 * @param action The name of the action to perform.
+	 * @param action 
 	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentAction
@@ -58,10 +58,10 @@ public class PaymentResource {
 	 *	Payment payment = new Payment();
 	 *	Checkout checkout = payment.performPaymentAction( action,  checkoutId,  paymentId,  responseFields);
 	 * </code></pre></p>
-	 * @param checkoutId The unique identifier of the checkout.
+	 * @param checkoutId 
 	 * @param paymentId Unique identifier of the payment for which to perform the action.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param action The name of the action to perform.
+	 * @param action 
 	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentAction
@@ -81,8 +81,8 @@ public class PaymentResource {
 	 *	Payment payment = new Payment();
 	 *	Checkout checkout = payment.createPaymentAction( action,  checkoutId);
 	 * </code></pre></p>
-	 * @param checkoutId The unique identifier of the checkout.
-	 * @param action The name of the action to create.
+	 * @param checkoutId 
+	 * @param action 
 	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentAction
@@ -98,9 +98,9 @@ public class PaymentResource {
 	 *	Payment payment = new Payment();
 	 *	Checkout checkout = payment.createPaymentAction( action,  checkoutId,  responseFields);
 	 * </code></pre></p>
-	 * @param checkoutId The unique identifier of the checkout.
+	 * @param checkoutId 
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param action The name of the action to create.
+	 * @param action 
 	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentAction

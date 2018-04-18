@@ -30,8 +30,8 @@ public class CustomerAttributeClient {
 	 * client.executeRequest();
 	 * CustomerAttribute customerAttribute = client.Result();
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param accountId Identifier of the customer account associated with the attribute to retrieve.
+	 * @param attributeFQN 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerAttribute>
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
 	 */
@@ -48,9 +48,9 @@ public class CustomerAttributeClient {
 	 * client.executeRequest();
 	 * CustomerAttribute customerAttribute = client.Result();
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param accountId Identifier of the customer account associated with the attribute to retrieve.
+	 * @param attributeFQN 
+	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerAttribute>
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
 	 */
@@ -74,7 +74,7 @@ public class CustomerAttributeClient {
 	 * client.executeRequest();
 	 * CustomerAttributeCollection customerAttributeCollection = client.Result();
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId Identifier of the customer account associated with the attributes to retrieve.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerAttributeCollection>
 	 * @see com.mozu.api.contracts.customer.CustomerAttributeCollection
 	 */
@@ -91,12 +91,12 @@ public class CustomerAttributeClient {
 	 * client.executeRequest();
 	 * CustomerAttributeCollection customerAttributeCollection = client.Result();
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param accountId Identifier of the customer account associated with the attributes to retrieve.
+	 * @param filter 
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerAttributeCollection>
 	 * @see com.mozu.api.contracts.customer.CustomerAttributeCollection
 	 */
@@ -121,7 +121,7 @@ public class CustomerAttributeClient {
 	 * CustomerAttribute customerAttribute = client.Result();
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param attribute Properties of an attribute associated with a customer account.
+	 * @param attribute The attribute to add to the customer account.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerAttribute>
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
@@ -140,8 +140,8 @@ public class CustomerAttributeClient {
 	 * CustomerAttribute customerAttribute = client.Result();
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param attribute Properties of an attribute associated with a customer account.
+	 * @param responseFields 
+	 * @param attribute The attribute to add to the customer account.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerAttribute>
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
@@ -167,9 +167,9 @@ public class CustomerAttributeClient {
 	 * client.executeRequest();
 	 * CustomerAttribute customerAttribute = client.Result();
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param attribute Properties of an attribute associated with a customer account.
+	 * @param accountId Identifier of the customer account associated with the attribute.
+	 * @param attributeFQN 
+	 * @param attribute Properties of the customer account attribute to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerAttribute>
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
@@ -187,10 +187,10 @@ public class CustomerAttributeClient {
 	 * client.executeRequest();
 	 * CustomerAttribute customerAttribute = client.Result();
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param attribute Properties of an attribute associated with a customer account.
+	 * @param accountId Identifier of the customer account associated with the attribute.
+	 * @param attributeFQN 
+	 * @param responseFields 
+	 * @param attribute Properties of the customer account attribute to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerAttribute>
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
@@ -216,7 +216,7 @@ public class CustomerAttributeClient {
 	 * client.executeRequest();
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param attributeFQN 
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deleteAccountAttributeClient(Integer accountId, String attributeFQN) throws Exception

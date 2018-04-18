@@ -17,7 +17,7 @@ import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.event.EventExtendedProperty;
 
 /**
- *	Mozu.AppDev.Contracts.Event ApiType DOCUMENT_HERE
+ *	Mozu.AppDev.Contracts.Event ApiType DOCUMENT_HERE 
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Event implements Serializable

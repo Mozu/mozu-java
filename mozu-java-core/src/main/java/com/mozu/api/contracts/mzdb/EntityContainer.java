@@ -100,7 +100,7 @@ public class EntityContainer implements Serializable
 	}
 
 	/**
-	 * Unique identifier for the master catalog. 
+	 * Unique identifier for the master catalog.
 	 */
 	protected  Integer masterCatalogId;
 

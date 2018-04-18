@@ -28,7 +28,7 @@ public class PriceListEntry implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Mozu.ProductAdmin.Contracts.PriceListEntry cost ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.ProductAdmin.Contracts.PriceListEntry cost ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  Double cost;
 
@@ -54,7 +54,7 @@ public class PriceListEntry implements Serializable
 	}
 
 	/**
-	 * The localized currency code for the monetary amount. 
+	 * The localized currency code for the monetary amount.
 	 */
 	protected  String currencyCode;
 

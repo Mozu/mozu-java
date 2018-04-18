@@ -26,7 +26,33 @@ public class DocumentListType implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The fully qualified name for the document list type for content. 
+	 * The type of scope associated with the documentList. For example, if the documentList is pageTemplateContent, the scopeType is Site.Valid values are: "Tenant", "MasterCatalog", and "Site".
+	 */
+	protected  String scopeType;
+
+	public String getScopeType() {
+		return this.scopeType;
+	}
+
+	public void setScopeType(String scopeType) {
+		this.scopeType = scopeType;
+	}
+
+	/**
+	 * Determines if documentLists belonging to this documentListType will support drafting and ActiveDateRanges documents. This field defaults to false and cannot be updated. Each documentList created from the documentListType will use this value.
+	 */
+	protected  Boolean supportsActiveDateRanges;
+
+	public Boolean getSupportsActiveDateRanges() {
+		return this.supportsActiveDateRanges;
+	}
+
+	public void setSupportsActiveDateRanges(Boolean supportsActiveDateRanges) {
+		this.supportsActiveDateRanges = supportsActiveDateRanges;
+	}
+
+	/**
+	 * The fully qualified name for the document list type for content.
 	 */
 	protected  String documentListTypeFQN;
 
@@ -115,32 +141,6 @@ public class DocumentListType implements Serializable
 	}
 
 	/**
-	 * The type of scope associated with the documentList. For example, if the documentList is pageTemplateContent, the scopeType is Site.Valid values are: "Tenant", "MasterCatalog", and "Site".
-	 */
-	protected  String scopeType;
-
-	public String getScopeType() {
-		return this.scopeType;
-	}
-
-	public void setScopeType(String scopeType) {
-		this.scopeType = scopeType;
-	}
-
-	/**
-	 * Determines if documentLists belonging to this documentListType will support drafting and ActiveDateRanges documents. This field defaults to false and cannot be updated. Each documentList created from the documentListType will use this value.
-	 */
-	protected  Boolean supportsActiveDateRanges;
-
-	public Boolean getSupportsActiveDateRanges() {
-		return this.supportsActiveDateRanges;
-	}
-
-	public void setSupportsActiveDateRanges(Boolean supportsActiveDateRanges) {
-		this.supportsActiveDateRanges = supportsActiveDateRanges;
-	}
-
-	/**
 	 * Indicates if modified documents are published automatically or saved to publish at a later time. If true, changed documents in this list can be saved as drafts until they are published to the site. If false, all document changes are immediately published in live mode. System-supplied and read only.
 	 */
 	protected  Boolean supportsPublishing;
@@ -178,7 +178,7 @@ public class DocumentListType implements Serializable
 	}
 
 	/**
-	 * Definition of any documents to create with a document list is created. 
+	 * Definition of any documents to create with a document list is created.
 	 */
 	protected List<DocumentInstallation> defaultDocuments;
 	public List<DocumentInstallation> getDefaultDocuments() {

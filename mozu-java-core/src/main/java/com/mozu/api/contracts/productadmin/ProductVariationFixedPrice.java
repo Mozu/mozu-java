@@ -35,7 +35,7 @@ public class ProductVariationFixedPrice implements Serializable
 	}
 
 	/**
-	 * The localized currency code for the monetary amount. 
+	 * The localized currency code for the monetary amount.
 	 */
 	protected  String currencyCode;
 

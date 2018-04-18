@@ -35,7 +35,7 @@ public class PasswordInfo implements Serializable
 	}
 
 	/**
-	 * The new password entered and saved by the user of the account. 
+	 * The new password entered and saved by the user of the account.
 	 */
 	protected  String newPassword;
 

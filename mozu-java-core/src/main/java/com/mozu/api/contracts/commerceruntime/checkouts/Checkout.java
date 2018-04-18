@@ -47,7 +47,7 @@ public class Checkout implements Serializable
 	}
 
 	/**
-	 * The total amount of the order not currently associated with a payment. The shopper must create one or more payments to satisfy this amount before the order can be fully paid.
+	 * amountRemainingForPayment ApiType DOCUMENT_HERE 
 	 */
 	protected  Double amountRemainingForPayment;
 
@@ -134,7 +134,7 @@ public class Checkout implements Serializable
 	}
 
 	/**
-	 * The tax identification number (TIN) of the customer who submitted the order. If the customer who submitted the order has a customer account defined for the tenant, the system sets this value when the order is submitted.
+	 * customerTaxId ApiType DOCUMENT_HERE 
 	 */
 	protected  String customerTaxId;
 
@@ -147,7 +147,7 @@ public class Checkout implements Serializable
 	}
 
 	/**
-	 * Duties or tariffs for the Order as well as OrderItems (e.g. if the Order has a $5 duty or tariff for any reason and an OrderItem has a $2 duty or tariff then the value in this property would be $7).
+	 * dutyTotal ApiType DOCUMENT_HERE 
 	 */
 	protected  Double dutyTotal;
 
@@ -186,7 +186,7 @@ public class Checkout implements Serializable
 	}
 
 	/**
-	 * Handling fees for the Order as well as OrderItems (e.g. if the Order has a $5 handling fee and an OrderItem has a $2 handling fee per item quantity then the value in this property would be $9).
+	 * handlingSubTotal ApiType DOCUMENT_HERE 
 	 */
 	protected  Double handlingSubTotal;
 
@@ -212,7 +212,7 @@ public class Checkout implements Serializable
 	}
 
 	/**
-	 * This total represents the handling amount value with any applied discounts.
+	 * handlingTotal ApiType DOCUMENT_HERE 
 	 */
 	protected  Double handlingTotal;
 
@@ -251,7 +251,7 @@ public class Checkout implements Serializable
 	}
 
 	/**
-	 * If true, the order is exempt from applied sales tax.
+	 * isTaxExempt ApiType DOCUMENT_HERE 
 	 */
 	protected  Boolean isTaxExempt;
 
@@ -264,7 +264,7 @@ public class Checkout implements Serializable
 	}
 
 	/**
-	 * The list of historically-applied handling discounts at the order item level. The active one will have IsExcluded == false.
+	 * itemLevelHandlingDiscountTotal ApiType DOCUMENT_HERE 
 	 */
 	protected  Double itemLevelHandlingDiscountTotal;
 
@@ -277,7 +277,7 @@ public class Checkout implements Serializable
 	}
 
 	/**
-	 * The applicable product discount for the order item.
+	 * itemLevelProductDiscountTotal ApiType DOCUMENT_HERE 
 	 */
 	protected  Double itemLevelProductDiscountTotal;
 
@@ -290,7 +290,7 @@ public class Checkout implements Serializable
 	}
 
 	/**
-	 * The applicable shipping discount for the order item.
+	 * itemLevelShippingDiscountTotal ApiType DOCUMENT_HERE 
 	 */
 	protected  Double itemLevelShippingDiscountTotal;
 
@@ -316,7 +316,7 @@ public class Checkout implements Serializable
 	}
 
 	/**
-	 * The total cost for the item.
+	 * itemTotal ApiType DOCUMENT_HERE 
 	 */
 	protected  Double itemTotal;
 
@@ -342,7 +342,7 @@ public class Checkout implements Serializable
 	}
 
 	/**
-	 * The order item number.
+	 * number ApiType DOCUMENT_HERE 
 	 */
 	protected  Integer number;
 
@@ -355,7 +355,7 @@ public class Checkout implements Serializable
 	}
 
 	/**
-	 * The list of historically-applied handling discounts at the order level. The active one will have IsExcluded == false.
+	 * orderLevelHandlingDiscountTotal ApiType DOCUMENT_HERE 
 	 */
 	protected  Double orderLevelHandlingDiscountTotal;
 
@@ -368,7 +368,7 @@ public class Checkout implements Serializable
 	}
 
 	/**
-	 * The applicable product discount for the order.
+	 * orderLevelProductDiscountTotal ApiType DOCUMENT_HERE 
 	 */
 	protected  Double orderLevelProductDiscountTotal;
 
@@ -381,7 +381,7 @@ public class Checkout implements Serializable
 	}
 
 	/**
-	 * The applicable shipping discount for the order.
+	 * orderLevelShippingDiscountTotal ApiType DOCUMENT_HERE 
 	 */
 	protected  Double orderLevelShippingDiscountTotal;
 
@@ -394,7 +394,7 @@ public class Checkout implements Serializable
 	}
 
 	/**
-	 * The unique identifier of the item when it was applied to a cart.
+	 * originalCartId ApiType DOCUMENT_HERE 
 	 */
 	protected  String originalCartId;
 
@@ -407,7 +407,7 @@ public class Checkout implements Serializable
 	}
 
 	/**
-	 * If the order is associated with a price list, this is the unique code of the price list.
+	 * priceListCode ApiType DOCUMENT_HERE 
 	 */
 	protected  String priceListCode;
 
@@ -472,7 +472,7 @@ public class Checkout implements Serializable
 	}
 
 	/**
-	 * The device from which the order originated in the case of offline orders.
+	 * sourceDevice ApiType DOCUMENT_HERE 
 	 */
 	protected  String sourceDevice;
 
@@ -485,7 +485,7 @@ public class Checkout implements Serializable
 	}
 
 	/**
-	 * The date and time the order was submitted. System-supplied and read-only.
+	 * submittedDate ApiType DOCUMENT_HERE 
 	 */
 	protected  DateTime submittedDate;
 
@@ -497,9 +497,6 @@ public class Checkout implements Serializable
 		this.submittedDate = submittedDate;
 	}
 
-	/**
-	 * Estimated amount of the cart or order without sales tax, shipping costs, and other fees. This amount is not calculated for wish lists at this time.
-	 */
 	protected  Double subTotal;
 
 	public Double getSubTotal() {
@@ -537,7 +534,7 @@ public class Checkout implements Serializable
 	}
 
 	/**
-	 * The type of scope, which is a developer account or production tenant.
+	 * type ApiType DOCUMENT_HERE 
 	 */
 	protected  String type;
 
@@ -600,7 +597,7 @@ public class Checkout implements Serializable
 	}
 
 	/**
-	 * Custom data for a given vendor set within the commerce process.
+	 * data ApiType DOCUMENT_HERE 
 	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
@@ -613,7 +610,7 @@ public class Checkout implements Serializable
 	}
 
 	/**
-	 * The collection of destinations available for the checkout.
+	 * destinations ApiType DOCUMENT_HERE 
 	 */
 	protected List<Destination> destinations;
 	public List<Destination> getDestinations() {
@@ -624,7 +621,7 @@ public class Checkout implements Serializable
 	}
 
 	/**
-	 * Groupings bundle items together that have the same fulfillment type and destination. Direct ship items going to the same destination are grouped together, in-store pickup items are grouped together, and gift card items are grouped together.
+	 * groupings ApiType DOCUMENT_HERE 
 	 */
 	protected List<CheckoutGrouping> groupings;
 	public List<CheckoutGrouping> getGroupings() {
@@ -679,7 +676,7 @@ public class Checkout implements Serializable
 	}
 
 	/**
-	 * A paged list collection of shopper notes for the order.
+	 * shopperNotes ApiType DOCUMENT_HERE 
 	 */
 	protected  ShopperNotes shopperNotes;
 
@@ -691,9 +688,6 @@ public class Checkout implements Serializable
 		this.shopperNotes = shopperNotes;
 	}
 
-	/**
-	 * suggestedDiscounts ApiType DOCUMENT_HERE 
-	 */
 	protected List<SuggestedDiscount> suggestedDiscounts;
 	public List<SuggestedDiscount> getSuggestedDiscounts() {
 		return this.suggestedDiscounts;
@@ -703,7 +697,7 @@ public class Checkout implements Serializable
 	}
 
 	/**
-	 * Leverage this property within a [tax Arc.js action](https://www.mozu.com/docs/arcjs/commerce-catalog-storefront-tax/commerce-catalog-storefront-tax.htm) to supplement the tax information for this item or object with custom JSON data.
+	 * taxData ApiType DOCUMENT_HERE 
 	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode taxData;
 

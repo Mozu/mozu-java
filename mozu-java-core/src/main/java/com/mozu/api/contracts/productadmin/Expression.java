@@ -25,6 +25,22 @@ public class Expression implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * The literal values of the predicate that is validated against the combined values of the left and operator fields. For example, you wish to validate on products that have a product code of "shoe". You would write the following expression:`"type": "predicate",
+			"left": "productCode",
+			"operator": "eq",
+			"right": "shoe".`
+	 */
+	protected  Object right;
+
+	public Object getRight() {
+		return this.right;
+	}
+
+	public void setRight(Object right) {
+		this.right = right;
+	}
+
+	/**
 	 * The expression field you wish to target. For example, if you wish to target the productCode field, this value would be productCode.Refer to [Dynamic Category Expressions](../../../developer/api-guides/dynamic-category-exp.htm) for more information about the supported expression fields.
 	 */
 	protected  String left;
@@ -61,22 +77,6 @@ public class Expression implements Serializable
 
 	public void setOperator(String operator) {
 		this.operator = operator;
-	}
-
-	/**
-	 * The literal values of the predicate that is validated against the combined values of the left and operator fields. For example, you wish to validate on products that have a product code of "shoe". You would write the following expression:`"type": "predicate",
-			"left": "productCode",
-			"operator": "eq",
-			"right": "shoe".`
-	 */
-	protected  Object right;
-
-	public Object getRight() {
-		return this.right;
-	}
-
-	public void setRight(Object right) {
-		this.right = right;
 	}
 
 	/**

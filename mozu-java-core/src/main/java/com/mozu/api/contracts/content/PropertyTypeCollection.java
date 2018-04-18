@@ -24,16 +24,6 @@ public class PropertyTypeCollection implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected  Integer pageCount;
-
-	public Integer getPageCount() {
-		return this.pageCount;
-	}
-
-	public void setPageCount(Integer pageCount) {
-		this.pageCount = pageCount;
-	}
-
 	protected  Integer pageSize;
 
 	public Integer getPageSize() {
@@ -52,6 +42,16 @@ public class PropertyTypeCollection implements Serializable
 
 	public void setStartIndex(Integer startIndex) {
 		this.startIndex = startIndex;
+	}
+
+	protected  Integer pageCount;
+
+	public Integer getPageCount() {
+		return this.pageCount;
+	}
+
+	public void setPageCount(Integer pageCount) {
+		this.pageCount = pageCount;
 	}
 
 	protected  Integer totalCount;

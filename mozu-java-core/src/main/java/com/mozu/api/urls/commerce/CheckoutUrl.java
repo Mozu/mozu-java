@@ -39,7 +39,7 @@ public class CheckoutUrl
 
 	/**
 	 * Get Resource Url for GetAvailableActions
-	 * @param checkoutId The unique identifier of the checkout.
+	 * @param checkoutId 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getAvailableActionsUrl(String checkoutId)
@@ -51,7 +51,7 @@ public class CheckoutUrl
 
 	/**
 	 * Get Resource Url for GetAvailableShippingMethods
-	 * @param checkoutId The unique identifier of the checkout.
+	 * @param checkoutId 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getAvailableShippingMethodsUrl(String checkoutId)
@@ -63,7 +63,7 @@ public class CheckoutUrl
 
 	/**
 	 * Get Resource Url for GetCheckout
-	 * @param checkoutId The unique identifier of the checkout.
+	 * @param checkoutId 
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
@@ -91,7 +91,7 @@ public class CheckoutUrl
 
 	/**
 	 * Get Resource Url for PerformCheckoutAction
-	 * @param checkoutId The unique identifier of the checkout.
+	 * @param checkoutId 
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
@@ -105,7 +105,7 @@ public class CheckoutUrl
 
 	/**
 	 * Get Resource Url for ResendCheckoutConfirmationEmail
-	 * @param checkoutId The unique identifier of the checkout.
+	 * @param checkoutId 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl resendCheckoutConfirmationEmailUrl(String checkoutId)
@@ -117,7 +117,7 @@ public class CheckoutUrl
 
 	/**
 	 * Get Resource Url for SetShippingMethods
-	 * @param checkoutId The unique identifier of the checkout.
+	 * @param checkoutId 
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
@@ -131,7 +131,7 @@ public class CheckoutUrl
 
 	/**
 	 * Get Resource Url for UpdateCheckout
-	 * @param checkoutId The unique identifier of the checkout.
+	 * @param checkoutId 
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
@@ -145,8 +145,8 @@ public class CheckoutUrl
 
 	/**
 	 * Get Resource Url for ProcessDigitalWallet
-	 * @param checkoutId The unique identifier of the checkout.
-	 * @param digitalWalletType The type of digital wallet.
+	 * @param checkoutId 
+	 * @param digitalWalletType 
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
@@ -161,7 +161,7 @@ public class CheckoutUrl
 
 	/**
 	 * Get Resource Url for ChangeCheckoutPriceList
-	 * @param checkoutId The unique identifier of the checkout.
+	 * @param checkoutId 
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */

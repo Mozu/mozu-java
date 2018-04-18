@@ -22,7 +22,7 @@ public class AppVersion implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Mozu.AppDev.Contracts.AppVersion majorVersion ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.AppVersion majorVersion ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  Integer majorVersion;
 
@@ -35,7 +35,7 @@ public class AppVersion implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.AppVersion minorVersion ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.AppVersion minorVersion ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  Integer minorVersion;
 
@@ -48,7 +48,7 @@ public class AppVersion implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.AppVersion revision ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.AppVersion revision ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  Integer revision;
 

@@ -38,7 +38,7 @@ public class DocumentType implements Serializable
 	}
 
 	/**
-	 * Fully qualified name of the document type. 
+	 * Fully qualified name of the document type.
 	 */
 	protected  String documentTypeFQN;
 

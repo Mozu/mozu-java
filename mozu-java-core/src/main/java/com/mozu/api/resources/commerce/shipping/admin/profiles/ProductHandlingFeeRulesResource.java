@@ -48,8 +48,8 @@ public class ProductHandlingFeeRulesResource {
 	 *	ProductHandlingFeeRules producthandlingfeerules = new ProductHandlingFeeRules();
 	 *	HandlingFeeRule handlingFeeRule = producthandlingfeerules.getProductHandlingFeeRule( profilecode,  id);
 	 * </code></pre></p>
-	 * @param id Unique identifier of the customer segment to retrieve.
-	 * @param profilecode The unique, user-defined code of the profile with which the product handling fee rule is associated.
+	 * @param id 
+	 * @param profilecode 
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
@@ -65,9 +65,9 @@ public class ProductHandlingFeeRulesResource {
 	 *	ProductHandlingFeeRules producthandlingfeerules = new ProductHandlingFeeRules();
 	 *	HandlingFeeRule handlingFeeRule = producthandlingfeerules.getProductHandlingFeeRule( profilecode,  id,  responseFields);
 	 * </code></pre></p>
-	 * @param id Unique identifier of the customer segment to retrieve.
-	 * @param profilecode The unique, user-defined code of the profile with which the product handling fee rule is associated.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param id 
+	 * @param profilecode 
+	 * @param responseFields 
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
@@ -87,7 +87,7 @@ public class ProductHandlingFeeRulesResource {
 	 *	ProductHandlingFeeRules producthandlingfeerules = new ProductHandlingFeeRules();
 	 *	HandlingFeeRuleCollection handlingFeeRuleCollection = producthandlingfeerules.getProductHandlingFeeRules( profilecode);
 	 * </code></pre></p>
-	 * @param profilecode The unique, user-defined code of the profile with which the product handling fee rule is associated.
+	 * @param profilecode 
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRuleCollection
 	 * @see com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRuleCollection
@@ -103,8 +103,8 @@ public class ProductHandlingFeeRulesResource {
 	 *	ProductHandlingFeeRules producthandlingfeerules = new ProductHandlingFeeRules();
 	 *	HandlingFeeRuleCollection handlingFeeRuleCollection = producthandlingfeerules.getProductHandlingFeeRules( profilecode,  responseFields);
 	 * </code></pre></p>
-	 * @param profilecode The unique, user-defined code of the profile with which the product handling fee rule is associated.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param profilecode 
+	 * @param responseFields 
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRuleCollection
 	 * @see com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRuleCollection
@@ -124,9 +124,9 @@ public class ProductHandlingFeeRulesResource {
 	 *	ProductHandlingFeeRules producthandlingfeerules = new ProductHandlingFeeRules();
 	 *	HandlingFeeRule handlingFeeRule = producthandlingfeerules.createProductHandlingFeeRule( rule,  profilecode);
 	 * </code></pre></p>
-	 * @param profilecode The unique, user-defined code of the profile with which the product handling fee rule is associated.
+	 * @param profilecode 
 	 * @param dataViewMode DataViewMode
-	 * @param rule The details of the new product handling fee rule.
+	 * @param rule 
 	 * @return com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
@@ -142,10 +142,10 @@ public class ProductHandlingFeeRulesResource {
 	 *	ProductHandlingFeeRules producthandlingfeerules = new ProductHandlingFeeRules();
 	 *	HandlingFeeRule handlingFeeRule = producthandlingfeerules.createProductHandlingFeeRule( rule,  profilecode,  responseFields);
 	 * </code></pre></p>
-	 * @param profilecode The unique, user-defined code of the profile with which the product handling fee rule is associated.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param profilecode 
+	 * @param responseFields 
 	 * @param dataViewMode DataViewMode
-	 * @param rule The details of the new product handling fee rule.
+	 * @param rule 
 	 * @return com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
@@ -165,10 +165,10 @@ public class ProductHandlingFeeRulesResource {
 	 *	ProductHandlingFeeRules producthandlingfeerules = new ProductHandlingFeeRules();
 	 *	HandlingFeeRule handlingFeeRule = producthandlingfeerules.updateProductHandlingFeeRule( rule,  profilecode,  id);
 	 * </code></pre></p>
-	 * @param id Unique identifier of the customer segment to retrieve.
-	 * @param profilecode The unique, user-defined code of the profile with which the product handling fee rule is associated.
+	 * @param id 
+	 * @param profilecode 
 	 * @param dataViewMode DataViewMode
-	 * @param rule The updated details of the product handling fee rule.
+	 * @param rule 
 	 * @return com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
@@ -184,11 +184,11 @@ public class ProductHandlingFeeRulesResource {
 	 *	ProductHandlingFeeRules producthandlingfeerules = new ProductHandlingFeeRules();
 	 *	HandlingFeeRule handlingFeeRule = producthandlingfeerules.updateProductHandlingFeeRule( rule,  profilecode,  id,  responseFields);
 	 * </code></pre></p>
-	 * @param id Unique identifier of the customer segment to retrieve.
-	 * @param profilecode The unique, user-defined code of the profile with which the product handling fee rule is associated.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param id 
+	 * @param profilecode 
+	 * @param responseFields 
 	 * @param dataViewMode DataViewMode
-	 * @param rule The updated details of the product handling fee rule.
+	 * @param rule 
 	 * @return com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
@@ -208,8 +208,8 @@ public class ProductHandlingFeeRulesResource {
 	 *	ProductHandlingFeeRules producthandlingfeerules = new ProductHandlingFeeRules();
 	 *	producthandlingfeerules.deleteProductHandlingFeeRule( profilecode,  id);
 	 * </code></pre></p>
-	 * @param id Unique identifier of the customer segment to retrieve.
-	 * @param profilecode The unique, user-defined code of the profile with which the product handling fee rule is associated.
+	 * @param id 
+	 * @param profilecode 
 	 * @param dataViewMode DataViewMode
 	 * @return 
 	 */

@@ -23,7 +23,7 @@ public class CheckoutGroupShippingMethod implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The grouping ID that the shipping method applies to.
+	 * groupingId ApiType DOCUMENT_HERE 
 	 */
 	protected  String groupingId;
 
@@ -36,7 +36,7 @@ public class CheckoutGroupShippingMethod implements Serializable
 	}
 
 	/**
-	 * The shipping rate applied to the grouping.
+	 * shippingRate ApiType DOCUMENT_HERE 
 	 */
 	protected  ShippingRate shippingRate;
 

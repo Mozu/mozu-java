@@ -29,6 +29,19 @@ public class CustomerAccount implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The full first name of a customer or contact name.
+	 */
+	protected  String firstName;
+
+	public String getFirstName() {
+		return this.firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
 	protected  Boolean acceptsMarketing;
 
 	public Boolean getAcceptsMarketing() {
@@ -99,19 +112,6 @@ public class CustomerAccount implements Serializable
 
 	public void setExternalId(String externalId) {
 		this.externalId = externalId;
-	}
-
-	/**
-	 * The full first name of a customer or contact name.
-	 */
-	protected  String firstName;
-
-	public String getFirstName() {
-		return this.firstName;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
 	}
 
 	/**

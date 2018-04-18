@@ -15,13 +15,13 @@ public class ProductUrl
 
 	/**
 	 * Get Resource Url for GetProducts
-	 * @param cursorMark In your first deep paged request, set this parameter to . Then, in all subsequent requests, set this parameter to the subsequent values of  that's returned in each response to continue paging through the results. Continue this pattern until  is null, which signifies the end of the paged results.
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param responseOptions Options you can specify for the response. This parameter is null by default.You can primarily use this parameter to return volume price band information in product details, which you can then display on category pages and search results depanding on your theme configuration. To return volume price band information, set this parameter to .
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param cursorMark 
+	 * @param filter 
+	 * @param pageSize Used to page results from a query. Indicates the maximum number of entities to return from a single query. Default value: 20. Maximum value: 200.
+	 * @param responseFields 
+	 * @param responseOptions 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getProductsUrl(String cursorMark, String filter, Integer pageSize, String responseFields, String responseOptions, String sortBy, Integer startIndex)
@@ -40,8 +40,8 @@ public class ProductUrl
 	/**
 	 * Get Resource Url for GetProductInventory
 	 * @param locationCodes Array of location codes for which to retrieve product inventory information.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param productCode 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getProductInventoryUrl(String locationCodes, String productCode, String responseFields)
@@ -55,14 +55,14 @@ public class ProductUrl
 
 	/**
 	 * Get Resource Url for GetProduct
-	 * @param acceptVariantProductCode Specifies whether to accept a product variant's code as the .When you set this parameter to , you can pass in a product variant's code in the GetProduct call to retrieve the product variant details that are associated with the base product.
-	 * @param allowInactive If true, allow inactive categories to be retrieved in the category list response. If false, the categories retrieved will not include ones marked inactive.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param purchaseLocation The location where the order item(s) was purchased.
-	 * @param quantity The number of cart items in the shopper's active cart.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
-	 * @param supressOutOfStock404 Specifies whether to supress the 404 error when the product is out of stock.
+	 * @param acceptVariantProductCode 
+	 * @param allowInactive If true, returns an inactive product as part of the query.
+	 * @param productCode 
+	 * @param purchaseLocation 
+	 * @param quantity 
+	 * @param responseFields 
+	 * @param skipInventoryCheck If true, skip the inventory validation process for the specified product.
+	 * @param supressOutOfStock404 
 	 * @param variationProductCode Merchant-created code associated with a specific product variation. Variation product codes maintain an association with the base product code.
 	 * @return   String Resource Url
 	 */
@@ -83,10 +83,10 @@ public class ProductUrl
 
 	/**
 	 * Get Resource Url for GetProductForIndexing
-	 * @param lastModifiedDate The date when the product was last updated.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param productVersion The product version.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param lastModifiedDate 
+	 * @param productCode 
+	 * @param productVersion 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getProductForIndexingUrl(DateTime lastModifiedDate, String productCode, Long productVersion, String responseFields)
@@ -102,11 +102,11 @@ public class ProductUrl
 	/**
 	 * Get Resource Url for ConfiguredProduct
 	 * @param includeOptionDetails If true, the response returns details about the product. If false, returns a product summary such as the product name, price, and sale price.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param purchaseLocation The location where the order item(s) was purchased.
-	 * @param quantity The number of cart items in the shopper's active cart.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
+	 * @param productCode 
+	 * @param purchaseLocation 
+	 * @param quantity 
+	 * @param responseFields 
+	 * @param skipInventoryCheck If true, skip the inventory validation process for the specified product.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl configuredProductUrl(Boolean includeOptionDetails, String productCode, String purchaseLocation, Integer quantity, String responseFields, Boolean skipInventoryCheck)
@@ -123,12 +123,12 @@ public class ProductUrl
 
 	/**
 	 * Get Resource Url for ValidateProduct
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param purchaseLocation The location where the order item(s) was purchased.
-	 * @param quantity The number of cart items in the shopper's active cart.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param skipDefaults Normally, product validation applies default extras to products that do not have options specified. If , product validation does not apply default extras to products.
-	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
+	 * @param productCode 
+	 * @param purchaseLocation 
+	 * @param quantity 
+	 * @param responseFields 
+	 * @param skipDefaults 
+	 * @param skipInventoryCheck If true, skip the inventory validation process for the specified product.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl validateProductUrl(String productCode, String purchaseLocation, Integer quantity, String responseFields, Boolean skipDefaults, Boolean skipInventoryCheck)
@@ -145,11 +145,11 @@ public class ProductUrl
 
 	/**
 	 * Get Resource Url for ValidateDiscounts
-	 * @param allowInactive If true, allow inactive categories to be retrieved in the category list response. If false, the categories retrieved will not include ones marked inactive.
-	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
+	 * @param allowInactive If true, this operation returns inactive product discounts as part of the POST.
+	 * @param customerAccountId Unique ID of the customer account associated with the shopper requesting the discount.
+	 * @param productCode 
+	 * @param responseFields 
+	 * @param skipInventoryCheck If true, do not validate the product inventory when evaluating the list of discounts.
 	 * @param variationProductCode Merchant-created code associated with a specific product variation. Variation product codes maintain an association with the base product code.
 	 * @return   String Resource Url
 	 */
@@ -167,7 +167,7 @@ public class ProductUrl
 
 	/**
 	 * Get Resource Url for GetProductCosts
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getProductCostsUrl(String responseFields)
@@ -179,7 +179,7 @@ public class ProductUrl
 
 	/**
 	 * Get Resource Url for GetProductInventories
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getProductInventoriesUrl(String responseFields)

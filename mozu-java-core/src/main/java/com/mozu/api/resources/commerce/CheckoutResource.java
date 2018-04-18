@@ -18,7 +18,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use this resource to track a shopper's order items and their intended destinations on sites that have the multiple shipment feature enabled. The Checkouts resource is active until the shopper submits the order, at which point one or many orders are created based on the data contained in the Checkouts resource.To learn more about this resource and the ability to ship items to multiple addresses, refer to the [Multiple Shipments API Overview](https://www.mozu.com/docs/Developer/api-guides/multi-ship.htm) topic.
+ * commerce/checkouts related resources. DOCUMENT_HERE 
  * </summary>
  */
 public class CheckoutResource {
@@ -79,7 +79,7 @@ public class CheckoutResource {
 	 *	Checkout checkout = new Checkout();
 	 *	string string = checkout.getAvailableActions( checkoutId);
 	 * </code></pre></p>
-	 * @param checkoutId The unique identifier of the checkout.
+	 * @param checkoutId 
 	 * @return List<string>
 	 * @see string
 	 */
@@ -98,7 +98,7 @@ public class CheckoutResource {
 	 *	Checkout checkout = new Checkout();
 	 *	CheckoutGroupRates checkoutGroupRates = checkout.getAvailableShippingMethods( checkoutId);
 	 * </code></pre></p>
-	 * @param checkoutId The unique identifier of the checkout.
+	 * @param checkoutId 
 	 * @return List<com.mozu.api.contracts.commerceruntime.checkouts.CheckoutGroupRates>
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.CheckoutGroupRates
 	 */
@@ -117,7 +117,7 @@ public class CheckoutResource {
 	 *	Checkout checkout = new Checkout();
 	 *	Checkout checkout = checkout.getCheckout( checkoutId);
 	 * </code></pre></p>
-	 * @param checkoutId The unique identifier of the checkout.
+	 * @param checkoutId 
 	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 */
@@ -132,7 +132,7 @@ public class CheckoutResource {
 	 *	Checkout checkout = new Checkout();
 	 *	Checkout checkout = checkout.getCheckout( checkoutId,  responseFields);
 	 * </code></pre></p>
-	 * @param checkoutId The unique identifier of the checkout.
+	 * @param checkoutId 
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
@@ -187,8 +187,8 @@ public class CheckoutResource {
 	 *	Checkout checkout = new Checkout();
 	 *	Checkout checkout = checkout.performCheckoutAction( action,  checkoutId);
 	 * </code></pre></p>
-	 * @param checkoutId The unique identifier of the checkout.
-	 * @param action The name of the action to perform.
+	 * @param checkoutId 
+	 * @param action 
 	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.CheckoutAction
@@ -204,9 +204,9 @@ public class CheckoutResource {
 	 *	Checkout checkout = new Checkout();
 	 *	Checkout checkout = checkout.performCheckoutAction( action,  checkoutId,  responseFields);
 	 * </code></pre></p>
-	 * @param checkoutId The unique identifier of the checkout.
+	 * @param checkoutId 
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param action The name of the action to perform.
+	 * @param action 
 	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.CheckoutAction
@@ -226,7 +226,7 @@ public class CheckoutResource {
 	 *	Checkout checkout = new Checkout();
 	 *	checkout.resendCheckoutConfirmationEmail( checkoutId);
 	 * </code></pre></p>
-	 * @param checkoutId The unique identifier of the checkout.
+	 * @param checkoutId 
 	 * @return 
 	 */
 	public void resendCheckoutConfirmationEmail(String checkoutId) throws Exception
@@ -244,8 +244,8 @@ public class CheckoutResource {
 	 *	Checkout checkout = new Checkout();
 	 *	Checkout checkout = checkout.setShippingMethods( groupShippingMethods,  checkoutId);
 	 * </code></pre></p>
-	 * @param checkoutId The unique identifier of the checkout.
-	 * @param groupShippingMethods The shipping methods for the grouping.
+	 * @param checkoutId 
+	 * @param groupShippingMethods 
 	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.CheckoutGroupShippingMethod
@@ -261,9 +261,9 @@ public class CheckoutResource {
 	 *	Checkout checkout = new Checkout();
 	 *	Checkout checkout = checkout.setShippingMethods( groupShippingMethods,  checkoutId,  responseFields);
 	 * </code></pre></p>
-	 * @param checkoutId The unique identifier of the checkout.
+	 * @param checkoutId 
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param groupShippingMethods The shipping methods for the grouping.
+	 * @param groupShippingMethods 
 	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.CheckoutGroupShippingMethod
@@ -283,8 +283,8 @@ public class CheckoutResource {
 	 *	Checkout checkout = new Checkout();
 	 *	Checkout checkout = checkout.updateCheckout( checkout,  checkoutId);
 	 * </code></pre></p>
-	 * @param checkoutId The unique identifier of the checkout.
-	 * @param checkout The checkout object.
+	 * @param checkoutId 
+	 * @param checkout 
 	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
@@ -300,9 +300,9 @@ public class CheckoutResource {
 	 *	Checkout checkout = new Checkout();
 	 *	Checkout checkout = checkout.updateCheckout( checkout,  checkoutId,  responseFields);
 	 * </code></pre></p>
-	 * @param checkoutId The unique identifier of the checkout.
+	 * @param checkoutId 
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param checkout The checkout object.
+	 * @param checkout 
 	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
@@ -322,9 +322,9 @@ public class CheckoutResource {
 	 *	Checkout checkout = new Checkout();
 	 *	Checkout checkout = checkout.processDigitalWallet( digitalWallet,  checkoutId,  digitalWalletType);
 	 * </code></pre></p>
-	 * @param checkoutId The unique identifier of the checkout.
-	 * @param digitalWalletType The type of digital wallet.
-	 * @param digitalWallet The digital wallet object.
+	 * @param checkoutId 
+	 * @param digitalWalletType 
+	 * @param digitalWallet 
 	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.orders.DigitalWallet
@@ -340,10 +340,10 @@ public class CheckoutResource {
 	 *	Checkout checkout = new Checkout();
 	 *	Checkout checkout = checkout.processDigitalWallet( digitalWallet,  checkoutId,  digitalWalletType,  responseFields);
 	 * </code></pre></p>
-	 * @param checkoutId The unique identifier of the checkout.
-	 * @param digitalWalletType The type of digital wallet.
+	 * @param checkoutId 
+	 * @param digitalWalletType 
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param digitalWallet The digital wallet object.
+	 * @param digitalWallet 
 	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.orders.DigitalWallet
@@ -363,8 +363,8 @@ public class CheckoutResource {
 	 *	Checkout checkout = new Checkout();
 	 *	Checkout checkout = checkout.changeCheckoutPriceList( priceListCode,  checkoutId);
 	 * </code></pre></p>
-	 * @param checkoutId The unique identifier of the checkout.
-	 * @param priceListCode The unique identifier of the price list that applies to the checkout, if applicable.
+	 * @param checkoutId 
+	 * @param priceListCode 
 	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see string
@@ -380,9 +380,9 @@ public class CheckoutResource {
 	 *	Checkout checkout = new Checkout();
 	 *	Checkout checkout = checkout.changeCheckoutPriceList( priceListCode,  checkoutId,  responseFields);
 	 * </code></pre></p>
-	 * @param checkoutId The unique identifier of the checkout.
+	 * @param checkoutId 
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param priceListCode The unique identifier of the price list that applies to the checkout, if applicable.
+	 * @param priceListCode 
 	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see string

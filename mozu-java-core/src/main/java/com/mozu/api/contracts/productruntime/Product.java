@@ -38,16 +38,14 @@ public class Product implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The date and time in UTC when the product is no longer active in the catalog.
+	 * A list of price lists for which the product is valid.
 	 */
-	protected  DateTime catalogEndDate;
-
-	public DateTime getCatalogEndDate() {
-		return this.catalogEndDate;
+	protected List<String> validPriceLists;
+	public List<String> getValidPriceLists() {
+		return this.validPriceLists;
 	}
-
-	public void setCatalogEndDate(DateTime catalogEndDate) {
-		this.catalogEndDate = catalogEndDate;
+	public void setValidPriceLists(List<String> validPriceLists) {
+		this.validPriceLists = validPriceLists;
 	}
 
 	/**
@@ -61,6 +59,19 @@ public class Product implements Serializable
 
 	public void setCatalogStartDate(DateTime catalogStartDate) {
 		this.catalogStartDate = catalogStartDate;
+	}
+
+	/**
+	 * The date and time in UTC when the product is no longer active in the catalog.
+	 */
+	protected  DateTime catalogEndDate;
+
+	public DateTime getCatalogEndDate() {
+		return this.catalogEndDate;
+	}
+
+	public void setCatalogEndDate(DateTime catalogEndDate) {
+		this.catalogEndDate = catalogEndDate;
 	}
 
 	protected  DateTime createDate;
@@ -256,9 +267,6 @@ public class Product implements Serializable
 		this.publishState = publishState;
 	}
 
-	/**
-	 * The location where the order item(s) was purchased.
-	 */
 	protected  String purchaseLocation;
 
 	public String getPurchaseLocation() {
@@ -301,17 +309,6 @@ public class Product implements Serializable
 
 	public void setUpdateDate(DateTime updateDate) {
 		this.updateDate = updateDate;
-	}
-
-	/**
-	 * A list of price lists for which the product is valid.
-	 */
-	protected List<String> validPriceLists;
-	public List<String> getValidPriceLists() {
-		return this.validPriceLists;
-	}
-	public void setValidPriceLists(List<String> validPriceLists) {
-		this.validPriceLists = validPriceLists;
 	}
 
 	protected  String variationProductCode;

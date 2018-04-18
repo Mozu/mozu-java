@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.commerceruntime.payments.PaymentGatewayResponseData;
+import com.mozu.api.contracts.commerceruntime.payments.PaymentActionTarget;
 
 /**
  *	Properties of a resulting payment interaction that occurs when a payment action is performed.
@@ -283,6 +284,16 @@ public class PaymentInteraction implements Serializable
 	}
 	public void setGatewayResponseData(List<PaymentGatewayResponseData> gatewayResponseData) {
 		this.gatewayResponseData = gatewayResponseData;
+	}
+
+	protected  PaymentActionTarget target;
+
+	public PaymentActionTarget getTarget() {
+		return this.target;
+	}
+
+	public void setTarget(PaymentActionTarget target) {
+		this.target = target;
 	}
 
 

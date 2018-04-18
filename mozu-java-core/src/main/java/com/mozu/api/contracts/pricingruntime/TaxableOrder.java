@@ -98,7 +98,7 @@ public class TaxableOrder implements Serializable
 	}
 
 	/**
-	 * The date and time the original order was placed. This date is set when the order is submitted with payment. 
+	 * The date and time the original order was placed. This date is set when the order is submitted with payment.
 	 */
 	protected  DateTime originalOrderDate;
 

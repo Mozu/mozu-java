@@ -125,7 +125,7 @@ public class Attribute implements Serializable
 	}
 
 	/**
-	 * Flag used to indicate if this attribute definition is read-only. Once an attribute definition is set to read-only this action cannot be undone. 
+	 * Flag used to indicate if this attribute definition is read-only. Once an attribute definition is set to read-only this action cannot be undone.
 	 */
 	protected  Boolean isReadOnly;
 

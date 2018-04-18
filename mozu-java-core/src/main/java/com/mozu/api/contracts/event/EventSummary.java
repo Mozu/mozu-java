@@ -77,7 +77,7 @@ public class EventSummary implements Serializable
 	}
 
 	/**
-	 * Unique identifier for the event. 
+	 * Unique identifier for the event.
 	 */
 	protected  String eventId;
 
@@ -90,7 +90,7 @@ public class EventSummary implements Serializable
 	}
 
 	/**
-	 * Unique identifier for the master catalog. 
+	 * Unique identifier for the master catalog.
 	 */
 	protected  Integer masterCatalogId;
 

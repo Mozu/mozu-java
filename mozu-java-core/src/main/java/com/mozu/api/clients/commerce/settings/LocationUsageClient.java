@@ -46,7 +46,7 @@ public class LocationUsageClient {
 	 * client.executeRequest();
 	 * LocationUsageCollection locationUsageCollection = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.LocationUsageCollection>
 	 * @see com.mozu.api.contracts.location.LocationUsageCollection
 	 */
@@ -70,7 +70,7 @@ public class LocationUsageClient {
 	 * client.executeRequest();
 	 * LocationUsage locationUsage = client.Result();
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code Code that identifies the location usage type, which is "DS" for direct ship, "SP" for in-store pickup, or "storeFinder" for store finder.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.LocationUsage>
 	 * @see com.mozu.api.contracts.location.LocationUsage
 	 */
@@ -87,8 +87,8 @@ public class LocationUsageClient {
 	 * client.executeRequest();
 	 * LocationUsage locationUsage = client.Result();
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param code Code that identifies the location usage type, which is "DS" for direct ship, "SP" for in-store pickup, or "storeFinder" for store finder.
+	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.LocationUsage>
 	 * @see com.mozu.api.contracts.location.LocationUsage
 	 */
@@ -112,8 +112,8 @@ public class LocationUsageClient {
 	 * client.executeRequest();
 	 * LocationUsage locationUsage = client.Result();
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param usage Configuration properties of a location usage type for a specified site. The direct ship location usage type consists of a single location that represents location that supports direct ship (DS) fulfillment. The in-store pickup location usage type consists of a list of location types that represent locations that support in-store pickup (SP) fulfillment. The store finder location usage type consists of a list of location codes, location types, or both.
+	 * @param code Code that identifies the location usage type, which is "DS" for direct ship, "SP" for in-store pickup, or "storeFinder" for store finder.
+	 * @param usage Properties of the location usage type to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.LocationUsage>
 	 * @see com.mozu.api.contracts.location.LocationUsage
 	 * @see com.mozu.api.contracts.location.LocationUsage
@@ -131,9 +131,9 @@ public class LocationUsageClient {
 	 * client.executeRequest();
 	 * LocationUsage locationUsage = client.Result();
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param usage Configuration properties of a location usage type for a specified site. The direct ship location usage type consists of a single location that represents location that supports direct ship (DS) fulfillment. The in-store pickup location usage type consists of a list of location types that represent locations that support in-store pickup (SP) fulfillment. The store finder location usage type consists of a list of location codes, location types, or both.
+	 * @param code Code that identifies the location usage type, which is "DS" for direct ship, "SP" for in-store pickup, or "storeFinder" for store finder.
+	 * @param responseFields 
+	 * @param usage Properties of the location usage type to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.LocationUsage>
 	 * @see com.mozu.api.contracts.location.LocationUsage
 	 * @see com.mozu.api.contracts.location.LocationUsage

@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Provides the display information for attribute vocabulary values. 
+ *	Provides the display information for attribute vocabulary values.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AttributeVocabularyValueDisplayInfo implements Serializable

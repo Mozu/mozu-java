@@ -15,7 +15,7 @@ public class AppliedDiscountUrl
 
 	/**
 	 * Get Resource Url for ApplyCoupon
-	 * @param checkoutId The unique identifier of the checkout.
+	 * @param checkoutId 
 	 * @param couponCode Code associated with the coupon to remove from the cart.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
@@ -31,7 +31,7 @@ public class AppliedDiscountUrl
 
 	/**
 	 * Get Resource Url for RemoveCoupons
-	 * @param checkoutId The unique identifier of the checkout.
+	 * @param checkoutId 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl removeCouponsUrl(String checkoutId)
@@ -43,7 +43,7 @@ public class AppliedDiscountUrl
 
 	/**
 	 * Get Resource Url for RemoveCoupon
-	 * @param checkoutId The unique identifier of the checkout.
+	 * @param checkoutId 
 	 * @param couponCode Code associated with the coupon to remove from the cart.
 	 * @return   String Resource Url
 	 */

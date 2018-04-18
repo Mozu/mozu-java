@@ -21,6 +21,16 @@ public class ProductLocalizedSEOContent implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected  String metaTagKeywords;
+
+	public String getMetaTagKeywords() {
+		return this.metaTagKeywords;
+	}
+
+	public void setMetaTagKeywords(String metaTagKeywords) {
+		this.metaTagKeywords = metaTagKeywords;
+	}
+
 	protected  String localeCode;
 
 	public String getLocaleCode() {
@@ -39,16 +49,6 @@ public class ProductLocalizedSEOContent implements Serializable
 
 	public void setMetaTagDescription(String metaTagDescription) {
 		this.metaTagDescription = metaTagDescription;
-	}
-
-	protected  String metaTagKeywords;
-
-	public String getMetaTagKeywords() {
-		return this.metaTagKeywords;
-	}
-
-	public void setMetaTagKeywords(String metaTagKeywords) {
-		this.metaTagKeywords = metaTagKeywords;
 	}
 
 	protected  String metaTagTitle;

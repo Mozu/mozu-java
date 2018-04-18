@@ -42,7 +42,7 @@ public class TaxableOrder implements Serializable
 	}
 
 	/**
-	 * The combined price for all handling costs calculated together for shipped orders, not for digital or in-store pickup. This includes all handling costs per the product line items and options, excluding taxes and discounts. 
+	 * The combined price for all handling costs calculated together for shipped orders, not for digital or in-store pickup. This includes all handling costs per the product line items and options, excluding taxes and discounts.
 	 */
 	protected  Double handlingFee;
 
@@ -55,7 +55,7 @@ public class TaxableOrder implements Serializable
 	}
 
 	/**
-	 * The date and time the order was submitted for purchase. 
+	 * The date and time the order was submitted for purchase.
 	 */
 	protected  DateTime orderDate;
 
@@ -107,7 +107,7 @@ public class TaxableOrder implements Serializable
 	}
 
 	/**
-	 * The date and time the original order was placed. This date is set when the order is submitted with payment. 
+	 * The date and time the original order was placed. This date is set when the order is submitted with payment.
 	 */
 	protected  DateTime originalOrderDate;
 

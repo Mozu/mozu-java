@@ -51,7 +51,7 @@ public class FraudScreen implements Serializable
 	}
 
 	/**
-	 * Mozu.PaymentService.Contracts.Response.FraudScreen transactionId ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.PaymentService.Contracts.Response.FraudScreen transactionId ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  String transactionId;
 
@@ -64,7 +64,7 @@ public class FraudScreen implements Serializable
 	}
 
 	/**
-	 * Mozu.PaymentService.Contracts.Response.FraudScreen fraudScreenResponseData ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.PaymentService.Contracts.Response.FraudScreen fraudScreenResponseData ApiTypeMember DOCUMENT_HERE
 	 */
 	protected List<FraudScreenResponseData> fraudScreenResponseData;
 	public List<FraudScreenResponseData> getFraudScreenResponseData() {

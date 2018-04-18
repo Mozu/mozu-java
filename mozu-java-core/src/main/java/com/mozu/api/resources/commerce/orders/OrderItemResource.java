@@ -240,7 +240,6 @@ public class OrderItemResource {
 	 *	Order order = orderitem.updateItemDuty( orderId,  orderItemId,  dutyAmount);
 	 * </code></pre></p>
 	 * @param dutyAmount The amount added to the order item for duty fees.
-        
 	 * @param orderId Unique identifier of the order.
 	 * @param orderItemId Unique identifier of the item to remove from the order.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
@@ -258,7 +257,6 @@ public class OrderItemResource {
 	 *	Order order = orderitem.updateItemDuty( orderId,  orderItemId,  dutyAmount,  updateMode,  version,  responseFields);
 	 * </code></pre></p>
 	 * @param dutyAmount The amount added to the order item for duty fees.
-        
 	 * @param orderId Unique identifier of the order.
 	 * @param orderItemId Unique identifier of the item to remove from the order.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
