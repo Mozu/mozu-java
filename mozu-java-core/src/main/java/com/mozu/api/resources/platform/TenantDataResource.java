@@ -18,7 +18,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the tenant data resource to store tenant-level information required for a third-party application in the  database.
+ * Use the tenant data resource to store tenant-level information required for a third-party application in the Mozu database.
  * </summary>
  */
 public class TenantDataResource {
@@ -40,7 +40,7 @@ public class TenantDataResource {
 	 *	TenantData tenantdata = new TenantData();
 	 *	string string = tenantdata.getDBValue( dbEntryQuery);
 	 * </code></pre></p>
-	 * @param dbEntryQuery The database entry string to create.
+	 * @param dbEntryQuery The database entry query string used to retrieve the record information.
 	 * @return string
 	 * @see string
 	 */
@@ -55,8 +55,8 @@ public class TenantDataResource {
 	 *	TenantData tenantdata = new TenantData();
 	 *	string string = tenantdata.getDBValue( dbEntryQuery,  responseFields);
 	 * </code></pre></p>
-	 * @param dbEntryQuery The database entry string to create.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param dbEntryQuery The database entry query string used to retrieve the record information.
+	 * @param responseFields 
 	 * @return string
 	 * @see string
 	 */
@@ -95,8 +95,8 @@ public class TenantDataResource {
 	 *	TenantData tenantdata = new TenantData();
 	 *	tenantdata.updateDBValue( value,  dbEntryQuery);
 	 * </code></pre></p>
-	 * @param dbEntryQuery The database entry string to create.
-	 * @param value The value string to create.
+	 * @param dbEntryQuery The database entry query string used to update the record information.
+	 * @param value The database value to update.
 	 * @return 
 	 * @see string
 	 */
@@ -115,7 +115,7 @@ public class TenantDataResource {
 	 *	TenantData tenantdata = new TenantData();
 	 *	tenantdata.deleteDBValue( dbEntryQuery);
 	 * </code></pre></p>
-	 * @param dbEntryQuery The database entry string to create.
+	 * @param dbEntryQuery The database entry string to delete.
 	 * @return 
 	 */
 	public void deleteDBValue(String dbEntryQuery) throws Exception

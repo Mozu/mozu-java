@@ -15,9 +15,9 @@ public class BillingInfoUrl
 
 	/**
 	 * Get Resource Url for GetBillingInfo
-	 * @param draft If true, retrieve the draft version of the order, which might include uncommitted changes to the order or its components.
+	 * @param draft If true, retrieve the draft version of the order billing information, which might include uncommitted changes.
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getBillingInfoUrl(Boolean draft, String orderId, String responseFields)
@@ -32,9 +32,9 @@ public class BillingInfoUrl
 	/**
 	 * Get Resource Url for SetBillingInfo
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
+	 * @param responseFields 
+	 * @param updateMode Specifies whether to set the billing information by updating the original order, updating the order in draft mode, or updating the order in draft mode and then committing the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
+	 * @param version 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl setBillingInfoUrl(String orderId, String responseFields, String updateMode, String version)

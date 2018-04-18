@@ -14,7 +14,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productruntime.AttributeVocabularyValueDisplayInfo;
 
 /**
- *	Properties of a value for a product property.
+ *	Values of a product property attribute.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductPropertyValue implements Serializable
@@ -42,9 +42,6 @@ public class ProductPropertyValue implements Serializable
 		this.value = value;
 	}
 
-	/**
-	 * Defines the intended display of this attribute in the storefront. Options include Drop Down, Image Picker, and Radio Buttons.
-	 */
 	protected  AttributeVocabularyValueDisplayInfo displayInfo;
 
 	public AttributeVocabularyValueDisplayInfo getDisplayInfo() {

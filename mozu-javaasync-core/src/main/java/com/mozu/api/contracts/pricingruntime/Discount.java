@@ -16,18 +16,12 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.pricingruntime.DiscountCondition;
 import com.mozu.api.contracts.pricingruntime.DiscountTarget;
 
-/**
- *	Name of the discount added and applied to a shopping cart and order for a shopper's purchase.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Discount implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * amount ApiType DOCUMENT_HERE 
-	 */
 	protected  Double amount;
 
 	public Double getAmount() {
@@ -38,9 +32,6 @@ public class Discount implements Serializable
 		this.amount = amount;
 	}
 
-	/**
-	 * The type of the discount, either  (meaning the discount amount value represents a percentage off the original price),  (meaning the discount amount value represents a dollar amount off the original price),  (meaning the discount amount value is ignored because the product is free), or  (meaning the discount amount value represents the discounted price of the item).
-	 */
 	protected  String amountType;
 
 	public String getAmountType() {
@@ -61,9 +52,6 @@ public class Discount implements Serializable
 		this.discountId = discountId;
 	}
 
-	/**
-	 * doesNotApplyToMultiShipToOrders ApiType DOCUMENT_HERE 
-	 */
 	protected  Boolean doesNotApplyToMultiShipToOrders;
 
 	public Boolean getDoesNotApplyToMultiShipToOrders() {
@@ -74,9 +62,6 @@ public class Discount implements Serializable
 		this.doesNotApplyToMultiShipToOrders = doesNotApplyToMultiShipToOrders;
 	}
 
-	/**
-	 * doesNotApplyToProductsWithSalePrice ApiType DOCUMENT_HERE 
-	 */
 	protected  Boolean doesNotApplyToProductsWithSalePrice;
 
 	public Boolean getDoesNotApplyToProductsWithSalePrice() {
@@ -97,9 +82,6 @@ public class Discount implements Serializable
 		this.expirationDate = expirationDate;
 	}
 
-	/**
-	 * The localizable, shopper-facing description defined for a discount or a storefront message.
-	 */
 	protected  String friendlyDescription;
 
 	public String getFriendlyDescription() {
@@ -110,9 +92,6 @@ public class Discount implements Serializable
 		this.friendlyDescription = friendlyDescription;
 	}
 
-	/**
-	 * includedPriceLists ApiType DOCUMENT_HERE 
-	 */
 	protected List<String> includedPriceLists;
 	public List<String> getIncludedPriceLists() {
 		return this.includedPriceLists;
@@ -121,9 +100,6 @@ public class Discount implements Serializable
 		this.includedPriceLists = includedPriceLists;
 	}
 
-	/**
-	 * maxDiscountValuePerRedemption ApiType DOCUMENT_HERE 
-	 */
 	protected  Double maxDiscountValuePerRedemption;
 
 	public Double getMaxDiscountValuePerRedemption() {
@@ -134,9 +110,6 @@ public class Discount implements Serializable
 		this.maxDiscountValuePerRedemption = maxDiscountValuePerRedemption;
 	}
 
-	/**
-	 * maximumDiscountValuePerOrder ApiType DOCUMENT_HERE 
-	 */
 	protected  Double maximumDiscountValuePerOrder;
 
 	public Double getMaximumDiscountValuePerOrder() {
@@ -147,9 +120,6 @@ public class Discount implements Serializable
 		this.maximumDiscountValuePerOrder = maximumDiscountValuePerOrder;
 	}
 
-	/**
-	 * maximumRedemptionsPerOrder ApiType DOCUMENT_HERE 
-	 */
 	protected  Integer maximumRedemptionsPerOrder;
 
 	public Integer getMaximumRedemptionsPerOrder() {
@@ -160,9 +130,6 @@ public class Discount implements Serializable
 		this.maximumRedemptionsPerOrder = maximumRedemptionsPerOrder;
 	}
 
-	/**
-	 * maximumUsesPerUser ApiType DOCUMENT_HERE 
-	 */
 	protected  Integer maximumUsesPerUser;
 
 	public Integer getMaximumUsesPerUser() {
@@ -173,9 +140,6 @@ public class Discount implements Serializable
 		this.maximumUsesPerUser = maximumUsesPerUser;
 	}
 
-	/**
-	 * maxRedemptions ApiType DOCUMENT_HERE 
-	 */
 	protected  Integer maxRedemptions;
 
 	public Integer getMaxRedemptions() {
@@ -196,9 +160,6 @@ public class Discount implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * redemptions ApiType DOCUMENT_HERE 
-	 */
 	protected  Integer redemptions;
 
 	public Integer getRedemptions() {
@@ -209,9 +170,6 @@ public class Discount implements Serializable
 		this.redemptions = redemptions;
 	}
 
-	/**
-	 * requiresAuthenticatedUser ApiType DOCUMENT_HERE 
-	 */
 	protected  Boolean requiresAuthenticatedUser;
 
 	public Boolean getRequiresAuthenticatedUser() {
@@ -222,9 +180,6 @@ public class Discount implements Serializable
 		this.requiresAuthenticatedUser = requiresAuthenticatedUser;
 	}
 
-	/**
-	 * scope ApiType DOCUMENT_HERE 
-	 */
 	protected  String scope;
 
 	public String getScope() {
@@ -235,9 +190,16 @@ public class Discount implements Serializable
 		this.scope = scope;
 	}
 
-	/**
-	 * type ApiType DOCUMENT_HERE 
-	 */
+	protected  Integer stackingLayer;
+
+	public Integer getStackingLayer() {
+		return this.stackingLayer;
+	}
+
+	public void setStackingLayer(Integer stackingLayer) {
+		this.stackingLayer = stackingLayer;
+	}
+
 	protected  String type;
 
 	public String getType() {
@@ -248,9 +210,6 @@ public class Discount implements Serializable
 		this.type = type;
 	}
 
-	/**
-	 * condition ApiType DOCUMENT_HERE 
-	 */
 	protected  DiscountCondition condition;
 
 	public DiscountCondition getCondition() {
@@ -261,9 +220,6 @@ public class Discount implements Serializable
 		this.condition = condition;
 	}
 
-	/**
-	 * Targets represent the object, such as an item to apply discounts to(products or orders) or a view field for content. Targets are the dot notations that link to the source document property. For example, firstitem for the direct level or firstitem.seconditem.thirditem for a deeper property.
-	 */
 	protected  DiscountTarget target;
 
 	public DiscountTarget getTarget() {

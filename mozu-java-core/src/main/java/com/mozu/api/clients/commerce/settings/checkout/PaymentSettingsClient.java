@@ -30,7 +30,7 @@ public class PaymentSettingsClient {
 	 * client.executeRequest();
 	 * ExternalPaymentWorkflowDefinition externalPaymentWorkflowDefinition = client.Result();
 	 * </code></pre></p>
-	 * @param fullyQualifiedName Fully qualified name of the attribute for the third-party payment workflow.
+	 * @param fullyQualifiedName 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition>
 	 * @see com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition
 	 */
@@ -47,8 +47,8 @@ public class PaymentSettingsClient {
 	 * client.executeRequest();
 	 * ExternalPaymentWorkflowDefinition externalPaymentWorkflowDefinition = client.Result();
 	 * </code></pre></p>
-	 * @param fullyQualifiedName Fully qualified name of the attribute for the third-party payment workflow.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param fullyQualifiedName 
+	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition>
 	 * @see com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition
 	 */
@@ -94,7 +94,7 @@ public class PaymentSettingsClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param definition Properties of an external payment processing workflow defined for the site. At this time, only PayPal Express is supported.
+	 * @param definition 
 	 * @return Mozu.Api.MozuClient 
 	 * @see com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition
 	 */
@@ -117,7 +117,7 @@ public class PaymentSettingsClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param fullyQualifiedName Fully qualified name of the attribute for the third-party payment workflow.
+	 * @param fullyQualifiedName 
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deleteThirdPartyPaymentWorkflowClient(String fullyQualifiedName) throws Exception

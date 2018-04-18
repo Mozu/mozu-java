@@ -21,9 +21,6 @@ public class ResetPasswordInfo implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The unique code of the customer set.
-	 */
 	protected  String customerSetCode;
 
 	public String getCustomerSetCode() {
@@ -48,7 +45,7 @@ public class ResetPasswordInfo implements Serializable
 	}
 
 	/**
-	 * The user name associated with the user profile. The customer uses the user name to access the account.
+	 * User name of the user associated with the customer account.
 	 */
 	protected  String userName;
 

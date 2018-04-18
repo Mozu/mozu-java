@@ -15,9 +15,6 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.event.SubscribingTenant;
 
-/**
- *	The subscription entity used to provide event notifications for third-parties.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Subscription implements Serializable
 {
@@ -114,9 +111,6 @@ public class Subscription implements Serializable
 		this.isActive = isActive;
 	}
 
-	/**
-	 * A boolean value that indicates if events should be delivered that resulted from an API call by the application. If true, any events that occur as a result of a direct API call by the same application will not be delivered. This can prevent an endless loop in certain scenarios.
-	 */
 	protected  Boolean noCallback;
 
 	public Boolean getNoCallback() {

@@ -39,7 +39,7 @@ public class RateRequest implements Serializable
 	}
 
 	/**
-	 * The estimated date and time the shipment will be shipped to the shopper. This calculation is based on product stock, availability, date of order entry, and location.
+	 * The date and time the shipment will be shipped to the shopper.
 	 */
 	protected  DateTime estimatedShipmentDate;
 
@@ -51,9 +51,6 @@ public class RateRequest implements Serializable
 		this.estimatedShipmentDate = estimatedShipmentDate;
 	}
 
-	/**
-	 * Unique identifier of the source property, such as a catalog, discount, order, or email template.For a product field it will be the name of the field.For a category ID, must be a positive integer not greater than 2000000. By default,  auto-generates a category ID when categories are created. If you want to specify an ID during creation (which preserves category link relationships when migrating tenant data from one sandbox to another), you must also include the  query string in the endpoint. For example, . Then, use the  property to specify the desired category ID.For a product attribute it will be the Attribute FQN.For a document, the ID must be specified as a 32 character, case-insensitive, alphanumeric string. You can specify the ID as 32 sequential characters or as groups separated by dashes in the format 8-4-4-4-12. For example, or.For email templates, the ID must be one of the following values:			
-	 */
 	protected  String id;
 
 	public String getId() {
@@ -84,9 +81,6 @@ public class RateRequest implements Serializable
 		this.isoCurrencyCode = isoCurrencyCode;
 	}
 
-	/**
-	 * The sub total of the order including all applicable discounts.
-	 */
 	protected  Double orderDiscountedSubTotal;
 
 	public Double getOrderDiscountedSubTotal() {
@@ -107,9 +101,6 @@ public class RateRequest implements Serializable
 		this.orderTotal = orderTotal;
 	}
 
-	/**
-	 * The unique identifier of the order to which the shipping rate is related.You can use Arc.js in combination with this property to retrieve other properties of the related order.
-	 */
 	protected  String relatedOrderId;
 
 	public String getRelatedOrderId() {
@@ -120,9 +111,6 @@ public class RateRequest implements Serializable
 		this.relatedOrderId = relatedOrderId;
 	}
 
-	/**
-	 * The order number that the customer sees on the storefront when they place the order.
-	 */
 	protected  Integer relatedOrderNumber;
 
 	public Integer getRelatedOrderNumber() {
@@ -144,9 +132,6 @@ public class RateRequest implements Serializable
 		this.shippingServiceTypes = shippingServiceTypes;
 	}
 
-	/**
-	 * Collection of attributes that may be paged list or a list, depending on the usage per object and API type.
-	 */
 	protected List<RateRequestAttribute> attributes;
 	public List<RateRequestAttribute> getAttributes() {
 		return this.attributes;
@@ -156,7 +141,7 @@ public class RateRequest implements Serializable
 	}
 
 	/**
-	 * Collection of carrier-specific key-value attribute pairs associated with a shipping carrier. These are required to retrieve a shipping rate request and are returned for the generated shipping label.
+	 * List of key-value pairs that represent custom attributes associated with the request.
 	 */
 	protected List<CustomAttribute> customAttributes;
 	public List<CustomAttribute> getCustomAttributes() {
@@ -166,9 +151,6 @@ public class RateRequest implements Serializable
 		this.customAttributes = customAttributes;
 	}
 
-	/**
-	 * Data included in the shipping rate information.
-	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {
@@ -198,7 +180,7 @@ public class RateRequest implements Serializable
 	}
 
 	/**
-	 * The physical address from which the order or shipment will ship.
+	 * The physical address from which the shipment will ship.
 	 */
 	protected  Address originAddress;
 

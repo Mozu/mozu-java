@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Properties of the inventory behavior associated with a product definition.
+ *	Properties of the active inventory managed for the product.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductInventoryInfo implements Serializable
@@ -44,9 +44,6 @@ public class ProductInventoryInfo implements Serializable
 		this.onlineLocationCode = onlineLocationCode;
 	}
 
-	/**
-	 * Number of product items currently available for purchase.
-	 */
 	protected  Integer onlineSoftStockAvailable;
 
 	public Integer getOnlineSoftStockAvailable() {

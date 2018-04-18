@@ -27,9 +27,6 @@ public class DiscountTarget implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Determines which way the discount is optimized. Consumers favor(default - false/null) or tenants favor (when this is set to true) Applies to discounts where target is not a specific product or list of products. May also impact behavior of Buy X Get Y so that X is the most expensive items and Y the least expensive.
-	 */
 	protected  Boolean appliesToLeastExpensiveProductsFirst;
 
 	public Boolean getAppliesToLeastExpensiveProductsFirst() {
@@ -40,9 +37,6 @@ public class DiscountTarget implements Serializable
 		this.appliesToLeastExpensiveProductsFirst = appliesToLeastExpensiveProductsFirst;
 	}
 
-	/**
-	 * Specifies whether the discount applies to the discount condition items as well. If , the shopper must purchase the required amount of the discount condition before the discount applies.
-	 */
 	protected  Boolean appliesToPurchaseConditionItems;
 
 	public Boolean getAppliesToPurchaseConditionItems() {
@@ -53,9 +47,6 @@ public class DiscountTarget implements Serializable
 		this.appliesToPurchaseConditionItems = appliesToPurchaseConditionItems;
 	}
 
-	/**
-	 * The operator to use on the excludedCategories field. Valid values are: "All" and "Any".
-	 */
 	protected  String excludedCategoriesOperator;
 
 	public String getExcludedCategoriesOperator() {
@@ -66,9 +57,6 @@ public class DiscountTarget implements Serializable
 		this.excludedCategoriesOperator = excludedCategoriesOperator;
 	}
 
-	/**
-	 * Prevents order scoped discounts from layering over items that already have a product discount with the same type.
-	 */
 	protected  Boolean excludeItemsWithExistingProductDiscounts;
 
 	public Boolean getExcludeItemsWithExistingProductDiscounts() {
@@ -79,9 +67,6 @@ public class DiscountTarget implements Serializable
 		this.excludeItemsWithExistingProductDiscounts = excludeItemsWithExistingProductDiscounts;
 	}
 
-	/**
-	 * Prevents order scoped discounts from layering over items that already have a shipping discount with the same type.
-	 */
 	protected  Boolean excludeItemsWithExistingShippingDiscounts;
 
 	public Boolean getExcludeItemsWithExistingShippingDiscounts() {
@@ -102,9 +87,6 @@ public class DiscountTarget implements Serializable
 		this.includeAllProducts = includeAllProducts;
 	}
 
-	/**
-	 * The operator of the includedCategories field.Valid values are: "All" and "Any".
-	 */
 	protected  String includedCategoriesOperator;
 
 	public String getIncludedCategoriesOperator() {
@@ -178,9 +160,6 @@ public class DiscountTarget implements Serializable
 		this.shippingMethods = shippingMethods;
 	}
 
-	/**
-	 * The list of shipping zones that are applicable for this discount.
-	 */
 	protected List<TargetedShippingZone> shippingZones;
 	public List<TargetedShippingZone> getShippingZones() {
 		return this.shippingZones;

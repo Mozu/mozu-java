@@ -13,18 +13,12 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.pricingruntime.Discount;
 
-/**
- *	The discount applied to the line item.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AppliedLineItemProductDiscount implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Specifies whether the line item discount applies to items that are on sale.
-	 */
 	protected  Boolean appliesToSalePrice;
 
 	public Boolean getAppliesToSalePrice() {
@@ -35,9 +29,6 @@ public class AppliedLineItemProductDiscount implements Serializable
 		this.appliesToSalePrice = appliesToSalePrice;
 	}
 
-	/**
-	 * The coupon code that a shopper uses to redeem an associated discount  on a purchase. This is also the unique identifier of the coupon itself.
-	 */
 	protected  String couponCode;
 
 	public String getCouponCode() {
@@ -48,9 +39,6 @@ public class AppliedLineItemProductDiscount implements Serializable
 		this.couponCode = couponCode;
 	}
 
-	/**
-	 * The unique identifier of the coupon set for the discount applied to the line item.
-	 */
 	protected  Integer couponSetId;
 
 	public Integer getCouponSetId() {
@@ -61,9 +49,6 @@ public class AppliedLineItemProductDiscount implements Serializable
 		this.couponSetId = couponSetId;
 	}
 
-	/**
-	 * The value of the discount applied to the cart or order, represented as a negative currency amount to apply to the original price.
-	 */
 	protected  Double impact;
 
 	public Double getImpact() {
@@ -74,9 +59,6 @@ public class AppliedLineItemProductDiscount implements Serializable
 		this.impact = impact;
 	}
 
-	/**
-	 * The impact of a discount for each discount quantity.
-	 */
 	protected  Double impactPerUnit;
 
 	public Double getImpactPerUnit() {
@@ -87,9 +69,6 @@ public class AppliedLineItemProductDiscount implements Serializable
 		this.impactPerUnit = impactPerUnit;
 	}
 
-	/**
-	 * Specifies whether to force the discount to apply to the line item.
-	 */
 	protected  Boolean isForced;
 
 	public Boolean getIsForced() {
@@ -100,9 +79,16 @@ public class AppliedLineItemProductDiscount implements Serializable
 		this.isForced = isForced;
 	}
 
-	/**
-	 * The specified quantity of objects and items. This property is used for numerous object types including products, options, components within a product bundle, cart and order items, returned items, shipping line items, items in a digital product. and items associated with types and reservations.
-	 */
+	protected  Double normalizedImpact;
+
+	public Double getNormalizedImpact() {
+		return this.normalizedImpact;
+	}
+
+	public void setNormalizedImpact(Double normalizedImpact) {
+		this.normalizedImpact = normalizedImpact;
+	}
+
 	protected  Integer quantity;
 
 	public Integer getQuantity() {
@@ -113,9 +99,6 @@ public class AppliedLineItemProductDiscount implements Serializable
 		this.quantity = quantity;
 	}
 
-	/**
-	 * Name of the discount added and applied to a shopping cart and order for a shopper's purchase.
-	 */
 	protected  Discount discount;
 
 	public Discount getDiscount() {

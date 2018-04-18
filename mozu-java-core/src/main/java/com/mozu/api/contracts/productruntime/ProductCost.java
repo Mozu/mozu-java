@@ -12,18 +12,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	The cost a client pays the supplier to stock the product.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductCost implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * cost ApiType DOCUMENT_HERE 
-	 */
 	protected  Double cost;
 
 	public Double getCost() {
@@ -34,9 +28,6 @@ public class ProductCost implements Serializable
 		this.cost = cost;
 	}
 
-	/**
-	 * The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 */
 	protected  String productCode;
 
 	public String getProductCode() {

@@ -14,18 +14,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	Mozu.PricingRuntime.Contracts.TaxAttribute ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class TaxAttribute implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Unique identifier of the attribute definition.
-	 */
 	protected  Integer attributeDefinitionId;
 
 	public Integer getAttributeDefinitionId() {
@@ -36,9 +30,6 @@ public class TaxAttribute implements Serializable
 		this.attributeDefinitionId = attributeDefinitionId;
 	}
 
-	/**
-	 * Fully qualified name of the attribute for the order or customer.
-	 */
 	protected  String fullyQualifiedName;
 
 	public String getFullyQualifiedName() {
@@ -49,9 +40,6 @@ public class TaxAttribute implements Serializable
 		this.fullyQualifiedName = fullyQualifiedName;
 	}
 
-	/**
-	 * List of value data for objects.
-	 */
 	protected List<Object> values;
 	public List<Object> getValues() {
 		return this.values;

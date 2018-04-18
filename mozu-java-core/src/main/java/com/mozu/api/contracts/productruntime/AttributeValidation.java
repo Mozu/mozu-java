@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Validates the attribute configured for the customer in the storefront against the attribute configured in .
+ *	Validates the attribute configured for the product in the storefront against the attribute configured in product admin.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AttributeValidation implements Serializable

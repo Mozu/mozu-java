@@ -78,7 +78,7 @@ public class TaxableTerritoryResource {
 	 *	TaxableTerritory taxableterritory = new TaxableTerritory();
 	 *	TaxableTerritory taxableTerritory = taxableterritory.addTaxableTerritory( taxableTerritory);
 	 * </code></pre></p>
-	 * @param taxableTerritory Properties of the territory which is subject to sales tax.
+	 * @param taxableTerritory Properties of the taxable territory to create.
 	 * @return com.mozu.api.contracts.sitesettings.general.TaxableTerritory
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
@@ -95,7 +95,7 @@ public class TaxableTerritoryResource {
 	 *	CountDownLatch latch = taxableterritory.addTaxableTerritory( taxableTerritory, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param taxableTerritory Properties of the territory which is subject to sales tax.
+	 * @param taxableTerritory Properties of the taxable territory to create.
 	 * @return com.mozu.api.contracts.sitesettings.general.TaxableTerritory
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
@@ -111,8 +111,8 @@ public class TaxableTerritoryResource {
 	 *	TaxableTerritory taxableterritory = new TaxableTerritory();
 	 *	TaxableTerritory taxableTerritory = taxableterritory.addTaxableTerritory( taxableTerritory,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param taxableTerritory Properties of the territory which is subject to sales tax.
+	 * @param responseFields 
+	 * @param taxableTerritory Properties of the taxable territory to create.
 	 * @return com.mozu.api.contracts.sitesettings.general.TaxableTerritory
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
@@ -132,9 +132,9 @@ public class TaxableTerritoryResource {
 	 *	TaxableTerritory taxableterritory = new TaxableTerritory();
 	 *	CountDownLatch latch = taxableterritory.addTaxableTerritory( taxableTerritory,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param taxableTerritory Properties of the territory which is subject to sales tax.
+	 * @param taxableTerritory Properties of the taxable territory to create.
 	 * @return com.mozu.api.contracts.sitesettings.general.TaxableTerritory
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
@@ -153,7 +153,7 @@ public class TaxableTerritoryResource {
 	 *	TaxableTerritory taxableterritory = new TaxableTerritory();
 	 *	TaxableTerritory taxableTerritory = taxableterritory.updateTaxableTerritories( taxableterritories);
 	 * </code></pre></p>
-	 * @param taxableterritories Properties of the territory which is subject to sales tax.
+	 * @param taxableterritories Properties of the taxable territories to update.
 	 * @return List<com.mozu.api.contracts.sitesettings.general.TaxableTerritory>
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
@@ -174,7 +174,7 @@ public class TaxableTerritoryResource {
 	 *	CountDownLatch latch = taxableterritory.updateTaxableTerritories( taxableterritories, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param taxableterritories Properties of the territory which is subject to sales tax.
+	 * @param taxableterritories Properties of the taxable territories to update.
 	 * @return List<com.mozu.api.contracts.sitesettings.general.TaxableTerritory>
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory

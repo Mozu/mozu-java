@@ -15,11 +15,11 @@ public class DiscountUrl
 
 	/**
 	 * Get Resource Url for GetDiscounts
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param filter 
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getDiscountsUrl(String filter, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
@@ -35,8 +35,8 @@ public class DiscountUrl
 
 	/**
 	 * Get Resource Url for GetDiscountContent
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getDiscountContentUrl(Integer discountId, String responseFields)
@@ -49,8 +49,8 @@ public class DiscountUrl
 
 	/**
 	 * Get Resource Url for GetDiscount
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getDiscountUrl(Integer discountId, String responseFields)
@@ -63,7 +63,7 @@ public class DiscountUrl
 
 	/**
 	 * Get Resource Url for GenerateRandomCoupon
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl generateRandomCouponUrl(String responseFields)
@@ -75,7 +75,7 @@ public class DiscountUrl
 
 	/**
 	 * Get Resource Url for CreateDiscount
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl createDiscountUrl(String responseFields)
@@ -87,8 +87,8 @@ public class DiscountUrl
 
 	/**
 	 * Get Resource Url for UpdateDiscountContent
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateDiscountContentUrl(Integer discountId, String responseFields)
@@ -101,8 +101,8 @@ public class DiscountUrl
 
 	/**
 	 * Get Resource Url for UpdateDiscount
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param discountId Unique identifier of the discount to update.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateDiscountUrl(Integer discountId, String responseFields)
@@ -115,7 +115,7 @@ public class DiscountUrl
 
 	/**
 	 * Get Resource Url for DeleteDiscount
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteDiscountUrl(Integer discountId)

@@ -20,7 +20,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the Storefront Tax resource to retrieve tax information from the storefront.
+ * 
  * </summary>
  */
 public class OrderTaxContextResource {
@@ -75,7 +75,7 @@ public class OrderTaxContextResource {
 	 *	OrderTaxContext ordertaxcontext = new OrderTaxContext();
 	 *	OrderTaxContext orderTaxContext = ordertaxcontext.estimateTaxes( taxableOrder,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param taxableOrder 
 	 * @return com.mozu.api.contracts.pricingruntime.OrderTaxContext
 	 * @see com.mozu.api.contracts.pricingruntime.OrderTaxContext
@@ -96,7 +96,7 @@ public class OrderTaxContextResource {
 	 *	OrderTaxContext ordertaxcontext = new OrderTaxContext();
 	 *	CountDownLatch latch = ordertaxcontext.estimateTaxes( taxableOrder,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @param taxableOrder 
 	 * @return com.mozu.api.contracts.pricingruntime.OrderTaxContext

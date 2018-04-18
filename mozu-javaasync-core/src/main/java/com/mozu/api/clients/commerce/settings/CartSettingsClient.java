@@ -19,7 +19,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the cart subresource to manage settings for the cart, such as whether to include handling fees in the cost calculations.
+ * 
  * </summary>
  */
 public class CartSettingsClient {
@@ -48,7 +48,7 @@ public class CartSettingsClient {
 	 * client.executeRequest();
 	 * CartSettings cartSettings = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.order.CartSettings>
 	 * @see com.mozu.api.contracts.sitesettings.order.CartSettings
 	 */
@@ -90,7 +90,7 @@ public class CartSettingsClient {
 	 * client.executeRequest();
 	 * CartSettings cartSettings = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param cartSettings 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.order.CartSettings>
 	 * @see com.mozu.api.contracts.sitesettings.order.CartSettings
@@ -135,7 +135,7 @@ public class CartSettingsClient {
 	 * client.executeRequest();
 	 * CartSettings cartSettings = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param cartSettings 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.order.CartSettings>
 	 * @see com.mozu.api.contracts.sitesettings.order.CartSettings

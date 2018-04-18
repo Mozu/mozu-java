@@ -19,7 +19,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the Extensions resource to manage Arc.js configuration settings. These are the same settings you can configure through  in the Action Management JSON Editor.
+ * 
  * </summary>
  */
 public class TenantExtensionsClient {
@@ -48,7 +48,7 @@ public class TenantExtensionsClient {
 	 * client.executeRequest();
 	 * TenantExtensions tenantExtensions = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.installedapplications.TenantExtensions>
 	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
 	 */
@@ -72,7 +72,7 @@ public class TenantExtensionsClient {
 	 * client.executeRequest();
 	 * TenantExtensions tenantExtensions = client.Result();
 	 * </code></pre></p>
-	 * @param extensions The updated details of the Arc.js configuration settings.
+	 * @param extensions 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.installedapplications.TenantExtensions>
 	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
 	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
@@ -90,8 +90,8 @@ public class TenantExtensionsClient {
 	 * client.executeRequest();
 	 * TenantExtensions tenantExtensions = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param extensions The updated details of the Arc.js configuration settings.
+	 * @param responseFields 
+	 * @param extensions 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.installedapplications.TenantExtensions>
 	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
 	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions

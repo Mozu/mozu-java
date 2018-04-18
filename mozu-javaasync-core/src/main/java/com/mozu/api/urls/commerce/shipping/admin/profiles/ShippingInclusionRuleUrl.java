@@ -15,9 +15,9 @@ public class ShippingInclusionRuleUrl
 
 	/**
 	 * Get Resource Url for GetShippingInclusionRule
-	 * @param id Unique identifier of the customer segment to retrieve.
-	 * @param profilecode The unique, user-defined code of the profile with which the shipping inclusion rule is associated.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param id 
+	 * @param profilecode 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getShippingInclusionRuleUrl(String id, String profilecode, String responseFields)
@@ -31,8 +31,8 @@ public class ShippingInclusionRuleUrl
 
 	/**
 	 * Get Resource Url for GetShippingInclusionRules
-	 * @param profilecode The unique, user-defined code of the profile with which the shipping inclusion rule is associated.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param profilecode 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getShippingInclusionRulesUrl(String profilecode, String responseFields)
@@ -45,8 +45,8 @@ public class ShippingInclusionRuleUrl
 
 	/**
 	 * Get Resource Url for CreateShippingInclusionRule
-	 * @param profilecode The unique, user-defined code of the profile with which the shipping inclusion rule is associated.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param profilecode 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl createShippingInclusionRuleUrl(String profilecode, String responseFields)
@@ -59,9 +59,9 @@ public class ShippingInclusionRuleUrl
 
 	/**
 	 * Get Resource Url for UpdateShippingInclusionRule
-	 * @param id Unique identifier of the customer segment to retrieve.
-	 * @param profilecode The unique, user-defined code of the profile with which the shipping inclusion rule is associated.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param id 
+	 * @param profilecode 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateShippingInclusionRuleUrl(String id, String profilecode, String responseFields)
@@ -75,8 +75,8 @@ public class ShippingInclusionRuleUrl
 
 	/**
 	 * Get Resource Url for DeleteShippingInclusionRule
-	 * @param id Unique identifier of the customer segment to retrieve.
-	 * @param profilecode The unique, user-defined code of the profile with which the shipping inclusion rule is associated.
+	 * @param id 
+	 * @param profilecode 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteShippingInclusionRuleUrl(String id, String profilecode)

@@ -16,23 +16,13 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.tenant.Catalog;
 
 /**
- *	Properties of a master product catalog defined for a tenant. All catalogs and sites associated with a master catalog share product definitions.
+ *	Properties of a master catalog defined for a tenant. All catalogs associated with a master catalog share product definitions.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class MasterCatalog implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
-
-	protected  DateTime createDate;
-
-	public DateTime getCreateDate() {
-		return this.createDate;
-	}
-
-	public void setCreateDate(DateTime createDate) {
-		this.createDate = createDate;
-	}
 
 	protected  String defaultCurrencyCode;
 
@@ -54,16 +44,6 @@ public class MasterCatalog implements Serializable
 		this.defaultLocaleCode = defaultLocaleCode;
 	}
 
-	protected  DateTime deleteDate;
-
-	public DateTime getDeleteDate() {
-		return this.deleteDate;
-	}
-
-	public void setDeleteDate(DateTime deleteDate) {
-		this.deleteDate = deleteDate;
-	}
-
 	protected  Integer id;
 
 	public Integer getId() {
@@ -72,16 +52,6 @@ public class MasterCatalog implements Serializable
 
 	public void setId(Integer id) {
 		this.id = id;
-	}
-
-	protected  Boolean isDeleted;
-
-	public Boolean getIsDeleted() {
-		return this.isDeleted;
-	}
-
-	public void setIsDeleted(Boolean isDeleted) {
-		this.isDeleted = isDeleted;
 	}
 
 	protected  String name;
@@ -94,22 +64,6 @@ public class MasterCatalog implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * The current status of the object.This value is read only. Valid values for this field are: "Active", "Expired", and "Inactive".
-	 */
-	protected  String status;
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	/**
-	 * Unique identifier of the Mozu tenant.
-	 */
 	protected  Integer tenantId;
 
 	public Integer getTenantId() {
@@ -118,16 +72,6 @@ public class MasterCatalog implements Serializable
 
 	public void setTenantId(Integer tenantId) {
 		this.tenantId = tenantId;
-	}
-
-	protected  DateTime updateDate;
-
-	public DateTime getUpdateDate() {
-		return this.updateDate;
-	}
-
-	public void setUpdateDate(DateTime updateDate) {
-		this.updateDate = updateDate;
 	}
 
 	protected List<Catalog> catalogs;

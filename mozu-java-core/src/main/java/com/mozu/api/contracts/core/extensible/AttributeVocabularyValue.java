@@ -23,7 +23,7 @@ public class AttributeVocabularyValue implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Indicates if the object is hidden or breaks inheritance, primarily used by facets, products, and attribute vocabulary values. For example, if true, the attribute vocabulary value does not appear in the list when defining a value for an attribute.
+	 * If true, the attribute vocabulary value does not appear in the list when defining a value for the attribute.
 	 */
 	protected  Boolean isHidden;
 

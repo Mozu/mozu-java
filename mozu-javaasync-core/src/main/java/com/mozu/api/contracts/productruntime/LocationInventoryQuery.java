@@ -14,18 +14,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	Properties for the product location inventory provided for queries to locate products by their location.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class LocationInventoryQuery implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * List of location codes to associate with the location usage. At this time, you can only specify one location code in the request for the direct ship location usage type.
-	 */
 	protected List<String> locationCodes;
 	public List<String> getLocationCodes() {
 		return this.locationCodes;
@@ -34,9 +28,6 @@ public class LocationInventoryQuery implements Serializable
 		this.locationCodes = locationCodes;
 	}
 
-	/**
-	 * A list of product codes of associated products. When this field is in the Product Publishing resource, you can use this field  to publish or delete individual pending product changes, or assign individual pending product changes to a publish set.
-	 */
 	protected List<String> productCodes;
 	public List<String> getProductCodes() {
 		return this.productCodes;

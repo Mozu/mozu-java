@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Describes whether a facet is currently valid and the reason. A facet may become invalid if the source data is changed in some ways (for example if the category tree structure is changed).
+ *	System-supplied and read only parameter that validates a facet for its associated category.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class FacetValidity implements Serializable

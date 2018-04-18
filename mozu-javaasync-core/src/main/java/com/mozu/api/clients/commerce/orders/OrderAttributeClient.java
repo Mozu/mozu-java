@@ -32,7 +32,7 @@ public class OrderAttributeClient {
 	 * client.executeRequest();
 	 * OrderAttribute orderAttribute = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId Unique identifier of the order for which to retrieve a list of defined attributes.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute>>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderAttribute
 	 */
@@ -56,8 +56,8 @@ public class OrderAttributeClient {
 	 * client.executeRequest();
 	 * OrderAttribute orderAttribute = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param orderAttributes Properties of an attribute applied to an order.
+	 * @param orderId Unique identifier of the order for which to assign the attributes.
+	 * @param orderAttributes The list of attributes to associate with the order, and the properties of each attribute to define for the order.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute>>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderAttribute
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderAttribute
@@ -83,8 +83,8 @@ public class OrderAttributeClient {
 	 * client.executeRequest();
 	 * OrderAttribute orderAttribute = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param orderAttributes Properties of an attribute applied to an order.
+	 * @param orderId Identifier of the order for which to update attributes.
+	 * @param orderAttributes List of order attributes to update, including the properties of each defined attribute in the list.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute>>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderAttribute
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderAttribute
@@ -102,9 +102,9 @@ public class OrderAttributeClient {
 	 * client.executeRequest();
 	 * OrderAttribute orderAttribute = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId Identifier of the order for which to update attributes.
 	 * @param removeMissing If true, the operation removes missing properties so that the updated order attributes will not show properties with a null value.
-	 * @param orderAttributes Properties of an attribute applied to an order.
+	 * @param orderAttributes List of order attributes to update, including the properties of each defined attribute in the list.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute>>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderAttribute
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderAttribute

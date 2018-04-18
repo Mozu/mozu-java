@@ -12,18 +12,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	Mozu.CommerceRuntime.Contracts.Discounts.SuggestedDiscount ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SuggestedDiscount implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * autoAdd ApiType DOCUMENT_HERE 
-	 */
 	protected  Boolean autoAdd;
 
 	public Boolean getAutoAdd() {
@@ -34,9 +28,6 @@ public class SuggestedDiscount implements Serializable
 		this.autoAdd = autoAdd;
 	}
 
-	/**
-	 * The unique identifier of the discount.
-	 */
 	protected  Integer discountId;
 
 	public Integer getDiscountId() {
@@ -47,9 +38,6 @@ public class SuggestedDiscount implements Serializable
 		this.discountId = discountId;
 	}
 
-	/**
-	 * The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 */
 	protected  String productCode;
 
 	public String getProductCode() {

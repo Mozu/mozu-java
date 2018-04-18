@@ -12,18 +12,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	The targeted shipping zone for the product.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class TargetedShippingZone implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The zone string for the tenant domain.
-	 */
 	protected  String zone;
 
 	public String getZone() {

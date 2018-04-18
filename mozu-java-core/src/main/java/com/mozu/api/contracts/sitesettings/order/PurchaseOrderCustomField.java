@@ -12,18 +12,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	The details of the custom fields associated with the purchase order payment.Refer to [Custom Text Fields](https://www.mozu.com/docs/guides/orders/purchase-order.htm#custom_text_fields) in the Purchase Orders guides topic for more information.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PurchaseOrderCustomField implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The unique code of the custom field associated with the purchase order payment type.Refer to [Custom Text Fields](https://www.mozu.com/docs/guides/orders/purchase-order.htm#custom_text_fields) in the Purchase Orders guides topic for more information.
-	 */
 	protected  String code;
 
 	public String getCode() {
@@ -34,9 +28,6 @@ public class PurchaseOrderCustomField implements Serializable
 		this.code = code;
 	}
 
-	/**
-	 * Indicates if the object or process is enabled. This indicator is used on external payment workflows and product option values. For product options, if true, the product option value is available for a shopper to choose. During configuration, this property will be false if the option value is invalid with other selected options. For external payment workflows, if true, the workflow is enabled and available for routing payments for the submitted order.
-	 */
 	protected  Boolean isEnabled;
 
 	public Boolean getIsEnabled() {
@@ -47,9 +38,6 @@ public class PurchaseOrderCustomField implements Serializable
 		this.isEnabled = isEnabled;
 	}
 
-	/**
-	 * Indicates if the property, attribute, product option, or product extra is required. If true, the object must have a defined value.
-	 */
 	protected  Boolean isRequired;
 
 	public Boolean getIsRequired() {
@@ -60,9 +48,6 @@ public class PurchaseOrderCustomField implements Serializable
 		this.isRequired = isRequired;
 	}
 
-	/**
-	 * Descriptive text used as a label for objects, such as field names, facets, date ranges, contact information, and package information.
-	 */
 	protected  String label;
 
 	public String getLabel() {
@@ -73,9 +58,6 @@ public class PurchaseOrderCustomField implements Serializable
 		this.label = label;
 	}
 
-	/**
-	 * The order/sequence position in which  displays the custom field.
-	 */
 	protected  Integer sequenceNumber;
 
 	public Integer getSequenceNumber() {

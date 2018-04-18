@@ -62,7 +62,7 @@ public class UserProfile implements Serializable
 	}
 
 	/**
-	 * The user name associated with the user profile. The customer uses the user name to access the account.
+	 * The user name associated with the user profile.
 	 */
 	protected  String userName;
 

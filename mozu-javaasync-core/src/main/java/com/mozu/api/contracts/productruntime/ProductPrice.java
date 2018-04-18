@@ -14,7 +14,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productruntime.AppliedDiscount;
 
 /**
- *	The price of the product in the specified currency code (USD). This price can either be the sale price or the price for which the merchang intends to sell the product.
+ *	The price of the product in the specified currency code (USD). This price can either be the sale price or the price for which the merchant intends to sell the product.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductPrice implements Serializable
@@ -48,9 +48,6 @@ public class ProductPrice implements Serializable
 		this.catalogSalePrice = catalogSalePrice;
 	}
 
-	/**
-	 * The credit value of the product or bundled product. When the `goodsType `is `DigitalCredit`, this value is populated to indicate the value of the credit. This is used to create store credit in the fulfillment of gift cards.
-	 */
 	protected  Double creditValue;
 
 	public Double getCreditValue() {
@@ -61,9 +58,6 @@ public class ProductPrice implements Serializable
 		this.creditValue = creditValue;
 	}
 
-	/**
-	 * The price list code if a price list is applield to the product's pricing.
-	 */
 	protected  String effectivePricelistCode;
 
 	public String getEffectivePricelistCode() {
@@ -75,7 +69,7 @@ public class ProductPrice implements Serializable
 	}
 
 	/**
-	 * The manufacturer's suggested retail price (MSRP) for the product. This content may be defined by the supplier.
+	 * The manufacturer's suggested retail price for the product.
 	 */
 	protected  Double msrp;
 
@@ -97,9 +91,6 @@ public class ProductPrice implements Serializable
 		this.price = price;
 	}
 
-	/**
-	 * The price list entry code that controls the product pricing, if a price list is applied to the product pricing.
-	 */
 	protected  String priceListEntryCode;
 
 	public String getPriceListEntryCode() {
@@ -110,9 +101,6 @@ public class ProductPrice implements Serializable
 		this.priceListEntryCode = priceListEntryCode;
 	}
 
-	/**
-	 * The pricing mode of the price list entry, if a price list is applied to the product pricing.The valid values are:* * A value of  indicates the product has volume pricing.
-	 */
 	protected  String priceListEntryMode;
 
 	public String getPriceListEntryMode() {
@@ -124,7 +112,7 @@ public class ProductPrice implements Serializable
 	}
 
 	/**
-	 * The price type that displays in the price field on product listing pages and product detail pages on the storefront.The valid values are:* * * 
+	 * The price type that displays on the storefront website for the Price field, which is List, MAP, or CatalogSalePrice
 	 */
 	protected  String priceType;
 
@@ -147,7 +135,7 @@ public class ProductPrice implements Serializable
 	}
 
 	/**
-	 * The sale price type that displays in the sale price field on product listing pages and product detail pages on the storefront.The valid values are:* * * 
+	 * The price type that displays on the storefront website for the Sale Price field, which is CatalogSalePrice, DiscountedList, or DiscountedCatalogSalePrice
 	 */
 	protected  String salePriceType;
 

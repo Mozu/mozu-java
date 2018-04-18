@@ -15,18 +15,12 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.customer.AccountPasswordInfo;
 
-/**
- *	A collection of account password information.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AccountPasswordInfoCollection implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The total number of items in the list.
-	 */
 	protected  Integer totalCount;
 
 	public Integer getTotalCount() {
@@ -37,9 +31,6 @@ public class AccountPasswordInfoCollection implements Serializable
 		this.totalCount = totalCount;
 	}
 
-	/**
-	 * A list of requested items. All returned data is provided in an items array.For a failed request, the returned response may be success with an empty item array.
-	 */
 	protected List<AccountPasswordInfo> items;
 	public List<AccountPasswordInfo> getItems() {
 		return this.items;

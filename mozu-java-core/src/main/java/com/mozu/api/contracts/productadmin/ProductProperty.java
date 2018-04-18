@@ -16,7 +16,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productadmin.ProductPropertyValue;
 
 /**
- *	Details of a property defined for a product.
+ *	Properties of the product property to create such as attribute detail, fully qualified name, and list of product property values.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductProperty implements Serializable

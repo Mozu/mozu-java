@@ -21,6 +21,16 @@ public class GatewayCredentialFieldValue implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected  Boolean isValueSet;
+
+	public Boolean getIsValueSet() {
+		return this.isValueSet;
+	}
+
+	public void setIsValueSet(Boolean isValueSet) {
+		this.isValueSet = isValueSet;
+	}
+
 	protected  String name;
 
 	public String getName() {

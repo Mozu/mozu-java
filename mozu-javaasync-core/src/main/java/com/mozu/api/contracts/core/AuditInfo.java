@@ -12,18 +12,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	Basic audit info about the object, including date, time, and user account. This data may be captured when creating, updating, and removing data.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AuditInfo implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Identifier of the user that created the object. System created and read only.
-	 */
 	protected  String createBy;
 
 	public String getCreateBy() {
@@ -34,9 +28,6 @@ public class AuditInfo implements Serializable
 		this.createBy = createBy;
 	}
 
-	/**
-	 * The date and time in UTCÂ format set when the object was created.
-	 */
 	protected  DateTime createDate;
 
 	public DateTime getCreateDate() {
@@ -47,9 +38,6 @@ public class AuditInfo implements Serializable
 		this.createDate = createDate;
 	}
 
-	/**
-	 * Identifier of the user that updated the entity most recently.
-	 */
 	protected  String updateBy;
 
 	public String getUpdateBy() {
@@ -60,9 +48,6 @@ public class AuditInfo implements Serializable
 		this.updateBy = updateBy;
 	}
 
-	/**
-	 * The date and time in UTC format the object was updated most recently.
-	 */
 	protected  DateTime updateDate;
 
 	public DateTime getUpdateDate() {

@@ -14,18 +14,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	Properties of the target to which the discount applies, such as the type of discount and which products, categories, or shipping methods are eligible for the discount and the properties of this discount target.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DiscountTarget implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * excludedCategoriesOperator ApiType DOCUMENT_HERE 
-	 */
 	protected  String excludedCategoriesOperator;
 
 	public String getExcludedCategoriesOperator() {
@@ -36,9 +30,6 @@ public class DiscountTarget implements Serializable
 		this.excludedCategoriesOperator = excludedCategoriesOperator;
 	}
 
-	/**
-	 * excludedCategoryIds ApiType DOCUMENT_HERE 
-	 */
 	protected List<Integer> excludedCategoryIds;
 	public List<Integer> getExcludedCategoryIds() {
 		return this.excludedCategoryIds;
@@ -47,9 +38,6 @@ public class DiscountTarget implements Serializable
 		this.excludedCategoryIds = excludedCategoryIds;
 	}
 
-	/**
-	 * excludedProductCodes ApiType DOCUMENT_HERE 
-	 */
 	protected List<String> excludedProductCodes;
 	public List<String> getExcludedProductCodes() {
 		return this.excludedProductCodes;
@@ -58,9 +46,6 @@ public class DiscountTarget implements Serializable
 		this.excludedProductCodes = excludedProductCodes;
 	}
 
-	/**
-	 * includeAllProducts ApiType DOCUMENT_HERE 
-	 */
 	protected  Boolean includeAllProducts;
 
 	public Boolean getIncludeAllProducts() {
@@ -71,9 +56,6 @@ public class DiscountTarget implements Serializable
 		this.includeAllProducts = includeAllProducts;
 	}
 
-	/**
-	 * includedCategoriesOperator ApiType DOCUMENT_HERE 
-	 */
 	protected  String includedCategoriesOperator;
 
 	public String getIncludedCategoriesOperator() {
@@ -84,9 +66,6 @@ public class DiscountTarget implements Serializable
 		this.includedCategoriesOperator = includedCategoriesOperator;
 	}
 
-	/**
-	 * includedCategoryIds ApiType DOCUMENT_HERE 
-	 */
 	protected List<Integer> includedCategoryIds;
 	public List<Integer> getIncludedCategoryIds() {
 		return this.includedCategoryIds;
@@ -95,9 +74,6 @@ public class DiscountTarget implements Serializable
 		this.includedCategoryIds = includedCategoryIds;
 	}
 
-	/**
-	 * includedProductCodes ApiType DOCUMENT_HERE 
-	 */
 	protected List<String> includedProductCodes;
 	public List<String> getIncludedProductCodes() {
 		return this.includedProductCodes;
@@ -106,9 +82,6 @@ public class DiscountTarget implements Serializable
 		this.includedProductCodes = includedProductCodes;
 	}
 
-	/**
-	 * shippingMethods ApiType DOCUMENT_HERE 
-	 */
 	protected List<String> shippingMethods;
 	public List<String> getShippingMethods() {
 		return this.shippingMethods;
@@ -117,9 +90,6 @@ public class DiscountTarget implements Serializable
 		this.shippingMethods = shippingMethods;
 	}
 
-	/**
-	 * shippingZones ApiType DOCUMENT_HERE 
-	 */
 	protected List<String> shippingZones;
 	public List<String> getShippingZones() {
 		return this.shippingZones;
@@ -128,9 +98,6 @@ public class DiscountTarget implements Serializable
 		this.shippingZones = shippingZones;
 	}
 
-	/**
-	 * type ApiType DOCUMENT_HERE 
-	 */
 	protected  String type;
 
 	public String getType() {

@@ -14,18 +14,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	Mozu.ProductRuntime.Contracts.ProductSearchRandomAccessCursor ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductSearchRandomAccessCursor implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * A calculated set of cursor marks for a given query that can be accessed in any order, providing the ability to page through all results in a random or parallelized order. You provide one of the generated cursor mark sets to the  parameter of the  operation in the  resource or the  operation in the  resource.
-	 */
 	protected List<String> cursorMarks;
 	public List<String> getCursorMarks() {
 		return this.cursorMarks;
