@@ -31,8 +31,8 @@ task wrapper(type: Wrapper) {
 
 
 repositories {
-    mavenCentral()
     mavenLocal()
+    mavenCentral()
 }
 
 dependencies {
