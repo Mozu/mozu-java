@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.checkouts.OrderItemResource;
 
 /** <summary>
- * Use this resource to manage the items a shopper adds to their cart while the Checkouts resource is active (the Checkouts resource only applies to sites that enable shipping to multiple destinations within the same order). The Checkouts resource remains active until the shopper submits their order.
+ * 
  * </summary>
  */
 public class OrderItemFactory

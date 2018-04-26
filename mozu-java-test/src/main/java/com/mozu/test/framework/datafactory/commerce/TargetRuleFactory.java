@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.TargetRuleResource;
 
 /** <summary>
- * Use the TargetRules resource to manage your target rules for products and zones. For example, you can set specific rules that dictate shipping options for specific products.
+ * 
  * </summary>
  */
 public class TargetRuleFactory

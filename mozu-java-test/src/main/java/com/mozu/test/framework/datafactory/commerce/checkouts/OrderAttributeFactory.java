@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.checkouts.OrderAttributeResource;
 
 /** <summary>
- * Use this resource to manage custom attributes attached to the Checkouts resource.
+ * 
  * </summary>
  */
 public class OrderAttributeFactory

@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.checkouts.AppliedDiscountResource;
 
 /** <summary>
- * Use this resource to manage discounts on the Checkouts resource.
+ * 
  * </summary>
  */
 public class AppliedDiscountFactory

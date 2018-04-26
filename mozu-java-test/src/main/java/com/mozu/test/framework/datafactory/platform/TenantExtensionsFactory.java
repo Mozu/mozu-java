@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.platform.TenantExtensionsResource;
 
 /** <summary>
- * Use the Extensions resource to manage Arc.js configuration settings. These are the same settings you can configure through  in the Action Management JSON Editor.
+ * 
  * </summary>
  */
 public class TenantExtensionsFactory

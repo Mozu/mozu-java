@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.shipping.admin.profiles.ProductHandlingFeeRulesResource;
 
 /** <summary>
- * Use the ProductHandlingFeeRules sub-resource to manage your product handling fee rules that are associated with a specific shipping profile.
+ * 
  * </summary>
  */
 public class ProductHandlingFeeRulesFactory
