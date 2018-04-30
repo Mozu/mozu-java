@@ -17,6 +17,7 @@ import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.productadmin.DiscountCondition;
 import com.mozu.api.contracts.productadmin.DiscountLocalizedContent;
 import com.mozu.api.contracts.productadmin.DiscountTarget;
+import com.mozu.api.contracts.productadmin.ThresholdMessage;
 
 /**
  *	Name of the discount added and applied to a shopping cart and order for a shopper's purchase. 
@@ -58,6 +59,19 @@ public class Discount implements Serializable
 
 	public void setCanBeDeleted(Boolean canBeDeleted) {
 		this.canBeDeleted = canBeDeleted;
+	}
+
+	/**
+	 * canBeStackedUpon ApiType DOCUMENT_HERE 
+	 */
+	protected  Boolean canBeStackedUpon;
+
+	public Boolean getCanBeStackedUpon() {
+		return this.canBeStackedUpon;
+	}
+
+	public void setCanBeStackedUpon(Boolean canBeStackedUpon) {
+		this.canBeStackedUpon = canBeStackedUpon;
 	}
 
 	protected  Integer currentRedemptionCount;
@@ -205,6 +219,19 @@ public class Discount implements Serializable
 		this.scope = scope;
 	}
 
+	/**
+	 * stackingLayer ApiType DOCUMENT_HERE 
+	 */
+	protected  Integer stackingLayer;
+
+	public Integer getStackingLayer() {
+		return this.stackingLayer;
+	}
+
+	public void setStackingLayer(Integer stackingLayer) {
+		this.stackingLayer = stackingLayer;
+	}
+
 	protected  String status;
 
 	public String getStatus() {
@@ -256,6 +283,19 @@ public class Discount implements Serializable
 
 	public void setTarget(DiscountTarget target) {
 		this.target = target;
+	}
+
+	/**
+	 * thresholdMessage ApiType DOCUMENT_HERE 
+	 */
+	protected  ThresholdMessage thresholdMessage;
+
+	public ThresholdMessage getThresholdMessage() {
+		return this.thresholdMessage;
+	}
+
+	public void setThresholdMessage(ThresholdMessage thresholdMessage) {
+		this.thresholdMessage = thresholdMessage;
 	}
 
 
