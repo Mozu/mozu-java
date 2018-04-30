@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c521480c-9002-4d65-81cb-1858a1a9790f" name="Default" comment="Regen SDK for latest API Changes">
-      <change beforePath="$PROJECT_DIR$/.idea/modules/mozu-java-core_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/mozu-java-core_main.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/mozu-java-core_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/mozu-java-core_test.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_mozu_mozu_api_core_2_1_0.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -59,7 +56,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="811">
@@ -94,7 +91,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AuthTicket.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AuthTicket.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mozu/api/security/AuthTicket.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="84">
@@ -973,7 +970,7 @@
       <workItem from="1486751213143" duration="1758000" />
       <workItem from="1524086477469" duration="149000" />
       <workItem from="1524086937478" duration="1432000" />
-      <workItem from="1525109353622" duration="2109000" />
+      <workItem from="1525109353622" duration="2680000" />
     </task>
     <task id="LOCAL-00001" summary="Regen SDK for latest API Changes">
       <created>1486751710961</created>
@@ -991,7 +988,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6073000" />
+    <option name="totallyTimeSpent" value="6644000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="2898" height="1768" extended-state="6" />
@@ -1151,6 +1148,15 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="811">
+          <caret line="38" column="30" lean-forward="false" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="30" />
+          <caret line="39" column="5" lean-forward="false" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mozu/api/security/CustomerAuthenticator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -1165,15 +1171,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="6" column="66" lean-forward="false" selection-start-line="6" selection-start-column="66" selection-end-line="6" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="811">
-          <caret line="38" column="30" lean-forward="false" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="30" />
-          <caret line="39" column="5" lean-forward="false" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
           <folding />
         </state>
       </provider>

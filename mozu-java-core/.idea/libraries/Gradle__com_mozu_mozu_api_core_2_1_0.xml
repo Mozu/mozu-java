@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.mozu:mozu-api-core:2.1.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.mozu/mozu-api-core/2.1.0/3b84f82f9ced8526872d34132b7221b247f7c902/mozu-api-core-2.1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.mozu/mozu-api-core/2.1.0/3f2c7e756c46e796c781bba3cbcd2e569c67caee/mozu-api-core-2.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
