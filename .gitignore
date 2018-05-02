@@ -12,3 +12,9 @@ hs_err_pid*
 /.settings
 /.classpath
 /.project
+.gradle/
+.idea/gradle.xml
+mozu-java-sdk/out/
+mozu-java-test/out/
+mozu-java.iml
+mozu-javaasync-sdk/out/
