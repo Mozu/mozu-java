@@ -14,7 +14,6 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.paymentservice.extensibility.v1.KeyValueTuple;
-import com.mozu.api.contracts.paymentservice.extensibility.v1.TransactionType;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class GatewayInteraction implements Serializable
