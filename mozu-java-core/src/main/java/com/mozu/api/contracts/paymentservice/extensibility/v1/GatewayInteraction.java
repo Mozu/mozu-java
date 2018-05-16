@@ -6,15 +6,11 @@
  */
 package com.mozu.api.contracts.paymentservice.extensibility.v1;
 
-import java.util.List;
-import java.util.HashMap;
-import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
-import java.io.IOException;
-import java.lang.ClassNotFoundException;
-import com.mozu.api.contracts.paymentservice.extensibility.v1.KeyValueTuple;
-import com.mozu.api.contracts.paymentservice.extensibility.v1.TransactionType;
+
+import java.io.Serializable;
+import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class GatewayInteraction implements Serializable
@@ -42,7 +38,7 @@ public class GatewayInteraction implements Serializable
 		this.cardId = cardId;
 	}
 
-	protected  DateTime createdOn;
+	protected DateTime createdOn;
 
 	public DateTime getCreatedOn() {
 		return this.createdOn;
