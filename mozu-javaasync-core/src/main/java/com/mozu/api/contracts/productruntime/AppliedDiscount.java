@@ -6,6 +6,8 @@
  */
 package com.mozu.api.contracts.productruntime;
 
+import java.util.List;
+import java.util.HashMap;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -50,6 +52,17 @@ public class AppliedDiscount implements Serializable
 
 	public void setDiscount(Discount discount) {
 		this.discount = discount;
+	}
+
+	/**
+	 * discounts ApiType DOCUMENT_HERE 
+	 */
+	protected List<Discount> discounts;
+	public List<Discount> getDiscounts() {
+		return this.discounts;
+	}
+	public void setDiscounts(List<Discount> discounts) {
+		this.discounts = discounts;
 	}
 
 

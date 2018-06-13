@@ -54,6 +54,19 @@ public class Discount implements Serializable
 		this.friendlyDescription = friendlyDescription;
 	}
 
+	/**
+	 * The value of the discount applied to the cart or order, represented as a negative currency amount to apply to the original price.
+	 */
+	protected  Double impact;
+
+	public Double getImpact() {
+		return this.impact;
+	}
+
+	public void setImpact(Double impact) {
+		this.impact = impact;
+	}
+
 	protected  String name;
 
 	public String getName() {

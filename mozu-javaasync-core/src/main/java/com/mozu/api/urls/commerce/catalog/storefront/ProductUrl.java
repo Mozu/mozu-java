@@ -91,7 +91,7 @@ public class ProductUrl
 	 */
 	public static MozuUrl getProductForIndexingUrl(DateTime lastModifiedDate, String productCode, Long productVersion, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/storefront/products/indexing/{productCode}&productVersion={productVersion}&lastModifiedDate={lastModifiedDate}?responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/storefront/products/indexing/{productCode}?productVersion={productVersion}&lastModifiedDate={lastModifiedDate}&responseFields={responseFields}");
 		formatter.formatUrl("lastModifiedDate", lastModifiedDate);
 		formatter.formatUrl("productCode", productCode);
 		formatter.formatUrl("productVersion", productVersion);

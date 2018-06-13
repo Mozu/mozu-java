@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.commerceruntime.commerce.ChangeMessage;
+import com.mozu.api.contracts.commerceruntime.commerce.ThresholdMessage;
 import com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty;
 import com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo;
 import com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem;
@@ -404,6 +405,17 @@ public class Wishlist implements Serializable
 
 	public void setData(com.fasterxml.jackson.databind.JsonNode data) {
 		this.data = data;
+	}
+
+	/**
+	 * discountThresholdMessages ApiType DOCUMENT_HERE 
+	 */
+	protected List<ThresholdMessage> discountThresholdMessages;
+	public List<ThresholdMessage> getDiscountThresholdMessages() {
+		return this.discountThresholdMessages;
+	}
+	public void setDiscountThresholdMessages(List<ThresholdMessage> discountThresholdMessages) {
+		this.discountThresholdMessages = discountThresholdMessages;
 	}
 
 	/**

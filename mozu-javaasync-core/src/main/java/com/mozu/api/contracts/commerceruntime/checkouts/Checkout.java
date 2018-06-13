@@ -16,6 +16,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.commerceruntime.orders.OrderAttribute;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.commerceruntime.fulfillment.Destination;
+import com.mozu.api.contracts.commerceruntime.commerce.ThresholdMessage;
 import com.mozu.api.contracts.commerceruntime.checkouts.CheckoutGrouping;
 import com.mozu.api.contracts.commerceruntime.discounts.InvalidCoupon;
 import com.mozu.api.contracts.commerceruntime.orders.OrderItem;
@@ -621,6 +622,17 @@ public class Checkout implements Serializable
 	}
 	public void setDestinations(List<Destination> destinations) {
 		this.destinations = destinations;
+	}
+
+	/**
+	 * discountThresholdMessages ApiType DOCUMENT_HERE 
+	 */
+	protected List<ThresholdMessage> discountThresholdMessages;
+	public List<ThresholdMessage> getDiscountThresholdMessages() {
+		return this.discountThresholdMessages;
+	}
+	public void setDiscountThresholdMessages(List<ThresholdMessage> discountThresholdMessages) {
+		this.discountThresholdMessages = discountThresholdMessages;
 	}
 
 	/**
