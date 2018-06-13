@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.commerceruntime.payments.PaymentGatewayResponseData;
+import com.mozu.api.contracts.commerceruntime.payments.PaymentActionTarget;
 
 /**
  *	Properties of a resulting payment interaction that occurs when a payment action is performed.
@@ -283,6 +284,19 @@ public class PaymentInteraction implements Serializable
 	}
 	public void setGatewayResponseData(List<PaymentGatewayResponseData> gatewayResponseData) {
 		this.gatewayResponseData = gatewayResponseData;
+	}
+
+	/**
+	 * Targets represent the object, such as an item to apply discounts to(products or orders) or a view field for content. Targets are the dot notations that link to the source document property. For example, firstitem for the direct level or firstitem.seconditem.thirditem for a deeper property.
+	 */
+	protected  PaymentActionTarget target;
+
+	public PaymentActionTarget getTarget() {
+		return this.target;
+	}
+
+	public void setTarget(PaymentActionTarget target) {
+		this.target = target;
 	}
 
 

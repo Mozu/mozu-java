@@ -236,6 +236,19 @@ public class Discount implements Serializable
 	}
 
 	/**
+	 * stackingLayer ApiType DOCUMENT_HERE 
+	 */
+	protected  Integer stackingLayer;
+
+	public Integer getStackingLayer() {
+		return this.stackingLayer;
+	}
+
+	public void setStackingLayer(Integer stackingLayer) {
+		this.stackingLayer = stackingLayer;
+	}
+
+	/**
 	 * type ApiType DOCUMENT_HERE 
 	 */
 	protected  String type;

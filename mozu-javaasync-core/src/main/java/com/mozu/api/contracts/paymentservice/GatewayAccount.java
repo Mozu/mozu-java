@@ -75,6 +75,19 @@ public class GatewayAccount implements Serializable
 		this.isActive = isActive;
 	}
 
+	/**
+	 * The user supplied name that appears in . You can use this field for identification purposes.
+	 */
+	protected  String name;
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	protected List<GatewayCredentialFieldValue> credentialFields;
 	public List<GatewayCredentialFieldValue> getCredentialFields() {
 		return this.credentialFields;
