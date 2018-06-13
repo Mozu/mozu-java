@@ -35,6 +35,19 @@ public class AttributeDetail implements Serializable
 		this.allowFilteringAndSortingInStorefront = allowFilteringAndSortingInStorefront;
 	}
 
+	/**
+	 * customWeightInStorefrontSearch ApiType DOCUMENT_HERE 
+	 */
+	protected  Boolean customWeightInStorefrontSearch;
+
+	public Boolean getCustomWeightInStorefrontSearch() {
+		return this.customWeightInStorefrontSearch;
+	}
+
+	public void setCustomWeightInStorefrontSearch(Boolean customWeightInStorefrontSearch) {
+		this.customWeightInStorefrontSearch = customWeightInStorefrontSearch;
+	}
+
 	protected  String dataType;
 
 	public String getDataType() {

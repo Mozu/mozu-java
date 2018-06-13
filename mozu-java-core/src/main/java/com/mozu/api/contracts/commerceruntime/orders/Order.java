@@ -19,6 +19,7 @@ import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.commerceruntime.payments.BillingInfo;
 import com.mozu.api.contracts.commerceruntime.commerce.ChangeMessage;
 import com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage;
+import com.mozu.api.contracts.commerceruntime.commerce.ThresholdMessage;
 import com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty;
 import com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo;
 import com.mozu.api.contracts.commerceruntime.discounts.AppliedDiscount;
@@ -887,6 +888,17 @@ public class Order implements Serializable
 	}
 	public void setDigitalPackages(List<DigitalPackage> digitalPackages) {
 		this.digitalPackages = digitalPackages;
+	}
+
+	/**
+	 * discountThresholdMessages ApiType DOCUMENT_HERE 
+	 */
+	protected List<ThresholdMessage> discountThresholdMessages;
+	public List<ThresholdMessage> getDiscountThresholdMessages() {
+		return this.discountThresholdMessages;
+	}
+	public void setDiscountThresholdMessages(List<ThresholdMessage> discountThresholdMessages) {
+		this.discountThresholdMessages = discountThresholdMessages;
 	}
 
 	/**
