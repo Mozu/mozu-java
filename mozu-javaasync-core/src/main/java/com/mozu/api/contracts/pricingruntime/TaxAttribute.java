@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Mozu.PricingRuntime.Contracts.TaxAttribute ApiType DOCUMENT_HERE
+ *	Mozu.PricingRuntime.Contracts.TaxAttribute ApiType DOCUMENT_HERE 
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class TaxAttribute implements Serializable

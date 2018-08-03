@@ -167,7 +167,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * locationsInStock ApiType DOCUMENT_HERE
+	 * locationsInStock ApiType DOCUMENT_HERE 
 	 */
 	protected List<String> locationsInStock;
 	public List<String> getLocationsInStock() {

@@ -96,7 +96,7 @@ public class ProductSearchResult implements Serializable
 	}
 
 	/**
-	 * Mozu.ProductRuntime.Contracts.ProductSearchResult solrDebugInfo ApiTypeMember DOCUMENT_HERE
+	 * Mozu.ProductRuntime.Contracts.ProductSearchResult solrDebugInfo ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  SolrDebugInfo solrDebugInfo;
 

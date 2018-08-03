@@ -16,7 +16,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate;
 
 /**
- *	Mozu.CommerceRuntime.Contracts.Checkouts.CheckoutGroupRates ApiType DOCUMENT_HERE
+ *	Mozu.CommerceRuntime.Contracts.Checkouts.CheckoutGroupRates ApiType DOCUMENT_HERE 
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CheckoutGroupRates implements Serializable

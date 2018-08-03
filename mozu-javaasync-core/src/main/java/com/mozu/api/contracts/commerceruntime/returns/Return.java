@@ -342,7 +342,7 @@ public class Return implements Serializable
 	}
 
 	/**
-	 * contact ApiType DOCUMENT_HERE
+	 * contact ApiType DOCUMENT_HERE 
 	 */
 	protected  Contact contact;
 

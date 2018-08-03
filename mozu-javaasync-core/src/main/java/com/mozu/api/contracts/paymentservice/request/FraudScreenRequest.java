@@ -20,7 +20,7 @@ import com.mozu.api.contracts.paymentservice.CustomData;
 import com.mozu.api.contracts.paymentservice.OrderItem;
 
 /**
- *	Mozu.PaymentService.Contracts.Request.FraudScreenRequest ApiType DOCUMENT_HERE
+ *	Mozu.PaymentService.Contracts.Request.FraudScreenRequest ApiType DOCUMENT_HERE 
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class FraudScreenRequest implements Serializable
@@ -29,7 +29,7 @@ public class FraudScreenRequest implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest avsCodes ApiTypeMember DOCUMENT_HERE
+	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest avsCodes ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  String avsCodes;
 
@@ -42,7 +42,7 @@ public class FraudScreenRequest implements Serializable
 	}
 
 	/**
-	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest cardId ApiTypeMember DOCUMENT_HERE
+	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest cardId ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  String cardId;
 
@@ -55,7 +55,7 @@ public class FraudScreenRequest implements Serializable
 	}
 
 	/**
-	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest cardNumberPart ApiTypeMember DOCUMENT_HERE
+	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest cardNumberPart ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  String cardNumberPart;
 
@@ -81,7 +81,7 @@ public class FraudScreenRequest implements Serializable
 	}
 
 	/**
-	 * The localized currency code for the monetary amount.
+	 * The localized currency code for the monetary amount. 
 	 */
 	protected  String currencyCode;
 
@@ -107,7 +107,7 @@ public class FraudScreenRequest implements Serializable
 	}
 
 	/**
-	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest cvV2Codes ApiTypeMember DOCUMENT_HERE
+	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest cvV2Codes ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  String cvV2Codes;
 
@@ -146,7 +146,7 @@ public class FraudScreenRequest implements Serializable
 	}
 
 	/**
-	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest gatewayAccountId ApiTypeMember DOCUMENT_HERE
+	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest gatewayAccountId ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  String gatewayAccountId;
 
@@ -159,7 +159,7 @@ public class FraudScreenRequest implements Serializable
 	}
 
 	/**
-	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest merchantTransactionId ApiTypeMember DOCUMENT_HERE
+	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest merchantTransactionId ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  String merchantTransactionId;
 
@@ -172,7 +172,7 @@ public class FraudScreenRequest implements Serializable
 	}
 
 	/**
-	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest orderNumber ApiTypeMember DOCUMENT_HERE
+	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest orderNumber ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  Integer orderNumber;
 
@@ -185,7 +185,7 @@ public class FraudScreenRequest implements Serializable
 	}
 
 	/**
-	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest paymentTransactionId ApiTypeMember DOCUMENT_HERE
+	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest paymentTransactionId ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  String paymentTransactionId;
 
@@ -211,7 +211,7 @@ public class FraudScreenRequest implements Serializable
 	}
 
 	/**
-	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest requestorIp ApiTypeMember DOCUMENT_HERE
+	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest requestorIp ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  String requestorIp;
 
@@ -224,7 +224,7 @@ public class FraudScreenRequest implements Serializable
 	}
 
 	/**
-	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest requestorUrl ApiTypeMember DOCUMENT_HERE
+	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest requestorUrl ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  String requestorUrl;
 
@@ -237,7 +237,7 @@ public class FraudScreenRequest implements Serializable
 	}
 
 	/**
-	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest requestorUserAgent ApiTypeMember DOCUMENT_HERE
+	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest requestorUserAgent ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  String requestorUserAgent;
 
@@ -250,7 +250,7 @@ public class FraudScreenRequest implements Serializable
 	}
 
 	/**
-	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest shipType ApiTypeMember DOCUMENT_HERE
+	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest shipType ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  String shipType;
 
@@ -276,7 +276,7 @@ public class FraudScreenRequest implements Serializable
 	}
 
 	/**
-	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest billingAddress ApiTypeMember DOCUMENT_HERE
+	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest billingAddress ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  Address billingAddress;
 
@@ -289,7 +289,7 @@ public class FraudScreenRequest implements Serializable
 	}
 
 	/**
-	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest billingContact ApiTypeMember DOCUMENT_HERE
+	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest billingContact ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  Contact billingContact;
 
@@ -302,7 +302,7 @@ public class FraudScreenRequest implements Serializable
 	}
 
 	/**
-	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest credentialFieldsOverride ApiTypeMember DOCUMENT_HERE
+	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest credentialFieldsOverride ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected List<GatewayCredentialFieldValue> credentialFieldsOverride;
 	public List<GatewayCredentialFieldValue> getCredentialFieldsOverride() {
@@ -313,7 +313,7 @@ public class FraudScreenRequest implements Serializable
 	}
 
 	/**
-	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest customData ApiTypeMember DOCUMENT_HERE
+	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest customData ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected List<CustomData> customData;
 	public List<CustomData> getCustomData() {
@@ -324,7 +324,7 @@ public class FraudScreenRequest implements Serializable
 	}
 
 	/**
-	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest orderItems ApiTypeMember DOCUMENT_HERE
+	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest orderItems ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected List<OrderItem> orderItems;
 	public List<OrderItem> getOrderItems() {
@@ -335,7 +335,7 @@ public class FraudScreenRequest implements Serializable
 	}
 
 	/**
-	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest shippingAddress ApiTypeMember DOCUMENT_HERE
+	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest shippingAddress ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  Address shippingAddress;
 
@@ -348,7 +348,7 @@ public class FraudScreenRequest implements Serializable
 	}
 
 	/**
-	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest shippingContact ApiTypeMember DOCUMENT_HERE
+	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest shippingContact ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  Contact shippingContact;
 

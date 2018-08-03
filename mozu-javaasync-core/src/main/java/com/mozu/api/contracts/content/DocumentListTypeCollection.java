@@ -16,7 +16,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.content.DocumentListType;
 
 /**
- *	Mozu.Content.Contracts.DocumentListTypeCollection ApiType DOCUMENT_HERE
+ *	Mozu.Content.Contracts.DocumentListTypeCollection ApiType DOCUMENT_HERE 
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DocumentListTypeCollection implements Serializable

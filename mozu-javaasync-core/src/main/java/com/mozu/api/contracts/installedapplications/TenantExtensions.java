@@ -17,7 +17,7 @@ import com.mozu.api.contracts.installedapplications.CustomFunctionsForAction;
 import com.mozu.api.contracts.installedapplications.ExtensionConfiguration;
 
 /**
- *	Mozu.InstalledApplications.Contracts.TenantExtensions ApiType DOCUMENT_HERE
+ *	Mozu.InstalledApplications.Contracts.TenantExtensions ApiType DOCUMENT_HERE 
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class TenantExtensions implements Serializable

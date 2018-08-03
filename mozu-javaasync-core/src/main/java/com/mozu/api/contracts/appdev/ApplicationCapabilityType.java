@@ -26,7 +26,7 @@ public class ApplicationCapabilityType implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Mozu.AppDev.Contracts.ApplicationCapabilityType applicationCapabilityTypeId ApiTypeMember DOCUMENT_HERE
+	 * Mozu.AppDev.Contracts.ApplicationCapabilityType applicationCapabilityTypeId ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  Integer applicationCapabilityTypeId;
 
@@ -39,7 +39,7 @@ public class ApplicationCapabilityType implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.ApplicationCapabilityType applicationId ApiTypeMember DOCUMENT_HERE
+	 * Mozu.AppDev.Contracts.ApplicationCapabilityType applicationId ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  Integer applicationId;
 
@@ -52,7 +52,7 @@ public class ApplicationCapabilityType implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.ApplicationCapabilityType capabilityTypeId ApiTypeMember DOCUMENT_HERE
+	 * Mozu.AppDev.Contracts.ApplicationCapabilityType capabilityTypeId ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  Integer capabilityTypeId;
 
@@ -65,7 +65,7 @@ public class ApplicationCapabilityType implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.ApplicationCapabilityType capabilityTypeName ApiTypeMember DOCUMENT_HERE
+	 * Mozu.AppDev.Contracts.ApplicationCapabilityType capabilityTypeName ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  String capabilityTypeName;
 
@@ -78,7 +78,7 @@ public class ApplicationCapabilityType implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.ApplicationCapabilityType isImplemented ApiTypeMember DOCUMENT_HERE
+	 * Mozu.AppDev.Contracts.ApplicationCapabilityType isImplemented ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  Boolean isImplemented;
 
@@ -91,7 +91,7 @@ public class ApplicationCapabilityType implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.ApplicationCapabilityType isInitializedByDefault ApiTypeMember DOCUMENT_HERE
+	 * Mozu.AppDev.Contracts.ApplicationCapabilityType isInitializedByDefault ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  Boolean isInitializedByDefault;
 
@@ -104,7 +104,7 @@ public class ApplicationCapabilityType implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.ApplicationCapabilityType packageId ApiTypeMember DOCUMENT_HERE
+	 * Mozu.AppDev.Contracts.ApplicationCapabilityType packageId ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  Integer packageId;
 
@@ -117,7 +117,7 @@ public class ApplicationCapabilityType implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.ApplicationCapabilityType applicationCapabilities ApiTypeMember DOCUMENT_HERE
+	 * Mozu.AppDev.Contracts.ApplicationCapabilityType applicationCapabilities ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected List<ApplicationCapability> applicationCapabilities;
 	public List<ApplicationCapability> getApplicationCapabilities() {
@@ -128,7 +128,7 @@ public class ApplicationCapabilityType implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.ApplicationCapabilityType applicationCapabilityDomains ApiTypeMember DOCUMENT_HERE
+	 * Mozu.AppDev.Contracts.ApplicationCapabilityType applicationCapabilityDomains ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected List<ApplicationCapabilityDomain> applicationCapabilityDomains;
 	public List<ApplicationCapabilityDomain> getApplicationCapabilityDomains() {

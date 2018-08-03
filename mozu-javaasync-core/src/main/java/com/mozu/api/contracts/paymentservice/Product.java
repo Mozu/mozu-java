@@ -48,7 +48,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * Mozu.PaymentService.Contracts.Product variantProductCode ApiTypeMember DOCUMENT_HERE
+	 * Mozu.PaymentService.Contracts.Product variantProductCode ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  String variantProductCode;
 

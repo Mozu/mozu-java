@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Mozu.CommerceRuntime.Contracts.Discounts.SuggestedDiscount ApiType DOCUMENT_HERE
+ *	Mozu.CommerceRuntime.Contracts.Discounts.SuggestedDiscount ApiType DOCUMENT_HERE 
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SuggestedDiscount implements Serializable
@@ -22,7 +22,7 @@ public class SuggestedDiscount implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * autoAdd ApiType DOCUMENT_HERE
+	 * autoAdd ApiType DOCUMENT_HERE 
 	 */
 	protected  Boolean autoAdd;
 

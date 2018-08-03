@@ -36,7 +36,7 @@ public class AppliedLineItemShippingDiscount implements Serializable
 	}
 
 	/**
-	 * The impact of a discount for each discount quantity.
+	 * The impact of a discount for each discount quantity. 
 	 */
 	protected  Double impactPerUnit;
 
@@ -62,7 +62,7 @@ public class AppliedLineItemShippingDiscount implements Serializable
 	}
 
 	/**
-	 * Name of the discount added and applied to a shopping cart and order for a shopper's purchase.
+	 * Name of the discount added and applied to a shopping cart and order for a shopper's purchase. 
 	 */
 	protected  AppliedDiscount discount;
 

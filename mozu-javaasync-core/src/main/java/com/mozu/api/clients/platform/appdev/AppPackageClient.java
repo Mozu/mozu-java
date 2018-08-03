@@ -166,7 +166,7 @@ public class AppPackageClient {
 	 * client.executeRequest();
 	 * ApplicationSummary applicationSummary = client.Result();
 	 * </code></pre></p>
-	 * @param appId appId parameter description DOCUMENT_HERE
+	 * @param appId appId parameter description DOCUMENT_HERE 
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.appdev.ApplicationSummary>>
 	 * @see com.mozu.api.contracts.appdev.ApplicationSummary
 	 */
@@ -234,7 +234,7 @@ public class AppPackageClient {
 	 * client.executeRequest();
 	 * Package package = client.Result();
 	 * </code></pre></p>
-	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}. 
 	 * @param packageName 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.Package>
 	 * @see com.mozu.api.contracts.appdev.Package
@@ -252,7 +252,7 @@ public class AppPackageClient {
 	 * client.executeRequest();
 	 * Package package = client.Result();
 	 * </code></pre></p>
-	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}. 
 	 * @param packageName 
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.Package>
@@ -369,7 +369,7 @@ public class AppPackageClient {
 	 * client.executeRequest();
 	 * Package package = client.Result();
 	 * </code></pre></p>
-	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}. 
 	 * @param package Properties for a package for fulfillment and shipment. A package may include one to many products, or a bundle of products.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.Package>
 	 * @see com.mozu.api.contracts.appdev.Package
@@ -388,7 +388,7 @@ public class AppPackageClient {
 	 * client.executeRequest();
 	 * Package package = client.Result();
 	 * </code></pre></p>
-	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}. 
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param package Properties for a package for fulfillment and shipment. A package may include one to many products, or a bundle of products.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.Package>

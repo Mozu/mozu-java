@@ -22,7 +22,7 @@ public class ApplicationBehavior implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Mozu.AppDev.Contracts.ApplicationBehavior behaviorId ApiTypeMember DOCUMENT_HERE
+	 * Mozu.AppDev.Contracts.ApplicationBehavior behaviorId ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  Integer behaviorId;
 
@@ -35,7 +35,7 @@ public class ApplicationBehavior implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.ApplicationBehavior packageId ApiTypeMember DOCUMENT_HERE
+	 * Mozu.AppDev.Contracts.ApplicationBehavior packageId ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  Integer packageId;
 

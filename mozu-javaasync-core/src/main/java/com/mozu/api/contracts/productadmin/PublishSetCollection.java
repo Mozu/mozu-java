@@ -16,7 +16,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productadmin.PublishSet;
 
 /**
- *	Mozu.ProductAdmin.Contracts.PublishSetCollection ApiType DOCUMENT_HERE
+ *	Mozu.ProductAdmin.Contracts.PublishSetCollection ApiType DOCUMENT_HERE 
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PublishSetCollection implements Serializable

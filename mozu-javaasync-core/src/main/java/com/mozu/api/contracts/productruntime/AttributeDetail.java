@@ -36,7 +36,7 @@ public class AttributeDetail implements Serializable
 	}
 
 	/**
-	 * customWeightInStorefrontSearch ApiType DOCUMENT_HERE
+	 * customWeightInStorefrontSearch ApiType DOCUMENT_HERE 
 	 */
 	protected  Boolean customWeightInStorefrontSearch;
 

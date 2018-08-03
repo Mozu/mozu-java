@@ -22,7 +22,7 @@ public class ProductCost implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * cost ApiType DOCUMENT_HERE
+	 * cost ApiType DOCUMENT_HERE 
 	 */
 	protected  Double cost;
 

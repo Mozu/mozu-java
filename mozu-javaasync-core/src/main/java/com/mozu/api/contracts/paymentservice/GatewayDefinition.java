@@ -36,6 +36,14 @@ public class GatewayDefinition implements Serializable
 		this.countryCode = countryCode;
 	}
 
+	protected List<String> features;
+	public List<String> getFeatures() {
+		return this.features;
+	}
+	public void setFeatures(List<String> features) {
+		this.features = features;
+	}
+
 	protected  String id;
 
 	public String getId() {
@@ -87,7 +95,7 @@ public class GatewayDefinition implements Serializable
 	}
 
 	/**
-	 * administationUi ApiType DOCUMENT_HERE
+	 * administationUi ApiType DOCUMENT_HERE 
 	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode administationUi;
 

@@ -117,7 +117,7 @@ public class PaymentAction implements Serializable
 	}
 
 	/**
-	 * AÂ general field for data to be communicated from an external payment service.
+	 * AÂ general field for data to be communicated from an external payment service. 
 	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode data;
 

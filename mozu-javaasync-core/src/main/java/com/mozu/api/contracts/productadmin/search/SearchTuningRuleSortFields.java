@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Mozu.ProductAdmin.Contracts.Search.SearchTuningRuleSortFields ApiType DOCUMENT_HERE
+ *	Mozu.ProductAdmin.Contracts.Search.SearchTuningRuleSortFields ApiType DOCUMENT_HERE 
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SearchTuningRuleSortFields implements Serializable
@@ -24,7 +24,7 @@ public class SearchTuningRuleSortFields implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Specifies whether you want the product properties in sortFields to be white listed or black listed. When you white list a product property, any search tuning rules that affect that product property will be in effect whenever a shopper sorts by that product property. When you black list a product product, any search tuning rules that affect that product property will never be in effect whenever a shopper sorts by that product property.Valid values are: "WhiteList" or "BlackList".For more information about
+	 * Specifies whether you want the product properties in sortFields to be white listed or black listed. When you white list a product property, any search tuning rules that affect that product property will be in effect whenever a shopper sorts by that product property. When you black list a product product, any search tuning rules that affect that product property will never be in effect whenever a shopper sorts by that product property.Valid values are: "WhiteList" or "BlackList".For more information about search tuning rule sort fields, refer to [Search Tuning Rules](../../../../developer/api-guides/search-tuning-rules.htm).
 	 */
 	protected  String inclusionExclusionType;
 

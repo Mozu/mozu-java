@@ -26,7 +26,7 @@ public class Discount implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * amount ApiType DOCUMENT_HERE
+	 * amount ApiType DOCUMENT_HERE 
 	 */
 	protected  Double amount;
 
@@ -62,7 +62,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * doesNotApplyToMultiShipToOrders ApiType DOCUMENT_HERE
+	 * doesNotApplyToMultiShipToOrders ApiType DOCUMENT_HERE 
 	 */
 	protected  Boolean doesNotApplyToMultiShipToOrders;
 
@@ -75,7 +75,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * doesNotApplyToProductsWithSalePrice ApiType DOCUMENT_HERE
+	 * doesNotApplyToProductsWithSalePrice ApiType DOCUMENT_HERE 
 	 */
 	protected  Boolean doesNotApplyToProductsWithSalePrice;
 
@@ -111,7 +111,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * includedPriceLists ApiType DOCUMENT_HERE
+	 * includedPriceLists ApiType DOCUMENT_HERE 
 	 */
 	protected List<String> includedPriceLists;
 	public List<String> getIncludedPriceLists() {
@@ -122,7 +122,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * maxDiscountValuePerRedemption ApiType DOCUMENT_HERE
+	 * maxDiscountValuePerRedemption ApiType DOCUMENT_HERE 
 	 */
 	protected  Double maxDiscountValuePerRedemption;
 
@@ -135,7 +135,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * maximumDiscountValuePerOrder ApiType DOCUMENT_HERE
+	 * maximumDiscountValuePerOrder ApiType DOCUMENT_HERE 
 	 */
 	protected  Double maximumDiscountValuePerOrder;
 
@@ -148,7 +148,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * maximumRedemptionsPerOrder ApiType DOCUMENT_HERE
+	 * maximumRedemptionsPerOrder ApiType DOCUMENT_HERE 
 	 */
 	protected  Integer maximumRedemptionsPerOrder;
 
@@ -161,7 +161,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * maximumUsesPerUser ApiType DOCUMENT_HERE
+	 * maximumUsesPerUser ApiType DOCUMENT_HERE 
 	 */
 	protected  Integer maximumUsesPerUser;
 
@@ -174,7 +174,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * maxRedemptions ApiType DOCUMENT_HERE
+	 * maxRedemptions ApiType DOCUMENT_HERE 
 	 */
 	protected  Integer maxRedemptions;
 
@@ -197,7 +197,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * redemptions ApiType DOCUMENT_HERE
+	 * redemptions ApiType DOCUMENT_HERE 
 	 */
 	protected  Integer redemptions;
 
@@ -210,7 +210,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * requiresAuthenticatedUser ApiType DOCUMENT_HERE
+	 * requiresAuthenticatedUser ApiType DOCUMENT_HERE 
 	 */
 	protected  Boolean requiresAuthenticatedUser;
 
@@ -223,7 +223,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * scope ApiType DOCUMENT_HERE
+	 * scope ApiType DOCUMENT_HERE 
 	 */
 	protected  String scope;
 
@@ -236,7 +236,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * stackingLayer ApiType DOCUMENT_HERE
+	 * stackingLayer ApiType DOCUMENT_HERE 
 	 */
 	protected  Integer stackingLayer;
 
@@ -249,7 +249,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * type ApiType DOCUMENT_HERE
+	 * type ApiType DOCUMENT_HERE 
 	 */
 	protected  String type;
 
@@ -262,7 +262,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * condition ApiType DOCUMENT_HERE
+	 * condition ApiType DOCUMENT_HERE 
 	 */
 	protected  DiscountCondition condition;
 

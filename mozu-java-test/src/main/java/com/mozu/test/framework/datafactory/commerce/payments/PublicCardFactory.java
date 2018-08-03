@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.payments.PublicCardResource;
 
 /** <summary>
- * commerce/payments/cards related resources. DOCUMENT_HERE
+ * commerce/payments/cards related resources. DOCUMENT_HERE 
  * </summary>
  */
 public class PublicCardFactory
@@ -35,6 +35,56 @@ public class PublicCardFactory
 		try
 		{
 			returnObj = resource.create( request,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
+	public static com.mozu.api.contracts.paymentservice.response.SyncResponse getGiftCardBalance(ApiContext apiContext, com.mozu.api.contracts.paymentservice.request.GetGiftCardBalanceRequest balanceRequest, String cardId, int expectedCode) throws Exception
+	{
+		return getGiftCardBalance(apiContext,  balanceRequest,  cardId,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.paymentservice.response.SyncResponse getGiftCardBalance(ApiContext apiContext, com.mozu.api.contracts.paymentservice.request.GetGiftCardBalanceRequest balanceRequest, String cardId, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.paymentservice.response.SyncResponse returnObj = new com.mozu.api.contracts.paymentservice.response.SyncResponse();
+		PublicCardResource resource = new PublicCardResource(apiContext);
+		try
+		{
+			returnObj = resource.getGiftCardBalance( balanceRequest,  cardId,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
+	public static com.mozu.api.contracts.paymentservice.response.SyncResponse getUnregisteredGiftCardBalance(ApiContext apiContext, com.mozu.api.contracts.paymentservice.request.GetGiftCardBalanceRequest balanceRequest, int expectedCode) throws Exception
+	{
+		return getUnregisteredGiftCardBalance(apiContext,  balanceRequest,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.paymentservice.response.SyncResponse getUnregisteredGiftCardBalance(ApiContext apiContext, com.mozu.api.contracts.paymentservice.request.GetGiftCardBalanceRequest balanceRequest, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.paymentservice.response.SyncResponse returnObj = new com.mozu.api.contracts.paymentservice.response.SyncResponse();
+		PublicCardResource resource = new PublicCardResource(apiContext);
+		try
+		{
+			returnObj = resource.getUnregisteredGiftCardBalance( balanceRequest,  responseFields);
 		}
 		catch (ApiException e)
 		{

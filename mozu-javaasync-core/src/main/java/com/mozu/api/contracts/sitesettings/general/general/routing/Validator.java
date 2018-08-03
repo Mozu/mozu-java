@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Mozu.SiteSettings.General.Contracts.General.Routing.Validator ApiType DOCUMENT_HERE
+ *	Mozu.SiteSettings.General.Contracts.General.Routing.Validator ApiType DOCUMENT_HERE 
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Validator implements Serializable
@@ -37,7 +37,7 @@ public class Validator implements Serializable
 	}
 
 	/**
-	 * docId ApiType DOCUMENT_HERE
+	 * docId ApiType DOCUMENT_HERE 
 	 */
 	protected  String docId;
 
@@ -50,7 +50,7 @@ public class Validator implements Serializable
 	}
 
 	/**
-	 * field ApiType DOCUMENT_HERE
+	 * field ApiType DOCUMENT_HERE 
 	 */
 	protected  String field;
 
@@ -76,7 +76,7 @@ public class Validator implements Serializable
 	}
 
 	/**
-	 * pattern ApiType DOCUMENT_HERE
+	 * pattern ApiType DOCUMENT_HERE 
 	 */
 	protected  String pattern;
 
@@ -89,7 +89,7 @@ public class Validator implements Serializable
 	}
 
 	/**
-	 * type ApiType DOCUMENT_HERE
+	 * type ApiType DOCUMENT_HERE 
 	 */
 	protected  String type;
 

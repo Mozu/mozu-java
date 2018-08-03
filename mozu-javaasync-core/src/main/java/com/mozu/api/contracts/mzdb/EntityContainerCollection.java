@@ -16,7 +16,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.mzdb.EntityContainer;
 
 /**
- *	Paged collection of EntityContainers within a specific tenant and site.
+ *	Paged collection of EntityContainers within a specific tenant and site. 
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class EntityContainerCollection implements Serializable

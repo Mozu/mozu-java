@@ -193,7 +193,7 @@ public class Category implements Serializable
 	}
 
 	/**
-	 * Mozu.ProductAdmin.Contracts.Category dynamicExpression ApiTypeMember DOCUMENT_HERE
+	 * Mozu.ProductAdmin.Contracts.Category dynamicExpression ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  DynamicExpression dynamicExpression;
 

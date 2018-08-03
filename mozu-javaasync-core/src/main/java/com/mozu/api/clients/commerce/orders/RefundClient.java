@@ -80,7 +80,7 @@ public class RefundClient {
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
 	 * @param refundId Unique ID of the refund.
-
+        
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient resendRefundEmailClient(String orderId, String refundId) throws Exception

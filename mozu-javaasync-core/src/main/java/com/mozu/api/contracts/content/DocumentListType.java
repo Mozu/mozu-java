@@ -26,7 +26,7 @@ public class DocumentListType implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The fully qualified name for the document list type for content.
+	 * The fully qualified name for the document list type for content. 
 	 */
 	protected  String documentListTypeFQN;
 
@@ -178,7 +178,7 @@ public class DocumentListType implements Serializable
 	}
 
 	/**
-	 * Definition of any documents to create with a document list is created.
+	 * Definition of any documents to create with a document list is created. 
 	 */
 	protected List<DocumentInstallation> defaultDocuments;
 	public List<DocumentInstallation> getDefaultDocuments() {

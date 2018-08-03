@@ -125,7 +125,7 @@ public class Attribute implements Serializable
 	}
 
 	/**
-	 * Flag used to indicate if this attribute definition is read-only. Once an attribute definition is set to read-only this action cannot be undone.
+	 * Flag used to indicate if this attribute definition is read-only. Once an attribute definition is set to read-only this action cannot be undone. 
 	 */
 	protected  Boolean isReadOnly;
 
@@ -187,7 +187,7 @@ public class Attribute implements Serializable
 	}
 
 	/**
-	 * An attribute value type is either predefined vocabulary by the admin during attribute set up or user-defined with an appropriate type (AdminEntered or ShopperEntered depending on the user). These types are used by products and attributes. The difference between predefined values versus manually entered values is such that the first choice is a set of options to choose from. AdminEntered and ShopperEntered are values that are entered rather than system-supplied and are not stored in the database, but captu
+	 * An attribute value type is either predefined vocabulary by the admin during attribute set up or user-defined with an appropriate type (AdminEntered or ShopperEntered depending on the user). These types are used by products and attributes. The difference between predefined values versus manually entered values is such that the first choice is a set of options to choose from. AdminEntered and ShopperEntered are values that are entered rather than system-supplied and are not stored in the database, but captured during a live commerce operations such as during an order.
 	 */
 	protected  String valueType;
 

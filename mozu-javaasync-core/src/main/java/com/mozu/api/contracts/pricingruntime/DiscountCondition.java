@@ -37,7 +37,7 @@ public class DiscountCondition implements Serializable
 	}
 
 	/**
-	 * customerSegmentIds ApiType DOCUMENT_HERE
+	 * customerSegmentIds ApiType DOCUMENT_HERE 
 	 */
 	protected List<Integer> customerSegmentIds;
 	public List<Integer> getCustomerSegmentIds() {
@@ -48,7 +48,7 @@ public class DiscountCondition implements Serializable
 	}
 
 	/**
-	 * excludedCategoryIds ApiType DOCUMENT_HERE
+	 * excludedCategoryIds ApiType DOCUMENT_HERE 
 	 */
 	protected List<Integer> excludedCategoryIds;
 	public List<Integer> getExcludedCategoryIds() {
@@ -59,7 +59,7 @@ public class DiscountCondition implements Serializable
 	}
 
 	/**
-	 * excludedProductCodes ApiType DOCUMENT_HERE
+	 * excludedProductCodes ApiType DOCUMENT_HERE 
 	 */
 	protected List<String> excludedProductCodes;
 	public List<String> getExcludedProductCodes() {
@@ -83,7 +83,7 @@ public class DiscountCondition implements Serializable
 	}
 
 	/**
-	 * includedCategoryIds ApiType DOCUMENT_HERE
+	 * includedCategoryIds ApiType DOCUMENT_HERE 
 	 */
 	protected List<Integer> includedCategoryIds;
 	public List<Integer> getIncludedCategoryIds() {
@@ -94,7 +94,7 @@ public class DiscountCondition implements Serializable
 	}
 
 	/**
-	 * includedProductCodes ApiType DOCUMENT_HERE
+	 * includedProductCodes ApiType DOCUMENT_HERE 
 	 */
 	protected List<String> includedProductCodes;
 	public List<String> getIncludedProductCodes() {
@@ -105,7 +105,7 @@ public class DiscountCondition implements Serializable
 	}
 
 	/**
-	 * minimumCategorySubtotalBeforeDiscounts ApiType DOCUMENT_HERE
+	 * minimumCategorySubtotalBeforeDiscounts ApiType DOCUMENT_HERE 
 	 */
 	protected  Double minimumCategorySubtotalBeforeDiscounts;
 
@@ -118,7 +118,7 @@ public class DiscountCondition implements Serializable
 	}
 
 	/**
-	 * minimumLifetimeValueAmount ApiType DOCUMENT_HERE
+	 * minimumLifetimeValueAmount ApiType DOCUMENT_HERE 
 	 */
 	protected  Double minimumLifetimeValueAmount;
 
@@ -131,7 +131,7 @@ public class DiscountCondition implements Serializable
 	}
 
 	/**
-	 * minimumOrderAmount ApiType DOCUMENT_HERE
+	 * minimumOrderAmount ApiType DOCUMENT_HERE 
 	 */
 	protected  Double minimumOrderAmount;
 
@@ -144,7 +144,7 @@ public class DiscountCondition implements Serializable
 	}
 
 	/**
-	 * minimumQuantityProductsRequiredInCategories ApiType DOCUMENT_HERE
+	 * minimumQuantityProductsRequiredInCategories ApiType DOCUMENT_HERE 
 	 */
 	protected  Integer minimumQuantityProductsRequiredInCategories;
 
@@ -157,7 +157,7 @@ public class DiscountCondition implements Serializable
 	}
 
 	/**
-	 * minimumQuantityRequiredProducts ApiType DOCUMENT_HERE
+	 * minimumQuantityRequiredProducts ApiType DOCUMENT_HERE 
 	 */
 	protected  Integer minimumQuantityRequiredProducts;
 
@@ -170,7 +170,7 @@ public class DiscountCondition implements Serializable
 	}
 
 	/**
-	 * paymentWorkflows ApiType DOCUMENT_HERE
+	 * paymentWorkflows ApiType DOCUMENT_HERE 
 	 */
 	protected List<String> paymentWorkflows;
 	public List<String> getPaymentWorkflows() {
@@ -181,7 +181,7 @@ public class DiscountCondition implements Serializable
 	}
 
 	/**
-	 * requiresCoupon ApiType DOCUMENT_HERE
+	 * requiresCoupon ApiType DOCUMENT_HERE 
 	 */
 	protected  Boolean requiresCoupon;
 
@@ -194,7 +194,7 @@ public class DiscountCondition implements Serializable
 	}
 
 	/**
-	 * startDate ApiType DOCUMENT_HERE
+	 * startDate ApiType DOCUMENT_HERE 
 	 */
 	protected  DateTime startDate;
 

@@ -157,7 +157,7 @@ public class ProductSearchResultResource {
 	 * @param facetStartIndex When paging through multiple facets, the startIndex value for each facet.
 	 * @param facetTemplate The facet template to use on the storefront. A template displays all facets associated with the template on the web storefront product search. Currently, only category-level facet templates are available.
 	 * @param facetTemplateExclude A comma-separated list of the facets to exclude from the facetTemplate.
-
+        
 	 * @param facetTemplateSubset Display a subset of the facets defined in the template specified in facetTemplate parameter.
 	 * @param facetValueFilter The facet values to apply to the filter.
 	 * @param facetValueSort Use this parameter to specify facet sorting outside the predefined facet definitions (which require a category). The most common options are:
@@ -206,7 +206,7 @@ The following code demonstrates an example of  sort:
 	 * @param facetStartIndex When paging through multiple facets, the startIndex value for each facet.
 	 * @param facetTemplate The facet template to use on the storefront. A template displays all facets associated with the template on the web storefront product search. Currently, only category-level facet templates are available.
 	 * @param facetTemplateExclude A comma-separated list of the facets to exclude from the facetTemplate.
-
+        
 	 * @param facetTemplateSubset Display a subset of the facets defined in the template specified in facetTemplate parameter.
 	 * @param facetValueFilter The facet values to apply to the filter.
 	 * @param facetValueSort Use this parameter to specify facet sorting outside the predefined facet definitions (which require a category). The most common options are:
@@ -272,7 +272,12 @@ The following code demonstrates an example of  sort:
 	 *	SearchSuggestionResult searchSuggestionResult = productsearchresult.suggest( query,  groups,  pageSize,  responseFields);
 	 * </code></pre></p>
 	 * @param groups Specifies the group that you want this operation to return in the response. This parameter accepts one or more values, separated by comma.For example, if you set this parameter to , then this operation returns a  object that contains suggestions for products that match the user entered characters in the search field.The valid values for this parameter are the following:
-*  â€” Indicates that products should be matched against and returned in the response. The search  value is compared against product name
+*  â€” Indicates that products should be matched against and returned in the response. The search  value is compared against product name and code. The response contains a  with a name of  and a collection of . Each collection item has a  of Product and contains a  equal to a complete product object.
+
+*  â€” Indicates that categories should be matched against and returned in the response. The search  value is compared to category name.  The response contains a  with a name of  and a collection of . Each collection item has a  of Category and contains a  equal to a complete category object.
+
+*  â€” Indicates that previously used search terms (keywords) should be matched against and returned in the response, sorted by frequency of use. Keep in mind that it is not currently possible to edit or remove search terms that may be considered undesirable via the  API. The response contains a  with a name of  and a collection of . Each collection item has a  of Term and contains a  equal to a string value of the matched search term.
+The default value is ; however, the  Core Theme only integrates  and ignores the  group.This operation only returns data that is then made available to your theme. If you set this paramter to multiple values,  returns multiple  in the response. Depending on your requirements, you can then customize your theme to display the groups together or as separate lists in the displayed search suggestions.
 	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
 	 * @param query Properties for the product location inventory provided for queries to locate products by their location.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
@@ -295,7 +300,12 @@ The following code demonstrates an example of  sort:
 	 *	CountDownLatch latch = productsearchresult.suggest( query,  groups,  pageSize,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param groups Specifies the group that you want this operation to return in the response. This parameter accepts one or more values, separated by comma.For example, if you set this parameter to , then this operation returns a  object that contains suggestions for products that match the user entered characters in the search field.The valid values for this parameter are the following:
-*  â€” Indicates that products should be matched against and returned in the response. The search  value is compared against product name
+*  â€” Indicates that products should be matched against and returned in the response. The search  value is compared against product name and code. The response contains a  with a name of  and a collection of . Each collection item has a  of Product and contains a  equal to a complete product object.
+
+*  â€” Indicates that categories should be matched against and returned in the response. The search  value is compared to category name.  The response contains a  with a name of  and a collection of . Each collection item has a  of Category and contains a  equal to a complete category object.
+
+*  â€” Indicates that previously used search terms (keywords) should be matched against and returned in the response, sorted by frequency of use. Keep in mind that it is not currently possible to edit or remove search terms that may be considered undesirable via the  API. The response contains a  with a name of  and a collection of . Each collection item has a  of Term and contains a  equal to a string value of the matched search term.
+The default value is ; however, the  Core Theme only integrates  and ignores the  group.This operation only returns data that is then made available to your theme. If you set this paramter to multiple values,  returns multiple  in the response. Depending on your requirements, you can then customize your theme to display the groups together or as separate lists in the displayed search suggestions.
 	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
 	 * @param query Properties for the product location inventory provided for queries to locate products by their location.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.

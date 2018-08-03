@@ -18,7 +18,7 @@ import com.mozu.api.contracts.sitesettings.general.general.routing.Validator;
 import com.mozu.api.contracts.sitesettings.general.general.routing.Route;
 
 /**
- *	Mozu.SiteSettings.General.Contracts.General.Routing.CustomRouteSettings ApiType DOCUMENT_HERE
+ *	Mozu.SiteSettings.General.Contracts.General.Routing.CustomRouteSettings ApiType DOCUMENT_HERE 
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CustomRouteSettings implements Serializable
@@ -27,7 +27,7 @@ public class CustomRouteSettings implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The mappings configured for the site. Mappings allow you to map the values of URL parameters to other JSON variables or to  objects such as facet values.
+	 * The mappings configured for the site. Mappings allow you to map the values of URL parameters to other JSON variables or to  objects such as facet values. 
 	 */
 	public HashMap<String,Mapping> mappings;
 	public HashMap<String,Mapping> getMappings() {
@@ -38,7 +38,7 @@ public class CustomRouteSettings implements Serializable
 	}
 
 	/**
-	 * The validators configured for a site. Validators require that URL parameters meet certain conditions before  considers the template a match.
+	 * The validators configured for a site. Validators require that URL parameters meet certain conditions before  considers the template a match. 
 	 */
 	public HashMap<String,Validator> validators;
 	public HashMap<String,Validator> getValidators() {

@@ -201,7 +201,7 @@ public class Payment implements Serializable
 	}
 
 	/**
-	 * groupId ApiType DOCUMENT_HERE
+	 * groupId ApiType DOCUMENT_HERE 
 	 */
 	protected  PaymentActionTarget groupId;
 
@@ -222,7 +222,7 @@ public class Payment implements Serializable
 	}
 
 	/**
-	 * subPayments ApiType DOCUMENT_HERE
+	 * subPayments ApiType DOCUMENT_HERE 
 	 */
 	protected List<SubPayment> subPayments;
 	public List<SubPayment> getSubPayments() {

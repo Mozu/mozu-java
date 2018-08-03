@@ -35,7 +35,7 @@ public class DiscountUrl
 
 	/**
 	 * Get Resource Url for GetDiscountContent
-	 * @param discountId discountId parameter description DOCUMENT_HERE
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
@@ -49,7 +49,7 @@ public class DiscountUrl
 
 	/**
 	 * Get Resource Url for GetDiscount
-	 * @param discountId discountId parameter description DOCUMENT_HERE
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
@@ -87,7 +87,7 @@ public class DiscountUrl
 
 	/**
 	 * Get Resource Url for UpdateDiscountContent
-	 * @param discountId discountId parameter description DOCUMENT_HERE
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
@@ -101,7 +101,7 @@ public class DiscountUrl
 
 	/**
 	 * Get Resource Url for UpdateDiscount
-	 * @param discountId discountId parameter description DOCUMENT_HERE
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
@@ -115,7 +115,7 @@ public class DiscountUrl
 
 	/**
 	 * Get Resource Url for DeleteDiscount
-	 * @param discountId discountId parameter description DOCUMENT_HERE
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteDiscountUrl(Integer discountId)

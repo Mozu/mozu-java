@@ -16,7 +16,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productadmin.SoftAllocation;
 
 /**
- *	Mozu.ProductAdmin.Contracts.SoftAllocationCollection ApiType DOCUMENT_HERE
+ *	Mozu.ProductAdmin.Contracts.SoftAllocationCollection ApiType DOCUMENT_HERE 
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SoftAllocationCollection implements Serializable

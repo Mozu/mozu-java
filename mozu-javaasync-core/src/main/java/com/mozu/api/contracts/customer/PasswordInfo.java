@@ -22,7 +22,7 @@ public class PasswordInfo implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * If you are importing existing customer accounts to  or using two customer systems simultaneously, you use this property to store an external password hash that helps you migrate existing customer accounts seamlessly into , without having to require shoppers to create new passwords for the platform.  If you set this property, you must use the [embedded.verifyExternalPassword](https://www.mozu.com/docs/arcjs/commerce-customer/actions/verifyexternalpassword.htm) action to verify that the hashed version of a
+	 * If you are importing existing customer accounts to  or using two customer systems simultaneously, you use this property to store an external password hash that helps you migrate existing customer accounts seamlessly into , without having to require shoppers to create new passwords for the platform.  If you set this property, you must use the [embedded.verifyExternalPassword](https://www.mozu.com/docs/arcjs/commerce-customer/actions/verifyexternalpassword.htm) action to verify that the hashed version of a cleartext password provided by a shopper matches the external password hash specified in this property.
 	 */
 	protected  String externalPassword;
 
@@ -35,7 +35,7 @@ public class PasswordInfo implements Serializable
 	}
 
 	/**
-	 * The new password entered and saved by the user of the account.
+	 * The new password entered and saved by the user of the account. 
 	 */
 	protected  String newPassword;
 

@@ -16,7 +16,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productruntime.ProductCost;
 
 /**
- *	Mozu.ProductRuntime.Contracts.ProductCostCollection ApiType DOCUMENT_HERE
+ *	Mozu.ProductRuntime.Contracts.ProductCostCollection ApiType DOCUMENT_HERE 
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductCostCollection implements Serializable

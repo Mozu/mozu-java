@@ -88,7 +88,7 @@ public class AppliedLineItemShippingDiscount implements Serializable
 	}
 
 	/**
-	 * normalizedImpact ApiType DOCUMENT_HERE
+	 * normalizedImpact ApiType DOCUMENT_HERE 
 	 */
 	protected  Double normalizedImpact;
 

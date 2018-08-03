@@ -51,7 +51,7 @@ public class ApplicationSubscription implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.ApplicationSubscription noCallback ApiTypeMember DOCUMENT_HERE
+	 * Mozu.AppDev.Contracts.ApplicationSubscription noCallback ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  Boolean noCallback;
 
@@ -64,7 +64,7 @@ public class ApplicationSubscription implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.ApplicationSubscription packageId ApiTypeMember DOCUMENT_HERE
+	 * Mozu.AppDev.Contracts.ApplicationSubscription packageId ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  Integer packageId;
 
@@ -77,7 +77,7 @@ public class ApplicationSubscription implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.ApplicationSubscription events ApiTypeMember DOCUMENT_HERE
+	 * Mozu.AppDev.Contracts.ApplicationSubscription events ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected List<Event> events;
 	public List<Event> getEvents() {

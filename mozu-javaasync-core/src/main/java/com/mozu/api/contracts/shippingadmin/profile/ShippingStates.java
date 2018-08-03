@@ -16,7 +16,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.shippingadmin.profile.State;
 
 /**
- *	Mozu.ShippingAdmin.Contracts.Profile.ShippingStates ApiType DOCUMENT_HERE
+ *	Mozu.ShippingAdmin.Contracts.Profile.ShippingStates ApiType DOCUMENT_HERE 
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ShippingStates implements Serializable

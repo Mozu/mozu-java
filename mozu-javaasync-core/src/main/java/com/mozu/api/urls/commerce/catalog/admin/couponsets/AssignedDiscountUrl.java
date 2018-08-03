@@ -40,7 +40,7 @@ public class AssignedDiscountUrl
 	/**
 	 * Get Resource Url for UnAssignDiscount
 	 * @param couponSetCode The unique identifier of the coupon set.
-	 * @param discountId discountId parameter description DOCUMENT_HERE
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl unAssignDiscountUrl(String couponSetCode, Integer discountId)

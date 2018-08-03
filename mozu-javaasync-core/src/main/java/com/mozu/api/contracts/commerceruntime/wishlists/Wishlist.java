@@ -408,7 +408,7 @@ public class Wishlist implements Serializable
 	}
 
 	/**
-	 * discountThresholdMessages ApiType DOCUMENT_HERE
+	 * discountThresholdMessages ApiType DOCUMENT_HERE 
 	 */
 	protected List<ThresholdMessage> discountThresholdMessages;
 	public List<ThresholdMessage> getDiscountThresholdMessages() {
@@ -456,7 +456,7 @@ public class Wishlist implements Serializable
 	}
 
 	/**
-	 * suggestedDiscounts ApiType DOCUMENT_HERE
+	 * suggestedDiscounts ApiType DOCUMENT_HERE 
 	 */
 	protected List<SuggestedDiscount> suggestedDiscounts;
 	public List<SuggestedDiscount> getSuggestedDiscounts() {

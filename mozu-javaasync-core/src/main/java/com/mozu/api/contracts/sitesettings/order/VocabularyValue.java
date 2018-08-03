@@ -16,7 +16,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.sitesettings.order.LocalizedContent;
 
 /**
- *	Mozu.SiteSettings.Order.Contracts.VocabularyValue ApiType DOCUMENT_HERE
+ *	Mozu.SiteSettings.Order.Contracts.VocabularyValue ApiType DOCUMENT_HERE 
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class VocabularyValue implements Serializable

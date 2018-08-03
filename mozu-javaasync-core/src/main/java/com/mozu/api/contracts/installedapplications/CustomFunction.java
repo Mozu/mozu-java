@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Mozu.InstalledApplications.Contracts.CustomFunction ApiType DOCUMENT_HERE
+ *	Mozu.InstalledApplications.Contracts.CustomFunction ApiType DOCUMENT_HERE 
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CustomFunction implements Serializable

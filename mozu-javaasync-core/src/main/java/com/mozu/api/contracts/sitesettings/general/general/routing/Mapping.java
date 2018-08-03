@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Mozu.SiteSettings.General.Contracts.General.Routing.Mapping ApiType DOCUMENT_HERE
+ *	Mozu.SiteSettings.General.Contracts.General.Routing.Mapping ApiType DOCUMENT_HERE 
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Mapping implements Serializable
@@ -24,7 +24,7 @@ public class Mapping implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * beforeRouting ApiType DOCUMENT_HERE
+	 * beforeRouting ApiType DOCUMENT_HERE 
 	 */
 	protected  Boolean beforeRouting;
 
@@ -37,7 +37,7 @@ public class Mapping implements Serializable
 	}
 
 	/**
-	 * docId ApiType DOCUMENT_HERE
+	 * docId ApiType DOCUMENT_HERE 
 	 */
 	protected  String docId;
 
@@ -50,7 +50,7 @@ public class Mapping implements Serializable
 	}
 
 	/**
-	 * facetId ApiType DOCUMENT_HERE
+	 * facetId ApiType DOCUMENT_HERE 
 	 */
 	protected  String facetId;
 
@@ -76,7 +76,7 @@ public class Mapping implements Serializable
 	}
 
 	/**
-	 * mappings ApiType DOCUMENT_HERE
+	 * mappings ApiType DOCUMENT_HERE 
 	 */
 	public HashMap<String,Object> mappings;
 	public HashMap<String,Object> getMappings() {
@@ -87,7 +87,7 @@ public class Mapping implements Serializable
 	}
 
 	/**
-	 * mapTo ApiType DOCUMENT_HERE
+	 * mapTo ApiType DOCUMENT_HERE 
 	 */
 	protected  String mapTo;
 
@@ -100,7 +100,7 @@ public class Mapping implements Serializable
 	}
 
 	/**
-	 * pattern ApiType DOCUMENT_HERE
+	 * pattern ApiType DOCUMENT_HERE 
 	 */
 	protected  String pattern;
 
@@ -113,7 +113,7 @@ public class Mapping implements Serializable
 	}
 
 	/**
-	 * replacement ApiType DOCUMENT_HERE
+	 * replacement ApiType DOCUMENT_HERE 
 	 */
 	protected  String replacement;
 
@@ -126,7 +126,7 @@ public class Mapping implements Serializable
 	}
 
 	/**
-	 * type ApiType DOCUMENT_HERE
+	 * type ApiType DOCUMENT_HERE 
 	 */
 	protected  String type;
 

@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Mozu.ShippingAdmin.Contracts.TargetRule ApiType DOCUMENT_HERE
+ *	Mozu.ShippingAdmin.Contracts.TargetRule ApiType DOCUMENT_HERE 
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class TargetRule implements Serializable
@@ -22,7 +22,7 @@ public class TargetRule implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * code ApiType DOCUMENT_HERE
+	 * code ApiType DOCUMENT_HERE 
 	 */
 	protected  String code;
 
@@ -61,7 +61,7 @@ public class TargetRule implements Serializable
 	}
 
 	/**
-	 * expression ApiType DOCUMENT_HERE
+	 * expression ApiType DOCUMENT_HERE 
 	 */
 	protected  String expression;
 

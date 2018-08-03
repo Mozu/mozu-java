@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Mozu.PaymentService.Contracts.PublicCard ApiType DOCUMENT_HERE
+ *	Mozu.PaymentService.Contracts.PublicCard ApiType DOCUMENT_HERE 
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PublicCard implements Serializable
@@ -22,7 +22,7 @@ public class PublicCard implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Mozu.PaymentService.Contracts.PublicCard cardHolderName ApiTypeMember DOCUMENT_HERE
+	 * Mozu.PaymentService.Contracts.PublicCard cardHolderName ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  String cardHolderName;
 
@@ -35,7 +35,7 @@ public class PublicCard implements Serializable
 	}
 
 	/**
-	 * Mozu.PaymentService.Contracts.PublicCard cardIssueMonth ApiTypeMember DOCUMENT_HERE
+	 * Mozu.PaymentService.Contracts.PublicCard cardIssueMonth ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  Integer cardIssueMonth;
 
@@ -61,7 +61,7 @@ public class PublicCard implements Serializable
 	}
 
 	/**
-	 * Mozu.PaymentService.Contracts.PublicCard cardIssueYear ApiTypeMember DOCUMENT_HERE
+	 * Mozu.PaymentService.Contracts.PublicCard cardIssueYear ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  Integer cardIssueYear;
 
@@ -87,7 +87,7 @@ public class PublicCard implements Serializable
 	}
 
 	/**
-	 * Mozu.PaymentService.Contracts.PublicCard cardType ApiTypeMember DOCUMENT_HERE
+	 * Mozu.PaymentService.Contracts.PublicCard cardType ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  String cardType;
 
@@ -100,7 +100,7 @@ public class PublicCard implements Serializable
 	}
 
 	/**
-	 * Mozu.PaymentService.Contracts.PublicCard cvv ApiTypeMember DOCUMENT_HERE
+	 * Mozu.PaymentService.Contracts.PublicCard cvv ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  String cvv;
 

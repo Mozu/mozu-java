@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	The state code, name, and tags, if applicable.
+ *	The state code, name, and tags, if applicable. 
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class State implements Serializable
@@ -22,7 +22,7 @@ public class State implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The two character state code.
+	 * The two character state code. 
 	 */
 	protected  String code;
 

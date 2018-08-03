@@ -55,7 +55,7 @@ public class AppliedDiscount implements Serializable
 	}
 
 	/**
-	 * discounts ApiType DOCUMENT_HERE
+	 * discounts ApiType DOCUMENT_HERE 
 	 */
 	protected List<Discount> discounts;
 	public List<Discount> getDiscounts() {

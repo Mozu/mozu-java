@@ -35,7 +35,7 @@ public class AttributeSearchSettings implements Serializable
 	}
 
 	/**
-	 * customWeightInStorefrontSearch ApiType DOCUMENT_HERE
+	 * customWeightInStorefrontSearch ApiType DOCUMENT_HERE 
 	 */
 	protected  Boolean customWeightInStorefrontSearch;
 

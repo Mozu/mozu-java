@@ -16,7 +16,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productadmin.CouponSet;
 
 /**
- *	Mozu.ProductAdmin.Contracts.CouponSetCollection ApiType DOCUMENT_HERE
+ *	Mozu.ProductAdmin.Contracts.CouponSetCollection ApiType DOCUMENT_HERE 
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CouponSetCollection implements Serializable

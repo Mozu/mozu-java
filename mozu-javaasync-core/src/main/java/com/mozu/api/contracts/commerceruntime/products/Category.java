@@ -14,7 +14,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.commerceruntime.products.Category;
 
 /**
- *	The category associated with assigned products. Products, product bundles, and options can be classified to multiple categories.
+ *	The category associated with assigned products. Products, product bundles, and options can be classified to multiple categories. 
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Category implements Serializable

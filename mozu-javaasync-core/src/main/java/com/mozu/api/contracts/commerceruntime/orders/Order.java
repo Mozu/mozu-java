@@ -59,7 +59,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * Indicates if the customer account is opted to receive marketing materials. If true, the customer account is opted in for receiving the content.
+	 * Indicates if the customer account is opted to receive marketing materials. If true, the customer account is opted in for receiving the content. 
 	 */
 	protected  Boolean acceptsMarketing;
 
@@ -891,7 +891,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * discountThresholdMessages ApiType DOCUMENT_HERE
+	 * discountThresholdMessages ApiType DOCUMENT_HERE 
 	 */
 	protected List<ThresholdMessage> discountThresholdMessages;
 	public List<ThresholdMessage> getDiscountThresholdMessages() {
@@ -1053,7 +1053,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * suggestedDiscounts ApiType DOCUMENT_HERE
+	 * suggestedDiscounts ApiType DOCUMENT_HERE 
 	 */
 	protected List<SuggestedDiscount> suggestedDiscounts;
 	public List<SuggestedDiscount> getSuggestedDiscounts() {

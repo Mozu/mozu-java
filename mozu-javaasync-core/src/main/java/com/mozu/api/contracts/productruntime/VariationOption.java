@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Mozu.ProductRuntime.Contracts.VariationOption ApiType DOCUMENT_HERE
+ *	Mozu.ProductRuntime.Contracts.VariationOption ApiType DOCUMENT_HERE 
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class VariationOption implements Serializable

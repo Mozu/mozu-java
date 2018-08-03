@@ -27,7 +27,7 @@ public class BillingInfo implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * customCreditType ApiType DOCUMENT_HERE
+	 * customCreditType ApiType DOCUMENT_HERE 
 	 */
 	protected  String customCreditType;
 
@@ -99,7 +99,7 @@ public class BillingInfo implements Serializable
 	}
 
 	/**
-	 * storeCreditType ApiType DOCUMENT_HERE
+	 * storeCreditType ApiType DOCUMENT_HERE 
 	 */
 	protected  String storeCreditType;
 

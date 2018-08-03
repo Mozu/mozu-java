@@ -16,7 +16,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule;
 
 /**
- *	Mozu.ShippingAdmin.Contracts.Profile.ShippingInclusionRuleCollection ApiType DOCUMENT_HERE
+ *	Mozu.ShippingAdmin.Contracts.Profile.ShippingInclusionRuleCollection ApiType DOCUMENT_HERE 
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ShippingInclusionRuleCollection implements Serializable

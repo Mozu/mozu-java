@@ -141,6 +141,16 @@ public class DiscountCondition implements Serializable
 		this.minimumQuantityRequiredProducts = minimumQuantityRequiredProducts;
 	}
 
+	protected  Integer minimumRequiredQuantityPerRedemption;
+
+	public Integer getMinimumRequiredQuantityPerRedemption() {
+		return this.minimumRequiredQuantityPerRedemption;
+	}
+
+	public void setMinimumRequiredQuantityPerRedemption(Integer minimumRequiredQuantityPerRedemption) {
+		this.minimumRequiredQuantityPerRedemption = minimumRequiredQuantityPerRedemption;
+	}
+
 	/**
 	 * If true, only authenticated users can redeem the discount. If false, anonymous users can redeem the discount.
 	 */
@@ -181,7 +191,7 @@ public class DiscountCondition implements Serializable
 	}
 
 	/**
-	 * categoriesToExcludeFromMinOrderTotal ApiType DOCUMENT_HERE
+	 * categoriesToExcludeFromMinOrderTotal ApiType DOCUMENT_HERE 
 	 */
 	protected List<CategoryDiscountCondition> categoriesToExcludeFromMinOrderTotal;
 	public List<CategoryDiscountCondition> getCategoriesToExcludeFromMinOrderTotal() {
@@ -247,7 +257,7 @@ public class DiscountCondition implements Serializable
 	}
 
 	/**
-	 * productsToExcludeFromMinOrderTotal ApiType DOCUMENT_HERE
+	 * productsToExcludeFromMinOrderTotal ApiType DOCUMENT_HERE 
 	 */
 	protected List<ProductDiscountCondition> productsToExcludeFromMinOrderTotal;
 	public List<ProductDiscountCondition> getProductsToExcludeFromMinOrderTotal() {

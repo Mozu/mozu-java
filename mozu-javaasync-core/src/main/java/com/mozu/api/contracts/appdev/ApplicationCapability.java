@@ -22,7 +22,7 @@ public class ApplicationCapability implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Mozu.AppDev.Contracts.ApplicationCapability applicationCapabilityId ApiTypeMember DOCUMENT_HERE
+	 * Mozu.AppDev.Contracts.ApplicationCapability applicationCapabilityId ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  Integer applicationCapabilityId;
 
@@ -35,7 +35,7 @@ public class ApplicationCapability implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.ApplicationCapability applicationCapabilityTypeId ApiTypeMember DOCUMENT_HERE
+	 * Mozu.AppDev.Contracts.ApplicationCapability applicationCapabilityTypeId ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  Integer applicationCapabilityTypeId;
 
@@ -48,7 +48,7 @@ public class ApplicationCapability implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.ApplicationCapability applicationEndPoint ApiTypeMember DOCUMENT_HERE
+	 * Mozu.AppDev.Contracts.ApplicationCapability applicationEndPoint ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  String applicationEndPoint;
 
@@ -61,7 +61,7 @@ public class ApplicationCapability implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.ApplicationCapability capabilityTypeContractId ApiTypeMember DOCUMENT_HERE
+	 * Mozu.AppDev.Contracts.ApplicationCapability capabilityTypeContractId ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  Integer capabilityTypeContractId;
 
@@ -74,7 +74,7 @@ public class ApplicationCapability implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.ApplicationCapability packageId ApiTypeMember DOCUMENT_HERE
+	 * Mozu.AppDev.Contracts.ApplicationCapability packageId ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  Integer packageId;
 

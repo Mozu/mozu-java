@@ -35,7 +35,7 @@ public class Attribute implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.Attribute applicationAttributeId ApiTypeMember DOCUMENT_HERE
+	 * Mozu.AppDev.Contracts.Attribute applicationAttributeId ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  Integer applicationAttributeId;
 
@@ -48,7 +48,7 @@ public class Attribute implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.Attribute attributeId ApiTypeMember DOCUMENT_HERE
+	 * Mozu.AppDev.Contracts.Attribute attributeId ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  Integer attributeId;
 
@@ -61,7 +61,7 @@ public class Attribute implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.Attribute code ApiTypeMember DOCUMENT_HERE
+	 * Mozu.AppDev.Contracts.Attribute code ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  String code;
 
@@ -74,7 +74,7 @@ public class Attribute implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.Attribute fqn ApiTypeMember DOCUMENT_HERE
+	 * Mozu.AppDev.Contracts.Attribute fqn ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  String fqn;
 
@@ -126,7 +126,7 @@ public class Attribute implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.Attribute type ApiTypeMember DOCUMENT_HERE
+	 * Mozu.AppDev.Contracts.Attribute type ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  String type;
 
@@ -139,7 +139,7 @@ public class Attribute implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.Attribute vocabularyJson ApiTypeMember DOCUMENT_HERE
+	 * Mozu.AppDev.Contracts.Attribute vocabularyJson ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  String vocabularyJson;
 

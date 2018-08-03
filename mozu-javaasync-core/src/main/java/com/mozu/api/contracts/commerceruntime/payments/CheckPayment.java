@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Mozu.CommerceRuntime.Contracts.Payments.CheckPayment ApiType DOCUMENT_HERE
+ *	Mozu.CommerceRuntime.Contracts.Payments.CheckPayment ApiType DOCUMENT_HERE 
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CheckPayment implements Serializable

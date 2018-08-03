@@ -20,7 +20,7 @@ import com.mozu.api.contracts.productadmin.DiscountTarget;
 import com.mozu.api.contracts.productadmin.ThresholdMessage;
 
 /**
- *	Name of the discount added and applied to a shopping cart and order for a shopper's purchase.
+ *	Name of the discount added and applied to a shopping cart and order for a shopper's purchase. 
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Discount implements Serializable
@@ -62,7 +62,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * canBeStackedUpon ApiType DOCUMENT_HERE
+	 * canBeStackedUpon ApiType DOCUMENT_HERE 
 	 */
 	protected  Boolean canBeStackedUpon;
 
@@ -121,6 +121,16 @@ public class Discount implements Serializable
 
 	public void setDoesNotApplyToSalePrice(Boolean doesNotApplyToSalePrice) {
 		this.doesNotApplyToSalePrice = doesNotApplyToSalePrice;
+	}
+
+	protected  Boolean hasPurchaseConditions;
+
+	public Boolean getHasPurchaseConditions() {
+		return this.hasPurchaseConditions;
+	}
+
+	public void setHasPurchaseConditions(Boolean hasPurchaseConditions) {
+		this.hasPurchaseConditions = hasPurchaseConditions;
 	}
 
 	protected  Integer id;
@@ -210,7 +220,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * preventLineItemShippingDiscounts ApiType DOCUMENT_HERE
+	 * preventLineItemShippingDiscounts ApiType DOCUMENT_HERE 
 	 */
 	protected  Boolean preventLineItemShippingDiscounts;
 
@@ -223,7 +233,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * preventOrderProductDiscounts ApiType DOCUMENT_HERE
+	 * preventOrderProductDiscounts ApiType DOCUMENT_HERE 
 	 */
 	protected  Boolean preventOrderProductDiscounts;
 
@@ -236,7 +246,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * preventOrderShippingDiscounts ApiType DOCUMENT_HERE
+	 * preventOrderShippingDiscounts ApiType DOCUMENT_HERE 
 	 */
 	protected  Boolean preventOrderShippingDiscounts;
 
@@ -246,6 +256,16 @@ public class Discount implements Serializable
 
 	public void setPreventOrderShippingDiscounts(Boolean preventOrderShippingDiscounts) {
 		this.preventOrderShippingDiscounts = preventOrderShippingDiscounts;
+	}
+
+	protected  String purchaseRequirementType;
+
+	public String getPurchaseRequirementType() {
+		return this.purchaseRequirementType;
+	}
+
+	public void setPurchaseRequirementType(String purchaseRequirementType) {
+		this.purchaseRequirementType = purchaseRequirementType;
 	}
 
 	protected  String scope;
@@ -259,7 +279,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * stackingLayer ApiType DOCUMENT_HERE
+	 * stackingLayer ApiType DOCUMENT_HERE 
 	 */
 	protected  Integer stackingLayer;
 
@@ -325,7 +345,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * thresholdMessage ApiType DOCUMENT_HERE
+	 * thresholdMessage ApiType DOCUMENT_HERE 
 	 */
 	protected  ThresholdMessage thresholdMessage;
 
