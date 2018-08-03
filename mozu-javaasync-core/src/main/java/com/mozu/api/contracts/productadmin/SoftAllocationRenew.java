@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Mozu.ProductAdmin.Contracts.SoftAllocationRenew ApiType DOCUMENT_HERE 
+ *	Mozu.ProductAdmin.Contracts.SoftAllocationRenew ApiType DOCUMENT_HERE
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SoftAllocationRenew implements Serializable

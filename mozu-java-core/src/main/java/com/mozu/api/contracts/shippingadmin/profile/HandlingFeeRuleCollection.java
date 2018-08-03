@@ -16,7 +16,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule;
 
 /**
- *	Mozu.ShippingAdmin.Contracts.Profile.HandlingFeeRuleCollection ApiType DOCUMENT_HERE 
+ *	Mozu.ShippingAdmin.Contracts.Profile.HandlingFeeRuleCollection ApiType DOCUMENT_HERE
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class HandlingFeeRuleCollection implements Serializable

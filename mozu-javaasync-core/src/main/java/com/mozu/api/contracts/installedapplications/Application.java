@@ -38,7 +38,7 @@ public class Application implements Serializable
 	}
 
 	/**
-	 * Unique identifier of an app or theme available in your  tenant or within  Dev Center. An appKey is composed of Developer Account namespace, app/theme ID, version, and package (e.g., devAccount.helloWorld.1.0.0.Release). 
+	 * Unique identifier of an app or theme available in your  tenant or within  Dev Center. An appKey is composed of Developer Account namespace, app/theme ID, version, and package (e.g., devAccount.helloWorld.1.0.0.Release).
 	 */
 	protected  String appKey;
 

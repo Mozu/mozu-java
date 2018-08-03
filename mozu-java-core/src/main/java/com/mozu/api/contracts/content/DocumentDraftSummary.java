@@ -58,7 +58,7 @@ public class DocumentDraftSummary implements Serializable
 	}
 
 	/**
-	 * Fully qualified name of the document type. 
+	 * Fully qualified name of the document type.
 	 */
 	protected  String documentTypeFQN;
 
@@ -104,7 +104,7 @@ public class DocumentDraftSummary implements Serializable
 	}
 
 	/**
-	 * Unique identifier for the master catalog. 
+	 * Unique identifier for the master catalog.
 	 */
 	protected  Integer masterCatalogId;
 

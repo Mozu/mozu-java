@@ -50,7 +50,7 @@ public class CustomerAccount implements Serializable
 	}
 
 	/**
-	 * customerSet ApiType DOCUMENT_HERE 
+	 * customerSet ApiType DOCUMENT_HERE
 	 */
 	protected  String customerSet;
 
@@ -63,7 +63,7 @@ public class CustomerAccount implements Serializable
 	}
 
 	/**
-	 * This property tracks the customer account creation date. This date can be set manually via the APIÂ for customer accounts that are imported into . 
+	 * This property tracks the customer account creation date. This date can be set manually via the APIÂ for customer accounts that are imported into .
 	 */
 	protected  DateTime customerSinceDate;
 

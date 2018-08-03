@@ -80,7 +80,7 @@ public class AssignedDiscountClient {
 	 * client.executeRequest();
 	 * </code></pre></p>
 	 * @param couponSetCode The unique identifier of the coupon set.
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param discountId discountId parameter description DOCUMENT_HERE
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient unAssignDiscountClient(String couponSetCode, Integer discountId) throws Exception

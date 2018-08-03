@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Mozu.AppDev.Contracts.AppVersion ApiType DOCUMENT_HERE 
+ *	Mozu.AppDev.Contracts.AppVersion ApiType DOCUMENT_HERE
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AppVersion implements Serializable
@@ -22,7 +22,7 @@ public class AppVersion implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Mozu.AppDev.Contracts.AppVersion majorVersion ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.AppVersion majorVersion ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  Integer majorVersion;
 
@@ -35,7 +35,7 @@ public class AppVersion implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.AppVersion minorVersion ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.AppVersion minorVersion ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  Integer minorVersion;
 
@@ -48,7 +48,7 @@ public class AppVersion implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.AppVersion revision ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.AppVersion revision ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  Integer revision;
 

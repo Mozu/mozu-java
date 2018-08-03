@@ -77,7 +77,7 @@ public class PriceList implements Serializable
 	}
 
 	/**
-	 * Specifies whether the price list is the default price list for the site. Refer to [Default](../../../guides/catalog/price-lists.htm#default) in the Price Lists guides topic for more information. 
+	 * Specifies whether the price list is the default price list for the site. Refer to [Default](../../../guides/catalog/price-lists.htm#default) in the Price Lists guides topic for more information.
 	 */
 	protected  Boolean isSiteDefault;
 

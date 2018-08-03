@@ -117,7 +117,7 @@ public class LocationResource {
 	 *	Location location = new Location();
 	 *	Location location = location.getLocation( locationCode);
 	 * </code></pre></p>
-	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param locationCode The unique, user-defined code that identifies a location.
 	 * @return com.mozu.api.contracts.location.Location
 	 * @see com.mozu.api.contracts.location.Location
 	 */
@@ -132,7 +132,7 @@ public class LocationResource {
 	 *	Location location = new Location();
 	 *	CountDownLatch latch = location.getLocation( locationCode, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param locationCode The unique, user-defined code that identifies a location.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.location.Location
 	 * @see com.mozu.api.contracts.location.Location
@@ -148,7 +148,7 @@ public class LocationResource {
 	 *	Location location = new Location();
 	 *	Location location = location.getLocation( locationCode,  responseFields);
 	 * </code></pre></p>
-	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param locationCode The unique, user-defined code that identifies a location.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.location.Location
 	 * @see com.mozu.api.contracts.location.Location
@@ -168,7 +168,7 @@ public class LocationResource {
 	 *	Location location = new Location();
 	 *	CountDownLatch latch = location.getLocation( locationCode,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param locationCode The unique, user-defined code that identifies a location.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.location.Location
@@ -263,7 +263,7 @@ public class LocationResource {
 	 *	Location location = new Location();
 	 *	Location location = location.updateLocation( location,  locationCode);
 	 * </code></pre></p>
-	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param locationCode The unique, user-defined code that identifies a location.
 	 * @param location Properties of a physical location a tenant uses to manage inventory and fulfills orders, provide store finder functionality, or both.
 	 * @return com.mozu.api.contracts.location.Location
 	 * @see com.mozu.api.contracts.location.Location
@@ -280,7 +280,7 @@ public class LocationResource {
 	 *	Location location = new Location();
 	 *	CountDownLatch latch = location.updateLocation( location,  locationCode, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param locationCode The unique, user-defined code that identifies a location.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param location Properties of a physical location a tenant uses to manage inventory and fulfills orders, provide store finder functionality, or both.
 	 * @return com.mozu.api.contracts.location.Location
@@ -298,7 +298,7 @@ public class LocationResource {
 	 *	Location location = new Location();
 	 *	Location location = location.updateLocation( location,  locationCode,  responseFields);
 	 * </code></pre></p>
-	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param locationCode The unique, user-defined code that identifies a location.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param location Properties of a physical location a tenant uses to manage inventory and fulfills orders, provide store finder functionality, or both.
 	 * @return com.mozu.api.contracts.location.Location
@@ -320,7 +320,7 @@ public class LocationResource {
 	 *	Location location = new Location();
 	 *	CountDownLatch latch = location.updateLocation( location,  locationCode,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param locationCode The unique, user-defined code that identifies a location.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param location Properties of a physical location a tenant uses to manage inventory and fulfills orders, provide store finder functionality, or both.
@@ -342,7 +342,7 @@ public class LocationResource {
 	 *	Location location = new Location();
 	 *	location.deleteLocation( locationCode);
 	 * </code></pre></p>
-	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param locationCode The unique, user-defined code that identifies a location.
 	 * @return 
 	 */
 	public void deleteLocation(String locationCode) throws Exception

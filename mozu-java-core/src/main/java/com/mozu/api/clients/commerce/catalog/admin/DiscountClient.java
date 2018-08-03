@@ -76,7 +76,7 @@ public class DiscountClient {
 	 * client.executeRequest();
 	 * DiscountLocalizedContent discountLocalizedContent = client.Result();
 	 * </code></pre></p>
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param discountId discountId parameter description DOCUMENT_HERE
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.DiscountLocalizedContent>
 	 * @see com.mozu.api.contracts.productadmin.DiscountLocalizedContent
 	 */
@@ -93,7 +93,7 @@ public class DiscountClient {
 	 * client.executeRequest();
 	 * DiscountLocalizedContent discountLocalizedContent = client.Result();
 	 * </code></pre></p>
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param discountId discountId parameter description DOCUMENT_HERE
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.DiscountLocalizedContent>
 	 * @see com.mozu.api.contracts.productadmin.DiscountLocalizedContent
@@ -119,7 +119,7 @@ public class DiscountClient {
 	 * client.executeRequest();
 	 * Discount discount = client.Result();
 	 * </code></pre></p>
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param discountId discountId parameter description DOCUMENT_HERE
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Discount>
 	 * @see com.mozu.api.contracts.productadmin.Discount
 	 */
@@ -136,7 +136,7 @@ public class DiscountClient {
 	 * client.executeRequest();
 	 * Discount discount = client.Result();
 	 * </code></pre></p>
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param discountId discountId parameter description DOCUMENT_HERE
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Discount>
 	 * @see com.mozu.api.contracts.productadmin.Discount
@@ -202,7 +202,7 @@ public class DiscountClient {
 	 * client.executeRequest();
 	 * Discount discount = client.Result();
 	 * </code></pre></p>
-	 * @param discount Name of the discount added and applied to a shopping cart and order for a shopper's purchase. 
+	 * @param discount Name of the discount added and applied to a shopping cart and order for a shopper's purchase.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Discount>
 	 * @see com.mozu.api.contracts.productadmin.Discount
 	 * @see com.mozu.api.contracts.productadmin.Discount
@@ -221,7 +221,7 @@ public class DiscountClient {
 	 * Discount discount = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param discount Name of the discount added and applied to a shopping cart and order for a shopper's purchase. 
+	 * @param discount Name of the discount added and applied to a shopping cart and order for a shopper's purchase.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Discount>
 	 * @see com.mozu.api.contracts.productadmin.Discount
 	 * @see com.mozu.api.contracts.productadmin.Discount
@@ -247,7 +247,7 @@ public class DiscountClient {
 	 * client.executeRequest();
 	 * DiscountLocalizedContent discountLocalizedContent = client.Result();
 	 * </code></pre></p>
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param discountId discountId parameter description DOCUMENT_HERE
 	 * @param content The container for the language-specific name of the discount. A container exists for each supported language (LocaleCode). This parameter enables you to display the discount name in multiple languages yet manage it as a single discount internally.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.DiscountLocalizedContent>
 	 * @see com.mozu.api.contracts.productadmin.DiscountLocalizedContent
@@ -266,7 +266,7 @@ public class DiscountClient {
 	 * client.executeRequest();
 	 * DiscountLocalizedContent discountLocalizedContent = client.Result();
 	 * </code></pre></p>
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param discountId discountId parameter description DOCUMENT_HERE
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param content The container for the language-specific name of the discount. A container exists for each supported language (LocaleCode). This parameter enables you to display the discount name in multiple languages yet manage it as a single discount internally.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.DiscountLocalizedContent>
@@ -294,8 +294,8 @@ public class DiscountClient {
 	 * client.executeRequest();
 	 * Discount discount = client.Result();
 	 * </code></pre></p>
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
-	 * @param discount Name of the discount added and applied to a shopping cart and order for a shopper's purchase. 
+	 * @param discountId discountId parameter description DOCUMENT_HERE
+	 * @param discount Name of the discount added and applied to a shopping cart and order for a shopper's purchase.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Discount>
 	 * @see com.mozu.api.contracts.productadmin.Discount
 	 * @see com.mozu.api.contracts.productadmin.Discount
@@ -313,9 +313,9 @@ public class DiscountClient {
 	 * client.executeRequest();
 	 * Discount discount = client.Result();
 	 * </code></pre></p>
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param discountId discountId parameter description DOCUMENT_HERE
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param discount Name of the discount added and applied to a shopping cart and order for a shopper's purchase. 
+	 * @param discount Name of the discount added and applied to a shopping cart and order for a shopper's purchase.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Discount>
 	 * @see com.mozu.api.contracts.productadmin.Discount
 	 * @see com.mozu.api.contracts.productadmin.Discount
@@ -340,7 +340,7 @@ public class DiscountClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param discountId discountId parameter description DOCUMENT_HERE
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deleteDiscountClient(Integer discountId) throws Exception

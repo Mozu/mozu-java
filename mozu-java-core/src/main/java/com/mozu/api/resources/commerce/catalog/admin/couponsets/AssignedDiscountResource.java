@@ -80,7 +80,7 @@ public class AssignedDiscountResource {
 	 *	assigneddiscount.unAssignDiscount( couponSetCode,  discountId);
 	 * </code></pre></p>
 	 * @param couponSetCode The unique identifier of the coupon set.
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param discountId discountId parameter description DOCUMENT_HERE
 	 * @return 
 	 */
 	public void unAssignDiscount(String couponSetCode, Integer discountId) throws Exception

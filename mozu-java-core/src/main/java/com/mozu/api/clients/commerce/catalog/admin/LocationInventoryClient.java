@@ -31,7 +31,7 @@ public class LocationInventoryClient {
 	 * client.executeRequest();
 	 * LocationInventory locationInventory = client.Result();
 	 * </code></pre></p>
-	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param locationCode The unique, user-defined code that identifies a location.
 	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.LocationInventory>
@@ -50,7 +50,7 @@ public class LocationInventoryClient {
 	 * client.executeRequest();
 	 * LocationInventory locationInventory = client.Result();
 	 * </code></pre></p>
-	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param locationCode The unique, user-defined code that identifies a location.
 	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
@@ -128,7 +128,7 @@ public class LocationInventoryClient {
 	 * client.executeRequest();
 	 * LocationInventory locationInventory = client.Result();
 	 * </code></pre></p>
-	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param locationCode The unique, user-defined code that identifies a location.
 	 * @param dataViewMode DataViewMode
 	 * @param locationInventoryList Properties of an inventory definition that defines the level of inventory for a specific product at a given location.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.LocationInventory>>
@@ -148,7 +148,7 @@ public class LocationInventoryClient {
 	 * client.executeRequest();
 	 * LocationInventory locationInventory = client.Result();
 	 * </code></pre></p>
-	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param locationCode The unique, user-defined code that identifies a location.
 	 * @param performUpserts Query string parameter lets the service perform an update for a new or existing record. When run, the update occurs without throwing a conflict exception that the record exists. If true, the updates completes regardless of the record currently existing. By default, if no value is specified, the service assumes this value is false.
 	 * @param dataViewMode DataViewMode
 	 * @param locationInventoryList Properties of an inventory definition that defines the level of inventory for a specific product at a given location.
@@ -178,7 +178,7 @@ public class LocationInventoryClient {
 	 * client.executeRequest();
 	 * LocationInventory locationInventory = client.Result();
 	 * </code></pre></p>
-	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param locationCode The unique, user-defined code that identifies a location.
 	 * @param dataViewMode DataViewMode
 	 * @param locationInventoryAdjustments Properties of an adjustment to the active product inventory of a specific location.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.LocationInventory>>
@@ -206,7 +206,7 @@ public class LocationInventoryClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param locationCode The unique, user-defined code that identifies a location.
 	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient 

@@ -16,7 +16,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productadmin.search.SearchTuningRule;
 
 /**
- *	Mozu.ProductAdmin.Contracts.Search.SearchTuningRuleCollection ApiType DOCUMENT_HERE 
+ *	Mozu.ProductAdmin.Contracts.Search.SearchTuningRuleCollection ApiType DOCUMENT_HERE
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SearchTuningRuleCollection implements Serializable

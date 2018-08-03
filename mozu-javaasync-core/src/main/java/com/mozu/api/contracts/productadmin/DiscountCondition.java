@@ -13,8 +13,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
-import com.mozu.api.contracts.productadmin.CustomerSegment;
 import com.mozu.api.contracts.productadmin.CategoryDiscountCondition;
+import com.mozu.api.contracts.productadmin.CustomerSegment;
 import com.mozu.api.contracts.productadmin.ProductDiscountCondition;
 
 /**
@@ -181,6 +181,17 @@ public class DiscountCondition implements Serializable
 	}
 
 	/**
+	 * categoriesToExcludeFromMinOrderTotal ApiType DOCUMENT_HERE
+	 */
+	protected List<CategoryDiscountCondition> categoriesToExcludeFromMinOrderTotal;
+	public List<CategoryDiscountCondition> getCategoriesToExcludeFromMinOrderTotal() {
+		return this.categoriesToExcludeFromMinOrderTotal;
+	}
+	public void setCategoriesToExcludeFromMinOrderTotal(List<CategoryDiscountCondition> categoriesToExcludeFromMinOrderTotal) {
+		this.categoriesToExcludeFromMinOrderTotal = categoriesToExcludeFromMinOrderTotal;
+	}
+
+	/**
 	 * List of customer segments associated with the discount. Shoppers who are members of an associated customer segment can redeem this discount.
 	 */
 	protected List<CustomerSegment> customerSegments;
@@ -233,6 +244,17 @@ public class DiscountCondition implements Serializable
 	}
 	public void setIncludedProducts(List<ProductDiscountCondition> includedProducts) {
 		this.includedProducts = includedProducts;
+	}
+
+	/**
+	 * productsToExcludeFromMinOrderTotal ApiType DOCUMENT_HERE
+	 */
+	protected List<ProductDiscountCondition> productsToExcludeFromMinOrderTotal;
+	public List<ProductDiscountCondition> getProductsToExcludeFromMinOrderTotal() {
+		return this.productsToExcludeFromMinOrderTotal;
+	}
+	public void setProductsToExcludeFromMinOrderTotal(List<ProductDiscountCondition> productsToExcludeFromMinOrderTotal) {
+		this.productsToExcludeFromMinOrderTotal = productsToExcludeFromMinOrderTotal;
 	}
 
 

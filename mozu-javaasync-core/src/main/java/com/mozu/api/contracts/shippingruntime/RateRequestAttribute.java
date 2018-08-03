@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Mozu.ShippingRuntime.Contracts.RateRequestAttribute ApiType DOCUMENT_HERE 
+ *	Mozu.ShippingRuntime.Contracts.RateRequestAttribute ApiType DOCUMENT_HERE
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class RateRequestAttribute implements Serializable

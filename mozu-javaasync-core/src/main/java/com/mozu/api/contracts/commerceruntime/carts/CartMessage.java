@@ -16,7 +16,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.commerceruntime.products.Product;
 
 /**
- *	Mozu.CommerceRuntime.Contracts.Carts.CartMessage ApiType DOCUMENT_HERE 
+ *	Mozu.CommerceRuntime.Contracts.Carts.CartMessage ApiType DOCUMENT_HERE
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CartMessage implements Serializable

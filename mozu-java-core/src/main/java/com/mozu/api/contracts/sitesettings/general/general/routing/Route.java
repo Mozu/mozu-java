@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Mozu.SiteSettings.General.Contracts.General.Routing.Route ApiType DOCUMENT_HERE 
+ *	Mozu.SiteSettings.General.Contracts.General.Routing.Route ApiType DOCUMENT_HERE
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Route implements Serializable

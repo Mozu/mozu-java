@@ -15,7 +15,7 @@ public class LocationInventoryUrl
 
 	/**
 	 * Get Resource Url for GetLocationInventory
-	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param locationCode The unique, user-defined code that identifies a location.
 	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
@@ -55,7 +55,7 @@ public class LocationInventoryUrl
 
 	/**
 	 * Get Resource Url for AddLocationInventory
-	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param locationCode The unique, user-defined code that identifies a location.
 	 * @param performUpserts Query string parameter lets the service perform an update for a new or existing record. When run, the update occurs without throwing a conflict exception that the record exists. If true, the updates completes regardless of the record currently existing. By default, if no value is specified, the service assumes this value is false.
 	 * @return   String Resource Url
 	 */
@@ -69,7 +69,7 @@ public class LocationInventoryUrl
 
 	/**
 	 * Get Resource Url for UpdateLocationInventory
-	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param locationCode The unique, user-defined code that identifies a location.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateLocationInventoryUrl(String locationCode)
@@ -81,7 +81,7 @@ public class LocationInventoryUrl
 
 	/**
 	 * Get Resource Url for DeleteLocationInventory
-	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param locationCode The unique, user-defined code that identifies a location.
 	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @return   String Resource Url
 	 */

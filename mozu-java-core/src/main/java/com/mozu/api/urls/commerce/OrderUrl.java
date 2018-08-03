@@ -123,15 +123,13 @@ public class OrderUrl
 
 	/**
 	 * Get Resource Url for PriceOrder
-	 * @param couponCodeToApply 
 	 * @param refreshShipping 
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl priceOrderUrl(String couponCodeToApply, Boolean refreshShipping, String responseFields)
+	public static MozuUrl priceOrderUrl(Boolean refreshShipping, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/price?refreshShipping={refreshShipping}&couponCodeToApply={couponCodeToApply}&responseFields={responseFields}");
-		formatter.formatUrl("couponCodeToApply", couponCodeToApply);
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/price?refreshShipping={refreshShipping}&responseFields={responseFields}");
 		formatter.formatUrl("refreshShipping", refreshShipping);
 		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
@@ -155,7 +153,7 @@ public class OrderUrl
 
 	/**
 	 * Get Resource Url for UpdateOrderDiscount
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param discountId discountId parameter description DOCUMENT_HERE
 	 * @param orderId Unique identifier of the order.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."

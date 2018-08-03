@@ -45,7 +45,7 @@ public class MasterCatalog implements Serializable
 	}
 
 	/**
-	 * Indicates if the object is deleted. If true, the object has been deleted. This may affect associated child members and objects. For example, a deleted master catalog affects all associated catalogs. 
+	 * Indicates if the object is deleted. If true, the object has been deleted. This may affect associated child members and objects. For example, a deleted master catalog affects all associated catalogs.
 	 */
 	protected  Boolean isDeleted;
 

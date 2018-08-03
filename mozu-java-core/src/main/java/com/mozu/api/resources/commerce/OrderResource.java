@@ -274,16 +274,15 @@ public class OrderResource {
 	 */
 	public com.mozu.api.contracts.commerceruntime.orders.Order priceOrder(com.mozu.api.contracts.commerceruntime.orders.Order order, Boolean refreshShipping) throws Exception
 	{
-		return priceOrder( order,  refreshShipping,  null,  null);
+		return priceOrder( order,  refreshShipping,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	Order order = new Order();
-	 *	Order order = order.priceOrder( order,  refreshShipping,  couponCodeToApply,  responseFields);
+	 *	Order order = order.priceOrder( order,  refreshShipping,  responseFields);
 	 * </code></pre></p>
-	 * @param couponCodeToApply 
 	 * @param refreshShipping 
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param order 
@@ -291,9 +290,9 @@ public class OrderResource {
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 */
-	public com.mozu.api.contracts.commerceruntime.orders.Order priceOrder(com.mozu.api.contracts.commerceruntime.orders.Order order, Boolean refreshShipping, String couponCodeToApply, String responseFields) throws Exception
+	public com.mozu.api.contracts.commerceruntime.orders.Order priceOrder(com.mozu.api.contracts.commerceruntime.orders.Order order, Boolean refreshShipping, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> client = com.mozu.api.clients.commerce.OrderClient.priceOrderClient( order,  refreshShipping,  couponCodeToApply,  responseFields);
+		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> client = com.mozu.api.clients.commerce.OrderClient.priceOrderClient( order,  refreshShipping,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -347,9 +346,9 @@ public class OrderResource {
 	 *	Order order = new Order();
 	 *	Order order = order.updateOrderDiscount( discount,  orderId,  discountId);
 	 * </code></pre></p>
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param discountId discountId parameter description DOCUMENT_HERE
 	 * @param orderId Unique identifier of the order.
-	 * @param discount Properties of all applied discounts for an associated cart, order, or product. 
+	 * @param discount Properties of all applied discounts for an associated cart, order, or product.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.discounts.AppliedDiscount
@@ -365,12 +364,12 @@ public class OrderResource {
 	 *	Order order = new Order();
 	 *	Order order = order.updateOrderDiscount( discount,  orderId,  discountId,  updateMode,  version,  responseFields);
 	 * </code></pre></p>
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param discountId discountId parameter description DOCUMENT_HERE
 	 * @param orderId Unique identifier of the order.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
 	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
-	 * @param discount Properties of all applied discounts for an associated cart, order, or product. 
+	 * @param discount Properties of all applied discounts for an associated cart, order, or product.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.discounts.AppliedDiscount

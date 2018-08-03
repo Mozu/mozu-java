@@ -35,6 +35,19 @@ public class AttributeSearchSettings implements Serializable
 	}
 
 	/**
+	 * customWeightInStorefrontSearch ApiType DOCUMENT_HERE
+	 */
+	protected  Boolean customWeightInStorefrontSearch;
+
+	public Boolean getCustomWeightInStorefrontSearch() {
+		return this.customWeightInStorefrontSearch;
+	}
+
+	public void setCustomWeightInStorefrontSearch(Boolean customWeightInStorefrontSearch) {
+		this.customWeightInStorefrontSearch = customWeightInStorefrontSearch;
+	}
+
+	/**
 	 * Specifies whether to create a case-sensitive Solr search index. The default is .
 	 */
 	protected  Boolean indexValueWithCase;

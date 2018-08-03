@@ -42,7 +42,7 @@ public class PublishingScope implements Serializable
 	}
 
 	/**
-	 * The unique identifier of the product publish set.You can use this field to perform operations on all the pending product changes assigned to a publish set. For example, when you perform the PublishDrafts operation, you can specify the publish set that the pending product changes are assigned to in order to publish all of the pending changes. If you specify a publishSetCode, the respecting operation is performed on all pending product changes assigned to the publish set, even if you specify individual productCodes.
+	 * The unique identifier of the product publish set.You can use this field to perform operations on all the pending product changes assigned to a publish set. For example, when you perform the PublishDrafts operation, you can specify the publish set that the pending product changes are assigned to in order to publish all of the pending changes. If you specify a publishSetCode, the respecting operation is performed on all pending product changes assigned to the publish set, even if you specify individual prod
 	 */
 	protected  String publishSetCode;
 

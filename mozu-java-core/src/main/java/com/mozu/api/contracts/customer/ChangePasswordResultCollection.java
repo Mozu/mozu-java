@@ -16,7 +16,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.customer.ChangePasswordResult;
 
 /**
- *	Mozu.Customer.Contracts.ChangePasswordResultCollection ApiType DOCUMENT_HERE 
+ *	Mozu.Customer.Contracts.ChangePasswordResultCollection ApiType DOCUMENT_HERE
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ChangePasswordResultCollection implements Serializable

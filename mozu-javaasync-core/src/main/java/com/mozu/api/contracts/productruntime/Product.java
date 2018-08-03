@@ -167,6 +167,17 @@ public class Product implements Serializable
 	}
 
 	/**
+	 * locationsInStock ApiType DOCUMENT_HERE
+	 */
+	protected List<String> locationsInStock;
+	public List<String> getLocationsInStock() {
+		return this.locationsInStock;
+	}
+	public void setLocationsInStock(List<String> locationsInStock) {
+		this.locationsInStock = locationsInStock;
+	}
+
+	/**
 	 * The manufacturer's part number for the product.
 	 */
 	protected  String mfgPartNumber;

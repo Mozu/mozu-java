@@ -16,7 +16,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.commerceruntime.orders.OrderReturnableItem;
 
 /**
- *	Mozu.CommerceRuntime.Contracts.Orders.OrderReturnableItemCollection ApiType DOCUMENT_HERE 
+ *	Mozu.CommerceRuntime.Contracts.Orders.OrderReturnableItemCollection ApiType DOCUMENT_HERE
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class OrderReturnableItemCollection implements Serializable

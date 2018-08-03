@@ -367,7 +367,7 @@ public class CustomerAccountClient {
 	 * client.executeRequest();
 	 * CustomerAuthTicket customerAuthTicket = client.Result();
 	 * </code></pre></p>
-	 * @param accountAndAuthInfo The authentication information associated with a customer account.Â The data includes the account properties such as the name, username, authorization access, and email address, the required password to match, and indicates if the account was imported from a third party resource. 
+	 * @param accountAndAuthInfo The authentication information associated with a customer account.Â The data includes the account properties such as the name, username, authorization access, and email address, the required password to match, and indicates if the account was imported from a third party resource.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerAuthTicket>
 	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerAccountAndAuthInfo
@@ -386,7 +386,7 @@ public class CustomerAccountClient {
 	 * CustomerAuthTicket customerAuthTicket = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param accountAndAuthInfo The authentication information associated with a customer account.Â The data includes the account properties such as the name, username, authorization access, and email address, the required password to match, and indicates if the account was imported from a third party resource. 
+	 * @param accountAndAuthInfo The authentication information associated with a customer account.Â The data includes the account properties such as the name, username, authorization access, and email address, the required password to match, and indicates if the account was imported from a third party resource.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerAuthTicket>
 	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerAccountAndAuthInfo
@@ -412,7 +412,7 @@ public class CustomerAccountClient {
 	 * client.executeRequest();
 	 * CustomerAccountCollection customerAccountCollection = client.Result();
 	 * </code></pre></p>
-	 * @param customers The authentication information associated with a customer account.Â The data includes the account properties such as the name, username, authorization access, and email address, the required password to match, and indicates if the account was imported from a third party resource. 
+	 * @param customers The authentication information associated with a customer account.Â The data includes the account properties such as the name, username, authorization access, and email address, the required password to match, and indicates if the account was imported from a third party resource.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerAccountCollection>
 	 * @see com.mozu.api.contracts.customer.CustomerAccountCollection
 	 * @see com.mozu.api.contracts.customer.CustomerAccountAndAuthInfo
@@ -431,7 +431,7 @@ public class CustomerAccountClient {
 	 * CustomerAccountCollection customerAccountCollection = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param customers The authentication information associated with a customer account.Â The data includes the account properties such as the name, username, authorization access, and email address, the required password to match, and indicates if the account was imported from a third party resource. 
+	 * @param customers The authentication information associated with a customer account.Â The data includes the account properties such as the name, username, authorization access, and email address, the required password to match, and indicates if the account was imported from a third party resource.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerAccountCollection>
 	 * @see com.mozu.api.contracts.customer.CustomerAccountCollection
 	 * @see com.mozu.api.contracts.customer.CustomerAccountAndAuthInfo

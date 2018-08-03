@@ -14,7 +14,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 
 /**
- *	Mozu.SiteSettings.Order.Contracts.CartSettings ApiType DOCUMENT_HERE 
+ *	Mozu.SiteSettings.Order.Contracts.CartSettings ApiType DOCUMENT_HERE
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CartSettings implements Serializable

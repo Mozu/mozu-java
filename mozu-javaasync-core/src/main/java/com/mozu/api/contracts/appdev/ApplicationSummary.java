@@ -49,7 +49,7 @@ public class ApplicationSummary implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.ApplicationSummary applicationId ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.ApplicationSummary applicationId ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  Integer applicationId;
 
@@ -62,7 +62,7 @@ public class ApplicationSummary implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.ApplicationSummary applicationNamespace ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.ApplicationSummary applicationNamespace ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  String applicationNamespace;
 
@@ -75,7 +75,7 @@ public class ApplicationSummary implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.ApplicationSummary applicationStatusId ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.ApplicationSummary applicationStatusId ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  Integer applicationStatusId;
 
@@ -88,7 +88,7 @@ public class ApplicationSummary implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.ApplicationSummary applicationStatusName ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.ApplicationSummary applicationStatusName ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  String applicationStatusName;
 
@@ -101,7 +101,7 @@ public class ApplicationSummary implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.ApplicationSummary applicationTypeId ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.ApplicationSummary applicationTypeId ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  Integer applicationTypeId;
 
@@ -114,7 +114,7 @@ public class ApplicationSummary implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.ApplicationSummary appSchemeVersion ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.ApplicationSummary appSchemeVersion ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  Byte appSchemeVersion;
 
@@ -127,7 +127,7 @@ public class ApplicationSummary implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.ApplicationSummary hasVersions ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.ApplicationSummary hasVersions ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  Boolean hasVersions;
 
@@ -166,7 +166,7 @@ public class ApplicationSummary implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.ApplicationSummary parentName ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.ApplicationSummary parentName ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  String parentName;
 
@@ -179,7 +179,7 @@ public class ApplicationSummary implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.ApplicationSummary releasePackageId ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.ApplicationSummary releasePackageId ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  Integer releasePackageId;
 
@@ -192,7 +192,7 @@ public class ApplicationSummary implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.ApplicationSummary releasePackageName ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.ApplicationSummary releasePackageName ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  String releasePackageName;
 
@@ -205,7 +205,7 @@ public class ApplicationSummary implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.ApplicationSummary updateAvailable ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.ApplicationSummary updateAvailable ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  Boolean updateAvailable;
 
@@ -231,7 +231,7 @@ public class ApplicationSummary implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.ApplicationSummary applicationVersion ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.ApplicationSummary applicationVersion ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  AppVersion applicationVersion;
 

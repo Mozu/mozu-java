@@ -18,7 +18,7 @@ import com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule;
 import com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule;
 
 /**
- *	Mozu.ShippingAdmin.Contracts.Profile.ShippingProfile ApiType DOCUMENT_HERE 
+ *	Mozu.ShippingAdmin.Contracts.Profile.ShippingProfile ApiType DOCUMENT_HERE
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ShippingProfile implements Serializable

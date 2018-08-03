@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Mozu.Customer.Contracts.ChangePasswordResult ApiType DOCUMENT_HERE 
+ *	Mozu.Customer.Contracts.ChangePasswordResult ApiType DOCUMENT_HERE
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ChangePasswordResult implements Serializable

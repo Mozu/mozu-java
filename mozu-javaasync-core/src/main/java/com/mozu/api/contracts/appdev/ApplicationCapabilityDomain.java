@@ -35,7 +35,7 @@ public class ApplicationCapabilityDomain implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.ApplicationCapabilityDomain applicationCapabilityTypeId ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.ApplicationCapabilityDomain applicationCapabilityTypeId ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  Integer applicationCapabilityTypeId;
 

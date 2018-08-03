@@ -28,7 +28,7 @@ public class PriceListEntry implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Mozu.ProductAdmin.Contracts.PriceListEntry cost ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.ProductAdmin.Contracts.PriceListEntry cost ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  Double cost;
 
@@ -54,7 +54,7 @@ public class PriceListEntry implements Serializable
 	}
 
 	/**
-	 * The localized currency code for the monetary amount. 
+	 * The localized currency code for the monetary amount.
 	 */
 	protected  String currencyCode;
 
@@ -67,7 +67,7 @@ public class PriceListEntry implements Serializable
 	}
 
 	/**
-	 * Indicates if the discount is restricted. If true, the system cannot apply any discounts to this product. Discount restrictions are defined at the master catalog level. Client administrators cannot override discount restrictions at the catalog level, but they can limit the restriction to a defined time interval.For price list entries, specifies whether discounts are restricted for the specific entry if  is set to .Refer to [Discount Restriction](../../../guides/catalog/price-lists.htm#discountrestriction) in the Price Lists guides topic for more information.
+	 * Indicates if the discount is restricted. If true, the system cannot apply any discounts to this product. Discount restrictions are defined at the master catalog level. Client administrators cannot override discount restrictions at the catalog level, but they can limit the restriction to a defined time interval.For price list entries, specifies whether discounts are restricted for the specific entry if  is set to .Refer to [Discount Restriction](../../../guides/catalog/price-lists.htm#discountrestriction)
 	 */
 	protected  Boolean discountsRestricted;
 

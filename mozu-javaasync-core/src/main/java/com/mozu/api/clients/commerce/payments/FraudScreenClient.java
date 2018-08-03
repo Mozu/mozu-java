@@ -19,7 +19,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * commerce/payments/fraudscreen related resources. DOCUMENT_HERE 
+ * commerce/payments/fraudscreen related resources. DOCUMENT_HERE
  * </summary>
  */
 public class FraudScreenClient {
@@ -32,7 +32,7 @@ public class FraudScreenClient {
 	 * client.executeRequest();
 	 * FraudScreen fraudScreen = client.Result();
 	 * </code></pre></p>
-	 * @param request Mozu.PaymentService.Contracts.Request.FraudScreenRequest ApiType DOCUMENT_HERE 
+	 * @param request Mozu.PaymentService.Contracts.Request.FraudScreenRequest ApiType DOCUMENT_HERE
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.paymentservice.response.FraudScreen>
 	 * @see com.mozu.api.contracts.paymentservice.response.FraudScreen
 	 * @see com.mozu.api.contracts.paymentservice.request.FraudScreenRequest
@@ -51,7 +51,7 @@ public class FraudScreenClient {
 	 * FraudScreen fraudScreen = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param request Mozu.PaymentService.Contracts.Request.FraudScreenRequest ApiType DOCUMENT_HERE 
+	 * @param request Mozu.PaymentService.Contracts.Request.FraudScreenRequest ApiType DOCUMENT_HERE
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.paymentservice.response.FraudScreen>
 	 * @see com.mozu.api.contracts.paymentservice.response.FraudScreen
 	 * @see com.mozu.api.contracts.paymentservice.request.FraudScreenRequest

@@ -25,7 +25,7 @@ public class ApplicationEntitlement implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Mozu.AppDev.Contracts.ApplicationEntitlement appKey ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.ApplicationEntitlement appKey ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  String appKey;
 
@@ -48,7 +48,7 @@ public class ApplicationEntitlement implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.ApplicationEntitlement applicationId ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.ApplicationEntitlement applicationId ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  Integer applicationId;
 
@@ -71,7 +71,7 @@ public class ApplicationEntitlement implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.ApplicationEntitlement applicationName ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.ApplicationEntitlement applicationName ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  String applicationName;
 
@@ -84,7 +84,7 @@ public class ApplicationEntitlement implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.ApplicationEntitlement applicationStatusId ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.ApplicationEntitlement applicationStatusId ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  String applicationStatusId;
 
@@ -97,7 +97,7 @@ public class ApplicationEntitlement implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.ApplicationEntitlement applicationVersion ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.ApplicationEntitlement applicationVersion ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  String applicationVersion;
 
@@ -123,7 +123,7 @@ public class ApplicationEntitlement implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.ApplicationEntitlement devAccountId ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.ApplicationEntitlement devAccountId ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  Integer devAccountId;
 
@@ -166,7 +166,7 @@ public class ApplicationEntitlement implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.ApplicationEntitlement installedAppsApplicationId ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.ApplicationEntitlement installedAppsApplicationId ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  String installedAppsApplicationId;
 
@@ -179,7 +179,7 @@ public class ApplicationEntitlement implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.ApplicationEntitlement installedByFirstName ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.ApplicationEntitlement installedByFirstName ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  String installedByFirstName;
 
@@ -192,7 +192,7 @@ public class ApplicationEntitlement implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.ApplicationEntitlement installedByLastName ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.ApplicationEntitlement installedByLastName ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  String installedByLastName;
 
@@ -205,7 +205,7 @@ public class ApplicationEntitlement implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.ApplicationEntitlement installedDate ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.ApplicationEntitlement installedDate ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  DateTime installedDate;
 
@@ -218,7 +218,7 @@ public class ApplicationEntitlement implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.ApplicationEntitlement packageId ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.ApplicationEntitlement packageId ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  Integer packageId;
 
@@ -231,7 +231,7 @@ public class ApplicationEntitlement implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.ApplicationEntitlement packageName ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.ApplicationEntitlement packageName ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  String packageName;
 
@@ -264,7 +264,7 @@ public class ApplicationEntitlement implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.ApplicationEntitlement tenantName ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.ApplicationEntitlement tenantName ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  String tenantName;
 

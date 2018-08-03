@@ -16,7 +16,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.appdev.Package;
 
 /**
- *	Mozu.AppDev.Contracts.PackageCollection ApiType DOCUMENT_HERE 
+ *	Mozu.AppDev.Contracts.PackageCollection ApiType DOCUMENT_HERE
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PackageCollection implements Serializable

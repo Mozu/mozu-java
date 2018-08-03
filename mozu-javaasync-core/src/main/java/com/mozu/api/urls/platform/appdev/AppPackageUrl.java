@@ -75,7 +75,7 @@ public class AppPackageUrl
 
 	/**
 	 * Get Resource Url for GetApplicationSummaryChildren
-	 * @param appId appId parameter description DOCUMENT_HERE 
+	 * @param appId appId parameter description DOCUMENT_HERE
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getApplicationSummaryChildrenUrl(String appId)
@@ -107,7 +107,7 @@ public class AppPackageUrl
 
 	/**
 	 * Get Resource Url for ClonePackage
-	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}. 
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
 	 * @param packageName 
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
@@ -149,7 +149,7 @@ public class AppPackageUrl
 
 	/**
 	 * Get Resource Url for UpdatePackage
-	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}. 
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */

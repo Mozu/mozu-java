@@ -53,7 +53,7 @@ public class Document implements Serializable
 	}
 
 	/**
-	 * Fully qualified name of the document type. 
+	 * Fully qualified name of the document type.
 	 */
 	protected  String documentTypeFQN;
 
@@ -152,7 +152,7 @@ public class Document implements Serializable
 	}
 
 	/**
-	 * Mozu.Content.Contracts.Document activeDateRange ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.Content.Contracts.Document activeDateRange ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  ActiveDateRange activeDateRange;
 

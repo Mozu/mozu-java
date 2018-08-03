@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Properties for the document installation package and data. This information details the installation of document content and files within the site. 
+ *	Properties for the document installation package and data. This information details the installation of document content and files within the site.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DocumentInstallation implements Serializable
@@ -22,7 +22,7 @@ public class DocumentInstallation implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Fully qualified name of the document type. 
+	 * Fully qualified name of the document type.
 	 */
 	protected  String documentTypeFQN;
 

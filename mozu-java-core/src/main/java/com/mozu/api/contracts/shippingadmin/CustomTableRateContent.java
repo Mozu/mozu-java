@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Mozu.ShippingAdmin.Contracts.CustomTableRateContent ApiType DOCUMENT_HERE 
+ *	Mozu.ShippingAdmin.Contracts.CustomTableRateContent ApiType DOCUMENT_HERE
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CustomTableRateContent implements Serializable

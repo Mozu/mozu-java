@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Mozu.Content.Contracts.PublishSetSummary ApiType DOCUMENT_HERE 
+ *	Mozu.Content.Contracts.PublishSetSummary ApiType DOCUMENT_HERE
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PublishSetSummary implements Serializable

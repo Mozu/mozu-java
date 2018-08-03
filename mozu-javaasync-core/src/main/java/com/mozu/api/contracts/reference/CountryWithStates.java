@@ -38,7 +38,7 @@ public class CountryWithStates implements Serializable
 	}
 
 	/**
-	 * The state code, name, and tags, if applicable. 
+	 * The state code, name, and tags, if applicable.
 	 */
 	protected List<State> states;
 	public List<State> getStates() {

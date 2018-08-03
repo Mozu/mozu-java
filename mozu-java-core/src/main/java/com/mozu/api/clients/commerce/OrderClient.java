@@ -311,18 +311,17 @@ public class OrderClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> priceOrderClient(com.mozu.api.contracts.commerceruntime.orders.Order order, Boolean refreshShipping) throws Exception
 	{
-		return priceOrderClient( order,  refreshShipping,  null,  null);
+		return priceOrderClient( order,  refreshShipping,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=PriceOrderClient( order,  refreshShipping,  couponCodeToApply,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=PriceOrderClient( order,  refreshShipping,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Order order = client.Result();
 	 * </code></pre></p>
-	 * @param couponCodeToApply 
 	 * @param refreshShipping 
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param order 
@@ -330,9 +329,9 @@ public class OrderClient {
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 */
-	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> priceOrderClient(com.mozu.api.contracts.commerceruntime.orders.Order order, Boolean refreshShipping, String couponCodeToApply, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> priceOrderClient(com.mozu.api.contracts.commerceruntime.orders.Order order, Boolean refreshShipping, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.OrderUrl.priceOrderUrl(couponCodeToApply, refreshShipping, responseFields);
+		MozuUrl url = com.mozu.api.urls.commerce.OrderUrl.priceOrderUrl(refreshShipping, responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.orders.Order.class;
 		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order>) MozuClientFactory.getInstance(clz);
@@ -400,9 +399,9 @@ public class OrderClient {
 	 * client.executeRequest();
 	 * Order order = client.Result();
 	 * </code></pre></p>
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param discountId discountId parameter description DOCUMENT_HERE
 	 * @param orderId Unique identifier of the order.
-	 * @param discount Properties of all applied discounts for an associated cart, order, or product. 
+	 * @param discount Properties of all applied discounts for an associated cart, order, or product.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.discounts.AppliedDiscount
@@ -420,12 +419,12 @@ public class OrderClient {
 	 * client.executeRequest();
 	 * Order order = client.Result();
 	 * </code></pre></p>
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param discountId discountId parameter description DOCUMENT_HERE
 	 * @param orderId Unique identifier of the order.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
 	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
-	 * @param discount Properties of all applied discounts for an associated cart, order, or product. 
+	 * @param discount Properties of all applied discounts for an associated cart, order, or product.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.discounts.AppliedDiscount

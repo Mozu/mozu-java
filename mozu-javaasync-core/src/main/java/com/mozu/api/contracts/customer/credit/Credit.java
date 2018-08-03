@@ -88,7 +88,7 @@ public class Credit implements Serializable
 	}
 
 	/**
-	 * customCreditType ApiType DOCUMENT_HERE 
+	 * customCreditType ApiType DOCUMENT_HERE
 	 */
 	protected  String customCreditType;
 

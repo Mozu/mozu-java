@@ -100,7 +100,7 @@ public class CustomerAuditEntry implements Serializable
 	}
 
 	/**
-	 * The path of the field value that was changed, for example 
+	 * The path of the field value that was changed, for example
 	 */
 	protected  String fieldPath;
 

@@ -32,7 +32,7 @@ public class InstalledApplicationsClient {
 	 * client.executeRequest();
 	 * Application application = client.Result();
 	 * </code></pre></p>
-	 * @param appId appId parameter description DOCUMENT_HERE 
+	 * @param appId appId parameter description DOCUMENT_HERE
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.installedapplications.Application>
 	 * @see com.mozu.api.contracts.installedapplications.Application
 	 */
@@ -49,7 +49,7 @@ public class InstalledApplicationsClient {
 	 * client.executeRequest();
 	 * Application application = client.Result();
 	 * </code></pre></p>
-	 * @param appId appId parameter description DOCUMENT_HERE 
+	 * @param appId appId parameter description DOCUMENT_HERE
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.installedapplications.Application>
 	 * @see com.mozu.api.contracts.installedapplications.Application
@@ -74,7 +74,7 @@ public class InstalledApplicationsClient {
 	 * client.executeRequest();
 	 * Application application = client.Result();
 	 * </code></pre></p>
-	 * @param appId appId parameter description DOCUMENT_HERE 
+	 * @param appId appId parameter description DOCUMENT_HERE
 	 * @param application Properties of an app installed in a tenant.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.installedapplications.Application>
 	 * @see com.mozu.api.contracts.installedapplications.Application
@@ -93,7 +93,7 @@ public class InstalledApplicationsClient {
 	 * client.executeRequest();
 	 * Application application = client.Result();
 	 * </code></pre></p>
-	 * @param appId appId parameter description DOCUMENT_HERE 
+	 * @param appId appId parameter description DOCUMENT_HERE
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param application Properties of an app installed in a tenant.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.installedapplications.Application>

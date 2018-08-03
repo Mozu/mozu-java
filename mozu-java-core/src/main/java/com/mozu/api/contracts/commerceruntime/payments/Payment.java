@@ -16,7 +16,9 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.commerceruntime.payments.BillingInfo;
 import com.mozu.api.contracts.commerceruntime.commerce.ChangeMessage;
+import com.mozu.api.contracts.commerceruntime.payments.PaymentActionTarget;
 import com.mozu.api.contracts.commerceruntime.payments.PaymentInteraction;
+import com.mozu.api.contracts.commerceruntime.payments.SubPayment;
 
 /**
  *	Properties of a payment transaction submitted for an order.
@@ -198,12 +200,36 @@ public class Payment implements Serializable
 		this.data = data;
 	}
 
+	/**
+	 * groupId ApiType DOCUMENT_HERE
+	 */
+	protected  PaymentActionTarget groupId;
+
+	public PaymentActionTarget getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(PaymentActionTarget groupId) {
+		this.groupId = groupId;
+	}
+
 	protected List<PaymentInteraction> interactions;
 	public List<PaymentInteraction> getInteractions() {
 		return this.interactions;
 	}
 	public void setInteractions(List<PaymentInteraction> interactions) {
 		this.interactions = interactions;
+	}
+
+	/**
+	 * subPayments ApiType DOCUMENT_HERE
+	 */
+	protected List<SubPayment> subPayments;
+	public List<SubPayment> getSubPayments() {
+		return this.subPayments;
+	}
+	public void setSubPayments(List<SubPayment> subPayments) {
+		this.subPayments = subPayments;
 	}
 
 	private void writeObject(java.io.ObjectOutputStream out) throws IOException {

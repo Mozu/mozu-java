@@ -86,6 +86,19 @@ public class GatewayDefinition implements Serializable
 		this.testServiceURL = testServiceURL;
 	}
 
+	/**
+	 * administationUi ApiType DOCUMENT_HERE
+	 */
+	protected transient com.fasterxml.jackson.databind.JsonNode administationUi;
+
+	public com.fasterxml.jackson.databind.JsonNode getAdministationUi() {
+		return this.administationUi;
+	}
+
+	public void setAdministationUi(com.fasterxml.jackson.databind.JsonNode administationUi) {
+		this.administationUi = administationUi;
+	}
+
 	protected List<GatewayCredentialFieldDefinition> credentialDefinitions;
 	public List<GatewayCredentialFieldDefinition> getCredentialDefinitions() {
 		return this.credentialDefinitions;
@@ -112,5 +125,21 @@ public class GatewayDefinition implements Serializable
 		this.supportedCards = supportedCards;
 	}
 
+	private void writeObject(java.io.ObjectOutputStream out) throws IOException {
+		out.defaultWriteObject();
+		if(administationUi == null){
+			out.writeBoolean(false);
+		} else {
+			out.writeBoolean(true);
+			new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonGenerator.Feature.AUTO_CLOSE_TARGET, false).writeValue(out, administationUi);
+		}
+	}
+
+	private void readObject(java.io.ObjectInputStream in) throws IOException, ClassNotFoundException {
+		in.defaultReadObject();
+		if(in.readBoolean()){
+			this.administationUi = new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonParser.Feature.AUTO_CLOSE_SOURCE, false).readValue(in, com.fasterxml.jackson.databind.JsonNode.class);
+		}
+	}
 
 }

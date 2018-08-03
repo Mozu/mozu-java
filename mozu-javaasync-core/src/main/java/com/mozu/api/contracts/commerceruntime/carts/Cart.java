@@ -16,6 +16,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.commerceruntime.carts.CartMessage;
 import com.mozu.api.contracts.commerceruntime.commerce.ChangeMessage;
+import com.mozu.api.contracts.commerceruntime.commerce.ThresholdMessage;
 import com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty;
 import com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo;
 import com.mozu.api.contracts.commerceruntime.discounts.InvalidCoupon;
@@ -43,7 +44,7 @@ public class Cart implements Serializable
 	}
 
 	/**
-	 * Array list of coupon codes associated with a shopping cart and the associated order. These codes are entered by a shopper when proceeding to checkout. 
+	 * Array list of coupon codes associated with a shopping cart and the associated order. These codes are entered by a shopper when proceeding to checkout.
 	 */
 	protected List<String> couponCodes;
 	public List<String> getCouponCodes() {
@@ -407,6 +408,17 @@ public class Cart implements Serializable
 	}
 
 	/**
+	 * discountThresholdMessages ApiType DOCUMENT_HERE
+	 */
+	protected List<ThresholdMessage> discountThresholdMessages;
+	public List<ThresholdMessage> getDiscountThresholdMessages() {
+		return this.discountThresholdMessages;
+	}
+	public void setDiscountThresholdMessages(List<ThresholdMessage> discountThresholdMessages) {
+		this.discountThresholdMessages = discountThresholdMessages;
+	}
+
+	/**
 	 * Extra properties (key-value pairs) that extend the primary object. Think of this as a property bag of string keys and string values.
 	 */
 	protected List<ExtendedProperty> extendedProperties;
@@ -455,7 +467,7 @@ public class Cart implements Serializable
 	}
 
 	/**
-	 * suggestedDiscounts ApiType DOCUMENT_HERE 
+	 * suggestedDiscounts ApiType DOCUMENT_HERE
 	 */
 	protected List<SuggestedDiscount> suggestedDiscounts;
 	public List<SuggestedDiscount> getSuggestedDiscounts() {

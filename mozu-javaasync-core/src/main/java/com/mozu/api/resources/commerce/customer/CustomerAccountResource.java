@@ -516,7 +516,7 @@ public class CustomerAccountResource {
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CustomerAuthTicket customerAuthTicket = customeraccount.addAccountAndLogin( accountAndAuthInfo);
 	 * </code></pre></p>
-	 * @param accountAndAuthInfo The authentication information associated with a customer account.Â The data includes the account properties such as the name, username, authorization access, and email address, the required password to match, and indicates if the account was imported from a third party resource. 
+	 * @param accountAndAuthInfo The authentication information associated with a customer account.Â The data includes the account properties such as the name, username, authorization access, and email address, the required password to match, and indicates if the account was imported from a third party resource.
 	 * @return com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerAccountAndAuthInfo
@@ -533,7 +533,7 @@ public class CustomerAccountResource {
 	 *	CountDownLatch latch = customeraccount.addAccountAndLogin( accountAndAuthInfo, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param accountAndAuthInfo The authentication information associated with a customer account.Â The data includes the account properties such as the name, username, authorization access, and email address, the required password to match, and indicates if the account was imported from a third party resource. 
+	 * @param accountAndAuthInfo The authentication information associated with a customer account.Â The data includes the account properties such as the name, username, authorization access, and email address, the required password to match, and indicates if the account was imported from a third party resource.
 	 * @return com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerAccountAndAuthInfo
@@ -550,7 +550,7 @@ public class CustomerAccountResource {
 	 *	CustomerAuthTicket customerAuthTicket = customeraccount.addAccountAndLogin( accountAndAuthInfo,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param accountAndAuthInfo The authentication information associated with a customer account.Â The data includes the account properties such as the name, username, authorization access, and email address, the required password to match, and indicates if the account was imported from a third party resource. 
+	 * @param accountAndAuthInfo The authentication information associated with a customer account.Â The data includes the account properties such as the name, username, authorization access, and email address, the required password to match, and indicates if the account was imported from a third party resource.
 	 * @return com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerAccountAndAuthInfo
@@ -572,7 +572,7 @@ public class CustomerAccountResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param accountAndAuthInfo The authentication information associated with a customer account.Â The data includes the account properties such as the name, username, authorization access, and email address, the required password to match, and indicates if the account was imported from a third party resource. 
+	 * @param accountAndAuthInfo The authentication information associated with a customer account.Â The data includes the account properties such as the name, username, authorization access, and email address, the required password to match, and indicates if the account was imported from a third party resource.
 	 * @return com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerAccountAndAuthInfo
@@ -591,7 +591,7 @@ public class CustomerAccountResource {
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CustomerAccountCollection customerAccountCollection = customeraccount.addAccounts( customers);
 	 * </code></pre></p>
-	 * @param customers The authentication information associated with a customer account.Â The data includes the account properties such as the name, username, authorization access, and email address, the required password to match, and indicates if the account was imported from a third party resource. 
+	 * @param customers The authentication information associated with a customer account.Â The data includes the account properties such as the name, username, authorization access, and email address, the required password to match, and indicates if the account was imported from a third party resource.
 	 * @return com.mozu.api.contracts.customer.CustomerAccountCollection
 	 * @see com.mozu.api.contracts.customer.CustomerAccountCollection
 	 * @see com.mozu.api.contracts.customer.CustomerAccountAndAuthInfo
@@ -608,7 +608,7 @@ public class CustomerAccountResource {
 	 *	CountDownLatch latch = customeraccount.addAccounts( customers, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param customers The authentication information associated with a customer account.Â The data includes the account properties such as the name, username, authorization access, and email address, the required password to match, and indicates if the account was imported from a third party resource. 
+	 * @param customers The authentication information associated with a customer account.Â The data includes the account properties such as the name, username, authorization access, and email address, the required password to match, and indicates if the account was imported from a third party resource.
 	 * @return com.mozu.api.contracts.customer.CustomerAccountCollection
 	 * @see com.mozu.api.contracts.customer.CustomerAccountCollection
 	 * @see com.mozu.api.contracts.customer.CustomerAccountAndAuthInfo
@@ -625,7 +625,7 @@ public class CustomerAccountResource {
 	 *	CustomerAccountCollection customerAccountCollection = customeraccount.addAccounts( customers,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param customers The authentication information associated with a customer account.Â The data includes the account properties such as the name, username, authorization access, and email address, the required password to match, and indicates if the account was imported from a third party resource. 
+	 * @param customers The authentication information associated with a customer account.Â The data includes the account properties such as the name, username, authorization access, and email address, the required password to match, and indicates if the account was imported from a third party resource.
 	 * @return com.mozu.api.contracts.customer.CustomerAccountCollection
 	 * @see com.mozu.api.contracts.customer.CustomerAccountCollection
 	 * @see com.mozu.api.contracts.customer.CustomerAccountAndAuthInfo
@@ -647,7 +647,7 @@ public class CustomerAccountResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param customers The authentication information associated with a customer account.Â The data includes the account properties such as the name, username, authorization access, and email address, the required password to match, and indicates if the account was imported from a third party resource. 
+	 * @param customers The authentication information associated with a customer account.Â The data includes the account properties such as the name, username, authorization access, and email address, the required password to match, and indicates if the account was imported from a third party resource.
 	 * @return com.mozu.api.contracts.customer.CustomerAccountCollection
 	 * @see com.mozu.api.contracts.customer.CustomerAccountCollection
 	 * @see com.mozu.api.contracts.customer.CustomerAccountAndAuthInfo

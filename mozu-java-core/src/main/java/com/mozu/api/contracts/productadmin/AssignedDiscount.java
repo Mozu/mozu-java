@@ -14,7 +14,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 
 /**
- *	Mozu.ProductAdmin.Contracts.AssignedDiscount ApiType DOCUMENT_HERE 
+ *	Mozu.ProductAdmin.Contracts.AssignedDiscount ApiType DOCUMENT_HERE
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AssignedDiscount implements Serializable

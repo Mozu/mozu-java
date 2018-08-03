@@ -87,7 +87,7 @@ public class LocationInventoryResource {
 	 *	LocationInventory locationinventory = new LocationInventory();
 	 *	LocationInventory locationInventory = locationinventory.getLocationInventory( productCode,  locationCode);
 	 * </code></pre></p>
-	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param locationCode The unique, user-defined code that identifies a location.
 	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @return com.mozu.api.contracts.productadmin.LocationInventory
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
@@ -103,7 +103,7 @@ public class LocationInventoryResource {
 	 *	LocationInventory locationinventory = new LocationInventory();
 	 *	LocationInventory locationInventory = locationinventory.getLocationInventory( productCode,  locationCode,  responseFields);
 	 * </code></pre></p>
-	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param locationCode The unique, user-defined code that identifies a location.
 	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.productadmin.LocationInventory
@@ -184,7 +184,7 @@ public class LocationInventoryResource {
 	 *	LocationInventory locationinventory = new LocationInventory();
 	 *	locationinventory.deleteLocationInventory( productCode,  locationCode);
 	 * </code></pre></p>
-	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param locationCode The unique, user-defined code that identifies a location.
 	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @return 
 	 */

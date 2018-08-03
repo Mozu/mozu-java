@@ -17,7 +17,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * commerce/payments/cards related resources. DOCUMENT_HERE 
+ * commerce/payments/cards related resources. DOCUMENT_HERE
  * </summary>
  */
 public class PublicCardClient {
@@ -30,7 +30,7 @@ public class PublicCardClient {
 	 * client.executeRequest();
 	 * SyncResponse syncResponse = client.Result();
 	 * </code></pre></p>
-	 * @param request Mozu.PaymentService.Contracts.PublicCard ApiType DOCUMENT_HERE 
+	 * @param request Mozu.PaymentService.Contracts.PublicCard ApiType DOCUMENT_HERE
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.paymentservice.response.SyncResponse>
 	 * @see com.mozu.api.contracts.paymentservice.response.SyncResponse
 	 * @see com.mozu.api.contracts.paymentservice.PublicCard
@@ -49,7 +49,7 @@ public class PublicCardClient {
 	 * SyncResponse syncResponse = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param request Mozu.PaymentService.Contracts.PublicCard ApiType DOCUMENT_HERE 
+	 * @param request Mozu.PaymentService.Contracts.PublicCard ApiType DOCUMENT_HERE
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.paymentservice.response.SyncResponse>
 	 * @see com.mozu.api.contracts.paymentservice.response.SyncResponse
 	 * @see com.mozu.api.contracts.paymentservice.PublicCard
@@ -76,7 +76,7 @@ public class PublicCardClient {
 	 * SyncResponse syncResponse = client.Result();
 	 * </code></pre></p>
 	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
-	 * @param request Mozu.PaymentService.Contracts.PublicCard ApiType DOCUMENT_HERE 
+	 * @param request Mozu.PaymentService.Contracts.PublicCard ApiType DOCUMENT_HERE
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.paymentservice.response.SyncResponse>
 	 * @see com.mozu.api.contracts.paymentservice.response.SyncResponse
 	 * @see com.mozu.api.contracts.paymentservice.PublicCard
@@ -96,7 +96,7 @@ public class PublicCardClient {
 	 * </code></pre></p>
 	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param request Mozu.PaymentService.Contracts.PublicCard ApiType DOCUMENT_HERE 
+	 * @param request Mozu.PaymentService.Contracts.PublicCard ApiType DOCUMENT_HERE
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.paymentservice.response.SyncResponse>
 	 * @see com.mozu.api.contracts.paymentservice.response.SyncResponse
 	 * @see com.mozu.api.contracts.paymentservice.PublicCard

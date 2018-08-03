@@ -16,7 +16,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.reference.CountryWithStates;
 
 /**
- *	The paged collection of country codes and their corresponding names. 
+ *	The paged collection of country codes and their corresponding names.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CountryWithStatesCollection implements Serializable

@@ -81,7 +81,7 @@ public class RefundResource {
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
 	 * @param refundId Unique ID of the refund.
-        
+
 	 * @return 
 	 */
 	public void resendRefundEmail(String orderId, String refundId) throws Exception

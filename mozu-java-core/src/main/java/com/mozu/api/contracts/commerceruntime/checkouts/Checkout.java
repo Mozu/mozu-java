@@ -16,6 +16,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.commerceruntime.orders.OrderAttribute;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.commerceruntime.fulfillment.Destination;
+import com.mozu.api.contracts.commerceruntime.commerce.ThresholdMessage;
 import com.mozu.api.contracts.commerceruntime.checkouts.CheckoutGrouping;
 import com.mozu.api.contracts.commerceruntime.discounts.InvalidCoupon;
 import com.mozu.api.contracts.commerceruntime.orders.OrderItem;
@@ -25,7 +26,7 @@ import com.mozu.api.contracts.commerceruntime.orders.ShopperNotes;
 import com.mozu.api.contracts.commerceruntime.discounts.SuggestedDiscount;
 
 /**
- *	Mozu.CommerceRuntime.Contracts.Checkouts.Checkout ApiType DOCUMENT_HERE 
+ *	Mozu.CommerceRuntime.Contracts.Checkouts.Checkout ApiType DOCUMENT_HERE
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Checkout implements Serializable
@@ -225,7 +226,7 @@ public class Checkout implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the source property, such as a catalog, discount, order, or email template.For a product field it will be the name of the field.For a category ID, must be a positive integer not greater than 2000000. By default,  auto-generates a category ID when categories are created. If you want to specify an ID during creation (which preserves category link relationships when migrating tenant data from one sandbox to another), you must also include the  query string in the endpoint. For example, . Then, use the  property to specify the desired category ID.For a product attribute it will be the Attribute FQN.For a document, the ID must be specified as a 32 character, case-insensitive, alphanumeric string. You can specify the ID as 32 sequential characters or as groups separated by dashes in the format 8-4-4-4-12. For example, or.For email templates, the ID must be one of the following values:			
+	 * Unique identifier of the source property, such as a catalog, discount, order, or email template.For a product field it will be the name of the field.For a category ID, must be a positive integer not greater than 2000000. By default,  auto-generates a category ID when categories are created. If you want to specify an ID during creation (which preserves category link relationships when migrating tenant data from one sandbox to another), you must also include the  query string in the endpoint. For example, .
 	 */
 	protected  String id;
 
@@ -624,6 +625,17 @@ public class Checkout implements Serializable
 	}
 
 	/**
+	 * discountThresholdMessages ApiType DOCUMENT_HERE
+	 */
+	protected List<ThresholdMessage> discountThresholdMessages;
+	public List<ThresholdMessage> getDiscountThresholdMessages() {
+		return this.discountThresholdMessages;
+	}
+	public void setDiscountThresholdMessages(List<ThresholdMessage> discountThresholdMessages) {
+		this.discountThresholdMessages = discountThresholdMessages;
+	}
+
+	/**
 	 * Groupings bundle items together that have the same fulfillment type and destination. Direct ship items going to the same destination are grouped together, in-store pickup items are grouped together, and gift card items are grouped together.
 	 */
 	protected List<CheckoutGrouping> groupings;
@@ -692,7 +704,7 @@ public class Checkout implements Serializable
 	}
 
 	/**
-	 * suggestedDiscounts ApiType DOCUMENT_HERE 
+	 * suggestedDiscounts ApiType DOCUMENT_HERE
 	 */
 	protected List<SuggestedDiscount> suggestedDiscounts;
 	public List<SuggestedDiscount> getSuggestedDiscounts() {

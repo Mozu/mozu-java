@@ -24,7 +24,7 @@ public class DiscountTarget implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * excludedCategoriesOperator ApiType DOCUMENT_HERE 
+	 * excludedCategoriesOperator ApiType DOCUMENT_HERE
 	 */
 	protected  String excludedCategoriesOperator;
 
@@ -37,7 +37,7 @@ public class DiscountTarget implements Serializable
 	}
 
 	/**
-	 * excludedCategoryIds ApiType DOCUMENT_HERE 
+	 * excludedCategoryIds ApiType DOCUMENT_HERE
 	 */
 	protected List<Integer> excludedCategoryIds;
 	public List<Integer> getExcludedCategoryIds() {
@@ -48,7 +48,7 @@ public class DiscountTarget implements Serializable
 	}
 
 	/**
-	 * excludedProductCodes ApiType DOCUMENT_HERE 
+	 * excludedProductCodes ApiType DOCUMENT_HERE
 	 */
 	protected List<String> excludedProductCodes;
 	public List<String> getExcludedProductCodes() {
@@ -59,7 +59,7 @@ public class DiscountTarget implements Serializable
 	}
 
 	/**
-	 * includeAllProducts ApiType DOCUMENT_HERE 
+	 * includeAllProducts ApiType DOCUMENT_HERE
 	 */
 	protected  Boolean includeAllProducts;
 
@@ -72,7 +72,7 @@ public class DiscountTarget implements Serializable
 	}
 
 	/**
-	 * includedCategoriesOperator ApiType DOCUMENT_HERE 
+	 * includedCategoriesOperator ApiType DOCUMENT_HERE
 	 */
 	protected  String includedCategoriesOperator;
 
@@ -85,7 +85,7 @@ public class DiscountTarget implements Serializable
 	}
 
 	/**
-	 * includedCategoryIds ApiType DOCUMENT_HERE 
+	 * includedCategoryIds ApiType DOCUMENT_HERE
 	 */
 	protected List<Integer> includedCategoryIds;
 	public List<Integer> getIncludedCategoryIds() {
@@ -96,7 +96,7 @@ public class DiscountTarget implements Serializable
 	}
 
 	/**
-	 * includedProductCodes ApiType DOCUMENT_HERE 
+	 * includedProductCodes ApiType DOCUMENT_HERE
 	 */
 	protected List<String> includedProductCodes;
 	public List<String> getIncludedProductCodes() {
@@ -107,7 +107,7 @@ public class DiscountTarget implements Serializable
 	}
 
 	/**
-	 * shippingMethods ApiType DOCUMENT_HERE 
+	 * shippingMethods ApiType DOCUMENT_HERE
 	 */
 	protected List<String> shippingMethods;
 	public List<String> getShippingMethods() {
@@ -118,7 +118,7 @@ public class DiscountTarget implements Serializable
 	}
 
 	/**
-	 * shippingZones ApiType DOCUMENT_HERE 
+	 * shippingZones ApiType DOCUMENT_HERE
 	 */
 	protected List<String> shippingZones;
 	public List<String> getShippingZones() {
@@ -129,7 +129,7 @@ public class DiscountTarget implements Serializable
 	}
 
 	/**
-	 * type ApiType DOCUMENT_HERE 
+	 * type ApiType DOCUMENT_HERE
 	 */
 	protected  String type;
 

@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Mozu.ProductRuntime.Contracts.PriceListNode ApiType DOCUMENT_HERE 
+ *	Mozu.ProductRuntime.Contracts.PriceListNode ApiType DOCUMENT_HERE
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PriceListNode implements Serializable

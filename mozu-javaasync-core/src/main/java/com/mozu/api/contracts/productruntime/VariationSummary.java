@@ -17,7 +17,7 @@ import com.mozu.api.contracts.productruntime.ProductInventoryInfo;
 import com.mozu.api.contracts.productruntime.VariationOption;
 
 /**
- *	Mozu.ProductRuntime.Contracts.VariationSummary ApiType DOCUMENT_HERE 
+ *	Mozu.ProductRuntime.Contracts.VariationSummary ApiType DOCUMENT_HERE
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class VariationSummary implements Serializable

@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.catalog.admin.PriceListResource;
 
 /** <summary>
- * Use the Price Lists resource to view and create price lists. You can use price lists to override the catalog pricing of products for specific customer segments and/or sites. You can override products' list price, sale price, advanced pricing information such as MSRP, cost, MAP, and the catalog price of any extras associated with the product in a price list. You can also restrict discounts from applying to the overridden product pricing in a price list. Refer to [Price Lists](../../../guides/catalog/price-lists.htm) in the Guides section for more information about price lists.
+ * Use the Price Lists resource to view and create price lists. You can use price lists to override the catalog pricing of products for specific customer segments and/or sites. You can override products' list price, sale price, advanced pricing information such as MSRP, cost, MAP, and the catalog price of any extras associated with the product in a price list. You can also restrict discounts from applying to the overridden product pricing in a price list. Refer to [Price Lists](../../../guides/catalog/price-
  * </summary>
  */
 public class PriceListFactory

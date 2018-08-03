@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Mozu.CommerceRuntime.Contracts.Returns.ReasonCollection ApiType DOCUMENT_HERE 
+ *	Mozu.CommerceRuntime.Contracts.Returns.ReasonCollection ApiType DOCUMENT_HERE
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ReasonCollection implements Serializable

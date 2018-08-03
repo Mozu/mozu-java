@@ -51,7 +51,7 @@ public class ApplicationAttribute implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.ApplicationAttribute isAppliedToBase ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.ApplicationAttribute isAppliedToBase ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  Boolean isAppliedToBase;
 
@@ -64,7 +64,7 @@ public class ApplicationAttribute implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.ApplicationAttribute packageId ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.AppDev.Contracts.ApplicationAttribute packageId ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  Integer packageId;
 
@@ -129,7 +129,7 @@ public class ApplicationAttribute implements Serializable
 	}
 
 	/**
-	 * Collection of attributes that may be paged list or a list, depending on the usage per object and API type. 
+	 * Collection of attributes that may be paged list or a list, depending on the usage per object and API type.
 	 */
 	protected List<Attribute> attributes;
 	public List<Attribute> getAttributes() {

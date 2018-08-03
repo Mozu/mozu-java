@@ -58,7 +58,7 @@ public class InvalidCoupon implements Serializable
 	}
 
 	/**
-	 * The reason description for an action, including item return, coupon not valid, and item is taxed. 
+	 * The reason description for an action, including item return, coupon not valid, and item is taxed.
 	 */
 	protected  String reason;
 

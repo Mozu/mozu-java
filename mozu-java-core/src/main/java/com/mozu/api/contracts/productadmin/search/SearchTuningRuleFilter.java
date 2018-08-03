@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Mozu.ProductAdmin.Contracts.Search.SearchTuningRuleFilter ApiType DOCUMENT_HERE 
+ *	Mozu.ProductAdmin.Contracts.Search.SearchTuningRuleFilter ApiType DOCUMENT_HERE
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SearchTuningRuleFilter implements Serializable
@@ -22,7 +22,7 @@ public class SearchTuningRuleFilter implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Mozu.ProductAdmin.Contracts.Search.SearchTuningRuleFilter field ApiTypeMember DOCUMENT_HERE 
+	 * Mozu.ProductAdmin.Contracts.Search.SearchTuningRuleFilter field ApiTypeMember DOCUMENT_HERE
 	 */
 	protected  String field;
 

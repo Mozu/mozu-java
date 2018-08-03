@@ -38,7 +38,7 @@ public class ExternalPaymentWorkflowDefinition implements Serializable
 	}
 
 	/**
-	 * Fully qualified name of the attribute for the order or customer. 
+	 * Fully qualified name of the attribute for the order or customer.
 	 */
 	protected  String fullyQualifiedName;
 

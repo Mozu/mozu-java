@@ -17,7 +17,7 @@ import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.productadmin.search.SearchTuningRuleFilter;
 
 /**
- *	Mozu.ProductAdmin.Contracts.Search.SearchTuningRule ApiType DOCUMENT_HERE 
+ *	Mozu.ProductAdmin.Contracts.Search.SearchTuningRule ApiType DOCUMENT_HERE
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SearchTuningRule implements Serializable
@@ -87,7 +87,7 @@ public class SearchTuningRule implements Serializable
 	}
 
 	/**
-	 * Indicates if the object is default. This indicator is used for product variations and site search settings. If true, the value/object is the default option. 
+	 * Indicates if the object is default. This indicator is used for product variations and site search settings. If true, the value/object is the default option.
 	 */
 	protected  Boolean isDefault;
 
