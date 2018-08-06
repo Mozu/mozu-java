@@ -123,15 +123,13 @@ public class OrderUrl
 
 	/**
 	 * Get Resource Url for PriceOrder
-	 * @param couponCodeToApply 
 	 * @param refreshShipping 
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl priceOrderUrl(String couponCodeToApply, Boolean refreshShipping, String responseFields)
+	public static MozuUrl priceOrderUrl(Boolean refreshShipping, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/price?refreshShipping={refreshShipping}&couponCodeToApply={couponCodeToApply}&responseFields={responseFields}");
-		formatter.formatUrl("couponCodeToApply", couponCodeToApply);
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/price?refreshShipping={refreshShipping}&responseFields={responseFields}");
 		formatter.formatUrl("refreshShipping", refreshShipping);
 		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;

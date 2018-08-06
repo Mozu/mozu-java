@@ -26,6 +26,32 @@ public class PublicCardUrl
 	}
 
 	/**
+	 * Get Resource Url for GetGiftCardBalance
+	 * @param cardId 
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getGiftCardBalanceUrl(String cardId, String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/payments/commerce/payments/cards/{cardId}/balance?responseFields={responseFields}");
+		formatter.formatUrl("cardId", cardId);
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.PCI_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for GetUnregisteredGiftCardBalance
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getUnregisteredGiftCardBalanceUrl(String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/payments/commerce/payments/cards/balance?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.PCI_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for Update
 	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.

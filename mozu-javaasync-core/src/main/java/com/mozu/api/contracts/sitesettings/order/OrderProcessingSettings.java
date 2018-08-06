@@ -35,6 +35,16 @@ public class OrderProcessingSettings implements Serializable
 		this.abandonedOrderThresholdInMinutes = abandonedOrderThresholdInMinutes;
 	}
 
+	protected  String giftCardProcessingType;
+
+	public String getGiftCardProcessingType() {
+		return this.giftCardProcessingType;
+	}
+
+	public void setGiftCardProcessingType(String giftCardProcessingType) {
+		this.giftCardProcessingType = giftCardProcessingType;
+	}
+
 	protected  String paymentProcessingFlowType;
 
 	public String getPaymentProcessingFlowType() {

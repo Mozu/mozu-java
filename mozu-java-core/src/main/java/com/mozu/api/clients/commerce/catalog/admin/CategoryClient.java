@@ -203,6 +203,55 @@ public class CategoryClient {
 	/**
 	 * 
 	 * <p><pre><code>
+	 * MozuClient mozuClient=AddProductsToCategoryClient(dataViewMode,  productCodes,  categoryId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * </code></pre></p>
+	 * @param categoryId 
+	 * @param productCodes 
+	 * @return Mozu.Api.MozuClient 
+	 * @see string
+	 */
+	public static MozuClient addProductsToCategoryClient(com.mozu.api.DataViewMode dataViewMode, List<String> productCodes, Integer categoryId) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.CategoryUrl.addProductsToCategoryUrl(categoryId);
+		String verb = "POST";
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(productCodes);
+		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient mozuClient=RemoveProductsFromCategoryClient( productCodes,  categoryId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * </code></pre></p>
+	 * @param categoryId 
+	 * @param productCodes 
+	 * @return Mozu.Api.MozuClient 
+	 * @see string
+	 */
+	public static MozuClient removeProductsFromCategoryClient(List<String> productCodes, Integer categoryId) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.CategoryUrl.removeProductsFromCategoryUrl(categoryId);
+		String verb = "POST";
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(productCodes);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.DynamicExpression> mozuClient=ValidateDynamicExpressionClient( dynamicExpressionIn);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();

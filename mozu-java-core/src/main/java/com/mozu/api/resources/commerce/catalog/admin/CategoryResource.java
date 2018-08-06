@@ -192,6 +192,46 @@ public class CategoryResource {
 	 * 
 	 * <p><pre><code>
 	 *	Category category = new Category();
+	 *	category.addProductsToCategory( productCodes,  categoryId);
+	 * </code></pre></p>
+	 * @param categoryId 
+	 * @param productCodes 
+	 * @return 
+	 * @see string
+	 */
+	public void addProductsToCategory(List<String> productCodes, Integer categoryId) throws Exception
+	{
+		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.CategoryClient.addProductsToCategoryClient(_dataViewMode,  productCodes,  categoryId);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		client.cleanupHttpConnection();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Category category = new Category();
+	 *	category.removeProductsFromCategory( productCodes,  categoryId);
+	 * </code></pre></p>
+	 * @param categoryId 
+	 * @param productCodes 
+	 * @return 
+	 * @see string
+	 */
+	public void removeProductsFromCategory(List<String> productCodes, Integer categoryId) throws Exception
+	{
+		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.CategoryClient.removeProductsFromCategoryClient( productCodes,  categoryId);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		client.cleanupHttpConnection();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Category category = new Category();
 	 *	DynamicExpression dynamicExpression = category.validateDynamicExpression( dynamicExpressionIn);
 	 * </code></pre></p>
 	 * @param dynamicExpressionIn The details of the dynamic expression that you want to validate.
