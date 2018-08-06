@@ -78,6 +78,30 @@ public class CategoryUrl
 	}
 
 	/**
+	 * Get Resource Url for AddProductsToCategory
+	 * @param categoryId 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl addProductsToCategoryUrl(Integer categoryId)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/categories/{categoryId}/add-products");
+		formatter.formatUrl("categoryId", categoryId);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for RemoveProductsFromCategory
+	 * @param categoryId 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl removeProductsFromCategoryUrl(Integer categoryId)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/categories/{categoryId}/remove-products");
+		formatter.formatUrl("categoryId", categoryId);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for ValidateDynamicExpression
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url

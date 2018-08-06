@@ -79,6 +79,82 @@ public PublicCardResource(ApiContext apiContext)
 	 * 
 	 * <p><pre><code>
 	 *	PublicCard publiccard = new PublicCard();
+	 *	SyncResponse syncResponse = publiccard.getGiftCardBalance( balanceRequest,  cardId);
+	 * </code></pre></p>
+	 * @param cardId 
+	 * @param balanceRequest 
+	 * @return com.mozu.api.contracts.paymentservice.response.SyncResponse
+	 * @see com.mozu.api.contracts.paymentservice.response.SyncResponse
+	 * @see com.mozu.api.contracts.paymentservice.request.GetGiftCardBalanceRequest
+	 */
+	public com.mozu.api.contracts.paymentservice.response.SyncResponse getGiftCardBalance(com.mozu.api.contracts.paymentservice.request.GetGiftCardBalanceRequest balanceRequest, String cardId) throws Exception
+	{
+		return getGiftCardBalance( balanceRequest,  cardId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	PublicCard publiccard = new PublicCard();
+	 *	SyncResponse syncResponse = publiccard.getGiftCardBalance( balanceRequest,  cardId,  responseFields);
+	 * </code></pre></p>
+	 * @param cardId 
+	 * @param responseFields 
+	 * @param balanceRequest 
+	 * @return com.mozu.api.contracts.paymentservice.response.SyncResponse
+	 * @see com.mozu.api.contracts.paymentservice.response.SyncResponse
+	 * @see com.mozu.api.contracts.paymentservice.request.GetGiftCardBalanceRequest
+	 */
+	public com.mozu.api.contracts.paymentservice.response.SyncResponse getGiftCardBalance(com.mozu.api.contracts.paymentservice.request.GetGiftCardBalanceRequest balanceRequest, String cardId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.paymentservice.response.SyncResponse> client = com.mozu.api.clients.commerce.payments.PublicCardClient.getGiftCardBalanceClient( balanceRequest,  cardId,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	PublicCard publiccard = new PublicCard();
+	 *	SyncResponse syncResponse = publiccard.getUnregisteredGiftCardBalance( balanceRequest);
+	 * </code></pre></p>
+	 * @param balanceRequest 
+	 * @return com.mozu.api.contracts.paymentservice.response.SyncResponse
+	 * @see com.mozu.api.contracts.paymentservice.response.SyncResponse
+	 * @see com.mozu.api.contracts.paymentservice.request.GetGiftCardBalanceRequest
+	 */
+	public com.mozu.api.contracts.paymentservice.response.SyncResponse getUnregisteredGiftCardBalance(com.mozu.api.contracts.paymentservice.request.GetGiftCardBalanceRequest balanceRequest) throws Exception
+	{
+		return getUnregisteredGiftCardBalance( balanceRequest,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	PublicCard publiccard = new PublicCard();
+	 *	SyncResponse syncResponse = publiccard.getUnregisteredGiftCardBalance( balanceRequest,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param balanceRequest 
+	 * @return com.mozu.api.contracts.paymentservice.response.SyncResponse
+	 * @see com.mozu.api.contracts.paymentservice.response.SyncResponse
+	 * @see com.mozu.api.contracts.paymentservice.request.GetGiftCardBalanceRequest
+	 */
+	public com.mozu.api.contracts.paymentservice.response.SyncResponse getUnregisteredGiftCardBalance(com.mozu.api.contracts.paymentservice.request.GetGiftCardBalanceRequest balanceRequest, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.paymentservice.response.SyncResponse> client = com.mozu.api.clients.commerce.payments.PublicCardClient.getUnregisteredGiftCardBalanceClient( balanceRequest,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	PublicCard publiccard = new PublicCard();
 	 *	SyncResponse syncResponse = publiccard.update( request,  cardId);
 	 * </code></pre></p>
 	 * @param cardId Unique identifier of the card associated with the customer account billing contact.

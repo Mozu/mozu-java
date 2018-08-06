@@ -123,6 +123,16 @@ public class Discount implements Serializable
 		this.doesNotApplyToSalePrice = doesNotApplyToSalePrice;
 	}
 
+	protected  Boolean hasPurchaseConditions;
+
+	public Boolean getHasPurchaseConditions() {
+		return this.hasPurchaseConditions;
+	}
+
+	public void setHasPurchaseConditions(Boolean hasPurchaseConditions) {
+		this.hasPurchaseConditions = hasPurchaseConditions;
+	}
+
 	protected  Integer id;
 
 	public Integer getId() {
@@ -246,6 +256,16 @@ public class Discount implements Serializable
 
 	public void setPreventOrderShippingDiscounts(Boolean preventOrderShippingDiscounts) {
 		this.preventOrderShippingDiscounts = preventOrderShippingDiscounts;
+	}
+
+	protected  String purchaseRequirementType;
+
+	public String getPurchaseRequirementType() {
+		return this.purchaseRequirementType;
+	}
+
+	public void setPurchaseRequirementType(String purchaseRequirementType) {
+		this.purchaseRequirementType = purchaseRequirementType;
 	}
 
 	protected  String scope;

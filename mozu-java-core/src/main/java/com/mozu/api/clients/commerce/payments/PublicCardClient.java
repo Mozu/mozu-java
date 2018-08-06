@@ -70,6 +70,98 @@ public class PublicCardClient {
 	/**
 	 * 
 	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.paymentservice.response.SyncResponse> mozuClient=GetGiftCardBalanceClient( balanceRequest,  cardId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * SyncResponse syncResponse = client.Result();
+	 * </code></pre></p>
+	 * @param cardId 
+	 * @param balanceRequest 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.paymentservice.response.SyncResponse>
+	 * @see com.mozu.api.contracts.paymentservice.response.SyncResponse
+	 * @see com.mozu.api.contracts.paymentservice.request.GetGiftCardBalanceRequest
+	 */
+	public static MozuClient<com.mozu.api.contracts.paymentservice.response.SyncResponse> getGiftCardBalanceClient(com.mozu.api.contracts.paymentservice.request.GetGiftCardBalanceRequest balanceRequest, String cardId) throws Exception
+	{
+		return getGiftCardBalanceClient( balanceRequest,  cardId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.paymentservice.response.SyncResponse> mozuClient=GetGiftCardBalanceClient( balanceRequest,  cardId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * SyncResponse syncResponse = client.Result();
+	 * </code></pre></p>
+	 * @param cardId 
+	 * @param responseFields 
+	 * @param balanceRequest 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.paymentservice.response.SyncResponse>
+	 * @see com.mozu.api.contracts.paymentservice.response.SyncResponse
+	 * @see com.mozu.api.contracts.paymentservice.request.GetGiftCardBalanceRequest
+	 */
+	public static MozuClient<com.mozu.api.contracts.paymentservice.response.SyncResponse> getGiftCardBalanceClient(com.mozu.api.contracts.paymentservice.request.GetGiftCardBalanceRequest balanceRequest, String cardId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.payments.PublicCardUrl.getGiftCardBalanceUrl(cardId, responseFields);
+		String verb = "POST";
+		Class<?> clz = com.mozu.api.contracts.paymentservice.response.SyncResponse.class;
+		MozuClient<com.mozu.api.contracts.paymentservice.response.SyncResponse> mozuClient = (MozuClient<com.mozu.api.contracts.paymentservice.response.SyncResponse>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(balanceRequest);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.paymentservice.response.SyncResponse> mozuClient=GetUnregisteredGiftCardBalanceClient( balanceRequest);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * SyncResponse syncResponse = client.Result();
+	 * </code></pre></p>
+	 * @param balanceRequest 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.paymentservice.response.SyncResponse>
+	 * @see com.mozu.api.contracts.paymentservice.response.SyncResponse
+	 * @see com.mozu.api.contracts.paymentservice.request.GetGiftCardBalanceRequest
+	 */
+	public static MozuClient<com.mozu.api.contracts.paymentservice.response.SyncResponse> getUnregisteredGiftCardBalanceClient(com.mozu.api.contracts.paymentservice.request.GetGiftCardBalanceRequest balanceRequest) throws Exception
+	{
+		return getUnregisteredGiftCardBalanceClient( balanceRequest,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.paymentservice.response.SyncResponse> mozuClient=GetUnregisteredGiftCardBalanceClient( balanceRequest,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * SyncResponse syncResponse = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param balanceRequest 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.paymentservice.response.SyncResponse>
+	 * @see com.mozu.api.contracts.paymentservice.response.SyncResponse
+	 * @see com.mozu.api.contracts.paymentservice.request.GetGiftCardBalanceRequest
+	 */
+	public static MozuClient<com.mozu.api.contracts.paymentservice.response.SyncResponse> getUnregisteredGiftCardBalanceClient(com.mozu.api.contracts.paymentservice.request.GetGiftCardBalanceRequest balanceRequest, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.payments.PublicCardUrl.getUnregisteredGiftCardBalanceUrl(responseFields);
+		String verb = "POST";
+		Class<?> clz = com.mozu.api.contracts.paymentservice.response.SyncResponse.class;
+		MozuClient<com.mozu.api.contracts.paymentservice.response.SyncResponse> mozuClient = (MozuClient<com.mozu.api.contracts.paymentservice.response.SyncResponse>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(balanceRequest);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.paymentservice.response.SyncResponse> mozuClient=UpdateClient( request,  cardId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();

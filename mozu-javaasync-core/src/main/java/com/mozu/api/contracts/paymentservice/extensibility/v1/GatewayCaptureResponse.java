@@ -51,6 +51,16 @@ public class GatewayCaptureResponse implements Serializable
 		this.avsCodes = avsCodes;
 	}
 
+	protected  Double capturedAmount;
+
+	public Double getCapturedAmount() {
+		return this.capturedAmount;
+	}
+
+	public void setCapturedAmount(Double capturedAmount) {
+		this.capturedAmount = capturedAmount;
+	}
+
 	/**
 	 * cvV2Codes ApiType DOCUMENT_HERE 
 	 */

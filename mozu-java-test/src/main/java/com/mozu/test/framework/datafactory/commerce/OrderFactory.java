@@ -190,16 +190,16 @@ public class OrderFactory
 
 	public static com.mozu.api.contracts.commerceruntime.orders.Order priceOrder(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.orders.Order order, Boolean refreshShipping, int expectedCode) throws Exception
 	{
-		return priceOrder(apiContext,  order,  refreshShipping,  null,  null, expectedCode);
+		return priceOrder(apiContext,  order,  refreshShipping,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.orders.Order priceOrder(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.orders.Order order, Boolean refreshShipping, String couponCodeToApply, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.orders.Order priceOrder(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.orders.Order order, Boolean refreshShipping, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.orders.Order returnObj = new com.mozu.api.contracts.commerceruntime.orders.Order();
 		OrderResource resource = new OrderResource(apiContext);
 		try
 		{
-			returnObj = resource.priceOrder( order,  refreshShipping,  couponCodeToApply,  responseFields);
+			returnObj = resource.priceOrder( order,  refreshShipping,  responseFields);
 		}
 		catch (ApiException e)
 		{
