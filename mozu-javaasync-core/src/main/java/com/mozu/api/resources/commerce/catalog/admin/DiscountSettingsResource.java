@@ -21,7 +21,7 @@ import org.apache.commons.lang.StringUtils;
 
 import com.mozu.api.DataViewMode;
 /** <summary>
- * commerce/catalog/admin/discountsettings related resources. DOCUMENT_HERE 
+ * 
  * </summary>
  */
 public class DiscountSettingsResource {
@@ -50,7 +50,7 @@ public class DiscountSettingsResource {
 	 *	DiscountSettings discountsettings = new DiscountSettings();
 	 *	DiscountSettings discountSettings = discountsettings.getDiscountSettings( catalogId);
 	 * </code></pre></p>
-	 * @param catalogId Unique identifier for a catalog.
+	 * @param catalogId 
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.DiscountSettings
 	 * @see com.mozu.api.contracts.productadmin.DiscountSettings
@@ -66,7 +66,7 @@ public class DiscountSettingsResource {
 	 *	DiscountSettings discountsettings = new DiscountSettings();
 	 *	CountDownLatch latch = discountsettings.getDiscountSettings( catalogId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param catalogId Unique identifier for a catalog.
+	 * @param catalogId 
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.DiscountSettings
@@ -83,8 +83,8 @@ public class DiscountSettingsResource {
 	 *	DiscountSettings discountsettings = new DiscountSettings();
 	 *	DiscountSettings discountSettings = discountsettings.getDiscountSettings( catalogId,  responseFields);
 	 * </code></pre></p>
-	 * @param catalogId Unique identifier for a catalog.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param catalogId 
+	 * @param responseFields 
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.DiscountSettings
 	 * @see com.mozu.api.contracts.productadmin.DiscountSettings
@@ -104,8 +104,8 @@ public class DiscountSettingsResource {
 	 *	DiscountSettings discountsettings = new DiscountSettings();
 	 *	CountDownLatch latch = discountsettings.getDiscountSettings( catalogId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param catalogId Unique identifier for a catalog.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param catalogId 
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.DiscountSettings
@@ -125,7 +125,7 @@ public class DiscountSettingsResource {
 	 *	DiscountSettings discountsettings = new DiscountSettings();
 	 *	DiscountSettings discountSettings = discountsettings.updateDiscountSettings( discountSettings,  catalogId);
 	 * </code></pre></p>
-	 * @param catalogId Unique identifier for a catalog.
+	 * @param catalogId 
 	 * @param dataViewMode DataViewMode
 	 * @param discountSettings 
 	 * @return com.mozu.api.contracts.productadmin.DiscountSettings
@@ -143,7 +143,7 @@ public class DiscountSettingsResource {
 	 *	DiscountSettings discountsettings = new DiscountSettings();
 	 *	CountDownLatch latch = discountsettings.updateDiscountSettings( discountSettings,  catalogId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param catalogId Unique identifier for a catalog.
+	 * @param catalogId 
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
 	 * @param discountSettings 
@@ -162,8 +162,8 @@ public class DiscountSettingsResource {
 	 *	DiscountSettings discountsettings = new DiscountSettings();
 	 *	DiscountSettings discountSettings = discountsettings.updateDiscountSettings( discountSettings,  catalogId,  responseFields);
 	 * </code></pre></p>
-	 * @param catalogId Unique identifier for a catalog.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param catalogId 
+	 * @param responseFields 
 	 * @param dataViewMode DataViewMode
 	 * @param discountSettings 
 	 * @return com.mozu.api.contracts.productadmin.DiscountSettings
@@ -185,8 +185,8 @@ public class DiscountSettingsResource {
 	 *	DiscountSettings discountsettings = new DiscountSettings();
 	 *	CountDownLatch latch = discountsettings.updateDiscountSettings( discountSettings,  catalogId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param catalogId Unique identifier for a catalog.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param catalogId 
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
 	 * @param discountSettings 

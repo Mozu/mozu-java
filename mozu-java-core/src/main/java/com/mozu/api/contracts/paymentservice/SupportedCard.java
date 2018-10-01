@@ -31,6 +31,16 @@ public class SupportedCard implements Serializable
 		this.friendlyName = friendlyName;
 	}
 
+	protected  String paymentType;
+
+	public String getPaymentType() {
+		return this.paymentType;
+	}
+
+	public void setPaymentType(String paymentType) {
+		this.paymentType = paymentType;
+	}
+
 	protected  String type;
 
 	public String getType() {

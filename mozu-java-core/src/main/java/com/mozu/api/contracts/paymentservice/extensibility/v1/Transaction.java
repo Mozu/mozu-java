@@ -15,18 +15,12 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.paymentservice.extensibility.v1.GatewayInteraction;
 
-/**
- *	Mozu.PaymentService.Extensibility.Contracts.V1.Transaction ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Transaction implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * activeCardId ApiType DOCUMENT_HERE 
-	 */
 	protected  String activeCardId;
 
 	public String getActiveCardId() {
@@ -37,9 +31,6 @@ public class Transaction implements Serializable
 		this.activeCardId = activeCardId;
 	}
 
-	/**
-	 * The date and time an object is created.
-	 */
 	protected  DateTime createdOn;
 
 	public DateTime getCreatedOn() {
@@ -50,9 +41,6 @@ public class Transaction implements Serializable
 		this.createdOn = createdOn;
 	}
 
-	/**
-	 * The localized currency code for the monetary amount.
-	 */
 	protected  String currencyCode;
 
 	public String getCurrencyCode() {
@@ -63,9 +51,6 @@ public class Transaction implements Serializable
 		this.currencyCode = currencyCode;
 	}
 
-	/**
-	 * Unique identifier of the source property, such as a catalog, discount, order, or email template.For a product field it will be the name of the field.For a category ID, must be a positive integer not greater than 2000000. By default,  auto-generates a category ID when categories are created. If you want to specify an ID during creation (which preserves category link relationships when migrating tenant data from one sandbox to another), you must also include the  query string in the endpoint. For example, . Then, use the  property to specify the desired category ID.For a product attribute it will be the Attribute FQN.For a document, the ID must be specified as a 32 character, case-insensitive, alphanumeric string. You can specify the ID as 32 sequential characters or as groups separated by dashes in the format 8-4-4-4-12. For example, or.For email templates, the ID must be one of the following values:			
-	 */
 	protected  String id;
 
 	public String getId() {
@@ -76,9 +61,6 @@ public class Transaction implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * Indicates if the product in a cart, order, or wish list is purchased on a recurring schedule. If true, the item can be purchased or fulfilled at regular intervals, such as a monthly billing cycle. For example, digital or physical product subscriptions are recurring cart items. This property is not used at this time and is reserved for future functionality.
-	 */
 	protected  Boolean isRecurring;
 
 	public Boolean getIsRecurring() {
@@ -89,9 +71,6 @@ public class Transaction implements Serializable
 		this.isRecurring = isRecurring;
 	}
 
-	/**
-	 * kiboTransactionId ApiType DOCUMENT_HERE 
-	 */
 	protected  String kiboTransactionId;
 
 	public String getKiboTransactionId() {
@@ -102,9 +81,6 @@ public class Transaction implements Serializable
 		this.kiboTransactionId = kiboTransactionId;
 	}
 
-	/**
-	 * gatewayInteractions ApiType DOCUMENT_HERE 
-	 */
 	protected List<GatewayInteraction> gatewayInteractions;
 	public List<GatewayInteraction> getGatewayInteractions() {
 		return this.gatewayInteractions;

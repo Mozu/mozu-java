@@ -12,18 +12,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	This property is not exposed in documentation.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ApplicationBehavior implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationBehavior behaviorId ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  Integer behaviorId;
 
 	public Integer getBehaviorId() {
@@ -34,9 +28,6 @@ public class ApplicationBehavior implements Serializable
 		this.behaviorId = behaviorId;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationBehavior packageId ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  Integer packageId;
 
 	public Integer getPackageId() {

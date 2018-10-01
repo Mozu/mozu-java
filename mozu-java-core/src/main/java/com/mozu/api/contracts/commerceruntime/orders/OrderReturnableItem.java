@@ -12,18 +12,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	Mozu.CommerceRuntime.Contracts.Orders.OrderReturnableItem ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class OrderReturnableItem implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Specifies whether to exclude product extras when you return a product or bundle. For example, assume the following order items:* Product A (bundle item)* Product B (bundle item)* Product C (bundle item)* Product D (extra on bundle)* Product F (extra on product)If this property is , Products D or F are included when the bundle or Product E are added to a return. If this property is , Products D or F are not included unless added individually.
-	 */
 	protected  Boolean excludeProductExtras;
 
 	public Boolean getExcludeProductExtras() {
@@ -34,9 +28,6 @@ public class OrderReturnableItem implements Serializable
 		this.excludeProductExtras = excludeProductExtras;
 	}
 
-	/**
-	 * The fulfillment status of the item, which is one of the following values:* * 
-	 */
 	protected  String fulfillmentStatus;
 
 	public String getFulfillmentStatus() {
@@ -47,9 +38,6 @@ public class OrderReturnableItem implements Serializable
 		this.fulfillmentStatus = fulfillmentStatus;
 	}
 
-	/**
-	 * Unique identifier of the order item associated with a validation message, order, or return.
-	 */
 	protected  String orderItemId;
 
 	public String getOrderItemId() {
@@ -60,9 +48,6 @@ public class OrderReturnableItem implements Serializable
 		this.orderItemId = orderItemId;
 	}
 
-	/**
-	 * The fully-qualified name of an attribute option on the item if it has an extra. For bundle items, this property is null.
-	 */
 	protected  String orderItemOptionAttributeFQN;
 
 	public String getOrderItemOptionAttributeFQN() {
@@ -73,9 +58,6 @@ public class OrderReturnableItem implements Serializable
 		this.orderItemOptionAttributeFQN = orderItemOptionAttributeFQN;
 	}
 
-	/**
-	 * The unique identifier of the line number associated with the item.
-	 */
 	protected  Integer orderLineId;
 
 	public Integer getOrderLineId() {
@@ -86,9 +68,6 @@ public class OrderReturnableItem implements Serializable
 		this.orderLineId = orderLineId;
 	}
 
-	/**
-	 * The product code of the parent item, if applicable. For example, a product bundle is the parent of the items in the bundle, and a product is the parent of a product extra.
-	 */
 	protected  String parentProductCode;
 
 	public String getParentProductCode() {
@@ -99,9 +78,6 @@ public class OrderReturnableItem implements Serializable
 		this.parentProductCode = parentProductCode;
 	}
 
-	/**
-	 * The name of the parent item, if applicable. For example, a product bundle is the parent of the items in the bundle, and a product is the parent of a product extra.
-	 */
 	protected  String parentProductName;
 
 	public String getParentProductName() {
@@ -112,9 +88,6 @@ public class OrderReturnableItem implements Serializable
 		this.parentProductName = parentProductName;
 	}
 
-	/**
-	 * The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 */
 	protected  String productCode;
 
 	public String getProductCode() {
@@ -125,9 +98,6 @@ public class OrderReturnableItem implements Serializable
 		this.productCode = productCode;
 	}
 
-	/**
-	 * The name of the product that represents a line item in a taxable order or product bundle.
-	 */
 	protected  String productName;
 
 	public String getProductName() {
@@ -138,9 +108,6 @@ public class OrderReturnableItem implements Serializable
 		this.productName = productName;
 	}
 
-	/**
-	 * The quantity of the item that a shopper or CSR has directly requested for return. For example, if someone requests a return on a product bundle, the bundle is directly returned, but the bundle items are indirectly returned. Conversely, if someone requests a return on a bundle item, the bundle item is directly returned, while the bundle is indirectly returned (in this case, the bundle is only partially returned, unless the other bundle items are also requested for return).
-	 */
 	protected  Integer quantityDirectlyReturned;
 
 	public Integer getQuantityDirectlyReturned() {
@@ -151,9 +118,6 @@ public class OrderReturnableItem implements Serializable
 		this.quantityDirectlyReturned = quantityDirectlyReturned;
 	}
 
-	/**
-	 * The quantity that has been fulfilled for the given line item. An item must be fulfilled before it is returnable. If an order contains Product X with a quantity of 3, and the quantity fulfilled is 2, then two Product X items are returnable (assuming all other return conditions are met).
-	 */
 	protected  Integer quantityFulfilled;
 
 	public Integer getQuantityFulfilled() {
@@ -164,9 +128,6 @@ public class OrderReturnableItem implements Serializable
 		this.quantityFulfilled = quantityFulfilled;
 	}
 
-	/**
-	 * The quantity of the item that is required for the successful return of another item. For example, if someone requests a return on a product bundle, the bundle is directly returned, but the bundle items are indirectly returned. Conversely, if someone requests a return on a bundle item, the bundle item is directly returned, while the bundle is indirectly returned (in this case, the bundle is only partially returned, unless the other bundle items are also requested for return).
-	 */
 	protected  Integer quantityIndirectlyReturned;
 
 	public Integer getQuantityIndirectlyReturned() {
@@ -177,9 +138,6 @@ public class OrderReturnableItem implements Serializable
 		this.quantityIndirectlyReturned = quantityIndirectlyReturned;
 	}
 
-	/**
-	 * The total quantity of an item on the order.
-	 */
 	protected  Integer quantityOrdered;
 
 	public Integer getQuantityOrdered() {
@@ -190,9 +148,6 @@ public class OrderReturnableItem implements Serializable
 		this.quantityOrdered = quantityOrdered;
 	}
 
-	/**
-	 * The quantity of a given item that is eligible for return. This number may be smaller than the quantity ordered, and changes depending on the actions taken on the return. For example, if an order contains five of Product X, but only three of those items are fulfilled, then only three items show as returnable (assuming all other return conditions are met).
-	 */
 	protected  Integer quantityReturnable;
 
 	public Integer getQuantityReturnable() {
@@ -203,9 +158,6 @@ public class OrderReturnableItem implements Serializable
 		this.quantityReturnable = quantityReturnable;
 	}
 
-	/**
-	 * The number of discrete units that make up an individual item. For example, 1 (ordered quantity) bag of screws may contain a unity quantity of 50 screws.
-	 */
 	protected  Integer unitQuantity;
 
 	public Integer getUnitQuantity() {

@@ -17,13 +17,23 @@ import com.mozu.api.contracts.core.UserRole;
 import com.mozu.api.contracts.core.UserSystemData;
 
 /**
- *	Properties of the user. Users include customers and  users.
+ *	Properties of the user.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class User implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
+
+	protected  String password;
+
+	public String getPassword() {
+		return this.password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
 	protected  String emailAddress;
 
@@ -83,16 +93,6 @@ public class User implements Serializable
 
 	public void setLocaleCode(String localeCode) {
 		this.localeCode = localeCode;
-	}
-
-	protected  String password;
-
-	public String getPassword() {
-		return this.password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
 	}
 
 	protected List<UserRole> roles;

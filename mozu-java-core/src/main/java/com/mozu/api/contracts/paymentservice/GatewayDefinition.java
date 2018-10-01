@@ -94,9 +94,6 @@ public class GatewayDefinition implements Serializable
 		this.testServiceURL = testServiceURL;
 	}
 
-	/**
-	 * administationUi ApiType DOCUMENT_HERE 
-	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode administationUi;
 
 	public com.fasterxml.jackson.databind.JsonNode getAdministationUi() {

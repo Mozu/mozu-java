@@ -21,9 +21,6 @@ public class GatewayCredentialFieldValue implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * isValueSet ApiType DOCUMENT_HERE 
-	 */
 	protected  Boolean isValueSet;
 
 	public Boolean getIsValueSet() {

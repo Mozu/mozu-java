@@ -28,9 +28,6 @@ public class CartItem implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The adjusted subtotal of the line item, including all manual adjustments, discounts, shipping charges and discounts, and duty or any other additional line item fees.
-	 */
 	protected  Double adjustedLineItemSubtotal;
 
 	public Double getAdjustedLineItemSubtotal() {
@@ -41,9 +38,6 @@ public class CartItem implements Serializable
 		this.adjustedLineItemSubtotal = adjustedLineItemSubtotal;
 	}
 
-	/**
-	 * autoAddDiscountId ApiType DOCUMENT_HERE 
-	 */
 	protected  Integer autoAddDiscountId;
 
 	public Integer getAutoAddDiscountId() {
@@ -114,9 +108,6 @@ public class CartItem implements Serializable
 		this.fulfillmentMethod = fulfillmentMethod;
 	}
 
-	/**
-	 * The combined price for all handling costs calculated together for shipped orders, not for digital or in-store pickup. This includes all handling costs per the product line items and options, excluding taxes and discounts. 
-	 */
 	protected  Double handlingAmount;
 
 	public Double getHandlingAmount() {
@@ -167,9 +158,6 @@ public class CartItem implements Serializable
 		this.itemTaxTotal = itemTaxTotal;
 	}
 
-	/**
-	 * The line id assigned to the order item. Visible only in the Admin, this is set from the Admin or in CommerceRuntime when a cart is converted to an order.
-	 */
 	protected  Integer lineId;
 
 	public Integer getLineId() {
@@ -190,9 +178,6 @@ public class CartItem implements Serializable
 		this.localeCode = localeCode;
 	}
 
-	/**
-	 * The location where the order item(s) was purchased.
-	 */
 	protected  String purchaseLocation;
 
 	public String getPurchaseLocation() {
@@ -213,9 +198,6 @@ public class CartItem implements Serializable
 		this.quantity = quantity;
 	}
 
-	/**
-	 * The total shipping amount for the line item before discounts and adjustments.
-	 */
 	protected  Double shippingAmountBeforeDiscountsAndAdjustments;
 
 	public Double getShippingAmountBeforeDiscountsAndAdjustments() {
@@ -276,9 +258,6 @@ public class CartItem implements Serializable
 		this.total = total;
 	}
 
-	/**
-	 * The total charge for the line item without any weighted order level shipping and handling charges.
-	 */
 	protected  Double totalWithoutWeightedShippingAndHandling;
 
 	public Double getTotalWithoutWeightedShippingAndHandling() {
@@ -289,9 +268,6 @@ public class CartItem implements Serializable
 		this.totalWithoutWeightedShippingAndHandling = totalWithoutWeightedShippingAndHandling;
 	}
 
-	/**
-	 * The total charge for the line item with all weighted order level shipping and handling charges.
-	 */
 	protected  Double totalWithWeightedShippingAndHandling;
 
 	public Double getTotalWithWeightedShippingAndHandling() {
@@ -302,9 +278,6 @@ public class CartItem implements Serializable
 		this.totalWithWeightedShippingAndHandling = totalWithWeightedShippingAndHandling;
 	}
 
-	/**
-	 * The total weighted order level manual adjustment amount.
-	 */
 	protected  Double weightedOrderAdjustment;
 
 	public Double getWeightedOrderAdjustment() {
@@ -315,9 +288,6 @@ public class CartItem implements Serializable
 		this.weightedOrderAdjustment = weightedOrderAdjustment;
 	}
 
-	/**
-	 * The total weighted order level discount amount.
-	 */
 	protected  Double weightedOrderDiscount;
 
 	public Double getWeightedOrderDiscount() {
@@ -328,9 +298,6 @@ public class CartItem implements Serializable
 		this.weightedOrderDiscount = weightedOrderDiscount;
 	}
 
-	/**
-	 * The total weighted order level duty charges.
-	 */
 	protected  Double weightedOrderDuty;
 
 	public Double getWeightedOrderDuty() {
@@ -341,9 +308,6 @@ public class CartItem implements Serializable
 		this.weightedOrderDuty = weightedOrderDuty;
 	}
 
-	/**
-	 * The amount to adjust the order handling fee.
-	 */
 	protected  Double weightedOrderHandlingAdjustment;
 
 	public Double getWeightedOrderHandlingAdjustment() {
@@ -354,9 +318,6 @@ public class CartItem implements Serializable
 		this.weightedOrderHandlingAdjustment = weightedOrderHandlingAdjustment;
 	}
 
-	/**
-	 * The total weighted order level handling fee amount.
-	 */
 	protected  Double weightedOrderHandlingFee;
 
 	public Double getWeightedOrderHandlingFee() {
@@ -367,9 +328,6 @@ public class CartItem implements Serializable
 		this.weightedOrderHandlingFee = weightedOrderHandlingFee;
 	}
 
-	/**
-	 * The total weighted order handling fee discount amount.
-	 */
 	protected  Double weightedOrderHandlingFeeDiscount;
 
 	public Double getWeightedOrderHandlingFeeDiscount() {
@@ -380,9 +338,6 @@ public class CartItem implements Serializable
 		this.weightedOrderHandlingFeeDiscount = weightedOrderHandlingFeeDiscount;
 	}
 
-	/**
-	 * The total weighted order level handling fee tax amount.
-	 */
 	protected  Double weightedOrderHandlingFeeTax;
 
 	public Double getWeightedOrderHandlingFeeTax() {
@@ -393,9 +348,6 @@ public class CartItem implements Serializable
 		this.weightedOrderHandlingFeeTax = weightedOrderHandlingFeeTax;
 	}
 
-	/**
-	 * The total weighted order level shipping charge.
-	 */
 	protected  Double weightedOrderShipping;
 
 	public Double getWeightedOrderShipping() {
@@ -406,9 +358,6 @@ public class CartItem implements Serializable
 		this.weightedOrderShipping = weightedOrderShipping;
 	}
 
-	/**
-	 * The total weighted order level shipping discount amount.
-	 */
 	protected  Double weightedOrderShippingDiscount;
 
 	public Double getWeightedOrderShippingDiscount() {
@@ -419,9 +368,6 @@ public class CartItem implements Serializable
 		this.weightedOrderShippingDiscount = weightedOrderShippingDiscount;
 	}
 
-	/**
-	 * The total weighted order level shipping manual adjustment amount.
-	 */
 	protected  Double weightedOrderShippingManualAdjustment;
 
 	public Double getWeightedOrderShippingManualAdjustment() {
@@ -432,9 +378,6 @@ public class CartItem implements Serializable
 		this.weightedOrderShippingManualAdjustment = weightedOrderShippingManualAdjustment;
 	}
 
-	/**
-	 * The total weighted order level shipping tax amount.
-	 */
 	protected  Double weightedOrderShippingTax;
 
 	public Double getWeightedOrderShippingTax() {
@@ -445,9 +388,6 @@ public class CartItem implements Serializable
 		this.weightedOrderShippingTax = weightedOrderShippingTax;
 	}
 
-	/**
-	 * The total weighted order level tax amount.
-	 */
 	protected  Double weightedOrderTax;
 
 	public Double getWeightedOrderTax() {
@@ -468,9 +408,6 @@ public class CartItem implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * Custom data for a given vendor set within the commerce process.
-	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {
@@ -492,7 +429,7 @@ public class CartItem implements Serializable
 	}
 
 	/**
-	 * The applicable product discount for an associated cart, order, or wish list. 
+	 * Product discounts displays a list of all applicable discount.
 	 */
 	protected  AppliedLineItemProductDiscount productDiscount;
 
@@ -520,9 +457,6 @@ public class CartItem implements Serializable
 		this.shippingDiscounts = shippingDiscounts;
 	}
 
-	/**
-	 * Leverage this property within a [tax Arc.js action](https://www.mozu.com/docs/arcjs/commerce-catalog-storefront-tax/commerce-catalog-storefront-tax.htm) to supplement the tax information for this item or object with custom JSON data.
-	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode taxData;
 
 	public com.fasterxml.jackson.databind.JsonNode getTaxData() {

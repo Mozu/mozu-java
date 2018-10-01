@@ -12,18 +12,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	Mozu.ProductAdmin.Contracts.StackingConfiguration ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class StackingConfiguration implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * productLineItemLayers ApiType DOCUMENT_HERE 
-	 */
 	protected  Integer productLineItemLayers;
 
 	public Integer getProductLineItemLayers() {
@@ -34,9 +28,6 @@ public class StackingConfiguration implements Serializable
 		this.productLineItemLayers = productLineItemLayers;
 	}
 
-	/**
-	 * productOrderLayers ApiType DOCUMENT_HERE 
-	 */
 	protected  Integer productOrderLayers;
 
 	public Integer getProductOrderLayers() {
@@ -47,9 +38,6 @@ public class StackingConfiguration implements Serializable
 		this.productOrderLayers = productOrderLayers;
 	}
 
-	/**
-	 * stackingEnabled ApiType DOCUMENT_HERE 
-	 */
 	protected  Boolean stackingEnabled;
 
 	public Boolean getStackingEnabled() {

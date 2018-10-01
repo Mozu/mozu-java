@@ -13,13 +13,23 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Properties of the inventory behavior associated with a product definition.
+ *	Properties of the active inventory managed for the product.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductInventoryInfo implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
+
+	protected  String outOfStockBehavior;
+
+	public String getOutOfStockBehavior() {
+		return this.outOfStockBehavior;
+	}
+
+	public void setOutOfStockBehavior(String outOfStockBehavior) {
+		this.outOfStockBehavior = outOfStockBehavior;
+	}
 
 	protected  Boolean manageStock;
 
@@ -44,9 +54,6 @@ public class ProductInventoryInfo implements Serializable
 		this.onlineLocationCode = onlineLocationCode;
 	}
 
-	/**
-	 * Number of product items currently available for purchase.
-	 */
 	protected  Integer onlineSoftStockAvailable;
 
 	public Integer getOnlineSoftStockAvailable() {
@@ -65,16 +72,6 @@ public class ProductInventoryInfo implements Serializable
 
 	public void setOnlineStockAvailable(Integer onlineStockAvailable) {
 		this.onlineStockAvailable = onlineStockAvailable;
-	}
-
-	protected  String outOfStockBehavior;
-
-	public String getOutOfStockBehavior() {
-		return this.outOfStockBehavior;
-	}
-
-	public void setOutOfStockBehavior(String outOfStockBehavior) {
-		this.outOfStockBehavior = outOfStockBehavior;
 	}
 
 

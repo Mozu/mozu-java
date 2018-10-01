@@ -15,7 +15,7 @@ public class OrderNoteUrl
 
 	/**
 	 * Get Resource Url for GetReturnNotes
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param returnId 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getReturnNotesUrl(String returnId)
@@ -27,9 +27,9 @@ public class OrderNoteUrl
 
 	/**
 	 * Get Resource Url for GetReturnNote
-	 * @param noteId Unique identifier of a particular note to retrieve.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param noteId 
+	 * @param responseFields 
+	 * @param returnId 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getReturnNoteUrl(String noteId, String responseFields, String returnId)
@@ -43,8 +43,8 @@ public class OrderNoteUrl
 
 	/**
 	 * Get Resource Url for CreateReturnNote
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param responseFields 
+	 * @param returnId 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl createReturnNoteUrl(String responseFields, String returnId)
@@ -57,9 +57,9 @@ public class OrderNoteUrl
 
 	/**
 	 * Get Resource Url for UpdateReturnNote
-	 * @param noteId Unique identifier of a particular note to retrieve.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param noteId 
+	 * @param responseFields 
+	 * @param returnId 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateReturnNoteUrl(String noteId, String responseFields, String returnId)
@@ -73,8 +73,8 @@ public class OrderNoteUrl
 
 	/**
 	 * Get Resource Url for DeleteReturnNote
-	 * @param noteId Unique identifier of a particular note to retrieve.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param noteId 
+	 * @param returnId 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteReturnNoteUrl(String noteId, String returnId)

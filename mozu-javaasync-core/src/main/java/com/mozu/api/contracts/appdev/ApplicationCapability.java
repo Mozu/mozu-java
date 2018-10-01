@@ -12,18 +12,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	This property is not exposed in documentation.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ApplicationCapability implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationCapability applicationCapabilityId ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  Integer applicationCapabilityId;
 
 	public Integer getApplicationCapabilityId() {
@@ -34,9 +28,6 @@ public class ApplicationCapability implements Serializable
 		this.applicationCapabilityId = applicationCapabilityId;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationCapability applicationCapabilityTypeId ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  Integer applicationCapabilityTypeId;
 
 	public Integer getApplicationCapabilityTypeId() {
@@ -47,9 +38,6 @@ public class ApplicationCapability implements Serializable
 		this.applicationCapabilityTypeId = applicationCapabilityTypeId;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationCapability applicationEndPoint ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String applicationEndPoint;
 
 	public String getApplicationEndPoint() {
@@ -60,9 +48,6 @@ public class ApplicationCapability implements Serializable
 		this.applicationEndPoint = applicationEndPoint;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationCapability capabilityTypeContractId ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  Integer capabilityTypeContractId;
 
 	public Integer getCapabilityTypeContractId() {
@@ -73,9 +58,6 @@ public class ApplicationCapability implements Serializable
 		this.capabilityTypeContractId = capabilityTypeContractId;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationCapability packageId ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  Integer packageId;
 
 	public Integer getPackageId() {

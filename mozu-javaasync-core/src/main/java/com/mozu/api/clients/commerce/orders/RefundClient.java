@@ -19,7 +19,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the refunds resource to create a refund.
+ * 
  * </summary>
  */
 public class RefundClient {
@@ -32,8 +32,8 @@ public class RefundClient {
 	 * client.executeRequest();
 	 * Refund refund = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param refund The details of the refund.
+	 * @param orderId 
+	 * @param refund 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.refunds.Refund>
 	 * @see com.mozu.api.contracts.commerceruntime.refunds.Refund
 	 * @see com.mozu.api.contracts.commerceruntime.refunds.Refund
@@ -51,9 +51,9 @@ public class RefundClient {
 	 * client.executeRequest();
 	 * Refund refund = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param refund The details of the refund.
+	 * @param orderId 
+	 * @param responseFields 
+	 * @param refund 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.refunds.Refund>
 	 * @see com.mozu.api.contracts.commerceruntime.refunds.Refund
 	 * @see com.mozu.api.contracts.commerceruntime.refunds.Refund
@@ -78,9 +78,8 @@ public class RefundClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param refundId Unique ID of the refund.
-        
+	 * @param orderId 
+	 * @param refundId 
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient resendRefundEmailClient(String orderId, String refundId) throws Exception

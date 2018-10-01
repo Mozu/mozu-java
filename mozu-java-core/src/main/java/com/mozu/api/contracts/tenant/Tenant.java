@@ -65,6 +65,16 @@ public class Tenant implements Serializable
 		this.name = name;
 	}
 
+	protected  Integer omsMerchantId;
+
+	public Integer getOmsMerchantId() {
+		return this.omsMerchantId;
+	}
+
+	public void setOmsMerchantId(Integer omsMerchantId) {
+		this.omsMerchantId = omsMerchantId;
+	}
+
 	protected List<MasterCatalog> masterCatalogs;
 	public List<MasterCatalog> getMasterCatalogs() {
 		return this.masterCatalogs;

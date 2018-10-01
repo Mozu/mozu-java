@@ -15,13 +15,13 @@ public class CheckoutUrl
 
 	/**
 	 * Get Resource Url for GetCheckouts
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param q A list of order search terms (not phrases) to use in the query when searching across order number and the name or email of the billing contact. When entering, separate multiple search terms with a space character.
-	 * @param qLimit The maximum number of search results to return in the response. You can limit any range between 1-100.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param filter 
+	 * @param pageSize 
+	 * @param q 
+	 * @param qLimit 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getCheckoutsUrl(String filter, Integer pageSize, String q, Integer qLimit, String responseFields, String sortBy, Integer startIndex)
@@ -39,7 +39,7 @@ public class CheckoutUrl
 
 	/**
 	 * Get Resource Url for GetAvailableActions
-	 * @param checkoutId The unique identifier of the checkout.
+	 * @param checkoutId 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getAvailableActionsUrl(String checkoutId)
@@ -51,7 +51,7 @@ public class CheckoutUrl
 
 	/**
 	 * Get Resource Url for GetAvailableShippingMethods
-	 * @param checkoutId The unique identifier of the checkout.
+	 * @param checkoutId 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getAvailableShippingMethodsUrl(String checkoutId)
@@ -63,8 +63,8 @@ public class CheckoutUrl
 
 	/**
 	 * Get Resource Url for GetCheckout
-	 * @param checkoutId The unique identifier of the checkout.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param checkoutId 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getCheckoutUrl(String checkoutId, String responseFields)
@@ -77,8 +77,8 @@ public class CheckoutUrl
 
 	/**
 	 * Get Resource Url for CreateCheckoutFromCart
-	 * @param cartId Identifier of the cart to delete.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param cartId 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl createCheckoutFromCartUrl(String cartId, String responseFields)
@@ -91,8 +91,8 @@ public class CheckoutUrl
 
 	/**
 	 * Get Resource Url for PerformCheckoutAction
-	 * @param checkoutId The unique identifier of the checkout.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param checkoutId 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl performCheckoutActionUrl(String checkoutId, String responseFields)
@@ -105,7 +105,7 @@ public class CheckoutUrl
 
 	/**
 	 * Get Resource Url for ResendCheckoutConfirmationEmail
-	 * @param checkoutId The unique identifier of the checkout.
+	 * @param checkoutId 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl resendCheckoutConfirmationEmailUrl(String checkoutId)
@@ -117,8 +117,8 @@ public class CheckoutUrl
 
 	/**
 	 * Get Resource Url for SetShippingMethods
-	 * @param checkoutId The unique identifier of the checkout.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param checkoutId 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl setShippingMethodsUrl(String checkoutId, String responseFields)
@@ -131,8 +131,8 @@ public class CheckoutUrl
 
 	/**
 	 * Get Resource Url for UpdateCheckout
-	 * @param checkoutId The unique identifier of the checkout.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param checkoutId 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateCheckoutUrl(String checkoutId, String responseFields)
@@ -145,9 +145,9 @@ public class CheckoutUrl
 
 	/**
 	 * Get Resource Url for ProcessDigitalWallet
-	 * @param checkoutId The unique identifier of the checkout.
-	 * @param digitalWalletType The type of digital wallet.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param checkoutId 
+	 * @param digitalWalletType 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl processDigitalWalletUrl(String checkoutId, String digitalWalletType, String responseFields)
@@ -161,8 +161,8 @@ public class CheckoutUrl
 
 	/**
 	 * Get Resource Url for ChangeCheckoutPriceList
-	 * @param checkoutId The unique identifier of the checkout.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param checkoutId 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl changeCheckoutPriceListUrl(String checkoutId, String responseFields)

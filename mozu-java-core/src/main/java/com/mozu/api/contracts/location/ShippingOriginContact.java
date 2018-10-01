@@ -48,7 +48,7 @@ public class ShippingOriginContact implements Serializable
 	}
 
 	/**
-	 * The full first name of a customer or contact name.
+	 * The first name of the shipping origin contact.
 	 */
 	protected  String firstName;
 
@@ -61,7 +61,7 @@ public class ShippingOriginContact implements Serializable
 	}
 
 	/**
-	 * The full last name or surname of a customer or contact name.
+	 * The last name of the shipping origin contact.
 	 */
 	protected  String lastNameOrSurname;
 
@@ -74,7 +74,7 @@ public class ShippingOriginContact implements Serializable
 	}
 
 	/**
-	 * Character string of the middle name or initial for the customer.
+	 * The middle name or middle initial of the shipping origin contact.
 	 */
 	protected  String middleNameOrInitial;
 

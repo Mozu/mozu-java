@@ -15,18 +15,12 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.installedapplications.CustomFunctionsForContext;
 
-/**
- *	Mozu.InstalledApplications.Contracts.CustomFunctionsForAction ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CustomFunctionsForAction implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The full action ID for a specific action.
-	 */
 	protected  String actionId;
 
 	public String getActionId() {
@@ -37,9 +31,6 @@ public class CustomFunctionsForAction implements Serializable
 		this.actionId = actionId;
 	}
 
-	/**
-	 * An array of settings for a particular action.
-	 */
 	protected List<CustomFunctionsForContext> contexts;
 	public List<CustomFunctionsForContext> getContexts() {
 		return this.contexts;

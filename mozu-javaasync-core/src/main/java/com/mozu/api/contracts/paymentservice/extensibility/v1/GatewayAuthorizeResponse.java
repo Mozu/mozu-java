@@ -16,18 +16,12 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.paymentservice.extensibility.v1.ConnectionStatuses;
 import com.mozu.api.contracts.paymentservice.extensibility.v1.KeyValueTuple;
 
-/**
- *	Mozu.PaymentService.Extensibility.Contracts.V1.GatewayAuthorizeResponse ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class GatewayAuthorizeResponse implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * authCode ApiType DOCUMENT_HERE 
-	 */
 	protected  String authCode;
 
 	public String getAuthCode() {
@@ -38,9 +32,6 @@ public class GatewayAuthorizeResponse implements Serializable
 		this.authCode = authCode;
 	}
 
-	/**
-	 * avsCodes ApiType DOCUMENT_HERE 
-	 */
 	protected  String avsCodes;
 
 	public String getAvsCodes() {
@@ -51,9 +42,6 @@ public class GatewayAuthorizeResponse implements Serializable
 		this.avsCodes = avsCodes;
 	}
 
-	/**
-	 * cvV2Codes ApiType DOCUMENT_HERE 
-	 */
 	protected  String cvV2Codes;
 
 	public String getCvV2Codes() {
@@ -64,9 +52,6 @@ public class GatewayAuthorizeResponse implements Serializable
 		this.cvV2Codes = cvV2Codes;
 	}
 
-	/**
-	 * isDeclined ApiType DOCUMENT_HERE 
-	 */
 	protected  Boolean isDeclined;
 
 	public Boolean getIsDeclined() {
@@ -77,9 +62,6 @@ public class GatewayAuthorizeResponse implements Serializable
 		this.isDeclined = isDeclined;
 	}
 
-	/**
-	 * responseCode ApiType DOCUMENT_HERE 
-	 */
 	protected  String responseCode;
 
 	public String getResponseCode() {
@@ -90,9 +72,6 @@ public class GatewayAuthorizeResponse implements Serializable
 		this.responseCode = responseCode;
 	}
 
-	/**
-	 * responseText ApiType DOCUMENT_HERE 
-	 */
 	protected  String responseText;
 
 	public String getResponseText() {
@@ -103,9 +82,6 @@ public class GatewayAuthorizeResponse implements Serializable
 		this.responseText = responseText;
 	}
 
-	/**
-	 * transactionId ApiType DOCUMENT_HERE 
-	 */
 	protected  String transactionId;
 
 	public String getTransactionId() {
@@ -116,9 +92,6 @@ public class GatewayAuthorizeResponse implements Serializable
 		this.transactionId = transactionId;
 	}
 
-	/**
-	 * remoteConnectionStatus ApiType DOCUMENT_HERE 
-	 */
 	protected  ConnectionStatuses remoteConnectionStatus;
 
 	public ConnectionStatuses getRemoteConnectionStatus() {
@@ -129,9 +102,6 @@ public class GatewayAuthorizeResponse implements Serializable
 		this.remoteConnectionStatus = remoteConnectionStatus;
 	}
 
-	/**
-	 * responseData ApiType DOCUMENT_HERE 
-	 */
 	protected List<KeyValueTuple> responseData;
 	public List<KeyValueTuple> getResponseData() {
 		return this.responseData;

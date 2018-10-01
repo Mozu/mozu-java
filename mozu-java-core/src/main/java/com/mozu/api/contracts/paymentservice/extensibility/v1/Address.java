@@ -12,18 +12,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	Mozu.PaymentService.Extensibility.Contracts.V1.Address ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Address implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * city ApiType DOCUMENT_HERE 
-	 */
 	protected  String city;
 
 	public String getCity() {
@@ -34,9 +28,6 @@ public class Address implements Serializable
 		this.city = city;
 	}
 
-	/**
-	 * companyName ApiType DOCUMENT_HERE 
-	 */
 	protected  String companyName;
 
 	public String getCompanyName() {
@@ -47,9 +38,6 @@ public class Address implements Serializable
 		this.companyName = companyName;
 	}
 
-	/**
-	 * country ApiType DOCUMENT_HERE 
-	 */
 	protected  String country;
 
 	public String getCountry() {
@@ -60,9 +48,6 @@ public class Address implements Serializable
 		this.country = country;
 	}
 
-	/**
-	 * line1 ApiType DOCUMENT_HERE 
-	 */
 	protected  String line1;
 
 	public String getLine1() {
@@ -73,9 +58,6 @@ public class Address implements Serializable
 		this.line1 = line1;
 	}
 
-	/**
-	 * line2 ApiType DOCUMENT_HERE 
-	 */
 	protected  String line2;
 
 	public String getLine2() {
@@ -86,9 +68,6 @@ public class Address implements Serializable
 		this.line2 = line2;
 	}
 
-	/**
-	 * line3 ApiType DOCUMENT_HERE 
-	 */
 	protected  String line3;
 
 	public String getLine3() {
@@ -99,9 +78,6 @@ public class Address implements Serializable
 		this.line3 = line3;
 	}
 
-	/**
-	 * postalCode ApiType DOCUMENT_HERE 
-	 */
 	protected  String postalCode;
 
 	public String getPostalCode() {
@@ -112,9 +88,6 @@ public class Address implements Serializable
 		this.postalCode = postalCode;
 	}
 
-	/**
-	 * state ApiType DOCUMENT_HERE 
-	 */
 	protected  String state;
 
 	public String getState() {

@@ -12,9 +12,6 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	Mozu.AppDev.Contracts.ApplicationTransaction ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ApplicationTransaction implements Serializable
 {
@@ -31,9 +28,6 @@ public class ApplicationTransaction implements Serializable
 		this.applicationEntitlementId = applicationEntitlementId;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationTransaction applicationId ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  Integer applicationId;
 
 	public Integer getApplicationId() {

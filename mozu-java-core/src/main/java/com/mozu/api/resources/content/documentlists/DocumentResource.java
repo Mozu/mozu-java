@@ -48,8 +48,8 @@ public class DocumentResource {
 	 *	Document document = new Document();
 	 *	Stream stream = document.getDocumentContent( documentListName,  documentId);
 	 * </code></pre></p>
-	 * @param documentId Unique identifier for a document, used by content and document calls. Document IDs are associated with document types, document type lists, sites, and tenants.
-	 * @param documentListName Name of content documentListName to delete
+	 * @param documentId Unique identifier of the document.
+	 * @param documentListName The name of the document list associated with the document.
 	 * @return Stream
 	 * @see Stream
 	 */
@@ -68,8 +68,8 @@ public class DocumentResource {
 	 *	Document document = new Document();
 	 *	Stream stream = document.transformDocumentContent( documentListName,  documentId);
 	 * </code></pre></p>
-	 * @param documentId Unique identifier for a document, used by content and document calls. Document IDs are associated with document types, document type lists, sites, and tenants.
-	 * @param documentListName Name of content documentListName to delete
+	 * @param documentId 
+	 * @param documentListName 
 	 * @return Stream
 	 * @see Stream
 	 */
@@ -84,15 +84,15 @@ public class DocumentResource {
 	 *	Document document = new Document();
 	 *	Stream stream = document.transformDocumentContent( documentListName,  documentId,  width,  height,  max,  maxWidth,  maxHeight,  crop,  quality);
 	 * </code></pre></p>
-	 * @param crop Crops the image based on the specified coordinates. The reference point for positive coordinates is the top-left corner of the image, and the reference point for negative coordinates is the bottom-right corner of the image.Usage: Example:  removes 10 pixels from all edges of the image.  leaves the image uncropped.
-	 * @param documentId Unique identifier for a document, used by content and document calls. Document IDs are associated with document types, document type lists, sites, and tenants.
-	 * @param documentListName Name of content documentListName to delete
-	 * @param height Specifies an exact height dimension for the image, in pixels.
-	 * @param max Specifies a pixel limitation for the largest side of an image.
-	 * @param maxHeight Specifies a pixel limitation for the height of the image, preserving the aspect ratio if the image needs resizing.
-	 * @param maxWidth Specifies a pixel limitation for the width of the image, preserving the aspect ratio if the image needs resizing.
-	 * @param quality Adjusts the image compression. Accepts values from 0-100, where 100 = highest quality, least compression.
-	 * @param width Specifies an exact width dimension for the image, in pixels.
+	 * @param crop 
+	 * @param documentId 
+	 * @param documentListName 
+	 * @param height 
+	 * @param max 
+	 * @param maxHeight 
+	 * @param maxWidth 
+	 * @param quality 
+	 * @param width 
 	 * @return Stream
 	 * @see Stream
 	 */
@@ -111,8 +111,8 @@ public class DocumentResource {
 	 *	Document document = new Document();
 	 *	Document document = document.getDocument( documentListName,  documentId);
 	 * </code></pre></p>
-	 * @param documentId Unique identifier for a document, used by content and document calls. Document IDs are associated with document types, document type lists, sites, and tenants.
-	 * @param documentListName Name of content documentListName to delete
+	 * @param documentId Identifier of the document being retrieved.
+	 * @param documentListName The name of the document list associated with the document to retrieve.
 	 * @return com.mozu.api.contracts.content.Document
 	 * @see com.mozu.api.contracts.content.Document
 	 */
@@ -127,10 +127,10 @@ public class DocumentResource {
 	 *	Document document = new Document();
 	 *	Document document = document.getDocument( documentListName,  documentId,  includeInactive,  responseFields);
 	 * </code></pre></p>
-	 * @param documentId Unique identifier for a document, used by content and document calls. Document IDs are associated with document types, document type lists, sites, and tenants.
-	 * @param documentListName Name of content documentListName to delete
-	 * @param includeInactive Include inactive content.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param documentId Identifier of the document being retrieved.
+	 * @param documentListName The name of the document list associated with the document to retrieve.
+	 * @param includeInactive 
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.content.Document
 	 * @see com.mozu.api.contracts.content.Document
 	 */
@@ -149,7 +149,7 @@ public class DocumentResource {
 	 *	Document document = new Document();
 	 *	DocumentCollection documentCollection = document.getDocuments( documentListName);
 	 * </code></pre></p>
-	 * @param documentListName Name of content documentListName to delete
+	 * @param documentListName The name of the document list.
 	 * @return com.mozu.api.contracts.content.DocumentCollection
 	 * @see com.mozu.api.contracts.content.DocumentCollection
 	 */
@@ -164,13 +164,13 @@ public class DocumentResource {
 	 *	Document document = new Document();
 	 *	DocumentCollection documentCollection = document.getDocuments( documentListName,  filter,  sortBy,  pageSize,  startIndex,  includeInactive,  responseFields);
 	 * </code></pre></p>
-	 * @param documentListName Name of content documentListName to delete
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param includeInactive Include inactive content.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param documentListName The name of the document list.
+	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. You can filter a document's search results by any of its properties, including its name or folder path. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=Name+sw+Events"
+	 * @param includeInactive 
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @return com.mozu.api.contracts.content.DocumentCollection
 	 * @see com.mozu.api.contracts.content.DocumentCollection
 	 */
@@ -189,8 +189,8 @@ public class DocumentResource {
 	 *	Document document = new Document();
 	 *	Document document = document.createDocument( document,  documentListName);
 	 * </code></pre></p>
-	 * @param documentListName Name of content documentListName to delete
-	 * @param document The document properties that define the content used by the content management system (CMS).
+	 * @param documentListName The descriptive alphanumeric document list name being created.
+	 * @param document The descriptive name of the newly created document.
 	 * @return com.mozu.api.contracts.content.Document
 	 * @see com.mozu.api.contracts.content.Document
 	 * @see com.mozu.api.contracts.content.Document
@@ -206,9 +206,9 @@ public class DocumentResource {
 	 *	Document document = new Document();
 	 *	Document document = document.createDocument( document,  documentListName,  responseFields);
 	 * </code></pre></p>
-	 * @param documentListName Name of content documentListName to delete
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param document The document properties that define the content used by the content management system (CMS).
+	 * @param documentListName The descriptive alphanumeric document list name being created.
+	 * @param responseFields 
+	 * @param document The descriptive name of the newly created document.
 	 * @return com.mozu.api.contracts.content.Document
 	 * @see com.mozu.api.contracts.content.Document
 	 * @see com.mozu.api.contracts.content.Document
@@ -228,9 +228,9 @@ public class DocumentResource {
 	 *	Document document = new Document();
 	 *	document.updateDocumentContent( stream,  documentListName,  documentId,  contentType);
 	 * </code></pre></p>
-	 * @param documentId Unique identifier for a document, used by content and document calls. Document IDs are associated with document types, document type lists, sites, and tenants.
-	 * @param documentListName Name of content documentListName to delete
-	 * @param stream Data stream that delivers information. Used to input and output data.
+	 * @param documentId Unique identifier of the document.
+	 * @param documentListName The name of the document list associated with the document.
+	 * @param stream Input output stream that delivers information.
 	 * @return 
 	 * @see Stream
 	 */
@@ -249,9 +249,9 @@ public class DocumentResource {
 	 *	Document document = new Document();
 	 *	Document document = document.updateDocument( document,  documentListName,  documentId);
 	 * </code></pre></p>
-	 * @param documentId Unique identifier for a document, used by content and document calls. Document IDs are associated with document types, document type lists, sites, and tenants.
-	 * @param documentListName Name of content documentListName to delete
-	 * @param document The document properties that define the content used by the content management system (CMS).
+	 * @param documentId Unique identifier of the document to update.
+	 * @param documentListName Name of the document list associated with the document.
+	 * @param document Properties of the document to update.
 	 * @return com.mozu.api.contracts.content.Document
 	 * @see com.mozu.api.contracts.content.Document
 	 * @see com.mozu.api.contracts.content.Document
@@ -267,10 +267,10 @@ public class DocumentResource {
 	 *	Document document = new Document();
 	 *	Document document = document.updateDocument( document,  documentListName,  documentId,  responseFields);
 	 * </code></pre></p>
-	 * @param documentId Unique identifier for a document, used by content and document calls. Document IDs are associated with document types, document type lists, sites, and tenants.
-	 * @param documentListName Name of content documentListName to delete
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param document The document properties that define the content used by the content management system (CMS).
+	 * @param documentId Unique identifier of the document to update.
+	 * @param documentListName Name of the document list associated with the document.
+	 * @param responseFields 
+	 * @param document Properties of the document to update.
 	 * @return com.mozu.api.contracts.content.Document
 	 * @see com.mozu.api.contracts.content.Document
 	 * @see com.mozu.api.contracts.content.Document
@@ -290,8 +290,8 @@ public class DocumentResource {
 	 *	Document document = new Document();
 	 *	document.deleteDocument( documentListName,  documentId);
 	 * </code></pre></p>
-	 * @param documentId Unique identifier for a document, used by content and document calls. Document IDs are associated with document types, document type lists, sites, and tenants.
-	 * @param documentListName Name of content documentListName to delete
+	 * @param documentId Identifier of the document being deleted.
+	 * @param documentListName The name of the document list associated with the document list being deleted.
 	 * @return 
 	 */
 	public void deleteDocument(String documentListName, String documentId) throws Exception
@@ -309,8 +309,8 @@ public class DocumentResource {
 	 *	Document document = new Document();
 	 *	document.deleteDocumentContent( documentListName,  documentId);
 	 * </code></pre></p>
-	 * @param documentId Unique identifier for a document, used by content and document calls. Document IDs are associated with document types, document type lists, sites, and tenants.
-	 * @param documentListName Name of content documentListName to delete
+	 * @param documentId Unique identifier of the document.
+	 * @param documentListName The name of the document list associated with the document.
 	 * @return 
 	 */
 	public void deleteDocumentContent(String documentListName, String documentId) throws Exception

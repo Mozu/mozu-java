@@ -12,18 +12,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	Mozu.PaymentService.Extensibility.Contracts.V1.CardInformation ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CardInformation implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * cardHolderName ApiType DOCUMENT_HERE 
-	 */
 	protected  String cardHolderName;
 
 	public String getCardHolderName() {
@@ -34,9 +28,6 @@ public class CardInformation implements Serializable
 		this.cardHolderName = cardHolderName;
 	}
 
-	/**
-	 * cardIssueMonth ApiType DOCUMENT_HERE 
-	 */
 	protected  Integer cardIssueMonth;
 
 	public Integer getCardIssueMonth() {
@@ -47,9 +38,6 @@ public class CardInformation implements Serializable
 		this.cardIssueMonth = cardIssueMonth;
 	}
 
-	/**
-	 * cardIssueNumber ApiType DOCUMENT_HERE 
-	 */
 	protected  String cardIssueNumber;
 
 	public String getCardIssueNumber() {
@@ -60,9 +48,6 @@ public class CardInformation implements Serializable
 		this.cardIssueNumber = cardIssueNumber;
 	}
 
-	/**
-	 * cardIssueYear ApiType DOCUMENT_HERE 
-	 */
 	protected  Integer cardIssueYear;
 
 	public Integer getCardIssueYear() {
@@ -73,9 +58,6 @@ public class CardInformation implements Serializable
 		this.cardIssueYear = cardIssueYear;
 	}
 
-	/**
-	 * cvv ApiType DOCUMENT_HERE 
-	 */
 	protected  String cvv;
 
 	public String getCvv() {
@@ -86,9 +68,6 @@ public class CardInformation implements Serializable
 		this.cvv = cvv;
 	}
 
-	/**
-	 * The two-digit month a credit card expires for a payment method.
-	 */
 	protected  Integer expireMonth;
 
 	public Integer getExpireMonth() {
@@ -99,9 +78,6 @@ public class CardInformation implements Serializable
 		this.expireMonth = expireMonth;
 	}
 
-	/**
-	 * The four-digit year the credit card expires for a payment method.
-	 */
 	protected  Integer expireYear;
 
 	public Integer getExpireYear() {
@@ -112,9 +88,6 @@ public class CardInformation implements Serializable
 		this.expireYear = expireYear;
 	}
 
-	/**
-	 * Unique identifier of the source property, such as a catalog, discount, order, or email template.For a product field it will be the name of the field.For a category ID, must be a positive integer not greater than 2000000. By default,  auto-generates a category ID when categories are created. If you want to specify an ID during creation (which preserves category link relationships when migrating tenant data from one sandbox to another), you must also include the  query string in the endpoint. For example, . Then, use the  property to specify the desired category ID.For a product attribute it will be the Attribute FQN.For a document, the ID must be specified as a 32 character, case-insensitive, alphanumeric string. You can specify the ID as 32 sequential characters or as groups separated by dashes in the format 8-4-4-4-12. For example, or.For email templates, the ID must be one of the following values:			
-	 */
 	protected  String id;
 
 	public String getId() {
@@ -125,9 +98,6 @@ public class CardInformation implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * numberPart ApiType DOCUMENT_HERE 
-	 */
 	protected  String numberPart;
 
 	public String getNumberPart() {
@@ -138,9 +108,6 @@ public class CardInformation implements Serializable
 		this.numberPart = numberPart;
 	}
 
-	/**
-	 * persistCard ApiType DOCUMENT_HERE 
-	 */
 	protected  Boolean persistCard;
 
 	public Boolean getPersistCard() {
@@ -151,9 +118,6 @@ public class CardInformation implements Serializable
 		this.persistCard = persistCard;
 	}
 
-	/**
-	 * type ApiType DOCUMENT_HERE 
-	 */
 	protected  String type;
 
 	public String getType() {

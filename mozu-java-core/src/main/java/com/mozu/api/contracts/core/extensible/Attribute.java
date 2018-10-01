@@ -69,7 +69,7 @@ public class Attribute implements Serializable
 	}
 
 	/**
-	 * Whether the customer or order attribute appears in  only, or in both  and the website storefront. Possible values are Admin and AdminAndStorefront.
+	 * Whether the customer or order attribute appears in Mozu Admin only, or in both Mozu Admin and the website storefront. Possible values are Admin and AdminAndStorefront.
 	 */
 	protected  String displayGroup;
 
@@ -124,9 +124,6 @@ public class Attribute implements Serializable
 		this.isMultiValued = isMultiValued;
 	}
 
-	/**
-	 * Flag used to indicate if this attribute definition is read-only. Once an attribute definition is set to read-only this action cannot be undone. 
-	 */
 	protected  Boolean isReadOnly;
 
 	public Boolean getIsReadOnly() {
@@ -138,7 +135,7 @@ public class Attribute implements Serializable
 	}
 
 	/**
-	 * Indicates if the property, attribute, product option, or product extra is required. If true, the object must have a defined value.
+	 * If true, the attribute must have a defined value.
 	 */
 	protected  Boolean isRequired;
 
@@ -174,7 +171,7 @@ public class Attribute implements Serializable
 	}
 
 	/**
-	 * Integer that represents the sequence order of the attribute.
+	 * Integer that represents the sequence of the attribute.
 	 */
 	protected  Integer order;
 
@@ -187,7 +184,7 @@ public class Attribute implements Serializable
 	}
 
 	/**
-	 * An attribute value type is either predefined vocabulary by the admin during attribute set up or user-defined with an appropriate type (AdminEntered or ShopperEntered depending on the user). These types are used by products and attributes. The difference between predefined values versus manually entered values is such that the first choice is a set of options to choose from. AdminEntered and ShopperEntered are values that are entered rather than system-supplied and are not stored in the database, but captured during a live commerce operations such as during an order.
+	 * An attribute value type is either predefined vocabulary by the admin during attribute set up or it can be "AdminEntered" or "ShopperEntered". The difference between predefined values versus manually entered values is such that the first choice is a set of options to choose from. AdminEntered and ShopperEntered are values that are entered rather than system-supplied and are not stored in the database, but captured during a live commerce operations such as during an order.
 	 */
 	protected  String valueType;
 

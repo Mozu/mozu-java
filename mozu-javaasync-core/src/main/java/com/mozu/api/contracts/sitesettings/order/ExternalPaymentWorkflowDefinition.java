@@ -24,9 +24,6 @@ public class ExternalPaymentWorkflowDefinition implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The localized description in text for the object, displayed per the locale code. For example, descriptions are used for product descriptions, attributes, and pre-authorization transaction types.
-	 */
 	protected  String description;
 
 	public String getDescription() {
@@ -37,9 +34,6 @@ public class ExternalPaymentWorkflowDefinition implements Serializable
 		this.description = description;
 	}
 
-	/**
-	 * Fully qualified name of the attribute for the order or customer. 
-	 */
 	protected  String fullyQualifiedName;
 
 	public String getFullyQualifiedName() {
@@ -60,6 +54,16 @@ public class ExternalPaymentWorkflowDefinition implements Serializable
 		this.isEnabled = isEnabled;
 	}
 
+	protected  Boolean isLegacy;
+
+	public Boolean getIsLegacy() {
+		return this.isLegacy;
+	}
+
+	public void setIsLegacy(Boolean isLegacy) {
+		this.isLegacy = isLegacy;
+	}
+
 	protected  String name;
 
 	public String getName() {
@@ -70,9 +74,6 @@ public class ExternalPaymentWorkflowDefinition implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * The namespace for the accessible APIs and source capabilities in the core of  APIs.
-	 */
 	protected  String namespace;
 
 	public String getNamespace() {

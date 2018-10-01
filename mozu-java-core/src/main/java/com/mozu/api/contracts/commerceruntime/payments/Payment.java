@@ -70,9 +70,6 @@ public class Payment implements Serializable
 		this.availableActions = availableActions;
 	}
 
-	/**
-	 * The external/third party transaction Id for this payment. This is used to store the transaction Id from digital wallet like Visa Checkout
-	 */
 	protected  String externalTransactionId;
 
 	public String getExternalTransactionId() {
@@ -133,9 +130,6 @@ public class Payment implements Serializable
 		this.paymentType = paymentType;
 	}
 
-	/**
-	 * The source of data for this payment. By default, this will be set to 'mozu'
-	 */
 	protected  String paymentWorkflow;
 
 	public String getPaymentWorkflow() {
@@ -177,7 +171,7 @@ public class Payment implements Serializable
 	}
 
 	/**
-	 * Collection (list or paged) of change messages logged for each modification made by a shopper to their carts, wishlists, orders, package, payment, pickup, and returns. Change log messages are system-supplied based on shopper actions and read only.
+	 * List of change messages associated with the payment.
 	 */
 	protected List<ChangeMessage> changeMessages;
 	public List<ChangeMessage> getChangeMessages() {
@@ -187,9 +181,6 @@ public class Payment implements Serializable
 		this.changeMessages = changeMessages;
 	}
 
-	/**
-	 * Custom data originated by the payment service.
-	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {
@@ -200,9 +191,6 @@ public class Payment implements Serializable
 		this.data = data;
 	}
 
-	/**
-	 * groupId ApiType DOCUMENT_HERE 
-	 */
 	protected  PaymentActionTarget groupId;
 
 	public PaymentActionTarget getGroupId() {
@@ -221,9 +209,6 @@ public class Payment implements Serializable
 		this.interactions = interactions;
 	}
 
-	/**
-	 * subPayments ApiType DOCUMENT_HERE 
-	 */
 	protected List<SubPayment> subPayments;
 	public List<SubPayment> getSubPayments() {
 		return this.subPayments;

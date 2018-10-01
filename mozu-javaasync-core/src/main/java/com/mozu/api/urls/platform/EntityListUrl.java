@@ -15,11 +15,11 @@ public class EntityListUrl
 
 	/**
 	 * Get Resource Url for GetEntityLists
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param filter 
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getEntityListsUrl(String filter, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
@@ -35,8 +35,8 @@ public class EntityListUrl
 
 	/**
 	 * Get Resource Url for GetEntityList
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param entityListFullName 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getEntityListUrl(String entityListFullName, String responseFields)
@@ -49,7 +49,7 @@ public class EntityListUrl
 
 	/**
 	 * Get Resource Url for CreateEntityList
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl createEntityListUrl(String responseFields)
@@ -61,8 +61,8 @@ public class EntityListUrl
 
 	/**
 	 * Get Resource Url for UpdateEntityList
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param entityListFullName 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateEntityListUrl(String entityListFullName, String responseFields)
@@ -75,7 +75,7 @@ public class EntityListUrl
 
 	/**
 	 * Get Resource Url for DeleteEntityList
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param entityListFullName 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteEntityListUrl(String entityListFullName)

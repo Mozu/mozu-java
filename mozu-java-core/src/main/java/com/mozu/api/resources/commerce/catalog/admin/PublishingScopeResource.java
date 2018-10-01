@@ -19,7 +19,7 @@ import org.apache.commons.lang.StringUtils;
 
 import com.mozu.api.DataViewMode;
 /** <summary>
- * Use the Product Publishing resource to publish or discard pending changes to products in a master catalog, or to add or remove pending changes to and from product publish sets.You can use product publish sets to group pending product changes together and publish them all at the same time.
+ * Use the Product Publishing resource to publish or discard pending changes to product definitions in the master catalog.
  * </summary>
  */
 public class PublishingScopeResource {
@@ -48,7 +48,7 @@ public class PublishingScopeResource {
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	PublishSet publishSet = publishingscope.getPublishSet( publishSetCode);
 	 * </code></pre></p>
-	 * @param publishSetCode The unique identifier of the publish set.
+	 * @param publishSetCode 
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.PublishSet
 	 * @see com.mozu.api.contracts.productadmin.PublishSet
@@ -64,8 +64,8 @@ public class PublishingScopeResource {
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	PublishSet publishSet = publishingscope.getPublishSet( publishSetCode,  responseFields);
 	 * </code></pre></p>
-	 * @param publishSetCode The unique identifier of the publish set.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param publishSetCode 
+	 * @param responseFields 
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.PublishSet
 	 * @see com.mozu.api.contracts.productadmin.PublishSet
@@ -100,7 +100,7 @@ public class PublishingScopeResource {
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	PublishSetCollection publishSetCollection = publishingscope.getPublishSets( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.PublishSetCollection
 	 * @see com.mozu.api.contracts.productadmin.PublishSetCollection
@@ -121,7 +121,7 @@ public class PublishingScopeResource {
 	 *	publishingscope.discardDrafts( publishScope);
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param publishScope Describes the scope of the product publishing update, which can include individual product codes or all pending changes.
+	 * @param publishScope Properties of the pending product changes to include in this operation.
 	 * @return 
 	 * @see com.mozu.api.contracts.productadmin.PublishingScope
 	 */
@@ -141,7 +141,7 @@ public class PublishingScopeResource {
 	 *	publishingscope.publishDrafts( publishScope);
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param publishScope Describes the scope of the product publishing update, which can include individual product codes or all pending changes.
+	 * @param publishScope Properties of the pending product changes to include in this operation.
 	 * @return 
 	 * @see com.mozu.api.contracts.productadmin.PublishingScope
 	 */
@@ -161,7 +161,7 @@ public class PublishingScopeResource {
 	 *	PublishSet publishSet = publishingscope.assignProductsToPublishSet( publishSet);
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param publishSet The details of the publish to which you want to assign products.
+	 * @param publishSet 
 	 * @return com.mozu.api.contracts.productadmin.PublishSet
 	 * @see com.mozu.api.contracts.productadmin.PublishSet
 	 * @see com.mozu.api.contracts.productadmin.PublishSet
@@ -177,9 +177,9 @@ public class PublishingScopeResource {
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	PublishSet publishSet = publishingscope.assignProductsToPublishSet( publishSet,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param dataViewMode DataViewMode
-	 * @param publishSet The details of the publish to which you want to assign products.
+	 * @param publishSet 
 	 * @return com.mozu.api.contracts.productadmin.PublishSet
 	 * @see com.mozu.api.contracts.productadmin.PublishSet
 	 * @see com.mozu.api.contracts.productadmin.PublishSet
@@ -199,7 +199,7 @@ public class PublishingScopeResource {
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	publishingscope.deletePublishSet( publishSetCode);
 	 * </code></pre></p>
-	 * @param publishSetCode The unique identifier of the publish set.
+	 * @param publishSetCode 
 	 * @param dataViewMode DataViewMode
 	 * @return 
 	 */
@@ -214,8 +214,8 @@ public class PublishingScopeResource {
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	publishingscope.deletePublishSet( publishSetCode,  discardDrafts);
 	 * </code></pre></p>
-	 * @param discardDrafts Specifies whether to discard all the drafts assigned to the publish set when the publish set is deleted.
-	 * @param publishSetCode The unique identifier of the publish set.
+	 * @param discardDrafts 
+	 * @param publishSetCode 
 	 * @param dataViewMode DataViewMode
 	 * @return 
 	 */

@@ -40,7 +40,7 @@ public class AdjustmentResource {
 	 *	Adjustment adjustment = new Adjustment();
 	 *	Order order = adjustment.applyHandlingAdjustment( adjustment,  orderId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId 
 	 * @param adjustment 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
@@ -57,10 +57,10 @@ public class AdjustmentResource {
 	 *	Adjustment adjustment = new Adjustment();
 	 *	Order order = adjustment.applyHandlingAdjustment( adjustment,  orderId,  updateMode,  version,  responseFields);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
+	 * @param orderId 
+	 * @param responseFields 
+	 * @param updateMode 
+	 * @param version 
 	 * @param adjustment 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
@@ -81,8 +81,8 @@ public class AdjustmentResource {
 	 *	Adjustment adjustment = new Adjustment();
 	 *	Order order = adjustment.applyShippingAdjustment( adjustment,  orderId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param adjustment Properties of an ad-hoc price adjustment for an order.
+	 * @param orderId Unique identifier of the order associated with the shipping adjustment.
+	 * @param adjustment Properties of the shipping adjustment to apply to the order.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.Adjustment
@@ -98,11 +98,11 @@ public class AdjustmentResource {
 	 *	Adjustment adjustment = new Adjustment();
 	 *	Order order = adjustment.applyShippingAdjustment( adjustment,  orderId,  updateMode,  version,  responseFields);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
-	 * @param adjustment Properties of an ad-hoc price adjustment for an order.
+	 * @param orderId Unique identifier of the order associated with the shipping adjustment.
+	 * @param responseFields 
+	 * @param updateMode Specifies whether to apply the shipping adjustment by updating the original order, updating the order in draft mode, or updating the order in draft mode and then committing the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
+	 * @param version 
+	 * @param adjustment Properties of the shipping adjustment to apply to the order.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.Adjustment
@@ -122,8 +122,8 @@ public class AdjustmentResource {
 	 *	Adjustment adjustment = new Adjustment();
 	 *	Order order = adjustment.applyAdjustment( adjustment,  orderId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param adjustment Properties of an ad-hoc price adjustment for an order.
+	 * @param orderId Unique identifier of the order for which to apply the adjustment.
+	 * @param adjustment Properties of the price adjustment to apply to the order.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.Adjustment
@@ -139,11 +139,11 @@ public class AdjustmentResource {
 	 *	Adjustment adjustment = new Adjustment();
 	 *	Order order = adjustment.applyAdjustment( adjustment,  orderId,  updateMode,  version,  responseFields);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
-	 * @param adjustment Properties of an ad-hoc price adjustment for an order.
+	 * @param orderId Unique identifier of the order for which to apply the adjustment.
+	 * @param responseFields 
+	 * @param updateMode Specifies whether to apply the adjustment by updating the original order, updating the order in draft mode, or updating the order in draft mode and then committing the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
+	 * @param version 
+	 * @param adjustment Properties of the price adjustment to apply to the order.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.Adjustment
@@ -163,7 +163,7 @@ public class AdjustmentResource {
 	 *	Adjustment adjustment = new Adjustment();
 	 *	Order order = adjustment.removeHandlingAdjustment( orderId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 */
@@ -178,9 +178,9 @@ public class AdjustmentResource {
 	 *	Adjustment adjustment = new Adjustment();
 	 *	Order order = adjustment.removeHandlingAdjustment( orderId,  updateMode,  version);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
+	 * @param orderId 
+	 * @param updateMode 
+	 * @param version 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 */
@@ -199,7 +199,7 @@ public class AdjustmentResource {
 	 *	Adjustment adjustment = new Adjustment();
 	 *	Order order = adjustment.removeShippingAdjustment( orderId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId Unique identifier of the order with the applied shipping adjustment.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 */
@@ -214,9 +214,9 @@ public class AdjustmentResource {
 	 *	Adjustment adjustment = new Adjustment();
 	 *	Order order = adjustment.removeShippingAdjustment( orderId,  updateMode,  version);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
+	 * @param orderId Unique identifier of the order with the applied shipping adjustment.
+	 * @param updateMode Specifies whether to remove the shipping adjustment by updating the original order, updating the order in draft mode, or updating the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
+	 * @param version 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 */
@@ -235,7 +235,7 @@ public class AdjustmentResource {
 	 *	Adjustment adjustment = new Adjustment();
 	 *	Order order = adjustment.removeAdjustment( orderId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId Unique identifier of the order for which to delete the adjustment.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 */
@@ -250,9 +250,9 @@ public class AdjustmentResource {
 	 *	Adjustment adjustment = new Adjustment();
 	 *	Order order = adjustment.removeAdjustment( orderId,  updateMode,  version);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
+	 * @param orderId Unique identifier of the order for which to delete the adjustment.
+	 * @param updateMode Specifies whether to remove the adjustment by updating the original order, updating the order in draft mode, or updating the order in draft mode and then committing the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
+	 * @param version 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 */

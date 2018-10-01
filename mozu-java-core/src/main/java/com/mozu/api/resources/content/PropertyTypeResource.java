@@ -62,9 +62,9 @@ public class PropertyTypeResource {
 	 *	PropertyType propertytype = new PropertyType();
 	 *	PropertyTypeCollection propertyTypeCollection = propertytype.getPropertyTypes( pageSize,  startIndex,  responseFields);
 	 * </code></pre></p>
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param startIndex 
 	 * @return com.mozu.api.contracts.content.PropertyTypeCollection
 	 * @see com.mozu.api.contracts.content.PropertyTypeCollection
 	 */
@@ -83,7 +83,7 @@ public class PropertyTypeResource {
 	 *	PropertyType propertytype = new PropertyType();
 	 *	PropertyType propertyType = propertytype.getPropertyType( propertyTypeName);
 	 * </code></pre></p>
-	 * @param propertyTypeName The name of the property type.
+	 * @param propertyTypeName The name of the content property type.
 	 * @return com.mozu.api.contracts.content.PropertyType
 	 * @see com.mozu.api.contracts.content.PropertyType
 	 */
@@ -98,8 +98,8 @@ public class PropertyTypeResource {
 	 *	PropertyType propertytype = new PropertyType();
 	 *	PropertyType propertyType = propertytype.getPropertyType( propertyTypeName,  responseFields);
 	 * </code></pre></p>
-	 * @param propertyTypeName The name of the property type.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param propertyTypeName The name of the content property type.
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.content.PropertyType
 	 * @see com.mozu.api.contracts.content.PropertyType
 	 */
@@ -118,7 +118,7 @@ public class PropertyTypeResource {
 	 *	PropertyType propertytype = new PropertyType();
 	 *	PropertyType propertyType = propertytype.createPropertyType( propertyType);
 	 * </code></pre></p>
-	 * @param propertyType Property type available for content. Property types are like templates that can be reused.
+	 * @param propertyType 
 	 * @return com.mozu.api.contracts.content.PropertyType
 	 * @see com.mozu.api.contracts.content.PropertyType
 	 * @see com.mozu.api.contracts.content.PropertyType
@@ -134,8 +134,8 @@ public class PropertyTypeResource {
 	 *	PropertyType propertytype = new PropertyType();
 	 *	PropertyType propertyType = propertytype.createPropertyType( propertyType,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param propertyType Property type available for content. Property types are like templates that can be reused.
+	 * @param responseFields 
+	 * @param propertyType 
 	 * @return com.mozu.api.contracts.content.PropertyType
 	 * @see com.mozu.api.contracts.content.PropertyType
 	 * @see com.mozu.api.contracts.content.PropertyType
@@ -155,8 +155,8 @@ public class PropertyTypeResource {
 	 *	PropertyType propertytype = new PropertyType();
 	 *	PropertyType propertyType = propertytype.updatePropertyType( propertyType,  propertyTypeName);
 	 * </code></pre></p>
-	 * @param propertyTypeName The name of the property type.
-	 * @param propertyType Property type available for content. Property types are like templates that can be reused.
+	 * @param propertyTypeName 
+	 * @param propertyType 
 	 * @return com.mozu.api.contracts.content.PropertyType
 	 * @see com.mozu.api.contracts.content.PropertyType
 	 * @see com.mozu.api.contracts.content.PropertyType
@@ -172,9 +172,9 @@ public class PropertyTypeResource {
 	 *	PropertyType propertytype = new PropertyType();
 	 *	PropertyType propertyType = propertytype.updatePropertyType( propertyType,  propertyTypeName,  responseFields);
 	 * </code></pre></p>
-	 * @param propertyTypeName The name of the property type.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param propertyType Property type available for content. Property types are like templates that can be reused.
+	 * @param propertyTypeName 
+	 * @param responseFields 
+	 * @param propertyType 
 	 * @return com.mozu.api.contracts.content.PropertyType
 	 * @see com.mozu.api.contracts.content.PropertyType
 	 * @see com.mozu.api.contracts.content.PropertyType
@@ -194,7 +194,7 @@ public class PropertyTypeResource {
 	 *	PropertyType propertytype = new PropertyType();
 	 *	propertytype.deletePropertyType( propertyTypeName);
 	 * </code></pre></p>
-	 * @param propertyTypeName The name of the property type.
+	 * @param propertyTypeName 
 	 * @return 
 	 */
 	public void deletePropertyType(String propertyTypeName) throws Exception

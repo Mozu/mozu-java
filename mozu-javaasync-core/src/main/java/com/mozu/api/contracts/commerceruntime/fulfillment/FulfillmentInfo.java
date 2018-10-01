@@ -11,8 +11,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
-import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.core.Contact;
+import com.mozu.api.contracts.core.AuditInfo;
 
 /**
  *	Properties of the information needed to fulfill an order, whether via in-store pickup or direct shipping.
@@ -53,6 +53,16 @@ public class FulfillmentInfo implements Serializable
 		this.shippingMethodName = shippingMethodName;
 	}
 
+	protected  Contact fulfillmentContact;
+
+	public Contact getFulfillmentContact() {
+		return this.fulfillmentContact;
+	}
+
+	public void setFulfillmentContact(Contact fulfillmentContact) {
+		this.fulfillmentContact = fulfillmentContact;
+	}
+
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -63,9 +73,6 @@ public class FulfillmentInfo implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * Custom data originated by the shipping service.
-	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {
@@ -74,16 +81,6 @@ public class FulfillmentInfo implements Serializable
 
 	public void setData(com.fasterxml.jackson.databind.JsonNode data) {
 		this.data = data;
-	}
-
-	protected  Contact fulfillmentContact;
-
-	public Contact getFulfillmentContact() {
-		return this.fulfillmentContact;
-	}
-
-	public void setFulfillmentContact(Contact fulfillmentContact) {
-		this.fulfillmentContact = fulfillmentContact;
 	}
 
 	private void writeObject(java.io.ObjectOutputStream out) throws IOException {

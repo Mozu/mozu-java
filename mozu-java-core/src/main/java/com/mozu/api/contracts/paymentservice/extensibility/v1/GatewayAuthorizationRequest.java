@@ -14,32 +14,14 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.paymentservice.extensibility.v1.CardInformation;
 import com.mozu.api.contracts.paymentservice.extensibility.v1.AdapterContext;
 import com.mozu.api.contracts.paymentservice.extensibility.v1.CustomerInformation;
+import com.mozu.api.contracts.paymentservice.extensibility.v1.PaymentToken;
 
-/**
- *	Mozu.PaymentService.Extensibility.Contracts.V1.GatewayAuthorizationRequest ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class GatewayAuthorizationRequest implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * additionalData ApiType DOCUMENT_HERE 
-	 */
-	protected  Object additionalData;
-
-	public Object getAdditionalData() {
-		return this.additionalData;
-	}
-
-	public void setAdditionalData(Object additionalData) {
-		this.additionalData = additionalData;
-	}
-
-	/**
-	 * amount ApiType DOCUMENT_HERE 
-	 */
 	protected  Double amount;
 
 	public Double getAmount() {
@@ -50,9 +32,6 @@ public class GatewayAuthorizationRequest implements Serializable
 		this.amount = amount;
 	}
 
-	/**
-	 * apiVersion ApiType DOCUMENT_HERE 
-	 */
 	protected  String apiVersion;
 
 	public String getApiVersion() {
@@ -63,9 +42,6 @@ public class GatewayAuthorizationRequest implements Serializable
 		this.apiVersion = apiVersion;
 	}
 
-	/**
-	 * methodName ApiType DOCUMENT_HERE 
-	 */
 	protected  String methodName;
 
 	public String getMethodName() {
@@ -76,9 +52,6 @@ public class GatewayAuthorizationRequest implements Serializable
 		this.methodName = methodName;
 	}
 
-	/**
-	 * preAuth ApiType DOCUMENT_HERE 
-	 */
 	protected  Boolean preAuth;
 
 	public Boolean getPreAuth() {
@@ -89,9 +62,6 @@ public class GatewayAuthorizationRequest implements Serializable
 		this.preAuth = preAuth;
 	}
 
-	/**
-	 * recurringType ApiType DOCUMENT_HERE 
-	 */
 	protected  String recurringType;
 
 	public String getRecurringType() {
@@ -102,9 +72,6 @@ public class GatewayAuthorizationRequest implements Serializable
 		this.recurringType = recurringType;
 	}
 
-	/**
-	 * card ApiType DOCUMENT_HERE 
-	 */
 	protected  CardInformation card;
 
 	public CardInformation getCard() {
@@ -115,9 +82,6 @@ public class GatewayAuthorizationRequest implements Serializable
 		this.card = card;
 	}
 
-	/**
-	 * context ApiType DOCUMENT_HERE 
-	 */
 	protected  AdapterContext context;
 
 	public AdapterContext getContext() {
@@ -128,9 +92,16 @@ public class GatewayAuthorizationRequest implements Serializable
 		this.context = context;
 	}
 
-	/**
-	 * shopper ApiType DOCUMENT_HERE 
-	 */
+	protected transient com.fasterxml.jackson.databind.JsonNode data;
+
+	public com.fasterxml.jackson.databind.JsonNode getData() {
+		return this.data;
+	}
+
+	public void setData(com.fasterxml.jackson.databind.JsonNode data) {
+		this.data = data;
+	}
+
 	protected  CustomerInformation shopper;
 
 	public CustomerInformation getShopper() {
@@ -141,5 +112,31 @@ public class GatewayAuthorizationRequest implements Serializable
 		this.shopper = shopper;
 	}
 
+	protected  PaymentToken token;
+
+	public PaymentToken getToken() {
+		return this.token;
+	}
+
+	public void setToken(PaymentToken token) {
+		this.token = token;
+	}
+
+	private void writeObject(java.io.ObjectOutputStream out) throws IOException {
+		out.defaultWriteObject();
+		if(data == null){
+			out.writeBoolean(false);
+		} else {
+			out.writeBoolean(true);
+			new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonGenerator.Feature.AUTO_CLOSE_TARGET, false).writeValue(out, data);
+		}
+	}
+
+	private void readObject(java.io.ObjectInputStream in) throws IOException, ClassNotFoundException {
+		in.defaultReadObject();
+		if(in.readBoolean()){
+			this.data = new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonParser.Feature.AUTO_CLOSE_SOURCE, false).readValue(in, com.fasterxml.jackson.databind.JsonNode.class);
+		}
+	}
 
 }

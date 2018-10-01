@@ -32,7 +32,7 @@ public class InstalledApplicationsClient {
 	 * client.executeRequest();
 	 * Application application = client.Result();
 	 * </code></pre></p>
-	 * @param appId appId parameter description DOCUMENT_HERE 
+	 * @param appId The application ID that represents the application to retrieve.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.installedapplications.Application>
 	 * @see com.mozu.api.contracts.installedapplications.Application
 	 */
@@ -49,8 +49,8 @@ public class InstalledApplicationsClient {
 	 * client.executeRequest();
 	 * Application application = client.Result();
 	 * </code></pre></p>
-	 * @param appId appId parameter description DOCUMENT_HERE 
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param appId The application ID that represents the application to retrieve.
+	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.installedapplications.Application>
 	 * @see com.mozu.api.contracts.installedapplications.Application
 	 */
@@ -74,8 +74,8 @@ public class InstalledApplicationsClient {
 	 * client.executeRequest();
 	 * Application application = client.Result();
 	 * </code></pre></p>
-	 * @param appId appId parameter description DOCUMENT_HERE 
-	 * @param application Properties of an app installed in a tenant.
+	 * @param appId The application ID that represents the application to update.
+	 * @param application Properties of the application to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.installedapplications.Application>
 	 * @see com.mozu.api.contracts.installedapplications.Application
 	 * @see com.mozu.api.contracts.installedapplications.Application
@@ -93,9 +93,9 @@ public class InstalledApplicationsClient {
 	 * client.executeRequest();
 	 * Application application = client.Result();
 	 * </code></pre></p>
-	 * @param appId appId parameter description DOCUMENT_HERE 
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param application Properties of an app installed in a tenant.
+	 * @param appId The application ID that represents the application to update.
+	 * @param responseFields 
+	 * @param application Properties of the application to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.installedapplications.Application>
 	 * @see com.mozu.api.contracts.installedapplications.Application
 	 * @see com.mozu.api.contracts.installedapplications.Application

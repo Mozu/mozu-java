@@ -15,10 +15,10 @@ public class ListViewUrl
 
 	/**
 	 * Get Resource Url for GetViewEntity
-	 * @param entityId Unique identifier for an entity, which defines the schema, rules, and formats for JSON entities within the MZDB ( Mongo DB).
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param viewName The name for a view. Views are used to render data in , such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param entityId 
+	 * @param entityListFullName 
+	 * @param responseFields 
+	 * @param viewName 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getViewEntityUrl(String entityId, String entityListFullName, String responseFields, String viewName)
@@ -33,12 +33,12 @@ public class ListViewUrl
 
 	/**
 	 * Get Resource Url for GetViewEntities
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
-	 * @param viewName The name for a view. Views are used to render data in , such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param entityListFullName 
+	 * @param filter 
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param startIndex 
+	 * @param viewName 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getViewEntitiesUrl(String entityListFullName, String filter, Integer pageSize, String responseFields, Integer startIndex, String viewName)
@@ -55,10 +55,10 @@ public class ListViewUrl
 
 	/**
 	 * Get Resource Url for GetViewEntityContainer
-	 * @param entityId Unique identifier for an entity, which defines the schema, rules, and formats for JSON entities within the MZDB ( Mongo DB).
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param viewName The name for a view. Views are used to render data in , such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param entityId 
+	 * @param entityListFullName 
+	 * @param responseFields 
+	 * @param viewName 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getViewEntityContainerUrl(String entityId, String entityListFullName, String responseFields, String viewName)
@@ -73,12 +73,12 @@ public class ListViewUrl
 
 	/**
 	 * Get Resource Url for GetViewEntityContainers
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
-	 * @param viewName The name for a view. Views are used to render data in , such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param entityListFullName 
+	 * @param filter 
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param startIndex 
+	 * @param viewName 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getViewEntityContainersUrl(String entityListFullName, String filter, Integer pageSize, String responseFields, Integer startIndex, String viewName)
@@ -95,9 +95,9 @@ public class ListViewUrl
 
 	/**
 	 * Get Resource Url for GetEntityListView
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param viewName The name for a view. Views are used to render data in , such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param entityListFullName 
+	 * @param responseFields 
+	 * @param viewName 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getEntityListViewUrl(String entityListFullName, String responseFields, String viewName)
@@ -111,8 +111,8 @@ public class ListViewUrl
 
 	/**
 	 * Get Resource Url for GetEntityListViews
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param entityListFullName 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getEntityListViewsUrl(String entityListFullName, String responseFields)
@@ -125,8 +125,8 @@ public class ListViewUrl
 
 	/**
 	 * Get Resource Url for CreateEntityListView
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param entityListFullName 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl createEntityListViewUrl(String entityListFullName, String responseFields)
@@ -139,9 +139,9 @@ public class ListViewUrl
 
 	/**
 	 * Get Resource Url for UpdateEntityListView
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param viewName The name for a view. Views are used to render data in , such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param entityListFullName 
+	 * @param responseFields 
+	 * @param viewName 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateEntityListViewUrl(String entityListFullName, String responseFields, String viewName)
@@ -155,8 +155,8 @@ public class ListViewUrl
 
 	/**
 	 * Get Resource Url for DeleteEntityListView
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param viewName The name for a view. Views are used to render data in , such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param entityListFullName 
+	 * @param viewName 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteEntityListViewUrl(String entityListFullName, String viewName)

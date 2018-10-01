@@ -16,8 +16,8 @@ public class SecureAppDataUrl
 	/**
 	 * Get Resource Url for GetDBValue
 	 * @param appKeyId 
-	 * @param dbEntryQuery The database entry string to create.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param dbEntryQuery 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getDBValueUrl(String appKeyId, String dbEntryQuery, String responseFields)
@@ -32,7 +32,7 @@ public class SecureAppDataUrl
 	/**
 	 * Get Resource Url for CreateDBValue
 	 * @param appKeyId 
-	 * @param dbEntryQuery The database entry string to create.
+	 * @param dbEntryQuery 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl createDBValueUrl(String appKeyId, String dbEntryQuery)
@@ -46,7 +46,7 @@ public class SecureAppDataUrl
 	/**
 	 * Get Resource Url for UpdateDBValue
 	 * @param appKeyId 
-	 * @param dbEntryQuery The database entry string to create.
+	 * @param dbEntryQuery 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateDBValueUrl(String appKeyId, String dbEntryQuery)
@@ -60,7 +60,7 @@ public class SecureAppDataUrl
 	/**
 	 * Get Resource Url for DeleteDBValue
 	 * @param appKeyId 
-	 * @param dbEntryQuery The database entry string to create.
+	 * @param dbEntryQuery 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteDBValueUrl(String appKeyId, String dbEntryQuery)

@@ -15,9 +15,9 @@ public class CustomerNoteUrl
 
 	/**
 	 * Get Resource Url for GetAccountNote
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId Unique identifier of the customer account that contains the note being retrieved.
 	 * @param noteId Unique identifier of a particular note to retrieve.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getAccountNoteUrl(Integer accountId, Integer noteId, String responseFields)
@@ -32,11 +32,11 @@ public class CustomerNoteUrl
 	/**
 	 * Get Resource Url for GetAccountNotes
 	 * @param accountId Unique identifier of the customer account.
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param filter 
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getAccountNotesUrl(Integer accountId, String filter, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
@@ -53,8 +53,8 @@ public class CustomerNoteUrl
 
 	/**
 	 * Get Resource Url for AddAccountNote
-	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param accountId Unique identifier of the customer account for which to create the note.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addAccountNoteUrl(Integer accountId, String responseFields)
@@ -67,9 +67,9 @@ public class CustomerNoteUrl
 
 	/**
 	 * Get Resource Url for UpdateAccountNote
-	 * @param accountId Unique identifier of the customer account.
-	 * @param noteId Unique identifier of a particular note to retrieve.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param accountId Unique identifier of the customer account note to modify.
+	 * @param noteId Unique identifier of the note to update.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateAccountNoteUrl(Integer accountId, Integer noteId, String responseFields)
@@ -83,8 +83,8 @@ public class CustomerNoteUrl
 
 	/**
 	 * Get Resource Url for DeleteAccountNote
-	 * @param accountId Unique identifier of the customer account.
-	 * @param noteId Unique identifier of a particular note to retrieve.
+	 * @param accountId Unique identifier of the customer account that contains the note being deleted.
+	 * @param noteId Unique identifier of the customer account note being deleted.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteAccountNoteUrl(Integer accountId, Integer noteId)

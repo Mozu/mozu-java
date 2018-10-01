@@ -54,7 +54,7 @@ public class ChangeMessageResource {
 	 *	ChangeMessage changemessage = new ChangeMessage();
 	 *	CartChangeMessageCollection cartChangeMessageCollection = changemessage.getMessages( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection
 	 */

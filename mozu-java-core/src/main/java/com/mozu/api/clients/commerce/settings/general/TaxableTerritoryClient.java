@@ -53,7 +53,7 @@ public class TaxableTerritoryClient {
 	 * client.executeRequest();
 	 * TaxableTerritory taxableTerritory = client.Result();
 	 * </code></pre></p>
-	 * @param taxableTerritory Properties of the territory which is subject to sales tax.
+	 * @param taxableTerritory Properties of the taxable territory to create.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.general.TaxableTerritory>
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
@@ -71,8 +71,8 @@ public class TaxableTerritoryClient {
 	 * client.executeRequest();
 	 * TaxableTerritory taxableTerritory = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param taxableTerritory Properties of the territory which is subject to sales tax.
+	 * @param responseFields 
+	 * @param taxableTerritory Properties of the taxable territory to create.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.general.TaxableTerritory>
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
@@ -98,7 +98,7 @@ public class TaxableTerritoryClient {
 	 * client.executeRequest();
 	 * TaxableTerritory taxableTerritory = client.Result();
 	 * </code></pre></p>
-	 * @param taxableterritories Properties of the territory which is subject to sales tax.
+	 * @param taxableterritories Properties of the taxable territories to update.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.sitesettings.general.TaxableTerritory>>
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory

@@ -13,18 +13,12 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productadmin.StackingConfiguration;
 
-/**
- *	Mozu.ProductAdmin.Contracts.DiscountSettings ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DiscountSettings implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * stackingConfiguration ApiType DOCUMENT_HERE 
-	 */
 	protected  StackingConfiguration stackingConfiguration;
 
 	public StackingConfiguration getStackingConfiguration() {

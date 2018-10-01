@@ -23,7 +23,7 @@ public class CreditTransaction implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Notes entered and saved with an order. These notes may be entered by a shopper on a wishlist or for an order. Comments may also be entered by  Admins on an order that may be visible only to authorized shoppers and users.
+	 * Comments entered for a transaction. Depending on the interface, these comments might be visible to authorized shoppers and users.
 	 */
 	protected  String comments;
 
@@ -36,7 +36,7 @@ public class CreditTransaction implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the source property, such as a catalog, discount, order, or email template.For a product field it will be the name of the field.For a category ID, must be a positive integer not greater than 2000000. By default,  auto-generates a category ID when categories are created. If you want to specify an ID during creation (which preserves category link relationships when migrating tenant data from one sandbox to another), you must also include the  query string in the endpoint. For example, . Then, use the  property to specify the desired category ID.For a product attribute it will be the Attribute FQN.For a document, the ID must be specified as a 32 character, case-insensitive, alphanumeric string. You can specify the ID as 32 sequential characters or as groups separated by dashes in the format 8-4-4-4-12. For example, or.For email templates, the ID must be one of the following values:			
+	 * Unique identifier of the customer credit transaction.
 	 */
 	protected  Integer id;
 
@@ -61,9 +61,6 @@ public class CreditTransaction implements Serializable
 		this.impactAmount = impactAmount;
 	}
 
-	/**
-	 * Unique identifier of the order associated with the payment.
-	 */
 	protected  String orderId;
 
 	public String getOrderId() {
@@ -75,7 +72,7 @@ public class CreditTransaction implements Serializable
 	}
 
 	/**
-	 * Specifies the type of transaction, including customer transactions and credit transactions.Valid values for credit transactions are the following:* â€”decreases the credit amount* â€”updates the credit amountValid values for customer transaction types are the following:* * * * 
+	 * The type of transaction to perform for the customer credit. To decrease the balance, set this parameter to "Debit". To increase the balance, set this parameter to "Credit".
 	 */
 	protected  String transactionType;
 
@@ -100,9 +97,6 @@ public class CreditTransaction implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * data ApiType DOCUMENT_HERE 
-	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {

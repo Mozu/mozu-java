@@ -12,9 +12,6 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	Contact information for an account.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Contact implements Serializable
 {

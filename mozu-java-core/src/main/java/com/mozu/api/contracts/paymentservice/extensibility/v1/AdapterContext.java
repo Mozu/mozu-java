@@ -16,18 +16,12 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.paymentservice.extensibility.v1.KeyValueTuple;
 import com.mozu.api.contracts.paymentservice.extensibility.v1.Transaction;
 
-/**
- *	Mozu.PaymentService.Extensibility.Contracts.V1.AdapterContext ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AdapterContext implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * configuration ApiType DOCUMENT_HERE 
-	 */
 	protected List<KeyValueTuple> configuration;
 	public List<KeyValueTuple> getConfiguration() {
 		return this.configuration;
@@ -36,9 +30,14 @@ public class AdapterContext implements Serializable
 		this.configuration = configuration;
 	}
 
-	/**
-	 * settings ApiType DOCUMENT_HERE 
-	 */
+	protected List<Transaction> previousTransactions;
+	public List<Transaction> getPreviousTransactions() {
+		return this.previousTransactions;
+	}
+	public void setPreviousTransactions(List<Transaction> previousTransactions) {
+		this.previousTransactions = previousTransactions;
+	}
+
 	protected List<KeyValueTuple> settings;
 	public List<KeyValueTuple> getSettings() {
 		return this.settings;
@@ -47,9 +46,6 @@ public class AdapterContext implements Serializable
 		this.settings = settings;
 	}
 
-	/**
-	 * transaction ApiType DOCUMENT_HERE 
-	 */
 	protected  Transaction transaction;
 
 	public Transaction getTransaction() {

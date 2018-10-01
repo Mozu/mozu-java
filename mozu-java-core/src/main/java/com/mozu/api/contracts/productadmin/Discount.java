@@ -20,7 +20,7 @@ import com.mozu.api.contracts.productadmin.DiscountTarget;
 import com.mozu.api.contracts.productadmin.ThresholdMessage;
 
 /**
- *	Name of the discount added and applied to a shopping cart and order for a shopper's purchase. 
+ *	Discount used to calculate SalePrice. Includes coupon code if applicable, amount of the discount, and discount savings. Discounts can be either an absolute price or a percentage off. The sale price beats any discounts.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Discount implements Serializable
@@ -48,9 +48,6 @@ public class Discount implements Serializable
 		this.amountType = amountType;
 	}
 
-	/**
-	 * Signifies that the discount is not referenced and can be hard deleted
-	 */
 	protected  Boolean canBeDeleted;
 
 	public Boolean getCanBeDeleted() {
@@ -61,9 +58,6 @@ public class Discount implements Serializable
 		this.canBeDeleted = canBeDeleted;
 	}
 
-	/**
-	 * canBeStackedUpon ApiType DOCUMENT_HERE 
-	 */
 	protected  Boolean canBeStackedUpon;
 
 	public Boolean getCanBeStackedUpon() {
@@ -84,9 +78,6 @@ public class Discount implements Serializable
 		this.currentRedemptionCount = currentRedemptionCount;
 	}
 
-	/**
-	 * True if the discount should not apply to orders with multiple shipments. For more information, refer to the topic on [multiple shipments](https://www.mozu.com/docs/Guides/orders/multi-ship.htm#effect_on_discounts).
-	 */
 	protected  Boolean doesNotApplyToMultiShipToOrders;
 
 	public Boolean getDoesNotApplyToMultiShipToOrders() {
@@ -97,9 +88,6 @@ public class Discount implements Serializable
 		this.doesNotApplyToMultiShipToOrders = doesNotApplyToMultiShipToOrders;
 	}
 
-	/**
-	 * Determines whether or not a discount applies to a items with a sale price. Applicable on order and line item discounts. For line items, when this is true, the discount will be disqualified. For order level discounts, when true, the discount will not be applied to those items have a sale price.
-	 */
 	protected  Boolean doesNotApplyToProductsWithSalePrice;
 
 	public Boolean getDoesNotApplyToProductsWithSalePrice() {
@@ -143,9 +131,6 @@ public class Discount implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * Products receiving a price from a price list specified here or a child of a specified price list can be discounted.
-	 */
 	protected List<String> includedPriceLists;
 	public List<String> getIncludedPriceLists() {
 		return this.includedPriceLists;
@@ -154,9 +139,6 @@ public class Discount implements Serializable
 		this.includedPriceLists = includedPriceLists;
 	}
 
-	/**
-	 * This field is read-only and specifies whether the discount condition is one product or category, and matches the discount target.
-	 */
 	protected  Boolean isBxGx;
 
 	public Boolean getIsBxGx() {
@@ -167,9 +149,6 @@ public class Discount implements Serializable
 		this.isBxGx = isBxGx;
 	}
 
-	/**
-	 * Maximum impact this discount can apply on a single order. Must be either null or greater than zero.
-	 */
 	protected  Double maximumDiscountImpactPerOrder;
 
 	public Double getMaximumDiscountImpactPerOrder() {
@@ -180,9 +159,6 @@ public class Discount implements Serializable
 		this.maximumDiscountImpactPerOrder = maximumDiscountImpactPerOrder;
 	}
 
-	/**
-	 * Maximum impact this discount can apply on a single line item. Must be either null or greater than zero.
-	 */
 	protected  Double maximumDiscountImpactPerRedemption;
 
 	public Double getMaximumDiscountImpactPerRedemption() {
@@ -193,9 +169,6 @@ public class Discount implements Serializable
 		this.maximumDiscountImpactPerRedemption = maximumDiscountImpactPerRedemption;
 	}
 
-	/**
-	 * Maximum number of redemptions allowed per order. If null, defaults to unlimited.
-	 */
 	protected  Integer maximumRedemptionsPerOrder;
 
 	public Integer getMaximumRedemptionsPerOrder() {
@@ -219,9 +192,6 @@ public class Discount implements Serializable
 		this.maximumUsesPerUser = maximumUsesPerUser;
 	}
 
-	/**
-	 * preventLineItemShippingDiscounts ApiType DOCUMENT_HERE 
-	 */
 	protected  Boolean preventLineItemShippingDiscounts;
 
 	public Boolean getPreventLineItemShippingDiscounts() {
@@ -232,9 +202,6 @@ public class Discount implements Serializable
 		this.preventLineItemShippingDiscounts = preventLineItemShippingDiscounts;
 	}
 
-	/**
-	 * preventOrderProductDiscounts ApiType DOCUMENT_HERE 
-	 */
 	protected  Boolean preventOrderProductDiscounts;
 
 	public Boolean getPreventOrderProductDiscounts() {
@@ -245,9 +212,6 @@ public class Discount implements Serializable
 		this.preventOrderProductDiscounts = preventOrderProductDiscounts;
 	}
 
-	/**
-	 * preventOrderShippingDiscounts ApiType DOCUMENT_HERE 
-	 */
 	protected  Boolean preventOrderShippingDiscounts;
 
 	public Boolean getPreventOrderShippingDiscounts() {
@@ -278,9 +242,6 @@ public class Discount implements Serializable
 		this.scope = scope;
 	}
 
-	/**
-	 * stackingLayer ApiType DOCUMENT_HERE 
-	 */
 	protected  Integer stackingLayer;
 
 	public Integer getStackingLayer() {
@@ -344,9 +305,6 @@ public class Discount implements Serializable
 		this.target = target;
 	}
 
-	/**
-	 * thresholdMessage ApiType DOCUMENT_HERE 
-	 */
 	protected  ThresholdMessage thresholdMessage;
 
 	public ThresholdMessage getThresholdMessage() {

@@ -12,18 +12,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	Mozu.CommerceRuntime.Contracts.Payments.PaymentActionTarget ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PaymentActionTarget implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * targetId ApiType DOCUMENT_HERE 
-	 */
 	protected  String targetId;
 
 	public String getTargetId() {
@@ -34,9 +28,6 @@ public class PaymentActionTarget implements Serializable
 		this.targetId = targetId;
 	}
 
-	/**
-	 * targetNumber ApiType DOCUMENT_HERE 
-	 */
 	protected  Integer targetNumber;
 
 	public Integer getTargetNumber() {
@@ -47,9 +38,6 @@ public class PaymentActionTarget implements Serializable
 		this.targetNumber = targetNumber;
 	}
 
-	/**
-	 * targetType ApiType DOCUMENT_HERE 
-	 */
 	protected  String targetType;
 
 	public String getTargetType() {

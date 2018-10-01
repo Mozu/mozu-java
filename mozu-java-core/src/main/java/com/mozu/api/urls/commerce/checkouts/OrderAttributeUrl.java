@@ -15,7 +15,7 @@ public class OrderAttributeUrl
 
 	/**
 	 * Get Resource Url for GetCheckoutAttributes
-	 * @param checkoutId The unique identifier of the checkout.
+	 * @param checkoutId 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getCheckoutAttributesUrl(String checkoutId)
@@ -27,7 +27,7 @@ public class OrderAttributeUrl
 
 	/**
 	 * Get Resource Url for CreateCheckoutAttributes
-	 * @param checkoutId The unique identifier of the checkout.
+	 * @param checkoutId 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl createCheckoutAttributesUrl(String checkoutId)
@@ -39,8 +39,8 @@ public class OrderAttributeUrl
 
 	/**
 	 * Get Resource Url for UpdateCheckoutAttribute
-	 * @param checkoutId The unique identifier of the checkout.
-	 * @param removeMissing If true, the operation removes missing properties so that the updated checkout attributes will not show properties with a null value.
+	 * @param checkoutId 
+	 * @param removeMissing 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateCheckoutAttributeUrl(String checkoutId, Boolean removeMissing)

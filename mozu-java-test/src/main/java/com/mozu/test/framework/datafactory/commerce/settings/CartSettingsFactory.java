@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.settings.CartSettingsResource;
 
 /** <summary>
- * Use the cart subresource to manage settings for the cart, such as whether to include handling fees in the cost calculations.
+ * 
  * </summary>
  */
 public class CartSettingsFactory

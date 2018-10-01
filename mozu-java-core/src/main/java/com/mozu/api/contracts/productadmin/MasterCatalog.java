@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Properties of a master product catalog defined for a tenant. All catalogs and sites associated with a master catalog share product definitions.
+ *	Properties of a master catalog associated with a tenant.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class MasterCatalog implements Serializable
@@ -21,9 +21,6 @@ public class MasterCatalog implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Enables the live editing of products feature. If you set the productPublishingMode field to Pending, set this field to true, and set the DataViewMode in the context header to live, you can edit the live version of products instead of the pending draft.This should only be enabled for immediate changes to the live version of products. Any edits made to the live version are not applied to the pending draft version, so when you publish the pending draft version, your edits to the live version are overwritten.
-	 */
 	protected  Boolean enableLiveEdit;
 
 	public Boolean getEnableLiveEdit() {
@@ -44,9 +41,6 @@ public class MasterCatalog implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * Indicates if the object is deleted. If true, the object has been deleted. This may affect associated child members and objects. For example, a deleted master catalog affects all associated catalogs. 
-	 */
 	protected  Boolean isDeleted;
 
 	public Boolean getIsDeleted() {

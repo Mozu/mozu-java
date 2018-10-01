@@ -15,18 +15,12 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.event.EventExtendedProperty;
 
-/**
- *	Properties of events as a summary of actions, data, and responses.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class EventSummary implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The unique identifier for the product catalog. Catalogs are part of a master catalog.
-	 */
 	protected  Integer catalogId;
 
 	public Integer getCatalogId() {
@@ -37,9 +31,6 @@ public class EventSummary implements Serializable
 		this.catalogId = catalogId;
 	}
 
-	/**
-	 * The unique identifier of the API request associated with the event action, which might contain multiple actions.
-	 */
 	protected  String correlationId;
 
 	public String getCorrelationId() {
@@ -50,9 +41,6 @@ public class EventSummary implements Serializable
 		this.correlationId = correlationId;
 	}
 
-	/**
-	 * The date and time in UTCÂ format set when the object was created.
-	 */
 	protected  DateTime createDate;
 
 	public DateTime getCreateDate() {
@@ -63,9 +51,6 @@ public class EventSummary implements Serializable
 		this.createDate = createDate;
 	}
 
-	/**
-	 * The unique identifier of the entity that caused the event. For example, if the event is "product.created", the entity ID value represents the product code of the product that was created.
-	 */
 	protected  String entityId;
 
 	public String getEntityId() {
@@ -76,9 +61,6 @@ public class EventSummary implements Serializable
 		this.entityId = entityId;
 	}
 
-	/**
-	 * Unique identifier for the event. 
-	 */
 	protected  String eventId;
 
 	public String getEventId() {
@@ -89,9 +71,6 @@ public class EventSummary implements Serializable
 		this.eventId = eventId;
 	}
 
-	/**
-	 * Unique identifier for the master catalog. 
-	 */
 	protected  Integer masterCatalogId;
 
 	public Integer getMasterCatalogId() {
@@ -102,9 +81,6 @@ public class EventSummary implements Serializable
 		this.masterCatalogId = masterCatalogId;
 	}
 
-	/**
-	 * Unique identifier for the site. This IDÂ is used at all levels of a store, catalog, and tenant to associate objects to a site.
-	 */
 	protected  Integer siteId;
 
 	public Integer getSiteId() {
@@ -128,9 +104,6 @@ public class EventSummary implements Serializable
 		this.tenantId = tenantId;
 	}
 
-	/**
-	 * The type of event that was performed, such as "product.created" or "category.deleted".
-	 */
 	protected  String topic;
 
 	public String getTopic() {
@@ -141,9 +114,6 @@ public class EventSummary implements Serializable
 		this.topic = topic;
 	}
 
-	/**
-	 * Extended properties. Note: This is purposefully not a CollectionBase type wrapper so consumers start to get used to not having counts returned.
-	 */
 	protected List<EventExtendedProperty> extendedProperties;
 	public List<EventExtendedProperty> getExtendedProperties() {
 		return this.extendedProperties;

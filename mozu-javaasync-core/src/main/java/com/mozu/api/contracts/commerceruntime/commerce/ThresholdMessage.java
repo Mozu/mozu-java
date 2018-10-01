@@ -12,18 +12,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	Mozu.CommerceRuntime.Contracts.Commerce.ThresholdMessage ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ThresholdMessage implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The unique identifier of the discount.
-	 */
 	protected  Integer discountId;
 
 	public Integer getDiscountId() {
@@ -34,9 +28,6 @@ public class ThresholdMessage implements Serializable
 		this.discountId = discountId;
 	}
 
-	/**
-	 * The text of the change message, such as "This product is no longer available." System-supplied and read-only.
-	 */
 	protected  String message;
 
 	public String getMessage() {
@@ -47,9 +38,6 @@ public class ThresholdMessage implements Serializable
 		this.message = message;
 	}
 
-	/**
-	 * requiresCouponCode ApiType DOCUMENT_HERE 
-	 */
 	protected  Boolean requiresCouponCode;
 
 	public Boolean getRequiresCouponCode() {
@@ -60,9 +48,6 @@ public class ThresholdMessage implements Serializable
 		this.requiresCouponCode = requiresCouponCode;
 	}
 
-	/**
-	 * showInCart ApiType DOCUMENT_HERE 
-	 */
 	protected  Boolean showInCart;
 
 	public Boolean getShowInCart() {
@@ -73,9 +58,6 @@ public class ThresholdMessage implements Serializable
 		this.showInCart = showInCart;
 	}
 
-	/**
-	 * showOnCheckout ApiType DOCUMENT_HERE 
-	 */
 	protected  Boolean showOnCheckout;
 
 	public Boolean getShowOnCheckout() {
@@ -86,9 +68,6 @@ public class ThresholdMessage implements Serializable
 		this.showOnCheckout = showOnCheckout;
 	}
 
-	/**
-	 * thresholdValue ApiType DOCUMENT_HERE 
-	 */
 	protected  Double thresholdValue;
 
 	public Double getThresholdValue() {

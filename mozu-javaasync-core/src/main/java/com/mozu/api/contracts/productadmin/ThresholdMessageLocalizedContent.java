@@ -13,18 +13,12 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 
-/**
- *	Mozu.ProductAdmin.Contracts.ThresholdMessageLocalizedContent ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ThresholdMessageLocalizedContent implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The two character locale code, per the country code provided. This code determines the localized content to use and display.
-	 */
 	protected  String localeCode;
 
 	public String getLocaleCode() {
@@ -35,9 +29,6 @@ public class ThresholdMessageLocalizedContent implements Serializable
 		this.localeCode = localeCode;
 	}
 
-	/**
-	 * messageTemplate ApiType DOCUMENT_HERE 
-	 */
 	protected  String messageTemplate;
 
 	public String getMessageTemplate() {
@@ -48,9 +39,6 @@ public class ThresholdMessageLocalizedContent implements Serializable
 		this.messageTemplate = messageTemplate;
 	}
 
-	/**
-	 * Basic audit info about the object, including date, time, and user account. This data may be captured when creating, updating, and removing data.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {

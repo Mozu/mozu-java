@@ -41,6 +41,16 @@ public class GatewayCredentialFieldDefinition implements Serializable
 		this.displayName = displayName;
 	}
 
+	protected  Boolean isPublic;
+
+	public Boolean getIsPublic() {
+		return this.isPublic;
+	}
+
+	public void setIsPublic(Boolean isPublic) {
+		this.isPublic = isPublic;
+	}
+
 	protected  String name;
 
 	public String getName() {
@@ -49,16 +59,6 @@ public class GatewayCredentialFieldDefinition implements Serializable
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	protected  String volusionStoreName;
-
-	public String getVolusionStoreName() {
-		return this.volusionStoreName;
-	}
-
-	public void setVolusionStoreName(String volusionStoreName) {
-		this.volusionStoreName = volusionStoreName;
 	}
 
 

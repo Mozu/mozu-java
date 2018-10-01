@@ -17,7 +17,7 @@ import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.event.EventExtendedProperty;
 
 /**
- *	Mozu.AppDev.Contracts.Event ApiType DOCUMENT_HERE
+ *	Properties of an event the system creates each time a create, read, update, or delete operation is performed.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Event implements Serializable
@@ -128,9 +128,6 @@ public class Event implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * Extended properties. Note: This is purposefully not a CollectionBase type wrapper so consumers start to get used to not having counts returned.
-	 */
 	protected List<EventExtendedProperty> extendedProperties;
 	public List<EventExtendedProperty> getExtendedProperties() {
 		return this.extendedProperties;
