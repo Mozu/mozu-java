@@ -192,7 +192,7 @@ public class PurchaseOrderTransaction implements Serializable
 	}
 
 	/**
-	 * The type of the purchase order transaction.The valid values are:*  â€” Line of Credit Change*  â€” Payment Requested*  â€” Payment Collected *  â€” Payment Voided*  â€” Payment Refund*  â€” Manual Adjustment
+	 * The type of the purchase order transaction.The valid values are:*   Line of Credit Change*   Payment Requested*   Payment Collected *   Payment Voided*   Payment Refund*   Manual Adjustment
 	 */
 	protected  Integer transactionTypeId;
 

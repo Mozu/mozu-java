@@ -55,7 +55,7 @@ public class ProductResource {
 	 */
 	public com.mozu.api.contracts.productruntime.ProductCollection getProducts() throws Exception
 	{
-		return getProducts( null,  null,  null,  null,  null,  null,  null);
+		return getProducts( null,  null,  null,  null,  null,  null,  null,  null);
 	}
 
 	/**
@@ -70,16 +70,17 @@ public class ProductResource {
 	 */
 	public CountDownLatch getProductsAsync( AsyncCallback<com.mozu.api.contracts.productruntime.ProductCollection> callback) throws Exception
 	{
-		return getProductsAsync( null,  null,  null,  null,  null,  null,  null, callback);
+		return getProductsAsync( null,  null,  null,  null,  null,  null,  null,  null, callback);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	Product product = new Product();
-	 *	ProductCollection productCollection = product.getProducts( filter,  startIndex,  pageSize,  sortBy,  responseOptions,  cursorMark,  responseFields);
+	 *	ProductCollection productCollection = product.getProducts( filter,  startIndex,  pageSize,  sortBy,  responseOptions,  cursorMark,  defaultSort,  responseFields);
 	 * </code></pre></p>
 	 * @param cursorMark In your first deep paged request, set this parameter to . Then, in all subsequent requests, set this parameter to the subsequent values of  that's returned in each response to continue paging through the results. Continue this pattern until  is null, which signifies the end of the paged results.
+	 * @param defaultSort Sets the default sorting for content. Sort does not use AND in determining the order
 	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
 	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
@@ -89,9 +90,9 @@ public class ProductResource {
 	 * @return com.mozu.api.contracts.productruntime.ProductCollection
 	 * @see com.mozu.api.contracts.productruntime.ProductCollection
 	 */
-	public com.mozu.api.contracts.productruntime.ProductCollection getProducts(String filter, Integer startIndex, Integer pageSize, String sortBy, String responseOptions, String cursorMark, String responseFields) throws Exception
+	public com.mozu.api.contracts.productruntime.ProductCollection getProducts(String filter, Integer startIndex, Integer pageSize, String sortBy, String responseOptions, String cursorMark, String defaultSort, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productruntime.ProductCollection> client = com.mozu.api.clients.commerce.catalog.storefront.ProductClient.getProductsClient(_dataViewMode,  filter,  startIndex,  pageSize,  sortBy,  responseOptions,  cursorMark,  responseFields);
+		MozuClient<com.mozu.api.contracts.productruntime.ProductCollection> client = com.mozu.api.clients.commerce.catalog.storefront.ProductClient.getProductsClient(_dataViewMode,  filter,  startIndex,  pageSize,  sortBy,  responseOptions,  cursorMark,  defaultSort,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -102,9 +103,10 @@ public class ProductResource {
 	 * 
 	 * <p><pre><code>
 	 *	Product product = new Product();
-	 *	CountDownLatch latch = product.getProducts( filter,  startIndex,  pageSize,  sortBy,  responseOptions,  cursorMark,  responseFields, callback );
+	 *	CountDownLatch latch = product.getProducts( filter,  startIndex,  pageSize,  sortBy,  responseOptions,  cursorMark,  defaultSort,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param cursorMark In your first deep paged request, set this parameter to . Then, in all subsequent requests, set this parameter to the subsequent values of  that's returned in each response to continue paging through the results. Continue this pattern until  is null, which signifies the end of the paged results.
+	 * @param defaultSort Sets the default sorting for content. Sort does not use AND in determining the order
 	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
 	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
@@ -115,9 +117,9 @@ public class ProductResource {
 	 * @return com.mozu.api.contracts.productruntime.ProductCollection
 	 * @see com.mozu.api.contracts.productruntime.ProductCollection
 	 */
-	public CountDownLatch getProductsAsync(String filter, Integer startIndex, Integer pageSize, String sortBy, String responseOptions, String cursorMark, String responseFields, AsyncCallback<com.mozu.api.contracts.productruntime.ProductCollection> callback) throws Exception
+	public CountDownLatch getProductsAsync(String filter, Integer startIndex, Integer pageSize, String sortBy, String responseOptions, String cursorMark, String defaultSort, String responseFields, AsyncCallback<com.mozu.api.contracts.productruntime.ProductCollection> callback) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productruntime.ProductCollection> client = com.mozu.api.clients.commerce.catalog.storefront.ProductClient.getProductsClient(_dataViewMode,  filter,  startIndex,  pageSize,  sortBy,  responseOptions,  cursorMark,  responseFields);
+		MozuClient<com.mozu.api.contracts.productruntime.ProductCollection> client = com.mozu.api.clients.commerce.catalog.storefront.ProductClient.getProductsClient(_dataViewMode,  filter,  startIndex,  pageSize,  sortBy,  responseOptions,  cursorMark,  defaultSort,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 

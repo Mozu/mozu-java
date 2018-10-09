@@ -209,7 +209,7 @@ public class CategoryClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param categoryId 
+	 * @param categoryId Unique identifier of the category to modify.
 	 * @param productCodes 
 	 * @return Mozu.Api.MozuClient 
 	 * @see string
@@ -234,7 +234,7 @@ public class CategoryClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param categoryId 
+	 * @param categoryId Unique identifier of the category to modify.
 	 * @param productCodes 
 	 * @return Mozu.Api.MozuClient 
 	 * @see string

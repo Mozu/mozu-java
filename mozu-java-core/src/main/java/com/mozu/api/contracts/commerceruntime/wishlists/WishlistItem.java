@@ -41,9 +41,6 @@ public class WishlistItem implements Serializable
 		this.adjustedLineItemSubtotal = adjustedLineItemSubtotal;
 	}
 
-	/**
-	 * autoAddDiscountId ApiType DOCUMENT_HERE 
-	 */
 	protected  Integer autoAddDiscountId;
 
 	public Integer getAutoAddDiscountId() {

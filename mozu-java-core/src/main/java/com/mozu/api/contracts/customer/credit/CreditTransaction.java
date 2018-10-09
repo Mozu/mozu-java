@@ -75,7 +75,7 @@ public class CreditTransaction implements Serializable
 	}
 
 	/**
-	 * Specifies the type of transaction, including customer transactions and credit transactions.Valid values for credit transactions are the following:* â€”decreases the credit amount* â€”updates the credit amountValid values for customer transaction types are the following:* * * * 
+	 * Specifies the type of transaction, including customer transactions and credit transactions.Valid values for credit transactions are the following:* decreases the credit amount* updates the credit amountValid values for customer transaction types are the following:* * * *
 	 */
 	protected  String transactionType;
 
@@ -100,9 +100,6 @@ public class CreditTransaction implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * data ApiType DOCUMENT_HERE 
-	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {

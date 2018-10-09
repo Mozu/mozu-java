@@ -12,9 +12,6 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	Mozu.CommerceRuntime.Contracts.Discounts.SuggestedDiscount ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SuggestedDiscount implements Serializable
 {
@@ -22,7 +19,7 @@ public class SuggestedDiscount implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * autoAdd ApiType DOCUMENT_HERE 
+	 * Indicates whether the free BOGA item should automatically be added to cart. If the free item has been added before and the shopper removed the free item (rejected it), the value will be false.
 	 */
 	protected  Boolean autoAdd;
 

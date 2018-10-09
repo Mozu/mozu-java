@@ -104,7 +104,7 @@ public class CustomerPurchaseOrderAccount implements Serializable
 	}
 
 	/**
-	 * Specifies the type and units of the  amount.The valid values are:*  â€” specifies that the  amount is a decimal amount.*  â€” specifies that the  amount is a percentage amount.
+	 * Specifies the type and units of the  amount.The valid values are:*   specifies that the  amount is a decimal amount.*   specifies that the  amount is a percentage amount.
 	 */
 	protected  String overdraftAllowanceType;
 

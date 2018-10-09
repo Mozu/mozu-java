@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Mozu.PaymentService.Extensibility.Contracts.V1.KeyValueTuple ApiType DOCUMENT_HERE 
+ *	Contains values in a map as an array of key/value pairs
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class KeyValueTuple implements Serializable

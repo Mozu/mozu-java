@@ -2,54 +2,217 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c521480c-9002-4d65-81cb-1858a1a9790f" name="Default" comment="Regen SDK for latest API Changes">
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/Version.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/Version.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/clients/commerce/OrderClient.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/clients/commerce/OrderClient.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/clients/commerce/admin/locations/attributedefinition/AttributeClient.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/clients/commerce/admin/locations/attributedefinition/AttributeClient.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/clients/commerce/catalog/admin/CategoryClient.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/clients/commerce/catalog/admin/CategoryClient.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/clients/commerce/catalog/admin/attributedefinition/AttributeClient.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/clients/commerce/catalog/admin/attributedefinition/AttributeClient.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/clients/commerce/catalog/storefront/ProductClient.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/clients/commerce/catalog/storefront/ProductClient.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/clients/commerce/catalog/storefront/ProductSearchResultClient.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/clients/commerce/catalog/storefront/ProductSearchResultClient.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/clients/commerce/customer/attributedefinition/AttributeClient.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/clients/commerce/customer/attributedefinition/AttributeClient.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/clients/commerce/orders/attributedefinition/AttributeClient.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/clients/commerce/orders/attributedefinition/AttributeClient.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/clients/commerce/payments/PublicCardClient.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/clients/commerce/payments/PublicCardClient.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/commerceruntime/carts/Cart.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/commerceruntime/carts/Cart.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/commerceruntime/carts/CartItem.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/commerceruntime/carts/CartItem.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/commerceruntime/checkouts/Checkout.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/commerceruntime/checkouts/Checkout.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/commerceruntime/commerce/ThresholdMessage.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/commerceruntime/commerce/ThresholdMessage.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/commerceruntime/discounts/SuggestedDiscount.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/commerceruntime/discounts/SuggestedDiscount.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/commerceruntime/fulfillment/Destination.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/commerceruntime/fulfillment/Destination.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/commerceruntime/orders/Order.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/commerceruntime/orders/Order.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/commerceruntime/orders/OrderItem.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/commerceruntime/orders/OrderItem.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/commerceruntime/payments/BillingInfo.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/commerceruntime/payments/BillingInfo.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/commerceruntime/payments/Payment.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/commerceruntime/payments/Payment.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/commerceruntime/payments/PaymentActionTarget.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/commerceruntime/payments/PaymentActionTarget.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/commerceruntime/payments/SubPayment.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/commerceruntime/payments/SubPayment.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/commerceruntime/products/BundledProduct.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/commerceruntime/products/BundledProduct.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/commerceruntime/products/Product.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/commerceruntime/products/Product.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/commerceruntime/wishlists/Wishlist.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/commerceruntime/wishlists/Wishlist.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/commerceruntime/wishlists/WishlistItem.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/commerceruntime/wishlists/WishlistItem.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/content/View.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/content/View.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/core/extensible/Attribute.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/core/extensible/Attribute.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/customer/CustomerPurchaseOrderAccount.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/customer/CustomerPurchaseOrderAccount.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/customer/PurchaseOrderTransaction.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/customer/PurchaseOrderTransaction.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/customer/credit/Credit.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/customer/credit/Credit.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/customer/credit/CreditTransaction.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/customer/credit/CreditTransaction.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/GatewayCredentialFieldDefinition.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/GatewayCredentialFieldDefinition.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/GatewayCredentialFieldValue.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/GatewayCredentialFieldValue.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/GatewayDefinition.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/GatewayDefinition.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/Product.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/Product.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/PublicCard.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/PublicCard.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/SupportedCard.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/SupportedCard.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/AdapterContext.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/AdapterContext.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/Address.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/Address.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/CaptureRequest.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/CaptureRequest.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/CardInformation.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/CardInformation.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/ConnectionStatuses.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/ConnectionStatuses.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/Contact.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/Contact.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/CustomerInformation.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/CustomerInformation.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/GatewayAuthorizationRequest.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/GatewayAuthorizationRequest.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/GatewayAuthorizeResponse.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/GatewayAuthorizeResponse.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/GatewayCaptureResponse.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/GatewayCaptureResponse.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/GatewayCreditResponse.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/GatewayCreditResponse.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/GatewayInteraction.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/GatewayInteraction.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/GatewayVoidResponse.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/GatewayVoidResponse.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/KeyValueTuple.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/KeyValueTuple.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/Transaction.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/Transaction.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/TransactionType.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/TransactionType.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/request/FraudScreenRequest.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/request/FraudScreenRequest.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/request/GetGiftCardBalanceRequest.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/request/GetGiftCardBalanceRequest.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/response/FraudScreen.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/response/FraudScreen.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/response/SyncResponse.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/response/SyncResponse.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/pricingruntime/AppliedLineItemProductDiscount.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/pricingruntime/AppliedLineItemProductDiscount.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/pricingruntime/AppliedLineItemShippingDiscount.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/pricingruntime/AppliedLineItemShippingDiscount.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/pricingruntime/Discount.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/pricingruntime/Discount.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/pricingruntime/DiscountCondition.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/pricingruntime/DiscountCondition.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/pricingruntime/DiscountTarget.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/pricingruntime/DiscountTarget.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/productadmin/AttributeSearchSettings.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/productadmin/AttributeSearchSettings.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/productadmin/CategoryDiscountCondition.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/productadmin/CategoryDiscountCondition.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/productadmin/Discount.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/productadmin/Discount.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/productadmin/DiscountCondition.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/productadmin/DiscountCondition.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/productadmin/DiscountTarget.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/productadmin/DiscountTarget.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/productadmin/DiscountSettings.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/productadmin/DiscountSettings.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/productadmin/ProductType.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/productadmin/ProductType.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/productadmin/StackingConfiguration.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/productadmin/StackingConfiguration.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/productadmin/ThresholdMessage.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/productadmin/ThresholdMessage.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/productadmin/ThresholdMessageLocalizedContent.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/productadmin/ThresholdMessageLocalizedContent.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/productadmin/search/SearchSynonymSettings.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/productadmin/search/SearchSynonymSettings.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/productruntime/AppliedDiscount.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/productruntime/AppliedDiscount.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/productruntime/AttributeDetail.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/productruntime/AttributeDetail.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/productruntime/BundledProduct.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/productruntime/BundledProduct.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/productruntime/BundledProductSummary.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/productruntime/BundledProductSummary.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/productruntime/Product.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/productruntime/Product.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/productruntime/ProductValidationSummary.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/productruntime/ProductValidationSummary.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/shippingadmin/profile/HandlingFeeRule.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/shippingadmin/profile/HandlingFeeRule.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/shippingruntime/RateRequest.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/shippingruntime/RateRequest.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/sitesettings/order/ExternalPaymentWorkflowDefinition.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/sitesettings/order/ExternalPaymentWorkflowDefinition.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/sitesettings/order/Gateway.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/sitesettings/order/Gateway.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/sitesettings/order/OrderProcessingSettings.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/sitesettings/order/OrderProcessingSettings.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/resources/commerce/OrderResource.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/resources/commerce/OrderResource.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/resources/commerce/admin/locations/attributedefinition/AttributeResource.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/resources/commerce/admin/locations/attributedefinition/AttributeResource.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/resources/commerce/catalog/admin/CategoryResource.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/resources/commerce/catalog/admin/CategoryResource.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/resources/commerce/catalog/admin/attributedefinition/AttributeResource.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/resources/commerce/catalog/admin/attributedefinition/AttributeResource.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/resources/commerce/catalog/storefront/ProductResource.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/resources/commerce/catalog/storefront/ProductResource.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/resources/commerce/catalog/storefront/ProductSearchResultResource.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/resources/commerce/catalog/storefront/ProductSearchResultResource.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/resources/commerce/customer/attributedefinition/AttributeResource.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/resources/commerce/customer/attributedefinition/AttributeResource.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/resources/commerce/orders/attributedefinition/AttributeResource.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/resources/commerce/orders/attributedefinition/AttributeResource.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/resources/commerce/payments/PublicCardResource.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/resources/commerce/payments/PublicCardResource.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/urls/commerce/OrderUrl.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/urls/commerce/OrderUrl.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/urls/commerce/catalog/admin/CategoryUrl.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/urls/commerce/catalog/admin/CategoryUrl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/urls/commerce/catalog/storefront/ProductSearchResultUrl.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/urls/commerce/catalog/storefront/ProductSearchResultUrl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/urls/commerce/catalog/storefront/ProductUrl.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/urls/commerce/catalog/storefront/ProductUrl.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mozu/api/urls/commerce/payments/PublicCardUrl.java" afterPath="$PROJECT_DIR$/src/main/java/com/mozu/api/urls/commerce/payments/PublicCardUrl.java" />
-      <change beforePath="$PROJECT_DIR$/../mozu-java-test/src/main/java/com/mozu/test/framework/datafactory/commerce/OrderFactory.java" afterPath="$PROJECT_DIR$/../mozu-java-test/src/main/java/com/mozu/test/framework/datafactory/commerce/OrderFactory.java" />
-      <change beforePath="$PROJECT_DIR$/../mozu-java-test/src/main/java/com/mozu/test/framework/datafactory/commerce/catalog/admin/CategoryFactory.java" afterPath="$PROJECT_DIR$/../mozu-java-test/src/main/java/com/mozu/test/framework/datafactory/commerce/catalog/admin/CategoryFactory.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-java-sdk/.idea/compiler.xml" afterPath="$PROJECT_DIR$/../mozu-java-sdk/.idea/compiler.xml" />
+      <change beforePath="$PROJECT_DIR$/../mozu-java-sdk/.idea/gradle.xml" afterPath="$PROJECT_DIR$/../mozu-java-sdk/.idea/gradle.xml" />
+      <change beforePath="$PROJECT_DIR$/../mozu-java-sdk/.idea/libraries/Gradle__com_fasterxml_jackson_core_jackson_annotations_2_2_3.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../mozu-java-sdk/.idea/libraries/Gradle__com_fasterxml_jackson_core_jackson_core_2_2_3.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../mozu-java-sdk/.idea/libraries/Gradle__com_fasterxml_jackson_core_jackson_databind_2_2_3.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../mozu-java-sdk/.idea/libraries/Gradle__com_fasterxml_jackson_datatype_jackson_datatype_joda_2_2_3.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../mozu-java-sdk/.idea/libraries/Gradle__com_googlecode_jmockit_jmockit_1_7.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../mozu-java-sdk/.idea/libraries/Gradle__com_googlecode_jmockit_jmockit_coverage_0_999_26.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../mozu-java-sdk/.idea/libraries/Gradle__com_mozu_mozu_api_core_1_20_1_SNAPSHOT.xml" afterPath="$PROJECT_DIR$/../mozu-java-sdk/.idea/libraries/Gradle__com_mozu_mozu_api_core_1_20_1_SNAPSHOT.xml" />
+      <change beforePath="$PROJECT_DIR$/../mozu-java-sdk/.idea/libraries/Gradle__commons_codec_commons_codec_1_9.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../mozu-java-sdk/.idea/libraries/Gradle__commons_configuration_commons_configuration_1_10.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../mozu-java-sdk/.idea/libraries/Gradle__commons_dbcp_commons_dbcp_1_2_2.xml" afterPath="$PROJECT_DIR$/../mozu-java-sdk/.idea/libraries/Gradle__commons_dbcp_commons_dbcp_1_2_2.xml" />
+      <change beforePath="$PROJECT_DIR$/../mozu-java-sdk/.idea/libraries/Gradle__commons_io_commons_io_2_4.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../mozu-java-sdk/.idea/libraries/Gradle__commons_lang_commons_lang_2_6.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../mozu-java-sdk/.idea/libraries/Gradle__javax_servlet_servlet_api_2_5.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../mozu-java-sdk/.idea/libraries/Gradle__joda_time_joda_time_2_9.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../mozu-java-sdk/.idea/libraries/Gradle__org_slf4j_slf4j_api_1_7_5.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../mozu-java-sdk/.idea/misc.xml" afterPath="$PROJECT_DIR$/../mozu-java-sdk/.idea/misc.xml" />
+      <change beforePath="$PROJECT_DIR$/../mozu-java-sdk/.idea/modules.xml" afterPath="$PROJECT_DIR$/../mozu-java-sdk/.idea/modules.xml" />
+      <change beforePath="$PROJECT_DIR$/../mozu-java-sdk/.idea/modules/mozu-java-sdk.iml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../mozu-java-sdk/.idea/modules/mozu-java-sdk_main.iml" afterPath="$PROJECT_DIR$/../mozu-java-sdk/.idea/modules/mozu-java-sdk_main.iml" />
+      <change beforePath="$PROJECT_DIR$/../mozu-java-sdk/.idea/modules/mozu-java-sdk_test.iml" afterPath="$PROJECT_DIR$/../mozu-java-sdk/.idea/modules/mozu-java-sdk_test.iml" />
+      <change beforePath="$PROJECT_DIR$/../mozu-java-sdk/.idea/vcs.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../mozu-java-sdk/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../mozu-java-sdk/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/../mozu-java-test/src/main/java/com/mozu/test/framework/datafactory/commerce/catalog/storefront/ProductFactory.java" afterPath="$PROJECT_DIR$/../mozu-java-test/src/main/java/com/mozu/test/framework/datafactory/commerce/catalog/storefront/ProductFactory.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-java-test/src/main/java/com/mozu/test/framework/datafactory/commerce/catalog/storefront/ProductSearchResultFactory.java" afterPath="$PROJECT_DIR$/../mozu-java-test/src/main/java/com/mozu/test/framework/datafactory/commerce/catalog/storefront/ProductSearchResultFactory.java" />
       <change beforePath="$PROJECT_DIR$/../mozu-java-test/src/main/java/com/mozu/test/framework/datafactory/commerce/payments/PublicCardFactory.java" afterPath="$PROJECT_DIR$/../mozu-java-test/src/main/java/com/mozu/test/framework/datafactory/commerce/payments/PublicCardFactory.java" />
       <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/Version.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/Version.java" />
       <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/clients/commerce/OrderClient.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/clients/commerce/OrderClient.java" />
       <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/clients/commerce/catalog/admin/CategoryClient.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/clients/commerce/catalog/admin/CategoryClient.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/clients/commerce/catalog/storefront/ProductClient.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/clients/commerce/catalog/storefront/ProductClient.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/clients/commerce/catalog/storefront/ProductSearchResultClient.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/clients/commerce/catalog/storefront/ProductSearchResultClient.java" />
       <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/clients/commerce/payments/PublicCardClient.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/clients/commerce/payments/PublicCardClient.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/commerceruntime/carts/Cart.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/commerceruntime/carts/Cart.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/commerceruntime/carts/CartItem.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/commerceruntime/carts/CartItem.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/commerceruntime/checkouts/Checkout.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/commerceruntime/checkouts/Checkout.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/commerceruntime/commerce/ThresholdMessage.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/commerceruntime/commerce/ThresholdMessage.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/commerceruntime/discounts/SuggestedDiscount.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/commerceruntime/discounts/SuggestedDiscount.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/commerceruntime/fulfillment/Destination.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/commerceruntime/fulfillment/Destination.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/commerceruntime/orders/Order.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/commerceruntime/orders/Order.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/commerceruntime/orders/OrderItem.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/commerceruntime/orders/OrderItem.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/commerceruntime/payments/BillingInfo.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/commerceruntime/payments/BillingInfo.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/commerceruntime/payments/Payment.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/commerceruntime/payments/Payment.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/commerceruntime/payments/PaymentActionTarget.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/commerceruntime/payments/PaymentActionTarget.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/commerceruntime/payments/SubPayment.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/commerceruntime/payments/SubPayment.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/commerceruntime/wishlists/Wishlist.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/commerceruntime/wishlists/Wishlist.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/commerceruntime/wishlists/WishlistItem.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/commerceruntime/wishlists/WishlistItem.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/core/extensible/Attribute.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/core/extensible/Attribute.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/customer/credit/Credit.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/customer/credit/Credit.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/customer/credit/CreditTransaction.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/customer/credit/CreditTransaction.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/GatewayCredentialFieldDefinition.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/GatewayCredentialFieldDefinition.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/GatewayCredentialFieldValue.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/GatewayCredentialFieldValue.java" />
       <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/GatewayDefinition.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/GatewayDefinition.java" />
-      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/ConnectionStatuses.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/Product.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/Product.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/PublicCard.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/PublicCard.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/SupportedCard.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/SupportedCard.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/AdapterContext.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/AdapterContext.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/Address.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/Address.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/CaptureRequest.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/CaptureRequest.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/CardInformation.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/CardInformation.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/Contact.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/Contact.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/CustomerInformation.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/CustomerInformation.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/GatewayAuthorizationRequest.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/GatewayAuthorizationRequest.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/GatewayAuthorizeResponse.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/GatewayAuthorizeResponse.java" />
       <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/GatewayCaptureResponse.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/GatewayCaptureResponse.java" />
-      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/TransactionType.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/GatewayCreditResponse.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/GatewayCreditResponse.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/GatewayInteraction.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/GatewayInteraction.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/GatewayVoidResponse.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/GatewayVoidResponse.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/KeyValueTuple.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/KeyValueTuple.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/Transaction.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/Transaction.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/request/FraudScreenRequest.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/request/FraudScreenRequest.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/request/GetGiftCardBalanceRequest.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/request/GetGiftCardBalanceRequest.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/response/FraudScreen.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/response/FraudScreen.java" />
       <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/response/SyncResponse.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/paymentservice/response/SyncResponse.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/pricingruntime/AppliedLineItemProductDiscount.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/pricingruntime/AppliedLineItemProductDiscount.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/pricingruntime/AppliedLineItemShippingDiscount.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/pricingruntime/AppliedLineItemShippingDiscount.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/pricingruntime/Discount.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/pricingruntime/Discount.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/pricingruntime/DiscountCondition.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/pricingruntime/DiscountCondition.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/pricingruntime/DiscountTarget.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/pricingruntime/DiscountTarget.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/productadmin/AttributeSearchSettings.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/productadmin/AttributeSearchSettings.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/productadmin/CategoryDiscountCondition.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/productadmin/CategoryDiscountCondition.java" />
       <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/productadmin/Discount.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/productadmin/Discount.java" />
       <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/productadmin/DiscountCondition.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/productadmin/DiscountCondition.java" />
-      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/productadmin/DiscountTarget.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/productadmin/DiscountTarget.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/productadmin/DiscountSettings.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/productadmin/DiscountSettings.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/productadmin/StackingConfiguration.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/productadmin/StackingConfiguration.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/productadmin/ThresholdMessage.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/productadmin/ThresholdMessage.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/productadmin/ThresholdMessageLocalizedContent.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/productadmin/ThresholdMessageLocalizedContent.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/productadmin/search/SearchSynonymSettings.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/productadmin/search/SearchSynonymSettings.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/productruntime/AppliedDiscount.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/productruntime/AppliedDiscount.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/productruntime/AttributeDetail.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/productruntime/AttributeDetail.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/productruntime/Product.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/productruntime/Product.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/shippingadmin/profile/HandlingFeeRule.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/shippingadmin/profile/HandlingFeeRule.java" />
       <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/shippingruntime/RateRequest.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/shippingruntime/RateRequest.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/sitesettings/order/ExternalPaymentWorkflowDefinition.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/sitesettings/order/ExternalPaymentWorkflowDefinition.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/sitesettings/order/Gateway.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/sitesettings/order/Gateway.java" />
       <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/sitesettings/order/OrderProcessingSettings.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/contracts/sitesettings/order/OrderProcessingSettings.java" />
       <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/resources/commerce/OrderResource.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/resources/commerce/OrderResource.java" />
       <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/resources/commerce/catalog/admin/CategoryResource.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/resources/commerce/catalog/admin/CategoryResource.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/resources/commerce/catalog/storefront/ProductResource.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/resources/commerce/catalog/storefront/ProductResource.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/resources/commerce/catalog/storefront/ProductSearchResultResource.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/resources/commerce/catalog/storefront/ProductSearchResultResource.java" />
       <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/resources/commerce/payments/PublicCardResource.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/resources/commerce/payments/PublicCardResource.java" />
       <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/urls/commerce/OrderUrl.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/urls/commerce/OrderUrl.java" />
       <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/urls/commerce/catalog/admin/CategoryUrl.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/urls/commerce/catalog/admin/CategoryUrl.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/urls/commerce/catalog/storefront/ProductSearchResultUrl.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/urls/commerce/catalog/storefront/ProductSearchResultUrl.java" />
+      <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/urls/commerce/catalog/storefront/ProductUrl.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/urls/commerce/catalog/storefront/ProductUrl.java" />
       <change beforePath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/urls/commerce/payments/PublicCardUrl.java" afterPath="$PROJECT_DIR$/../mozu-javaasync-core/src/main/java/com/mozu/api/urls/commerce/payments/PublicCardUrl.java" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
+    <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,29 +231,40 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
-        <projects_view />
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="mozu-java-core" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="mozu-java-core" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="mozu-java-core" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="other" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
       </state>
     </system>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GatewayCaptureResponse.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/GatewayCaptureResponse.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="144" column="47" lean-forward="false" selection-start-line="144" selection-start-column="47" selection-end-line="144" selection-end-column="47" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1533588362004" expanded="true" signature="1559:1606" ph="/**...*/" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Cart.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/commerceruntime/carts/Cart.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2570">
+            <state relative-caret-position="5439">
               <caret line="412" column="26" lean-forward="false" selection-start-line="412" selection-start-column="26" selection-end-line="412" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -102,8 +276,38 @@
       <file leaf-file-name="ThresholdMessage.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/commerceruntime/commerce/ThresholdMessage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
+            <state relative-caret-position="1092">
               <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GatewayInteraction.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/GatewayInteraction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="16" column="61" lean-forward="false" selection-start-line="16" selection-start-column="61" selection-end-line="16" selection-end-column="61" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Transaction.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/Transaction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-494">
+              <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -112,67 +316,49 @@
       <file leaf-file-name="ConnectionStatuses.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/ConnectionStatuses.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="9" column="1" lean-forward="false" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+            <state relative-caret-position="168">
+              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TransactionType.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProductSearchResultUrl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/mozu/api/urls/commerce/catalog/storefront/ProductSearchResultUrl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1163">
+              <caret line="56" column="2" lean-forward="false" selection-start-line="56" selection-start-column="2" selection-end-line="56" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AttributeResource.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/mozu/api/resources/commerce/orders/attributedefinition/AttributeResource.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="21" column="3" lean-forward="false" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProductValidationSummary.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/productruntime/ProductValidationSummary.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="46" column="168" lean-forward="false" selection-start-line="46" selection-start-column="168" selection-end-line="46" selection-end-column="168" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TransactionType.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/TransactionType.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="15" column="1" lean-forward="false" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+            <state relative-caret-position="294">
+              <caret line="14" column="10" lean-forward="false" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GatewayCreditResponse.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/GatewayCreditResponse.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="63">
-              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GatewayInteraction.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/GatewayInteraction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GatewayVoidResponse.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/GatewayVoidResponse.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GatewayAuthorizeResponse.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/GatewayAuthorizeResponse.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="63">
-              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -186,18 +372,28 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>â€”</find>
+      <find>â€œ</find>
+      <find>â€</find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="GradleLocalSettings">
     <option name="myGradleHomes">
       <map>
-        <entry key="$PROJECT_DIR$" value="C:\Users\sanjay.mandadi.KIBOCOMMERCE\.gradle\wrapper\dists\gradle-1.12-bin\bneqk71eg7klge05yquczbdxi\gradle-1.12" />
+        <entry key="$PROJECT_DIR$" value="C:\Users\rkollman\.gradle\wrapper\dists\gradle-3.3-bin\64bhckfm0iuu9gap9hg3r7ev2\gradle-3.3" />
       </map>
     </option>
     <option name="myGradleVersions">
       <map>
-        <entry key="$PROJECT_DIR$" value="1.12" />
+        <entry key="$PROJECT_DIR$" value="3.3" />
       </map>
     </option>
     <option name="availableProjects">
@@ -226,6 +422,11 @@
           <value>
             <list>
               <ExternalTaskPojo>
+                <option name="description" value="Displays the components produced by root project 'mozu-java-core'. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="components" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="description" value="Assembles and tests this project and all projects that depend on it." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="buildDependents" />
@@ -235,14 +436,29 @@
                 <option name="name" value="cleanEclipseClasspath" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="description" value="Displays the sub-projects of root project 'mozu-java-core'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="projects" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="description" value="Cleans all Eclipse files." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="cleanEclipse" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Assembles classes 'main'." />
+                <option name="description" value="Assembles main classes." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="classes" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the dependent components of components in root project 'mozu-java-core'. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="dependentComponents" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays all buildscript dependencies declared in root project 'mozu-java-core'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="buildEnvironment" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
@@ -257,7 +473,7 @@
                 <option name="name" value="sourcesJar" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Assembles classes 'test'." />
+                <option name="description" value="Assembles test classes." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="testClasses" />
               </ExternalTaskPojo>
@@ -281,13 +497,28 @@
                 <option name="name" value="jar" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Processes resources 'main:resources'." />
+                <option name="description" value="Displays the configuration model of root project 'mozu-java-core'. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="model" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Processes main resources." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="processResources" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="description" value="Displays the tasks runnable from root project 'mozu-java-core'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="tasks" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="cleanEclipseJdt" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Initializes a new Gradle build. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="init" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Runs the unit tests." />
@@ -295,13 +526,18 @@
                 <option name="name" value="test" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Compiles Java source 'main:java'." />
+                <option name="description" value="Compiles main Java source." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="compileJava" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="javadocJar" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the insight into a specific dependency in root project 'mozu-java-core'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="dependencyInsight" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Runs all checks." />
@@ -319,9 +555,14 @@
                 <option name="name" value="clean" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Compiles Java source 'test:java'." />
+                <option name="description" value="Compiles test Java source." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="compileTestJava" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays all dependencies declared in root project 'mozu-java-core'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="dependencies" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Generates all Eclipse files." />
@@ -329,9 +570,14 @@
                 <option name="name" value="eclipse" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Processes resources 'test:resources'." />
+                <option name="description" value="Processes test resources." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="processTestResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays a help message." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="help" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Generates the Eclipse JDT settings file." />
@@ -358,6 +604,11 @@
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="eclipseProject" />
               </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the properties of root project 'mozu-java-core'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="properties" />
+              </ExternalTaskPojo>
             </list>
           </value>
         </entry>
@@ -368,7 +619,9 @@
         <entry key="C:/Mozu.Integrations.OMS" value="2967455784078" />
         <entry key="C:/Mozu.Integrations.PowerReviews" value="1481232066705" />
         <entry key="C:/mozu-java-security" value="1484062713212" />
-        <entry key="$PROJECT_DIR$" value="1481230854835" />
+        <entry key="$PROJECT_DIR$" value="3040969217338" />
+        <entry key="$PROJECT_DIR$/build.gradle" value="216562490" />
+        <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="714125404" />
         <entry key="C:/sstack.ecommetry" value="2964494172529" />
       </map>
     </option>
@@ -391,48 +644,75 @@
               <option name="name" value="mozu-java-core" />
               <option name="projectBuildClasspath">
                 <list>
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-1.12-bin/bneqk71eg7klge05yquczbdxi/gradle-1.12/lib/ant-1.9.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-1.12-bin/bneqk71eg7klge05yquczbdxi/gradle-1.12/lib/ant-launcher-1.9.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-1.12-bin/bneqk71eg7klge05yquczbdxi/gradle-1.12/lib/gradle-base-services-1.12.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-1.12-bin/bneqk71eg7klge05yquczbdxi/gradle-1.12/lib/gradle-base-services-groovy-1.12.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-1.12-bin/bneqk71eg7klge05yquczbdxi/gradle-1.12/lib/gradle-cli-1.12.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-1.12-bin/bneqk71eg7klge05yquczbdxi/gradle-1.12/lib/gradle-core-1.12.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-1.12-bin/bneqk71eg7klge05yquczbdxi/gradle-1.12/lib/gradle-docs-1.12.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-1.12-bin/bneqk71eg7klge05yquczbdxi/gradle-1.12/lib/gradle-launcher-1.12.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-1.12-bin/bneqk71eg7klge05yquczbdxi/gradle-1.12/lib/gradle-messaging-1.12.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-1.12-bin/bneqk71eg7klge05yquczbdxi/gradle-1.12/lib/gradle-native-1.12.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-1.12-bin/bneqk71eg7klge05yquczbdxi/gradle-1.12/lib/gradle-open-api-1.12.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-1.12-bin/bneqk71eg7klge05yquczbdxi/gradle-1.12/lib/gradle-resources-1.12.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-1.12-bin/bneqk71eg7klge05yquczbdxi/gradle-1.12/lib/gradle-tooling-api-1.12.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-1.12-bin/bneqk71eg7klge05yquczbdxi/gradle-1.12/lib/gradle-ui-1.12.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-1.12-bin/bneqk71eg7klge05yquczbdxi/gradle-1.12/lib/gradle-wrapper-1.12.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-1.12-bin/bneqk71eg7klge05yquczbdxi/gradle-1.12/lib/groovy-all-1.8.6.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-1.12-bin/bneqk71eg7klge05yquczbdxi/gradle-1.12/lib/ivy-2.2.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-1.12-bin/bneqk71eg7klge05yquczbdxi/gradle-1.12/lib/plugins/ant-antlr-1.9.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-1.12-bin/bneqk71eg7klge05yquczbdxi/gradle-1.12/lib/plugins/gradle-announce-1.12.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-1.12-bin/bneqk71eg7klge05yquczbdxi/gradle-1.12/lib/plugins/gradle-antlr-1.12.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-1.12-bin/bneqk71eg7klge05yquczbdxi/gradle-1.12/lib/plugins/gradle-build-comparison-1.12.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-1.12-bin/bneqk71eg7klge05yquczbdxi/gradle-1.12/lib/plugins/gradle-build-init-1.12.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-1.12-bin/bneqk71eg7klge05yquczbdxi/gradle-1.12/lib/plugins/gradle-code-quality-1.12.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-1.12-bin/bneqk71eg7klge05yquczbdxi/gradle-1.12/lib/plugins/gradle-core-impl-1.12.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-1.12-bin/bneqk71eg7klge05yquczbdxi/gradle-1.12/lib/plugins/gradle-cpp-1.12.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-1.12-bin/bneqk71eg7klge05yquczbdxi/gradle-1.12/lib/plugins/gradle-diagnostics-1.12.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-1.12-bin/bneqk71eg7klge05yquczbdxi/gradle-1.12/lib/plugins/gradle-ear-1.12.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-1.12-bin/bneqk71eg7klge05yquczbdxi/gradle-1.12/lib/plugins/gradle-ide-1.12.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-1.12-bin/bneqk71eg7klge05yquczbdxi/gradle-1.12/lib/plugins/gradle-ivy-1.12.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-1.12-bin/bneqk71eg7klge05yquczbdxi/gradle-1.12/lib/plugins/gradle-jacoco-1.12.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-1.12-bin/bneqk71eg7klge05yquczbdxi/gradle-1.12/lib/plugins/gradle-javascript-1.12.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-1.12-bin/bneqk71eg7klge05yquczbdxi/gradle-1.12/lib/plugins/gradle-jetty-1.12.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-1.12-bin/bneqk71eg7klge05yquczbdxi/gradle-1.12/lib/plugins/gradle-language-base-1.12.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-1.12-bin/bneqk71eg7klge05yquczbdxi/gradle-1.12/lib/plugins/gradle-language-jvm-1.12.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-1.12-bin/bneqk71eg7klge05yquczbdxi/gradle-1.12/lib/plugins/gradle-maven-1.12.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-1.12-bin/bneqk71eg7klge05yquczbdxi/gradle-1.12/lib/plugins/gradle-osgi-1.12.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-1.12-bin/bneqk71eg7klge05yquczbdxi/gradle-1.12/lib/plugins/gradle-plugins-1.12.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-1.12-bin/bneqk71eg7klge05yquczbdxi/gradle-1.12/lib/plugins/gradle-publish-1.12.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-1.12-bin/bneqk71eg7klge05yquczbdxi/gradle-1.12/lib/plugins/gradle-reporting-1.12.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-1.12-bin/bneqk71eg7klge05yquczbdxi/gradle-1.12/lib/plugins/gradle-scala-1.12.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-1.12-bin/bneqk71eg7klge05yquczbdxi/gradle-1.12/lib/plugins/gradle-signing-1.12.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-1.12-bin/bneqk71eg7klge05yquczbdxi/gradle-1.12/lib/plugins/gradle-sonar-1.12.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/ant-1.9.6.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/ant-launcher-1.9.6.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/gradle-base-services-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/gradle-base-services-groovy-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/gradle-cli-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/gradle-core-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/gradle-docs-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/gradle-installation-beacon-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/gradle-jvm-services-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/gradle-launcher-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/gradle-logging-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/gradle-messaging-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/gradle-model-core-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/gradle-model-groovy-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/gradle-native-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/gradle-open-api-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/gradle-process-services-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/gradle-resources-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/gradle-script-kotlin-0.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/gradle-tooling-api-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/gradle-ui-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/gradle-version-info-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/gradle-wrapper-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/groovy-all-2.4.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/plugins/gradle-announce-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/plugins/gradle-antlr-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/plugins/gradle-build-cache-http-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/plugins/gradle-build-comparison-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/plugins/gradle-build-init-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/plugins/gradle-code-quality-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/plugins/gradle-composite-builds-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/plugins/gradle-dependency-management-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/plugins/gradle-diagnostics-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/plugins/gradle-ear-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/plugins/gradle-ide-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/plugins/gradle-ide-native-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/plugins/gradle-ide-play-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/plugins/gradle-ivy-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/plugins/gradle-jacoco-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/plugins/gradle-javascript-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/plugins/gradle-jetty-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/plugins/gradle-language-groovy-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/plugins/gradle-language-java-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/plugins/gradle-language-jvm-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/plugins/gradle-language-native-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/plugins/gradle-language-scala-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/plugins/gradle-maven-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/plugins/gradle-osgi-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/plugins/gradle-platform-base-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/plugins/gradle-platform-jvm-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/plugins/gradle-platform-native-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/plugins/gradle-platform-play-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/plugins/gradle-plugin-development-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/plugins/gradle-plugin-use-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/plugins/gradle-plugins-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/plugins/gradle-publish-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/plugins/gradle-reporting-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/plugins/gradle-resources-http-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/plugins/gradle-resources-s3-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/plugins/gradle-resources-sftp-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/plugins/gradle-scala-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/plugins/gradle-signing-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/plugins/gradle-test-kit-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/plugins/gradle-testing-base-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/plugins/gradle-testing-jvm-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/plugins/gradle-testing-native-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/plugins/gradle-tooling-api-builders-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/plugins/gradle-workers-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/lib/plugins/ivy-2.2.0.jar" />
                   <option value="$PROJECT_DIR$/buildSrc/src/main/java" />
                   <option value="$PROJECT_DIR$/buildSrc/src/main/groovy" />
                 </list>
@@ -445,12 +725,20 @@
     <option name="externalProjectsViewState">
       <projects_view />
     </option>
+    <option name="projectSyncType">
+      <map>
+        <entry key="$PROJECT_DIR$" value="RE_IMPORT" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/ConnectionStatuses.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/TransactionType.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/ConnectionStatuses.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mozu/api/urls/commerce/catalog/storefront/ProductSearchResultUrl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mozu/api/resources/commerce/orders/attributedefinition/AttributeResource.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/productruntime/ProductValidationSummary.java" />
       </list>
     </option>
   </component>
@@ -460,11 +748,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="3927" />
+    <option name="y" value="-9" />
+    <option name="width" value="2896" />
+    <option name="height" value="1776" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -482,7 +770,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -538,7 +825,7 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
               <item name="contracts" type="462c0819:PsiDirectoryNode" />
-              <item name="commerceruntime" type="462c0819:PsiDirectoryNode" />
+              <item name="productruntime" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mozu-java-core" type="b2602c69:ProjectViewProjectNode" />
@@ -547,9 +834,7 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="contracts" type="462c0819:PsiDirectoryNode" />
-              <item name="commerceruntime" type="462c0819:PsiDirectoryNode" />
-              <item name="carts" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mozu-java-core" type="b2602c69:ProjectViewProjectNode" />
@@ -558,8 +843,8 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="contracts" type="462c0819:PsiDirectoryNode" />
-              <item name="paymentservice" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="commerce" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mozu-java-core" type="b2602c69:ProjectViewProjectNode" />
@@ -568,9 +853,21 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="contracts" type="462c0819:PsiDirectoryNode" />
-              <item name="paymentservice" type="462c0819:PsiDirectoryNode" />
-              <item name="v1" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="commerce" type="462c0819:PsiDirectoryNode" />
+              <item name="orders" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mozu-java-core" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mozu-java-core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="commerce" type="462c0819:PsiDirectoryNode" />
+              <item name="orders" type="462c0819:PsiDirectoryNode" />
+              <item name="attributedefinition" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mozu-java-core" type="b2602c69:ProjectViewProjectNode" />
@@ -580,15 +877,16 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mozu-java-sdk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
@@ -994,6 +1292,8 @@
       <updated>1484162748151</updated>
       <workItem from="1484162753514" duration="625000" />
       <workItem from="1486751213143" duration="1758000" />
+      <workItem from="1539108916813" duration="618000" />
+      <workItem from="1539109666781" duration="1053000" />
     </task>
     <task id="LOCAL-00001" summary="Regen SDK for latest API Changes">
       <created>1486751710961</created>
@@ -1006,14 +1306,14 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2524000" />
+    <option name="totallyTimeSpent" value="5391000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="3591" y="-9" width="2418" height="1318" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32853514" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7976291" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1021,12 +1321,14 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32938188" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25486875" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45977986" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21291667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19916667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18716256" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26333332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31583333" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1034,36 +1336,12 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32938188" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32853514" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32938188" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18454936" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17743056" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26333332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1099,6 +1377,9 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -1111,55 +1392,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/mozu/api/security/CryptoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mozu/api/events/ApplicationEvents.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="19" column="44" lean-forward="false" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mozu/api/security/CustomerAuthenticator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="20" column="49" lean-forward="false" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mozu/api/security/AuthTicket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="6" column="66" lean-forward="false" selection-start-line="6" selection-start-column="66" selection-end-line="6" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/mozu/api/MozuApiContextTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/mozu/api/utils/UrlFormatterTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/mozu/api/security/AppAuthenticatorUnitTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="30" column="13" lean-forward="false" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1323,13 +1555,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/Transaction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-882">
-          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1359,16 +1584,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/GatewayInteraction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
@@ -1392,18 +1607,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/GatewayCaptureResponse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="144" column="47" lean-forward="false" selection-start-line="144" selection-start-column="47" selection-end-line="144" selection-end-column="47" />
+        <state relative-caret-position="1528">
+          <caret line="147" column="7" lean-forward="false" selection-start-line="147" selection-start-column="7" selection-end-line="147" selection-end-column="7" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1533588362004" expanded="true" signature="1559:1606" ph="/**...*/" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/commerceruntime/carts/Cart.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2570">
+        <state relative-caret-position="5439">
           <caret line="412" column="26" lean-forward="false" selection-start-line="412" selection-start-column="26" selection-end-line="412" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1413,7 +1627,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/commerceruntime/commerce/ThresholdMessage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
+        <state relative-caret-position="1092">
           <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
           <folding />
         </state>
@@ -1423,13 +1637,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1447,26 +1655,105 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/ConnectionStatuses.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/TransactionTypes.java" />
+    <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="1" lean-forward="false" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/TransactionTypes.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/PaymentToken.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="29" lean-forward="false" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
+        <state relative-caret-position="153">
+          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/GatewayInteraction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="16" column="61" lean-forward="false" selection-start-line="16" selection-start-column="61" selection-end-line="16" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/Transaction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-494">
+          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/GatewayCreditResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/TransactionType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="1" lean-forward="false" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+        <state relative-caret-position="294">
+          <caret line="14" column="10" lean-forward="false" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/ConnectionStatuses.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/GatewayVoidResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mozu/api/urls/commerce/catalog/storefront/ProductSearchResultUrl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1163">
+          <caret line="56" column="2" lean-forward="false" selection-start-line="56" selection-start-column="2" selection-end-line="56" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/paymentservice/extensibility/v1/GatewayAuthorizeResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mozu/api/resources/commerce/orders/attributedefinition/AttributeResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="21" column="3" lean-forward="false" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mozu/api/contracts/productruntime/ProductValidationSummary.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="46" column="168" lean-forward="false" selection-start-line="46" selection-start-column="168" selection-end-line="46" selection-end-column="168" />
           <folding />
         </state>
       </provider>
