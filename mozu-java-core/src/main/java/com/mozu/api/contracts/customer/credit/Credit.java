@@ -87,9 +87,6 @@ public class Credit implements Serializable
 		this.currentBalance = currentBalance;
 	}
 
-	/**
-	 * customCreditType ApiType DOCUMENT_HERE 
-	 */
 	protected  String customCreditType;
 
 	public String getCustomCreditType() {

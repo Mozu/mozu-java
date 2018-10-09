@@ -36,6 +36,9 @@ public class GatewayDefinition implements Serializable
 		this.countryCode = countryCode;
 	}
 
+	/**
+	 * features ApiType DOCUMENT_HERE 
+	 */
 	protected List<String> features;
 	public List<String> getFeatures() {
 		return this.features;
@@ -94,9 +97,6 @@ public class GatewayDefinition implements Serializable
 		this.testServiceURL = testServiceURL;
 	}
 
-	/**
-	 * administationUi ApiType DOCUMENT_HERE 
-	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode administationUi;
 
 	public com.fasterxml.jackson.databind.JsonNode getAdministationUi() {

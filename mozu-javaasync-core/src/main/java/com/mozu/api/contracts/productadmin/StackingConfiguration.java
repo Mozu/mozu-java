@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Mozu.ProductAdmin.Contracts.StackingConfiguration ApiType DOCUMENT_HERE 
+ *	Used to enable stacking and indicate how many layers to use for line item/order discounts. 
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class StackingConfiguration implements Serializable
@@ -22,7 +22,7 @@ public class StackingConfiguration implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * productLineItemLayers ApiType DOCUMENT_HERE 
+	 * Numerical fieldÂ that represents the number of discount layers for line item product discounts (up to 3).
 	 */
 	protected  Integer productLineItemLayers;
 
@@ -35,7 +35,7 @@ public class StackingConfiguration implements Serializable
 	}
 
 	/**
-	 * productOrderLayers ApiType DOCUMENT_HERE 
+	 * Numerical fieldÂ that represents number of discount layers for order product discounts (up to 3).
 	 */
 	protected  Integer productOrderLayers;
 
@@ -48,7 +48,7 @@ public class StackingConfiguration implements Serializable
 	}
 
 	/**
-	 * stackingEnabled ApiType DOCUMENT_HERE 
+	 * Boolean field that indicates whether or not stackable discounts are enabled per catalog.
 	 */
 	protected  Boolean stackingEnabled;
 

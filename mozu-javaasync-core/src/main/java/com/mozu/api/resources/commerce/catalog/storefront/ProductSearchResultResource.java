@@ -120,7 +120,7 @@ public class ProductSearchResultResource {
 	 */
 	public com.mozu.api.contracts.productruntime.ProductSearchResult search() throws Exception
 	{
-		return search( null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null);
+		return search( null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null);
 	}
 
 	/**
@@ -135,16 +135,18 @@ public class ProductSearchResultResource {
 	 */
 	public CountDownLatch searchAsync( AsyncCallback<com.mozu.api.contracts.productruntime.ProductSearchResult> callback) throws Exception
 	{
-		return searchAsync( null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null, callback);
+		return searchAsync( null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null, callback);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	ProductSearchResult productsearchresult = new ProductSearchResult();
-	 *	ProductSearchResult productSearchResult = productsearchresult.search( query,  filter,  facetTemplate,  facetTemplateSubset,  facet,  facetFieldRangeQuery,  facetHierPrefix,  facetHierValue,  facetHierDepth,  facetStartIndex,  facetPageSize,  facetSettings,  facetValueFilter,  sortBy,  pageSize,  startIndex,  searchSettings,  enableSearchTuningRules,  searchTuningRuleContext,  searchTuningRuleCode,  facetTemplateExclude,  facetPrefix,  responseOptions,  cursorMark,  facetValueSort,  responseFields);
+	 *	ProductSearchResult productSearchResult = productsearchresult.search( query,  filter,  facetTemplate,  facetTemplateSubset,  facet,  facetFieldRangeQuery,  facetHierPrefix,  facetHierValue,  facetHierDepth,  facetStartIndex,  facetPageSize,  facetSettings,  facetValueFilter,  sortBy,  pageSize,  startIndex,  searchSettings,  enableSearchTuningRules,  searchTuningRuleContext,  searchTuningRuleCode,  facetTemplateExclude,  facetPrefix,  responseOptions,  cursorMark,  facetValueSort,  defaultSort,  sortDefinitionName,  defaultSortDefinitionName,  responseFields);
 	 * </code></pre></p>
 	 * @param cursorMark In your first deep paged request, set this parameter to . Then, in all subsequent requests, set this parameter to the subsequent values of  that's returned in each response to continue paging through the results. Continue this pattern until  is null, which signifies the end of the paged results.
+	 * @param defaultSort Sets the default sorting for content. Sort does not use AND in determining the order
+	 * @param defaultSortDefinitionName The name of the default product sort definition for the product results.
 	 * @param enableSearchTuningRules Enables search tuning rules on your site.
 	 * @param facet Individually list the facet fields you want to display in a web storefront product search.
 	 * @param facetFieldRangeQuery Display a range facet not specified in a template in a web storefront product search by listing the facet field and the range to display.
@@ -174,13 +176,14 @@ The following code demonstrates an example of  sort:
 	 * @param searchTuningRuleCode The unique identifier of the search tuning rule.
 	 * @param searchTuningRuleContext The category ID that the search tuning rule applies to.
 	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param sortDefinitionName The name of the product sort definition that is being applied.
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return com.mozu.api.contracts.productruntime.ProductSearchResult
 	 * @see com.mozu.api.contracts.productruntime.ProductSearchResult
 	 */
-	public com.mozu.api.contracts.productruntime.ProductSearchResult search(String query, String filter, String facetTemplate, String facetTemplateSubset, String facet, String facetFieldRangeQuery, String facetHierPrefix, String facetHierValue, String facetHierDepth, String facetStartIndex, String facetPageSize, String facetSettings, String facetValueFilter, String sortBy, Integer pageSize, Integer startIndex, String searchSettings, Boolean enableSearchTuningRules, String searchTuningRuleContext, String searchTuningRuleCode, String facetTemplateExclude, String facetPrefix, String responseOptions, String cursorMark, String facetValueSort, String responseFields) throws Exception
+	public com.mozu.api.contracts.productruntime.ProductSearchResult search(String query, String filter, String facetTemplate, String facetTemplateSubset, String facet, String facetFieldRangeQuery, String facetHierPrefix, String facetHierValue, String facetHierDepth, String facetStartIndex, String facetPageSize, String facetSettings, String facetValueFilter, String sortBy, Integer pageSize, Integer startIndex, String searchSettings, Boolean enableSearchTuningRules, String searchTuningRuleContext, String searchTuningRuleCode, String facetTemplateExclude, String facetPrefix, String responseOptions, String cursorMark, String facetValueSort, String defaultSort, String sortDefinitionName, String defaultSortDefinitionName, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productruntime.ProductSearchResult> client = com.mozu.api.clients.commerce.catalog.storefront.ProductSearchResultClient.searchClient( query,  filter,  facetTemplate,  facetTemplateSubset,  facet,  facetFieldRangeQuery,  facetHierPrefix,  facetHierValue,  facetHierDepth,  facetStartIndex,  facetPageSize,  facetSettings,  facetValueFilter,  sortBy,  pageSize,  startIndex,  searchSettings,  enableSearchTuningRules,  searchTuningRuleContext,  searchTuningRuleCode,  facetTemplateExclude,  facetPrefix,  responseOptions,  cursorMark,  facetValueSort,  responseFields);
+		MozuClient<com.mozu.api.contracts.productruntime.ProductSearchResult> client = com.mozu.api.clients.commerce.catalog.storefront.ProductSearchResultClient.searchClient( query,  filter,  facetTemplate,  facetTemplateSubset,  facet,  facetFieldRangeQuery,  facetHierPrefix,  facetHierValue,  facetHierDepth,  facetStartIndex,  facetPageSize,  facetSettings,  facetValueFilter,  sortBy,  pageSize,  startIndex,  searchSettings,  enableSearchTuningRules,  searchTuningRuleContext,  searchTuningRuleCode,  facetTemplateExclude,  facetPrefix,  responseOptions,  cursorMark,  facetValueSort,  defaultSort,  sortDefinitionName,  defaultSortDefinitionName,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -191,9 +194,11 @@ The following code demonstrates an example of  sort:
 	 * 
 	 * <p><pre><code>
 	 *	ProductSearchResult productsearchresult = new ProductSearchResult();
-	 *	CountDownLatch latch = productsearchresult.search( query,  filter,  facetTemplate,  facetTemplateSubset,  facet,  facetFieldRangeQuery,  facetHierPrefix,  facetHierValue,  facetHierDepth,  facetStartIndex,  facetPageSize,  facetSettings,  facetValueFilter,  sortBy,  pageSize,  startIndex,  searchSettings,  enableSearchTuningRules,  searchTuningRuleContext,  searchTuningRuleCode,  facetTemplateExclude,  facetPrefix,  responseOptions,  cursorMark,  facetValueSort,  responseFields, callback );
+	 *	CountDownLatch latch = productsearchresult.search( query,  filter,  facetTemplate,  facetTemplateSubset,  facet,  facetFieldRangeQuery,  facetHierPrefix,  facetHierValue,  facetHierDepth,  facetStartIndex,  facetPageSize,  facetSettings,  facetValueFilter,  sortBy,  pageSize,  startIndex,  searchSettings,  enableSearchTuningRules,  searchTuningRuleContext,  searchTuningRuleCode,  facetTemplateExclude,  facetPrefix,  responseOptions,  cursorMark,  facetValueSort,  defaultSort,  sortDefinitionName,  defaultSortDefinitionName,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param cursorMark In your first deep paged request, set this parameter to . Then, in all subsequent requests, set this parameter to the subsequent values of  that's returned in each response to continue paging through the results. Continue this pattern until  is null, which signifies the end of the paged results.
+	 * @param defaultSort Sets the default sorting for content. Sort does not use AND in determining the order
+	 * @param defaultSortDefinitionName The name of the default product sort definition for the product results.
 	 * @param enableSearchTuningRules Enables search tuning rules on your site.
 	 * @param facet Individually list the facet fields you want to display in a web storefront product search.
 	 * @param facetFieldRangeQuery Display a range facet not specified in a template in a web storefront product search by listing the facet field and the range to display.
@@ -223,14 +228,15 @@ The following code demonstrates an example of  sort:
 	 * @param searchTuningRuleCode The unique identifier of the search tuning rule.
 	 * @param searchTuningRuleContext The category ID that the search tuning rule applies to.
 	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param sortDefinitionName The name of the product sort definition that is being applied.
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productruntime.ProductSearchResult
 	 * @see com.mozu.api.contracts.productruntime.ProductSearchResult
 	 */
-	public CountDownLatch searchAsync(String query, String filter, String facetTemplate, String facetTemplateSubset, String facet, String facetFieldRangeQuery, String facetHierPrefix, String facetHierValue, String facetHierDepth, String facetStartIndex, String facetPageSize, String facetSettings, String facetValueFilter, String sortBy, Integer pageSize, Integer startIndex, String searchSettings, Boolean enableSearchTuningRules, String searchTuningRuleContext, String searchTuningRuleCode, String facetTemplateExclude, String facetPrefix, String responseOptions, String cursorMark, String facetValueSort, String responseFields, AsyncCallback<com.mozu.api.contracts.productruntime.ProductSearchResult> callback) throws Exception
+	public CountDownLatch searchAsync(String query, String filter, String facetTemplate, String facetTemplateSubset, String facet, String facetFieldRangeQuery, String facetHierPrefix, String facetHierValue, String facetHierDepth, String facetStartIndex, String facetPageSize, String facetSettings, String facetValueFilter, String sortBy, Integer pageSize, Integer startIndex, String searchSettings, Boolean enableSearchTuningRules, String searchTuningRuleContext, String searchTuningRuleCode, String facetTemplateExclude, String facetPrefix, String responseOptions, String cursorMark, String facetValueSort, String defaultSort, String sortDefinitionName, String defaultSortDefinitionName, String responseFields, AsyncCallback<com.mozu.api.contracts.productruntime.ProductSearchResult> callback) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productruntime.ProductSearchResult> client = com.mozu.api.clients.commerce.catalog.storefront.ProductSearchResultClient.searchClient( query,  filter,  facetTemplate,  facetTemplateSubset,  facet,  facetFieldRangeQuery,  facetHierPrefix,  facetHierValue,  facetHierDepth,  facetStartIndex,  facetPageSize,  facetSettings,  facetValueFilter,  sortBy,  pageSize,  startIndex,  searchSettings,  enableSearchTuningRules,  searchTuningRuleContext,  searchTuningRuleCode,  facetTemplateExclude,  facetPrefix,  responseOptions,  cursorMark,  facetValueSort,  responseFields);
+		MozuClient<com.mozu.api.contracts.productruntime.ProductSearchResult> client = com.mozu.api.clients.commerce.catalog.storefront.ProductSearchResultClient.searchClient( query,  filter,  facetTemplate,  facetTemplateSubset,  facet,  facetFieldRangeQuery,  facetHierPrefix,  facetHierValue,  facetHierDepth,  facetStartIndex,  facetPageSize,  facetSettings,  facetValueFilter,  sortBy,  pageSize,  startIndex,  searchSettings,  enableSearchTuningRules,  searchTuningRuleContext,  searchTuningRuleCode,  facetTemplateExclude,  facetPrefix,  responseOptions,  cursorMark,  facetValueSort,  defaultSort,  sortDefinitionName,  defaultSortDefinitionName,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 

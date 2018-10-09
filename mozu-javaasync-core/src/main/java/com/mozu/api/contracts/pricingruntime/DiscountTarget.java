@@ -24,7 +24,7 @@ public class DiscountTarget implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * excludedCategoriesOperator ApiType DOCUMENT_HERE 
+	 * The operator to use on the excludedCategories field. Valid values are: "All" and "Any".
 	 */
 	protected  String excludedCategoriesOperator;
 
@@ -37,7 +37,7 @@ public class DiscountTarget implements Serializable
 	}
 
 	/**
-	 * excludedCategoryIds ApiType DOCUMENT_HERE 
+	 * A list of categories to be excluded from the discount.
 	 */
 	protected List<Integer> excludedCategoryIds;
 	public List<Integer> getExcludedCategoryIds() {
@@ -48,7 +48,7 @@ public class DiscountTarget implements Serializable
 	}
 
 	/**
-	 * excludedProductCodes ApiType DOCUMENT_HERE 
+	 * A list of product codes to be excluded from the discount.
 	 */
 	protected List<String> excludedProductCodes;
 	public List<String> getExcludedProductCodes() {
@@ -59,7 +59,7 @@ public class DiscountTarget implements Serializable
 	}
 
 	/**
-	 * includeAllProducts ApiType DOCUMENT_HERE 
+	 * If true, the target discount applies to all products sold on the site, regardless of product category.
 	 */
 	protected  Boolean includeAllProducts;
 
@@ -72,7 +72,7 @@ public class DiscountTarget implements Serializable
 	}
 
 	/**
-	 * includedCategoriesOperator ApiType DOCUMENT_HERE 
+	 * The operator of the includedCategories field.Valid values are: "All" and "Any".
 	 */
 	protected  String includedCategoriesOperator;
 
@@ -85,7 +85,7 @@ public class DiscountTarget implements Serializable
 	}
 
 	/**
-	 * includedCategoryIds ApiType DOCUMENT_HERE 
+	 * A list of categories to be included with the discount.
 	 */
 	protected List<Integer> includedCategoryIds;
 	public List<Integer> getIncludedCategoryIds() {
@@ -96,7 +96,7 @@ public class DiscountTarget implements Serializable
 	}
 
 	/**
-	 * includedProductCodes ApiType DOCUMENT_HERE 
+	 * A list of product codes to be included in the discount.
 	 */
 	protected List<String> includedProductCodes;
 	public List<String> getIncludedProductCodes() {
@@ -107,7 +107,7 @@ public class DiscountTarget implements Serializable
 	}
 
 	/**
-	 * shippingMethods ApiType DOCUMENT_HERE 
+	 * The list of shipping method codes that represents the shipping service types to which the discount can apply.
 	 */
 	protected List<String> shippingMethods;
 	public List<String> getShippingMethods() {
@@ -118,7 +118,7 @@ public class DiscountTarget implements Serializable
 	}
 
 	/**
-	 * shippingZones ApiType DOCUMENT_HERE 
+	 * The list of shipping zones that are applicable for this discount.
 	 */
 	protected List<String> shippingZones;
 	public List<String> getShippingZones() {
@@ -128,9 +128,6 @@ public class DiscountTarget implements Serializable
 		this.shippingZones = shippingZones;
 	}
 
-	/**
-	 * type ApiType DOCUMENT_HERE 
-	 */
 	protected  String type;
 
 	public String getType() {

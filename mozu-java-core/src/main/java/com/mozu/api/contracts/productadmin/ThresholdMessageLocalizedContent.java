@@ -14,7 +14,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 
 /**
- *	Mozu.ProductAdmin.Contracts.ThresholdMessageLocalizedContent ApiType DOCUMENT_HERE 
+ *	The localized content of the threshold message.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ThresholdMessageLocalizedContent implements Serializable
@@ -36,7 +36,7 @@ public class ThresholdMessageLocalizedContent implements Serializable
 	}
 
 	/**
-	 * messageTemplate ApiType DOCUMENT_HERE 
+	 * Locale-based contents of the Threshold Message that will be displayed.
 	 */
 	protected  String messageTemplate;
 

@@ -81,16 +81,18 @@ public class ProductSearchResultResource {
 	 */
 	public com.mozu.api.contracts.productruntime.ProductSearchResult search() throws Exception
 	{
-		return search( null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null);
+		return search( null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	ProductSearchResult productsearchresult = new ProductSearchResult();
-	 *	ProductSearchResult productSearchResult = productsearchresult.search( query,  filter,  facetTemplate,  facetTemplateSubset,  facet,  facetFieldRangeQuery,  facetHierPrefix,  facetHierValue,  facetHierDepth,  facetStartIndex,  facetPageSize,  facetSettings,  facetValueFilter,  sortBy,  pageSize,  startIndex,  searchSettings,  enableSearchTuningRules,  searchTuningRuleContext,  searchTuningRuleCode,  facetTemplateExclude,  facetPrefix,  responseOptions,  cursorMark,  facetValueSort,  responseFields);
+	 *	ProductSearchResult productSearchResult = productsearchresult.search( query,  filter,  facetTemplate,  facetTemplateSubset,  facet,  facetFieldRangeQuery,  facetHierPrefix,  facetHierValue,  facetHierDepth,  facetStartIndex,  facetPageSize,  facetSettings,  facetValueFilter,  sortBy,  pageSize,  startIndex,  searchSettings,  enableSearchTuningRules,  searchTuningRuleContext,  searchTuningRuleCode,  facetTemplateExclude,  facetPrefix,  responseOptions,  cursorMark,  facetValueSort,  defaultSort,  sortDefinitionName,  defaultSortDefinitionName,  responseFields);
 	 * </code></pre></p>
 	 * @param cursorMark In your first deep paged request, set this parameter to . Then, in all subsequent requests, set this parameter to the subsequent values of  that's returned in each response to continue paging through the results. Continue this pattern until  is null, which signifies the end of the paged results.
+	 * @param defaultSort Sets the default sorting for content. Sort does not use AND in determining the order
+	 * @param defaultSortDefinitionName The name of the default product sort definition for the product results.
 	 * @param enableSearchTuningRules Enables search tuning rules on your site.
 	 * @param facet Individually list the facet fields you want to display in a web storefront product search.
 	 * @param facetFieldRangeQuery Display a range facet not specified in a template in a web storefront product search by listing the facet field and the range to display.
@@ -107,9 +109,9 @@ public class ProductSearchResultResource {
 	 * @param facetTemplateSubset Display a subset of the facets defined in the template specified in facetTemplate parameter.
 	 * @param facetValueFilter The facet values to apply to the filter.
 	 * @param facetValueSort Use this parameter to specify facet sorting outside the predefined facet definitions (which require a category). The most common options are:
-*  (default)â€”Sorts by product count (highest count first).
+*  (default)Sorts by product count (highest count first).
 
-* â€”Sorts by lexicographic order. In most cases, this means alphabetical order.
+* Sorts by lexicographic order. In most cases, this means alphabetical order.
 The following code demonstrates an example of  sort:
 	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
 	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
@@ -120,13 +122,14 @@ The following code demonstrates an example of  sort:
 	 * @param searchTuningRuleCode The unique identifier of the search tuning rule.
 	 * @param searchTuningRuleContext The category ID that the search tuning rule applies to.
 	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param sortDefinitionName The name of the product sort definition that is being applied.
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return com.mozu.api.contracts.productruntime.ProductSearchResult
 	 * @see com.mozu.api.contracts.productruntime.ProductSearchResult
 	 */
-	public com.mozu.api.contracts.productruntime.ProductSearchResult search(String query, String filter, String facetTemplate, String facetTemplateSubset, String facet, String facetFieldRangeQuery, String facetHierPrefix, String facetHierValue, String facetHierDepth, String facetStartIndex, String facetPageSize, String facetSettings, String facetValueFilter, String sortBy, Integer pageSize, Integer startIndex, String searchSettings, Boolean enableSearchTuningRules, String searchTuningRuleContext, String searchTuningRuleCode, String facetTemplateExclude, String facetPrefix, String responseOptions, String cursorMark, String facetValueSort, String responseFields) throws Exception
+	public com.mozu.api.contracts.productruntime.ProductSearchResult search(String query, String filter, String facetTemplate, String facetTemplateSubset, String facet, String facetFieldRangeQuery, String facetHierPrefix, String facetHierValue, String facetHierDepth, String facetStartIndex, String facetPageSize, String facetSettings, String facetValueFilter, String sortBy, Integer pageSize, Integer startIndex, String searchSettings, Boolean enableSearchTuningRules, String searchTuningRuleContext, String searchTuningRuleCode, String facetTemplateExclude, String facetPrefix, String responseOptions, String cursorMark, String facetValueSort, String defaultSort, String sortDefinitionName, String defaultSortDefinitionName, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productruntime.ProductSearchResult> client = com.mozu.api.clients.commerce.catalog.storefront.ProductSearchResultClient.searchClient( query,  filter,  facetTemplate,  facetTemplateSubset,  facet,  facetFieldRangeQuery,  facetHierPrefix,  facetHierValue,  facetHierDepth,  facetStartIndex,  facetPageSize,  facetSettings,  facetValueFilter,  sortBy,  pageSize,  startIndex,  searchSettings,  enableSearchTuningRules,  searchTuningRuleContext,  searchTuningRuleCode,  facetTemplateExclude,  facetPrefix,  responseOptions,  cursorMark,  facetValueSort,  responseFields);
+		MozuClient<com.mozu.api.contracts.productruntime.ProductSearchResult> client = com.mozu.api.clients.commerce.catalog.storefront.ProductSearchResultClient.searchClient( query,  filter,  facetTemplate,  facetTemplateSubset,  facet,  facetFieldRangeQuery,  facetHierPrefix,  facetHierValue,  facetHierDepth,  facetStartIndex,  facetPageSize,  facetSettings,  facetValueFilter,  sortBy,  pageSize,  startIndex,  searchSettings,  enableSearchTuningRules,  searchTuningRuleContext,  searchTuningRuleCode,  facetTemplateExclude,  facetPrefix,  responseOptions,  cursorMark,  facetValueSort,  defaultSort,  sortDefinitionName,  defaultSortDefinitionName,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -154,11 +157,11 @@ The following code demonstrates an example of  sort:
 	 *	SearchSuggestionResult searchSuggestionResult = productsearchresult.suggest( query,  groups,  pageSize,  responseFields);
 	 * </code></pre></p>
 	 * @param groups Specifies the group that you want this operation to return in the response. This parameter accepts one or more values, separated by comma.For example, if you set this parameter to , then this operation returns a  object that contains suggestions for products that match the user entered characters in the search field.The valid values for this parameter are the following:
-*  â€” Indicates that products should be matched against and returned in the response. The search  value is compared against product name and code. The response contains a  with a name of  and a collection of . Each collection item has a  of Product and contains a  equal to a complete product object.
+*   Indicates that products should be matched against and returned in the response. The search  value is compared against product name and code. The response contains a  with a name of  and a collection of . Each collection item has a  of Product and contains a  equal to a complete product object.
 
-*  â€” Indicates that categories should be matched against and returned in the response. The search  value is compared to category name.  The response contains a  with a name of  and a collection of . Each collection item has a  of Category and contains a  equal to a complete category object.
+*   Indicates that categories should be matched against and returned in the response. The search  value is compared to category name.  The response contains a  with a name of  and a collection of . Each collection item has a  of Category and contains a  equal to a complete category object.
 
-*  â€” Indicates that previously used search terms (keywords) should be matched against and returned in the response, sorted by frequency of use. Keep in mind that it is not currently possible to edit or remove search terms that may be considered undesirable via the  API. The response contains a  with a name of  and a collection of . Each collection item has a  of Term and contains a  equal to a string value of the matched search term.
+*   Indicates that previously used search terms (keywords) should be matched against and returned in the response, sorted by frequency of use. Keep in mind that it is not currently possible to edit or remove search terms that may be considered undesirable via the  API. The response contains a  with a name of  and a collection of . Each collection item has a  of Term and contains a  equal to a string value of the matched search term.
 The default value is ; however, the  Core Theme only integrates  and ignores the  group.This operation only returns data that is then made available to your theme. If you set this paramter to multiple values,  returns multiple  in the response. Depending on your requirements, you can then customize your theme to display the groups together or as separate lists in the displayed search suggestions.
 	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
 	 * @param query Properties for the product location inventory provided for queries to locate products by their location.

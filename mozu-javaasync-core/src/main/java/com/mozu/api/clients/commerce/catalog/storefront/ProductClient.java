@@ -38,18 +38,19 @@ public class ProductClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.productruntime.ProductCollection> getProductsClient(com.mozu.api.DataViewMode dataViewMode) throws Exception
 	{
-		return getProductsClient(dataViewMode,  null,  null,  null,  null,  null,  null,  null);
+		return getProductsClient(dataViewMode,  null,  null,  null,  null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productruntime.ProductCollection> mozuClient=GetProductsClient(dataViewMode,  filter,  startIndex,  pageSize,  sortBy,  responseOptions,  cursorMark,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.productruntime.ProductCollection> mozuClient=GetProductsClient(dataViewMode,  filter,  startIndex,  pageSize,  sortBy,  responseOptions,  cursorMark,  defaultSort,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ProductCollection productCollection = client.Result();
 	 * </code></pre></p>
 	 * @param cursorMark In your first deep paged request, set this parameter to . Then, in all subsequent requests, set this parameter to the subsequent values of  that's returned in each response to continue paging through the results. Continue this pattern until  is null, which signifies the end of the paged results.
+	 * @param defaultSort Sets the default sorting for content. Sort does not use AND in determining the order
 	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
 	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
@@ -59,9 +60,9 @@ public class ProductClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productruntime.ProductCollection>
 	 * @see com.mozu.api.contracts.productruntime.ProductCollection
 	 */
-	public static MozuClient<com.mozu.api.contracts.productruntime.ProductCollection> getProductsClient(com.mozu.api.DataViewMode dataViewMode, String filter, Integer startIndex, Integer pageSize, String sortBy, String responseOptions, String cursorMark, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productruntime.ProductCollection> getProductsClient(com.mozu.api.DataViewMode dataViewMode, String filter, Integer startIndex, Integer pageSize, String sortBy, String responseOptions, String cursorMark, String defaultSort, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.storefront.ProductUrl.getProductsUrl(cursorMark, filter, pageSize, responseFields, responseOptions, sortBy, startIndex);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.storefront.ProductUrl.getProductsUrl(cursorMark, defaultSort, filter, pageSize, responseFields, responseOptions, sortBy, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productruntime.ProductCollection.class;
 		MozuClient<com.mozu.api.contracts.productruntime.ProductCollection> mozuClient = (MozuClient<com.mozu.api.contracts.productruntime.ProductCollection>) MozuClientFactory.getInstance(clz);

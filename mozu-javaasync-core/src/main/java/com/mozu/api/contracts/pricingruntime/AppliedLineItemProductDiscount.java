@@ -100,9 +100,6 @@ public class AppliedLineItemProductDiscount implements Serializable
 		this.isForced = isForced;
 	}
 
-	/**
-	 * normalizedImpact ApiType DOCUMENT_HERE 
-	 */
 	protected  Double normalizedImpact;
 
 	public Double getNormalizedImpact() {

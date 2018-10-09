@@ -6,12 +6,15 @@
  */
 package com.mozu.api.contracts.sitesettings.order;
 
+import java.util.List;
+import java.util.HashMap;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
+import com.mozu.api.contracts.sitesettings.order.ThirdPartyPaymentSetting;
 
 /**
  *	Settings that determine how orders are processed and order payments are authorized for the site.
@@ -35,6 +38,9 @@ public class OrderProcessingSettings implements Serializable
 		this.abandonedOrderThresholdInMinutes = abandonedOrderThresholdInMinutes;
 	}
 
+	/**
+	 * giftCardProcessingType ApiType DOCUMENT_HERE 
+	 */
 	protected  String giftCardProcessingType;
 
 	public String getGiftCardProcessingType() {
@@ -73,6 +79,17 @@ public class OrderProcessingSettings implements Serializable
 
 	public void setAuditInfo(AuditInfo auditInfo) {
 		this.auditInfo = auditInfo;
+	}
+
+	/**
+	 * thirdPartyPaymentSettings ApiType DOCUMENT_HERE 
+	 */
+	protected List<ThirdPartyPaymentSetting> thirdPartyPaymentSettings;
+	public List<ThirdPartyPaymentSetting> getThirdPartyPaymentSettings() {
+		return this.thirdPartyPaymentSettings;
+	}
+	public void setThirdPartyPaymentSettings(List<ThirdPartyPaymentSetting> thirdPartyPaymentSettings) {
+		this.thirdPartyPaymentSettings = thirdPartyPaymentSettings;
 	}
 
 

@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Mozu.CommerceRuntime.Contracts.Commerce.ThresholdMessage ApiType DOCUMENT_HERE 
+ *	Information on where, when and what content to display in a threshold message to customers.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ThresholdMessage implements Serializable
@@ -48,7 +48,7 @@ public class ThresholdMessage implements Serializable
 	}
 
 	/**
-	 * requiresCouponCode ApiType DOCUMENT_HERE 
+	 * Boolean field indicating whether or not threshold message requires the customer entering a coupon code to display.
 	 */
 	protected  Boolean requiresCouponCode;
 
@@ -61,7 +61,7 @@ public class ThresholdMessage implements Serializable
 	}
 
 	/**
-	 * showInCart ApiType DOCUMENT_HERE 
+	 * Boolean field indicating whether or not the threshold message should be displayed on the Cart page.
 	 */
 	protected  Boolean showInCart;
 
@@ -74,7 +74,7 @@ public class ThresholdMessage implements Serializable
 	}
 
 	/**
-	 * showOnCheckout ApiType DOCUMENT_HERE 
+	 * Boolean field indicating whether or not the threshold message should display on the Checkout page
 	 */
 	protected  Boolean showOnCheckout;
 
@@ -87,7 +87,7 @@ public class ThresholdMessage implements Serializable
 	}
 
 	/**
-	 * thresholdValue ApiType DOCUMENT_HERE 
+	 * Numerical value representing the Cart minimum total to be satisfied in order to display the threshold message.
 	 */
 	protected  Double thresholdValue;
 

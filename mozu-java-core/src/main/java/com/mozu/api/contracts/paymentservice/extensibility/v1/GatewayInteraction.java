@@ -17,7 +17,7 @@ import com.mozu.api.contracts.paymentservice.extensibility.v1.KeyValueTuple;
 import com.mozu.api.contracts.paymentservice.extensibility.v1.TransactionType;
 
 /**
- *	Mozu.PaymentService.Extensibility.Contracts.V1.GatewayInteraction ApiType DOCUMENT_HERE 
+ *	Contains information about interactions with the gateway
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class GatewayInteraction implements Serializable
@@ -26,7 +26,7 @@ public class GatewayInteraction implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * amount ApiType DOCUMENT_HERE 
+	 * Contains information about interactions with the gateway; contains the amount of this interaction.
 	 */
 	protected  Double amount;
 
@@ -39,7 +39,7 @@ public class GatewayInteraction implements Serializable
 	}
 
 	/**
-	 * cardId ApiType DOCUMENT_HERE 
+	 * Contains the id for the card for this interaction.
 	 */
 	protected  String cardId;
 
@@ -91,7 +91,7 @@ public class GatewayInteraction implements Serializable
 	}
 
 	/**
-	 * isSuccessful ApiType DOCUMENT_HERE 
+	 * Indicates whether the interaction succeeded or not.
 	 */
 	protected  Boolean isSuccessful;
 
@@ -104,7 +104,7 @@ public class GatewayInteraction implements Serializable
 	}
 
 	/**
-	 * responseData ApiType DOCUMENT_HERE 
+	 * Contains information not in the object allowing flexibility.
 	 */
 	protected List<KeyValueTuple> responseData;
 	public List<KeyValueTuple> getResponseData() {
@@ -115,7 +115,7 @@ public class GatewayInteraction implements Serializable
 	}
 
 	/**
-	 * Specifies the type of transaction, including customer transactions and credit transactions.Valid values for credit transactions are the following:* â€”decreases the credit amount* â€”updates the credit amountValid values for customer transaction types are the following:* * * * 
+	 * Specifies the type of transaction, including customer transactions and credit transactions.Valid values for credit transactions are the following:* decreases the credit amount* updates the credit amountValid values for customer transaction types are the following:* * * *
 	 */
 	protected  TransactionType transactionType;
 
