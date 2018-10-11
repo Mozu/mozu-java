@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="Gradle: com.mozu:mozu-api-core:1.20.1-SNAPSHOT">
     <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/com/mozu/mozu-api-core/1.20.1-SNAPSHOT/mozu-api-core-1.20.1-SNAPSHOT.jar!/" />
+      <root url="file://$PROJECT_DIR$/Could not find com.mozu:mozu-api-core:1.20.1-SNAPSHOT." />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

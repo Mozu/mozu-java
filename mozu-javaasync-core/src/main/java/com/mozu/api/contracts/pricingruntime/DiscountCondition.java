@@ -37,7 +37,7 @@ public class DiscountCondition implements Serializable
 	}
 
 	/**
-	 * customerSegmentIds ApiType DOCUMENT_HERE 
+	 * A list of customer segments - groups of customers accounts that discounts can be targeted for.
 	 */
 	protected List<Integer> customerSegmentIds;
 	public List<Integer> getCustomerSegmentIds() {
@@ -48,7 +48,7 @@ public class DiscountCondition implements Serializable
 	}
 
 	/**
-	 * excludedCategoryIds ApiType DOCUMENT_HERE 
+	 * A list of categories to be excluded from the discount.
 	 */
 	protected List<Integer> excludedCategoryIds;
 	public List<Integer> getExcludedCategoryIds() {
@@ -59,7 +59,7 @@ public class DiscountCondition implements Serializable
 	}
 
 	/**
-	 * excludedProductCodes ApiType DOCUMENT_HERE 
+	 * A list of product codes to be excluded from the discount.
 	 */
 	protected List<String> excludedProductCodes;
 	public List<String> getExcludedProductCodes() {
@@ -83,7 +83,7 @@ public class DiscountCondition implements Serializable
 	}
 
 	/**
-	 * includedCategoryIds ApiType DOCUMENT_HERE 
+	 * A list of categories to be included with the discount.
 	 */
 	protected List<Integer> includedCategoryIds;
 	public List<Integer> getIncludedCategoryIds() {
@@ -94,7 +94,7 @@ public class DiscountCondition implements Serializable
 	}
 
 	/**
-	 * includedProductCodes ApiType DOCUMENT_HERE 
+	 * A list of product codes to be included in the discount.
 	 */
 	protected List<String> includedProductCodes;
 	public List<String> getIncludedProductCodes() {
@@ -105,7 +105,7 @@ public class DiscountCondition implements Serializable
 	}
 
 	/**
-	 * minimumCategorySubtotalBeforeDiscounts ApiType DOCUMENT_HERE 
+	 * This specifies the minimum amount that must be purchased in the combined categories defined in IncludedCategories. This amount is calculated before discounting and it is not used if IncludedCategories is empty.
 	 */
 	protected  Double minimumCategorySubtotalBeforeDiscounts;
 
@@ -118,7 +118,7 @@ public class DiscountCondition implements Serializable
 	}
 
 	/**
-	 * minimumLifetimeValueAmount ApiType DOCUMENT_HERE 
+	 * The minimum customer lifetime value amount required to redeem this discount.
 	 */
 	protected  Double minimumLifetimeValueAmount;
 
@@ -131,7 +131,7 @@ public class DiscountCondition implements Serializable
 	}
 
 	/**
-	 * minimumOrderAmount ApiType DOCUMENT_HERE 
+	 * The minimum order amount required to redeem this discount.
 	 */
 	protected  Double minimumOrderAmount;
 
@@ -144,7 +144,7 @@ public class DiscountCondition implements Serializable
 	}
 
 	/**
-	 * minimumQuantityProductsRequiredInCategories ApiType DOCUMENT_HERE 
+	 * This specifies the minimum quantity of products in the categories specified in IncludedCategories, which must be purchased to qualify for the associated discount. This defaults to 1 if null, and IncludedCategories has values.
 	 */
 	protected  Integer minimumQuantityProductsRequiredInCategories;
 
@@ -157,7 +157,7 @@ public class DiscountCondition implements Serializable
 	}
 
 	/**
-	 * minimumQuantityRequiredProducts ApiType DOCUMENT_HERE 
+	 * This specifies the minimum quantity of products in the specified IncludedProducts that must be purchased to qualify for the associated discount. This defaults to 1 if null, and IncludedProducts has values.
 	 */
 	protected  Integer minimumQuantityRequiredProducts;
 
@@ -169,9 +169,6 @@ public class DiscountCondition implements Serializable
 		this.minimumQuantityRequiredProducts = minimumQuantityRequiredProducts;
 	}
 
-	/**
-	 * paymentWorkflows ApiType DOCUMENT_HERE 
-	 */
 	protected List<String> paymentWorkflows;
 	public List<String> getPaymentWorkflows() {
 		return this.paymentWorkflows;
@@ -181,7 +178,7 @@ public class DiscountCondition implements Serializable
 	}
 
 	/**
-	 * requiresCoupon ApiType DOCUMENT_HERE 
+	 * If true, redemption of this discount requires entry of a coupon code.
 	 */
 	protected  Boolean requiresCoupon;
 
@@ -194,7 +191,7 @@ public class DiscountCondition implements Serializable
 	}
 
 	/**
-	 * startDate ApiType DOCUMENT_HERE 
+	 * The earliest date and time this discount can be redeemed.
 	 */
 	protected  DateTime startDate;
 

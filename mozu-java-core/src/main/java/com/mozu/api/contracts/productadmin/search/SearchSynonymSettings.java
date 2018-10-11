@@ -48,6 +48,32 @@ public class SearchSynonymSettings implements Serializable
 	}
 
 	/**
+	 * matchOnAnyTerm ApiType DOCUMENT_HERE 
+	 */
+	protected  Boolean matchOnAnyTerm;
+
+	public Boolean getMatchOnAnyTerm() {
+		return this.matchOnAnyTerm;
+	}
+
+	public void setMatchOnAnyTerm(Boolean matchOnAnyTerm) {
+		this.matchOnAnyTerm = matchOnAnyTerm;
+	}
+
+	/**
+	 * phraseBoost ApiType DOCUMENT_HERE 
+	 */
+	protected  Integer phraseBoost;
+
+	public Integer getPhraseBoost() {
+		return this.phraseBoost;
+	}
+
+	public void setPhraseBoost(Integer phraseBoost) {
+		this.phraseBoost = phraseBoost;
+	}
+
+	/**
 	 * Boosts the synonyms to affect rankings for search results.
 	 */
 	protected  Double synonymPartBoost;

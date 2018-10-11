@@ -42,7 +42,7 @@ public class OrderItem implements Serializable
 	}
 
 	/**
-	 * autoAddDiscountId ApiType DOCUMENT_HERE 
+	 * If an item was automatically added as a result of a BOGA discount (i.e. this is the free item), this field will be populated with the corresponding BOGA discount ID.
 	 */
 	protected  Integer autoAddDiscountId;
 

@@ -62,7 +62,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * canBeStackedUpon ApiType DOCUMENT_HERE 
+	 * Boolean field, if true, this discount will allow discounts in the following layer to be stacked on top.
 	 */
 	protected  Boolean canBeStackedUpon;
 
@@ -123,6 +123,9 @@ public class Discount implements Serializable
 		this.doesNotApplyToSalePrice = doesNotApplyToSalePrice;
 	}
 
+	/**
+	 * hasPurchaseConditions ApiType DOCUMENT_HERE 
+	 */
 	protected  Boolean hasPurchaseConditions;
 
 	public Boolean getHasPurchaseConditions() {
@@ -219,9 +222,6 @@ public class Discount implements Serializable
 		this.maximumUsesPerUser = maximumUsesPerUser;
 	}
 
-	/**
-	 * preventLineItemShippingDiscounts ApiType DOCUMENT_HERE 
-	 */
 	protected  Boolean preventLineItemShippingDiscounts;
 
 	public Boolean getPreventLineItemShippingDiscounts() {
@@ -232,9 +232,6 @@ public class Discount implements Serializable
 		this.preventLineItemShippingDiscounts = preventLineItemShippingDiscounts;
 	}
 
-	/**
-	 * preventOrderProductDiscounts ApiType DOCUMENT_HERE 
-	 */
 	protected  Boolean preventOrderProductDiscounts;
 
 	public Boolean getPreventOrderProductDiscounts() {
@@ -245,9 +242,6 @@ public class Discount implements Serializable
 		this.preventOrderProductDiscounts = preventOrderProductDiscounts;
 	}
 
-	/**
-	 * preventOrderShippingDiscounts ApiType DOCUMENT_HERE 
-	 */
 	protected  Boolean preventOrderShippingDiscounts;
 
 	public Boolean getPreventOrderShippingDiscounts() {
@@ -258,6 +252,9 @@ public class Discount implements Serializable
 		this.preventOrderShippingDiscounts = preventOrderShippingDiscounts;
 	}
 
+	/**
+	 * purchaseRequirementType ApiType DOCUMENT_HERE 
+	 */
 	protected  String purchaseRequirementType;
 
 	public String getPurchaseRequirementType() {
@@ -279,7 +276,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * stackingLayer ApiType DOCUMENT_HERE 
+	 * Numerical fieldÂ representing number of discount layer (up to 3) -Each discount can be assigned to a layer which is then used to determine the order of application. Discounts in the same layer will compete and provide the best value for the shopper.
 	 */
 	protected  Integer stackingLayer;
 
@@ -345,7 +342,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * thresholdMessage ApiType DOCUMENT_HERE 
+	 * Text field representing message content that the user wants to display on their storefront
 	 */
 	protected  ThresholdMessage thresholdMessage;
 

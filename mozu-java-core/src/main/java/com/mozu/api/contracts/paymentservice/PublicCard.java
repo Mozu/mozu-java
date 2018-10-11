@@ -12,9 +12,6 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	Mozu.PaymentService.Contracts.PublicCard ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PublicCard implements Serializable
 {
@@ -22,7 +19,7 @@ public class PublicCard implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Mozu.PaymentService.Contracts.PublicCard cardHolderName ApiTypeMember DOCUMENT_HERE 
+	 * The card holder full name.
 	 */
 	protected  String cardHolderName;
 
@@ -35,7 +32,7 @@ public class PublicCard implements Serializable
 	}
 
 	/**
-	 * Mozu.PaymentService.Contracts.PublicCard cardIssueMonth ApiTypeMember DOCUMENT_HERE 
+	 * The month the credit card was issued; used by some cards.
 	 */
 	protected  Integer cardIssueMonth;
 
@@ -61,7 +58,7 @@ public class PublicCard implements Serializable
 	}
 
 	/**
-	 * Mozu.PaymentService.Contracts.PublicCard cardIssueYear ApiTypeMember DOCUMENT_HERE 
+	 * The issue year; used by some cards.
 	 */
 	protected  Integer cardIssueYear;
 
@@ -87,7 +84,7 @@ public class PublicCard implements Serializable
 	}
 
 	/**
-	 * Mozu.PaymentService.Contracts.PublicCard cardType ApiTypeMember DOCUMENT_HERE 
+	 * The type of credit card, such as Visa or Amex.
 	 */
 	protected  String cardType;
 
@@ -100,7 +97,7 @@ public class PublicCard implements Serializable
 	}
 
 	/**
-	 * Mozu.PaymentService.Contracts.PublicCard cvv ApiTypeMember DOCUMENT_HERE 
+	 * The CVV code for the credit card.
 	 */
 	protected  String cvv;
 

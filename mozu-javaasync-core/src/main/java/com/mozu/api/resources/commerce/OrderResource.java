@@ -499,8 +499,8 @@ public class OrderResource {
 	 *	Order order = new Order();
 	 *	Order order = order.priceOrder( order,  refreshShipping);
 	 * </code></pre></p>
-	 * @param refreshShipping 
-	 * @param order 
+	 * @param refreshShipping Specifies whether shipping rates should be re-evaluated while pricing.
+	 * @param order The order payload to price.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
@@ -516,9 +516,9 @@ public class OrderResource {
 	 *	Order order = new Order();
 	 *	CountDownLatch latch = order.priceOrder( order,  refreshShipping, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param refreshShipping 
+	 * @param refreshShipping Specifies whether shipping rates should be re-evaluated while pricing.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param order 
+	 * @param order The order payload to price.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
@@ -534,9 +534,9 @@ public class OrderResource {
 	 *	Order order = new Order();
 	 *	Order order = order.priceOrder( order,  refreshShipping,  responseFields);
 	 * </code></pre></p>
-	 * @param refreshShipping 
+	 * @param refreshShipping Specifies whether shipping rates should be re-evaluated while pricing.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param order 
+	 * @param order The order payload to price.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
@@ -556,10 +556,10 @@ public class OrderResource {
 	 *	Order order = new Order();
 	 *	CountDownLatch latch = order.priceOrder( order,  refreshShipping,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param refreshShipping 
+	 * @param refreshShipping Specifies whether shipping rates should be re-evaluated while pricing.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param order 
+	 * @param order The order payload to price.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order

@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Mozu.CommerceRuntime.Contracts.Payments.PaymentActionTarget ApiType DOCUMENT_HERE 
+ *	Specifies the target on a payment action or on an interaction
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PaymentActionTarget implements Serializable
@@ -22,7 +22,7 @@ public class PaymentActionTarget implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * targetId ApiType DOCUMENT_HERE 
+	 * The Id of the checkout/order to target.
 	 */
 	protected  String targetId;
 
@@ -35,7 +35,7 @@ public class PaymentActionTarget implements Serializable
 	}
 
 	/**
-	 * targetNumber ApiType DOCUMENT_HERE 
+	 * The number of the checkout/order to target.
 	 */
 	protected  Integer targetNumber;
 
@@ -48,7 +48,7 @@ public class PaymentActionTarget implements Serializable
 	}
 
 	/**
-	 * targetType ApiType DOCUMENT_HERE 
+	 * Specifies if the TargetId is a checkout Id or order Id.
 	 */
 	protected  String targetType;
 

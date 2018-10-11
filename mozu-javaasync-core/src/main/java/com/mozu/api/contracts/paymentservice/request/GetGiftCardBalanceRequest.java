@@ -12,12 +12,18 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
+/**
+ *	Mozu.PaymentService.Contracts.Request.GetGiftCardBalanceRequest ApiType DOCUMENT_HERE 
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class GetGiftCardBalanceRequest implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The masked credit card number part returned from the payment gateway.
+	 */
 	protected  String cardNumberPart;
 
 	public String getCardNumberPart() {
@@ -28,6 +34,9 @@ public class GetGiftCardBalanceRequest implements Serializable
 		this.cardNumberPart = cardNumberPart;
 	}
 
+	/**
+	 * The type of credit card, such as Visa or Amex.
+	 */
 	protected  String cardType;
 
 	public String getCardType() {
@@ -38,6 +47,9 @@ public class GetGiftCardBalanceRequest implements Serializable
 		this.cardType = cardType;
 	}
 
+	/**
+	 * The CVV code for the credit card.
+	 */
 	protected  String cvv;
 
 	public String getCvv() {

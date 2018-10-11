@@ -51,7 +51,7 @@ public class FraudScreen implements Serializable
 	}
 
 	/**
-	 * Mozu.PaymentService.Contracts.Response.FraudScreen transactionId ApiTypeMember DOCUMENT_HERE 
+	 * Contains the id for the transaction provided by the gateway.
 	 */
 	protected  String transactionId;
 

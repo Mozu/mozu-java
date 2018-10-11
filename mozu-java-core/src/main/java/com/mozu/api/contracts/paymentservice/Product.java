@@ -48,7 +48,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * Mozu.PaymentService.Contracts.Product variantProductCode ApiTypeMember DOCUMENT_HERE 
+	 * For configurable products, the unique identifier of the product variation that has been selected.
 	 */
 	protected  String variantProductCode;
 

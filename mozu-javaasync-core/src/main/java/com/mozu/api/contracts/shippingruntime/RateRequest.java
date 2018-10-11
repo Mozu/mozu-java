@@ -51,6 +51,9 @@ public class RateRequest implements Serializable
 		this.estimatedShipmentDate = estimatedShipmentDate;
 	}
 
+	/**
+	 * handlingTotal ApiType DOCUMENT_HERE 
+	 */
 	protected  Double handlingTotal;
 
 	public Double getHandlingTotal() {

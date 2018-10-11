@@ -100,9 +100,6 @@ public class CreditTransaction implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * data ApiType DOCUMENT_HERE 
-	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {

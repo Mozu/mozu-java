@@ -21,6 +21,9 @@ public class SyncResponse implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The current balance of the card.
+	 */
 	protected  Double balance;
 
 	public Double getBalance() {
@@ -45,7 +48,7 @@ public class SyncResponse implements Serializable
 	}
 
 	/**
-	 * Mozu.PaymentService.Contracts.Response.SyncResponse isSuccessful ApiTypeMember DOCUMENT_HERE 
+	 * Indicates whether the interaction succeeded or not.
 	 */
 	protected  Boolean isSuccessful;
 
@@ -57,6 +60,9 @@ public class SyncResponse implements Serializable
 		this.isSuccessful = isSuccessful;
 	}
 
+	/**
+	 * The text of the change message, such as "This product is no longer available." System-supplied and read-only.
+	 */
 	protected  String message;
 
 	public String getMessage() {

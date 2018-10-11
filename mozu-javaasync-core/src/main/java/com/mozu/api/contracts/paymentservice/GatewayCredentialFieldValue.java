@@ -22,7 +22,7 @@ public class GatewayCredentialFieldValue implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * isValueSet ApiType DOCUMENT_HERE 
+	 * A list of KeyValueTuples containing the configuration from the application setup.
 	 */
 	protected  Boolean isValueSet;
 

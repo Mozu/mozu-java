@@ -141,6 +141,9 @@ public class DiscountCondition implements Serializable
 		this.minimumQuantityRequiredProducts = minimumQuantityRequiredProducts;
 	}
 
+	/**
+	 * minimumRequiredQuantityPerRedemption ApiType DOCUMENT_HERE 
+	 */
 	protected  Integer minimumRequiredQuantityPerRedemption;
 
 	public Integer getMinimumRequiredQuantityPerRedemption() {
@@ -190,9 +193,6 @@ public class DiscountCondition implements Serializable
 		this.startDate = startDate;
 	}
 
-	/**
-	 * categoriesToExcludeFromMinOrderTotal ApiType DOCUMENT_HERE 
-	 */
 	protected List<CategoryDiscountCondition> categoriesToExcludeFromMinOrderTotal;
 	public List<CategoryDiscountCondition> getCategoriesToExcludeFromMinOrderTotal() {
 		return this.categoriesToExcludeFromMinOrderTotal;
@@ -256,9 +256,6 @@ public class DiscountCondition implements Serializable
 		this.includedProducts = includedProducts;
 	}
 
-	/**
-	 * productsToExcludeFromMinOrderTotal ApiType DOCUMENT_HERE 
-	 */
 	protected List<ProductDiscountCondition> productsToExcludeFromMinOrderTotal;
 	public List<ProductDiscountCondition> getProductsToExcludeFromMinOrderTotal() {
 		return this.productsToExcludeFromMinOrderTotal;

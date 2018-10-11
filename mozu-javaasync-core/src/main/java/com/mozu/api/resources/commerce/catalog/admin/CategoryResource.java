@@ -346,7 +346,7 @@ public class CategoryResource {
 	 *	Category category = new Category();
 	 *	category.addProductsToCategory( productCodes,  categoryId);
 	 * </code></pre></p>
-	 * @param categoryId 
+	 * @param categoryId Unique identifier of the category to modify.
 	 * @param productCodes 
 	 * @return 
 	 * @see string
@@ -366,7 +366,7 @@ public class CategoryResource {
 	 *	Category category = new Category();
 	 *	category.removeProductsFromCategory( productCodes,  categoryId);
 	 * </code></pre></p>
-	 * @param categoryId 
+	 * @param categoryId Unique identifier of the category to modify.
 	 * @param productCodes 
 	 * @return 
 	 * @see string

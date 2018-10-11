@@ -14,7 +14,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.commerceruntime.payments.PaymentActionTarget;
 
 /**
- *	Mozu.CommerceRuntime.Contracts.Payments.SubPayment ApiType DOCUMENT_HERE 
+ *	Sub-payment that corresponds to a child order in case of multiship order.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SubPayment implements Serializable
@@ -23,7 +23,7 @@ public class SubPayment implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * amountCollected ApiType DOCUMENT_HERE 
+	 * The amount collected for that portion of the payment.
 	 */
 	protected  Double amountCollected;
 
@@ -36,7 +36,7 @@ public class SubPayment implements Serializable
 	}
 
 	/**
-	 * amountCredited ApiType DOCUMENT_HERE 
+	 * The amount credited back for that portion of the payment.
 	 */
 	protected  Double amountCredited;
 
@@ -49,7 +49,7 @@ public class SubPayment implements Serializable
 	}
 
 	/**
-	 * amountRefunded ApiType DOCUMENT_HERE 
+	 * The amount refunded for that portion of the payment.
 	 */
 	protected  Double amountRefunded;
 
@@ -62,7 +62,7 @@ public class SubPayment implements Serializable
 	}
 
 	/**
-	 * amountRequested ApiType DOCUMENT_HERE 
+	 * The amount requested for that portion of the payment.
 	 */
 	protected  Double amountRequested;
 

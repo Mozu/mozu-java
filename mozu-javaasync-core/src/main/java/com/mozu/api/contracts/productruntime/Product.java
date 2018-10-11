@@ -166,9 +166,6 @@ public class Product implements Serializable
 		this.isTaxable = isTaxable;
 	}
 
-	/**
-	 * locationsInStock ApiType DOCUMENT_HERE 
-	 */
 	protected List<String> locationsInStock;
 	public List<String> getLocationsInStock() {
 		return this.locationsInStock;

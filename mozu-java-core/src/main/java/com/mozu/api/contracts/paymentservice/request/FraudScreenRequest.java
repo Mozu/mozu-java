@@ -29,7 +29,7 @@ public class FraudScreenRequest implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest avsCodes ApiTypeMember DOCUMENT_HERE 
+	 * Contains the avs codes from the gateway.
 	 */
 	protected  String avsCodes;
 
@@ -42,7 +42,7 @@ public class FraudScreenRequest implements Serializable
 	}
 
 	/**
-	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest cardId ApiTypeMember DOCUMENT_HERE 
+	 * Unique identifier of the card associated with the customer account billing contact.
 	 */
 	protected  String cardId;
 
@@ -55,7 +55,7 @@ public class FraudScreenRequest implements Serializable
 	}
 
 	/**
-	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest cardNumberPart ApiTypeMember DOCUMENT_HERE 
+	 * The masked credit card number part returned from the payment gateway.
 	 */
 	protected  String cardNumberPart;
 
@@ -107,7 +107,7 @@ public class FraudScreenRequest implements Serializable
 	}
 
 	/**
-	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest cvV2Codes ApiTypeMember DOCUMENT_HERE 
+	 * The CVV code for the credit card.
 	 */
 	protected  String cvV2Codes;
 
@@ -172,7 +172,7 @@ public class FraudScreenRequest implements Serializable
 	}
 
 	/**
-	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest orderNumber ApiTypeMember DOCUMENT_HERE 
+	 * The unique identifier of the order.
 	 */
 	protected  Integer orderNumber;
 
@@ -211,7 +211,7 @@ public class FraudScreenRequest implements Serializable
 	}
 
 	/**
-	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest requestorIp ApiTypeMember DOCUMENT_HERE 
+	 * Contains the IP the customer is using.
 	 */
 	protected  String requestorIp;
 
@@ -224,7 +224,7 @@ public class FraudScreenRequest implements Serializable
 	}
 
 	/**
-	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest requestorUrl ApiTypeMember DOCUMENT_HERE 
+	 * Contains the url the customer is using.
 	 */
 	protected  String requestorUrl;
 
@@ -237,7 +237,7 @@ public class FraudScreenRequest implements Serializable
 	}
 
 	/**
-	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest requestorUserAgent ApiTypeMember DOCUMENT_HERE 
+	 * Contains the user agent the customer is using.
 	 */
 	protected  String requestorUserAgent;
 
@@ -276,7 +276,7 @@ public class FraudScreenRequest implements Serializable
 	}
 
 	/**
-	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest billingAddress ApiTypeMember DOCUMENT_HERE 
+	 * The billing address used in the transaction.
 	 */
 	protected  Address billingAddress;
 
@@ -289,7 +289,7 @@ public class FraudScreenRequest implements Serializable
 	}
 
 	/**
-	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest billingContact ApiTypeMember DOCUMENT_HERE 
+	 * The cardholder's billing contact information, including addresses.
 	 */
 	protected  Contact billingContact;
 
@@ -324,7 +324,7 @@ public class FraudScreenRequest implements Serializable
 	}
 
 	/**
-	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest orderItems ApiTypeMember DOCUMENT_HERE 
+	 * A list of items included in the order.
 	 */
 	protected List<OrderItem> orderItems;
 	public List<OrderItem> getOrderItems() {

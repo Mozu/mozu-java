@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Mozu.PaymentService.Extensibility.Contracts.V1.CardInformation ApiType DOCUMENT_HERE 
+ *	Contains information about the card
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CardInformation implements Serializable
@@ -22,7 +22,7 @@ public class CardInformation implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * cardHolderName ApiType DOCUMENT_HERE 
+	 * The card holder full name.
 	 */
 	protected  String cardHolderName;
 
@@ -35,7 +35,7 @@ public class CardInformation implements Serializable
 	}
 
 	/**
-	 * cardIssueMonth ApiType DOCUMENT_HERE 
+	 * The month the credit card was issued; used by some cards.
 	 */
 	protected  Integer cardIssueMonth;
 
@@ -48,7 +48,7 @@ public class CardInformation implements Serializable
 	}
 
 	/**
-	 * cardIssueNumber ApiType DOCUMENT_HERE 
+	 * The issue number of the credit card. (Used by some cards.)
 	 */
 	protected  String cardIssueNumber;
 
@@ -61,7 +61,7 @@ public class CardInformation implements Serializable
 	}
 
 	/**
-	 * cardIssueYear ApiType DOCUMENT_HERE 
+	 * The issue year; used by some cards.
 	 */
 	protected  Integer cardIssueYear;
 
@@ -74,7 +74,7 @@ public class CardInformation implements Serializable
 	}
 
 	/**
-	 * cvv ApiType DOCUMENT_HERE 
+	 * The CVV code for the credit card.
 	 */
 	protected  String cvv;
 
@@ -126,7 +126,7 @@ public class CardInformation implements Serializable
 	}
 
 	/**
-	 * numberPart ApiType DOCUMENT_HERE 
+	 * Contains the card number or number part if the card is tokenized.
 	 */
 	protected  String numberPart;
 
@@ -139,7 +139,7 @@ public class CardInformation implements Serializable
 	}
 
 	/**
-	 * persistCard ApiType DOCUMENT_HERE 
+	 * Indicates whether to store credit card information.
 	 */
 	protected  Boolean persistCard;
 
@@ -152,7 +152,7 @@ public class CardInformation implements Serializable
 	}
 
 	/**
-	 * type ApiType DOCUMENT_HERE 
+	 * Contains the type of credit card. For example: Visa, MasterCard.
 	 */
 	protected  String type;
 

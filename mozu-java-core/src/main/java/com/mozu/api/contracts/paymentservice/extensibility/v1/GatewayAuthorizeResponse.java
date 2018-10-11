@@ -17,7 +17,7 @@ import com.mozu.api.contracts.paymentservice.extensibility.v1.ConnectionStatuses
 import com.mozu.api.contracts.paymentservice.extensibility.v1.KeyValueTuple;
 
 /**
- *	Mozu.PaymentService.Extensibility.Contracts.V1.GatewayAuthorizeResponse ApiType DOCUMENT_HERE 
+ *	Contains an authorization response
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class GatewayAuthorizeResponse implements Serializable
@@ -26,7 +26,7 @@ public class GatewayAuthorizeResponse implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * authCode ApiType DOCUMENT_HERE 
+	 * Contains the auth code from the gateway.
 	 */
 	protected  String authCode;
 
@@ -39,7 +39,7 @@ public class GatewayAuthorizeResponse implements Serializable
 	}
 
 	/**
-	 * avsCodes ApiType DOCUMENT_HERE 
+	 * Contains the avs codes from the gateway.
 	 */
 	protected  String avsCodes;
 
@@ -52,7 +52,7 @@ public class GatewayAuthorizeResponse implements Serializable
 	}
 
 	/**
-	 * cvV2Codes ApiType DOCUMENT_HERE 
+	 * Contains the CVV2 codes from the gateway.
 	 */
 	protected  String cvV2Codes;
 
@@ -65,7 +65,7 @@ public class GatewayAuthorizeResponse implements Serializable
 	}
 
 	/**
-	 * isDeclined ApiType DOCUMENT_HERE 
+	 * Set this to true if the transaction is declined or fails for any reason.
 	 */
 	protected  Boolean isDeclined;
 
@@ -78,7 +78,7 @@ public class GatewayAuthorizeResponse implements Serializable
 	}
 
 	/**
-	 * responseCode ApiType DOCUMENT_HERE 
+	 * Contains the response code from the gateway.
 	 */
 	protected  String responseCode;
 
@@ -91,7 +91,7 @@ public class GatewayAuthorizeResponse implements Serializable
 	}
 
 	/**
-	 * responseText ApiType DOCUMENT_HERE 
+	 * Contains the text for the response,  'Insufficient funds'.
 	 */
 	protected  String responseText;
 
@@ -104,7 +104,7 @@ public class GatewayAuthorizeResponse implements Serializable
 	}
 
 	/**
-	 * transactionId ApiType DOCUMENT_HERE 
+	 * Contains the id for the transaction provided by the gateway.
 	 */
 	protected  String transactionId;
 
@@ -117,7 +117,7 @@ public class GatewayAuthorizeResponse implements Serializable
 	}
 
 	/**
-	 * remoteConnectionStatus ApiType DOCUMENT_HERE 
+	 * Contains information about the interaction with the gateway.
 	 */
 	protected  ConnectionStatuses remoteConnectionStatus;
 
@@ -130,7 +130,7 @@ public class GatewayAuthorizeResponse implements Serializable
 	}
 
 	/**
-	 * responseData ApiType DOCUMENT_HERE 
+	 * Contains information not contained in the object allowing flexibility.
 	 */
 	protected List<KeyValueTuple> responseData;
 	public List<KeyValueTuple> getResponseData() {

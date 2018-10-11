@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.paymentservice.GatewayAccount;
 import com.mozu.api.contracts.paymentservice.GatewayDefinition;
+import com.mozu.api.contracts.paymentservice.SiteGatewaySupportedCard;
 
 /**
  *	Properties of a payment gateway defined for the site.
@@ -61,6 +62,14 @@ public class Gateway implements Serializable
 
 	public void setGatewayDefinition(GatewayDefinition gatewayDefinition) {
 		this.gatewayDefinition = gatewayDefinition;
+	}
+
+	protected List<SiteGatewaySupportedCard> siteGatewaySupportedCards;
+	public List<SiteGatewaySupportedCard> getSiteGatewaySupportedCards() {
+		return this.siteGatewaySupportedCards;
+	}
+	public void setSiteGatewaySupportedCards(List<SiteGatewaySupportedCard> siteGatewaySupportedCards) {
+		this.siteGatewaySupportedCards = siteGatewaySupportedCards;
 	}
 
 

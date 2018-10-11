@@ -16,7 +16,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.paymentservice.extensibility.v1.GatewayInteraction;
 
 /**
- *	Mozu.PaymentService.Extensibility.Contracts.V1.Transaction ApiType DOCUMENT_HERE 
+ *	Contains information about a transaction
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Transaction implements Serializable
@@ -25,7 +25,7 @@ public class Transaction implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * activeCardId ApiType DOCUMENT_HERE 
+	 * Contains the card id used in the transaction
 	 */
 	protected  String activeCardId;
 
@@ -90,7 +90,7 @@ public class Transaction implements Serializable
 	}
 
 	/**
-	 * kiboTransactionId ApiType DOCUMENT_HERE 
+	 * Contains the Kibo transaction id
 	 */
 	protected  String kiboTransactionId;
 
@@ -103,7 +103,7 @@ public class Transaction implements Serializable
 	}
 
 	/**
-	 * gatewayInteractions ApiType DOCUMENT_HERE 
+	 * Contains information about the gateway interactions
 	 */
 	protected List<GatewayInteraction> gatewayInteractions;
 	public List<GatewayInteraction> getGatewayInteractions() {

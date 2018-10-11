@@ -201,7 +201,7 @@ public class Payment implements Serializable
 	}
 
 	/**
-	 * groupId ApiType DOCUMENT_HERE 
+	 * The parent group Id that this payment belongs to. This will refer to the parent checkout in the case of a multi-ship order, or the parent order in the case of a non-multi-ship order. This will (eventually) allow us to find all payments associated with a checkout, even if the payment is added directly to one of the child orders.
 	 */
 	protected  PaymentActionTarget groupId;
 
@@ -222,7 +222,7 @@ public class Payment implements Serializable
 	}
 
 	/**
-	 * subPayments ApiType DOCUMENT_HERE 
+	 * List of sub-payments that correspond to child orders in case of multiship orders. Used for tracking each order's portion of a shared payment.
 	 */
 	protected List<SubPayment> subPayments;
 	public List<SubPayment> getSubPayments() {

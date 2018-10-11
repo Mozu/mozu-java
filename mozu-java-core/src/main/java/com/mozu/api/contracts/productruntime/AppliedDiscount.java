@@ -54,9 +54,6 @@ public class AppliedDiscount implements Serializable
 		this.discount = discount;
 	}
 
-	/**
-	 * discounts ApiType DOCUMENT_HERE 
-	 */
 	protected List<Discount> discounts;
 	public List<Discount> getDiscounts() {
 		return this.discounts;

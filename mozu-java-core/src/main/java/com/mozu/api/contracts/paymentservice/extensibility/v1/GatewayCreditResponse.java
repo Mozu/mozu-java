@@ -17,7 +17,7 @@ import com.mozu.api.contracts.paymentservice.extensibility.v1.ConnectionStatuses
 import com.mozu.api.contracts.paymentservice.extensibility.v1.KeyValueTuple;
 
 /**
- *	Mozu.PaymentService.Extensibility.Contracts.V1.GatewayCreditResponse ApiType DOCUMENT_HERE 
+ *	Contains a credit response
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class GatewayCreditResponse implements Serializable
@@ -26,7 +26,7 @@ public class GatewayCreditResponse implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * isDeclined ApiType DOCUMENT_HERE 
+	 * Set this to true if the transaction is declined or fails for any reason.
 	 */
 	protected  Boolean isDeclined;
 
@@ -39,7 +39,7 @@ public class GatewayCreditResponse implements Serializable
 	}
 
 	/**
-	 * responseCode ApiType DOCUMENT_HERE 
+	 * Contains the response code from the gateway.
 	 */
 	protected  String responseCode;
 
@@ -52,7 +52,7 @@ public class GatewayCreditResponse implements Serializable
 	}
 
 	/**
-	 * responseText ApiType DOCUMENT_HERE 
+	 * Contains the text for the response, eg, 'Insufficient funds'.
 	 */
 	protected  String responseText;
 
@@ -65,7 +65,7 @@ public class GatewayCreditResponse implements Serializable
 	}
 
 	/**
-	 * transactionId ApiType DOCUMENT_HERE 
+	 * Contains the id for the transaction provided by the gateway.
 	 */
 	protected  String transactionId;
 
@@ -78,7 +78,7 @@ public class GatewayCreditResponse implements Serializable
 	}
 
 	/**
-	 * remoteConnectionStatus ApiType DOCUMENT_HERE 
+	 * Contains information about the interaction with the gateway.
 	 */
 	protected  ConnectionStatuses remoteConnectionStatus;
 
@@ -91,7 +91,7 @@ public class GatewayCreditResponse implements Serializable
 	}
 
 	/**
-	 * responseData ApiType DOCUMENT_HERE 
+	 * Contains information not in the object allowing flexibility.
 	 */
 	protected List<KeyValueTuple> responseData;
 	public List<KeyValueTuple> getResponseData() {

@@ -36,7 +36,7 @@ public class AttributeDetail implements Serializable
 	}
 
 	/**
-	 * customWeightInStorefrontSearch ApiType DOCUMENT_HERE 
+	 * When set to true, enables you to set a custom search weight for a product attribute in search-settings.
 	 */
 	protected  Boolean customWeightInStorefrontSearch;
 
