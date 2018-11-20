@@ -18,7 +18,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use this subresource to view which order items are eligible for return.
+ * 
  * </summary>
  */
 public class OrderReturnableItemResource {
@@ -40,7 +40,7 @@ public class OrderReturnableItemResource {
 	 *	OrderReturnableItem orderreturnableitem = new OrderReturnableItem();
 	 *	OrderReturnableItemCollection orderReturnableItemCollection = orderreturnableitem.getOrderReturnableItems( orderId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderReturnableItemCollection
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderReturnableItemCollection
 	 */
@@ -55,8 +55,8 @@ public class OrderReturnableItemResource {
 	 *	OrderReturnableItem orderreturnableitem = new OrderReturnableItem();
 	 *	OrderReturnableItemCollection orderReturnableItemCollection = orderreturnableitem.getOrderReturnableItems( orderId,  responseFields);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param orderId 
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderReturnableItemCollection
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderReturnableItemCollection
 	 */

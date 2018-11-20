@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.content.DocumentListTypeResource;
 
 /** <summary>
- * Use the Document List Types resource to manage the types of document lists in your site's document hierarchy. The type denotes a content type for that list of folders, sub-folders, and documents such as `web_pages`.
+ * 
  * </summary>
  */
 public class DocumentListTypeFactory

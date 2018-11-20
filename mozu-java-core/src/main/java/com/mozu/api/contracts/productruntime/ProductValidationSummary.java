@@ -33,7 +33,7 @@ public class ProductValidationSummary implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * List of supported types of fulfillment for the product or variation. The types include direct ship, in-store pickup, or both.
+	 * List of fulfillment types that the product supports.
 	 */
 	protected List<String> fulfillmentTypesSupported;
 	public List<String> getFulfillmentTypesSupported() {
@@ -43,9 +43,6 @@ public class ProductValidationSummary implements Serializable
 		this.fulfillmentTypesSupported = fulfillmentTypesSupported;
 	}
 
-	/**
-	 * The type of goods in a bundled product. A bundled product is composed of products associated to sell together. Possible values include Physical and DigitalCredit. This comes from the `productType `of the product. Products are defaulted to a Physical `goodsType`. Gift cards have a `goodsType `of DigitalCredit.
-	 */
 	protected  String goodsType;
 
 	public String getGoodsType() {
@@ -57,7 +54,7 @@ public class ProductValidationSummary implements Serializable
 	}
 
 	/**
-	 * Indicates if the product must be shipped alone in a container. This is used for products and products within a bundle. If true, this product cannot be shipped in a package with other items and must ship in a package by itself.
+	 * If true, this product should not be packaged with other items and should ship by itself.
 	 */
 	protected  Boolean isPackagedStandAlone;
 
@@ -122,9 +119,6 @@ public class ProductValidationSummary implements Serializable
 		this.productShortDescription = productShortDescription;
 	}
 
-	/**
-	 * A product type is like a product template.
-	 */
 	protected  String productType;
 
 	public String getProductType() {
@@ -136,7 +130,7 @@ public class ProductValidationSummary implements Serializable
 	}
 
 	/**
-	 * The usage type that applies to this product, which is Standard (a single product without configurable options), Configurable (a product that includes configurable option attributes), Bundle (a collection of products sold as a single entity), or Component (an invididual product that represents a component in a bundle).
+	 * The usage type of this product, which is Standard (a single product without configurable options), Configurable (a product that includes configurable option attributes), Bundle (a collection of products sold as a single entity), or Component (an invididual product that represents a component in a bundle).
 	 */
 	protected  String productUsage;
 
@@ -148,9 +142,6 @@ public class ProductValidationSummary implements Serializable
 		this.productUsage = productUsage;
 	}
 
-	/**
-	 * The location where the order item(s) was purchased.
-	 */
 	protected  String purchaseLocation;
 
 	public String getPurchaseLocation() {
@@ -162,7 +153,7 @@ public class ProductValidationSummary implements Serializable
 	}
 
 	/**
-	 * The universal product code (UPC) is the barcode defined for the product. The UPC is unique across all sales channels. 
+	 * The universal product code defined for the product.
 	 */
 	protected  String upc;
 
@@ -185,7 +176,7 @@ public class ProductValidationSummary implements Serializable
 	}
 
 	/**
-	 * Properties of a collection of component products that make up a single product bundle with its own product code. Tenants can define product bundles for any product type that supports the Bundle product usage.
+	 * Properties of a collection of component products that make up a single product bundle with its own product code.
 	 */
 	protected List<BundledProductSummary> bundledProducts;
 	public List<BundledProductSummary> getBundledProducts() {
@@ -244,7 +235,7 @@ public class ProductValidationSummary implements Serializable
 	}
 
 	/**
-	 * Properties that describe the behavior the system uses when determining the price of products.
+	 * Properties that describe the behavior the system uses when determining the price of the product.
 	 */
 	protected  ProductPricingBehaviorInfo pricingBehavior;
 

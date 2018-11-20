@@ -12,18 +12,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	Properties for the document installation package and data. This information details the installation of document content and files within the site. 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DocumentInstallation implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Fully qualified name of the document type. 
-	 */
 	protected  String documentTypeFQN;
 
 	public String getDocumentTypeFQN() {
@@ -34,9 +28,6 @@ public class DocumentInstallation implements Serializable
 		this.documentTypeFQN = documentTypeFQN;
 	}
 
-	/**
-	 * Localized properties for the document installation package and data. This information details the installation of document content and files within the site and is localized based on the `localeCode`.
-	 */
 	protected  String locale;
 
 	public String getLocale() {
@@ -47,9 +38,6 @@ public class DocumentInstallation implements Serializable
 		this.locale = locale;
 	}
 
-	/**
-	 * The user supplied name that appears in . You can use this field for identification purposes.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -60,9 +48,6 @@ public class DocumentInstallation implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * Collection of property attributes defined for the object. Properties are associated to all objects within , including documents, products, and product types.
-	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode properties;
 
 	public com.fasterxml.jackson.databind.JsonNode getProperties() {

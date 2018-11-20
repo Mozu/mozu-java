@@ -16,7 +16,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productruntime.FacetValue;
 
 /**
- *	Properties of the facet used to retrieve documents.
+ *	Properties of the facet used to index product searches on a storefront.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Facet implements Serializable

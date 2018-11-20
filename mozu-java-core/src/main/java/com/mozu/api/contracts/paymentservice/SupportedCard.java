@@ -31,9 +31,6 @@ public class SupportedCard implements Serializable
 		this.friendlyName = friendlyName;
 	}
 
-	/**
-	 * The type of payment, such as credit card, check, or PayPal Express. Additional payment types will be supported in future releases.
-	 */
 	protected  String paymentType;
 
 	public String getPaymentType() {

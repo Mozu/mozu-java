@@ -40,9 +40,6 @@ public class GeneralSettings implements Serializable
 		this.allowInvalidAddresses = allowInvalidAddresses;
 	}
 
-	/**
-	 * An email address to blind carbon copy anytime an automatic email is sent from  to a shopper.
-	 */
 	protected  String bccEmailAddress;
 
 	public String getBccEmailAddress() {
@@ -53,9 +50,6 @@ public class GeneralSettings implements Serializable
 		this.bccEmailAddress = bccEmailAddress;
 	}
 
-	/**
-	 * Custom override of the default subdomain for CDN-hosted content. For example, for SEO reasons you may prefer that the subdomain for your CDN content be  instead of the default subdomain, which might be something like .
-	 */
 	protected  String customCdnHostName;
 
 	public String getCustomCdnHostName() {
@@ -136,9 +130,6 @@ public class GeneralSettings implements Serializable
 		this.isMozuWebSite = isMozuWebSite;
 	}
 
-	/**
-	 * True if the site supports [shipping to multiple addresses](https://www.mozu.com/docs/Guides/orders/multi-ship.htm) within one order.
-	 */
 	protected  Boolean isMultishipEnabled;
 
 	public Boolean getIsMultishipEnabled() {
@@ -179,9 +170,6 @@ public class GeneralSettings implements Serializable
 		this.logoText = logoText;
 	}
 
-	/**
-	 * Assigns an image to render in place of broken images and unspecified product images (and unspecified category images, if your theme developer has enabled category images). Specified by the name or ID of the CMS image within .
-	 */
 	protected  String missingImageSubstitute;
 
 	public String getMissingImageSubstitute() {
@@ -222,9 +210,6 @@ public class GeneralSettings implements Serializable
 		this.senderEmailAddress = senderEmailAddress;
 	}
 
-	/**
-	 * An alternate name for the sender email. For example, if your sender email is , you might want to use an alias of .
-	 */
 	protected  String senderEmailAlias;
 
 	public String getSenderEmailAlias() {
@@ -308,9 +293,6 @@ public class GeneralSettings implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * Set of settings to deal with site caching.
-	 */
 	protected  CacheSettings cacheSettings;
 
 	public CacheSettings getCacheSettings() {
@@ -321,9 +303,6 @@ public class GeneralSettings implements Serializable
 		this.cacheSettings = cacheSettings;
 	}
 
-	/**
-	 * Site-level settings for custom routing, which allows you to use your own custom URL patterns for common  pages.
-	 */
 	protected  CustomRouteSettings customRoutes;
 
 	public CustomRouteSettings getCustomRoutes() {
@@ -334,9 +313,6 @@ public class GeneralSettings implements Serializable
 		this.customRoutes = customRoutes;
 	}
 
-	/**
-	 * Set this property to  to disable automatically sending order confirmation emails after an order is submitted. If you enable this property, order confirmation emails are triggered only by the  API operation or a Resend Order Confirmation Email event (which can be triggered by an  user).
-	 */
 	protected  EmailTransactionSettings emailTransactionsOnlyOnRequest;
 
 	public EmailTransactionSettings getEmailTransactionsOnlyOnRequest() {
@@ -347,9 +323,6 @@ public class GeneralSettings implements Serializable
 		this.emailTransactionsOnlyOnRequest = emailTransactionsOnlyOnRequest;
 	}
 
-	/**
-	 * A collection of overrides that allow you to apply unique email settings to the email template(s) of your choice.
-	 */
 	protected List<EmailTypeSetting> emailTypes;
 	public List<EmailTypeSetting> getEmailTypes() {
 		return this.emailTypes;
@@ -358,9 +331,6 @@ public class GeneralSettings implements Serializable
 		this.emailTypes = emailTypes;
 	}
 
-	/**
-	 * Supressed emails. Setting any of these to 'true' will block  from sending that email and an event will be published instead.
-	 */
 	protected  EmailTransactionSettings supressedEmailTransactions;
 
 	public EmailTransactionSettings getSupressedEmailTransactions() {
@@ -379,9 +349,6 @@ public class GeneralSettings implements Serializable
 		this.taxableTerritories = taxableTerritories;
 	}
 
-	/**
-	 * A collection of authorizations that control access to viewing the pending and live sites.
-	 */
 	protected  ViewAuthorizations viewAuthorizations;
 
 	public ViewAuthorizations getViewAuthorizations() {

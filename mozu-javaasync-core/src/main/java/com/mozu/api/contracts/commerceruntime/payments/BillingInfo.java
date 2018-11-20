@@ -27,9 +27,6 @@ public class BillingInfo implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * If StoreCreditType is set to Custom, this field is used to provide the custom name for the payment type.
-	 */
 	protected  String customCreditType;
 
 	public String getCustomCreditType() {
@@ -40,9 +37,6 @@ public class BillingInfo implements Serializable
 		this.customCreditType = customCreditType;
 	}
 
-	/**
-	 * Holds the transaction IDÂ for an external payment type service.
-	 */
 	protected  String externalTransactionId;
 
 	public String getExternalTransactionId() {
@@ -73,9 +67,6 @@ public class BillingInfo implements Serializable
 		this.paymentType = paymentType;
 	}
 
-	/**
-	 * Identifies a specific workflow the payment goes through. This is used to define a workflow for external payment services.
-	 */
 	protected  String paymentWorkflow;
 
 	public String getPaymentWorkflow() {
@@ -99,9 +90,6 @@ public class BillingInfo implements Serializable
 		this.storeCreditCode = storeCreditCode;
 	}
 
-	/**
-	 * A payment referring to a store credit or gift card.* StoreCredit* GiftCard* CustomStoreCredit and GiftCard are internally managed by Kibo eComm. Use Custom for externally managed gift cards or reward systems. If Custom is used, provide the name for the custom type in the CustomCreditType field.
-	 */
 	protected  String storeCreditType;
 
 	public String getStoreCreditType() {
@@ -142,9 +130,6 @@ public class BillingInfo implements Serializable
 		this.card = card;
 	}
 
-	/**
-	 * Information about the check used in the billing information, if it exists.
-	 */
 	protected  CheckPayment check;
 
 	public CheckPayment getCheck() {
@@ -155,9 +140,6 @@ public class BillingInfo implements Serializable
 		this.check = check;
 	}
 
-	/**
-	 * Custom data originated by the billing service.
-	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {
@@ -168,9 +150,6 @@ public class BillingInfo implements Serializable
 		this.data = data;
 	}
 
-	/**
-	 * The purchase order payment details.
-	 */
 	protected  PurchaseOrderPayment purchaseOrder;
 
 	public PurchaseOrderPayment getPurchaseOrder() {
@@ -181,9 +160,6 @@ public class BillingInfo implements Serializable
 		this.purchaseOrder = purchaseOrder;
 	}
 
-	/**
-	 * token ApiType DOCUMENT_HERE 
-	 */
 	protected  PaymentToken token;
 
 	public PaymentToken getToken() {

@@ -20,7 +20,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the Coupons subresource to manage coupons within manual coupon sets.
+ * 
  * </summary>
  */
 public class CouponResource {
@@ -42,8 +42,8 @@ public class CouponResource {
 	 *	Coupon coupon = new Coupon();
 	 *	Coupon coupon = coupon.getCoupon( couponSetCode,  couponCode);
 	 * </code></pre></p>
-	 * @param couponCode Code associated with the coupon to remove from the cart.
-	 * @param couponSetCode The unique identifier of the coupon set that the coupon belongs to.
+	 * @param couponCode 
+	 * @param couponSetCode 
 	 * @return com.mozu.api.contracts.productadmin.Coupon
 	 * @see com.mozu.api.contracts.productadmin.Coupon
 	 */
@@ -58,8 +58,8 @@ public class CouponResource {
 	 *	Coupon coupon = new Coupon();
 	 *	CountDownLatch latch = coupon.getCoupon( couponSetCode,  couponCode, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param couponCode Code associated with the coupon to remove from the cart.
-	 * @param couponSetCode The unique identifier of the coupon set that the coupon belongs to.
+	 * @param couponCode 
+	 * @param couponSetCode 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.Coupon
 	 * @see com.mozu.api.contracts.productadmin.Coupon
@@ -75,10 +75,10 @@ public class CouponResource {
 	 *	Coupon coupon = new Coupon();
 	 *	Coupon coupon = coupon.getCoupon( couponSetCode,  couponCode,  includeCounts,  responseFields);
 	 * </code></pre></p>
-	 * @param couponCode Code associated with the coupon to remove from the cart.
-	 * @param couponSetCode The unique identifier of the coupon set that the coupon belongs to.
-	 * @param includeCounts Specifies whether to return the redemptionCount property in the response body object.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param couponCode 
+	 * @param couponSetCode 
+	 * @param includeCounts 
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.productadmin.Coupon
 	 * @see com.mozu.api.contracts.productadmin.Coupon
 	 */
@@ -97,10 +97,10 @@ public class CouponResource {
 	 *	Coupon coupon = new Coupon();
 	 *	CountDownLatch latch = coupon.getCoupon( couponSetCode,  couponCode,  includeCounts,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param couponCode Code associated with the coupon to remove from the cart.
-	 * @param couponSetCode The unique identifier of the coupon set that the coupon belongs to.
-	 * @param includeCounts Specifies whether to return the redemptionCount property in the response body object.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param couponCode 
+	 * @param couponSetCode 
+	 * @param includeCounts 
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.Coupon
 	 * @see com.mozu.api.contracts.productadmin.Coupon
@@ -119,7 +119,7 @@ public class CouponResource {
 	 *	Coupon coupon = new Coupon();
 	 *	CouponCollection couponCollection = coupon.getCoupons( couponSetCode);
 	 * </code></pre></p>
-	 * @param couponSetCode The unique identifier of the coupon set that the coupons belongs to.
+	 * @param couponSetCode 
 	 * @return com.mozu.api.contracts.productadmin.CouponCollection
 	 * @see com.mozu.api.contracts.productadmin.CouponCollection
 	 */
@@ -134,7 +134,7 @@ public class CouponResource {
 	 *	Coupon coupon = new Coupon();
 	 *	CountDownLatch latch = coupon.getCoupons( couponSetCode, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param couponSetCode The unique identifier of the coupon set that the coupons belongs to.
+	 * @param couponSetCode 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.CouponCollection
 	 * @see com.mozu.api.contracts.productadmin.CouponCollection
@@ -150,13 +150,13 @@ public class CouponResource {
 	 *	Coupon coupon = new Coupon();
 	 *	CouponCollection couponCollection = coupon.getCoupons( couponSetCode,  startIndex,  pageSize,  sortBy,  filter,  includeCounts,  responseFields);
 	 * </code></pre></p>
-	 * @param couponSetCode The unique identifier of the coupon set that the coupons belongs to.
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param includeCounts Specifies whether to include the redemptionCount property in the response body object.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param couponSetCode 
+	 * @param filter 
+	 * @param includeCounts 
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @return com.mozu.api.contracts.productadmin.CouponCollection
 	 * @see com.mozu.api.contracts.productadmin.CouponCollection
 	 */
@@ -175,13 +175,13 @@ public class CouponResource {
 	 *	Coupon coupon = new Coupon();
 	 *	CountDownLatch latch = coupon.getCoupons( couponSetCode,  startIndex,  pageSize,  sortBy,  filter,  includeCounts,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param couponSetCode The unique identifier of the coupon set that the coupons belongs to.
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param includeCounts Specifies whether to include the redemptionCount property in the response body object.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param couponSetCode 
+	 * @param filter 
+	 * @param includeCounts 
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.CouponCollection
 	 * @see com.mozu.api.contracts.productadmin.CouponCollection
@@ -200,8 +200,8 @@ public class CouponResource {
 	 *	Coupon coupon = new Coupon();
 	 *	coupon.addCoupons( coupons,  couponSetCode);
 	 * </code></pre></p>
-	 * @param couponSetCode The unique identifier of the coupon set.
-	 * @param coupons The details necessary to assign the discount to a coupon set, including .
+	 * @param couponSetCode 
+	 * @param coupons 
 	 * @return 
 	 * @see com.mozu.api.contracts.productadmin.Coupon
 	 */
@@ -220,8 +220,8 @@ public class CouponResource {
 	 *	Coupon coupon = new Coupon();
 	 *	coupon.deleteCoupons( couponCodes,  couponSetCode);
 	 * </code></pre></p>
-	 * @param couponSetCode The unique identifier of the coupon set that the coupon belongs to.
-	 * @param couponCodes The unique identifiers of the coupons to delete.
+	 * @param couponSetCode 
+	 * @param couponCodes 
 	 * @return 
 	 * @see string
 	 */
@@ -240,8 +240,8 @@ public class CouponResource {
 	 *	Coupon coupon = new Coupon();
 	 *	coupon.deleteCoupon( couponSetCode,  couponCode);
 	 * </code></pre></p>
-	 * @param couponCode Code associated with the coupon to remove from the cart.
-	 * @param couponSetCode The unique identifier of the coupon set that the coupon belongs to.
+	 * @param couponCode 
+	 * @param couponSetCode 
 	 * @return 
 	 */
 	public void deleteCoupon(String couponSetCode, String couponCode) throws Exception

@@ -20,7 +20,7 @@ import org.apache.commons.lang.StringUtils;
 
 import com.mozu.api.DataViewMode;
 /** <summary>
- * commerce/catalog/admin/discountsettings related resources. DOCUMENT_HERE 
+ * 
  * </summary>
  */
 public class DiscountSettingsClient {
@@ -33,7 +33,7 @@ public class DiscountSettingsClient {
 	 * client.executeRequest();
 	 * DiscountSettings discountSettings = client.Result();
 	 * </code></pre></p>
-	 * @param catalogId Unique identifier for a catalog.
+	 * @param catalogId 
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.DiscountSettings>
 	 * @see com.mozu.api.contracts.productadmin.DiscountSettings
@@ -51,8 +51,8 @@ public class DiscountSettingsClient {
 	 * client.executeRequest();
 	 * DiscountSettings discountSettings = client.Result();
 	 * </code></pre></p>
-	 * @param catalogId Unique identifier for a catalog.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param catalogId 
+	 * @param responseFields 
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.DiscountSettings>
 	 * @see com.mozu.api.contracts.productadmin.DiscountSettings
@@ -78,7 +78,7 @@ public class DiscountSettingsClient {
 	 * client.executeRequest();
 	 * DiscountSettings discountSettings = client.Result();
 	 * </code></pre></p>
-	 * @param catalogId Unique identifier for a catalog.
+	 * @param catalogId 
 	 * @param dataViewMode DataViewMode
 	 * @param discountSettings 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.DiscountSettings>
@@ -98,8 +98,8 @@ public class DiscountSettingsClient {
 	 * client.executeRequest();
 	 * DiscountSettings discountSettings = client.Result();
 	 * </code></pre></p>
-	 * @param catalogId Unique identifier for a catalog.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param catalogId 
+	 * @param responseFields 
 	 * @param dataViewMode DataViewMode
 	 * @param discountSettings 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.DiscountSettings>

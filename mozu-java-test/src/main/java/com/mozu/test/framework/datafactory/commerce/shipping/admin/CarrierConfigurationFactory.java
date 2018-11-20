@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.shipping.admin.CarrierConfigurationResource;
 
 /** <summary>
- * Use the Carriers resource to configure and manage your supported shipping carrier configurations.
+ * 
  * </summary>
  */
 public class CarrierConfigurationFactory

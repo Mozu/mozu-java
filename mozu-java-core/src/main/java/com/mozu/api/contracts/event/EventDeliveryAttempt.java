@@ -13,18 +13,12 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.event.HttpStatus;
 
-/**
- *	Properties and information captured for an attempted delivery that failed.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class EventDeliveryAttempt implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Status of the delivery process `EventDeliveryStatusType`. System-supplied and read-only.
-	 */
 	protected  String deliveryStatus;
 
 	public String getDeliveryStatus() {
@@ -35,9 +29,6 @@ public class EventDeliveryAttempt implements Serializable
 		this.deliveryStatus = deliveryStatus;
 	}
 
-	/**
-	 * Type of error that occurred, if the delivery was unsuccessful
-	 */
 	protected  String errorType;
 
 	public String getErrorType() {
@@ -48,9 +39,6 @@ public class EventDeliveryAttempt implements Serializable
 		this.errorType = errorType;
 	}
 
-	/**
-	 * The date that the delivery was attempted
-	 */
 	protected  DateTime executionDate;
 
 	public DateTime getExecutionDate() {
@@ -61,9 +49,6 @@ public class EventDeliveryAttempt implements Serializable
 		this.executionDate = executionDate;
 	}
 
-	/**
-	 * The text of the change message, such as "This product is no longer available." System-supplied and read-only.
-	 */
 	protected  String message;
 
 	public String getMessage() {
@@ -74,9 +59,6 @@ public class EventDeliveryAttempt implements Serializable
 		this.message = message;
 	}
 
-	/**
-	 * The HTTP Status (code and name) returned by the remote endpoint
-	 */
 	protected  HttpStatus httpStatus;
 
 	public HttpStatus getHttpStatus() {

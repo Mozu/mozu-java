@@ -17,7 +17,7 @@ import com.mozu.api.contracts.productruntime.AttributeDetail;
 import com.mozu.api.contracts.productruntime.ProductPropertyValue;
 
 /**
- *	Details of a property defined for a product.
+ *	Details of a property attribute defined for a product.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductProperty implements Serializable

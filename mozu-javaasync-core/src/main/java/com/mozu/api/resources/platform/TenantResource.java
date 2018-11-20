@@ -20,7 +20,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the tenants resource to manage information about a  tenant.
+ * Use the tenants resource to manage information about a Mozu tenant.
  * </summary>
  */
 public class TenantResource {
@@ -46,7 +46,7 @@ public TenantResource(ApiContext apiContext)
 	 *	Tenant tenant = new Tenant();
 	 *	Tenant tenant = tenant.getTenant( tenantId);
 	 * </code></pre></p>
-	 * @param tenantId Unique identifier of the development or production tenant for which to generate the user authentication ticket.
+	 * @param tenantId 
 	 * @return com.mozu.api.contracts.tenant.Tenant
 	 * @see com.mozu.api.contracts.tenant.Tenant
 	 */
@@ -61,7 +61,7 @@ public TenantResource(ApiContext apiContext)
 	 *	Tenant tenant = new Tenant();
 	 *	CountDownLatch latch = tenant.getTenant( tenantId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param tenantId Unique identifier of the development or production tenant for which to generate the user authentication ticket.
+	 * @param tenantId 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.tenant.Tenant
 	 * @see com.mozu.api.contracts.tenant.Tenant
@@ -77,8 +77,8 @@ public TenantResource(ApiContext apiContext)
 	 *	Tenant tenant = new Tenant();
 	 *	Tenant tenant = tenant.getTenant( tenantId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param tenantId Unique identifier of the development or production tenant for which to generate the user authentication ticket.
+	 * @param responseFields 
+	 * @param tenantId 
 	 * @return com.mozu.api.contracts.tenant.Tenant
 	 * @see com.mozu.api.contracts.tenant.Tenant
 	 */
@@ -97,8 +97,8 @@ public TenantResource(ApiContext apiContext)
 	 *	Tenant tenant = new Tenant();
 	 *	CountDownLatch latch = tenant.getTenant( tenantId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param tenantId Unique identifier of the development or production tenant for which to generate the user authentication ticket.
+	 * @param responseFields 
+	 * @param tenantId 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.tenant.Tenant
 	 * @see com.mozu.api.contracts.tenant.Tenant

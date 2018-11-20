@@ -20,7 +20,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the cart subresource to manage settings for the cart, such as whether to include handling fees in the cost calculations.
+ * 
  * </summary>
  */
 public class CartSettingsResource {
@@ -71,7 +71,7 @@ public class CartSettingsResource {
 	 *	CartSettings cartsettings = new CartSettings();
 	 *	CartSettings cartSettings = cartsettings.getCartSettings( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.sitesettings.order.CartSettings
 	 * @see com.mozu.api.contracts.sitesettings.order.CartSettings
 	 */
@@ -90,7 +90,7 @@ public class CartSettingsResource {
 	 *	CartSettings cartsettings = new CartSettings();
 	 *	CountDownLatch latch = cartsettings.getCartSettings( responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.sitesettings.order.CartSettings
 	 * @see com.mozu.api.contracts.sitesettings.order.CartSettings
@@ -142,7 +142,7 @@ public class CartSettingsResource {
 	 *	CartSettings cartsettings = new CartSettings();
 	 *	CartSettings cartSettings = cartsettings.createCartSettings( cartSettings,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param cartSettings 
 	 * @return com.mozu.api.contracts.sitesettings.order.CartSettings
 	 * @see com.mozu.api.contracts.sitesettings.order.CartSettings
@@ -163,7 +163,7 @@ public class CartSettingsResource {
 	 *	CartSettings cartsettings = new CartSettings();
 	 *	CountDownLatch latch = cartsettings.createCartSettings( cartSettings,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @param cartSettings 
 	 * @return com.mozu.api.contracts.sitesettings.order.CartSettings
@@ -217,7 +217,7 @@ public class CartSettingsResource {
 	 *	CartSettings cartsettings = new CartSettings();
 	 *	CartSettings cartSettings = cartsettings.updateCartSettings( cartSettings,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param cartSettings 
 	 * @return com.mozu.api.contracts.sitesettings.order.CartSettings
 	 * @see com.mozu.api.contracts.sitesettings.order.CartSettings
@@ -238,7 +238,7 @@ public class CartSettingsResource {
 	 *	CartSettings cartsettings = new CartSettings();
 	 *	CountDownLatch latch = cartsettings.updateCartSettings( cartSettings,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @param cartSettings 
 	 * @return com.mozu.api.contracts.sitesettings.order.CartSettings

@@ -11,8 +11,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
-import com.mozu.api.contracts.productadmin.AttributeVocabularyValueDisplayInfo;
 import com.mozu.api.contracts.productadmin.AttributeVocabularyValue;
+import com.mozu.api.contracts.productadmin.AttributeVocabularyValueDisplayInfo;
 
 /**
  *	The actual vocabulary value of the attribute that exists as a part of the product type.
@@ -43,19 +43,6 @@ public class AttributeVocabularyValueInProductType implements Serializable
 		this.value = value;
 	}
 
-	/**
-	 * Defines the intended display of this attribute in the storefront. Options include Drop Down, Image Picker, and Radio Buttons.
-	 */
-	protected  AttributeVocabularyValueDisplayInfo displayInfo;
-
-	public AttributeVocabularyValueDisplayInfo getDisplayInfo() {
-		return this.displayInfo;
-	}
-
-	public void setDisplayInfo(AttributeVocabularyValueDisplayInfo displayInfo) {
-		this.displayInfo = displayInfo;
-	}
-
 	protected  AttributeVocabularyValue vocabularyValueDetail;
 
 	public AttributeVocabularyValue getVocabularyValueDetail() {
@@ -64,6 +51,16 @@ public class AttributeVocabularyValueInProductType implements Serializable
 
 	public void setVocabularyValueDetail(AttributeVocabularyValue vocabularyValueDetail) {
 		this.vocabularyValueDetail = vocabularyValueDetail;
+	}
+
+	protected  AttributeVocabularyValueDisplayInfo displayInfo;
+
+	public AttributeVocabularyValueDisplayInfo getDisplayInfo() {
+		return this.displayInfo;
+	}
+
+	public void setDisplayInfo(AttributeVocabularyValueDisplayInfo displayInfo) {
+		this.displayInfo = displayInfo;
 	}
 
 

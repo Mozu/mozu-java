@@ -41,9 +41,6 @@ public class GatewayCredentialFieldDefinition implements Serializable
 		this.displayName = displayName;
 	}
 
-	/**
-	 * isPublic ApiType DOCUMENT_HERE 
-	 */
 	protected  Boolean isPublic;
 
 	public Boolean getIsPublic() {

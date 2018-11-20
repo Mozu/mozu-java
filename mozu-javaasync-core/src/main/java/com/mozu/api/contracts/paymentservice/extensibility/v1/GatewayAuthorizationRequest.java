@@ -16,18 +16,12 @@ import com.mozu.api.contracts.paymentservice.extensibility.v1.AdapterContext;
 import com.mozu.api.contracts.paymentservice.extensibility.v1.CustomerInformation;
 import com.mozu.api.contracts.paymentservice.extensibility.v1.PaymentToken;
 
-/**
- *	Contains an authorization request
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class GatewayAuthorizationRequest implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Contains the amount to authorize.
-	 */
 	protected  Double amount;
 
 	public Double getAmount() {
@@ -38,9 +32,6 @@ public class GatewayAuthorizationRequest implements Serializable
 		this.amount = amount;
 	}
 
-	/**
-	 * The api version of the call.
-	 */
 	protected  String apiVersion;
 
 	public String getApiVersion() {
@@ -51,9 +42,6 @@ public class GatewayAuthorizationRequest implements Serializable
 		this.apiVersion = apiVersion;
 	}
 
-	/**
-	 * The method name being called on the connector.
-	 */
 	protected  String methodName;
 
 	public String getMethodName() {
@@ -64,9 +52,6 @@ public class GatewayAuthorizationRequest implements Serializable
 		this.methodName = methodName;
 	}
 
-	/**
-	 * Indicates whether the request is pre-auth or not.
-	 */
 	protected  Boolean preAuth;
 
 	public Boolean getPreAuth() {
@@ -77,9 +62,6 @@ public class GatewayAuthorizationRequest implements Serializable
 		this.preAuth = preAuth;
 	}
 
-	/**
-	 * Indicates whether the request is recurring or not.
-	 */
 	protected  String recurringType;
 
 	public String getRecurringType() {
@@ -90,9 +72,6 @@ public class GatewayAuthorizationRequest implements Serializable
 		this.recurringType = recurringType;
 	}
 
-	/**
-	 * CardInformation object containing the card information.
-	 */
 	protected  CardInformation card;
 
 	public CardInformation getCard() {
@@ -103,9 +82,6 @@ public class GatewayAuthorizationRequest implements Serializable
 		this.card = card;
 	}
 
-	/**
-	 * The AdapterContext information.
-	 */
 	protected  AdapterContext context;
 
 	public AdapterContext getContext() {
@@ -116,9 +92,6 @@ public class GatewayAuthorizationRequest implements Serializable
 		this.context = context;
 	}
 
-	/**
-	 * data ApiType DOCUMENT_HERE 
-	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {
@@ -129,9 +102,6 @@ public class GatewayAuthorizationRequest implements Serializable
 		this.data = data;
 	}
 
-	/**
-	 * The CustomerInformation for the shopper.
-	 */
 	protected  CustomerInformation shopper;
 
 	public CustomerInformation getShopper() {
@@ -142,9 +112,6 @@ public class GatewayAuthorizationRequest implements Serializable
 		this.shopper = shopper;
 	}
 
-	/**
-	 * token ApiType DOCUMENT_HERE 
-	 */
 	protected  PaymentToken token;
 
 	public PaymentToken getToken() {

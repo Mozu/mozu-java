@@ -27,58 +27,6 @@ public class TaxableLineItem implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The subtotal of the cart, order, and wishlist items, including any applied discount calculations. Wishlist subtotals may change depending on the length of time, available discounts, and stock amounts of products at the time of review by shoppers.
-	 */
-	protected  Double discountedTotal;
-
-	public Double getDiscountedTotal() {
-		return this.discountedTotal;
-	}
-
-	public void setDiscountedTotal(Double discountedTotal) {
-		this.discountedTotal = discountedTotal;
-	}
-
-	/**
-	 * Estimated amount of discounts applied to all items in the carts and orders. System-supplied and read-only. This value will be available at the wish list, cart item, order item, and wish list item level at a later time.
-	 */
-	protected  Double discountTotal;
-
-	public Double getDiscountTotal() {
-		return this.discountTotal;
-	}
-
-	public void setDiscountTotal(Double discountTotal) {
-		this.discountTotal = discountTotal;
-	}
-
-	/**
-	 * The monetary sum of all fees incurred in the cart, order, line item in a cart, or line item in an order. This value is not calculated for wish lists at this time.
-	 */
-	protected  Double feeTotal;
-
-	public Double getFeeTotal() {
-		return this.feeTotal;
-	}
-
-	public void setFeeTotal(Double feeTotal) {
-		this.feeTotal = feeTotal;
-	}
-
-	/**
-	 * The combined price for all handling costs calculated together for shipped orders, not for digital or in-store pickup. This includes all handling costs per the product line items and options, excluding taxes and discounts.
-	 */
-	protected  Double handlingAmount;
-
-	public Double getHandlingAmount() {
-		return this.handlingAmount;
-	}
-
-	public void setHandlingAmount(Double handlingAmount) {
-		this.handlingAmount = handlingAmount;
-	}
-
 	protected  String id;
 
 	public String getId() {
@@ -97,6 +45,46 @@ public class TaxableLineItem implements Serializable
 
 	public void setIsTaxable(Boolean isTaxable) {
 		this.isTaxable = isTaxable;
+	}
+
+	protected  Double discountedTotal;
+
+	public Double getDiscountedTotal() {
+		return this.discountedTotal;
+	}
+
+	public void setDiscountedTotal(Double discountedTotal) {
+		this.discountedTotal = discountedTotal;
+	}
+
+	protected  Double discountTotal;
+
+	public Double getDiscountTotal() {
+		return this.discountTotal;
+	}
+
+	public void setDiscountTotal(Double discountTotal) {
+		this.discountTotal = discountTotal;
+	}
+
+	protected  Double feeTotal;
+
+	public Double getFeeTotal() {
+		return this.feeTotal;
+	}
+
+	public void setFeeTotal(Double feeTotal) {
+		this.feeTotal = feeTotal;
+	}
+
+	protected  Double handlingAmount;
+
+	public Double getHandlingAmount() {
+		return this.handlingAmount;
+	}
+
+	public void setHandlingAmount(Double handlingAmount) {
+		this.handlingAmount = handlingAmount;
 	}
 
 	protected  Double lineItemPrice;
@@ -120,7 +108,7 @@ public class TaxableLineItem implements Serializable
 	}
 
 	/**
-	 * The name of the product that represents a line item in a taxable order or product bundle.
+	 * The name of the product that represents a line item in a taxable order.
 	 */
 	protected  String productName;
 
@@ -143,7 +131,7 @@ public class TaxableLineItem implements Serializable
 	}
 
 	/**
-	 * The reason description for an action, including item return, coupon not valid, and item is taxed. 
+	 * The reason the item is either taxed or returned.
 	 */
 	protected  String reason;
 
@@ -165,9 +153,6 @@ public class TaxableLineItem implements Serializable
 		this.shippingAmount = shippingAmount;
 	}
 
-	/**
-	 * For configurable products, the unique identifier of the product variation that has been selected.
-	 */
 	protected  String variantProductCode;
 
 	public String getVariantProductCode() {
@@ -178,9 +163,6 @@ public class TaxableLineItem implements Serializable
 		this.variantProductCode = variantProductCode;
 	}
 
-	/**
-	 * Custom data for a given vendor set within the commerce process.
-	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {
@@ -191,9 +173,6 @@ public class TaxableLineItem implements Serializable
 		this.data = data;
 	}
 
-	/**
-	 * The physical address orders are sent to as a shipping destination. This address may contain multiple lines, city, state/province, country, and zip/postal code. The destination is used to calculate shipping costs.
-	 */
 	protected  Address destinationAddress;
 
 	public Address getDestinationAddress() {
@@ -204,9 +183,6 @@ public class TaxableLineItem implements Serializable
 		this.destinationAddress = destinationAddress;
 	}
 
-	/**
-	 * The physical address from which the order or shipment will ship.
-	 */
 	protected  Address originAddress;
 
 	public Address getOriginAddress() {
@@ -217,9 +193,6 @@ public class TaxableLineItem implements Serializable
 		this.originAddress = originAddress;
 	}
 
-	/**
-	 * The applicable product discount for an associated cart, order, or wish list.
-	 */
 	protected  AppliedLineItemProductDiscount productDiscount;
 
 	public AppliedLineItemProductDiscount getProductDiscount() {
@@ -230,9 +203,6 @@ public class TaxableLineItem implements Serializable
 		this.productDiscount = productDiscount;
 	}
 
-	/**
-	 * List of product-level discounts projected to apply to a cart, order, or wish list.
-	 */
 	protected List<AppliedLineItemProductDiscount> productDiscounts;
 	public List<AppliedLineItemProductDiscount> getProductDiscounts() {
 		return this.productDiscounts;
@@ -249,9 +219,6 @@ public class TaxableLineItem implements Serializable
 		this.productProperties = productProperties;
 	}
 
-	/**
-	 * The shipping discount applied to the taxable line item.
-	 */
 	protected  AppliedLineItemShippingDiscount shippingDiscount;
 
 	public AppliedLineItemShippingDiscount getShippingDiscount() {
@@ -262,9 +229,6 @@ public class TaxableLineItem implements Serializable
 		this.shippingDiscount = shippingDiscount;
 	}
 
-	/**
-	 * List of shipping discounts projected to apply to carts, orders, and wish lists and items at checkout.
-	 */
 	protected List<AppliedLineItemShippingDiscount> shippingDiscounts;
 	public List<AppliedLineItemShippingDiscount> getShippingDiscounts() {
 		return this.shippingDiscounts;

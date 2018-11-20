@@ -36,9 +36,6 @@ public class GatewayDefinition implements Serializable
 		this.countryCode = countryCode;
 	}
 
-	/**
-	 * features ApiType DOCUMENT_HERE 
-	 */
 	protected List<String> features;
 	public List<String> getFeatures() {
 		return this.features;

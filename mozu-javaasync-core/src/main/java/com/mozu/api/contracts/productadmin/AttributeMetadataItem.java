@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Properties of a metadata item defined for an attribute.
+ *	Item used to define additional key-value pairs of data associated with a product attribute.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AttributeMetadataItem implements Serializable

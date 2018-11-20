@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.catalog.admin.DiscountSettingsResource;
 
 /** <summary>
- * commerce/catalog/admin/discountsettings related resources. DOCUMENT_HERE 
+ * 
  * </summary>
  */
 public class DiscountSettingsFactory

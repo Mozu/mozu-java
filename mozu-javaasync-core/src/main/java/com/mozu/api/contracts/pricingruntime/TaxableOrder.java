@@ -13,14 +13,14 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
+import com.mozu.api.contracts.pricingruntime.TaxContext;
 import com.mozu.api.contracts.pricingruntime.TaxAttribute;
 import com.mozu.api.contracts.pricingruntime.AppliedDiscount;
 import com.mozu.api.contracts.pricingruntime.TaxableLineItem;
 import com.mozu.api.contracts.pricingruntime.AppliedOrderShippingDiscount;
-import com.mozu.api.contracts.pricingruntime.TaxContext;
 
 /**
- *	Properties of an order to calculate tax against. When a tax capability is enabled for a tenant,  sends the `TaxableOrder `properties to the capability as read-only, system-supplied information.
+ *	Properties of an order for which to calculate tax. When a tax capability is enabled for a tenant, Mozu sends the TaxableOrder properties to the capability as read-only, system-supplied information.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class TaxableOrder implements Serializable
@@ -58,9 +58,6 @@ public class TaxableOrder implements Serializable
 		this.orderDate = orderDate;
 	}
 
-	/**
-	 * Unique identifier of the order associated with the payment.
-	 */
 	protected  String orderId;
 
 	public String getOrderId() {
@@ -71,9 +68,6 @@ public class TaxableOrder implements Serializable
 		this.orderId = orderId;
 	}
 
-	/**
-	 * The order number that the customer sees on the storefront when they place the order.
-	 */
 	protected  Integer orderNumber;
 
 	public Integer getOrderNumber() {
@@ -98,7 +92,7 @@ public class TaxableOrder implements Serializable
 	}
 
 	/**
-	 * The date and time the original order was placed. This date is set when the order is submitted with payment. 
+	 * The date and time the original order was placed.
 	 */
 	protected  DateTime originalOrderDate;
 
@@ -120,9 +114,6 @@ public class TaxableOrder implements Serializable
 		this.shippingAmount = shippingAmount;
 	}
 
-	/**
-	 * The code associated with a carrier's shipping method service type, used during fulfillment of packages and shipments. Service type codes include a prefix that indicates the carrier. For example: FEDEX_INTERNATIONAL_STANDARD and UPS_GROUND.If using a custom rate, this property corresponds to the  field in  when you navigate to  &gt;  &gt; , and then click on an existing rate or on .
-	 */
 	protected  String shippingMethodCode;
 
 	public String getShippingMethodCode() {
@@ -133,9 +124,6 @@ public class TaxableOrder implements Serializable
 		this.shippingMethodCode = shippingMethodCode;
 	}
 
-	/**
-	 * The carrier-supplied name for the shipping service type, such as "UPS Ground" or "2nd Day Air".If using a custom rate, this property corresponds to the  field in  when you navigate to  &gt;  &gt; , and then click on an existing rate or on .
-	 */
 	protected  String shippingMethodName;
 
 	public String getShippingMethodName() {
@@ -147,7 +135,7 @@ public class TaxableOrder implements Serializable
 	}
 
 	/**
-	 * The type of request for which to tax this entity, which is Order or Return.
+	 * The type of request for which to tax this entity, which is "Order" or "Return."
 	 */
 	protected  String taxRequestType;
 
@@ -159,9 +147,16 @@ public class TaxableOrder implements Serializable
 		this.taxRequestType = taxRequestType;
 	}
 
-	/**
-	 * Collection of attributes that may be paged list or a list, depending on the usage per object and API type.
-	 */
+	protected  TaxContext taxContext;
+
+	public TaxContext getTaxContext() {
+		return this.taxContext;
+	}
+
+	public void setTaxContext(TaxContext taxContext) {
+		this.taxContext = taxContext;
+	}
+
 	protected List<TaxAttribute> attributes;
 	public List<TaxAttribute> getAttributes() {
 		return this.attributes;
@@ -170,9 +165,6 @@ public class TaxableOrder implements Serializable
 		this.attributes = attributes;
 	}
 
-	/**
-	 * Custom data for a given vendor set within the commerce process.
-	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {
@@ -183,9 +175,6 @@ public class TaxableOrder implements Serializable
 		this.data = data;
 	}
 
-	/**
-	 * The discount applied to the order's handling fee.
-	 */
 	protected  AppliedDiscount handlingDiscount;
 
 	public AppliedDiscount getHandlingDiscount() {
@@ -196,9 +185,6 @@ public class TaxableOrder implements Serializable
 		this.handlingDiscount = handlingDiscount;
 	}
 
-	/**
-	 * The handling discounts applied to the order's handling fee.
-	 */
 	protected List<AppliedDiscount> handlingDiscounts;
 	public List<AppliedDiscount> getHandlingDiscounts() {
 		return this.handlingDiscounts;
@@ -215,9 +201,6 @@ public class TaxableOrder implements Serializable
 		this.lineItems = lineItems;
 	}
 
-	/**
-	 * The discount applied to the order.
-	 */
 	protected  AppliedDiscount orderDiscount;
 
 	public AppliedDiscount getOrderDiscount() {
@@ -228,9 +211,6 @@ public class TaxableOrder implements Serializable
 		this.orderDiscount = orderDiscount;
 	}
 
-	/**
-	 * List of order-level discounts projected to apply to the cart at checkout or order.
-	 */
 	protected List<AppliedDiscount> orderDiscounts;
 	public List<AppliedDiscount> getOrderDiscounts() {
 		return this.orderDiscounts;
@@ -239,9 +219,6 @@ public class TaxableOrder implements Serializable
 		this.orderDiscounts = orderDiscounts;
 	}
 
-	/**
-	 * The discount applied to the order's shipping cost.
-	 */
 	protected  AppliedOrderShippingDiscount shippingDiscount;
 
 	public AppliedOrderShippingDiscount getShippingDiscount() {
@@ -252,25 +229,12 @@ public class TaxableOrder implements Serializable
 		this.shippingDiscount = shippingDiscount;
 	}
 
-	/**
-	 * List of shipping discounts projected to apply to carts, orders, and wish lists and items at checkout.
-	 */
 	protected List<AppliedOrderShippingDiscount> shippingDiscounts;
 	public List<AppliedOrderShippingDiscount> getShippingDiscounts() {
 		return this.shippingDiscounts;
 	}
 	public void setShippingDiscounts(List<AppliedOrderShippingDiscount> shippingDiscounts) {
 		this.shippingDiscounts = shippingDiscounts;
-	}
-
-	protected  TaxContext taxContext;
-
-	public TaxContext getTaxContext() {
-		return this.taxContext;
-	}
-
-	public void setTaxContext(TaxContext taxContext) {
-		this.taxContext = taxContext;
 	}
 
 	private void writeObject(java.io.ObjectOutputStream out) throws IOException {

@@ -107,7 +107,7 @@ public class PaymentInteraction implements Serializable
 	}
 
 	/**
-	 * Textual message returned by the payment gateway for the associated .Refer to [Gateway Response Code and Text](https://www.mozu.com/docs/developer/api-guides/payment-gateways.htm#gateway_response_code_and_text) in the API Guides for more information.
+	 * Textual message returned by the payment gateway.
 	 */
 	protected  String gatewayResponseText;
 
@@ -229,9 +229,6 @@ public class PaymentInteraction implements Serializable
 		this.paymentTransactionInteractionIdReference = paymentTransactionInteractionIdReference;
 	}
 
-	/**
-	 * The unique identifier of the refund for a given interaction.
-	 */
 	protected  String refundId;
 
 	public String getRefundId() {
@@ -242,9 +239,6 @@ public class PaymentInteraction implements Serializable
 		this.refundId = refundId;
 	}
 
-	/**
-	 * The unique identifier of the return associated with a given interaction.
-	 */
 	protected  String returnId;
 
 	public String getReturnId() {
@@ -275,9 +269,6 @@ public class PaymentInteraction implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * Additional response data from the gateway that's unique to each gateway.This is a list of key value pairs.Refer to [Gateway Response Data](https://www.mozu.com/docs/developer/api-guides/payment-gateways.htm#gateway_response_data) in the API Guides for more information.
-	 */
 	protected List<PaymentGatewayResponseData> gatewayResponseData;
 	public List<PaymentGatewayResponseData> getGatewayResponseData() {
 		return this.gatewayResponseData;
@@ -286,9 +277,6 @@ public class PaymentInteraction implements Serializable
 		this.gatewayResponseData = gatewayResponseData;
 	}
 
-	/**
-	 * Targets represent the object, such as an item to apply discounts to(products or orders) or a view field for content. Targets are the dot notations that link to the source document property. For example, firstitem for the direct level or firstitem.seconditem.thirditem for a deeper property.
-	 */
 	protected  PaymentActionTarget target;
 
 	public PaymentActionTarget getTarget() {

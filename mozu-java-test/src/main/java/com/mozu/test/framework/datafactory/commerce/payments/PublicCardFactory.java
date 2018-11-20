@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.payments.PublicCardResource;
 
 /** <summary>
- * These APIs are used to register, update, and remove customer credit cards. The Create operation is the most frequently used one - when paying for an order using a credit card, the storefront first takes the full credit card information and calls Create on the PaymentService to store the card. The PaymentService responds with a SyncResponse containing a card ID. Any further references to that credit card are done using the card ID so that eCommerce doesn't have the full credit card info in hand. With the card ID, the storefront can call CreatePaymentAction (either for [single-ship](../../orders/operations/createpaymentaction.htm) or [multi-ship](../../checkouts/operations/createpaymentaction.htm)) to add a payment for that credit card to the order/checkout. 
+ * 
  * </summary>
  */
 public class PublicCardFactory

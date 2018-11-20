@@ -15,7 +15,7 @@ public class ProductPropertyUrl
 
 	/**
 	 * Get Resource Url for GetProperties
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param productCode 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getPropertiesUrl(String productCode)
@@ -27,9 +27,9 @@ public class ProductPropertyUrl
 
 	/**
 	 * Get Resource Url for GetPropertyValueLocalizedContents
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param value The value string to create.
+	 * @param attributeFQN 
+	 * @param productCode 
+	 * @param value 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getPropertyValueLocalizedContentsUrl(String attributeFQN, String productCode, String value)
@@ -43,11 +43,11 @@ public class ProductPropertyUrl
 
 	/**
 	 * Get Resource Url for GetPropertyValueLocalizedContent
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param value The value string to create.
+	 * @param attributeFQN 
+	 * @param localeCode 
+	 * @param productCode 
+	 * @param responseFields 
+	 * @param value 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getPropertyValueLocalizedContentUrl(String attributeFQN, String localeCode, String productCode, String responseFields, String value)
@@ -63,9 +63,9 @@ public class ProductPropertyUrl
 
 	/**
 	 * Get Resource Url for GetProperty
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param attributeFQN 
+	 * @param productCode 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getPropertyUrl(String attributeFQN, String productCode, String responseFields)
@@ -79,10 +79,10 @@ public class ProductPropertyUrl
 
 	/**
 	 * Get Resource Url for AddPropertyValueLocalizedContent
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param value The value string to create.
+	 * @param attributeFQN 
+	 * @param productCode 
+	 * @param responseFields 
+	 * @param value 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addPropertyValueLocalizedContentUrl(String attributeFQN, String productCode, String responseFields, String value)
@@ -97,8 +97,8 @@ public class ProductPropertyUrl
 
 	/**
 	 * Get Resource Url for AddProperty
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param productCode 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addPropertyUrl(String productCode, String responseFields)
@@ -111,9 +111,9 @@ public class ProductPropertyUrl
 
 	/**
 	 * Get Resource Url for UpdatePropertyValueLocalizedContents
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param value The value string to create.
+	 * @param attributeFQN 
+	 * @param productCode 
+	 * @param value 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updatePropertyValueLocalizedContentsUrl(String attributeFQN, String productCode, String value)
@@ -127,11 +127,11 @@ public class ProductPropertyUrl
 
 	/**
 	 * Get Resource Url for UpdatePropertyValueLocalizedContent
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param value The value string to create.
+	 * @param attributeFQN 
+	 * @param localeCode 
+	 * @param productCode 
+	 * @param responseFields 
+	 * @param value 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updatePropertyValueLocalizedContentUrl(String attributeFQN, String localeCode, String productCode, String responseFields, String value)
@@ -147,9 +147,9 @@ public class ProductPropertyUrl
 
 	/**
 	 * Get Resource Url for UpdateProperty
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param attributeFQN 
+	 * @param productCode 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updatePropertyUrl(String attributeFQN, String productCode, String responseFields)
@@ -163,8 +163,8 @@ public class ProductPropertyUrl
 
 	/**
 	 * Get Resource Url for DeleteProperty
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param attributeFQN 
+	 * @param productCode 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deletePropertyUrl(String attributeFQN, String productCode)
@@ -177,10 +177,10 @@ public class ProductPropertyUrl
 
 	/**
 	 * Get Resource Url for DeletePropertyValueLocalizedContent
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param value The value string to create.
+	 * @param attributeFQN 
+	 * @param localeCode 
+	 * @param productCode 
+	 * @param value 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deletePropertyValueLocalizedContentUrl(String attributeFQN, String localeCode, String productCode, String value)

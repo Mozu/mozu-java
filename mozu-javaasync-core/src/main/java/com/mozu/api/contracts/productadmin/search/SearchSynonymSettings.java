@@ -12,18 +12,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	Settings for search synonyms for search results.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SearchSynonymSettings implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Indicates if synonyms should be expanded.
-	 */
 	protected  Boolean expandSynonyms;
 
 	public Boolean getExpandSynonyms() {
@@ -34,9 +28,6 @@ public class SearchSynonymSettings implements Serializable
 		this.expandSynonyms = expandSynonyms;
 	}
 
-	/**
-	 * Sets the boost for the words actually sent in the query.
-	 */
 	protected  Double mainPartBoost;
 
 	public Double getMainPartBoost() {
@@ -47,35 +38,6 @@ public class SearchSynonymSettings implements Serializable
 		this.mainPartBoost = mainPartBoost;
 	}
 
-	/**
-	 * matchOnAnyTerm ApiType DOCUMENT_HERE 
-	 */
-	protected  Boolean matchOnAnyTerm;
-
-	public Boolean getMatchOnAnyTerm() {
-		return this.matchOnAnyTerm;
-	}
-
-	public void setMatchOnAnyTerm(Boolean matchOnAnyTerm) {
-		this.matchOnAnyTerm = matchOnAnyTerm;
-	}
-
-	/**
-	 * phraseBoost ApiType DOCUMENT_HERE 
-	 */
-	protected  Integer phraseBoost;
-
-	public Integer getPhraseBoost() {
-		return this.phraseBoost;
-	}
-
-	public void setPhraseBoost(Integer phraseBoost) {
-		this.phraseBoost = phraseBoost;
-	}
-
-	/**
-	 * Boosts the synonyms to affect rankings for search results.
-	 */
 	protected  Double synonymPartBoost;
 
 	public Double getSynonymPartBoost() {

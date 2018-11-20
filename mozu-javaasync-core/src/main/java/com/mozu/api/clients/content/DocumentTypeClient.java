@@ -49,9 +49,9 @@ public class DocumentTypeClient {
 	 * client.executeRequest();
 	 * DocumentTypeCollection documentTypeCollection = client.Result();
 	 * </code></pre></p>
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param startIndex 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentTypeCollection>
 	 * @see com.mozu.api.contracts.content.DocumentTypeCollection
 	 */
@@ -94,7 +94,7 @@ public class DocumentTypeClient {
 	 * DocumentType documentType = client.Result();
 	 * </code></pre></p>
 	 * @param documentTypeName The name of the document type to retrieve.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentType>
 	 * @see com.mozu.api.contracts.content.DocumentType
 	 */
@@ -119,7 +119,7 @@ public class DocumentTypeClient {
 	 * client.executeRequest();
 	 * DocumentType documentType = client.Result();
 	 * </code></pre></p>
-	 * @param documentType The type of documents used in the CMS such as "web_page" or "template" or "image_url".
+	 * @param documentType 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentType>
 	 * @see com.mozu.api.contracts.content.DocumentType
 	 * @see com.mozu.api.contracts.content.DocumentType
@@ -137,8 +137,8 @@ public class DocumentTypeClient {
 	 * client.executeRequest();
 	 * DocumentType documentType = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param documentType The type of documents used in the CMS such as "web_page" or "template" or "image_url".
+	 * @param responseFields 
+	 * @param documentType 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentType>
 	 * @see com.mozu.api.contracts.content.DocumentType
 	 * @see com.mozu.api.contracts.content.DocumentType
@@ -165,8 +165,8 @@ public class DocumentTypeClient {
 	 * client.executeRequest();
 	 * DocumentType documentType = client.Result();
 	 * </code></pre></p>
-	 * @param documentTypeName The name of the document type to retrieve.
-	 * @param documentType The type of documents used in the CMS such as "web_page" or "template" or "image_url".
+	 * @param documentTypeName 
+	 * @param documentType 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentType>
 	 * @see com.mozu.api.contracts.content.DocumentType
 	 * @see com.mozu.api.contracts.content.DocumentType
@@ -184,9 +184,9 @@ public class DocumentTypeClient {
 	 * client.executeRequest();
 	 * DocumentType documentType = client.Result();
 	 * </code></pre></p>
-	 * @param documentTypeName The name of the document type to retrieve.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param documentType The type of documents used in the CMS such as "web_page" or "template" or "image_url".
+	 * @param documentTypeName 
+	 * @param responseFields 
+	 * @param documentType 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentType>
 	 * @see com.mozu.api.contracts.content.DocumentType
 	 * @see com.mozu.api.contracts.content.DocumentType

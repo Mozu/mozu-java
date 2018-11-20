@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	The localized name and description of the attribute, displayed in the locale defined for the master catalog.
+ *	Localized content displayed in the storefront for this attribute.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AttributeLocalizedContent implements Serializable

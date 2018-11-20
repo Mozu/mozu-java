@@ -16,18 +16,12 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.installedapplications.CustomFunctionsForAction;
 import com.mozu.api.contracts.installedapplications.ExtensionConfiguration;
 
-/**
- *	Mozu.InstalledApplications.Contracts.TenantExtensions ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class TenantExtensions implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The priority level to assign to application logs. Possible values mirror Apache's log4net: "all", "debug", "info", "warn", "error", "fatal", and "off".
-	 */
 	protected  String defaultLogLevel;
 
 	public String getDefaultLogLevel() {
@@ -38,9 +32,6 @@ public class TenantExtensions implements Serializable
 		this.defaultLogLevel = defaultLogLevel;
 	}
 
-	/**
-	 * The list of actions configured for the site.
-	 */
 	protected List<CustomFunctionsForAction> actions;
 	public List<CustomFunctionsForAction> getActions() {
 		return this.actions;
@@ -49,9 +40,6 @@ public class TenantExtensions implements Serializable
 		this.actions = actions;
 	}
 
-	/**
-	 * An array of settings that apply to all actions within the application.
-	 */
 	protected List<ExtensionConfiguration> configurations;
 	public List<ExtensionConfiguration> getConfigurations() {
 		return this.configurations;

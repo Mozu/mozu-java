@@ -22,7 +22,7 @@ public class OrderValidationMessage implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The text of the change message, such as "This product is no longer available." System-supplied and read-only.
+	 * The body of the message returned by the order validation capability.
 	 */
 	protected  String message;
 
@@ -48,7 +48,7 @@ public class OrderValidationMessage implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the order item associated with a validation message, order, or return.
+	 * Unique identifier of the order item associated with the validation message.
 	 */
 	protected  String orderItemId;
 

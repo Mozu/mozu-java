@@ -12,18 +12,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	Mozu.InstalledApplications.Contracts.CredentialStoreEntry ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CredentialStoreEntry implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The full name of the credential store entry.
-	 */
 	protected  String fullName;
 
 	public String getFullName() {
@@ -34,9 +28,6 @@ public class CredentialStoreEntry implements Serializable
 		this.fullName = fullName;
 	}
 
-	/**
-	 * The value of a property, used by numerous objects within  including facets, attributes, products, localized content, metadata, capabilities ( and third-party), location inventory adjustment, and more. The value may be a string, integer, or double. Validation may be run against the entered and saved values depending on the object type.
-	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode value;
 
 	public com.fasterxml.jackson.databind.JsonNode getValue() {

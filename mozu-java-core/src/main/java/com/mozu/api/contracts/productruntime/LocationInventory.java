@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Properties of an inventory definition that defines the level of inventory for a specific product at a given location.
+ *	Properties of the active product inventory levels for a specific location.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class LocationInventory implements Serializable
@@ -31,9 +31,6 @@ public class LocationInventory implements Serializable
 		this.locationCode = locationCode;
 	}
 
-	/**
-	 * The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 */
 	protected  String productCode;
 
 	public String getProductCode() {
@@ -44,9 +41,6 @@ public class LocationInventory implements Serializable
 		this.productCode = productCode;
 	}
 
-	/**
-	 * The soft stock level for the associated product currently available, at specified locations, and based on the number of pending soft product allocations as applicable. This value is associated with the  resource and operations.
-	 */
 	protected  Integer softStockAvailable;
 
 	public Integer getSoftStockAvailable() {

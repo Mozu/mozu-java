@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.LocationResource;
 
 /** <summary>
- * Use the Location resource to retrieve details about a location from a  hosted storefront.
+ * Use the Location resource to retrieve details about a location from a Mozu hosted storefront.
  * </summary>
  */
 public class LocationFactory

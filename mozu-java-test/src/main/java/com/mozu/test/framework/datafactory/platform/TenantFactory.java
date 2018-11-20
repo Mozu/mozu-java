@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.platform.TenantResource;
 
 /** <summary>
- * Use the tenants resource to manage information about a  tenant.
+ * Use the tenants resource to manage information about a Mozu tenant.
  * </summary>
  */
 public class TenantFactory

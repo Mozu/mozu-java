@@ -15,9 +15,9 @@ public class AppliedDiscountUrl
 
 	/**
 	 * Get Resource Url for ApplyCoupon
-	 * @param cartId Identifier of the cart to delete.
-	 * @param couponCode Code associated with the coupon to remove from the cart.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param cartId Unique identifier of the cart to which to apply the coupon.
+	 * @param couponCode Code associated with the coupon to apply to the cart.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl applyCouponUrl(String cartId, String couponCode, String responseFields)
@@ -31,7 +31,7 @@ public class AppliedDiscountUrl
 
 	/**
 	 * Get Resource Url for RemoveCoupons
-	 * @param cartId Identifier of the cart to delete.
+	 * @param cartId Unique identifier of the cart.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl removeCouponsUrl(String cartId)
@@ -43,7 +43,7 @@ public class AppliedDiscountUrl
 
 	/**
 	 * Get Resource Url for RemoveCoupon
-	 * @param cartId Identifier of the cart to delete.
+	 * @param cartId Unique identifier of the cart.
 	 * @param couponCode Code associated with the coupon to remove from the cart.
 	 * @return   String Resource Url
 	 */

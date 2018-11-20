@@ -14,18 +14,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	Mozu.SiteSettings.General.Contracts.General.Routing.Validator ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Validator implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The fully qualified name of the attribute. The attributeDefiniteId may be used to generate this name.
-	 */
 	protected  String attributeFQN;
 
 	public String getAttributeFQN() {
@@ -36,9 +30,6 @@ public class Validator implements Serializable
 		this.attributeFQN = attributeFQN;
 	}
 
-	/**
-	 * docId ApiType DOCUMENT_HERE 
-	 */
 	protected  String docId;
 
 	public String getDocId() {
@@ -49,9 +40,6 @@ public class Validator implements Serializable
 		this.docId = docId;
 	}
 
-	/**
-	 * field ApiType DOCUMENT_HERE 
-	 */
 	protected  String field;
 
 	public String getField() {
@@ -62,9 +50,6 @@ public class Validator implements Serializable
 		this.field = field;
 	}
 
-	/**
-	 * The fully qualified name of the document list.
-	 */
 	protected  String listFqn;
 
 	public String getListFqn() {
@@ -75,9 +60,6 @@ public class Validator implements Serializable
 		this.listFqn = listFqn;
 	}
 
-	/**
-	 * pattern ApiType DOCUMENT_HERE 
-	 */
 	protected  String pattern;
 
 	public String getPattern() {
@@ -88,9 +70,6 @@ public class Validator implements Serializable
 		this.pattern = pattern;
 	}
 
-	/**
-	 * type ApiType DOCUMENT_HERE 
-	 */
 	protected  String type;
 
 	public String getType() {
@@ -101,9 +80,6 @@ public class Validator implements Serializable
 		this.type = type;
 	}
 
-	/**
-	 * List of value data for objects.
-	 */
 	protected List<String> values;
 	public List<String> getValues() {
 		return this.values;

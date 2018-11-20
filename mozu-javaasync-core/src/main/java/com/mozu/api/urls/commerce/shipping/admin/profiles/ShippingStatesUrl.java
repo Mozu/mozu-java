@@ -15,7 +15,7 @@ public class ShippingStatesUrl
 
 	/**
 	 * Get Resource Url for GetStates
-	 * @param profileCode The unique, user-defined code of the profile with which the shipping state is associated.
+	 * @param profileCode 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getStatesUrl(String profileCode)
@@ -27,7 +27,7 @@ public class ShippingStatesUrl
 
 	/**
 	 * Get Resource Url for UpdateStates
-	 * @param profilecode The unique, user-defined code of the profile with which the shipping state is associated.
+	 * @param profilecode 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateStatesUrl(String profilecode)

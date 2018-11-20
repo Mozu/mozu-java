@@ -22,9 +22,6 @@ public class AttributeDetail implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Indicates whether the attribute should be able to be used in filters, facets, and sorting on the public storefront.
-	 */
 	protected  Boolean allowFilteringAndSortingInStorefront;
 
 	public Boolean getAllowFilteringAndSortingInStorefront() {
@@ -35,9 +32,6 @@ public class AttributeDetail implements Serializable
 		this.allowFilteringAndSortingInStorefront = allowFilteringAndSortingInStorefront;
 	}
 
-	/**
-	 * When set to true, enables you to set a custom search weight for a product attribute in search-settings.
-	 */
 	protected  Boolean customWeightInStorefrontSearch;
 
 	public Boolean getCustomWeightInStorefrontSearch() {
@@ -78,9 +72,6 @@ public class AttributeDetail implements Serializable
 		this.description = description;
 	}
 
-	/**
-	 * Defines the intended display of this attribute in the storefront. Options include Drop Down, Image Picker, and Radio Buttons.
-	 */
 	protected  String displayIntention;
 
 	public String getDisplayIntention() {
@@ -91,9 +82,6 @@ public class AttributeDetail implements Serializable
 		this.displayIntention = displayIntention;
 	}
 
-	/**
-	 * Specifies whether to create a case-sensitive Solr search index. The default is .
-	 */
 	protected  Boolean indexValueWithCase;
 
 	public Boolean getIndexValueWithCase() {
@@ -125,7 +113,7 @@ public class AttributeDetail implements Serializable
 	}
 
 	/**
-	 * Indicates if the attribute value is searchable on the public storefront.
+	 * Indicates whether the attribute value is searchable in the storefont by a shopper.
 	 */
 	protected  Boolean searchableInStorefront;
 
@@ -138,7 +126,7 @@ public class AttributeDetail implements Serializable
 	}
 
 	/**
-	 * Indicates what kind of values search queries and returns. If true, the system indexes the display value of string attributes instead of the canonical value for searching. Always use the canonical value for filtering. This does not apply for non-string attributes.
+	 * If true, the system indexes the display value of string attributes instead of the canonical value for searching. The canonical value is always used for filtering. This does not apply for for non-string attributes.
 	 */
 	protected  Boolean searchDisplayValue;
 

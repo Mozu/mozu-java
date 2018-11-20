@@ -14,18 +14,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	Mozu.ProductAdmin.Contracts.PublishSet ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PublishSet implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The unique identifier of the product publish set.
-	 */
 	protected  String code;
 
 	public String getCode() {
@@ -36,9 +30,6 @@ public class PublishSet implements Serializable
 		this.code = code;
 	}
 
-	/**
-	 * A list of product codes of associated products. When this field is in the Product Publishing resource, you can use this field  to publish or delete individual pending product changes, or assign individual pending product changes to a publish set.
-	 */
 	protected List<String> productCodes;
 	public List<String> getProductCodes() {
 		return this.productCodes;
@@ -47,9 +38,6 @@ public class PublishSet implements Serializable
 		this.productCodes = productCodes;
 	}
 
-	/**
-	 * The total number of products. This total may indicate the total products associate with a product type or number of products in a list.
-	 */
 	protected  Integer productCount;
 
 	public Integer getProductCount() {

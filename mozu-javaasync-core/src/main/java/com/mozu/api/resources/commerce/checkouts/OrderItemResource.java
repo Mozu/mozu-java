@@ -20,7 +20,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use this resource to manage the items a shopper adds to their cart while the Checkouts resource is active (the Checkouts resource only applies to sites that enable shipping to multiple destinations within the same order). The Checkouts resource remains active until the shopper submits their order.
+ * 
  * </summary>
  */
 public class OrderItemResource {
@@ -42,8 +42,8 @@ public class OrderItemResource {
 	 *	OrderItem orderitem = new OrderItem();
 	 *	Checkout checkout = orderitem.splitItem( checkoutId,  itemId);
 	 * </code></pre></p>
-	 * @param checkoutId The unique identifier of the checkout.
-	 * @param itemId The unique identifier of the item.
+	 * @param checkoutId 
+	 * @param itemId 
 	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 */
@@ -58,8 +58,8 @@ public class OrderItemResource {
 	 *	OrderItem orderitem = new OrderItem();
 	 *	CountDownLatch latch = orderitem.splitItem( checkoutId,  itemId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param checkoutId The unique identifier of the checkout.
-	 * @param itemId The unique identifier of the item.
+	 * @param checkoutId 
+	 * @param itemId 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
@@ -75,10 +75,10 @@ public class OrderItemResource {
 	 *	OrderItem orderitem = new OrderItem();
 	 *	Checkout checkout = orderitem.splitItem( checkoutId,  itemId,  quantity,  responseFields);
 	 * </code></pre></p>
-	 * @param checkoutId The unique identifier of the checkout.
-	 * @param itemId The unique identifier of the item.
-	 * @param quantity The number of cart items in the shopper's active cart.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param checkoutId 
+	 * @param itemId 
+	 * @param quantity 
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 */
@@ -97,10 +97,10 @@ public class OrderItemResource {
 	 *	OrderItem orderitem = new OrderItem();
 	 *	CountDownLatch latch = orderitem.splitItem( checkoutId,  itemId,  quantity,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param checkoutId The unique identifier of the checkout.
-	 * @param itemId The unique identifier of the item.
-	 * @param quantity The number of cart items in the shopper's active cart.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param checkoutId 
+	 * @param itemId 
+	 * @param quantity 
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
@@ -119,8 +119,8 @@ public class OrderItemResource {
 	 *	OrderItem orderitem = new OrderItem();
 	 *	Checkout checkout = orderitem.bulkUpdateItemDestinations( itemsForDestination,  checkoutId);
 	 * </code></pre></p>
-	 * @param checkoutId The unique identifier of the checkout.
-	 * @param itemsForDestination A collection of items to be associated with a destination.
+	 * @param checkoutId 
+	 * @param itemsForDestination 
 	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.ItemsForDestination
@@ -136,9 +136,9 @@ public class OrderItemResource {
 	 *	OrderItem orderitem = new OrderItem();
 	 *	CountDownLatch latch = orderitem.bulkUpdateItemDestinations( itemsForDestination,  checkoutId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param checkoutId The unique identifier of the checkout.
+	 * @param checkoutId 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param itemsForDestination A collection of items to be associated with a destination.
+	 * @param itemsForDestination 
 	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.ItemsForDestination
@@ -154,9 +154,9 @@ public class OrderItemResource {
 	 *	OrderItem orderitem = new OrderItem();
 	 *	Checkout checkout = orderitem.bulkUpdateItemDestinations( itemsForDestination,  checkoutId,  responseFields);
 	 * </code></pre></p>
-	 * @param checkoutId The unique identifier of the checkout.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param itemsForDestination A collection of items to be associated with a destination.
+	 * @param checkoutId 
+	 * @param responseFields 
+	 * @param itemsForDestination 
 	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.ItemsForDestination
@@ -176,10 +176,10 @@ public class OrderItemResource {
 	 *	OrderItem orderitem = new OrderItem();
 	 *	CountDownLatch latch = orderitem.bulkUpdateItemDestinations( itemsForDestination,  checkoutId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param checkoutId The unique identifier of the checkout.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param checkoutId 
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param itemsForDestination A collection of items to be associated with a destination.
+	 * @param itemsForDestination 
 	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.ItemsForDestination
@@ -198,9 +198,9 @@ public class OrderItemResource {
 	 *	OrderItem orderitem = new OrderItem();
 	 *	Checkout checkout = orderitem.updateItemDestination( checkoutId,  itemId,  destinationId);
 	 * </code></pre></p>
-	 * @param checkoutId The unique identifier of the checkout.
-	 * @param destinationId The unique identifier of the destination.
-	 * @param itemId The unique identifier of the item.
+	 * @param checkoutId 
+	 * @param destinationId 
+	 * @param itemId 
 	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 */
@@ -215,9 +215,9 @@ public class OrderItemResource {
 	 *	OrderItem orderitem = new OrderItem();
 	 *	CountDownLatch latch = orderitem.updateItemDestination( checkoutId,  itemId,  destinationId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param checkoutId The unique identifier of the checkout.
-	 * @param destinationId The unique identifier of the destination.
-	 * @param itemId The unique identifier of the item.
+	 * @param checkoutId 
+	 * @param destinationId 
+	 * @param itemId 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
@@ -233,10 +233,10 @@ public class OrderItemResource {
 	 *	OrderItem orderitem = new OrderItem();
 	 *	Checkout checkout = orderitem.updateItemDestination( checkoutId,  itemId,  destinationId,  responseFields);
 	 * </code></pre></p>
-	 * @param checkoutId The unique identifier of the checkout.
-	 * @param destinationId The unique identifier of the destination.
-	 * @param itemId The unique identifier of the item.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param checkoutId 
+	 * @param destinationId 
+	 * @param itemId 
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 */
@@ -255,10 +255,10 @@ public class OrderItemResource {
 	 *	OrderItem orderitem = new OrderItem();
 	 *	CountDownLatch latch = orderitem.updateItemDestination( checkoutId,  itemId,  destinationId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param checkoutId The unique identifier of the checkout.
-	 * @param destinationId The unique identifier of the destination.
-	 * @param itemId The unique identifier of the item.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param checkoutId 
+	 * @param destinationId 
+	 * @param itemId 
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout

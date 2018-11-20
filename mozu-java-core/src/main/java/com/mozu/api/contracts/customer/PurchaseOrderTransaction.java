@@ -13,18 +13,12 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 
-/**
- *	The details of the purchase order payment transaction.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PurchaseOrderTransaction implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Additional transaction details or notes associated with the transaction.
-	 */
 	protected  String additionalTransactionDetail;
 
 	public String getAdditionalTransactionDetail() {
@@ -35,9 +29,6 @@ public class PurchaseOrderTransaction implements Serializable
 		this.additionalTransactionDetail = additionalTransactionDetail;
 	}
 
-	/**
-	 * The author of the purchase order transaction.
-	 */
 	protected  String author;
 
 	public String getAuthor() {
@@ -48,9 +39,6 @@ public class PurchaseOrderTransaction implements Serializable
 		this.author = author;
 	}
 
-	/**
-	 * The available balance the customer has on their purchase order account. This balance is the result of the  minus the customer's total amount due.
-	 */
 	protected  Double availableBalance;
 
 	public Double getAvailableBalance() {
@@ -61,9 +49,6 @@ public class PurchaseOrderTransaction implements Serializable
 		this.availableBalance = availableBalance;
 	}
 
-	/**
-	 * The total credit limit the customer can spend using purchase orders.
-	 */
 	protected  Double creditLimit;
 
 	public Double getCreditLimit() {
@@ -74,9 +59,6 @@ public class PurchaseOrderTransaction implements Serializable
 		this.creditLimit = creditLimit;
 	}
 
-	/**
-	 * The unique identifier of the customer purchase order account.
-	 */
 	protected  Integer customerPurchaseOrderAccountId;
 
 	public Integer getCustomerPurchaseOrderAccountId() {
@@ -87,9 +69,6 @@ public class PurchaseOrderTransaction implements Serializable
 		this.customerPurchaseOrderAccountId = customerPurchaseOrderAccountId;
 	}
 
-	/**
-	 * Unique identifier used by an external program to identify a  order, customer account, or wish list.
-	 */
 	protected  String externalId;
 
 	public String getExternalId() {
@@ -100,9 +79,6 @@ public class PurchaseOrderTransaction implements Serializable
 		this.externalId = externalId;
 	}
 
-	/**
-	 * Unique identifier of the order associated with the payment.
-	 */
 	protected  String orderId;
 
 	public String getOrderId() {
@@ -113,9 +89,6 @@ public class PurchaseOrderTransaction implements Serializable
 		this.orderId = orderId;
 	}
 
-	/**
-	 * The purchase order number.
-	 */
 	protected  String purchaseOrderNumber;
 
 	public String getPurchaseOrderNumber() {
@@ -126,9 +99,6 @@ public class PurchaseOrderTransaction implements Serializable
 		this.purchaseOrderNumber = purchaseOrderNumber;
 	}
 
-	/**
-	 * Unique identifier for the site. This IDÂ is used at all levels of a store, catalog, and tenant to associate objects to a site.
-	 */
 	protected  Integer siteId;
 
 	public Integer getSiteId() {
@@ -139,9 +109,6 @@ public class PurchaseOrderTransaction implements Serializable
 		this.siteId = siteId;
 	}
 
-	/**
-	 * Unique identifier for the tenant.
-	 */
 	protected  Integer tenantId;
 
 	public Integer getTenantId() {
@@ -152,9 +119,6 @@ public class PurchaseOrderTransaction implements Serializable
 		this.tenantId = tenantId;
 	}
 
-	/**
-	 * The amount of the purchase order transaction.
-	 */
 	protected  Double transactionAmount;
 
 	public Double getTransactionAmount() {
@@ -165,9 +129,6 @@ public class PurchaseOrderTransaction implements Serializable
 		this.transactionAmount = transactionAmount;
 	}
 
-	/**
-	 * The date when the purchase order transaction was made on a purchase order account.
-	 */
 	protected  DateTime transactionDate;
 
 	public DateTime getTransactionDate() {
@@ -178,9 +139,6 @@ public class PurchaseOrderTransaction implements Serializable
 		this.transactionDate = transactionDate;
 	}
 
-	/**
-	 * A description of the purchase order transaction type.This field is read-only dependent on the value of .* * * * * * 
-	 */
 	protected  String transactionDescription;
 
 	public String getTransactionDescription() {
@@ -191,9 +149,6 @@ public class PurchaseOrderTransaction implements Serializable
 		this.transactionDescription = transactionDescription;
 	}
 
-	/**
-	 * The type of the purchase order transaction.The valid values are:*   Line of Credit Change*   Payment Requested*   Payment Collected *   Payment Voided*   Payment Refund*   Manual Adjustment
-	 */
 	protected  Integer transactionTypeId;
 
 	public Integer getTransactionTypeId() {
@@ -204,9 +159,6 @@ public class PurchaseOrderTransaction implements Serializable
 		this.transactionTypeId = transactionTypeId;
 	}
 
-	/**
-	 * Basic audit info about the object, including date, time, and user account. This data may be captured when creating, updating, and removing data.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {

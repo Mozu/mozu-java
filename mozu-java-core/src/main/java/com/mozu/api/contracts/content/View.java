@@ -15,9 +15,6 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.content.ViewField;
 
-/**
- *	A view can select which fields are returned from a document query.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class View implements Serializable
 {
@@ -37,9 +34,6 @@ public class View implements Serializable
 		this.filter = filter;
 	}
 
-	/**
-	 * Specifies how to filter views based on the status of a document.You can specify the following values for this property: or nullall documents return in the view.only documents within the active date range (or documents without an active date range specified) return in the view.only documents with an active date range set in the future return in the view.only scheduled and active documents return in the view.only documents with an active date range set in the past return in the view.
-	 */
 	protected  String includeInactiveMode;
 
 	public String getIncludeInactiveMode() {
@@ -50,9 +44,6 @@ public class View implements Serializable
 		this.includeInactiveMode = includeInactiveMode;
 	}
 
-	/**
-	 * If , specifies that the view is the default view for a documentList or documentListType when viewed in . If no view is specified as default, then the first view in the documentList or documentListType is default. Only one view within a documentList or documentListType can have this value set to .
-	 */
 	protected  Boolean isAdminDefault;
 
 	public Boolean getIsAdminDefault() {
@@ -63,9 +54,6 @@ public class View implements Serializable
 		this.isAdminDefault = isAdminDefault;
 	}
 
-	/**
-	 * The isVisibleInStorefront field indicates whether documents in the view can be accessed from the  storefront application. If true, the storefront application and storefront client application (javascript tier) can GET documents from the view.
-	 */
 	protected  Boolean isVisibleInStorefront;
 
 	public Boolean getIsVisibleInStorefront() {
@@ -76,9 +64,6 @@ public class View implements Serializable
 		this.isVisibleInStorefront = isVisibleInStorefront;
 	}
 
-	/**
-	 * The user supplied name that appears in . You can use this field for identification purposes.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -89,9 +74,6 @@ public class View implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * A string array that determines where the document or entity list displays. The options are , for displaying content in the Custom Schema page in  , and , for displaying content in the site tree in Site Builder (applies only to document lists). The following example demonstrates how to display content across both options:
-	 */
 	protected List<String> usages;
 	public List<String> getUsages() {
 		return this.usages;
@@ -100,9 +82,6 @@ public class View implements Serializable
 		this.usages = usages;
 	}
 
-	/**
-	 * The list of fields to display for a view or an associated schema. For example, the address schema would display fields for postal addresses.
-	 */
 	protected List<ViewField> fields;
 	public List<ViewField> getFields() {
 		return this.fields;
@@ -111,9 +90,6 @@ public class View implements Serializable
 		this.fields = fields;
 	}
 
-	/**
-	 * Metadata content for entities, used by document lists, document type lists, document type, views, entity lists, and list views.
-	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode metadata;
 
 	public com.fasterxml.jackson.databind.JsonNode getMetadata() {

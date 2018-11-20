@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.catalog.storefront.ProductResource;
 
 /** <summary>
- * Use the Storefront Products resource to manage the shopper product selection process during a visit to the web storefront. You can update product options as shoppers pick and choose their product choices. A shopper cannot add a product to a cart until all of its required options have been selected.
+ * Use the Storefront Products  resource to manage the shopper product selection process during a visit to the web storefront. You can update product options as shoppers pick and choose their product choices. A shopper cannot add a product to a cart until all of its required options have been selected.
  * </summary>
  */
 public class ProductFactory
@@ -25,16 +25,16 @@ public class ProductFactory
 
 	public static com.mozu.api.contracts.productruntime.ProductCollection getProducts(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, int expectedCode) throws Exception
 	{
-		return getProducts(apiContext, dataViewMode,  null,  null,  null,  null,  null,  null,  null,  null, expectedCode);
+		return getProducts(apiContext, dataViewMode,  null,  null,  null,  null,  null,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.productruntime.ProductCollection getProducts(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String filter, Integer startIndex, Integer pageSize, String sortBy, String responseOptions, String cursorMark, String defaultSort, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.productruntime.ProductCollection getProducts(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String filter, Integer startIndex, Integer pageSize, String sortBy, String responseOptions, String cursorMark, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.productruntime.ProductCollection returnObj = new com.mozu.api.contracts.productruntime.ProductCollection();
 		ProductResource resource = new ProductResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.getProducts( filter,  startIndex,  pageSize,  sortBy,  responseOptions,  cursorMark,  defaultSort,  responseFields);
+			returnObj = resource.getProducts( filter,  startIndex,  pageSize,  sortBy,  responseOptions,  cursorMark,  responseFields);
 		}
 		catch (ApiException e)
 		{

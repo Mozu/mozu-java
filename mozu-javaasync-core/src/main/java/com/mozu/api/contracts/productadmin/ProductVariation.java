@@ -37,9 +37,6 @@ public class ProductVariation implements Serializable
 		this.deltaWeight = deltaWeight;
 	}
 
-	/**
-	 * If the product is in explicit pricing mode, this is the fixed weight of the variation.
-	 */
 	protected  Double fixedWeight;
 
 	public Double getFixedWeight() {
@@ -51,7 +48,7 @@ public class ProductVariation implements Serializable
 	}
 
 	/**
-	 * List of supported types of fulfillment for the product or variation. The types include direct ship, in-store pickup, or both.
+	 * Describes the types of fulfillment that are supported for this product variation. A variation can support direct ship, in-store pickup, or both. Supported fulfillment types are defined at the master catalog level. Client administrators cannot override the supported fulfillment types at the catalog level.
 	 */
 	protected List<String> fulfillmentTypesSupported;
 	public List<String> getFulfillmentTypesSupported() {
@@ -82,7 +79,7 @@ public class ProductVariation implements Serializable
 	}
 
 	/**
-	 * The universal product code (UPC) is the barcode defined for the product. The UPC is unique across all sales channels. 
+	 * The universal product code associated with the product variation. The UPC of a product is unique across all sales channels.
 	 */
 	protected  String upc;
 
@@ -134,9 +131,6 @@ public class ProductVariation implements Serializable
 		this.deltaPrice = deltaPrice;
 	}
 
-	/**
-	 * If the product is in Explicit pricing mode, this is the price of the variation.Refer to [Product Variant Pricing and Weight](../../../guides/catalog/products.htm#product_variant_pricing_and_weight) in the Products guides topic for more information.
-	 */
 	protected  ProductVariationFixedPrice fixedPrice;
 
 	public ProductVariationFixedPrice getFixedPrice() {
@@ -147,9 +141,6 @@ public class ProductVariation implements Serializable
 		this.fixedPrice = fixedPrice;
 	}
 
-	/**
-	 * The difference between associated prices for a product, variation option, or extra that is localized per the `localeCode`. The difference is calculated by subtracting the base price from the associated price with this product, option, and/or extra. Depending on the localeCode, the price may be converted such as from USD (USÂ Dollar) to EUR (euro).
-	 */
 	protected List<ProductVariationDeltaPrice> localizedDeltaPrice;
 	public List<ProductVariationDeltaPrice> getLocalizedDeltaPrice() {
 		return this.localizedDeltaPrice;
@@ -158,9 +149,6 @@ public class ProductVariation implements Serializable
 		this.localizedDeltaPrice = localizedDeltaPrice;
 	}
 
-	/**
-	 * Price of the variation using fixed per currency This collection allows for multiple currencies.
-	 */
 	protected List<ProductVariationFixedPrice> localizedFixedPrice;
 	public List<ProductVariationFixedPrice> getLocalizedFixedPrice() {
 		return this.localizedFixedPrice;
@@ -178,7 +166,7 @@ public class ProductVariation implements Serializable
 	}
 
 	/**
-	 * Supplier-defined properties assigned for the product.
+	 * Supplier-defined properties assigned for the product variation.
 	 */
 	protected  ProductSupplierInfo supplierInfo;
 

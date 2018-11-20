@@ -38,9 +38,6 @@ public class OrderProcessingSettings implements Serializable
 		this.abandonedOrderThresholdInMinutes = abandonedOrderThresholdInMinutes;
 	}
 
-	/**
-	 * giftCardProcessingType ApiType DOCUMENT_HERE 
-	 */
 	protected  String giftCardProcessingType;
 
 	public String getGiftCardProcessingType() {
@@ -81,9 +78,6 @@ public class OrderProcessingSettings implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * thirdPartyPaymentSettings ApiType DOCUMENT_HERE 
-	 */
 	protected List<ThirdPartyPaymentSetting> thirdPartyPaymentSettings;
 	public List<ThirdPartyPaymentSetting> getThirdPartyPaymentSettings() {
 		return this.thirdPartyPaymentSettings;

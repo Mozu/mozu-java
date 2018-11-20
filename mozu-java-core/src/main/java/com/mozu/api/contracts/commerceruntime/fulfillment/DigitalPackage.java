@@ -27,7 +27,7 @@ public class DigitalPackage implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Available actions you can complete for an order. These actions may differ depending on the status of the order, such as actions required to enter a payment, return of a package, and fulfillment of a shipment.
+	 * Available actions are actions that you can take on this fulfillment unit.
 	 */
 	protected List<String> availableActions;
 	public List<String> getAvailableActions() {
@@ -51,7 +51,7 @@ public class DigitalPackage implements Serializable
 	}
 
 	/**
-	 * Date and time when a shipment completes fulfillment by delivery to a customer's physical address, picked up by a customer at a store, or delivered digitally for downloadable products.
+	 * The digital fulfillment date is the date of the pickup.
 	 */
 	protected  DateTime fulfillmentDate;
 
@@ -64,7 +64,7 @@ public class DigitalPackage implements Serializable
 	}
 
 	/**
-	 * The code that identifies the location used to fulfill the cart/cart item or order/order item. This code can include physical store locations for in-store pickup, warehouse locations providing the products for shipment, or the location for the digital file(s).
+	 * The digital package location code is for the location from which to obtain this item.
 	 */
 	protected  String fulfillmentLocationCode;
 
@@ -77,7 +77,7 @@ public class DigitalPackage implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the source property, such as a catalog, discount, order, or email template.For a product field it will be the name of the field.For a category ID, must be a positive integer not greater than 2000000. By default,  auto-generates a category ID when categories are created. If you want to specify an ID during creation (which preserves category link relationships when migrating tenant data from one sandbox to another), you must also include the  query string in the endpoint. For example, . Then, use the  property to specify the desired category ID.For a product attribute it will be the Attribute FQN.For a document, the ID must be specified as a 32 character, case-insensitive, alphanumeric string. You can specify the ID as 32 sequential characters or as groups separated by dashes in the format 8-4-4-4-12. For example, or.For email templates, the ID must be one of the following values:			
+	 * The digital package ID is the ID of the fulfillment unit.
 	 */
 	protected  String id;
 
@@ -90,7 +90,7 @@ public class DigitalPackage implements Serializable
 	}
 
 	/**
-	 * The current status of the object.This value is read only. Valid values for this field are: "Active", "Expired", and "Inactive".
+	 * This is the status of the fulfillment unit.
 	 */
 	protected  String status;
 
@@ -103,7 +103,7 @@ public class DigitalPackage implements Serializable
 	}
 
 	/**
-	 * Basic audit info about the object, including date, time, and user account. This data may be captured when creating, updating, and removing data.
+	 * Audit info contains the basic audit information about the digital item.
 	 */
 	protected  AuditInfo auditInfo;
 
@@ -116,7 +116,7 @@ public class DigitalPackage implements Serializable
 	}
 
 	/**
-	 * Collection (list or paged) of change messages logged for each modification made by a shopper to their carts, wishlists, orders, package, payment, pickup, and returns. Change log messages are system-supplied based on shopper actions and read only.
+	 * Change messages handle message related to changes with the fulfillment unit.
 	 */
 	protected List<ChangeMessage> changeMessages;
 	public List<ChangeMessage> getChangeMessages() {
@@ -127,7 +127,7 @@ public class DigitalPackage implements Serializable
 	}
 
 	/**
-	 * A list of requested items. All returned data is provided in an items array.For a failed request, the returned response may be success with an empty item array.
+	 * The digital package list is a list of items in the fulfillment unit.
 	 */
 	protected List<DigitalPackageItem> items;
 	public List<DigitalPackageItem> getItems() {

@@ -15,18 +15,12 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.appdev.ApplicationTransaction;
 
-/**
- *	This property is not exposed in documentation.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ApplicationEntitlement implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationEntitlement appKey ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String appKey;
 
 	public String getAppKey() {
@@ -47,9 +41,6 @@ public class ApplicationEntitlement implements Serializable
 		this.applicationEntitlementId = applicationEntitlementId;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationEntitlement applicationId ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  Integer applicationId;
 
 	public Integer getApplicationId() {
@@ -70,9 +61,6 @@ public class ApplicationEntitlement implements Serializable
 		this.applicationLicenseType = applicationLicenseType;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationEntitlement applicationName ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String applicationName;
 
 	public String getApplicationName() {
@@ -83,9 +71,6 @@ public class ApplicationEntitlement implements Serializable
 		this.applicationName = applicationName;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationEntitlement applicationStatusId ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String applicationStatusId;
 
 	public String getApplicationStatusId() {
@@ -96,9 +81,6 @@ public class ApplicationEntitlement implements Serializable
 		this.applicationStatusId = applicationStatusId;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationEntitlement applicationVersion ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String applicationVersion;
 
 	public String getApplicationVersion() {
@@ -109,9 +91,6 @@ public class ApplicationEntitlement implements Serializable
 		this.applicationVersion = applicationVersion;
 	}
 
-	/**
-	 * Denotes the application owner dev account id
-	 */
 	protected  Integer appOwnerDevAccountId;
 
 	public Integer getAppOwnerDevAccountId() {
@@ -122,9 +101,6 @@ public class ApplicationEntitlement implements Serializable
 		this.appOwnerDevAccountId = appOwnerDevAccountId;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationEntitlement devAccountId ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  Integer devAccountId;
 
 	public Integer getDevAccountId() {
@@ -165,9 +141,6 @@ public class ApplicationEntitlement implements Serializable
 		this.entitlementStatus = entitlementStatus;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationEntitlement installedAppsApplicationId ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String installedAppsApplicationId;
 
 	public String getInstalledAppsApplicationId() {
@@ -178,9 +151,6 @@ public class ApplicationEntitlement implements Serializable
 		this.installedAppsApplicationId = installedAppsApplicationId;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationEntitlement installedByFirstName ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String installedByFirstName;
 
 	public String getInstalledByFirstName() {
@@ -191,9 +161,6 @@ public class ApplicationEntitlement implements Serializable
 		this.installedByFirstName = installedByFirstName;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationEntitlement installedByLastName ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String installedByLastName;
 
 	public String getInstalledByLastName() {
@@ -204,9 +171,6 @@ public class ApplicationEntitlement implements Serializable
 		this.installedByLastName = installedByLastName;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationEntitlement installedDate ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  DateTime installedDate;
 
 	public DateTime getInstalledDate() {
@@ -217,9 +181,6 @@ public class ApplicationEntitlement implements Serializable
 		this.installedDate = installedDate;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationEntitlement packageId ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  Integer packageId;
 
 	public Integer getPackageId() {
@@ -230,9 +191,6 @@ public class ApplicationEntitlement implements Serializable
 		this.packageId = packageId;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationEntitlement packageName ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String packageName;
 
 	public String getPackageName() {
@@ -263,9 +221,6 @@ public class ApplicationEntitlement implements Serializable
 		this.tenantId = tenantId;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationEntitlement tenantName ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String tenantName;
 
 	public String getTenantName() {

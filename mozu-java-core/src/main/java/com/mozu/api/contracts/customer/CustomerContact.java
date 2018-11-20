@@ -27,6 +27,16 @@ public class CustomerContact implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected  String email;
+
+	public String getEmail() {
+		return this.email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	protected  Integer accountId;
 
 	public Integer getAccountId() {
@@ -45,16 +55,6 @@ public class CustomerContact implements Serializable
 
 	public void setCompanyOrOrganization(String companyOrOrganization) {
 		this.companyOrOrganization = companyOrOrganization;
-	}
-
-	protected  String email;
-
-	public String getEmail() {
-		return this.email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
 	}
 
 	/**
@@ -90,9 +90,6 @@ public class CustomerContact implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * Descriptive text used as a label for objects, such as field names, facets, date ranges, contact information, and package information.
-	 */
 	protected  String label;
 
 	public String getLabel() {
