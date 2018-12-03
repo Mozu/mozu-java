@@ -21,6 +21,16 @@ public class PaymentCard implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected  String nameOnCard;
+
+	public String getNameOnCard() {
+		return this.nameOnCard;
+	}
+
+	public void setNameOnCard(String nameOnCard) {
+		this.nameOnCard = nameOnCard;
+	}
+
 	protected  String bin;
 
 	public String getBin() {
@@ -79,16 +89,6 @@ public class PaymentCard implements Serializable
 
 	public void setIsUsedRecurring(Boolean isUsedRecurring) {
 		this.isUsedRecurring = isUsedRecurring;
-	}
-
-	protected  String nameOnCard;
-
-	public String getNameOnCard() {
-		return this.nameOnCard;
-	}
-
-	public void setNameOnCard(String nameOnCard) {
-		this.nameOnCard = nameOnCard;
 	}
 
 	protected  String paymentOrCardType;

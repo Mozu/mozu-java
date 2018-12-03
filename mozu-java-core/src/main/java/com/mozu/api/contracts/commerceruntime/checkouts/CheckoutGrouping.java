@@ -250,16 +250,6 @@ public class CheckoutGrouping implements Serializable
 		this.standaloneGroup = standaloneGroup;
 	}
 
-	protected transient com.fasterxml.jackson.databind.JsonNode taxData;
-
-	public com.fasterxml.jackson.databind.JsonNode getTaxData() {
-		return this.taxData;
-	}
-
-	public void setTaxData(com.fasterxml.jackson.databind.JsonNode taxData) {
-		this.taxData = taxData;
-	}
-
 	protected List<AppliedDiscount> handlingDiscounts;
 	public List<AppliedDiscount> getHandlingDiscounts() {
 		return this.handlingDiscounts;
@@ -274,6 +264,16 @@ public class CheckoutGrouping implements Serializable
 	}
 	public void setShippingDiscounts(List<ShippingDiscount> shippingDiscounts) {
 		this.shippingDiscounts = shippingDiscounts;
+	}
+
+	protected transient com.fasterxml.jackson.databind.JsonNode taxData;
+
+	public com.fasterxml.jackson.databind.JsonNode getTaxData() {
+		return this.taxData;
+	}
+
+	public void setTaxData(com.fasterxml.jackson.databind.JsonNode taxData) {
+		this.taxData = taxData;
 	}
 
 	private void writeObject(java.io.ObjectOutputStream out) throws IOException {

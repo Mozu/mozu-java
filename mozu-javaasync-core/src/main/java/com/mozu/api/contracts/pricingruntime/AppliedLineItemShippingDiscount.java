@@ -19,16 +19,6 @@ public class AppliedLineItemShippingDiscount implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected  Integer quantity;
-
-	public Integer getQuantity() {
-		return this.quantity;
-	}
-
-	public void setQuantity(Integer quantity) {
-		this.quantity = quantity;
-	}
-
 	protected  String couponCode;
 
 	public String getCouponCode() {
@@ -87,6 +77,16 @@ public class AppliedLineItemShippingDiscount implements Serializable
 
 	public void setNormalizedImpact(Double normalizedImpact) {
 		this.normalizedImpact = normalizedImpact;
+	}
+
+	protected  Integer quantity;
+
+	public Integer getQuantity() {
+		return this.quantity;
+	}
+
+	public void setQuantity(Integer quantity) {
+		this.quantity = quantity;
 	}
 
 	protected  String shippingMethodCode;

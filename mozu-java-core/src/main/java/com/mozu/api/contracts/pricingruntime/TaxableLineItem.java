@@ -27,26 +27,6 @@ public class TaxableLineItem implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected  String id;
-
-	public String getId() {
-		return this.id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	protected  Boolean isTaxable;
-
-	public Boolean getIsTaxable() {
-		return this.isTaxable;
-	}
-
-	public void setIsTaxable(Boolean isTaxable) {
-		this.isTaxable = isTaxable;
-	}
-
 	protected  Double discountedTotal;
 
 	public Double getDiscountedTotal() {
@@ -85,6 +65,26 @@ public class TaxableLineItem implements Serializable
 
 	public void setHandlingAmount(Double handlingAmount) {
 		this.handlingAmount = handlingAmount;
+	}
+
+	protected  String id;
+
+	public String getId() {
+		return this.id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	protected  Boolean isTaxable;
+
+	public Boolean getIsTaxable() {
+		return this.isTaxable;
+	}
+
+	public void setIsTaxable(Boolean isTaxable) {
+		this.isTaxable = isTaxable;
 	}
 
 	protected  Double lineItemPrice;

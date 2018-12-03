@@ -21,6 +21,36 @@ public class Catalog implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected  DateTime createDate;
+
+	public DateTime getCreateDate() {
+		return this.createDate;
+	}
+
+	public void setCreateDate(DateTime createDate) {
+		this.createDate = createDate;
+	}
+
+	protected  String defaultCurrencyCode;
+
+	public String getDefaultCurrencyCode() {
+		return this.defaultCurrencyCode;
+	}
+
+	public void setDefaultCurrencyCode(String defaultCurrencyCode) {
+		this.defaultCurrencyCode = defaultCurrencyCode;
+	}
+
+	protected  String defaultLocaleCode;
+
+	public String getDefaultLocaleCode() {
+		return this.defaultLocaleCode;
+	}
+
+	public void setDefaultLocaleCode(String defaultLocaleCode) {
+		this.defaultLocaleCode = defaultLocaleCode;
+	}
+
 	protected  DateTime deleteDate;
 
 	public DateTime getDeleteDate() {
@@ -105,36 +135,6 @@ public class Catalog implements Serializable
 
 	public void setUpdateDate(DateTime updateDate) {
 		this.updateDate = updateDate;
-	}
-
-	protected  String defaultLocaleCode;
-
-	public String getDefaultLocaleCode() {
-		return this.defaultLocaleCode;
-	}
-
-	public void setDefaultLocaleCode(String defaultLocaleCode) {
-		this.defaultLocaleCode = defaultLocaleCode;
-	}
-
-	protected  DateTime createDate;
-
-	public DateTime getCreateDate() {
-		return this.createDate;
-	}
-
-	public void setCreateDate(DateTime createDate) {
-		this.createDate = createDate;
-	}
-
-	protected  String defaultCurrencyCode;
-
-	public String getDefaultCurrencyCode() {
-		return this.defaultCurrencyCode;
-	}
-
-	public void setDefaultCurrencyCode(String defaultCurrencyCode) {
-		this.defaultCurrencyCode = defaultCurrencyCode;
 	}
 
 

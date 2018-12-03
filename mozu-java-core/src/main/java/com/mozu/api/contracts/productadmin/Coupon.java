@@ -19,26 +19,6 @@ public class Coupon implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected  Integer couponSetId;
-
-	public Integer getCouponSetId() {
-		return this.couponSetId;
-	}
-
-	public void setCouponSetId(Integer couponSetId) {
-		this.couponSetId = couponSetId;
-	}
-
-	protected  Integer redemptionCount;
-
-	public Integer getRedemptionCount() {
-		return this.redemptionCount;
-	}
-
-	public void setRedemptionCount(Integer redemptionCount) {
-		this.redemptionCount = redemptionCount;
-	}
-
 	protected  Boolean canBeDeleted;
 
 	public Boolean getCanBeDeleted() {
@@ -67,6 +47,26 @@ public class Coupon implements Serializable
 
 	public void setCouponSetCode(String couponSetCode) {
 		this.couponSetCode = couponSetCode;
+	}
+
+	protected  Integer couponSetId;
+
+	public Integer getCouponSetId() {
+		return this.couponSetId;
+	}
+
+	public void setCouponSetId(Integer couponSetId) {
+		this.couponSetId = couponSetId;
+	}
+
+	protected  Integer redemptionCount;
+
+	public Integer getRedemptionCount() {
+		return this.redemptionCount;
+	}
+
+	public void setRedemptionCount(Integer redemptionCount) {
+		this.redemptionCount = redemptionCount;
 	}
 
 	protected  AuditInfo auditInfo;

@@ -24,6 +24,14 @@ public class Channel implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected List<Integer> siteIds;
+	public List<Integer> getSiteIds() {
+		return this.siteIds;
+	}
+	public void setSiteIds(List<Integer> siteIds) {
+		this.siteIds = siteIds;
+	}
+
 	protected  String code;
 
 	public String getCode() {
@@ -72,14 +80,6 @@ public class Channel implements Serializable
 
 	public void setRegion(String region) {
 		this.region = region;
-	}
-
-	protected List<Integer> siteIds;
-	public List<Integer> getSiteIds() {
-		return this.siteIds;
-	}
-	public void setSiteIds(List<Integer> siteIds) {
-		this.siteIds = siteIds;
 	}
 
 	protected  Integer tenantId;

@@ -106,6 +106,25 @@ public class CartItemResource {
 	 * 
 	 * <p><pre><code>
 	 *	CartItem cartitem = new CartItem();
+	 *	cartitem.addItemsToCart( cartItems);
+	 * </code></pre></p>
+	 * @param cartItems 
+	 * @return 
+	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 */
+	public void addItemsToCart(List<com.mozu.api.contracts.commerceruntime.carts.CartItem> cartItems) throws Exception
+	{
+		MozuClient client = com.mozu.api.clients.commerce.carts.CartItemClient.addItemsToCartClient( cartItems);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		client.cleanupHttpConnection();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CartItem cartitem = new CartItem();
 	 *	CartItem cartItem = cartitem.addItemToCart( cartItem);
 	 * </code></pre></p>
 	 * @param cartItem All properties of the new cart item. The product code is required.

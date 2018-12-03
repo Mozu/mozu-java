@@ -38,6 +38,26 @@ public class SearchSynonymSettings implements Serializable
 		this.mainPartBoost = mainPartBoost;
 	}
 
+	protected  Boolean matchOnAnyTerm;
+
+	public Boolean getMatchOnAnyTerm() {
+		return this.matchOnAnyTerm;
+	}
+
+	public void setMatchOnAnyTerm(Boolean matchOnAnyTerm) {
+		this.matchOnAnyTerm = matchOnAnyTerm;
+	}
+
+	protected  Integer phraseBoost;
+
+	public Integer getPhraseBoost() {
+		return this.phraseBoost;
+	}
+
+	public void setPhraseBoost(Integer phraseBoost) {
+		this.phraseBoost = phraseBoost;
+	}
+
 	protected  Double synonymPartBoost;
 
 	public Double getSynonymPartBoost() {

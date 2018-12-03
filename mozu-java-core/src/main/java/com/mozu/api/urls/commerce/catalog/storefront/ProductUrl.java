@@ -16,6 +16,7 @@ public class ProductUrl
 	/**
 	 * Get Resource Url for GetProducts
 	 * @param cursorMark 
+	 * @param defaultSort 
 	 * @param filter 
 	 * @param pageSize Used to page results from a query. Indicates the maximum number of entities to return from a single query. Default value: 20. Maximum value: 200.
 	 * @param responseFields 
@@ -24,10 +25,11 @@ public class ProductUrl
 	 * @param startIndex 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getProductsUrl(String cursorMark, String filter, Integer pageSize, String responseFields, String responseOptions, String sortBy, Integer startIndex)
+	public static MozuUrl getProductsUrl(String cursorMark, String defaultSort, String filter, Integer pageSize, String responseFields, String responseOptions, String sortBy, Integer startIndex)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/storefront/products/?filter={filter}&startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&responseOptions={responseOptions}&cursorMark={cursorMark}&responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/storefront/products/?filter={filter}&startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&responseOptions={responseOptions}&cursorMark={cursorMark}&defaultSort={defaultSort}&responseFields={responseFields}");
 		formatter.formatUrl("cursorMark", cursorMark);
+		formatter.formatUrl("defaultSort", defaultSort);
 		formatter.formatUrl("filter", filter);
 		formatter.formatUrl("pageSize", pageSize);
 		formatter.formatUrl("responseFields", responseFields);

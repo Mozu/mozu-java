@@ -46,6 +46,20 @@ public class OrderItemUrl
 	}
 
 	/**
+	 * Get Resource Url for AddCheckoutItem
+	 * @param checkoutId 
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl addCheckoutItemUrl(String checkoutId, String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/checkouts/{checkoutId}/items?skipInventoryCheck={skipInventoryCheck}&responseFields={responseFields}");
+		formatter.formatUrl("checkoutId", checkoutId);
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for UpdateItemDestination
 	 * @param checkoutId 
 	 * @param destinationId 
@@ -60,6 +74,20 @@ public class OrderItemUrl
 		formatter.formatUrl("destinationId", destinationId);
 		formatter.formatUrl("itemId", itemId);
 		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for DeleteCheckoutItem
+	 * @param checkoutId 
+	 * @param itemId 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl deleteCheckoutItemUrl(String checkoutId, String itemId)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/checkouts/{checkoutId}/items/{itemId}");
+		formatter.formatUrl("checkoutId", checkoutId);
+		formatter.formatUrl("itemId", itemId);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

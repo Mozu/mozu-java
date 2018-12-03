@@ -40,6 +40,16 @@ public class CartItemUrl
 	}
 
 	/**
+	 * Get Resource Url for AddItemsToCart
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl addItemsToCartUrl()
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/carts/current/bulkitems");
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for AddItemToCart
 	 * @param responseFields 
 	 * @return   String Resource Url

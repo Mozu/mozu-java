@@ -53,16 +53,17 @@ public class ProductResource {
 	 */
 	public com.mozu.api.contracts.productruntime.ProductCollection getProducts() throws Exception
 	{
-		return getProducts( null,  null,  null,  null,  null,  null,  null);
+		return getProducts( null,  null,  null,  null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	Product product = new Product();
-	 *	ProductCollection productCollection = product.getProducts( filter,  startIndex,  pageSize,  sortBy,  responseOptions,  cursorMark,  responseFields);
+	 *	ProductCollection productCollection = product.getProducts( filter,  startIndex,  pageSize,  sortBy,  responseOptions,  cursorMark,  defaultSort,  responseFields);
 	 * </code></pre></p>
 	 * @param cursorMark 
+	 * @param defaultSort 
 	 * @param filter 
 	 * @param pageSize Used to page results from a query. Indicates the maximum number of entities to return from a single query. Default value: 20. Maximum value: 200.
 	 * @param responseFields 
@@ -72,9 +73,9 @@ public class ProductResource {
 	 * @return com.mozu.api.contracts.productruntime.ProductCollection
 	 * @see com.mozu.api.contracts.productruntime.ProductCollection
 	 */
-	public com.mozu.api.contracts.productruntime.ProductCollection getProducts(String filter, Integer startIndex, Integer pageSize, String sortBy, String responseOptions, String cursorMark, String responseFields) throws Exception
+	public com.mozu.api.contracts.productruntime.ProductCollection getProducts(String filter, Integer startIndex, Integer pageSize, String sortBy, String responseOptions, String cursorMark, String defaultSort, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productruntime.ProductCollection> client = com.mozu.api.clients.commerce.catalog.storefront.ProductClient.getProductsClient(_dataViewMode,  filter,  startIndex,  pageSize,  sortBy,  responseOptions,  cursorMark,  responseFields);
+		MozuClient<com.mozu.api.contracts.productruntime.ProductCollection> client = com.mozu.api.clients.commerce.catalog.storefront.ProductClient.getProductsClient(_dataViewMode,  filter,  startIndex,  pageSize,  sortBy,  responseOptions,  cursorMark,  defaultSort,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

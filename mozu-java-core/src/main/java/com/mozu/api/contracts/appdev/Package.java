@@ -29,6 +29,16 @@ public class Package implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected  Integer applicationTypeId;
+
+	public Integer getApplicationTypeId() {
+		return this.applicationTypeId;
+	}
+
+	public void setApplicationTypeId(Integer applicationTypeId) {
+		this.applicationTypeId = applicationTypeId;
+	}
+
 	protected  String apiVersion;
 
 	public String getApiVersion() {
@@ -147,16 +157,6 @@ public class Package implements Serializable
 
 	public void setApplicationStatusName(String applicationStatusName) {
 		this.applicationStatusName = applicationStatusName;
-	}
-
-	protected  Integer applicationTypeId;
-
-	public Integer getApplicationTypeId() {
-		return this.applicationTypeId;
-	}
-
-	public void setApplicationTypeId(Integer applicationTypeId) {
-		this.applicationTypeId = applicationTypeId;
 	}
 
 	protected  String applicationTypeName;

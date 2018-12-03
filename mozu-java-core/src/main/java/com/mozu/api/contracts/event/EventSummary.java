@@ -21,6 +21,16 @@ public class EventSummary implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected  Integer siteId;
+
+	public Integer getSiteId() {
+		return this.siteId;
+	}
+
+	public void setSiteId(Integer siteId) {
+		this.siteId = siteId;
+	}
+
 	protected  Integer catalogId;
 
 	public Integer getCatalogId() {
@@ -79,16 +89,6 @@ public class EventSummary implements Serializable
 
 	public void setMasterCatalogId(Integer masterCatalogId) {
 		this.masterCatalogId = masterCatalogId;
-	}
-
-	protected  Integer siteId;
-
-	public Integer getSiteId() {
-		return this.siteId;
-	}
-
-	public void setSiteId(Integer siteId) {
-		this.siteId = siteId;
 	}
 
 	/**

@@ -15,12 +15,12 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.commerceruntime.commerce.ChangeMessage;
-import com.mozu.api.contracts.commerceruntime.discounts.SuggestedDiscount;
 import com.mozu.api.contracts.commerceruntime.commerce.ThresholdMessage;
 import com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty;
 import com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo;
 import com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem;
 import com.mozu.api.contracts.commerceruntime.discounts.AppliedDiscount;
+import com.mozu.api.contracts.commerceruntime.discounts.SuggestedDiscount;
 
 /**
  *	Properties of a shopper wish list defined for a site, associated with a customer account.
@@ -388,14 +388,6 @@ public class Wishlist implements Serializable
 		this.changeMessages = changeMessages;
 	}
 
-	protected List<SuggestedDiscount> suggestedDiscounts;
-	public List<SuggestedDiscount> getSuggestedDiscounts() {
-		return this.suggestedDiscounts;
-	}
-	public void setSuggestedDiscounts(List<SuggestedDiscount> suggestedDiscounts) {
-		this.suggestedDiscounts = suggestedDiscounts;
-	}
-
 	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {
@@ -446,6 +438,14 @@ public class Wishlist implements Serializable
 	}
 	public void setOrderDiscounts(List<AppliedDiscount> orderDiscounts) {
 		this.orderDiscounts = orderDiscounts;
+	}
+
+	protected List<SuggestedDiscount> suggestedDiscounts;
+	public List<SuggestedDiscount> getSuggestedDiscounts() {
+		return this.suggestedDiscounts;
+	}
+	public void setSuggestedDiscounts(List<SuggestedDiscount> suggestedDiscounts) {
+		this.suggestedDiscounts = suggestedDiscounts;
 	}
 
 	protected transient com.fasterxml.jackson.databind.JsonNode taxData;

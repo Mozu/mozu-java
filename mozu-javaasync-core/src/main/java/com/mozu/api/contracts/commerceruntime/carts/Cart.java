@@ -74,16 +74,6 @@ public class Cart implements Serializable
 		this.customerInteractionType = customerInteractionType;
 	}
 
-	protected  Double taxTotal;
-
-	public Double getTaxTotal() {
-		return this.taxTotal;
-	}
-
-	public void setTaxTotal(Double taxTotal) {
-		this.taxTotal = taxTotal;
-	}
-
 	protected  Double discountedSubtotal;
 
 	public Double getDiscountedSubtotal() {
@@ -282,6 +272,16 @@ public class Cart implements Serializable
 
 	public void setSubtotal(Double subtotal) {
 		this.subtotal = subtotal;
+	}
+
+	protected  Double taxTotal;
+
+	public Double getTaxTotal() {
+		return this.taxTotal;
+	}
+
+	public void setTaxTotal(Double taxTotal) {
+		this.taxTotal = taxTotal;
 	}
 
 	protected  Integer tenantId;

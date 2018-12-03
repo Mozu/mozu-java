@@ -25,16 +25,6 @@ public class User implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected  String password;
-
-	public String getPassword() {
-		return this.password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
 	protected  String emailAddress;
 
 	public String getEmailAddress() {
@@ -93,6 +83,16 @@ public class User implements Serializable
 
 	public void setLocaleCode(String localeCode) {
 		this.localeCode = localeCode;
+	}
+
+	protected  String password;
+
+	public String getPassword() {
+		return this.password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	protected List<UserRole> roles;

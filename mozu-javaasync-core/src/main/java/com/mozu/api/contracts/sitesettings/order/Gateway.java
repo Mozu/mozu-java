@@ -36,6 +36,14 @@ public class Gateway implements Serializable
 		this.areGatewayCredentialFieldsSet = areGatewayCredentialFieldsSet;
 	}
 
+	protected List<String> supportedCards;
+	public List<String> getSupportedCards() {
+		return this.supportedCards;
+	}
+	public void setSupportedCards(List<String> supportedCards) {
+		this.supportedCards = supportedCards;
+	}
+
 	protected  GatewayAccount gatewayAccount;
 
 	public GatewayAccount getGatewayAccount() {
@@ -56,12 +64,12 @@ public class Gateway implements Serializable
 		this.gatewayDefinition = gatewayDefinition;
 	}
 
-	protected List<SiteGatewaySupportedCard> supportedCards;
-	public List<SiteGatewaySupportedCard> getSupportedCards() {
-		return this.supportedCards;
+	protected List<SiteGatewaySupportedCard> siteGatewaySupportedCards;
+	public List<SiteGatewaySupportedCard> getSiteGatewaySupportedCards() {
+		return this.siteGatewaySupportedCards;
 	}
-	public void setSupportedCards(List<SiteGatewaySupportedCard> supportedCards) {
-		this.supportedCards = supportedCards;
+	public void setSiteGatewaySupportedCards(List<SiteGatewaySupportedCard> siteGatewaySupportedCards) {
+		this.siteGatewaySupportedCards = siteGatewaySupportedCards;
 	}
 
 

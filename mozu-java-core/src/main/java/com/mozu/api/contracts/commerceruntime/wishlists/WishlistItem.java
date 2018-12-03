@@ -13,8 +13,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
-import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.commerceruntime.products.Product;
+import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.commerceruntime.discounts.AppliedLineItemProductDiscount;
 import com.mozu.api.contracts.commerceruntime.discounts.AppliedLineItemShippingDiscount;
 import com.mozu.api.contracts.commerceruntime.commerce.CommerceUnitPrice;
@@ -408,6 +408,16 @@ public class WishlistItem implements Serializable
 		this.weightedOrderTax = weightedOrderTax;
 	}
 
+	protected  Product product;
+
+	public Product getProduct() {
+		return this.product;
+	}
+
+	public void setProduct(Product product) {
+		this.product = product;
+	}
+
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -426,16 +436,6 @@ public class WishlistItem implements Serializable
 
 	public void setData(com.fasterxml.jackson.databind.JsonNode data) {
 		this.data = data;
-	}
-
-	protected  Product product;
-
-	public Product getProduct() {
-		return this.product;
-	}
-
-	public void setProduct(Product product) {
-		this.product = product;
 	}
 
 	/**

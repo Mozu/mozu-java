@@ -13,11 +13,11 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
-import com.mozu.api.contracts.pricingruntime.TaxContext;
 import com.mozu.api.contracts.pricingruntime.TaxAttribute;
 import com.mozu.api.contracts.pricingruntime.AppliedDiscount;
 import com.mozu.api.contracts.pricingruntime.TaxableLineItem;
 import com.mozu.api.contracts.pricingruntime.AppliedOrderShippingDiscount;
+import com.mozu.api.contracts.pricingruntime.TaxContext;
 
 /**
  *	Properties of an order for which to calculate tax. When a tax capability is enabled for a tenant, Mozu sends the TaxableOrder properties to the capability as read-only, system-supplied information.
@@ -147,16 +147,6 @@ public class TaxableOrder implements Serializable
 		this.taxRequestType = taxRequestType;
 	}
 
-	protected  TaxContext taxContext;
-
-	public TaxContext getTaxContext() {
-		return this.taxContext;
-	}
-
-	public void setTaxContext(TaxContext taxContext) {
-		this.taxContext = taxContext;
-	}
-
 	protected List<TaxAttribute> attributes;
 	public List<TaxAttribute> getAttributes() {
 		return this.attributes;
@@ -235,6 +225,16 @@ public class TaxableOrder implements Serializable
 	}
 	public void setShippingDiscounts(List<AppliedOrderShippingDiscount> shippingDiscounts) {
 		this.shippingDiscounts = shippingDiscounts;
+	}
+
+	protected  TaxContext taxContext;
+
+	public TaxContext getTaxContext() {
+		return this.taxContext;
+	}
+
+	public void setTaxContext(TaxContext taxContext) {
+		this.taxContext = taxContext;
 	}
 
 	private void writeObject(java.io.ObjectOutputStream out) throws IOException {

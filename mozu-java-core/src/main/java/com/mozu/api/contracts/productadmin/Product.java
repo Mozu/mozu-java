@@ -49,16 +49,6 @@ public class Product implements Serializable
 		this.baseProductCode = baseProductCode;
 	}
 
-	protected  String upc;
-
-	public String getUpc() {
-		return this.upc;
-	}
-
-	public void setUpc(String upc) {
-		this.upc = upc;
-	}
-
 	/**
 	 * Describes the types of fulfillment that are supported for this product. A product can support direct ship, in-store pickup, or both. Supported fulfillment types are defined at the master catalog level. Client administrators cannot override the supported fulfillment types at the catalog level.
 	 */
@@ -211,6 +201,16 @@ public class Product implements Serializable
 
 	public void setStandAlonePackageType(String standAlonePackageType) {
 		this.standAlonePackageType = standAlonePackageType;
+	}
+
+	protected  String upc;
+
+	public String getUpc() {
+		return this.upc;
+	}
+
+	public void setUpc(String upc) {
+		this.upc = upc;
 	}
 
 	protected  String variationKey;

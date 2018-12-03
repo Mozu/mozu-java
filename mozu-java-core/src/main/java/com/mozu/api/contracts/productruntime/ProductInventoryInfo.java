@@ -21,26 +21,6 @@ public class ProductInventoryInfo implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected  String outOfStockBehavior;
-
-	public String getOutOfStockBehavior() {
-		return this.outOfStockBehavior;
-	}
-
-	public void setOutOfStockBehavior(String outOfStockBehavior) {
-		this.outOfStockBehavior = outOfStockBehavior;
-	}
-
-	protected  Boolean manageStock;
-
-	public Boolean getManageStock() {
-		return this.manageStock;
-	}
-
-	public void setManageStock(Boolean manageStock) {
-		this.manageStock = manageStock;
-	}
-
 	/**
 	 * The location code for the direct ship location associated with the available online stock.
 	 */
@@ -52,6 +32,16 @@ public class ProductInventoryInfo implements Serializable
 
 	public void setOnlineLocationCode(String onlineLocationCode) {
 		this.onlineLocationCode = onlineLocationCode;
+	}
+
+	protected  Boolean manageStock;
+
+	public Boolean getManageStock() {
+		return this.manageStock;
+	}
+
+	public void setManageStock(Boolean manageStock) {
+		this.manageStock = manageStock;
 	}
 
 	protected  Integer onlineSoftStockAvailable;
@@ -72,6 +62,16 @@ public class ProductInventoryInfo implements Serializable
 
 	public void setOnlineStockAvailable(Integer onlineStockAvailable) {
 		this.onlineStockAvailable = onlineStockAvailable;
+	}
+
+	protected  String outOfStockBehavior;
+
+	public String getOutOfStockBehavior() {
+		return this.outOfStockBehavior;
+	}
+
+	public void setOutOfStockBehavior(String outOfStockBehavior) {
+		this.outOfStockBehavior = outOfStockBehavior;
 	}
 
 

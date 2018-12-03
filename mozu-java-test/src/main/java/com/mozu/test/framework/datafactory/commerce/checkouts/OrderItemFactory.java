@@ -73,6 +73,31 @@ public class OrderItemFactory
 		return returnObj;
 	}
 
+	public static com.mozu.api.contracts.commerceruntime.checkouts.Checkout addCheckoutItem(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.orders.OrderItem item, String checkoutId, int expectedCode) throws Exception
+	{
+		return addCheckoutItem(apiContext,  item,  checkoutId,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.checkouts.Checkout addCheckoutItem(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.orders.OrderItem item, String checkoutId, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.commerceruntime.checkouts.Checkout returnObj = new com.mozu.api.contracts.commerceruntime.checkouts.Checkout();
+		OrderItemResource resource = new OrderItemResource(apiContext);
+		try
+		{
+			returnObj = resource.addCheckoutItem( item,  checkoutId,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
 	public static com.mozu.api.contracts.commerceruntime.checkouts.Checkout updateItemDestination(ApiContext apiContext, String checkoutId, String itemId, String destinationId, int expectedCode) throws Exception
 	{
 		return updateItemDestination(apiContext,  checkoutId,  itemId,  destinationId,  null, expectedCode);
@@ -85,6 +110,26 @@ public class OrderItemFactory
 		try
 		{
 			returnObj = resource.updateItemDestination( checkoutId,  itemId,  destinationId,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.checkouts.Checkout deleteCheckoutItem(ApiContext apiContext, String checkoutId, String itemId, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.commerceruntime.checkouts.Checkout returnObj = new com.mozu.api.contracts.commerceruntime.checkouts.Checkout();
+		OrderItemResource resource = new OrderItemResource(apiContext);
+		try
+		{
+			returnObj = resource.deleteCheckoutItem( checkoutId,  itemId);
 		}
 		catch (ApiException e)
 		{
