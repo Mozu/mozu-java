@@ -23,19 +23,6 @@ public class AppliedLineItemShippingDiscount implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The number of the line item that is used for this particular discount.
-	 */
-	protected  Integer discountQuantity;
-
-	public Integer getDiscountQuantity() {
-		return this.discountQuantity;
-	}
-
-	public void setDiscountQuantity(Integer discountQuantity) {
-		this.discountQuantity = discountQuantity;
-	}
-
-	/**
 	 * The impact of this discount for each discount quantity.
 	 */
 	protected  Double impactPerUnit;
@@ -46,6 +33,19 @@ public class AppliedLineItemShippingDiscount implements Serializable
 
 	public void setImpactPerUnit(Double impactPerUnit) {
 		this.impactPerUnit = impactPerUnit;
+	}
+
+	/**
+	 * The number of the line item that is used for this particular discount.
+	 */
+	protected  Integer discountQuantity;
+
+	public Integer getDiscountQuantity() {
+		return this.discountQuantity;
+	}
+
+	public void setDiscountQuantity(Integer discountQuantity) {
+		this.discountQuantity = discountQuantity;
 	}
 
 	protected  String methodCode;

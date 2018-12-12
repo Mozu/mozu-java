@@ -21,6 +21,16 @@ public class PriceList implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected  Integer priceListSequence;
+
+	public Integer getPriceListSequence() {
+		return this.priceListSequence;
+	}
+
+	public void setPriceListSequence(Integer priceListSequence) {
+		this.priceListSequence = priceListSequence;
+	}
+
 	protected List<Integer> defaultForSites;
 	public List<Integer> getDefaultForSites() {
 		return this.defaultForSites;
@@ -113,16 +123,6 @@ public class PriceList implements Serializable
 
 	public void setPriceListCode(String priceListCode) {
 		this.priceListCode = priceListCode;
-	}
-
-	protected  Integer priceListSequence;
-
-	public Integer getPriceListSequence() {
-		return this.priceListSequence;
-	}
-
-	public void setPriceListSequence(Integer priceListSequence) {
-		this.priceListSequence = priceListSequence;
 	}
 
 	protected  Integer rank;

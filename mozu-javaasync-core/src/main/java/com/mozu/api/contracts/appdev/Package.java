@@ -29,14 +29,14 @@ public class Package implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected  Integer applicationTypeId;
+	protected  Integer assetFileCount;
 
-	public Integer getApplicationTypeId() {
-		return this.applicationTypeId;
+	public Integer getAssetFileCount() {
+		return this.assetFileCount;
 	}
 
-	public void setApplicationTypeId(Integer applicationTypeId) {
-		this.applicationTypeId = applicationTypeId;
+	public void setAssetFileCount(Integer assetFileCount) {
+		this.assetFileCount = assetFileCount;
 	}
 
 	protected  String apiVersion;
@@ -159,6 +159,16 @@ public class Package implements Serializable
 		this.applicationStatusName = applicationStatusName;
 	}
 
+	protected  Integer applicationTypeId;
+
+	public Integer getApplicationTypeId() {
+		return this.applicationTypeId;
+	}
+
+	public void setApplicationTypeId(Integer applicationTypeId) {
+		this.applicationTypeId = applicationTypeId;
+	}
+
 	protected  String applicationTypeName;
 
 	public String getApplicationTypeName() {
@@ -187,16 +197,6 @@ public class Package implements Serializable
 
 	public void setAppSchemeVersion(Byte appSchemeVersion) {
 		this.appSchemeVersion = appSchemeVersion;
-	}
-
-	protected  Integer assetFileCount;
-
-	public Integer getAssetFileCount() {
-		return this.assetFileCount;
-	}
-
-	public void setAssetFileCount(Integer assetFileCount) {
-		this.assetFileCount = assetFileCount;
 	}
 
 	protected  String attributeNamespace;

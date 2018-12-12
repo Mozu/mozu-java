@@ -24,6 +24,16 @@ public class Category implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected  Integer childCount;
+
+	public Integer getChildCount() {
+		return this.childCount;
+	}
+
+	public void setChildCount(Integer childCount) {
+		this.childCount = childCount;
+	}
+
 	protected  Integer catalogId;
 
 	public Integer getCatalogId() {
@@ -52,16 +62,6 @@ public class Category implements Serializable
 
 	public void setCategoryType(String categoryType) {
 		this.categoryType = categoryType;
-	}
-
-	protected  Integer childCount;
-
-	public Integer getChildCount() {
-		return this.childCount;
-	}
-
-	public void setChildCount(Integer childCount) {
-		this.childCount = childCount;
 	}
 
 	protected  Integer id;

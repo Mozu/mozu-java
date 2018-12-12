@@ -24,6 +24,16 @@ public class Site implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected  String name;
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	protected  Integer catalogId;
 
 	public Integer getCatalogId() {
@@ -82,16 +92,6 @@ public class Site implements Serializable
 
 	public void setLocaleCode(String localeCode) {
 		this.localeCode = localeCode;
-	}
-
-	protected  String name;
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
 	}
 
 	protected  String primaryCustomDomain;

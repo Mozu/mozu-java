@@ -49,6 +49,16 @@ public class CurrencyExchangeRate implements Serializable
 		this.rate = rate;
 	}
 
+	protected  String referenceData;
+
+	public String getReferenceData() {
+		return this.referenceData;
+	}
+
+	public void setReferenceData(String referenceData) {
+		this.referenceData = referenceData;
+	}
+
 	protected  String toCurrencyCode;
 
 	public String getToCurrencyCode() {

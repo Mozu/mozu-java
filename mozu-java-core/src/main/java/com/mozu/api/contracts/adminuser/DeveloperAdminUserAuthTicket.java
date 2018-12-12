@@ -83,6 +83,14 @@ public class DeveloperAdminUserAuthTicket implements Serializable
 		this.refreshTokenExpiration = refreshTokenExpiration;
 	}
 
+	protected List<DeveloperAccount> availableAccounts;
+	public List<DeveloperAccount> getAvailableAccounts() {
+		return this.availableAccounts;
+	}
+	public void setAvailableAccounts(List<DeveloperAccount> availableAccounts) {
+		this.availableAccounts = availableAccounts;
+	}
+
 	protected  DeveloperAccount account;
 
 	public DeveloperAccount getAccount() {
@@ -91,14 +99,6 @@ public class DeveloperAdminUserAuthTicket implements Serializable
 
 	public void setAccount(DeveloperAccount account) {
 		this.account = account;
-	}
-
-	protected List<DeveloperAccount> availableAccounts;
-	public List<DeveloperAccount> getAvailableAccounts() {
-		return this.availableAccounts;
-	}
-	public void setAvailableAccounts(List<DeveloperAccount> availableAccounts) {
-		this.availableAccounts = availableAccounts;
 	}
 
 	protected  UserProfile user;

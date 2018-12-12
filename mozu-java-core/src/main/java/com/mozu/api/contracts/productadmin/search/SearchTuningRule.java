@@ -22,6 +22,24 @@ public class SearchTuningRule implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected List<String> keywords;
+	public List<String> getKeywords() {
+		return this.keywords;
+	}
+	public void setKeywords(List<String> keywords) {
+		this.keywords = keywords;
+	}
+
+	protected  Boolean isDefault;
+
+	public Boolean getIsDefault() {
+		return this.isDefault;
+	}
+
+	public void setIsDefault(Boolean isDefault) {
+		this.isDefault = isDefault;
+	}
+
 	protected  Boolean active;
 
 	public Boolean getActive() {
@@ -66,24 +84,6 @@ public class SearchTuningRule implements Serializable
 	}
 	public void setBoostedProductCodes(List<String> boostedProductCodes) {
 		this.boostedProductCodes = boostedProductCodes;
-	}
-
-	protected  Boolean isDefault;
-
-	public Boolean getIsDefault() {
-		return this.isDefault;
-	}
-
-	public void setIsDefault(Boolean isDefault) {
-		this.isDefault = isDefault;
-	}
-
-	protected List<String> keywords;
-	public List<String> getKeywords() {
-		return this.keywords;
-	}
-	public void setKeywords(List<String> keywords) {
-		this.keywords = keywords;
 	}
 
 	protected  String searchTuningRuleCode;

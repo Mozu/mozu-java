@@ -24,26 +24,6 @@ public class DocumentDraftSummaryPagedCollection implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected  Integer startIndex;
-
-	public Integer getStartIndex() {
-		return this.startIndex;
-	}
-
-	public void setStartIndex(Integer startIndex) {
-		this.startIndex = startIndex;
-	}
-
-	protected  Integer totalCount;
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
 	protected  Integer pageCount;
 
 	public Integer getPageCount() {
@@ -62,6 +42,26 @@ public class DocumentDraftSummaryPagedCollection implements Serializable
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	protected  Integer startIndex;
+
+	public Integer getStartIndex() {
+		return this.startIndex;
+	}
+
+	public void setStartIndex(Integer startIndex) {
+		this.startIndex = startIndex;
+	}
+
+	protected  Integer totalCount;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	protected List<DocumentDraftSummary> items;

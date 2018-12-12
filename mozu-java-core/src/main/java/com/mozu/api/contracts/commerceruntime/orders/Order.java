@@ -193,16 +193,6 @@ public class Order implements Serializable
 		this.customerTaxId = customerTaxId;
 	}
 
-	protected  Boolean isTaxExempt;
-
-	public Boolean getIsTaxExempt() {
-		return this.isTaxExempt;
-	}
-
-	public void setIsTaxExempt(Boolean isTaxExempt) {
-		this.isTaxExempt = isTaxExempt;
-	}
-
 	protected  Double discountedSubtotal;
 
 	public Double getDiscountedSubtotal() {
@@ -433,6 +423,16 @@ public class Order implements Serializable
 
 	public void setIsPartialOrder(Boolean isPartialOrder) {
 		this.isPartialOrder = isPartialOrder;
+	}
+
+	protected  Boolean isTaxExempt;
+
+	public Boolean getIsTaxExempt() {
+		return this.isTaxExempt;
+	}
+
+	public void setIsTaxExempt(Boolean isTaxExempt) {
+		this.isTaxExempt = isTaxExempt;
 	}
 
 	protected  Double itemTaxTotal;

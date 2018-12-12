@@ -21,6 +21,16 @@ public class PickupItem implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected  String optionAttributeFQN;
+
+	public String getOptionAttributeFQN() {
+		return this.optionAttributeFQN;
+	}
+
+	public void setOptionAttributeFQN(String optionAttributeFQN) {
+		this.optionAttributeFQN = optionAttributeFQN;
+	}
+
 	/**
 	 * This specifies the type of fulfillment item.
 	 */
@@ -42,16 +52,6 @@ public class PickupItem implements Serializable
 
 	public void setLineId(Integer lineId) {
 		this.lineId = lineId;
-	}
-
-	protected  String optionAttributeFQN;
-
-	public String getOptionAttributeFQN() {
-		return this.optionAttributeFQN;
-	}
-
-	public void setOptionAttributeFQN(String optionAttributeFQN) {
-		this.optionAttributeFQN = optionAttributeFQN;
 	}
 
 	/**

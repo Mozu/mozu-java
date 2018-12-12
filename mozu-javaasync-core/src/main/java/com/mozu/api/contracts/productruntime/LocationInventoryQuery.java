@@ -20,20 +20,20 @@ public class LocationInventoryQuery implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected List<String> locationCodes;
-	public List<String> getLocationCodes() {
-		return this.locationCodes;
-	}
-	public void setLocationCodes(List<String> locationCodes) {
-		this.locationCodes = locationCodes;
-	}
-
 	protected List<String> productCodes;
 	public List<String> getProductCodes() {
 		return this.productCodes;
 	}
 	public void setProductCodes(List<String> productCodes) {
 		this.productCodes = productCodes;
+	}
+
+	protected List<String> locationCodes;
+	public List<String> getLocationCodes() {
+		return this.locationCodes;
+	}
+	public void setLocationCodes(List<String> locationCodes) {
+		this.locationCodes = locationCodes;
 	}
 
 

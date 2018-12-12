@@ -22,6 +22,26 @@ public class DocumentListType implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected  String scopeType;
+
+	public String getScopeType() {
+		return this.scopeType;
+	}
+
+	public void setScopeType(String scopeType) {
+		this.scopeType = scopeType;
+	}
+
+	protected  Boolean supportsActiveDateRanges;
+
+	public Boolean getSupportsActiveDateRanges() {
+		return this.supportsActiveDateRanges;
+	}
+
+	public void setSupportsActiveDateRanges(Boolean supportsActiveDateRanges) {
+		this.supportsActiveDateRanges = supportsActiveDateRanges;
+	}
+
 	protected  String documentListTypeFQN;
 
 	public String getDocumentListTypeFQN() {
@@ -88,26 +108,6 @@ public class DocumentListType implements Serializable
 
 	public void setNamespace(String namespace) {
 		this.namespace = namespace;
-	}
-
-	protected  String scopeType;
-
-	public String getScopeType() {
-		return this.scopeType;
-	}
-
-	public void setScopeType(String scopeType) {
-		this.scopeType = scopeType;
-	}
-
-	protected  Boolean supportsActiveDateRanges;
-
-	public Boolean getSupportsActiveDateRanges() {
-		return this.supportsActiveDateRanges;
-	}
-
-	public void setSupportsActiveDateRanges(Boolean supportsActiveDateRanges) {
-		this.supportsActiveDateRanges = supportsActiveDateRanges;
 	}
 
 	protected  Boolean supportsPublishing;

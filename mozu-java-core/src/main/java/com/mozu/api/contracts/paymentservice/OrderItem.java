@@ -22,14 +22,14 @@ public class OrderItem implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected  Double taxAmount;
+	protected  String id;
 
-	public Double getTaxAmount() {
-		return this.taxAmount;
+	public String getId() {
+		return this.id;
 	}
 
-	public void setTaxAmount(Double taxAmount) {
-		this.taxAmount = taxAmount;
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	protected  Integer quantity;
@@ -42,14 +42,14 @@ public class OrderItem implements Serializable
 		this.quantity = quantity;
 	}
 
-	protected  String id;
+	protected  Double taxAmount;
 
-	public String getId() {
-		return this.id;
+	public Double getTaxAmount() {
+		return this.taxAmount;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public void setTaxAmount(Double taxAmount) {
+		this.taxAmount = taxAmount;
 	}
 
 	protected  Double totalAmount;
