@@ -47,24 +47,25 @@ public class CustomerContactResource {
 	 */
 	public com.mozu.api.contracts.customer.CustomerContact getAccountContact(Integer accountId, Integer contactId) throws Exception
 	{
-		return getAccountContact( accountId,  contactId,  null);
+		return getAccountContact( accountId,  contactId,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	CustomerContact customercontact = new CustomerContact();
-	 *	CustomerContact customerContact = customercontact.getAccountContact( accountId,  contactId,  responseFields);
+	 *	CustomerContact customerContact = customercontact.getAccountContact( accountId,  contactId,  userId,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param contactId Unique identifer of the customer account contact being updated.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @return com.mozu.api.contracts.customer.CustomerContact
 	 * @see com.mozu.api.contracts.customer.CustomerContact
 	 */
-	public com.mozu.api.contracts.customer.CustomerContact getAccountContact(Integer accountId, Integer contactId, String responseFields) throws Exception
+	public com.mozu.api.contracts.customer.CustomerContact getAccountContact(Integer accountId, Integer contactId, String userId, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.customer.CustomerContact> client = com.mozu.api.clients.commerce.customer.accounts.CustomerContactClient.getAccountContactClient( accountId,  contactId,  responseFields);
+		MozuClient<com.mozu.api.contracts.customer.CustomerContact> client = com.mozu.api.clients.commerce.customer.accounts.CustomerContactClient.getAccountContactClient( accountId,  contactId,  userId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -83,14 +84,14 @@ public class CustomerContactResource {
 	 */
 	public com.mozu.api.contracts.customer.CustomerContactCollection getAccountContacts(Integer accountId) throws Exception
 	{
-		return getAccountContacts( accountId,  null,  null,  null,  null,  null);
+		return getAccountContacts( accountId,  null,  null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	CustomerContact customercontact = new CustomerContact();
-	 *	CustomerContactCollection customerContactCollection = customercontact.getAccountContacts( accountId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 *	CustomerContactCollection customerContactCollection = customercontact.getAccountContacts( accountId,  startIndex,  pageSize,  sortBy,  filter,  userId,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
@@ -98,12 +99,13 @@ public class CustomerContactResource {
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @return com.mozu.api.contracts.customer.CustomerContactCollection
 	 * @see com.mozu.api.contracts.customer.CustomerContactCollection
 	 */
-	public com.mozu.api.contracts.customer.CustomerContactCollection getAccountContacts(Integer accountId, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
+	public com.mozu.api.contracts.customer.CustomerContactCollection getAccountContacts(Integer accountId, Integer startIndex, Integer pageSize, String sortBy, String filter, String userId, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.customer.CustomerContactCollection> client = com.mozu.api.clients.commerce.customer.accounts.CustomerContactClient.getAccountContactsClient( accountId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
+		MozuClient<com.mozu.api.contracts.customer.CustomerContactCollection> client = com.mozu.api.clients.commerce.customer.accounts.CustomerContactClient.getAccountContactsClient( accountId,  startIndex,  pageSize,  sortBy,  filter,  userId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -164,26 +166,27 @@ public class CustomerContactResource {
 	 */
 	public com.mozu.api.contracts.customer.CustomerContact updateAccountContact(com.mozu.api.contracts.customer.CustomerContact contact, Integer accountId, Integer contactId) throws Exception
 	{
-		return updateAccountContact( contact,  accountId,  contactId,  null);
+		return updateAccountContact( contact,  accountId,  contactId,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	CustomerContact customercontact = new CustomerContact();
-	 *	CustomerContact customerContact = customercontact.updateAccountContact( contact,  accountId,  contactId,  responseFields);
+	 *	CustomerContact customerContact = customercontact.updateAccountContact( contact,  accountId,  contactId,  userId,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param contactId Unique identifer of the customer account contact being updated.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @param contact Contact information, including the contact's name, address, phone numbers, email addresses, and company (if supplied). Also indicates whether this is a billing, shipping, or billing and shipping contact.
 	 * @return com.mozu.api.contracts.customer.CustomerContact
 	 * @see com.mozu.api.contracts.customer.CustomerContact
 	 * @see com.mozu.api.contracts.customer.CustomerContact
 	 */
-	public com.mozu.api.contracts.customer.CustomerContact updateAccountContact(com.mozu.api.contracts.customer.CustomerContact contact, Integer accountId, Integer contactId, String responseFields) throws Exception
+	public com.mozu.api.contracts.customer.CustomerContact updateAccountContact(com.mozu.api.contracts.customer.CustomerContact contact, Integer accountId, Integer contactId, String userId, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.customer.CustomerContact> client = com.mozu.api.clients.commerce.customer.accounts.CustomerContactClient.updateAccountContactClient( contact,  accountId,  contactId,  responseFields);
+		MozuClient<com.mozu.api.contracts.customer.CustomerContact> client = com.mozu.api.clients.commerce.customer.accounts.CustomerContactClient.updateAccountContactClient( contact,  accountId,  contactId,  userId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

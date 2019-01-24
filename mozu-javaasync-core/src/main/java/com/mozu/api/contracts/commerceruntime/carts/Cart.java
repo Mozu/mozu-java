@@ -408,7 +408,7 @@ public class Cart implements Serializable
 	}
 
 	/**
-	 * discountThresholdMessages ApiType DOCUMENT_HERE 
+	 * A list of threshold messages to display on Cart page.
 	 */
 	protected List<ThresholdMessage> discountThresholdMessages;
 	public List<ThresholdMessage> getDiscountThresholdMessages() {
@@ -467,7 +467,18 @@ public class Cart implements Serializable
 	}
 
 	/**
-	 * suggestedDiscounts ApiType DOCUMENT_HERE 
+	 * rejectedDiscounts ApiType DOCUMENT_HERE 
+	 */
+	protected List<SuggestedDiscount> rejectedDiscounts;
+	public List<SuggestedDiscount> getRejectedDiscounts() {
+		return this.rejectedDiscounts;
+	}
+	public void setRejectedDiscounts(List<SuggestedDiscount> rejectedDiscounts) {
+		this.rejectedDiscounts = rejectedDiscounts;
+	}
+
+	/**
+	 * Refers to the BOGA discounts that are currently satisfied but whose free item has not yet been added.
 	 */
 	protected List<SuggestedDiscount> suggestedDiscounts;
 	public List<SuggestedDiscount> getSuggestedDiscounts() {

@@ -16,6 +16,7 @@ import com.mozu.api.contracts.core.Contact;
 import com.mozu.api.contracts.commerceruntime.payments.PaymentCard;
 import com.mozu.api.contracts.commerceruntime.payments.CheckPayment;
 import com.mozu.api.contracts.commerceruntime.payments.PurchaseOrderPayment;
+import com.mozu.api.contracts.commerceruntime.payments.PaymentToken;
 
 /**
  *	Properties of the billing information entered for an order during checkout.
@@ -27,7 +28,7 @@ public class BillingInfo implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * customCreditType ApiType DOCUMENT_HERE 
+	 * If StoreCreditType is set to Custom, this field is used to provide the custom name for the payment type.
 	 */
 	protected  String customCreditType;
 
@@ -99,7 +100,7 @@ public class BillingInfo implements Serializable
 	}
 
 	/**
-	 * storeCreditType ApiType DOCUMENT_HERE 
+	 * A payment referring to a store credit or gift card.* StoreCredit* GiftCard* CustomStoreCredit and GiftCard are internally managed by Kibo eComm. Use Custom for externally managed gift cards or reward systems. If Custom is used, provide the name for the custom type in the CustomCreditType field.
 	 */
 	protected  String storeCreditType;
 
@@ -178,6 +179,19 @@ public class BillingInfo implements Serializable
 
 	public void setPurchaseOrder(PurchaseOrderPayment purchaseOrder) {
 		this.purchaseOrder = purchaseOrder;
+	}
+
+	/**
+	 * The token to access billing information.
+	 */
+	protected  PaymentToken token;
+
+	public PaymentToken getToken() {
+		return this.token;
+	}
+
+	public void setToken(PaymentToken token) {
+		this.token = token;
 	}
 
 	private void writeObject(java.io.ObjectOutputStream out) throws IOException {

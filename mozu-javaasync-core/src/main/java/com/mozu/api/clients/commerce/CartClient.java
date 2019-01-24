@@ -233,6 +233,50 @@ public class CartClient {
 	/**
 	 * 
 	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> mozuClient=RejectSuggestedDiscountClient( cartId,  discountId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Cart cart = client.Result();
+	 * </code></pre></p>
+	 * @param cartId Identifier of the cart to delete.
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.carts.Cart>
+	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> rejectSuggestedDiscountClient(String cartId, Integer discountId) throws Exception
+	{
+		return rejectSuggestedDiscountClient( cartId,  discountId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> mozuClient=RejectSuggestedDiscountClient( cartId,  discountId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Cart cart = client.Result();
+	 * </code></pre></p>
+	 * @param cartId Identifier of the cart to delete.
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.carts.Cart>
+	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> rejectSuggestedDiscountClient(String cartId, Integer discountId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.CartUrl.rejectSuggestedDiscountUrl(cartId, discountId, responseFields);
+		String verb = "POST";
+		Class<?> clz = com.mozu.api.contracts.commerceruntime.carts.Cart.class;
+		MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> mozuClient=UpdateCartClient( cart);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();

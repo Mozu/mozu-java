@@ -25,16 +25,16 @@ public class CustomerContactFactory
 
 	public static com.mozu.api.contracts.customer.CustomerContact getAccountContact(ApiContext apiContext, Integer accountId, Integer contactId, int expectedCode) throws Exception
 	{
-		return getAccountContact(apiContext,  accountId,  contactId,  null, expectedCode);
+		return getAccountContact(apiContext,  accountId,  contactId,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.customer.CustomerContact getAccountContact(ApiContext apiContext, Integer accountId, Integer contactId, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.customer.CustomerContact getAccountContact(ApiContext apiContext, Integer accountId, Integer contactId, String userId, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.customer.CustomerContact returnObj = new com.mozu.api.contracts.customer.CustomerContact();
 		CustomerContactResource resource = new CustomerContactResource(apiContext);
 		try
 		{
-			returnObj = resource.getAccountContact( accountId,  contactId,  responseFields);
+			returnObj = resource.getAccountContact( accountId,  contactId,  userId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -50,16 +50,16 @@ public class CustomerContactFactory
 
 	public static com.mozu.api.contracts.customer.CustomerContactCollection getAccountContacts(ApiContext apiContext, Integer accountId, int expectedCode) throws Exception
 	{
-		return getAccountContacts(apiContext,  accountId,  null,  null,  null,  null,  null, expectedCode);
+		return getAccountContacts(apiContext,  accountId,  null,  null,  null,  null,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.customer.CustomerContactCollection getAccountContacts(ApiContext apiContext, Integer accountId, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.customer.CustomerContactCollection getAccountContacts(ApiContext apiContext, Integer accountId, Integer startIndex, Integer pageSize, String sortBy, String filter, String userId, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.customer.CustomerContactCollection returnObj = new com.mozu.api.contracts.customer.CustomerContactCollection();
 		CustomerContactResource resource = new CustomerContactResource(apiContext);
 		try
 		{
-			returnObj = resource.getAccountContacts( accountId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
+			returnObj = resource.getAccountContacts( accountId,  startIndex,  pageSize,  sortBy,  filter,  userId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -100,16 +100,16 @@ public class CustomerContactFactory
 
 	public static com.mozu.api.contracts.customer.CustomerContact updateAccountContact(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerContact contact, Integer accountId, Integer contactId, int expectedCode) throws Exception
 	{
-		return updateAccountContact(apiContext,  contact,  accountId,  contactId,  null, expectedCode);
+		return updateAccountContact(apiContext,  contact,  accountId,  contactId,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.customer.CustomerContact updateAccountContact(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerContact contact, Integer accountId, Integer contactId, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.customer.CustomerContact updateAccountContact(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerContact contact, Integer accountId, Integer contactId, String userId, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.customer.CustomerContact returnObj = new com.mozu.api.contracts.customer.CustomerContact();
 		CustomerContactResource resource = new CustomerContactResource(apiContext);
 		try
 		{
-			returnObj = resource.updateAccountContact( contact,  accountId,  contactId,  responseFields);
+			returnObj = resource.updateAccountContact( contact,  accountId,  contactId,  userId,  responseFields);
 		}
 		catch (ApiException e)
 		{

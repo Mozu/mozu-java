@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Mozu.PaymentService.Extensibility.Contracts.V1.Contact ApiType DOCUMENT_HERE 
+ *	Contains information about the contact for billing
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Contact implements Serializable
@@ -22,7 +22,7 @@ public class Contact implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * country ApiType DOCUMENT_HERE 
+	 * Contains the country for the contact.
 	 */
 	protected  String country;
 
@@ -74,7 +74,7 @@ public class Contact implements Serializable
 	}
 
 	/**
-	 * phone ApiType DOCUMENT_HERE 
+	 * Contains the phone for the contact.
 	 */
 	protected  String phone;
 

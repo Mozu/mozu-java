@@ -42,30 +42,34 @@ public class CustomerAccountUrl
 	}
 
 	/**
-	 * Get Resource Url for GetLoginState
+	 * Get Resource Url for GetAccount
 	 * @param accountId Unique identifier of the customer account.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getLoginStateUrl(Integer accountId, String responseFields)
+	public static MozuUrl getAccountUrl(Integer accountId, String responseFields, String userId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}/loginstate?responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}&userId={userId}?responseFields={responseFields}");
 		formatter.formatUrl("accountId", accountId);
 		formatter.formatUrl("responseFields", responseFields);
+		formatter.formatUrl("userId", userId);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
-	 * Get Resource Url for GetAccount
+	 * Get Resource Url for GetLoginState
 	 * @param accountId Unique identifier of the customer account.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getAccountUrl(Integer accountId, String responseFields)
+	public static MozuUrl getLoginStateUrl(Integer accountId, String responseFields, String userId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}?responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}/loginstate?userId={userId}&responseFields={responseFields}");
 		formatter.formatUrl("accountId", accountId);
 		formatter.formatUrl("responseFields", responseFields);
+		formatter.formatUrl("userId", userId);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
@@ -85,13 +89,15 @@ public class CustomerAccountUrl
 	 * Get Resource Url for ChangePassword
 	 * @param accountId Unique identifier of the customer account.
 	 * @param unlockAccount Specifies whether to unlock the specified customer account.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl changePasswordUrl(Integer accountId, Boolean unlockAccount)
+	public static MozuUrl changePasswordUrl(Integer accountId, Boolean unlockAccount, String userId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}/Change-Password?unlockAccount={unlockAccount}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}/Change-Password?unlockAccount={unlockAccount}&userId={userId}");
 		formatter.formatUrl("accountId", accountId);
 		formatter.formatUrl("unlockAccount", unlockAccount);
+		formatter.formatUrl("userId", userId);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
@@ -124,24 +130,28 @@ public class CustomerAccountUrl
 	/**
 	 * Get Resource Url for SetLoginLocked
 	 * @param accountId Unique identifier of the customer account.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl setLoginLockedUrl(Integer accountId)
+	public static MozuUrl setLoginLockedUrl(Integer accountId, String userId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}/Set-Login-Locked");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}/Set-Login-Locked?userId={userId}");
 		formatter.formatUrl("accountId", accountId);
+		formatter.formatUrl("userId", userId);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for SetPasswordChangeRequired
 	 * @param accountId Unique identifier of the customer account.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl setPasswordChangeRequiredUrl(Integer accountId)
+	public static MozuUrl setPasswordChangeRequiredUrl(Integer accountId, String userId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}/Set-Password-Change-Required");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}/Set-Password-Change-Required?userId={userId}");
 		formatter.formatUrl("accountId", accountId);
+		formatter.formatUrl("userId", userId);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
@@ -215,15 +225,17 @@ public class CustomerAccountUrl
 
 	/**
 	 * Get Resource Url for GetCustomersPurchaseOrderAccounts
+	 * @param accountType 
 	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getCustomersPurchaseOrderAccountsUrl(Integer pageSize, String responseFields, String sortBy, Integer startIndex)
+	public static MozuUrl getCustomersPurchaseOrderAccountsUrl(String accountType, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/purchaseOrderAccounts?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/purchaseOrderAccounts?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&accountType={accountType}&responseFields={responseFields}");
+		formatter.formatUrl("accountType", accountType);
 		formatter.formatUrl("pageSize", pageSize);
 		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("sortBy", sortBy);

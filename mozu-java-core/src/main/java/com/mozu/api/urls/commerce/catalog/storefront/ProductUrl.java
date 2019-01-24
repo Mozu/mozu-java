@@ -16,6 +16,7 @@ public class ProductUrl
 	/**
 	 * Get Resource Url for GetProducts
 	 * @param cursorMark In your first deep paged request, set this parameter to . Then, in all subsequent requests, set this parameter to the subsequent values of  that's returned in each response to continue paging through the results. Continue this pattern until  is null, which signifies the end of the paged results.
+	 * @param defaultSort Sets the default sorting for content. Sort does not use AND in determining the order
 	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
 	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
@@ -24,10 +25,11 @@ public class ProductUrl
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getProductsUrl(String cursorMark, String filter, Integer pageSize, String responseFields, String responseOptions, String sortBy, Integer startIndex)
+	public static MozuUrl getProductsUrl(String cursorMark, String defaultSort, String filter, Integer pageSize, String responseFields, String responseOptions, String sortBy, Integer startIndex)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/storefront/products/?filter={filter}&startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&responseOptions={responseOptions}&cursorMark={cursorMark}&responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/storefront/products/?filter={filter}&startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&responseOptions={responseOptions}&cursorMark={cursorMark}&defaultSort={defaultSort}&responseFields={responseFields}");
 		formatter.formatUrl("cursorMark", cursorMark);
+		formatter.formatUrl("defaultSort", defaultSort);
 		formatter.formatUrl("filter", filter);
 		formatter.formatUrl("pageSize", pageSize);
 		formatter.formatUrl("responseFields", responseFields);
@@ -64,11 +66,12 @@ public class ProductUrl
 	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
 	 * @param supressOutOfStock404 Specifies whether to supress the 404 error when the product is out of stock.
 	 * @param variationProductCode Merchant-created code associated with a specific product variation. Variation product codes maintain an association with the base product code.
+	 * @param variationProductCodeFilter 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getProductUrl(Boolean acceptVariantProductCode, Boolean allowInactive, String productCode, String purchaseLocation, Integer quantity, String responseFields, Boolean skipInventoryCheck, Boolean supressOutOfStock404, String variationProductCode)
+	public static MozuUrl getProductUrl(Boolean acceptVariantProductCode, Boolean allowInactive, String productCode, String purchaseLocation, Integer quantity, String responseFields, Boolean skipInventoryCheck, Boolean supressOutOfStock404, String variationProductCode, String variationProductCodeFilter)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/storefront/products/{productCode}?variationProductCode={variationProductCode}&allowInactive={allowInactive}&skipInventoryCheck={skipInventoryCheck}&supressOutOfStock404={supressOutOfStock404}&quantity={quantity}&acceptVariantProductCode={acceptVariantProductCode}&purchaseLocation={purchaseLocation}&responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/storefront/products/{productCode}?variationProductCode={variationProductCode}&allowInactive={allowInactive}&skipInventoryCheck={skipInventoryCheck}&supressOutOfStock404={supressOutOfStock404}&quantity={quantity}&acceptVariantProductCode={acceptVariantProductCode}&purchaseLocation={purchaseLocation}&variationProductCodeFilter={variationProductCodeFilter}&responseFields={responseFields}");
 		formatter.formatUrl("acceptVariantProductCode", acceptVariantProductCode);
 		formatter.formatUrl("allowInactive", allowInactive);
 		formatter.formatUrl("productCode", productCode);
@@ -78,6 +81,7 @@ public class ProductUrl
 		formatter.formatUrl("skipInventoryCheck", skipInventoryCheck);
 		formatter.formatUrl("supressOutOfStock404", supressOutOfStock404);
 		formatter.formatUrl("variationProductCode", variationProductCode);
+		formatter.formatUrl("variationProductCodeFilter", variationProductCodeFilter);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
@@ -107,17 +111,19 @@ public class ProductUrl
 	 * @param quantity The number of cart items in the shopper's active cart.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
+	 * @param variationProductCodeFilter 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl configuredProductUrl(Boolean includeOptionDetails, String productCode, String purchaseLocation, Integer quantity, String responseFields, Boolean skipInventoryCheck)
+	public static MozuUrl configuredProductUrl(Boolean includeOptionDetails, String productCode, String purchaseLocation, Integer quantity, String responseFields, Boolean skipInventoryCheck, String variationProductCodeFilter)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/storefront/products/{productCode}/configure?includeOptionDetails={includeOptionDetails}&skipInventoryCheck={skipInventoryCheck}&quantity={quantity}&purchaseLocation={purchaseLocation}&responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/storefront/products/{productCode}/configure?includeOptionDetails={includeOptionDetails}&skipInventoryCheck={skipInventoryCheck}&quantity={quantity}&purchaseLocation={purchaseLocation}&variationProductCodeFilter={variationProductCodeFilter}&responseFields={responseFields}");
 		formatter.formatUrl("includeOptionDetails", includeOptionDetails);
 		formatter.formatUrl("productCode", productCode);
 		formatter.formatUrl("purchaseLocation", purchaseLocation);
 		formatter.formatUrl("quantity", quantity);
 		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("skipInventoryCheck", skipInventoryCheck);
+		formatter.formatUrl("variationProductCodeFilter", variationProductCodeFilter);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

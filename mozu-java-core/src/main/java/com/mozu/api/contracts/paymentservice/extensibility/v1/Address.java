@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Mozu.PaymentService.Extensibility.Contracts.V1.Address ApiType DOCUMENT_HERE 
+ *	Contains address information
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Address implements Serializable
@@ -22,7 +22,7 @@ public class Address implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * city ApiType DOCUMENT_HERE 
+	 * An object containing address/city information.
 	 */
 	protected  String city;
 
@@ -35,7 +35,7 @@ public class Address implements Serializable
 	}
 
 	/**
-	 * companyName ApiType DOCUMENT_HERE 
+	 * The company name
 	 */
 	protected  String companyName;
 
@@ -48,7 +48,7 @@ public class Address implements Serializable
 	}
 
 	/**
-	 * country ApiType DOCUMENT_HERE 
+	 * The country
 	 */
 	protected  String country;
 
@@ -61,7 +61,7 @@ public class Address implements Serializable
 	}
 
 	/**
-	 * line1 ApiType DOCUMENT_HERE 
+	 * The first line of the address
 	 */
 	protected  String line1;
 
@@ -74,7 +74,7 @@ public class Address implements Serializable
 	}
 
 	/**
-	 * line2 ApiType DOCUMENT_HERE 
+	 * The second line of the address
 	 */
 	protected  String line2;
 
@@ -87,7 +87,7 @@ public class Address implements Serializable
 	}
 
 	/**
-	 * line3 ApiType DOCUMENT_HERE 
+	 * The third line of the address
 	 */
 	protected  String line3;
 
@@ -100,7 +100,7 @@ public class Address implements Serializable
 	}
 
 	/**
-	 * postalCode ApiType DOCUMENT_HERE 
+	 * The postal code
 	 */
 	protected  String postalCode;
 
@@ -113,7 +113,7 @@ public class Address implements Serializable
 	}
 
 	/**
-	 * state ApiType DOCUMENT_HERE 
+	 * The state
 	 */
 	protected  String state;
 

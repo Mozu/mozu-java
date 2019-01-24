@@ -48,18 +48,18 @@ public class CustomerAccountFactory
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.customer.LoginState getLoginState(ApiContext apiContext, Integer accountId, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.customer.CustomerAccount getAccount(ApiContext apiContext, Integer accountId, int expectedCode) throws Exception
 	{
-		return getLoginState(apiContext,  accountId,  null, expectedCode);
+		return getAccount(apiContext,  accountId,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.customer.LoginState getLoginState(ApiContext apiContext, Integer accountId, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.customer.CustomerAccount getAccount(ApiContext apiContext, Integer accountId, String userId, String responseFields, int expectedCode) throws Exception
 	{
-		com.mozu.api.contracts.customer.LoginState returnObj = new com.mozu.api.contracts.customer.LoginState();
+		com.mozu.api.contracts.customer.CustomerAccount returnObj = new com.mozu.api.contracts.customer.CustomerAccount();
 		CustomerAccountResource resource = new CustomerAccountResource(apiContext);
 		try
 		{
-			returnObj = resource.getLoginState( accountId,  responseFields);
+			returnObj = resource.getAccount( accountId,  userId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -73,18 +73,18 @@ public class CustomerAccountFactory
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.customer.CustomerAccount getAccount(ApiContext apiContext, Integer accountId, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.customer.LoginState getLoginState(ApiContext apiContext, Integer accountId, int expectedCode) throws Exception
 	{
-		return getAccount(apiContext,  accountId,  null, expectedCode);
+		return getLoginState(apiContext,  accountId,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.customer.CustomerAccount getAccount(ApiContext apiContext, Integer accountId, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.customer.LoginState getLoginState(ApiContext apiContext, Integer accountId, String userId, String responseFields, int expectedCode) throws Exception
 	{
-		com.mozu.api.contracts.customer.CustomerAccount returnObj = new com.mozu.api.contracts.customer.CustomerAccount();
+		com.mozu.api.contracts.customer.LoginState returnObj = new com.mozu.api.contracts.customer.LoginState();
 		CustomerAccountResource resource = new CustomerAccountResource(apiContext);
 		try
 		{
-			returnObj = resource.getAccount( accountId,  responseFields);
+			returnObj = resource.getLoginState( accountId,  userId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -125,15 +125,15 @@ public class CustomerAccountFactory
 
 	public static void changePassword(ApiContext apiContext, com.mozu.api.contracts.customer.PasswordInfo passwordInfo, Integer accountId, int expectedCode) throws Exception
 	{
-		changePassword(apiContext,  passwordInfo,  accountId,  null, expectedCode);
+		changePassword(apiContext,  passwordInfo,  accountId,  null,  null, expectedCode);
 	}
 
-	public static void changePassword(ApiContext apiContext, com.mozu.api.contracts.customer.PasswordInfo passwordInfo, Integer accountId, Boolean unlockAccount, int expectedCode) throws Exception
+	public static void changePassword(ApiContext apiContext, com.mozu.api.contracts.customer.PasswordInfo passwordInfo, Integer accountId, Boolean unlockAccount, String userId, int expectedCode) throws Exception
 	{
 		CustomerAccountResource resource = new CustomerAccountResource(apiContext);
 		try
 		{
-			resource.changePassword( passwordInfo,  accountId,  unlockAccount);
+			resource.changePassword( passwordInfo,  accountId,  unlockAccount,  userId);
 		}
 		catch (ApiException e)
 		{
@@ -191,10 +191,15 @@ public class CustomerAccountFactory
 
 	public static void setLoginLocked(ApiContext apiContext, Boolean isLocked, Integer accountId, int expectedCode) throws Exception
 	{
+		setLoginLocked(apiContext,  isLocked,  accountId,  null, expectedCode);
+	}
+
+	public static void setLoginLocked(ApiContext apiContext, Boolean isLocked, Integer accountId, String userId, int expectedCode) throws Exception
+	{
 		CustomerAccountResource resource = new CustomerAccountResource(apiContext);
 		try
 		{
-			resource.setLoginLocked( isLocked,  accountId);
+			resource.setLoginLocked( isLocked,  accountId,  userId);
 		}
 		catch (ApiException e)
 		{
@@ -209,10 +214,15 @@ public class CustomerAccountFactory
 
 	public static void setPasswordChangeRequired(ApiContext apiContext, Boolean isPasswordChangeRequired, Integer accountId, int expectedCode) throws Exception
 	{
+		setPasswordChangeRequired(apiContext,  isPasswordChangeRequired,  accountId,  null, expectedCode);
+	}
+
+	public static void setPasswordChangeRequired(ApiContext apiContext, Boolean isPasswordChangeRequired, Integer accountId, String userId, int expectedCode) throws Exception
+	{
 		CustomerAccountResource resource = new CustomerAccountResource(apiContext);
 		try
 		{
-			resource.setPasswordChangeRequired( isPasswordChangeRequired,  accountId);
+			resource.setPasswordChangeRequired( isPasswordChangeRequired,  accountId,  userId);
 		}
 		catch (ApiException e)
 		{
@@ -352,16 +362,16 @@ public class CustomerAccountFactory
 
 	public static com.mozu.api.contracts.customer.CustomerPurchaseOrderAccountCollection getCustomersPurchaseOrderAccounts(ApiContext apiContext, int expectedCode) throws Exception
 	{
-		return getCustomersPurchaseOrderAccounts(apiContext,  null,  null,  null,  null, expectedCode);
+		return getCustomersPurchaseOrderAccounts(apiContext,  null,  null,  null,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.customer.CustomerPurchaseOrderAccountCollection getCustomersPurchaseOrderAccounts(ApiContext apiContext, Integer startIndex, Integer pageSize, String sortBy, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.customer.CustomerPurchaseOrderAccountCollection getCustomersPurchaseOrderAccounts(ApiContext apiContext, Integer startIndex, Integer pageSize, String sortBy, String accountType, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.customer.CustomerPurchaseOrderAccountCollection returnObj = new com.mozu.api.contracts.customer.CustomerPurchaseOrderAccountCollection();
 		CustomerAccountResource resource = new CustomerAccountResource(apiContext);
 		try
 		{
-			returnObj = resource.getCustomersPurchaseOrderAccounts( startIndex,  pageSize,  sortBy,  responseFields);
+			returnObj = resource.getCustomersPurchaseOrderAccounts( startIndex,  pageSize,  sortBy,  accountType,  responseFields);
 		}
 		catch (ApiException e)
 		{

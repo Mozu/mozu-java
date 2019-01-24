@@ -209,6 +209,43 @@ public class CartResource {
 	 * 
 	 * <p><pre><code>
 	 *	Cart cart = new Cart();
+	 *	Cart cart = cart.rejectSuggestedDiscount( cartId,  discountId);
+	 * </code></pre></p>
+	 * @param cartId Identifier of the cart to delete.
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
+	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
+	 */
+	public com.mozu.api.contracts.commerceruntime.carts.Cart rejectSuggestedDiscount(String cartId, Integer discountId) throws Exception
+	{
+		return rejectSuggestedDiscount( cartId,  discountId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Cart cart = new Cart();
+	 *	Cart cart = cart.rejectSuggestedDiscount( cartId,  discountId,  responseFields);
+	 * </code></pre></p>
+	 * @param cartId Identifier of the cart to delete.
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
+	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
+	 */
+	public com.mozu.api.contracts.commerceruntime.carts.Cart rejectSuggestedDiscount(String cartId, Integer discountId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> client = com.mozu.api.clients.commerce.CartClient.rejectSuggestedDiscountClient( cartId,  discountId,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Cart cart = new Cart();
 	 *	Cart cart = cart.updateCart( cart);
 	 * </code></pre></p>
 	 * @param cart Properties of a shopping cart.

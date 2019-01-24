@@ -346,6 +346,19 @@ public class Wishlist implements Serializable
 		this.typeTag = typeTag;
 	}
 
+	/**
+	 * Unique identifier of the customer account (shopper or system user). System-supplied and read-only. If the shopper user is anonymous, the user ID represents a system-generated user ID string.
+	 */
+	protected  String userId;
+
+	public String getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
 	protected  String version;
 
 	public String getVersion() {
@@ -408,7 +421,7 @@ public class Wishlist implements Serializable
 	}
 
 	/**
-	 * discountThresholdMessages ApiType DOCUMENT_HERE 
+	 * A list of threshold messages to display on the Wishlist page.
 	 */
 	protected List<ThresholdMessage> discountThresholdMessages;
 	public List<ThresholdMessage> getDiscountThresholdMessages() {
@@ -456,7 +469,18 @@ public class Wishlist implements Serializable
 	}
 
 	/**
-	 * suggestedDiscounts ApiType DOCUMENT_HERE 
+	 * rejectedDiscounts ApiType DOCUMENT_HERE 
+	 */
+	protected List<SuggestedDiscount> rejectedDiscounts;
+	public List<SuggestedDiscount> getRejectedDiscounts() {
+		return this.rejectedDiscounts;
+	}
+	public void setRejectedDiscounts(List<SuggestedDiscount> rejectedDiscounts) {
+		this.rejectedDiscounts = rejectedDiscounts;
+	}
+
+	/**
+	 * Refers to the BOGA discounts that are currently satisfied but whose free item has not yet been added.
 	 */
 	protected List<SuggestedDiscount> suggestedDiscounts;
 	public List<SuggestedDiscount> getSuggestedDiscounts() {

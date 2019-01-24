@@ -14,7 +14,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productadmin.StackingConfiguration;
 
 /**
- *	Mozu.ProductAdmin.Contracts.DiscountSettings ApiType DOCUMENT_HERE 
+ *	Indicates if the stacking is enabled for a specific catalog, here you can set the stacking configuration.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DiscountSettings implements Serializable
@@ -23,7 +23,7 @@ public class DiscountSettings implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * stackingConfiguration ApiType DOCUMENT_HERE 
+	 * Where we can enable stacking and indicate how many layers we want to use for line item/order discounts.
 	 */
 	protected  StackingConfiguration stackingConfiguration;
 

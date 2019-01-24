@@ -51,6 +51,9 @@ public class RateRequest implements Serializable
 		this.estimatedShipmentDate = estimatedShipmentDate;
 	}
 
+	/**
+	 * The total fee for shipment handling.
+	 */
 	protected  Double handlingTotal;
 
 	public Double getHandlingTotal() {

@@ -49,7 +49,7 @@ public class CustomerAttributeResource {
 	 */
 	public com.mozu.api.contracts.customer.CustomerAttribute getAccountAttribute(Integer accountId, String attributeFQN) throws Exception
 	{
-		return getAccountAttribute( accountId,  attributeFQN,  null);
+		return getAccountAttribute( accountId,  attributeFQN,  null,  null);
 	}
 
 	/**
@@ -66,24 +66,25 @@ public class CustomerAttributeResource {
 	 */
 	public CountDownLatch getAccountAttributeAsync(Integer accountId, String attributeFQN, AsyncCallback<com.mozu.api.contracts.customer.CustomerAttribute> callback) throws Exception
 	{
-		return getAccountAttributeAsync( accountId,  attributeFQN,  null, callback);
+		return getAccountAttributeAsync( accountId,  attributeFQN,  null,  null, callback);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	CustomerAttribute customerattribute = new CustomerAttribute();
-	 *	CustomerAttribute customerAttribute = customerattribute.getAccountAttribute( accountId,  attributeFQN,  responseFields);
+	 *	CustomerAttribute customerAttribute = customerattribute.getAccountAttribute( accountId,  attributeFQN,  userId,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @return com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
 	 */
-	public com.mozu.api.contracts.customer.CustomerAttribute getAccountAttribute(Integer accountId, String attributeFQN, String responseFields) throws Exception
+	public com.mozu.api.contracts.customer.CustomerAttribute getAccountAttribute(Integer accountId, String attributeFQN, String userId, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.customer.CustomerAttribute> client = com.mozu.api.clients.commerce.customer.accounts.CustomerAttributeClient.getAccountAttributeClient( accountId,  attributeFQN,  responseFields);
+		MozuClient<com.mozu.api.contracts.customer.CustomerAttribute> client = com.mozu.api.clients.commerce.customer.accounts.CustomerAttributeClient.getAccountAttributeClient( accountId,  attributeFQN,  userId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -94,18 +95,19 @@ public class CustomerAttributeResource {
 	 * 
 	 * <p><pre><code>
 	 *	CustomerAttribute customerattribute = new CustomerAttribute();
-	 *	CountDownLatch latch = customerattribute.getAccountAttribute( accountId,  attributeFQN,  responseFields, callback );
+	 *	CountDownLatch latch = customerattribute.getAccountAttribute( accountId,  attributeFQN,  userId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
 	 */
-	public CountDownLatch getAccountAttributeAsync(Integer accountId, String attributeFQN, String responseFields, AsyncCallback<com.mozu.api.contracts.customer.CustomerAttribute> callback) throws Exception
+	public CountDownLatch getAccountAttributeAsync(Integer accountId, String attributeFQN, String userId, String responseFields, AsyncCallback<com.mozu.api.contracts.customer.CustomerAttribute> callback) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.customer.CustomerAttribute> client = com.mozu.api.clients.commerce.customer.accounts.CustomerAttributeClient.getAccountAttributeClient( accountId,  attributeFQN,  responseFields);
+		MozuClient<com.mozu.api.contracts.customer.CustomerAttribute> client = com.mozu.api.clients.commerce.customer.accounts.CustomerAttributeClient.getAccountAttributeClient( accountId,  attributeFQN,  userId,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 
@@ -123,7 +125,7 @@ public class CustomerAttributeResource {
 	 */
 	public com.mozu.api.contracts.customer.CustomerAttributeCollection getAccountAttributes(Integer accountId) throws Exception
 	{
-		return getAccountAttributes( accountId,  null,  null,  null,  null,  null);
+		return getAccountAttributes( accountId,  null,  null,  null,  null,  null,  null);
 	}
 
 	/**
@@ -139,14 +141,14 @@ public class CustomerAttributeResource {
 	 */
 	public CountDownLatch getAccountAttributesAsync(Integer accountId, AsyncCallback<com.mozu.api.contracts.customer.CustomerAttributeCollection> callback) throws Exception
 	{
-		return getAccountAttributesAsync( accountId,  null,  null,  null,  null,  null, callback);
+		return getAccountAttributesAsync( accountId,  null,  null,  null,  null,  null,  null, callback);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	CustomerAttribute customerattribute = new CustomerAttribute();
-	 *	CustomerAttributeCollection customerAttributeCollection = customerattribute.getAccountAttributes( accountId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 *	CustomerAttributeCollection customerAttributeCollection = customerattribute.getAccountAttributes( accountId,  startIndex,  pageSize,  sortBy,  filter,  userId,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
@@ -154,12 +156,13 @@ public class CustomerAttributeResource {
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @return com.mozu.api.contracts.customer.CustomerAttributeCollection
 	 * @see com.mozu.api.contracts.customer.CustomerAttributeCollection
 	 */
-	public com.mozu.api.contracts.customer.CustomerAttributeCollection getAccountAttributes(Integer accountId, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
+	public com.mozu.api.contracts.customer.CustomerAttributeCollection getAccountAttributes(Integer accountId, Integer startIndex, Integer pageSize, String sortBy, String filter, String userId, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.customer.CustomerAttributeCollection> client = com.mozu.api.clients.commerce.customer.accounts.CustomerAttributeClient.getAccountAttributesClient( accountId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
+		MozuClient<com.mozu.api.contracts.customer.CustomerAttributeCollection> client = com.mozu.api.clients.commerce.customer.accounts.CustomerAttributeClient.getAccountAttributesClient( accountId,  startIndex,  pageSize,  sortBy,  filter,  userId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -170,7 +173,7 @@ public class CustomerAttributeResource {
 	 * 
 	 * <p><pre><code>
 	 *	CustomerAttribute customerattribute = new CustomerAttribute();
-	 *	CountDownLatch latch = customerattribute.getAccountAttributes( accountId,  startIndex,  pageSize,  sortBy,  filter,  responseFields, callback );
+	 *	CountDownLatch latch = customerattribute.getAccountAttributes( accountId,  startIndex,  pageSize,  sortBy,  filter,  userId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
@@ -178,13 +181,14 @@ public class CustomerAttributeResource {
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.CustomerAttributeCollection
 	 * @see com.mozu.api.contracts.customer.CustomerAttributeCollection
 	 */
-	public CountDownLatch getAccountAttributesAsync(Integer accountId, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, AsyncCallback<com.mozu.api.contracts.customer.CustomerAttributeCollection> callback) throws Exception
+	public CountDownLatch getAccountAttributesAsync(Integer accountId, Integer startIndex, Integer pageSize, String sortBy, String filter, String userId, String responseFields, AsyncCallback<com.mozu.api.contracts.customer.CustomerAttributeCollection> callback) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.customer.CustomerAttributeCollection> client = com.mozu.api.clients.commerce.customer.accounts.CustomerAttributeClient.getAccountAttributesClient( accountId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
+		MozuClient<com.mozu.api.contracts.customer.CustomerAttributeCollection> client = com.mozu.api.clients.commerce.customer.accounts.CustomerAttributeClient.getAccountAttributesClient( accountId,  startIndex,  pageSize,  sortBy,  filter,  userId,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 
@@ -204,7 +208,7 @@ public class CustomerAttributeResource {
 	 */
 	public com.mozu.api.contracts.customer.CustomerAttribute addAccountAttribute(com.mozu.api.contracts.customer.CustomerAttribute attribute, Integer accountId) throws Exception
 	{
-		return addAccountAttribute( attribute,  accountId,  null);
+		return addAccountAttribute( attribute,  accountId,  null,  null);
 	}
 
 	/**
@@ -222,25 +226,26 @@ public class CustomerAttributeResource {
 	 */
 	public CountDownLatch addAccountAttributeAsync(com.mozu.api.contracts.customer.CustomerAttribute attribute, Integer accountId, AsyncCallback<com.mozu.api.contracts.customer.CustomerAttribute> callback) throws Exception
 	{
-		return addAccountAttributeAsync( attribute,  accountId,  null, callback);
+		return addAccountAttributeAsync( attribute,  accountId,  null,  null, callback);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	CustomerAttribute customerattribute = new CustomerAttribute();
-	 *	CustomerAttribute customerAttribute = customerattribute.addAccountAttribute( attribute,  accountId,  responseFields);
+	 *	CustomerAttribute customerAttribute = customerattribute.addAccountAttribute( attribute,  accountId,  userId,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @param attribute Properties of an attribute associated with a customer account.
 	 * @return com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
 	 */
-	public com.mozu.api.contracts.customer.CustomerAttribute addAccountAttribute(com.mozu.api.contracts.customer.CustomerAttribute attribute, Integer accountId, String responseFields) throws Exception
+	public com.mozu.api.contracts.customer.CustomerAttribute addAccountAttribute(com.mozu.api.contracts.customer.CustomerAttribute attribute, Integer accountId, String userId, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.customer.CustomerAttribute> client = com.mozu.api.clients.commerce.customer.accounts.CustomerAttributeClient.addAccountAttributeClient( attribute,  accountId,  responseFields);
+		MozuClient<com.mozu.api.contracts.customer.CustomerAttribute> client = com.mozu.api.clients.commerce.customer.accounts.CustomerAttributeClient.addAccountAttributeClient( attribute,  accountId,  userId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -251,19 +256,20 @@ public class CustomerAttributeResource {
 	 * 
 	 * <p><pre><code>
 	 *	CustomerAttribute customerattribute = new CustomerAttribute();
-	 *	CountDownLatch latch = customerattribute.addAccountAttribute( attribute,  accountId,  responseFields, callback );
+	 *	CountDownLatch latch = customerattribute.addAccountAttribute( attribute,  accountId,  userId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param attribute Properties of an attribute associated with a customer account.
 	 * @return com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
 	 */
-	public CountDownLatch addAccountAttributeAsync(com.mozu.api.contracts.customer.CustomerAttribute attribute, Integer accountId, String responseFields, AsyncCallback<com.mozu.api.contracts.customer.CustomerAttribute> callback) throws Exception
+	public CountDownLatch addAccountAttributeAsync(com.mozu.api.contracts.customer.CustomerAttribute attribute, Integer accountId, String userId, String responseFields, AsyncCallback<com.mozu.api.contracts.customer.CustomerAttribute> callback) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.customer.CustomerAttribute> client = com.mozu.api.clients.commerce.customer.accounts.CustomerAttributeClient.addAccountAttributeClient( attribute,  accountId,  responseFields);
+		MozuClient<com.mozu.api.contracts.customer.CustomerAttribute> client = com.mozu.api.clients.commerce.customer.accounts.CustomerAttributeClient.addAccountAttributeClient( attribute,  accountId,  userId,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 
@@ -284,7 +290,7 @@ public class CustomerAttributeResource {
 	 */
 	public com.mozu.api.contracts.customer.CustomerAttribute updateAccountAttribute(com.mozu.api.contracts.customer.CustomerAttribute attribute, Integer accountId, String attributeFQN) throws Exception
 	{
-		return updateAccountAttribute( attribute,  accountId,  attributeFQN,  null);
+		return updateAccountAttribute( attribute,  accountId,  attributeFQN,  null,  null);
 	}
 
 	/**
@@ -303,26 +309,27 @@ public class CustomerAttributeResource {
 	 */
 	public CountDownLatch updateAccountAttributeAsync(com.mozu.api.contracts.customer.CustomerAttribute attribute, Integer accountId, String attributeFQN, AsyncCallback<com.mozu.api.contracts.customer.CustomerAttribute> callback) throws Exception
 	{
-		return updateAccountAttributeAsync( attribute,  accountId,  attributeFQN,  null, callback);
+		return updateAccountAttributeAsync( attribute,  accountId,  attributeFQN,  null,  null, callback);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	CustomerAttribute customerattribute = new CustomerAttribute();
-	 *	CustomerAttribute customerAttribute = customerattribute.updateAccountAttribute( attribute,  accountId,  attributeFQN,  responseFields);
+	 *	CustomerAttribute customerAttribute = customerattribute.updateAccountAttribute( attribute,  accountId,  attributeFQN,  userId,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @param attribute Properties of an attribute associated with a customer account.
 	 * @return com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
 	 */
-	public com.mozu.api.contracts.customer.CustomerAttribute updateAccountAttribute(com.mozu.api.contracts.customer.CustomerAttribute attribute, Integer accountId, String attributeFQN, String responseFields) throws Exception
+	public com.mozu.api.contracts.customer.CustomerAttribute updateAccountAttribute(com.mozu.api.contracts.customer.CustomerAttribute attribute, Integer accountId, String attributeFQN, String userId, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.customer.CustomerAttribute> client = com.mozu.api.clients.commerce.customer.accounts.CustomerAttributeClient.updateAccountAttributeClient( attribute,  accountId,  attributeFQN,  responseFields);
+		MozuClient<com.mozu.api.contracts.customer.CustomerAttribute> client = com.mozu.api.clients.commerce.customer.accounts.CustomerAttributeClient.updateAccountAttributeClient( attribute,  accountId,  attributeFQN,  userId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -333,20 +340,21 @@ public class CustomerAttributeResource {
 	 * 
 	 * <p><pre><code>
 	 *	CustomerAttribute customerattribute = new CustomerAttribute();
-	 *	CountDownLatch latch = customerattribute.updateAccountAttribute( attribute,  accountId,  attributeFQN,  responseFields, callback );
+	 *	CountDownLatch latch = customerattribute.updateAccountAttribute( attribute,  accountId,  attributeFQN,  userId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param attribute Properties of an attribute associated with a customer account.
 	 * @return com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
 	 */
-	public CountDownLatch updateAccountAttributeAsync(com.mozu.api.contracts.customer.CustomerAttribute attribute, Integer accountId, String attributeFQN, String responseFields, AsyncCallback<com.mozu.api.contracts.customer.CustomerAttribute> callback) throws Exception
+	public CountDownLatch updateAccountAttributeAsync(com.mozu.api.contracts.customer.CustomerAttribute attribute, Integer accountId, String attributeFQN, String userId, String responseFields, AsyncCallback<com.mozu.api.contracts.customer.CustomerAttribute> callback) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.customer.CustomerAttribute> client = com.mozu.api.clients.commerce.customer.accounts.CustomerAttributeClient.updateAccountAttributeClient( attribute,  accountId,  attributeFQN,  responseFields);
+		MozuClient<com.mozu.api.contracts.customer.CustomerAttribute> client = com.mozu.api.clients.commerce.customer.accounts.CustomerAttributeClient.updateAccountAttributeClient( attribute,  accountId,  attributeFQN,  userId,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 
@@ -364,7 +372,23 @@ public class CustomerAttributeResource {
 	 */
 	public void deleteAccountAttribute(Integer accountId, String attributeFQN) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.commerce.customer.accounts.CustomerAttributeClient.deleteAccountAttributeClient( accountId,  attributeFQN);
+		deleteAccountAttribute( accountId,  attributeFQN,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CustomerAttribute customerattribute = new CustomerAttribute();
+	 *	customerattribute.deleteAccountAttribute( accountId,  attributeFQN,  userId);
+	 * </code></pre></p>
+	 * @param accountId Unique identifier of the customer account.
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
+	 * @return 
+	 */
+	public void deleteAccountAttribute(Integer accountId, String attributeFQN, String userId) throws Exception
+	{
+		MozuClient client = com.mozu.api.clients.commerce.customer.accounts.CustomerAttributeClient.deleteAccountAttributeClient( accountId,  attributeFQN,  userId);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		client.cleanupHttpConnection();

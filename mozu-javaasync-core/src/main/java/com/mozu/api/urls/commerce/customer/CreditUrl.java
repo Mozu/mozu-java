@@ -50,12 +50,14 @@ public class CreditUrl
 	/**
 	 * Get Resource Url for AddCredit
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl addCreditUrl(String responseFields)
+	public static MozuUrl addCreditUrl(String responseFields, String userId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/credits/?responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/credits/?userId={userId}&responseFields={responseFields}");
 		formatter.formatUrl("responseFields", responseFields);
+		formatter.formatUrl("userId", userId);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
@@ -76,12 +78,14 @@ public class CreditUrl
 	/**
 	 * Get Resource Url for ResendCreditCreatedEmail
 	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl resendCreditCreatedEmailUrl(String code)
+	public static MozuUrl resendCreditCreatedEmailUrl(String code, String userId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/credits/{code}/Resend-Email");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/credits/{code}/Resend-Email?userId={userId}");
 		formatter.formatUrl("code", code);
+		formatter.formatUrl("userId", userId);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

@@ -73,6 +73,29 @@ public class CartItemFactory
 		return returnObj;
 	}
 
+	public static void addItemsToCart(ApiContext apiContext, List<com.mozu.api.contracts.commerceruntime.carts.CartItem> cartItems, int expectedCode) throws Exception
+	{
+		addItemsToCart(apiContext,  cartItems,  null, expectedCode);
+	}
+
+	public static void addItemsToCart(ApiContext apiContext, List<com.mozu.api.contracts.commerceruntime.carts.CartItem> cartItems, Boolean throwErrorOnInvalidItems, int expectedCode) throws Exception
+	{
+		CartItemResource resource = new CartItemResource(apiContext);
+		try
+		{
+			resource.addItemsToCart( cartItems,  throwErrorOnInvalidItems);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+	}
+
 	public static com.mozu.api.contracts.commerceruntime.carts.CartItem addItemToCart(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.carts.CartItem cartItem, int expectedCode) throws Exception
 	{
 		return addItemToCart(apiContext,  cartItem,  null, expectedCode);

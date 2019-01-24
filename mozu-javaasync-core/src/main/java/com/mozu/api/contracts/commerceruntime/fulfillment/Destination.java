@@ -49,7 +49,7 @@ public class Destination implements Serializable
 	}
 
 	/**
-	 * data ApiType DOCUMENT_HERE 
+	 * A data bag that merchants can use for storing custom data. This one is tied to the associated destination.
 	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode data;
 

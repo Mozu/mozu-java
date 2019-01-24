@@ -25,9 +25,6 @@ public class Discount implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * amount ApiType DOCUMENT_HERE 
-	 */
 	protected  Double amount;
 
 	public Double getAmount() {
@@ -62,7 +59,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * doesNotApplyToMultiShipToOrders ApiType DOCUMENT_HERE 
+	 * True if the discount should not apply to orders with multiple shipments. For more information, refer to the topic on [multiple shipments](https://www.mozu.com/docs/Guides/orders/multi-ship.htm#effect_on_discounts).
 	 */
 	protected  Boolean doesNotApplyToMultiShipToOrders;
 
@@ -75,7 +72,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * doesNotApplyToProductsWithSalePrice ApiType DOCUMENT_HERE 
+	 * Determines whether or not a discount applies to a items with a sale price. Applicable on order and line item discounts. For line items, when this is true, the discount will be disqualified. For order level discounts, when true, the discount will not be applied to those items have a sale price.
 	 */
 	protected  Boolean doesNotApplyToProductsWithSalePrice;
 
@@ -111,7 +108,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * includedPriceLists ApiType DOCUMENT_HERE 
+	 * Products receiving a price from a price list specified here or a child of a specified price list can be discounted.
 	 */
 	protected List<String> includedPriceLists;
 	public List<String> getIncludedPriceLists() {
@@ -122,7 +119,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * maxDiscountValuePerRedemption ApiType DOCUMENT_HERE 
+	 * The maximum amount of savings that may be applied per each redemption of this discount.
 	 */
 	protected  Double maxDiscountValuePerRedemption;
 
@@ -135,7 +132,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * maximumDiscountValuePerOrder ApiType DOCUMENT_HERE 
+	 * The maximum amount of discount savings that may be applied per order.
 	 */
 	protected  Double maximumDiscountValuePerOrder;
 
@@ -148,7 +145,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * maximumRedemptionsPerOrder ApiType DOCUMENT_HERE 
+	 * Maximum number of redemptions allowed per order. If null, defaults to unlimited.
 	 */
 	protected  Integer maximumRedemptionsPerOrder;
 
@@ -161,7 +158,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * maximumUsesPerUser ApiType DOCUMENT_HERE 
+	 * The maximum number of times an individual shopper can redeem the discount.
 	 */
 	protected  Integer maximumUsesPerUser;
 
@@ -174,7 +171,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * maxRedemptions ApiType DOCUMENT_HERE 
+	 * The maximum number of times any coupon code in the coupon set can be used. This value must be either null, greater than or equal to 1, or -1. A value of -1 indicates unlimited.If you leave this value null,  defaults this value to 1 when you create the coupon set.
 	 */
 	protected  Integer maxRedemptions;
 
@@ -196,9 +193,6 @@ public class Discount implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * redemptions ApiType DOCUMENT_HERE 
-	 */
 	protected  Integer redemptions;
 
 	public Integer getRedemptions() {
@@ -210,7 +204,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * requiresAuthenticatedUser ApiType DOCUMENT_HERE 
+	 * If true, only authenticated users can redeem the discount. If false, anonymous users can redeem the discount.
 	 */
 	protected  Boolean requiresAuthenticatedUser;
 
@@ -223,7 +217,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * scope ApiType DOCUMENT_HERE 
+	 * The scope to which the discount applies, which is "Order" for order discounts or "LineItem" for individual product discounts.
 	 */
 	protected  String scope;
 
@@ -236,7 +230,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * stackingLayer ApiType DOCUMENT_HERE 
+	 * Numerical fieldÂ representing the number of discount layer (up to 3).
 	 */
 	protected  Integer stackingLayer;
 
@@ -248,9 +242,6 @@ public class Discount implements Serializable
 		this.stackingLayer = stackingLayer;
 	}
 
-	/**
-	 * type ApiType DOCUMENT_HERE 
-	 */
 	protected  String type;
 
 	public String getType() {
@@ -262,7 +253,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * condition ApiType DOCUMENT_HERE 
+	 * A condition that must be met for the discount to apply.
 	 */
 	protected  DiscountCondition condition;
 

@@ -148,6 +148,31 @@ public class CartFactory
 		return returnObj;
 	}
 
+	public static com.mozu.api.contracts.commerceruntime.carts.Cart rejectSuggestedDiscount(ApiContext apiContext, String cartId, Integer discountId, int expectedCode) throws Exception
+	{
+		return rejectSuggestedDiscount(apiContext,  cartId,  discountId,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.carts.Cart rejectSuggestedDiscount(ApiContext apiContext, String cartId, Integer discountId, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.commerceruntime.carts.Cart returnObj = new com.mozu.api.contracts.commerceruntime.carts.Cart();
+		CartResource resource = new CartResource(apiContext);
+		try
+		{
+			returnObj = resource.rejectSuggestedDiscount( cartId,  discountId,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
 	public static com.mozu.api.contracts.commerceruntime.carts.Cart updateCart(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.carts.Cart cart, int expectedCode) throws Exception
 	{
 		return updateCart(apiContext,  cart,  null, expectedCode);

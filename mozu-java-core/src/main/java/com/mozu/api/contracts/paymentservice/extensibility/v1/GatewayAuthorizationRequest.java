@@ -14,9 +14,10 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.paymentservice.extensibility.v1.CardInformation;
 import com.mozu.api.contracts.paymentservice.extensibility.v1.AdapterContext;
 import com.mozu.api.contracts.paymentservice.extensibility.v1.CustomerInformation;
+import com.mozu.api.contracts.paymentservice.extensibility.v1.PaymentToken;
 
 /**
- *	Mozu.PaymentService.Extensibility.Contracts.V1.GatewayAuthorizationRequest ApiType DOCUMENT_HERE 
+ *	Contains an authorization request
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class GatewayAuthorizationRequest implements Serializable
@@ -25,20 +26,7 @@ public class GatewayAuthorizationRequest implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * additionalData ApiType DOCUMENT_HERE 
-	 */
-	protected  Object additionalData;
-
-	public Object getAdditionalData() {
-		return this.additionalData;
-	}
-
-	public void setAdditionalData(Object additionalData) {
-		this.additionalData = additionalData;
-	}
-
-	/**
-	 * amount ApiType DOCUMENT_HERE 
+	 * Contains the amount to authorize.
 	 */
 	protected  Double amount;
 
@@ -51,7 +39,7 @@ public class GatewayAuthorizationRequest implements Serializable
 	}
 
 	/**
-	 * apiVersion ApiType DOCUMENT_HERE 
+	 * The api version of the call.
 	 */
 	protected  String apiVersion;
 
@@ -64,7 +52,7 @@ public class GatewayAuthorizationRequest implements Serializable
 	}
 
 	/**
-	 * methodName ApiType DOCUMENT_HERE 
+	 * The method name being called on the connector.
 	 */
 	protected  String methodName;
 
@@ -77,7 +65,7 @@ public class GatewayAuthorizationRequest implements Serializable
 	}
 
 	/**
-	 * preAuth ApiType DOCUMENT_HERE 
+	 * Indicates whether the request is pre-auth or not.
 	 */
 	protected  Boolean preAuth;
 
@@ -90,7 +78,7 @@ public class GatewayAuthorizationRequest implements Serializable
 	}
 
 	/**
-	 * recurringType ApiType DOCUMENT_HERE 
+	 * Indicates whether the request is recurring or not.
 	 */
 	protected  String recurringType;
 
@@ -103,7 +91,7 @@ public class GatewayAuthorizationRequest implements Serializable
 	}
 
 	/**
-	 * card ApiType DOCUMENT_HERE 
+	 * CardInformation object containing the card information.
 	 */
 	protected  CardInformation card;
 
@@ -116,7 +104,7 @@ public class GatewayAuthorizationRequest implements Serializable
 	}
 
 	/**
-	 * context ApiType DOCUMENT_HERE 
+	 * The AdapterContext information.
 	 */
 	protected  AdapterContext context;
 
@@ -129,7 +117,20 @@ public class GatewayAuthorizationRequest implements Serializable
 	}
 
 	/**
-	 * shopper ApiType DOCUMENT_HERE 
+	 * The data provided for the authorization.
+	 */
+	protected transient com.fasterxml.jackson.databind.JsonNode data;
+
+	public com.fasterxml.jackson.databind.JsonNode getData() {
+		return this.data;
+	}
+
+	public void setData(com.fasterxml.jackson.databind.JsonNode data) {
+		this.data = data;
+	}
+
+	/**
+	 * The CustomerInformation for the shopper.
 	 */
 	protected  CustomerInformation shopper;
 
@@ -141,5 +142,34 @@ public class GatewayAuthorizationRequest implements Serializable
 		this.shopper = shopper;
 	}
 
+	/**
+	 * The token for gateway authorization.
+	 */
+	protected  PaymentToken token;
+
+	public PaymentToken getToken() {
+		return this.token;
+	}
+
+	public void setToken(PaymentToken token) {
+		this.token = token;
+	}
+
+	private void writeObject(java.io.ObjectOutputStream out) throws IOException {
+		out.defaultWriteObject();
+		if(data == null){
+			out.writeBoolean(false);
+		} else {
+			out.writeBoolean(true);
+			new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonGenerator.Feature.AUTO_CLOSE_TARGET, false).writeValue(out, data);
+		}
+	}
+
+	private void readObject(java.io.ObjectInputStream in) throws IOException, ClassNotFoundException {
+		in.defaultReadObject();
+		if(in.readBoolean()){
+			this.data = new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonParser.Feature.AUTO_CLOSE_SOURCE, false).readValue(in, com.fasterxml.jackson.databind.JsonNode.class);
+		}
+	}
 
 }

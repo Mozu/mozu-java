@@ -107,6 +107,46 @@ public class CartItemClient {
 	/**
 	 * 
 	 * <p><pre><code>
+	 * MozuClient mozuClient=AddItemsToCartClient( cartItems);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * </code></pre></p>
+	 * @param cartItems 
+	 * @return Mozu.Api.MozuClient 
+	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 */
+	public static MozuClient addItemsToCartClient(List<com.mozu.api.contracts.commerceruntime.carts.CartItem> cartItems) throws Exception
+	{
+		return addItemsToCartClient( cartItems,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient mozuClient=AddItemsToCartClient( cartItems,  throwErrorOnInvalidItems);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * </code></pre></p>
+	 * @param throwErrorOnInvalidItems 
+	 * @param cartItems 
+	 * @return Mozu.Api.MozuClient 
+	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 */
+	public static MozuClient addItemsToCartClient(List<com.mozu.api.contracts.commerceruntime.carts.CartItem> cartItems, Boolean throwErrorOnInvalidItems) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.carts.CartItemUrl.addItemsToCartUrl(throwErrorOnInvalidItems);
+		String verb = "POST";
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(cartItems);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartItem> mozuClient=AddItemToCartClient( cartItem);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();

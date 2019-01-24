@@ -80,6 +80,22 @@ public class CartUrl
 	}
 
 	/**
+	 * Get Resource Url for RejectSuggestedDiscount
+	 * @param cartId Identifier of the cart to delete.
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl rejectSuggestedDiscountUrl(String cartId, Integer discountId, String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/carts/{cartId}/rejectautodiscount/{discountId}?responseFields={responseFields}");
+		formatter.formatUrl("cartId", cartId);
+		formatter.formatUrl("discountId", discountId);
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for UpdateCart
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url

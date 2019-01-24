@@ -73,48 +73,6 @@ public class CustomerAccountClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.customer.LoginState> mozuClient=GetLoginStateClient( accountId);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * LoginState loginState = client.Result();
-	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.LoginState>
-	 * @see com.mozu.api.contracts.customer.LoginState
-	 */
-	public static MozuClient<com.mozu.api.contracts.customer.LoginState> getLoginStateClient(Integer accountId) throws Exception
-	{
-		return getLoginStateClient( accountId,  null);
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.customer.LoginState> mozuClient=GetLoginStateClient( accountId,  responseFields);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * LoginState loginState = client.Result();
-	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.LoginState>
-	 * @see com.mozu.api.contracts.customer.LoginState
-	 */
-	public static MozuClient<com.mozu.api.contracts.customer.LoginState> getLoginStateClient(Integer accountId, String responseFields) throws Exception
-	{
-		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAccountUrl.getLoginStateUrl(accountId, responseFields);
-		String verb = "GET";
-		Class<?> clz = com.mozu.api.contracts.customer.LoginState.class;
-		MozuClient<com.mozu.api.contracts.customer.LoginState> mozuClient = (MozuClient<com.mozu.api.contracts.customer.LoginState>) MozuClientFactory.getInstance(clz);
-		mozuClient.setVerb(verb);
-		mozuClient.setResourceUrl(url);
-		return mozuClient;
-
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerAccount> mozuClient=GetAccountClient( accountId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
@@ -126,28 +84,72 @@ public class CustomerAccountClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.customer.CustomerAccount> getAccountClient(Integer accountId) throws Exception
 	{
-		return getAccountClient( accountId,  null);
+		return getAccountClient( accountId,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.customer.CustomerAccount> mozuClient=GetAccountClient( accountId,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.customer.CustomerAccount> mozuClient=GetAccountClient( accountId,  userId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * CustomerAccount customerAccount = client.Result();
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerAccount>
 	 * @see com.mozu.api.contracts.customer.CustomerAccount
 	 */
-	public static MozuClient<com.mozu.api.contracts.customer.CustomerAccount> getAccountClient(Integer accountId, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.customer.CustomerAccount> getAccountClient(Integer accountId, String userId, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAccountUrl.getAccountUrl(accountId, responseFields);
+		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAccountUrl.getAccountUrl(accountId, responseFields, userId);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.customer.CustomerAccount.class;
 		MozuClient<com.mozu.api.contracts.customer.CustomerAccount> mozuClient = (MozuClient<com.mozu.api.contracts.customer.CustomerAccount>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.customer.LoginState> mozuClient=GetLoginStateClient( accountId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * LoginState loginState = client.Result();
+	 * </code></pre></p>
+	 * @param accountId Unique identifier of the customer account.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.LoginState>
+	 * @see com.mozu.api.contracts.customer.LoginState
+	 */
+	public static MozuClient<com.mozu.api.contracts.customer.LoginState> getLoginStateClient(Integer accountId) throws Exception
+	{
+		return getLoginStateClient( accountId,  null,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.customer.LoginState> mozuClient=GetLoginStateClient( accountId,  userId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * LoginState loginState = client.Result();
+	 * </code></pre></p>
+	 * @param accountId Unique identifier of the customer account.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.LoginState>
+	 * @see com.mozu.api.contracts.customer.LoginState
+	 */
+	public static MozuClient<com.mozu.api.contracts.customer.LoginState> getLoginStateClient(Integer accountId, String userId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAccountUrl.getLoginStateUrl(accountId, responseFields, userId);
+		String verb = "GET";
+		Class<?> clz = com.mozu.api.contracts.customer.LoginState.class;
+		MozuClient<com.mozu.api.contracts.customer.LoginState> mozuClient = (MozuClient<com.mozu.api.contracts.customer.LoginState>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -213,25 +215,26 @@ public class CustomerAccountClient {
 	 */
 	public static MozuClient changePasswordClient(com.mozu.api.contracts.customer.PasswordInfo passwordInfo, Integer accountId) throws Exception
 	{
-		return changePasswordClient( passwordInfo,  accountId,  null);
+		return changePasswordClient( passwordInfo,  accountId,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=ChangePasswordClient( passwordInfo,  accountId,  unlockAccount);
+	 * MozuClient mozuClient=ChangePasswordClient( passwordInfo,  accountId,  unlockAccount,  userId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param unlockAccount Specifies whether to unlock the specified customer account.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @param passwordInfo The information required to modify a shopper account password.
 	 * @return Mozu.Api.MozuClient 
 	 * @see com.mozu.api.contracts.customer.PasswordInfo
 	 */
-	public static MozuClient changePasswordClient(com.mozu.api.contracts.customer.PasswordInfo passwordInfo, Integer accountId, Boolean unlockAccount) throws Exception
+	public static MozuClient changePasswordClient(com.mozu.api.contracts.customer.PasswordInfo passwordInfo, Integer accountId, Boolean unlockAccount, String userId) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAccountUrl.changePasswordUrl(accountId, unlockAccount);
+		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAccountUrl.changePasswordUrl(accountId, unlockAccount, userId);
 		String verb = "POST";
 				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
@@ -323,7 +326,25 @@ public class CustomerAccountClient {
 	 */
 	public static MozuClient setLoginLockedClient(Boolean isLocked, Integer accountId) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAccountUrl.setLoginLockedUrl(accountId);
+		return setLoginLockedClient( isLocked,  accountId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient mozuClient=SetLoginLockedClient( isLocked,  accountId,  userId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * </code></pre></p>
+	 * @param accountId Unique identifier of the customer account.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
+	 * @param isLocked If true, the customer account is locked from logging in.
+	 * @return Mozu.Api.MozuClient 
+	 * @see bool
+	 */
+	public static MozuClient setLoginLockedClient(Boolean isLocked, Integer accountId, String userId) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAccountUrl.setLoginLockedUrl(accountId, userId);
 		String verb = "POST";
 				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
@@ -347,7 +368,25 @@ public class CustomerAccountClient {
 	 */
 	public static MozuClient setPasswordChangeRequiredClient(Boolean isPasswordChangeRequired, Integer accountId) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAccountUrl.setPasswordChangeRequiredUrl(accountId);
+		return setPasswordChangeRequiredClient( isPasswordChangeRequired,  accountId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient mozuClient=SetPasswordChangeRequiredClient( isPasswordChangeRequired,  accountId,  userId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * </code></pre></p>
+	 * @param accountId Unique identifier of the customer account.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
+	 * @param isPasswordChangeRequired If true, the password for the customer account must be changed.
+	 * @return Mozu.Api.MozuClient 
+	 * @see bool
+	 */
+	public static MozuClient setPasswordChangeRequiredClient(Boolean isPasswordChangeRequired, Integer accountId, String userId) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAccountUrl.setPasswordChangeRequiredUrl(accountId, userId);
 		String verb = "POST";
 				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
@@ -591,17 +630,18 @@ public class CustomerAccountClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.customer.CustomerPurchaseOrderAccountCollection> getCustomersPurchaseOrderAccountsClient() throws Exception
 	{
-		return getCustomersPurchaseOrderAccountsClient( null,  null,  null,  null);
+		return getCustomersPurchaseOrderAccountsClient( null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.customer.CustomerPurchaseOrderAccountCollection> mozuClient=GetCustomersPurchaseOrderAccountsClient( startIndex,  pageSize,  sortBy,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.customer.CustomerPurchaseOrderAccountCollection> mozuClient=GetCustomersPurchaseOrderAccountsClient( startIndex,  pageSize,  sortBy,  accountType,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * CustomerPurchaseOrderAccountCollection customerPurchaseOrderAccountCollection = client.Result();
 	 * </code></pre></p>
+	 * @param accountType 
 	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
@@ -609,9 +649,9 @@ public class CustomerAccountClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerPurchaseOrderAccountCollection>
 	 * @see com.mozu.api.contracts.customer.CustomerPurchaseOrderAccountCollection
 	 */
-	public static MozuClient<com.mozu.api.contracts.customer.CustomerPurchaseOrderAccountCollection> getCustomersPurchaseOrderAccountsClient(Integer startIndex, Integer pageSize, String sortBy, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.customer.CustomerPurchaseOrderAccountCollection> getCustomersPurchaseOrderAccountsClient(Integer startIndex, Integer pageSize, String sortBy, String accountType, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAccountUrl.getCustomersPurchaseOrderAccountsUrl(pageSize, responseFields, sortBy, startIndex);
+		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAccountUrl.getCustomersPurchaseOrderAccountsUrl(accountType, pageSize, responseFields, sortBy, startIndex);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.customer.CustomerPurchaseOrderAccountCollection.class;
 		MozuClient<com.mozu.api.contracts.customer.CustomerPurchaseOrderAccountCollection> mozuClient = (MozuClient<com.mozu.api.contracts.customer.CustomerPurchaseOrderAccountCollection>) MozuClientFactory.getInstance(clz);
