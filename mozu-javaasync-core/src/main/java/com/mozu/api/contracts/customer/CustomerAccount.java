@@ -39,6 +39,19 @@ public class CustomerAccount implements Serializable
 		this.acceptsMarketing = acceptsMarketing;
 	}
 
+	/**
+	 * accountType ApiType DOCUMENT_HERE 
+	 */
+	protected  String accountType;
+
+	public String getAccountType() {
+		return this.accountType;
+	}
+
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
+	}
+
 	protected  String companyOrOrganization;
 
 	public String getCompanyOrOrganization() {

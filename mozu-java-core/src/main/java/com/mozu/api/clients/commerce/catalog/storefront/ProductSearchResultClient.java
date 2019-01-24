@@ -78,18 +78,20 @@ public class ProductSearchResultClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.productruntime.ProductSearchResult> searchClient() throws Exception
 	{
-		return searchClient( null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null);
+		return searchClient( null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productruntime.ProductSearchResult> mozuClient=SearchClient( query,  filter,  facetTemplate,  facetTemplateSubset,  facet,  facetFieldRangeQuery,  facetHierPrefix,  facetHierValue,  facetHierDepth,  facetStartIndex,  facetPageSize,  facetSettings,  facetValueFilter,  sortBy,  pageSize,  startIndex,  searchSettings,  enableSearchTuningRules,  searchTuningRuleContext,  searchTuningRuleCode,  facetTemplateExclude,  facetPrefix,  responseOptions,  cursorMark,  facetValueSort,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.productruntime.ProductSearchResult> mozuClient=SearchClient( query,  filter,  facetTemplate,  facetTemplateSubset,  facet,  facetFieldRangeQuery,  facetHierPrefix,  facetHierValue,  facetHierDepth,  facetStartIndex,  facetPageSize,  facetSettings,  facetValueFilter,  sortBy,  pageSize,  startIndex,  searchSettings,  enableSearchTuningRules,  searchTuningRuleContext,  searchTuningRuleCode,  facetTemplateExclude,  facetPrefix,  responseOptions,  cursorMark,  facetValueSort,  defaultSort,  sortDefinitionName,  defaultSortDefinitionName,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ProductSearchResult productSearchResult = client.Result();
 	 * </code></pre></p>
 	 * @param cursorMark In your first deep paged request, set this parameter to . Then, in all subsequent requests, set this parameter to the subsequent values of  that's returned in each response to continue paging through the results. Continue this pattern until  is null, which signifies the end of the paged results.
+	 * @param defaultSort Sets the default sorting for content. Sort does not use AND in determining the order
+	 * @param defaultSortDefinitionName The name of the default product sort definition for the product results.
 	 * @param enableSearchTuningRules Enables search tuning rules on your site.
 	 * @param facet Individually list the facet fields you want to display in a web storefront product search.
 	 * @param facetFieldRangeQuery Display a range facet not specified in a template in a web storefront product search by listing the facet field and the range to display.
@@ -119,13 +121,14 @@ The following code demonstrates an example of  sort:
 	 * @param searchTuningRuleCode The unique identifier of the search tuning rule.
 	 * @param searchTuningRuleContext The category ID that the search tuning rule applies to.
 	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param sortDefinitionName The name of the product sort definition that is being applied.
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productruntime.ProductSearchResult>
 	 * @see com.mozu.api.contracts.productruntime.ProductSearchResult
 	 */
-	public static MozuClient<com.mozu.api.contracts.productruntime.ProductSearchResult> searchClient(String query, String filter, String facetTemplate, String facetTemplateSubset, String facet, String facetFieldRangeQuery, String facetHierPrefix, String facetHierValue, String facetHierDepth, String facetStartIndex, String facetPageSize, String facetSettings, String facetValueFilter, String sortBy, Integer pageSize, Integer startIndex, String searchSettings, Boolean enableSearchTuningRules, String searchTuningRuleContext, String searchTuningRuleCode, String facetTemplateExclude, String facetPrefix, String responseOptions, String cursorMark, String facetValueSort, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productruntime.ProductSearchResult> searchClient(String query, String filter, String facetTemplate, String facetTemplateSubset, String facet, String facetFieldRangeQuery, String facetHierPrefix, String facetHierValue, String facetHierDepth, String facetStartIndex, String facetPageSize, String facetSettings, String facetValueFilter, String sortBy, Integer pageSize, Integer startIndex, String searchSettings, Boolean enableSearchTuningRules, String searchTuningRuleContext, String searchTuningRuleCode, String facetTemplateExclude, String facetPrefix, String responseOptions, String cursorMark, String facetValueSort, String defaultSort, String sortDefinitionName, String defaultSortDefinitionName, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.storefront.ProductSearchResultUrl.searchUrl(cursorMark, enableSearchTuningRules, facet, facetFieldRangeQuery, facetHierDepth, facetHierPrefix, facetHierValue, facetPageSize, facetPrefix, facetSettings, facetStartIndex, facetTemplate, facetTemplateExclude, facetTemplateSubset, facetValueFilter, facetValueSort, filter, pageSize, query, responseFields, responseOptions, searchSettings, searchTuningRuleCode, searchTuningRuleContext, sortBy, startIndex);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.storefront.ProductSearchResultUrl.searchUrl(cursorMark, defaultSort, defaultSortDefinitionName, enableSearchTuningRules, facet, facetFieldRangeQuery, facetHierDepth, facetHierPrefix, facetHierValue, facetPageSize, facetPrefix, facetSettings, facetStartIndex, facetTemplate, facetTemplateExclude, facetTemplateSubset, facetValueFilter, facetValueSort, filter, pageSize, query, responseFields, responseOptions, searchSettings, searchTuningRuleCode, searchTuningRuleContext, sortBy, sortDefinitionName, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productruntime.ProductSearchResult.class;
 		MozuClient<com.mozu.api.contracts.productruntime.ProductSearchResult> mozuClient = (MozuClient<com.mozu.api.contracts.productruntime.ProductSearchResult>) MozuClientFactory.getInstance(clz);

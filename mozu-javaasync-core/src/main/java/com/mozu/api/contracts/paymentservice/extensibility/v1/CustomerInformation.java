@@ -18,7 +18,7 @@ import com.mozu.api.contracts.paymentservice.extensibility.v1.Contact;
 import com.mozu.api.contracts.paymentservice.extensibility.v1.KeyValueTuple;
 
 /**
- *	Mozu.PaymentService.Extensibility.Contracts.V1.CustomerInformation ApiType DOCUMENT_HERE 
+ *	Contains information about the customer
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CustomerInformation implements Serializable
@@ -53,7 +53,7 @@ public class CustomerInformation implements Serializable
 	}
 
 	/**
-	 * phoneNumber ApiType DOCUMENT_HERE 
+	 * Contains the phone for the customer.
 	 */
 	protected  String phoneNumber;
 
@@ -66,7 +66,7 @@ public class CustomerInformation implements Serializable
 	}
 
 	/**
-	 * requestorIp ApiType DOCUMENT_HERE 
+	 * Contains the IP the customer is using.
 	 */
 	protected  String requestorIp;
 
@@ -79,7 +79,7 @@ public class CustomerInformation implements Serializable
 	}
 
 	/**
-	 * requestorUrl ApiType DOCUMENT_HERE 
+	 * Contains the url the customer is using.
 	 */
 	protected  String requestorUrl;
 
@@ -92,7 +92,7 @@ public class CustomerInformation implements Serializable
 	}
 
 	/**
-	 * requestorUserAgent ApiType DOCUMENT_HERE 
+	 * Contains the user agent the customer is using.
 	 */
 	protected  String requestorUserAgent;
 
@@ -118,7 +118,7 @@ public class CustomerInformation implements Serializable
 	}
 
 	/**
-	 * contact ApiType DOCUMENT_HERE 
+	 * Contains the Contact information for the customer.
 	 */
 	protected  Contact contact;
 
@@ -131,7 +131,7 @@ public class CustomerInformation implements Serializable
 	}
 
 	/**
-	 * extendedInfo ApiType DOCUMENT_HERE 
+	 * Contains information not in the object allowing flexibility.
 	 */
 	protected List<KeyValueTuple> extendedInfo;
 	public List<KeyValueTuple> getExtendedInfo() {

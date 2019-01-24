@@ -194,8 +194,8 @@ public class CategoryResource {
 	 *	Category category = new Category();
 	 *	category.addProductsToCategory( productCodes,  categoryId);
 	 * </code></pre></p>
-	 * @param categoryId 
-	 * @param productCodes 
+	 * @param categoryId Unique identifier of the category to modify.
+	 * @param productCodes A list of product codes to be added to the category.
 	 * @return 
 	 * @see string
 	 */
@@ -214,8 +214,8 @@ public class CategoryResource {
 	 *	Category category = new Category();
 	 *	category.removeProductsFromCategory( productCodes,  categoryId);
 	 * </code></pre></p>
-	 * @param categoryId 
-	 * @param productCodes 
+	 * @param categoryId Unique identifier of the category to modify.
+	 * @param productCodes A list of product codes to be removed from the category.
 	 * @return 
 	 * @see string
 	 */

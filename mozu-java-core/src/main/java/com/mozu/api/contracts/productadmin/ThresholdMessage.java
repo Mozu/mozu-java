@@ -15,7 +15,7 @@ import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.productadmin.ThresholdMessageLocalizedContent;
 
 /**
- *	Mozu.ProductAdmin.Contracts.ThresholdMessage ApiType DOCUMENT_HERE 
+ *	Information on where, when and what content to display in a threshold message to customers.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ThresholdMessage implements Serializable
@@ -50,7 +50,7 @@ public class ThresholdMessage implements Serializable
 	}
 
 	/**
-	 * requiresCouponCode ApiType DOCUMENT_HERE 
+	 * Indicates if the threshold message will display when a promo code is evaluated
 	 */
 	protected  Boolean requiresCouponCode;
 
@@ -63,7 +63,7 @@ public class ThresholdMessage implements Serializable
 	}
 
 	/**
-	 * showInCart ApiType DOCUMENT_HERE 
+	 * Indicates if the threshold message will display in the cart
 	 */
 	protected  Boolean showInCart;
 
@@ -76,7 +76,7 @@ public class ThresholdMessage implements Serializable
 	}
 
 	/**
-	 * showOnCheckout ApiType DOCUMENT_HERE 
+	 * Indicates if the threshold message will display on the checkout page
 	 */
 	protected  Boolean showOnCheckout;
 
@@ -89,7 +89,7 @@ public class ThresholdMessage implements Serializable
 	}
 
 	/**
-	 * thresholdValue ApiType DOCUMENT_HERE 
+	 * The cart total amount that must be met before the threshold message is displayed
 	 */
 	protected  Double thresholdValue;
 

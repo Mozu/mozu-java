@@ -17,7 +17,7 @@ import com.mozu.api.contracts.paymentservice.extensibility.v1.KeyValueTuple;
 import com.mozu.api.contracts.paymentservice.extensibility.v1.Transaction;
 
 /**
- *	Mozu.PaymentService.Extensibility.Contracts.V1.AdapterContext ApiType DOCUMENT_HERE 
+ *	Contains information about the payment gateway adapter configuration
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AdapterContext implements Serializable
@@ -26,7 +26,7 @@ public class AdapterContext implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * configuration ApiType DOCUMENT_HERE 
+	 * A list of KeyValueTuples containing the configuration from the application setup.
 	 */
 	protected List<KeyValueTuple> configuration;
 	public List<KeyValueTuple> getConfiguration() {
@@ -37,7 +37,18 @@ public class AdapterContext implements Serializable
 	}
 
 	/**
-	 * settings ApiType DOCUMENT_HERE 
+	 * The previous transactions performed from this adapter.
+	 */
+	protected List<Transaction> previousTransactions;
+	public List<Transaction> getPreviousTransactions() {
+		return this.previousTransactions;
+	}
+	public void setPreviousTransactions(List<Transaction> previousTransactions) {
+		this.previousTransactions = previousTransactions;
+	}
+
+	/**
+	 * A list of KeyValueTuples containing the configuration from the settings for the application in the Tenant.
 	 */
 	protected List<KeyValueTuple> settings;
 	public List<KeyValueTuple> getSettings() {
@@ -48,7 +59,7 @@ public class AdapterContext implements Serializable
 	}
 
 	/**
-	 * transaction ApiType DOCUMENT_HERE 
+	 * Contains information on the transaction, including previous interactions with the gateway.
 	 */
 	protected  Transaction transaction;
 

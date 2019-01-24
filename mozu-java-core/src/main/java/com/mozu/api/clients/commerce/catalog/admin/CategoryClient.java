@@ -207,8 +207,8 @@ public class CategoryClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param categoryId 
-	 * @param productCodes 
+	 * @param categoryId Unique identifier of the category to modify.
+	 * @param productCodes A list of product codes to be added to the category.
 	 * @return Mozu.Api.MozuClient 
 	 * @see string
 	 */
@@ -232,8 +232,8 @@ public class CategoryClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param categoryId 
-	 * @param productCodes 
+	 * @param categoryId Unique identifier of the category to modify.
+	 * @param productCodes A list of product codes to be removed from the category.
 	 * @return Mozu.Api.MozuClient 
 	 * @see string
 	 */

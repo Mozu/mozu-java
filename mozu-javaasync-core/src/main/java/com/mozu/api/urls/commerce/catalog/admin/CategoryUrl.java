@@ -79,7 +79,7 @@ public class CategoryUrl
 
 	/**
 	 * Get Resource Url for AddProductsToCategory
-	 * @param categoryId 
+	 * @param categoryId Unique identifier of the category to modify.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addProductsToCategoryUrl(Integer categoryId)
@@ -91,7 +91,7 @@ public class CategoryUrl
 
 	/**
 	 * Get Resource Url for RemoveProductsFromCategory
-	 * @param categoryId 
+	 * @param categoryId Unique identifier of the category to modify.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl removeProductsFromCategoryUrl(Integer categoryId)

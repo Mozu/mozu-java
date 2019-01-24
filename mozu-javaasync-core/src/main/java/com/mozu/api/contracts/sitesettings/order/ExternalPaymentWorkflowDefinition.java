@@ -60,6 +60,19 @@ public class ExternalPaymentWorkflowDefinition implements Serializable
 		this.isEnabled = isEnabled;
 	}
 
+	/**
+	 * Whether this is a legacy process.
+	 */
+	protected  Boolean isLegacy;
+
+	public Boolean getIsLegacy() {
+		return this.isLegacy;
+	}
+
+	public void setIsLegacy(Boolean isLegacy) {
+		this.isLegacy = isLegacy;
+	}
+
 	protected  String name;
 
 	public String getName() {

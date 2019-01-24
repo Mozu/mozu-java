@@ -196,6 +196,85 @@ public class OrderItemResource {
 	 * 
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
+	 *	Checkout checkout = orderitem.addCheckoutItem( item,  checkoutId);
+	 * </code></pre></p>
+	 * @param checkoutId The unique identifier of the checkout.
+	 * @param item 
+	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
+	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
+	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItem
+	 */
+	public com.mozu.api.contracts.commerceruntime.checkouts.Checkout addCheckoutItem(com.mozu.api.contracts.commerceruntime.orders.OrderItem item, String checkoutId) throws Exception
+	{
+		return addCheckoutItem( item,  checkoutId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	OrderItem orderitem = new OrderItem();
+	 *	CountDownLatch latch = orderitem.addCheckoutItem( item,  checkoutId, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param checkoutId The unique identifier of the checkout.
+	 * @param  callback callback handler for asynchronous operations
+	 * @param item 
+	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
+	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
+	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItem
+	 */
+	public CountDownLatch addCheckoutItemAsync(com.mozu.api.contracts.commerceruntime.orders.OrderItem item, String checkoutId, AsyncCallback<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> callback) throws Exception
+	{
+		return addCheckoutItemAsync( item,  checkoutId,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	OrderItem orderitem = new OrderItem();
+	 *	Checkout checkout = orderitem.addCheckoutItem( item,  checkoutId,  responseFields);
+	 * </code></pre></p>
+	 * @param checkoutId The unique identifier of the checkout.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param item 
+	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
+	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
+	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItem
+	 */
+	public com.mozu.api.contracts.commerceruntime.checkouts.Checkout addCheckoutItem(com.mozu.api.contracts.commerceruntime.orders.OrderItem item, String checkoutId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> client = com.mozu.api.clients.commerce.checkouts.OrderItemClient.addCheckoutItemClient( item,  checkoutId,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	OrderItem orderitem = new OrderItem();
+	 *	CountDownLatch latch = orderitem.addCheckoutItem( item,  checkoutId,  responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param checkoutId The unique identifier of the checkout.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param  callback callback handler for asynchronous operations
+	 * @param item 
+	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
+	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
+	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItem
+	 */
+	public CountDownLatch addCheckoutItemAsync(com.mozu.api.contracts.commerceruntime.orders.OrderItem item, String checkoutId, String responseFields, AsyncCallback<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> client = com.mozu.api.clients.commerce.checkouts.OrderItemClient.addCheckoutItemClient( item,  checkoutId,  responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	OrderItem orderitem = new OrderItem();
 	 *	Checkout checkout = orderitem.updateItemDestination( checkoutId,  itemId,  destinationId);
 	 * </code></pre></p>
 	 * @param checkoutId The unique identifier of the checkout.
@@ -266,6 +345,46 @@ public class OrderItemResource {
 	public CountDownLatch updateItemDestinationAsync(String checkoutId, String itemId, String destinationId, String responseFields, AsyncCallback<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> callback) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> client = com.mozu.api.clients.commerce.checkouts.OrderItemClient.updateItemDestinationClient( checkoutId,  itemId,  destinationId,  responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	OrderItem orderitem = new OrderItem();
+	 *	Checkout checkout = orderitem.deleteCheckoutItem( checkoutId,  itemId);
+	 * </code></pre></p>
+	 * @param checkoutId The unique identifier of the checkout.
+	 * @param itemId The unique identifier of the item.
+	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
+	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
+	 */
+	public com.mozu.api.contracts.commerceruntime.checkouts.Checkout deleteCheckoutItem(String checkoutId, String itemId) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> client = com.mozu.api.clients.commerce.checkouts.OrderItemClient.deleteCheckoutItemClient( checkoutId,  itemId);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	OrderItem orderitem = new OrderItem();
+	 *	CountDownLatch latch = orderitem.deleteCheckoutItem( checkoutId,  itemId, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param checkoutId The unique identifier of the checkout.
+	 * @param itemId The unique identifier of the item.
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.commerceruntime.checkouts.Checkout
+	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
+	 */
+	public CountDownLatch deleteCheckoutItemAsync(String checkoutId, String itemId, AsyncCallback<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.checkouts.Checkout> client = com.mozu.api.clients.commerce.checkouts.OrderItemClient.deleteCheckoutItemClient( checkoutId,  itemId);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 

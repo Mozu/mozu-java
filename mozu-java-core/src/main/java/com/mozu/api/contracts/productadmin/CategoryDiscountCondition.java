@@ -22,7 +22,7 @@ public class CategoryDiscountCondition implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Unique identifier of a category. 
+	 * ID of the relevant category.
 	 */
 	protected  Integer categoryId;
 

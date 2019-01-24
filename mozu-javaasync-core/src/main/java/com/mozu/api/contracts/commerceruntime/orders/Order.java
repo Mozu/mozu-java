@@ -30,10 +30,10 @@ import com.mozu.api.contracts.commerceruntime.fulfillment.Package;
 import com.mozu.api.contracts.commerceruntime.payments.Payment;
 import com.mozu.api.contracts.commerceruntime.fulfillment.Pickup;
 import com.mozu.api.contracts.commerceruntime.refunds.Refund;
+import com.mozu.api.contracts.commerceruntime.discounts.SuggestedDiscount;
 import com.mozu.api.contracts.commerceruntime.fulfillment.Shipment;
 import com.mozu.api.contracts.commerceruntime.discounts.ShippingDiscount;
 import com.mozu.api.contracts.commerceruntime.orders.ShopperNotes;
-import com.mozu.api.contracts.commerceruntime.discounts.SuggestedDiscount;
 import com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult;
 
 /**
@@ -790,6 +790,19 @@ public class Order implements Serializable
 		this.type = type;
 	}
 
+	/**
+	 * Unique identifier of the customer account (shopper or system user). System-supplied and read-only. If the shopper user is anonymous, the user ID represents a system-generated user ID string.
+	 */
+	protected  String userId;
+
+	public String getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
 	protected  String version;
 
 	public String getVersion() {
@@ -891,7 +904,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * discountThresholdMessages ApiType DOCUMENT_HERE 
+	 * Saves threshold message settings for the Cart and Checkout pages.
 	 */
 	protected List<ThresholdMessage> discountThresholdMessages;
 	public List<ThresholdMessage> getDiscountThresholdMessages() {
@@ -1016,6 +1029,17 @@ public class Order implements Serializable
 		this.refunds = refunds;
 	}
 
+	/**
+	 * rejectedDiscounts ApiType DOCUMENT_HERE 
+	 */
+	protected List<SuggestedDiscount> rejectedDiscounts;
+	public List<SuggestedDiscount> getRejectedDiscounts() {
+		return this.rejectedDiscounts;
+	}
+	public void setRejectedDiscounts(List<SuggestedDiscount> rejectedDiscounts) {
+		this.rejectedDiscounts = rejectedDiscounts;
+	}
+
 	protected List<Shipment> shipments;
 	public List<Shipment> getShipments() {
 		return this.shipments;
@@ -1053,7 +1077,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * suggestedDiscounts ApiType DOCUMENT_HERE 
+	 * Refers to the BOGA discounts that are currently satisfied but whose free item has not yet been added.
 	 */
 	protected List<SuggestedDiscount> suggestedDiscounts;
 	public List<SuggestedDiscount> getSuggestedDiscounts() {

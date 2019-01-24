@@ -75,16 +75,16 @@ public class CreditFactory
 
 	public static com.mozu.api.contracts.customer.credit.Credit addCredit(ApiContext apiContext, com.mozu.api.contracts.customer.credit.Credit credit, int expectedCode) throws Exception
 	{
-		return addCredit(apiContext,  credit,  null, expectedCode);
+		return addCredit(apiContext,  credit,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.customer.credit.Credit addCredit(ApiContext apiContext, com.mozu.api.contracts.customer.credit.Credit credit, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.customer.credit.Credit addCredit(ApiContext apiContext, com.mozu.api.contracts.customer.credit.Credit credit, String userId, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.customer.credit.Credit returnObj = new com.mozu.api.contracts.customer.credit.Credit();
 		CreditResource resource = new CreditResource(apiContext);
 		try
 		{
-			returnObj = resource.addCredit( credit,  responseFields);
+			returnObj = resource.addCredit( credit,  userId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -125,10 +125,15 @@ public class CreditFactory
 
 	public static void resendCreditCreatedEmail(ApiContext apiContext, String code, int expectedCode) throws Exception
 	{
+		resendCreditCreatedEmail(apiContext,  code,  null, expectedCode);
+	}
+
+	public static void resendCreditCreatedEmail(ApiContext apiContext, String code, String userId, int expectedCode) throws Exception
+	{
 		CreditResource resource = new CreditResource(apiContext);
 		try
 		{
-			resource.resendCreditCreatedEmail( code);
+			resource.resendCreditCreatedEmail( code,  userId);
 		}
 		catch (ApiException e)
 		{

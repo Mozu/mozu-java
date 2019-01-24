@@ -33,6 +33,19 @@ public class Discount implements Serializable
 		this.expirationDate = expirationDate;
 	}
 
+	/**
+	 * hasMultipleTargetProducts ApiType DOCUMENT_HERE 
+	 */
+	protected  Boolean hasMultipleTargetProducts;
+
+	public Boolean getHasMultipleTargetProducts() {
+		return this.hasMultipleTargetProducts;
+	}
+
+	public void setHasMultipleTargetProducts(Boolean hasMultipleTargetProducts) {
+		this.hasMultipleTargetProducts = hasMultipleTargetProducts;
+	}
+
 	protected  Integer id;
 
 	public Integer getId() {

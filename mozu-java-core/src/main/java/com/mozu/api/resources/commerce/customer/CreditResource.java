@@ -119,24 +119,25 @@ public class CreditResource {
 	 */
 	public com.mozu.api.contracts.customer.credit.Credit addCredit(com.mozu.api.contracts.customer.credit.Credit credit) throws Exception
 	{
-		return addCredit( credit,  null);
+		return addCredit( credit,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	Credit credit = new Credit();
-	 *	Credit credit = credit.addCredit( credit,  responseFields);
+	 *	Credit credit = credit.addCredit( credit,  userId,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @param credit Properties of the store credit of gift card applied to a customer account. At this time, gift card functionality is reserved for future use.
 	 * @return com.mozu.api.contracts.customer.credit.Credit
 	 * @see com.mozu.api.contracts.customer.credit.Credit
 	 * @see com.mozu.api.contracts.customer.credit.Credit
 	 */
-	public com.mozu.api.contracts.customer.credit.Credit addCredit(com.mozu.api.contracts.customer.credit.Credit credit, String responseFields) throws Exception
+	public com.mozu.api.contracts.customer.credit.Credit addCredit(com.mozu.api.contracts.customer.credit.Credit credit, String userId, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.customer.credit.Credit> client = com.mozu.api.clients.commerce.customer.CreditClient.addCreditClient( credit,  responseFields);
+		MozuClient<com.mozu.api.contracts.customer.credit.Credit> client = com.mozu.api.clients.commerce.customer.CreditClient.addCreditClient( credit,  userId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -189,7 +190,22 @@ public class CreditResource {
 	 */
 	public void resendCreditCreatedEmail(String code) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.commerce.customer.CreditClient.resendCreditCreatedEmailClient( code);
+		resendCreditCreatedEmail( code,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Credit credit = new Credit();
+	 *	credit.resendCreditCreatedEmail( code,  userId);
+	 * </code></pre></p>
+	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
+	 * @return 
+	 */
+	public void resendCreditCreatedEmail(String code, String userId) throws Exception
+	{
+		MozuClient client = com.mozu.api.clients.commerce.customer.CreditClient.resendCreditCreatedEmailClient( code,  userId);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		client.cleanupHttpConnection();

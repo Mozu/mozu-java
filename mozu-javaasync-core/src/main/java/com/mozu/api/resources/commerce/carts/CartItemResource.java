@@ -178,6 +178,41 @@ public class CartItemResource {
 	 * 
 	 * <p><pre><code>
 	 *	CartItem cartitem = new CartItem();
+	 *	cartitem.addItemsToCart( cartItems);
+	 * </code></pre></p>
+	 * @param cartItems 
+	 * @return 
+	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 */
+	public void addItemsToCart(List<com.mozu.api.contracts.commerceruntime.carts.CartItem> cartItems) throws Exception
+	{
+		addItemsToCart( cartItems,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CartItem cartitem = new CartItem();
+	 *	cartitem.addItemsToCart( cartItems,  throwErrorOnInvalidItems);
+	 * </code></pre></p>
+	 * @param throwErrorOnInvalidItems 
+	 * @param cartItems 
+	 * @return 
+	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 */
+	public void addItemsToCart(List<com.mozu.api.contracts.commerceruntime.carts.CartItem> cartItems, Boolean throwErrorOnInvalidItems) throws Exception
+	{
+		MozuClient client = com.mozu.api.clients.commerce.carts.CartItemClient.addItemsToCartClient( cartItems,  throwErrorOnInvalidItems);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		client.cleanupHttpConnection();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CartItem cartitem = new CartItem();
 	 *	CartItem cartItem = cartitem.addItemToCart( cartItem);
 	 * </code></pre></p>
 	 * @param cartItem Properties of an item added to an active shopping cart.

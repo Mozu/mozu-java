@@ -48,6 +48,32 @@ public class SearchSynonymSettings implements Serializable
 	}
 
 	/**
+	 * Allows a document to appear in search results even if only one term is present from the list of search terms.
+	 */
+	protected  Boolean matchOnAnyTerm;
+
+	public Boolean getMatchOnAnyTerm() {
+		return this.matchOnAnyTerm;
+	}
+
+	public void setMatchOnAnyTerm(Boolean matchOnAnyTerm) {
+		this.matchOnAnyTerm = matchOnAnyTerm;
+	}
+
+	/**
+	 * Raises the relevancy score of a search result that has the exact search phrase with all terms next to each other.
+	 */
+	protected  Integer phraseBoost;
+
+	public Integer getPhraseBoost() {
+		return this.phraseBoost;
+	}
+
+	public void setPhraseBoost(Integer phraseBoost) {
+		this.phraseBoost = phraseBoost;
+	}
+
+	/**
 	 * Boosts the synonyms to affect rankings for search results.
 	 */
 	protected  Double synonymPartBoost;
