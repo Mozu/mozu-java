@@ -217,7 +217,7 @@ public class Cart implements Serializable
 	}
 
 	/**
-	 * Pricelist code
+	 * Code for the pricelist being applied to the products in the cart.
 	 */
 	protected  String priceListCode;
 
@@ -467,7 +467,7 @@ public class Cart implements Serializable
 	}
 
 	/**
-	 * rejectedDiscounts ApiType DOCUMENT_HERE 
+	 * A list of the discounts that were rejected from being applied to the cart.
 	 */
 	protected List<SuggestedDiscount> rejectedDiscounts;
 	public List<SuggestedDiscount> getRejectedDiscounts() {

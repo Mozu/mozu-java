@@ -23,7 +23,7 @@ public class CurrencyExchangeRate implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * fromCurrencyCode ApiType DOCUMENT_HERE 
+	 * The code of the original currency that the new currency equivalent is being calculated from.
 	 */
 	protected  String fromCurrencyCode;
 
@@ -36,7 +36,7 @@ public class CurrencyExchangeRate implements Serializable
 	}
 
 	/**
-	 * multiplier ApiType DOCUMENT_HERE 
+	 * The multiplier that is used to calculate the equivalent between two currencies.
 	 */
 	protected  Double multiplier;
 
@@ -49,7 +49,7 @@ public class CurrencyExchangeRate implements Serializable
 	}
 
 	/**
-	 * rate ApiType DOCUMENT_HERE 
+	 * The exact rate of the given currency exchange.
 	 */
 	protected  Double rate;
 
@@ -62,7 +62,7 @@ public class CurrencyExchangeRate implements Serializable
 	}
 
 	/**
-	 * referenceData ApiType DOCUMENT_HERE 
+	 * Any reference information for the exchange calculation.
 	 */
 	protected  String referenceData;
 
@@ -75,7 +75,7 @@ public class CurrencyExchangeRate implements Serializable
 	}
 
 	/**
-	 * toCurrencyCode ApiType DOCUMENT_HERE 
+	 * The code of the new currency that the original currency's equivalent is being calculated to.
 	 */
 	protected  String toCurrencyCode;
 

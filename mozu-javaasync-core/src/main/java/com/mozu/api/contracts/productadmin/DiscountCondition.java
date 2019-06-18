@@ -64,6 +64,19 @@ public class DiscountCondition implements Serializable
 	}
 
 	/**
+	 * This allows you to set a maximum order total as a condition of a discount, so the discount only applies when the shopper has an order totaling less than that value. This allows you to have more control over when discounts should or should not apply in order to control costs, especially when combined with a minimum order value to create a range of order values that are eligible for the discount. This can be used in addition to other discount conditions as well.
+	 */
+	protected  Double maximumOrderAmount;
+
+	public Double getMaximumOrderAmount() {
+		return this.maximumOrderAmount;
+	}
+
+	public void setMaximumOrderAmount(Double maximumOrderAmount) {
+		this.maximumOrderAmount = maximumOrderAmount;
+	}
+
+	/**
 	 * The maximum number of times the discount can be redeemed.
 	 */
 	protected  Integer maxRedemptionCount;

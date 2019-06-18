@@ -16,7 +16,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productadmin.CurrencyLocalization;
 
 /**
- *	Mozu.ProductAdmin.Contracts.CurrencyLocalizationCollection ApiType DOCUMENT_HERE 
+ *	Collection of data about currency localization formatting rules, such as decimal places and rounding strategies.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CurrencyLocalizationCollection implements Serializable

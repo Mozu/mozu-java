@@ -162,7 +162,7 @@ public class B2BAccountUrl
 	/**
 	 * Get Resource Url for AddUserRoleAsync
 	 * @param accountId Unique identifier of the customer account.
-	 * @param roleId 
+	 * @param roleId Identifier for the role that the user account should belong to. For B2B, these roles include Admin, Purchaser, and Non-Purchaser.
 	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @return   String Resource Url
 	 */
@@ -266,7 +266,7 @@ public class B2BAccountUrl
 	/**
 	 * Get Resource Url for RemoveUserRoleAsync
 	 * @param accountId Unique identifier of the customer account.
-	 * @param roleId 
+	 * @param roleId The ID corresponding to the type of permissions being removed, e.g. 1 for Admin.
 	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @return   String Resource Url
 	 */

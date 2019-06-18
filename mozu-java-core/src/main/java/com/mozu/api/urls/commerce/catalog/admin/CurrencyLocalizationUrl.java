@@ -29,7 +29,7 @@ public class CurrencyLocalizationUrl
 	 * Get Resource Url for GetCurrencyExchangeRate
 	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param toCurrencyCode 
+	 * @param toCurrencyCode The code of the new currency that the original currency's equivalent is being calculated to.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getCurrencyExchangeRateUrl(String currencyCode, String responseFields, String toCurrencyCode)
@@ -134,7 +134,7 @@ public class CurrencyLocalizationUrl
 	/**
 	 * Get Resource Url for DeleteCurrencyExchangeRate
 	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
-	 * @param toCurrencyCode 
+	 * @param toCurrencyCode The code of the new currency that the original currency's equivalent is being calculated to.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteCurrencyExchangeRateUrl(String currencyCode, String toCurrencyCode)

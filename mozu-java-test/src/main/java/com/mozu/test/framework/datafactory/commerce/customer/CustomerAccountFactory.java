@@ -48,18 +48,18 @@ public class CustomerAccountFactory
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.customer.CustomerAccount getAccount(ApiContext apiContext, Integer accountId, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.customer.LoginState getLoginState(ApiContext apiContext, Integer accountId, int expectedCode) throws Exception
 	{
-		return getAccount(apiContext,  accountId,  null,  null, expectedCode);
+		return getLoginState(apiContext,  accountId,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.customer.CustomerAccount getAccount(ApiContext apiContext, Integer accountId, String userId, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.customer.LoginState getLoginState(ApiContext apiContext, Integer accountId, String userId, String responseFields, int expectedCode) throws Exception
 	{
-		com.mozu.api.contracts.customer.CustomerAccount returnObj = new com.mozu.api.contracts.customer.CustomerAccount();
+		com.mozu.api.contracts.customer.LoginState returnObj = new com.mozu.api.contracts.customer.LoginState();
 		CustomerAccountResource resource = new CustomerAccountResource(apiContext);
 		try
 		{
-			returnObj = resource.getAccount( accountId,  userId,  responseFields);
+			returnObj = resource.getLoginState( accountId,  userId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -73,18 +73,18 @@ public class CustomerAccountFactory
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.customer.LoginState getLoginState(ApiContext apiContext, Integer accountId, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.customer.CustomerAccount getAccount(ApiContext apiContext, Integer accountId, int expectedCode) throws Exception
 	{
-		return getLoginState(apiContext,  accountId,  null,  null, expectedCode);
+		return getAccount(apiContext,  accountId,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.customer.LoginState getLoginState(ApiContext apiContext, Integer accountId, String userId, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.customer.CustomerAccount getAccount(ApiContext apiContext, Integer accountId, String userId, String responseFields, int expectedCode) throws Exception
 	{
-		com.mozu.api.contracts.customer.LoginState returnObj = new com.mozu.api.contracts.customer.LoginState();
+		com.mozu.api.contracts.customer.CustomerAccount returnObj = new com.mozu.api.contracts.customer.CustomerAccount();
 		CustomerAccountResource resource = new CustomerAccountResource(apiContext);
 		try
 		{
-			returnObj = resource.getLoginState( accountId,  userId,  responseFields);
+			returnObj = resource.getAccount( accountId,  userId,  responseFields);
 		}
 		catch (ApiException e)
 		{

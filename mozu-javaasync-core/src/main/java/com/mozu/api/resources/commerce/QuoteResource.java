@@ -20,7 +20,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * commerce/quotes related resources. DOCUMENT_HERE 
+ * Quotes support the eCommerce B2B feature by providing functionality similar to that of standard wishlists. However, comments can be added to quotes to provide clearer information to other users accessing the quote through the shared B2B account. These basic APIs provide the ability to create new quotes, update them, and retrieve their information.These APIs are currently a work-in-progress and will be enhanced in the future as more functionality such as setting fixed prices, setting expiration, etc. is released. The current models may change and break backwards compatibility, so use caution if interacting with these APIs for now.
  * </summary>
  */
 public class QuoteResource {
@@ -121,7 +121,7 @@ public class QuoteResource {
 	 *	Quote quote = new Quote();
 	 *	Quote quote = quote.getQuote( quoteId);
 	 * </code></pre></p>
-	 * @param quoteId 
+	 * @param quoteId A unique identifier for the quote.
 	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 */
@@ -136,7 +136,7 @@ public class QuoteResource {
 	 *	Quote quote = new Quote();
 	 *	CountDownLatch latch = quote.getQuote( quoteId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param quoteId 
+	 * @param quoteId A unique identifier for the quote.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
@@ -152,7 +152,7 @@ public class QuoteResource {
 	 *	Quote quote = new Quote();
 	 *	Quote quote = quote.getQuote( quoteId,  responseFields);
 	 * </code></pre></p>
-	 * @param quoteId 
+	 * @param quoteId A unique identifier for the quote.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
@@ -172,7 +172,7 @@ public class QuoteResource {
 	 *	Quote quote = new Quote();
 	 *	CountDownLatch latch = quote.getQuote( quoteId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param quoteId 
+	 * @param quoteId A unique identifier for the quote.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
@@ -193,7 +193,7 @@ public class QuoteResource {
 	 *	Quote quote = quote.getQuoteByName( customerAccountId,  quoteName);
 	 * </code></pre></p>
 	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
-	 * @param quoteName 
+	 * @param quoteName A unique name for the quote.
 	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 */
@@ -209,7 +209,7 @@ public class QuoteResource {
 	 *	CountDownLatch latch = quote.getQuoteByName( customerAccountId,  quoteName, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
-	 * @param quoteName 
+	 * @param quoteName A unique name for the quote.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
@@ -226,7 +226,7 @@ public class QuoteResource {
 	 *	Quote quote = quote.getQuoteByName( customerAccountId,  quoteName,  responseFields);
 	 * </code></pre></p>
 	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
-	 * @param quoteName 
+	 * @param quoteName A unique name for the quote.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
@@ -247,7 +247,7 @@ public class QuoteResource {
 	 *	CountDownLatch latch = quote.getQuoteByName( customerAccountId,  quoteName,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
-	 * @param quoteName 
+	 * @param quoteName A unique name for the quote.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
@@ -267,7 +267,7 @@ public class QuoteResource {
 	 *	Quote quote = new Quote();
 	 *	Quote quote = quote.createQuote( quote);
 	 * </code></pre></p>
-	 * @param quote 
+	 * @param quote The quote being created.
 	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
@@ -284,7 +284,7 @@ public class QuoteResource {
 	 *	CountDownLatch latch = quote.createQuote( quote, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param quote 
+	 * @param quote The quote being created.
 	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
@@ -301,7 +301,7 @@ public class QuoteResource {
 	 *	Quote quote = quote.createQuote( quote,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param quote 
+	 * @param quote The quote being created.
 	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
@@ -323,7 +323,7 @@ public class QuoteResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param quote 
+	 * @param quote The quote being created.
 	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
@@ -342,8 +342,8 @@ public class QuoteResource {
 	 *	Quote quote = new Quote();
 	 *	Quote quote = quote.updateQuote( quote,  quoteId);
 	 * </code></pre></p>
-	 * @param quoteId 
-	 * @param quote 
+	 * @param quoteId A unique identifier for the quote being updated.
+	 * @param quote The quote that is being updated.
 	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
@@ -359,9 +359,9 @@ public class QuoteResource {
 	 *	Quote quote = new Quote();
 	 *	CountDownLatch latch = quote.updateQuote( quote,  quoteId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param quoteId 
+	 * @param quoteId A unique identifier for the quote being updated.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param quote 
+	 * @param quote The quote that is being updated.
 	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
@@ -377,9 +377,9 @@ public class QuoteResource {
 	 *	Quote quote = new Quote();
 	 *	Quote quote = quote.updateQuote( quote,  quoteId,  responseFields);
 	 * </code></pre></p>
-	 * @param quoteId 
+	 * @param quoteId A unique identifier for the quote being updated.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param quote 
+	 * @param quote The quote that is being updated.
 	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
@@ -399,10 +399,10 @@ public class QuoteResource {
 	 *	Quote quote = new Quote();
 	 *	CountDownLatch latch = quote.updateQuote( quote,  quoteId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param quoteId 
+	 * @param quoteId A unique identifier for the quote being updated.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param quote 
+	 * @param quote The quote that is being updated.
 	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
@@ -421,7 +421,7 @@ public class QuoteResource {
 	 *	Quote quote = new Quote();
 	 *	quote.deleteQuote( quoteId);
 	 * </code></pre></p>
-	 * @param quoteId 
+	 * @param quoteId A unique identifier for the quote.
 	 * @return 
 	 */
 	public void deleteQuote(String quoteId) throws Exception

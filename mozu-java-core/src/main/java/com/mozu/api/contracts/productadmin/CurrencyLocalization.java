@@ -14,7 +14,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 
 /**
- *	Mozu.ProductAdmin.Contracts.CurrencyLocalization ApiType DOCUMENT_HERE 
+ *	Currency localization formatting rules, such as decimal places and rounding strategies.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CurrencyLocalization implements Serializable
@@ -36,7 +36,7 @@ public class CurrencyLocalization implements Serializable
 	}
 
 	/**
-	 * decimalPlaces ApiType DOCUMENT_HERE 
+	 * The allowed decimal places used in the localized currency format
 	 */
 	protected  Integer decimalPlaces;
 
@@ -49,7 +49,7 @@ public class CurrencyLocalization implements Serializable
 	}
 
 	/**
-	 * roundingStrategy ApiType DOCUMENT_HERE 
+	 * The rounding strategy used in the localized currency format.
 	 */
 	protected  Integer roundingStrategy;
 

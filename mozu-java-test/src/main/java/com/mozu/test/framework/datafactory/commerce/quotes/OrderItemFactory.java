@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.quotes.OrderItemResource;
 
 /** <summary>
- * commerce/quotes/quoteitems related resources. DOCUMENT_HERE 
+ * Quote Items are the individual products that are added to a particular quote, which serves as the wishlists of the B2B feature.Like the quotes themselves, the quote items APIs are a work-in-progress that will be enhanced with future releases. Use caution when interacting with these APIs, as their current models may change and break backwards compatibility as functionality is added.
  * </summary>
  */
 public class OrderItemFactory

@@ -19,7 +19,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * commerce/quotes related resources. DOCUMENT_HERE 
+ * Quotes support the eCommerce B2B feature by providing functionality similar to that of standard wishlists. However, comments can be added to quotes to provide clearer information to other users accessing the quote through the shared B2B account. These basic APIs provide the ability to create new quotes, update them, and retrieve their information.These APIs are currently a work-in-progress and will be enhanced in the future as more functionality such as setting fixed prices, setting expiration, etc. is released. The current models may change and break backwards compatibility, so use caution if interacting with these APIs for now.
  * </summary>
  */
 public class QuoteClient {
@@ -78,7 +78,7 @@ public class QuoteClient {
 	 * client.executeRequest();
 	 * Quote quote = client.Result();
 	 * </code></pre></p>
-	 * @param quoteId 
+	 * @param quoteId A unique identifier for the quote.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.quotes.Quote>
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 */
@@ -95,7 +95,7 @@ public class QuoteClient {
 	 * client.executeRequest();
 	 * Quote quote = client.Result();
 	 * </code></pre></p>
-	 * @param quoteId 
+	 * @param quoteId A unique identifier for the quote.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.quotes.Quote>
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
@@ -121,7 +121,7 @@ public class QuoteClient {
 	 * Quote quote = client.Result();
 	 * </code></pre></p>
 	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
-	 * @param quoteName 
+	 * @param quoteName A unique name for the quote.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.quotes.Quote>
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 */
@@ -139,7 +139,7 @@ public class QuoteClient {
 	 * Quote quote = client.Result();
 	 * </code></pre></p>
 	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
-	 * @param quoteName 
+	 * @param quoteName A unique name for the quote.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.quotes.Quote>
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
@@ -164,7 +164,7 @@ public class QuoteClient {
 	 * client.executeRequest();
 	 * Quote quote = client.Result();
 	 * </code></pre></p>
-	 * @param quote 
+	 * @param quote The quote being created.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.quotes.Quote>
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
@@ -183,7 +183,7 @@ public class QuoteClient {
 	 * Quote quote = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param quote 
+	 * @param quote The quote being created.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.quotes.Quote>
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
@@ -209,8 +209,8 @@ public class QuoteClient {
 	 * client.executeRequest();
 	 * Quote quote = client.Result();
 	 * </code></pre></p>
-	 * @param quoteId 
-	 * @param quote 
+	 * @param quoteId A unique identifier for the quote being updated.
+	 * @param quote The quote that is being updated.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.quotes.Quote>
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
@@ -228,9 +228,9 @@ public class QuoteClient {
 	 * client.executeRequest();
 	 * Quote quote = client.Result();
 	 * </code></pre></p>
-	 * @param quoteId 
+	 * @param quoteId A unique identifier for the quote being updated.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param quote 
+	 * @param quote The quote that is being updated.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.quotes.Quote>
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
@@ -255,7 +255,7 @@ public class QuoteClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param quoteId 
+	 * @param quoteId A unique identifier for the quote.
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deleteQuoteClient(String quoteId) throws Exception

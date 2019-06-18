@@ -75,49 +75,6 @@ public class CustomerAccountClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.customer.CustomerAccount> mozuClient=GetAccountClient( accountId);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * CustomerAccount customerAccount = client.Result();
-	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerAccount>
-	 * @see com.mozu.api.contracts.customer.CustomerAccount
-	 */
-	public static MozuClient<com.mozu.api.contracts.customer.CustomerAccount> getAccountClient(Integer accountId) throws Exception
-	{
-		return getAccountClient( accountId,  null,  null);
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.customer.CustomerAccount> mozuClient=GetAccountClient( accountId,  userId,  responseFields);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * CustomerAccount customerAccount = client.Result();
-	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerAccount>
-	 * @see com.mozu.api.contracts.customer.CustomerAccount
-	 */
-	public static MozuClient<com.mozu.api.contracts.customer.CustomerAccount> getAccountClient(Integer accountId, String userId, String responseFields) throws Exception
-	{
-		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAccountUrl.getAccountUrl(accountId, responseFields, userId);
-		String verb = "GET";
-		Class<?> clz = com.mozu.api.contracts.customer.CustomerAccount.class;
-		MozuClient<com.mozu.api.contracts.customer.CustomerAccount> mozuClient = (MozuClient<com.mozu.api.contracts.customer.CustomerAccount>) MozuClientFactory.getInstance(clz);
-		mozuClient.setVerb(verb);
-		mozuClient.setResourceUrl(url);
-		return mozuClient;
-
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.LoginState> mozuClient=GetLoginStateClient( accountId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
@@ -152,6 +109,49 @@ public class CustomerAccountClient {
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.customer.LoginState.class;
 		MozuClient<com.mozu.api.contracts.customer.LoginState> mozuClient = (MozuClient<com.mozu.api.contracts.customer.LoginState>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.customer.CustomerAccount> mozuClient=GetAccountClient( accountId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * CustomerAccount customerAccount = client.Result();
+	 * </code></pre></p>
+	 * @param accountId Unique identifier of the customer account.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerAccount>
+	 * @see com.mozu.api.contracts.customer.CustomerAccount
+	 */
+	public static MozuClient<com.mozu.api.contracts.customer.CustomerAccount> getAccountClient(Integer accountId) throws Exception
+	{
+		return getAccountClient( accountId,  null,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.customer.CustomerAccount> mozuClient=GetAccountClient( accountId,  userId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * CustomerAccount customerAccount = client.Result();
+	 * </code></pre></p>
+	 * @param accountId Unique identifier of the customer account.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerAccount>
+	 * @see com.mozu.api.contracts.customer.CustomerAccount
+	 */
+	public static MozuClient<com.mozu.api.contracts.customer.CustomerAccount> getAccountClient(Integer accountId, String userId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAccountUrl.getAccountUrl(accountId, responseFields, userId);
+		String verb = "GET";
+		Class<?> clz = com.mozu.api.contracts.customer.CustomerAccount.class;
+		MozuClient<com.mozu.api.contracts.customer.CustomerAccount> mozuClient = (MozuClient<com.mozu.api.contracts.customer.CustomerAccount>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -643,7 +643,7 @@ public class CustomerAccountClient {
 	 * client.executeRequest();
 	 * CustomerPurchaseOrderAccountCollection customerPurchaseOrderAccountCollection = client.Result();
 	 * </code></pre></p>
-	 * @param accountType 
+	 * @param accountType The type of customer account utilizing purchase orders.
 	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
