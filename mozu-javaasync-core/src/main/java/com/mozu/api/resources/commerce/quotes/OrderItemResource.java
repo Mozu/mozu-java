@@ -20,7 +20,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * commerce/quotes/quoteitems related resources. DOCUMENT_HERE 
+ * Quote Items are the individual products that are added to a particular quote, which serves as the wishlists of the B2B feature.Like the quotes themselves, the quote items APIs are a work-in-progress that will be enhanced with future releases. Use caution when interacting with these APIs, as their current models may change and break backwards compatibility as functionality is added.
  * </summary>
  */
 public class OrderItemResource {
@@ -42,8 +42,8 @@ public class OrderItemResource {
 	 *	OrderItem orderitem = new OrderItem();
 	 *	OrderItem orderItem = orderitem.getQuoteItem( quoteId,  quoteItemId);
 	 * </code></pre></p>
-	 * @param quoteId 
-	 * @param quoteItemId 
+	 * @param quoteId A unique identifier for the quote that the item is included within.
+	 * @param quoteItemId A unique identifier for the item included within a quote.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderItem
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItem
 	 */
@@ -58,8 +58,8 @@ public class OrderItemResource {
 	 *	OrderItem orderitem = new OrderItem();
 	 *	CountDownLatch latch = orderitem.getQuoteItem( quoteId,  quoteItemId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param quoteId 
-	 * @param quoteItemId 
+	 * @param quoteId A unique identifier for the quote that the item is included within.
+	 * @param quoteItemId A unique identifier for the item included within a quote.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderItem
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItem
@@ -75,8 +75,8 @@ public class OrderItemResource {
 	 *	OrderItem orderitem = new OrderItem();
 	 *	OrderItem orderItem = orderitem.getQuoteItem( quoteId,  quoteItemId,  responseFields);
 	 * </code></pre></p>
-	 * @param quoteId 
-	 * @param quoteItemId 
+	 * @param quoteId A unique identifier for the quote that the item is included within.
+	 * @param quoteItemId A unique identifier for the item included within a quote.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderItem
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItem
@@ -96,8 +96,8 @@ public class OrderItemResource {
 	 *	OrderItem orderitem = new OrderItem();
 	 *	CountDownLatch latch = orderitem.getQuoteItem( quoteId,  quoteItemId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param quoteId 
-	 * @param quoteItemId 
+	 * @param quoteId A unique identifier for the quote that the item is included within.
+	 * @param quoteItemId A unique identifier for the item included within a quote.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderItem
@@ -117,7 +117,7 @@ public class OrderItemResource {
 	 *	OrderItem orderitem = new OrderItem();
 	 *	QuoteItemCollection quoteItemCollection = orderitem.getQuoteItems( quoteId);
 	 * </code></pre></p>
-	 * @param quoteId 
+	 * @param quoteId A unique identifier for the quote that the items are included within.
 	 * @return com.mozu.api.contracts.commerceruntime.quotes.QuoteItemCollection
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.QuoteItemCollection
 	 */
@@ -132,7 +132,7 @@ public class OrderItemResource {
 	 *	OrderItem orderitem = new OrderItem();
 	 *	CountDownLatch latch = orderitem.getQuoteItems( quoteId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param quoteId 
+	 * @param quoteId A unique identifier for the quote that the items are included within.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.quotes.QuoteItemCollection
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.QuoteItemCollection
@@ -150,7 +150,7 @@ public class OrderItemResource {
 	 * </code></pre></p>
 	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
 	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param quoteId 
+	 * @param quoteId A unique identifier for the quote that the items are included within.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
@@ -174,7 +174,7 @@ public class OrderItemResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
 	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param quoteId 
+	 * @param quoteId A unique identifier for the quote that the items are included within.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
@@ -197,7 +197,7 @@ public class OrderItemResource {
 	 *	QuoteItemCollection quoteItemCollection = orderitem.getQuoteItemsByQuoteName( customerAccountId,  quoteName);
 	 * </code></pre></p>
 	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
-	 * @param quoteName 
+	 * @param quoteName The unique name of the quote that items are being retrieved for.
 	 * @return com.mozu.api.contracts.commerceruntime.quotes.QuoteItemCollection
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.QuoteItemCollection
 	 */
@@ -213,7 +213,7 @@ public class OrderItemResource {
 	 *	CountDownLatch latch = orderitem.getQuoteItemsByQuoteName( customerAccountId,  quoteName, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
-	 * @param quoteName 
+	 * @param quoteName The unique name of the quote that items are being retrieved for.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.quotes.QuoteItemCollection
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.QuoteItemCollection
@@ -232,7 +232,7 @@ public class OrderItemResource {
 	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
 	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
 	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param quoteName 
+	 * @param quoteName The unique name of the quote that items are being retrieved for.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
@@ -257,7 +257,7 @@ public class OrderItemResource {
 	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
 	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
 	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param quoteName 
+	 * @param quoteName The unique name of the quote that items are being retrieved for.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
@@ -279,8 +279,8 @@ public class OrderItemResource {
 	 *	OrderItem orderitem = new OrderItem();
 	 *	Quote quote = orderitem.addItemToQuote( quoteItem,  quoteId);
 	 * </code></pre></p>
-	 * @param quoteId 
-	 * @param quoteItem 
+	 * @param quoteId The unique identifier for the quote that an item is being added to.
+	 * @param quoteItem A unique identifier for the item being added to a quote.
 	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItem
@@ -296,9 +296,9 @@ public class OrderItemResource {
 	 *	OrderItem orderitem = new OrderItem();
 	 *	CountDownLatch latch = orderitem.addItemToQuote( quoteItem,  quoteId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param quoteId 
+	 * @param quoteId The unique identifier for the quote that an item is being added to.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param quoteItem 
+	 * @param quoteItem A unique identifier for the item being added to a quote.
 	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItem
@@ -314,9 +314,9 @@ public class OrderItemResource {
 	 *	OrderItem orderitem = new OrderItem();
 	 *	Quote quote = orderitem.addItemToQuote( quoteItem,  quoteId,  responseFields);
 	 * </code></pre></p>
-	 * @param quoteId 
+	 * @param quoteId The unique identifier for the quote that an item is being added to.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param quoteItem 
+	 * @param quoteItem A unique identifier for the item being added to a quote.
 	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItem
@@ -336,10 +336,10 @@ public class OrderItemResource {
 	 *	OrderItem orderitem = new OrderItem();
 	 *	CountDownLatch latch = orderitem.addItemToQuote( quoteItem,  quoteId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param quoteId 
+	 * @param quoteId The unique identifier for the quote that an item is being added to.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param quoteItem 
+	 * @param quoteItem A unique identifier for the item being added to a quote.
 	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItem
@@ -358,9 +358,9 @@ public class OrderItemResource {
 	 *	OrderItem orderitem = new OrderItem();
 	 *	Quote quote = orderitem.updateQuoteItem( quoteItem,  quoteId,  quoteItemId);
 	 * </code></pre></p>
-	 * @param quoteId 
-	 * @param quoteItemId 
-	 * @param quoteItem 
+	 * @param quoteId The unique identifier for the quote that the item being updated is listed within.
+	 * @param quoteItemId The unique identifier for the quote item being updated.
+	 * @param quoteItem The item within a quote that is being updated.
 	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItem
@@ -376,10 +376,10 @@ public class OrderItemResource {
 	 *	OrderItem orderitem = new OrderItem();
 	 *	CountDownLatch latch = orderitem.updateQuoteItem( quoteItem,  quoteId,  quoteItemId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param quoteId 
-	 * @param quoteItemId 
+	 * @param quoteId The unique identifier for the quote that the item being updated is listed within.
+	 * @param quoteItemId The unique identifier for the quote item being updated.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param quoteItem 
+	 * @param quoteItem The item within a quote that is being updated.
 	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItem
@@ -395,10 +395,10 @@ public class OrderItemResource {
 	 *	OrderItem orderitem = new OrderItem();
 	 *	Quote quote = orderitem.updateQuoteItem( quoteItem,  quoteId,  quoteItemId,  responseFields);
 	 * </code></pre></p>
-	 * @param quoteId 
-	 * @param quoteItemId 
+	 * @param quoteId The unique identifier for the quote that the item being updated is listed within.
+	 * @param quoteItemId The unique identifier for the quote item being updated.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param quoteItem 
+	 * @param quoteItem The item within a quote that is being updated.
 	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItem
@@ -418,11 +418,11 @@ public class OrderItemResource {
 	 *	OrderItem orderitem = new OrderItem();
 	 *	CountDownLatch latch = orderitem.updateQuoteItem( quoteItem,  quoteId,  quoteItemId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param quoteId 
-	 * @param quoteItemId 
+	 * @param quoteId The unique identifier for the quote that the item being updated is listed within.
+	 * @param quoteItemId The unique identifier for the quote item being updated.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param quoteItem 
+	 * @param quoteItem The item within a quote that is being updated.
 	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItem
@@ -441,8 +441,8 @@ public class OrderItemResource {
 	 *	OrderItem orderitem = new OrderItem();
 	 *	orderitem.deleteQuoteItem( quoteId,  quoteItemId);
 	 * </code></pre></p>
-	 * @param quoteId 
-	 * @param quoteItemId 
+	 * @param quoteId A unique identifier for the quote tha the item being deleted belongs to.
+	 * @param quoteItemId A unique identifier for an item included in the quote.
 	 * @return 
 	 */
 	public void deleteQuoteItem(String quoteId, String quoteItemId) throws Exception

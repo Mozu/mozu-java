@@ -20,6 +20,7 @@ import com.mozu.api.contracts.productruntime.ProductOption;
 import com.mozu.api.contracts.productruntime.ProductPrice;
 import com.mozu.api.contracts.productruntime.ProductProperty;
 import com.mozu.api.contracts.productruntime.ProductPriceRange;
+import com.mozu.api.contracts.productruntime.ProductImage;
 import com.mozu.api.contracts.productruntime.ProductPurchasableState;
 import com.mozu.api.contracts.productruntime.ProductVolumePrice;
 
@@ -169,6 +170,17 @@ public class ConfiguredProduct implements Serializable
 
 	public void setPriceRange(ProductPriceRange priceRange) {
 		this.priceRange = priceRange;
+	}
+
+	/**
+	 * List of image files associated with a product. This content may include the image file URL, name, and other information as available.
+	 */
+	protected List<ProductImage> productImages;
+	public List<ProductImage> getProductImages() {
+		return this.productImages;
+	}
+	public void setProductImages(List<ProductImage> productImages) {
+		this.productImages = productImages;
 	}
 
 	protected  ProductPurchasableState purchasableState;

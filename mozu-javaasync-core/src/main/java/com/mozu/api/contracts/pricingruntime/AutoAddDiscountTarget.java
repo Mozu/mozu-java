@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Mozu.PricingRuntime.Contracts.AutoAddDiscountTarget ApiType DOCUMENT_HERE 
+ *	The target product of an auto-add discount.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AutoAddDiscountTarget implements Serializable
@@ -50,7 +50,7 @@ public class AutoAddDiscountTarget implements Serializable
 	}
 
 	/**
-	 * includedProductCodes ApiType DOCUMENT_HERE 
+	 * The identification codes of products added to the cart as part of an auto-add discount.
 	 */
 	protected List<String> includedProductCodes;
 	public List<String> getIncludedProductCodes() {

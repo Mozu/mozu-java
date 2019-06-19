@@ -74,6 +74,19 @@ public class ProductImage implements Serializable
 		this.mediaType = mediaType;
 	}
 
+	/**
+	 * A unique identifier for the product image group.
+	 */
+	protected  String productImageGroupId;
+
+	public String getProductImageGroupId() {
+		return this.productImageGroupId;
+	}
+
+	public void setProductImageGroupId(String productImageGroupId) {
+		this.productImageGroupId = productImageGroupId;
+	}
+
 	protected  Integer sequence;
 
 	public Integer getSequence() {

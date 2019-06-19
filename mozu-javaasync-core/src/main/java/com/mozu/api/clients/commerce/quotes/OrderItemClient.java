@@ -19,7 +19,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * commerce/quotes/quoteitems related resources. DOCUMENT_HERE 
+ * Quote Items are the individual products that are added to a particular quote, which serves as the wishlists of the B2B feature.Like the quotes themselves, the quote items APIs are a work-in-progress that will be enhanced with future releases. Use caution when interacting with these APIs, as their current models may change and break backwards compatibility as functionality is added.
  * </summary>
  */
 public class OrderItemClient {
@@ -32,8 +32,8 @@ public class OrderItemClient {
 	 * client.executeRequest();
 	 * OrderItem orderItem = client.Result();
 	 * </code></pre></p>
-	 * @param quoteId 
-	 * @param quoteItemId 
+	 * @param quoteId A unique identifier for the quote that the item is included within.
+	 * @param quoteItemId A unique identifier for the item included within a quote.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.OrderItem>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItem
 	 */
@@ -50,8 +50,8 @@ public class OrderItemClient {
 	 * client.executeRequest();
 	 * OrderItem orderItem = client.Result();
 	 * </code></pre></p>
-	 * @param quoteId 
-	 * @param quoteItemId 
+	 * @param quoteId A unique identifier for the quote that the item is included within.
+	 * @param quoteItemId A unique identifier for the item included within a quote.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.OrderItem>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItem
@@ -76,7 +76,7 @@ public class OrderItemClient {
 	 * client.executeRequest();
 	 * QuoteItemCollection quoteItemCollection = client.Result();
 	 * </code></pre></p>
-	 * @param quoteId 
+	 * @param quoteId A unique identifier for the quote that the items are included within.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.quotes.QuoteItemCollection>
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.QuoteItemCollection
 	 */
@@ -95,7 +95,7 @@ public class OrderItemClient {
 	 * </code></pre></p>
 	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
 	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param quoteId 
+	 * @param quoteId A unique identifier for the quote that the items are included within.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
@@ -123,7 +123,7 @@ public class OrderItemClient {
 	 * QuoteItemCollection quoteItemCollection = client.Result();
 	 * </code></pre></p>
 	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
-	 * @param quoteName 
+	 * @param quoteName The unique name of the quote that items are being retrieved for.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.quotes.QuoteItemCollection>
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.QuoteItemCollection
 	 */
@@ -143,7 +143,7 @@ public class OrderItemClient {
 	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
 	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
 	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param quoteName 
+	 * @param quoteName The unique name of the quote that items are being retrieved for.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
@@ -170,8 +170,8 @@ public class OrderItemClient {
 	 * client.executeRequest();
 	 * Quote quote = client.Result();
 	 * </code></pre></p>
-	 * @param quoteId 
-	 * @param quoteItem 
+	 * @param quoteId The unique identifier for the quote that an item is being added to.
+	 * @param quoteItem A unique identifier for the item being added to a quote.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.quotes.Quote>
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItem
@@ -189,9 +189,9 @@ public class OrderItemClient {
 	 * client.executeRequest();
 	 * Quote quote = client.Result();
 	 * </code></pre></p>
-	 * @param quoteId 
+	 * @param quoteId The unique identifier for the quote that an item is being added to.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param quoteItem 
+	 * @param quoteItem A unique identifier for the item being added to a quote.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.quotes.Quote>
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItem
@@ -217,9 +217,9 @@ public class OrderItemClient {
 	 * client.executeRequest();
 	 * Quote quote = client.Result();
 	 * </code></pre></p>
-	 * @param quoteId 
-	 * @param quoteItemId 
-	 * @param quoteItem 
+	 * @param quoteId The unique identifier for the quote that the item being updated is listed within.
+	 * @param quoteItemId The unique identifier for the quote item being updated.
+	 * @param quoteItem The item within a quote that is being updated.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.quotes.Quote>
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItem
@@ -237,10 +237,10 @@ public class OrderItemClient {
 	 * client.executeRequest();
 	 * Quote quote = client.Result();
 	 * </code></pre></p>
-	 * @param quoteId 
-	 * @param quoteItemId 
+	 * @param quoteId The unique identifier for the quote that the item being updated is listed within.
+	 * @param quoteItemId The unique identifier for the quote item being updated.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param quoteItem 
+	 * @param quoteItem The item within a quote that is being updated.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.quotes.Quote>
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItem
@@ -265,8 +265,8 @@ public class OrderItemClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param quoteId 
-	 * @param quoteItemId 
+	 * @param quoteId A unique identifier for the quote tha the item being deleted belongs to.
+	 * @param quoteItemId A unique identifier for an item included in the quote.
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deleteQuoteItemClient(String quoteId, String quoteItemId) throws Exception

@@ -45,6 +45,19 @@ public class ProductOption implements Serializable
 		this.isMultiValue = isMultiValue;
 	}
 
+	/**
+	 * Indicates that the product option is used as a grouping mechanism for product images.  Only one ProductOption is allowed to have a true value for this property at a given time.  The ProductOption with a true value will be the selected option on the Images section on the product page in the Admin app when Assign Images to Options is checked.
+	 */
+	protected  Boolean isProductImageGroupSelector;
+
+	public Boolean getIsProductImageGroupSelector() {
+		return this.isProductImageGroupSelector;
+	}
+
+	public void setIsProductImageGroupSelector(Boolean isProductImageGroupSelector) {
+		this.isProductImageGroupSelector = isProductImageGroupSelector;
+	}
+
 	protected  Boolean isRequired;
 
 	public Boolean getIsRequired() {

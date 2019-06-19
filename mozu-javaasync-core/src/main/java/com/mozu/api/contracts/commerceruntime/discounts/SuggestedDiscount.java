@@ -58,7 +58,7 @@ public class SuggestedDiscount implements Serializable
 	}
 
 	/**
-	 * hasOptions ApiType DOCUMENT_HERE 
+	 * Whether the suggested discount includes multiple options.
 	 */
 	protected  Boolean hasOptions;
 

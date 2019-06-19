@@ -469,7 +469,7 @@ public class Wishlist implements Serializable
 	}
 
 	/**
-	 * rejectedDiscounts ApiType DOCUMENT_HERE 
+	 * List of discounts that were rejected instead of applied to this wishlist.
 	 */
 	protected List<SuggestedDiscount> rejectedDiscounts;
 	public List<SuggestedDiscount> getRejectedDiscounts() {

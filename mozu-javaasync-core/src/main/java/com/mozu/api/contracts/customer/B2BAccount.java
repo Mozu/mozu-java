@@ -22,7 +22,7 @@ import com.mozu.api.contracts.customer.CustomerSegment;
 import com.mozu.api.contracts.customer.B2BUser;
 
 /**
- *	Mozu.Customer.Contracts.B2BAccount ApiType DOCUMENT_HERE 
+ *	The shared B2B account, with associated users that can all log into the B2B account.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class B2BAccount implements Serializable
@@ -31,7 +31,7 @@ public class B2BAccount implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * accountType ApiType DOCUMENT_HERE 
+	 * The type of the B2B account.
 	 */
 	protected  String accountType;
 
@@ -44,7 +44,7 @@ public class B2BAccount implements Serializable
 	}
 
 	/**
-	 * The entered company or organization name entered for a customer account.
+	 * The company or organization name entered for a customer account.
 	 */
 	protected  String companyOrOrganization;
 
@@ -70,7 +70,7 @@ public class B2BAccount implements Serializable
 	}
 
 	/**
-	 * customerSinceDate ApiType DOCUMENT_HERE 
+	 * This property tracks the B2B customer account creation date. 
 	 */
 	protected  DateTime customerSinceDate;
 
@@ -135,7 +135,7 @@ public class B2BAccount implements Serializable
 	}
 
 	/**
-	 * taxExempt ApiType DOCUMENT_HERE 
+	 * If true, this account has tax exempt status.
 	 */
 	protected  Boolean taxExempt;
 
@@ -148,7 +148,7 @@ public class B2BAccount implements Serializable
 	}
 
 	/**
-	 * taxId ApiType DOCUMENT_HERE 
+	 * The tax identification number associated with the account.
 	 */
 	protected  String taxId;
 
@@ -231,7 +231,7 @@ public class B2BAccount implements Serializable
 	}
 
 	/**
-	 * users ApiType DOCUMENT_HERE 
+	 * A list of users associated to the B2B account. On initial B2B account creation, one user is required and will be set up as the admin customer.
 	 */
 	protected List<B2BUser> users;
 	public List<B2BUser> getUsers() {

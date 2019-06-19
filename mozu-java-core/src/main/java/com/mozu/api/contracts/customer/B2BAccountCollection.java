@@ -16,7 +16,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.customer.B2BAccount;
 
 /**
- *	Mozu.Customer.Contracts.B2BAccountCollection ApiType DOCUMENT_HERE 
+ *	A collection of multiple B2B accounts.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class B2BAccountCollection implements Serializable

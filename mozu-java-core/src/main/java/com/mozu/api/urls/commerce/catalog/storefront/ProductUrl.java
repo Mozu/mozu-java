@@ -66,7 +66,7 @@ public class ProductUrl
 	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
 	 * @param supressOutOfStock404 Specifies whether to supress the 404 error when the product is out of stock.
 	 * @param variationProductCode Merchant-created code associated with a specific product variation. Variation product codes maintain an association with the base product code.
-	 * @param variationProductCodeFilter 
+	 * @param variationProductCodeFilter Provides support for [Variant Discounts](https://www.mozu.com/docs/guides/marketing/variant-discounts.htm) by indicating single and multiple variant codes. When this data is provided then only the option values for the specified product variants will display under the â€œOptionsâ€ list for the product. If a product has multiple options, then each option and the specified value for that variant will be displayed.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getProductUrl(Boolean acceptVariantProductCode, Boolean allowInactive, String productCode, String purchaseLocation, Integer quantity, String responseFields, Boolean skipInventoryCheck, Boolean supressOutOfStock404, String variationProductCode, String variationProductCodeFilter)
@@ -111,7 +111,7 @@ public class ProductUrl
 	 * @param quantity The number of cart items in the shopper's active cart.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
-	 * @param variationProductCodeFilter 
+	 * @param variationProductCodeFilter Provides support for [Variant Discounts](https://www.mozu.com/docs/guides/marketing/variant-discounts.htm) by indicating single and multiple variant codes. When this data is provided then only the option values for the specified product variants will display under the â€œOptionsâ€ list for the product. If a product has multiple options, then each option and the specified value for that variant will be displayed.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl configuredProductUrl(Boolean includeOptionDetails, String productCode, String purchaseLocation, Integer quantity, String responseFields, Boolean skipInventoryCheck, String variationProductCodeFilter)

@@ -18,7 +18,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * commerce/catalog/storefront/currencies related resources. DOCUMENT_HERE 
+ * Resources for the currencies that are supported on the storefront for this catalog.
  * </summary>
  */
 public class CurrencyExchangeRateResource {

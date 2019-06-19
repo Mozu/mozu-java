@@ -16,7 +16,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.UserRole;
 
 /**
- *	Mozu.Customer.Contracts.B2BUser ApiType DOCUMENT_HERE 
+ *	A user login that can access a shared B2B account.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class B2BUser implements Serializable
@@ -64,7 +64,7 @@ public class B2BUser implements Serializable
 	}
 
 	/**
-	 * hasExternalPassword ApiType DOCUMENT_HERE 
+	 * Indicates if an external password is set on this account.
 	 */
 	protected  Boolean hasExternalPassword;
 
@@ -103,7 +103,7 @@ public class B2BUser implements Serializable
 	}
 
 	/**
-	 * isRemoved ApiType DOCUMENT_HERE 
+	 * Indicates whether the customer has been removed or not from the available users list.
 	 */
 	protected  Boolean isRemoved;
 

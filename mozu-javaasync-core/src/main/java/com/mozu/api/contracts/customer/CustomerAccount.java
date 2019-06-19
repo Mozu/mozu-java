@@ -40,7 +40,7 @@ public class CustomerAccount implements Serializable
 	}
 
 	/**
-	 * accountType ApiType DOCUMENT_HERE 
+	 * The type of the customer account.
 	 */
 	protected  String accountType;
 

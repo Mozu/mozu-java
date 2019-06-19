@@ -20,7 +20,7 @@ import com.mozu.api.contracts.commerceruntime.orders.OrderItem;
 import com.mozu.api.contracts.commerceruntime.discounts.ShippingDiscount;
 
 /**
- *	Mozu.CommerceRuntime.Contracts.Quotes.Quote ApiType DOCUMENT_HERE 
+ *	A quote acting as a wishlist for a B2B account.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Quote implements Serializable
@@ -92,7 +92,7 @@ public class Quote implements Serializable
 	}
 
 	/**
-	 * customerTaxId ApiType DOCUMENT_HERE 
+	 * The tax identification number (TIN) of the customer who submitted the order. If the customer who submitted the order has a customer account defined for the tenant, the system sets this value when the order is submitted.
 	 */
 	protected  String customerTaxId;
 
@@ -105,7 +105,7 @@ public class Quote implements Serializable
 	}
 
 	/**
-	 * dutyAmount ApiType DOCUMENT_HERE 
+	 * The amount added to the order item for duty fees.
 	 */
 	protected  Double dutyAmount;
 
@@ -118,7 +118,7 @@ public class Quote implements Serializable
 	}
 
 	/**
-	 * dutyTotal ApiType DOCUMENT_HERE 
+	 * Duties or tariffs for the Order as well as OrderItems (e.g. if the Order has a $5 duty or tariff for any reason and an OrderItem has a $2 duty or tariff then the value in this property would be $7)
 	 */
 	protected  Double dutyTotal;
 
@@ -183,7 +183,7 @@ public class Quote implements Serializable
 	}
 
 	/**
-	 * handlingSubTotal ApiType DOCUMENT_HERE 
+	 * Handling fees for the Order as well as OrderItems (e.g. if the Order has a $5 handling fee and an OrderItem has a $2 handling fee per item quantity then the value in this property would be $9)
 	 */
 	protected  Double handlingSubTotal;
 
@@ -196,7 +196,7 @@ public class Quote implements Serializable
 	}
 
 	/**
-	 * handlingTax ApiType DOCUMENT_HERE 
+	 * Calculated total tax amount for handling costs if the cart/order is subject to sales tax.
 	 */
 	protected  Double handlingTax;
 
@@ -222,7 +222,7 @@ public class Quote implements Serializable
 	}
 
 	/**
-	 * handlingTotal ApiType DOCUMENT_HERE 
+	 * The total fee for shipment handling.
 	 */
 	protected  Double handlingTotal;
 
@@ -261,7 +261,7 @@ public class Quote implements Serializable
 	}
 
 	/**
-	 * isTaxExempt ApiType DOCUMENT_HERE 
+	 * If true, the order is exempt from applied sales tax.
 	 */
 	protected  Boolean isTaxExempt;
 
@@ -274,7 +274,7 @@ public class Quote implements Serializable
 	}
 
 	/**
-	 * itemLevelHandlingDiscountTotal ApiType DOCUMENT_HERE 
+	 * The handling discount total for the grouping item.
 	 */
 	protected  Double itemLevelHandlingDiscountTotal;
 
@@ -287,7 +287,7 @@ public class Quote implements Serializable
 	}
 
 	/**
-	 * itemLevelProductDiscountTotal ApiType DOCUMENT_HERE 
+	 * The applicable product discount for the order item.
 	 */
 	protected  Double itemLevelProductDiscountTotal;
 
@@ -300,7 +300,7 @@ public class Quote implements Serializable
 	}
 
 	/**
-	 * itemLevelShippingDiscountTotal ApiType DOCUMENT_HERE 
+	 * The applicable shipping discount for the grouping item.
 	 */
 	protected  Double itemLevelShippingDiscountTotal;
 
@@ -326,7 +326,7 @@ public class Quote implements Serializable
 	}
 
 	/**
-	 * itemTotal ApiType DOCUMENT_HERE 
+	 * The total cost for the item.
 	 */
 	protected  Double itemTotal;
 
@@ -365,7 +365,7 @@ public class Quote implements Serializable
 	}
 
 	/**
-	 * number ApiType DOCUMENT_HERE 
+	 * The order item number.
 	 */
 	protected  Integer number;
 
@@ -378,7 +378,7 @@ public class Quote implements Serializable
 	}
 
 	/**
-	 * orderLevelHandlingDiscountTotal ApiType DOCUMENT_HERE 
+	 * The handling discount total at the order level.
 	 */
 	protected  Double orderLevelHandlingDiscountTotal;
 
@@ -391,7 +391,7 @@ public class Quote implements Serializable
 	}
 
 	/**
-	 * orderLevelProductDiscountTotal ApiType DOCUMENT_HERE 
+	 * The applicable product discount for the order.
 	 */
 	protected  Double orderLevelProductDiscountTotal;
 
@@ -404,7 +404,7 @@ public class Quote implements Serializable
 	}
 
 	/**
-	 * orderLevelShippingDiscountTotal ApiType DOCUMENT_HERE 
+	 * The shipping level discount at the order level.
 	 */
 	protected  Double orderLevelShippingDiscountTotal;
 
@@ -417,7 +417,7 @@ public class Quote implements Serializable
 	}
 
 	/**
-	 * priceListCode ApiType DOCUMENT_HERE 
+	 * If the order is associated with a price list, this is the unique code of the price list.
 	 */
 	protected  String priceListCode;
 
@@ -534,7 +534,7 @@ public class Quote implements Serializable
 	}
 
 	/**
-	 * sourceDevice ApiType DOCUMENT_HERE 
+	 * The device from which the order originated in the case of offline orders.
 	 */
 	protected  String sourceDevice;
 
@@ -547,7 +547,7 @@ public class Quote implements Serializable
 	}
 
 	/**
-	 * submittedDate ApiType DOCUMENT_HERE 
+	 * The date and time the order was submitted. System-supplied and read-only.
 	 */
 	protected  DateTime submittedDate;
 
@@ -651,7 +651,7 @@ public class Quote implements Serializable
 	}
 
 	/**
-	 * data ApiType DOCUMENT_HERE 
+	 * Additional data provided with the other properties.
 	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
@@ -664,7 +664,7 @@ public class Quote implements Serializable
 	}
 
 	/**
-	 * destinations ApiType DOCUMENT_HERE 
+	 * The addresses that the purchaser intends to send these quote items to.
 	 */
 	protected List<Destination> destinations;
 	public List<Destination> getDestinations() {
@@ -675,7 +675,7 @@ public class Quote implements Serializable
 	}
 
 	/**
-	 * handlingDiscounts ApiType DOCUMENT_HERE 
+	 * The handling discounts applied to the order's handling fee.
 	 */
 	protected List<AppliedDiscount> handlingDiscounts;
 	public List<AppliedDiscount> getHandlingDiscounts() {
@@ -719,7 +719,7 @@ public class Quote implements Serializable
 	}
 
 	/**
-	 * taxData ApiType DOCUMENT_HERE 
+	 * Leverage this property within a [tax Arc.js action](https://www.mozu.com/docs/arcjs/commerce-catalog-storefront-tax/commerce-catalog-storefront-tax.htm) to supplement the tax information for this item or object with custom JSON data.
 	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode taxData;
 

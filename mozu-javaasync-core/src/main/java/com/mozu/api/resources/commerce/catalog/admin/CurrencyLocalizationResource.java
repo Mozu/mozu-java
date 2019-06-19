@@ -20,7 +20,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * commerce/catalog/admin/currency related resources. DOCUMENT_HERE 
+ * Manage the currency localization rules and exchange rates for any of the currencies that are supported for placing orders in.
  * </summary>
  */
 public class CurrencyLocalizationResource {
@@ -110,7 +110,7 @@ public class CurrencyLocalizationResource {
 	 *	CurrencyExchangeRate currencyExchangeRate = currencylocalization.getCurrencyExchangeRate( currencyCode,  toCurrencyCode);
 	 * </code></pre></p>
 	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
-	 * @param toCurrencyCode 
+	 * @param toCurrencyCode The code of the new currency that the original currency's equivalent is being calculated to.
 	 * @return com.mozu.api.contracts.productadmin.CurrencyExchangeRate
 	 * @see com.mozu.api.contracts.productadmin.CurrencyExchangeRate
 	 */
@@ -126,7 +126,7 @@ public class CurrencyLocalizationResource {
 	 *	CountDownLatch latch = currencylocalization.getCurrencyExchangeRate( currencyCode,  toCurrencyCode, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
-	 * @param toCurrencyCode 
+	 * @param toCurrencyCode The code of the new currency that the original currency's equivalent is being calculated to.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.CurrencyExchangeRate
 	 * @see com.mozu.api.contracts.productadmin.CurrencyExchangeRate
@@ -144,7 +144,7 @@ public class CurrencyLocalizationResource {
 	 * </code></pre></p>
 	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param toCurrencyCode 
+	 * @param toCurrencyCode The code of the new currency that the original currency's equivalent is being calculated to.
 	 * @return com.mozu.api.contracts.productadmin.CurrencyExchangeRate
 	 * @see com.mozu.api.contracts.productadmin.CurrencyExchangeRate
 	 */
@@ -165,7 +165,7 @@ public class CurrencyLocalizationResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param toCurrencyCode 
+	 * @param toCurrencyCode The code of the new currency that the original currency's equivalent is being calculated to.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.CurrencyExchangeRate
 	 * @see com.mozu.api.contracts.productadmin.CurrencyExchangeRate
@@ -326,7 +326,7 @@ public class CurrencyLocalizationResource {
 	 *	CurrencyLocalization currencylocalization = new CurrencyLocalization();
 	 *	CurrencyLocalization currencyLocalization = currencylocalization.addCurrencyLocalization( currencyLocalization);
 	 * </code></pre></p>
-	 * @param currencyLocalization 
+	 * @param currencyLocalization The currency localization strategies being added to the currency data.
 	 * @return com.mozu.api.contracts.productadmin.CurrencyLocalization
 	 * @see com.mozu.api.contracts.productadmin.CurrencyLocalization
 	 * @see com.mozu.api.contracts.productadmin.CurrencyLocalization
@@ -343,7 +343,7 @@ public class CurrencyLocalizationResource {
 	 *	CountDownLatch latch = currencylocalization.addCurrencyLocalization( currencyLocalization, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param currencyLocalization 
+	 * @param currencyLocalization The currency localization strategies being added to the currency data.
 	 * @return com.mozu.api.contracts.productadmin.CurrencyLocalization
 	 * @see com.mozu.api.contracts.productadmin.CurrencyLocalization
 	 * @see com.mozu.api.contracts.productadmin.CurrencyLocalization
@@ -360,7 +360,7 @@ public class CurrencyLocalizationResource {
 	 *	CurrencyLocalization currencyLocalization = currencylocalization.addCurrencyLocalization( currencyLocalization,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param currencyLocalization 
+	 * @param currencyLocalization The currency localization strategies being added to the currency data.
 	 * @return com.mozu.api.contracts.productadmin.CurrencyLocalization
 	 * @see com.mozu.api.contracts.productadmin.CurrencyLocalization
 	 * @see com.mozu.api.contracts.productadmin.CurrencyLocalization
@@ -382,7 +382,7 @@ public class CurrencyLocalizationResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param currencyLocalization 
+	 * @param currencyLocalization The currency localization strategies being added to the currency data.
 	 * @return com.mozu.api.contracts.productadmin.CurrencyLocalization
 	 * @see com.mozu.api.contracts.productadmin.CurrencyLocalization
 	 * @see com.mozu.api.contracts.productadmin.CurrencyLocalization
@@ -402,7 +402,7 @@ public class CurrencyLocalizationResource {
 	 *	currencylocalization.addCurrencyExchangeRates( currencyExchangeRates,  currencyCode);
 	 * </code></pre></p>
 	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
-	 * @param currencyExchangeRates 
+	 * @param currencyExchangeRates All of the exchange rates being provided.
 	 * @return 
 	 * @see com.mozu.api.contracts.productadmin.CurrencyExchangeRate
 	 */
@@ -442,7 +442,7 @@ public class CurrencyLocalizationResource {
 	 *	CurrencyLocalization currencyLocalization = currencylocalization.updateCurrencyLocalization( currencyLocalization,  currencyCode);
 	 * </code></pre></p>
 	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
-	 * @param currencyLocalization 
+	 * @param currencyLocalization The currency localization information being updated.
 	 * @return com.mozu.api.contracts.productadmin.CurrencyLocalization
 	 * @see com.mozu.api.contracts.productadmin.CurrencyLocalization
 	 * @see com.mozu.api.contracts.productadmin.CurrencyLocalization
@@ -460,7 +460,7 @@ public class CurrencyLocalizationResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param currencyLocalization 
+	 * @param currencyLocalization The currency localization information being updated.
 	 * @return com.mozu.api.contracts.productadmin.CurrencyLocalization
 	 * @see com.mozu.api.contracts.productadmin.CurrencyLocalization
 	 * @see com.mozu.api.contracts.productadmin.CurrencyLocalization
@@ -478,7 +478,7 @@ public class CurrencyLocalizationResource {
 	 * </code></pre></p>
 	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param currencyLocalization 
+	 * @param currencyLocalization The currency localization information being updated.
 	 * @return com.mozu.api.contracts.productadmin.CurrencyLocalization
 	 * @see com.mozu.api.contracts.productadmin.CurrencyLocalization
 	 * @see com.mozu.api.contracts.productadmin.CurrencyLocalization
@@ -501,7 +501,7 @@ public class CurrencyLocalizationResource {
 	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param currencyLocalization 
+	 * @param currencyLocalization The currency localization information being updated.
 	 * @return com.mozu.api.contracts.productadmin.CurrencyLocalization
 	 * @see com.mozu.api.contracts.productadmin.CurrencyLocalization
 	 * @see com.mozu.api.contracts.productadmin.CurrencyLocalization
@@ -539,7 +539,7 @@ public class CurrencyLocalizationResource {
 	 *	currencylocalization.deleteCurrencyExchangeRate( currencyCode,  toCurrencyCode);
 	 * </code></pre></p>
 	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
-	 * @param toCurrencyCode 
+	 * @param toCurrencyCode The code of the new currency that the original currency's equivalent is being calculated to.
 	 * @return 
 	 */
 	public void deleteCurrencyExchangeRate(String currencyCode, String toCurrencyCode) throws Exception

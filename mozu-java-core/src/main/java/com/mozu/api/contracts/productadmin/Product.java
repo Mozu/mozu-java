@@ -23,6 +23,7 @@ import com.mozu.api.contracts.productadmin.ProductOption;
 import com.mozu.api.contracts.core.Measurement;
 import com.mozu.api.contracts.productadmin.ProductPrice;
 import com.mozu.api.contracts.productadmin.ProductPricingBehaviorInfo;
+import com.mozu.api.contracts.productadmin.ProductImageGroup;
 import com.mozu.api.contracts.productadmin.ProductInCatalogInfo;
 import com.mozu.api.contracts.productadmin.ProductProperty;
 import com.mozu.api.contracts.productadmin.ProductPublishingInfo;
@@ -349,6 +350,17 @@ public class Product implements Serializable
 
 	public void setPricingBehavior(ProductPricingBehaviorInfo pricingBehavior) {
 		this.pricingBehavior = pricingBehavior;
+	}
+
+	/**
+	 * An array of multiple product image groups, providing an assortment of different themed image sets.
+	 */
+	protected List<ProductImageGroup> productImageGroups;
+	public List<ProductImageGroup> getProductImageGroups() {
+		return this.productImageGroups;
+	}
+	public void setProductImageGroups(List<ProductImageGroup> productImageGroups) {
+		this.productImageGroups = productImageGroups;
 	}
 
 	protected List<ProductInCatalogInfo> productInCatalogs;

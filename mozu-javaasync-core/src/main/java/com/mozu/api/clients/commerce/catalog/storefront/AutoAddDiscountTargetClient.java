@@ -19,7 +19,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * commerce/catalog/storefront/discounts related resources. DOCUMENT_HERE 
+ * Resources for the discounts supported on the storefront of this catalog.
  * </summary>
  */
 public class AutoAddDiscountTargetClient {

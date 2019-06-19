@@ -14,7 +14,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.customer.B2BUser;
 
 /**
- *	Mozu.Customer.Contracts.B2BUserAndAuthInfo ApiType DOCUMENT_HERE 
+ *	The individual user information of logins that can access a shared B2B account.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class B2BUserAndAuthInfo implements Serializable
@@ -23,7 +23,7 @@ public class B2BUserAndAuthInfo implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * externalPassword ApiType DOCUMENT_HERE 
+	 * The external password used by this login, if applicable.
 	 */
 	protected  String externalPassword;
 
@@ -49,7 +49,7 @@ public class B2BUserAndAuthInfo implements Serializable
 	}
 
 	/**
-	 * b2bUser ApiType DOCUMENT_HERE 
+	 * Individual user information for a login that can access a shared B2B account.
 	 */
 	protected  B2BUser b2bUser;
 

@@ -18,7 +18,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * commerce/customer/b2baccounts related resources. DOCUMENT_HERE 
+ * The B2B feature includes the primary shared B2B account and a set of user account logins that have access to that primary account. This primary account has its own identifying data and customer attributes, as well as the list of users associated with it. These attributes and users can be managed through other operations of the B2B APIs.
  * </summary>
  */
 public class B2BAccountResource {
@@ -307,7 +307,7 @@ public class B2BAccountResource {
 	 *	CustomerAttribute customerAttribute = b2baccount.addB2BAccountAttribute( attribute,  accountId);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param attribute 
+	 * @param attribute The attribute details being applied to the B2B account.
 	 * @return com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
@@ -325,7 +325,7 @@ public class B2BAccountResource {
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param attribute 
+	 * @param attribute The attribute details being applied to the B2B account.
 	 * @return com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
@@ -346,7 +346,7 @@ public class B2BAccountResource {
 	 *	b2baccount.addUserRoleAsync( accountId,  userId,  roleId);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param roleId 
+	 * @param roleId Identifier for the role that the user account should belong to. For B2B, these roles include Admin, Purchaser, and Non-Purchaser.
 	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @return 
 	 */
@@ -564,7 +564,7 @@ public class B2BAccountResource {
 	 *	b2baccount.removeUserRoleAsync( accountId,  userId,  roleId);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param roleId 
+	 * @param roleId The ID corresponding to the type of permissions being removed, e.g. 1 for Admin.
 	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @return 
 	 */

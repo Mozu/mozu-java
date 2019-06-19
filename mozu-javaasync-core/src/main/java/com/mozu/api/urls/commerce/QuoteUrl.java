@@ -39,7 +39,7 @@ public class QuoteUrl
 
 	/**
 	 * Get Resource Url for GetQuote
-	 * @param quoteId 
+	 * @param quoteId A unique identifier for the quote.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
@@ -54,7 +54,7 @@ public class QuoteUrl
 	/**
 	 * Get Resource Url for GetQuoteByName
 	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
-	 * @param quoteName 
+	 * @param quoteName A unique name for the quote.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
@@ -81,7 +81,7 @@ public class QuoteUrl
 
 	/**
 	 * Get Resource Url for UpdateQuote
-	 * @param quoteId 
+	 * @param quoteId A unique identifier for the quote being updated.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
@@ -95,7 +95,7 @@ public class QuoteUrl
 
 	/**
 	 * Get Resource Url for DeleteQuote
-	 * @param quoteId 
+	 * @param quoteId A unique identifier for the quote.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteQuoteUrl(String quoteId)

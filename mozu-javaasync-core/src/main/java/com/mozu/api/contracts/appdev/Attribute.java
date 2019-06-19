@@ -74,7 +74,7 @@ public class Attribute implements Serializable
 	}
 
 	/**
-	 * Mozu.AppDev.Contracts.Attribute fqn ApiTypeMember DOCUMENT_HERE 
+	 * The FQN of the option to which this image group belongs.  Should match the fqn of the option that has a true value for isProductImageGroupSelector.
 	 */
 	protected  String fqn;
 
