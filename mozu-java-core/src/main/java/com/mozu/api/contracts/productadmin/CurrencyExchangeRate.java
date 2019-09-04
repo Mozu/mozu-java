@@ -13,18 +13,12 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 
-/**
- *	Mozu.ProductAdmin.Contracts.CurrencyExchangeRate ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CurrencyExchangeRate implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The code of the original currency that the new currency equivalent is being calculated from.
-	 */
 	protected  String fromCurrencyCode;
 
 	public String getFromCurrencyCode() {
@@ -35,9 +29,6 @@ public class CurrencyExchangeRate implements Serializable
 		this.fromCurrencyCode = fromCurrencyCode;
 	}
 
-	/**
-	 * The multiplier that is used to calculate the equivalent between two currencies.
-	 */
 	protected  Double multiplier;
 
 	public Double getMultiplier() {
@@ -48,9 +39,6 @@ public class CurrencyExchangeRate implements Serializable
 		this.multiplier = multiplier;
 	}
 
-	/**
-	 * The exact rate of the given currency exchange.
-	 */
 	protected  Double rate;
 
 	public Double getRate() {
@@ -61,9 +49,6 @@ public class CurrencyExchangeRate implements Serializable
 		this.rate = rate;
 	}
 
-	/**
-	 * Any reference information for the exchange calculation.
-	 */
 	protected  String referenceData;
 
 	public String getReferenceData() {
@@ -74,9 +59,6 @@ public class CurrencyExchangeRate implements Serializable
 		this.referenceData = referenceData;
 	}
 
-	/**
-	 * The code of the new currency that the original currency's equivalent is being calculated to.
-	 */
 	protected  String toCurrencyCode;
 
 	public String getToCurrencyCode() {
@@ -87,9 +69,6 @@ public class CurrencyExchangeRate implements Serializable
 		this.toCurrencyCode = toCurrencyCode;
 	}
 
-	/**
-	 * Basic audit info about the object, including date, time, and user account. This data may be captured when creating, updating, and removing data.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {

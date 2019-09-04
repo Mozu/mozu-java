@@ -54,7 +54,7 @@ public class ChangeMessageResource {
 	 *	ChangeMessage changemessage = new ChangeMessage();
 	 *	CartChangeMessageCollection cartChangeMessageCollection = changemessage.getMessages( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection
 	 */
@@ -71,16 +71,17 @@ public class ChangeMessageResource {
 	 * 
 	 * <p><pre><code>
 	 *	ChangeMessage changemessage = new ChangeMessage();
-	 *	changemessage.removeAllMessages();
+	 *	Stream stream = changemessage.removeAllMessages();
 	 * </code></pre></p>
-	 * @return 
+	 * @return Stream
+	 * @see Stream
 	 */
-	public void removeAllMessages() throws Exception
+	public java.io.InputStream removeAllMessages() throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.commerce.carts.ChangeMessageClient.removeAllMessagesClient();
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.carts.ChangeMessageClient.removeAllMessagesClient();
 		client.setContext(_apiContext);
 		client.executeRequest();
-		client.cleanupHttpConnection();
+		return client.getResult();
 
 	}
 
@@ -88,17 +89,18 @@ public class ChangeMessageResource {
 	 * 
 	 * <p><pre><code>
 	 *	ChangeMessage changemessage = new ChangeMessage();
-	 *	changemessage.removeMessage( messageId);
+	 *	Stream stream = changemessage.removeMessage( messageId);
 	 * </code></pre></p>
 	 * @param messageId Identifier of the message to remove from the cart.
-	 * @return 
+	 * @return Stream
+	 * @see Stream
 	 */
-	public void removeMessage(String messageId) throws Exception
+	public java.io.InputStream removeMessage(String messageId) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.commerce.carts.ChangeMessageClient.removeMessageClient( messageId);
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.carts.ChangeMessageClient.removeMessageClient( messageId);
 		client.setContext(_apiContext);
 		client.executeRequest();
-		client.cleanupHttpConnection();
+		return client.getResult();
 
 	}
 

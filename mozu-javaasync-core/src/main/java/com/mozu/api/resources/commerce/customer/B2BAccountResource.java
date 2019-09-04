@@ -20,7 +20,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * The B2B feature includes the primary shared B2B account and a set of user account logins that have access to that primary account. This primary account has its own identifying data and customer attributes, as well as the list of users associated with it. These attributes and users can be managed through other operations of the B2B APIs.
+ * 
  * </summary>
  */
 public class B2BAccountResource {
@@ -72,13 +72,13 @@ public class B2BAccountResource {
 	 *	B2BAccountCollection b2BAccountCollection = b2baccount.getB2BAccounts( startIndex,  pageSize,  sortBy,  filter,  fields,  q,  qLimit,  responseFields);
 	 * </code></pre></p>
 	 * @param fields 
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param q A list of order search terms (not phrases) to use in the query when searching across order number and the name or email of the billing contact. When entering, separate multiple search terms with a space character.
-	 * @param qLimit The maximum number of search results to return in the response. You can limit any range between 1-100.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param filter 
+	 * @param pageSize 
+	 * @param q 
+	 * @param qLimit 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @return com.mozu.api.contracts.customer.B2BAccountCollection
 	 * @see com.mozu.api.contracts.customer.B2BAccountCollection
 	 */
@@ -98,13 +98,13 @@ public class B2BAccountResource {
 	 *	CountDownLatch latch = b2baccount.getB2BAccounts( startIndex,  pageSize,  sortBy,  filter,  fields,  q,  qLimit,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param fields 
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param q A list of order search terms (not phrases) to use in the query when searching across order number and the name or email of the billing contact. When entering, separate multiple search terms with a space character.
-	 * @param qLimit The maximum number of search results to return in the response. You can limit any range between 1-100.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param filter 
+	 * @param pageSize 
+	 * @param q 
+	 * @param qLimit 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.B2BAccountCollection
 	 * @see com.mozu.api.contracts.customer.B2BAccountCollection
@@ -123,8 +123,8 @@ public class B2BAccountResource {
 	 *	B2BAccount b2baccount = new B2BAccount();
 	 *	CustomerAttribute customerAttribute = b2baccount.getB2BAccountAttribute( accountId,  attributeFQN);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param accountId 
+	 * @param attributeFQN 
 	 * @return com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
 	 */
@@ -139,8 +139,8 @@ public class B2BAccountResource {
 	 *	B2BAccount b2baccount = new B2BAccount();
 	 *	CountDownLatch latch = b2baccount.getB2BAccountAttribute( accountId,  attributeFQN, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param accountId 
+	 * @param attributeFQN 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
@@ -156,9 +156,9 @@ public class B2BAccountResource {
 	 *	B2BAccount b2baccount = new B2BAccount();
 	 *	CustomerAttribute customerAttribute = b2baccount.getB2BAccountAttribute( accountId,  attributeFQN,  responseFields);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param accountId 
+	 * @param attributeFQN 
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
 	 */
@@ -177,9 +177,9 @@ public class B2BAccountResource {
 	 *	B2BAccount b2baccount = new B2BAccount();
 	 *	CountDownLatch latch = b2baccount.getB2BAccountAttribute( accountId,  attributeFQN,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param accountId 
+	 * @param attributeFQN 
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
@@ -198,7 +198,7 @@ public class B2BAccountResource {
 	 *	B2BAccount b2baccount = new B2BAccount();
 	 *	CustomerAttributeCollection customerAttributeCollection = b2baccount.getB2BAccountAttributes( accountId);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId 
 	 * @return com.mozu.api.contracts.customer.CustomerAttributeCollection
 	 * @see com.mozu.api.contracts.customer.CustomerAttributeCollection
 	 */
@@ -213,7 +213,7 @@ public class B2BAccountResource {
 	 *	B2BAccount b2baccount = new B2BAccount();
 	 *	CountDownLatch latch = b2baccount.getB2BAccountAttributes( accountId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.CustomerAttributeCollection
 	 * @see com.mozu.api.contracts.customer.CustomerAttributeCollection
@@ -229,12 +229,12 @@ public class B2BAccountResource {
 	 *	B2BAccount b2baccount = new B2BAccount();
 	 *	CustomerAttributeCollection customerAttributeCollection = b2baccount.getB2BAccountAttributes( accountId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param accountId 
+	 * @param filter 
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @return com.mozu.api.contracts.customer.CustomerAttributeCollection
 	 * @see com.mozu.api.contracts.customer.CustomerAttributeCollection
 	 */
@@ -253,12 +253,12 @@ public class B2BAccountResource {
 	 *	B2BAccount b2baccount = new B2BAccount();
 	 *	CountDownLatch latch = b2baccount.getB2BAccountAttributes( accountId,  startIndex,  pageSize,  sortBy,  filter,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param accountId 
+	 * @param filter 
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.CustomerAttributeCollection
 	 * @see com.mozu.api.contracts.customer.CustomerAttributeCollection
@@ -277,8 +277,8 @@ public class B2BAccountResource {
 	 *	B2BAccount b2baccount = new B2BAccount();
 	 *	UserRoleCollection userRoleCollection = b2baccount.getUserRolesAsync( accountId,  userId);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
+	 * @param accountId 
+	 * @param userId 
 	 * @return com.mozu.api.contracts.customer.UserRoleCollection
 	 * @see com.mozu.api.contracts.customer.UserRoleCollection
 	 */
@@ -293,8 +293,8 @@ public class B2BAccountResource {
 	 *	B2BAccount b2baccount = new B2BAccount();
 	 *	CountDownLatch latch = b2baccount.getUserRolesAsync( accountId,  userId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
+	 * @param accountId 
+	 * @param userId 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.UserRoleCollection
 	 * @see com.mozu.api.contracts.customer.UserRoleCollection
@@ -310,9 +310,9 @@ public class B2BAccountResource {
 	 *	B2BAccount b2baccount = new B2BAccount();
 	 *	UserRoleCollection userRoleCollection = b2baccount.getUserRolesAsync( accountId,  userId,  responseFields);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
+	 * @param accountId 
+	 * @param responseFields 
+	 * @param userId 
 	 * @return com.mozu.api.contracts.customer.UserRoleCollection
 	 * @see com.mozu.api.contracts.customer.UserRoleCollection
 	 */
@@ -331,9 +331,9 @@ public class B2BAccountResource {
 	 *	B2BAccount b2baccount = new B2BAccount();
 	 *	CountDownLatch latch = b2baccount.getUserRolesAsync( accountId,  userId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
+	 * @param accountId 
+	 * @param responseFields 
+	 * @param userId 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.UserRoleCollection
 	 * @see com.mozu.api.contracts.customer.UserRoleCollection
@@ -352,7 +352,7 @@ public class B2BAccountResource {
 	 *	B2BAccount b2baccount = new B2BAccount();
 	 *	B2BUserCollection b2BUserCollection = b2baccount.getUsers( accountId);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId 
 	 * @return com.mozu.api.contracts.customer.B2BUserCollection
 	 * @see com.mozu.api.contracts.customer.B2BUserCollection
 	 */
@@ -367,7 +367,7 @@ public class B2BAccountResource {
 	 *	B2BAccount b2baccount = new B2BAccount();
 	 *	CountDownLatch latch = b2baccount.getUsers( accountId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.B2BUserCollection
 	 * @see com.mozu.api.contracts.customer.B2BUserCollection
@@ -383,14 +383,14 @@ public class B2BAccountResource {
 	 *	B2BAccount b2baccount = new B2BAccount();
 	 *	B2BUserCollection b2BUserCollection = b2baccount.getUsers( accountId,  startIndex,  pageSize,  sortBy,  filter,  q,  qLimit,  responseFields);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param q A list of order search terms (not phrases) to use in the query when searching across order number and the name or email of the billing contact. When entering, separate multiple search terms with a space character.
-	 * @param qLimit The maximum number of search results to return in the response. You can limit any range between 1-100.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param accountId 
+	 * @param filter 
+	 * @param pageSize 
+	 * @param q 
+	 * @param qLimit 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @return com.mozu.api.contracts.customer.B2BUserCollection
 	 * @see com.mozu.api.contracts.customer.B2BUserCollection
 	 */
@@ -409,14 +409,14 @@ public class B2BAccountResource {
 	 *	B2BAccount b2baccount = new B2BAccount();
 	 *	CountDownLatch latch = b2baccount.getUsers( accountId,  startIndex,  pageSize,  sortBy,  filter,  q,  qLimit,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param q A list of order search terms (not phrases) to use in the query when searching across order number and the name or email of the billing contact. When entering, separate multiple search terms with a space character.
-	 * @param qLimit The maximum number of search results to return in the response. You can limit any range between 1-100.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param accountId 
+	 * @param filter 
+	 * @param pageSize 
+	 * @param q 
+	 * @param qLimit 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.B2BUserCollection
 	 * @see com.mozu.api.contracts.customer.B2BUserCollection
@@ -435,7 +435,7 @@ public class B2BAccountResource {
 	 *	B2BAccount b2baccount = new B2BAccount();
 	 *	B2BAccount b2BAccount = b2baccount.getB2BAccount( accountId);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId 
 	 * @return com.mozu.api.contracts.customer.B2BAccount
 	 * @see com.mozu.api.contracts.customer.B2BAccount
 	 */
@@ -450,7 +450,7 @@ public class B2BAccountResource {
 	 *	B2BAccount b2baccount = new B2BAccount();
 	 *	CountDownLatch latch = b2baccount.getB2BAccount( accountId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.B2BAccount
 	 * @see com.mozu.api.contracts.customer.B2BAccount
@@ -466,8 +466,8 @@ public class B2BAccountResource {
 	 *	B2BAccount b2baccount = new B2BAccount();
 	 *	B2BAccount b2BAccount = b2baccount.getB2BAccount( accountId,  responseFields);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param accountId 
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.customer.B2BAccount
 	 * @see com.mozu.api.contracts.customer.B2BAccount
 	 */
@@ -486,8 +486,8 @@ public class B2BAccountResource {
 	 *	B2BAccount b2baccount = new B2BAccount();
 	 *	CountDownLatch latch = b2baccount.getB2BAccount( accountId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param accountId 
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.B2BAccount
 	 * @see com.mozu.api.contracts.customer.B2BAccount
@@ -539,7 +539,7 @@ public class B2BAccountResource {
 	 *	B2BAccount b2baccount = new B2BAccount();
 	 *	B2BAccount b2BAccount = b2baccount.addAccount( account,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param account 
 	 * @return com.mozu.api.contracts.customer.B2BAccount
 	 * @see com.mozu.api.contracts.customer.B2BAccount
@@ -560,7 +560,7 @@ public class B2BAccountResource {
 	 *	B2BAccount b2baccount = new B2BAccount();
 	 *	CountDownLatch latch = b2baccount.addAccount( account,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @param account 
 	 * @return com.mozu.api.contracts.customer.B2BAccount
@@ -581,8 +581,8 @@ public class B2BAccountResource {
 	 *	B2BAccount b2baccount = new B2BAccount();
 	 *	CustomerAttribute customerAttribute = b2baccount.addB2BAccountAttribute( attribute,  accountId);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param attribute The attribute details being applied to the B2B account.
+	 * @param accountId 
+	 * @param attribute 
 	 * @return com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
@@ -598,9 +598,9 @@ public class B2BAccountResource {
 	 *	B2BAccount b2baccount = new B2BAccount();
 	 *	CountDownLatch latch = b2baccount.addB2BAccountAttribute( attribute,  accountId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param attribute The attribute details being applied to the B2B account.
+	 * @param attribute 
 	 * @return com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
@@ -616,9 +616,9 @@ public class B2BAccountResource {
 	 *	B2BAccount b2baccount = new B2BAccount();
 	 *	CustomerAttribute customerAttribute = b2baccount.addB2BAccountAttribute( attribute,  accountId,  responseFields);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param attribute The attribute details being applied to the B2B account.
+	 * @param accountId 
+	 * @param responseFields 
+	 * @param attribute 
 	 * @return com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
@@ -638,10 +638,10 @@ public class B2BAccountResource {
 	 *	B2BAccount b2baccount = new B2BAccount();
 	 *	CountDownLatch latch = b2baccount.addB2BAccountAttribute( attribute,  accountId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param accountId 
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param attribute The attribute details being applied to the B2B account.
+	 * @param attribute 
 	 * @return com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
@@ -658,19 +658,41 @@ public class B2BAccountResource {
 	 * 
 	 * <p><pre><code>
 	 *	B2BAccount b2baccount = new B2BAccount();
-	 *	b2baccount.addUserRoleAsync( accountId,  userId,  roleId);
+	 *	Stream stream = b2baccount.addUserRoleAsync( accountId,  userId,  roleId);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param roleId Identifier for the role that the user account should belong to. For B2B, these roles include Admin, Purchaser, and Non-Purchaser.
-	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
-	 * @return 
+	 * @param accountId 
+	 * @param roleId 
+	 * @param userId 
+	 * @return Stream
+	 * @see Stream
 	 */
-	public void addUserRoleAsync(Integer accountId, String userId, Integer roleId) throws Exception
+	public java.io.InputStream addUserRoleAsync(Integer accountId, String userId, Integer roleId) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.commerce.customer.B2BAccountClient.addUserRoleAsyncClient( accountId,  userId,  roleId);
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.customer.B2BAccountClient.addUserRoleAsyncClient( accountId,  userId,  roleId);
 		client.setContext(_apiContext);
 		client.executeRequest();
-		client.cleanupHttpConnection();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	B2BAccount b2baccount = new B2BAccount();
+	 *	CountDownLatch latch = b2baccount.addUserRoleAsync( accountId,  userId,  roleId, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param accountId 
+	 * @param roleId 
+	 * @param userId 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return Stream
+	 * @see Stream
+	 */
+	public CountDownLatch addUserRoleAsyncAsync(Integer accountId, String userId, Integer roleId, AsyncCallback<java.io.InputStream> callback) throws Exception
+	{
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.customer.B2BAccountClient.addUserRoleAsyncClient( accountId,  userId,  roleId);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
 
 	}
 
@@ -680,7 +702,7 @@ public class B2BAccountResource {
 	 *	B2BAccount b2baccount = new B2BAccount();
 	 *	B2BUser b2BUser = b2baccount.addUser( user,  accountId);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId 
 	 * @param user 
 	 * @return com.mozu.api.contracts.customer.B2BUser
 	 * @see com.mozu.api.contracts.customer.B2BUser
@@ -697,7 +719,7 @@ public class B2BAccountResource {
 	 *	B2BAccount b2baccount = new B2BAccount();
 	 *	CountDownLatch latch = b2baccount.addUser( user,  accountId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId 
 	 * @param  callback callback handler for asynchronous operations
 	 * @param user 
 	 * @return com.mozu.api.contracts.customer.B2BUser
@@ -715,8 +737,8 @@ public class B2BAccountResource {
 	 *	B2BAccount b2baccount = new B2BAccount();
 	 *	B2BUser b2BUser = b2baccount.addUser( user,  accountId,  responseFields);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param accountId 
+	 * @param responseFields 
 	 * @param user 
 	 * @return com.mozu.api.contracts.customer.B2BUser
 	 * @see com.mozu.api.contracts.customer.B2BUser
@@ -737,8 +759,8 @@ public class B2BAccountResource {
 	 *	B2BAccount b2baccount = new B2BAccount();
 	 *	CountDownLatch latch = b2baccount.addUser( user,  accountId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param accountId 
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @param user 
 	 * @return com.mozu.api.contracts.customer.B2BUser
@@ -759,8 +781,8 @@ public class B2BAccountResource {
 	 *	B2BAccount b2baccount = new B2BAccount();
 	 *	CustomerAttribute customerAttribute = b2baccount.updateB2BAccountAttribute( attribute,  accountId,  attributeFQN);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param accountId 
+	 * @param attributeFQN 
 	 * @param attribute 
 	 * @return com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
@@ -777,8 +799,8 @@ public class B2BAccountResource {
 	 *	B2BAccount b2baccount = new B2BAccount();
 	 *	CountDownLatch latch = b2baccount.updateB2BAccountAttribute( attribute,  accountId,  attributeFQN, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param accountId 
+	 * @param attributeFQN 
 	 * @param  callback callback handler for asynchronous operations
 	 * @param attribute 
 	 * @return com.mozu.api.contracts.customer.CustomerAttribute
@@ -796,9 +818,9 @@ public class B2BAccountResource {
 	 *	B2BAccount b2baccount = new B2BAccount();
 	 *	CustomerAttribute customerAttribute = b2baccount.updateB2BAccountAttribute( attribute,  accountId,  attributeFQN,  responseFields);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param accountId 
+	 * @param attributeFQN 
+	 * @param responseFields 
 	 * @param attribute 
 	 * @return com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
@@ -819,9 +841,9 @@ public class B2BAccountResource {
 	 *	B2BAccount b2baccount = new B2BAccount();
 	 *	CountDownLatch latch = b2baccount.updateB2BAccountAttribute( attribute,  accountId,  attributeFQN,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param accountId 
+	 * @param attributeFQN 
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @param attribute 
 	 * @return com.mozu.api.contracts.customer.CustomerAttribute
@@ -840,18 +862,39 @@ public class B2BAccountResource {
 	 * 
 	 * <p><pre><code>
 	 *	B2BAccount b2baccount = new B2BAccount();
-	 *	b2baccount.removeUser( accountId,  userId);
+	 *	Stream stream = b2baccount.removeUser( accountId,  userId);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
-	 * @return 
+	 * @param accountId 
+	 * @param userId 
+	 * @return Stream
+	 * @see Stream
 	 */
-	public void removeUser(Integer accountId, String userId) throws Exception
+	public java.io.InputStream removeUser(Integer accountId, String userId) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.commerce.customer.B2BAccountClient.removeUserClient( accountId,  userId);
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.customer.B2BAccountClient.removeUserClient( accountId,  userId);
 		client.setContext(_apiContext);
 		client.executeRequest();
-		client.cleanupHttpConnection();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	B2BAccount b2baccount = new B2BAccount();
+	 *	CountDownLatch latch = b2baccount.removeUser( accountId,  userId, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param accountId 
+	 * @param userId 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return Stream
+	 * @see Stream
+	 */
+	public CountDownLatch removeUserAsync(Integer accountId, String userId, AsyncCallback<java.io.InputStream> callback) throws Exception
+	{
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.customer.B2BAccountClient.removeUserClient( accountId,  userId);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
 
 	}
 
@@ -861,8 +904,8 @@ public class B2BAccountResource {
 	 *	B2BAccount b2baccount = new B2BAccount();
 	 *	B2BUser b2BUser = b2baccount.updateUser( user,  accountId,  userId);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
+	 * @param accountId 
+	 * @param userId 
 	 * @param user 
 	 * @return com.mozu.api.contracts.customer.B2BUser
 	 * @see com.mozu.api.contracts.customer.B2BUser
@@ -879,8 +922,8 @@ public class B2BAccountResource {
 	 *	B2BAccount b2baccount = new B2BAccount();
 	 *	CountDownLatch latch = b2baccount.updateUser( user,  accountId,  userId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
+	 * @param accountId 
+	 * @param userId 
 	 * @param  callback callback handler for asynchronous operations
 	 * @param user 
 	 * @return com.mozu.api.contracts.customer.B2BUser
@@ -898,9 +941,9 @@ public class B2BAccountResource {
 	 *	B2BAccount b2baccount = new B2BAccount();
 	 *	B2BUser b2BUser = b2baccount.updateUser( user,  accountId,  userId,  responseFields);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
+	 * @param accountId 
+	 * @param responseFields 
+	 * @param userId 
 	 * @param user 
 	 * @return com.mozu.api.contracts.customer.B2BUser
 	 * @see com.mozu.api.contracts.customer.B2BUser
@@ -921,9 +964,9 @@ public class B2BAccountResource {
 	 *	B2BAccount b2baccount = new B2BAccount();
 	 *	CountDownLatch latch = b2baccount.updateUser( user,  accountId,  userId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
+	 * @param accountId 
+	 * @param responseFields 
+	 * @param userId 
 	 * @param  callback callback handler for asynchronous operations
 	 * @param user 
 	 * @return com.mozu.api.contracts.customer.B2BUser
@@ -944,7 +987,7 @@ public class B2BAccountResource {
 	 *	B2BAccount b2baccount = new B2BAccount();
 	 *	B2BAccount b2BAccount = b2baccount.updateAccount( account,  accountId);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId 
 	 * @param account 
 	 * @return com.mozu.api.contracts.customer.B2BAccount
 	 * @see com.mozu.api.contracts.customer.B2BAccount
@@ -961,7 +1004,7 @@ public class B2BAccountResource {
 	 *	B2BAccount b2baccount = new B2BAccount();
 	 *	CountDownLatch latch = b2baccount.updateAccount( account,  accountId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId 
 	 * @param  callback callback handler for asynchronous operations
 	 * @param account 
 	 * @return com.mozu.api.contracts.customer.B2BAccount
@@ -979,8 +1022,8 @@ public class B2BAccountResource {
 	 *	B2BAccount b2baccount = new B2BAccount();
 	 *	B2BAccount b2BAccount = b2baccount.updateAccount( account,  accountId,  responseFields);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param accountId 
+	 * @param responseFields 
 	 * @param account 
 	 * @return com.mozu.api.contracts.customer.B2BAccount
 	 * @see com.mozu.api.contracts.customer.B2BAccount
@@ -1001,8 +1044,8 @@ public class B2BAccountResource {
 	 *	B2BAccount b2baccount = new B2BAccount();
 	 *	CountDownLatch latch = b2baccount.updateAccount( account,  accountId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param accountId 
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @param account 
 	 * @return com.mozu.api.contracts.customer.B2BAccount
@@ -1021,18 +1064,19 @@ public class B2BAccountResource {
 	 * 
 	 * <p><pre><code>
 	 *	B2BAccount b2baccount = new B2BAccount();
-	 *	b2baccount.deleteB2BAccountAttribute( accountId,  attributeFQN);
+	 *	Stream stream = b2baccount.deleteB2BAccountAttribute( accountId,  attributeFQN);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @return 
+	 * @param accountId 
+	 * @param attributeFQN 
+	 * @return Stream
+	 * @see Stream
 	 */
-	public void deleteB2BAccountAttribute(Integer accountId, String attributeFQN) throws Exception
+	public java.io.InputStream deleteB2BAccountAttribute(Integer accountId, String attributeFQN) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.commerce.customer.B2BAccountClient.deleteB2BAccountAttributeClient( accountId,  attributeFQN);
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.customer.B2BAccountClient.deleteB2BAccountAttributeClient( accountId,  attributeFQN);
 		client.setContext(_apiContext);
 		client.executeRequest();
-		client.cleanupHttpConnection();
+		return client.getResult();
 
 	}
 
@@ -1040,19 +1084,61 @@ public class B2BAccountResource {
 	 * 
 	 * <p><pre><code>
 	 *	B2BAccount b2baccount = new B2BAccount();
-	 *	b2baccount.removeUserRoleAsync( accountId,  userId,  roleId);
-	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param roleId The ID corresponding to the type of permissions being removed, e.g. 1 for Admin.
-	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
-	 * @return 
+	 *	CountDownLatch latch = b2baccount.deleteB2BAccountAttribute( accountId,  attributeFQN, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param accountId 
+	 * @param attributeFQN 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return Stream
+	 * @see Stream
 	 */
-	public void removeUserRoleAsync(Integer accountId, String userId, Integer roleId) throws Exception
+	public CountDownLatch deleteB2BAccountAttributeAsync(Integer accountId, String attributeFQN, AsyncCallback<java.io.InputStream> callback) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.commerce.customer.B2BAccountClient.removeUserRoleAsyncClient( accountId,  userId,  roleId);
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.customer.B2BAccountClient.deleteB2BAccountAttributeClient( accountId,  attributeFQN);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	B2BAccount b2baccount = new B2BAccount();
+	 *	Stream stream = b2baccount.removeUserRoleAsync( accountId,  userId,  roleId);
+	 * </code></pre></p>
+	 * @param accountId 
+	 * @param roleId 
+	 * @param userId 
+	 * @return Stream
+	 * @see Stream
+	 */
+	public java.io.InputStream removeUserRoleAsync(Integer accountId, String userId, Integer roleId) throws Exception
+	{
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.customer.B2BAccountClient.removeUserRoleAsyncClient( accountId,  userId,  roleId);
 		client.setContext(_apiContext);
 		client.executeRequest();
-		client.cleanupHttpConnection();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	B2BAccount b2baccount = new B2BAccount();
+	 *	CountDownLatch latch = b2baccount.removeUserRoleAsync( accountId,  userId,  roleId, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param accountId 
+	 * @param roleId 
+	 * @param userId 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return Stream
+	 * @see Stream
+	 */
+	public CountDownLatch removeUserRoleAsyncAsync(Integer accountId, String userId, Integer roleId, AsyncCallback<java.io.InputStream> callback) throws Exception
+	{
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.customer.B2BAccountClient.removeUserRoleAsyncClient( accountId,  userId,  roleId);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
 
 	}
 

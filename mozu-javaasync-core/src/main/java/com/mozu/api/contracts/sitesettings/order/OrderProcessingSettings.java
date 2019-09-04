@@ -38,9 +38,6 @@ public class OrderProcessingSettings implements Serializable
 		this.abandonedOrderThresholdInMinutes = abandonedOrderThresholdInMinutes;
 	}
 
-	/**
-	 * The gift card payment type being used to perform this purchase.
-	 */
 	protected  String giftCardProcessingType;
 
 	public String getGiftCardProcessingType() {
@@ -81,9 +78,6 @@ public class OrderProcessingSettings implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * The settings of the third party payment gateways as configured by the user.
-	 */
 	protected List<ThirdPartyPaymentSetting> thirdPartyPaymentSettings;
 	public List<ThirdPartyPaymentSetting> getThirdPartyPaymentSettings() {
 		return this.thirdPartyPaymentSettings;

@@ -253,40 +253,44 @@ public class AttributeVocabularyValueFactory
 		return returnObj;
 	}
 
-	public static void deleteAttributeVocabularyValue(ApiContext apiContext, String attributeFQN, String value, int expectedCode) throws Exception
+	public static java.io.InputStream deleteAttributeVocabularyValue(ApiContext apiContext, String attributeFQN, String value, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		AttributeVocabularyValueResource resource = new AttributeVocabularyValueResource(apiContext);
 		try
 		{
-			resource.deleteAttributeVocabularyValue( attributeFQN,  value);
+			returnObj = resource.deleteAttributeVocabularyValue( attributeFQN,  value);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
-	public static void deleteAttributeVocabularyValueLocalizedContent(ApiContext apiContext, String attributeFQN, String value, String localeCode, int expectedCode) throws Exception
+	public static java.io.InputStream deleteAttributeVocabularyValueLocalizedContent(ApiContext apiContext, String attributeFQN, String value, String localeCode, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		AttributeVocabularyValueResource resource = new AttributeVocabularyValueResource(apiContext);
 		try
 		{
-			resource.deleteAttributeVocabularyValueLocalizedContent( attributeFQN,  value,  localeCode);
+			returnObj = resource.deleteAttributeVocabularyValueLocalizedContent( attributeFQN,  value,  localeCode);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 }

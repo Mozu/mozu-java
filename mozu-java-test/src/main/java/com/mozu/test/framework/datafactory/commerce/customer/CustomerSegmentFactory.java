@@ -98,22 +98,24 @@ public class CustomerSegmentFactory
 		return returnObj;
 	}
 
-	public static void addSegmentAccounts(ApiContext apiContext, List<Integer> accountIds, Integer id, int expectedCode) throws Exception
+	public static java.io.InputStream addSegmentAccounts(ApiContext apiContext, List<Integer> accountIds, Integer id, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		CustomerSegmentResource resource = new CustomerSegmentResource(apiContext);
 		try
 		{
-			resource.addSegmentAccounts( accountIds,  id);
+			returnObj = resource.addSegmentAccounts( accountIds,  id);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 	public static com.mozu.api.contracts.customer.CustomerSegment updateSegment(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerSegment segment, Integer id, int expectedCode) throws Exception
@@ -141,40 +143,44 @@ public class CustomerSegmentFactory
 		return returnObj;
 	}
 
-	public static void deleteSegment(ApiContext apiContext, Integer id, int expectedCode) throws Exception
+	public static java.io.InputStream deleteSegment(ApiContext apiContext, Integer id, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		CustomerSegmentResource resource = new CustomerSegmentResource(apiContext);
 		try
 		{
-			resource.deleteSegment( id);
+			returnObj = resource.deleteSegment( id);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
-	public static void removeSegmentAccount(ApiContext apiContext, Integer id, Integer accountId, int expectedCode) throws Exception
+	public static java.io.InputStream removeSegmentAccount(ApiContext apiContext, Integer id, Integer accountId, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		CustomerSegmentResource resource = new CustomerSegmentResource(apiContext);
 		try
 		{
-			resource.removeSegmentAccount( id,  accountId);
+			returnObj = resource.removeSegmentAccount( id,  accountId);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 }

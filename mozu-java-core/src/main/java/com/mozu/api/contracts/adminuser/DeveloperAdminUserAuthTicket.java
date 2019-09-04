@@ -17,7 +17,7 @@ import com.mozu.api.contracts.adminuser.DeveloperAccount;
 import com.mozu.api.contracts.core.UserProfile;
 
 /**
- *	Properties of the authentication ticket to be used in developer account claims with the  API.
+ *	Properties of the authentication ticket to be used in developer account claims with the Mozu API.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DeveloperAdminUserAuthTicket implements Serializable
@@ -61,6 +61,16 @@ public class DeveloperAdminUserAuthTicket implements Serializable
 	}
 	public void setGrantedBehaviors(List<Integer> grantedBehaviors) {
 		this.grantedBehaviors = grantedBehaviors;
+	}
+
+	protected  String jwtAccessToken;
+
+	public String getJwtAccessToken() {
+		return this.jwtAccessToken;
+	}
+
+	public void setJwtAccessToken(String jwtAccessToken) {
+		this.jwtAccessToken = jwtAccessToken;
 	}
 
 	protected  String refreshToken;

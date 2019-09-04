@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.catalog.admin.attributedefinition.attributes.AttributeLocalizedContentResource;
 
 /** <summary>
- * Properties of localized content for attributes, based on a `localeCode` at a site/tenant level. This content supports translated text for product, product options, and additional objects. 
+ * 
  * </summary>
  */
 public class AttributeLocalizedContentFactory
@@ -138,22 +138,24 @@ public class AttributeLocalizedContentFactory
 		return returnObj;
 	}
 
-	public static void deleteLocalizedContent(ApiContext apiContext, String attributeFQN, String localeCode, int expectedCode) throws Exception
+	public static java.io.InputStream deleteLocalizedContent(ApiContext apiContext, String attributeFQN, String localeCode, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		AttributeLocalizedContentResource resource = new AttributeLocalizedContentResource(apiContext);
 		try
 		{
-			resource.deleteLocalizedContent( attributeFQN,  localeCode);
+			returnObj = resource.deleteLocalizedContent( attributeFQN,  localeCode);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 }

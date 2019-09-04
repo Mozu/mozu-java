@@ -13,18 +13,12 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.customer.B2BUser;
 
-/**
- *	The individual user information of logins that can access a shared B2B account.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class B2BUserAndAuthInfo implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The external password used by this login, if applicable.
-	 */
 	protected  String externalPassword;
 
 	public String getExternalPassword() {
@@ -35,9 +29,6 @@ public class B2BUserAndAuthInfo implements Serializable
 		this.externalPassword = externalPassword;
 	}
 
-	/**
-	 * Indicates if this object/data was imported from an outside source such as a data import or synchronization via an app or service. If true, this data was originally imported into  and accessible through your store database. Examples of imported objects/data include orders and customer accounts.
-	 */
 	protected  Boolean isImport;
 
 	public Boolean getIsImport() {
@@ -48,9 +39,6 @@ public class B2BUserAndAuthInfo implements Serializable
 		this.isImport = isImport;
 	}
 
-	/**
-	 * Individual user information for a login that can access a shared B2B account.
-	 */
 	protected  B2BUser b2bUser;
 
 	public B2BUser getB2bUser() {

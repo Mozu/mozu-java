@@ -22,9 +22,6 @@ public class LocationInventory implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Product code defined by the tenant administrator to use as a base prefix when generating product codes for any variations of this product.
-	 */
 	protected  String baseProductCode;
 
 	public String getBaseProductCode() {

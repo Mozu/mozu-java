@@ -21,18 +21,12 @@ import com.mozu.api.contracts.customer.CustomerNote;
 import com.mozu.api.contracts.customer.CustomerSegment;
 import com.mozu.api.contracts.customer.B2BUser;
 
-/**
- *	The shared B2B account, with associated users that can all log into the B2B account.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class B2BAccount implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The type of the B2B account.
-	 */
 	protected  String accountType;
 
 	public String getAccountType() {
@@ -43,9 +37,6 @@ public class B2BAccount implements Serializable
 		this.accountType = accountType;
 	}
 
-	/**
-	 * The company or organization name entered for a customer account.
-	 */
 	protected  String companyOrOrganization;
 
 	public String getCompanyOrOrganization() {
@@ -56,9 +47,6 @@ public class B2BAccount implements Serializable
 		this.companyOrOrganization = companyOrOrganization;
 	}
 
-	/**
-	 * customerSet ApiType DOCUMENT_HERE 
-	 */
 	protected  String customerSet;
 
 	public String getCustomerSet() {
@@ -69,9 +57,6 @@ public class B2BAccount implements Serializable
 		this.customerSet = customerSet;
 	}
 
-	/**
-	 * This property tracks the B2B customer account creation date. 
-	 */
 	protected  DateTime customerSinceDate;
 
 	public DateTime getCustomerSinceDate() {
@@ -82,9 +67,6 @@ public class B2BAccount implements Serializable
 		this.customerSinceDate = customerSinceDate;
 	}
 
-	/**
-	 * Unique identifier used by an external program to identify a  order, customer account, or wish list.
-	 */
 	protected  String externalId;
 
 	public String getExternalId() {
@@ -95,9 +77,6 @@ public class B2BAccount implements Serializable
 		this.externalId = externalId;
 	}
 
-	/**
-	 * Unique identifier of the source property, such as a catalog, discount, order, or email template.For a product field it will be the name of the field.For a category ID, must be a positive integer not greater than 2000000. By default,  auto-generates a category ID when categories are created. If you want to specify an ID during creation (which preserves category link relationships when migrating tenant data from one sandbox to another), you must also include the  query string in the endpoint. For example, . Then, use the  property to specify the desired category ID.For a product attribute it will be the Attribute FQN.For a document, the ID must be specified as a 32 character, case-insensitive, alphanumeric string. You can specify the ID as 32 sequential characters or as groups separated by dashes in the format 8-4-4-4-12. For example, or.For email templates, the ID must be one of the following values:			
-	 */
 	protected  Integer id;
 
 	public Integer getId() {
@@ -108,9 +87,6 @@ public class B2BAccount implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * Indicates if the object or feature is active.
-	 */
 	protected  Boolean isActive;
 
 	public Boolean getIsActive() {
@@ -121,9 +97,6 @@ public class B2BAccount implements Serializable
 		this.isActive = isActive;
 	}
 
-	/**
-	 * priceList ApiType DOCUMENT_HERE 
-	 */
 	protected  String priceList;
 
 	public String getPriceList() {
@@ -134,9 +107,6 @@ public class B2BAccount implements Serializable
 		this.priceList = priceList;
 	}
 
-	/**
-	 * If true, this account has tax exempt status.
-	 */
 	protected  Boolean taxExempt;
 
 	public Boolean getTaxExempt() {
@@ -147,9 +117,6 @@ public class B2BAccount implements Serializable
 		this.taxExempt = taxExempt;
 	}
 
-	/**
-	 * The tax identification number associated with the account.
-	 */
 	protected  String taxId;
 
 	public String getTaxId() {
@@ -160,9 +127,6 @@ public class B2BAccount implements Serializable
 		this.taxId = taxId;
 	}
 
-	/**
-	 * Collection of attributes that may be paged list or a list, depending on the usage per object and API type.
-	 */
 	protected List<CustomerAttribute> attributes;
 	public List<CustomerAttribute> getAttributes() {
 		return this.attributes;
@@ -171,9 +135,6 @@ public class B2BAccount implements Serializable
 		this.attributes = attributes;
 	}
 
-	/**
-	 * Basic audit info about the object, including date, time, and user account. This data may be captured when creating, updating, and removing data.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -184,9 +145,6 @@ public class B2BAccount implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * commerceSummary ApiType DOCUMENT_HERE 
-	 */
 	protected  CommerceSummary commerceSummary;
 
 	public CommerceSummary getCommerceSummary() {
@@ -197,9 +155,6 @@ public class B2BAccount implements Serializable
 		this.commerceSummary = commerceSummary;
 	}
 
-	/**
-	 * contacts ApiType DOCUMENT_HERE 
-	 */
 	protected List<CustomerContact> contacts;
 	public List<CustomerContact> getContacts() {
 		return this.contacts;
@@ -208,9 +163,6 @@ public class B2BAccount implements Serializable
 		this.contacts = contacts;
 	}
 
-	/**
-	 * Paged list collection of note content for objects including customers, orders, and returns.
-	 */
 	protected List<CustomerNote> notes;
 	public List<CustomerNote> getNotes() {
 		return this.notes;
@@ -219,9 +171,6 @@ public class B2BAccount implements Serializable
 		this.notes = notes;
 	}
 
-	/**
-	 * segments ApiType DOCUMENT_HERE 
-	 */
 	protected List<CustomerSegment> segments;
 	public List<CustomerSegment> getSegments() {
 		return this.segments;
@@ -230,9 +179,6 @@ public class B2BAccount implements Serializable
 		this.segments = segments;
 	}
 
-	/**
-	 * A list of users associated to the B2B account. On initial B2B account creation, one user is required and will be set up as the admin customer.
-	 */
 	protected List<B2BUser> users;
 	public List<B2BUser> getUsers() {
 		return this.users;

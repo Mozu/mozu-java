@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.catalog.admin.ProductSortDefinitionResource;
 
 /** <summary>
- * Use the Product Sort Definition resource to create, update, and delete sort order definitions used in visual merchandising.You can use these definitions to apply organization rules to a category defined by a product property or custom attribute. The sort order determines the order that products are displayed in, such as newest to oldest, so that they can be rearranged.
+ * 
  * </summary>
  */
 public class ProductSortDefinitionFactory
@@ -123,22 +123,24 @@ public class ProductSortDefinitionFactory
 		return returnObj;
 	}
 
-	public static void deleteProductSortDefinition(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer productSortDefinitionId, int expectedCode) throws Exception
+	public static java.io.InputStream deleteProductSortDefinition(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer productSortDefinitionId, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		ProductSortDefinitionResource resource = new ProductSortDefinitionResource(apiContext, dataViewMode);
 		try
 		{
-			resource.deleteProductSortDefinition( productSortDefinitionId);
+			returnObj = resource.deleteProductSortDefinition( productSortDefinitionId);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 }

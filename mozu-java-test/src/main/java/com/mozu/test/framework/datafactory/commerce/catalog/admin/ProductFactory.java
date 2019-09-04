@@ -168,22 +168,24 @@ public class ProductFactory
 		return returnObj;
 	}
 
-	public static void renameProductCodes(ApiContext apiContext, List<com.mozu.api.contracts.productadmin.ProductCodeRename> productCodeRenames, int expectedCode) throws Exception
+	public static java.io.InputStream renameProductCodes(ApiContext apiContext, List<com.mozu.api.contracts.productadmin.ProductCodeRename> productCodeRenames, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		ProductResource resource = new ProductResource(apiContext);
 		try
 		{
-			resource.renameProductCodes( productCodeRenames);
+			returnObj = resource.renameProductCodes( productCodeRenames);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 	public static List<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> updateProductInCatalogs(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> productInCatalogsIn, String productCode, int expectedCode) throws Exception
@@ -256,40 +258,44 @@ public class ProductFactory
 		return returnObj;
 	}
 
-	public static void deleteProduct(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, int expectedCode) throws Exception
+	public static java.io.InputStream deleteProduct(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		ProductResource resource = new ProductResource(apiContext, dataViewMode);
 		try
 		{
-			resource.deleteProduct( productCode);
+			returnObj = resource.deleteProduct( productCode);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
-	public static void deleteProductInCatalog(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, Integer catalogId, int expectedCode) throws Exception
+	public static java.io.InputStream deleteProductInCatalog(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, Integer catalogId, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		ProductResource resource = new ProductResource(apiContext, dataViewMode);
 		try
 		{
-			resource.deleteProductInCatalog( productCode,  catalogId);
+			returnObj = resource.deleteProductInCatalog( productCode,  catalogId);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 }

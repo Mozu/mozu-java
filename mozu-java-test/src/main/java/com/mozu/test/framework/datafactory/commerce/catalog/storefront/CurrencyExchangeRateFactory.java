@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.catalog.storefront.CurrencyExchangeRateResource;
 
 /** <summary>
- * Resources for the currencies that are supported on the storefront for this catalog.
+ * 
  * </summary>
  */
 public class CurrencyExchangeRateFactory

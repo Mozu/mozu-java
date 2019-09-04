@@ -16,7 +16,7 @@ public class PaymentUrl
 	/**
 	 * Get Resource Url for GetPayments
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getPaymentsUrl(String orderId, String responseFields)
@@ -29,8 +29,8 @@ public class PaymentUrl
 
 	/**
 	 * Get Resource Url for GetAvailablePaymentActions
-	 * @param orderId Unique identifier of the order.
-	 * @param paymentId Unique identifier of the payment for which to perform the action.
+	 * @param orderId Unique identifier of the order associated with the payment.
+	 * @param paymentId Unique identifer of the payment for which to retrieve available actions.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getAvailablePaymentActionsUrl(String orderId, String paymentId)
@@ -43,9 +43,9 @@ public class PaymentUrl
 
 	/**
 	 * Get Resource Url for GetPayment
-	 * @param orderId Unique identifier of the order.
-	 * @param paymentId Unique identifier of the payment for which to perform the action.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param orderId Unique identifier of the order associated with the payment transaction.
+	 * @param paymentId Unique identifier of the payment transaction submitted for the order.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getPaymentUrl(String orderId, String paymentId, String responseFields)
@@ -59,9 +59,9 @@ public class PaymentUrl
 
 	/**
 	 * Get Resource Url for PerformPaymentAction
-	 * @param orderId Unique identifier of the order.
-	 * @param paymentId Unique identifier of the payment for which to perform the action.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param orderId Unique identifier of the order associated with the payment.
+	 * @param paymentId Unique identifer of the payment for which to perform the action.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl performPaymentActionUrl(String orderId, String paymentId, String responseFields)
@@ -75,13 +75,29 @@ public class PaymentUrl
 
 	/**
 	 * Get Resource Url for CreatePaymentAction
-	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param orderId Unique identifier of the order for which to apply the payment.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl createPaymentActionUrl(String orderId, String responseFields)
 	{
 		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/payments/actions?responseFields={responseFields}");
+		formatter.formatUrl("orderId", orderId);
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for AutoCapturePayments
+	 * @param forceCapture 
+	 * @param orderId 
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl autoCapturePaymentsUrl(Boolean forceCapture, String orderId, String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/payments/autocapture?forcecapture={forceCapture}&responseFields={responseFields}");
+		formatter.formatUrl("forceCapture", forceCapture);
 		formatter.formatUrl("orderId", orderId);
 		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;

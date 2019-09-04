@@ -17,7 +17,7 @@ import com.mozu.api.contracts.core.UserRole;
 import com.mozu.api.contracts.core.UserSystemData;
 
 /**
- *	Properties of the user. Users include customers and  users.
+ *	Properties of the user.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class User implements Serializable
@@ -33,6 +33,16 @@ public class User implements Serializable
 
 	public void setEmailAddress(String emailAddress) {
 		this.emailAddress = emailAddress;
+	}
+
+	protected  String externalId;
+
+	public String getExternalId() {
+		return this.externalId;
+	}
+
+	public void setExternalId(String externalId) {
+		this.externalId = externalId;
 	}
 
 	protected  String firstName;
@@ -85,6 +95,26 @@ public class User implements Serializable
 		this.localeCode = localeCode;
 	}
 
+	protected  Boolean optInToEmail;
+
+	public Boolean getOptInToEmail() {
+		return this.optInToEmail;
+	}
+
+	public void setOptInToEmail(Boolean optInToEmail) {
+		this.optInToEmail = optInToEmail;
+	}
+
+	protected  Boolean optInToTextMessage;
+
+	public Boolean getOptInToTextMessage() {
+		return this.optInToTextMessage;
+	}
+
+	public void setOptInToTextMessage(Boolean optInToTextMessage) {
+		this.optInToTextMessage = optInToTextMessage;
+	}
+
 	protected  String password;
 
 	public String getPassword() {
@@ -93,6 +123,26 @@ public class User implements Serializable
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	protected  String phoneNumber;
+
+	public String getPhoneNumber() {
+		return this.phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	protected  String userName;
+
+	public String getUserName() {
+		return this.userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 	protected List<UserRole> roles;

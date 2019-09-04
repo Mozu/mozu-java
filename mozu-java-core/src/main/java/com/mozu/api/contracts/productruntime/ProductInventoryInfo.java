@@ -13,13 +13,23 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Properties of the inventory behavior associated with a product definition.
+ *	Properties of the active inventory managed for the product.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductInventoryInfo implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
+
+	protected  DateTime availableDate;
+
+	public DateTime getAvailableDate() {
+		return this.availableDate;
+	}
+
+	public void setAvailableDate(DateTime availableDate) {
+		this.availableDate = availableDate;
+	}
 
 	protected  Boolean manageStock;
 
@@ -44,9 +54,6 @@ public class ProductInventoryInfo implements Serializable
 		this.onlineLocationCode = onlineLocationCode;
 	}
 
-	/**
-	 * Number of product items currently available for purchase.
-	 */
 	protected  Integer onlineSoftStockAvailable;
 
 	public Integer getOnlineSoftStockAvailable() {

@@ -123,40 +123,44 @@ public class CategoryFactory
 		return returnObj;
 	}
 
-	public static void addProductsToCategory(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, List<String> productCodes, Integer categoryId, int expectedCode) throws Exception
+	public static java.io.InputStream addProductsToCategory(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, List<String> productCodes, Integer categoryId, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		CategoryResource resource = new CategoryResource(apiContext, dataViewMode);
 		try
 		{
-			resource.addProductsToCategory( productCodes,  categoryId);
+			returnObj = resource.addProductsToCategory( productCodes,  categoryId);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
-	public static void removeProductsFromCategory(ApiContext apiContext, List<String> productCodes, Integer categoryId, int expectedCode) throws Exception
+	public static java.io.InputStream removeProductsFromCategory(ApiContext apiContext, List<String> productCodes, Integer categoryId, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		CategoryResource resource = new CategoryResource(apiContext);
 		try
 		{
-			resource.removeProductsFromCategory( productCodes,  categoryId);
+			returnObj = resource.removeProductsFromCategory( productCodes,  categoryId);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 	public static com.mozu.api.contracts.productadmin.DynamicExpression validateDynamicExpression(ApiContext apiContext, com.mozu.api.contracts.productadmin.DynamicExpression dynamicExpressionIn, int expectedCode) throws Exception
@@ -234,27 +238,29 @@ public class CategoryFactory
 		return returnObj;
 	}
 
-	public static void deleteCategoryById(ApiContext apiContext, Integer categoryId, int expectedCode) throws Exception
+	public static java.io.InputStream deleteCategoryById(ApiContext apiContext, Integer categoryId, int expectedCode) throws Exception
 	{
-		deleteCategoryById(apiContext,  categoryId,  null,  null,  null, expectedCode);
+		return deleteCategoryById(apiContext,  categoryId,  null,  null,  null, expectedCode);
 	}
 
-	public static void deleteCategoryById(ApiContext apiContext, Integer categoryId, Boolean cascadeDelete, Boolean forceDelete, Boolean reassignToParent, int expectedCode) throws Exception
+	public static java.io.InputStream deleteCategoryById(ApiContext apiContext, Integer categoryId, Boolean cascadeDelete, Boolean forceDelete, Boolean reassignToParent, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		CategoryResource resource = new CategoryResource(apiContext);
 		try
 		{
-			resource.deleteCategoryById( categoryId,  cascadeDelete,  forceDelete,  reassignToParent);
+			returnObj = resource.deleteCategoryById( categoryId,  cascadeDelete,  forceDelete,  reassignToParent);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 }

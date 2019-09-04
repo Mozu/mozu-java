@@ -23,18 +23,13 @@ import com.mozu.api.resources.commerce.settings.ApplicationResource;
 public class ApplicationFactory
 {
 
-	public static com.mozu.api.contracts.sitesettings.application.Application thirdPartyGetApplication(ApiContext apiContext, int expectedCode) throws Exception
+	public static java.io.InputStream thirdPartyGetApplication(ApiContext apiContext, int expectedCode) throws Exception
 	{
-		return thirdPartyGetApplication(apiContext,  null, expectedCode);
-	}
-
-	public static com.mozu.api.contracts.sitesettings.application.Application thirdPartyGetApplication(ApiContext apiContext, String responseFields, int expectedCode) throws Exception
-	{
-		com.mozu.api.contracts.sitesettings.application.Application returnObj = new com.mozu.api.contracts.sitesettings.application.Application();
+		java.io.InputStream returnObj;
 		ApplicationResource resource = new ApplicationResource(apiContext);
 		try
 		{
-			returnObj = resource.thirdPartyGetApplication( responseFields);
+			returnObj = resource.thirdPartyGetApplication();
 		}
 		catch (ApiException e)
 		{
@@ -48,18 +43,13 @@ public class ApplicationFactory
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.sitesettings.application.Application thirdPartyUpdateApplication(ApiContext apiContext, com.mozu.api.contracts.sitesettings.application.Application application, int expectedCode) throws Exception
+	public static java.io.InputStream thirdPartyUpdateApplication(ApiContext apiContext, com.mozu.api.contracts.sitesettings.application.Application application, int expectedCode) throws Exception
 	{
-		return thirdPartyUpdateApplication(apiContext,  application,  null, expectedCode);
-	}
-
-	public static com.mozu.api.contracts.sitesettings.application.Application thirdPartyUpdateApplication(ApiContext apiContext, com.mozu.api.contracts.sitesettings.application.Application application, String responseFields, int expectedCode) throws Exception
-	{
-		com.mozu.api.contracts.sitesettings.application.Application returnObj = new com.mozu.api.contracts.sitesettings.application.Application();
+		java.io.InputStream returnObj;
 		ApplicationResource resource = new ApplicationResource(apiContext);
 		try
 		{
-			returnObj = resource.thirdPartyUpdateApplication( application,  responseFields);
+			returnObj = resource.thirdPartyUpdateApplication( application);
 		}
 		catch (ApiException e)
 		{

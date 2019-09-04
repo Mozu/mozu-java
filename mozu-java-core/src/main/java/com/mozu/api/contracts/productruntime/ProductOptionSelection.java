@@ -21,14 +21,14 @@ public class ProductOptionSelection implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected  String attributeFQN;
+	protected  String attributeFqn;
 
-	public String getAttributeFQN() {
-		return this.attributeFQN;
+	public String getAttributeFqn() {
+		return this.attributeFqn;
 	}
 
-	public void setAttributeFQN(String attributeFQN) {
-		this.attributeFQN = attributeFQN;
+	public void setAttributeFqn(String attributeFqn) {
+		this.attributeFqn = attributeFqn;
 	}
 
 	protected  Integer attributeValueId;

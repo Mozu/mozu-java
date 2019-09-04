@@ -123,22 +123,24 @@ public class PropertyTypeFactory
 		return returnObj;
 	}
 
-	public static void deletePropertyType(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String propertyTypeName, int expectedCode) throws Exception
+	public static java.io.InputStream deletePropertyType(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String propertyTypeName, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		PropertyTypeResource resource = new PropertyTypeResource(apiContext, dataViewMode);
 		try
 		{
-			resource.deletePropertyType( propertyTypeName);
+			returnObj = resource.deletePropertyType( propertyTypeName);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 }

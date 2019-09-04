@@ -20,7 +20,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the Return Notes resource to access and modify internal notes associated with returns. These notes can be useful to customer service representatives viewing them in .
+ * 
  * </summary>
  */
 public class OrderNoteResource {
@@ -42,7 +42,7 @@ public class OrderNoteResource {
 	 *	OrderNote ordernote = new OrderNote();
 	 *	OrderNote orderNote = ordernote.getReturnNotes( returnId);
 	 * </code></pre></p>
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param returnId 
 	 * @return List<com.mozu.api.contracts.commerceruntime.orders.OrderNote>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 */
@@ -61,7 +61,7 @@ public class OrderNoteResource {
 	 *	OrderNote ordernote = new OrderNote();
 	 *	CountDownLatch latch = ordernote.getReturnNotes( returnId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param returnId 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return List<com.mozu.api.contracts.commerceruntime.orders.OrderNote>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
@@ -80,8 +80,8 @@ public class OrderNoteResource {
 	 *	OrderNote ordernote = new OrderNote();
 	 *	OrderNote orderNote = ordernote.getReturnNote( returnId,  noteId);
 	 * </code></pre></p>
-	 * @param noteId Unique identifier of a particular note to retrieve.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param noteId 
+	 * @param returnId 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 */
@@ -96,8 +96,8 @@ public class OrderNoteResource {
 	 *	OrderNote ordernote = new OrderNote();
 	 *	CountDownLatch latch = ordernote.getReturnNote( returnId,  noteId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param noteId Unique identifier of a particular note to retrieve.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param noteId 
+	 * @param returnId 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
@@ -113,9 +113,9 @@ public class OrderNoteResource {
 	 *	OrderNote ordernote = new OrderNote();
 	 *	OrderNote orderNote = ordernote.getReturnNote( returnId,  noteId,  responseFields);
 	 * </code></pre></p>
-	 * @param noteId Unique identifier of a particular note to retrieve.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param noteId 
+	 * @param responseFields 
+	 * @param returnId 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 */
@@ -134,9 +134,9 @@ public class OrderNoteResource {
 	 *	OrderNote ordernote = new OrderNote();
 	 *	CountDownLatch latch = ordernote.getReturnNote( returnId,  noteId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param noteId Unique identifier of a particular note to retrieve.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param noteId 
+	 * @param responseFields 
+	 * @param returnId 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
@@ -155,7 +155,7 @@ public class OrderNoteResource {
 	 *	OrderNote ordernote = new OrderNote();
 	 *	OrderNote orderNote = ordernote.createReturnNote( returnNote,  returnId);
 	 * </code></pre></p>
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param returnId 
 	 * @param returnNote 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
@@ -172,7 +172,7 @@ public class OrderNoteResource {
 	 *	OrderNote ordernote = new OrderNote();
 	 *	CountDownLatch latch = ordernote.createReturnNote( returnNote,  returnId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param returnId 
 	 * @param  callback callback handler for asynchronous operations
 	 * @param returnNote 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderNote
@@ -190,8 +190,8 @@ public class OrderNoteResource {
 	 *	OrderNote ordernote = new OrderNote();
 	 *	OrderNote orderNote = ordernote.createReturnNote( returnNote,  returnId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param responseFields 
+	 * @param returnId 
 	 * @param returnNote 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
@@ -212,8 +212,8 @@ public class OrderNoteResource {
 	 *	OrderNote ordernote = new OrderNote();
 	 *	CountDownLatch latch = ordernote.createReturnNote( returnNote,  returnId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param responseFields 
+	 * @param returnId 
 	 * @param  callback callback handler for asynchronous operations
 	 * @param returnNote 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderNote
@@ -234,8 +234,8 @@ public class OrderNoteResource {
 	 *	OrderNote ordernote = new OrderNote();
 	 *	OrderNote orderNote = ordernote.updateReturnNote( returnNote,  returnId,  noteId);
 	 * </code></pre></p>
-	 * @param noteId Unique identifier of a particular note to retrieve.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param noteId 
+	 * @param returnId 
 	 * @param returnNote 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
@@ -252,8 +252,8 @@ public class OrderNoteResource {
 	 *	OrderNote ordernote = new OrderNote();
 	 *	CountDownLatch latch = ordernote.updateReturnNote( returnNote,  returnId,  noteId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param noteId Unique identifier of a particular note to retrieve.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param noteId 
+	 * @param returnId 
 	 * @param  callback callback handler for asynchronous operations
 	 * @param returnNote 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderNote
@@ -271,9 +271,9 @@ public class OrderNoteResource {
 	 *	OrderNote ordernote = new OrderNote();
 	 *	OrderNote orderNote = ordernote.updateReturnNote( returnNote,  returnId,  noteId,  responseFields);
 	 * </code></pre></p>
-	 * @param noteId Unique identifier of a particular note to retrieve.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param noteId 
+	 * @param responseFields 
+	 * @param returnId 
 	 * @param returnNote 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
@@ -294,9 +294,9 @@ public class OrderNoteResource {
 	 *	OrderNote ordernote = new OrderNote();
 	 *	CountDownLatch latch = ordernote.updateReturnNote( returnNote,  returnId,  noteId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param noteId Unique identifier of a particular note to retrieve.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param noteId 
+	 * @param responseFields 
+	 * @param returnId 
 	 * @param  callback callback handler for asynchronous operations
 	 * @param returnNote 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderNote
@@ -315,18 +315,39 @@ public class OrderNoteResource {
 	 * 
 	 * <p><pre><code>
 	 *	OrderNote ordernote = new OrderNote();
-	 *	ordernote.deleteReturnNote( returnId,  noteId);
+	 *	Stream stream = ordernote.deleteReturnNote( returnId,  noteId);
 	 * </code></pre></p>
-	 * @param noteId Unique identifier of a particular note to retrieve.
-	 * @param returnId Unique identifier of the return whose items you want to get.
-	 * @return 
+	 * @param noteId 
+	 * @param returnId 
+	 * @return Stream
+	 * @see Stream
 	 */
-	public void deleteReturnNote(String returnId, String noteId) throws Exception
+	public java.io.InputStream deleteReturnNote(String returnId, String noteId) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.commerce.returns.OrderNoteClient.deleteReturnNoteClient( returnId,  noteId);
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.returns.OrderNoteClient.deleteReturnNoteClient( returnId,  noteId);
 		client.setContext(_apiContext);
 		client.executeRequest();
-		client.cleanupHttpConnection();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	OrderNote ordernote = new OrderNote();
+	 *	CountDownLatch latch = ordernote.deleteReturnNote( returnId,  noteId, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param noteId 
+	 * @param returnId 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return Stream
+	 * @see Stream
+	 */
+	public CountDownLatch deleteReturnNoteAsync(String returnId, String noteId, AsyncCallback<java.io.InputStream> callback) throws Exception
+	{
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.returns.OrderNoteClient.deleteReturnNoteClient( returnId,  noteId);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
 
 	}
 

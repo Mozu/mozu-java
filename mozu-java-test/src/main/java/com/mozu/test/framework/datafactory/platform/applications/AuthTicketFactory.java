@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.platform.applications.AuthTicketResource;
 
 /** <summary>
- * Use the Authetickets for applications resource to manage authentication tickets for your apps.
+ * Use this resource to manage authentication tickets for your applications.
  * </summary>
  */
 public class AuthTicketFactory
@@ -35,6 +35,31 @@ public class AuthTicketFactory
 		try
 		{
 			returnObj = resource.authenticateApp( appAuthInfo,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
+	public static com.mozu.api.contracts.appdev.OAuthAccessTokenResponse oauthAuthenticateApp(ApiContext apiContext, com.mozu.api.contracts.appdev.OauthAuthRequest appAuthInfo, int expectedCode) throws Exception
+	{
+		return oauthAuthenticateApp(apiContext,  appAuthInfo,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.appdev.OAuthAccessTokenResponse oauthAuthenticateApp(ApiContext apiContext, com.mozu.api.contracts.appdev.OauthAuthRequest appAuthInfo, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.appdev.OAuthAccessTokenResponse returnObj = new com.mozu.api.contracts.appdev.OAuthAccessTokenResponse();
+		AuthTicketResource resource = new AuthTicketResource(apiContext);
+		try
+		{
+			returnObj = resource.oauthAuthenticateApp( appAuthInfo,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -73,22 +98,24 @@ public class AuthTicketFactory
 		return returnObj;
 	}
 
-	public static void deleteAppAuthTicket(ApiContext apiContext, String refreshToken, int expectedCode) throws Exception
+	public static java.io.InputStream deleteAppAuthTicket(ApiContext apiContext, String refreshToken, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		AuthTicketResource resource = new AuthTicketResource(apiContext);
 		try
 		{
-			resource.deleteAppAuthTicket( refreshToken);
+			returnObj = resource.deleteAppAuthTicket( refreshToken);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 }

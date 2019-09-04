@@ -17,24 +17,19 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.platform.TenantExtensionsResource;
 
 /** <summary>
- * Use the Extensions resource to manage Arc.js configuration settings. These are the same settings you can configure through  in the Action Management JSON Editor.
+ * 
  * </summary>
  */
 public class TenantExtensionsFactory
 {
 
-	public static com.mozu.api.contracts.installedapplications.TenantExtensions getExtensions(ApiContext apiContext, int expectedCode) throws Exception
+	public static java.io.InputStream getExtensions(ApiContext apiContext, int expectedCode) throws Exception
 	{
-		return getExtensions(apiContext,  null, expectedCode);
-	}
-
-	public static com.mozu.api.contracts.installedapplications.TenantExtensions getExtensions(ApiContext apiContext, String responseFields, int expectedCode) throws Exception
-	{
-		com.mozu.api.contracts.installedapplications.TenantExtensions returnObj = new com.mozu.api.contracts.installedapplications.TenantExtensions();
+		java.io.InputStream returnObj;
 		TenantExtensionsResource resource = new TenantExtensionsResource(apiContext);
 		try
 		{
-			returnObj = resource.getExtensions( responseFields);
+			returnObj = resource.getExtensions();
 		}
 		catch (ApiException e)
 		{
@@ -48,18 +43,13 @@ public class TenantExtensionsFactory
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.installedapplications.TenantExtensions updateExtensions(ApiContext apiContext, com.mozu.api.contracts.installedapplications.TenantExtensions extensions, int expectedCode) throws Exception
+	public static java.io.InputStream updateExtensions(ApiContext apiContext, com.mozu.api.contracts.installedapplications.TenantExtensions extensions, int expectedCode) throws Exception
 	{
-		return updateExtensions(apiContext,  extensions,  null, expectedCode);
-	}
-
-	public static com.mozu.api.contracts.installedapplications.TenantExtensions updateExtensions(ApiContext apiContext, com.mozu.api.contracts.installedapplications.TenantExtensions extensions, String responseFields, int expectedCode) throws Exception
-	{
-		com.mozu.api.contracts.installedapplications.TenantExtensions returnObj = new com.mozu.api.contracts.installedapplications.TenantExtensions();
+		java.io.InputStream returnObj;
 		TenantExtensionsResource resource = new TenantExtensionsResource(apiContext);
 		try
 		{
-			returnObj = resource.updateExtensions( extensions,  responseFields);
+			returnObj = resource.updateExtensions( extensions);
 		}
 		catch (ApiException e)
 		{

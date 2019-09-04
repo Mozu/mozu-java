@@ -17,7 +17,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the Cart Extended Properties subresource to store an arbitrary number of cart extended properties such as tracking strings, marketing sources, affiliates, sales personnel/data, and so on, on a per cart basis. Each cart may have none, one, or more than one entry in the extended properties collection, and all values in the extended properties collection are represented as strings. When you create an order from a cart, all extended properties are retained from the cart and copied to the order. Refer to the subresource for more information about order extended properties.
+ * 
  * </summary>
  */
 public class ExtendedPropertyClient {
@@ -53,7 +53,7 @@ public class ExtendedPropertyClient {
 	 * client.executeRequest();
 	 * ExtendedProperty extendedProperty = client.Result();
 	 * </code></pre></p>
-	 * @param extendedProperties The details of the new extended property.
+	 * @param extendedProperties 
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>>
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
@@ -79,8 +79,8 @@ public class ExtendedPropertyClient {
 	 * client.executeRequest();
 	 * ExtendedProperty extendedProperty = client.Result();
 	 * </code></pre></p>
-	 * @param key Key used for metadata defined for objects, including extensible attributes, custom attributes associated with a shipping provider, and search synonyms definitions. This content may be user-defined depending on the object and usage.
-	 * @param extendedProperty The details of the updated extended property.
+	 * @param key 
+	 * @param extendedProperty 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
@@ -98,10 +98,10 @@ public class ExtendedPropertyClient {
 	 * client.executeRequest();
 	 * ExtendedProperty extendedProperty = client.Result();
 	 * </code></pre></p>
-	 * @param key Key used for metadata defined for objects, including extensible attributes, custom attributes associated with a shipping provider, and search synonyms definitions. This content may be user-defined depending on the object and usage.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param upsert Any set of key value pairs to be stored in the extended properties of a cart.
-	 * @param extendedProperty The details of the updated extended property.
+	 * @param key 
+	 * @param responseFields 
+	 * @param upsert 
+	 * @param extendedProperty 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
@@ -127,7 +127,7 @@ public class ExtendedPropertyClient {
 	 * client.executeRequest();
 	 * ExtendedProperty extendedProperty = client.Result();
 	 * </code></pre></p>
-	 * @param extendedProperties The details of the updated extended properties.
+	 * @param extendedProperties 
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>>
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
@@ -145,8 +145,8 @@ public class ExtendedPropertyClient {
 	 * client.executeRequest();
 	 * ExtendedProperty extendedProperty = client.Result();
 	 * </code></pre></p>
-	 * @param upsert Any set of key value pairs to be stored in the extended properties of a cart.
-	 * @param extendedProperties The details of the updated extended properties.
+	 * @param upsert 
+	 * @param extendedProperties 
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>>
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
@@ -167,19 +167,22 @@ public class ExtendedPropertyClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=DeleteExtendedPropertiesClient( keys);
+	 * MozuClient<java.io.InputStream> mozuClient=DeleteExtendedPropertiesClient( keys);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
+	 * Stream stream = client.Result();
 	 * </code></pre></p>
 	 * @param keys 
-	 * @return Mozu.Api.MozuClient 
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
 	 * @see string
 	 */
-	public static MozuClient deleteExtendedPropertiesClient(List<String> keys) throws Exception
+	public static MozuClient<java.io.InputStream> deleteExtendedPropertiesClient(List<String> keys) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.carts.ExtendedPropertyUrl.deleteExtendedPropertiesUrl();
 		String verb = "DELETE";
-				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(keys);
@@ -190,18 +193,21 @@ public class ExtendedPropertyClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=DeleteExtendedPropertyClient( key);
+	 * MozuClient<java.io.InputStream> mozuClient=DeleteExtendedPropertyClient( key);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
+	 * Stream stream = client.Result();
 	 * </code></pre></p>
 	 * @param key 
-	 * @return Mozu.Api.MozuClient 
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
 	 */
-	public static MozuClient deleteExtendedPropertyClient(String key) throws Exception
+	public static MozuClient<java.io.InputStream> deleteExtendedPropertyClient(String key) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.carts.ExtendedPropertyUrl.deleteExtendedPropertyUrl(key);
 		String verb = "DELETE";
-				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

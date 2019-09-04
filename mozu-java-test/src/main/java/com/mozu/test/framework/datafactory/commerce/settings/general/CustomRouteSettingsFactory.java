@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.settings.general.CustomRouteSettingsResource;
 
 /** <summary>
- * Use the Custom Routes resource to manage your custom route settings. Custom routing allows you to display SEO-friendly URLs on your site that map behind-the-scenes to conventional  resources such as a product page or a search results page. With custom routing, you gain advanced control over the URL structures on your site and can more visibly highlight the products or categories your shoppers are interested in purchasing.To learn more about custom routing, refer to the [Custom Route Settings](../../../guides/settings/custom-routes.htm) topic.
+ * 
  * </summary>
  */
 public class CustomRouteSettingsFactory
@@ -98,22 +98,24 @@ public class CustomRouteSettingsFactory
 		return returnObj;
 	}
 
-	public static void deleteCustomRouteSettings(ApiContext apiContext, int expectedCode) throws Exception
+	public static java.io.InputStream deleteCustomRouteSettings(ApiContext apiContext, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		CustomRouteSettingsResource resource = new CustomRouteSettingsResource(apiContext);
 		try
 		{
-			resource.deleteCustomRouteSettings();
+			returnObj = resource.deleteCustomRouteSettings();
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 }

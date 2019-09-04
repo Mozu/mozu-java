@@ -6,11 +6,14 @@
  */
 package com.mozu.api.contracts.tenant;
 
+import java.util.List;
+import java.util.HashMap;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
+import com.mozu.api.contracts.tenant.TenantAttribute;
 
 /**
  *	Properties of a site associated with a tenant.
@@ -109,6 +112,14 @@ public class Site implements Serializable
 
 	public void setTenantId(Integer tenantId) {
 		this.tenantId = tenantId;
+	}
+
+	protected List<TenantAttribute> attributes;
+	public List<TenantAttribute> getAttributes() {
+		return this.attributes;
+	}
+	public void setAttributes(List<TenantAttribute> attributes) {
+		this.attributes = attributes;
 	}
 
 

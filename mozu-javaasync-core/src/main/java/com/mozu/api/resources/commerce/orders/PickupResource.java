@@ -42,8 +42,8 @@ public class PickupResource {
 	 *	Pickup pickup = new Pickup();
 	 *	string string = pickup.getAvailablePickupFulfillmentActions( orderId,  pickupId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param pickupId Unique identifier of the pickup to remove.
+	 * @param orderId Unique identifier of the order associated with the pickup.
+	 * @param pickupId Unique identifier of the pickup for which to retrieve available actions.
 	 * @return List<string>
 	 * @see string
 	 */
@@ -62,8 +62,8 @@ public class PickupResource {
 	 *	Pickup pickup = new Pickup();
 	 *	CountDownLatch latch = pickup.getAvailablePickupFulfillmentActions( orderId,  pickupId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param pickupId Unique identifier of the pickup to remove.
+	 * @param orderId Unique identifier of the order associated with the pickup.
+	 * @param pickupId Unique identifier of the pickup for which to retrieve available actions.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return List<string>
 	 * @see string
@@ -82,8 +82,8 @@ public class PickupResource {
 	 *	Pickup pickup = new Pickup();
 	 *	Pickup pickup = pickup.getPickup( orderId,  pickupId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param pickupId Unique identifier of the pickup to remove.
+	 * @param orderId Unique identifier of the order associated with the pickup.
+	 * @param pickupId Unique identifier of the pickup to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 */
@@ -98,8 +98,8 @@ public class PickupResource {
 	 *	Pickup pickup = new Pickup();
 	 *	CountDownLatch latch = pickup.getPickup( orderId,  pickupId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param pickupId Unique identifier of the pickup to remove.
+	 * @param orderId Unique identifier of the order associated with the pickup.
+	 * @param pickupId Unique identifier of the pickup to retrieve.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
@@ -115,9 +115,9 @@ public class PickupResource {
 	 *	Pickup pickup = new Pickup();
 	 *	Pickup pickup = pickup.getPickup( orderId,  pickupId,  responseFields);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param pickupId Unique identifier of the pickup to remove.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param orderId Unique identifier of the order associated with the pickup.
+	 * @param pickupId Unique identifier of the pickup to retrieve.
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 */
@@ -136,9 +136,9 @@ public class PickupResource {
 	 *	Pickup pickup = new Pickup();
 	 *	CountDownLatch latch = pickup.getPickup( orderId,  pickupId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param pickupId Unique identifier of the pickup to remove.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param orderId Unique identifier of the order associated with the pickup.
+	 * @param pickupId Unique identifier of the pickup to retrieve.
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
@@ -158,7 +158,7 @@ public class PickupResource {
 	 *	Pickup pickup = pickup.createPickup( pickup,  orderId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param pickup Properties of an in-store pickup defined to fulfill items in an order.
+	 * @param pickup Properties of the in-store pickup to create.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
@@ -176,7 +176,7 @@ public class PickupResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param pickup Properties of an in-store pickup defined to fulfill items in an order.
+	 * @param pickup Properties of the in-store pickup to create.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
@@ -193,8 +193,8 @@ public class PickupResource {
 	 *	Pickup pickup = pickup.createPickup( pickup,  orderId,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param pickup Properties of an in-store pickup defined to fulfill items in an order.
+	 * @param responseFields 
+	 * @param pickup Properties of the in-store pickup to create.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
@@ -215,9 +215,9 @@ public class PickupResource {
 	 *	CountDownLatch latch = pickup.createPickup( pickup,  orderId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param pickup Properties of an in-store pickup defined to fulfill items in an order.
+	 * @param pickup Properties of the in-store pickup to create.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
@@ -236,9 +236,9 @@ public class PickupResource {
 	 *	Pickup pickup = new Pickup();
 	 *	Pickup pickup = pickup.updatePickup( pickup,  orderId,  pickupId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param pickupId Unique identifier of the pickup to remove.
-	 * @param pickup Properties of an in-store pickup defined to fulfill items in an order.
+	 * @param orderId Unique identifier of the order associated with the in-store pickup.
+	 * @param pickupId Unique identifier of the pickup to update.
+	 * @param pickup Properties of the in-store pickup to update.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
@@ -254,10 +254,10 @@ public class PickupResource {
 	 *	Pickup pickup = new Pickup();
 	 *	CountDownLatch latch = pickup.updatePickup( pickup,  orderId,  pickupId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param pickupId Unique identifier of the pickup to remove.
+	 * @param orderId Unique identifier of the order associated with the in-store pickup.
+	 * @param pickupId Unique identifier of the pickup to update.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param pickup Properties of an in-store pickup defined to fulfill items in an order.
+	 * @param pickup Properties of the in-store pickup to update.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
@@ -273,10 +273,10 @@ public class PickupResource {
 	 *	Pickup pickup = new Pickup();
 	 *	Pickup pickup = pickup.updatePickup( pickup,  orderId,  pickupId,  responseFields);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param pickupId Unique identifier of the pickup to remove.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param pickup Properties of an in-store pickup defined to fulfill items in an order.
+	 * @param orderId Unique identifier of the order associated with the in-store pickup.
+	 * @param pickupId Unique identifier of the pickup to update.
+	 * @param responseFields 
+	 * @param pickup Properties of the in-store pickup to update.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
@@ -296,11 +296,11 @@ public class PickupResource {
 	 *	Pickup pickup = new Pickup();
 	 *	CountDownLatch latch = pickup.updatePickup( pickup,  orderId,  pickupId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param pickupId Unique identifier of the pickup to remove.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param orderId Unique identifier of the order associated with the in-store pickup.
+	 * @param pickupId Unique identifier of the pickup to update.
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param pickup Properties of an in-store pickup defined to fulfill items in an order.
+	 * @param pickup Properties of the in-store pickup to update.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
@@ -317,18 +317,39 @@ public class PickupResource {
 	 * 
 	 * <p><pre><code>
 	 *	Pickup pickup = new Pickup();
-	 *	pickup.deletePickup( orderId,  pickupId);
+	 *	Stream stream = pickup.deletePickup( orderId,  pickupId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId Unique identifier of the order associated with the pickup.
 	 * @param pickupId Unique identifier of the pickup to remove.
-	 * @return 
+	 * @return Stream
+	 * @see Stream
 	 */
-	public void deletePickup(String orderId, String pickupId) throws Exception
+	public java.io.InputStream deletePickup(String orderId, String pickupId) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.commerce.orders.PickupClient.deletePickupClient( orderId,  pickupId);
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.orders.PickupClient.deletePickupClient( orderId,  pickupId);
 		client.setContext(_apiContext);
 		client.executeRequest();
-		client.cleanupHttpConnection();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Pickup pickup = new Pickup();
+	 *	CountDownLatch latch = pickup.deletePickup( orderId,  pickupId, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param orderId Unique identifier of the order associated with the pickup.
+	 * @param pickupId Unique identifier of the pickup to remove.
+	 * @param  callback callback handler for asynchronous operations
+	 * @return Stream
+	 * @see Stream
+	 */
+	public CountDownLatch deletePickupAsync(String orderId, String pickupId, AsyncCallback<java.io.InputStream> callback) throws Exception
+	{
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.orders.PickupClient.deletePickupClient( orderId,  pickupId);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
 
 	}
 

@@ -18,7 +18,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the user data subresource to store user-level data required for a third-party application in the  database.
+ * Use the user data subresource to store user-level data required for a third-party application in the Mozu database.
  * </summary>
  */
 public class UserDataResource {
@@ -40,7 +40,7 @@ public class UserDataResource {
 	 *	UserData userdata = new UserData();
 	 *	string string = userdata.getDBValue( dbEntryQuery);
 	 * </code></pre></p>
-	 * @param dbEntryQuery The database entry string to create.
+	 * @param dbEntryQuery The database entry query string used to retrieve the record information.
 	 * @return string
 	 * @see string
 	 */
@@ -55,8 +55,8 @@ public class UserDataResource {
 	 *	UserData userdata = new UserData();
 	 *	string string = userdata.getDBValue( dbEntryQuery,  responseFields);
 	 * </code></pre></p>
-	 * @param dbEntryQuery The database entry string to create.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param dbEntryQuery The database entry query string used to retrieve the record information.
+	 * @param responseFields 
 	 * @return string
 	 * @see string
 	 */
@@ -73,19 +73,20 @@ public class UserDataResource {
 	 * 
 	 * <p><pre><code>
 	 *	UserData userdata = new UserData();
-	 *	userdata.createDBValue( value,  dbEntryQuery);
+	 *	Stream stream = userdata.createDBValue( value,  dbEntryQuery);
 	 * </code></pre></p>
 	 * @param dbEntryQuery The database entry string to create.
 	 * @param value The value string to create.
-	 * @return 
+	 * @return Stream
+	 * @see Stream
 	 * @see string
 	 */
-	public void createDBValue(String value, String dbEntryQuery) throws Exception
+	public java.io.InputStream createDBValue(String value, String dbEntryQuery) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.platform.UserDataClient.createDBValueClient( value,  dbEntryQuery);
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.platform.UserDataClient.createDBValueClient( value,  dbEntryQuery);
 		client.setContext(_apiContext);
 		client.executeRequest();
-		client.cleanupHttpConnection();
+		return client.getResult();
 
 	}
 
@@ -93,19 +94,20 @@ public class UserDataResource {
 	 * 
 	 * <p><pre><code>
 	 *	UserData userdata = new UserData();
-	 *	userdata.updateDBValue( value,  dbEntryQuery);
+	 *	Stream stream = userdata.updateDBValue( value,  dbEntryQuery);
 	 * </code></pre></p>
-	 * @param dbEntryQuery The database entry string to create.
-	 * @param value The value string to create.
-	 * @return 
+	 * @param dbEntryQuery The database entry query string used to update the record information.
+	 * @param value The database value to update.
+	 * @return Stream
+	 * @see Stream
 	 * @see string
 	 */
-	public void updateDBValue(String value, String dbEntryQuery) throws Exception
+	public java.io.InputStream updateDBValue(String value, String dbEntryQuery) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.platform.UserDataClient.updateDBValueClient( value,  dbEntryQuery);
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.platform.UserDataClient.updateDBValueClient( value,  dbEntryQuery);
 		client.setContext(_apiContext);
 		client.executeRequest();
-		client.cleanupHttpConnection();
+		return client.getResult();
 
 	}
 
@@ -113,17 +115,18 @@ public class UserDataResource {
 	 * 
 	 * <p><pre><code>
 	 *	UserData userdata = new UserData();
-	 *	userdata.deleteDBValue( dbEntryQuery);
+	 *	Stream stream = userdata.deleteDBValue( dbEntryQuery);
 	 * </code></pre></p>
-	 * @param dbEntryQuery The database entry string to create.
-	 * @return 
+	 * @param dbEntryQuery The database entry string to delete.
+	 * @return Stream
+	 * @see Stream
 	 */
-	public void deleteDBValue(String dbEntryQuery) throws Exception
+	public java.io.InputStream deleteDBValue(String dbEntryQuery) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.platform.UserDataClient.deleteDBValueClient( dbEntryQuery);
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.platform.UserDataClient.deleteDBValueClient( dbEntryQuery);
 		client.setContext(_apiContext);
 		client.executeRequest();
-		client.cleanupHttpConnection();
+		return client.getResult();
 
 	}
 

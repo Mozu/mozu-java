@@ -12,18 +12,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	Mozu.ProductRuntime.Contracts.ProductSortExpression ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductSortExpression implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * ASC or DESC. Represents a product that is positioned out of its normal sort position. It can be boosted to the top of the list, positioned exactly or buried at the bottom.
-	 */
 	protected  String direction;
 
 	public String getDirection() {
@@ -34,9 +28,6 @@ public class ProductSortExpression implements Serializable
 		this.direction = direction;
 	}
 
-	/**
-	 * The name of the field to sort on. A known sort field or sortable attribute.
-	 */
 	protected  String field;
 
 	public String getField() {

@@ -48,11 +48,11 @@ public class CustomerSegmentClient {
 	 * client.executeRequest();
 	 * CustomerSegmentCollection customerSegmentCollection = client.Result();
 	 * </code></pre></p>
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param filter 
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerSegmentCollection>
 	 * @see com.mozu.api.contracts.customer.CustomerSegmentCollection
 	 */
@@ -94,7 +94,7 @@ public class CustomerSegmentClient {
 	 * CustomerSegment customerSegment = client.Result();
 	 * </code></pre></p>
 	 * @param id Unique identifier of the customer segment to retrieve.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerSegment>
 	 * @see com.mozu.api.contracts.customer.CustomerSegment
 	 */
@@ -118,7 +118,7 @@ public class CustomerSegmentClient {
 	 * client.executeRequest();
 	 * CustomerSegment customerSegment = client.Result();
 	 * </code></pre></p>
-	 * @param segment The Customer Segment object includes properties of a defined customer segment used to group customer accounts.
+	 * @param segment Properties of the customer segment to add.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerSegment>
 	 * @see com.mozu.api.contracts.customer.CustomerSegment
 	 * @see com.mozu.api.contracts.customer.CustomerSegment
@@ -136,8 +136,8 @@ public class CustomerSegmentClient {
 	 * client.executeRequest();
 	 * CustomerSegment customerSegment = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param segment The Customer Segment object includes properties of a defined customer segment used to group customer accounts.
+	 * @param responseFields 
+	 * @param segment Properties of the customer segment to add.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerSegment>
 	 * @see com.mozu.api.contracts.customer.CustomerSegment
 	 * @see com.mozu.api.contracts.customer.CustomerSegment
@@ -158,20 +158,23 @@ public class CustomerSegmentClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=AddSegmentAccountsClient( accountIds,  id);
+	 * MozuClient<java.io.InputStream> mozuClient=AddSegmentAccountsClient( accountIds,  id);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
+	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param id Unique identifier of the customer segment for which to add the associated customer accounts.
 	 * @param accountIds List of customer account IDs to add to the customer segment specified in the request.
-	 * @return Mozu.Api.MozuClient 
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
 	 * @see int
 	 */
-	public static MozuClient addSegmentAccountsClient(List<Integer> accountIds, Integer id) throws Exception
+	public static MozuClient<java.io.InputStream> addSegmentAccountsClient(List<Integer> accountIds, Integer id) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerSegmentUrl.addSegmentAccountsUrl(id);
 		String verb = "POST";
-				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(accountIds);
@@ -187,8 +190,8 @@ public class CustomerSegmentClient {
 	 * client.executeRequest();
 	 * CustomerSegment customerSegment = client.Result();
 	 * </code></pre></p>
-	 * @param id Unique identifier of the customer segment to retrieve.
-	 * @param segment The Customer Segment object includes properties of a defined customer segment used to group customer accounts.
+	 * @param id Unique identifier of the customer segment.
+	 * @param segment Properties of the customer segment to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerSegment>
 	 * @see com.mozu.api.contracts.customer.CustomerSegment
 	 * @see com.mozu.api.contracts.customer.CustomerSegment
@@ -206,9 +209,9 @@ public class CustomerSegmentClient {
 	 * client.executeRequest();
 	 * CustomerSegment customerSegment = client.Result();
 	 * </code></pre></p>
-	 * @param id Unique identifier of the customer segment to retrieve.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param segment The Customer Segment object includes properties of a defined customer segment used to group customer accounts.
+	 * @param id Unique identifier of the customer segment.
+	 * @param responseFields 
+	 * @param segment Properties of the customer segment to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerSegment>
 	 * @see com.mozu.api.contracts.customer.CustomerSegment
 	 * @see com.mozu.api.contracts.customer.CustomerSegment
@@ -229,18 +232,21 @@ public class CustomerSegmentClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=DeleteSegmentClient( id);
+	 * MozuClient<java.io.InputStream> mozuClient=DeleteSegmentClient( id);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
+	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param id Unique identifier of the customer segment to retrieve.
-	 * @return Mozu.Api.MozuClient 
+	 * @param id Unique identifier of the customer segment to delete.
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
 	 */
-	public static MozuClient deleteSegmentClient(Integer id) throws Exception
+	public static MozuClient<java.io.InputStream> deleteSegmentClient(Integer id) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerSegmentUrl.deleteSegmentUrl(id);
 		String verb = "DELETE";
-				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -250,19 +256,22 @@ public class CustomerSegmentClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=RemoveSegmentAccountClient( id,  accountId);
+	 * MozuClient<java.io.InputStream> mozuClient=RemoveSegmentAccountClient( id,  accountId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
+	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param id Unique identifier of the customer segment to retrieve.
-	 * @return Mozu.Api.MozuClient 
+	 * @param accountId 
+	 * @param id 
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
 	 */
-	public static MozuClient removeSegmentAccountClient(Integer id, Integer accountId) throws Exception
+	public static MozuClient<java.io.InputStream> removeSegmentAccountClient(Integer id, Integer accountId) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerSegmentUrl.removeSegmentAccountUrl(accountId, id);
 		String verb = "DELETE";
-				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

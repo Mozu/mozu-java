@@ -20,7 +20,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Resources for the discounts supported on the storefront of this catalog.
+ * 
  * </summary>
  */
 public class AutoAddDiscountTargetResource {
@@ -42,7 +42,7 @@ public class AutoAddDiscountTargetResource {
 	 *	AutoAddDiscountTarget autoadddiscounttarget = new AutoAddDiscountTarget();
 	 *	AutoAddDiscountTarget autoAddDiscountTarget = autoadddiscounttarget.getAutoAddTarget( discountId);
 	 * </code></pre></p>
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param discountId 
 	 * @return com.mozu.api.contracts.pricingruntime.AutoAddDiscountTarget
 	 * @see com.mozu.api.contracts.pricingruntime.AutoAddDiscountTarget
 	 */
@@ -57,7 +57,7 @@ public class AutoAddDiscountTargetResource {
 	 *	AutoAddDiscountTarget autoadddiscounttarget = new AutoAddDiscountTarget();
 	 *	CountDownLatch latch = autoadddiscounttarget.getAutoAddTarget( discountId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param discountId 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.pricingruntime.AutoAddDiscountTarget
 	 * @see com.mozu.api.contracts.pricingruntime.AutoAddDiscountTarget
@@ -73,8 +73,8 @@ public class AutoAddDiscountTargetResource {
 	 *	AutoAddDiscountTarget autoadddiscounttarget = new AutoAddDiscountTarget();
 	 *	AutoAddDiscountTarget autoAddDiscountTarget = autoadddiscounttarget.getAutoAddTarget( discountId,  responseFields);
 	 * </code></pre></p>
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param discountId 
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.pricingruntime.AutoAddDiscountTarget
 	 * @see com.mozu.api.contracts.pricingruntime.AutoAddDiscountTarget
 	 */
@@ -93,8 +93,8 @@ public class AutoAddDiscountTargetResource {
 	 *	AutoAddDiscountTarget autoadddiscounttarget = new AutoAddDiscountTarget();
 	 *	CountDownLatch latch = autoadddiscounttarget.getAutoAddTarget( discountId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param discountId 
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.pricingruntime.AutoAddDiscountTarget
 	 * @see com.mozu.api.contracts.pricingruntime.AutoAddDiscountTarget

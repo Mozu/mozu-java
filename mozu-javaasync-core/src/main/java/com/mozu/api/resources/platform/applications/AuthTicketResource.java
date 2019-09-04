@@ -20,7 +20,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the Authetickets for applications resource to manage authentication tickets for your apps.
+ * Use this resource to manage authentication tickets for your applications.
  * </summary>
  */
 public class AuthTicketResource {
@@ -46,7 +46,7 @@ public AuthTicketResource(ApiContext apiContext)
 	 *	AuthTicket authticket = new AuthTicket();
 	 *	AuthTicket authTicket = authticket.authenticateApp( appAuthInfo);
 	 * </code></pre></p>
-	 * @param appAuthInfo The information required to authenticate third party applications against the  API.
+	 * @param appAuthInfo Authentication information required to generate an authentication ticket includes the application id and the shared secret.
 	 * @return com.mozu.api.contracts.appdev.AuthTicket
 	 * @see com.mozu.api.contracts.appdev.AuthTicket
 	 * @see com.mozu.api.contracts.appdev.AppAuthInfo
@@ -63,7 +63,7 @@ public AuthTicketResource(ApiContext apiContext)
 	 *	CountDownLatch latch = authticket.authenticateApp( appAuthInfo, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param appAuthInfo The information required to authenticate third party applications against the  API.
+	 * @param appAuthInfo Authentication information required to generate an authentication ticket includes the application id and the shared secret.
 	 * @return com.mozu.api.contracts.appdev.AuthTicket
 	 * @see com.mozu.api.contracts.appdev.AuthTicket
 	 * @see com.mozu.api.contracts.appdev.AppAuthInfo
@@ -79,8 +79,8 @@ public AuthTicketResource(ApiContext apiContext)
 	 *	AuthTicket authticket = new AuthTicket();
 	 *	AuthTicket authTicket = authticket.authenticateApp( appAuthInfo,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param appAuthInfo The information required to authenticate third party applications against the  API.
+	 * @param responseFields 
+	 * @param appAuthInfo Authentication information required to generate an authentication ticket includes the application id and the shared secret.
 	 * @return com.mozu.api.contracts.appdev.AuthTicket
 	 * @see com.mozu.api.contracts.appdev.AuthTicket
 	 * @see com.mozu.api.contracts.appdev.AppAuthInfo
@@ -100,9 +100,9 @@ public AuthTicketResource(ApiContext apiContext)
 	 *	AuthTicket authticket = new AuthTicket();
 	 *	CountDownLatch latch = authticket.authenticateApp( appAuthInfo,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param appAuthInfo The information required to authenticate third party applications against the  API.
+	 * @param appAuthInfo Authentication information required to generate an authentication ticket includes the application id and the shared secret.
 	 * @return com.mozu.api.contracts.appdev.AuthTicket
 	 * @see com.mozu.api.contracts.appdev.AuthTicket
 	 * @see com.mozu.api.contracts.appdev.AppAuthInfo
@@ -119,9 +119,84 @@ public AuthTicketResource(ApiContext apiContext)
 	 * 
 	 * <p><pre><code>
 	 *	AuthTicket authticket = new AuthTicket();
+	 *	OAuthAccessTokenResponse oAuthAccessTokenResponse = authticket.oauthAuthenticateApp( appAuthInfo);
+	 * </code></pre></p>
+	 * @param appAuthInfo 
+	 * @return com.mozu.api.contracts.appdev.OAuthAccessTokenResponse
+	 * @see com.mozu.api.contracts.appdev.OAuthAccessTokenResponse
+	 * @see com.mozu.api.contracts.appdev.OauthAuthRequest
+	 */
+	public com.mozu.api.contracts.appdev.OAuthAccessTokenResponse oauthAuthenticateApp(com.mozu.api.contracts.appdev.OauthAuthRequest appAuthInfo) throws Exception
+	{
+		return oauthAuthenticateApp( appAuthInfo,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	AuthTicket authticket = new AuthTicket();
+	 *	CountDownLatch latch = authticket.oauthAuthenticateApp( appAuthInfo, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param  callback callback handler for asynchronous operations
+	 * @param appAuthInfo 
+	 * @return com.mozu.api.contracts.appdev.OAuthAccessTokenResponse
+	 * @see com.mozu.api.contracts.appdev.OAuthAccessTokenResponse
+	 * @see com.mozu.api.contracts.appdev.OauthAuthRequest
+	 */
+	public CountDownLatch oauthAuthenticateAppAsync(com.mozu.api.contracts.appdev.OauthAuthRequest appAuthInfo, AsyncCallback<com.mozu.api.contracts.appdev.OAuthAccessTokenResponse> callback) throws Exception
+	{
+		return oauthAuthenticateAppAsync( appAuthInfo,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	AuthTicket authticket = new AuthTicket();
+	 *	OAuthAccessTokenResponse oAuthAccessTokenResponse = authticket.oauthAuthenticateApp( appAuthInfo,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param appAuthInfo 
+	 * @return com.mozu.api.contracts.appdev.OAuthAccessTokenResponse
+	 * @see com.mozu.api.contracts.appdev.OAuthAccessTokenResponse
+	 * @see com.mozu.api.contracts.appdev.OauthAuthRequest
+	 */
+	public com.mozu.api.contracts.appdev.OAuthAccessTokenResponse oauthAuthenticateApp(com.mozu.api.contracts.appdev.OauthAuthRequest appAuthInfo, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.appdev.OAuthAccessTokenResponse> client = com.mozu.api.clients.platform.applications.AuthTicketClient.oauthAuthenticateAppClient( appAuthInfo,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	AuthTicket authticket = new AuthTicket();
+	 *	CountDownLatch latch = authticket.oauthAuthenticateApp( appAuthInfo,  responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param  callback callback handler for asynchronous operations
+	 * @param appAuthInfo 
+	 * @return com.mozu.api.contracts.appdev.OAuthAccessTokenResponse
+	 * @see com.mozu.api.contracts.appdev.OAuthAccessTokenResponse
+	 * @see com.mozu.api.contracts.appdev.OauthAuthRequest
+	 */
+	public CountDownLatch oauthAuthenticateAppAsync(com.mozu.api.contracts.appdev.OauthAuthRequest appAuthInfo, String responseFields, AsyncCallback<com.mozu.api.contracts.appdev.OAuthAccessTokenResponse> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.appdev.OAuthAccessTokenResponse> client = com.mozu.api.clients.platform.applications.AuthTicketClient.oauthAuthenticateAppClient( appAuthInfo,  responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	AuthTicket authticket = new AuthTicket();
 	 *	AuthTicket authTicket = authticket.refreshAppAuthTicket( authTicketRequest);
 	 * </code></pre></p>
-	 * @param authTicketRequest Properties of the authentication ticket refresh requests, which includes the refresh token string.
+	 * @param authTicketRequest The refresh token string required to update the application authentication ticket.
 	 * @return com.mozu.api.contracts.appdev.AuthTicket
 	 * @see com.mozu.api.contracts.appdev.AuthTicket
 	 * @see com.mozu.api.contracts.appdev.AuthTicketRequest
@@ -138,7 +213,7 @@ public AuthTicketResource(ApiContext apiContext)
 	 *	CountDownLatch latch = authticket.refreshAppAuthTicket( authTicketRequest, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param authTicketRequest Properties of the authentication ticket refresh requests, which includes the refresh token string.
+	 * @param authTicketRequest The refresh token string required to update the application authentication ticket.
 	 * @return com.mozu.api.contracts.appdev.AuthTicket
 	 * @see com.mozu.api.contracts.appdev.AuthTicket
 	 * @see com.mozu.api.contracts.appdev.AuthTicketRequest
@@ -154,8 +229,8 @@ public AuthTicketResource(ApiContext apiContext)
 	 *	AuthTicket authticket = new AuthTicket();
 	 *	AuthTicket authTicket = authticket.refreshAppAuthTicket( authTicketRequest,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param authTicketRequest Properties of the authentication ticket refresh requests, which includes the refresh token string.
+	 * @param responseFields 
+	 * @param authTicketRequest The refresh token string required to update the application authentication ticket.
 	 * @return com.mozu.api.contracts.appdev.AuthTicket
 	 * @see com.mozu.api.contracts.appdev.AuthTicket
 	 * @see com.mozu.api.contracts.appdev.AuthTicketRequest
@@ -175,9 +250,9 @@ public AuthTicketResource(ApiContext apiContext)
 	 *	AuthTicket authticket = new AuthTicket();
 	 *	CountDownLatch latch = authticket.refreshAppAuthTicket( authTicketRequest,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param authTicketRequest Properties of the authentication ticket refresh requests, which includes the refresh token string.
+	 * @param authTicketRequest The refresh token string required to update the application authentication ticket.
 	 * @return com.mozu.api.contracts.appdev.AuthTicket
 	 * @see com.mozu.api.contracts.appdev.AuthTicket
 	 * @see com.mozu.api.contracts.appdev.AuthTicketRequest
@@ -194,17 +269,37 @@ public AuthTicketResource(ApiContext apiContext)
 	 * 
 	 * <p><pre><code>
 	 *	AuthTicket authticket = new AuthTicket();
-	 *	authticket.deleteAppAuthTicket( refreshToken);
+	 *	Stream stream = authticket.deleteAppAuthTicket( refreshToken);
 	 * </code></pre></p>
-	 * @param refreshToken Alphanumeric string used for access tokens. This token refreshes access for accounts by generating a new developer or application account authentication ticket after an access token expires.
-	 * @return 
+	 * @param refreshToken The refresh token string from the application's authentication ticket.
+	 * @return Stream
+	 * @see Stream
 	 */
-	public void deleteAppAuthTicket(String refreshToken) throws Exception
+	public java.io.InputStream deleteAppAuthTicket(String refreshToken) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.platform.applications.AuthTicketClient.deleteAppAuthTicketClient( refreshToken);
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.platform.applications.AuthTicketClient.deleteAppAuthTicketClient( refreshToken);
 		client.setContext(_apiContext);
 		client.executeRequest();
-		client.cleanupHttpConnection();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	AuthTicket authticket = new AuthTicket();
+	 *	CountDownLatch latch = authticket.deleteAppAuthTicket( refreshToken, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param refreshToken The refresh token string from the application's authentication ticket.
+	 * @param  callback callback handler for asynchronous operations
+	 * @return Stream
+	 * @see Stream
+	 */
+	public CountDownLatch deleteAppAuthTicketAsync(String refreshToken, AsyncCallback<java.io.InputStream> callback) throws Exception
+	{
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.platform.applications.AuthTicketClient.deleteAppAuthTicketClient( refreshToken);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
 
 	}
 

@@ -42,7 +42,7 @@ public class TransactionResource {
 	 *	Transaction transaction = new Transaction();
 	 *	Transaction transaction = transaction.getTransactions( accountId);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId Unique identifier of the customer account for which to retrieve transactions.
 	 * @return List<com.mozu.api.contracts.customer.Transaction>
 	 * @see com.mozu.api.contracts.customer.Transaction
 	 */
@@ -61,7 +61,7 @@ public class TransactionResource {
 	 *	Transaction transaction = new Transaction();
 	 *	CountDownLatch latch = transaction.getTransactions( accountId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId Unique identifier of the customer account for which to retrieve transactions.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return List<com.mozu.api.contracts.customer.Transaction>
 	 * @see com.mozu.api.contracts.customer.Transaction
@@ -81,7 +81,7 @@ public class TransactionResource {
 	 *	Transaction transaction = transaction.addTransaction( transaction,  accountId);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param transaction Properties of a transaction performed by a customer account. The system creates a transaction each time the customer submits an order, returns an item, picks up items for an order, or manages items on a wish list.
+	 * @param transaction Properties of the transaction to create for the customer account.
 	 * @return com.mozu.api.contracts.customer.Transaction
 	 * @see com.mozu.api.contracts.customer.Transaction
 	 * @see com.mozu.api.contracts.customer.Transaction
@@ -99,7 +99,7 @@ public class TransactionResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param transaction Properties of a transaction performed by a customer account. The system creates a transaction each time the customer submits an order, returns an item, picks up items for an order, or manages items on a wish list.
+	 * @param transaction Properties of the transaction to create for the customer account.
 	 * @return com.mozu.api.contracts.customer.Transaction
 	 * @see com.mozu.api.contracts.customer.Transaction
 	 * @see com.mozu.api.contracts.customer.Transaction
@@ -116,8 +116,8 @@ public class TransactionResource {
 	 *	Transaction transaction = transaction.addTransaction( transaction,  accountId,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param transaction Properties of a transaction performed by a customer account. The system creates a transaction each time the customer submits an order, returns an item, picks up items for an order, or manages items on a wish list.
+	 * @param responseFields 
+	 * @param transaction Properties of the transaction to create for the customer account.
 	 * @return com.mozu.api.contracts.customer.Transaction
 	 * @see com.mozu.api.contracts.customer.Transaction
 	 * @see com.mozu.api.contracts.customer.Transaction
@@ -138,9 +138,9 @@ public class TransactionResource {
 	 *	CountDownLatch latch = transaction.addTransaction( transaction,  accountId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param transaction Properties of a transaction performed by a customer account. The system creates a transaction each time the customer submits an order, returns an item, picks up items for an order, or manages items on a wish list.
+	 * @param transaction Properties of the transaction to create for the customer account.
 	 * @return com.mozu.api.contracts.customer.Transaction
 	 * @see com.mozu.api.contracts.customer.Transaction
 	 * @see com.mozu.api.contracts.customer.Transaction
@@ -157,18 +157,39 @@ public class TransactionResource {
 	 * 
 	 * <p><pre><code>
 	 *	Transaction transaction = new Transaction();
-	 *	transaction.removeTransaction( accountId,  transactionId);
+	 *	Stream stream = transaction.removeTransaction( accountId,  transactionId);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId Unique identifier of the customer account from which to delete the transaction.
 	 * @param transactionId Unique identifier of the transaction to delete.
-	 * @return 
+	 * @return Stream
+	 * @see Stream
 	 */
-	public void removeTransaction(Integer accountId, String transactionId) throws Exception
+	public java.io.InputStream removeTransaction(Integer accountId, String transactionId) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.commerce.customer.accounts.TransactionClient.removeTransactionClient( accountId,  transactionId);
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.customer.accounts.TransactionClient.removeTransactionClient( accountId,  transactionId);
 		client.setContext(_apiContext);
 		client.executeRequest();
-		client.cleanupHttpConnection();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Transaction transaction = new Transaction();
+	 *	CountDownLatch latch = transaction.removeTransaction( accountId,  transactionId, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param accountId Unique identifier of the customer account from which to delete the transaction.
+	 * @param transactionId Unique identifier of the transaction to delete.
+	 * @param  callback callback handler for asynchronous operations
+	 * @return Stream
+	 * @see Stream
+	 */
+	public CountDownLatch removeTransactionAsync(Integer accountId, String transactionId, AsyncCallback<java.io.InputStream> callback) throws Exception
+	{
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.customer.accounts.TransactionClient.removeTransactionClient( accountId,  transactionId);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
 
 	}
 

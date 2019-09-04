@@ -40,7 +40,7 @@ public class PaymentSettingsResource {
 	 *	PaymentSettings paymentsettings = new PaymentSettings();
 	 *	ExternalPaymentWorkflowDefinition externalPaymentWorkflowDefinition = paymentsettings.getThirdPartyPaymentWorkflowWithValues( fullyQualifiedName);
 	 * </code></pre></p>
-	 * @param fullyQualifiedName Fully qualified name of the attribute for the third-party payment workflow.
+	 * @param fullyQualifiedName 
 	 * @return com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition
 	 * @see com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition
 	 */
@@ -55,8 +55,8 @@ public class PaymentSettingsResource {
 	 *	PaymentSettings paymentsettings = new PaymentSettings();
 	 *	ExternalPaymentWorkflowDefinition externalPaymentWorkflowDefinition = paymentsettings.getThirdPartyPaymentWorkflowWithValues( fullyQualifiedName,  responseFields);
 	 * </code></pre></p>
-	 * @param fullyQualifiedName Fully qualified name of the attribute for the third-party payment workflow.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param fullyQualifiedName 
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition
 	 * @see com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition
 	 */
@@ -91,18 +91,19 @@ public class PaymentSettingsResource {
 	 * 
 	 * <p><pre><code>
 	 *	PaymentSettings paymentsettings = new PaymentSettings();
-	 *	paymentsettings.addThirdPartyPaymentWorkflow( definition);
+	 *	Stream stream = paymentsettings.addThirdPartyPaymentWorkflow( definition);
 	 * </code></pre></p>
-	 * @param definition Properties of an external payment processing workflow defined for the site. At this time, only PayPal Express is supported.
-	 * @return 
+	 * @param definition 
+	 * @return Stream
+	 * @see Stream
 	 * @see com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition
 	 */
-	public void addThirdPartyPaymentWorkflow(com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition definition) throws Exception
+	public java.io.InputStream addThirdPartyPaymentWorkflow(com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition definition) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.commerce.settings.checkout.PaymentSettingsClient.addThirdPartyPaymentWorkflowClient( definition);
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.settings.checkout.PaymentSettingsClient.addThirdPartyPaymentWorkflowClient( definition);
 		client.setContext(_apiContext);
 		client.executeRequest();
-		client.cleanupHttpConnection();
+		return client.getResult();
 
 	}
 
@@ -110,17 +111,18 @@ public class PaymentSettingsResource {
 	 * 
 	 * <p><pre><code>
 	 *	PaymentSettings paymentsettings = new PaymentSettings();
-	 *	paymentsettings.deleteThirdPartyPaymentWorkflow( fullyQualifiedName);
+	 *	Stream stream = paymentsettings.deleteThirdPartyPaymentWorkflow( fullyQualifiedName);
 	 * </code></pre></p>
-	 * @param fullyQualifiedName Fully qualified name of the attribute for the third-party payment workflow.
-	 * @return 
+	 * @param fullyQualifiedName 
+	 * @return Stream
+	 * @see Stream
 	 */
-	public void deleteThirdPartyPaymentWorkflow(String fullyQualifiedName) throws Exception
+	public java.io.InputStream deleteThirdPartyPaymentWorkflow(String fullyQualifiedName) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.commerce.settings.checkout.PaymentSettingsClient.deleteThirdPartyPaymentWorkflowClient( fullyQualifiedName);
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.settings.checkout.PaymentSettingsClient.deleteThirdPartyPaymentWorkflowClient( fullyQualifiedName);
 		client.setContext(_apiContext);
 		client.executeRequest();
-		client.cleanupHttpConnection();
+		return client.getResult();
 
 	}
 

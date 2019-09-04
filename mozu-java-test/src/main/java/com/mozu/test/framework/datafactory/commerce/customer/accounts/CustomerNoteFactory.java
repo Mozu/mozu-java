@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.customer.accounts.CustomerNoteResource;
 
 /** <summary>
- * This resources manages notes for a customer account. For example, a client can track a shopper's interests or complaints. Only clients can add and view notes. Shoppers cannot view these notes from the My Account page.
+ * Tenant administrators can add and view internal notes for a customer account. For example, a client can track a shopper's interests or complaints. Only clients can add and view notes. Shoppers cannot view these notes from the My Account page.
  * </summary>
  */
 public class CustomerNoteFactory
@@ -123,22 +123,24 @@ public class CustomerNoteFactory
 		return returnObj;
 	}
 
-	public static void deleteAccountNote(ApiContext apiContext, Integer accountId, Integer noteId, int expectedCode) throws Exception
+	public static java.io.InputStream deleteAccountNote(ApiContext apiContext, Integer accountId, Integer noteId, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		CustomerNoteResource resource = new CustomerNoteResource(apiContext);
 		try
 		{
-			resource.deleteAccountNote( accountId,  noteId);
+			returnObj = resource.deleteAccountNote( accountId,  noteId);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 }

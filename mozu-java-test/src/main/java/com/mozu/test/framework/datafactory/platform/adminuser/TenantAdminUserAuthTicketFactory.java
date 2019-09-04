@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.platform.adminuser.TenantAdminUserAuthTicketResource;
 
 /** <summary>
- * Use the Admin User authentication tickets resource to generate and refresh authentication tickets that enable  administrator or developer account users to access development or production tenants.
+ * Use the Admin User authentication tickets resource to generate and refresh authentication tickets that enable Mozu administrator or developer account users to access development or production tenants.
  * </summary>
  */
 public class TenantAdminUserAuthTicketFactory
@@ -73,22 +73,24 @@ public class TenantAdminUserAuthTicketFactory
 		return returnObj;
 	}
 
-	public static void deleteUserAuthTicket(ApiContext apiContext, String refreshToken, int expectedCode) throws Exception
+	public static java.io.InputStream deleteUserAuthTicket(ApiContext apiContext, String refreshToken, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		TenantAdminUserAuthTicketResource resource = new TenantAdminUserAuthTicketResource(apiContext);
 		try
 		{
-			resource.deleteUserAuthTicket( refreshToken);
+			returnObj = resource.deleteUserAuthTicket( refreshToken);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 }

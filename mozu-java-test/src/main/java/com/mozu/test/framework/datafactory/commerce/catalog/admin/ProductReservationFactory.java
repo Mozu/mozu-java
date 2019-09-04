@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.catalog.admin.ProductReservationResource;
 
 /** <summary>
- * Use the Product Reservations resource to temporarily hold a product from inventory while a shopper is filling out payment information. You can create a product reservation when a shopper proceeds to check out and then release the reservation when the order process is complete.
+ * Temporarily hold a product from inventory while a shopper is filling out payment information. Create a product reservation when a shopper proceeds to check out and then release the reservation when the order process is complete.
  * </summary>
  */
 public class ProductReservationFactory
@@ -98,22 +98,24 @@ public class ProductReservationFactory
 		return returnObj;
 	}
 
-	public static void commitReservations(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.ProductReservation> productReservations, int expectedCode) throws Exception
+	public static java.io.InputStream commitReservations(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.ProductReservation> productReservations, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		ProductReservationResource resource = new ProductReservationResource(apiContext, dataViewMode);
 		try
 		{
-			resource.commitReservations( productReservations);
+			returnObj = resource.commitReservations( productReservations);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 	public static List<com.mozu.api.contracts.productadmin.ProductReservation> updateProductReservations(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.ProductReservation> productReservations, int expectedCode) throws Exception
@@ -141,22 +143,24 @@ public class ProductReservationFactory
 		return returnObj;
 	}
 
-	public static void deleteProductReservation(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer productReservationId, int expectedCode) throws Exception
+	public static java.io.InputStream deleteProductReservation(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer productReservationId, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		ProductReservationResource resource = new ProductReservationResource(apiContext, dataViewMode);
 		try
 		{
-			resource.deleteProductReservation( productReservationId);
+			returnObj = resource.deleteProductReservation( productReservationId);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 }

@@ -14,18 +14,12 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.productadmin.ThresholdMessageLocalizedContent;
 
-/**
- *	Information on where, when and what content to display in a threshold message to customers.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ThresholdMessage implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The unique identifier of the discount.
-	 */
 	protected  Integer discountId;
 
 	public Integer getDiscountId() {
@@ -36,9 +30,6 @@ public class ThresholdMessage implements Serializable
 		this.discountId = discountId;
 	}
 
-	/**
-	 * Indicates if the object or feature is active.
-	 */
 	protected  Boolean isActive;
 
 	public Boolean getIsActive() {
@@ -49,9 +40,6 @@ public class ThresholdMessage implements Serializable
 		this.isActive = isActive;
 	}
 
-	/**
-	 * Indicates if the threshold message will display when a promo code is evaluated
-	 */
 	protected  Boolean requiresCouponCode;
 
 	public Boolean getRequiresCouponCode() {
@@ -62,9 +50,6 @@ public class ThresholdMessage implements Serializable
 		this.requiresCouponCode = requiresCouponCode;
 	}
 
-	/**
-	 * Indicates if the threshold message will display in the cart
-	 */
 	protected  Boolean showInCart;
 
 	public Boolean getShowInCart() {
@@ -75,9 +60,6 @@ public class ThresholdMessage implements Serializable
 		this.showInCart = showInCart;
 	}
 
-	/**
-	 * Indicates if the threshold message will display on the checkout page
-	 */
 	protected  Boolean showOnCheckout;
 
 	public Boolean getShowOnCheckout() {
@@ -88,9 +70,6 @@ public class ThresholdMessage implements Serializable
 		this.showOnCheckout = showOnCheckout;
 	}
 
-	/**
-	 * The cart total amount that must be met before the threshold message is displayed
-	 */
 	protected  Double thresholdValue;
 
 	public Double getThresholdValue() {
@@ -101,9 +80,6 @@ public class ThresholdMessage implements Serializable
 		this.thresholdValue = thresholdValue;
 	}
 
-	/**
-	 * Basic audit info about the object, including date, time, and user account. This data may be captured when creating, updating, and removing data.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -114,9 +90,6 @@ public class ThresholdMessage implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * Localizable content (such as a name and/or description) for an attribute. The content may be localized when displayed according to the locale code specified by the master catalog. Content can include descriptive text for product extensible attributes, catalog-level descriptions (displayed if isContentOverriden is true), product bundles, and customer account notes.
-	 */
 	protected  ThresholdMessageLocalizedContent content;
 
 	public ThresholdMessageLocalizedContent getContent() {

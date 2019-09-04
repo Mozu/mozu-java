@@ -15,18 +15,12 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.UserRole;
 
-/**
- *	A user login that can access a shared B2B account.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class B2BUser implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Indicates if the customer account is opted to receive marketing materials. If true, the customer account is opted in for receiving the content.
-	 */
 	protected  Boolean acceptsMarketing;
 
 	public Boolean getAcceptsMarketing() {
@@ -37,9 +31,6 @@ public class B2BUser implements Serializable
 		this.acceptsMarketing = acceptsMarketing;
 	}
 
-	/**
-	 * The email address for the customer account and contact. This email may be used for login to the storefront and for subscription mailing lists.
-	 */
 	protected  String emailAddress;
 
 	public String getEmailAddress() {
@@ -50,9 +41,6 @@ public class B2BUser implements Serializable
 		this.emailAddress = emailAddress;
 	}
 
-	/**
-	 * The full first name of a customer or contact name.
-	 */
 	protected  String firstName;
 
 	public String getFirstName() {
@@ -63,9 +51,6 @@ public class B2BUser implements Serializable
 		this.firstName = firstName;
 	}
 
-	/**
-	 * Indicates if an external password is set on this account.
-	 */
 	protected  Boolean hasExternalPassword;
 
 	public Boolean getHasExternalPassword() {
@@ -76,9 +61,6 @@ public class B2BUser implements Serializable
 		this.hasExternalPassword = hasExternalPassword;
 	}
 
-	/**
-	 * Indicates if the object or feature is active.
-	 */
 	protected  Boolean isActive;
 
 	public Boolean getIsActive() {
@@ -89,9 +71,6 @@ public class B2BUser implements Serializable
 		this.isActive = isActive;
 	}
 
-	/**
-	 * Indicates if a customer account and associated data is locked. If true, the user account is locked due to multiple failed authentication attempts. The user cannot login until the account is unlocked.
-	 */
 	protected  Boolean isLocked;
 
 	public Boolean getIsLocked() {
@@ -102,9 +81,6 @@ public class B2BUser implements Serializable
 		this.isLocked = isLocked;
 	}
 
-	/**
-	 * Indicates whether the customer has been removed or not from the available users list.
-	 */
 	protected  Boolean isRemoved;
 
 	public Boolean getIsRemoved() {
@@ -115,9 +91,6 @@ public class B2BUser implements Serializable
 		this.isRemoved = isRemoved;
 	}
 
-	/**
-	 * The full last name of a customer or contact name.
-	 */
 	protected  String lastName;
 
 	public String getLastName() {
@@ -128,9 +101,6 @@ public class B2BUser implements Serializable
 		this.lastName = lastName;
 	}
 
-	/**
-	 * The two character locale code, per the country code provided. This code determines the localized content to use and display.
-	 */
 	protected  String localeCode;
 
 	public String getLocaleCode() {
@@ -141,9 +111,6 @@ public class B2BUser implements Serializable
 		this.localeCode = localeCode;
 	}
 
-	/**
-	 * Unique identifier of the customer account (shopper or system user). System-supplied and read-only. If the shopper user is anonymous, the user ID represents a system-generated user ID string.
-	 */
 	protected  String userId;
 
 	public String getUserId() {
@@ -154,9 +121,6 @@ public class B2BUser implements Serializable
 		this.userId = userId;
 	}
 
-	/**
-	 * The user name associated with the user profile. The customer uses the user name to access the account.
-	 */
 	protected  String userName;
 
 	public String getUserName() {
@@ -167,9 +131,6 @@ public class B2BUser implements Serializable
 		this.userName = userName;
 	}
 
-	/**
-	 * roles ApiType DOCUMENT_HERE 
-	 */
 	protected List<UserRole> roles;
 	public List<UserRole> getRoles() {
 		return this.roles;

@@ -21,7 +21,7 @@ import org.apache.commons.lang.StringUtils;
 
 import com.mozu.api.DataViewMode;
 /** <summary>
- * Use the Product Publishing resource to publish or discard pending changes to products in a master catalog, or to add or remove pending changes to and from product publish sets.You can use product publish sets to group pending product changes together and publish them all at the same time.
+ * Use the Product Publishing resource to publish or discard pending changes to product definitions in the master catalog.
  * </summary>
  */
 public class PublishingScopeResource {
@@ -50,7 +50,7 @@ public class PublishingScopeResource {
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	PublishSet publishSet = publishingscope.getPublishSet( publishSetCode);
 	 * </code></pre></p>
-	 * @param publishSetCode The unique identifier of the publish set.
+	 * @param publishSetCode 
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.PublishSet
 	 * @see com.mozu.api.contracts.productadmin.PublishSet
@@ -66,7 +66,7 @@ public class PublishingScopeResource {
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	CountDownLatch latch = publishingscope.getPublishSet( publishSetCode, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param publishSetCode The unique identifier of the publish set.
+	 * @param publishSetCode 
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.PublishSet
@@ -83,8 +83,8 @@ public class PublishingScopeResource {
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	PublishSet publishSet = publishingscope.getPublishSet( publishSetCode,  responseFields);
 	 * </code></pre></p>
-	 * @param publishSetCode The unique identifier of the publish set.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param publishSetCode 
+	 * @param responseFields 
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.PublishSet
 	 * @see com.mozu.api.contracts.productadmin.PublishSet
@@ -104,8 +104,8 @@ public class PublishingScopeResource {
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	CountDownLatch latch = publishingscope.getPublishSet( publishSetCode,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param publishSetCode The unique identifier of the publish set.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param publishSetCode 
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.PublishSet
@@ -156,7 +156,7 @@ public class PublishingScopeResource {
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	PublishSetCollection publishSetCollection = publishingscope.getPublishSets( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.PublishSetCollection
 	 * @see com.mozu.api.contracts.productadmin.PublishSetCollection
@@ -176,7 +176,7 @@ public class PublishingScopeResource {
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	CountDownLatch latch = publishingscope.getPublishSets( responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.PublishSetCollection
@@ -194,19 +194,20 @@ public class PublishingScopeResource {
 	 * 
 	 * <p><pre><code>
 	 *	PublishingScope publishingscope = new PublishingScope();
-	 *	publishingscope.discardDrafts( publishScope);
+	 *	Stream stream = publishingscope.discardDrafts( publishScope);
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param publishScope Describes the scope of the product publishing update, which can include individual product codes or all pending changes.
-	 * @return 
+	 * @param publishScope Properties of the pending product changes to include in this operation.
+	 * @return Stream
+	 * @see Stream
 	 * @see com.mozu.api.contracts.productadmin.PublishingScope
 	 */
-	public void discardDrafts(com.mozu.api.contracts.productadmin.PublishingScope publishScope) throws Exception
+	public java.io.InputStream discardDrafts(com.mozu.api.contracts.productadmin.PublishingScope publishScope) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.PublishingScopeClient.discardDraftsClient(_dataViewMode,  publishScope);
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.catalog.admin.PublishingScopeClient.discardDraftsClient(_dataViewMode,  publishScope);
 		client.setContext(_apiContext);
 		client.executeRequest();
-		client.cleanupHttpConnection();
+		return client.getResult();
 
 	}
 
@@ -214,19 +215,62 @@ public class PublishingScopeResource {
 	 * 
 	 * <p><pre><code>
 	 *	PublishingScope publishingscope = new PublishingScope();
-	 *	publishingscope.publishDrafts( publishScope);
-	 * </code></pre></p>
+	 *	CountDownLatch latch = publishingscope.discardDrafts( publishScope, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
-	 * @param publishScope Describes the scope of the product publishing update, which can include individual product codes or all pending changes.
-	 * @return 
+	 * @param publishScope Properties of the pending product changes to include in this operation.
+	 * @return Stream
+	 * @see Stream
 	 * @see com.mozu.api.contracts.productadmin.PublishingScope
 	 */
-	public void publishDrafts(com.mozu.api.contracts.productadmin.PublishingScope publishScope) throws Exception
+	public CountDownLatch discardDraftsAsync(com.mozu.api.contracts.productadmin.PublishingScope publishScope, AsyncCallback<java.io.InputStream> callback) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.PublishingScopeClient.publishDraftsClient(_dataViewMode,  publishScope);
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.catalog.admin.PublishingScopeClient.discardDraftsClient(_dataViewMode,  publishScope);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	PublishingScope publishingscope = new PublishingScope();
+	 *	Stream stream = publishingscope.publishDrafts( publishScope);
+	 * </code></pre></p>
+	 * @param dataViewMode DataViewMode
+	 * @param publishScope Properties of the pending product changes to include in this operation.
+	 * @return Stream
+	 * @see Stream
+	 * @see com.mozu.api.contracts.productadmin.PublishingScope
+	 */
+	public java.io.InputStream publishDrafts(com.mozu.api.contracts.productadmin.PublishingScope publishScope) throws Exception
+	{
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.catalog.admin.PublishingScopeClient.publishDraftsClient(_dataViewMode,  publishScope);
 		client.setContext(_apiContext);
 		client.executeRequest();
-		client.cleanupHttpConnection();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	PublishingScope publishingscope = new PublishingScope();
+	 *	CountDownLatch latch = publishingscope.publishDrafts( publishScope, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param  callback callback handler for asynchronous operations
+	 * @param dataViewMode DataViewMode
+	 * @param publishScope Properties of the pending product changes to include in this operation.
+	 * @return Stream
+	 * @see Stream
+	 * @see com.mozu.api.contracts.productadmin.PublishingScope
+	 */
+	public CountDownLatch publishDraftsAsync(com.mozu.api.contracts.productadmin.PublishingScope publishScope, AsyncCallback<java.io.InputStream> callback) throws Exception
+	{
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.catalog.admin.PublishingScopeClient.publishDraftsClient(_dataViewMode,  publishScope);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
 
 	}
 
@@ -237,7 +281,7 @@ public class PublishingScopeResource {
 	 *	PublishSet publishSet = publishingscope.assignProductsToPublishSet( publishSet);
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param publishSet The details of the publish to which you want to assign products.
+	 * @param publishSet 
 	 * @return com.mozu.api.contracts.productadmin.PublishSet
 	 * @see com.mozu.api.contracts.productadmin.PublishSet
 	 * @see com.mozu.api.contracts.productadmin.PublishSet
@@ -255,7 +299,7 @@ public class PublishingScopeResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
-	 * @param publishSet The details of the publish to which you want to assign products.
+	 * @param publishSet 
 	 * @return com.mozu.api.contracts.productadmin.PublishSet
 	 * @see com.mozu.api.contracts.productadmin.PublishSet
 	 * @see com.mozu.api.contracts.productadmin.PublishSet
@@ -271,9 +315,9 @@ public class PublishingScopeResource {
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	PublishSet publishSet = publishingscope.assignProductsToPublishSet( publishSet,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param dataViewMode DataViewMode
-	 * @param publishSet The details of the publish to which you want to assign products.
+	 * @param publishSet 
 	 * @return com.mozu.api.contracts.productadmin.PublishSet
 	 * @see com.mozu.api.contracts.productadmin.PublishSet
 	 * @see com.mozu.api.contracts.productadmin.PublishSet
@@ -293,10 +337,10 @@ public class PublishingScopeResource {
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	CountDownLatch latch = publishingscope.assignProductsToPublishSet( publishSet,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
-	 * @param publishSet The details of the publish to which you want to assign products.
+	 * @param publishSet 
 	 * @return com.mozu.api.contracts.productadmin.PublishSet
 	 * @see com.mozu.api.contracts.productadmin.PublishSet
 	 * @see com.mozu.api.contracts.productadmin.PublishSet
@@ -313,34 +357,74 @@ public class PublishingScopeResource {
 	 * 
 	 * <p><pre><code>
 	 *	PublishingScope publishingscope = new PublishingScope();
-	 *	publishingscope.deletePublishSet( publishSetCode);
+	 *	Stream stream = publishingscope.deletePublishSet( publishSetCode);
 	 * </code></pre></p>
-	 * @param publishSetCode The unique identifier of the publish set.
+	 * @param publishSetCode 
 	 * @param dataViewMode DataViewMode
-	 * @return 
+	 * @return Stream
+	 * @see Stream
 	 */
-	public void deletePublishSet(String publishSetCode) throws Exception
+	public java.io.InputStream deletePublishSet(String publishSetCode) throws Exception
 	{
-		deletePublishSet( publishSetCode,  null);
+		return deletePublishSet( publishSetCode,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	PublishingScope publishingscope = new PublishingScope();
-	 *	publishingscope.deletePublishSet( publishSetCode,  discardDrafts);
-	 * </code></pre></p>
-	 * @param discardDrafts Specifies whether to discard all the drafts assigned to the publish set when the publish set is deleted.
-	 * @param publishSetCode The unique identifier of the publish set.
+	 *	CountDownLatch latch = publishingscope.deletePublishSet( publishSetCode, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param publishSetCode 
+	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
-	 * @return 
+	 * @return Stream
+	 * @see Stream
 	 */
-	public void deletePublishSet(String publishSetCode, Boolean discardDrafts) throws Exception
+	public CountDownLatch deletePublishSetAsync(String publishSetCode, AsyncCallback<java.io.InputStream> callback) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.PublishingScopeClient.deletePublishSetClient( publishSetCode,  discardDrafts);
+		return deletePublishSetAsync( publishSetCode,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	PublishingScope publishingscope = new PublishingScope();
+	 *	Stream stream = publishingscope.deletePublishSet( publishSetCode,  discardDrafts);
+	 * </code></pre></p>
+	 * @param discardDrafts 
+	 * @param publishSetCode 
+	 * @param dataViewMode DataViewMode
+	 * @return Stream
+	 * @see Stream
+	 */
+	public java.io.InputStream deletePublishSet(String publishSetCode, Boolean discardDrafts) throws Exception
+	{
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.catalog.admin.PublishingScopeClient.deletePublishSetClient( publishSetCode,  discardDrafts);
 		client.setContext(_apiContext);
 		client.executeRequest();
-		client.cleanupHttpConnection();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	PublishingScope publishingscope = new PublishingScope();
+	 *	CountDownLatch latch = publishingscope.deletePublishSet( publishSetCode,  discardDrafts, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param discardDrafts 
+	 * @param publishSetCode 
+	 * @param  callback callback handler for asynchronous operations
+	 * @param dataViewMode DataViewMode
+	 * @return Stream
+	 * @see Stream
+	 */
+	public CountDownLatch deletePublishSetAsync(String publishSetCode, Boolean discardDrafts, AsyncCallback<java.io.InputStream> callback) throws Exception
+	{
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.catalog.admin.PublishingScopeClient.deletePublishSetClient( publishSetCode,  discardDrafts);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
 
 	}
 

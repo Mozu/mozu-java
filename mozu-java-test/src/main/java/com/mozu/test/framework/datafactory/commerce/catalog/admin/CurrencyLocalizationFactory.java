@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.catalog.admin.CurrencyLocalizationResource;
 
 /** <summary>
- * Manage the currency localization rules and exchange rates for any of the currencies that are supported for placing orders in.
+ * 
  * </summary>
  */
 public class CurrencyLocalizationFactory
@@ -148,40 +148,44 @@ public class CurrencyLocalizationFactory
 		return returnObj;
 	}
 
-	public static void addCurrencyExchangeRates(ApiContext apiContext, List<com.mozu.api.contracts.productadmin.CurrencyExchangeRate> currencyExchangeRates, String currencyCode, int expectedCode) throws Exception
+	public static java.io.InputStream addCurrencyExchangeRates(ApiContext apiContext, List<com.mozu.api.contracts.productadmin.CurrencyExchangeRate> currencyExchangeRates, String currencyCode, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		CurrencyLocalizationResource resource = new CurrencyLocalizationResource(apiContext);
 		try
 		{
-			resource.addCurrencyExchangeRates( currencyExchangeRates,  currencyCode);
+			returnObj = resource.addCurrencyExchangeRates( currencyExchangeRates,  currencyCode);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
-	public static void updateCurrencyExchangeRates(ApiContext apiContext, List<com.mozu.api.contracts.productadmin.CurrencyExchangeRate> currencyExchangeRates, String currencyCode, int expectedCode) throws Exception
+	public static java.io.InputStream updateCurrencyExchangeRates(ApiContext apiContext, List<com.mozu.api.contracts.productadmin.CurrencyExchangeRate> currencyExchangeRates, String currencyCode, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		CurrencyLocalizationResource resource = new CurrencyLocalizationResource(apiContext);
 		try
 		{
-			resource.updateCurrencyExchangeRates( currencyExchangeRates,  currencyCode);
+			returnObj = resource.updateCurrencyExchangeRates( currencyExchangeRates,  currencyCode);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 	public static com.mozu.api.contracts.productadmin.CurrencyLocalization updateCurrencyLocalization(ApiContext apiContext, com.mozu.api.contracts.productadmin.CurrencyLocalization currencyLocalization, String currencyCode, int expectedCode) throws Exception
@@ -209,40 +213,44 @@ public class CurrencyLocalizationFactory
 		return returnObj;
 	}
 
-	public static void deleteCurrencyLocalization(ApiContext apiContext, String currencyCode, int expectedCode) throws Exception
+	public static java.io.InputStream deleteCurrencyLocalization(ApiContext apiContext, String currencyCode, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		CurrencyLocalizationResource resource = new CurrencyLocalizationResource(apiContext);
 		try
 		{
-			resource.deleteCurrencyLocalization( currencyCode);
+			returnObj = resource.deleteCurrencyLocalization( currencyCode);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
-	public static void deleteCurrencyExchangeRate(ApiContext apiContext, String currencyCode, String toCurrencyCode, int expectedCode) throws Exception
+	public static java.io.InputStream deleteCurrencyExchangeRate(ApiContext apiContext, String currencyCode, String toCurrencyCode, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		CurrencyLocalizationResource resource = new CurrencyLocalizationResource(apiContext);
 		try
 		{
-			resource.deleteCurrencyExchangeRate( currencyCode,  toCurrencyCode);
+			returnObj = resource.deleteCurrencyExchangeRate( currencyCode,  toCurrencyCode);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 }

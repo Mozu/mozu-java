@@ -31,7 +31,7 @@ public class ProductExtraClient {
 	 * client.executeRequest();
 	 * ProductExtra productExtra = client.Result();
 	 * </code></pre></p>
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param productCode 
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.ProductExtra>>
 	 * @see com.mozu.api.contracts.productadmin.ProductExtra
 	 */
@@ -56,9 +56,9 @@ public class ProductExtraClient {
 	 * client.executeRequest();
 	 * ProductExtraValueDeltaPrice productExtraValueDeltaPrice = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param value The value string to create.
+	 * @param attributeFQN 
+	 * @param productCode 
+	 * @param value 
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice>>
 	 * @see com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice
 	 */
@@ -83,10 +83,10 @@ public class ProductExtraClient {
 	 * client.executeRequest();
 	 * ProductExtraValueDeltaPrice productExtraValueDeltaPrice = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param value The value string to create.
+	 * @param attributeFQN 
+	 * @param currencyCode 
+	 * @param productCode 
+	 * @param value 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice>
 	 * @see com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice
 	 */
@@ -103,11 +103,11 @@ public class ProductExtraClient {
 	 * client.executeRequest();
 	 * ProductExtraValueDeltaPrice productExtraValueDeltaPrice = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param value The value string to create.
+	 * @param attributeFQN 
+	 * @param currencyCode 
+	 * @param productCode 
+	 * @param responseFields 
+	 * @param value 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice>
 	 * @see com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice
 	 */
@@ -132,8 +132,8 @@ public class ProductExtraClient {
 	 * client.executeRequest();
 	 * ProductExtra productExtra = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param attributeFQN 
+	 * @param productCode 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductExtra>
 	 * @see com.mozu.api.contracts.productadmin.ProductExtra
 	 */
@@ -150,9 +150,9 @@ public class ProductExtraClient {
 	 * client.executeRequest();
 	 * ProductExtra productExtra = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param attributeFQN 
+	 * @param productCode 
+	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductExtra>
 	 * @see com.mozu.api.contracts.productadmin.ProductExtra
 	 */
@@ -177,10 +177,10 @@ public class ProductExtraClient {
 	 * client.executeRequest();
 	 * ProductExtraValueDeltaPrice productExtraValueDeltaPrice = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param value The value string to create.
-	 * @param localizedDeltaPrice The properties of the price difference between the product extra and the base product.
+	 * @param attributeFQN 
+	 * @param productCode 
+	 * @param value 
+	 * @param localizedDeltaPrice 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice>
 	 * @see com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice
@@ -198,11 +198,11 @@ public class ProductExtraClient {
 	 * client.executeRequest();
 	 * ProductExtraValueDeltaPrice productExtraValueDeltaPrice = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param value The value string to create.
-	 * @param localizedDeltaPrice The properties of the price difference between the product extra and the base product.
+	 * @param attributeFQN 
+	 * @param productCode 
+	 * @param responseFields 
+	 * @param value 
+	 * @param localizedDeltaPrice 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice>
 	 * @see com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice
@@ -229,8 +229,8 @@ public class ProductExtraClient {
 	 * client.executeRequest();
 	 * ProductExtra productExtra = client.Result();
 	 * </code></pre></p>
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param productExtra Properties of an extra attribute to defined for a product that is associated with a product type that uses the extra. Setting up extras for a product enables shopper-entered information, such as initials for a monogram.
+	 * @param productCode 
+	 * @param productExtra Properties of the product extra to configure for the specified product.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductExtra>
 	 * @see com.mozu.api.contracts.productadmin.ProductExtra
 	 * @see com.mozu.api.contracts.productadmin.ProductExtra
@@ -248,9 +248,9 @@ public class ProductExtraClient {
 	 * client.executeRequest();
 	 * ProductExtra productExtra = client.Result();
 	 * </code></pre></p>
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param productExtra Properties of an extra attribute to defined for a product that is associated with a product type that uses the extra. Setting up extras for a product enables shopper-entered information, such as initials for a monogram.
+	 * @param productCode 
+	 * @param responseFields 
+	 * @param productExtra Properties of the product extra to configure for the specified product.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductExtra>
 	 * @see com.mozu.api.contracts.productadmin.ProductExtra
 	 * @see com.mozu.api.contracts.productadmin.ProductExtra
@@ -277,10 +277,10 @@ public class ProductExtraClient {
 	 * client.executeRequest();
 	 * ProductExtraValueDeltaPrice productExtraValueDeltaPrice = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param value The value string to create.
-	 * @param localizedDeltaPrice The properties of the price difference between the product extra and the base product.
+	 * @param attributeFQN 
+	 * @param productCode 
+	 * @param value 
+	 * @param localizedDeltaPrice 
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice>>
 	 * @see com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice
@@ -307,11 +307,11 @@ public class ProductExtraClient {
 	 * client.executeRequest();
 	 * ProductExtraValueDeltaPrice productExtraValueDeltaPrice = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param value The value string to create.
-	 * @param localizedDeltaPrice The properties of the price difference between the product extra and the base product.
+	 * @param attributeFQN 
+	 * @param currencyCode 
+	 * @param productCode 
+	 * @param value 
+	 * @param localizedDeltaPrice 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice>
 	 * @see com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice
@@ -329,12 +329,12 @@ public class ProductExtraClient {
 	 * client.executeRequest();
 	 * ProductExtraValueDeltaPrice productExtraValueDeltaPrice = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param value The value string to create.
-	 * @param localizedDeltaPrice The properties of the price difference between the product extra and the base product.
+	 * @param attributeFQN 
+	 * @param currencyCode 
+	 * @param productCode 
+	 * @param responseFields 
+	 * @param value 
+	 * @param localizedDeltaPrice 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice>
 	 * @see com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice
@@ -361,9 +361,9 @@ public class ProductExtraClient {
 	 * client.executeRequest();
 	 * ProductExtra productExtra = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param productExtra Properties of an extra attribute to defined for a product that is associated with a product type that uses the extra. Setting up extras for a product enables shopper-entered information, such as initials for a monogram.
+	 * @param attributeFQN 
+	 * @param productCode 
+	 * @param productExtra Properties of the extra attribute to update for the specified product.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductExtra>
 	 * @see com.mozu.api.contracts.productadmin.ProductExtra
 	 * @see com.mozu.api.contracts.productadmin.ProductExtra
@@ -381,10 +381,10 @@ public class ProductExtraClient {
 	 * client.executeRequest();
 	 * ProductExtra productExtra = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param productExtra Properties of an extra attribute to defined for a product that is associated with a product type that uses the extra. Setting up extras for a product enables shopper-entered information, such as initials for a monogram.
+	 * @param attributeFQN 
+	 * @param productCode 
+	 * @param responseFields 
+	 * @param productExtra Properties of the extra attribute to update for the specified product.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductExtra>
 	 * @see com.mozu.api.contracts.productadmin.ProductExtra
 	 * @see com.mozu.api.contracts.productadmin.ProductExtra
@@ -406,19 +406,22 @@ public class ProductExtraClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=DeleteExtraClient(dataViewMode,  productCode,  attributeFQN);
+	 * MozuClient<java.io.InputStream> mozuClient=DeleteExtraClient(dataViewMode,  productCode,  attributeFQN);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
+	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @return Mozu.Api.MozuClient 
+	 * @param attributeFQN 
+	 * @param productCode 
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
 	 */
-	public static MozuClient deleteExtraClient(com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN) throws Exception
+	public static MozuClient<java.io.InputStream> deleteExtraClient(com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductExtraUrl.deleteExtraUrl(attributeFQN, productCode);
 		String verb = "DELETE";
-				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
@@ -429,21 +432,24 @@ public class ProductExtraClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=DeleteExtraValueLocalizedDeltaPriceClient(dataViewMode,  productCode,  attributeFQN,  value,  currencyCode);
+	 * MozuClient<java.io.InputStream> mozuClient=DeleteExtraValueLocalizedDeltaPriceClient(dataViewMode,  productCode,  attributeFQN,  value,  currencyCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
+	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param value The value string to create.
-	 * @return Mozu.Api.MozuClient 
+	 * @param attributeFQN 
+	 * @param currencyCode 
+	 * @param productCode 
+	 * @param value 
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
 	 */
-	public static MozuClient deleteExtraValueLocalizedDeltaPriceClient(com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, String value, String currencyCode) throws Exception
+	public static MozuClient<java.io.InputStream> deleteExtraValueLocalizedDeltaPriceClient(com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, String value, String currencyCode) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductExtraUrl.deleteExtraValueLocalizedDeltaPriceUrl(attributeFQN, currencyCode, productCode, value);
 		String verb = "DELETE";
-				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());

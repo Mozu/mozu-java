@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.customer.B2BAccountResource;
 
 /** <summary>
- * The B2B feature includes the primary shared B2B account and a set of user account logins that have access to that primary account. This primary account has its own identifying data and customer attributes, as well as the list of users associated with it. These attributes and users can be managed through other operations of the B2B APIs.
+ * 
  * </summary>
  */
 public class B2BAccountFactory
@@ -223,22 +223,24 @@ public class B2BAccountFactory
 		return returnObj;
 	}
 
-	public static void addUserRoleAsync(ApiContext apiContext, Integer accountId, String userId, Integer roleId, int expectedCode) throws Exception
+	public static java.io.InputStream addUserRoleAsync(ApiContext apiContext, Integer accountId, String userId, Integer roleId, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		B2BAccountResource resource = new B2BAccountResource(apiContext);
 		try
 		{
-			resource.addUserRoleAsync( accountId,  userId,  roleId);
+			returnObj = resource.addUserRoleAsync( accountId,  userId,  roleId);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 	public static com.mozu.api.contracts.customer.B2BUser addUser(ApiContext apiContext, com.mozu.api.contracts.customer.B2BUserAndAuthInfo user, Integer accountId, int expectedCode) throws Exception
@@ -291,22 +293,24 @@ public class B2BAccountFactory
 		return returnObj;
 	}
 
-	public static void removeUser(ApiContext apiContext, Integer accountId, String userId, int expectedCode) throws Exception
+	public static java.io.InputStream removeUser(ApiContext apiContext, Integer accountId, String userId, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		B2BAccountResource resource = new B2BAccountResource(apiContext);
 		try
 		{
-			resource.removeUser( accountId,  userId);
+			returnObj = resource.removeUser( accountId,  userId);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 	public static com.mozu.api.contracts.customer.B2BUser updateUser(ApiContext apiContext, com.mozu.api.contracts.customer.B2BUser user, Integer accountId, String userId, int expectedCode) throws Exception
@@ -359,40 +363,44 @@ public class B2BAccountFactory
 		return returnObj;
 	}
 
-	public static void deleteB2BAccountAttribute(ApiContext apiContext, Integer accountId, String attributeFQN, int expectedCode) throws Exception
+	public static java.io.InputStream deleteB2BAccountAttribute(ApiContext apiContext, Integer accountId, String attributeFQN, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		B2BAccountResource resource = new B2BAccountResource(apiContext);
 		try
 		{
-			resource.deleteB2BAccountAttribute( accountId,  attributeFQN);
+			returnObj = resource.deleteB2BAccountAttribute( accountId,  attributeFQN);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
-	public static void removeUserRoleAsync(ApiContext apiContext, Integer accountId, String userId, Integer roleId, int expectedCode) throws Exception
+	public static java.io.InputStream removeUserRoleAsync(ApiContext apiContext, Integer accountId, String userId, Integer roleId, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		B2BAccountResource resource = new B2BAccountResource(apiContext);
 		try
 		{
-			resource.removeUserRoleAsync( accountId,  userId,  roleId);
+			returnObj = resource.removeUserRoleAsync( accountId,  userId,  roleId);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 }

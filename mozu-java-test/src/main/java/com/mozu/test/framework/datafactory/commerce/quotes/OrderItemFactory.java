@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.quotes.OrderItemResource;
 
 /** <summary>
- * Quote Items are the individual products that are added to a particular quote, which serves as the wishlists of the B2B feature.Like the quotes themselves, the quote items APIs are a work-in-progress that will be enhanced with future releases. Use caution when interacting with these APIs, as their current models may change and break backwards compatibility as functionality is added.
+ * 
  * </summary>
  */
 public class OrderItemFactory
@@ -148,22 +148,24 @@ public class OrderItemFactory
 		return returnObj;
 	}
 
-	public static void deleteQuoteItem(ApiContext apiContext, String quoteId, String quoteItemId, int expectedCode) throws Exception
+	public static java.io.InputStream deleteQuoteItem(ApiContext apiContext, String quoteId, String quoteItemId, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		OrderItemResource resource = new OrderItemResource(apiContext);
 		try
 		{
-			resource.deleteQuoteItem( quoteId,  quoteItemId);
+			returnObj = resource.deleteQuoteItem( quoteId,  quoteItemId);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 }

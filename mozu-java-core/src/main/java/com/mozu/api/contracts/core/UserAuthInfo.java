@@ -41,5 +41,15 @@ public class UserAuthInfo implements Serializable
 		this.password = password;
 	}
 
+	protected  String userName;
+
+	public String getUserName() {
+		return this.userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
 
 }

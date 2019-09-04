@@ -118,22 +118,24 @@ public class LocationInventoryFactory
 		return returnObj;
 	}
 
-	public static void deleteLocationInventory(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String locationCode, int expectedCode) throws Exception
+	public static java.io.InputStream deleteLocationInventory(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String locationCode, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		LocationInventoryResource resource = new LocationInventoryResource(apiContext, dataViewMode);
 		try
 		{
-			resource.deleteLocationInventory( productCode,  locationCode);
+			returnObj = resource.deleteLocationInventory( productCode,  locationCode);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 }

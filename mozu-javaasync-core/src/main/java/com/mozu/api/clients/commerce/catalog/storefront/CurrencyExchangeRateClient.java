@@ -19,7 +19,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Resources for the currencies that are supported on the storefront for this catalog.
+ * 
  * </summary>
  */
 public class CurrencyExchangeRateClient {

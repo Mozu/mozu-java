@@ -40,47 +40,15 @@ public class InstalledApplicationsResource {
 	 * 
 	 * <p><pre><code>
 	 *	InstalledApplications installedapplications = new InstalledApplications();
-	 *	Application application = installedapplications.getApplication( appId);
+	 *	Stream stream = installedapplications.getApplication( appId);
 	 * </code></pre></p>
-	 * @param appId appId parameter description DOCUMENT_HERE 
-	 * @return com.mozu.api.contracts.installedapplications.Application
-	 * @see com.mozu.api.contracts.installedapplications.Application
+	 * @param appId The application ID that represents the application to retrieve.
+	 * @return Stream
+	 * @see Stream
 	 */
-	public com.mozu.api.contracts.installedapplications.Application getApplication(String appId) throws Exception
+	public java.io.InputStream getApplication(String appId) throws Exception
 	{
-		return getApplication( appId,  null);
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 *	InstalledApplications installedapplications = new InstalledApplications();
-	 *	CountDownLatch latch = installedapplications.getApplication( appId, callback );
-	 *	latch.await()	 * </code></pre></p>
-	 * @param appId appId parameter description DOCUMENT_HERE 
-	 * @param  callback callback handler for asynchronous operations
-	 * @return com.mozu.api.contracts.installedapplications.Application
-	 * @see com.mozu.api.contracts.installedapplications.Application
-	 */
-	public CountDownLatch getApplicationAsync(String appId, AsyncCallback<com.mozu.api.contracts.installedapplications.Application> callback) throws Exception
-	{
-		return getApplicationAsync( appId,  null, callback);
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 *	InstalledApplications installedapplications = new InstalledApplications();
-	 *	Application application = installedapplications.getApplication( appId,  responseFields);
-	 * </code></pre></p>
-	 * @param appId appId parameter description DOCUMENT_HERE 
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @return com.mozu.api.contracts.installedapplications.Application
-	 * @see com.mozu.api.contracts.installedapplications.Application
-	 */
-	public com.mozu.api.contracts.installedapplications.Application getApplication(String appId, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.installedapplications.Application> client = com.mozu.api.clients.platform.InstalledApplicationsClient.getApplicationClient( appId,  responseFields);
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.platform.InstalledApplicationsClient.getApplicationClient( appId);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -91,17 +59,16 @@ public class InstalledApplicationsResource {
 	 * 
 	 * <p><pre><code>
 	 *	InstalledApplications installedapplications = new InstalledApplications();
-	 *	CountDownLatch latch = installedapplications.getApplication( appId,  responseFields, callback );
+	 *	CountDownLatch latch = installedapplications.getApplication( appId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param appId appId parameter description DOCUMENT_HERE 
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param appId The application ID that represents the application to retrieve.
 	 * @param  callback callback handler for asynchronous operations
-	 * @return com.mozu.api.contracts.installedapplications.Application
-	 * @see com.mozu.api.contracts.installedapplications.Application
+	 * @return Stream
+	 * @see Stream
 	 */
-	public CountDownLatch getApplicationAsync(String appId, String responseFields, AsyncCallback<com.mozu.api.contracts.installedapplications.Application> callback) throws Exception
+	public CountDownLatch getApplicationAsync(String appId, AsyncCallback<java.io.InputStream> callback) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.installedapplications.Application> client = com.mozu.api.clients.platform.InstalledApplicationsClient.getApplicationClient( appId,  responseFields);
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.platform.InstalledApplicationsClient.getApplicationClient( appId);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 
@@ -111,53 +78,17 @@ public class InstalledApplicationsResource {
 	 * 
 	 * <p><pre><code>
 	 *	InstalledApplications installedapplications = new InstalledApplications();
-	 *	Application application = installedapplications.updateApplication( application,  appId);
+	 *	Stream stream = installedapplications.updateApplication( application,  appId);
 	 * </code></pre></p>
-	 * @param appId appId parameter description DOCUMENT_HERE 
-	 * @param application Properties of an app installed in a tenant.
-	 * @return com.mozu.api.contracts.installedapplications.Application
-	 * @see com.mozu.api.contracts.installedapplications.Application
-	 * @see com.mozu.api.contracts.installedapplications.Application
-	 */
-	public com.mozu.api.contracts.installedapplications.Application updateApplication(com.mozu.api.contracts.installedapplications.Application application, String appId) throws Exception
-	{
-		return updateApplication( application,  appId,  null);
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 *	InstalledApplications installedapplications = new InstalledApplications();
-	 *	CountDownLatch latch = installedapplications.updateApplication( application,  appId, callback );
-	 *	latch.await()	 * </code></pre></p>
-	 * @param appId appId parameter description DOCUMENT_HERE 
-	 * @param  callback callback handler for asynchronous operations
-	 * @param application Properties of an app installed in a tenant.
-	 * @return com.mozu.api.contracts.installedapplications.Application
-	 * @see com.mozu.api.contracts.installedapplications.Application
+	 * @param appId The application ID that represents the application to update.
+	 * @param application Properties of the application to update.
+	 * @return Stream
+	 * @see Stream
 	 * @see com.mozu.api.contracts.installedapplications.Application
 	 */
-	public CountDownLatch updateApplicationAsync(com.mozu.api.contracts.installedapplications.Application application, String appId, AsyncCallback<com.mozu.api.contracts.installedapplications.Application> callback) throws Exception
+	public java.io.InputStream updateApplication(com.mozu.api.contracts.installedapplications.Application application, String appId) throws Exception
 	{
-		return updateApplicationAsync( application,  appId,  null, callback);
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 *	InstalledApplications installedapplications = new InstalledApplications();
-	 *	Application application = installedapplications.updateApplication( application,  appId,  responseFields);
-	 * </code></pre></p>
-	 * @param appId appId parameter description DOCUMENT_HERE 
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param application Properties of an app installed in a tenant.
-	 * @return com.mozu.api.contracts.installedapplications.Application
-	 * @see com.mozu.api.contracts.installedapplications.Application
-	 * @see com.mozu.api.contracts.installedapplications.Application
-	 */
-	public com.mozu.api.contracts.installedapplications.Application updateApplication(com.mozu.api.contracts.installedapplications.Application application, String appId, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.installedapplications.Application> client = com.mozu.api.clients.platform.InstalledApplicationsClient.updateApplicationClient( application,  appId,  responseFields);
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.platform.InstalledApplicationsClient.updateApplicationClient( application,  appId);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -168,19 +99,18 @@ public class InstalledApplicationsResource {
 	 * 
 	 * <p><pre><code>
 	 *	InstalledApplications installedapplications = new InstalledApplications();
-	 *	CountDownLatch latch = installedapplications.updateApplication( application,  appId,  responseFields, callback );
+	 *	CountDownLatch latch = installedapplications.updateApplication( application,  appId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param appId appId parameter description DOCUMENT_HERE 
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param appId The application ID that represents the application to update.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param application Properties of an app installed in a tenant.
-	 * @return com.mozu.api.contracts.installedapplications.Application
-	 * @see com.mozu.api.contracts.installedapplications.Application
+	 * @param application Properties of the application to update.
+	 * @return Stream
+	 * @see Stream
 	 * @see com.mozu.api.contracts.installedapplications.Application
 	 */
-	public CountDownLatch updateApplicationAsync(com.mozu.api.contracts.installedapplications.Application application, String appId, String responseFields, AsyncCallback<com.mozu.api.contracts.installedapplications.Application> callback) throws Exception
+	public CountDownLatch updateApplicationAsync(com.mozu.api.contracts.installedapplications.Application application, String appId, AsyncCallback<java.io.InputStream> callback) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.installedapplications.Application> client = com.mozu.api.clients.platform.InstalledApplicationsClient.updateApplicationClient( application,  appId,  responseFields);
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.platform.InstalledApplicationsClient.updateApplicationClient( application,  appId);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 

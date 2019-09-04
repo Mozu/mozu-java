@@ -46,7 +46,7 @@ public class ChangeMessageClient {
 	 * client.executeRequest();
 	 * CartChangeMessageCollection cartChangeMessageCollection = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection>
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection
 	 */
@@ -65,17 +65,20 @@ public class ChangeMessageClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=RemoveAllMessagesClient();
+	 * MozuClient<java.io.InputStream> mozuClient=RemoveAllMessagesClient();
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
+	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @return Mozu.Api.MozuClient 
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
 	 */
-	public static MozuClient removeAllMessagesClient() throws Exception
+	public static MozuClient<java.io.InputStream> removeAllMessagesClient() throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.carts.ChangeMessageUrl.removeAllMessagesUrl();
 		String verb = "DELETE";
-				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -85,18 +88,21 @@ public class ChangeMessageClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=RemoveMessageClient( messageId);
+	 * MozuClient<java.io.InputStream> mozuClient=RemoveMessageClient( messageId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
+	 * Stream stream = client.Result();
 	 * </code></pre></p>
 	 * @param messageId Identifier of the message to remove from the cart.
-	 * @return Mozu.Api.MozuClient 
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
 	 */
-	public static MozuClient removeMessageClient(String messageId) throws Exception
+	public static MozuClient<java.io.InputStream> removeMessageClient(String messageId) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.carts.ChangeMessageUrl.removeMessageUrl(messageId);
 		String verb = "DELETE";
-				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

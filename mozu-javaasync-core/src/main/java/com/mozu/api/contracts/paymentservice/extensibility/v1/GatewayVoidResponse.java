@@ -16,18 +16,12 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.paymentservice.extensibility.v1.ConnectionStatuses;
 import com.mozu.api.contracts.paymentservice.extensibility.v1.KeyValueTuple;
 
-/**
- *	Contains a void response
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class GatewayVoidResponse implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Set this to true if the transaction is declined or fails for any reason.
-	 */
 	protected  Boolean isDeclined;
 
 	public Boolean getIsDeclined() {
@@ -38,9 +32,6 @@ public class GatewayVoidResponse implements Serializable
 		this.isDeclined = isDeclined;
 	}
 
-	/**
-	 * Contains the response code from the gateway.
-	 */
 	protected  String responseCode;
 
 	public String getResponseCode() {
@@ -51,9 +42,6 @@ public class GatewayVoidResponse implements Serializable
 		this.responseCode = responseCode;
 	}
 
-	/**
-	 * Contains the text for the response. For example: 'Insufficient funds'.
-	 */
 	protected  String responseText;
 
 	public String getResponseText() {
@@ -64,9 +52,6 @@ public class GatewayVoidResponse implements Serializable
 		this.responseText = responseText;
 	}
 
-	/**
-	 * Contains the id for the transaction provided by the gateway.
-	 */
 	protected  String transactionId;
 
 	public String getTransactionId() {
@@ -77,9 +62,6 @@ public class GatewayVoidResponse implements Serializable
 		this.transactionId = transactionId;
 	}
 
-	/**
-	 * Contains information about the interaction with the gateway.
-	 */
 	protected  ConnectionStatuses remoteConnectionStatus;
 
 	public ConnectionStatuses getRemoteConnectionStatus() {
@@ -90,9 +72,6 @@ public class GatewayVoidResponse implements Serializable
 		this.remoteConnectionStatus = remoteConnectionStatus;
 	}
 
-	/**
-	 * Contains information not in the object allowing flexibility.
-	 */
 	protected List<KeyValueTuple> responseData;
 	public List<KeyValueTuple> getResponseData() {
 		return this.responseData;

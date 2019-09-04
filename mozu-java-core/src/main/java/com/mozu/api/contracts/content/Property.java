@@ -13,18 +13,12 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.content.PropertyType;
 
-/**
- *	Provides details and data for properties for content in the site.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Property implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * If true, the attribute can have more than one value.
-	 */
 	protected  Boolean isMultiValued;
 
 	public Boolean getIsMultiValued() {
@@ -35,9 +29,6 @@ public class Property implements Serializable
 		this.isMultiValued = isMultiValued;
 	}
 
-	/**
-	 * Indicates if the property, attribute, product option, or product extra is required. If true, the object must have a defined value.
-	 */
 	protected  Boolean isRequired;
 
 	public Boolean getIsRequired() {
@@ -48,9 +39,6 @@ public class Property implements Serializable
 		this.isRequired = isRequired;
 	}
 
-	/**
-	 * The user supplied name that appears in . You can use this field for identification purposes.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -61,9 +49,6 @@ public class Property implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * Property type available for content. Property types are like templates that can be reused.
-	 */
 	protected  PropertyType propertyType;
 
 	public PropertyType getPropertyType() {

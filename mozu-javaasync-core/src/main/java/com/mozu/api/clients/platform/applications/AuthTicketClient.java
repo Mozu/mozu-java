@@ -19,7 +19,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the Authetickets for applications resource to manage authentication tickets for your apps.
+ * Use this resource to manage authentication tickets for your applications.
  * </summary>
  */
 public class AuthTicketClient {
@@ -32,7 +32,7 @@ public class AuthTicketClient {
 	 * client.executeRequest();
 	 * AuthTicket authTicket = client.Result();
 	 * </code></pre></p>
-	 * @param appAuthInfo The information required to authenticate third party applications against the  API.
+	 * @param appAuthInfo Authentication information required to generate an authentication ticket includes the application id and the shared secret.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.AuthTicket>
 	 * @see com.mozu.api.contracts.appdev.AuthTicket
 	 * @see com.mozu.api.contracts.appdev.AppAuthInfo
@@ -50,8 +50,8 @@ public class AuthTicketClient {
 	 * client.executeRequest();
 	 * AuthTicket authTicket = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param appAuthInfo The information required to authenticate third party applications against the  API.
+	 * @param responseFields 
+	 * @param appAuthInfo Authentication information required to generate an authentication ticket includes the application id and the shared secret.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.AuthTicket>
 	 * @see com.mozu.api.contracts.appdev.AuthTicket
 	 * @see com.mozu.api.contracts.appdev.AppAuthInfo
@@ -72,12 +72,57 @@ public class AuthTicketClient {
 	/**
 	 * 
 	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.appdev.OAuthAccessTokenResponse> mozuClient=OauthAuthenticateAppClient( appAuthInfo);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * OAuthAccessTokenResponse oAuthAccessTokenResponse = client.Result();
+	 * </code></pre></p>
+	 * @param appAuthInfo 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.OAuthAccessTokenResponse>
+	 * @see com.mozu.api.contracts.appdev.OAuthAccessTokenResponse
+	 * @see com.mozu.api.contracts.appdev.OauthAuthRequest
+	 */
+	public static MozuClient<com.mozu.api.contracts.appdev.OAuthAccessTokenResponse> oauthAuthenticateAppClient(com.mozu.api.contracts.appdev.OauthAuthRequest appAuthInfo) throws Exception
+	{
+		return oauthAuthenticateAppClient( appAuthInfo,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.appdev.OAuthAccessTokenResponse> mozuClient=OauthAuthenticateAppClient( appAuthInfo,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * OAuthAccessTokenResponse oAuthAccessTokenResponse = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param appAuthInfo 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.OAuthAccessTokenResponse>
+	 * @see com.mozu.api.contracts.appdev.OAuthAccessTokenResponse
+	 * @see com.mozu.api.contracts.appdev.OauthAuthRequest
+	 */
+	public static MozuClient<com.mozu.api.contracts.appdev.OAuthAccessTokenResponse> oauthAuthenticateAppClient(com.mozu.api.contracts.appdev.OauthAuthRequest appAuthInfo, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.platform.applications.AuthTicketUrl.oauthAuthenticateAppUrl(responseFields);
+		String verb = "POST";
+		Class<?> clz = com.mozu.api.contracts.appdev.OAuthAccessTokenResponse.class;
+		MozuClient<com.mozu.api.contracts.appdev.OAuthAccessTokenResponse> mozuClient = (MozuClient<com.mozu.api.contracts.appdev.OAuthAccessTokenResponse>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(appAuthInfo);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.appdev.AuthTicket> mozuClient=RefreshAppAuthTicketClient( authTicketRequest);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * AuthTicket authTicket = client.Result();
 	 * </code></pre></p>
-	 * @param authTicketRequest Properties of the authentication ticket refresh requests, which includes the refresh token string.
+	 * @param authTicketRequest The refresh token string required to update the application authentication ticket.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.AuthTicket>
 	 * @see com.mozu.api.contracts.appdev.AuthTicket
 	 * @see com.mozu.api.contracts.appdev.AuthTicketRequest
@@ -95,8 +140,8 @@ public class AuthTicketClient {
 	 * client.executeRequest();
 	 * AuthTicket authTicket = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param authTicketRequest Properties of the authentication ticket refresh requests, which includes the refresh token string.
+	 * @param responseFields 
+	 * @param authTicketRequest The refresh token string required to update the application authentication ticket.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.AuthTicket>
 	 * @see com.mozu.api.contracts.appdev.AuthTicket
 	 * @see com.mozu.api.contracts.appdev.AuthTicketRequest
@@ -117,18 +162,21 @@ public class AuthTicketClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=DeleteAppAuthTicketClient( refreshToken);
+	 * MozuClient<java.io.InputStream> mozuClient=DeleteAppAuthTicketClient( refreshToken);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
+	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param refreshToken Alphanumeric string used for access tokens. This token refreshes access for accounts by generating a new developer or application account authentication ticket after an access token expires.
-	 * @return Mozu.Api.MozuClient 
+	 * @param refreshToken The refresh token string from the application's authentication ticket.
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
 	 */
-	public static MozuClient deleteAppAuthTicketClient(String refreshToken) throws Exception
+	public static MozuClient<java.io.InputStream> deleteAppAuthTicketClient(String refreshToken) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.platform.applications.AuthTicketUrl.deleteAppAuthTicketUrl(refreshToken);
 		String verb = "DELETE";
-				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

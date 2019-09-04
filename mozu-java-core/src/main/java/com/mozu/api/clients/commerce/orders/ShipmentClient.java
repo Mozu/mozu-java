@@ -30,7 +30,7 @@ public class ShipmentClient {
 	 * client.executeRequest();
 	 * Shipment shipment = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId Unique identifier of the order associated with the shipment to retrieve.
 	 * @param shipmentId Unique identifier of the shipment to retrieve.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Shipment>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Shipment
@@ -48,8 +48,8 @@ public class ShipmentClient {
 	 * client.executeRequest();
 	 * Shipment shipment = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param orderId Unique identifier of the order associated with the shipment to retrieve.
+	 * @param responseFields 
 	 * @param shipmentId Unique identifier of the shipment to retrieve.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Shipment>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Shipment
@@ -74,7 +74,7 @@ public class ShipmentClient {
 	 * client.executeRequest();
 	 * ShippingRate shippingRate = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId Unique identifier of the order for the available shipment methods being retrieved.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate>>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate
 	 */
@@ -91,8 +91,8 @@ public class ShipmentClient {
 	 * client.executeRequest();
 	 * ShippingRate shippingRate = client.Result();
 	 * </code></pre></p>
-	 * @param draft If true, retrieve the draft version of the order, which might include uncommitted changes to the order or its components.
-	 * @param orderId Unique identifier of the order.
+	 * @param draft 
+	 * @param orderId Unique identifier of the order for the available shipment methods being retrieved.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate>>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate
 	 */
@@ -116,7 +116,7 @@ public class ShipmentClient {
 	 * client.executeRequest();
 	 * Package package = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId Unique identifier of the order for this shipment.
 	 * @param packageIds List of unique identifiers for each package associated with this shipment. Not all packages must belong to the same shipment.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.commerceruntime.fulfillment.Package>>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
@@ -138,19 +138,193 @@ public class ShipmentClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=DeleteShipmentClient( orderId,  shipmentId);
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Shipment> mozuClient=UpdateShipmentAdjustmentsClient( shipmentAdjustment,  orderId,  shipmentNumber);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
+	 * Shipment shipment = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param shipmentId Unique identifier of the shipment to retrieve.
-	 * @return Mozu.Api.MozuClient 
+	 * @param orderId 
+	 * @param shipmentNumber 
+	 * @param shipmentAdjustment 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Shipment>
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Shipment
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.ShipmentAdjustment
 	 */
-	public static MozuClient deleteShipmentClient(String orderId, String shipmentId) throws Exception
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Shipment> updateShipmentAdjustmentsClient(com.mozu.api.contracts.commerceruntime.fulfillment.ShipmentAdjustment shipmentAdjustment, String orderId, Integer shipmentNumber) throws Exception
+	{
+		return updateShipmentAdjustmentsClient( shipmentAdjustment,  orderId,  shipmentNumber,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Shipment> mozuClient=UpdateShipmentAdjustmentsClient( shipmentAdjustment,  orderId,  shipmentNumber,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Shipment shipment = client.Result();
+	 * </code></pre></p>
+	 * @param orderId 
+	 * @param responseFields 
+	 * @param shipmentNumber 
+	 * @param shipmentAdjustment 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Shipment>
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Shipment
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.ShipmentAdjustment
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Shipment> updateShipmentAdjustmentsClient(com.mozu.api.contracts.commerceruntime.fulfillment.ShipmentAdjustment shipmentAdjustment, String orderId, Integer shipmentNumber, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.orders.ShipmentUrl.updateShipmentAdjustmentsUrl(orderId, responseFields, shipmentNumber);
+		String verb = "POST";
+		Class<?> clz = com.mozu.api.contracts.commerceruntime.fulfillment.Shipment.class;
+		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Shipment> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Shipment>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(shipmentAdjustment);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Shipment> mozuClient=UpdateShipmentItemClient( shipmentItemAdjustment,  shipmentNumber,  itemId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Shipment shipment = client.Result();
+	 * </code></pre></p>
+	 * @param itemId 
+	 * @param shipmentNumber 
+	 * @param shipmentItemAdjustment 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Shipment>
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Shipment
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.ShipmentItemAdjustment
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Shipment> updateShipmentItemClient(com.mozu.api.contracts.commerceruntime.fulfillment.ShipmentItemAdjustment shipmentItemAdjustment, Integer shipmentNumber, Integer itemId) throws Exception
+	{
+		return updateShipmentItemClient( shipmentItemAdjustment,  shipmentNumber,  itemId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Shipment> mozuClient=UpdateShipmentItemClient( shipmentItemAdjustment,  shipmentNumber,  itemId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Shipment shipment = client.Result();
+	 * </code></pre></p>
+	 * @param itemId 
+	 * @param responseFields 
+	 * @param shipmentNumber 
+	 * @param shipmentItemAdjustment 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Shipment>
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Shipment
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.ShipmentItemAdjustment
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Shipment> updateShipmentItemClient(com.mozu.api.contracts.commerceruntime.fulfillment.ShipmentItemAdjustment shipmentItemAdjustment, Integer shipmentNumber, Integer itemId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.orders.ShipmentUrl.updateShipmentItemUrl(itemId, responseFields, shipmentNumber);
+		String verb = "POST";
+		Class<?> clz = com.mozu.api.contracts.commerceruntime.fulfillment.Shipment.class;
+		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Shipment> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Shipment>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(shipmentItemAdjustment);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Shipment> mozuClient=RepriceShipmentClient( repriceShipment,  shipmentNumber);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Shipment shipment = client.Result();
+	 * </code></pre></p>
+	 * @param shipmentNumber 
+	 * @param repriceShipment 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Shipment>
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Shipment
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.RepriceShipmentObject
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Shipment> repriceShipmentClient(com.mozu.api.contracts.commerceruntime.fulfillment.RepriceShipmentObject repriceShipment, Integer shipmentNumber) throws Exception
+	{
+		return repriceShipmentClient( repriceShipment,  shipmentNumber,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Shipment> mozuClient=RepriceShipmentClient( repriceShipment,  shipmentNumber,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Shipment shipment = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param shipmentNumber 
+	 * @param repriceShipment 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Shipment>
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Shipment
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.RepriceShipmentObject
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Shipment> repriceShipmentClient(com.mozu.api.contracts.commerceruntime.fulfillment.RepriceShipmentObject repriceShipment, Integer shipmentNumber, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.orders.ShipmentUrl.repriceShipmentUrl(responseFields, shipmentNumber);
+		String verb = "POST";
+		Class<?> clz = com.mozu.api.contracts.commerceruntime.fulfillment.Shipment.class;
+		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Shipment> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Shipment>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(repriceShipment);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<List<com.mozu.api.contracts.commerceruntime.fulfillment.Shipment>> mozuClient=SplitShipmentsClient( splitShipments);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Shipment shipment = client.Result();
+	 * </code></pre></p>
+	 * @param splitShipments 
+	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.commerceruntime.fulfillment.Shipment>>
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Shipment
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.SplitShipmentsObject
+	 */
+	public static MozuClient<List<com.mozu.api.contracts.commerceruntime.fulfillment.Shipment>> splitShipmentsClient(com.mozu.api.contracts.commerceruntime.fulfillment.SplitShipmentsObject splitShipments) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.orders.ShipmentUrl.splitShipmentsUrl();
+		String verb = "POST";
+		Class<?> clz = new ArrayList<com.mozu.api.contracts.commerceruntime.fulfillment.Shipment>(){}.getClass();
+		MozuClient<List<com.mozu.api.contracts.commerceruntime.fulfillment.Shipment>> mozuClient = (MozuClient<List<com.mozu.api.contracts.commerceruntime.fulfillment.Shipment>>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(splitShipments);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<java.io.InputStream> mozuClient=DeleteShipmentClient( orderId,  shipmentId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Stream stream = client.Result();
+	 * </code></pre></p>
+	 * @param orderId Unique identifier of the order to cancel shipment.
+	 * @param shipmentId Unique identifier of the shipment to cancel.
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
+	 */
+	public static MozuClient<java.io.InputStream> deleteShipmentClient(String orderId, String shipmentId) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.orders.ShipmentUrl.deleteShipmentUrl(orderId, shipmentId);
 		String verb = "DELETE";
-				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

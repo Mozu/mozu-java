@@ -15,11 +15,11 @@ public class ProductSortDefinitionUrl
 
 	/**
 	 * Get Resource Url for GetProductSortDefinitions
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param filter 
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getProductSortDefinitionsUrl(String filter, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
@@ -35,8 +35,8 @@ public class ProductSortDefinitionUrl
 
 	/**
 	 * Get Resource Url for GetProductSortDefinition
-	 * @param productSortDefinitionId Unique identifier of the product sort definition.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param productSortDefinitionId 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getProductSortDefinitionUrl(Integer productSortDefinitionId, String responseFields)
@@ -49,8 +49,8 @@ public class ProductSortDefinitionUrl
 
 	/**
 	 * Get Resource Url for AddProductSortDefinition
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param useProvidedId If true, the provided Id value will be used as the ProductSortDefinitionId. If omitted or false, the system will generate a ProductSortDefinitionId
+	 * @param responseFields 
+	 * @param useProvidedId 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addProductSortDefinitionUrl(String responseFields, Boolean useProvidedId)
@@ -63,8 +63,8 @@ public class ProductSortDefinitionUrl
 
 	/**
 	 * Get Resource Url for UpdateProductSortDefinition
-	 * @param productSortDefinitionId Unique identifier of the product sort definition.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param productSortDefinitionId 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateProductSortDefinitionUrl(Integer productSortDefinitionId, String responseFields)
@@ -77,7 +77,7 @@ public class ProductSortDefinitionUrl
 
 	/**
 	 * Get Resource Url for DeleteProductSortDefinition
-	 * @param productSortDefinitionId Unique identifier of the product sort definition.
+	 * @param productSortDefinitionId 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteProductSortDefinitionUrl(Integer productSortDefinitionId)

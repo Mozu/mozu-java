@@ -68,22 +68,24 @@ public class TransactionFactory
 		return returnObj;
 	}
 
-	public static void removeTransaction(ApiContext apiContext, Integer accountId, String transactionId, int expectedCode) throws Exception
+	public static java.io.InputStream removeTransaction(ApiContext apiContext, Integer accountId, String transactionId, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		TransactionResource resource = new TransactionResource(apiContext);
 		try
 		{
-			resource.removeTransaction( accountId,  transactionId);
+			returnObj = resource.removeTransaction( accountId,  transactionId);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 }

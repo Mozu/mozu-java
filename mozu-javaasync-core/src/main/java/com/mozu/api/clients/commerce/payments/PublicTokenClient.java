@@ -19,7 +19,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * commerce/payments/tokens related resources. DOCUMENT_HERE 
+ * 
  * </summary>
  */
 public class PublicTokenClient {
@@ -50,7 +50,7 @@ public class PublicTokenClient {
 	 * client.executeRequest();
 	 * TokenResponse tokenResponse = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param request 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.paymentservice.response.TokenResponse>
 	 * @see com.mozu.api.contracts.paymentservice.response.TokenResponse
@@ -97,7 +97,7 @@ public class PublicTokenClient {
 	 * JObject json = client.Result();
 	 * </code></pre></p>
 	 * @param cardType 
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param request 
 	 * @return Mozu.Api.MozuClient <JObject>
 	 * @see JObject

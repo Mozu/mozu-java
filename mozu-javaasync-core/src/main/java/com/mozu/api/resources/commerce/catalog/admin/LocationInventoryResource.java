@@ -50,8 +50,8 @@ public class LocationInventoryResource {
 	 *	LocationInventory locationinventory = new LocationInventory();
 	 *	LocationInventory locationInventory = locationinventory.getLocationInventory( locationCode,  productCode);
 	 * </code></pre></p>
-	 * @param locationCode The unique, user-defined code that identifies a location. 
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param locationCode User-defined code that uniquely identifies the location.
+	 * @param productCode 
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.LocationInventory
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
@@ -67,8 +67,8 @@ public class LocationInventoryResource {
 	 *	LocationInventory locationinventory = new LocationInventory();
 	 *	CountDownLatch latch = locationinventory.getLocationInventory( locationCode,  productCode, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param locationCode The unique, user-defined code that identifies a location. 
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param locationCode User-defined code that uniquely identifies the location.
+	 * @param productCode 
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.LocationInventory
@@ -85,9 +85,9 @@ public class LocationInventoryResource {
 	 *	LocationInventory locationinventory = new LocationInventory();
 	 *	LocationInventory locationInventory = locationinventory.getLocationInventory( locationCode,  productCode,  responseFields);
 	 * </code></pre></p>
-	 * @param locationCode The unique, user-defined code that identifies a location. 
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param locationCode User-defined code that uniquely identifies the location.
+	 * @param productCode 
+	 * @param responseFields 
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.LocationInventory
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
@@ -107,9 +107,9 @@ public class LocationInventoryResource {
 	 *	LocationInventory locationinventory = new LocationInventory();
 	 *	CountDownLatch latch = locationinventory.getLocationInventory( locationCode,  productCode,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param locationCode The unique, user-defined code that identifies a location. 
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param locationCode User-defined code that uniquely identifies the location.
+	 * @param productCode 
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.LocationInventory
@@ -162,13 +162,13 @@ public class LocationInventoryResource {
 	 *	LocationInventory locationinventory = new LocationInventory();
 	 *	LocationInventoryCollection locationInventoryCollection = locationinventory.getLocationInventories( locationCode,  startIndex,  pageSize,  sortBy,  filter,  filterFunctions,  responseFields);
 	 * </code></pre></p>
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param filterFunctions Functions that optimize commonly used filters for efficiency.For the  operation, you have access to the  filter function. For example, use  to filter only for product inventory that is currently active.
+	 * @param filter 
+	 * @param filterFunctions 
 	 * @param locationCode 
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.LocationInventoryCollection
 	 * @see com.mozu.api.contracts.productadmin.LocationInventoryCollection
@@ -188,13 +188,13 @@ public class LocationInventoryResource {
 	 *	LocationInventory locationinventory = new LocationInventory();
 	 *	CountDownLatch latch = locationinventory.getLocationInventories( locationCode,  startIndex,  pageSize,  sortBy,  filter,  filterFunctions,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param filterFunctions Functions that optimize commonly used filters for efficiency.For the  operation, you have access to the  filter function. For example, use  to filter only for product inventory that is currently active.
+	 * @param filter 
+	 * @param filterFunctions 
 	 * @param locationCode 
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.LocationInventoryCollection
@@ -214,9 +214,9 @@ public class LocationInventoryResource {
 	 *	LocationInventory locationinventory = new LocationInventory();
 	 *	LocationInventory locationInventory = locationinventory.addLocationInventory( locationInventoryList,  locationCode);
 	 * </code></pre></p>
-	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param locationCode User-defined code that uniquely identifies the location.
 	 * @param dataViewMode DataViewMode
-	 * @param locationInventoryList Properties of an inventory definition that defines the level of inventory for a specific product at a given location.
+	 * @param locationInventoryList Array list of product inventory definitions for all associated locations. For each location inventory in the list, define the productCode and stockOnHand values.
 	 * @return List<com.mozu.api.contracts.productadmin.LocationInventory>
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
@@ -232,10 +232,10 @@ public class LocationInventoryResource {
 	 *	LocationInventory locationinventory = new LocationInventory();
 	 *	CountDownLatch latch = locationinventory.addLocationInventory( locationInventoryList,  locationCode, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param locationCode User-defined code that uniquely identifies the location.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
-	 * @param locationInventoryList Properties of an inventory definition that defines the level of inventory for a specific product at a given location.
+	 * @param locationInventoryList Array list of product inventory definitions for all associated locations. For each location inventory in the list, define the productCode and stockOnHand values.
 	 * @return List<com.mozu.api.contracts.productadmin.LocationInventory>
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
@@ -251,10 +251,10 @@ public class LocationInventoryResource {
 	 *	LocationInventory locationinventory = new LocationInventory();
 	 *	LocationInventory locationInventory = locationinventory.addLocationInventory( locationInventoryList,  locationCode,  performUpserts);
 	 * </code></pre></p>
-	 * @param locationCode The unique, user-defined code that identifies a location. 
-	 * @param performUpserts Query string parameter lets the service perform an update for a new or existing record. When run, the update occurs without throwing a conflict exception that the record exists. If true, the updates completes regardless of the record currently existing. By default, if no value is specified, the service assumes this value is false.
+	 * @param locationCode User-defined code that uniquely identifies the location.
+	 * @param performUpserts 
 	 * @param dataViewMode DataViewMode
-	 * @param locationInventoryList Properties of an inventory definition that defines the level of inventory for a specific product at a given location.
+	 * @param locationInventoryList Array list of product inventory definitions for all associated locations. For each location inventory in the list, define the productCode and stockOnHand values.
 	 * @return List<com.mozu.api.contracts.productadmin.LocationInventory>
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
@@ -274,11 +274,11 @@ public class LocationInventoryResource {
 	 *	LocationInventory locationinventory = new LocationInventory();
 	 *	CountDownLatch latch = locationinventory.addLocationInventory( locationInventoryList,  locationCode,  performUpserts, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param locationCode The unique, user-defined code that identifies a location. 
-	 * @param performUpserts Query string parameter lets the service perform an update for a new or existing record. When run, the update occurs without throwing a conflict exception that the record exists. If true, the updates completes regardless of the record currently existing. By default, if no value is specified, the service assumes this value is false.
+	 * @param locationCode User-defined code that uniquely identifies the location.
+	 * @param performUpserts 
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
-	 * @param locationInventoryList Properties of an inventory definition that defines the level of inventory for a specific product at a given location.
+	 * @param locationInventoryList Array list of product inventory definitions for all associated locations. For each location inventory in the list, define the productCode and stockOnHand values.
 	 * @return List<com.mozu.api.contracts.productadmin.LocationInventory>
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
@@ -297,9 +297,9 @@ public class LocationInventoryResource {
 	 *	LocationInventory locationinventory = new LocationInventory();
 	 *	LocationInventory locationInventory = locationinventory.updateLocationInventory( locationInventoryAdjustments,  locationCode);
 	 * </code></pre></p>
-	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param locationCode User-defined code that uniquely identifies the location.
 	 * @param dataViewMode DataViewMode
-	 * @param locationInventoryAdjustments Properties of an adjustment to the active product inventory of a specific location.
+	 * @param locationInventoryAdjustments Properties of the inventory adjustments to perform for the specified location.
 	 * @return List<com.mozu.api.contracts.productadmin.LocationInventory>
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
 	 * @see com.mozu.api.contracts.productadmin.LocationInventoryAdjustment
@@ -319,10 +319,10 @@ public class LocationInventoryResource {
 	 *	LocationInventory locationinventory = new LocationInventory();
 	 *	CountDownLatch latch = locationinventory.updateLocationInventory( locationInventoryAdjustments,  locationCode, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param locationCode User-defined code that uniquely identifies the location.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
-	 * @param locationInventoryAdjustments Properties of an adjustment to the active product inventory of a specific location.
+	 * @param locationInventoryAdjustments Properties of the inventory adjustments to perform for the specified location.
 	 * @return List<com.mozu.api.contracts.productadmin.LocationInventory>
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
 	 * @see com.mozu.api.contracts.productadmin.LocationInventoryAdjustment
@@ -339,19 +339,41 @@ public class LocationInventoryResource {
 	 * 
 	 * <p><pre><code>
 	 *	LocationInventory locationinventory = new LocationInventory();
-	 *	locationinventory.deleteLocationInventory( locationCode,  productCode);
+	 *	Stream stream = locationinventory.deleteLocationInventory( locationCode,  productCode);
 	 * </code></pre></p>
-	 * @param locationCode The unique, user-defined code that identifies a location. 
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param locationCode User-defined code that uniquely identifies the location.
+	 * @param productCode 
 	 * @param dataViewMode DataViewMode
-	 * @return 
+	 * @return Stream
+	 * @see Stream
 	 */
-	public void deleteLocationInventory(String locationCode, String productCode) throws Exception
+	public java.io.InputStream deleteLocationInventory(String locationCode, String productCode) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.LocationInventoryClient.deleteLocationInventoryClient(_dataViewMode,  locationCode,  productCode);
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.catalog.admin.LocationInventoryClient.deleteLocationInventoryClient(_dataViewMode,  locationCode,  productCode);
 		client.setContext(_apiContext);
 		client.executeRequest();
-		client.cleanupHttpConnection();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	LocationInventory locationinventory = new LocationInventory();
+	 *	CountDownLatch latch = locationinventory.deleteLocationInventory( locationCode,  productCode, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param locationCode User-defined code that uniquely identifies the location.
+	 * @param productCode 
+	 * @param  callback callback handler for asynchronous operations
+	 * @param dataViewMode DataViewMode
+	 * @return Stream
+	 * @see Stream
+	 */
+	public CountDownLatch deleteLocationInventoryAsync(String locationCode, String productCode, AsyncCallback<java.io.InputStream> callback) throws Exception
+	{
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.catalog.admin.LocationInventoryClient.deleteLocationInventoryClient(_dataViewMode,  locationCode,  productCode);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
 
 	}
 

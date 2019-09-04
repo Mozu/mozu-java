@@ -14,18 +14,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	Properties of the conditions that must be met for a discount to apply to an order.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DiscountCondition implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The coupon code that a shopper uses to redeem an associated discount  on a purchase. This is also the unique identifier of the coupon itself.
-	 */
 	protected  String couponCode;
 
 	public String getCouponCode() {
@@ -36,9 +30,6 @@ public class DiscountCondition implements Serializable
 		this.couponCode = couponCode;
 	}
 
-	/**
-	 * A list of customer segments - groups of customers accounts that discounts can be targeted for.
-	 */
 	protected List<Integer> customerSegmentIds;
 	public List<Integer> getCustomerSegmentIds() {
 		return this.customerSegmentIds;
@@ -47,9 +38,6 @@ public class DiscountCondition implements Serializable
 		this.customerSegmentIds = customerSegmentIds;
 	}
 
-	/**
-	 * A list of categories to be excluded from the discount.
-	 */
 	protected List<Integer> excludedCategoryIds;
 	public List<Integer> getExcludedCategoryIds() {
 		return this.excludedCategoryIds;
@@ -58,9 +46,6 @@ public class DiscountCondition implements Serializable
 		this.excludedCategoryIds = excludedCategoryIds;
 	}
 
-	/**
-	 * A list of product codes to be excluded from the discount.
-	 */
 	protected List<String> excludedProductCodes;
 	public List<String> getExcludedProductCodes() {
 		return this.excludedProductCodes;
@@ -69,9 +54,6 @@ public class DiscountCondition implements Serializable
 		this.excludedProductCodes = excludedProductCodes;
 	}
 
-	/**
-	 * Date and time in UTC format when a discount, credit, wish list, or cart expires. An expired discount no longer can be redeemed. An expired wish list is no longer available. An expired credit can no longer be redeemed for a purchase. Acart becomes inactive and expired based on a system-calculated interval. For example, if an anonymous shopper has 14 days of inactivity, the cart is considered abandoned after that period of inactivity. System-supplied and read-only.
-	 */
 	protected  DateTime expirationDate;
 
 	public DateTime getExpirationDate() {
@@ -82,9 +64,6 @@ public class DiscountCondition implements Serializable
 		this.expirationDate = expirationDate;
 	}
 
-	/**
-	 * A list of categories to be included with the discount.
-	 */
 	protected List<Integer> includedCategoryIds;
 	public List<Integer> getIncludedCategoryIds() {
 		return this.includedCategoryIds;
@@ -93,9 +72,6 @@ public class DiscountCondition implements Serializable
 		this.includedCategoryIds = includedCategoryIds;
 	}
 
-	/**
-	 * A list of product codes to be included in the discount.
-	 */
 	protected List<String> includedProductCodes;
 	public List<String> getIncludedProductCodes() {
 		return this.includedProductCodes;
@@ -104,9 +80,6 @@ public class DiscountCondition implements Serializable
 		this.includedProductCodes = includedProductCodes;
 	}
 
-	/**
-	 * This allows you to set a maximum order total as a condition of a discount, so the discount only applies when the shopper has an order totaling less than that value. This allows you to have more control over when discounts should or should not apply in order to control costs, especially when combined with a minimum order value to create a range of order values that are eligible for the discount. This can be used in addition to other discount conditions as well.
-	 */
 	protected  Double maximumOrderAmount;
 
 	public Double getMaximumOrderAmount() {
@@ -117,9 +90,6 @@ public class DiscountCondition implements Serializable
 		this.maximumOrderAmount = maximumOrderAmount;
 	}
 
-	/**
-	 * This specifies the minimum amount that must be purchased in the combined categories defined in IncludedCategories. This amount is calculated before discounting and it is not used if IncludedCategories is empty.
-	 */
 	protected  Double minimumCategorySubtotalBeforeDiscounts;
 
 	public Double getMinimumCategorySubtotalBeforeDiscounts() {
@@ -130,9 +100,6 @@ public class DiscountCondition implements Serializable
 		this.minimumCategorySubtotalBeforeDiscounts = minimumCategorySubtotalBeforeDiscounts;
 	}
 
-	/**
-	 * The minimum customer lifetime value amount required to redeem this discount.
-	 */
 	protected  Double minimumLifetimeValueAmount;
 
 	public Double getMinimumLifetimeValueAmount() {
@@ -143,9 +110,6 @@ public class DiscountCondition implements Serializable
 		this.minimumLifetimeValueAmount = minimumLifetimeValueAmount;
 	}
 
-	/**
-	 * The minimum order amount required to redeem this discount.
-	 */
 	protected  Double minimumOrderAmount;
 
 	public Double getMinimumOrderAmount() {
@@ -156,9 +120,6 @@ public class DiscountCondition implements Serializable
 		this.minimumOrderAmount = minimumOrderAmount;
 	}
 
-	/**
-	 * This specifies the minimum quantity of products in the categories specified in IncludedCategories, which must be purchased to qualify for the associated discount. This defaults to 1 if null, and IncludedCategories has values.
-	 */
 	protected  Integer minimumQuantityProductsRequiredInCategories;
 
 	public Integer getMinimumQuantityProductsRequiredInCategories() {
@@ -169,9 +130,6 @@ public class DiscountCondition implements Serializable
 		this.minimumQuantityProductsRequiredInCategories = minimumQuantityProductsRequiredInCategories;
 	}
 
-	/**
-	 * This specifies the minimum quantity of products in the specified IncludedProducts that must be purchased to qualify for the associated discount. This defaults to 1 if null, and IncludedProducts has values.
-	 */
 	protected  Integer minimumQuantityRequiredProducts;
 
 	public Integer getMinimumQuantityRequiredProducts() {
@@ -190,9 +148,6 @@ public class DiscountCondition implements Serializable
 		this.paymentWorkflows = paymentWorkflows;
 	}
 
-	/**
-	 * If true, redemption of this discount requires entry of a coupon code.
-	 */
 	protected  Boolean requiresCoupon;
 
 	public Boolean getRequiresCoupon() {
@@ -203,9 +158,6 @@ public class DiscountCondition implements Serializable
 		this.requiresCoupon = requiresCoupon;
 	}
 
-	/**
-	 * The earliest date and time this discount can be redeemed.
-	 */
 	protected  DateTime startDate;
 
 	public DateTime getStartDate() {

@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.TargetRuleResource;
 
 /** <summary>
- * Use the TargetRules resource to manage your target rules for products and zones. For example, you can set specific rules that dictate shipping options for specific products.
+ * 
  * </summary>
  */
 public class TargetRuleFactory
@@ -98,22 +98,24 @@ public class TargetRuleFactory
 		return returnObj;
 	}
 
-	public static void validateTargetRule(ApiContext apiContext, com.mozu.api.contracts.shippingadmin.TargetRule targetRule, int expectedCode) throws Exception
+	public static java.io.InputStream validateTargetRule(ApiContext apiContext, com.mozu.api.contracts.shippingadmin.TargetRule targetRule, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		TargetRuleResource resource = new TargetRuleResource(apiContext);
 		try
 		{
-			resource.validateTargetRule( targetRule);
+			returnObj = resource.validateTargetRule( targetRule);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 	public static com.mozu.api.contracts.shippingadmin.TargetRule updateTargetRule(ApiContext apiContext, com.mozu.api.contracts.shippingadmin.TargetRule targetRule, String code, int expectedCode) throws Exception
@@ -141,22 +143,24 @@ public class TargetRuleFactory
 		return returnObj;
 	}
 
-	public static void deleteTargetRule(ApiContext apiContext, String code, int expectedCode) throws Exception
+	public static java.io.InputStream deleteTargetRule(ApiContext apiContext, String code, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		TargetRuleResource resource = new TargetRuleResource(apiContext);
 		try
 		{
-			resource.deleteTargetRule( code);
+			returnObj = resource.deleteTargetRule( code);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 }

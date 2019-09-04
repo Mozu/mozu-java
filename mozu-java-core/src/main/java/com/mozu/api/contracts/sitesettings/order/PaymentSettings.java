@@ -16,6 +16,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition;
 import com.mozu.api.contracts.sitesettings.order.Gateway;
+import com.mozu.api.contracts.sitesettings.order.JobSettings;
 import com.mozu.api.contracts.sitesettings.order.PurchaseOrderPaymentDefinition;
 
 /**
@@ -35,6 +36,16 @@ public class PaymentSettings implements Serializable
 
 	public void setPayByMail(Boolean payByMail) {
 		this.payByMail = payByMail;
+	}
+
+	protected  String paymentRanking;
+
+	public String getPaymentRanking() {
+		return this.paymentRanking;
+	}
+
+	public void setPaymentRanking(String paymentRanking) {
+		this.paymentRanking = paymentRanking;
 	}
 
 	protected  AuditInfo auditInfo;
@@ -63,9 +74,16 @@ public class PaymentSettings implements Serializable
 		this.gateways = gateways;
 	}
 
-	/**
-	 * The purchase order payment type settings associated with a site.Refer to [Enable the Purchase Order Payment Type](https://www.mozu.com/docs/guides/orders/purchase-order.htm#enable_the_purchase_order_payment_type) in the Purchase Orders guides topic for more information.
-	 */
+	protected  JobSettings jobSettings;
+
+	public JobSettings getJobSettings() {
+		return this.jobSettings;
+	}
+
+	public void setJobSettings(JobSettings jobSettings) {
+		this.jobSettings = jobSettings;
+	}
+
 	protected  PurchaseOrderPaymentDefinition purchaseOrder;
 
 	public PurchaseOrderPaymentDefinition getPurchaseOrder() {

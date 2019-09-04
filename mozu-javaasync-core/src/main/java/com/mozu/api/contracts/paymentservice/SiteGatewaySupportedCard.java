@@ -12,18 +12,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	A card supported by the payment gateway enabled for the site.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SiteGatewaySupportedCard implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * An identifier for the type of payment card being used in the gateway.
-	 */
 	protected  String cardTypeId;
 
 	public String getCardTypeId() {
@@ -34,9 +28,6 @@ public class SiteGatewaySupportedCard implements Serializable
 		this.cardTypeId = cardTypeId;
 	}
 
-	/**
-	 * The identifier of the account for the gateway.
-	 */
 	protected  String gatewayAccountId;
 
 	public String getGatewayAccountId() {
@@ -47,9 +38,6 @@ public class SiteGatewaySupportedCard implements Serializable
 		this.gatewayAccountId = gatewayAccountId;
 	}
 
-	/**
-	 * The type of payment, such as credit card, check, or PayPal Express. Additional payment types will be supported in future releases.
-	 */
 	protected  String paymentType;
 
 	public String getPaymentType() {
@@ -60,9 +48,6 @@ public class SiteGatewaySupportedCard implements Serializable
 		this.paymentType = paymentType;
 	}
 
-	/**
-	 * The identifier of the account for the processing gateway.
-	 */
 	protected  String processingGatewayAccountId;
 
 	public String getProcessingGatewayAccountId() {

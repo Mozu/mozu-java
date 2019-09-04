@@ -20,7 +20,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * commerce/payments/tokens related resources. DOCUMENT_HERE 
+ * 
  * </summary>
  */
 public class PublicTokenResource {
@@ -75,7 +75,7 @@ public class PublicTokenResource {
 	 *	PublicToken publictoken = new PublicToken();
 	 *	TokenResponse tokenResponse = publictoken.create( request,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param request 
 	 * @return com.mozu.api.contracts.paymentservice.response.TokenResponse
 	 * @see com.mozu.api.contracts.paymentservice.response.TokenResponse
@@ -96,7 +96,7 @@ public class PublicTokenResource {
 	 *	PublicToken publictoken = new PublicToken();
 	 *	CountDownLatch latch = publictoken.create( request,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @param request 
 	 * @return com.mozu.api.contracts.paymentservice.response.TokenResponse
@@ -153,7 +153,7 @@ public class PublicTokenResource {
 	 *	JObject json = publictoken.execute( request,  cardType,  responseFields);
 	 * </code></pre></p>
 	 * @param cardType 
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param request 
 	 * @return JObject
 	 * @see JObject
@@ -175,7 +175,7 @@ public class PublicTokenResource {
 	 *	CountDownLatch latch = publictoken.execute( request,  cardType,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param cardType 
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @param request 
 	 * @return JObject

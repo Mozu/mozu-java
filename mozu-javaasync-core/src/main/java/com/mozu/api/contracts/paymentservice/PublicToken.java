@@ -12,18 +12,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	Mozu.PaymentService.Contracts.PublicToken ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PublicToken implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The type of public token being provided.
-	 */
 	protected  String type;
 
 	public String getType() {
@@ -34,9 +28,6 @@ public class PublicToken implements Serializable
 		this.type = type;
 	}
 
-	/**
-	 * The public token being used for this payment service.
-	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode token;
 
 	public com.fasterxml.jackson.databind.JsonNode getToken() {

@@ -46,7 +46,7 @@ public class GeneralSettingsClient {
 	 * client.executeRequest();
 	 * GeneralSettings generalSettings = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.general.GeneralSettings>
 	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings
 	 */
@@ -70,7 +70,7 @@ public class GeneralSettingsClient {
 	 * client.executeRequest();
 	 * GeneralSettings generalSettings = client.Result();
 	 * </code></pre></p>
-	 * @param generalSettings General settings used on the storefront site.
+	 * @param generalSettings The properties of the site's general settings to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.general.GeneralSettings>
 	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings
@@ -88,8 +88,8 @@ public class GeneralSettingsClient {
 	 * client.executeRequest();
 	 * GeneralSettings generalSettings = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param generalSettings General settings used on the storefront site.
+	 * @param responseFields 
+	 * @param generalSettings The properties of the site's general settings to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.general.GeneralSettings>
 	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings

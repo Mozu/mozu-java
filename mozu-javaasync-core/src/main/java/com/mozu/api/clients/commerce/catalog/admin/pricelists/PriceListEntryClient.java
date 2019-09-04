@@ -19,7 +19,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the Entries sub-resource to interact with price list entries. Price list entries enable you to override product pricing as well as control what products shoppers can view and purchase when the price list is exclusive. Refer to the [Price Lists](../../../guides/catalog/price-lists.htm) guides topic for more information.
+ * 
  * </summary>
  */
 public class PriceListEntryClient {
@@ -32,9 +32,9 @@ public class PriceListEntryClient {
 	 * client.executeRequest();
 	 * PriceListEntry priceListEntry = client.Result();
 	 * </code></pre></p>
-	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
-	 * @param priceListCode The unique code of the price list associated with the price list entry.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param currencyCode 
+	 * @param priceListCode 
+	 * @param productCode 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.PriceListEntry>
 	 * @see com.mozu.api.contracts.productadmin.PriceListEntry
 	 */
@@ -51,11 +51,11 @@ public class PriceListEntryClient {
 	 * client.executeRequest();
 	 * PriceListEntry priceListEntry = client.Result();
 	 * </code></pre></p>
-	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
-	 * @param priceListCode The unique code of the price list associated with the price list entry.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param startDate The start date of the price list entry.
+	 * @param currencyCode 
+	 * @param priceListCode 
+	 * @param productCode 
+	 * @param responseFields 
+	 * @param startDate 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.PriceListEntry>
 	 * @see com.mozu.api.contracts.productadmin.PriceListEntry
 	 */
@@ -79,7 +79,7 @@ public class PriceListEntryClient {
 	 * client.executeRequest();
 	 * PriceListEntryCollection priceListEntryCollection = client.Result();
 	 * </code></pre></p>
-	 * @param priceListCode The unique code of the price list associated with the price list entry.
+	 * @param priceListCode 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.PriceListEntryCollection>
 	 * @see com.mozu.api.contracts.productadmin.PriceListEntryCollection
 	 */
@@ -96,12 +96,12 @@ public class PriceListEntryClient {
 	 * client.executeRequest();
 	 * PriceListEntryCollection priceListEntryCollection = client.Result();
 	 * </code></pre></p>
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param priceListCode The unique code of the price list associated with the price list entry.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param filter 
+	 * @param pageSize 
+	 * @param priceListCode 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.PriceListEntryCollection>
 	 * @see com.mozu.api.contracts.productadmin.PriceListEntryCollection
 	 */
@@ -125,8 +125,8 @@ public class PriceListEntryClient {
 	 * client.executeRequest();
 	 * PriceListEntry priceListEntry = client.Result();
 	 * </code></pre></p>
-	 * @param priceListCode The specified price list to which you want to add the price list entry.
-	 * @param priceListEntryIn The details of the new price list entry.
+	 * @param priceListCode 
+	 * @param priceListEntryIn 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.PriceListEntry>
 	 * @see com.mozu.api.contracts.productadmin.PriceListEntry
 	 * @see com.mozu.api.contracts.productadmin.PriceListEntry
@@ -144,9 +144,9 @@ public class PriceListEntryClient {
 	 * client.executeRequest();
 	 * PriceListEntry priceListEntry = client.Result();
 	 * </code></pre></p>
-	 * @param priceListCode The specified price list to which you want to add the price list entry.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param priceListEntryIn The details of the new price list entry.
+	 * @param priceListCode 
+	 * @param responseFields 
+	 * @param priceListEntryIn 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.PriceListEntry>
 	 * @see com.mozu.api.contracts.productadmin.PriceListEntry
 	 * @see com.mozu.api.contracts.productadmin.PriceListEntry
@@ -172,10 +172,10 @@ public class PriceListEntryClient {
 	 * client.executeRequest();
 	 * PriceListEntry priceListEntry = client.Result();
 	 * </code></pre></p>
-	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
-	 * @param priceListCode The unique code of the price list associated with the price list entry.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param priceListEntryIn The updated details of the price list entry.
+	 * @param currencyCode 
+	 * @param priceListCode 
+	 * @param productCode 
+	 * @param priceListEntryIn 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.PriceListEntry>
 	 * @see com.mozu.api.contracts.productadmin.PriceListEntry
 	 * @see com.mozu.api.contracts.productadmin.PriceListEntry
@@ -193,12 +193,12 @@ public class PriceListEntryClient {
 	 * client.executeRequest();
 	 * PriceListEntry priceListEntry = client.Result();
 	 * </code></pre></p>
-	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
-	 * @param priceListCode The unique code of the price list associated with the price list entry.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param startDate The start date of the price list entry.
-	 * @param priceListEntryIn The updated details of the price list entry.
+	 * @param currencyCode 
+	 * @param priceListCode 
+	 * @param productCode 
+	 * @param responseFields 
+	 * @param startDate 
+	 * @param priceListEntryIn 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.PriceListEntry>
 	 * @see com.mozu.api.contracts.productadmin.PriceListEntry
 	 * @see com.mozu.api.contracts.productadmin.PriceListEntry
@@ -219,16 +219,18 @@ public class PriceListEntryClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=DeletePriceListEntryClient( priceListCode,  productCode,  currencyCode);
+	 * MozuClient<java.io.InputStream> mozuClient=DeletePriceListEntryClient( priceListCode,  productCode,  currencyCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
+	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
-	 * @param priceListCode The code of the specified price list associated with the price list entry.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @return Mozu.Api.MozuClient 
+	 * @param currencyCode 
+	 * @param priceListCode 
+	 * @param productCode 
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
 	 */
-	public static MozuClient deletePriceListEntryClient(String priceListCode, String productCode, String currencyCode) throws Exception
+	public static MozuClient<java.io.InputStream> deletePriceListEntryClient(String priceListCode, String productCode, String currencyCode) throws Exception
 	{
 		return deletePriceListEntryClient( priceListCode,  productCode,  currencyCode,  null);
 	}
@@ -236,21 +238,24 @@ public class PriceListEntryClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=DeletePriceListEntryClient( priceListCode,  productCode,  currencyCode,  startDate);
+	 * MozuClient<java.io.InputStream> mozuClient=DeletePriceListEntryClient( priceListCode,  productCode,  currencyCode,  startDate);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
+	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
-	 * @param priceListCode The code of the specified price list associated with the price list entry.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param startDate The start date of the price list entry.
-	 * @return Mozu.Api.MozuClient 
+	 * @param currencyCode 
+	 * @param priceListCode 
+	 * @param productCode 
+	 * @param startDate 
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
 	 */
-	public static MozuClient deletePriceListEntryClient(String priceListCode, String productCode, String currencyCode, DateTime startDate) throws Exception
+	public static MozuClient<java.io.InputStream> deletePriceListEntryClient(String priceListCode, String productCode, String currencyCode, DateTime startDate) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.pricelists.PriceListEntryUrl.deletePriceListEntryUrl(currencyCode, priceListCode, productCode, startDate);
 		String verb = "DELETE";
-				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

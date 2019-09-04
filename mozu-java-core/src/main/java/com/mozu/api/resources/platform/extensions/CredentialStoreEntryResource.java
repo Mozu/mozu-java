@@ -18,7 +18,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * The CredentialStore resource allows you to encrypt and store sensitive data on your tenant. You can then decrypt and access that data using an Arc.js application, as described in the Arc.js [Programming Patterns](https://www.mozu.com/docs/developer/arcjs-guides/programming-patterns.htm#securely_store_and_access_sensitive_data) topic.
+ * 
  * </summary>
  */
 public class CredentialStoreEntryResource {
@@ -38,18 +38,19 @@ public class CredentialStoreEntryResource {
 	 * 
 	 * <p><pre><code>
 	 *	CredentialStoreEntry credentialstoreentry = new CredentialStoreEntry();
-	 *	credentialstoreentry.storeCredentials( credentials);
+	 *	Stream stream = credentialstoreentry.storeCredentials( credentials);
 	 * </code></pre></p>
 	 * @param credentials 
-	 * @return 
+	 * @return Stream
+	 * @see Stream
 	 * @see com.mozu.api.contracts.installedapplications.CredentialStoreEntry
 	 */
-	public void storeCredentials(com.mozu.api.contracts.installedapplications.CredentialStoreEntry credentials) throws Exception
+	public java.io.InputStream storeCredentials(com.mozu.api.contracts.installedapplications.CredentialStoreEntry credentials) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.platform.extensions.CredentialStoreEntryClient.storeCredentialsClient( credentials);
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.platform.extensions.CredentialStoreEntryClient.storeCredentialsClient( credentials);
 		client.setContext(_apiContext);
 		client.executeRequest();
-		client.cleanupHttpConnection();
+		return client.getResult();
 
 	}
 

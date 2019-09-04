@@ -15,8 +15,8 @@ public class ShipmentUrl
 
 	/**
 	 * Get Resource Url for GetShipment
-	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param orderId Unique identifier of the order associated with the shipment to retrieve.
+	 * @param responseFields 
 	 * @param shipmentId Unique identifier of the shipment to retrieve.
 	 * @return   String Resource Url
 	 */
@@ -31,8 +31,8 @@ public class ShipmentUrl
 
 	/**
 	 * Get Resource Url for GetAvailableShipmentMethods
-	 * @param draft If true, retrieve the draft version of the order, which might include uncommitted changes to the order or its components.
-	 * @param orderId Unique identifier of the order.
+	 * @param draft 
+	 * @param orderId Unique identifier of the order for the available shipment methods being retrieved.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getAvailableShipmentMethodsUrl(Boolean draft, String orderId)
@@ -45,7 +45,7 @@ public class ShipmentUrl
 
 	/**
 	 * Get Resource Url for CreatePackageShipments
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId Unique identifier of the order for this shipment.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl createPackageShipmentsUrl(String orderId)
@@ -56,9 +56,65 @@ public class ShipmentUrl
 	}
 
 	/**
+	 * Get Resource Url for UpdateShipmentAdjustments
+	 * @param orderId 
+	 * @param responseFields 
+	 * @param shipmentNumber 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl updateShipmentAdjustmentsUrl(String orderId, String responseFields, Integer shipmentNumber)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/shipments/{shipmentNumber}/adjustments/?responseFields={responseFields}");
+		formatter.formatUrl("orderId", orderId);
+		formatter.formatUrl("responseFields", responseFields);
+		formatter.formatUrl("shipmentNumber", shipmentNumber);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for UpdateShipmentItem
+	 * @param itemId 
+	 * @param responseFields 
+	 * @param shipmentNumber 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl updateShipmentItemUrl(Integer itemId, String responseFields, Integer shipmentNumber)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/shipments/{shipmentNumber}/item/{itemId}/adjustments?responseFields={responseFields}");
+		formatter.formatUrl("itemId", itemId);
+		formatter.formatUrl("responseFields", responseFields);
+		formatter.formatUrl("shipmentNumber", shipmentNumber);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for RepriceShipment
+	 * @param responseFields 
+	 * @param shipmentNumber 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl repriceShipmentUrl(String responseFields, Integer shipmentNumber)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/shipments/{shipmentNumber}/reprice?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
+		formatter.formatUrl("shipmentNumber", shipmentNumber);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for SplitShipments
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl splitShipmentsUrl()
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/shipments/{shipmentNumber}/split");
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for DeleteShipment
-	 * @param orderId Unique identifier of the order.
-	 * @param shipmentId Unique identifier of the shipment to retrieve.
+	 * @param orderId Unique identifier of the order to cancel shipment.
+	 * @param shipmentId Unique identifier of the shipment to cancel.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteShipmentUrl(String orderId, String shipmentId)

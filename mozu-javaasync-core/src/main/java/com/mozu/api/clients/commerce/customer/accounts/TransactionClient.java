@@ -32,7 +32,7 @@ public class TransactionClient {
 	 * client.executeRequest();
 	 * Transaction transaction = client.Result();
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId Unique identifier of the customer account for which to retrieve transactions.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.customer.Transaction>>
 	 * @see com.mozu.api.contracts.customer.Transaction
 	 */
@@ -57,7 +57,7 @@ public class TransactionClient {
 	 * Transaction transaction = client.Result();
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param transaction Properties of a transaction performed by a customer account. The system creates a transaction each time the customer submits an order, returns an item, picks up items for an order, or manages items on a wish list.
+	 * @param transaction Properties of the transaction to create for the customer account.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.Transaction>
 	 * @see com.mozu.api.contracts.customer.Transaction
 	 * @see com.mozu.api.contracts.customer.Transaction
@@ -76,8 +76,8 @@ public class TransactionClient {
 	 * Transaction transaction = client.Result();
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param transaction Properties of a transaction performed by a customer account. The system creates a transaction each time the customer submits an order, returns an item, picks up items for an order, or manages items on a wish list.
+	 * @param responseFields 
+	 * @param transaction Properties of the transaction to create for the customer account.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.Transaction>
 	 * @see com.mozu.api.contracts.customer.Transaction
 	 * @see com.mozu.api.contracts.customer.Transaction
@@ -98,19 +98,22 @@ public class TransactionClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=RemoveTransactionClient( accountId,  transactionId);
+	 * MozuClient<java.io.InputStream> mozuClient=RemoveTransactionClient( accountId,  transactionId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
+	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId Unique identifier of the customer account from which to delete the transaction.
 	 * @param transactionId Unique identifier of the transaction to delete.
-	 * @return Mozu.Api.MozuClient 
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
 	 */
-	public static MozuClient removeTransactionClient(Integer accountId, String transactionId) throws Exception
+	public static MozuClient<java.io.InputStream> removeTransactionClient(Integer accountId, String transactionId) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.customer.accounts.TransactionUrl.removeTransactionUrl(accountId, transactionId);
 		String verb = "DELETE";
-				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

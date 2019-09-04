@@ -12,18 +12,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	Mozu.AppDev.Contracts.PackageRequest ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PackageRequest implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Mozu.AppDev.Contracts.PackageRequest appKey ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String appKey;
 
 	public String getAppKey() {
@@ -34,9 +28,6 @@ public class PackageRequest implements Serializable
 		this.appKey = appKey;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.PackageRequest parentThemeAppKey ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String parentThemeAppKey;
 
 	public String getParentThemeAppKey() {

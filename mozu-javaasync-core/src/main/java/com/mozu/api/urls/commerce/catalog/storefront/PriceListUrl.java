@@ -15,8 +15,8 @@ public class PriceListUrl
 
 	/**
 	 * Get Resource Url for GetPriceList
-	 * @param priceListCode The unique code of the price list for which you want to retrieve the details.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param priceListCode 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getPriceListUrl(String priceListCode, String responseFields)
@@ -29,8 +29,8 @@ public class PriceListUrl
 
 	/**
 	 * Get Resource Url for GetResolvedPriceList
-	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param customerAccountId 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getResolvedPriceListUrl(Integer customerAccountId, String responseFields)

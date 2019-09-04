@@ -123,27 +123,29 @@ public class CustomerAccountFactory
 		return returnObj;
 	}
 
-	public static void changePassword(ApiContext apiContext, com.mozu.api.contracts.customer.PasswordInfo passwordInfo, Integer accountId, int expectedCode) throws Exception
+	public static java.io.InputStream changePassword(ApiContext apiContext, com.mozu.api.contracts.customer.PasswordInfo passwordInfo, Integer accountId, int expectedCode) throws Exception
 	{
-		changePassword(apiContext,  passwordInfo,  accountId,  null,  null, expectedCode);
+		return changePassword(apiContext,  passwordInfo,  accountId,  null,  null, expectedCode);
 	}
 
-	public static void changePassword(ApiContext apiContext, com.mozu.api.contracts.customer.PasswordInfo passwordInfo, Integer accountId, Boolean unlockAccount, String userId, int expectedCode) throws Exception
+	public static java.io.InputStream changePassword(ApiContext apiContext, com.mozu.api.contracts.customer.PasswordInfo passwordInfo, Integer accountId, Boolean unlockAccount, String userId, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		CustomerAccountResource resource = new CustomerAccountResource(apiContext);
 		try
 		{
-			resource.changePassword( passwordInfo,  accountId,  unlockAccount,  userId);
+			returnObj = resource.changePassword( passwordInfo,  accountId,  unlockAccount,  userId);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 	public static com.mozu.api.contracts.customer.CustomerAuthTicket addLoginToExistingCustomer(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerLoginInfo customerAuthInfo, Integer accountId, int expectedCode) throws Exception
@@ -171,68 +173,74 @@ public class CustomerAccountFactory
 		return returnObj;
 	}
 
-	public static void recomputeCustomerLifetimeValue(ApiContext apiContext, Integer accountId, int expectedCode) throws Exception
+	public static java.io.InputStream recomputeCustomerLifetimeValue(ApiContext apiContext, Integer accountId, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		CustomerAccountResource resource = new CustomerAccountResource(apiContext);
 		try
 		{
-			resource.recomputeCustomerLifetimeValue( accountId);
+			returnObj = resource.recomputeCustomerLifetimeValue( accountId);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
-	public static void setLoginLocked(ApiContext apiContext, Boolean isLocked, Integer accountId, int expectedCode) throws Exception
+	public static java.io.InputStream setLoginLocked(ApiContext apiContext, Boolean isLocked, Integer accountId, int expectedCode) throws Exception
 	{
-		setLoginLocked(apiContext,  isLocked,  accountId,  null, expectedCode);
+		return setLoginLocked(apiContext,  isLocked,  accountId,  null, expectedCode);
 	}
 
-	public static void setLoginLocked(ApiContext apiContext, Boolean isLocked, Integer accountId, String userId, int expectedCode) throws Exception
+	public static java.io.InputStream setLoginLocked(ApiContext apiContext, Boolean isLocked, Integer accountId, String userId, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		CustomerAccountResource resource = new CustomerAccountResource(apiContext);
 		try
 		{
-			resource.setLoginLocked( isLocked,  accountId,  userId);
+			returnObj = resource.setLoginLocked( isLocked,  accountId,  userId);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
-	public static void setPasswordChangeRequired(ApiContext apiContext, Boolean isPasswordChangeRequired, Integer accountId, int expectedCode) throws Exception
+	public static java.io.InputStream setPasswordChangeRequired(ApiContext apiContext, Boolean isPasswordChangeRequired, Integer accountId, int expectedCode) throws Exception
 	{
-		setPasswordChangeRequired(apiContext,  isPasswordChangeRequired,  accountId,  null, expectedCode);
+		return setPasswordChangeRequired(apiContext,  isPasswordChangeRequired,  accountId,  null, expectedCode);
 	}
 
-	public static void setPasswordChangeRequired(ApiContext apiContext, Boolean isPasswordChangeRequired, Integer accountId, String userId, int expectedCode) throws Exception
+	public static java.io.InputStream setPasswordChangeRequired(ApiContext apiContext, Boolean isPasswordChangeRequired, Integer accountId, String userId, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		CustomerAccountResource resource = new CustomerAccountResource(apiContext);
 		try
 		{
-			resource.setPasswordChangeRequired( isPasswordChangeRequired,  accountId,  userId);
+			returnObj = resource.setPasswordChangeRequired( isPasswordChangeRequired,  accountId,  userId);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 	public static com.mozu.api.contracts.customer.CustomerAuthTicket addAccountAndLogin(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerAccountAndAuthInfo accountAndAuthInfo, int expectedCode) throws Exception
@@ -385,22 +393,24 @@ public class CustomerAccountFactory
 		return returnObj;
 	}
 
-	public static void resetPassword(ApiContext apiContext, com.mozu.api.contracts.customer.ResetPasswordInfo resetPasswordInfo, int expectedCode) throws Exception
+	public static java.io.InputStream resetPassword(ApiContext apiContext, com.mozu.api.contracts.customer.ResetPasswordInfo resetPasswordInfo, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		CustomerAccountResource resource = new CustomerAccountResource(apiContext);
 		try
 		{
-			resource.resetPassword( resetPasswordInfo);
+			returnObj = resource.resetPassword( resetPasswordInfo);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 	public static com.mozu.api.contracts.customer.CustomerAccount updateAccount(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerAccount account, Integer accountId, int expectedCode) throws Exception
@@ -428,22 +438,24 @@ public class CustomerAccountFactory
 		return returnObj;
 	}
 
-	public static void deleteAccount(ApiContext apiContext, Integer accountId, int expectedCode) throws Exception
+	public static java.io.InputStream deleteAccount(ApiContext apiContext, Integer accountId, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		CustomerAccountResource resource = new CustomerAccountResource(apiContext);
 		try
 		{
-			resource.deleteAccount( accountId);
+			returnObj = resource.deleteAccount( accountId);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 }

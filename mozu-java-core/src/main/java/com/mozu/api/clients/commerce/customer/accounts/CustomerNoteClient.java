@@ -17,7 +17,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * This resources manages notes for a customer account. For example, a client can track a shopper's interests or complaints. Only clients can add and view notes. Shoppers cannot view these notes from the My Account page.
+ * Tenant administrators can add and view internal notes for a customer account. For example, a client can track a shopper's interests or complaints. Only clients can add and view notes. Shoppers cannot view these notes from the My Account page.
  * </summary>
  */
 public class CustomerNoteClient {
@@ -30,7 +30,7 @@ public class CustomerNoteClient {
 	 * client.executeRequest();
 	 * CustomerNote customerNote = client.Result();
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId Unique identifier of the customer account that contains the note being retrieved.
 	 * @param noteId Unique identifier of a particular note to retrieve.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerNote>
 	 * @see com.mozu.api.contracts.customer.CustomerNote
@@ -48,9 +48,9 @@ public class CustomerNoteClient {
 	 * client.executeRequest();
 	 * CustomerNote customerNote = client.Result();
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId Unique identifier of the customer account that contains the note being retrieved.
 	 * @param noteId Unique identifier of a particular note to retrieve.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerNote>
 	 * @see com.mozu.api.contracts.customer.CustomerNote
 	 */
@@ -92,11 +92,11 @@ public class CustomerNoteClient {
 	 * CustomerNoteCollection customerNoteCollection = client.Result();
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param filter 
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerNoteCollection>
 	 * @see com.mozu.api.contracts.customer.CustomerNoteCollection
 	 */
@@ -120,8 +120,8 @@ public class CustomerNoteClient {
 	 * client.executeRequest();
 	 * CustomerNote customerNote = client.Result();
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param note Properties of a note configured for a customer account.
+	 * @param accountId Unique identifier of the customer account for which to create the note.
+	 * @param note Properties of the customer account note to create.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerNote>
 	 * @see com.mozu.api.contracts.customer.CustomerNote
 	 * @see com.mozu.api.contracts.customer.CustomerNote
@@ -139,9 +139,9 @@ public class CustomerNoteClient {
 	 * client.executeRequest();
 	 * CustomerNote customerNote = client.Result();
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param note Properties of a note configured for a customer account.
+	 * @param accountId Unique identifier of the customer account for which to create the note.
+	 * @param responseFields 
+	 * @param note Properties of the customer account note to create.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerNote>
 	 * @see com.mozu.api.contracts.customer.CustomerNote
 	 * @see com.mozu.api.contracts.customer.CustomerNote
@@ -167,9 +167,9 @@ public class CustomerNoteClient {
 	 * client.executeRequest();
 	 * CustomerNote customerNote = client.Result();
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param noteId Unique identifier of a particular note to retrieve.
-	 * @param note Properties of a note configured for a customer account.
+	 * @param accountId Unique identifier of the customer account note to modify.
+	 * @param noteId Unique identifier of the note to update.
+	 * @param note The new content to replace the existing note.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerNote>
 	 * @see com.mozu.api.contracts.customer.CustomerNote
 	 * @see com.mozu.api.contracts.customer.CustomerNote
@@ -187,10 +187,10 @@ public class CustomerNoteClient {
 	 * client.executeRequest();
 	 * CustomerNote customerNote = client.Result();
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param noteId Unique identifier of a particular note to retrieve.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param note Properties of a note configured for a customer account.
+	 * @param accountId Unique identifier of the customer account note to modify.
+	 * @param noteId Unique identifier of the note to update.
+	 * @param responseFields 
+	 * @param note The new content to replace the existing note.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerNote>
 	 * @see com.mozu.api.contracts.customer.CustomerNote
 	 * @see com.mozu.api.contracts.customer.CustomerNote
@@ -211,19 +211,22 @@ public class CustomerNoteClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=DeleteAccountNoteClient( accountId,  noteId);
+	 * MozuClient<java.io.InputStream> mozuClient=DeleteAccountNoteClient( accountId,  noteId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
+	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param noteId Unique identifier of a particular note to retrieve.
-	 * @return Mozu.Api.MozuClient 
+	 * @param accountId Unique identifier of the customer account that contains the note being deleted.
+	 * @param noteId Unique identifier of the customer account note being deleted.
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
 	 */
-	public static MozuClient deleteAccountNoteClient(Integer accountId, Integer noteId) throws Exception
+	public static MozuClient<java.io.InputStream> deleteAccountNoteClient(Integer accountId, Integer noteId) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.customer.accounts.CustomerNoteUrl.deleteAccountNoteUrl(accountId, noteId);
 		String verb = "DELETE";
-				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

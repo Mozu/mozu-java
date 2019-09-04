@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.catalog.admin.SearchResource;
 
 /** <summary>
- * Use the Search resource to manage all settings and options for providing product search on your site, as well as search tuning rules.
+ * 
  * </summary>
  */
 public class SearchFactory
@@ -373,40 +373,44 @@ public class SearchFactory
 		return returnObj;
 	}
 
-	public static void deleteSearchTuningRule(ApiContext apiContext, String searchTuningRuleCode, int expectedCode) throws Exception
+	public static java.io.InputStream deleteSearchTuningRule(ApiContext apiContext, String searchTuningRuleCode, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		SearchResource resource = new SearchResource(apiContext);
 		try
 		{
-			resource.deleteSearchTuningRule( searchTuningRuleCode);
+			returnObj = resource.deleteSearchTuningRule( searchTuningRuleCode);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
-	public static void deleteSynonymDefinition(ApiContext apiContext, Integer synonymId, int expectedCode) throws Exception
+	public static java.io.InputStream deleteSynonymDefinition(ApiContext apiContext, Integer synonymId, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		SearchResource resource = new SearchResource(apiContext);
 		try
 		{
-			resource.deleteSynonymDefinition( synonymId);
+			returnObj = resource.deleteSynonymDefinition( synonymId);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 }

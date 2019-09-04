@@ -34,9 +34,6 @@ public class Application implements Serializable
 		this.appId = appId;
 	}
 
-	/**
-	 * denotes the Application Key for the app.
-	 */
 	protected  String appKey;
 
 	public String getAppKey() {
@@ -68,7 +65,7 @@ public class Application implements Serializable
 	}
 
 	/**
-	 * Indicates if the installed application is of type extension. An extension is an application that extends upon the  infrastructure. Examples of extensions include Arc.js applications and applications that integrate third-party services.
+	 * If true, the application type is Extension.
 	 */
 	protected  Boolean isExtension;
 
@@ -80,9 +77,6 @@ public class Application implements Serializable
 		this.isExtension = isExtension;
 	}
 
-	/**
-	 * Indicates if the installed application is a  certified application.
-	 */
 	protected  Boolean isExtensionCertified;
 
 	public Boolean getIsExtensionCertified() {

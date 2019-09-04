@@ -32,7 +32,7 @@ public class ProductImage implements Serializable
 	}
 
 	/**
-	 * The identifier of the image in the  CMS. Supply a value for either the CMS ID or Image URL parameter.
+	 * The identifier of the product image in the Mozu CMS. Supply a value for either the CMS ID or the Image URL parameter.
 	 */
 	protected  String cmsId;
 
@@ -74,9 +74,6 @@ public class ProductImage implements Serializable
 		this.mediaType = mediaType;
 	}
 
-	/**
-	 * A unique identifier for the product image group.
-	 */
 	protected  String productImageGroupId;
 
 	public String getProductImageGroupId() {

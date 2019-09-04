@@ -48,40 +48,44 @@ public class ChangeMessageFactory
 		return returnObj;
 	}
 
-	public static void removeAllMessages(ApiContext apiContext, int expectedCode) throws Exception
+	public static java.io.InputStream removeAllMessages(ApiContext apiContext, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		ChangeMessageResource resource = new ChangeMessageResource(apiContext);
 		try
 		{
-			resource.removeAllMessages();
+			returnObj = resource.removeAllMessages();
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
-	public static void removeMessage(ApiContext apiContext, String messageId, int expectedCode) throws Exception
+	public static java.io.InputStream removeMessage(ApiContext apiContext, String messageId, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		ChangeMessageResource resource = new ChangeMessageResource(apiContext);
 		try
 		{
-			resource.removeMessage( messageId);
+			returnObj = resource.removeMessage( messageId);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 }

@@ -19,7 +19,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the Coupons subresource to manage coupons within manual coupon sets.
+ * 
  * </summary>
  */
 public class CouponClient {
@@ -32,8 +32,8 @@ public class CouponClient {
 	 * client.executeRequest();
 	 * Coupon coupon = client.Result();
 	 * </code></pre></p>
-	 * @param couponCode Code associated with the coupon to remove from the cart.
-	 * @param couponSetCode The unique identifier of the coupon set that the coupon belongs to.
+	 * @param couponCode 
+	 * @param couponSetCode 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Coupon>
 	 * @see com.mozu.api.contracts.productadmin.Coupon
 	 */
@@ -50,10 +50,10 @@ public class CouponClient {
 	 * client.executeRequest();
 	 * Coupon coupon = client.Result();
 	 * </code></pre></p>
-	 * @param couponCode Code associated with the coupon to remove from the cart.
-	 * @param couponSetCode The unique identifier of the coupon set that the coupon belongs to.
-	 * @param includeCounts Specifies whether to return the redemptionCount property in the response body object.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param couponCode 
+	 * @param couponSetCode 
+	 * @param includeCounts 
+	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Coupon>
 	 * @see com.mozu.api.contracts.productadmin.Coupon
 	 */
@@ -77,7 +77,7 @@ public class CouponClient {
 	 * client.executeRequest();
 	 * CouponCollection couponCollection = client.Result();
 	 * </code></pre></p>
-	 * @param couponSetCode The unique identifier of the coupon set that the coupons belongs to.
+	 * @param couponSetCode 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.CouponCollection>
 	 * @see com.mozu.api.contracts.productadmin.CouponCollection
 	 */
@@ -94,13 +94,13 @@ public class CouponClient {
 	 * client.executeRequest();
 	 * CouponCollection couponCollection = client.Result();
 	 * </code></pre></p>
-	 * @param couponSetCode The unique identifier of the coupon set that the coupons belongs to.
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param includeCounts Specifies whether to include the redemptionCount property in the response body object.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param couponSetCode 
+	 * @param filter 
+	 * @param includeCounts 
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.CouponCollection>
 	 * @see com.mozu.api.contracts.productadmin.CouponCollection
 	 */
@@ -119,20 +119,23 @@ public class CouponClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=AddCouponsClient( coupons,  couponSetCode);
+	 * MozuClient<java.io.InputStream> mozuClient=AddCouponsClient( coupons,  couponSetCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
+	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param couponSetCode The unique identifier of the coupon set.
-	 * @param coupons The details necessary to assign the discount to a coupon set, including .
-	 * @return Mozu.Api.MozuClient 
+	 * @param couponSetCode 
+	 * @param coupons 
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
 	 * @see com.mozu.api.contracts.productadmin.Coupon
 	 */
-	public static MozuClient addCouponsClient(List<com.mozu.api.contracts.productadmin.Coupon> coupons, String couponSetCode) throws Exception
+	public static MozuClient<java.io.InputStream> addCouponsClient(List<com.mozu.api.contracts.productadmin.Coupon> coupons, String couponSetCode) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.couponsets.CouponUrl.addCouponsUrl(couponSetCode);
 		String verb = "POST";
-				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(coupons);
@@ -143,20 +146,23 @@ public class CouponClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=DeleteCouponsClient( couponCodes,  couponSetCode);
+	 * MozuClient<java.io.InputStream> mozuClient=DeleteCouponsClient( couponCodes,  couponSetCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
+	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param couponSetCode The unique identifier of the coupon set that the coupon belongs to.
-	 * @param couponCodes The unique identifiers of the coupons to delete.
-	 * @return Mozu.Api.MozuClient 
+	 * @param couponSetCode 
+	 * @param couponCodes 
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
 	 * @see string
 	 */
-	public static MozuClient deleteCouponsClient(List<String> couponCodes, String couponSetCode) throws Exception
+	public static MozuClient<java.io.InputStream> deleteCouponsClient(List<String> couponCodes, String couponSetCode) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.couponsets.CouponUrl.deleteCouponsUrl(couponSetCode);
 		String verb = "POST";
-				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(couponCodes);
@@ -167,19 +173,22 @@ public class CouponClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=DeleteCouponClient( couponSetCode,  couponCode);
+	 * MozuClient<java.io.InputStream> mozuClient=DeleteCouponClient( couponSetCode,  couponCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
+	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param couponCode Code associated with the coupon to remove from the cart.
-	 * @param couponSetCode The unique identifier of the coupon set that the coupon belongs to.
-	 * @return Mozu.Api.MozuClient 
+	 * @param couponCode 
+	 * @param couponSetCode 
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
 	 */
-	public static MozuClient deleteCouponClient(String couponSetCode, String couponCode) throws Exception
+	public static MozuClient<java.io.InputStream> deleteCouponClient(String couponSetCode, String couponCode) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.couponsets.CouponUrl.deleteCouponUrl(couponCode, couponSetCode);
 		String verb = "DELETE";
-				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

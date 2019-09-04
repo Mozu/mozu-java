@@ -30,8 +30,8 @@ public class PackageClient {
 	 * client.executeRequest();
 	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param packageId Unique identifier of the package for which to retrieve the label.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param packageId Unique identifier of the return replacement package for which to retrieve the label.
+	 * @param returnId Unique identifier of the return associated with the replacement package label to retrieve.
 	 * @return Mozu.Api.MozuClient <Stream>
 	 * @see Stream
 	 */
@@ -48,9 +48,9 @@ public class PackageClient {
 	 * client.executeRequest();
 	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param packageId Unique identifier of the package for which to retrieve the label.
-	 * @param returnAsBase64Png Specifies whether to return the RMA label image as Base64-encoded PNG image instead of as a byte array encoded in the original image format. The default is .
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param packageId Unique identifier of the return replacement package for which to retrieve the label.
+	 * @param returnAsBase64Png 
+	 * @param returnId Unique identifier of the return associated with the replacement package label to retrieve.
 	 * @return Mozu.Api.MozuClient <Stream>
 	 * @see Stream
 	 */
@@ -74,8 +74,8 @@ public class PackageClient {
 	 * client.executeRequest();
 	 * Package package = client.Result();
 	 * </code></pre></p>
-	 * @param packageId Unique identifier of the package for which to retrieve the label.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param packageId Unique identifier of the return replacement package to retrieve.
+	 * @param returnId Unique identifier of the return associated with the replacement package to retrieve.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Package>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 */
@@ -92,9 +92,9 @@ public class PackageClient {
 	 * client.executeRequest();
 	 * Package package = client.Result();
 	 * </code></pre></p>
-	 * @param packageId Unique identifier of the package for which to retrieve the label.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param packageId Unique identifier of the return replacement package to retrieve.
+	 * @param responseFields 
+	 * @param returnId Unique identifier of the return associated with the replacement package to retrieve.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Package>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 */
@@ -118,8 +118,8 @@ public class PackageClient {
 	 * client.executeRequest();
 	 * Package package = client.Result();
 	 * </code></pre></p>
-	 * @param returnId Unique identifier of the return whose items you want to get.
-	 * @param package Properties of a physical package shipped for an order.
+	 * @param returnId Unique identifier of the return for which to create a replacement package.
+	 * @param package Properties of the physical package for a return replacement.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Package>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
@@ -137,9 +137,9 @@ public class PackageClient {
 	 * client.executeRequest();
 	 * Package package = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param returnId Unique identifier of the return whose items you want to get.
-	 * @param package Properties of a physical package shipped for an order.
+	 * @param responseFields 
+	 * @param returnId Unique identifier of the return for which to create a replacement package.
+	 * @param package Properties of the physical package for a return replacement.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Package>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
@@ -165,9 +165,9 @@ public class PackageClient {
 	 * client.executeRequest();
 	 * Package package = client.Result();
 	 * </code></pre></p>
-	 * @param packageId Unique identifier of the package for which to retrieve the label.
-	 * @param returnId Unique identifier of the return whose items you want to get.
-	 * @param package Properties of a physical package shipped for an order.
+	 * @param packageId Unique identifier of the return replacement package to update.
+	 * @param returnId Unique identifier of the return associated with the replacement package to update.
+	 * @param package Properties of the return replacement package to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Package>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
@@ -185,10 +185,10 @@ public class PackageClient {
 	 * client.executeRequest();
 	 * Package package = client.Result();
 	 * </code></pre></p>
-	 * @param packageId Unique identifier of the package for which to retrieve the label.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param returnId Unique identifier of the return whose items you want to get.
-	 * @param package Properties of a physical package shipped for an order.
+	 * @param packageId Unique identifier of the return replacement package to update.
+	 * @param responseFields 
+	 * @param returnId Unique identifier of the return associated with the replacement package to update.
+	 * @param package Properties of the return replacement package to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Package>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
@@ -209,19 +209,22 @@ public class PackageClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=DeletePackageClient( returnId,  packageId);
+	 * MozuClient<java.io.InputStream> mozuClient=DeletePackageClient( returnId,  packageId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
+	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param packageId Unique identifier of the package for which to retrieve the label.
-	 * @param returnId Unique identifier of the return whose items you want to get.
-	 * @return Mozu.Api.MozuClient 
+	 * @param packageId Unique identifier of the return replacement package to delete.
+	 * @param returnId Unique identifier of the return associated with the replacement package to delete.
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
 	 */
-	public static MozuClient deletePackageClient(String returnId, String packageId) throws Exception
+	public static MozuClient<java.io.InputStream> deletePackageClient(String returnId, String packageId) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.returns.PackageUrl.deletePackageUrl(packageId, returnId);
 		String verb = "DELETE";
-				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

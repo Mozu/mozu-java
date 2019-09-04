@@ -35,6 +35,16 @@ public class CreditAuditEntry implements Serializable
 		this.activityType = activityType;
 	}
 
+	protected  Integer activityTypeId;
+
+	public Integer getActivityTypeId() {
+		return this.activityTypeId;
+	}
+
+	public void setActivityTypeId(Integer activityTypeId) {
+		this.activityTypeId = activityTypeId;
+	}
+
 	/**
 	 * Detail log that describes the activity performed for this credit audit entry.
 	 */

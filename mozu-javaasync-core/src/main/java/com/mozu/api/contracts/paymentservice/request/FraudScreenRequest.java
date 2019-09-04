@@ -19,18 +19,12 @@ import com.mozu.api.contracts.paymentservice.GatewayCredentialFieldValue;
 import com.mozu.api.contracts.paymentservice.CustomData;
 import com.mozu.api.contracts.paymentservice.OrderItem;
 
-/**
- *	Mozu.PaymentService.Contracts.Request.FraudScreenRequest ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class FraudScreenRequest implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Contains the avs codes from the gateway.
-	 */
 	protected  String avsCodes;
 
 	public String getAvsCodes() {
@@ -41,9 +35,6 @@ public class FraudScreenRequest implements Serializable
 		this.avsCodes = avsCodes;
 	}
 
-	/**
-	 * Unique identifier of the card associated with the customer account billing contact.
-	 */
 	protected  String cardId;
 
 	public String getCardId() {
@@ -54,9 +45,6 @@ public class FraudScreenRequest implements Serializable
 		this.cardId = cardId;
 	}
 
-	/**
-	 * The masked credit card number part returned from the payment gateway.
-	 */
 	protected  String cardNumberPart;
 
 	public String getCardNumberPart() {
@@ -67,9 +55,6 @@ public class FraudScreenRequest implements Serializable
 		this.cardNumberPart = cardNumberPart;
 	}
 
-	/**
-	 * The 2-letter geographic code representing the country for the physical or mailing address. Currently limited to the US.
-	 */
 	protected  String countryCode;
 
 	public String getCountryCode() {
@@ -80,9 +65,6 @@ public class FraudScreenRequest implements Serializable
 		this.countryCode = countryCode;
 	}
 
-	/**
-	 * The localized currency code for the monetary amount. 
-	 */
 	protected  String currencyCode;
 
 	public String getCurrencyCode() {
@@ -93,9 +75,6 @@ public class FraudScreenRequest implements Serializable
 		this.currencyCode = currencyCode;
 	}
 
-	/**
-	 * Unique identifier of the customer in , used to associate customers with data, orders, returns, and in-store credit.
-	 */
 	protected  String customerId;
 
 	public String getCustomerId() {
@@ -106,9 +85,6 @@ public class FraudScreenRequest implements Serializable
 		this.customerId = customerId;
 	}
 
-	/**
-	 * The CVV code for the credit card.
-	 */
 	protected  String cvV2Codes;
 
 	public String getCvV2Codes() {
@@ -119,9 +95,6 @@ public class FraudScreenRequest implements Serializable
 		this.cvV2Codes = cvV2Codes;
 	}
 
-	/**
-	 * The two-digit month a credit card expires for a payment method.
-	 */
 	protected  Integer expireMonth;
 
 	public Integer getExpireMonth() {
@@ -132,9 +105,6 @@ public class FraudScreenRequest implements Serializable
 		this.expireMonth = expireMonth;
 	}
 
-	/**
-	 * The four-digit year the credit card expires for a payment method.
-	 */
 	protected  Integer expireYear;
 
 	public Integer getExpireYear() {
@@ -145,9 +115,6 @@ public class FraudScreenRequest implements Serializable
 		this.expireYear = expireYear;
 	}
 
-	/**
-	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest gatewayAccountId ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String gatewayAccountId;
 
 	public String getGatewayAccountId() {
@@ -158,9 +125,6 @@ public class FraudScreenRequest implements Serializable
 		this.gatewayAccountId = gatewayAccountId;
 	}
 
-	/**
-	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest merchantTransactionId ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String merchantTransactionId;
 
 	public String getMerchantTransactionId() {
@@ -171,9 +135,6 @@ public class FraudScreenRequest implements Serializable
 		this.merchantTransactionId = merchantTransactionId;
 	}
 
-	/**
-	 * The unique identifier of the order.
-	 */
 	protected  Integer orderNumber;
 
 	public Integer getOrderNumber() {
@@ -184,9 +145,6 @@ public class FraudScreenRequest implements Serializable
 		this.orderNumber = orderNumber;
 	}
 
-	/**
-	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest paymentTransactionId ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String paymentTransactionId;
 
 	public String getPaymentTransactionId() {
@@ -197,9 +155,6 @@ public class FraudScreenRequest implements Serializable
 		this.paymentTransactionId = paymentTransactionId;
 	}
 
-	/**
-	 * The type of payment, such as credit card, check, or PayPal Express. Additional payment types will be supported in future releases.
-	 */
 	protected  String paymentType;
 
 	public String getPaymentType() {
@@ -210,9 +165,6 @@ public class FraudScreenRequest implements Serializable
 		this.paymentType = paymentType;
 	}
 
-	/**
-	 * Contains the IP the customer is using.
-	 */
 	protected  String requestorIp;
 
 	public String getRequestorIp() {
@@ -223,9 +175,6 @@ public class FraudScreenRequest implements Serializable
 		this.requestorIp = requestorIp;
 	}
 
-	/**
-	 * Contains the url the customer is using.
-	 */
 	protected  String requestorUrl;
 
 	public String getRequestorUrl() {
@@ -236,9 +185,6 @@ public class FraudScreenRequest implements Serializable
 		this.requestorUrl = requestorUrl;
 	}
 
-	/**
-	 * Contains the user agent the customer is using.
-	 */
 	protected  String requestorUserAgent;
 
 	public String getRequestorUserAgent() {
@@ -249,9 +195,6 @@ public class FraudScreenRequest implements Serializable
 		this.requestorUserAgent = requestorUserAgent;
 	}
 
-	/**
-	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest shipType ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String shipType;
 
 	public String getShipType() {
@@ -262,9 +205,6 @@ public class FraudScreenRequest implements Serializable
 		this.shipType = shipType;
 	}
 
-	/**
-	 * Total is used to indicate the monetary, estimated total amount of the cart or order, including items, sales tax, shipping costs, and other fees. Totals are not estimated for wish lists at this time.
-	 */
 	protected  Double total;
 
 	public Double getTotal() {
@@ -275,9 +215,6 @@ public class FraudScreenRequest implements Serializable
 		this.total = total;
 	}
 
-	/**
-	 * The billing address used in the transaction.
-	 */
 	protected  Address billingAddress;
 
 	public Address getBillingAddress() {
@@ -288,9 +225,6 @@ public class FraudScreenRequest implements Serializable
 		this.billingAddress = billingAddress;
 	}
 
-	/**
-	 * The cardholder's billing contact information, including addresses.
-	 */
 	protected  Contact billingContact;
 
 	public Contact getBillingContact() {
@@ -301,9 +235,6 @@ public class FraudScreenRequest implements Serializable
 		this.billingContact = billingContact;
 	}
 
-	/**
-	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest credentialFieldsOverride ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected List<GatewayCredentialFieldValue> credentialFieldsOverride;
 	public List<GatewayCredentialFieldValue> getCredentialFieldsOverride() {
 		return this.credentialFieldsOverride;
@@ -312,9 +243,6 @@ public class FraudScreenRequest implements Serializable
 		this.credentialFieldsOverride = credentialFieldsOverride;
 	}
 
-	/**
-	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest customData ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected List<CustomData> customData;
 	public List<CustomData> getCustomData() {
 		return this.customData;
@@ -323,9 +251,6 @@ public class FraudScreenRequest implements Serializable
 		this.customData = customData;
 	}
 
-	/**
-	 * A list of items included in the order.
-	 */
 	protected List<OrderItem> orderItems;
 	public List<OrderItem> getOrderItems() {
 		return this.orderItems;
@@ -334,9 +259,6 @@ public class FraudScreenRequest implements Serializable
 		this.orderItems = orderItems;
 	}
 
-	/**
-	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest shippingAddress ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  Address shippingAddress;
 
 	public Address getShippingAddress() {
@@ -347,9 +269,6 @@ public class FraudScreenRequest implements Serializable
 		this.shippingAddress = shippingAddress;
 	}
 
-	/**
-	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest shippingContact ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  Contact shippingContact;
 
 	public Contact getShippingContact() {

@@ -49,14 +49,14 @@ public class ProductClient {
 	 * client.executeRequest();
 	 * ProductCollection productCollection = client.Result();
 	 * </code></pre></p>
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param filter 
 	 * @param noCount If true, the operation does not return the TotalCount number of results.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param q A list of order search terms (not phrases) to use in the query when searching across order number and the name or email of the billing contact. When entering, separate multiple search terms with a space character.
+	 * @param pageSize 
+	 * @param q A list of product search terms to use in the query when searching across product code and product name. Separate multiple search terms with a space character.
 	 * @param qLimit The maximum number of search results to return in the response. You can limit any range between 1-100.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductCollection>
 	 * @see com.mozu.api.contracts.productadmin.ProductCollection
 	 */
@@ -81,7 +81,7 @@ public class ProductClient {
 	 * client.executeRequest();
 	 * ProductInCatalogInfo productInCatalogInfo = client.Result();
 	 * </code></pre></p>
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param productCode 
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.ProductInCatalogInfo>>
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 */
@@ -106,8 +106,8 @@ public class ProductClient {
 	 * client.executeRequest();
 	 * ProductInCatalogInfo productInCatalogInfo = client.Result();
 	 * </code></pre></p>
-	 * @param catalogId Unique identifier for a catalog.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param catalogId 
+	 * @param productCode 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductInCatalogInfo>
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 */
@@ -124,9 +124,9 @@ public class ProductClient {
 	 * client.executeRequest();
 	 * ProductInCatalogInfo productInCatalogInfo = client.Result();
 	 * </code></pre></p>
-	 * @param catalogId Unique identifier for a catalog.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param catalogId 
+	 * @param productCode 
+	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductInCatalogInfo>
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 */
@@ -151,7 +151,7 @@ public class ProductClient {
 	 * client.executeRequest();
 	 * Product product = client.Result();
 	 * </code></pre></p>
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param productCode 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Product>
 	 * @see com.mozu.api.contracts.productadmin.Product
 	 */
@@ -168,8 +168,8 @@ public class ProductClient {
 	 * client.executeRequest();
 	 * Product product = client.Result();
 	 * </code></pre></p>
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param productCode 
+	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Product>
 	 * @see com.mozu.api.contracts.productadmin.Product
 	 */
@@ -194,7 +194,7 @@ public class ProductClient {
 	 * client.executeRequest();
 	 * Product product = client.Result();
 	 * </code></pre></p>
-	 * @param product The properties of a product, referenced and used by carts, orders, wish lists, and returns.
+	 * @param product Properties of the new product. You must supply values for the product code, product name, and price.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Product>
 	 * @see com.mozu.api.contracts.productadmin.Product
 	 * @see com.mozu.api.contracts.productadmin.Product
@@ -212,8 +212,8 @@ public class ProductClient {
 	 * client.executeRequest();
 	 * Product product = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param product The properties of a product, referenced and used by carts, orders, wish lists, and returns.
+	 * @param responseFields 
+	 * @param product Properties of the new product. You must supply values for the product code, product name, and price.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Product>
 	 * @see com.mozu.api.contracts.productadmin.Product
 	 * @see com.mozu.api.contracts.productadmin.Product
@@ -240,8 +240,8 @@ public class ProductClient {
 	 * client.executeRequest();
 	 * ProductInCatalogInfo productInCatalogInfo = client.Result();
 	 * </code></pre></p>
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param productInCatalogInfoIn Properties of a product associated with a specific catalog.
+	 * @param productCode 
+	 * @param productInCatalogInfoIn Properties of the product to define for the specific catalog association.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductInCatalogInfo>
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
@@ -259,9 +259,9 @@ public class ProductClient {
 	 * client.executeRequest();
 	 * ProductInCatalogInfo productInCatalogInfo = client.Result();
 	 * </code></pre></p>
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param productInCatalogInfoIn Properties of a product associated with a specific catalog.
+	 * @param productCode 
+	 * @param responseFields 
+	 * @param productInCatalogInfoIn Properties of the product to define for the specific catalog association.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductInCatalogInfo>
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
@@ -283,19 +283,22 @@ public class ProductClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=RenameProductCodesClient( productCodeRenames);
+	 * MozuClient<java.io.InputStream> mozuClient=RenameProductCodesClient( productCodeRenames);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
+	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param productCodeRenames Properties for a product code current and changed content.
-	 * @return Mozu.Api.MozuClient 
+	 * @param productCodeRenames 
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
 	 * @see com.mozu.api.contracts.productadmin.ProductCodeRename
 	 */
-	public static MozuClient renameProductCodesClient(List<com.mozu.api.contracts.productadmin.ProductCodeRename> productCodeRenames) throws Exception
+	public static MozuClient<java.io.InputStream> renameProductCodesClient(List<com.mozu.api.contracts.productadmin.ProductCodeRename> productCodeRenames) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.ProductUrl.renameProductCodesUrl();
 		String verb = "POST";
-				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(productCodeRenames);
@@ -311,8 +314,8 @@ public class ProductClient {
 	 * client.executeRequest();
 	 * ProductInCatalogInfo productInCatalogInfo = client.Result();
 	 * </code></pre></p>
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param productInCatalogsIn Properties of a product associated with a specific catalog.
+	 * @param productCode 
+	 * @param productInCatalogsIn Properties of the product to update for each associated catalog.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.ProductInCatalogInfo>>
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
@@ -339,9 +342,9 @@ public class ProductClient {
 	 * client.executeRequest();
 	 * ProductInCatalogInfo productInCatalogInfo = client.Result();
 	 * </code></pre></p>
-	 * @param catalogId Unique identifier for a catalog.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param productInCatalogInfoIn Properties of a product associated with a specific catalog.
+	 * @param catalogId 
+	 * @param productCode 
+	 * @param productInCatalogInfoIn Properties of the product associated with the catalog specified in the request.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductInCatalogInfo>
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
@@ -359,10 +362,10 @@ public class ProductClient {
 	 * client.executeRequest();
 	 * ProductInCatalogInfo productInCatalogInfo = client.Result();
 	 * </code></pre></p>
-	 * @param catalogId Unique identifier for a catalog.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param productInCatalogInfoIn Properties of a product associated with a specific catalog.
+	 * @param catalogId 
+	 * @param productCode 
+	 * @param responseFields 
+	 * @param productInCatalogInfoIn Properties of the product associated with the catalog specified in the request.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductInCatalogInfo>
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
@@ -389,8 +392,8 @@ public class ProductClient {
 	 * client.executeRequest();
 	 * Product product = client.Result();
 	 * </code></pre></p>
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param product The properties of a product, referenced and used by carts, orders, wish lists, and returns.
+	 * @param productCode 
+	 * @param product Properties of the product definition to update in the master catalog.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Product>
 	 * @see com.mozu.api.contracts.productadmin.Product
 	 * @see com.mozu.api.contracts.productadmin.Product
@@ -408,9 +411,9 @@ public class ProductClient {
 	 * client.executeRequest();
 	 * Product product = client.Result();
 	 * </code></pre></p>
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param product The properties of a product, referenced and used by carts, orders, wish lists, and returns.
+	 * @param productCode 
+	 * @param responseFields 
+	 * @param product Properties of the product definition to update in the master catalog.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Product>
 	 * @see com.mozu.api.contracts.productadmin.Product
 	 * @see com.mozu.api.contracts.productadmin.Product
@@ -432,18 +435,21 @@ public class ProductClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=DeleteProductClient(dataViewMode,  productCode);
+	 * MozuClient<java.io.InputStream> mozuClient=DeleteProductClient(dataViewMode,  productCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
+	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @return Mozu.Api.MozuClient 
+	 * @param productCode 
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
 	 */
-	public static MozuClient deleteProductClient(com.mozu.api.DataViewMode dataViewMode, String productCode) throws Exception
+	public static MozuClient<java.io.InputStream> deleteProductClient(com.mozu.api.DataViewMode dataViewMode, String productCode) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.ProductUrl.deleteProductUrl(productCode);
 		String verb = "DELETE";
-				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
@@ -454,19 +460,22 @@ public class ProductClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=DeleteProductInCatalogClient(dataViewMode,  productCode,  catalogId);
+	 * MozuClient<java.io.InputStream> mozuClient=DeleteProductInCatalogClient(dataViewMode,  productCode,  catalogId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
+	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param catalogId Unique identifier for a catalog.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @return Mozu.Api.MozuClient 
+	 * @param catalogId 
+	 * @param productCode 
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
 	 */
-	public static MozuClient deleteProductInCatalogClient(com.mozu.api.DataViewMode dataViewMode, String productCode, Integer catalogId) throws Exception
+	public static MozuClient<java.io.InputStream> deleteProductInCatalogClient(com.mozu.api.DataViewMode dataViewMode, String productCode, Integer catalogId) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.ProductUrl.deleteProductInCatalogUrl(catalogId, productCode);
 		String verb = "DELETE";
-				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());

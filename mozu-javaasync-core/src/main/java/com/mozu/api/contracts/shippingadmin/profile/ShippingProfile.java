@@ -17,18 +17,12 @@ import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule;
 import com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule;
 
-/**
- *	Mozu.ShippingAdmin.Contracts.Profile.ShippingProfile ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ShippingProfile implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The unique code of the shipping profile.
-	 */
 	protected  String code;
 
 	public String getCode() {
@@ -39,9 +33,6 @@ public class ShippingProfile implements Serializable
 		this.code = code;
 	}
 
-	/**
-	 * A list of unique site identifiers that the shipping profile targets.
-	 */
 	protected List<Integer> targetedSiteIds;
 	public List<Integer> getTargetedSiteIds() {
 		return this.targetedSiteIds;
@@ -50,9 +41,6 @@ public class ShippingProfile implements Serializable
 		this.targetedSiteIds = targetedSiteIds;
 	}
 
-	/**
-	 * Basic audit info about the object, including date, time, and user account. This data may be captured when creating, updating, and removing data.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -63,9 +51,6 @@ public class ShippingProfile implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * A list of order handling fee rules and their details.
-	 */
 	protected List<HandlingFeeRule> orderHandlingFeeRules;
 	public List<HandlingFeeRule> getOrderHandlingFeeRules() {
 		return this.orderHandlingFeeRules;
@@ -74,9 +59,6 @@ public class ShippingProfile implements Serializable
 		this.orderHandlingFeeRules = orderHandlingFeeRules;
 	}
 
-	/**
-	 * A list of product handling fee rules and their details.
-	 */
 	protected List<HandlingFeeRule> productHandlingFeeRules;
 	public List<HandlingFeeRule> getProductHandlingFeeRules() {
 		return this.productHandlingFeeRules;
@@ -85,9 +67,6 @@ public class ShippingProfile implements Serializable
 		this.productHandlingFeeRules = productHandlingFeeRules;
 	}
 
-	/**
-	 * A list of shipping inclusion rules and their details.
-	 */
 	protected List<ShippingInclusionRule> shippingInclusionRules;
 	public List<ShippingInclusionRule> getShippingInclusionRules() {
 		return this.shippingInclusionRules;

@@ -15,8 +15,8 @@ public class AutoAddDiscountTargetUrl
 
 	/**
 	 * Get Resource Url for GetAutoAddTarget
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param discountId 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getAutoAddTargetUrl(Integer discountId, String responseFields)

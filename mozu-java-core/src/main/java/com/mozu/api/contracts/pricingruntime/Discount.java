@@ -16,9 +16,6 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.pricingruntime.DiscountCondition;
 import com.mozu.api.contracts.pricingruntime.DiscountTarget;
 
-/**
- *	Name of the discount added and applied to a shopping cart and order for a shopper's purchase.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Discount implements Serializable
 {
@@ -35,9 +32,6 @@ public class Discount implements Serializable
 		this.amount = amount;
 	}
 
-	/**
-	 * The type of the discount, either  (meaning the discount amount value represents a percentage off the original price),  (meaning the discount amount value represents a dollar amount off the original price),  (meaning the discount amount value is ignored because the product is free), or  (meaning the discount amount value represents the discounted price of the item).
-	 */
 	protected  String amountType;
 
 	public String getAmountType() {
@@ -58,9 +52,6 @@ public class Discount implements Serializable
 		this.discountId = discountId;
 	}
 
-	/**
-	 * True if the discount should not apply to orders with multiple shipments. For more information, refer to the topic on [multiple shipments](https://www.mozu.com/docs/Guides/orders/multi-ship.htm#effect_on_discounts).
-	 */
 	protected  Boolean doesNotApplyToMultiShipToOrders;
 
 	public Boolean getDoesNotApplyToMultiShipToOrders() {
@@ -71,9 +62,6 @@ public class Discount implements Serializable
 		this.doesNotApplyToMultiShipToOrders = doesNotApplyToMultiShipToOrders;
 	}
 
-	/**
-	 * Determines whether or not a discount applies to a items with a sale price. Applicable on order and line item discounts. For line items, when this is true, the discount will be disqualified. For order level discounts, when true, the discount will not be applied to those items have a sale price.
-	 */
 	protected  Boolean doesNotApplyToProductsWithSalePrice;
 
 	public Boolean getDoesNotApplyToProductsWithSalePrice() {
@@ -94,9 +82,6 @@ public class Discount implements Serializable
 		this.expirationDate = expirationDate;
 	}
 
-	/**
-	 * The localizable, shopper-facing description defined for a discount or a storefront message.
-	 */
 	protected  String friendlyDescription;
 
 	public String getFriendlyDescription() {
@@ -107,9 +92,6 @@ public class Discount implements Serializable
 		this.friendlyDescription = friendlyDescription;
 	}
 
-	/**
-	 * Products receiving a price from a price list specified here or a child of a specified price list can be discounted.
-	 */
 	protected List<String> includedPriceLists;
 	public List<String> getIncludedPriceLists() {
 		return this.includedPriceLists;
@@ -118,9 +100,6 @@ public class Discount implements Serializable
 		this.includedPriceLists = includedPriceLists;
 	}
 
-	/**
-	 * The maximum amount of savings that may be applied per each redemption of this discount.
-	 */
 	protected  Double maxDiscountValuePerRedemption;
 
 	public Double getMaxDiscountValuePerRedemption() {
@@ -131,9 +110,6 @@ public class Discount implements Serializable
 		this.maxDiscountValuePerRedemption = maxDiscountValuePerRedemption;
 	}
 
-	/**
-	 * The maximum amount of discount savings that may be applied per order.
-	 */
 	protected  Double maximumDiscountValuePerOrder;
 
 	public Double getMaximumDiscountValuePerOrder() {
@@ -144,9 +120,6 @@ public class Discount implements Serializable
 		this.maximumDiscountValuePerOrder = maximumDiscountValuePerOrder;
 	}
 
-	/**
-	 * Maximum number of redemptions allowed per order. If null, defaults to unlimited.
-	 */
 	protected  Integer maximumRedemptionsPerOrder;
 
 	public Integer getMaximumRedemptionsPerOrder() {
@@ -157,9 +130,6 @@ public class Discount implements Serializable
 		this.maximumRedemptionsPerOrder = maximumRedemptionsPerOrder;
 	}
 
-	/**
-	 * The maximum number of times an individual shopper can redeem the discount.
-	 */
 	protected  Integer maximumUsesPerUser;
 
 	public Integer getMaximumUsesPerUser() {
@@ -170,9 +140,6 @@ public class Discount implements Serializable
 		this.maximumUsesPerUser = maximumUsesPerUser;
 	}
 
-	/**
-	 * The maximum number of times any coupon code in the coupon set can be used. This value must be either null, greater than or equal to 1, or -1. A value of -1 indicates unlimited.If you leave this value null,  defaults this value to 1 when you create the coupon set.
-	 */
 	protected  Integer maxRedemptions;
 
 	public Integer getMaxRedemptions() {
@@ -203,9 +170,6 @@ public class Discount implements Serializable
 		this.redemptions = redemptions;
 	}
 
-	/**
-	 * If true, only authenticated users can redeem the discount. If false, anonymous users can redeem the discount.
-	 */
 	protected  Boolean requiresAuthenticatedUser;
 
 	public Boolean getRequiresAuthenticatedUser() {
@@ -216,9 +180,6 @@ public class Discount implements Serializable
 		this.requiresAuthenticatedUser = requiresAuthenticatedUser;
 	}
 
-	/**
-	 * The scope to which the discount applies, which is "Order" for order discounts or "LineItem" for individual product discounts.
-	 */
 	protected  String scope;
 
 	public String getScope() {
@@ -229,9 +190,6 @@ public class Discount implements Serializable
 		this.scope = scope;
 	}
 
-	/**
-	 * Numerical fieldÂ representing the number of discount layer (up to 3).
-	 */
 	protected  Integer stackingLayer;
 
 	public Integer getStackingLayer() {
@@ -252,9 +210,6 @@ public class Discount implements Serializable
 		this.type = type;
 	}
 
-	/**
-	 * A condition that must be met for the discount to apply.
-	 */
 	protected  DiscountCondition condition;
 
 	public DiscountCondition getCondition() {
@@ -265,9 +220,6 @@ public class Discount implements Serializable
 		this.condition = condition;
 	}
 
-	/**
-	 * Targets represent the object, such as an item to apply discounts to(products or orders) or a view field for content. Targets are the dot notations that link to the source document property. For example, firstitem for the direct level or firstitem.seconditem.thirditem for a deeper property.
-	 */
 	protected  DiscountTarget target;
 
 	public DiscountTarget getTarget() {

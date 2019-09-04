@@ -19,7 +19,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the Returns resource to manage returned items that were previously fufilled. Returns can include any number of items associated with an original  order. Each return must either be associated with an original order or a product definition to represent each returned item.Refer to the [Returns API](https://www.mozu.com/docs/developer/api-guides/returns.htm) topic for more information about creating and processing returns using the API.
+ * Use the Returns resource to manage returned items that were previously fufilled. Returns can include any number of items associated with an original Mozu order. Each return must either be associated with an original order or a product definition to represent each returned item.
  * </summary>
  */
 public class ReturnClient {
@@ -48,12 +48,12 @@ public class ReturnClient {
 	 * client.executeRequest();
 	 * ReturnCollection returnCollection = client.Result();
 	 * </code></pre></p>
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param q A list of order search terms (not phrases) to use in the query when searching across order number and the name or email of the billing contact. When entering, separate multiple search terms with a space character.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param filter 
+	 * @param pageSize 
+	 * @param q 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.ReturnCollection>
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnCollection
 	 */
@@ -77,7 +77,7 @@ public class ReturnClient {
 	 * client.executeRequest();
 	 * string string = client.Result();
 	 * </code></pre></p>
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param returnId Unique identifier of the return for which to retrieve available actions.
 	 * @return Mozu.Api.MozuClient <List<string>>
 	 * @see string
 	 */
@@ -101,8 +101,8 @@ public class ReturnClient {
 	 * client.executeRequest();
 	 * ReturnItem returnItem = client.Result();
 	 * </code></pre></p>
-	 * @param returnId Unique identifier of the return whose items you want to get.
-	 * @param returnItemId Unique identifier of the return item whose details you want to get.
+	 * @param returnId 
+	 * @param returnItemId 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.ReturnItem>
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnItem
 	 */
@@ -119,9 +119,9 @@ public class ReturnClient {
 	 * client.executeRequest();
 	 * ReturnItem returnItem = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param returnId Unique identifier of the return whose items you want to get.
-	 * @param returnItemId Unique identifier of the return item whose details you want to get.
+	 * @param responseFields 
+	 * @param returnId 
+	 * @param returnItemId 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.ReturnItem>
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnItem
 	 */
@@ -145,7 +145,7 @@ public class ReturnClient {
 	 * client.executeRequest();
 	 * ReturnItemCollection returnItemCollection = client.Result();
 	 * </code></pre></p>
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param returnId 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.ReturnItemCollection>
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnItemCollection
 	 */
@@ -162,8 +162,8 @@ public class ReturnClient {
 	 * client.executeRequest();
 	 * ReturnItemCollection returnItemCollection = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param responseFields 
+	 * @param returnId 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.ReturnItemCollection>
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnItemCollection
 	 */
@@ -188,7 +188,7 @@ public class ReturnClient {
 	 * string string = client.Result();
 	 * </code></pre></p>
 	 * @param paymentId Unique identifier of the payment for which to perform the action.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param returnId Unique identifier of the return associated with the payment.
 	 * @return Mozu.Api.MozuClient <List<string>>
 	 * @see string
 	 */
@@ -212,8 +212,8 @@ public class ReturnClient {
 	 * client.executeRequest();
 	 * Payment payment = client.Result();
 	 * </code></pre></p>
-	 * @param paymentId Unique identifier of the payment for which to perform the action.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param paymentId Unique identifier of the return payment to retrieve.
+	 * @param returnId Unique identifier of the return associated with the payment.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.payments.Payment>
 	 * @see com.mozu.api.contracts.commerceruntime.payments.Payment
 	 */
@@ -230,9 +230,9 @@ public class ReturnClient {
 	 * client.executeRequest();
 	 * Payment payment = client.Result();
 	 * </code></pre></p>
-	 * @param paymentId Unique identifier of the payment for which to perform the action.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param paymentId Unique identifier of the return payment to retrieve.
+	 * @param responseFields 
+	 * @param returnId Unique identifier of the return associated with the payment.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.payments.Payment>
 	 * @see com.mozu.api.contracts.commerceruntime.payments.Payment
 	 */
@@ -256,7 +256,7 @@ public class ReturnClient {
 	 * client.executeRequest();
 	 * PaymentCollection paymentCollection = client.Result();
 	 * </code></pre></p>
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param returnId Returns the details of the refund payment associated with the return specified in the request.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.payments.PaymentCollection>
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentCollection
 	 */
@@ -273,8 +273,8 @@ public class ReturnClient {
 	 * client.executeRequest();
 	 * PaymentCollection paymentCollection = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param responseFields 
+	 * @param returnId Returns the details of the refund payment associated with the return specified in the request.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.payments.PaymentCollection>
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentCollection
 	 */
@@ -298,7 +298,7 @@ public class ReturnClient {
 	 * client.executeRequest();
 	 * Return return = client.Result();
 	 * </code></pre></p>
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param returnId Returns the properties of the return specified in the request as well as system-supplied information.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.Return>
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
 	 */
@@ -315,8 +315,8 @@ public class ReturnClient {
 	 * client.executeRequest();
 	 * Return return = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param responseFields 
+	 * @param returnId Returns the properties of the return specified in the request as well as system-supplied information.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.Return>
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
 	 */
@@ -356,7 +356,7 @@ public class ReturnClient {
 	 * client.executeRequest();
 	 * ReasonCollection reasonCollection = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.ReasonCollection>
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReasonCollection
 	 */
@@ -380,7 +380,7 @@ public class ReturnClient {
 	 * client.executeRequest();
 	 * Return return = client.Result();
 	 * </code></pre></p>
-	 * @param ret Properties of a return of one or more previously fulfilled items.
+	 * @param ret Wrapper for the properties of the return to create.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.Return>
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
@@ -398,8 +398,8 @@ public class ReturnClient {
 	 * client.executeRequest();
 	 * Return return = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param ret Properties of a return of one or more previously fulfilled items.
+	 * @param responseFields 
+	 * @param ret Wrapper for the properties of the return to create.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.Return>
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
@@ -425,8 +425,8 @@ public class ReturnClient {
 	 * client.executeRequest();
 	 * Return return = client.Result();
 	 * </code></pre></p>
-	 * @param returnId Unique identifier of the return whose items you want to get.
-	 * @param returnItem Properties of a previously fulfilled item associated with a return.
+	 * @param returnId 
+	 * @param returnItem 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.Return>
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnItem
@@ -444,9 +444,9 @@ public class ReturnClient {
 	 * client.executeRequest();
 	 * Return return = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param returnId Unique identifier of the return whose items you want to get.
-	 * @param returnItem Properties of a previously fulfilled item associated with a return.
+	 * @param responseFields 
+	 * @param returnId 
+	 * @param returnItem 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.Return>
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnItem
@@ -472,9 +472,9 @@ public class ReturnClient {
 	 * client.executeRequest();
 	 * Return return = client.Result();
 	 * </code></pre></p>
-	 * @param paymentId Unique identifier of the payment for which to perform the action.
-	 * @param returnId Unique identifier of the return whose items you want to get.
-	 * @param action Properties of the payment action performed for an order.
+	 * @param paymentId Unique identifier of the return payment to update.
+	 * @param returnId Unique identifier of the return associated with the refund payment.
+	 * @param action The payment action to perform for the refund payment.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.Return>
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentAction
@@ -492,10 +492,10 @@ public class ReturnClient {
 	 * client.executeRequest();
 	 * Return return = client.Result();
 	 * </code></pre></p>
-	 * @param paymentId Unique identifier of the payment for which to perform the action.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param returnId Unique identifier of the return whose items you want to get.
-	 * @param action Properties of the payment action performed for an order.
+	 * @param paymentId Unique identifier of the return payment to update.
+	 * @param responseFields 
+	 * @param returnId Unique identifier of the return associated with the refund payment.
+	 * @param action The payment action to perform for the refund payment.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.Return>
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentAction
@@ -521,8 +521,8 @@ public class ReturnClient {
 	 * client.executeRequest();
 	 * Return return = client.Result();
 	 * </code></pre></p>
-	 * @param returnId Unique identifier of the return whose items you want to get.
-	 * @param action Properties of the payment action performed for an order.
+	 * @param returnId Unique identifier of the return associated with the payment action.
+	 * @param action The payment action to perform for the customer return.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.Return>
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentAction
@@ -540,9 +540,9 @@ public class ReturnClient {
 	 * client.executeRequest();
 	 * Return return = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param returnId Unique identifier of the return whose items you want to get.
-	 * @param action Properties of the payment action performed for an order.
+	 * @param responseFields 
+	 * @param returnId Unique identifier of the return associated with the payment action.
+	 * @param action The payment action to perform for the customer return.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.Return>
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentAction
@@ -568,7 +568,7 @@ public class ReturnClient {
 	 * client.executeRequest();
 	 * Order order = client.Result();
 	 * </code></pre></p>
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param returnId 
 	 * @param itemQuantities 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
@@ -587,8 +587,8 @@ public class ReturnClient {
 	 * client.executeRequest();
 	 * Order order = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param responseFields 
+	 * @param returnId 
 	 * @param itemQuantities 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
@@ -615,7 +615,7 @@ public class ReturnClient {
 	 * client.executeRequest();
 	 * ReturnCollection returnCollection = client.Result();
 	 * </code></pre></p>
-	 * @param action Properties of an action a user can perform for a return.
+	 * @param action The name of the return action to perform, such as "Reject" or "Authorize".
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.ReturnCollection>
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnCollection
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnAction
@@ -633,8 +633,8 @@ public class ReturnClient {
 	 * client.executeRequest();
 	 * ReturnCollection returnCollection = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param action Properties of an action a user can perform for a return.
+	 * @param responseFields 
+	 * @param action The name of the return action to perform, such as "Reject" or "Authorize".
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.ReturnCollection>
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnCollection
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnAction
@@ -660,8 +660,8 @@ public class ReturnClient {
 	 * client.executeRequest();
 	 * Return return = client.Result();
 	 * </code></pre></p>
-	 * @param returnId Unique identifier of the return whose items you want to get.
-	 * @param ret Properties of a return of one or more previously fulfilled items.
+	 * @param returnId Unique identifier of the return.
+	 * @param ret Wrapper for the array of properties to update for the return.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.Return>
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
@@ -679,9 +679,9 @@ public class ReturnClient {
 	 * client.executeRequest();
 	 * Return return = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param returnId Unique identifier of the return whose items you want to get.
-	 * @param ret Properties of a return of one or more previously fulfilled items.
+	 * @param responseFields 
+	 * @param returnId Unique identifier of the return.
+	 * @param ret Wrapper for the array of properties to update for the return.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.Return>
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
@@ -702,19 +702,22 @@ public class ReturnClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=ResendReturnEmailClient( action);
+	 * MozuClient<java.io.InputStream> mozuClient=ResendReturnEmailClient( action);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
+	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param action Properties of an action a user can perform for a return.
-	 * @return Mozu.Api.MozuClient 
+	 * @param action 
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnAction
 	 */
-	public static MozuClient resendReturnEmailClient(com.mozu.api.contracts.commerceruntime.returns.ReturnAction action) throws Exception
+	public static MozuClient<java.io.InputStream> resendReturnEmailClient(com.mozu.api.contracts.commerceruntime.returns.ReturnAction action) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.ReturnUrl.resendReturnEmailUrl();
 		String verb = "PUT";
-				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(action);
@@ -730,8 +733,8 @@ public class ReturnClient {
 	 * client.executeRequest();
 	 * Return return = client.Result();
 	 * </code></pre></p>
-	 * @param returnId Unique identifier of the return whose items you want to get.
-	 * @param returnItemId Unique identifier of the return item whose details you want to get.
+	 * @param returnId 
+	 * @param returnItemId 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.Return>
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
 	 */
@@ -750,18 +753,21 @@ public class ReturnClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=DeleteReturnClient( returnId);
+	 * MozuClient<java.io.InputStream> mozuClient=DeleteReturnClient( returnId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
+	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param returnId Unique identifier of the return whose items you want to get.
-	 * @return Mozu.Api.MozuClient 
+	 * @param returnId Unique identifier of the return to delete.
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
 	 */
-	public static MozuClient deleteReturnClient(String returnId) throws Exception
+	public static MozuClient<java.io.InputStream> deleteReturnClient(String returnId) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.ReturnUrl.deleteReturnUrl(returnId);
 		String verb = "DELETE";
-				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

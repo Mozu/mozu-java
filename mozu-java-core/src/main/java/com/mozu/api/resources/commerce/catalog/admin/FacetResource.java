@@ -56,7 +56,7 @@ public class FacetResource {
 	 *	Facet facet = facet.getFacet( facetId,  validate,  responseFields);
 	 * </code></pre></p>
 	 * @param facetId Unique identifier of the facet to retrieve.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param validate Validates that the product category associated with a facet is active. System-supplied and read only.
 	 * @return com.mozu.api.contracts.productadmin.Facet
 	 * @see com.mozu.api.contracts.productadmin.Facet
@@ -76,7 +76,7 @@ public class FacetResource {
 	 *	Facet facet = new Facet();
 	 *	FacetSet facetSet = facet.getFacetCategoryList( categoryId);
 	 * </code></pre></p>
-	 * @param categoryId Unique identifier of the category to modify.
+	 * @param categoryId Unique identifier of the category associated with the facets to retrieve.
 	 * @return com.mozu.api.contracts.productadmin.FacetSet
 	 * @see com.mozu.api.contracts.productadmin.FacetSet
 	 */
@@ -91,9 +91,9 @@ public class FacetResource {
 	 *	Facet facet = new Facet();
 	 *	FacetSet facetSet = facet.getFacetCategoryList( categoryId,  includeAvailable,  validate,  responseFields);
 	 * </code></pre></p>
-	 * @param categoryId Unique identifier of the category to modify.
+	 * @param categoryId Unique identifier of the category associated with the facets to retrieve.
 	 * @param includeAvailable If true, returns a list of the attributes and categories associated with a product type that have not been defined as a facet for the category.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param validate Validates that the product category associated with a facet is active. System-supplied and read only.
 	 * @return com.mozu.api.contracts.productadmin.FacetSet
 	 * @see com.mozu.api.contracts.productadmin.FacetSet
@@ -113,7 +113,7 @@ public class FacetResource {
 	 *	Facet facet = new Facet();
 	 *	Facet facet = facet.addFacet( facet);
 	 * </code></pre></p>
-	 * @param facet Properties of the facet used to retrieve documents.
+	 * @param facet Properties of the new facet to create. You must specify the source, type, and category.
 	 * @return com.mozu.api.contracts.productadmin.Facet
 	 * @see com.mozu.api.contracts.productadmin.Facet
 	 * @see com.mozu.api.contracts.productadmin.Facet
@@ -129,8 +129,8 @@ public class FacetResource {
 	 *	Facet facet = new Facet();
 	 *	Facet facet = facet.addFacet( facet,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param facet Properties of the facet used to retrieve documents.
+	 * @param responseFields 
+	 * @param facet Properties of the new facet to create. You must specify the source, type, and category.
 	 * @return com.mozu.api.contracts.productadmin.Facet
 	 * @see com.mozu.api.contracts.productadmin.Facet
 	 * @see com.mozu.api.contracts.productadmin.Facet
@@ -150,8 +150,8 @@ public class FacetResource {
 	 *	Facet facet = new Facet();
 	 *	Facet facet = facet.updateFacet( facet,  facetId);
 	 * </code></pre></p>
-	 * @param facetId Unique identifier of the facet to retrieve.
-	 * @param facet Properties of the facet used to retrieve documents.
+	 * @param facetId Unique identifier of the facet to modify.
+	 * @param facet Properties of the defined facet to modify.
 	 * @return com.mozu.api.contracts.productadmin.Facet
 	 * @see com.mozu.api.contracts.productadmin.Facet
 	 * @see com.mozu.api.contracts.productadmin.Facet
@@ -167,9 +167,9 @@ public class FacetResource {
 	 *	Facet facet = new Facet();
 	 *	Facet facet = facet.updateFacet( facet,  facetId,  responseFields);
 	 * </code></pre></p>
-	 * @param facetId Unique identifier of the facet to retrieve.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param facet Properties of the facet used to retrieve documents.
+	 * @param facetId Unique identifier of the facet to modify.
+	 * @param responseFields 
+	 * @param facet Properties of the defined facet to modify.
 	 * @return com.mozu.api.contracts.productadmin.Facet
 	 * @see com.mozu.api.contracts.productadmin.Facet
 	 * @see com.mozu.api.contracts.productadmin.Facet
@@ -187,17 +187,18 @@ public class FacetResource {
 	 * 
 	 * <p><pre><code>
 	 *	Facet facet = new Facet();
-	 *	facet.deleteFacetById( facetId);
+	 *	Stream stream = facet.deleteFacetById( facetId);
 	 * </code></pre></p>
-	 * @param facetId Unique identifier of the facet to retrieve.
-	 * @return 
+	 * @param facetId Unique identifier of the facet to delete.
+	 * @return Stream
+	 * @see Stream
 	 */
-	public void deleteFacetById(Integer facetId) throws Exception
+	public java.io.InputStream deleteFacetById(Integer facetId) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.FacetClient.deleteFacetByIdClient( facetId);
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.catalog.admin.FacetClient.deleteFacetByIdClient( facetId);
 		client.setContext(_apiContext);
 		client.executeRequest();
-		client.cleanupHttpConnection();
+		return client.getResult();
 
 	}
 

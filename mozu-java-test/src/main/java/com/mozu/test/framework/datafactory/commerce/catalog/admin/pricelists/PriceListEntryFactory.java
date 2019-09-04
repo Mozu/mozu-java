@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.catalog.admin.pricelists.PriceListEntryResource;
 
 /** <summary>
- * Use the Entries sub-resource to interact with price list entries. Price list entries enable you to override product pricing as well as control what products shoppers can view and purchase when the price list is exclusive. Refer to the [Price Lists](../../../guides/catalog/price-lists.htm) guides topic for more information.
+ * 
  * </summary>
  */
 public class PriceListEntryFactory
@@ -123,27 +123,29 @@ public class PriceListEntryFactory
 		return returnObj;
 	}
 
-	public static void deletePriceListEntry(ApiContext apiContext, String priceListCode, String productCode, String currencyCode, int expectedCode) throws Exception
+	public static java.io.InputStream deletePriceListEntry(ApiContext apiContext, String priceListCode, String productCode, String currencyCode, int expectedCode) throws Exception
 	{
-		deletePriceListEntry(apiContext,  priceListCode,  productCode,  currencyCode,  null, expectedCode);
+		return deletePriceListEntry(apiContext,  priceListCode,  productCode,  currencyCode,  null, expectedCode);
 	}
 
-	public static void deletePriceListEntry(ApiContext apiContext, String priceListCode, String productCode, String currencyCode, DateTime startDate, int expectedCode) throws Exception
+	public static java.io.InputStream deletePriceListEntry(ApiContext apiContext, String priceListCode, String productCode, String currencyCode, DateTime startDate, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		PriceListEntryResource resource = new PriceListEntryResource(apiContext);
 		try
 		{
-			resource.deletePriceListEntry( priceListCode,  productCode,  currencyCode,  startDate);
+			returnObj = resource.deletePriceListEntry( priceListCode,  productCode,  currencyCode,  startDate);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 }

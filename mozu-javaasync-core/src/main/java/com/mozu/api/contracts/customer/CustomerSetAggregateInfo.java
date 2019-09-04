@@ -12,18 +12,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	This property is not used.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CustomerSetAggregateInfo implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The amount of customers associated with the customer set.
-	 */
 	protected  Integer customerCount;
 
 	public Integer getCustomerCount() {

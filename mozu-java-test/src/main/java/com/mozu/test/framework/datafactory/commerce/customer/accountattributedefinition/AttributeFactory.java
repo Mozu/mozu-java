@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.customer.accountattributedefinition.AttributeResource;
 
 /** <summary>
- * commerce/customer/accountattributedefinition/attributes related resources. DOCUMENT_HERE 
+ * 
  * </summary>
  */
 public class AttributeFactory

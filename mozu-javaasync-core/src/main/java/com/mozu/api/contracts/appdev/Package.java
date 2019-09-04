@@ -21,7 +21,7 @@ import com.mozu.api.contracts.appdev.ApplicationEntitlement;
 import com.mozu.api.contracts.appdev.ApplicationSubscription;
 
 /**
- *	Properties for a package for fulfillment and shipment. A package may include one to many products, or a bundle of products.
+ *	Properties of a development or release package of theme asset or application configuration files.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Package implements Serializable
@@ -29,9 +29,6 @@ public class Package implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Mozu.AppDev.Contracts.Package apiVersion ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String apiVersion;
 
 	public String getApiVersion() {
@@ -42,9 +39,6 @@ public class Package implements Serializable
 		this.apiVersion = apiVersion;
 	}
 
-	/**
-	 * This will be used by the 3rd party developers to set a URL the intalled applications can call from the Tenant installation/
-	 */
 	protected  String appConfigUrl;
 
 	public String getAppConfigUrl() {
@@ -55,9 +49,6 @@ public class Package implements Serializable
 		this.appConfigUrl = appConfigUrl;
 	}
 
-	/**
-	 * Unique identifier of an app available in your  tenant or within  Dev Center. This ID is unique across all apps installed, initialized, and enabled in the  and those in development through the Dev Center Console.
-	 */
 	protected  String appId;
 
 	public String getAppId() {
@@ -68,9 +59,6 @@ public class Package implements Serializable
 		this.appId = appId;
 	}
 
-	/**
-	 * App Key for the package in question.
-	 */
 	protected  String appKey;
 
 	public String getAppKey() {
@@ -81,9 +69,6 @@ public class Package implements Serializable
 		this.appKey = appKey;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.Package applicationDescription ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String applicationDescription;
 
 	public String getApplicationDescription() {
@@ -94,9 +79,6 @@ public class Package implements Serializable
 		this.applicationDescription = applicationDescription;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.Package applicationDetailId ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  Integer applicationDetailId;
 
 	public Integer getApplicationDetailId() {
@@ -107,9 +89,6 @@ public class Package implements Serializable
 		this.applicationDetailId = applicationDetailId;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.Package applicationId ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  Integer applicationId;
 
 	public Integer getApplicationId() {
@@ -120,9 +99,6 @@ public class Package implements Serializable
 		this.applicationId = applicationId;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.Package applicationName ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String applicationName;
 
 	public String getApplicationName() {
@@ -133,9 +109,6 @@ public class Package implements Serializable
 		this.applicationName = applicationName;
 	}
 
-	/**
-	 * This is the DevAccountId that owns the application
-	 */
 	protected  Integer applicationOwnerDevAccountId;
 
 	public Integer getApplicationOwnerDevAccountId() {
@@ -146,9 +119,6 @@ public class Package implements Serializable
 		this.applicationOwnerDevAccountId = applicationOwnerDevAccountId;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.Package applicationStatus ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String applicationStatus;
 
 	public String getApplicationStatus() {
@@ -159,9 +129,6 @@ public class Package implements Serializable
 		this.applicationStatus = applicationStatus;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.Package applicationStatusId ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  Integer applicationStatusId;
 
 	public Integer getApplicationStatusId() {
@@ -172,9 +139,6 @@ public class Package implements Serializable
 		this.applicationStatusId = applicationStatusId;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.Package applicationStatusName ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String applicationStatusName;
 
 	public String getApplicationStatusName() {
@@ -185,9 +149,6 @@ public class Package implements Serializable
 		this.applicationStatusName = applicationStatusName;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.Package applicationTypeId ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  Integer applicationTypeId;
 
 	public Integer getApplicationTypeId() {
@@ -198,9 +159,6 @@ public class Package implements Serializable
 		this.applicationTypeId = applicationTypeId;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.Package applicationTypeName ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String applicationTypeName;
 
 	public String getApplicationTypeName() {
@@ -211,9 +169,6 @@ public class Package implements Serializable
 		this.applicationTypeName = applicationTypeName;
 	}
 
-	/**
-	 * The date and time in UTC format when the application was updated most recently.
-	 */
 	protected  DateTime applicationUpdateDate;
 
 	public DateTime getApplicationUpdateDate() {
@@ -224,9 +179,6 @@ public class Package implements Serializable
 		this.applicationUpdateDate = applicationUpdateDate;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.Package appSchemeVersion ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  Byte appSchemeVersion;
 
 	public Byte getAppSchemeVersion() {
@@ -237,9 +189,6 @@ public class Package implements Serializable
 		this.appSchemeVersion = appSchemeVersion;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.Package assetFileCount ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  Integer assetFileCount;
 
 	public Integer getAssetFileCount() {
@@ -250,9 +199,6 @@ public class Package implements Serializable
 		this.assetFileCount = assetFileCount;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.Package attributeNamespace ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String attributeNamespace;
 
 	public String getAttributeNamespace() {
@@ -263,9 +209,6 @@ public class Package implements Serializable
 		this.attributeNamespace = attributeNamespace;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.Package dataNamespace ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String dataNamespace;
 
 	public String getDataNamespace() {
@@ -276,9 +219,6 @@ public class Package implements Serializable
 		this.dataNamespace = dataNamespace;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.Package hasApplicationVersions ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  Boolean hasApplicationVersions;
 
 	public Boolean getHasApplicationVersions() {
@@ -289,9 +229,6 @@ public class Package implements Serializable
 		this.hasApplicationVersions = hasApplicationVersions;
 	}
 
-	/**
-	 * Unique identifier of the source property, such as a catalog, discount, order, or email template.For a product field it will be the name of the field.For a category ID, must be a positive integer not greater than 2000000. By default,  auto-generates a category ID when categories are created. If you want to specify an ID during creation (which preserves category link relationships when migrating tenant data from one sandbox to another), you must also include the  query string in the endpoint. For example, . Then, use the  property to specify the desired category ID.For a product attribute it will be the Attribute FQN.For a document, the ID must be specified as a 32 character, case-insensitive, alphanumeric string. You can specify the ID as 32 sequential characters or as groups separated by dashes in the format 8-4-4-4-12. For example, or.For email templates, the ID must be one of the following values:			
-	 */
 	protected  Integer id;
 
 	public Integer getId() {
@@ -302,9 +239,6 @@ public class Package implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * Indicates if the object is deleted. If true, the object has been deleted. This may affect associated child members and objects. For example, a deleted master catalog affects all associated catalogs. 
-	 */
 	protected  Boolean isDeleted;
 
 	public Boolean getIsDeleted() {
@@ -315,9 +249,6 @@ public class Package implements Serializable
 		this.isDeleted = isDeleted;
 	}
 
-	/**
-	 * Indicates if a customer account and associated data is locked. If true, the user account is locked due to multiple failed authentication attempts. The user cannot login until the account is unlocked.
-	 */
 	protected  Boolean isLocked;
 
 	public Boolean getIsLocked() {
@@ -328,9 +259,6 @@ public class Package implements Serializable
 		this.isLocked = isLocked;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.Package isReleasePackage ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  Boolean isReleasePackage;
 
 	public Boolean getIsReleasePackage() {
@@ -341,9 +269,6 @@ public class Package implements Serializable
 		this.isReleasePackage = isReleasePackage;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.Package legacyNamespace ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String legacyNamespace;
 
 	public String getLegacyNamespace() {
@@ -354,9 +279,6 @@ public class Package implements Serializable
 		this.legacyNamespace = legacyNamespace;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.Package majorVersion ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  Integer majorVersion;
 
 	public Integer getMajorVersion() {
@@ -367,9 +289,6 @@ public class Package implements Serializable
 		this.majorVersion = majorVersion;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.Package minorVersion ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  Integer minorVersion;
 
 	public Integer getMinorVersion() {
@@ -380,9 +299,6 @@ public class Package implements Serializable
 		this.minorVersion = minorVersion;
 	}
 
-	/**
-	 * The namespace for the accessible APIs and source capabilities in the core of  APIs.
-	 */
 	protected  String namespace;
 
 	public String getNamespace() {
@@ -393,9 +309,6 @@ public class Package implements Serializable
 		this.namespace = namespace;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.Package namespaceRegistryId ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String namespaceRegistryId;
 
 	public String getNamespaceRegistryId() {
@@ -406,9 +319,6 @@ public class Package implements Serializable
 		this.namespaceRegistryId = namespaceRegistryId;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.Package packageDescription ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String packageDescription;
 
 	public String getPackageDescription() {
@@ -419,9 +329,6 @@ public class Package implements Serializable
 		this.packageDescription = packageDescription;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.Package packageGuid ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String packageGuid;
 
 	public String getPackageGuid() {
@@ -432,9 +339,6 @@ public class Package implements Serializable
 		this.packageGuid = packageGuid;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.Package packageName ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String packageName;
 
 	public String getPackageName() {
@@ -445,9 +349,6 @@ public class Package implements Serializable
 		this.packageName = packageName;
 	}
 
-	/**
-	 * The parent theme AppKey if this is a theme and the theme extends a valid, published theme.
-	 */
 	protected  String parentThemeAppKey;
 
 	public String getParentThemeAppKey() {
@@ -458,9 +359,6 @@ public class Package implements Serializable
 		this.parentThemeAppKey = parentThemeAppKey;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.Package parentThemeName ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String parentThemeName;
 
 	public String getParentThemeName() {
@@ -471,9 +369,6 @@ public class Package implements Serializable
 		this.parentThemeName = parentThemeName;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.Package publishedParentSemanticVersion ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String publishedParentSemanticVersion;
 
 	public String getPublishedParentSemanticVersion() {
@@ -484,9 +379,6 @@ public class Package implements Serializable
 		this.publishedParentSemanticVersion = publishedParentSemanticVersion;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.Package publishedParentThemeId ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  Integer publishedParentThemeId;
 
 	public Integer getPublishedParentThemeId() {
@@ -497,9 +389,6 @@ public class Package implements Serializable
 		this.publishedParentThemeId = publishedParentThemeId;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.Package revision ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  Integer revision;
 
 	public Integer getRevision() {
@@ -510,9 +399,6 @@ public class Package implements Serializable
 		this.revision = revision;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.Package semanticVersionRange ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String semanticVersionRange;
 
 	public String getSemanticVersionRange() {
@@ -523,9 +409,6 @@ public class Package implements Serializable
 		this.semanticVersionRange = semanticVersionRange;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.Package sharedSecret ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String sharedSecret;
 
 	public String getSharedSecret() {
@@ -536,9 +419,6 @@ public class Package implements Serializable
 		this.sharedSecret = sharedSecret;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.Package themeEngineVersion ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String themeEngineVersion;
 
 	public String getThemeEngineVersion() {
@@ -549,9 +429,6 @@ public class Package implements Serializable
 		this.themeEngineVersion = themeEngineVersion;
 	}
 
-	/**
-	 * Whether or not there's a theme update.
-	 */
 	protected  Boolean updateAvailable;
 
 	public Boolean getUpdateAvailable() {
@@ -562,9 +439,6 @@ public class Package implements Serializable
 		this.updateAvailable = updateAvailable;
 	}
 
-	/**
-	 * The date and time in UTC format the object was updated most recently.
-	 */
 	protected  DateTime updateDate;
 
 	public DateTime getUpdateDate() {
@@ -575,9 +449,6 @@ public class Package implements Serializable
 		this.updateDate = updateDate;
 	}
 
-	/**
-	 * The AppKey is a runtime type. This only applies for themes that inherit from another theme. It shows the most current update available.
-	 */
 	protected  String updateParentAppKey;
 
 	public String getUpdateParentAppKey() {
@@ -588,9 +459,6 @@ public class Package implements Serializable
 		this.updateParentAppKey = updateParentAppKey;
 	}
 
-	/**
-	 * updateParentThemeName ApiType DOCUMENT_HERE 
-	 */
 	protected  String updateParentThemeName;
 
 	public String getUpdateParentThemeName() {
@@ -601,9 +469,6 @@ public class Package implements Serializable
 		this.updateParentThemeName = updateParentThemeName;
 	}
 
-	/**
-	 * updateParentThemeVersion ApiType DOCUMENT_HERE 
-	 */
 	protected  String updateParentThemeVersion;
 
 	public String getUpdateParentThemeVersion() {
@@ -614,9 +479,6 @@ public class Package implements Serializable
 		this.updateParentThemeVersion = updateParentThemeVersion;
 	}
 
-	/**
-	 * Unique identifier of the customer account (shopper or system user). System-supplied and read-only. If the shopper user is anonymous, the user ID represents a system-generated user ID string.
-	 */
 	protected  String userId;
 
 	public String getUserId() {
@@ -627,9 +489,6 @@ public class Package implements Serializable
 		this.userId = userId;
 	}
 
-	/**
-	 * List of Statuses that the application can move to during the application lifecycle. This is based on what the current value of the ApplicatinStatusId is.
-	 */
 	protected List<Integer> validApplicationStatusIdList;
 	public List<Integer> getValidApplicationStatusIdList() {
 		return this.validApplicationStatusIdList;
@@ -638,9 +497,6 @@ public class Package implements Serializable
 		this.validApplicationStatusIdList = validApplicationStatusIdList;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.Package applicationAttributes ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected List<ApplicationAttribute> applicationAttributes;
 	public List<ApplicationAttribute> getApplicationAttributes() {
 		return this.applicationAttributes;
@@ -649,9 +505,6 @@ public class Package implements Serializable
 		this.applicationAttributes = applicationAttributes;
 	}
 
-	/**
-	 * List of Application Behaviors that apply to this version of the application.
-	 */
 	protected List<ApplicationBehavior> applicationBehaviors;
 	public List<ApplicationBehavior> getApplicationBehaviors() {
 		return this.applicationBehaviors;
@@ -660,9 +513,6 @@ public class Package implements Serializable
 		this.applicationBehaviors = applicationBehaviors;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.Package applicationCapabilities ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected List<ApplicationCapability> applicationCapabilities;
 	public List<ApplicationCapability> getApplicationCapabilities() {
 		return this.applicationCapabilities;
@@ -671,9 +521,6 @@ public class Package implements Serializable
 		this.applicationCapabilities = applicationCapabilities;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.Package applicationCapabilityTypes ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected List<ApplicationCapabilityType> applicationCapabilityTypes;
 	public List<ApplicationCapabilityType> getApplicationCapabilityTypes() {
 		return this.applicationCapabilityTypes;
@@ -682,9 +529,6 @@ public class Package implements Serializable
 		this.applicationCapabilityTypes = applicationCapabilityTypes;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.Package applicationEntitlements ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected List<ApplicationEntitlement> applicationEntitlements;
 	public List<ApplicationEntitlement> getApplicationEntitlements() {
 		return this.applicationEntitlements;
@@ -693,9 +537,6 @@ public class Package implements Serializable
 		this.applicationEntitlements = applicationEntitlements;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.Package applicationSubscriptions ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected List<ApplicationSubscription> applicationSubscriptions;
 	public List<ApplicationSubscription> getApplicationSubscriptions() {
 		return this.applicationSubscriptions;

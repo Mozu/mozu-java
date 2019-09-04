@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.platform.ApplicationResource;
 
 /** <summary>
- * Use the Developer resource to view and update information and files related to application packages.
+ * 
  * </summary>
  */
 public class ApplicationFactory
@@ -123,18 +123,18 @@ public class ApplicationFactory
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.appdev.FileMetadata upsertPackageFile(ApiContext apiContext, java.io.InputStream stream, String applicationKey, String filepath, String  contentType, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.appdev.FileMetadata upsertPackageFile(ApiContext apiContext, String applicationKey, String filepath, int expectedCode) throws Exception
 	{
-		return upsertPackageFile(apiContext,  stream,  applicationKey,  filepath,  null,  null,  contentType, expectedCode);
+		return upsertPackageFile(apiContext,  applicationKey,  filepath,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.appdev.FileMetadata upsertPackageFile(ApiContext apiContext, java.io.InputStream stream, String applicationKey, String filepath, String lastModifiedTime, String responseFields, String  contentType, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.appdev.FileMetadata upsertPackageFile(ApiContext apiContext, String applicationKey, String filepath, String lastModifiedTime, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.appdev.FileMetadata returnObj = new com.mozu.api.contracts.appdev.FileMetadata();
 		ApplicationResource resource = new ApplicationResource(apiContext);
 		try
 		{
-			returnObj = resource.upsertPackageFile( stream,  applicationKey,  filepath,  lastModifiedTime,  responseFields,  contentType);
+			returnObj = resource.upsertPackageFile( applicationKey,  filepath,  lastModifiedTime,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -173,22 +173,24 @@ public class ApplicationFactory
 		return returnObj;
 	}
 
-	public static void deletePackageFile(ApiContext apiContext, String applicationKey, String filepath, int expectedCode) throws Exception
+	public static java.io.InputStream deletePackageFile(ApiContext apiContext, String applicationKey, String filepath, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		ApplicationResource resource = new ApplicationResource(apiContext);
 		try
 		{
-			resource.deletePackageFile( applicationKey,  filepath);
+			returnObj = resource.deletePackageFile( applicationKey,  filepath);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 }

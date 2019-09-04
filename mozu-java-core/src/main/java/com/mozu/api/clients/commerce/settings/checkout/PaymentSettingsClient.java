@@ -30,7 +30,7 @@ public class PaymentSettingsClient {
 	 * client.executeRequest();
 	 * ExternalPaymentWorkflowDefinition externalPaymentWorkflowDefinition = client.Result();
 	 * </code></pre></p>
-	 * @param fullyQualifiedName Fully qualified name of the attribute for the third-party payment workflow.
+	 * @param fullyQualifiedName 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition>
 	 * @see com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition
 	 */
@@ -47,8 +47,8 @@ public class PaymentSettingsClient {
 	 * client.executeRequest();
 	 * ExternalPaymentWorkflowDefinition externalPaymentWorkflowDefinition = client.Result();
 	 * </code></pre></p>
-	 * @param fullyQualifiedName Fully qualified name of the attribute for the third-party payment workflow.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param fullyQualifiedName 
+	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition>
 	 * @see com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition
 	 */
@@ -90,19 +90,22 @@ public class PaymentSettingsClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=AddThirdPartyPaymentWorkflowClient( definition);
+	 * MozuClient<java.io.InputStream> mozuClient=AddThirdPartyPaymentWorkflowClient( definition);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
+	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param definition Properties of an external payment processing workflow defined for the site. At this time, only PayPal Express is supported.
-	 * @return Mozu.Api.MozuClient 
+	 * @param definition 
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
 	 * @see com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition
 	 */
-	public static MozuClient addThirdPartyPaymentWorkflowClient(com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition definition) throws Exception
+	public static MozuClient<java.io.InputStream> addThirdPartyPaymentWorkflowClient(com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition definition) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.settings.checkout.PaymentSettingsUrl.addThirdPartyPaymentWorkflowUrl();
 		String verb = "PUT";
-				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(definition);
@@ -113,18 +116,21 @@ public class PaymentSettingsClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=DeleteThirdPartyPaymentWorkflowClient( fullyQualifiedName);
+	 * MozuClient<java.io.InputStream> mozuClient=DeleteThirdPartyPaymentWorkflowClient( fullyQualifiedName);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
+	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param fullyQualifiedName Fully qualified name of the attribute for the third-party payment workflow.
-	 * @return Mozu.Api.MozuClient 
+	 * @param fullyQualifiedName 
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
 	 */
-	public static MozuClient deleteThirdPartyPaymentWorkflowClient(String fullyQualifiedName) throws Exception
+	public static MozuClient<java.io.InputStream> deleteThirdPartyPaymentWorkflowClient(String fullyQualifiedName) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.settings.checkout.PaymentSettingsUrl.deleteThirdPartyPaymentWorkflowUrl(fullyQualifiedName);
 		String verb = "DELETE";
-				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

@@ -15,29 +15,25 @@ public class InstalledApplicationsUrl
 
 	/**
 	 * Get Resource Url for GetApplication
-	 * @param appId appId parameter description DOCUMENT_HERE 
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param appId The application ID that represents the application to retrieve.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getApplicationUrl(String appId, String responseFields)
+	public static MozuUrl getApplicationUrl(String appId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/platform/applications/{appId}?responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/platform/applications/{appId}");
 		formatter.formatUrl("appId", appId);
-		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for UpdateApplication
-	 * @param appId appId parameter description DOCUMENT_HERE 
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param appId The application ID that represents the application to update.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl updateApplicationUrl(String appId, String responseFields)
+	public static MozuUrl updateApplicationUrl(String appId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/platform/applications/{appId}?responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/platform/applications/{appId}");
 		formatter.formatUrl("appId", appId);
-		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

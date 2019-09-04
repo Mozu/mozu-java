@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.platform.SecureAppDataResource;
 
 /** <summary>
- * Manage Secure App Settings. Expose via arc.js so that arc apps can securely access secrets. Third-party extensions can also access their data. Secured via AppKey.AppId
+ * 
  * </summary>
  */
 public class SecureAppDataFactory
@@ -48,58 +48,64 @@ public class SecureAppDataFactory
 		return returnObj;
 	}
 
-	public static void createDBValue(ApiContext apiContext, com.fasterxml.jackson.databind.JsonNode value, String appKeyId, String dbEntryQuery, int expectedCode) throws Exception
+	public static java.io.InputStream createDBValue(ApiContext apiContext, com.fasterxml.jackson.databind.JsonNode value, String appKeyId, String dbEntryQuery, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		SecureAppDataResource resource = new SecureAppDataResource(apiContext);
 		try
 		{
-			resource.createDBValue( value,  appKeyId,  dbEntryQuery);
+			returnObj = resource.createDBValue( value,  appKeyId,  dbEntryQuery);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
-	public static void updateDBValue(ApiContext apiContext, com.fasterxml.jackson.databind.JsonNode value, String appKeyId, String dbEntryQuery, int expectedCode) throws Exception
+	public static java.io.InputStream updateDBValue(ApiContext apiContext, com.fasterxml.jackson.databind.JsonNode value, String appKeyId, String dbEntryQuery, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		SecureAppDataResource resource = new SecureAppDataResource(apiContext);
 		try
 		{
-			resource.updateDBValue( value,  appKeyId,  dbEntryQuery);
+			returnObj = resource.updateDBValue( value,  appKeyId,  dbEntryQuery);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
-	public static void deleteDBValue(ApiContext apiContext, String appKeyId, String dbEntryQuery, int expectedCode) throws Exception
+	public static java.io.InputStream deleteDBValue(ApiContext apiContext, String appKeyId, String dbEntryQuery, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		SecureAppDataResource resource = new SecureAppDataResource(apiContext);
 		try
 		{
-			resource.deleteDBValue( appKeyId,  dbEntryQuery);
+			returnObj = resource.deleteDBValue( appKeyId,  dbEntryQuery);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 }

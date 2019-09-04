@@ -21,9 +21,6 @@ public class PaymentCard implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The bin number of a branded credit card.
-	 */
 	protected  String bin;
 
 	public String getBin() {
@@ -72,6 +69,16 @@ public class PaymentCard implements Serializable
 
 	public void setIsCardInfoSaved(Boolean isCardInfoSaved) {
 		this.isCardInfoSaved = isCardInfoSaved;
+	}
+
+	protected  Boolean isTokenized;
+
+	public Boolean getIsTokenized() {
+		return this.isTokenized;
+	}
+
+	public void setIsTokenized(Boolean isTokenized) {
+		this.isTokenized = isTokenized;
 	}
 
 	protected  Boolean isUsedRecurring;

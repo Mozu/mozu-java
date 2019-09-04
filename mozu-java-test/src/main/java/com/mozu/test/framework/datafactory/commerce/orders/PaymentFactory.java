@@ -143,6 +143,31 @@ public class PaymentFactory
 		return returnObj;
 	}
 
+	public static com.mozu.api.contracts.commerceruntime.orders.Order autoCapturePayments(ApiContext apiContext, String orderId, int expectedCode) throws Exception
+	{
+		return autoCapturePayments(apiContext,  orderId,  null,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.orders.Order autoCapturePayments(ApiContext apiContext, String orderId, Boolean forceCapture, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.commerceruntime.orders.Order returnObj = new com.mozu.api.contracts.commerceruntime.orders.Order();
+		PaymentResource resource = new PaymentResource(apiContext);
+		try
+		{
+			returnObj = resource.autoCapturePayments( orderId,  forceCapture,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
 }
 
 

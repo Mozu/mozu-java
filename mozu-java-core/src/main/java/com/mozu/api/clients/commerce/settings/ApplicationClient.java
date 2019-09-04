@@ -25,37 +25,20 @@ public class ApplicationClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.sitesettings.application.Application> mozuClient=ThirdPartyGetApplicationClient();
+	 * MozuClient<java.io.InputStream> mozuClient=ThirdPartyGetApplicationClient();
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
-	 * Application application = client.Result();
+	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.application.Application>
-	 * @see com.mozu.api.contracts.sitesettings.application.Application
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
 	 */
-	public static MozuClient<com.mozu.api.contracts.sitesettings.application.Application> thirdPartyGetApplicationClient() throws Exception
+	public static MozuClient<java.io.InputStream> thirdPartyGetApplicationClient() throws Exception
 	{
-		return thirdPartyGetApplicationClient( null);
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.sitesettings.application.Application> mozuClient=ThirdPartyGetApplicationClient( responseFields);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * Application application = client.Result();
-	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.application.Application>
-	 * @see com.mozu.api.contracts.sitesettings.application.Application
-	 */
-	public static MozuClient<com.mozu.api.contracts.sitesettings.application.Application> thirdPartyGetApplicationClient(String responseFields) throws Exception
-	{
-		MozuUrl url = com.mozu.api.urls.commerce.settings.ApplicationUrl.thirdPartyGetApplicationUrl(responseFields);
+		MozuUrl url = com.mozu.api.urls.commerce.settings.ApplicationUrl.thirdPartyGetApplicationUrl();
 		String verb = "GET";
-		Class<?> clz = com.mozu.api.contracts.sitesettings.application.Application.class;
-		MozuClient<com.mozu.api.contracts.sitesettings.application.Application> mozuClient = (MozuClient<com.mozu.api.contracts.sitesettings.application.Application>) MozuClientFactory.getInstance(clz);
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -65,41 +48,22 @@ public class ApplicationClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.sitesettings.application.Application> mozuClient=ThirdPartyUpdateApplicationClient( application);
+	 * MozuClient<java.io.InputStream> mozuClient=ThirdPartyUpdateApplicationClient( application);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
-	 * Application application = client.Result();
+	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param application Properties of an application installed in a tenant.
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.application.Application>
-	 * @see com.mozu.api.contracts.sitesettings.application.Application
+	 * @param application Properties of the application to update.
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
 	 * @see com.mozu.api.contracts.sitesettings.application.Application
 	 */
-	public static MozuClient<com.mozu.api.contracts.sitesettings.application.Application> thirdPartyUpdateApplicationClient(com.mozu.api.contracts.sitesettings.application.Application application) throws Exception
+	public static MozuClient<java.io.InputStream> thirdPartyUpdateApplicationClient(com.mozu.api.contracts.sitesettings.application.Application application) throws Exception
 	{
-		return thirdPartyUpdateApplicationClient( application,  null);
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.sitesettings.application.Application> mozuClient=ThirdPartyUpdateApplicationClient( application,  responseFields);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * Application application = client.Result();
-	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param application Properties of an application installed in a tenant.
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.application.Application>
-	 * @see com.mozu.api.contracts.sitesettings.application.Application
-	 * @see com.mozu.api.contracts.sitesettings.application.Application
-	 */
-	public static MozuClient<com.mozu.api.contracts.sitesettings.application.Application> thirdPartyUpdateApplicationClient(com.mozu.api.contracts.sitesettings.application.Application application, String responseFields) throws Exception
-	{
-		MozuUrl url = com.mozu.api.urls.commerce.settings.ApplicationUrl.thirdPartyUpdateApplicationUrl(responseFields);
+		MozuUrl url = com.mozu.api.urls.commerce.settings.ApplicationUrl.thirdPartyUpdateApplicationUrl();
 		String verb = "PUT";
-		Class<?> clz = com.mozu.api.contracts.sitesettings.application.Application.class;
-		MozuClient<com.mozu.api.contracts.sitesettings.application.Application> mozuClient = (MozuClient<com.mozu.api.contracts.sitesettings.application.Application>) MozuClientFactory.getInstance(clz);
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(application);

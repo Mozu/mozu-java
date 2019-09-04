@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.platform.appdev.AppPackageResource;
 
 /** <summary>
- * This resource is not public.
+ * 
  * </summary>
  */
 public class AppPackageFactory
@@ -243,22 +243,24 @@ public class AppPackageFactory
 		return returnObj;
 	}
 
-	public static void deletePackage(ApiContext apiContext, String applicationKey, int expectedCode) throws Exception
+	public static java.io.InputStream deletePackage(ApiContext apiContext, String applicationKey, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		AppPackageResource resource = new AppPackageResource(apiContext);
 		try
 		{
-			resource.deletePackage( applicationKey);
+			returnObj = resource.deletePackage( applicationKey);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 }

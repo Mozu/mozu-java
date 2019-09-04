@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.platform.EntityListResource;
 
 /** <summary>
- * The Entity Lists resource manages all dynamic entities in your  document store of the  cloud. The content is JSON and can have up to five indexed properties (integer, decimal, string, date, and boolean) with support for additional customized elements as needed. Every document in the entity list has a validated unique ID.
+ * 
  * </summary>
  */
 public class EntityListFactory
@@ -123,22 +123,24 @@ public class EntityListFactory
 		return returnObj;
 	}
 
-	public static void deleteEntityList(ApiContext apiContext, String entityListFullName, int expectedCode) throws Exception
+	public static java.io.InputStream deleteEntityList(ApiContext apiContext, String entityListFullName, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		EntityListResource resource = new EntityListResource(apiContext);
 		try
 		{
-			resource.deleteEntityList( entityListFullName);
+			returnObj = resource.deleteEntityList( entityListFullName);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 }

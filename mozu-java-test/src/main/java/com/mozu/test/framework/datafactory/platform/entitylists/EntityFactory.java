@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.platform.entitylists.EntityResource;
 
 /** <summary>
- * Entities are JSON entries within the MZDBÂ ( Mongo DB) for handling large data sets to heavily filter (&gt;2,000 items). Each entity is associated to an EntityList with schema, rules, and formatting for storing the content. This content can be accessed via the  API and  Hypr tags.
+ * 
  * </summary>
  */
 public class EntityFactory
@@ -123,22 +123,24 @@ public class EntityFactory
 		return returnObj;
 	}
 
-	public static void deleteEntity(ApiContext apiContext, String entityListFullName, String id, int expectedCode) throws Exception
+	public static java.io.InputStream deleteEntity(ApiContext apiContext, String entityListFullName, String id, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		EntityResource resource = new EntityResource(apiContext);
 		try
 		{
-			resource.deleteEntity( entityListFullName,  id);
+			returnObj = resource.deleteEntity( entityListFullName,  id);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 }

@@ -30,7 +30,7 @@ public class AttributeVocabularyValueClient {
 	 * client.executeRequest();
 	 * AttributeVocabularyValue attributeVocabularyValue = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param attributeFQN 
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.AttributeVocabularyValue>>
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValue
@@ -55,8 +55,8 @@ public class AttributeVocabularyValueClient {
 	 * client.executeRequest();
 	 * AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param value The value string to create.
+	 * @param attributeFQN 
+	 * @param value 
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>>
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent
@@ -81,9 +81,9 @@ public class AttributeVocabularyValueClient {
 	 * client.executeRequest();
 	 * AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
-	 * @param value The value string to create.
+	 * @param attributeFQN 
+	 * @param localeCode 
+	 * @param value 
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent
@@ -101,10 +101,10 @@ public class AttributeVocabularyValueClient {
 	 * client.executeRequest();
 	 * AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param value The value string to create.
+	 * @param attributeFQN 
+	 * @param localeCode 
+	 * @param responseFields 
+	 * @param value 
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent
@@ -129,8 +129,8 @@ public class AttributeVocabularyValueClient {
 	 * client.executeRequest();
 	 * AttributeVocabularyValue attributeVocabularyValue = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param value The value string to create.
+	 * @param attributeFQN 
+	 * @param value The actual unique value of the attribute vocabulary to retrieve. A single attribute must have a unique value and match the attribute's data type. If a string value returns null, the system will generate a value. The actual string content displayed shoud be stored as "Content" and actual content is required for string values.
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeVocabularyValue>
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValue
@@ -148,9 +148,9 @@ public class AttributeVocabularyValueClient {
 	 * client.executeRequest();
 	 * AttributeVocabularyValue attributeVocabularyValue = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param value The value string to create.
+	 * @param attributeFQN 
+	 * @param responseFields 
+	 * @param value The actual unique value of the attribute vocabulary to retrieve. A single attribute must have a unique value and match the attribute's data type. If a string value returns null, the system will generate a value. The actual string content displayed shoud be stored as "Content" and actual content is required for string values.
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeVocabularyValue>
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValue
@@ -175,10 +175,10 @@ public class AttributeVocabularyValueClient {
 	 * client.executeRequest();
 	 * AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param value The value string to create.
+	 * @param attributeFQN 
+	 * @param value 
 	 * @param dataViewMode DataViewMode
-	 * @param localizedContent The localized text for the string value of a product attribute.
+	 * @param localizedContent 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent
@@ -196,11 +196,11 @@ public class AttributeVocabularyValueClient {
 	 * client.executeRequest();
 	 * AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param value The value string to create.
+	 * @param attributeFQN 
+	 * @param responseFields 
+	 * @param value 
 	 * @param dataViewMode DataViewMode
-	 * @param localizedContent The localized text for the string value of a product attribute.
+	 * @param localizedContent 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent
@@ -226,9 +226,9 @@ public class AttributeVocabularyValueClient {
 	 * client.executeRequest();
 	 * AttributeVocabularyValue attributeVocabularyValue = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param attributeFQN 
 	 * @param dataViewMode DataViewMode
-	 * @param attributeVocabularyValue Properties of a vocabulary value defined for an extensible attribute.
+	 * @param attributeVocabularyValue The predefined vocabulary value to add to the attribute content.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeVocabularyValue>
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValue
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValue
@@ -246,10 +246,10 @@ public class AttributeVocabularyValueClient {
 	 * client.executeRequest();
 	 * AttributeVocabularyValue attributeVocabularyValue = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param attributeFQN 
+	 * @param responseFields 
 	 * @param dataViewMode DataViewMode
-	 * @param attributeVocabularyValue Properties of a vocabulary value defined for an extensible attribute.
+	 * @param attributeVocabularyValue The predefined vocabulary value to add to the attribute content.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeVocabularyValue>
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValue
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValue
@@ -275,9 +275,9 @@ public class AttributeVocabularyValueClient {
 	 * client.executeRequest();
 	 * AttributeVocabularyValue attributeVocabularyValue = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param attributeFQN 
 	 * @param dataViewMode DataViewMode
-	 * @param vocabularyValues Properties of a vocabulary value defined for an extensible attribute.
+	 * @param vocabularyValues The actual vocabulary values for the attribute being updated.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.AttributeVocabularyValue>>
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValue
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValue
@@ -303,10 +303,10 @@ public class AttributeVocabularyValueClient {
 	 * client.executeRequest();
 	 * AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param value The value string to create.
+	 * @param attributeFQN 
+	 * @param value 
 	 * @param dataViewMode DataViewMode
-	 * @param localizedContent The localized text for the string value of a product attribute.
+	 * @param localizedContent 
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>>
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent
@@ -332,11 +332,11 @@ public class AttributeVocabularyValueClient {
 	 * client.executeRequest();
 	 * AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
-	 * @param value The value string to create.
+	 * @param attributeFQN 
+	 * @param localeCode 
+	 * @param value 
 	 * @param dataViewMode DataViewMode
-	 * @param localizedContent The localized text for the string value of a product attribute.
+	 * @param localizedContent 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent
@@ -354,12 +354,12 @@ public class AttributeVocabularyValueClient {
 	 * client.executeRequest();
 	 * AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param value The value string to create.
+	 * @param attributeFQN 
+	 * @param localeCode 
+	 * @param responseFields 
+	 * @param value 
 	 * @param dataViewMode DataViewMode
-	 * @param localizedContent The localized text for the string value of a product attribute.
+	 * @param localizedContent 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent
@@ -385,10 +385,10 @@ public class AttributeVocabularyValueClient {
 	 * client.executeRequest();
 	 * AttributeVocabularyValue attributeVocabularyValue = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param value The value string to create.
+	 * @param attributeFQN 
+	 * @param value The actual unique value of the attribute vocabulary value to update. A single attribute must have a unique value and match the attribute's data type. If a string value returns null, the system will generate a value. The actual string content displayed shoud be stored as "Content" and actual content is required for string values.
 	 * @param dataViewMode DataViewMode
-	 * @param attributeVocabularyValue Properties of a vocabulary value defined for an extensible attribute.
+	 * @param attributeVocabularyValue The predefined vocabulary value to add to the attribute content to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeVocabularyValue>
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValue
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValue
@@ -406,11 +406,11 @@ public class AttributeVocabularyValueClient {
 	 * client.executeRequest();
 	 * AttributeVocabularyValue attributeVocabularyValue = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param value The value string to create.
+	 * @param attributeFQN 
+	 * @param responseFields 
+	 * @param value The actual unique value of the attribute vocabulary value to update. A single attribute must have a unique value and match the attribute's data type. If a string value returns null, the system will generate a value. The actual string content displayed shoud be stored as "Content" and actual content is required for string values.
 	 * @param dataViewMode DataViewMode
-	 * @param attributeVocabularyValue Properties of a vocabulary value defined for an extensible attribute.
+	 * @param attributeVocabularyValue The predefined vocabulary value to add to the attribute content to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeVocabularyValue>
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValue
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValue
@@ -431,20 +431,23 @@ public class AttributeVocabularyValueClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=DeleteAttributeVocabularyValueClient( attributeFQN,  value);
+	 * MozuClient<java.io.InputStream> mozuClient=DeleteAttributeVocabularyValueClient( attributeFQN,  value);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
+	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param value The value string to create.
+	 * @param attributeFQN 
+	 * @param value The actual unique value of the attribute vocabulary to delete. A single attribute must have a unique value and match the attribute's data type. If a string value returns null, the system will generate a value. The actual string content displayed shoud be stored as "Content" and actual content is required for string values.
 	 * @param dataViewMode DataViewMode
-	 * @return Mozu.Api.MozuClient 
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
 	 */
-	public static MozuClient deleteAttributeVocabularyValueClient(String attributeFQN, String value) throws Exception
+	public static MozuClient<java.io.InputStream> deleteAttributeVocabularyValueClient(String attributeFQN, String value) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.attributes.AttributeVocabularyValueUrl.deleteAttributeVocabularyValueUrl(attributeFQN, value);
 		String verb = "DELETE";
-				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -454,21 +457,24 @@ public class AttributeVocabularyValueClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=DeleteAttributeVocabularyValueLocalizedContentClient( attributeFQN,  value,  localeCode);
+	 * MozuClient<java.io.InputStream> mozuClient=DeleteAttributeVocabularyValueLocalizedContentClient( attributeFQN,  value,  localeCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
+	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
-	 * @param value The value string to create.
+	 * @param attributeFQN 
+	 * @param localeCode 
+	 * @param value 
 	 * @param dataViewMode DataViewMode
-	 * @return Mozu.Api.MozuClient 
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
 	 */
-	public static MozuClient deleteAttributeVocabularyValueLocalizedContentClient(String attributeFQN, String value, String localeCode) throws Exception
+	public static MozuClient<java.io.InputStream> deleteAttributeVocabularyValueLocalizedContentClient(String attributeFQN, String value, String localeCode) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.attributes.AttributeVocabularyValueUrl.deleteAttributeVocabularyValueLocalizedContentUrl(attributeFQN, localeCode, value);
 		String verb = "DELETE";
-				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

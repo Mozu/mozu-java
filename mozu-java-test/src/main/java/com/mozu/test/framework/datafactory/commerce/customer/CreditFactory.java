@@ -123,27 +123,29 @@ public class CreditFactory
 		return returnObj;
 	}
 
-	public static void resendCreditCreatedEmail(ApiContext apiContext, String code, int expectedCode) throws Exception
+	public static java.io.InputStream resendCreditCreatedEmail(ApiContext apiContext, String code, int expectedCode) throws Exception
 	{
-		resendCreditCreatedEmail(apiContext,  code,  null, expectedCode);
+		return resendCreditCreatedEmail(apiContext,  code,  null, expectedCode);
 	}
 
-	public static void resendCreditCreatedEmail(ApiContext apiContext, String code, String userId, int expectedCode) throws Exception
+	public static java.io.InputStream resendCreditCreatedEmail(ApiContext apiContext, String code, String userId, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		CreditResource resource = new CreditResource(apiContext);
 		try
 		{
-			resource.resendCreditCreatedEmail( code,  userId);
+			returnObj = resource.resendCreditCreatedEmail( code,  userId);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 	public static com.mozu.api.contracts.customer.credit.Credit updateCredit(ApiContext apiContext, com.mozu.api.contracts.customer.credit.Credit credit, String code, int expectedCode) throws Exception
@@ -171,22 +173,24 @@ public class CreditFactory
 		return returnObj;
 	}
 
-	public static void deleteCredit(ApiContext apiContext, String code, int expectedCode) throws Exception
+	public static java.io.InputStream deleteCredit(ApiContext apiContext, String code, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		CreditResource resource = new CreditResource(apiContext);
 		try
 		{
-			resource.deleteCredit( code);
+			returnObj = resource.deleteCredit( code);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 }

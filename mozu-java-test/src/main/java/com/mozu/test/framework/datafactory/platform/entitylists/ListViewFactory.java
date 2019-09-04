@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.platform.entitylists.ListViewResource;
 
 /** <summary>
- * Provides settings and options for displaying associated content within a context level of site, tenant, catalog, or master catalog. ListViews can be associated with entity lists and entities.
+ * 
  * </summary>
  */
 public class ListViewFactory
@@ -223,22 +223,24 @@ public class ListViewFactory
 		return returnObj;
 	}
 
-	public static void deleteEntityListView(ApiContext apiContext, String entityListFullName, String viewName, int expectedCode) throws Exception
+	public static java.io.InputStream deleteEntityListView(ApiContext apiContext, String entityListFullName, String viewName, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		ListViewResource resource = new ListViewResource(apiContext);
 		try
 		{
-			resource.deleteEntityListView( entityListFullName,  viewName);
+			returnObj = resource.deleteEntityListView( entityListFullName,  viewName);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 }

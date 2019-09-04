@@ -17,28 +17,30 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.platform.extensions.CredentialStoreEntryResource;
 
 /** <summary>
- * The CredentialStore resource allows you to encrypt and store sensitive data on your tenant. You can then decrypt and access that data using an Arc.js application, as described in the Arc.js [Programming Patterns](https://www.mozu.com/docs/developer/arcjs-guides/programming-patterns.htm#securely_store_and_access_sensitive_data) topic.
+ * 
  * </summary>
  */
 public class CredentialStoreEntryFactory
 {
 
-	public static void storeCredentials(ApiContext apiContext, com.mozu.api.contracts.installedapplications.CredentialStoreEntry credentials, int expectedCode) throws Exception
+	public static java.io.InputStream storeCredentials(ApiContext apiContext, com.mozu.api.contracts.installedapplications.CredentialStoreEntry credentials, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		CredentialStoreEntryResource resource = new CredentialStoreEntryResource(apiContext);
 		try
 		{
-			resource.storeCredentials( credentials);
+			returnObj = resource.storeCredentials( credentials);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 }

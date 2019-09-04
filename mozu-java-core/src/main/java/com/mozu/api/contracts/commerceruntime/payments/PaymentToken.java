@@ -12,18 +12,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	The token used to authorize the payment request.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PaymentToken implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The identifier of the payment service token.
-	 */
 	protected  String paymentServiceTokenId;
 
 	public String getPaymentServiceTokenId() {
@@ -34,9 +28,6 @@ public class PaymentToken implements Serializable
 		this.paymentServiceTokenId = paymentServiceTokenId;
 	}
 
-	/**
-	 * The type of token being provided for the payment.
-	 */
 	protected  String type;
 
 	public String getType() {

@@ -17,7 +17,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Provides settings and options for displaying associated content within a context level of site, tenant, catalog, or master catalog. ListViews can be associated with entity lists and entities.
+ * 
  * </summary>
  */
 public class ListViewClient {
@@ -30,9 +30,9 @@ public class ListViewClient {
 	 * client.executeRequest();
 	 * JObject json = client.Result();
 	 * </code></pre></p>
-	 * @param entityId Unique identifier for an entity, which defines the schema, rules, and formats for JSON entities within the MZDB ( Mongo DB).
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param viewName The name for a view. Views are used to render data in , such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param entityId 
+	 * @param entityListFullName 
+	 * @param viewName 
 	 * @return Mozu.Api.MozuClient <JObject>
 	 * @see JObject
 	 */
@@ -49,10 +49,10 @@ public class ListViewClient {
 	 * client.executeRequest();
 	 * JObject json = client.Result();
 	 * </code></pre></p>
-	 * @param entityId Unique identifier for an entity, which defines the schema, rules, and formats for JSON entities within the MZDB ( Mongo DB).
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param viewName The name for a view. Views are used to render data in , such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param entityId 
+	 * @param entityListFullName 
+	 * @param responseFields 
+	 * @param viewName 
 	 * @return Mozu.Api.MozuClient <JObject>
 	 * @see JObject
 	 */
@@ -76,8 +76,8 @@ public class ListViewClient {
 	 * client.executeRequest();
 	 * EntityCollection entityCollection = client.Result();
 	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param viewName The name for a view. Views are used to render data in , such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param entityListFullName 
+	 * @param viewName 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.EntityCollection>
 	 * @see com.mozu.api.contracts.mzdb.EntityCollection
 	 */
@@ -94,12 +94,12 @@ public class ListViewClient {
 	 * client.executeRequest();
 	 * EntityCollection entityCollection = client.Result();
 	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
-	 * @param viewName The name for a view. Views are used to render data in , such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param entityListFullName 
+	 * @param filter 
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param startIndex 
+	 * @param viewName 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.EntityCollection>
 	 * @see com.mozu.api.contracts.mzdb.EntityCollection
 	 */
@@ -123,9 +123,9 @@ public class ListViewClient {
 	 * client.executeRequest();
 	 * EntityContainer entityContainer = client.Result();
 	 * </code></pre></p>
-	 * @param entityId Unique identifier for an entity, which defines the schema, rules, and formats for JSON entities within the MZDB ( Mongo DB).
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param viewName The name for a view. Views are used to render data in , such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param entityId 
+	 * @param entityListFullName 
+	 * @param viewName 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.EntityContainer>
 	 * @see com.mozu.api.contracts.mzdb.EntityContainer
 	 */
@@ -142,10 +142,10 @@ public class ListViewClient {
 	 * client.executeRequest();
 	 * EntityContainer entityContainer = client.Result();
 	 * </code></pre></p>
-	 * @param entityId Unique identifier for an entity, which defines the schema, rules, and formats for JSON entities within the MZDB ( Mongo DB).
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param viewName The name for a view. Views are used to render data in , such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param entityId 
+	 * @param entityListFullName 
+	 * @param responseFields 
+	 * @param viewName 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.EntityContainer>
 	 * @see com.mozu.api.contracts.mzdb.EntityContainer
 	 */
@@ -169,8 +169,8 @@ public class ListViewClient {
 	 * client.executeRequest();
 	 * EntityContainerCollection entityContainerCollection = client.Result();
 	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param viewName The name for a view. Views are used to render data in , such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param entityListFullName 
+	 * @param viewName 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.EntityContainerCollection>
 	 * @see com.mozu.api.contracts.mzdb.EntityContainerCollection
 	 */
@@ -187,12 +187,12 @@ public class ListViewClient {
 	 * client.executeRequest();
 	 * EntityContainerCollection entityContainerCollection = client.Result();
 	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
-	 * @param viewName The name for a view. Views are used to render data in , such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param entityListFullName 
+	 * @param filter 
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param startIndex 
+	 * @param viewName 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.EntityContainerCollection>
 	 * @see com.mozu.api.contracts.mzdb.EntityContainerCollection
 	 */
@@ -216,8 +216,8 @@ public class ListViewClient {
 	 * client.executeRequest();
 	 * ListView listView = client.Result();
 	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param viewName The name for a view. Views are used to render data in , such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param entityListFullName 
+	 * @param viewName 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.ListView>
 	 * @see com.mozu.api.contracts.mzdb.ListView
 	 */
@@ -234,9 +234,9 @@ public class ListViewClient {
 	 * client.executeRequest();
 	 * ListView listView = client.Result();
 	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param viewName The name for a view. Views are used to render data in , such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param entityListFullName 
+	 * @param responseFields 
+	 * @param viewName 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.ListView>
 	 * @see com.mozu.api.contracts.mzdb.ListView
 	 */
@@ -260,7 +260,7 @@ public class ListViewClient {
 	 * client.executeRequest();
 	 * ListViewCollection listViewCollection = client.Result();
 	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param entityListFullName 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.ListViewCollection>
 	 * @see com.mozu.api.contracts.mzdb.ListViewCollection
 	 */
@@ -277,8 +277,8 @@ public class ListViewClient {
 	 * client.executeRequest();
 	 * ListViewCollection listViewCollection = client.Result();
 	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param entityListFullName 
+	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.ListViewCollection>
 	 * @see com.mozu.api.contracts.mzdb.ListViewCollection
 	 */
@@ -302,8 +302,8 @@ public class ListViewClient {
 	 * client.executeRequest();
 	 * ListView listView = client.Result();
 	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param listView Properties for the list view that specifies what fields and content display per page load. All associated fields in the list view correspond with object data.
+	 * @param entityListFullName 
+	 * @param listView 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.ListView>
 	 * @see com.mozu.api.contracts.mzdb.ListView
 	 * @see com.mozu.api.contracts.mzdb.ListView
@@ -321,9 +321,9 @@ public class ListViewClient {
 	 * client.executeRequest();
 	 * ListView listView = client.Result();
 	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param listView Properties for the list view that specifies what fields and content display per page load. All associated fields in the list view correspond with object data.
+	 * @param entityListFullName 
+	 * @param responseFields 
+	 * @param listView 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.ListView>
 	 * @see com.mozu.api.contracts.mzdb.ListView
 	 * @see com.mozu.api.contracts.mzdb.ListView
@@ -349,9 +349,9 @@ public class ListViewClient {
 	 * client.executeRequest();
 	 * ListView listView = client.Result();
 	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param viewName The name for a view. Views are used to render data in , such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
-	 * @param listView Properties for the list view that specifies what fields and content display per page load. All associated fields in the list view correspond with object data.
+	 * @param entityListFullName 
+	 * @param viewName 
+	 * @param listView 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.ListView>
 	 * @see com.mozu.api.contracts.mzdb.ListView
 	 * @see com.mozu.api.contracts.mzdb.ListView
@@ -369,10 +369,10 @@ public class ListViewClient {
 	 * client.executeRequest();
 	 * ListView listView = client.Result();
 	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param viewName The name for a view. Views are used to render data in , such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
-	 * @param listView Properties for the list view that specifies what fields and content display per page load. All associated fields in the list view correspond with object data.
+	 * @param entityListFullName 
+	 * @param responseFields 
+	 * @param viewName 
+	 * @param listView 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.ListView>
 	 * @see com.mozu.api.contracts.mzdb.ListView
 	 * @see com.mozu.api.contracts.mzdb.ListView
@@ -393,19 +393,22 @@ public class ListViewClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=DeleteEntityListViewClient( entityListFullName,  viewName);
+	 * MozuClient<java.io.InputStream> mozuClient=DeleteEntityListViewClient( entityListFullName,  viewName);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
+	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param viewName The name for a view. Views are used to render data in , such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
-	 * @return Mozu.Api.MozuClient 
+	 * @param entityListFullName 
+	 * @param viewName 
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
 	 */
-	public static MozuClient deleteEntityListViewClient(String entityListFullName, String viewName) throws Exception
+	public static MozuClient<java.io.InputStream> deleteEntityListViewClient(String entityListFullName, String viewName) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.platform.entitylists.ListViewUrl.deleteEntityListViewUrl(entityListFullName, viewName);
 		String verb = "DELETE";
-				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

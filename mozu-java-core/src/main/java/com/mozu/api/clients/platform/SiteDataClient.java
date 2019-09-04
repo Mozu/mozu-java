@@ -17,7 +17,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the site data resource to store site-level information required for a third-party application in the  database.
+ * Use the site data resource to store site-level information required for a third-party application in the Mozu database.
  * </summary>
  */
 public class SiteDataClient {
@@ -30,7 +30,7 @@ public class SiteDataClient {
 	 * client.executeRequest();
 	 * string string = client.Result();
 	 * </code></pre></p>
-	 * @param dbEntryQuery The database entry string to create.
+	 * @param dbEntryQuery The database entry query string used to retrieve the record information.
 	 * @return Mozu.Api.MozuClient <string>
 	 * @see string
 	 */
@@ -47,8 +47,8 @@ public class SiteDataClient {
 	 * client.executeRequest();
 	 * string string = client.Result();
 	 * </code></pre></p>
-	 * @param dbEntryQuery The database entry string to create.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param dbEntryQuery The database entry query string used to retrieve the record information.
+	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <string>
 	 * @see string
 	 */
@@ -67,20 +67,23 @@ public class SiteDataClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=CreateDBValueClient( value,  dbEntryQuery);
+	 * MozuClient<java.io.InputStream> mozuClient=CreateDBValueClient( value,  dbEntryQuery);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
+	 * Stream stream = client.Result();
 	 * </code></pre></p>
 	 * @param dbEntryQuery The database entry string to create.
 	 * @param value The value string to create.
-	 * @return Mozu.Api.MozuClient 
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
 	 * @see string
 	 */
-	public static MozuClient createDBValueClient(String value, String dbEntryQuery) throws Exception
+	public static MozuClient<java.io.InputStream> createDBValueClient(String value, String dbEntryQuery) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.platform.SiteDataUrl.createDBValueUrl(dbEntryQuery);
 		String verb = "POST";
-				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(value);
@@ -91,20 +94,23 @@ public class SiteDataClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=UpdateDBValueClient( value,  dbEntryQuery);
+	 * MozuClient<java.io.InputStream> mozuClient=UpdateDBValueClient( value,  dbEntryQuery);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
+	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param dbEntryQuery The database entry string to create.
-	 * @param value The value string to create.
-	 * @return Mozu.Api.MozuClient 
+	 * @param dbEntryQuery The database entry query string used to update the record information.
+	 * @param value The database value to update.
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
 	 * @see string
 	 */
-	public static MozuClient updateDBValueClient(String value, String dbEntryQuery) throws Exception
+	public static MozuClient<java.io.InputStream> updateDBValueClient(String value, String dbEntryQuery) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.platform.SiteDataUrl.updateDBValueUrl(dbEntryQuery);
 		String verb = "PUT";
-				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(value);
@@ -115,18 +121,21 @@ public class SiteDataClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=DeleteDBValueClient( dbEntryQuery);
+	 * MozuClient<java.io.InputStream> mozuClient=DeleteDBValueClient( dbEntryQuery);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
+	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param dbEntryQuery The database entry string to create.
-	 * @return Mozu.Api.MozuClient 
+	 * @param dbEntryQuery The database entry string to delete.
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
 	 */
-	public static MozuClient deleteDBValueClient(String dbEntryQuery) throws Exception
+	public static MozuClient<java.io.InputStream> deleteDBValueClient(String dbEntryQuery) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.platform.SiteDataUrl.deleteDBValueUrl(dbEntryQuery);
 		String verb = "DELETE";
-				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

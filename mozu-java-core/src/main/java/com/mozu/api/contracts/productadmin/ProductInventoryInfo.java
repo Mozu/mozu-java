@@ -21,16 +21,6 @@ public class ProductInventoryInfo implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected  Boolean manageStock;
-
-	public Boolean getManageStock() {
-		return this.manageStock;
-	}
-
-	public void setManageStock(Boolean manageStock) {
-		this.manageStock = manageStock;
-	}
-
 	protected  String outOfStockBehavior;
 
 	public String getOutOfStockBehavior() {
@@ -39,6 +29,16 @@ public class ProductInventoryInfo implements Serializable
 
 	public void setOutOfStockBehavior(String outOfStockBehavior) {
 		this.outOfStockBehavior = outOfStockBehavior;
+	}
+
+	protected  Boolean manageStock;
+
+	public Boolean getManageStock() {
+		return this.manageStock;
+	}
+
+	public void setManageStock(Boolean manageStock) {
+		this.manageStock = manageStock;
 	}
 
 

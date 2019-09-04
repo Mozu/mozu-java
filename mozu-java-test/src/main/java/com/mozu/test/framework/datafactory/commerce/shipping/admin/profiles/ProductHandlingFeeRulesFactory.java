@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.shipping.admin.profiles.ProductHandlingFeeRulesResource;
 
 /** <summary>
- * Use the ProductHandlingFeeRules sub-resource to manage your product handling fee rules that are associated with a specific shipping profile.
+ * 
  * </summary>
  */
 public class ProductHandlingFeeRulesFactory
@@ -123,22 +123,24 @@ public class ProductHandlingFeeRulesFactory
 		return returnObj;
 	}
 
-	public static void deleteProductHandlingFeeRule(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String profilecode, String id, int expectedCode) throws Exception
+	public static java.io.InputStream deleteProductHandlingFeeRule(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String profilecode, String id, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		ProductHandlingFeeRulesResource resource = new ProductHandlingFeeRulesResource(apiContext, dataViewMode);
 		try
 		{
-			resource.deleteProductHandlingFeeRule( profilecode,  id);
+			returnObj = resource.deleteProductHandlingFeeRule( profilecode,  id);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 }

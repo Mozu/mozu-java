@@ -31,9 +31,6 @@ public class Location implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Allow fullfillment with no (or less) stock
-	 */
 	protected  Boolean allowFulfillmentWithNoStock;
 
 	public Boolean getAllowFulfillmentWithNoStock() {
@@ -64,6 +61,16 @@ public class Location implements Serializable
 		this.description = description;
 	}
 
+	protected  Boolean express;
+
+	public Boolean getExpress() {
+		return this.express;
+	}
+
+	public void setExpress(Boolean express) {
+		this.express = express;
+	}
+
 	protected  String fax;
 
 	public String getFax() {
@@ -74,9 +81,26 @@ public class Location implements Serializable
 		this.fax = fax;
 	}
 
-	/**
-	 * Locations is disabled (soft delete)
-	 */
+	protected  Boolean includeInInventoryAggregrate;
+
+	public Boolean getIncludeInInventoryAggregrate() {
+		return this.includeInInventoryAggregrate;
+	}
+
+	public void setIncludeInInventoryAggregrate(Boolean includeInInventoryAggregrate) {
+		this.includeInInventoryAggregrate = includeInInventoryAggregrate;
+	}
+
+	protected  Boolean includeInLocationExport;
+
+	public Boolean getIncludeInLocationExport() {
+		return this.includeInLocationExport;
+	}
+
+	public void setIncludeInLocationExport(Boolean includeInLocationExport) {
+		this.includeInLocationExport = includeInLocationExport;
+	}
+
 	protected  Boolean isDisabled;
 
 	public Boolean getIsDisabled() {
@@ -135,6 +159,26 @@ public class Location implements Serializable
 		this.tags = tags;
 	}
 
+	protected  Boolean transferEnabled;
+
+	public Boolean getTransferEnabled() {
+		return this.transferEnabled;
+	}
+
+	public void setTransferEnabled(Boolean transferEnabled) {
+		this.transferEnabled = transferEnabled;
+	}
+
+	protected  Boolean warehouseEnabled;
+
+	public Boolean getWarehouseEnabled() {
+		return this.warehouseEnabled;
+	}
+
+	public void setWarehouseEnabled(Boolean warehouseEnabled) {
+		this.warehouseEnabled = warehouseEnabled;
+	}
+
 	protected  Address address;
 
 	public Address getAddress() {
@@ -145,9 +189,6 @@ public class Location implements Serializable
 		this.address = address;
 	}
 
-	/**
-	 * Collection of attributes that may be paged list or a list, depending on the usage per object and API type.
-	 */
 	protected List<LocationAttribute> attributes;
 	public List<LocationAttribute> getAttributes() {
 		return this.attributes;

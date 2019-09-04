@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.catalog.admin.DiscountResource;
 
 /** <summary>
- * Use the Discounts resource to define and manage discounts to apply to products, product categories, or orders. The discounts can be a specified amount off the price, percentage off the price, or for free shipping. You can create a coupon code that shoppers can use to redeem the discount.
+ * Define and manage discounts to apply to products, product categories, or orders. The discounts can be a specified amount off the price, percentage off the price, or for free shipping. Create a coupon code that shoppers can use to redeem the discount.
  * </summary>
  */
 public class DiscountFactory
@@ -198,22 +198,24 @@ public class DiscountFactory
 		return returnObj;
 	}
 
-	public static void deleteDiscount(ApiContext apiContext, Integer discountId, int expectedCode) throws Exception
+	public static java.io.InputStream deleteDiscount(ApiContext apiContext, Integer discountId, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		DiscountResource resource = new DiscountResource(apiContext);
 		try
 		{
-			resource.deleteDiscount( discountId);
+			returnObj = resource.deleteDiscount( discountId);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 }

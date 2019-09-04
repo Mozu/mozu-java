@@ -19,7 +19,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use this resource to manage discounts on the Checkouts resource.
+ * 
  * </summary>
  */
 public class AppliedDiscountClient {
@@ -32,8 +32,8 @@ public class AppliedDiscountClient {
 	 * client.executeRequest();
 	 * Checkout checkout = client.Result();
 	 * </code></pre></p>
-	 * @param checkoutId The unique identifier of the checkout.
-	 * @param couponCode Code associated with the coupon to remove from the cart.
+	 * @param checkoutId 
+	 * @param couponCode 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.checkouts.Checkout>
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 */
@@ -50,9 +50,9 @@ public class AppliedDiscountClient {
 	 * client.executeRequest();
 	 * Checkout checkout = client.Result();
 	 * </code></pre></p>
-	 * @param checkoutId The unique identifier of the checkout.
-	 * @param couponCode Code associated with the coupon to remove from the cart.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param checkoutId 
+	 * @param couponCode 
+	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.checkouts.Checkout>
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 */
@@ -76,7 +76,7 @@ public class AppliedDiscountClient {
 	 * client.executeRequest();
 	 * Checkout checkout = client.Result();
 	 * </code></pre></p>
-	 * @param checkoutId The unique identifier of the checkout.
+	 * @param checkoutId 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.checkouts.Checkout>
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 */
@@ -100,8 +100,8 @@ public class AppliedDiscountClient {
 	 * client.executeRequest();
 	 * Checkout checkout = client.Result();
 	 * </code></pre></p>
-	 * @param checkoutId The unique identifier of the checkout.
-	 * @param couponCode Code associated with the coupon to remove from the cart.
+	 * @param checkoutId 
+	 * @param couponCode 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.checkouts.Checkout>
 	 * @see com.mozu.api.contracts.commerceruntime.checkouts.Checkout
 	 */

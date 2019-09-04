@@ -353,58 +353,64 @@ public class ProductVariationFactory
 		return returnObj;
 	}
 
-	public static void deleteProductVariation(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String variationKey, int expectedCode) throws Exception
+	public static java.io.InputStream deleteProductVariation(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String variationKey, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		ProductVariationResource resource = new ProductVariationResource(apiContext, dataViewMode);
 		try
 		{
-			resource.deleteProductVariation( productCode,  variationKey);
+			returnObj = resource.deleteProductVariation( productCode,  variationKey);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
-	public static void deleteProductVariationLocalizedDeltaPrice(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String variationKey, String currencyCode, int expectedCode) throws Exception
+	public static java.io.InputStream deleteProductVariationLocalizedDeltaPrice(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String variationKey, String currencyCode, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		ProductVariationResource resource = new ProductVariationResource(apiContext, dataViewMode);
 		try
 		{
-			resource.deleteProductVariationLocalizedDeltaPrice( productCode,  variationKey,  currencyCode);
+			returnObj = resource.deleteProductVariationLocalizedDeltaPrice( productCode,  variationKey,  currencyCode);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
-	public static void deleteProductVariationLocalizedPrice(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String variationKey, String currencyCode, int expectedCode) throws Exception
+	public static java.io.InputStream deleteProductVariationLocalizedPrice(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String variationKey, String currencyCode, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		ProductVariationResource resource = new ProductVariationResource(apiContext, dataViewMode);
 		try
 		{
-			resource.deleteProductVariationLocalizedPrice( productCode,  variationKey,  currencyCode);
+			returnObj = resource.deleteProductVariationLocalizedPrice( productCode,  variationKey,  currencyCode);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 }

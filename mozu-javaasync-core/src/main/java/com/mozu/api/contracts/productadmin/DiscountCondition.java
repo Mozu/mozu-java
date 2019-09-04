@@ -27,7 +27,7 @@ public class DiscountCondition implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The coupon code that a shopper uses to redeem an associated discount  on a purchase. This is also the unique identifier of the coupon itself.
+	 * If the discount is a coupon, the code required to redeem the coupon.
 	 */
 	protected  String couponCode;
 
@@ -40,7 +40,7 @@ public class DiscountCondition implements Serializable
 	}
 
 	/**
-	 * Date and time in UTC format when a discount, credit, wish list, or cart expires. An expired discount no longer can be redeemed. An expired wish list is no longer available. An expired credit can no longer be redeemed for a purchase. Acart becomes inactive and expired based on a system-calculated interval. For example, if an anonymous shopper has 14 days of inactivity, the cart is considered abandoned after that period of inactivity. System-supplied and read-only.
+	 * The date and time on which the discount expires and cannot be redeemed.
 	 */
 	protected  DateTime expirationDate;
 
@@ -52,9 +52,6 @@ public class DiscountCondition implements Serializable
 		this.expirationDate = expirationDate;
 	}
 
-	/**
-	 * List of payment types that trigger this discount to be valid.
-	 */
 	protected List<String> includedPaymentWorkflows;
 	public List<String> getIncludedPaymentWorkflows() {
 		return this.includedPaymentWorkflows;
@@ -63,9 +60,6 @@ public class DiscountCondition implements Serializable
 		this.includedPaymentWorkflows = includedPaymentWorkflows;
 	}
 
-	/**
-	 * This allows you to set a maximum order total as a condition of a discount, so the discount only applies when the shopper has an order totaling less than that value. This allows you to have more control over when discounts should or should not apply in order to control costs, especially when combined with a minimum order value to create a range of order values that are eligible for the discount. This can be used in addition to other discount conditions as well.
-	 */
 	protected  Double maximumOrderAmount;
 
 	public Double getMaximumOrderAmount() {
@@ -90,7 +84,7 @@ public class DiscountCondition implements Serializable
 	}
 
 	/**
-	 * This specifies the minimum amount that must be purchased in the combined categories defined in IncludedCategories. This amount is calculated before discounting and it is not used if IncludedCategories is empty.
+	 * This pecifies the minimum amount that must be purchased in the combined categories defined in IncludedCategories. This amount is calculated before discounting and it is not used if IncludedCategories is empty.
 	 */
 	protected  Double minimumCategorySubtotalBeforeDiscounts;
 
@@ -129,7 +123,7 @@ public class DiscountCondition implements Serializable
 	}
 
 	/**
-	 * This specifies the minimum quantity of products in the categories specified in IncludedCategories, which must be purchased to qualify for the associated discount. This defaults to 1 if null, and IncludedCategories has values.
+	 * This specifies the minimum quantity of products in the categories specified in IncludedCategories, which must be purchased to qualify for the associated discount. This defaults to 1 if  null, and IncludedCategories has values.
 	 */
 	protected  Integer minimumQuantityProductsRequiredInCategories;
 
@@ -142,7 +136,7 @@ public class DiscountCondition implements Serializable
 	}
 
 	/**
-	 * This specifies the minimum quantity of products in the specified IncludedProducts that must be purchased to qualify for the associated discount. This defaults to 1 if null, and IncludedProducts has values.
+	 * This specifies the minimum quantity of products in the specified IncludedProducts that must be purchased to qualify for the associated discount. This defaults to 1 if  null, and IncludedProducts has values.
 	 */
 	protected  Integer minimumQuantityRequiredProducts;
 
@@ -154,9 +148,6 @@ public class DiscountCondition implements Serializable
 		this.minimumQuantityRequiredProducts = minimumQuantityRequiredProducts;
 	}
 
-	/**
-	 * minimumRequiredQuantityPerRedemption ApiType DOCUMENT_HERE 
-	 */
 	protected  Integer minimumRequiredQuantityPerRedemption;
 
 	public Integer getMinimumRequiredQuantityPerRedemption() {
@@ -237,7 +228,7 @@ public class DiscountCondition implements Serializable
 	}
 
 	/**
-	 * List of products that are not eligible for the discount.
+	 * List of the products that are not eligible for the discount.
 	 */
 	protected List<ProductDiscountCondition> excludedProducts;
 	public List<ProductDiscountCondition> getExcludedProducts() {

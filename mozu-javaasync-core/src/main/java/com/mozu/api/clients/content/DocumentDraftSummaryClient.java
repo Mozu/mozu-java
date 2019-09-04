@@ -48,10 +48,10 @@ public class DocumentDraftSummaryClient {
 	 * client.executeRequest();
 	 * DocumentDraftSummaryPagedCollection documentDraftSummaryPagedCollection = client.Result();
 	 * </code></pre></p>
-	 * @param documentLists List of document lists that contain documents to delete.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param documentLists Lists that contain the document drafts.
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param startIndex 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection>
 	 * @see com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection
 	 */
@@ -70,15 +70,17 @@ public class DocumentDraftSummaryClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=DeleteDocumentDraftsClient( documentIds);
+	 * MozuClient<java.io.InputStream> mozuClient=DeleteDocumentDraftsClient( documentIds);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
+	 * Stream stream = client.Result();
 	 * </code></pre></p>
 	 * @param documentIds Unique identifiers of the documents to delete.
-	 * @return Mozu.Api.MozuClient 
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
 	 * @see string
 	 */
-	public static MozuClient deleteDocumentDraftsClient(List<String> documentIds) throws Exception
+	public static MozuClient<java.io.InputStream> deleteDocumentDraftsClient(List<String> documentIds) throws Exception
 	{
 		return deleteDocumentDraftsClient( documentIds,  null);
 	}
@@ -86,20 +88,23 @@ public class DocumentDraftSummaryClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=DeleteDocumentDraftsClient( documentIds,  documentLists);
+	 * MozuClient<java.io.InputStream> mozuClient=DeleteDocumentDraftsClient( documentIds,  documentLists);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
+	 * Stream stream = client.Result();
 	 * </code></pre></p>
 	 * @param documentLists List of document lists that contain documents to delete.
 	 * @param documentIds Unique identifiers of the documents to delete.
-	 * @return Mozu.Api.MozuClient 
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
 	 * @see string
 	 */
-	public static MozuClient deleteDocumentDraftsClient(List<String> documentIds, String documentLists) throws Exception
+	public static MozuClient<java.io.InputStream> deleteDocumentDraftsClient(List<String> documentIds, String documentLists) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.content.DocumentDraftSummaryUrl.deleteDocumentDraftsUrl(documentLists);
 		String verb = "POST";
-				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(documentIds);
@@ -110,15 +115,17 @@ public class DocumentDraftSummaryClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=PublishDocumentsClient( documentIds);
+	 * MozuClient<java.io.InputStream> mozuClient=PublishDocumentsClient( documentIds);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
+	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param documentIds Unique identifiers of the documents to delete.
-	 * @return Mozu.Api.MozuClient 
+	 * @param documentIds List of unique identifiers of the document drafts to publish.
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
 	 * @see string
 	 */
-	public static MozuClient publishDocumentsClient(List<String> documentIds) throws Exception
+	public static MozuClient<java.io.InputStream> publishDocumentsClient(List<String> documentIds) throws Exception
 	{
 		return publishDocumentsClient( documentIds,  null);
 	}
@@ -126,20 +133,23 @@ public class DocumentDraftSummaryClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=PublishDocumentsClient( documentIds,  documentLists);
+	 * MozuClient<java.io.InputStream> mozuClient=PublishDocumentsClient( documentIds,  documentLists);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
+	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param documentLists List of document lists that contain documents to delete.
-	 * @param documentIds Unique identifiers of the documents to delete.
-	 * @return Mozu.Api.MozuClient 
+	 * @param documentLists List of document lists that contain documents to publish.
+	 * @param documentIds List of unique identifiers of the document drafts to publish.
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
 	 * @see string
 	 */
-	public static MozuClient publishDocumentsClient(List<String> documentIds, String documentLists) throws Exception
+	public static MozuClient<java.io.InputStream> publishDocumentsClient(List<String> documentIds, String documentLists) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.content.DocumentDraftSummaryUrl.publishDocumentsUrl(documentLists);
 		String verb = "PUT";
-				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(documentIds);

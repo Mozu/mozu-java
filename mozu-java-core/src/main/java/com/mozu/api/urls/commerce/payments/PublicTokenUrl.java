@@ -15,7 +15,7 @@ public class PublicTokenUrl
 
 	/**
 	 * Get Resource Url for Create
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl createUrl(String responseFields)
@@ -28,7 +28,7 @@ public class PublicTokenUrl
 	/**
 	 * Get Resource Url for Execute
 	 * @param cardType 
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl executeUrl(String cardType, String responseFields)

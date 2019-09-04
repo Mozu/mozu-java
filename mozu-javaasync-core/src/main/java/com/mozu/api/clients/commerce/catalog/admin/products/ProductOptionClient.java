@@ -33,7 +33,7 @@ public class ProductOptionClient {
 	 * client.executeRequest();
 	 * ProductOption productOption = client.Result();
 	 * </code></pre></p>
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param productCode 
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.ProductOption>>
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
 	 */
@@ -58,8 +58,8 @@ public class ProductOptionClient {
 	 * client.executeRequest();
 	 * ProductOption productOption = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param attributeFQN 
+	 * @param productCode 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductOption>
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
 	 */
@@ -76,9 +76,9 @@ public class ProductOptionClient {
 	 * client.executeRequest();
 	 * ProductOption productOption = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param attributeFQN 
+	 * @param productCode 
+	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductOption>
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
 	 */
@@ -103,8 +103,8 @@ public class ProductOptionClient {
 	 * client.executeRequest();
 	 * ProductOption productOption = client.Result();
 	 * </code></pre></p>
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param productOption Properties of the product option to create such as attribute detail, fully qualified name, and list of product option values.
+	 * @param productCode 
+	 * @param productOption Properties of the option attribute to define for the product.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductOption>
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
@@ -122,9 +122,9 @@ public class ProductOptionClient {
 	 * client.executeRequest();
 	 * ProductOption productOption = client.Result();
 	 * </code></pre></p>
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param productOption Properties of the product option to create such as attribute detail, fully qualified name, and list of product option values.
+	 * @param productCode 
+	 * @param responseFields 
+	 * @param productOption Properties of the option attribute to define for the product.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductOption>
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
@@ -151,9 +151,9 @@ public class ProductOptionClient {
 	 * client.executeRequest();
 	 * ProductOption productOption = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param productOption Properties of the product option to create such as attribute detail, fully qualified name, and list of product option values.
+	 * @param attributeFQN 
+	 * @param productCode 
+	 * @param productOption Properties of the product option attribute configuration to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductOption>
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
@@ -171,10 +171,10 @@ public class ProductOptionClient {
 	 * client.executeRequest();
 	 * ProductOption productOption = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param productOption Properties of the product option to create such as attribute detail, fully qualified name, and list of product option values.
+	 * @param attributeFQN 
+	 * @param productCode 
+	 * @param responseFields 
+	 * @param productOption Properties of the product option attribute configuration to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductOption>
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
@@ -196,19 +196,22 @@ public class ProductOptionClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=DeleteOptionClient(dataViewMode,  productCode,  attributeFQN);
+	 * MozuClient<java.io.InputStream> mozuClient=DeleteOptionClient(dataViewMode,  productCode,  attributeFQN);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
+	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @return Mozu.Api.MozuClient 
+	 * @param attributeFQN 
+	 * @param productCode 
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
 	 */
-	public static MozuClient deleteOptionClient(com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN) throws Exception
+	public static MozuClient<java.io.InputStream> deleteOptionClient(com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductOptionUrl.deleteOptionUrl(attributeFQN, productCode);
 		String verb = "DELETE";
-				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());

@@ -15,25 +15,21 @@ public class TenantExtensionsUrl
 
 	/**
 	 * Get Resource Url for GetExtensions
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getExtensionsUrl(String responseFields)
+	public static MozuUrl getExtensionsUrl()
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/platform/extensions/?responseFields={responseFields}");
-		formatter.formatUrl("responseFields", responseFields);
+		UrlFormatter formatter = new UrlFormatter("/api/platform/extensions/");
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for UpdateExtensions
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl updateExtensionsUrl(String responseFields)
+	public static MozuUrl updateExtensionsUrl()
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/platform/extensions/?responseFields={responseFields}");
-		formatter.formatUrl("responseFields", responseFields);
+		UrlFormatter formatter = new UrlFormatter("/api/platform/extensions/");
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

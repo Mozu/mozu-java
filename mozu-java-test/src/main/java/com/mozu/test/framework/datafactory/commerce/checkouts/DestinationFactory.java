@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.checkouts.DestinationResource;
 
 /** <summary>
- * Use this resource to manage the addresses a shopper intends to ship items to. This resource remains active while the Checkouts resource is active (the Checkouts resource only applies to sites that enable shipping to multiple destinations within the same order). The Checkouts resource remains active until the shopper submits their order.
+ * 
  * </summary>
  */
 public class DestinationFactory
@@ -118,22 +118,24 @@ public class DestinationFactory
 		return returnObj;
 	}
 
-	public static void removeDestination(ApiContext apiContext, String checkoutId, String destinationId, int expectedCode) throws Exception
+	public static java.io.InputStream removeDestination(ApiContext apiContext, String checkoutId, String destinationId, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		DestinationResource resource = new DestinationResource(apiContext);
 		try
 		{
-			resource.removeDestination( checkoutId,  destinationId);
+			returnObj = resource.removeDestination( checkoutId,  destinationId);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 }

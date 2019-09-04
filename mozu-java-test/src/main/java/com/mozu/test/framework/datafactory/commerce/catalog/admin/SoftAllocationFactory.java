@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.catalog.admin.SoftAllocationResource;
 
 /** <summary>
- * The Soft Allocations resource allows you to temporarily hold a product from inventory while a shopper is filling out payment information. You create a product reservation when a shopper proceeds to check out and then release the reservation when the order process is complete.
+ * 
  * </summary>
  */
 public class SoftAllocationFactory
@@ -153,22 +153,24 @@ public class SoftAllocationFactory
 		return returnObj;
 	}
 
-	public static void deleteSoftAllocation(ApiContext apiContext, Integer softAllocationId, int expectedCode) throws Exception
+	public static java.io.InputStream deleteSoftAllocation(ApiContext apiContext, Integer softAllocationId, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		SoftAllocationResource resource = new SoftAllocationResource(apiContext);
 		try
 		{
-			resource.deleteSoftAllocation( softAllocationId);
+			returnObj = resource.deleteSoftAllocation( softAllocationId);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 }

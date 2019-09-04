@@ -20,7 +20,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the Extensions resource to manage Arc.js configuration settings. These are the same settings you can configure through  in the Action Management JSON Editor.
+ * 
  * </summary>
  */
 public class TenantExtensionsResource {
@@ -40,14 +40,18 @@ public class TenantExtensionsResource {
 	 * 
 	 * <p><pre><code>
 	 *	TenantExtensions tenantextensions = new TenantExtensions();
-	 *	TenantExtensions tenantExtensions = tenantextensions.getExtensions();
+	 *	Stream stream = tenantextensions.getExtensions();
 	 * </code></pre></p>
-	 * @return com.mozu.api.contracts.installedapplications.TenantExtensions
-	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
+	 * @return Stream
+	 * @see Stream
 	 */
-	public com.mozu.api.contracts.installedapplications.TenantExtensions getExtensions() throws Exception
+	public java.io.InputStream getExtensions() throws Exception
 	{
-		return getExtensions( null);
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.platform.TenantExtensionsClient.getExtensionsClient();
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
 	}
 
 	/**
@@ -57,47 +61,12 @@ public class TenantExtensionsResource {
 	 *	CountDownLatch latch = tenantextensions.getExtensions( callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @return com.mozu.api.contracts.installedapplications.TenantExtensions
-	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
+	 * @return Stream
+	 * @see Stream
 	 */
-	public CountDownLatch getExtensionsAsync( AsyncCallback<com.mozu.api.contracts.installedapplications.TenantExtensions> callback) throws Exception
+	public CountDownLatch getExtensionsAsync( AsyncCallback<java.io.InputStream> callback) throws Exception
 	{
-		return getExtensionsAsync( null, callback);
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 *	TenantExtensions tenantextensions = new TenantExtensions();
-	 *	TenantExtensions tenantExtensions = tenantextensions.getExtensions( responseFields);
-	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @return com.mozu.api.contracts.installedapplications.TenantExtensions
-	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
-	 */
-	public com.mozu.api.contracts.installedapplications.TenantExtensions getExtensions(String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.installedapplications.TenantExtensions> client = com.mozu.api.clients.platform.TenantExtensionsClient.getExtensionsClient( responseFields);
-		client.setContext(_apiContext);
-		client.executeRequest();
-		return client.getResult();
-
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 *	TenantExtensions tenantextensions = new TenantExtensions();
-	 *	CountDownLatch latch = tenantextensions.getExtensions( responseFields, callback );
-	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param  callback callback handler for asynchronous operations
-	 * @return com.mozu.api.contracts.installedapplications.TenantExtensions
-	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
-	 */
-	public CountDownLatch getExtensionsAsync(String responseFields, AsyncCallback<com.mozu.api.contracts.installedapplications.TenantExtensions> callback) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.installedapplications.TenantExtensions> client = com.mozu.api.clients.platform.TenantExtensionsClient.getExtensionsClient( responseFields);
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.platform.TenantExtensionsClient.getExtensionsClient();
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 
@@ -107,50 +76,16 @@ public class TenantExtensionsResource {
 	 * 
 	 * <p><pre><code>
 	 *	TenantExtensions tenantextensions = new TenantExtensions();
-	 *	TenantExtensions tenantExtensions = tenantextensions.updateExtensions( extensions);
+	 *	Stream stream = tenantextensions.updateExtensions( extensions);
 	 * </code></pre></p>
-	 * @param extensions The updated details of the Arc.js configuration settings.
-	 * @return com.mozu.api.contracts.installedapplications.TenantExtensions
-	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
-	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
-	 */
-	public com.mozu.api.contracts.installedapplications.TenantExtensions updateExtensions(com.mozu.api.contracts.installedapplications.TenantExtensions extensions) throws Exception
-	{
-		return updateExtensions( extensions,  null);
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 *	TenantExtensions tenantextensions = new TenantExtensions();
-	 *	CountDownLatch latch = tenantextensions.updateExtensions( extensions, callback );
-	 *	latch.await()	 * </code></pre></p>
-	 * @param  callback callback handler for asynchronous operations
-	 * @param extensions The updated details of the Arc.js configuration settings.
-	 * @return com.mozu.api.contracts.installedapplications.TenantExtensions
-	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
+	 * @param extensions 
+	 * @return Stream
+	 * @see Stream
 	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
 	 */
-	public CountDownLatch updateExtensionsAsync(com.mozu.api.contracts.installedapplications.TenantExtensions extensions, AsyncCallback<com.mozu.api.contracts.installedapplications.TenantExtensions> callback) throws Exception
+	public java.io.InputStream updateExtensions(com.mozu.api.contracts.installedapplications.TenantExtensions extensions) throws Exception
 	{
-		return updateExtensionsAsync( extensions,  null, callback);
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 *	TenantExtensions tenantextensions = new TenantExtensions();
-	 *	TenantExtensions tenantExtensions = tenantextensions.updateExtensions( extensions,  responseFields);
-	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param extensions The updated details of the Arc.js configuration settings.
-	 * @return com.mozu.api.contracts.installedapplications.TenantExtensions
-	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
-	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
-	 */
-	public com.mozu.api.contracts.installedapplications.TenantExtensions updateExtensions(com.mozu.api.contracts.installedapplications.TenantExtensions extensions, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.installedapplications.TenantExtensions> client = com.mozu.api.clients.platform.TenantExtensionsClient.updateExtensionsClient( extensions,  responseFields);
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.platform.TenantExtensionsClient.updateExtensionsClient( extensions);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -161,18 +96,17 @@ public class TenantExtensionsResource {
 	 * 
 	 * <p><pre><code>
 	 *	TenantExtensions tenantextensions = new TenantExtensions();
-	 *	CountDownLatch latch = tenantextensions.updateExtensions( extensions,  responseFields, callback );
+	 *	CountDownLatch latch = tenantextensions.updateExtensions( extensions, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param extensions The updated details of the Arc.js configuration settings.
-	 * @return com.mozu.api.contracts.installedapplications.TenantExtensions
-	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
+	 * @param extensions 
+	 * @return Stream
+	 * @see Stream
 	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
 	 */
-	public CountDownLatch updateExtensionsAsync(com.mozu.api.contracts.installedapplications.TenantExtensions extensions, String responseFields, AsyncCallback<com.mozu.api.contracts.installedapplications.TenantExtensions> callback) throws Exception
+	public CountDownLatch updateExtensionsAsync(com.mozu.api.contracts.installedapplications.TenantExtensions extensions, AsyncCallback<java.io.InputStream> callback) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.installedapplications.TenantExtensions> client = com.mozu.api.clients.platform.TenantExtensionsClient.updateExtensionsClient( extensions,  responseFields);
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.platform.TenantExtensionsClient.updateExtensionsClient( extensions);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 

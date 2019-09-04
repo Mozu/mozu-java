@@ -61,6 +61,16 @@ public class Credit implements Serializable
 		this.creditType = creditType;
 	}
 
+	protected  Integer creditTypeId;
+
+	public Integer getCreditTypeId() {
+		return this.creditTypeId;
+	}
+
+	public void setCreditTypeId(Integer creditTypeId) {
+		this.creditTypeId = creditTypeId;
+	}
+
 	/**
 	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
 	 */
@@ -98,7 +108,7 @@ public class Credit implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the customer in , used to associate customers with data, orders, returns, and in-store credit.
+	 * Unique identifier of the shopper associated with the applied credit. For gift cards, this property is not required.
 	 */
 	protected  Integer customerId;
 
@@ -111,7 +121,7 @@ public class Credit implements Serializable
 	}
 
 	/**
-	 * Date and time in UTC format when a discount, credit, wish list, or cart expires. An expired discount no longer can be redeemed. An expired wish list is no longer available. An expired credit can no longer be redeemed for a purchase. Acart becomes inactive and expired based on a system-calculated interval. For example, if an anonymous shopper has 14 days of inactivity, the cart is considered abandoned after that period of inactivity. System-supplied and read-only.
+	 * The date and time the credit expires and can no longer be redeemed.
 	 */
 	protected  DateTime expirationDate;
 

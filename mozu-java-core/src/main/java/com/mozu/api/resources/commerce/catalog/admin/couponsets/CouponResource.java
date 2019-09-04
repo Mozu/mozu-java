@@ -18,7 +18,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the Coupons subresource to manage coupons within manual coupon sets.
+ * 
  * </summary>
  */
 public class CouponResource {
@@ -40,8 +40,8 @@ public class CouponResource {
 	 *	Coupon coupon = new Coupon();
 	 *	Coupon coupon = coupon.getCoupon( couponSetCode,  couponCode);
 	 * </code></pre></p>
-	 * @param couponCode Code associated with the coupon to remove from the cart.
-	 * @param couponSetCode The unique identifier of the coupon set that the coupon belongs to.
+	 * @param couponCode 
+	 * @param couponSetCode 
 	 * @return com.mozu.api.contracts.productadmin.Coupon
 	 * @see com.mozu.api.contracts.productadmin.Coupon
 	 */
@@ -56,10 +56,10 @@ public class CouponResource {
 	 *	Coupon coupon = new Coupon();
 	 *	Coupon coupon = coupon.getCoupon( couponSetCode,  couponCode,  includeCounts,  responseFields);
 	 * </code></pre></p>
-	 * @param couponCode Code associated with the coupon to remove from the cart.
-	 * @param couponSetCode The unique identifier of the coupon set that the coupon belongs to.
-	 * @param includeCounts Specifies whether to return the redemptionCount property in the response body object.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param couponCode 
+	 * @param couponSetCode 
+	 * @param includeCounts 
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.productadmin.Coupon
 	 * @see com.mozu.api.contracts.productadmin.Coupon
 	 */
@@ -78,7 +78,7 @@ public class CouponResource {
 	 *	Coupon coupon = new Coupon();
 	 *	CouponCollection couponCollection = coupon.getCoupons( couponSetCode);
 	 * </code></pre></p>
-	 * @param couponSetCode The unique identifier of the coupon set that the coupons belongs to.
+	 * @param couponSetCode 
 	 * @return com.mozu.api.contracts.productadmin.CouponCollection
 	 * @see com.mozu.api.contracts.productadmin.CouponCollection
 	 */
@@ -93,13 +93,13 @@ public class CouponResource {
 	 *	Coupon coupon = new Coupon();
 	 *	CouponCollection couponCollection = coupon.getCoupons( couponSetCode,  startIndex,  pageSize,  sortBy,  filter,  includeCounts,  responseFields);
 	 * </code></pre></p>
-	 * @param couponSetCode The unique identifier of the coupon set that the coupons belongs to.
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param includeCounts Specifies whether to include the redemptionCount property in the response body object.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param couponSetCode 
+	 * @param filter 
+	 * @param includeCounts 
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @return com.mozu.api.contracts.productadmin.CouponCollection
 	 * @see com.mozu.api.contracts.productadmin.CouponCollection
 	 */
@@ -116,19 +116,20 @@ public class CouponResource {
 	 * 
 	 * <p><pre><code>
 	 *	Coupon coupon = new Coupon();
-	 *	coupon.addCoupons( coupons,  couponSetCode);
+	 *	Stream stream = coupon.addCoupons( coupons,  couponSetCode);
 	 * </code></pre></p>
-	 * @param couponSetCode The unique identifier of the coupon set.
-	 * @param coupons The details necessary to assign the discount to a coupon set, including .
-	 * @return 
+	 * @param couponSetCode 
+	 * @param coupons 
+	 * @return Stream
+	 * @see Stream
 	 * @see com.mozu.api.contracts.productadmin.Coupon
 	 */
-	public void addCoupons(List<com.mozu.api.contracts.productadmin.Coupon> coupons, String couponSetCode) throws Exception
+	public java.io.InputStream addCoupons(List<com.mozu.api.contracts.productadmin.Coupon> coupons, String couponSetCode) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.couponsets.CouponClient.addCouponsClient( coupons,  couponSetCode);
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.catalog.admin.couponsets.CouponClient.addCouponsClient( coupons,  couponSetCode);
 		client.setContext(_apiContext);
 		client.executeRequest();
-		client.cleanupHttpConnection();
+		return client.getResult();
 
 	}
 
@@ -136,19 +137,20 @@ public class CouponResource {
 	 * 
 	 * <p><pre><code>
 	 *	Coupon coupon = new Coupon();
-	 *	coupon.deleteCoupons( couponCodes,  couponSetCode);
+	 *	Stream stream = coupon.deleteCoupons( couponCodes,  couponSetCode);
 	 * </code></pre></p>
-	 * @param couponSetCode The unique identifier of the coupon set that the coupon belongs to.
-	 * @param couponCodes The unique identifiers of the coupons to delete.
-	 * @return 
+	 * @param couponSetCode 
+	 * @param couponCodes 
+	 * @return Stream
+	 * @see Stream
 	 * @see string
 	 */
-	public void deleteCoupons(List<String> couponCodes, String couponSetCode) throws Exception
+	public java.io.InputStream deleteCoupons(List<String> couponCodes, String couponSetCode) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.couponsets.CouponClient.deleteCouponsClient( couponCodes,  couponSetCode);
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.catalog.admin.couponsets.CouponClient.deleteCouponsClient( couponCodes,  couponSetCode);
 		client.setContext(_apiContext);
 		client.executeRequest();
-		client.cleanupHttpConnection();
+		return client.getResult();
 
 	}
 
@@ -156,18 +158,19 @@ public class CouponResource {
 	 * 
 	 * <p><pre><code>
 	 *	Coupon coupon = new Coupon();
-	 *	coupon.deleteCoupon( couponSetCode,  couponCode);
+	 *	Stream stream = coupon.deleteCoupon( couponSetCode,  couponCode);
 	 * </code></pre></p>
-	 * @param couponCode Code associated with the coupon to remove from the cart.
-	 * @param couponSetCode The unique identifier of the coupon set that the coupon belongs to.
-	 * @return 
+	 * @param couponCode 
+	 * @param couponSetCode 
+	 * @return Stream
+	 * @see Stream
 	 */
-	public void deleteCoupon(String couponSetCode, String couponCode) throws Exception
+	public java.io.InputStream deleteCoupon(String couponSetCode, String couponCode) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.couponsets.CouponClient.deleteCouponClient( couponSetCode,  couponCode);
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.catalog.admin.couponsets.CouponClient.deleteCouponClient( couponSetCode,  couponCode);
 		client.setContext(_apiContext);
 		client.executeRequest();
-		client.cleanupHttpConnection();
+		return client.getResult();
 
 	}
 

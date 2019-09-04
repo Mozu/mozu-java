@@ -95,7 +95,7 @@ public class MasterCatalog implements Serializable
 	}
 
 	/**
-	 * The current status of the object.This value is read only. Valid values for this field are: "Active", "Expired", and "Inactive".
+	 * The current status of the master catalog.
 	 */
 	protected  String status;
 

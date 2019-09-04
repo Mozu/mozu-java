@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.platform.UserDataResource;
 
 /** <summary>
- * Use the user data subresource to store user-level data required for a third-party application in the  database.
+ * Use the user data subresource to store user-level data required for a third-party application in the Mozu database.
  * </summary>
  */
 public class UserDataFactory
@@ -48,58 +48,64 @@ public class UserDataFactory
 		return returnObj;
 	}
 
-	public static void createDBValue(ApiContext apiContext, String value, String dbEntryQuery, int expectedCode) throws Exception
+	public static java.io.InputStream createDBValue(ApiContext apiContext, String value, String dbEntryQuery, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		UserDataResource resource = new UserDataResource(apiContext);
 		try
 		{
-			resource.createDBValue( value,  dbEntryQuery);
+			returnObj = resource.createDBValue( value,  dbEntryQuery);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
-	public static void updateDBValue(ApiContext apiContext, String value, String dbEntryQuery, int expectedCode) throws Exception
+	public static java.io.InputStream updateDBValue(ApiContext apiContext, String value, String dbEntryQuery, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		UserDataResource resource = new UserDataResource(apiContext);
 		try
 		{
-			resource.updateDBValue( value,  dbEntryQuery);
+			returnObj = resource.updateDBValue( value,  dbEntryQuery);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
-	public static void deleteDBValue(ApiContext apiContext, String dbEntryQuery, int expectedCode) throws Exception
+	public static java.io.InputStream deleteDBValue(ApiContext apiContext, String dbEntryQuery, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		UserDataResource resource = new UserDataResource(apiContext);
 		try
 		{
-			resource.deleteDBValue( dbEntryQuery);
+			returnObj = resource.deleteDBValue( dbEntryQuery);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 }

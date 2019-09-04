@@ -17,7 +17,7 @@ import com.mozu.api.contracts.productruntime.AttributeDetail;
 import com.mozu.api.contracts.productruntime.ProductOptionValue;
 
 /**
- *	Properties of the product option to create such as attribute detail, fully qualified name, and list of product option values.
+ *	Represents configurable options that a shopper can choose when ordering a product, such as a t-shirt color and size.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductOption implements Serializable
@@ -25,14 +25,14 @@ public class ProductOption implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected  String attributeFQN;
+	protected  String attributeFqn;
 
-	public String getAttributeFQN() {
-		return this.attributeFQN;
+	public String getAttributeFqn() {
+		return this.attributeFqn;
 	}
 
-	public void setAttributeFQN(String attributeFQN) {
-		this.attributeFQN = attributeFQN;
+	public void setAttributeFqn(String attributeFqn) {
+		this.attributeFqn = attributeFqn;
 	}
 
 	protected  Boolean isMultiValue;
@@ -45,9 +45,6 @@ public class ProductOption implements Serializable
 		this.isMultiValue = isMultiValue;
 	}
 
-	/**
-	 * Indicates that the product option is used as a grouping mechanism for product images.  Only one ProductOption is allowed to have a true value for this property at a given time.  The ProductOption with a true value will be the selected option on the Images section on the product page in the Admin app when Assign Images to Options is checked.
-	 */
 	protected  Boolean isProductImageGroupSelector;
 
 	public Boolean getIsProductImageGroupSelector() {

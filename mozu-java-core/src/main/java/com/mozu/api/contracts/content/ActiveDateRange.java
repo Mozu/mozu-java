@@ -12,18 +12,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	Specifies a start date and end date for when associated object is on the live site, if  is set to .If  is set to  ignores this property.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ActiveDateRange implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The end of the active date range for this document
-	 */
 	protected  DateTime endDate;
 
 	public DateTime getEndDate() {
@@ -34,9 +28,6 @@ public class ActiveDateRange implements Serializable
 		this.endDate = endDate;
 	}
 
-	/**
-	 * The beginning of the active date range of this document
-	 */
 	protected  DateTime startDate;
 
 	public DateTime getStartDate() {

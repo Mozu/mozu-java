@@ -19,7 +19,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the tenants resource to manage information about a  tenant.
+ * Use the tenants resource to manage information about a Mozu tenant.
  * </summary>
  */
 public class TenantClient {
@@ -32,7 +32,7 @@ public class TenantClient {
 	 * client.executeRequest();
 	 * Tenant tenant = client.Result();
 	 * </code></pre></p>
-	 * @param tenantId Unique identifier of the development or production tenant for which to generate the user authentication ticket.
+	 * @param tenantId 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.tenant.Tenant>
 	 * @see com.mozu.api.contracts.tenant.Tenant
 	 */
@@ -49,8 +49,8 @@ public class TenantClient {
 	 * client.executeRequest();
 	 * Tenant tenant = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param tenantId Unique identifier of the development or production tenant for which to generate the user authentication ticket.
+	 * @param responseFields 
+	 * @param tenantId 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.tenant.Tenant>
 	 * @see com.mozu.api.contracts.tenant.Tenant
 	 */

@@ -48,50 +48,54 @@ public class DocumentDraftSummaryFactory
 		return returnObj;
 	}
 
-	public static void deleteDocumentDrafts(ApiContext apiContext, List<String> documentIds, int expectedCode) throws Exception
+	public static java.io.InputStream deleteDocumentDrafts(ApiContext apiContext, List<String> documentIds, int expectedCode) throws Exception
 	{
-		deleteDocumentDrafts(apiContext,  documentIds,  null, expectedCode);
+		return deleteDocumentDrafts(apiContext,  documentIds,  null, expectedCode);
 	}
 
-	public static void deleteDocumentDrafts(ApiContext apiContext, List<String> documentIds, String documentLists, int expectedCode) throws Exception
+	public static java.io.InputStream deleteDocumentDrafts(ApiContext apiContext, List<String> documentIds, String documentLists, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		DocumentDraftSummaryResource resource = new DocumentDraftSummaryResource(apiContext);
 		try
 		{
-			resource.deleteDocumentDrafts( documentIds,  documentLists);
+			returnObj = resource.deleteDocumentDrafts( documentIds,  documentLists);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
-	public static void publishDocuments(ApiContext apiContext, List<String> documentIds, int expectedCode) throws Exception
+	public static java.io.InputStream publishDocuments(ApiContext apiContext, List<String> documentIds, int expectedCode) throws Exception
 	{
-		publishDocuments(apiContext,  documentIds,  null, expectedCode);
+		return publishDocuments(apiContext,  documentIds,  null, expectedCode);
 	}
 
-	public static void publishDocuments(ApiContext apiContext, List<String> documentIds, String documentLists, int expectedCode) throws Exception
+	public static java.io.InputStream publishDocuments(ApiContext apiContext, List<String> documentIds, String documentLists, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		DocumentDraftSummaryResource resource = new DocumentDraftSummaryResource(apiContext);
 		try
 		{
-			resource.publishDocuments( documentIds,  documentLists);
+			returnObj = resource.publishDocuments( documentIds,  documentLists);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 }

@@ -68,22 +68,24 @@ public class ShipmentFactory
 		return returnObj;
 	}
 
-	public static void deleteShipment(ApiContext apiContext, String returnId, String shipmentId, int expectedCode) throws Exception
+	public static java.io.InputStream deleteShipment(ApiContext apiContext, String returnId, String shipmentId, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		ShipmentResource resource = new ShipmentResource(apiContext);
 		try
 		{
-			resource.deleteShipment( returnId,  shipmentId);
+			returnObj = resource.deleteShipment( returnId,  shipmentId);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 }

@@ -15,7 +15,7 @@ public class DestinationUrl
 
 	/**
 	 * Get Resource Url for GetDestinations
-	 * @param checkoutId The unique identifier of the checkout.
+	 * @param checkoutId 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getDestinationsUrl(String checkoutId)
@@ -27,9 +27,9 @@ public class DestinationUrl
 
 	/**
 	 * Get Resource Url for GetDestination
-	 * @param checkoutId The unique identifier of the checkout.
-	 * @param destinationId The unique identifier of the destination.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param checkoutId 
+	 * @param destinationId 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getDestinationUrl(String checkoutId, String destinationId, String responseFields)
@@ -43,8 +43,8 @@ public class DestinationUrl
 
 	/**
 	 * Get Resource Url for AddDestination
-	 * @param checkoutId The unique identifier of the checkout.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param checkoutId 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addDestinationUrl(String checkoutId, String responseFields)
@@ -57,9 +57,9 @@ public class DestinationUrl
 
 	/**
 	 * Get Resource Url for UpdateDestination
-	 * @param checkoutId The unique identifier of the checkout.
-	 * @param destinationId The unique identifier of the destination.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param checkoutId 
+	 * @param destinationId 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateDestinationUrl(String checkoutId, String destinationId, String responseFields)
@@ -73,8 +73,8 @@ public class DestinationUrl
 
 	/**
 	 * Get Resource Url for RemoveDestination
-	 * @param checkoutId The unique identifier of the checkout.
-	 * @param destinationId The unique identifier of the destination.
+	 * @param checkoutId 
+	 * @param destinationId 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl removeDestinationUrl(String checkoutId, String destinationId)

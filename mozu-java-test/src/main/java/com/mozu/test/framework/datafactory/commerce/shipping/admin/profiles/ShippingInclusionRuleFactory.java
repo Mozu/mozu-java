@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.shipping.admin.profiles.ShippingInclusionRuleResource;
 
 /** <summary>
- * Use the ShippingInclusionRules sub-resource to manage your shipping inclusion rules that are associated with a specific shipping profile.
+ * 
  * </summary>
  */
 public class ShippingInclusionRuleFactory
@@ -123,22 +123,24 @@ public class ShippingInclusionRuleFactory
 		return returnObj;
 	}
 
-	public static void deleteShippingInclusionRule(ApiContext apiContext, String profilecode, String id, int expectedCode) throws Exception
+	public static java.io.InputStream deleteShippingInclusionRule(ApiContext apiContext, String profilecode, String id, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		ShippingInclusionRuleResource resource = new ShippingInclusionRuleResource(apiContext);
 		try
 		{
-			resource.deleteShippingInclusionRule( profilecode,  id);
+			returnObj = resource.deleteShippingInclusionRule( profilecode,  id);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 }

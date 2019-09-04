@@ -64,9 +64,6 @@ public class Gateway implements Serializable
 		this.gatewayDefinition = gatewayDefinition;
 	}
 
-	/**
-	 * The cards supported by the payment gateway enabled for the site.
-	 */
 	protected List<SiteGatewaySupportedCard> siteGatewaySupportedCards;
 	public List<SiteGatewaySupportedCard> getSiteGatewaySupportedCards() {
 		return this.siteGatewaySupportedCards;

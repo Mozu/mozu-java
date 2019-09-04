@@ -18,7 +18,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * The Accounts resource displays the user accounts and account details associated with a developer or  tenant administrator. Email addresses uniquely identify admin user accounts.
+ * Displays the user accounts and account details associated with a developer or Mozu tenant administrator. Email addresses uniquely identify admin user accounts.
  * </summary>
  */
 public class AdminUserResource {
@@ -42,6 +42,78 @@ public AdminUserResource(ApiContext apiContext)
 	 * 
 	 * <p><pre><code>
 	 *	AdminUser adminuser = new AdminUser();
+	 *	Stream stream = adminuser.getUsers();
+	 * </code></pre></p>
+	 * @return Stream
+	 * @see Stream
+	 */
+	public java.io.InputStream getUsers() throws Exception
+	{
+		return getUsers( null,  null,  null,  null,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	AdminUser adminuser = new AdminUser();
+	 *	Stream stream = adminuser.getUsers( emailAddress,  startIndex,  pageSize,  sortBy,  filter);
+	 * </code></pre></p>
+	 * @param emailAddress 
+	 * @param filter 
+	 * @param pageSize 
+	 * @param sortBy 
+	 * @param startIndex 
+	 * @return Stream
+	 * @see Stream
+	 */
+	public java.io.InputStream getUsers(String emailAddress, Integer startIndex, Integer pageSize, String sortBy, String filter) throws Exception
+	{
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.platform.adminuser.AdminUserClient.getUsersClient( emailAddress,  startIndex,  pageSize,  sortBy,  filter);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	AdminUser adminuser = new AdminUser();
+	 *	UserRoleCollection userRoleCollection = adminuser.getUserRoles( userId);
+	 * </code></pre></p>
+	 * @param userId 
+	 * @return com.mozu.api.contracts.adminuser.UserRoleCollection
+	 * @see com.mozu.api.contracts.adminuser.UserRoleCollection
+	 */
+	public com.mozu.api.contracts.adminuser.UserRoleCollection getUserRoles(String userId) throws Exception
+	{
+		return getUserRoles( userId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	AdminUser adminuser = new AdminUser();
+	 *	UserRoleCollection userRoleCollection = adminuser.getUserRoles( userId,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param userId 
+	 * @return com.mozu.api.contracts.adminuser.UserRoleCollection
+	 * @see com.mozu.api.contracts.adminuser.UserRoleCollection
+	 */
+	public com.mozu.api.contracts.adminuser.UserRoleCollection getUserRoles(String userId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.adminuser.UserRoleCollection> client = com.mozu.api.clients.platform.adminuser.AdminUserClient.getUserRolesClient( userId,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	AdminUser adminuser = new AdminUser();
 	 *	TenantCollection tenantCollection = adminuser.getTenantScopesForUser( userId);
 	 * </code></pre></p>
 	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
@@ -59,7 +131,7 @@ public AdminUserResource(ApiContext apiContext)
 	 *	AdminUser adminuser = new AdminUser();
 	 *	TenantCollection tenantCollection = adminuser.getTenantScopesForUser( userId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @return com.mozu.api.contracts.tenant.TenantCollection
 	 * @see com.mozu.api.contracts.tenant.TenantCollection
@@ -77,9 +149,44 @@ public AdminUserResource(ApiContext apiContext)
 	 * 
 	 * <p><pre><code>
 	 *	AdminUser adminuser = new AdminUser();
+	 *	User user = adminuser.getUserById( userId);
+	 * </code></pre></p>
+	 * @param userId 
+	 * @return com.mozu.api.contracts.core.User
+	 * @see com.mozu.api.contracts.core.User
+	 */
+	public com.mozu.api.contracts.core.User getUserById(String userId) throws Exception
+	{
+		return getUserById( userId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	AdminUser adminuser = new AdminUser();
+	 *	User user = adminuser.getUserById( userId,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param userId 
+	 * @return com.mozu.api.contracts.core.User
+	 * @see com.mozu.api.contracts.core.User
+	 */
+	public com.mozu.api.contracts.core.User getUserById(String userId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.core.User> client = com.mozu.api.clients.platform.adminuser.AdminUserClient.getUserByIdClient( userId,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	AdminUser adminuser = new AdminUser();
 	 *	User user = adminuser.getUser( userId);
 	 * </code></pre></p>
-	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
+	 * @param userId Unique identifier of the administrator account to retrieve.
 	 * @return com.mozu.api.contracts.core.User
 	 * @see com.mozu.api.contracts.core.User
 	 */
@@ -94,14 +201,191 @@ public AdminUserResource(ApiContext apiContext)
 	 *	AdminUser adminuser = new AdminUser();
 	 *	User user = adminuser.getUser( userId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
+	 * @param responseFields 
+	 * @param userId Unique identifier of the administrator account to retrieve.
 	 * @return com.mozu.api.contracts.core.User
 	 * @see com.mozu.api.contracts.core.User
 	 */
 	public com.mozu.api.contracts.core.User getUser(String userId, String responseFields) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.core.User> client = com.mozu.api.clients.platform.adminuser.AdminUserClient.getUserClient( userId,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	AdminUser adminuser = new AdminUser();
+	 *	User user = adminuser.createUser( user);
+	 * </code></pre></p>
+	 * @param user 
+	 * @return com.mozu.api.contracts.core.User
+	 * @see com.mozu.api.contracts.core.User
+	 * @see com.mozu.api.contracts.core.User
+	 */
+	public com.mozu.api.contracts.core.User createUser(com.mozu.api.contracts.core.User user) throws Exception
+	{
+		return createUser( user,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	AdminUser adminuser = new AdminUser();
+	 *	User user = adminuser.createUser( user,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param user 
+	 * @return com.mozu.api.contracts.core.User
+	 * @see com.mozu.api.contracts.core.User
+	 * @see com.mozu.api.contracts.core.User
+	 */
+	public com.mozu.api.contracts.core.User createUser(com.mozu.api.contracts.core.User user, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.core.User> client = com.mozu.api.clients.platform.adminuser.AdminUserClient.createUserClient( user,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	AdminUser adminuser = new AdminUser();
+	 *	Stream stream = adminuser.changePassword( passwordInfo,  userId);
+	 * </code></pre></p>
+	 * @param userId 
+	 * @param passwordInfo 
+	 * @return Stream
+	 * @see Stream
+	 * @see com.mozu.api.contracts.adminuser.PasswordInfo
+	 */
+	public java.io.InputStream changePassword(com.mozu.api.contracts.adminuser.PasswordInfo passwordInfo, String userId) throws Exception
+	{
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.platform.adminuser.AdminUserClient.changePasswordClient( passwordInfo,  userId);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	AdminUser adminuser = new AdminUser();
+	 *	Stream stream = adminuser.changeUserPassword( changeUserPasswordInfo,  userId);
+	 * </code></pre></p>
+	 * @param userId 
+	 * @param changeUserPasswordInfo 
+	 * @return Stream
+	 * @see Stream
+	 * @see com.mozu.api.contracts.adminuser.ChangeUserPasswordInfo
+	 */
+	public java.io.InputStream changeUserPassword(com.mozu.api.contracts.adminuser.ChangeUserPasswordInfo changeUserPasswordInfo, String userId) throws Exception
+	{
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.platform.adminuser.AdminUserClient.changeUserPasswordClient( changeUserPasswordInfo,  userId);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	AdminUser adminuser = new AdminUser();
+	 *	Stream stream = adminuser.addUserRole( userId,  roleId);
+	 * </code></pre></p>
+	 * @param roleId 
+	 * @param userId 
+	 * @return Stream
+	 * @see Stream
+	 */
+	public java.io.InputStream addUserRole(String userId, Integer roleId) throws Exception
+	{
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.platform.adminuser.AdminUserClient.addUserRoleClient( userId,  roleId);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	AdminUser adminuser = new AdminUser();
+	 *	User user = adminuser.updateUser( user,  userId);
+	 * </code></pre></p>
+	 * @param userId 
+	 * @param user 
+	 * @return com.mozu.api.contracts.core.User
+	 * @see com.mozu.api.contracts.core.User
+	 * @see com.mozu.api.contracts.core.User
+	 */
+	public com.mozu.api.contracts.core.User updateUser(com.mozu.api.contracts.core.User user, String userId) throws Exception
+	{
+		return updateUser( user,  userId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	AdminUser adminuser = new AdminUser();
+	 *	User user = adminuser.updateUser( user,  userId,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param userId 
+	 * @param user 
+	 * @return com.mozu.api.contracts.core.User
+	 * @see com.mozu.api.contracts.core.User
+	 * @see com.mozu.api.contracts.core.User
+	 */
+	public com.mozu.api.contracts.core.User updateUser(com.mozu.api.contracts.core.User user, String userId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.core.User> client = com.mozu.api.clients.platform.adminuser.AdminUserClient.updateUserClient( user,  userId,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	AdminUser adminuser = new AdminUser();
+	 *	Stream stream = adminuser.deleteUser( userId);
+	 * </code></pre></p>
+	 * @param userId 
+	 * @return Stream
+	 * @see Stream
+	 */
+	public java.io.InputStream deleteUser(String userId) throws Exception
+	{
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.platform.adminuser.AdminUserClient.deleteUserClient( userId);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	AdminUser adminuser = new AdminUser();
+	 *	Stream stream = adminuser.removeUserRole( userId,  roleId);
+	 * </code></pre></p>
+	 * @param roleId 
+	 * @param userId 
+	 * @return Stream
+	 * @see Stream
+	 */
+	public java.io.InputStream removeUserRole(String userId, Integer roleId) throws Exception
+	{
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.platform.adminuser.AdminUserClient.removeUserRoleClient( userId,  roleId);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

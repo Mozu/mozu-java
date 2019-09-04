@@ -18,7 +18,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Manage Secure App Settings. Expose via arc.js so that arc apps can securely access secrets. Third-party extensions can also access their data. Secured via AppKey.AppId
+ * 
  * </summary>
  */
 public class SecureAppDataResource {
@@ -41,7 +41,7 @@ public class SecureAppDataResource {
 	 *	JObject json = secureappdata.getDBValue( appKeyId,  dbEntryQuery);
 	 * </code></pre></p>
 	 * @param appKeyId 
-	 * @param dbEntryQuery The database entry string to create.
+	 * @param dbEntryQuery 
 	 * @return JObject
 	 * @see JObject
 	 */
@@ -57,8 +57,8 @@ public class SecureAppDataResource {
 	 *	JObject json = secureappdata.getDBValue( appKeyId,  dbEntryQuery,  responseFields);
 	 * </code></pre></p>
 	 * @param appKeyId 
-	 * @param dbEntryQuery The database entry string to create.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param dbEntryQuery 
+	 * @param responseFields 
 	 * @return JObject
 	 * @see JObject
 	 */
@@ -75,20 +75,21 @@ public class SecureAppDataResource {
 	 * 
 	 * <p><pre><code>
 	 *	SecureAppData secureappdata = new SecureAppData();
-	 *	secureappdata.createDBValue( value,  appKeyId,  dbEntryQuery);
+	 *	Stream stream = secureappdata.createDBValue( value,  appKeyId,  dbEntryQuery);
 	 * </code></pre></p>
 	 * @param appKeyId 
-	 * @param dbEntryQuery The database entry string to create.
-	 * @param value The value string to create.
-	 * @return 
+	 * @param dbEntryQuery 
+	 * @param value 
+	 * @return Stream
+	 * @see Stream
 	 * @see JObject
 	 */
-	public void createDBValue(com.fasterxml.jackson.databind.JsonNode value, String appKeyId, String dbEntryQuery) throws Exception
+	public java.io.InputStream createDBValue(com.fasterxml.jackson.databind.JsonNode value, String appKeyId, String dbEntryQuery) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.platform.SecureAppDataClient.createDBValueClient( value,  appKeyId,  dbEntryQuery);
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.platform.SecureAppDataClient.createDBValueClient( value,  appKeyId,  dbEntryQuery);
 		client.setContext(_apiContext);
 		client.executeRequest();
-		client.cleanupHttpConnection();
+		return client.getResult();
 
 	}
 
@@ -96,20 +97,21 @@ public class SecureAppDataResource {
 	 * 
 	 * <p><pre><code>
 	 *	SecureAppData secureappdata = new SecureAppData();
-	 *	secureappdata.updateDBValue( value,  appKeyId,  dbEntryQuery);
+	 *	Stream stream = secureappdata.updateDBValue( value,  appKeyId,  dbEntryQuery);
 	 * </code></pre></p>
 	 * @param appKeyId 
-	 * @param dbEntryQuery The database entry string to create.
-	 * @param value The value string to create.
-	 * @return 
+	 * @param dbEntryQuery 
+	 * @param value 
+	 * @return Stream
+	 * @see Stream
 	 * @see JObject
 	 */
-	public void updateDBValue(com.fasterxml.jackson.databind.JsonNode value, String appKeyId, String dbEntryQuery) throws Exception
+	public java.io.InputStream updateDBValue(com.fasterxml.jackson.databind.JsonNode value, String appKeyId, String dbEntryQuery) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.platform.SecureAppDataClient.updateDBValueClient( value,  appKeyId,  dbEntryQuery);
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.platform.SecureAppDataClient.updateDBValueClient( value,  appKeyId,  dbEntryQuery);
 		client.setContext(_apiContext);
 		client.executeRequest();
-		client.cleanupHttpConnection();
+		return client.getResult();
 
 	}
 
@@ -117,18 +119,19 @@ public class SecureAppDataResource {
 	 * 
 	 * <p><pre><code>
 	 *	SecureAppData secureappdata = new SecureAppData();
-	 *	secureappdata.deleteDBValue( appKeyId,  dbEntryQuery);
+	 *	Stream stream = secureappdata.deleteDBValue( appKeyId,  dbEntryQuery);
 	 * </code></pre></p>
 	 * @param appKeyId 
-	 * @param dbEntryQuery The database entry string to create.
-	 * @return 
+	 * @param dbEntryQuery 
+	 * @return Stream
+	 * @see Stream
 	 */
-	public void deleteDBValue(String appKeyId, String dbEntryQuery) throws Exception
+	public java.io.InputStream deleteDBValue(String appKeyId, String dbEntryQuery) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.platform.SecureAppDataClient.deleteDBValueClient( appKeyId,  dbEntryQuery);
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.platform.SecureAppDataClient.deleteDBValueClient( appKeyId,  dbEntryQuery);
 		client.setContext(_apiContext);
 		client.executeRequest();
-		client.cleanupHttpConnection();
+		return client.getResult();
 
 	}
 

@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.catalog.admin.PublishingScopeResource;
 
 /** <summary>
- * Use the Product Publishing resource to publish or discard pending changes to products in a master catalog, or to add or remove pending changes to and from product publish sets.You can use product publish sets to group pending product changes together and publish them all at the same time.
+ * Use the Product Publishing resource to publish or discard pending changes to product definitions in the master catalog.
  * </summary>
  */
 public class PublishingScopeFactory
@@ -73,40 +73,44 @@ public class PublishingScopeFactory
 		return returnObj;
 	}
 
-	public static void discardDrafts(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.PublishingScope publishScope, int expectedCode) throws Exception
+	public static java.io.InputStream discardDrafts(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.PublishingScope publishScope, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		PublishingScopeResource resource = new PublishingScopeResource(apiContext, dataViewMode);
 		try
 		{
-			resource.discardDrafts( publishScope);
+			returnObj = resource.discardDrafts( publishScope);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
-	public static void publishDrafts(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.PublishingScope publishScope, int expectedCode) throws Exception
+	public static java.io.InputStream publishDrafts(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.PublishingScope publishScope, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		PublishingScopeResource resource = new PublishingScopeResource(apiContext, dataViewMode);
 		try
 		{
-			resource.publishDrafts( publishScope);
+			returnObj = resource.publishDrafts( publishScope);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 	public static com.mozu.api.contracts.productadmin.PublishSet assignProductsToPublishSet(ApiContext apiContext, com.mozu.api.contracts.productadmin.PublishSet publishSet, int expectedCode) throws Exception
@@ -134,27 +138,29 @@ public class PublishingScopeFactory
 		return returnObj;
 	}
 
-	public static void deletePublishSet(ApiContext apiContext, String publishSetCode, int expectedCode) throws Exception
+	public static java.io.InputStream deletePublishSet(ApiContext apiContext, String publishSetCode, int expectedCode) throws Exception
 	{
-		deletePublishSet(apiContext,  publishSetCode,  null, expectedCode);
+		return deletePublishSet(apiContext,  publishSetCode,  null, expectedCode);
 	}
 
-	public static void deletePublishSet(ApiContext apiContext, String publishSetCode, Boolean discardDrafts, int expectedCode) throws Exception
+	public static java.io.InputStream deletePublishSet(ApiContext apiContext, String publishSetCode, Boolean discardDrafts, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		PublishingScopeResource resource = new PublishingScopeResource(apiContext);
 		try
 		{
-			resource.deletePublishSet( publishSetCode,  discardDrafts);
+			returnObj = resource.deletePublishSet( publishSetCode,  discardDrafts);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 }

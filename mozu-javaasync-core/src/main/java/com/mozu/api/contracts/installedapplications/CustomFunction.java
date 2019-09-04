@@ -12,18 +12,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	Mozu.InstalledApplications.Contracts.CustomFunction ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CustomFunction implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The Arc.js application key.
-	 */
 	protected  String applicationKey;
 
 	public String getApplicationKey() {
@@ -34,9 +28,6 @@ public class CustomFunction implements Serializable
 		this.applicationKey = applicationKey;
 	}
 
-	/**
-	 * Indicates if a capability, function tied to an Arc.js action, application, or price list is enabled for the tenant/site. If true, the capability/application/function/price list is enabled for the tenant. System-supplied and read-only with the exception of functions tied to an Arc.js action and price lists.
-	 */
 	protected  Boolean enabled;
 
 	public Boolean getEnabled() {
@@ -47,9 +38,6 @@ public class CustomFunction implements Serializable
 		this.enabled = enabled;
 	}
 
-	/**
-	 * The behavior to take when an error is encountered. "fault" or "continue". The default is "fault".
-	 */
 	protected  String exceptionBehavior;
 
 	public String getExceptionBehavior() {
@@ -60,9 +48,6 @@ public class CustomFunction implements Serializable
 		this.exceptionBehavior = exceptionBehavior;
 	}
 
-	/**
-	 * The name of the custom function tied to a particular action.
-	 */
 	protected  String functionId;
 
 	public String getFunctionId() {
@@ -73,9 +58,6 @@ public class CustomFunction implements Serializable
 		this.functionId = functionId;
 	}
 
-	/**
-	 * The priority level to assign to logs related to a particular function. Possible values mirror Apache's log4net: "all", "debug", "info", "warn", "error", "fatal", and "off".
-	 */
 	protected  String logLevel;
 
 	public String getLogLevel() {
@@ -86,9 +68,6 @@ public class CustomFunction implements Serializable
 		this.logLevel = logLevel;
 	}
 
-	/**
-	 * The number of milliseconds that the function waits before timing out. The default is 5000 milliseconds
-	 */
 	protected  Integer timeoutMilliseconds;
 
 	public Integer getTimeoutMilliseconds() {
@@ -99,9 +78,6 @@ public class CustomFunction implements Serializable
 		this.timeoutMilliseconds = timeoutMilliseconds;
 	}
 
-	/**
-	 * Custom function-level settings specified as key-value pairs.
-	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode configuration;
 
 	public com.fasterxml.jackson.databind.JsonNode getConfiguration() {

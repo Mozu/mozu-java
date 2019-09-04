@@ -54,11 +54,11 @@ public class ChannelResource {
 	 *	Channel channel = new Channel();
 	 *	ChannelCollection channelCollection = channel.getChannels( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param filter 
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @return com.mozu.api.contracts.commerceruntime.channels.ChannelCollection
 	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelCollection
 	 */
@@ -77,7 +77,7 @@ public class ChannelResource {
 	 *	Channel channel = new Channel();
 	 *	Channel channel = channel.getChannel( code);
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code User-defined code that identifies the channel to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.channels.Channel
 	 * @see com.mozu.api.contracts.commerceruntime.channels.Channel
 	 */
@@ -92,8 +92,8 @@ public class ChannelResource {
 	 *	Channel channel = new Channel();
 	 *	Channel channel = channel.getChannel( code,  responseFields);
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param code User-defined code that identifies the channel to retrieve.
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.commerceruntime.channels.Channel
 	 * @see com.mozu.api.contracts.commerceruntime.channels.Channel
 	 */
@@ -112,7 +112,7 @@ public class ChannelResource {
 	 *	Channel channel = new Channel();
 	 *	Channel channel = channel.createChannel( channel);
 	 * </code></pre></p>
-	 * @param channel Properties of a channel used to divide a company into logical business divisions, such as "US Retail," "US Online," or "Amazon." All sites and orders are associated with a channel.
+	 * @param channel Properties of the channel to create.
 	 * @return com.mozu.api.contracts.commerceruntime.channels.Channel
 	 * @see com.mozu.api.contracts.commerceruntime.channels.Channel
 	 * @see com.mozu.api.contracts.commerceruntime.channels.Channel
@@ -128,8 +128,8 @@ public class ChannelResource {
 	 *	Channel channel = new Channel();
 	 *	Channel channel = channel.createChannel( channel,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param channel Properties of a channel used to divide a company into logical business divisions, such as "US Retail," "US Online," or "Amazon." All sites and orders are associated with a channel.
+	 * @param responseFields 
+	 * @param channel Properties of the channel to create.
 	 * @return com.mozu.api.contracts.commerceruntime.channels.Channel
 	 * @see com.mozu.api.contracts.commerceruntime.channels.Channel
 	 * @see com.mozu.api.contracts.commerceruntime.channels.Channel
@@ -149,8 +149,8 @@ public class ChannelResource {
 	 *	Channel channel = new Channel();
 	 *	Channel channel = channel.updateChannel( channel,  code);
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param channel Properties of a channel used to divide a company into logical business divisions, such as "US Retail," "US Online," or "Amazon." All sites and orders are associated with a channel.
+	 * @param code User-defined code that identifies the channel to update.
+	 * @param channel Properties of a the channel to update.
 	 * @return com.mozu.api.contracts.commerceruntime.channels.Channel
 	 * @see com.mozu.api.contracts.commerceruntime.channels.Channel
 	 * @see com.mozu.api.contracts.commerceruntime.channels.Channel
@@ -166,9 +166,9 @@ public class ChannelResource {
 	 *	Channel channel = new Channel();
 	 *	Channel channel = channel.updateChannel( channel,  code,  responseFields);
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param channel Properties of a channel used to divide a company into logical business divisions, such as "US Retail," "US Online," or "Amazon." All sites and orders are associated with a channel.
+	 * @param code User-defined code that identifies the channel to update.
+	 * @param responseFields 
+	 * @param channel Properties of a the channel to update.
 	 * @return com.mozu.api.contracts.commerceruntime.channels.Channel
 	 * @see com.mozu.api.contracts.commerceruntime.channels.Channel
 	 * @see com.mozu.api.contracts.commerceruntime.channels.Channel
@@ -186,17 +186,18 @@ public class ChannelResource {
 	 * 
 	 * <p><pre><code>
 	 *	Channel channel = new Channel();
-	 *	channel.deleteChannel( code);
+	 *	Stream stream = channel.deleteChannel( code);
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @return 
+	 * @param code User-defined code that identifies the channel to delete.
+	 * @return Stream
+	 * @see Stream
 	 */
-	public void deleteChannel(String code) throws Exception
+	public java.io.InputStream deleteChannel(String code) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.commerce.ChannelClient.deleteChannelClient( code);
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.ChannelClient.deleteChannelClient( code);
 		client.setContext(_apiContext);
 		client.executeRequest();
-		client.cleanupHttpConnection();
+		return client.getResult();
 
 	}
 

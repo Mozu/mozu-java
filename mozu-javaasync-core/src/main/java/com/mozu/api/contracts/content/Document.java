@@ -52,9 +52,6 @@ public class Document implements Serializable
 		this.contentUpdateDate = contentUpdateDate;
 	}
 
-	/**
-	 * Fully qualified name of the document type. 
-	 */
 	protected  String documentTypeFQN;
 
 	public String getDocumentTypeFQN() {
@@ -95,9 +92,6 @@ public class Document implements Serializable
 		this.insertDate = insertDate;
 	}
 
-	/**
-	 * The fully qualified name of the document list.
-	 */
 	protected  String listFQN;
 
 	public String getListFQN() {
@@ -118,9 +112,6 @@ public class Document implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * The name of the publish set that this document belongs to, if any.
-	 */
 	protected  String publishSetCode;
 
 	public String getPublishSetCode() {
@@ -151,9 +142,6 @@ public class Document implements Serializable
 		this.updateDate = updateDate;
 	}
 
-	/**
-	 * Mozu.Content.Contracts.Document activeDateRange ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  ActiveDateRange activeDateRange;
 
 	public ActiveDateRange getActiveDateRange() {

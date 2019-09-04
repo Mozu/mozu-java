@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.orders.ExtendedPropertyResource;
 
 /** <summary>
- * Use the Extended Properties resource to store tracking strings for your orders. Extended properties can help you track affiliate sources.
+ * 
  * </summary>
  */
 public class ExtendedPropertyFactory
@@ -123,50 +123,54 @@ public class ExtendedPropertyFactory
 		return returnObj;
 	}
 
-	public static void deleteExtendedProperty(ApiContext apiContext, String orderId, String key, int expectedCode) throws Exception
+	public static java.io.InputStream deleteExtendedProperty(ApiContext apiContext, String orderId, String key, int expectedCode) throws Exception
 	{
-		deleteExtendedProperty(apiContext,  orderId,  key,  null,  null, expectedCode);
+		return deleteExtendedProperty(apiContext,  orderId,  key,  null,  null, expectedCode);
 	}
 
-	public static void deleteExtendedProperty(ApiContext apiContext, String orderId, String key, String updateMode, String version, int expectedCode) throws Exception
+	public static java.io.InputStream deleteExtendedProperty(ApiContext apiContext, String orderId, String key, String updateMode, String version, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		ExtendedPropertyResource resource = new ExtendedPropertyResource(apiContext);
 		try
 		{
-			resource.deleteExtendedProperty( orderId,  key,  updateMode,  version);
+			returnObj = resource.deleteExtendedProperty( orderId,  key,  updateMode,  version);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
-	public static void deleteExtendedProperties(ApiContext apiContext, List<String> keys, String orderId, int expectedCode) throws Exception
+	public static java.io.InputStream deleteExtendedProperties(ApiContext apiContext, List<String> keys, String orderId, int expectedCode) throws Exception
 	{
-		deleteExtendedProperties(apiContext,  keys,  orderId,  null,  null, expectedCode);
+		return deleteExtendedProperties(apiContext,  keys,  orderId,  null,  null, expectedCode);
 	}
 
-	public static void deleteExtendedProperties(ApiContext apiContext, List<String> keys, String orderId, String updateMode, String version, int expectedCode) throws Exception
+	public static java.io.InputStream deleteExtendedProperties(ApiContext apiContext, List<String> keys, String orderId, String updateMode, String version, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		ExtendedPropertyResource resource = new ExtendedPropertyResource(apiContext);
 		try
 		{
-			resource.deleteExtendedProperties( keys,  orderId,  updateMode,  version);
+			returnObj = resource.deleteExtendedProperties( keys,  orderId,  updateMode,  version);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 }

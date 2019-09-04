@@ -16,13 +16,13 @@ public class B2BAccountUrl
 	/**
 	 * Get Resource Url for GetB2BAccounts
 	 * @param fields 
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param q A list of order search terms (not phrases) to use in the query when searching across order number and the name or email of the billing contact. When entering, separate multiple search terms with a space character.
-	 * @param qLimit The maximum number of search results to return in the response. You can limit any range between 1-100.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param filter 
+	 * @param pageSize 
+	 * @param q 
+	 * @param qLimit 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getB2BAccountsUrl(String fields, String filter, Integer pageSize, String q, Integer qLimit, String responseFields, String sortBy, Integer startIndex)
@@ -41,9 +41,9 @@ public class B2BAccountUrl
 
 	/**
 	 * Get Resource Url for GetB2BAccountAttribute
-	 * @param accountId Unique identifier of the customer account.
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param accountId 
+	 * @param attributeFQN 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getB2BAccountAttributeUrl(Integer accountId, String attributeFQN, String responseFields)
@@ -57,12 +57,12 @@ public class B2BAccountUrl
 
 	/**
 	 * Get Resource Url for GetB2BAccountAttributes
-	 * @param accountId Unique identifier of the customer account.
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param accountId 
+	 * @param filter 
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getB2BAccountAttributesUrl(Integer accountId, String filter, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
@@ -79,9 +79,9 @@ public class B2BAccountUrl
 
 	/**
 	 * Get Resource Url for GetUserRolesAsync
-	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
+	 * @param accountId 
+	 * @param responseFields 
+	 * @param userId 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getUserRolesAsyncUrl(Integer accountId, String responseFields, String userId)
@@ -95,14 +95,14 @@ public class B2BAccountUrl
 
 	/**
 	 * Get Resource Url for GetUsers
-	 * @param accountId Unique identifier of the customer account.
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param q A list of order search terms (not phrases) to use in the query when searching across order number and the name or email of the billing contact. When entering, separate multiple search terms with a space character.
-	 * @param qLimit The maximum number of search results to return in the response. You can limit any range between 1-100.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param accountId 
+	 * @param filter 
+	 * @param pageSize 
+	 * @param q 
+	 * @param qLimit 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getUsersUrl(Integer accountId, String filter, Integer pageSize, String q, Integer qLimit, String responseFields, String sortBy, Integer startIndex)
@@ -121,8 +121,8 @@ public class B2BAccountUrl
 
 	/**
 	 * Get Resource Url for GetB2BAccount
-	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param accountId 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getB2BAccountUrl(Integer accountId, String responseFields)
@@ -135,7 +135,7 @@ public class B2BAccountUrl
 
 	/**
 	 * Get Resource Url for AddAccount
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addAccountUrl(String responseFields)
@@ -147,8 +147,8 @@ public class B2BAccountUrl
 
 	/**
 	 * Get Resource Url for AddB2BAccountAttribute
-	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param accountId 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addB2BAccountAttributeUrl(Integer accountId, String responseFields)
@@ -161,9 +161,9 @@ public class B2BAccountUrl
 
 	/**
 	 * Get Resource Url for AddUserRoleAsync
-	 * @param accountId Unique identifier of the customer account.
-	 * @param roleId Identifier for the role that the user account should belong to. For B2B, these roles include Admin, Purchaser, and Non-Purchaser.
-	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
+	 * @param accountId 
+	 * @param roleId 
+	 * @param userId 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addUserRoleAsyncUrl(Integer accountId, Integer roleId, String userId)
@@ -177,8 +177,8 @@ public class B2BAccountUrl
 
 	/**
 	 * Get Resource Url for AddUser
-	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param accountId 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addUserUrl(Integer accountId, String responseFields)
@@ -191,9 +191,9 @@ public class B2BAccountUrl
 
 	/**
 	 * Get Resource Url for UpdateB2BAccountAttribute
-	 * @param accountId Unique identifier of the customer account.
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param accountId 
+	 * @param attributeFQN 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateB2BAccountAttributeUrl(Integer accountId, String attributeFQN, String responseFields)
@@ -207,8 +207,8 @@ public class B2BAccountUrl
 
 	/**
 	 * Get Resource Url for RemoveUser
-	 * @param accountId Unique identifier of the customer account.
-	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
+	 * @param accountId 
+	 * @param userId 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl removeUserUrl(Integer accountId, String userId)
@@ -221,9 +221,9 @@ public class B2BAccountUrl
 
 	/**
 	 * Get Resource Url for UpdateUser
-	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
+	 * @param accountId 
+	 * @param responseFields 
+	 * @param userId 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateUserUrl(Integer accountId, String responseFields, String userId)
@@ -237,8 +237,8 @@ public class B2BAccountUrl
 
 	/**
 	 * Get Resource Url for UpdateAccount
-	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param accountId 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateAccountUrl(Integer accountId, String responseFields)
@@ -251,8 +251,8 @@ public class B2BAccountUrl
 
 	/**
 	 * Get Resource Url for DeleteB2BAccountAttribute
-	 * @param accountId Unique identifier of the customer account.
-	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param accountId 
+	 * @param attributeFQN 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteB2BAccountAttributeUrl(Integer accountId, String attributeFQN)
@@ -265,9 +265,9 @@ public class B2BAccountUrl
 
 	/**
 	 * Get Resource Url for RemoveUserRoleAsync
-	 * @param accountId Unique identifier of the customer account.
-	 * @param roleId The ID corresponding to the type of permissions being removed, e.g. 1 for Admin.
-	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
+	 * @param accountId 
+	 * @param roleId 
+	 * @param userId 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl removeUserRoleAsyncUrl(Integer accountId, Integer roleId, String userId)

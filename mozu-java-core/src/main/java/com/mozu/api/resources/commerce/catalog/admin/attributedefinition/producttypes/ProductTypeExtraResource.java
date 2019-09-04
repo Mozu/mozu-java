@@ -68,8 +68,8 @@ public class ProductTypeExtraResource {
 	 *	ProductTypeExtra producttypeextra = new ProductTypeExtra();
 	 *	AttributeInProductType attributeInProductType = producttypeextra.getExtra( productTypeId,  attributeFQN);
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productTypeId Identifier of the product type.
+	 * @param attributeFQN 
+	 * @param productTypeId Identifier of the product type whose extra is being retrieved.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.AttributeInProductType
 	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
@@ -85,9 +85,9 @@ public class ProductTypeExtraResource {
 	 *	ProductTypeExtra producttypeextra = new ProductTypeExtra();
 	 *	AttributeInProductType attributeInProductType = producttypeextra.getExtra( productTypeId,  attributeFQN,  responseFields);
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productTypeId Identifier of the product type.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param attributeFQN 
+	 * @param productTypeId Identifier of the product type whose extra is being retrieved.
+	 * @param responseFields 
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.AttributeInProductType
 	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
@@ -109,7 +109,7 @@ public class ProductTypeExtraResource {
 	 * </code></pre></p>
 	 * @param productTypeId Identifier of the product type.
 	 * @param dataViewMode DataViewMode
-	 * @param attributeInProductType Properties of an attribute definition associated with a specific product type. When an attribute is applied to a product type, each product of that type maintains the same set of attributes.
+	 * @param attributeInProductType The properties of the extra attribute definition for this product type assignment.
 	 * @return com.mozu.api.contracts.productadmin.AttributeInProductType
 	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
 	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
@@ -126,9 +126,9 @@ public class ProductTypeExtraResource {
 	 *	AttributeInProductType attributeInProductType = producttypeextra.addExtra( attributeInProductType,  productTypeId,  responseFields);
 	 * </code></pre></p>
 	 * @param productTypeId Identifier of the product type.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param dataViewMode DataViewMode
-	 * @param attributeInProductType Properties of an attribute definition associated with a specific product type. When an attribute is applied to a product type, each product of that type maintains the same set of attributes.
+	 * @param attributeInProductType The properties of the extra attribute definition for this product type assignment.
 	 * @return com.mozu.api.contracts.productadmin.AttributeInProductType
 	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
 	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
@@ -148,10 +148,10 @@ public class ProductTypeExtraResource {
 	 *	ProductTypeExtra producttypeextra = new ProductTypeExtra();
 	 *	AttributeInProductType attributeInProductType = producttypeextra.updateExtra( attributeInProductType,  productTypeId,  attributeFQN);
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param attributeFQN 
 	 * @param productTypeId Identifier of the product type.
 	 * @param dataViewMode DataViewMode
-	 * @param attributeInProductType Properties of an attribute definition associated with a specific product type. When an attribute is applied to a product type, each product of that type maintains the same set of attributes.
+	 * @param attributeInProductType The properties of the extra attribute definition to update for the product type.
 	 * @return com.mozu.api.contracts.productadmin.AttributeInProductType
 	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
 	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
@@ -167,11 +167,11 @@ public class ProductTypeExtraResource {
 	 *	ProductTypeExtra producttypeextra = new ProductTypeExtra();
 	 *	AttributeInProductType attributeInProductType = producttypeextra.updateExtra( attributeInProductType,  productTypeId,  attributeFQN,  responseFields);
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param attributeFQN 
 	 * @param productTypeId Identifier of the product type.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param dataViewMode DataViewMode
-	 * @param attributeInProductType Properties of an attribute definition associated with a specific product type. When an attribute is applied to a product type, each product of that type maintains the same set of attributes.
+	 * @param attributeInProductType The properties of the extra attribute definition to update for the product type.
 	 * @return com.mozu.api.contracts.productadmin.AttributeInProductType
 	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
 	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
@@ -189,19 +189,20 @@ public class ProductTypeExtraResource {
 	 * 
 	 * <p><pre><code>
 	 *	ProductTypeExtra producttypeextra = new ProductTypeExtra();
-	 *	producttypeextra.deleteExtra( productTypeId,  attributeFQN);
+	 *	Stream stream = producttypeextra.deleteExtra( productTypeId,  attributeFQN);
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param attributeFQN 
 	 * @param productTypeId Identifier of the product type.
 	 * @param dataViewMode DataViewMode
-	 * @return 
+	 * @return Stream
+	 * @see Stream
 	 */
-	public void deleteExtra(Integer productTypeId, String attributeFQN) throws Exception
+	public java.io.InputStream deleteExtra(Integer productTypeId, String attributeFQN) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.attributedefinition.producttypes.ProductTypeExtraClient.deleteExtraClient(_dataViewMode,  productTypeId,  attributeFQN);
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.catalog.admin.attributedefinition.producttypes.ProductTypeExtraClient.deleteExtraClient(_dataViewMode,  productTypeId,  attributeFQN);
 		client.setContext(_apiContext);
 		client.executeRequest();
-		client.cleanupHttpConnection();
+		return client.getResult();
 
 	}
 

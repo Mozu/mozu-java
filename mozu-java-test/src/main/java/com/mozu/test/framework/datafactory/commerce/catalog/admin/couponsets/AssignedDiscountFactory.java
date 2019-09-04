@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.catalog.admin.couponsets.AssignedDiscountResource;
 
 /** <summary>
- * Use the AssignedDiscounts resource to manage the discounts assigned to coupon sets.
+ * 
  * </summary>
  */
 public class AssignedDiscountFactory
@@ -43,40 +43,44 @@ public class AssignedDiscountFactory
 		return returnObj;
 	}
 
-	public static void assignDiscount(ApiContext apiContext, com.mozu.api.contracts.productadmin.AssignedDiscount assignedDiscount, String couponSetCode, int expectedCode) throws Exception
+	public static java.io.InputStream assignDiscount(ApiContext apiContext, com.mozu.api.contracts.productadmin.AssignedDiscount assignedDiscount, String couponSetCode, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		AssignedDiscountResource resource = new AssignedDiscountResource(apiContext);
 		try
 		{
-			resource.assignDiscount( assignedDiscount,  couponSetCode);
+			returnObj = resource.assignDiscount( assignedDiscount,  couponSetCode);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
-	public static void unAssignDiscount(ApiContext apiContext, String couponSetCode, Integer discountId, int expectedCode) throws Exception
+	public static java.io.InputStream unAssignDiscount(ApiContext apiContext, String couponSetCode, Integer discountId, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		AssignedDiscountResource resource = new AssignedDiscountResource(apiContext);
 		try
 		{
-			resource.unAssignDiscount( couponSetCode,  discountId);
+			returnObj = resource.unAssignDiscount( couponSetCode,  discountId);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 }

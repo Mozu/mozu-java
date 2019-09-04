@@ -21,7 +21,7 @@ import org.apache.commons.lang.StringUtils;
 
 import com.mozu.api.DataViewMode;
 /** <summary>
- * Use the Product Sort Definition resource to create, update, and delete sort order definitions used in visual merchandising.You can use these definitions to apply organization rules to a category defined by a product property or custom attribute. The sort order determines the order that products are displayed in, such as newest to oldest, so that they can be rearranged.
+ * 
  * </summary>
  */
 public class ProductSortDefinitionResource {
@@ -79,11 +79,11 @@ public class ProductSortDefinitionResource {
 	 *	ProductSortDefinition productsortdefinition = new ProductSortDefinition();
 	 *	ProductSortDefinitionPagedCollection productSortDefinitionPagedCollection = productsortdefinition.getProductSortDefinitions( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param filter 
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @return com.mozu.api.contracts.productadmin.ProductSortDefinitionPagedCollection
 	 * @see com.mozu.api.contracts.productadmin.ProductSortDefinitionPagedCollection
 	 */
@@ -102,11 +102,11 @@ public class ProductSortDefinitionResource {
 	 *	ProductSortDefinition productsortdefinition = new ProductSortDefinition();
 	 *	CountDownLatch latch = productsortdefinition.getProductSortDefinitions( startIndex,  pageSize,  sortBy,  filter,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param filter 
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.ProductSortDefinitionPagedCollection
 	 * @see com.mozu.api.contracts.productadmin.ProductSortDefinitionPagedCollection
@@ -125,7 +125,7 @@ public class ProductSortDefinitionResource {
 	 *	ProductSortDefinition productsortdefinition = new ProductSortDefinition();
 	 *	ProductSortDefinition productSortDefinition = productsortdefinition.getProductSortDefinition( productSortDefinitionId);
 	 * </code></pre></p>
-	 * @param productSortDefinitionId Unique identifier of the product sort definition.
+	 * @param productSortDefinitionId 
 	 * @return com.mozu.api.contracts.productadmin.ProductSortDefinition
 	 * @see com.mozu.api.contracts.productadmin.ProductSortDefinition
 	 */
@@ -140,7 +140,7 @@ public class ProductSortDefinitionResource {
 	 *	ProductSortDefinition productsortdefinition = new ProductSortDefinition();
 	 *	CountDownLatch latch = productsortdefinition.getProductSortDefinition( productSortDefinitionId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param productSortDefinitionId Unique identifier of the product sort definition.
+	 * @param productSortDefinitionId 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.ProductSortDefinition
 	 * @see com.mozu.api.contracts.productadmin.ProductSortDefinition
@@ -156,8 +156,8 @@ public class ProductSortDefinitionResource {
 	 *	ProductSortDefinition productsortdefinition = new ProductSortDefinition();
 	 *	ProductSortDefinition productSortDefinition = productsortdefinition.getProductSortDefinition( productSortDefinitionId,  responseFields);
 	 * </code></pre></p>
-	 * @param productSortDefinitionId Unique identifier of the product sort definition.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param productSortDefinitionId 
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.productadmin.ProductSortDefinition
 	 * @see com.mozu.api.contracts.productadmin.ProductSortDefinition
 	 */
@@ -176,8 +176,8 @@ public class ProductSortDefinitionResource {
 	 *	ProductSortDefinition productsortdefinition = new ProductSortDefinition();
 	 *	CountDownLatch latch = productsortdefinition.getProductSortDefinition( productSortDefinitionId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param productSortDefinitionId Unique identifier of the product sort definition.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param productSortDefinitionId 
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.ProductSortDefinition
 	 * @see com.mozu.api.contracts.productadmin.ProductSortDefinition
@@ -196,7 +196,7 @@ public class ProductSortDefinitionResource {
 	 *	ProductSortDefinition productsortdefinition = new ProductSortDefinition();
 	 *	ProductSortDefinition productSortDefinition = productsortdefinition.addProductSortDefinition( definition);
 	 * </code></pre></p>
-	 * @param definition Properties of the new product sort definition. Required properties of StartDate and Name.
+	 * @param definition 
 	 * @return com.mozu.api.contracts.productadmin.ProductSortDefinition
 	 * @see com.mozu.api.contracts.productadmin.ProductSortDefinition
 	 * @see com.mozu.api.contracts.productadmin.ProductSortDefinition
@@ -213,7 +213,7 @@ public class ProductSortDefinitionResource {
 	 *	CountDownLatch latch = productsortdefinition.addProductSortDefinition( definition, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param definition Properties of the new product sort definition. Required properties of StartDate and Name.
+	 * @param definition 
 	 * @return com.mozu.api.contracts.productadmin.ProductSortDefinition
 	 * @see com.mozu.api.contracts.productadmin.ProductSortDefinition
 	 * @see com.mozu.api.contracts.productadmin.ProductSortDefinition
@@ -229,9 +229,9 @@ public class ProductSortDefinitionResource {
 	 *	ProductSortDefinition productsortdefinition = new ProductSortDefinition();
 	 *	ProductSortDefinition productSortDefinition = productsortdefinition.addProductSortDefinition( definition,  useProvidedId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param useProvidedId If true, the provided Id value will be used as the ProductSortDefinitionId. If omitted or false, the system will generate a ProductSortDefinitionId
-	 * @param definition Properties of the new product sort definition. Required properties of StartDate and Name.
+	 * @param responseFields 
+	 * @param useProvidedId 
+	 * @param definition 
 	 * @return com.mozu.api.contracts.productadmin.ProductSortDefinition
 	 * @see com.mozu.api.contracts.productadmin.ProductSortDefinition
 	 * @see com.mozu.api.contracts.productadmin.ProductSortDefinition
@@ -251,10 +251,10 @@ public class ProductSortDefinitionResource {
 	 *	ProductSortDefinition productsortdefinition = new ProductSortDefinition();
 	 *	CountDownLatch latch = productsortdefinition.addProductSortDefinition( definition,  useProvidedId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param useProvidedId If true, the provided Id value will be used as the ProductSortDefinitionId. If omitted or false, the system will generate a ProductSortDefinitionId
+	 * @param responseFields 
+	 * @param useProvidedId 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param definition Properties of the new product sort definition. Required properties of StartDate and Name.
+	 * @param definition 
 	 * @return com.mozu.api.contracts.productadmin.ProductSortDefinition
 	 * @see com.mozu.api.contracts.productadmin.ProductSortDefinition
 	 * @see com.mozu.api.contracts.productadmin.ProductSortDefinition
@@ -273,8 +273,8 @@ public class ProductSortDefinitionResource {
 	 *	ProductSortDefinition productsortdefinition = new ProductSortDefinition();
 	 *	ProductSortDefinition productSortDefinition = productsortdefinition.updateProductSortDefinition( definition,  productSortDefinitionId);
 	 * </code></pre></p>
-	 * @param productSortDefinitionId Unique identifier of the product sort definition.
-	 * @param definition The details of the product sort definition to update.
+	 * @param productSortDefinitionId 
+	 * @param definition 
 	 * @return com.mozu.api.contracts.productadmin.ProductSortDefinition
 	 * @see com.mozu.api.contracts.productadmin.ProductSortDefinition
 	 * @see com.mozu.api.contracts.productadmin.ProductSortDefinition
@@ -290,9 +290,9 @@ public class ProductSortDefinitionResource {
 	 *	ProductSortDefinition productsortdefinition = new ProductSortDefinition();
 	 *	CountDownLatch latch = productsortdefinition.updateProductSortDefinition( definition,  productSortDefinitionId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param productSortDefinitionId Unique identifier of the product sort definition.
+	 * @param productSortDefinitionId 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param definition The details of the product sort definition to update.
+	 * @param definition 
 	 * @return com.mozu.api.contracts.productadmin.ProductSortDefinition
 	 * @see com.mozu.api.contracts.productadmin.ProductSortDefinition
 	 * @see com.mozu.api.contracts.productadmin.ProductSortDefinition
@@ -308,9 +308,9 @@ public class ProductSortDefinitionResource {
 	 *	ProductSortDefinition productsortdefinition = new ProductSortDefinition();
 	 *	ProductSortDefinition productSortDefinition = productsortdefinition.updateProductSortDefinition( definition,  productSortDefinitionId,  responseFields);
 	 * </code></pre></p>
-	 * @param productSortDefinitionId Unique identifier of the product sort definition.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param definition The details of the product sort definition to update.
+	 * @param productSortDefinitionId 
+	 * @param responseFields 
+	 * @param definition 
 	 * @return com.mozu.api.contracts.productadmin.ProductSortDefinition
 	 * @see com.mozu.api.contracts.productadmin.ProductSortDefinition
 	 * @see com.mozu.api.contracts.productadmin.ProductSortDefinition
@@ -330,10 +330,10 @@ public class ProductSortDefinitionResource {
 	 *	ProductSortDefinition productsortdefinition = new ProductSortDefinition();
 	 *	CountDownLatch latch = productsortdefinition.updateProductSortDefinition( definition,  productSortDefinitionId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param productSortDefinitionId Unique identifier of the product sort definition.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param productSortDefinitionId 
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param definition The details of the product sort definition to update.
+	 * @param definition 
 	 * @return com.mozu.api.contracts.productadmin.ProductSortDefinition
 	 * @see com.mozu.api.contracts.productadmin.ProductSortDefinition
 	 * @see com.mozu.api.contracts.productadmin.ProductSortDefinition
@@ -350,17 +350,37 @@ public class ProductSortDefinitionResource {
 	 * 
 	 * <p><pre><code>
 	 *	ProductSortDefinition productsortdefinition = new ProductSortDefinition();
-	 *	productsortdefinition.deleteProductSortDefinition( productSortDefinitionId);
+	 *	Stream stream = productsortdefinition.deleteProductSortDefinition( productSortDefinitionId);
 	 * </code></pre></p>
-	 * @param productSortDefinitionId Unique identifier of the product sort definition.
-	 * @return 
+	 * @param productSortDefinitionId 
+	 * @return Stream
+	 * @see Stream
 	 */
-	public void deleteProductSortDefinition(Integer productSortDefinitionId) throws Exception
+	public java.io.InputStream deleteProductSortDefinition(Integer productSortDefinitionId) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.ProductSortDefinitionClient.deleteProductSortDefinitionClient(_dataViewMode,  productSortDefinitionId);
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.catalog.admin.ProductSortDefinitionClient.deleteProductSortDefinitionClient(_dataViewMode,  productSortDefinitionId);
 		client.setContext(_apiContext);
 		client.executeRequest();
-		client.cleanupHttpConnection();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	ProductSortDefinition productsortdefinition = new ProductSortDefinition();
+	 *	CountDownLatch latch = productsortdefinition.deleteProductSortDefinition( productSortDefinitionId, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param productSortDefinitionId 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return Stream
+	 * @see Stream
+	 */
+	public CountDownLatch deleteProductSortDefinitionAsync(Integer productSortDefinitionId, AsyncCallback<java.io.InputStream> callback) throws Exception
+	{
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.catalog.admin.ProductSortDefinitionClient.deleteProductSortDefinitionClient(_dataViewMode,  productSortDefinitionId);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
 
 	}
 

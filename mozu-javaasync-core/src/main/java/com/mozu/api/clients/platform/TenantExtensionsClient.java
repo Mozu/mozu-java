@@ -19,7 +19,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the Extensions resource to manage Arc.js configuration settings. These are the same settings you can configure through  in the Action Management JSON Editor.
+ * 
  * </summary>
  */
 public class TenantExtensionsClient {
@@ -27,37 +27,20 @@ public class TenantExtensionsClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.installedapplications.TenantExtensions> mozuClient=GetExtensionsClient();
+	 * MozuClient<java.io.InputStream> mozuClient=GetExtensionsClient();
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
-	 * TenantExtensions tenantExtensions = client.Result();
+	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.installedapplications.TenantExtensions>
-	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
 	 */
-	public static MozuClient<com.mozu.api.contracts.installedapplications.TenantExtensions> getExtensionsClient() throws Exception
+	public static MozuClient<java.io.InputStream> getExtensionsClient() throws Exception
 	{
-		return getExtensionsClient( null);
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.installedapplications.TenantExtensions> mozuClient=GetExtensionsClient( responseFields);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * TenantExtensions tenantExtensions = client.Result();
-	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.installedapplications.TenantExtensions>
-	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
-	 */
-	public static MozuClient<com.mozu.api.contracts.installedapplications.TenantExtensions> getExtensionsClient(String responseFields) throws Exception
-	{
-		MozuUrl url = com.mozu.api.urls.platform.TenantExtensionsUrl.getExtensionsUrl(responseFields);
+		MozuUrl url = com.mozu.api.urls.platform.TenantExtensionsUrl.getExtensionsUrl();
 		String verb = "GET";
-		Class<?> clz = com.mozu.api.contracts.installedapplications.TenantExtensions.class;
-		MozuClient<com.mozu.api.contracts.installedapplications.TenantExtensions> mozuClient = (MozuClient<com.mozu.api.contracts.installedapplications.TenantExtensions>) MozuClientFactory.getInstance(clz);
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -67,41 +50,22 @@ public class TenantExtensionsClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.installedapplications.TenantExtensions> mozuClient=UpdateExtensionsClient( extensions);
+	 * MozuClient<java.io.InputStream> mozuClient=UpdateExtensionsClient( extensions);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
-	 * TenantExtensions tenantExtensions = client.Result();
+	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param extensions The updated details of the Arc.js configuration settings.
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.installedapplications.TenantExtensions>
-	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
+	 * @param extensions 
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
 	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
 	 */
-	public static MozuClient<com.mozu.api.contracts.installedapplications.TenantExtensions> updateExtensionsClient(com.mozu.api.contracts.installedapplications.TenantExtensions extensions) throws Exception
+	public static MozuClient<java.io.InputStream> updateExtensionsClient(com.mozu.api.contracts.installedapplications.TenantExtensions extensions) throws Exception
 	{
-		return updateExtensionsClient( extensions,  null);
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.installedapplications.TenantExtensions> mozuClient=UpdateExtensionsClient( extensions,  responseFields);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * TenantExtensions tenantExtensions = client.Result();
-	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param extensions The updated details of the Arc.js configuration settings.
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.installedapplications.TenantExtensions>
-	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
-	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
-	 */
-	public static MozuClient<com.mozu.api.contracts.installedapplications.TenantExtensions> updateExtensionsClient(com.mozu.api.contracts.installedapplications.TenantExtensions extensions, String responseFields) throws Exception
-	{
-		MozuUrl url = com.mozu.api.urls.platform.TenantExtensionsUrl.updateExtensionsUrl(responseFields);
+		MozuUrl url = com.mozu.api.urls.platform.TenantExtensionsUrl.updateExtensionsUrl();
 		String verb = "PUT";
-		Class<?> clz = com.mozu.api.contracts.installedapplications.TenantExtensions.class;
-		MozuClient<com.mozu.api.contracts.installedapplications.TenantExtensions> mozuClient = (MozuClient<com.mozu.api.contracts.installedapplications.TenantExtensions>) MozuClientFactory.getInstance(clz);
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(extensions);

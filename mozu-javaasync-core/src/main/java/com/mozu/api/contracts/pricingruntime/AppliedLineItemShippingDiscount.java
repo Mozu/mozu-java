@@ -13,18 +13,12 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.pricingruntime.Discount;
 
-/**
- *	The discount applied to the line item shipping cost.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AppliedLineItemShippingDiscount implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The coupon code that a shopper uses to redeem an associated discount  on a purchase. This is also the unique identifier of the coupon itself.
-	 */
 	protected  String couponCode;
 
 	public String getCouponCode() {
@@ -35,9 +29,6 @@ public class AppliedLineItemShippingDiscount implements Serializable
 		this.couponCode = couponCode;
 	}
 
-	/**
-	 * The unique identifier of the coupon set for the discount applied to the line item shipping cost.
-	 */
 	protected  Integer couponSetId;
 
 	public Integer getCouponSetId() {
@@ -48,9 +39,6 @@ public class AppliedLineItemShippingDiscount implements Serializable
 		this.couponSetId = couponSetId;
 	}
 
-	/**
-	 * The value of the discount applied to the cart or order, represented as a negative currency amount to apply to the original price.
-	 */
 	protected  Double impact;
 
 	public Double getImpact() {
@@ -61,9 +49,6 @@ public class AppliedLineItemShippingDiscount implements Serializable
 		this.impact = impact;
 	}
 
-	/**
-	 * The impact of a discount for each discount quantity.
-	 */
 	protected  Double impactPerUnit;
 
 	public Double getImpactPerUnit() {
@@ -74,9 +59,6 @@ public class AppliedLineItemShippingDiscount implements Serializable
 		this.impactPerUnit = impactPerUnit;
 	}
 
-	/**
-	 * Specifies whether to force the discount to apply to the line item shipping cost.
-	 */
 	protected  Boolean isForced;
 
 	public Boolean getIsForced() {
@@ -97,9 +79,6 @@ public class AppliedLineItemShippingDiscount implements Serializable
 		this.normalizedImpact = normalizedImpact;
 	}
 
-	/**
-	 * The specified quantity of objects and items. This property is used for numerous object types including products, options, components within a product bundle, cart and order items, returned items, shipping line items, items in a digital product. and items associated with types and reservations.
-	 */
 	protected  Integer quantity;
 
 	public Integer getQuantity() {
@@ -110,9 +89,6 @@ public class AppliedLineItemShippingDiscount implements Serializable
 		this.quantity = quantity;
 	}
 
-	/**
-	 * The code associated with a carrier's shipping method service type, used during fulfillment of packages and shipments. Service type codes include a prefix that indicates the carrier. For example: FEDEX_INTERNATIONAL_STANDARD and UPS_GROUND.If using a custom rate, this property corresponds to the  field in  when you navigate to  &gt;  &gt; , and then click on an existing rate or on .
-	 */
 	protected  String shippingMethodCode;
 
 	public String getShippingMethodCode() {
@@ -123,9 +99,6 @@ public class AppliedLineItemShippingDiscount implements Serializable
 		this.shippingMethodCode = shippingMethodCode;
 	}
 
-	/**
-	 * Name of the discount added and applied to a shopping cart and order for a shopper's purchase.
-	 */
 	protected  Discount discount;
 
 	public Discount getDiscount() {

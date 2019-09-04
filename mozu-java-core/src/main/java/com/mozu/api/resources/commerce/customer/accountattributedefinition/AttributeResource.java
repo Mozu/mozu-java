@@ -18,7 +18,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * commerce/customer/accountattributedefinition/attributes related resources. DOCUMENT_HERE 
+ * 
  * </summary>
  */
 public class AttributeResource {
@@ -54,11 +54,11 @@ public class AttributeResource {
 	 *	Attribute attribute = new Attribute();
 	 *	AttributeCollection attributeCollection = attribute.getAttributes( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param filter 
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @return com.mozu.api.contracts.core.extensible.AttributeCollection
 	 * @see com.mozu.api.contracts.core.extensible.AttributeCollection
 	 */
@@ -77,7 +77,7 @@ public class AttributeResource {
 	 *	Attribute attribute = new Attribute();
 	 *	AttributeVocabularyValue attributeVocabularyValue = attribute.getAttributeVocabularyValues( attributeFQN);
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param attributeFQN 
 	 * @return List<com.mozu.api.contracts.core.extensible.AttributeVocabularyValue>
 	 * @see com.mozu.api.contracts.core.extensible.AttributeVocabularyValue
 	 */
@@ -96,7 +96,7 @@ public class AttributeResource {
 	 *	Attribute attribute = new Attribute();
 	 *	Attribute attribute = attribute.getAttribute( attributeFQN);
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param attributeFQN 
 	 * @return com.mozu.api.contracts.core.extensible.Attribute
 	 * @see com.mozu.api.contracts.core.extensible.Attribute
 	 */
@@ -111,8 +111,8 @@ public class AttributeResource {
 	 *	Attribute attribute = new Attribute();
 	 *	Attribute attribute = attribute.getAttribute( attributeFQN,  responseFields);
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param attributeFQN 
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.core.extensible.Attribute
 	 * @see com.mozu.api.contracts.core.extensible.Attribute
 	 */
@@ -147,7 +147,7 @@ public class AttributeResource {
 	 *	Attribute attribute = new Attribute();
 	 *	Attribute attribute = attribute.createAttribute( attribute,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param attribute 
 	 * @return com.mozu.api.contracts.core.extensible.Attribute
 	 * @see com.mozu.api.contracts.core.extensible.Attribute
@@ -168,7 +168,7 @@ public class AttributeResource {
 	 *	Attribute attribute = new Attribute();
 	 *	Attribute attribute = attribute.updateAttribute( attribute,  attributeFQN);
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param attributeFQN 
 	 * @param attribute 
 	 * @return com.mozu.api.contracts.core.extensible.Attribute
 	 * @see com.mozu.api.contracts.core.extensible.Attribute
@@ -185,8 +185,8 @@ public class AttributeResource {
 	 *	Attribute attribute = new Attribute();
 	 *	Attribute attribute = attribute.updateAttribute( attribute,  attributeFQN,  responseFields);
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param attributeFQN 
+	 * @param responseFields 
 	 * @param attribute 
 	 * @return com.mozu.api.contracts.core.extensible.Attribute
 	 * @see com.mozu.api.contracts.core.extensible.Attribute

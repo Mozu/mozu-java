@@ -33,7 +33,7 @@ public class ProductPropertyClient {
 	 * client.executeRequest();
 	 * ProductProperty productProperty = client.Result();
 	 * </code></pre></p>
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param productCode 
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.ProductProperty>>
 	 * @see com.mozu.api.contracts.productadmin.ProductProperty
 	 */
@@ -58,9 +58,9 @@ public class ProductPropertyClient {
 	 * client.executeRequest();
 	 * ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param value The value string to create.
+	 * @param attributeFQN 
+	 * @param productCode 
+	 * @param value 
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent>>
 	 * @see com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
 	 */
@@ -85,10 +85,10 @@ public class ProductPropertyClient {
 	 * client.executeRequest();
 	 * ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param value The value string to create.
+	 * @param attributeFQN 
+	 * @param localeCode 
+	 * @param productCode 
+	 * @param value 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent>
 	 * @see com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
 	 */
@@ -105,11 +105,11 @@ public class ProductPropertyClient {
 	 * client.executeRequest();
 	 * ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param value The value string to create.
+	 * @param attributeFQN 
+	 * @param localeCode 
+	 * @param productCode 
+	 * @param responseFields 
+	 * @param value 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent>
 	 * @see com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
 	 */
@@ -134,8 +134,8 @@ public class ProductPropertyClient {
 	 * client.executeRequest();
 	 * ProductProperty productProperty = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param attributeFQN 
+	 * @param productCode 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductProperty>
 	 * @see com.mozu.api.contracts.productadmin.ProductProperty
 	 */
@@ -152,9 +152,9 @@ public class ProductPropertyClient {
 	 * client.executeRequest();
 	 * ProductProperty productProperty = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param attributeFQN 
+	 * @param productCode 
+	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductProperty>
 	 * @see com.mozu.api.contracts.productadmin.ProductProperty
 	 */
@@ -179,10 +179,10 @@ public class ProductPropertyClient {
 	 * client.executeRequest();
 	 * ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param value The value string to create.
-	 * @param localizedContent Content of the product property value in the language defined for the locale code.
+	 * @param attributeFQN 
+	 * @param productCode 
+	 * @param value 
+	 * @param localizedContent 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent>
 	 * @see com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
@@ -200,11 +200,11 @@ public class ProductPropertyClient {
 	 * client.executeRequest();
 	 * ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param value The value string to create.
-	 * @param localizedContent Content of the product property value in the language defined for the locale code.
+	 * @param attributeFQN 
+	 * @param productCode 
+	 * @param responseFields 
+	 * @param value 
+	 * @param localizedContent 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent>
 	 * @see com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
@@ -231,8 +231,8 @@ public class ProductPropertyClient {
 	 * client.executeRequest();
 	 * ProductProperty productProperty = client.Result();
 	 * </code></pre></p>
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param productProperty Details of a property defined for a product.
+	 * @param productCode 
+	 * @param productProperty Properties of the property attribute to configure for a product.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductProperty>
 	 * @see com.mozu.api.contracts.productadmin.ProductProperty
 	 * @see com.mozu.api.contracts.productadmin.ProductProperty
@@ -250,9 +250,9 @@ public class ProductPropertyClient {
 	 * client.executeRequest();
 	 * ProductProperty productProperty = client.Result();
 	 * </code></pre></p>
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param productProperty Details of a property defined for a product.
+	 * @param productCode 
+	 * @param responseFields 
+	 * @param productProperty Properties of the property attribute to configure for a product.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductProperty>
 	 * @see com.mozu.api.contracts.productadmin.ProductProperty
 	 * @see com.mozu.api.contracts.productadmin.ProductProperty
@@ -279,10 +279,10 @@ public class ProductPropertyClient {
 	 * client.executeRequest();
 	 * ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param value The value string to create.
-	 * @param localizedContent Content of the product property value in the language defined for the locale code.
+	 * @param attributeFQN 
+	 * @param productCode 
+	 * @param value 
+	 * @param localizedContent 
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent>>
 	 * @see com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
@@ -309,11 +309,11 @@ public class ProductPropertyClient {
 	 * client.executeRequest();
 	 * ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param value The value string to create.
-	 * @param localizedContent Content of the product property value in the language defined for the locale code.
+	 * @param attributeFQN 
+	 * @param localeCode 
+	 * @param productCode 
+	 * @param value 
+	 * @param localizedContent 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent>
 	 * @see com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
@@ -331,12 +331,12 @@ public class ProductPropertyClient {
 	 * client.executeRequest();
 	 * ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param value The value string to create.
-	 * @param localizedContent Content of the product property value in the language defined for the locale code.
+	 * @param attributeFQN 
+	 * @param localeCode 
+	 * @param productCode 
+	 * @param responseFields 
+	 * @param value 
+	 * @param localizedContent 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent>
 	 * @see com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
@@ -363,9 +363,9 @@ public class ProductPropertyClient {
 	 * client.executeRequest();
 	 * ProductProperty productProperty = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param productProperty Details of a property defined for a product.
+	 * @param attributeFQN 
+	 * @param productCode 
+	 * @param productProperty Details of the property attribute to update for the product configuration.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductProperty>
 	 * @see com.mozu.api.contracts.productadmin.ProductProperty
 	 * @see com.mozu.api.contracts.productadmin.ProductProperty
@@ -383,10 +383,10 @@ public class ProductPropertyClient {
 	 * client.executeRequest();
 	 * ProductProperty productProperty = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param productProperty Details of a property defined for a product.
+	 * @param attributeFQN 
+	 * @param productCode 
+	 * @param responseFields 
+	 * @param productProperty Details of the property attribute to update for the product configuration.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductProperty>
 	 * @see com.mozu.api.contracts.productadmin.ProductProperty
 	 * @see com.mozu.api.contracts.productadmin.ProductProperty
@@ -408,19 +408,22 @@ public class ProductPropertyClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=DeletePropertyClient(dataViewMode,  productCode,  attributeFQN);
+	 * MozuClient<java.io.InputStream> mozuClient=DeletePropertyClient(dataViewMode,  productCode,  attributeFQN);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
+	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @return Mozu.Api.MozuClient 
+	 * @param attributeFQN 
+	 * @param productCode 
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
 	 */
-	public static MozuClient deletePropertyClient(com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN) throws Exception
+	public static MozuClient<java.io.InputStream> deletePropertyClient(com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductPropertyUrl.deletePropertyUrl(attributeFQN, productCode);
 		String verb = "DELETE";
-				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
@@ -431,21 +434,24 @@ public class ProductPropertyClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=DeletePropertyValueLocalizedContentClient(dataViewMode,  productCode,  attributeFQN,  value,  localeCode);
+	 * MozuClient<java.io.InputStream> mozuClient=DeletePropertyValueLocalizedContentClient(dataViewMode,  productCode,  attributeFQN,  value,  localeCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
+	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param value The value string to create.
-	 * @return Mozu.Api.MozuClient 
+	 * @param attributeFQN 
+	 * @param localeCode 
+	 * @param productCode 
+	 * @param value 
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
 	 */
-	public static MozuClient deletePropertyValueLocalizedContentClient(com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, String value, String localeCode) throws Exception
+	public static MozuClient<java.io.InputStream> deletePropertyValueLocalizedContentClient(com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, String value, String localeCode) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductPropertyUrl.deletePropertyValueLocalizedContentUrl(attributeFQN, localeCode, productCode, value);
 		String verb = "DELETE";
-				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());

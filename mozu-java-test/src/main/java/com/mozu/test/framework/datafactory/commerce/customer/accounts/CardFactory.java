@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.customer.accounts.CardResource;
 
 /** <summary>
- * Use the Cards subresource to manage stored credit cards for customer accounts.  stores limited card data in the Customer service for expedited ordering purposes; however, the complete card data is stored in the Payment service.
+ * Use the Cards subresource to manage stored credit cards for customer accounts. Mozu stores limited card data in the Customer service for expedited ordering purposes; however, the complete card data is stored in the Payment service.
  * </summary>
  */
 public class CardFactory
@@ -123,22 +123,24 @@ public class CardFactory
 		return returnObj;
 	}
 
-	public static void deleteAccountCard(ApiContext apiContext, Integer accountId, String cardId, int expectedCode) throws Exception
+	public static java.io.InputStream deleteAccountCard(ApiContext apiContext, Integer accountId, String cardId, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		CardResource resource = new CardResource(apiContext);
 		try
 		{
-			resource.deleteAccountCard( accountId,  cardId);
+			returnObj = resource.deleteAccountCard( accountId,  cardId);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 }

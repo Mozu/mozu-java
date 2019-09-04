@@ -15,18 +15,12 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productadmin.ProductImageGroupTag;
 
-/**
- *	An object representing the group of images, including data such as the name of the group (e.g. "blue") and the tags (which include the FQN such as "tenant~color" and values such as "blue") to identify how these images are assorted.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductImageGroup implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * A unique identifier for the product image group.
-	 */
 	protected  String productImageGroupId;
 
 	public String getProductImageGroupId() {
@@ -37,9 +31,6 @@ public class ProductImageGroup implements Serializable
 		this.productImageGroupId = productImageGroupId;
 	}
 
-	/**
-	 * A list of tags associated with the product image group.
-	 */
 	protected List<ProductImageGroupTag> productImageGroupTags;
 	public List<ProductImageGroupTag> getProductImageGroupTags() {
 		return this.productImageGroupTags;

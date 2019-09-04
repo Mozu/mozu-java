@@ -93,22 +93,119 @@ public class ShipmentFactory
 		return returnObj;
 	}
 
-	public static void deleteShipment(ApiContext apiContext, String orderId, String shipmentId, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.fulfillment.Shipment updateShipmentAdjustments(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.fulfillment.ShipmentAdjustment shipmentAdjustment, String orderId, Integer shipmentNumber, int expectedCode) throws Exception
 	{
+		return updateShipmentAdjustments(apiContext,  shipmentAdjustment,  orderId,  shipmentNumber,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.fulfillment.Shipment updateShipmentAdjustments(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.fulfillment.ShipmentAdjustment shipmentAdjustment, String orderId, Integer shipmentNumber, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.commerceruntime.fulfillment.Shipment returnObj = new com.mozu.api.contracts.commerceruntime.fulfillment.Shipment();
 		ShipmentResource resource = new ShipmentResource(apiContext);
 		try
 		{
-			resource.deleteShipment( orderId,  shipmentId);
+			returnObj = resource.updateShipmentAdjustments( shipmentAdjustment,  orderId,  shipmentNumber,  responseFields);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.fulfillment.Shipment updateShipmentItem(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.fulfillment.ShipmentItemAdjustment shipmentItemAdjustment, Integer shipmentNumber, Integer itemId, int expectedCode) throws Exception
+	{
+		return updateShipmentItem(apiContext,  shipmentItemAdjustment,  shipmentNumber,  itemId,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.fulfillment.Shipment updateShipmentItem(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.fulfillment.ShipmentItemAdjustment shipmentItemAdjustment, Integer shipmentNumber, Integer itemId, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.commerceruntime.fulfillment.Shipment returnObj = new com.mozu.api.contracts.commerceruntime.fulfillment.Shipment();
+		ShipmentResource resource = new ShipmentResource(apiContext);
+		try
+		{
+			returnObj = resource.updateShipmentItem( shipmentItemAdjustment,  shipmentNumber,  itemId,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.fulfillment.Shipment repriceShipment(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.fulfillment.RepriceShipmentObject repriceShipment, Integer shipmentNumber, int expectedCode) throws Exception
+	{
+		return repriceShipment(apiContext,  repriceShipment,  shipmentNumber,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.fulfillment.Shipment repriceShipment(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.fulfillment.RepriceShipmentObject repriceShipment, Integer shipmentNumber, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.commerceruntime.fulfillment.Shipment returnObj = new com.mozu.api.contracts.commerceruntime.fulfillment.Shipment();
+		ShipmentResource resource = new ShipmentResource(apiContext);
+		try
+		{
+			returnObj = resource.repriceShipment( repriceShipment,  shipmentNumber,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
+	public static List<com.mozu.api.contracts.commerceruntime.fulfillment.Shipment> splitShipments(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.fulfillment.SplitShipmentsObject splitShipments, int expectedCode) throws Exception
+	{
+		List<com.mozu.api.contracts.commerceruntime.fulfillment.Shipment> returnObj = new ArrayList<com.mozu.api.contracts.commerceruntime.fulfillment.Shipment>();
+		ShipmentResource resource = new ShipmentResource(apiContext);
+		try
+		{
+			returnObj = resource.splitShipments( splitShipments);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
+	public static java.io.InputStream deleteShipment(ApiContext apiContext, String orderId, String shipmentId, int expectedCode) throws Exception
+	{
+		java.io.InputStream returnObj;
+		ShipmentResource resource = new ShipmentResource(apiContext);
+		try
+		{
+			returnObj = resource.deleteShipment( orderId,  shipmentId);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 }

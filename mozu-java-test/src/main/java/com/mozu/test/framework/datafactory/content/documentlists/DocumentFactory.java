@@ -143,22 +143,24 @@ public class DocumentFactory
 		return returnObj;
 	}
 
-	public static void updateDocumentContent(ApiContext apiContext, java.io.InputStream stream, String documentListName, String documentId, String  contentType, int expectedCode) throws Exception
+	public static java.io.InputStream updateDocumentContent(ApiContext apiContext, java.io.InputStream stream, String documentListName, String documentId, String  contentType, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		DocumentResource resource = new DocumentResource(apiContext);
 		try
 		{
-			resource.updateDocumentContent( stream,  documentListName,  documentId,  contentType);
+			returnObj = resource.updateDocumentContent( stream,  documentListName,  documentId,  contentType);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 	public static com.mozu.api.contracts.content.Document updateDocument(ApiContext apiContext, com.mozu.api.contracts.content.Document document, String documentListName, String documentId, int expectedCode) throws Exception
@@ -186,40 +188,44 @@ public class DocumentFactory
 		return returnObj;
 	}
 
-	public static void deleteDocument(ApiContext apiContext, String documentListName, String documentId, int expectedCode) throws Exception
+	public static java.io.InputStream deleteDocument(ApiContext apiContext, String documentListName, String documentId, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		DocumentResource resource = new DocumentResource(apiContext);
 		try
 		{
-			resource.deleteDocument( documentListName,  documentId);
+			returnObj = resource.deleteDocument( documentListName,  documentId);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
-	public static void deleteDocumentContent(ApiContext apiContext, String documentListName, String documentId, int expectedCode) throws Exception
+	public static java.io.InputStream deleteDocumentContent(ApiContext apiContext, String documentListName, String documentId, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		DocumentResource resource = new DocumentResource(apiContext);
 		try
 		{
-			resource.deleteDocumentContent( documentListName,  documentId);
+			returnObj = resource.deleteDocumentContent( documentListName,  documentId);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 }

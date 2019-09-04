@@ -17,18 +17,12 @@ import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.productadmin.ProductSortOverride;
 import com.mozu.api.contracts.productadmin.ProductSortExpression;
 
-/**
- *	Mozu.ProductRuntime.Contracts.ProductSortDefinition ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductSortDefinition implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * ID of the relevant category.
-	 */
 	protected  Integer categoryId;
 
 	public Integer getCategoryId() {
@@ -39,9 +33,6 @@ public class ProductSortDefinition implements Serializable
 		this.categoryId = categoryId;
 	}
 
-	/**
-	 * Optional end date for a product sort definition.
-	 */
 	protected  DateTime endDate;
 
 	public DateTime getEndDate() {
@@ -52,9 +43,6 @@ public class ProductSortDefinition implements Serializable
 		this.endDate = endDate;
 	}
 
-	/**
-	 * The user supplied name that appears in . You can use this field for identification purposes.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -65,9 +53,6 @@ public class ProductSortDefinition implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * System or user provided ID for the ProductSortDefinition.
-	 */
 	protected  Integer productSortDefinitionId;
 
 	public Integer getProductSortDefinitionId() {
@@ -78,9 +63,6 @@ public class ProductSortDefinition implements Serializable
 		this.productSortDefinitionId = productSortDefinitionId;
 	}
 
-	/**
-	 * The Start Date when the sort definition becomes active.
-	 */
 	protected  DateTime startDate;
 
 	public DateTime getStartDate() {
@@ -91,9 +73,6 @@ public class ProductSortDefinition implements Serializable
 		this.startDate = startDate;
 	}
 
-	/**
-	 * Basic audit info about the object, including date, time, and user account. This data may be captured when creating, updating, and removing data.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -104,9 +83,6 @@ public class ProductSortDefinition implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * List of products being boosted.
-	 */
 	protected List<ProductSortOverride> boosted;
 	public List<ProductSortOverride> getBoosted() {
 		return this.boosted;
@@ -115,9 +91,6 @@ public class ProductSortDefinition implements Serializable
 		this.boosted = boosted;
 	}
 
-	/**
-	 * List of products being positioned.
-	 */
 	protected List<ProductSortOverride> buried;
 	public List<ProductSortOverride> getBuried() {
 		return this.buried;
@@ -126,9 +99,6 @@ public class ProductSortDefinition implements Serializable
 		this.buried = buried;
 	}
 
-	/**
-	 * Sort expression to apply two expression.
-	 */
 	protected List<ProductSortExpression> sortExpressions;
 	public List<ProductSortExpression> getSortExpressions() {
 		return this.sortExpressions;

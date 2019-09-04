@@ -18,7 +18,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Manage the currency localization rules and exchange rates for any of the currencies that are supported for placing orders in.
+ * 
  * </summary>
  */
 public class CurrencyLocalizationResource {
@@ -54,7 +54,7 @@ public class CurrencyLocalizationResource {
 	 *	CurrencyLocalization currencylocalization = new CurrencyLocalization();
 	 *	CurrencyLocalizationCollection currencyLocalizationCollection = currencylocalization.getCurrencyLocalizations( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.productadmin.CurrencyLocalizationCollection
 	 * @see com.mozu.api.contracts.productadmin.CurrencyLocalizationCollection
 	 */
@@ -73,8 +73,8 @@ public class CurrencyLocalizationResource {
 	 *	CurrencyLocalization currencylocalization = new CurrencyLocalization();
 	 *	CurrencyExchangeRate currencyExchangeRate = currencylocalization.getCurrencyExchangeRate( currencyCode,  toCurrencyCode);
 	 * </code></pre></p>
-	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
-	 * @param toCurrencyCode The code of the new currency that the original currency's equivalent is being calculated to.
+	 * @param currencyCode 
+	 * @param toCurrencyCode 
 	 * @return com.mozu.api.contracts.productadmin.CurrencyExchangeRate
 	 * @see com.mozu.api.contracts.productadmin.CurrencyExchangeRate
 	 */
@@ -89,9 +89,9 @@ public class CurrencyLocalizationResource {
 	 *	CurrencyLocalization currencylocalization = new CurrencyLocalization();
 	 *	CurrencyExchangeRate currencyExchangeRate = currencylocalization.getCurrencyExchangeRate( currencyCode,  toCurrencyCode,  responseFields);
 	 * </code></pre></p>
-	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param toCurrencyCode The code of the new currency that the original currency's equivalent is being calculated to.
+	 * @param currencyCode 
+	 * @param responseFields 
+	 * @param toCurrencyCode 
 	 * @return com.mozu.api.contracts.productadmin.CurrencyExchangeRate
 	 * @see com.mozu.api.contracts.productadmin.CurrencyExchangeRate
 	 */
@@ -110,7 +110,7 @@ public class CurrencyLocalizationResource {
 	 *	CurrencyLocalization currencylocalization = new CurrencyLocalization();
 	 *	CurrencyExchangeRateCollection currencyExchangeRateCollection = currencylocalization.getCurrencyExchangeRates( currencyCode);
 	 * </code></pre></p>
-	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
+	 * @param currencyCode 
 	 * @return com.mozu.api.contracts.productadmin.CurrencyExchangeRateCollection
 	 * @see com.mozu.api.contracts.productadmin.CurrencyExchangeRateCollection
 	 */
@@ -125,8 +125,8 @@ public class CurrencyLocalizationResource {
 	 *	CurrencyLocalization currencylocalization = new CurrencyLocalization();
 	 *	CurrencyExchangeRateCollection currencyExchangeRateCollection = currencylocalization.getCurrencyExchangeRates( currencyCode,  responseFields);
 	 * </code></pre></p>
-	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param currencyCode 
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.productadmin.CurrencyExchangeRateCollection
 	 * @see com.mozu.api.contracts.productadmin.CurrencyExchangeRateCollection
 	 */
@@ -145,7 +145,7 @@ public class CurrencyLocalizationResource {
 	 *	CurrencyLocalization currencylocalization = new CurrencyLocalization();
 	 *	CurrencyLocalization currencyLocalization = currencylocalization.getCurrencyLocalization( currencyCode);
 	 * </code></pre></p>
-	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
+	 * @param currencyCode 
 	 * @return com.mozu.api.contracts.productadmin.CurrencyLocalization
 	 * @see com.mozu.api.contracts.productadmin.CurrencyLocalization
 	 */
@@ -160,8 +160,8 @@ public class CurrencyLocalizationResource {
 	 *	CurrencyLocalization currencylocalization = new CurrencyLocalization();
 	 *	CurrencyLocalization currencyLocalization = currencylocalization.getCurrencyLocalization( currencyCode,  responseFields);
 	 * </code></pre></p>
-	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param currencyCode 
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.productadmin.CurrencyLocalization
 	 * @see com.mozu.api.contracts.productadmin.CurrencyLocalization
 	 */
@@ -180,7 +180,7 @@ public class CurrencyLocalizationResource {
 	 *	CurrencyLocalization currencylocalization = new CurrencyLocalization();
 	 *	CurrencyLocalization currencyLocalization = currencylocalization.addCurrencyLocalization( currencyLocalization);
 	 * </code></pre></p>
-	 * @param currencyLocalization The currency localization strategies being added to the currency data.
+	 * @param currencyLocalization 
 	 * @return com.mozu.api.contracts.productadmin.CurrencyLocalization
 	 * @see com.mozu.api.contracts.productadmin.CurrencyLocalization
 	 * @see com.mozu.api.contracts.productadmin.CurrencyLocalization
@@ -196,8 +196,8 @@ public class CurrencyLocalizationResource {
 	 *	CurrencyLocalization currencylocalization = new CurrencyLocalization();
 	 *	CurrencyLocalization currencyLocalization = currencylocalization.addCurrencyLocalization( currencyLocalization,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param currencyLocalization The currency localization strategies being added to the currency data.
+	 * @param responseFields 
+	 * @param currencyLocalization 
 	 * @return com.mozu.api.contracts.productadmin.CurrencyLocalization
 	 * @see com.mozu.api.contracts.productadmin.CurrencyLocalization
 	 * @see com.mozu.api.contracts.productadmin.CurrencyLocalization
@@ -215,19 +215,20 @@ public class CurrencyLocalizationResource {
 	 * 
 	 * <p><pre><code>
 	 *	CurrencyLocalization currencylocalization = new CurrencyLocalization();
-	 *	currencylocalization.addCurrencyExchangeRates( currencyExchangeRates,  currencyCode);
+	 *	Stream stream = currencylocalization.addCurrencyExchangeRates( currencyExchangeRates,  currencyCode);
 	 * </code></pre></p>
-	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
-	 * @param currencyExchangeRates All of the exchange rates being provided.
-	 * @return 
+	 * @param currencyCode 
+	 * @param currencyExchangeRates 
+	 * @return Stream
+	 * @see Stream
 	 * @see com.mozu.api.contracts.productadmin.CurrencyExchangeRate
 	 */
-	public void addCurrencyExchangeRates(List<com.mozu.api.contracts.productadmin.CurrencyExchangeRate> currencyExchangeRates, String currencyCode) throws Exception
+	public java.io.InputStream addCurrencyExchangeRates(List<com.mozu.api.contracts.productadmin.CurrencyExchangeRate> currencyExchangeRates, String currencyCode) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.CurrencyLocalizationClient.addCurrencyExchangeRatesClient( currencyExchangeRates,  currencyCode);
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.catalog.admin.CurrencyLocalizationClient.addCurrencyExchangeRatesClient( currencyExchangeRates,  currencyCode);
 		client.setContext(_apiContext);
 		client.executeRequest();
-		client.cleanupHttpConnection();
+		return client.getResult();
 
 	}
 
@@ -235,19 +236,20 @@ public class CurrencyLocalizationResource {
 	 * 
 	 * <p><pre><code>
 	 *	CurrencyLocalization currencylocalization = new CurrencyLocalization();
-	 *	currencylocalization.updateCurrencyExchangeRates( currencyExchangeRates,  currencyCode);
+	 *	Stream stream = currencylocalization.updateCurrencyExchangeRates( currencyExchangeRates,  currencyCode);
 	 * </code></pre></p>
-	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
+	 * @param currencyCode 
 	 * @param currencyExchangeRates 
-	 * @return 
+	 * @return Stream
+	 * @see Stream
 	 * @see com.mozu.api.contracts.productadmin.CurrencyExchangeRate
 	 */
-	public void updateCurrencyExchangeRates(List<com.mozu.api.contracts.productadmin.CurrencyExchangeRate> currencyExchangeRates, String currencyCode) throws Exception
+	public java.io.InputStream updateCurrencyExchangeRates(List<com.mozu.api.contracts.productadmin.CurrencyExchangeRate> currencyExchangeRates, String currencyCode) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.CurrencyLocalizationClient.updateCurrencyExchangeRatesClient( currencyExchangeRates,  currencyCode);
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.catalog.admin.CurrencyLocalizationClient.updateCurrencyExchangeRatesClient( currencyExchangeRates,  currencyCode);
 		client.setContext(_apiContext);
 		client.executeRequest();
-		client.cleanupHttpConnection();
+		return client.getResult();
 
 	}
 
@@ -257,8 +259,8 @@ public class CurrencyLocalizationResource {
 	 *	CurrencyLocalization currencylocalization = new CurrencyLocalization();
 	 *	CurrencyLocalization currencyLocalization = currencylocalization.updateCurrencyLocalization( currencyLocalization,  currencyCode);
 	 * </code></pre></p>
-	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
-	 * @param currencyLocalization The currency localization information being updated.
+	 * @param currencyCode 
+	 * @param currencyLocalization 
 	 * @return com.mozu.api.contracts.productadmin.CurrencyLocalization
 	 * @see com.mozu.api.contracts.productadmin.CurrencyLocalization
 	 * @see com.mozu.api.contracts.productadmin.CurrencyLocalization
@@ -274,9 +276,9 @@ public class CurrencyLocalizationResource {
 	 *	CurrencyLocalization currencylocalization = new CurrencyLocalization();
 	 *	CurrencyLocalization currencyLocalization = currencylocalization.updateCurrencyLocalization( currencyLocalization,  currencyCode,  responseFields);
 	 * </code></pre></p>
-	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param currencyLocalization The currency localization information being updated.
+	 * @param currencyCode 
+	 * @param responseFields 
+	 * @param currencyLocalization 
 	 * @return com.mozu.api.contracts.productadmin.CurrencyLocalization
 	 * @see com.mozu.api.contracts.productadmin.CurrencyLocalization
 	 * @see com.mozu.api.contracts.productadmin.CurrencyLocalization
@@ -294,17 +296,18 @@ public class CurrencyLocalizationResource {
 	 * 
 	 * <p><pre><code>
 	 *	CurrencyLocalization currencylocalization = new CurrencyLocalization();
-	 *	currencylocalization.deleteCurrencyLocalization( currencyCode);
+	 *	Stream stream = currencylocalization.deleteCurrencyLocalization( currencyCode);
 	 * </code></pre></p>
-	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
-	 * @return 
+	 * @param currencyCode 
+	 * @return Stream
+	 * @see Stream
 	 */
-	public void deleteCurrencyLocalization(String currencyCode) throws Exception
+	public java.io.InputStream deleteCurrencyLocalization(String currencyCode) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.CurrencyLocalizationClient.deleteCurrencyLocalizationClient( currencyCode);
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.catalog.admin.CurrencyLocalizationClient.deleteCurrencyLocalizationClient( currencyCode);
 		client.setContext(_apiContext);
 		client.executeRequest();
-		client.cleanupHttpConnection();
+		return client.getResult();
 
 	}
 
@@ -312,18 +315,19 @@ public class CurrencyLocalizationResource {
 	 * 
 	 * <p><pre><code>
 	 *	CurrencyLocalization currencylocalization = new CurrencyLocalization();
-	 *	currencylocalization.deleteCurrencyExchangeRate( currencyCode,  toCurrencyCode);
+	 *	Stream stream = currencylocalization.deleteCurrencyExchangeRate( currencyCode,  toCurrencyCode);
 	 * </code></pre></p>
-	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
-	 * @param toCurrencyCode The code of the new currency that the original currency's equivalent is being calculated to.
-	 * @return 
+	 * @param currencyCode 
+	 * @param toCurrencyCode 
+	 * @return Stream
+	 * @see Stream
 	 */
-	public void deleteCurrencyExchangeRate(String currencyCode, String toCurrencyCode) throws Exception
+	public java.io.InputStream deleteCurrencyExchangeRate(String currencyCode, String toCurrencyCode) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.CurrencyLocalizationClient.deleteCurrencyExchangeRateClient( currencyCode,  toCurrencyCode);
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.catalog.admin.CurrencyLocalizationClient.deleteCurrencyExchangeRateClient( currencyCode,  toCurrencyCode);
 		client.setContext(_apiContext);
 		client.executeRequest();
-		client.cleanupHttpConnection();
+		return client.getResult();
 
 	}
 

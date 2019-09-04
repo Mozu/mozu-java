@@ -19,7 +19,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the refunds resource to create a refund.
+ * 
  * </summary>
  */
 public class RefundClient {
@@ -32,8 +32,8 @@ public class RefundClient {
 	 * client.executeRequest();
 	 * Refund refund = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param refund The details of the refund.
+	 * @param orderId 
+	 * @param refund 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.refunds.Refund>
 	 * @see com.mozu.api.contracts.commerceruntime.refunds.Refund
 	 * @see com.mozu.api.contracts.commerceruntime.refunds.Refund
@@ -51,9 +51,9 @@ public class RefundClient {
 	 * client.executeRequest();
 	 * Refund refund = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param refund The details of the refund.
+	 * @param orderId 
+	 * @param responseFields 
+	 * @param refund 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.refunds.Refund>
 	 * @see com.mozu.api.contracts.commerceruntime.refunds.Refund
 	 * @see com.mozu.api.contracts.commerceruntime.refunds.Refund
@@ -74,20 +74,22 @@ public class RefundClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=ResendRefundEmailClient( orderId,  refundId);
+	 * MozuClient<java.io.InputStream> mozuClient=ResendRefundEmailClient( orderId,  refundId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
+	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param refundId Unique ID of the refund.
-        
-	 * @return Mozu.Api.MozuClient 
+	 * @param orderId 
+	 * @param refundId 
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
 	 */
-	public static MozuClient resendRefundEmailClient(String orderId, String refundId) throws Exception
+	public static MozuClient<java.io.InputStream> resendRefundEmailClient(String orderId, String refundId) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.orders.RefundUrl.resendRefundEmailUrl(orderId, refundId);
 		String verb = "PUT";
-				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

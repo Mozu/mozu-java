@@ -23,18 +23,13 @@ import com.mozu.api.resources.platform.InstalledApplicationsResource;
 public class InstalledApplicationsFactory
 {
 
-	public static com.mozu.api.contracts.installedapplications.Application getApplication(ApiContext apiContext, String appId, int expectedCode) throws Exception
+	public static java.io.InputStream getApplication(ApiContext apiContext, String appId, int expectedCode) throws Exception
 	{
-		return getApplication(apiContext,  appId,  null, expectedCode);
-	}
-
-	public static com.mozu.api.contracts.installedapplications.Application getApplication(ApiContext apiContext, String appId, String responseFields, int expectedCode) throws Exception
-	{
-		com.mozu.api.contracts.installedapplications.Application returnObj = new com.mozu.api.contracts.installedapplications.Application();
+		java.io.InputStream returnObj;
 		InstalledApplicationsResource resource = new InstalledApplicationsResource(apiContext);
 		try
 		{
-			returnObj = resource.getApplication( appId,  responseFields);
+			returnObj = resource.getApplication( appId);
 		}
 		catch (ApiException e)
 		{
@@ -48,18 +43,13 @@ public class InstalledApplicationsFactory
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.installedapplications.Application updateApplication(ApiContext apiContext, com.mozu.api.contracts.installedapplications.Application application, String appId, int expectedCode) throws Exception
+	public static java.io.InputStream updateApplication(ApiContext apiContext, com.mozu.api.contracts.installedapplications.Application application, String appId, int expectedCode) throws Exception
 	{
-		return updateApplication(apiContext,  application,  appId,  null, expectedCode);
-	}
-
-	public static com.mozu.api.contracts.installedapplications.Application updateApplication(ApiContext apiContext, com.mozu.api.contracts.installedapplications.Application application, String appId, String responseFields, int expectedCode) throws Exception
-	{
-		com.mozu.api.contracts.installedapplications.Application returnObj = new com.mozu.api.contracts.installedapplications.Application();
+		java.io.InputStream returnObj;
 		InstalledApplicationsResource resource = new InstalledApplicationsResource(apiContext);
 		try
 		{
-			returnObj = resource.updateApplication( application,  appId,  responseFields);
+			returnObj = resource.updateApplication( application,  appId);
 		}
 		catch (ApiException e)
 		{

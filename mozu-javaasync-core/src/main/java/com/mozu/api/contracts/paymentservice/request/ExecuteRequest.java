@@ -12,18 +12,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	The request to be executed.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ExecuteRequest implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The title of a method in the request.
-	 */
 	protected  String methodName;
 
 	public String getMethodName() {
@@ -34,9 +28,6 @@ public class ExecuteRequest implements Serializable
 		this.methodName = methodName;
 	}
 
-	/**
-	 * The identifier of the token being used in the request.
-	 */
 	protected  String tokenId;
 
 	public String getTokenId() {
@@ -47,9 +38,6 @@ public class ExecuteRequest implements Serializable
 		this.tokenId = tokenId;
 	}
 
-	/**
-	 * The content body of the request.
-	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode body;
 
 	public com.fasterxml.jackson.databind.JsonNode getBody() {

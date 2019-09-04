@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.catalog.admin.PriceListResource;
 
 /** <summary>
- * Use the Price Lists resource to view and create price lists. You can use price lists to override the catalog pricing of products for specific customer segments and/or sites. You can override products' list price, sale price, advanced pricing information such as MSRP, cost, MAP, and the catalog price of any extras associated with the product in a price list. You can also restrict discounts from applying to the overridden product pricing in a price list. Refer to [Price Lists](../../../guides/catalog/price-lists.htm) in the Guides section for more information about price lists.
+ * 
  * </summary>
  */
 public class PriceListFactory
@@ -98,73 +98,79 @@ public class PriceListFactory
 		return returnObj;
 	}
 
-	public static void bulkAddPriceListEntries(ApiContext apiContext, List<com.mozu.api.contracts.productadmin.PriceListEntry> priceListEntriesIn, int expectedCode) throws Exception
+	public static java.io.InputStream bulkAddPriceListEntries(ApiContext apiContext, List<com.mozu.api.contracts.productadmin.PriceListEntry> priceListEntriesIn, int expectedCode) throws Exception
 	{
-		bulkAddPriceListEntries(apiContext,  priceListEntriesIn,  null,  null, expectedCode);
+		return bulkAddPriceListEntries(apiContext,  priceListEntriesIn,  null,  null, expectedCode);
 	}
 
-	public static void bulkAddPriceListEntries(ApiContext apiContext, List<com.mozu.api.contracts.productadmin.PriceListEntry> priceListEntriesIn, Boolean publishEvents, Boolean invalidateCache, int expectedCode) throws Exception
+	public static java.io.InputStream bulkAddPriceListEntries(ApiContext apiContext, List<com.mozu.api.contracts.productadmin.PriceListEntry> priceListEntriesIn, Boolean publishEvents, Boolean invalidateCache, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		PriceListResource resource = new PriceListResource(apiContext);
 		try
 		{
-			resource.bulkAddPriceListEntries( priceListEntriesIn,  publishEvents,  invalidateCache);
+			returnObj = resource.bulkAddPriceListEntries( priceListEntriesIn,  publishEvents,  invalidateCache);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
-	public static void bulkDeletePriceListEntries(ApiContext apiContext, List<com.mozu.api.contracts.productadmin.PriceListEntry> priceListEntriesIn, int expectedCode) throws Exception
+	public static java.io.InputStream bulkDeletePriceListEntries(ApiContext apiContext, List<com.mozu.api.contracts.productadmin.PriceListEntry> priceListEntriesIn, int expectedCode) throws Exception
 	{
-		bulkDeletePriceListEntries(apiContext,  priceListEntriesIn,  null,  null, expectedCode);
+		return bulkDeletePriceListEntries(apiContext,  priceListEntriesIn,  null,  null, expectedCode);
 	}
 
-	public static void bulkDeletePriceListEntries(ApiContext apiContext, List<com.mozu.api.contracts.productadmin.PriceListEntry> priceListEntriesIn, Boolean publishEvents, Boolean invalidateCache, int expectedCode) throws Exception
+	public static java.io.InputStream bulkDeletePriceListEntries(ApiContext apiContext, List<com.mozu.api.contracts.productadmin.PriceListEntry> priceListEntriesIn, Boolean publishEvents, Boolean invalidateCache, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		PriceListResource resource = new PriceListResource(apiContext);
 		try
 		{
-			resource.bulkDeletePriceListEntries( priceListEntriesIn,  publishEvents,  invalidateCache);
+			returnObj = resource.bulkDeletePriceListEntries( priceListEntriesIn,  publishEvents,  invalidateCache);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
-	public static void bulkUpdatePriceListEntries(ApiContext apiContext, List<com.mozu.api.contracts.productadmin.PriceListEntry> priceListEntriesIn, int expectedCode) throws Exception
+	public static java.io.InputStream bulkUpdatePriceListEntries(ApiContext apiContext, List<com.mozu.api.contracts.productadmin.PriceListEntry> priceListEntriesIn, int expectedCode) throws Exception
 	{
-		bulkUpdatePriceListEntries(apiContext,  priceListEntriesIn,  null,  null, expectedCode);
+		return bulkUpdatePriceListEntries(apiContext,  priceListEntriesIn,  null,  null, expectedCode);
 	}
 
-	public static void bulkUpdatePriceListEntries(ApiContext apiContext, List<com.mozu.api.contracts.productadmin.PriceListEntry> priceListEntriesIn, Boolean publishEvents, Boolean invalidateCache, int expectedCode) throws Exception
+	public static java.io.InputStream bulkUpdatePriceListEntries(ApiContext apiContext, List<com.mozu.api.contracts.productadmin.PriceListEntry> priceListEntriesIn, Boolean publishEvents, Boolean invalidateCache, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		PriceListResource resource = new PriceListResource(apiContext);
 		try
 		{
-			resource.bulkUpdatePriceListEntries( priceListEntriesIn,  publishEvents,  invalidateCache);
+			returnObj = resource.bulkUpdatePriceListEntries( priceListEntriesIn,  publishEvents,  invalidateCache);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 	public static com.mozu.api.contracts.productadmin.PriceList updatePriceList(ApiContext apiContext, com.mozu.api.contracts.productadmin.PriceList priceList, String priceListCode, int expectedCode) throws Exception
@@ -192,27 +198,29 @@ public class PriceListFactory
 		return returnObj;
 	}
 
-	public static void deletePriceList(ApiContext apiContext, String priceListCode, int expectedCode) throws Exception
+	public static java.io.InputStream deletePriceList(ApiContext apiContext, String priceListCode, int expectedCode) throws Exception
 	{
-		deletePriceList(apiContext,  priceListCode,  null, expectedCode);
+		return deletePriceList(apiContext,  priceListCode,  null, expectedCode);
 	}
 
-	public static void deletePriceList(ApiContext apiContext, String priceListCode, Boolean cascadeDeleteEntries, int expectedCode) throws Exception
+	public static java.io.InputStream deletePriceList(ApiContext apiContext, String priceListCode, Boolean cascadeDeleteEntries, int expectedCode) throws Exception
 	{
+		java.io.InputStream returnObj;
 		PriceListResource resource = new PriceListResource(apiContext);
 		try
 		{
-			resource.deletePriceList( priceListCode,  cascadeDeleteEntries);
+			returnObj = resource.deletePriceList( priceListCode,  cascadeDeleteEntries);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
-				return;
+				return null;
 		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
 	}
 
 }

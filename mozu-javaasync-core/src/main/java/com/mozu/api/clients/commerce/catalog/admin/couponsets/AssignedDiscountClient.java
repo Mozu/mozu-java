@@ -19,7 +19,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the AssignedDiscounts resource to manage the discounts assigned to coupon sets.
+ * 
  * </summary>
  */
 public class AssignedDiscountClient {
@@ -32,7 +32,7 @@ public class AssignedDiscountClient {
 	 * client.executeRequest();
 	 * AssignedDiscount assignedDiscount = client.Result();
 	 * </code></pre></p>
-	 * @param couponSetCode The unique identifier of the coupon set.
+	 * @param couponSetCode 
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.AssignedDiscount>>
 	 * @see com.mozu.api.contracts.productadmin.AssignedDiscount
 	 */
@@ -51,20 +51,23 @@ public class AssignedDiscountClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=AssignDiscountClient( assignedDiscount,  couponSetCode);
+	 * MozuClient<java.io.InputStream> mozuClient=AssignDiscountClient( assignedDiscount,  couponSetCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
+	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param couponSetCode The unique identifier of the coupon set.
-	 * @param assignedDiscount The details of the discount assigned to the coupon set.
-	 * @return Mozu.Api.MozuClient 
+	 * @param couponSetCode 
+	 * @param assignedDiscount 
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
 	 * @see com.mozu.api.contracts.productadmin.AssignedDiscount
 	 */
-	public static MozuClient assignDiscountClient(com.mozu.api.contracts.productadmin.AssignedDiscount assignedDiscount, String couponSetCode) throws Exception
+	public static MozuClient<java.io.InputStream> assignDiscountClient(com.mozu.api.contracts.productadmin.AssignedDiscount assignedDiscount, String couponSetCode) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.couponsets.AssignedDiscountUrl.assignDiscountUrl(couponSetCode);
 		String verb = "POST";
-				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(assignedDiscount);
@@ -75,19 +78,22 @@ public class AssignedDiscountClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=UnAssignDiscountClient( couponSetCode,  discountId);
+	 * MozuClient<java.io.InputStream> mozuClient=UnAssignDiscountClient( couponSetCode,  discountId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
+	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param couponSetCode The unique identifier of the coupon set.
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
-	 * @return Mozu.Api.MozuClient 
+	 * @param couponSetCode 
+	 * @param discountId 
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
 	 */
-	public static MozuClient unAssignDiscountClient(String couponSetCode, Integer discountId) throws Exception
+	public static MozuClient<java.io.InputStream> unAssignDiscountClient(String couponSetCode, Integer discountId) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.couponsets.AssignedDiscountUrl.unAssignDiscountUrl(couponSetCode, discountId);
 		String verb = "DELETE";
-				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

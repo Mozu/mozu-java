@@ -18,7 +18,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the AssignedDiscounts resource to manage the discounts assigned to coupon sets.
+ * 
  * </summary>
  */
 public class AssignedDiscountResource {
@@ -40,7 +40,7 @@ public class AssignedDiscountResource {
 	 *	AssignedDiscount assigneddiscount = new AssignedDiscount();
 	 *	AssignedDiscount assignedDiscount = assigneddiscount.getAssignedDiscounts( couponSetCode);
 	 * </code></pre></p>
-	 * @param couponSetCode The unique identifier of the coupon set.
+	 * @param couponSetCode 
 	 * @return List<com.mozu.api.contracts.productadmin.AssignedDiscount>
 	 * @see com.mozu.api.contracts.productadmin.AssignedDiscount
 	 */
@@ -57,19 +57,20 @@ public class AssignedDiscountResource {
 	 * 
 	 * <p><pre><code>
 	 *	AssignedDiscount assigneddiscount = new AssignedDiscount();
-	 *	assigneddiscount.assignDiscount( assignedDiscount,  couponSetCode);
+	 *	Stream stream = assigneddiscount.assignDiscount( assignedDiscount,  couponSetCode);
 	 * </code></pre></p>
-	 * @param couponSetCode The unique identifier of the coupon set.
-	 * @param assignedDiscount The details of the discount assigned to the coupon set.
-	 * @return 
+	 * @param couponSetCode 
+	 * @param assignedDiscount 
+	 * @return Stream
+	 * @see Stream
 	 * @see com.mozu.api.contracts.productadmin.AssignedDiscount
 	 */
-	public void assignDiscount(com.mozu.api.contracts.productadmin.AssignedDiscount assignedDiscount, String couponSetCode) throws Exception
+	public java.io.InputStream assignDiscount(com.mozu.api.contracts.productadmin.AssignedDiscount assignedDiscount, String couponSetCode) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.couponsets.AssignedDiscountClient.assignDiscountClient( assignedDiscount,  couponSetCode);
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.catalog.admin.couponsets.AssignedDiscountClient.assignDiscountClient( assignedDiscount,  couponSetCode);
 		client.setContext(_apiContext);
 		client.executeRequest();
-		client.cleanupHttpConnection();
+		return client.getResult();
 
 	}
 
@@ -77,18 +78,19 @@ public class AssignedDiscountResource {
 	 * 
 	 * <p><pre><code>
 	 *	AssignedDiscount assigneddiscount = new AssignedDiscount();
-	 *	assigneddiscount.unAssignDiscount( couponSetCode,  discountId);
+	 *	Stream stream = assigneddiscount.unAssignDiscount( couponSetCode,  discountId);
 	 * </code></pre></p>
-	 * @param couponSetCode The unique identifier of the coupon set.
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
-	 * @return 
+	 * @param couponSetCode 
+	 * @param discountId 
+	 * @return Stream
+	 * @see Stream
 	 */
-	public void unAssignDiscount(String couponSetCode, Integer discountId) throws Exception
+	public java.io.InputStream unAssignDiscount(String couponSetCode, Integer discountId) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.couponsets.AssignedDiscountClient.unAssignDiscountClient( couponSetCode,  discountId);
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.catalog.admin.couponsets.AssignedDiscountClient.unAssignDiscountClient( couponSetCode,  discountId);
 		client.setContext(_apiContext);
 		client.executeRequest();
-		client.cleanupHttpConnection();
+		return client.getResult();
 
 	}
 

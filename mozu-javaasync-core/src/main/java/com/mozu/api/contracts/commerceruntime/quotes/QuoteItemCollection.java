@@ -15,18 +15,12 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.commerceruntime.orders.OrderItem;
 
-/**
- *	Mozu.CommerceRuntime.Contracts.Quotes.QuoteItemCollection ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class QuoteItemCollection implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * capacity ApiType DOCUMENT_HERE 
-	 */
 	protected  Integer capacity;
 
 	public Integer getCapacity() {
@@ -37,9 +31,6 @@ public class QuoteItemCollection implements Serializable
 		this.capacity = capacity;
 	}
 
-	/**
-	 * The total number of associated items.
-	 */
 	protected  Integer count;
 
 	public Integer getCount() {
@@ -50,9 +41,6 @@ public class QuoteItemCollection implements Serializable
 		this.count = count;
 	}
 
-	/**
-	 * The total number of pages of the results divided per the `pageSize`.
-	 */
 	protected  Integer pageCount;
 
 	public Integer getPageCount() {
@@ -63,9 +51,6 @@ public class QuoteItemCollection implements Serializable
 		this.pageCount = pageCount;
 	}
 
-	/**
-	 * The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
-	 */
 	protected  Integer pageSize;
 
 	public Integer getPageSize() {
@@ -76,9 +61,6 @@ public class QuoteItemCollection implements Serializable
 		this.pageSize = pageSize;
 	}
 
-	/**
-	 * When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=50`.
-	 */
 	protected  Integer startIndex;
 
 	public Integer getStartIndex() {
@@ -89,9 +71,6 @@ public class QuoteItemCollection implements Serializable
 		this.startIndex = startIndex;
 	}
 
-	/**
-	 * The total number of items in the list.
-	 */
 	protected  Integer totalCount;
 
 	public Integer getTotalCount() {
@@ -102,9 +81,6 @@ public class QuoteItemCollection implements Serializable
 		this.totalCount = totalCount;
 	}
 
-	/**
-	 * item ApiType DOCUMENT_HERE 
-	 */
 	protected  OrderItem item;
 
 	public OrderItem getItem() {
@@ -115,9 +91,6 @@ public class QuoteItemCollection implements Serializable
 		this.item = item;
 	}
 
-	/**
-	 * A list of requested items. All returned data is provided in an items array.For a failed request, the returned response may be success with an empty item array.
-	 */
 	protected List<OrderItem> items;
 	public List<OrderItem> getItems() {
 		return this.items;

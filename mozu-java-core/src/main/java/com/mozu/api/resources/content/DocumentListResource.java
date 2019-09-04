@@ -62,9 +62,9 @@ public class DocumentListResource {
 	 *	DocumentList documentlist = new DocumentList();
 	 *	DocumentListCollection documentListCollection = documentlist.getDocumentLists( pageSize,  startIndex,  responseFields);
 	 * </code></pre></p>
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param startIndex 
 	 * @return com.mozu.api.contracts.content.DocumentListCollection
 	 * @see com.mozu.api.contracts.content.DocumentListCollection
 	 */
@@ -83,7 +83,7 @@ public class DocumentListResource {
 	 *	DocumentList documentlist = new DocumentList();
 	 *	DocumentList documentList = documentlist.getDocumentList( documentListName);
 	 * </code></pre></p>
-	 * @param documentListName Name of content documentListName to delete
+	 * @param documentListName The name of the document list.
 	 * @return com.mozu.api.contracts.content.DocumentList
 	 * @see com.mozu.api.contracts.content.DocumentList
 	 */
@@ -98,8 +98,8 @@ public class DocumentListResource {
 	 *	DocumentList documentlist = new DocumentList();
 	 *	DocumentList documentList = documentlist.getDocumentList( documentListName,  responseFields);
 	 * </code></pre></p>
-	 * @param documentListName Name of content documentListName to delete
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param documentListName The name of the document list.
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.content.DocumentList
 	 * @see com.mozu.api.contracts.content.DocumentList
 	 */
@@ -118,7 +118,7 @@ public class DocumentListResource {
 	 *	DocumentList documentlist = new DocumentList();
 	 *	DocumentList documentList = documentlist.createDocumentList( list);
 	 * </code></pre></p>
-	 * @param list The list of document types and related properties that define content used by the content management system (CMS).
+	 * @param list 
 	 * @return com.mozu.api.contracts.content.DocumentList
 	 * @see com.mozu.api.contracts.content.DocumentList
 	 * @see com.mozu.api.contracts.content.DocumentList
@@ -134,8 +134,8 @@ public class DocumentListResource {
 	 *	DocumentList documentlist = new DocumentList();
 	 *	DocumentList documentList = documentlist.createDocumentList( list,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param list The list of document types and related properties that define content used by the content management system (CMS).
+	 * @param responseFields 
+	 * @param list 
 	 * @return com.mozu.api.contracts.content.DocumentList
 	 * @see com.mozu.api.contracts.content.DocumentList
 	 * @see com.mozu.api.contracts.content.DocumentList
@@ -155,8 +155,8 @@ public class DocumentListResource {
 	 *	DocumentList documentlist = new DocumentList();
 	 *	DocumentList documentList = documentlist.updateDocumentList( list,  documentListName);
 	 * </code></pre></p>
-	 * @param documentListName Name of content documentListName to delete
-	 * @param list The list of document types and related properties that define content used by the content management system (CMS).
+	 * @param documentListName 
+	 * @param list 
 	 * @return com.mozu.api.contracts.content.DocumentList
 	 * @see com.mozu.api.contracts.content.DocumentList
 	 * @see com.mozu.api.contracts.content.DocumentList
@@ -172,9 +172,9 @@ public class DocumentListResource {
 	 *	DocumentList documentlist = new DocumentList();
 	 *	DocumentList documentList = documentlist.updateDocumentList( list,  documentListName,  responseFields);
 	 * </code></pre></p>
-	 * @param documentListName Name of content documentListName to delete
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param list The list of document types and related properties that define content used by the content management system (CMS).
+	 * @param documentListName 
+	 * @param responseFields 
+	 * @param list 
 	 * @return com.mozu.api.contracts.content.DocumentList
 	 * @see com.mozu.api.contracts.content.DocumentList
 	 * @see com.mozu.api.contracts.content.DocumentList
@@ -192,17 +192,18 @@ public class DocumentListResource {
 	 * 
 	 * <p><pre><code>
 	 *	DocumentList documentlist = new DocumentList();
-	 *	documentlist.deleteDocumentList( documentListName);
+	 *	Stream stream = documentlist.deleteDocumentList( documentListName);
 	 * </code></pre></p>
-	 * @param documentListName Name of content documentListName to delete
-	 * @return 
+	 * @param documentListName 
+	 * @return Stream
+	 * @see Stream
 	 */
-	public void deleteDocumentList(String documentListName) throws Exception
+	public java.io.InputStream deleteDocumentList(String documentListName) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.content.DocumentListClient.deleteDocumentListClient( documentListName);
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.content.DocumentListClient.deleteDocumentListClient( documentListName);
 		client.setContext(_apiContext);
 		client.executeRequest();
-		client.cleanupHttpConnection();
+		return client.getResult();
 
 	}
 

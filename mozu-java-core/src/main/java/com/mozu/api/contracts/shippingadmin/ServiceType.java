@@ -32,6 +32,16 @@ public class ServiceType implements Serializable
 		this.code = code;
 	}
 
+	protected  String deliveryDuration;
+
+	public String getDeliveryDuration() {
+		return this.deliveryDuration;
+	}
+
+	public void setDeliveryDuration(String deliveryDuration) {
+		this.deliveryDuration = deliveryDuration;
+	}
+
 	protected  ServiceTypeLocalizedContent content;
 
 	public ServiceTypeLocalizedContent getContent() {
