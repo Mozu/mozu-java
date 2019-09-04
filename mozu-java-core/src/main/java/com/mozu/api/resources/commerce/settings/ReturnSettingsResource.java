@@ -40,10 +40,10 @@ public class ReturnSettingsResource {
 	 *	ReturnSettings returnsettings = new ReturnSettings();
 	 *	ReturnSettings returnSettings = returnsettings.getReturnSettings();
 	 * </code></pre></p>
-	 * @return com.mozu.api.contracts.sitesettings.order.return.ReturnSettings
-	 * @see com.mozu.api.contracts.sitesettings.order.return.ReturnSettings
+	 * @return com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings
+	 * @see com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings
 	 */
-	public com.mozu.api.contracts.sitesettings.order.return.ReturnSettings getReturnSettings() throws Exception
+	public com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings getReturnSettings() throws Exception
 	{
 		return getReturnSettings( null);
 	}
@@ -55,12 +55,12 @@ public class ReturnSettingsResource {
 	 *	ReturnSettings returnSettings = returnsettings.getReturnSettings( responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
-	 * @return com.mozu.api.contracts.sitesettings.order.return.ReturnSettings
-	 * @see com.mozu.api.contracts.sitesettings.order.return.ReturnSettings
+	 * @return com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings
+	 * @see com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings
 	 */
-	public com.mozu.api.contracts.sitesettings.order.return.ReturnSettings getReturnSettings(String responseFields) throws Exception
+	public com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings getReturnSettings(String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.sitesettings.order.return.ReturnSettings> client = com.mozu.api.clients.commerce.settings.ReturnSettingsClient.getReturnSettingsClient( responseFields);
+		MozuClient<com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings> client = com.mozu.api.clients.commerce.settings.ReturnSettingsClient.getReturnSettingsClient( responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -74,11 +74,11 @@ public class ReturnSettingsResource {
 	 *	ReturnSettings returnSettings = returnsettings.createReturnSettings( returnSettings);
 	 * </code></pre></p>
 	 * @param returnSettings 
-	 * @return com.mozu.api.contracts.sitesettings.order.return.ReturnSettings
-	 * @see com.mozu.api.contracts.sitesettings.order.return.ReturnSettings
-	 * @see com.mozu.api.contracts.sitesettings.order.return.ReturnSettings
+	 * @return com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings
+	 * @see com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings
+	 * @see com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings
 	 */
-	public com.mozu.api.contracts.sitesettings.order.return.ReturnSettings createReturnSettings(com.mozu.api.contracts.sitesettings.order.return.ReturnSettings returnSettings) throws Exception
+	public com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings createReturnSettings(com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings returnSettings) throws Exception
 	{
 		return createReturnSettings( returnSettings,  null);
 	}
@@ -91,13 +91,13 @@ public class ReturnSettingsResource {
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param returnSettings 
-	 * @return com.mozu.api.contracts.sitesettings.order.return.ReturnSettings
-	 * @see com.mozu.api.contracts.sitesettings.order.return.ReturnSettings
-	 * @see com.mozu.api.contracts.sitesettings.order.return.ReturnSettings
+	 * @return com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings
+	 * @see com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings
+	 * @see com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings
 	 */
-	public com.mozu.api.contracts.sitesettings.order.return.ReturnSettings createReturnSettings(com.mozu.api.contracts.sitesettings.order.return.ReturnSettings returnSettings, String responseFields) throws Exception
+	public com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings createReturnSettings(com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings returnSettings, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.sitesettings.order.return.ReturnSettings> client = com.mozu.api.clients.commerce.settings.ReturnSettingsClient.createReturnSettingsClient( returnSettings,  responseFields);
+		MozuClient<com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings> client = com.mozu.api.clients.commerce.settings.ReturnSettingsClient.createReturnSettingsClient( returnSettings,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -111,11 +111,11 @@ public class ReturnSettingsResource {
 	 *	ReturnSettings returnSettings = returnsettings.updateReturnSettings( returnSettings);
 	 * </code></pre></p>
 	 * @param returnSettings 
-	 * @return com.mozu.api.contracts.sitesettings.order.return.ReturnSettings
-	 * @see com.mozu.api.contracts.sitesettings.order.return.ReturnSettings
-	 * @see com.mozu.api.contracts.sitesettings.order.return.ReturnSettings
+	 * @return com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings
+	 * @see com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings
+	 * @see com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings
 	 */
-	public com.mozu.api.contracts.sitesettings.order.return.ReturnSettings updateReturnSettings(com.mozu.api.contracts.sitesettings.order.return.ReturnSettings returnSettings) throws Exception
+	public com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings updateReturnSettings(com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings returnSettings) throws Exception
 	{
 		return updateReturnSettings( returnSettings,  null);
 	}
@@ -128,13 +128,13 @@ public class ReturnSettingsResource {
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param returnSettings 
-	 * @return com.mozu.api.contracts.sitesettings.order.return.ReturnSettings
-	 * @see com.mozu.api.contracts.sitesettings.order.return.ReturnSettings
-	 * @see com.mozu.api.contracts.sitesettings.order.return.ReturnSettings
+	 * @return com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings
+	 * @see com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings
+	 * @see com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings
 	 */
-	public com.mozu.api.contracts.sitesettings.order.return.ReturnSettings updateReturnSettings(com.mozu.api.contracts.sitesettings.order.return.ReturnSettings returnSettings, String responseFields) throws Exception
+	public com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings updateReturnSettings(com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings returnSettings, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.sitesettings.order.return.ReturnSettings> client = com.mozu.api.clients.commerce.settings.ReturnSettingsClient.updateReturnSettingsClient( returnSettings,  responseFields);
+		MozuClient<com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings> client = com.mozu.api.clients.commerce.settings.ReturnSettingsClient.updateReturnSettingsClient( returnSettings,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

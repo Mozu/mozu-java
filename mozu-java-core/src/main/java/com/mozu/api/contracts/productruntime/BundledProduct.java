@@ -37,9 +37,7 @@ public class BundledProduct implements Serializable
 		this.creditValue = creditValue;
 	}
 
-	/**
-	 * This is the goods type of the product. Possible values are â€œPhysical,â€ and â€œDigitalCreditâ€. This comes from the productType of the product. Products are defaulted to a Physical goodsType. Gift cards have a goodsType of DigitalCredit.
-	 */
+
 	protected  String goodsType;
 
 	public String getGoodsType() {
