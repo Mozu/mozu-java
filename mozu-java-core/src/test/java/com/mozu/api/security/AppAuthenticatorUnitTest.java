@@ -2,7 +2,10 @@ package com.mozu.api.security;
 
 import static org.junit.Assert.*;
 
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.ObjectInputStream;
 
 import mockit.Expectations;
 import mockit.Mock;
@@ -58,7 +61,9 @@ public class AppAuthenticatorUnitTest {
     @After
     public void tearDown() throws Exception {
         new MockUp<AuthTicketResource>() {
-            @Mock public void deleteAppAuthTicket(String refreshToken) throws Exception {};
+            @Mock public java.io.InputStream deleteAppAuthTicket(String refreshToken) throws IOException {
+                return new FileInputStream("asd") ;
+            };
         };
         AppAuthenticator.invalidateAuth();
     }
