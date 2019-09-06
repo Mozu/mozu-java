@@ -42,10 +42,10 @@ public class ReturnSettingsResource {
 	 *	ReturnSettings returnsettings = new ReturnSettings();
 	 *	ReturnSettings returnSettings = returnsettings.getReturnSettings();
 	 * </code></pre></p>
-	 * @return com.mozu.api.contracts.sitesettings.order.return.ReturnSettings
-	 * @see com.mozu.api.contracts.sitesettings.order.return.ReturnSettings
+	 * @return com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings
+	 * @see com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings
 	 */
-	public com.mozu.api.contracts.sitesettings.order.return.ReturnSettings getReturnSettings() throws Exception
+	public com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings getReturnSettings() throws Exception
 	{
 		return getReturnSettings( null);
 	}
@@ -57,10 +57,10 @@ public class ReturnSettingsResource {
 	 *	CountDownLatch latch = returnsettings.getReturnSettings( callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @return com.mozu.api.contracts.sitesettings.order.return.ReturnSettings
-	 * @see com.mozu.api.contracts.sitesettings.order.return.ReturnSettings
+	 * @return com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings
+	 * @see com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings
 	 */
-	public CountDownLatch getReturnSettingsAsync( AsyncCallback<com.mozu.api.contracts.sitesettings.order.return.ReturnSettings> callback) throws Exception
+	public CountDownLatch getReturnSettingsAsync( AsyncCallback<com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings> callback) throws Exception
 	{
 		return getReturnSettingsAsync( null, callback);
 	}
@@ -72,12 +72,12 @@ public class ReturnSettingsResource {
 	 *	ReturnSettings returnSettings = returnsettings.getReturnSettings( responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
-	 * @return com.mozu.api.contracts.sitesettings.order.return.ReturnSettings
-	 * @see com.mozu.api.contracts.sitesettings.order.return.ReturnSettings
+	 * @return com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings
+	 * @see com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings
 	 */
-	public com.mozu.api.contracts.sitesettings.order.return.ReturnSettings getReturnSettings(String responseFields) throws Exception
+	public com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings getReturnSettings(String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.sitesettings.order.return.ReturnSettings> client = com.mozu.api.clients.commerce.settings.ReturnSettingsClient.getReturnSettingsClient( responseFields);
+		MozuClient<com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings> client = com.mozu.api.clients.commerce.settings.ReturnSettingsClient.getReturnSettingsClient( responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -92,12 +92,12 @@ public class ReturnSettingsResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
-	 * @return com.mozu.api.contracts.sitesettings.order.return.ReturnSettings
-	 * @see com.mozu.api.contracts.sitesettings.order.return.ReturnSettings
+	 * @return com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings
+	 * @see com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings
 	 */
-	public CountDownLatch getReturnSettingsAsync(String responseFields, AsyncCallback<com.mozu.api.contracts.sitesettings.order.return.ReturnSettings> callback) throws Exception
+	public CountDownLatch getReturnSettingsAsync(String responseFields, AsyncCallback<com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings> callback) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.sitesettings.order.return.ReturnSettings> client = com.mozu.api.clients.commerce.settings.ReturnSettingsClient.getReturnSettingsClient( responseFields);
+		MozuClient<com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings> client = com.mozu.api.clients.commerce.settings.ReturnSettingsClient.getReturnSettingsClient( responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 
@@ -110,11 +110,11 @@ public class ReturnSettingsResource {
 	 *	ReturnSettings returnSettings = returnsettings.createReturnSettings( returnSettings);
 	 * </code></pre></p>
 	 * @param returnSettings 
-	 * @return com.mozu.api.contracts.sitesettings.order.return.ReturnSettings
-	 * @see com.mozu.api.contracts.sitesettings.order.return.ReturnSettings
-	 * @see com.mozu.api.contracts.sitesettings.order.return.ReturnSettings
+	 * @return com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings
+	 * @see com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings
+	 * @see com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings
 	 */
-	public com.mozu.api.contracts.sitesettings.order.return.ReturnSettings createReturnSettings(com.mozu.api.contracts.sitesettings.order.return.ReturnSettings returnSettings) throws Exception
+	public com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings createReturnSettings(com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings returnSettings) throws Exception
 	{
 		return createReturnSettings( returnSettings,  null);
 	}
@@ -127,11 +127,11 @@ public class ReturnSettingsResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
 	 * @param returnSettings 
-	 * @return com.mozu.api.contracts.sitesettings.order.return.ReturnSettings
-	 * @see com.mozu.api.contracts.sitesettings.order.return.ReturnSettings
-	 * @see com.mozu.api.contracts.sitesettings.order.return.ReturnSettings
+	 * @return com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings
+	 * @see com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings
+	 * @see com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings
 	 */
-	public CountDownLatch createReturnSettingsAsync(com.mozu.api.contracts.sitesettings.order.return.ReturnSettings returnSettings, AsyncCallback<com.mozu.api.contracts.sitesettings.order.return.ReturnSettings> callback) throws Exception
+	public CountDownLatch createReturnSettingsAsync(com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings returnSettings, AsyncCallback<com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings> callback) throws Exception
 	{
 		return createReturnSettingsAsync( returnSettings,  null, callback);
 	}
@@ -144,13 +144,13 @@ public class ReturnSettingsResource {
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param returnSettings 
-	 * @return com.mozu.api.contracts.sitesettings.order.return.ReturnSettings
-	 * @see com.mozu.api.contracts.sitesettings.order.return.ReturnSettings
-	 * @see com.mozu.api.contracts.sitesettings.order.return.ReturnSettings
+	 * @return com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings
+	 * @see com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings
+	 * @see com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings
 	 */
-	public com.mozu.api.contracts.sitesettings.order.return.ReturnSettings createReturnSettings(com.mozu.api.contracts.sitesettings.order.return.ReturnSettings returnSettings, String responseFields) throws Exception
+	public com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings createReturnSettings(com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings returnSettings, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.sitesettings.order.return.ReturnSettings> client = com.mozu.api.clients.commerce.settings.ReturnSettingsClient.createReturnSettingsClient( returnSettings,  responseFields);
+		MozuClient<com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings> client = com.mozu.api.clients.commerce.settings.ReturnSettingsClient.createReturnSettingsClient( returnSettings,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -166,13 +166,13 @@ public class ReturnSettingsResource {
 	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @param returnSettings 
-	 * @return com.mozu.api.contracts.sitesettings.order.return.ReturnSettings
-	 * @see com.mozu.api.contracts.sitesettings.order.return.ReturnSettings
-	 * @see com.mozu.api.contracts.sitesettings.order.return.ReturnSettings
+	 * @return com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings
+	 * @see com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings
+	 * @see com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings
 	 */
-	public CountDownLatch createReturnSettingsAsync(com.mozu.api.contracts.sitesettings.order.return.ReturnSettings returnSettings, String responseFields, AsyncCallback<com.mozu.api.contracts.sitesettings.order.return.ReturnSettings> callback) throws Exception
+	public CountDownLatch createReturnSettingsAsync(com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings returnSettings, String responseFields, AsyncCallback<com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings> callback) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.sitesettings.order.return.ReturnSettings> client = com.mozu.api.clients.commerce.settings.ReturnSettingsClient.createReturnSettingsClient( returnSettings,  responseFields);
+		MozuClient<com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings> client = com.mozu.api.clients.commerce.settings.ReturnSettingsClient.createReturnSettingsClient( returnSettings,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 
@@ -185,11 +185,11 @@ public class ReturnSettingsResource {
 	 *	ReturnSettings returnSettings = returnsettings.updateReturnSettings( returnSettings);
 	 * </code></pre></p>
 	 * @param returnSettings 
-	 * @return com.mozu.api.contracts.sitesettings.order.return.ReturnSettings
-	 * @see com.mozu.api.contracts.sitesettings.order.return.ReturnSettings
-	 * @see com.mozu.api.contracts.sitesettings.order.return.ReturnSettings
+	 * @return com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings
+	 * @see com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings
+	 * @see com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings
 	 */
-	public com.mozu.api.contracts.sitesettings.order.return.ReturnSettings updateReturnSettings(com.mozu.api.contracts.sitesettings.order.return.ReturnSettings returnSettings) throws Exception
+	public com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings updateReturnSettings(com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings returnSettings) throws Exception
 	{
 		return updateReturnSettings( returnSettings,  null);
 	}
@@ -202,11 +202,11 @@ public class ReturnSettingsResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
 	 * @param returnSettings 
-	 * @return com.mozu.api.contracts.sitesettings.order.return.ReturnSettings
-	 * @see com.mozu.api.contracts.sitesettings.order.return.ReturnSettings
-	 * @see com.mozu.api.contracts.sitesettings.order.return.ReturnSettings
+	 * @return com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings
+	 * @see com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings
+	 * @see com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings
 	 */
-	public CountDownLatch updateReturnSettingsAsync(com.mozu.api.contracts.sitesettings.order.return.ReturnSettings returnSettings, AsyncCallback<com.mozu.api.contracts.sitesettings.order.return.ReturnSettings> callback) throws Exception
+	public CountDownLatch updateReturnSettingsAsync(com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings returnSettings, AsyncCallback<com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings> callback) throws Exception
 	{
 		return updateReturnSettingsAsync( returnSettings,  null, callback);
 	}
@@ -219,13 +219,13 @@ public class ReturnSettingsResource {
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param returnSettings 
-	 * @return com.mozu.api.contracts.sitesettings.order.return.ReturnSettings
-	 * @see com.mozu.api.contracts.sitesettings.order.return.ReturnSettings
-	 * @see com.mozu.api.contracts.sitesettings.order.return.ReturnSettings
+	 * @return com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings
+	 * @see com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings
+	 * @see com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings
 	 */
-	public com.mozu.api.contracts.sitesettings.order.return.ReturnSettings updateReturnSettings(com.mozu.api.contracts.sitesettings.order.return.ReturnSettings returnSettings, String responseFields) throws Exception
+	public com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings updateReturnSettings(com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings returnSettings, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.sitesettings.order.return.ReturnSettings> client = com.mozu.api.clients.commerce.settings.ReturnSettingsClient.updateReturnSettingsClient( returnSettings,  responseFields);
+		MozuClient<com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings> client = com.mozu.api.clients.commerce.settings.ReturnSettingsClient.updateReturnSettingsClient( returnSettings,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -241,13 +241,13 @@ public class ReturnSettingsResource {
 	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @param returnSettings 
-	 * @return com.mozu.api.contracts.sitesettings.order.return.ReturnSettings
-	 * @see com.mozu.api.contracts.sitesettings.order.return.ReturnSettings
-	 * @see com.mozu.api.contracts.sitesettings.order.return.ReturnSettings
+	 * @return com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings
+	 * @see com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings
+	 * @see com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings
 	 */
-	public CountDownLatch updateReturnSettingsAsync(com.mozu.api.contracts.sitesettings.order.return.ReturnSettings returnSettings, String responseFields, AsyncCallback<com.mozu.api.contracts.sitesettings.order.return.ReturnSettings> callback) throws Exception
+	public CountDownLatch updateReturnSettingsAsync(com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings returnSettings, String responseFields, AsyncCallback<com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings> callback) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.sitesettings.order.return.ReturnSettings> client = com.mozu.api.clients.commerce.settings.ReturnSettingsClient.updateReturnSettingsClient( returnSettings,  responseFields);
+		MozuClient<com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings> client = com.mozu.api.clients.commerce.settings.ReturnSettingsClient.updateReturnSettingsClient( returnSettings,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 

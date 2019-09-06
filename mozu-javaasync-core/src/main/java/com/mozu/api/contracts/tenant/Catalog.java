@@ -21,16 +21,6 @@ public class Catalog implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected  Integer id;
-
-	public Integer getId() {
-		return this.id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
 	protected  Boolean isDeleted;
 
 	public Boolean getIsDeleted() {
@@ -95,6 +85,16 @@ public class Catalog implements Serializable
 
 	public void setUpdateDate(DateTime updateDate) {
 		this.updateDate = updateDate;
+	}
+
+	protected  Integer id;
+
+	public Integer getId() {
+		return this.id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	protected  DateTime createDate;

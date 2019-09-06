@@ -13,9 +13,9 @@ import com.mozu.api.events.model.EventHandlerStatus;
 
 public interface SiteEventHandler {
 
-		public EventHandlerStatus cloned(ApiContext apiContext, Event event);
 		public EventHandlerStatus created(ApiContext apiContext, Event event);
 		public EventHandlerStatus deleted(ApiContext apiContext, Event event);
+		public EventHandlerStatus cloned(ApiContext apiContext, Event event);
 		public EventHandlerStatus updated(ApiContext apiContext, Event event);
 
 }

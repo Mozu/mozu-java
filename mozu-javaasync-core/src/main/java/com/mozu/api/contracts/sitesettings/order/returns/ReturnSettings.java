@@ -4,7 +4,7 @@
  *     Changes to this file may cause incorrect behavior and will be lost if
  *     the code is regenerated.
  */
-package com.mozu.api.contracts.sitesettings.order.return;
+package com.mozu.api.contracts.sitesettings.order.returns;
 
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

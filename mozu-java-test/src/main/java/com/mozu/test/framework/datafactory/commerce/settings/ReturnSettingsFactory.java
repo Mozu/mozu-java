@@ -23,14 +23,14 @@ import com.mozu.api.resources.commerce.settings.ReturnSettingsResource;
 public class ReturnSettingsFactory
 {
 
-	public static com.mozu.api.contracts.sitesettings.order.return.ReturnSettings getReturnSettings(ApiContext apiContext, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings getReturnSettings(ApiContext apiContext, int expectedCode) throws Exception
 	{
 		return getReturnSettings(apiContext,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.sitesettings.order.return.ReturnSettings getReturnSettings(ApiContext apiContext, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings getReturnSettings(ApiContext apiContext, String responseFields, int expectedCode) throws Exception
 	{
-		com.mozu.api.contracts.sitesettings.order.return.ReturnSettings returnObj = new com.mozu.api.contracts.sitesettings.order.return.ReturnSettings();
+		com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings returnObj = new com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings();
 		ReturnSettingsResource resource = new ReturnSettingsResource(apiContext);
 		try
 		{
@@ -48,14 +48,14 @@ public class ReturnSettingsFactory
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.sitesettings.order.return.ReturnSettings createReturnSettings(ApiContext apiContext, com.mozu.api.contracts.sitesettings.order.return.ReturnSettings returnSettings, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings createReturnSettings(ApiContext apiContext, com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings returnSettings, int expectedCode) throws Exception
 	{
 		return createReturnSettings(apiContext,  returnSettings,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.sitesettings.order.return.ReturnSettings createReturnSettings(ApiContext apiContext, com.mozu.api.contracts.sitesettings.order.return.ReturnSettings returnSettings, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings createReturnSettings(ApiContext apiContext, com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings returnSettings, String responseFields, int expectedCode) throws Exception
 	{
-		com.mozu.api.contracts.sitesettings.order.return.ReturnSettings returnObj = new com.mozu.api.contracts.sitesettings.order.return.ReturnSettings();
+		com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings returnObj = new com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings();
 		ReturnSettingsResource resource = new ReturnSettingsResource(apiContext);
 		try
 		{
@@ -73,14 +73,14 @@ public class ReturnSettingsFactory
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.sitesettings.order.return.ReturnSettings updateReturnSettings(ApiContext apiContext, com.mozu.api.contracts.sitesettings.order.return.ReturnSettings returnSettings, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings updateReturnSettings(ApiContext apiContext, com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings returnSettings, int expectedCode) throws Exception
 	{
 		return updateReturnSettings(apiContext,  returnSettings,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.sitesettings.order.return.ReturnSettings updateReturnSettings(ApiContext apiContext, com.mozu.api.contracts.sitesettings.order.return.ReturnSettings returnSettings, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings updateReturnSettings(ApiContext apiContext, com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings returnSettings, String responseFields, int expectedCode) throws Exception
 	{
-		com.mozu.api.contracts.sitesettings.order.return.ReturnSettings returnObj = new com.mozu.api.contracts.sitesettings.order.return.ReturnSettings();
+		com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings returnObj = new com.mozu.api.contracts.sitesettings.order.returns.ReturnSettings();
 		ReturnSettingsResource resource = new ReturnSettingsResource(apiContext);
 		try
 		{

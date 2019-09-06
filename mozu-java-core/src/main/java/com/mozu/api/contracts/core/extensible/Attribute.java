@@ -28,19 +28,6 @@ public class Attribute implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * An attribute value type is either predefined vocabulary by the admin during attribute set up or it can be "AdminEntered" or "ShopperEntered". The difference between predefined values versus manually entered values is such that the first choice is a set of options to choose from. AdminEntered and ShopperEntered are values that are entered rather than system-supplied and are not stored in the database, but captured during a live commerce operations such as during an order.
-	 */
-	protected  String valueType;
-
-	public String getValueType() {
-		return this.valueType;
-	}
-
-	public void setValueType(String valueType) {
-		this.valueType = valueType;
-	}
-
 	protected  String adminName;
 
 	public String getAdminName() {
@@ -194,6 +181,19 @@ public class Attribute implements Serializable
 
 	public void setOrder(Integer order) {
 		this.order = order;
+	}
+
+	/**
+	 * An attribute value type is either predefined vocabulary by the admin during attribute set up or it can be "AdminEntered" or "ShopperEntered". The difference between predefined values versus manually entered values is such that the first choice is a set of options to choose from. AdminEntered and ShopperEntered are values that are entered rather than system-supplied and are not stored in the database, but captured during a live commerce operations such as during an order.
+	 */
+	protected  String valueType;
+
+	public String getValueType() {
+		return this.valueType;
+	}
+
+	public void setValueType(String valueType) {
+		this.valueType = valueType;
 	}
 
 	protected List<AttributeMetadataItem> attributeMetadata;
