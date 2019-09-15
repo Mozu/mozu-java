@@ -16,24 +16,28 @@ public class InstalledApplicationsUrl
 	/**
 	 * Get Resource Url for GetApplication
 	 * @param appId The application ID that represents the application to retrieve.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getApplicationUrl(String appId)
+	public static MozuUrl getApplicationUrl(String appId, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/platform/applications/{appId}");
+		UrlFormatter formatter = new UrlFormatter("/api/platform/applications/{appId}?responseFields={responseFields}");
 		formatter.formatUrl("appId", appId);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for UpdateApplication
 	 * @param appId The application ID that represents the application to update.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl updateApplicationUrl(String appId)
+	public static MozuUrl updateApplicationUrl(String appId, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/platform/applications/{appId}");
+		UrlFormatter formatter = new UrlFormatter("/api/platform/applications/{appId}?responseFields={responseFields}");
 		formatter.formatUrl("appId", appId);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

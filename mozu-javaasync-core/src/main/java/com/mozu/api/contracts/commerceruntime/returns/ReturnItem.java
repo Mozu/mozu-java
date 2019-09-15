@@ -130,6 +130,16 @@ public class ReturnItem implements Serializable
 		this.quantityRestockable = quantityRestockable;
 	}
 
+	protected  Integer quantityRestocked;
+
+	public Integer getQuantityRestocked() {
+		return this.quantityRestocked;
+	}
+
+	public void setQuantityRestocked(Integer quantityRestocked) {
+		this.quantityRestocked = quantityRestocked;
+	}
+
 	protected  Integer quantityShipped;
 
 	public Integer getQuantityShipped() {

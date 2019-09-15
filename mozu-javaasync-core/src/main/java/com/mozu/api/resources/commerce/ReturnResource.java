@@ -941,6 +941,85 @@ public class ReturnResource {
 	 * 
 	 * <p><pre><code>
 	 *	Return return = new Return();
+	 *	Return return = return.restockReturnItems( returnItems,  returnId);
+	 * </code></pre></p>
+	 * @param returnId 
+	 * @param returnItems 
+	 * @return com.mozu.api.contracts.commerceruntime.returns.Return
+	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
+	 * @see com.mozu.api.contracts.commerceruntime.returns.RestockableReturnItem
+	 */
+	public com.mozu.api.contracts.commerceruntime.returns.Return restockReturnItems(List<com.mozu.api.contracts.commerceruntime.returns.RestockableReturnItem> returnItems, String returnId) throws Exception
+	{
+		return restockReturnItems( returnItems,  returnId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Return return = new Return();
+	 *	CountDownLatch latch = return.restockReturnItems( returnItems,  returnId, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param returnId 
+	 * @param  callback callback handler for asynchronous operations
+	 * @param returnItems 
+	 * @return com.mozu.api.contracts.commerceruntime.returns.Return
+	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
+	 * @see com.mozu.api.contracts.commerceruntime.returns.RestockableReturnItem
+	 */
+	public CountDownLatch restockReturnItemsAsync(List<com.mozu.api.contracts.commerceruntime.returns.RestockableReturnItem> returnItems, String returnId, AsyncCallback<com.mozu.api.contracts.commerceruntime.returns.Return> callback) throws Exception
+	{
+		return restockReturnItemsAsync( returnItems,  returnId,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Return return = new Return();
+	 *	Return return = return.restockReturnItems( returnItems,  returnId,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param returnId 
+	 * @param returnItems 
+	 * @return com.mozu.api.contracts.commerceruntime.returns.Return
+	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
+	 * @see com.mozu.api.contracts.commerceruntime.returns.RestockableReturnItem
+	 */
+	public com.mozu.api.contracts.commerceruntime.returns.Return restockReturnItems(List<com.mozu.api.contracts.commerceruntime.returns.RestockableReturnItem> returnItems, String returnId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.returns.Return> client = com.mozu.api.clients.commerce.ReturnClient.restockReturnItemsClient( returnItems,  returnId,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Return return = new Return();
+	 *	CountDownLatch latch = return.restockReturnItems( returnItems,  returnId,  responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param returnId 
+	 * @param  callback callback handler for asynchronous operations
+	 * @param returnItems 
+	 * @return com.mozu.api.contracts.commerceruntime.returns.Return
+	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
+	 * @see com.mozu.api.contracts.commerceruntime.returns.RestockableReturnItem
+	 */
+	public CountDownLatch restockReturnItemsAsync(List<com.mozu.api.contracts.commerceruntime.returns.RestockableReturnItem> returnItems, String returnId, String responseFields, AsyncCallback<com.mozu.api.contracts.commerceruntime.returns.Return> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.returns.Return> client = com.mozu.api.clients.commerce.ReturnClient.restockReturnItemsClient( returnItems,  returnId,  responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Return return = new Return();
 	 *	Order order = return.createReturnShippingOrder( itemQuantities,  returnId);
 	 * </code></pre></p>
 	 * @param returnId 

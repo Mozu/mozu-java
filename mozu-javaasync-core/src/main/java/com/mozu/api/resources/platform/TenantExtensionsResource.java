@@ -40,18 +40,14 @@ public class TenantExtensionsResource {
 	 * 
 	 * <p><pre><code>
 	 *	TenantExtensions tenantextensions = new TenantExtensions();
-	 *	Stream stream = tenantextensions.getExtensions();
+	 *	TenantExtensions tenantExtensions = tenantextensions.getExtensions();
 	 * </code></pre></p>
-	 * @return Stream
-	 * @see Stream
+	 * @return com.mozu.api.contracts.installedapplications.TenantExtensions
+	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
 	 */
-	public java.io.InputStream getExtensions() throws Exception
+	public com.mozu.api.contracts.installedapplications.TenantExtensions getExtensions() throws Exception
 	{
-		MozuClient<java.io.InputStream> client = com.mozu.api.clients.platform.TenantExtensionsClient.getExtensionsClient();
-		client.setContext(_apiContext);
-		client.executeRequest();
-		return client.getResult();
-
+		return getExtensions( null);
 	}
 
 	/**
@@ -61,12 +57,47 @@ public class TenantExtensionsResource {
 	 *	CountDownLatch latch = tenantextensions.getExtensions( callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @return Stream
-	 * @see Stream
+	 * @return com.mozu.api.contracts.installedapplications.TenantExtensions
+	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
 	 */
-	public CountDownLatch getExtensionsAsync( AsyncCallback<java.io.InputStream> callback) throws Exception
+	public CountDownLatch getExtensionsAsync( AsyncCallback<com.mozu.api.contracts.installedapplications.TenantExtensions> callback) throws Exception
 	{
-		MozuClient<java.io.InputStream> client = com.mozu.api.clients.platform.TenantExtensionsClient.getExtensionsClient();
+		return getExtensionsAsync( null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	TenantExtensions tenantextensions = new TenantExtensions();
+	 *	TenantExtensions tenantExtensions = tenantextensions.getExtensions( responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.installedapplications.TenantExtensions
+	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
+	 */
+	public com.mozu.api.contracts.installedapplications.TenantExtensions getExtensions(String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.installedapplications.TenantExtensions> client = com.mozu.api.clients.platform.TenantExtensionsClient.getExtensionsClient( responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	TenantExtensions tenantextensions = new TenantExtensions();
+	 *	CountDownLatch latch = tenantextensions.getExtensions( responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.installedapplications.TenantExtensions
+	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
+	 */
+	public CountDownLatch getExtensionsAsync(String responseFields, AsyncCallback<com.mozu.api.contracts.installedapplications.TenantExtensions> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.installedapplications.TenantExtensions> client = com.mozu.api.clients.platform.TenantExtensionsClient.getExtensionsClient( responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 
@@ -76,20 +107,16 @@ public class TenantExtensionsResource {
 	 * 
 	 * <p><pre><code>
 	 *	TenantExtensions tenantextensions = new TenantExtensions();
-	 *	Stream stream = tenantextensions.updateExtensions( extensions);
+	 *	TenantExtensions tenantExtensions = tenantextensions.updateExtensions( extensions);
 	 * </code></pre></p>
 	 * @param extensions 
-	 * @return Stream
-	 * @see Stream
+	 * @return com.mozu.api.contracts.installedapplications.TenantExtensions
+	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
 	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
 	 */
-	public java.io.InputStream updateExtensions(com.mozu.api.contracts.installedapplications.TenantExtensions extensions) throws Exception
+	public com.mozu.api.contracts.installedapplications.TenantExtensions updateExtensions(com.mozu.api.contracts.installedapplications.TenantExtensions extensions) throws Exception
 	{
-		MozuClient<java.io.InputStream> client = com.mozu.api.clients.platform.TenantExtensionsClient.updateExtensionsClient( extensions);
-		client.setContext(_apiContext);
-		client.executeRequest();
-		return client.getResult();
-
+		return updateExtensions( extensions,  null);
 	}
 
 	/**
@@ -100,13 +127,52 @@ public class TenantExtensionsResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
 	 * @param extensions 
-	 * @return Stream
-	 * @see Stream
+	 * @return com.mozu.api.contracts.installedapplications.TenantExtensions
+	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
 	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
 	 */
-	public CountDownLatch updateExtensionsAsync(com.mozu.api.contracts.installedapplications.TenantExtensions extensions, AsyncCallback<java.io.InputStream> callback) throws Exception
+	public CountDownLatch updateExtensionsAsync(com.mozu.api.contracts.installedapplications.TenantExtensions extensions, AsyncCallback<com.mozu.api.contracts.installedapplications.TenantExtensions> callback) throws Exception
 	{
-		MozuClient<java.io.InputStream> client = com.mozu.api.clients.platform.TenantExtensionsClient.updateExtensionsClient( extensions);
+		return updateExtensionsAsync( extensions,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	TenantExtensions tenantextensions = new TenantExtensions();
+	 *	TenantExtensions tenantExtensions = tenantextensions.updateExtensions( extensions,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param extensions 
+	 * @return com.mozu.api.contracts.installedapplications.TenantExtensions
+	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
+	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
+	 */
+	public com.mozu.api.contracts.installedapplications.TenantExtensions updateExtensions(com.mozu.api.contracts.installedapplications.TenantExtensions extensions, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.installedapplications.TenantExtensions> client = com.mozu.api.clients.platform.TenantExtensionsClient.updateExtensionsClient( extensions,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	TenantExtensions tenantextensions = new TenantExtensions();
+	 *	CountDownLatch latch = tenantextensions.updateExtensions( extensions,  responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param  callback callback handler for asynchronous operations
+	 * @param extensions 
+	 * @return com.mozu.api.contracts.installedapplications.TenantExtensions
+	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
+	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
+	 */
+	public CountDownLatch updateExtensionsAsync(com.mozu.api.contracts.installedapplications.TenantExtensions extensions, String responseFields, AsyncCallback<com.mozu.api.contracts.installedapplications.TenantExtensions> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.installedapplications.TenantExtensions> client = com.mozu.api.clients.platform.TenantExtensionsClient.updateExtensionsClient( extensions,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 

@@ -140,6 +140,16 @@ public class AdminUserUrl
 	}
 
 	/**
+	 * Get Resource Url for ResetPassword
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl resetPasswordUrl()
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/platform/adminuser/accounts/Reset-Password");
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.HOME_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for UpdateUser
 	 * @param responseFields 
 	 * @param userId 

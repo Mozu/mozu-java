@@ -338,6 +338,31 @@ public class ReturnFactory
 		return returnObj;
 	}
 
+	public static com.mozu.api.contracts.commerceruntime.returns.Return restockReturnItems(ApiContext apiContext, List<com.mozu.api.contracts.commerceruntime.returns.RestockableReturnItem> returnItems, String returnId, int expectedCode) throws Exception
+	{
+		return restockReturnItems(apiContext,  returnItems,  returnId,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.returns.Return restockReturnItems(ApiContext apiContext, List<com.mozu.api.contracts.commerceruntime.returns.RestockableReturnItem> returnItems, String returnId, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.commerceruntime.returns.Return returnObj = new com.mozu.api.contracts.commerceruntime.returns.Return();
+		ReturnResource resource = new ReturnResource(apiContext);
+		try
+		{
+			returnObj = resource.restockReturnItems( returnItems,  returnId,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
 	public static com.mozu.api.contracts.commerceruntime.orders.Order createReturnShippingOrder(ApiContext apiContext, List<com.mozu.api.contracts.commerceruntime.returns.ReturnItemSpecifier> itemQuantities, String returnId, int expectedCode) throws Exception
 	{
 		return createReturnShippingOrder(apiContext,  itemQuantities,  returnId,  null, expectedCode);

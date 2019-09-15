@@ -318,6 +318,26 @@ public AdminUserResource(ApiContext apiContext)
 	 * 
 	 * <p><pre><code>
 	 *	AdminUser adminuser = new AdminUser();
+	 *	Stream stream = adminuser.resetPassword( resetPasswordInfo);
+	 * </code></pre></p>
+	 * @param resetPasswordInfo 
+	 * @return Stream
+	 * @see Stream
+	 * @see com.mozu.api.contracts.adminuser.ResetPasswordInfo
+	 */
+	public java.io.InputStream resetPassword(com.mozu.api.contracts.adminuser.ResetPasswordInfo resetPasswordInfo) throws Exception
+	{
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.platform.adminuser.AdminUserClient.resetPasswordClient( resetPasswordInfo);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	AdminUser adminuser = new AdminUser();
 	 *	User user = adminuser.updateUser( user,  userId);
 	 * </code></pre></p>
 	 * @param userId 

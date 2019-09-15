@@ -204,6 +204,20 @@ public class ReturnUrl
 	}
 
 	/**
+	 * Get Resource Url for RestockReturnItems
+	 * @param responseFields 
+	 * @param returnId 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl restockReturnItemsUrl(String responseFields, String returnId)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/returns/{returnId}/restock?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
+		formatter.formatUrl("returnId", returnId);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for CreateReturnShippingOrder
 	 * @param responseFields 
 	 * @param returnId 

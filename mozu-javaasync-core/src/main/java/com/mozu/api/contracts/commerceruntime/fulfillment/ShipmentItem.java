@@ -192,6 +192,16 @@ public class ShipmentItem implements Serializable
 		this.originalOrderItemId = originalOrderItemId;
 	}
 
+	protected  Double overridePrice;
+
+	public Double getOverridePrice() {
+		return this.overridePrice;
+	}
+
+	public void setOverridePrice(Double overridePrice) {
+		this.overridePrice = overridePrice;
+	}
+
 	protected  String parentId;
 
 	public String getParentId() {

@@ -13,11 +13,13 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
+import com.mozu.api.contracts.core.AuditInfo;
+import com.mozu.api.contracts.commerceruntime.orders.CanceledReason;
 import com.mozu.api.contracts.commerceruntime.commerce.PackageMeasurements;
 import com.mozu.api.contracts.commerceruntime.products.ProductOption;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ShipmentItem implements Serializable
+public class CanceledItem implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
@@ -280,6 +282,26 @@ public class ShipmentItem implements Serializable
 
 	public void setVariationProductCode(String variationProductCode) {
 		this.variationProductCode = variationProductCode;
+	}
+
+	protected  AuditInfo auditInfo;
+
+	public AuditInfo getAuditInfo() {
+		return this.auditInfo;
+	}
+
+	public void setAuditInfo(AuditInfo auditInfo) {
+		this.auditInfo = auditInfo;
+	}
+
+	protected  CanceledReason canceledReason;
+
+	public CanceledReason getCanceledReason() {
+		return this.canceledReason;
+	}
+
+	public void setCanceledReason(CanceledReason canceledReason) {
+		this.canceledReason = canceledReason;
 	}
 
 	protected transient com.fasterxml.jackson.databind.JsonNode data;

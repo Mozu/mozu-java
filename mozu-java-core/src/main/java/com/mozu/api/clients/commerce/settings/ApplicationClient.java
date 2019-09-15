@@ -25,20 +25,37 @@ public class ApplicationClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<java.io.InputStream> mozuClient=ThirdPartyGetApplicationClient();
+	 * MozuClient<com.mozu.api.contracts.sitesettings.application.Application> mozuClient=ThirdPartyGetApplicationClient();
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
-	 * Stream stream = client.Result();
+	 * Application application = client.Result();
 	 * </code></pre></p>
-	 * @return Mozu.Api.MozuClient <Stream>
-	 * @see Stream
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.application.Application>
+	 * @see com.mozu.api.contracts.sitesettings.application.Application
 	 */
-	public static MozuClient<java.io.InputStream> thirdPartyGetApplicationClient() throws Exception
+	public static MozuClient<com.mozu.api.contracts.sitesettings.application.Application> thirdPartyGetApplicationClient() throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.settings.ApplicationUrl.thirdPartyGetApplicationUrl();
+		return thirdPartyGetApplicationClient( null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.sitesettings.application.Application> mozuClient=ThirdPartyGetApplicationClient( responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Application application = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.application.Application>
+	 * @see com.mozu.api.contracts.sitesettings.application.Application
+	 */
+	public static MozuClient<com.mozu.api.contracts.sitesettings.application.Application> thirdPartyGetApplicationClient(String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.settings.ApplicationUrl.thirdPartyGetApplicationUrl(responseFields);
 		String verb = "GET";
-		Class<?> clz = java.io.InputStream.class;
-		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
+		Class<?> clz = com.mozu.api.contracts.sitesettings.application.Application.class;
+		MozuClient<com.mozu.api.contracts.sitesettings.application.Application> mozuClient = (MozuClient<com.mozu.api.contracts.sitesettings.application.Application>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -48,22 +65,41 @@ public class ApplicationClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<java.io.InputStream> mozuClient=ThirdPartyUpdateApplicationClient( application);
+	 * MozuClient<com.mozu.api.contracts.sitesettings.application.Application> mozuClient=ThirdPartyUpdateApplicationClient( application);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
-	 * Stream stream = client.Result();
+	 * Application application = client.Result();
 	 * </code></pre></p>
 	 * @param application Properties of the application to update.
-	 * @return Mozu.Api.MozuClient <Stream>
-	 * @see Stream
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.application.Application>
+	 * @see com.mozu.api.contracts.sitesettings.application.Application
 	 * @see com.mozu.api.contracts.sitesettings.application.Application
 	 */
-	public static MozuClient<java.io.InputStream> thirdPartyUpdateApplicationClient(com.mozu.api.contracts.sitesettings.application.Application application) throws Exception
+	public static MozuClient<com.mozu.api.contracts.sitesettings.application.Application> thirdPartyUpdateApplicationClient(com.mozu.api.contracts.sitesettings.application.Application application) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.settings.ApplicationUrl.thirdPartyUpdateApplicationUrl();
+		return thirdPartyUpdateApplicationClient( application,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.sitesettings.application.Application> mozuClient=ThirdPartyUpdateApplicationClient( application,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Application application = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param application Properties of the application to update.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.application.Application>
+	 * @see com.mozu.api.contracts.sitesettings.application.Application
+	 * @see com.mozu.api.contracts.sitesettings.application.Application
+	 */
+	public static MozuClient<com.mozu.api.contracts.sitesettings.application.Application> thirdPartyUpdateApplicationClient(com.mozu.api.contracts.sitesettings.application.Application application, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.settings.ApplicationUrl.thirdPartyUpdateApplicationUrl(responseFields);
 		String verb = "PUT";
-		Class<?> clz = java.io.InputStream.class;
-		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
+		Class<?> clz = com.mozu.api.contracts.sitesettings.application.Application.class;
+		MozuClient<com.mozu.api.contracts.sitesettings.application.Application> mozuClient = (MozuClient<com.mozu.api.contracts.sitesettings.application.Application>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(application);

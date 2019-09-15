@@ -25,20 +25,37 @@ public class TenantExtensionsClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<java.io.InputStream> mozuClient=GetExtensionsClient();
+	 * MozuClient<com.mozu.api.contracts.installedapplications.TenantExtensions> mozuClient=GetExtensionsClient();
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
-	 * Stream stream = client.Result();
+	 * TenantExtensions tenantExtensions = client.Result();
 	 * </code></pre></p>
-	 * @return Mozu.Api.MozuClient <Stream>
-	 * @see Stream
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.installedapplications.TenantExtensions>
+	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
 	 */
-	public static MozuClient<java.io.InputStream> getExtensionsClient() throws Exception
+	public static MozuClient<com.mozu.api.contracts.installedapplications.TenantExtensions> getExtensionsClient() throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.platform.TenantExtensionsUrl.getExtensionsUrl();
+		return getExtensionsClient( null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.installedapplications.TenantExtensions> mozuClient=GetExtensionsClient( responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * TenantExtensions tenantExtensions = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.installedapplications.TenantExtensions>
+	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
+	 */
+	public static MozuClient<com.mozu.api.contracts.installedapplications.TenantExtensions> getExtensionsClient(String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.platform.TenantExtensionsUrl.getExtensionsUrl(responseFields);
 		String verb = "GET";
-		Class<?> clz = java.io.InputStream.class;
-		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
+		Class<?> clz = com.mozu.api.contracts.installedapplications.TenantExtensions.class;
+		MozuClient<com.mozu.api.contracts.installedapplications.TenantExtensions> mozuClient = (MozuClient<com.mozu.api.contracts.installedapplications.TenantExtensions>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -48,22 +65,41 @@ public class TenantExtensionsClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<java.io.InputStream> mozuClient=UpdateExtensionsClient( extensions);
+	 * MozuClient<com.mozu.api.contracts.installedapplications.TenantExtensions> mozuClient=UpdateExtensionsClient( extensions);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
-	 * Stream stream = client.Result();
+	 * TenantExtensions tenantExtensions = client.Result();
 	 * </code></pre></p>
 	 * @param extensions 
-	 * @return Mozu.Api.MozuClient <Stream>
-	 * @see Stream
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.installedapplications.TenantExtensions>
+	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
 	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
 	 */
-	public static MozuClient<java.io.InputStream> updateExtensionsClient(com.mozu.api.contracts.installedapplications.TenantExtensions extensions) throws Exception
+	public static MozuClient<com.mozu.api.contracts.installedapplications.TenantExtensions> updateExtensionsClient(com.mozu.api.contracts.installedapplications.TenantExtensions extensions) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.platform.TenantExtensionsUrl.updateExtensionsUrl();
+		return updateExtensionsClient( extensions,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.installedapplications.TenantExtensions> mozuClient=UpdateExtensionsClient( extensions,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * TenantExtensions tenantExtensions = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param extensions 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.installedapplications.TenantExtensions>
+	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
+	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
+	 */
+	public static MozuClient<com.mozu.api.contracts.installedapplications.TenantExtensions> updateExtensionsClient(com.mozu.api.contracts.installedapplications.TenantExtensions extensions, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.platform.TenantExtensionsUrl.updateExtensionsUrl(responseFields);
 		String verb = "PUT";
-		Class<?> clz = java.io.InputStream.class;
-		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
+		Class<?> clz = com.mozu.api.contracts.installedapplications.TenantExtensions.class;
+		MozuClient<com.mozu.api.contracts.installedapplications.TenantExtensions> mozuClient = (MozuClient<com.mozu.api.contracts.installedapplications.TenantExtensions>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(extensions);

@@ -334,16 +334,6 @@ public class Cart implements Serializable
 		this.webSessionId = webSessionId;
 	}
 
-	protected transient com.fasterxml.jackson.databind.JsonNode data;
-
-	public com.fasterxml.jackson.databind.JsonNode getData() {
-		return this.data;
-	}
-
-	public void setData(com.fasterxml.jackson.databind.JsonNode data) {
-		this.data = data;
-	}
-
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -378,6 +368,16 @@ public class Cart implements Serializable
 	}
 	public void setChangeMessages(List<ChangeMessage> changeMessages) {
 		this.changeMessages = changeMessages;
+	}
+
+	protected transient com.fasterxml.jackson.databind.JsonNode data;
+
+	public com.fasterxml.jackson.databind.JsonNode getData() {
+		return this.data;
+	}
+
+	public void setData(com.fasterxml.jackson.databind.JsonNode data) {
+		this.data = data;
 	}
 
 	protected List<ThresholdMessage> discountThresholdMessages;

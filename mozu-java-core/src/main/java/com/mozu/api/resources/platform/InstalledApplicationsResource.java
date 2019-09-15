@@ -38,15 +38,31 @@ public class InstalledApplicationsResource {
 	 * 
 	 * <p><pre><code>
 	 *	InstalledApplications installedapplications = new InstalledApplications();
-	 *	Stream stream = installedapplications.getApplication( appId);
+	 *	Application application = installedapplications.getApplication( appId);
 	 * </code></pre></p>
 	 * @param appId The application ID that represents the application to retrieve.
-	 * @return Stream
-	 * @see Stream
+	 * @return com.mozu.api.contracts.installedapplications.Application
+	 * @see com.mozu.api.contracts.installedapplications.Application
 	 */
-	public java.io.InputStream getApplication(String appId) throws Exception
+	public com.mozu.api.contracts.installedapplications.Application getApplication(String appId) throws Exception
 	{
-		MozuClient<java.io.InputStream> client = com.mozu.api.clients.platform.InstalledApplicationsClient.getApplicationClient( appId);
+		return getApplication( appId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	InstalledApplications installedapplications = new InstalledApplications();
+	 *	Application application = installedapplications.getApplication( appId,  responseFields);
+	 * </code></pre></p>
+	 * @param appId The application ID that represents the application to retrieve.
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.installedapplications.Application
+	 * @see com.mozu.api.contracts.installedapplications.Application
+	 */
+	public com.mozu.api.contracts.installedapplications.Application getApplication(String appId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.installedapplications.Application> client = com.mozu.api.clients.platform.InstalledApplicationsClient.getApplicationClient( appId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -57,17 +73,35 @@ public class InstalledApplicationsResource {
 	 * 
 	 * <p><pre><code>
 	 *	InstalledApplications installedapplications = new InstalledApplications();
-	 *	Stream stream = installedapplications.updateApplication( application,  appId);
+	 *	Application application = installedapplications.updateApplication( application,  appId);
 	 * </code></pre></p>
 	 * @param appId The application ID that represents the application to update.
 	 * @param application Properties of the application to update.
-	 * @return Stream
-	 * @see Stream
+	 * @return com.mozu.api.contracts.installedapplications.Application
+	 * @see com.mozu.api.contracts.installedapplications.Application
 	 * @see com.mozu.api.contracts.installedapplications.Application
 	 */
-	public java.io.InputStream updateApplication(com.mozu.api.contracts.installedapplications.Application application, String appId) throws Exception
+	public com.mozu.api.contracts.installedapplications.Application updateApplication(com.mozu.api.contracts.installedapplications.Application application, String appId) throws Exception
 	{
-		MozuClient<java.io.InputStream> client = com.mozu.api.clients.platform.InstalledApplicationsClient.updateApplicationClient( application,  appId);
+		return updateApplication( application,  appId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	InstalledApplications installedapplications = new InstalledApplications();
+	 *	Application application = installedapplications.updateApplication( application,  appId,  responseFields);
+	 * </code></pre></p>
+	 * @param appId The application ID that represents the application to update.
+	 * @param responseFields 
+	 * @param application Properties of the application to update.
+	 * @return com.mozu.api.contracts.installedapplications.Application
+	 * @see com.mozu.api.contracts.installedapplications.Application
+	 * @see com.mozu.api.contracts.installedapplications.Application
+	 */
+	public com.mozu.api.contracts.installedapplications.Application updateApplication(com.mozu.api.contracts.installedapplications.Application application, String appId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.installedapplications.Application> client = com.mozu.api.clients.platform.InstalledApplicationsClient.updateApplicationClient( application,  appId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

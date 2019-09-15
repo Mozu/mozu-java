@@ -25,16 +25,16 @@ public class RoleFactory
 
 	public static com.mozu.api.contracts.core.RoleCollection getRoles(ApiContext apiContext, int expectedCode) throws Exception
 	{
-		return getRoles(apiContext,  null,  null, expectedCode);
+		return getRoles(apiContext,  null,  null,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.core.RoleCollection getRoles(ApiContext apiContext, String filter, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.core.RoleCollection getRoles(ApiContext apiContext, Integer startIndex, Integer pageSize, String filter, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.core.RoleCollection returnObj = new com.mozu.api.contracts.core.RoleCollection();
 		RoleResource resource = new RoleResource(apiContext);
 		try
 		{
-			returnObj = resource.getRoles( filter,  responseFields);
+			returnObj = resource.getRoles( startIndex,  pageSize,  filter,  responseFields);
 		}
 		catch (ApiException e)
 		{

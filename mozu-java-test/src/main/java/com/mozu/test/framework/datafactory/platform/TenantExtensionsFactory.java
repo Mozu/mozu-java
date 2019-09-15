@@ -23,13 +23,18 @@ import com.mozu.api.resources.platform.TenantExtensionsResource;
 public class TenantExtensionsFactory
 {
 
-	public static java.io.InputStream getExtensions(ApiContext apiContext, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.installedapplications.TenantExtensions getExtensions(ApiContext apiContext, int expectedCode) throws Exception
 	{
-		java.io.InputStream returnObj;
+		return getExtensions(apiContext,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.installedapplications.TenantExtensions getExtensions(ApiContext apiContext, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.installedapplications.TenantExtensions returnObj = new com.mozu.api.contracts.installedapplications.TenantExtensions();
 		TenantExtensionsResource resource = new TenantExtensionsResource(apiContext);
 		try
 		{
-			returnObj = resource.getExtensions();
+			returnObj = resource.getExtensions( responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -43,13 +48,18 @@ public class TenantExtensionsFactory
 		return returnObj;
 	}
 
-	public static java.io.InputStream updateExtensions(ApiContext apiContext, com.mozu.api.contracts.installedapplications.TenantExtensions extensions, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.installedapplications.TenantExtensions updateExtensions(ApiContext apiContext, com.mozu.api.contracts.installedapplications.TenantExtensions extensions, int expectedCode) throws Exception
 	{
-		java.io.InputStream returnObj;
+		return updateExtensions(apiContext,  extensions,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.installedapplications.TenantExtensions updateExtensions(ApiContext apiContext, com.mozu.api.contracts.installedapplications.TenantExtensions extensions, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.installedapplications.TenantExtensions returnObj = new com.mozu.api.contracts.installedapplications.TenantExtensions();
 		TenantExtensionsResource resource = new TenantExtensionsResource(apiContext);
 		try
 		{
-			returnObj = resource.updateExtensions( extensions);
+			returnObj = resource.updateExtensions( extensions,  responseFields);
 		}
 		catch (ApiException e)
 		{

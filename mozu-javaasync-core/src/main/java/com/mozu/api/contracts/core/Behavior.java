@@ -23,16 +23,6 @@ public class Behavior implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected  Integer categoryId;
-
-	public Integer getCategoryId() {
-		return this.categoryId;
-	}
-
-	public void setCategoryId(Integer categoryId) {
-		this.categoryId = categoryId;
-	}
-
 	protected  Integer id;
 
 	public Integer getId() {
@@ -88,6 +78,16 @@ public class Behavior implements Serializable
 	}
 	public void setValidUserTypes(List<String> validUserTypes) {
 		this.validUserTypes = validUserTypes;
+	}
+
+	protected  Integer categoryId;
+
+	public Integer getCategoryId() {
+		return this.categoryId;
+	}
+
+	public void setCategoryId(Integer categoryId) {
+		this.categoryId = categoryId;
 	}
 
 

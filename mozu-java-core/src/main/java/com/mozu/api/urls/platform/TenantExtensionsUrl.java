@@ -15,21 +15,25 @@ public class TenantExtensionsUrl
 
 	/**
 	 * Get Resource Url for GetExtensions
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getExtensionsUrl()
+	public static MozuUrl getExtensionsUrl(String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/platform/extensions/");
+		UrlFormatter formatter = new UrlFormatter("/api/platform/extensions/?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for UpdateExtensions
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl updateExtensionsUrl()
+	public static MozuUrl updateExtensionsUrl(String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/platform/extensions/");
+		UrlFormatter formatter = new UrlFormatter("/api/platform/extensions/?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

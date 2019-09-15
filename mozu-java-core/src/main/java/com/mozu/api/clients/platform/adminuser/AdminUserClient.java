@@ -361,6 +361,32 @@ public class AdminUserClient {
 	/**
 	 * 
 	 * <p><pre><code>
+	 * MozuClient<java.io.InputStream> mozuClient=ResetPasswordClient( resetPasswordInfo);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Stream stream = client.Result();
+	 * </code></pre></p>
+	 * @param resetPasswordInfo 
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
+	 * @see com.mozu.api.contracts.adminuser.ResetPasswordInfo
+	 */
+	public static MozuClient<java.io.InputStream> resetPasswordClient(com.mozu.api.contracts.adminuser.ResetPasswordInfo resetPasswordInfo) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.platform.adminuser.AdminUserUrl.resetPasswordUrl();
+		String verb = "POST";
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(resetPasswordInfo);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.core.User> mozuClient=UpdateUserClient( user,  userId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();

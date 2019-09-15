@@ -16,6 +16,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.location.LocationAttribute;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.location.BoxType;
+import com.mozu.api.contracts.location.BpmConfiguration;
 import com.mozu.api.contracts.location.Carrier;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -266,6 +267,14 @@ public class LocationGroupConfiguration implements Serializable
 	}
 	public void setBoxTypes(List<BoxType> boxTypes) {
 		this.boxTypes = boxTypes;
+	}
+
+	protected List<BpmConfiguration> bpmConfigurations;
+	public List<BpmConfiguration> getBpmConfigurations() {
+		return this.bpmConfigurations;
+	}
+	public void setBpmConfigurations(List<BpmConfiguration> bpmConfigurations) {
+		this.bpmConfigurations = bpmConfigurations;
 	}
 
 	protected List<Carrier> carriers;

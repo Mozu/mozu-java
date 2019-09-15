@@ -38,14 +38,29 @@ public class ApplicationResource {
 	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
-	 *	Stream stream = application.thirdPartyGetApplication();
+	 *	Application application = application.thirdPartyGetApplication();
 	 * </code></pre></p>
-	 * @return Stream
-	 * @see Stream
+	 * @return com.mozu.api.contracts.sitesettings.application.Application
+	 * @see com.mozu.api.contracts.sitesettings.application.Application
 	 */
-	public java.io.InputStream thirdPartyGetApplication() throws Exception
+	public com.mozu.api.contracts.sitesettings.application.Application thirdPartyGetApplication() throws Exception
 	{
-		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.settings.ApplicationClient.thirdPartyGetApplicationClient();
+		return thirdPartyGetApplication( null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Application application = new Application();
+	 *	Application application = application.thirdPartyGetApplication( responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.sitesettings.application.Application
+	 * @see com.mozu.api.contracts.sitesettings.application.Application
+	 */
+	public com.mozu.api.contracts.sitesettings.application.Application thirdPartyGetApplication(String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.sitesettings.application.Application> client = com.mozu.api.clients.commerce.settings.ApplicationClient.thirdPartyGetApplicationClient( responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -56,16 +71,33 @@ public class ApplicationResource {
 	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
-	 *	Stream stream = application.thirdPartyUpdateApplication( application);
+	 *	Application application = application.thirdPartyUpdateApplication( application);
 	 * </code></pre></p>
 	 * @param application Properties of the application to update.
-	 * @return Stream
-	 * @see Stream
+	 * @return com.mozu.api.contracts.sitesettings.application.Application
+	 * @see com.mozu.api.contracts.sitesettings.application.Application
 	 * @see com.mozu.api.contracts.sitesettings.application.Application
 	 */
-	public java.io.InputStream thirdPartyUpdateApplication(com.mozu.api.contracts.sitesettings.application.Application application) throws Exception
+	public com.mozu.api.contracts.sitesettings.application.Application thirdPartyUpdateApplication(com.mozu.api.contracts.sitesettings.application.Application application) throws Exception
 	{
-		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.settings.ApplicationClient.thirdPartyUpdateApplicationClient( application);
+		return thirdPartyUpdateApplication( application,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Application application = new Application();
+	 *	Application application = application.thirdPartyUpdateApplication( application,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param application Properties of the application to update.
+	 * @return com.mozu.api.contracts.sitesettings.application.Application
+	 * @see com.mozu.api.contracts.sitesettings.application.Application
+	 * @see com.mozu.api.contracts.sitesettings.application.Application
+	 */
+	public com.mozu.api.contracts.sitesettings.application.Application thirdPartyUpdateApplication(com.mozu.api.contracts.sitesettings.application.Application application, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.sitesettings.application.Application> client = com.mozu.api.clients.commerce.settings.ApplicationClient.thirdPartyUpdateApplicationClient( application,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

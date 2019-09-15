@@ -14,9 +14,10 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
-import com.mozu.api.contracts.commerceruntime.fulfillment.ShipmentItem;
+import com.mozu.api.contracts.commerceruntime.fulfillment.CanceledItem;
 import com.mozu.api.contracts.commerceruntime.commerce.ChangeMessage;
 import com.mozu.api.contracts.commerceruntime.fulfillment.Destination;
+import com.mozu.api.contracts.commerceruntime.fulfillment.ShipmentItem;
 import com.mozu.api.contracts.core.Contact;
 import com.mozu.api.contracts.commerceruntime.fulfillment.Package;
 import com.mozu.api.contracts.commerceruntime.fulfillment.WorkflowState;
@@ -29,16 +30,6 @@ public class Shipment implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
-
-	protected  DateTime fulfillmentDate;
-
-	public DateTime getFulfillmentDate() {
-		return this.fulfillmentDate;
-	}
-
-	public void setFulfillmentDate(DateTime fulfillmentDate) {
-		this.fulfillmentDate = fulfillmentDate;
-	}
 
 	protected  Integer backorderCreatedDate;
 
@@ -128,6 +119,16 @@ public class Shipment implements Serializable
 
 	public void setExternalShipmentId(String externalShipmentId) {
 		this.externalShipmentId = externalShipmentId;
+	}
+
+	protected  DateTime fulfillmentDate;
+
+	public DateTime getFulfillmentDate() {
+		return this.fulfillmentDate;
+	}
+
+	public void setFulfillmentDate(DateTime fulfillmentDate) {
+		this.fulfillmentDate = fulfillmentDate;
 	}
 
 	protected  String fulfillmentLocationCode;
@@ -468,11 +469,11 @@ public class Shipment implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	protected List<ShipmentItem> canceledItems;
-	public List<ShipmentItem> getCanceledItems() {
+	protected List<CanceledItem> canceledItems;
+	public List<CanceledItem> getCanceledItems() {
 		return this.canceledItems;
 	}
-	public void setCanceledItems(List<ShipmentItem> canceledItems) {
+	public void setCanceledItems(List<CanceledItem> canceledItems) {
 		this.canceledItems = canceledItems;
 	}
 

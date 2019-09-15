@@ -28,6 +28,16 @@ public class CanceledReason implements Serializable
 		this.description = description;
 	}
 
+	protected  String moreInfo;
+
+	public String getMoreInfo() {
+		return this.moreInfo;
+	}
+
+	public void setMoreInfo(String moreInfo) {
+		this.moreInfo = moreInfo;
+	}
+
 	protected  String reasonCode;
 
 	public String getReasonCode() {

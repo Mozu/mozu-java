@@ -40,18 +40,14 @@ public class ApplicationResource {
 	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
-	 *	Stream stream = application.thirdPartyGetApplication();
+	 *	Application application = application.thirdPartyGetApplication();
 	 * </code></pre></p>
-	 * @return Stream
-	 * @see Stream
+	 * @return com.mozu.api.contracts.sitesettings.application.Application
+	 * @see com.mozu.api.contracts.sitesettings.application.Application
 	 */
-	public java.io.InputStream thirdPartyGetApplication() throws Exception
+	public com.mozu.api.contracts.sitesettings.application.Application thirdPartyGetApplication() throws Exception
 	{
-		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.settings.ApplicationClient.thirdPartyGetApplicationClient();
-		client.setContext(_apiContext);
-		client.executeRequest();
-		return client.getResult();
-
+		return thirdPartyGetApplication( null);
 	}
 
 	/**
@@ -61,12 +57,47 @@ public class ApplicationResource {
 	 *	CountDownLatch latch = application.thirdPartyGetApplication( callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @return Stream
-	 * @see Stream
+	 * @return com.mozu.api.contracts.sitesettings.application.Application
+	 * @see com.mozu.api.contracts.sitesettings.application.Application
 	 */
-	public CountDownLatch thirdPartyGetApplicationAsync( AsyncCallback<java.io.InputStream> callback) throws Exception
+	public CountDownLatch thirdPartyGetApplicationAsync( AsyncCallback<com.mozu.api.contracts.sitesettings.application.Application> callback) throws Exception
 	{
-		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.settings.ApplicationClient.thirdPartyGetApplicationClient();
+		return thirdPartyGetApplicationAsync( null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Application application = new Application();
+	 *	Application application = application.thirdPartyGetApplication( responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.sitesettings.application.Application
+	 * @see com.mozu.api.contracts.sitesettings.application.Application
+	 */
+	public com.mozu.api.contracts.sitesettings.application.Application thirdPartyGetApplication(String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.sitesettings.application.Application> client = com.mozu.api.clients.commerce.settings.ApplicationClient.thirdPartyGetApplicationClient( responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Application application = new Application();
+	 *	CountDownLatch latch = application.thirdPartyGetApplication( responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.sitesettings.application.Application
+	 * @see com.mozu.api.contracts.sitesettings.application.Application
+	 */
+	public CountDownLatch thirdPartyGetApplicationAsync(String responseFields, AsyncCallback<com.mozu.api.contracts.sitesettings.application.Application> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.sitesettings.application.Application> client = com.mozu.api.clients.commerce.settings.ApplicationClient.thirdPartyGetApplicationClient( responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 
@@ -76,20 +107,16 @@ public class ApplicationResource {
 	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
-	 *	Stream stream = application.thirdPartyUpdateApplication( application);
+	 *	Application application = application.thirdPartyUpdateApplication( application);
 	 * </code></pre></p>
 	 * @param application Properties of the application to update.
-	 * @return Stream
-	 * @see Stream
+	 * @return com.mozu.api.contracts.sitesettings.application.Application
+	 * @see com.mozu.api.contracts.sitesettings.application.Application
 	 * @see com.mozu.api.contracts.sitesettings.application.Application
 	 */
-	public java.io.InputStream thirdPartyUpdateApplication(com.mozu.api.contracts.sitesettings.application.Application application) throws Exception
+	public com.mozu.api.contracts.sitesettings.application.Application thirdPartyUpdateApplication(com.mozu.api.contracts.sitesettings.application.Application application) throws Exception
 	{
-		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.settings.ApplicationClient.thirdPartyUpdateApplicationClient( application);
-		client.setContext(_apiContext);
-		client.executeRequest();
-		return client.getResult();
-
+		return thirdPartyUpdateApplication( application,  null);
 	}
 
 	/**
@@ -100,13 +127,52 @@ public class ApplicationResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
 	 * @param application Properties of the application to update.
-	 * @return Stream
-	 * @see Stream
+	 * @return com.mozu.api.contracts.sitesettings.application.Application
+	 * @see com.mozu.api.contracts.sitesettings.application.Application
 	 * @see com.mozu.api.contracts.sitesettings.application.Application
 	 */
-	public CountDownLatch thirdPartyUpdateApplicationAsync(com.mozu.api.contracts.sitesettings.application.Application application, AsyncCallback<java.io.InputStream> callback) throws Exception
+	public CountDownLatch thirdPartyUpdateApplicationAsync(com.mozu.api.contracts.sitesettings.application.Application application, AsyncCallback<com.mozu.api.contracts.sitesettings.application.Application> callback) throws Exception
 	{
-		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.settings.ApplicationClient.thirdPartyUpdateApplicationClient( application);
+		return thirdPartyUpdateApplicationAsync( application,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Application application = new Application();
+	 *	Application application = application.thirdPartyUpdateApplication( application,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param application Properties of the application to update.
+	 * @return com.mozu.api.contracts.sitesettings.application.Application
+	 * @see com.mozu.api.contracts.sitesettings.application.Application
+	 * @see com.mozu.api.contracts.sitesettings.application.Application
+	 */
+	public com.mozu.api.contracts.sitesettings.application.Application thirdPartyUpdateApplication(com.mozu.api.contracts.sitesettings.application.Application application, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.sitesettings.application.Application> client = com.mozu.api.clients.commerce.settings.ApplicationClient.thirdPartyUpdateApplicationClient( application,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Application application = new Application();
+	 *	CountDownLatch latch = application.thirdPartyUpdateApplication( application,  responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param  callback callback handler for asynchronous operations
+	 * @param application Properties of the application to update.
+	 * @return com.mozu.api.contracts.sitesettings.application.Application
+	 * @see com.mozu.api.contracts.sitesettings.application.Application
+	 * @see com.mozu.api.contracts.sitesettings.application.Application
+	 */
+	public CountDownLatch thirdPartyUpdateApplicationAsync(com.mozu.api.contracts.sitesettings.application.Application application, String responseFields, AsyncCallback<com.mozu.api.contracts.sitesettings.application.Application> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.sitesettings.application.Application> client = com.mozu.api.clients.commerce.settings.ApplicationClient.thirdPartyUpdateApplicationClient( application,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 

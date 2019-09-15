@@ -45,16 +45,6 @@ public class Order implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected  DateTime cancelledDate;
-
-	public DateTime getCancelledDate() {
-		return this.cancelledDate;
-	}
-
-	public void setCancelledDate(DateTime cancelledDate) {
-		this.cancelledDate = cancelledDate;
-	}
-
 	/**
 	 * The date and time the order was accepted by the tenant.
 	 */
@@ -123,6 +113,16 @@ public class Order implements Serializable
 	}
 	public void setAvailableActions(List<String> availableActions) {
 		this.availableActions = availableActions;
+	}
+
+	protected  DateTime cancelledDate;
+
+	public DateTime getCancelledDate() {
+		return this.cancelledDate;
+	}
+
+	public void setCancelledDate(DateTime cancelledDate) {
+		this.cancelledDate = cancelledDate;
 	}
 
 	protected  String channelCode;
