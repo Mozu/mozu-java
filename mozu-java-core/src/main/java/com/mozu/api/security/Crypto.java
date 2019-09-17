@@ -69,6 +69,7 @@ public class Crypto {
 
         long deltaTime = (DateTime.now().getMillis() - dTime.getMillis())/1000;
         if (deltaTime > requestValidTimeSeconds) {
+            logger.warn(Long.toString(deltaTime)+"is greater than "+Long.toString(requestValidTimeSeconds)+". Request invalid.");
             isValid = false;
         }
         return isValid;
