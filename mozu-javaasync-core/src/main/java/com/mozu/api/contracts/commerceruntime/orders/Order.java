@@ -435,6 +435,16 @@ public class Order implements Serializable
 		this.isTaxExempt = isTaxExempt;
 	}
 
+	protected  Boolean isUnified;
+
+	public Boolean getIsUnified() {
+		return this.isUnified;
+	}
+
+	public void setIsUnified(Boolean isUnified) {
+		this.isUnified = isUnified;
+	}
+
 	protected  Double itemTaxTotal;
 
 	public Double getItemTaxTotal() {

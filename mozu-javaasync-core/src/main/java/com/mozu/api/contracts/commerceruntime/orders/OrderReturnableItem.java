@@ -6,20 +6,77 @@
  */
 package com.mozu.api.contracts.commerceruntime.orders;
 
-import java.util.List;
-import java.util.HashMap;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
-import com.mozu.api.contracts.commerceruntime.orders.ReturnableShipItem;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class OrderReturnableItem implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
+
+	protected  String fulfillmentStatus;
+
+	public String getFulfillmentStatus() {
+		return this.fulfillmentStatus;
+	}
+
+	public void setFulfillmentStatus(String fulfillmentStatus) {
+		this.fulfillmentStatus = fulfillmentStatus;
+	}
+
+	protected  String orderItemId;
+
+	public String getOrderItemId() {
+		return this.orderItemId;
+	}
+
+	public void setOrderItemId(String orderItemId) {
+		this.orderItemId = orderItemId;
+	}
+
+	protected  String orderItemOptionAttributeFQN;
+
+	public String getOrderItemOptionAttributeFQN() {
+		return this.orderItemOptionAttributeFQN;
+	}
+
+	public void setOrderItemOptionAttributeFQN(String orderItemOptionAttributeFQN) {
+		this.orderItemOptionAttributeFQN = orderItemOptionAttributeFQN;
+	}
+
+	protected  Integer orderLineId;
+
+	public Integer getOrderLineId() {
+		return this.orderLineId;
+	}
+
+	public void setOrderLineId(Integer orderLineId) {
+		this.orderLineId = orderLineId;
+	}
+
+	protected  String parentProductCode;
+
+	public String getParentProductCode() {
+		return this.parentProductCode;
+	}
+
+	public void setParentProductCode(String parentProductCode) {
+		this.parentProductCode = parentProductCode;
+	}
+
+	protected  String parentProductName;
+
+	public String getParentProductName() {
+		return this.parentProductName;
+	}
+
+	public void setParentProductName(String parentProductName) {
+		this.parentProductName = parentProductName;
+	}
 
 	protected  String productCode;
 
@@ -81,12 +138,34 @@ public class OrderReturnableItem implements Serializable
 		this.quantityReturned = quantityReturned;
 	}
 
-	protected List<ReturnableShipItem> items;
-	public List<ReturnableShipItem> getItems() {
-		return this.items;
+	protected  Integer shipmentItemId;
+
+	public Integer getShipmentItemId() {
+		return this.shipmentItemId;
 	}
-	public void setItems(List<ReturnableShipItem> items) {
-		this.items = items;
+
+	public void setShipmentItemId(Integer shipmentItemId) {
+		this.shipmentItemId = shipmentItemId;
+	}
+
+	protected  Integer shipmentNumber;
+
+	public Integer getShipmentNumber() {
+		return this.shipmentNumber;
+	}
+
+	public void setShipmentNumber(Integer shipmentNumber) {
+		this.shipmentNumber = shipmentNumber;
+	}
+
+	protected  Integer unitQuantity;
+
+	public Integer getUnitQuantity() {
+		return this.unitQuantity;
+	}
+
+	public void setUnitQuantity(Integer unitQuantity) {
+		this.unitQuantity = unitQuantity;
 	}
 
 

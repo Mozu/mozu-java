@@ -17,6 +17,7 @@ public class OrderUrl
 	 * Get Resource Url for GetOrders
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. You can filter an order's search results by any of its properties, including status, contact information, or total. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=Status+eq+Submitted"
 	 * @param includeBin 
+	 * @param mode 
 	 * @param pageSize Used to page results from a query. Indicates the maximum number of entities to return from a query. Default value: 20. Max value: 200.
 	 * @param q A list of order search terms to use in the query when searching across order number and the name or email of the billing contact. Separate multiple search terms with a space character.
 	 * @param qLimit The maximum number of search results to return in the response. You can limit any range between 1-100.
@@ -25,11 +26,12 @@ public class OrderUrl
 	 * @param startIndex 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getOrdersUrl(String filter, Boolean includeBin, Integer pageSize, String q, Integer qLimit, String responseFields, String sortBy, Integer startIndex)
+	public static MozuUrl getOrdersUrl(String filter, Boolean includeBin, String mode, Integer pageSize, String q, Integer qLimit, String responseFields, String sortBy, Integer startIndex)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}&q={q}&qLimit={qLimit}&includeBin={includeBin}&responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}&q={q}&qLimit={qLimit}&includeBin={includeBin}&mode={mode}&responseFields={responseFields}");
 		formatter.formatUrl("filter", filter);
 		formatter.formatUrl("includeBin", includeBin);
+		formatter.formatUrl("mode", mode);
 		formatter.formatUrl("pageSize", pageSize);
 		formatter.formatUrl("q", q);
 		formatter.formatUrl("qLimit", qLimit);
@@ -67,15 +69,17 @@ public class OrderUrl
 	 * Get Resource Url for GetOrder
 	 * @param draft If true, retrieve the draft version of the order, which might include uncommitted changes to the order or its components.
 	 * @param includeBin 
+	 * @param mode 
 	 * @param orderId Unique identifier of the order details to get.
 	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getOrderUrl(Boolean draft, Boolean includeBin, String orderId, String responseFields)
+	public static MozuUrl getOrderUrl(Boolean draft, Boolean includeBin, String mode, String orderId, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}?draft={draft}&includeBin={includeBin}&responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}?draft={draft}&includeBin={includeBin}&mode={mode}&responseFields={responseFields}");
 		formatter.formatUrl("draft", draft);
 		formatter.formatUrl("includeBin", includeBin);
+		formatter.formatUrl("mode", mode);
 		formatter.formatUrl("orderId", orderId);
 		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;

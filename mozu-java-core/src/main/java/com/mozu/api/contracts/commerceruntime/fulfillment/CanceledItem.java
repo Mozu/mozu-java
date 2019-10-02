@@ -264,6 +264,36 @@ public class CanceledItem implements Serializable
 		this.shippingTax = shippingTax;
 	}
 
+	protected  Double taxableHandling;
+
+	public Double getTaxableHandling() {
+		return this.taxableHandling;
+	}
+
+	public void setTaxableHandling(Double taxableHandling) {
+		this.taxableHandling = taxableHandling;
+	}
+
+	protected  Double taxableLineItemCost;
+
+	public Double getTaxableLineItemCost() {
+		return this.taxableLineItemCost;
+	}
+
+	public void setTaxableLineItemCost(Double taxableLineItemCost) {
+		this.taxableLineItemCost = taxableLineItemCost;
+	}
+
+	protected  Double taxableShipping;
+
+	public Double getTaxableShipping() {
+		return this.taxableShipping;
+	}
+
+	public void setTaxableShipping(Double taxableShipping) {
+		this.taxableShipping = taxableShipping;
+	}
+
 	protected  Double unitPrice;
 
 	public Double getUnitPrice() {
@@ -282,6 +312,76 @@ public class CanceledItem implements Serializable
 
 	public void setVariationProductCode(String variationProductCode) {
 		this.variationProductCode = variationProductCode;
+	}
+
+	protected  Double weightedDutyAdjustment;
+
+	public Double getWeightedDutyAdjustment() {
+		return this.weightedDutyAdjustment;
+	}
+
+	public void setWeightedDutyAdjustment(Double weightedDutyAdjustment) {
+		this.weightedDutyAdjustment = weightedDutyAdjustment;
+	}
+
+	protected  Double weightedHandlingAdjustment;
+
+	public Double getWeightedHandlingAdjustment() {
+		return this.weightedHandlingAdjustment;
+	}
+
+	public void setWeightedHandlingAdjustment(Double weightedHandlingAdjustment) {
+		this.weightedHandlingAdjustment = weightedHandlingAdjustment;
+	}
+
+	protected  Double weightedHandlingTaxAdjustment;
+
+	public Double getWeightedHandlingTaxAdjustment() {
+		return this.weightedHandlingTaxAdjustment;
+	}
+
+	public void setWeightedHandlingTaxAdjustment(Double weightedHandlingTaxAdjustment) {
+		this.weightedHandlingTaxAdjustment = weightedHandlingTaxAdjustment;
+	}
+
+	protected  Double weightedLineItemTaxAdjustment;
+
+	public Double getWeightedLineItemTaxAdjustment() {
+		return this.weightedLineItemTaxAdjustment;
+	}
+
+	public void setWeightedLineItemTaxAdjustment(Double weightedLineItemTaxAdjustment) {
+		this.weightedLineItemTaxAdjustment = weightedLineItemTaxAdjustment;
+	}
+
+	protected  Double weightedShipmentAdjustment;
+
+	public Double getWeightedShipmentAdjustment() {
+		return this.weightedShipmentAdjustment;
+	}
+
+	public void setWeightedShipmentAdjustment(Double weightedShipmentAdjustment) {
+		this.weightedShipmentAdjustment = weightedShipmentAdjustment;
+	}
+
+	protected  Double weightedShippingAdjustment;
+
+	public Double getWeightedShippingAdjustment() {
+		return this.weightedShippingAdjustment;
+	}
+
+	public void setWeightedShippingAdjustment(Double weightedShippingAdjustment) {
+		this.weightedShippingAdjustment = weightedShippingAdjustment;
+	}
+
+	protected  Double weightedShippingTaxAdjustment;
+
+	public Double getWeightedShippingTaxAdjustment() {
+		return this.weightedShippingTaxAdjustment;
+	}
+
+	public void setWeightedShippingTaxAdjustment(Double weightedShippingTaxAdjustment) {
+		this.weightedShippingTaxAdjustment = weightedShippingTaxAdjustment;
 	}
 
 	protected  AuditInfo auditInfo;

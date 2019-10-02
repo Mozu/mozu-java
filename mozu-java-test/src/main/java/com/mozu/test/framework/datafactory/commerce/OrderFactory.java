@@ -25,16 +25,16 @@ public class OrderFactory
 
 	public static com.mozu.api.contracts.commerceruntime.orders.OrderCollection getOrders(ApiContext apiContext, int expectedCode) throws Exception
 	{
-		return getOrders(apiContext,  null,  null,  null,  null,  null,  null,  null,  null, expectedCode);
+		return getOrders(apiContext,  null,  null,  null,  null,  null,  null,  null,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.orders.OrderCollection getOrders(ApiContext apiContext, Integer startIndex, Integer pageSize, String sortBy, String filter, String q, Integer qLimit, Boolean includeBin, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.orders.OrderCollection getOrders(ApiContext apiContext, Integer startIndex, Integer pageSize, String sortBy, String filter, String q, Integer qLimit, Boolean includeBin, String mode, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.orders.OrderCollection returnObj = new com.mozu.api.contracts.commerceruntime.orders.OrderCollection();
 		OrderResource resource = new OrderResource(apiContext);
 		try
 		{
-			returnObj = resource.getOrders( startIndex,  pageSize,  sortBy,  filter,  q,  qLimit,  includeBin,  responseFields);
+			returnObj = resource.getOrders( startIndex,  pageSize,  sortBy,  filter,  q,  qLimit,  includeBin,  mode,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -90,16 +90,16 @@ public class OrderFactory
 
 	public static com.mozu.api.contracts.commerceruntime.orders.Order getOrder(ApiContext apiContext, String orderId, int expectedCode) throws Exception
 	{
-		return getOrder(apiContext,  orderId,  null,  null,  null, expectedCode);
+		return getOrder(apiContext,  orderId,  null,  null,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.orders.Order getOrder(ApiContext apiContext, String orderId, Boolean draft, Boolean includeBin, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.orders.Order getOrder(ApiContext apiContext, String orderId, Boolean draft, Boolean includeBin, String mode, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.orders.Order returnObj = new com.mozu.api.contracts.commerceruntime.orders.Order();
 		OrderResource resource = new OrderResource(apiContext);
 		try
 		{
-			returnObj = resource.getOrder( orderId,  draft,  includeBin,  responseFields);
+			returnObj = resource.getOrder( orderId,  draft,  includeBin,  mode,  responseFields);
 		}
 		catch (ApiException e)
 		{

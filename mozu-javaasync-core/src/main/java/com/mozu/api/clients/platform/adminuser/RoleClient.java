@@ -37,27 +37,25 @@ public class RoleClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.core.RoleCollection> getRolesClient() throws Exception
 	{
-		return getRolesClient( null,  null,  null,  null);
+		return getRolesClient( null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.core.RoleCollection> mozuClient=GetRolesClient( startIndex,  pageSize,  filter,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.core.RoleCollection> mozuClient=GetRolesClient( filter,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * RoleCollection roleCollection = client.Result();
 	 * </code></pre></p>
 	 * @param filter 
-	 * @param pageSize 
 	 * @param responseFields 
-	 * @param startIndex 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.core.RoleCollection>
 	 * @see com.mozu.api.contracts.core.RoleCollection
 	 */
-	public static MozuClient<com.mozu.api.contracts.core.RoleCollection> getRolesClient(Integer startIndex, Integer pageSize, String filter, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.core.RoleCollection> getRolesClient(String filter, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.platform.adminuser.RoleUrl.getRolesUrl(filter, pageSize, responseFields, startIndex);
+		MozuUrl url = com.mozu.api.urls.platform.adminuser.RoleUrl.getRolesUrl(filter, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.core.RoleCollection.class;
 		MozuClient<com.mozu.api.contracts.core.RoleCollection> mozuClient = (MozuClient<com.mozu.api.contracts.core.RoleCollection>) MozuClientFactory.getInstance(clz);

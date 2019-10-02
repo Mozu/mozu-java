@@ -16,18 +16,14 @@ public class RoleUrl
 	/**
 	 * Get Resource Url for GetRoles
 	 * @param filter 
-	 * @param pageSize 
 	 * @param responseFields 
-	 * @param startIndex 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getRolesUrl(String filter, Integer pageSize, String responseFields, Integer startIndex)
+	public static MozuUrl getRolesUrl(String filter, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/platform/adminuser/roles/?startIndex={startIndex}&pageSize={pageSize}&filter={filter}&responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/platform/adminuser/roles/?filter={filter}&responseFields={responseFields}");
 		formatter.formatUrl("filter", filter);
-		formatter.formatUrl("pageSize", pageSize);
 		formatter.formatUrl("responseFields", responseFields);
-		formatter.formatUrl("startIndex", startIndex);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

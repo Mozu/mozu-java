@@ -45,25 +45,23 @@ public class RoleResource {
 	 */
 	public com.mozu.api.contracts.core.RoleCollection getRoles() throws Exception
 	{
-		return getRoles( null,  null,  null,  null);
+		return getRoles( null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	Role role = new Role();
-	 *	RoleCollection roleCollection = role.getRoles( startIndex,  pageSize,  filter,  responseFields);
+	 *	RoleCollection roleCollection = role.getRoles( filter,  responseFields);
 	 * </code></pre></p>
 	 * @param filter 
-	 * @param pageSize 
 	 * @param responseFields 
-	 * @param startIndex 
 	 * @return com.mozu.api.contracts.core.RoleCollection
 	 * @see com.mozu.api.contracts.core.RoleCollection
 	 */
-	public com.mozu.api.contracts.core.RoleCollection getRoles(Integer startIndex, Integer pageSize, String filter, String responseFields) throws Exception
+	public com.mozu.api.contracts.core.RoleCollection getRoles(String filter, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.core.RoleCollection> client = com.mozu.api.clients.platform.adminuser.RoleClient.getRolesClient( startIndex,  pageSize,  filter,  responseFields);
+		MozuClient<com.mozu.api.contracts.core.RoleCollection> client = com.mozu.api.clients.platform.adminuser.RoleClient.getRolesClient( filter,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

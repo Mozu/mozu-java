@@ -18,24 +18,14 @@ public class ShipmentItemAdjustment implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected  Double actualPrice;
+	protected  Double overridePrice;
 
-	public Double getActualPrice() {
-		return this.actualPrice;
+	public Double getOverridePrice() {
+		return this.overridePrice;
 	}
 
-	public void setActualPrice(Double actualPrice) {
-		this.actualPrice = actualPrice;
-	}
-
-	protected  Double unitTax;
-
-	public Double getUnitTax() {
-		return this.unitTax;
-	}
-
-	public void setUnitTax(Double unitTax) {
-		this.unitTax = unitTax;
+	public void setOverridePrice(Double overridePrice) {
+		this.overridePrice = overridePrice;
 	}
 
 

@@ -47,7 +47,7 @@ public class OrderResource {
 	 */
 	public com.mozu.api.contracts.commerceruntime.orders.OrderCollection getOrders() throws Exception
 	{
-		return getOrders( null,  null,  null,  null,  null,  null,  null,  null);
+		return getOrders( null,  null,  null,  null,  null,  null,  null,  null,  null);
 	}
 
 	/**
@@ -62,17 +62,18 @@ public class OrderResource {
 	 */
 	public CountDownLatch getOrdersAsync( AsyncCallback<com.mozu.api.contracts.commerceruntime.orders.OrderCollection> callback) throws Exception
 	{
-		return getOrdersAsync( null,  null,  null,  null,  null,  null,  null,  null, callback);
+		return getOrdersAsync( null,  null,  null,  null,  null,  null,  null,  null,  null, callback);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	Order order = new Order();
-	 *	OrderCollection orderCollection = order.getOrders( startIndex,  pageSize,  sortBy,  filter,  q,  qLimit,  includeBin,  responseFields);
+	 *	OrderCollection orderCollection = order.getOrders( startIndex,  pageSize,  sortBy,  filter,  q,  qLimit,  includeBin,  mode,  responseFields);
 	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. You can filter an order's search results by any of its properties, including status, contact information, or total. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=Status+eq+Submitted"
 	 * @param includeBin 
+	 * @param mode 
 	 * @param pageSize Used to page results from a query. Indicates the maximum number of entities to return from a query. Default value: 20. Max value: 200.
 	 * @param q A list of order search terms to use in the query when searching across order number and the name or email of the billing contact. Separate multiple search terms with a space character.
 	 * @param qLimit The maximum number of search results to return in the response. You can limit any range between 1-100.
@@ -82,9 +83,9 @@ public class OrderResource {
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderCollection
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderCollection
 	 */
-	public com.mozu.api.contracts.commerceruntime.orders.OrderCollection getOrders(Integer startIndex, Integer pageSize, String sortBy, String filter, String q, Integer qLimit, Boolean includeBin, String responseFields) throws Exception
+	public com.mozu.api.contracts.commerceruntime.orders.OrderCollection getOrders(Integer startIndex, Integer pageSize, String sortBy, String filter, String q, Integer qLimit, Boolean includeBin, String mode, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderCollection> client = com.mozu.api.clients.commerce.OrderClient.getOrdersClient( startIndex,  pageSize,  sortBy,  filter,  q,  qLimit,  includeBin,  responseFields);
+		MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderCollection> client = com.mozu.api.clients.commerce.OrderClient.getOrdersClient( startIndex,  pageSize,  sortBy,  filter,  q,  qLimit,  includeBin,  mode,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -95,10 +96,11 @@ public class OrderResource {
 	 * 
 	 * <p><pre><code>
 	 *	Order order = new Order();
-	 *	CountDownLatch latch = order.getOrders( startIndex,  pageSize,  sortBy,  filter,  q,  qLimit,  includeBin,  responseFields, callback );
+	 *	CountDownLatch latch = order.getOrders( startIndex,  pageSize,  sortBy,  filter,  q,  qLimit,  includeBin,  mode,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. You can filter an order's search results by any of its properties, including status, contact information, or total. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=Status+eq+Submitted"
 	 * @param includeBin 
+	 * @param mode 
 	 * @param pageSize Used to page results from a query. Indicates the maximum number of entities to return from a query. Default value: 20. Max value: 200.
 	 * @param q A list of order search terms to use in the query when searching across order number and the name or email of the billing contact. Separate multiple search terms with a space character.
 	 * @param qLimit The maximum number of search results to return in the response. You can limit any range between 1-100.
@@ -109,9 +111,9 @@ public class OrderResource {
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderCollection
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderCollection
 	 */
-	public CountDownLatch getOrdersAsync(Integer startIndex, Integer pageSize, String sortBy, String filter, String q, Integer qLimit, Boolean includeBin, String responseFields, AsyncCallback<com.mozu.api.contracts.commerceruntime.orders.OrderCollection> callback) throws Exception
+	public CountDownLatch getOrdersAsync(Integer startIndex, Integer pageSize, String sortBy, String filter, String q, Integer qLimit, Boolean includeBin, String mode, String responseFields, AsyncCallback<com.mozu.api.contracts.commerceruntime.orders.OrderCollection> callback) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderCollection> client = com.mozu.api.clients.commerce.OrderClient.getOrdersClient( startIndex,  pageSize,  sortBy,  filter,  q,  qLimit,  includeBin,  responseFields);
+		MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderCollection> client = com.mozu.api.clients.commerce.OrderClient.getOrdersClient( startIndex,  pageSize,  sortBy,  filter,  q,  qLimit,  includeBin,  mode,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 
@@ -205,7 +207,7 @@ public class OrderResource {
 	 */
 	public com.mozu.api.contracts.commerceruntime.orders.Order getOrder(String orderId) throws Exception
 	{
-		return getOrder( orderId,  null,  null,  null);
+		return getOrder( orderId,  null,  null,  null,  null);
 	}
 
 	/**
@@ -221,25 +223,26 @@ public class OrderResource {
 	 */
 	public CountDownLatch getOrderAsync(String orderId, AsyncCallback<com.mozu.api.contracts.commerceruntime.orders.Order> callback) throws Exception
 	{
-		return getOrderAsync( orderId,  null,  null,  null, callback);
+		return getOrderAsync( orderId,  null,  null,  null,  null, callback);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	Order order = new Order();
-	 *	Order order = order.getOrder( orderId,  draft,  includeBin,  responseFields);
+	 *	Order order = order.getOrder( orderId,  draft,  includeBin,  mode,  responseFields);
 	 * </code></pre></p>
 	 * @param draft If true, retrieve the draft version of the order, which might include uncommitted changes to the order or its components.
 	 * @param includeBin 
+	 * @param mode 
 	 * @param orderId Unique identifier of the order details to get.
 	 * @param responseFields 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 */
-	public com.mozu.api.contracts.commerceruntime.orders.Order getOrder(String orderId, Boolean draft, Boolean includeBin, String responseFields) throws Exception
+	public com.mozu.api.contracts.commerceruntime.orders.Order getOrder(String orderId, Boolean draft, Boolean includeBin, String mode, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> client = com.mozu.api.clients.commerce.OrderClient.getOrderClient( orderId,  draft,  includeBin,  responseFields);
+		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> client = com.mozu.api.clients.commerce.OrderClient.getOrderClient( orderId,  draft,  includeBin,  mode,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -250,19 +253,20 @@ public class OrderResource {
 	 * 
 	 * <p><pre><code>
 	 *	Order order = new Order();
-	 *	CountDownLatch latch = order.getOrder( orderId,  draft,  includeBin,  responseFields, callback );
+	 *	CountDownLatch latch = order.getOrder( orderId,  draft,  includeBin,  mode,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param draft If true, retrieve the draft version of the order, which might include uncommitted changes to the order or its components.
 	 * @param includeBin 
+	 * @param mode 
 	 * @param orderId Unique identifier of the order details to get.
 	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 */
-	public CountDownLatch getOrderAsync(String orderId, Boolean draft, Boolean includeBin, String responseFields, AsyncCallback<com.mozu.api.contracts.commerceruntime.orders.Order> callback) throws Exception
+	public CountDownLatch getOrderAsync(String orderId, Boolean draft, Boolean includeBin, String mode, String responseFields, AsyncCallback<com.mozu.api.contracts.commerceruntime.orders.Order> callback) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> client = com.mozu.api.clients.commerce.OrderClient.getOrderClient( orderId,  draft,  includeBin,  responseFields);
+		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> client = com.mozu.api.clients.commerce.OrderClient.getOrderClient( orderId,  draft,  includeBin,  mode,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 
