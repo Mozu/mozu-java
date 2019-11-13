@@ -54,7 +54,7 @@ public class GeneralSettingsResource {
 	 *	GeneralSettings generalsettings = new GeneralSettings();
 	 *	GeneralSettings generalSettings = generalsettings.getGeneralSettings( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.sitesettings.general.GeneralSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings
 	 */
@@ -73,7 +73,7 @@ public class GeneralSettingsResource {
 	 *	GeneralSettings generalsettings = new GeneralSettings();
 	 *	GeneralSettings generalSettings = generalsettings.updateGeneralSettings( generalSettings);
 	 * </code></pre></p>
-	 * @param generalSettings The properties of the site's general settings to update.
+	 * @param generalSettings General settings used on the storefront site.
 	 * @return com.mozu.api.contracts.sitesettings.general.GeneralSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings
@@ -89,8 +89,8 @@ public class GeneralSettingsResource {
 	 *	GeneralSettings generalsettings = new GeneralSettings();
 	 *	GeneralSettings generalSettings = generalsettings.updateGeneralSettings( generalSettings,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param generalSettings The properties of the site's general settings to update.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param generalSettings General settings used on the storefront site.
 	 * @return com.mozu.api.contracts.sitesettings.general.GeneralSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings

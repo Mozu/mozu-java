@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.catalog.storefront.OrderTaxContextResource;
 
 /** <summary>
- * 
+ * Use the Storefront Tax resource to retrieve tax information from the storefront.
  * </summary>
  */
 public class OrderTaxContextFactory

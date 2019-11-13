@@ -16,12 +16,18 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.paymentservice.extensibility.v1.KeyValueTuple;
 import com.mozu.api.contracts.paymentservice.extensibility.v1.Transaction;
 
+/**
+ *	Contains information about the payment gateway adapter configuration
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AdapterContext implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * A list of KeyValueTuples containing the configuration from the application setup.
+	 */
 	protected List<KeyValueTuple> configuration;
 	public List<KeyValueTuple> getConfiguration() {
 		return this.configuration;
@@ -30,6 +36,9 @@ public class AdapterContext implements Serializable
 		this.configuration = configuration;
 	}
 
+	/**
+	 * The previous transactions performed from this adapter.
+	 */
 	protected List<Transaction> previousTransactions;
 	public List<Transaction> getPreviousTransactions() {
 		return this.previousTransactions;
@@ -38,6 +47,9 @@ public class AdapterContext implements Serializable
 		this.previousTransactions = previousTransactions;
 	}
 
+	/**
+	 * A list of KeyValueTuples containing the configuration from the settings for the application in the Tenant.
+	 */
 	protected List<KeyValueTuple> settings;
 	public List<KeyValueTuple> getSettings() {
 		return this.settings;
@@ -46,6 +58,9 @@ public class AdapterContext implements Serializable
 		this.settings = settings;
 	}
 
+	/**
+	 * Contains information on the transaction, including previous interactions with the gateway.
+	 */
 	protected  Transaction transaction;
 
 	public Transaction getTransaction() {

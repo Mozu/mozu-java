@@ -21,6 +21,9 @@ public class GatewayCredentialFieldValue implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * A list of KeyValueTuples containing the configuration from the application setup.
+	 */
 	protected  Boolean isValueSet;
 
 	public Boolean getIsValueSet() {

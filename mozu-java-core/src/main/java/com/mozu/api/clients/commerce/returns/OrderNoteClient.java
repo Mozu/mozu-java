@@ -17,7 +17,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * 
+ * Use the Return Notes resource to access and modify internal notes associated with returns. These notes can be useful to customer service representatives viewing them in .
  * </summary>
  */
 public class OrderNoteClient {
@@ -30,7 +30,7 @@ public class OrderNoteClient {
 	 * client.executeRequest();
 	 * OrderNote orderNote = client.Result();
 	 * </code></pre></p>
-	 * @param returnId 
+	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.commerceruntime.orders.OrderNote>>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 */
@@ -54,8 +54,8 @@ public class OrderNoteClient {
 	 * client.executeRequest();
 	 * OrderNote orderNote = client.Result();
 	 * </code></pre></p>
-	 * @param noteId 
-	 * @param returnId 
+	 * @param noteId Unique identifier of a particular note to retrieve.
+	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.OrderNote>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 */
@@ -72,9 +72,9 @@ public class OrderNoteClient {
 	 * client.executeRequest();
 	 * OrderNote orderNote = client.Result();
 	 * </code></pre></p>
-	 * @param noteId 
-	 * @param responseFields 
-	 * @param returnId 
+	 * @param noteId Unique identifier of a particular note to retrieve.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.OrderNote>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 */
@@ -98,7 +98,7 @@ public class OrderNoteClient {
 	 * client.executeRequest();
 	 * OrderNote orderNote = client.Result();
 	 * </code></pre></p>
-	 * @param returnId 
+	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @param returnNote 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.OrderNote>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
@@ -117,8 +117,8 @@ public class OrderNoteClient {
 	 * client.executeRequest();
 	 * OrderNote orderNote = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param returnId 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @param returnNote 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.OrderNote>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
@@ -145,8 +145,8 @@ public class OrderNoteClient {
 	 * client.executeRequest();
 	 * OrderNote orderNote = client.Result();
 	 * </code></pre></p>
-	 * @param noteId 
-	 * @param returnId 
+	 * @param noteId Unique identifier of a particular note to retrieve.
+	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @param returnNote 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.OrderNote>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
@@ -165,9 +165,9 @@ public class OrderNoteClient {
 	 * client.executeRequest();
 	 * OrderNote orderNote = client.Result();
 	 * </code></pre></p>
-	 * @param noteId 
-	 * @param responseFields 
-	 * @param returnId 
+	 * @param noteId Unique identifier of a particular note to retrieve.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @param returnNote 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.OrderNote>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
@@ -194,8 +194,8 @@ public class OrderNoteClient {
 	 * client.executeRequest();
 	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param noteId 
-	 * @param returnId 
+	 * @param noteId Unique identifier of a particular note to retrieve.
+	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @return Mozu.Api.MozuClient <Stream>
 	 * @see Stream
 	 */

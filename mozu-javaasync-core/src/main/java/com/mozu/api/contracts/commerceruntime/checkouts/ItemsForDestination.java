@@ -14,12 +14,18 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
+/**
+ *	Mozu.CommerceRuntime.Contracts.Checkouts.ItemsForDestination ApiType DOCUMENT_HERE 
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ItemsForDestination implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The ID of the destination the order items will ship to.
+	 */
 	protected  String destinationId;
 
 	public String getDestinationId() {
@@ -30,6 +36,9 @@ public class ItemsForDestination implements Serializable
 		this.destinationId = destinationId;
 	}
 
+	/**
+	 * The order item IDs of the items associated with a destination.
+	 */
 	protected List<String> itemIds;
 	public List<String> getItemIds() {
 		return this.itemIds;

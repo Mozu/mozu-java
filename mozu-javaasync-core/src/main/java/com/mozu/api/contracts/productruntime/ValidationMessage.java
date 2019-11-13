@@ -61,6 +61,9 @@ public class ValidationMessage implements Serializable
 		this.sourceId = sourceId;
 	}
 
+	/**
+	 * Type of validation error that occurred. This can be checked programatically. Must be one of the values in ValidationTypeConst.
+	 */
 	protected  String validationType;
 
 	public String getValidationType() {

@@ -31,6 +31,9 @@ public class Location implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Allow fullfillment with no (or less) stock
+	 */
 	protected  Boolean allowFulfillmentWithNoStock;
 
 	public Boolean getAllowFulfillmentWithNoStock() {
@@ -101,6 +104,9 @@ public class Location implements Serializable
 		this.includeInLocationExport = includeInLocationExport;
 	}
 
+	/**
+	 * Locations is disabled (soft delete)
+	 */
 	protected  Boolean isDisabled;
 
 	public Boolean getIsDisabled() {
@@ -189,6 +195,9 @@ public class Location implements Serializable
 		this.address = address;
 	}
 
+	/**
+	 * Collection of attributes that may be paged list or a list, depending on the usage per object and API type.
+	 */
 	protected List<LocationAttribute> attributes;
 	public List<LocationAttribute> getAttributes() {
 		return this.attributes;

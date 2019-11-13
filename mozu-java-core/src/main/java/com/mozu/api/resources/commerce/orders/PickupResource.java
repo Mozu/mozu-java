@@ -40,8 +40,8 @@ public class PickupResource {
 	 *	Pickup pickup = new Pickup();
 	 *	string string = pickup.getAvailablePickupFulfillmentActions( orderId,  pickupId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with the pickup.
-	 * @param pickupId Unique identifier of the pickup for which to retrieve available actions.
+	 * @param orderId Unique identifier of the order.
+	 * @param pickupId Unique identifier of the pickup to remove.
 	 * @return List<string>
 	 * @see string
 	 */
@@ -60,8 +60,8 @@ public class PickupResource {
 	 *	Pickup pickup = new Pickup();
 	 *	Pickup pickup = pickup.getPickup( orderId,  pickupId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with the pickup.
-	 * @param pickupId Unique identifier of the pickup to retrieve.
+	 * @param orderId Unique identifier of the order.
+	 * @param pickupId Unique identifier of the pickup to remove.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 */
@@ -76,9 +76,9 @@ public class PickupResource {
 	 *	Pickup pickup = new Pickup();
 	 *	Pickup pickup = pickup.getPickup( orderId,  pickupId,  responseFields);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with the pickup.
-	 * @param pickupId Unique identifier of the pickup to retrieve.
-	 * @param responseFields 
+	 * @param orderId Unique identifier of the order.
+	 * @param pickupId Unique identifier of the pickup to remove.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 */
@@ -98,7 +98,7 @@ public class PickupResource {
 	 *	Pickup pickup = pickup.createPickup( pickup,  orderId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param pickup Properties of the in-store pickup to create.
+	 * @param pickup Properties of an in-store pickup defined to fulfill items in an order.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
@@ -115,8 +115,8 @@ public class PickupResource {
 	 *	Pickup pickup = pickup.createPickup( pickup,  orderId,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields 
-	 * @param pickup Properties of the in-store pickup to create.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param pickup Properties of an in-store pickup defined to fulfill items in an order.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
@@ -136,9 +136,9 @@ public class PickupResource {
 	 *	Pickup pickup = new Pickup();
 	 *	Pickup pickup = pickup.updatePickup( pickup,  orderId,  pickupId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with the in-store pickup.
-	 * @param pickupId Unique identifier of the pickup to update.
-	 * @param pickup Properties of the in-store pickup to update.
+	 * @param orderId Unique identifier of the order.
+	 * @param pickupId Unique identifier of the pickup to remove.
+	 * @param pickup Properties of an in-store pickup defined to fulfill items in an order.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
@@ -154,10 +154,10 @@ public class PickupResource {
 	 *	Pickup pickup = new Pickup();
 	 *	Pickup pickup = pickup.updatePickup( pickup,  orderId,  pickupId,  responseFields);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with the in-store pickup.
-	 * @param pickupId Unique identifier of the pickup to update.
-	 * @param responseFields 
-	 * @param pickup Properties of the in-store pickup to update.
+	 * @param orderId Unique identifier of the order.
+	 * @param pickupId Unique identifier of the pickup to remove.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param pickup Properties of an in-store pickup defined to fulfill items in an order.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
@@ -177,7 +177,7 @@ public class PickupResource {
 	 *	Pickup pickup = new Pickup();
 	 *	Stream stream = pickup.deletePickup( orderId,  pickupId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with the pickup.
+	 * @param orderId Unique identifier of the order.
 	 * @param pickupId Unique identifier of the pickup to remove.
 	 * @return Stream
 	 * @see Stream

@@ -47,9 +47,9 @@ public class PropertyTypeClient {
 	 * client.executeRequest();
 	 * PropertyTypeCollection propertyTypeCollection = client.Result();
 	 * </code></pre></p>
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param startIndex 
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.PropertyTypeCollection>
 	 * @see com.mozu.api.contracts.content.PropertyTypeCollection
 	 */
@@ -74,7 +74,7 @@ public class PropertyTypeClient {
 	 * client.executeRequest();
 	 * PropertyType propertyType = client.Result();
 	 * </code></pre></p>
-	 * @param propertyTypeName The name of the content property type.
+	 * @param propertyTypeName The name of the property type.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.PropertyType>
 	 * @see com.mozu.api.contracts.content.PropertyType
 	 */
@@ -91,8 +91,8 @@ public class PropertyTypeClient {
 	 * client.executeRequest();
 	 * PropertyType propertyType = client.Result();
 	 * </code></pre></p>
-	 * @param propertyTypeName The name of the content property type.
-	 * @param responseFields 
+	 * @param propertyTypeName The name of the property type.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.PropertyType>
 	 * @see com.mozu.api.contracts.content.PropertyType
 	 */
@@ -117,7 +117,7 @@ public class PropertyTypeClient {
 	 * client.executeRequest();
 	 * PropertyType propertyType = client.Result();
 	 * </code></pre></p>
-	 * @param propertyType 
+	 * @param propertyType Property type available for content. Property types are like templates that can be reused.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.PropertyType>
 	 * @see com.mozu.api.contracts.content.PropertyType
 	 * @see com.mozu.api.contracts.content.PropertyType
@@ -135,8 +135,8 @@ public class PropertyTypeClient {
 	 * client.executeRequest();
 	 * PropertyType propertyType = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param propertyType 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param propertyType Property type available for content. Property types are like templates that can be reused.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.PropertyType>
 	 * @see com.mozu.api.contracts.content.PropertyType
 	 * @see com.mozu.api.contracts.content.PropertyType
@@ -162,8 +162,8 @@ public class PropertyTypeClient {
 	 * client.executeRequest();
 	 * PropertyType propertyType = client.Result();
 	 * </code></pre></p>
-	 * @param propertyTypeName 
-	 * @param propertyType 
+	 * @param propertyTypeName The name of the property type.
+	 * @param propertyType Property type available for content. Property types are like templates that can be reused.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.PropertyType>
 	 * @see com.mozu.api.contracts.content.PropertyType
 	 * @see com.mozu.api.contracts.content.PropertyType
@@ -181,9 +181,9 @@ public class PropertyTypeClient {
 	 * client.executeRequest();
 	 * PropertyType propertyType = client.Result();
 	 * </code></pre></p>
-	 * @param propertyTypeName 
-	 * @param responseFields 
-	 * @param propertyType 
+	 * @param propertyTypeName The name of the property type.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param propertyType Property type available for content. Property types are like templates that can be reused.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.PropertyType>
 	 * @see com.mozu.api.contracts.content.PropertyType
 	 * @see com.mozu.api.contracts.content.PropertyType
@@ -210,7 +210,7 @@ public class PropertyTypeClient {
 	 * client.executeRequest();
 	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param propertyTypeName 
+	 * @param propertyTypeName The name of the property type.
 	 * @return Mozu.Api.MozuClient <Stream>
 	 * @see Stream
 	 */

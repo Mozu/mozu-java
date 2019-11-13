@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.platform.ApplicationResource;
 
 /** <summary>
- * 
+ * Use the Developer resource to view and update information and files related to application packages.
  * </summary>
  */
 public class ApplicationFactory

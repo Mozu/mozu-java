@@ -17,7 +17,7 @@ import com.mozu.api.contracts.productadmin.AttributeVocabularyValue;
 import com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent;
 
 /**
- *	Value details for a product property attribute.
+ *	Properties of a value for a product property.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductPropertyValue implements Serializable
@@ -55,6 +55,9 @@ public class ProductPropertyValue implements Serializable
 		this.content = content;
 	}
 
+	/**
+	 * The localized content associated with the object.
+	 */
 	protected List<ProductPropertyValueLocalizedContent> localizedContent;
 	public List<ProductPropertyValueLocalizedContent> getLocalizedContent() {
 		return this.localizedContent;

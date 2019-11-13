@@ -26,7 +26,7 @@ public class LocationTypeUrl
 	/**
 	 * Get Resource Url for GetLocationType
 	 * @param locationTypeCode The user-defined code that identifies the location type.
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getLocationTypeUrl(String locationTypeCode, String responseFields)
@@ -39,7 +39,7 @@ public class LocationTypeUrl
 
 	/**
 	 * Get Resource Url for AddLocationType
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addLocationTypeUrl(String responseFields)
@@ -52,7 +52,7 @@ public class LocationTypeUrl
 	/**
 	 * Get Resource Url for UpdateLocationType
 	 * @param locationTypeCode The user-defined code that identifies the location type.
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateLocationTypeUrl(String locationTypeCode, String responseFields)
@@ -65,7 +65,7 @@ public class LocationTypeUrl
 
 	/**
 	 * Get Resource Url for DeleteLocationType
-	 * @param locationTypeCode User-defined code used to identify the location type.
+	 * @param locationTypeCode The user-defined code that identifies the location type.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteLocationTypeUrl(String locationTypeCode)

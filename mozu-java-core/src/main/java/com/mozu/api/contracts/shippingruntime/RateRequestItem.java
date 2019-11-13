@@ -55,6 +55,9 @@ public class RateRequestItem implements Serializable
 		this.shipsByItself = shipsByItself;
 	}
 
+	/**
+	 * Data unique to the shipping rate for the item.
+	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {
@@ -65,6 +68,9 @@ public class RateRequestItem implements Serializable
 		this.data = data;
 	}
 
+	/**
+	 * If Product Summaries are populated, this information will be utilized in Product Rules (e.g. ProductCode eq "ABC" or (Weight.Unit eq "lbs" and Weight.Value ge 50)
+	 */
 	protected List<ProductSummary> productSummaries;
 	public List<ProductSummary> getProductSummaries() {
 		return this.productSummaries;

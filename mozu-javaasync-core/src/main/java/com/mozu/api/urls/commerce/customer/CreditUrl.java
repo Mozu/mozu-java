@@ -15,11 +15,11 @@ public class CreditUrl
 
 	/**
 	 * Get Resource Url for GetCredits
-	 * @param filter 
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getCreditsUrl(String filter, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
@@ -35,8 +35,8 @@ public class CreditUrl
 
 	/**
 	 * Get Resource Url for GetCredit
-	 * @param code User-defined code that identifies the store credit to retrieve.
-	 * @param responseFields 
+	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getCreditUrl(String code, String responseFields)
@@ -49,8 +49,8 @@ public class CreditUrl
 
 	/**
 	 * Get Resource Url for AddCredit
-	 * @param responseFields 
-	 * @param userId 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addCreditUrl(String responseFields, String userId)
@@ -63,8 +63,8 @@ public class CreditUrl
 
 	/**
 	 * Get Resource Url for AssociateCreditToShopper
-	 * @param code The code that represents the credit to claim for the shopper.
-	 * @param responseFields 
+	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl associateCreditToShopperUrl(String code, String responseFields)
@@ -77,8 +77,8 @@ public class CreditUrl
 
 	/**
 	 * Get Resource Url for ResendCreditCreatedEmail
-	 * @param code 
-	 * @param userId 
+	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl resendCreditCreatedEmailUrl(String code, String userId)
@@ -91,8 +91,8 @@ public class CreditUrl
 
 	/**
 	 * Get Resource Url for UpdateCredit
-	 * @param code User-defined code of the store credit to update.
-	 * @param responseFields 
+	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateCreditUrl(String code, String responseFields)
@@ -105,7 +105,7 @@ public class CreditUrl
 
 	/**
 	 * Get Resource Url for DeleteCredit
-	 * @param code User-defined code of the store credit to delete.
+	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteCreditUrl(String code)

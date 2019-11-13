@@ -20,7 +20,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * 
+ * Use the AssignedDiscounts resource to manage the discounts assigned to coupon sets.
  * </summary>
  */
 public class AssignedDiscountResource {
@@ -42,7 +42,7 @@ public class AssignedDiscountResource {
 	 *	AssignedDiscount assigneddiscount = new AssignedDiscount();
 	 *	AssignedDiscount assignedDiscount = assigneddiscount.getAssignedDiscounts( couponSetCode);
 	 * </code></pre></p>
-	 * @param couponSetCode 
+	 * @param couponSetCode The unique identifier of the coupon set.
 	 * @return List<com.mozu.api.contracts.productadmin.AssignedDiscount>
 	 * @see com.mozu.api.contracts.productadmin.AssignedDiscount
 	 */
@@ -61,7 +61,7 @@ public class AssignedDiscountResource {
 	 *	AssignedDiscount assigneddiscount = new AssignedDiscount();
 	 *	CountDownLatch latch = assigneddiscount.getAssignedDiscounts( couponSetCode, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param couponSetCode 
+	 * @param couponSetCode The unique identifier of the coupon set.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return List<com.mozu.api.contracts.productadmin.AssignedDiscount>
 	 * @see com.mozu.api.contracts.productadmin.AssignedDiscount
@@ -80,8 +80,8 @@ public class AssignedDiscountResource {
 	 *	AssignedDiscount assigneddiscount = new AssignedDiscount();
 	 *	Stream stream = assigneddiscount.assignDiscount( assignedDiscount,  couponSetCode);
 	 * </code></pre></p>
-	 * @param couponSetCode 
-	 * @param assignedDiscount 
+	 * @param couponSetCode The unique identifier of the coupon set.
+	 * @param assignedDiscount The details of the discount assigned to the coupon set.
 	 * @return Stream
 	 * @see Stream
 	 * @see com.mozu.api.contracts.productadmin.AssignedDiscount
@@ -101,9 +101,9 @@ public class AssignedDiscountResource {
 	 *	AssignedDiscount assigneddiscount = new AssignedDiscount();
 	 *	CountDownLatch latch = assigneddiscount.assignDiscount( assignedDiscount,  couponSetCode, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param couponSetCode 
+	 * @param couponSetCode The unique identifier of the coupon set.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param assignedDiscount 
+	 * @param assignedDiscount The details of the discount assigned to the coupon set.
 	 * @return Stream
 	 * @see Stream
 	 * @see com.mozu.api.contracts.productadmin.AssignedDiscount
@@ -122,8 +122,8 @@ public class AssignedDiscountResource {
 	 *	AssignedDiscount assigneddiscount = new AssignedDiscount();
 	 *	Stream stream = assigneddiscount.unAssignDiscount( couponSetCode,  discountId);
 	 * </code></pre></p>
-	 * @param couponSetCode 
-	 * @param discountId 
+	 * @param couponSetCode The unique identifier of the coupon set.
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
 	 * @return Stream
 	 * @see Stream
 	 */
@@ -142,8 +142,8 @@ public class AssignedDiscountResource {
 	 *	AssignedDiscount assigneddiscount = new AssignedDiscount();
 	 *	CountDownLatch latch = assigneddiscount.unAssignDiscount( couponSetCode,  discountId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param couponSetCode 
-	 * @param discountId 
+	 * @param couponSetCode The unique identifier of the coupon set.
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return Stream
 	 * @see Stream

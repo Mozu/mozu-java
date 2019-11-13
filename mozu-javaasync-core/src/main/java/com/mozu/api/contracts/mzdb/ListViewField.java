@@ -12,12 +12,18 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
+/**
+ *	Properties for the field associated to a view.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ListViewField implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The user supplied name that appears in . You can use this field for identification purposes.
+	 */
 	protected  String name;
 
 	public String getName() {
@@ -28,6 +34,9 @@ public class ListViewField implements Serializable
 		this.name = name;
 	}
 
+	/**
+	 * Targets represent the object, such as an item to apply discounts to(products or orders) or a view field for content. Targets are the dot notations that link to the source document property. For example, firstitem for the direct level or firstitem.seconditem.thirditem for a deeper property.
+	 */
 	protected  String target;
 
 	public String getTarget() {
@@ -38,6 +47,9 @@ public class ListViewField implements Serializable
 		this.target = target;
 	}
 
+	/**
+	 * The datatype of the field. Valid values are "string", "integer", "decimal", "date", "bool".
+	 */
 	protected  String type;
 
 	public String getType() {

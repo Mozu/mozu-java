@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.platform.UserDataResource;
 
 /** <summary>
- * Use the user data subresource to store user-level data required for a third-party application in the Mozu database.
+ * Use the user data subresource to store user-level data required for a third-party application in the  database.
  * </summary>
  */
 public class UserDataFactory

@@ -12,12 +12,18 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
+/**
+ *	Contains information about the contact for billing
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Contact implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Contains the country for the contact.
+	 */
 	protected  String country;
 
 	public String getCountry() {
@@ -28,6 +34,9 @@ public class Contact implements Serializable
 		this.country = country;
 	}
 
+	/**
+	 * The email address for the customer account and contact. This email may be used for login to the storefront, receiving in-stock product notifications, and subscription mailing lists.
+	 */
 	protected  String email;
 
 	public String getEmail() {
@@ -38,6 +47,9 @@ public class Contact implements Serializable
 		this.email = email;
 	}
 
+	/**
+	 * The full first name of a customer or contact name.
+	 */
 	protected  String firstname;
 
 	public String getFirstname() {
@@ -48,6 +60,9 @@ public class Contact implements Serializable
 		this.firstname = firstname;
 	}
 
+	/**
+	 * The full last name of a customer or contact name.
+	 */
 	protected  String lastname;
 
 	public String getLastname() {
@@ -58,6 +73,9 @@ public class Contact implements Serializable
 		this.lastname = lastname;
 	}
 
+	/**
+	 * Contains the phone for the contact.
+	 */
 	protected  String phone;
 
 	public String getPhone() {

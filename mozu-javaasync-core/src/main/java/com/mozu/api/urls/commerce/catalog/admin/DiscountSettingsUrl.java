@@ -15,8 +15,8 @@ public class DiscountSettingsUrl
 
 	/**
 	 * Get Resource Url for GetDiscountSettings
-	 * @param catalogId 
-	 * @param responseFields 
+	 * @param catalogId Unique identifier for a catalog.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getDiscountSettingsUrl(Integer catalogId, String responseFields)
@@ -29,8 +29,8 @@ public class DiscountSettingsUrl
 
 	/**
 	 * Get Resource Url for UpdateDiscountSettings
-	 * @param catalogId 
-	 * @param responseFields 
+	 * @param catalogId Unique identifier for a catalog.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateDiscountSettingsUrl(Integer catalogId, String responseFields)

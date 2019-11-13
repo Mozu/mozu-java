@@ -48,7 +48,7 @@ public class ProductOptionResource {
 	 *	ProductOption productoption = new ProductOption();
 	 *	ProductOption productOption = productoption.getOptions( productCode);
 	 * </code></pre></p>
-	 * @param productCode 
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @return List<com.mozu.api.contracts.productadmin.ProductOption>
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
 	 */
@@ -67,8 +67,8 @@ public class ProductOptionResource {
 	 *	ProductOption productoption = new ProductOption();
 	 *	ProductOption productOption = productoption.getOption( productCode,  attributeFQN);
 	 * </code></pre></p>
-	 * @param attributeFQN 
-	 * @param productCode 
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @return com.mozu.api.contracts.productadmin.ProductOption
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
 	 */
@@ -83,9 +83,9 @@ public class ProductOptionResource {
 	 *	ProductOption productoption = new ProductOption();
 	 *	ProductOption productOption = productoption.getOption( productCode,  attributeFQN,  responseFields);
 	 * </code></pre></p>
-	 * @param attributeFQN 
-	 * @param productCode 
-	 * @param responseFields 
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.productadmin.ProductOption
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
 	 */
@@ -104,8 +104,8 @@ public class ProductOptionResource {
 	 *	ProductOption productoption = new ProductOption();
 	 *	ProductOption productOption = productoption.addOption( productOption,  productCode);
 	 * </code></pre></p>
-	 * @param productCode 
-	 * @param productOption Properties of the option attribute to define for the product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param productOption Properties of the product option to create such as attribute detail, fully qualified name, and list of product option values.
 	 * @return com.mozu.api.contracts.productadmin.ProductOption
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
@@ -121,9 +121,9 @@ public class ProductOptionResource {
 	 *	ProductOption productoption = new ProductOption();
 	 *	ProductOption productOption = productoption.addOption( productOption,  productCode,  responseFields);
 	 * </code></pre></p>
-	 * @param productCode 
-	 * @param responseFields 
-	 * @param productOption Properties of the option attribute to define for the product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param productOption Properties of the product option to create such as attribute detail, fully qualified name, and list of product option values.
 	 * @return com.mozu.api.contracts.productadmin.ProductOption
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
@@ -143,9 +143,9 @@ public class ProductOptionResource {
 	 *	ProductOption productoption = new ProductOption();
 	 *	ProductOption productOption = productoption.updateOption( productOption,  productCode,  attributeFQN);
 	 * </code></pre></p>
-	 * @param attributeFQN 
-	 * @param productCode 
-	 * @param productOption Properties of the product option attribute configuration to update.
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param productOption Properties of the product option to create such as attribute detail, fully qualified name, and list of product option values.
 	 * @return com.mozu.api.contracts.productadmin.ProductOption
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
@@ -161,10 +161,10 @@ public class ProductOptionResource {
 	 *	ProductOption productoption = new ProductOption();
 	 *	ProductOption productOption = productoption.updateOption( productOption,  productCode,  attributeFQN,  responseFields);
 	 * </code></pre></p>
-	 * @param attributeFQN 
-	 * @param productCode 
-	 * @param responseFields 
-	 * @param productOption Properties of the product option attribute configuration to update.
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param productOption Properties of the product option to create such as attribute detail, fully qualified name, and list of product option values.
 	 * @return com.mozu.api.contracts.productadmin.ProductOption
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
@@ -184,8 +184,8 @@ public class ProductOptionResource {
 	 *	ProductOption productoption = new ProductOption();
 	 *	Stream stream = productoption.deleteOption( productCode,  attributeFQN);
 	 * </code></pre></p>
-	 * @param attributeFQN 
-	 * @param productCode 
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @return Stream
 	 * @see Stream
 	 */

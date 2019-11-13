@@ -12,12 +12,18 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
+/**
+ *	Used to enable stacking and indicate how many layers to use for line item/order discounts. 
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class StackingConfiguration implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Numerical fieldÂ that represents the number of discount layers for line item product discounts (up to 3).
+	 */
 	protected  Integer productLineItemLayers;
 
 	public Integer getProductLineItemLayers() {
@@ -28,6 +34,9 @@ public class StackingConfiguration implements Serializable
 		this.productLineItemLayers = productLineItemLayers;
 	}
 
+	/**
+	 * Numerical fieldÂ that represents number of discount layers for order product discounts (up to 3).
+	 */
 	protected  Integer productOrderLayers;
 
 	public Integer getProductOrderLayers() {
@@ -38,6 +47,9 @@ public class StackingConfiguration implements Serializable
 		this.productOrderLayers = productOrderLayers;
 	}
 
+	/**
+	 * Boolean field that indicates whether or not stackable discounts are enabled per catalog.
+	 */
 	protected  Boolean stackingEnabled;
 
 	public Boolean getStackingEnabled() {

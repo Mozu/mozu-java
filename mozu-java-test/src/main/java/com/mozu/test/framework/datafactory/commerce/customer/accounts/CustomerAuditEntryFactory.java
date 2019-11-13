@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.customer.accounts.CustomerAuditEntryResource;
 
 /** <summary>
- * 
+ * Use the Audit Log resource to retrieve audit logs for customer accounts.
  * </summary>
  */
 public class CustomerAuditEntryFactory

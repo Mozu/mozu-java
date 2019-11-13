@@ -12,12 +12,18 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
+/**
+ *	The details of the product variation localized price.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductVariationFixedPrice implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The credit value of the product or bundled product. When the `goodsType `is `DigitalCredit`, this value is populated to indicate the value of the credit. This is used to create store credit in the fulfillment of gift cards.
+	 */
 	protected  Double creditValue;
 
 	public Double getCreditValue() {
@@ -28,6 +34,9 @@ public class ProductVariationFixedPrice implements Serializable
 		this.creditValue = creditValue;
 	}
 
+	/**
+	 * The localized currency code for the monetary amount. 
+	 */
 	protected  String currencyCode;
 
 	public String getCurrencyCode() {
@@ -38,6 +47,9 @@ public class ProductVariationFixedPrice implements Serializable
 		this.currencyCode = currencyCode;
 	}
 
+	/**
+	 * If the product is in explicit pricing mode, this is the list price of the variation.
+	 */
 	protected  Double listPrice;
 
 	public Double getListPrice() {
@@ -48,6 +60,9 @@ public class ProductVariationFixedPrice implements Serializable
 		this.listPrice = listPrice;
 	}
 
+	/**
+	 * The manufacturer's suggested retail price (MSRP) for the product. This content may be defined by the supplier.
+	 */
 	protected  Double msrp;
 
 	public Double getMsrp() {
@@ -58,6 +73,9 @@ public class ProductVariationFixedPrice implements Serializable
 		this.msrp = msrp;
 	}
 
+	/**
+	 * The set sale price for a product consisting of a price with a discount already applied.For price list entries, this property is the product's sale price if the  is set to .
+	 */
 	protected  Double salePrice;
 
 	public Double getSalePrice() {

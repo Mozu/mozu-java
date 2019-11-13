@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Properties of an application behavior.
+ *	Properties of an application's behavior.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Behavior implements Serializable

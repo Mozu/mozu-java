@@ -12,12 +12,18 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
+/**
+ *	Information on where, when and what content to display in a threshold message to customers.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ThresholdMessage implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The unique identifier of the discount.
+	 */
 	protected  Integer discountId;
 
 	public Integer getDiscountId() {
@@ -28,6 +34,9 @@ public class ThresholdMessage implements Serializable
 		this.discountId = discountId;
 	}
 
+	/**
+	 * The text of the change message, such as "This product is no longer available." System-supplied and read-only.
+	 */
 	protected  String message;
 
 	public String getMessage() {
@@ -38,6 +47,9 @@ public class ThresholdMessage implements Serializable
 		this.message = message;
 	}
 
+	/**
+	 * Boolean field indicating whether or not threshold message requires the customer entering a coupon code to display.
+	 */
 	protected  Boolean requiresCouponCode;
 
 	public Boolean getRequiresCouponCode() {
@@ -48,6 +60,9 @@ public class ThresholdMessage implements Serializable
 		this.requiresCouponCode = requiresCouponCode;
 	}
 
+	/**
+	 * Boolean field indicating whether or not the threshold message should be displayed on the Cart page.
+	 */
 	protected  Boolean showInCart;
 
 	public Boolean getShowInCart() {
@@ -58,6 +73,9 @@ public class ThresholdMessage implements Serializable
 		this.showInCart = showInCart;
 	}
 
+	/**
+	 * Boolean field indicating whether or not the threshold message should display on the Checkout page
+	 */
 	protected  Boolean showOnCheckout;
 
 	public Boolean getShowOnCheckout() {
@@ -68,6 +86,9 @@ public class ThresholdMessage implements Serializable
 		this.showOnCheckout = showOnCheckout;
 	}
 
+	/**
+	 * Numerical value representing the Cart minimum total to be satisfied in order to display the threshold message.
+	 */
 	protected  Double thresholdValue;
 
 	public Double getThresholdValue() {

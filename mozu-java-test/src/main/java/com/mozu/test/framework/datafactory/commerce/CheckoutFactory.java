@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.CheckoutResource;
 
 /** <summary>
- * 
+ * Use this resource to track a shopper's order items and their intended destinations on sites that have the multiple shipment feature enabled. The Checkouts resource is active until the shopper submits the order, at which point one or many orders are created based on the data contained in the Checkouts resource.To learn more about this resource and the ability to ship items to multiple addresses, refer to the [Multiple Shipments API Overview](https://www.mozu.com/docs/Developer/api-guides/multi-ship.htm) topic.
  * </summary>
  */
 public class CheckoutFactory

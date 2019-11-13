@@ -15,7 +15,7 @@ public class ProductTypeOptionUrl
 
 	/**
 	 * Get Resource Url for GetOptions
-	 * @param productTypeId Identifier of the product type to retrieve.
+	 * @param productTypeId Identifier of the product type.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getOptionsUrl(Integer productTypeId)
@@ -27,9 +27,9 @@ public class ProductTypeOptionUrl
 
 	/**
 	 * Get Resource Url for GetOption
-	 * @param attributeFQN 
-	 * @param productTypeId The identifier of the product type.
-	 * @param responseFields 
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param productTypeId Identifier of the product type.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getOptionUrl(String attributeFQN, Integer productTypeId, String responseFields)
@@ -44,7 +44,7 @@ public class ProductTypeOptionUrl
 	/**
 	 * Get Resource Url for AddOption
 	 * @param productTypeId Identifier of the product type.
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addOptionUrl(Integer productTypeId, String responseFields)
@@ -57,9 +57,9 @@ public class ProductTypeOptionUrl
 
 	/**
 	 * Get Resource Url for UpdateOption
-	 * @param attributeFQN 
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param productTypeId Identifier of the product type.
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateOptionUrl(String attributeFQN, Integer productTypeId, String responseFields)
@@ -73,7 +73,7 @@ public class ProductTypeOptionUrl
 
 	/**
 	 * Get Resource Url for DeleteOption
-	 * @param attributeFQN 
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param productTypeId Identifier of the product type.
 	 * @return   String Resource Url
 	 */

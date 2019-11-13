@@ -22,7 +22,7 @@ public class ProductVariationDeltaPrice implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The credit amount for the product.
+	 * The credit value of the product or bundled product. When the `goodsType `is `DigitalCredit`, this value is populated to indicate the value of the credit. This is used to create store credit in the fulfillment of gift cards.
 	 */
 	protected  Double creditValue;
 
@@ -45,7 +45,7 @@ public class ProductVariationDeltaPrice implements Serializable
 	}
 
 	/**
-	 * The manufacturer's suggested retail price, as defined by the supplier.
+	 * The manufacturer's suggested retail price (MSRP) for the product. This content may be defined by the supplier.
 	 */
 	protected  Double msrp;
 

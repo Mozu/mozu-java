@@ -46,7 +46,7 @@ public class CustomerCheckoutSettingsClient {
 	 * client.executeRequest();
 	 * CustomerCheckoutSettings customerCheckoutSettings = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings>
 	 * @see com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings
 	 */
@@ -70,7 +70,7 @@ public class CustomerCheckoutSettingsClient {
 	 * client.executeRequest();
 	 * CustomerCheckoutSettings customerCheckoutSettings = client.Result();
 	 * </code></pre></p>
-	 * @param customerCheckoutSettings All the properties to update in the checkout settings.
+	 * @param customerCheckoutSettings The properties of the customer checkout settings such as whether shoppers must be logged in.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings>
 	 * @see com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings
 	 * @see com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings
@@ -88,8 +88,8 @@ public class CustomerCheckoutSettingsClient {
 	 * client.executeRequest();
 	 * CustomerCheckoutSettings customerCheckoutSettings = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param customerCheckoutSettings All the properties to update in the checkout settings.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param customerCheckoutSettings The properties of the customer checkout settings such as whether shoppers must be logged in.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings>
 	 * @see com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings
 	 * @see com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings

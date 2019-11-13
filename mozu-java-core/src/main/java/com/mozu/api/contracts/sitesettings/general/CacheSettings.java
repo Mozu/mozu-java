@@ -12,12 +12,18 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
+/**
+ *	Settings related to the CDN cache.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CacheSettings implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * A random string value appended to the URLs of CDN content. When a user clicks the Bust Cache button in , the random number in the URL forces the cache to point to the latest version of the CDN content.
+	 */
 	protected  String cdnCacheBustKey;
 
 	public String getCdnCacheBustKey() {

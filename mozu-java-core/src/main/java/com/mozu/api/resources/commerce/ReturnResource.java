@@ -18,7 +18,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the Returns resource to manage returned items that were previously fufilled. Returns can include any number of items associated with an original Mozu order. Each return must either be associated with an original order or a product definition to represent each returned item.
+ * Use the Returns resource to manage returned items that were previously fufilled. Returns can include any number of items associated with an original  order. Each return must either be associated with an original order or a product definition to represent each returned item.Refer to the [Returns API](https://www.mozu.com/docs/developer/api-guides/returns.htm) topic for more information about creating and processing returns using the API.
  * </summary>
  */
 public class ReturnResource {
@@ -54,12 +54,12 @@ public class ReturnResource {
 	 *	Return return = new Return();
 	 *	ReturnCollection returnCollection = return.getReturns( startIndex,  pageSize,  sortBy,  filter,  q,  responseFields);
 	 * </code></pre></p>
-	 * @param filter 
-	 * @param pageSize 
-	 * @param q 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param q A list of order search terms (not phrases) to use in the query when searching across order number and the name or email of the billing contact. When entering, separate multiple search terms with a space character.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return com.mozu.api.contracts.commerceruntime.returns.ReturnCollection
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnCollection
 	 */
@@ -78,7 +78,7 @@ public class ReturnResource {
 	 *	Return return = new Return();
 	 *	string string = return.getAvailableReturnActions( returnId);
 	 * </code></pre></p>
-	 * @param returnId Unique identifier of the return for which to retrieve available actions.
+	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @return List<string>
 	 * @see string
 	 */
@@ -97,8 +97,8 @@ public class ReturnResource {
 	 *	Return return = new Return();
 	 *	ReturnItem returnItem = return.getReturnItem( returnId,  returnItemId);
 	 * </code></pre></p>
-	 * @param returnId 
-	 * @param returnItemId 
+	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param returnItemId Unique identifier of the return item whose details you want to get.
 	 * @return com.mozu.api.contracts.commerceruntime.returns.ReturnItem
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnItem
 	 */
@@ -113,9 +113,9 @@ public class ReturnResource {
 	 *	Return return = new Return();
 	 *	ReturnItem returnItem = return.getReturnItem( returnId,  returnItemId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param returnId 
-	 * @param returnItemId 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param returnItemId Unique identifier of the return item whose details you want to get.
 	 * @return com.mozu.api.contracts.commerceruntime.returns.ReturnItem
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnItem
 	 */
@@ -134,7 +134,7 @@ public class ReturnResource {
 	 *	Return return = new Return();
 	 *	ReturnItemCollection returnItemCollection = return.getReturnItems( returnId);
 	 * </code></pre></p>
-	 * @param returnId 
+	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @return com.mozu.api.contracts.commerceruntime.returns.ReturnItemCollection
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnItemCollection
 	 */
@@ -149,8 +149,8 @@ public class ReturnResource {
 	 *	Return return = new Return();
 	 *	ReturnItemCollection returnItemCollection = return.getReturnItems( returnId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param returnId 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @return com.mozu.api.contracts.commerceruntime.returns.ReturnItemCollection
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnItemCollection
 	 */
@@ -170,7 +170,7 @@ public class ReturnResource {
 	 *	string string = return.getAvailablePaymentActionsForReturn( returnId,  paymentId);
 	 * </code></pre></p>
 	 * @param paymentId Unique identifier of the payment for which to perform the action.
-	 * @param returnId Unique identifier of the return associated with the payment.
+	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @return List<string>
 	 * @see string
 	 */
@@ -189,8 +189,8 @@ public class ReturnResource {
 	 *	Return return = new Return();
 	 *	Payment payment = return.getPayment( returnId,  paymentId);
 	 * </code></pre></p>
-	 * @param paymentId Unique identifier of the return payment to retrieve.
-	 * @param returnId Unique identifier of the return associated with the payment.
+	 * @param paymentId Unique identifier of the payment for which to perform the action.
+	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @return com.mozu.api.contracts.commerceruntime.payments.Payment
 	 * @see com.mozu.api.contracts.commerceruntime.payments.Payment
 	 */
@@ -205,9 +205,9 @@ public class ReturnResource {
 	 *	Return return = new Return();
 	 *	Payment payment = return.getPayment( returnId,  paymentId,  responseFields);
 	 * </code></pre></p>
-	 * @param paymentId Unique identifier of the return payment to retrieve.
-	 * @param responseFields 
-	 * @param returnId Unique identifier of the return associated with the payment.
+	 * @param paymentId Unique identifier of the payment for which to perform the action.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @return com.mozu.api.contracts.commerceruntime.payments.Payment
 	 * @see com.mozu.api.contracts.commerceruntime.payments.Payment
 	 */
@@ -226,7 +226,7 @@ public class ReturnResource {
 	 *	Return return = new Return();
 	 *	PaymentCollection paymentCollection = return.getPayments( returnId);
 	 * </code></pre></p>
-	 * @param returnId Returns the details of the refund payment associated with the return specified in the request.
+	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @return com.mozu.api.contracts.commerceruntime.payments.PaymentCollection
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentCollection
 	 */
@@ -241,8 +241,8 @@ public class ReturnResource {
 	 *	Return return = new Return();
 	 *	PaymentCollection paymentCollection = return.getPayments( returnId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param returnId Returns the details of the refund payment associated with the return specified in the request.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @return com.mozu.api.contracts.commerceruntime.payments.PaymentCollection
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentCollection
 	 */
@@ -259,9 +259,44 @@ public class ReturnResource {
 	 * 
 	 * <p><pre><code>
 	 *	Return return = new Return();
+	 *	GenerateLabelResponse generateLabelResponse = return.getReturnLabel( returnId);
+	 * </code></pre></p>
+	 * @param returnId 
+	 * @return com.mozu.api.contracts.kibo.cars.model.GenerateLabelResponse
+	 * @see com.mozu.api.contracts.kibo.cars.model.GenerateLabelResponse
+	 */
+	public com.mozu.api.contracts.kibo.cars.model.GenerateLabelResponse getReturnLabel(String returnId) throws Exception
+	{
+		return getReturnLabel( returnId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Return return = new Return();
+	 *	GenerateLabelResponse generateLabelResponse = return.getReturnLabel( returnId,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param returnId 
+	 * @return com.mozu.api.contracts.kibo.cars.model.GenerateLabelResponse
+	 * @see com.mozu.api.contracts.kibo.cars.model.GenerateLabelResponse
+	 */
+	public com.mozu.api.contracts.kibo.cars.model.GenerateLabelResponse getReturnLabel(String returnId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.kibo.cars.model.GenerateLabelResponse> client = com.mozu.api.clients.commerce.ReturnClient.getReturnLabelClient( returnId,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Return return = new Return();
 	 *	Return return = return.getReturn( returnId);
 	 * </code></pre></p>
-	 * @param returnId Returns the properties of the return specified in the request as well as system-supplied information.
+	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @return com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
 	 */
@@ -276,8 +311,8 @@ public class ReturnResource {
 	 *	Return return = new Return();
 	 *	Return return = return.getReturn( returnId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param returnId Returns the properties of the return specified in the request as well as system-supplied information.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @return com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
 	 */
@@ -310,7 +345,7 @@ public class ReturnResource {
 	 *	Return return = new Return();
 	 *	ReasonCollection reasonCollection = return.getReasons( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.commerceruntime.returns.ReasonCollection
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReasonCollection
 	 */
@@ -329,7 +364,7 @@ public class ReturnResource {
 	 *	Return return = new Return();
 	 *	Return return = return.createReturn( ret);
 	 * </code></pre></p>
-	 * @param ret Wrapper for the properties of the return to create.
+	 * @param ret Properties of a return of one or more previously fulfilled items.
 	 * @return com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
@@ -345,8 +380,8 @@ public class ReturnResource {
 	 *	Return return = new Return();
 	 *	Return return = return.createReturn( ret,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param ret Wrapper for the properties of the return to create.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param ret Properties of a return of one or more previously fulfilled items.
 	 * @return com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
@@ -366,8 +401,8 @@ public class ReturnResource {
 	 *	Return return = new Return();
 	 *	Return return = return.createReturnItem( returnItem,  returnId);
 	 * </code></pre></p>
-	 * @param returnId 
-	 * @param returnItem 
+	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param returnItem Properties of a previously fulfilled item associated with a return.
 	 * @return com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnItem
@@ -383,9 +418,9 @@ public class ReturnResource {
 	 *	Return return = new Return();
 	 *	Return return = return.createReturnItem( returnItem,  returnId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param returnId 
-	 * @param returnItem 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param returnItem Properties of a previously fulfilled item associated with a return.
 	 * @return com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnItem
@@ -405,9 +440,9 @@ public class ReturnResource {
 	 *	Return return = new Return();
 	 *	Return return = return.performPaymentActionForReturn( action,  returnId,  paymentId);
 	 * </code></pre></p>
-	 * @param paymentId Unique identifier of the return payment to update.
-	 * @param returnId Unique identifier of the return associated with the refund payment.
-	 * @param action The payment action to perform for the refund payment.
+	 * @param paymentId Unique identifier of the payment for which to perform the action.
+	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param action Properties of the payment action performed for an order.
 	 * @return com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentAction
@@ -423,10 +458,10 @@ public class ReturnResource {
 	 *	Return return = new Return();
 	 *	Return return = return.performPaymentActionForReturn( action,  returnId,  paymentId,  responseFields);
 	 * </code></pre></p>
-	 * @param paymentId Unique identifier of the return payment to update.
-	 * @param responseFields 
-	 * @param returnId Unique identifier of the return associated with the refund payment.
-	 * @param action The payment action to perform for the refund payment.
+	 * @param paymentId Unique identifier of the payment for which to perform the action.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param action Properties of the payment action performed for an order.
 	 * @return com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentAction
@@ -446,8 +481,8 @@ public class ReturnResource {
 	 *	Return return = new Return();
 	 *	Return return = return.createPaymentActionForReturn( action,  returnId);
 	 * </code></pre></p>
-	 * @param returnId Unique identifier of the return associated with the payment action.
-	 * @param action The payment action to perform for the customer return.
+	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param action Properties of the payment action performed for an order.
 	 * @return com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentAction
@@ -463,9 +498,9 @@ public class ReturnResource {
 	 *	Return return = new Return();
 	 *	Return return = return.createPaymentActionForReturn( action,  returnId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param returnId Unique identifier of the return associated with the payment action.
-	 * @param action The payment action to perform for the customer return.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param action Properties of the payment action performed for an order.
 	 * @return com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentAction
@@ -524,7 +559,7 @@ public class ReturnResource {
 	 *	Return return = new Return();
 	 *	Order order = return.createReturnShippingOrder( itemQuantities,  returnId);
 	 * </code></pre></p>
-	 * @param returnId 
+	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @param itemQuantities 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
@@ -541,8 +576,8 @@ public class ReturnResource {
 	 *	Return return = new Return();
 	 *	Order order = return.createReturnShippingOrder( itemQuantities,  returnId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param returnId 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @param itemQuantities 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
@@ -563,7 +598,7 @@ public class ReturnResource {
 	 *	Return return = new Return();
 	 *	ReturnCollection returnCollection = return.performReturnActions( action);
 	 * </code></pre></p>
-	 * @param action The name of the return action to perform, such as "Reject" or "Authorize".
+	 * @param action Properties of an action a user can perform for a return.
 	 * @return com.mozu.api.contracts.commerceruntime.returns.ReturnCollection
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnCollection
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnAction
@@ -579,8 +614,8 @@ public class ReturnResource {
 	 *	Return return = new Return();
 	 *	ReturnCollection returnCollection = return.performReturnActions( action,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param action The name of the return action to perform, such as "Reject" or "Authorize".
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param action Properties of an action a user can perform for a return.
 	 * @return com.mozu.api.contracts.commerceruntime.returns.ReturnCollection
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnCollection
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnAction
@@ -600,8 +635,8 @@ public class ReturnResource {
 	 *	Return return = new Return();
 	 *	Return return = return.updateReturn( ret,  returnId);
 	 * </code></pre></p>
-	 * @param returnId Unique identifier of the return.
-	 * @param ret Wrapper for the array of properties to update for the return.
+	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param ret Properties of a return of one or more previously fulfilled items.
 	 * @return com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
@@ -617,9 +652,9 @@ public class ReturnResource {
 	 *	Return return = new Return();
 	 *	Return return = return.updateReturn( ret,  returnId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param returnId Unique identifier of the return.
-	 * @param ret Wrapper for the array of properties to update for the return.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param ret Properties of a return of one or more previously fulfilled items.
 	 * @return com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
@@ -639,7 +674,7 @@ public class ReturnResource {
 	 *	Return return = new Return();
 	 *	Stream stream = return.resendReturnEmail( action);
 	 * </code></pre></p>
-	 * @param action 
+	 * @param action Properties of an action a user can perform for a return.
 	 * @return Stream
 	 * @see Stream
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnAction
@@ -659,8 +694,8 @@ public class ReturnResource {
 	 *	Return return = new Return();
 	 *	Return return = return.deleteOrderItem( returnId,  returnItemId);
 	 * </code></pre></p>
-	 * @param returnId 
-	 * @param returnItemId 
+	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param returnItemId Unique identifier of the return item whose details you want to get.
 	 * @return com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
 	 */
@@ -679,7 +714,7 @@ public class ReturnResource {
 	 *	Return return = new Return();
 	 *	Stream stream = return.deleteReturn( returnId);
 	 * </code></pre></p>
-	 * @param returnId Unique identifier of the return to delete.
+	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @return Stream
 	 * @see Stream
 	 */

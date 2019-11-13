@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.shipping.admin.profiles.ShippingInclusionRuleResource;
 
 /** <summary>
- * 
+ * Use the ShippingInclusionRules sub-resource to manage your shipping inclusion rules that are associated with a specific shipping profile.
  * </summary>
  */
 public class ShippingInclusionRuleFactory

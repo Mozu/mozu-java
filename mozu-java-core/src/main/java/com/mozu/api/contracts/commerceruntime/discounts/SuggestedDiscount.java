@@ -18,6 +18,9 @@ public class SuggestedDiscount implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Indicates whether the free BOGA item should automatically be added to cart. If the free item has been added before and the shopper removed the free item (rejected it), the value will be false.
+	 */
 	protected  Boolean autoAdd;
 
 	public Boolean getAutoAdd() {
@@ -28,6 +31,9 @@ public class SuggestedDiscount implements Serializable
 		this.autoAdd = autoAdd;
 	}
 
+	/**
+	 * The unique identifier of the discount.
+	 */
 	protected  Integer discountId;
 
 	public Integer getDiscountId() {
@@ -38,6 +44,9 @@ public class SuggestedDiscount implements Serializable
 		this.discountId = discountId;
 	}
 
+	/**
+	 * hasMultipleProducts ApiType DOCUMENT_HERE 
+	 */
 	protected  Boolean hasMultipleProducts;
 
 	public Boolean getHasMultipleProducts() {
@@ -48,6 +57,9 @@ public class SuggestedDiscount implements Serializable
 		this.hasMultipleProducts = hasMultipleProducts;
 	}
 
+	/**
+	 * Whether the suggested discount includes multiple options.
+	 */
 	protected  Boolean hasOptions;
 
 	public Boolean getHasOptions() {
@@ -58,6 +70,9 @@ public class SuggestedDiscount implements Serializable
 		this.hasOptions = hasOptions;
 	}
 
+	/**
+	 * The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 */
 	protected  String productCode;
 
 	public String getProductCode() {

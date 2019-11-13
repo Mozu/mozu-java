@@ -13,12 +13,18 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.commerceruntime.payments.PaymentActionTarget;
 
+/**
+ *	Sub-payment that corresponds to a child order in case of multiship order.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SubPayment implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The amount collected for that portion of the payment.
+	 */
 	protected  Double amountCollected;
 
 	public Double getAmountCollected() {
@@ -29,6 +35,9 @@ public class SubPayment implements Serializable
 		this.amountCollected = amountCollected;
 	}
 
+	/**
+	 * The amount credited back for that portion of the payment.
+	 */
 	protected  Double amountCredited;
 
 	public Double getAmountCredited() {
@@ -39,6 +48,9 @@ public class SubPayment implements Serializable
 		this.amountCredited = amountCredited;
 	}
 
+	/**
+	 * The amount refunded for that portion of the payment.
+	 */
 	protected  Double amountRefunded;
 
 	public Double getAmountRefunded() {
@@ -49,6 +61,9 @@ public class SubPayment implements Serializable
 		this.amountRefunded = amountRefunded;
 	}
 
+	/**
+	 * The amount requested for that portion of the payment.
+	 */
 	protected  Double amountRequested;
 
 	public Double getAmountRequested() {
@@ -59,6 +74,9 @@ public class SubPayment implements Serializable
 		this.amountRequested = amountRequested;
 	}
 
+	/**
+	 * The current status of the object.This value is read only. Valid values for this field are: "Active", "Expired", and "Inactive".
+	 */
 	protected  String status;
 
 	public String getStatus() {
@@ -69,6 +87,9 @@ public class SubPayment implements Serializable
 		this.status = status;
 	}
 
+	/**
+	 * Targets represent the object, such as an item to apply discounts to(products or orders) or a view field for content. Targets are the dot notations that link to the source document property. For example, firstitem for the direct level or firstitem.seconditem.thirditem for a deeper property.
+	 */
 	protected  PaymentActionTarget target;
 
 	public PaymentActionTarget getTarget() {

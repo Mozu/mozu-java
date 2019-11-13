@@ -54,11 +54,11 @@ public class VisitResource {
 	 *	Visit visit = new Visit();
 	 *	VisitCollection visitCollection = visit.getVisits( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param filter 
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return com.mozu.api.contracts.customer.VisitCollection
 	 * @see com.mozu.api.contracts.customer.VisitCollection
 	 */
@@ -77,7 +77,7 @@ public class VisitResource {
 	 *	Visit visit = new Visit();
 	 *	Visit visit = visit.getVisit( visitId);
 	 * </code></pre></p>
-	 * @param visitId Unique identifier of the customer visit to retrieve.
+	 * @param visitId Unique identifier of the customer visit to update.
 	 * @return com.mozu.api.contracts.customer.Visit
 	 * @see com.mozu.api.contracts.customer.Visit
 	 */
@@ -92,8 +92,8 @@ public class VisitResource {
 	 *	Visit visit = new Visit();
 	 *	Visit visit = visit.getVisit( visitId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param visitId Unique identifier of the customer visit to retrieve.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param visitId Unique identifier of the customer visit to update.
 	 * @return com.mozu.api.contracts.customer.Visit
 	 * @see com.mozu.api.contracts.customer.Visit
 	 */
@@ -112,7 +112,7 @@ public class VisitResource {
 	 *	Visit visit = new Visit();
 	 *	Visit visit = visit.addVisit( visit);
 	 * </code></pre></p>
-	 * @param visit Properties of the visit to add to the customer account.
+	 * @param visit Properties of a customer visit to one of a company's sites.
 	 * @return com.mozu.api.contracts.customer.Visit
 	 * @see com.mozu.api.contracts.customer.Visit
 	 * @see com.mozu.api.contracts.customer.Visit
@@ -128,8 +128,8 @@ public class VisitResource {
 	 *	Visit visit = new Visit();
 	 *	Visit visit = visit.addVisit( visit,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param visit Properties of the visit to add to the customer account.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param visit Properties of a customer visit to one of a company's sites.
 	 * @return com.mozu.api.contracts.customer.Visit
 	 * @see com.mozu.api.contracts.customer.Visit
 	 * @see com.mozu.api.contracts.customer.Visit
@@ -150,7 +150,7 @@ public class VisitResource {
 	 *	Visit visit = visit.updateVisit( visit,  visitId);
 	 * </code></pre></p>
 	 * @param visitId Unique identifier of the customer visit to update.
-	 * @param visit Properties of the customer visit to update.
+	 * @param visit Properties of a customer visit to one of a company's sites.
 	 * @return com.mozu.api.contracts.customer.Visit
 	 * @see com.mozu.api.contracts.customer.Visit
 	 * @see com.mozu.api.contracts.customer.Visit
@@ -166,9 +166,9 @@ public class VisitResource {
 	 *	Visit visit = new Visit();
 	 *	Visit visit = visit.updateVisit( visit,  visitId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param visitId Unique identifier of the customer visit to update.
-	 * @param visit Properties of the customer visit to update.
+	 * @param visit Properties of a customer visit to one of a company's sites.
 	 * @return com.mozu.api.contracts.customer.Visit
 	 * @see com.mozu.api.contracts.customer.Visit
 	 * @see com.mozu.api.contracts.customer.Visit

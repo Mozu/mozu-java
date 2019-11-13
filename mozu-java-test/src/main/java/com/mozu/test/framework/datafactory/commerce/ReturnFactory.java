@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.ReturnResource;
 
 /** <summary>
- * Use the Returns resource to manage returned items that were previously fufilled. Returns can include any number of items associated with an original Mozu order. Each return must either be associated with an original order or a product definition to represent each returned item.
+ * Use the Returns resource to manage returned items that were previously fufilled. Returns can include any number of items associated with an original  order. Each return must either be associated with an original order or a product definition to represent each returned item.Refer to the [Returns API](https://www.mozu.com/docs/developer/api-guides/returns.htm) topic for more information about creating and processing returns using the API.
  * </summary>
  */
 public class ReturnFactory
@@ -175,6 +175,31 @@ public class ReturnFactory
 		try
 		{
 			returnObj = resource.getPayments( returnId,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
+	public static com.mozu.api.contracts.kibo.cars.model.GenerateLabelResponse getReturnLabel(ApiContext apiContext, String returnId, int expectedCode) throws Exception
+	{
+		return getReturnLabel(apiContext,  returnId,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.kibo.cars.model.GenerateLabelResponse getReturnLabel(ApiContext apiContext, String returnId, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.kibo.cars.model.GenerateLabelResponse returnObj = new com.mozu.api.contracts.kibo.cars.model.GenerateLabelResponse();
+		ReturnResource resource = new ReturnResource(apiContext);
+		try
+		{
+			returnObj = resource.getReturnLabel( returnId,  responseFields);
 		}
 		catch (ApiException e)
 		{

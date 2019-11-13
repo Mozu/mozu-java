@@ -12,12 +12,18 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
+/**
+ *	Mozu.ProductAdmin.Contracts.ProductSortOverride ApiType DOCUMENT_HERE 
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductSortOverride implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Flag to indicate that the product is pinned at the specified position. Not applicable to buried products.
+	 */
 	protected  Boolean isPinned;
 
 	public Boolean getIsPinned() {
@@ -28,6 +34,9 @@ public class ProductSortOverride implements Serializable
 		this.isPinned = isPinned;
 	}
 
+	/**
+	 * Indicates the relative position of the product to other overridden products. Position is absolute if IsPinned is true. Not applicable to buried products. Buried products will be given a default of -1.
+	 */
 	protected  Integer position;
 
 	public Integer getPosition() {
@@ -38,6 +47,9 @@ public class ProductSortOverride implements Serializable
 		this.position = position;
 	}
 
+	/**
+	 * The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 */
 	protected  String productCode;
 
 	public String getProductCode() {

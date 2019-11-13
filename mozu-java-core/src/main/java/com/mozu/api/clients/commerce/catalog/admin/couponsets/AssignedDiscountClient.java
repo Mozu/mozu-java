@@ -17,7 +17,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * 
+ * Use the AssignedDiscounts resource to manage the discounts assigned to coupon sets.
  * </summary>
  */
 public class AssignedDiscountClient {
@@ -30,7 +30,7 @@ public class AssignedDiscountClient {
 	 * client.executeRequest();
 	 * AssignedDiscount assignedDiscount = client.Result();
 	 * </code></pre></p>
-	 * @param couponSetCode 
+	 * @param couponSetCode The unique identifier of the coupon set.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.AssignedDiscount>>
 	 * @see com.mozu.api.contracts.productadmin.AssignedDiscount
 	 */
@@ -54,8 +54,8 @@ public class AssignedDiscountClient {
 	 * client.executeRequest();
 	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param couponSetCode 
-	 * @param assignedDiscount 
+	 * @param couponSetCode The unique identifier of the coupon set.
+	 * @param assignedDiscount The details of the discount assigned to the coupon set.
 	 * @return Mozu.Api.MozuClient <Stream>
 	 * @see Stream
 	 * @see com.mozu.api.contracts.productadmin.AssignedDiscount
@@ -81,8 +81,8 @@ public class AssignedDiscountClient {
 	 * client.executeRequest();
 	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param couponSetCode 
-	 * @param discountId 
+	 * @param couponSetCode The unique identifier of the coupon set.
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
 	 * @return Mozu.Api.MozuClient <Stream>
 	 * @see Stream
 	 */

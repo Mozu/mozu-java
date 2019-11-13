@@ -20,7 +20,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * 
+ * Use the OrderHandlingFeeRules sub-resource to manage your order handling fee rules that are associated with a specific shipping profile.
  * </summary>
  */
 public class OrderHandlingFeeRulesResource {
@@ -42,8 +42,8 @@ public class OrderHandlingFeeRulesResource {
 	 *	OrderHandlingFeeRules orderhandlingfeerules = new OrderHandlingFeeRules();
 	 *	HandlingFeeRule handlingFeeRule = orderhandlingfeerules.getOrderHandlingFeeRule( profilecode,  id);
 	 * </code></pre></p>
-	 * @param id 
-	 * @param profilecode 
+	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param profilecode The unique, user-defined code of the profile with which the order handling fee rule is associated.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
@@ -59,8 +59,8 @@ public class OrderHandlingFeeRulesResource {
 	 *	OrderHandlingFeeRules orderhandlingfeerules = new OrderHandlingFeeRules();
 	 *	CountDownLatch latch = orderhandlingfeerules.getOrderHandlingFeeRule( profilecode,  id, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param id 
-	 * @param profilecode 
+	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param profilecode The unique, user-defined code of the profile with which the order handling fee rule is associated.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
@@ -77,9 +77,9 @@ public class OrderHandlingFeeRulesResource {
 	 *	OrderHandlingFeeRules orderhandlingfeerules = new OrderHandlingFeeRules();
 	 *	HandlingFeeRule handlingFeeRule = orderhandlingfeerules.getOrderHandlingFeeRule( profilecode,  id,  responseFields);
 	 * </code></pre></p>
-	 * @param id 
-	 * @param profilecode 
-	 * @param responseFields 
+	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param profilecode The unique, user-defined code of the profile with which the order handling fee rule is associated.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
@@ -99,9 +99,9 @@ public class OrderHandlingFeeRulesResource {
 	 *	OrderHandlingFeeRules orderhandlingfeerules = new OrderHandlingFeeRules();
 	 *	CountDownLatch latch = orderhandlingfeerules.getOrderHandlingFeeRule( profilecode,  id,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param id 
-	 * @param profilecode 
-	 * @param responseFields 
+	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param profilecode The unique, user-defined code of the profile with which the order handling fee rule is associated.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
@@ -121,7 +121,7 @@ public class OrderHandlingFeeRulesResource {
 	 *	OrderHandlingFeeRules orderhandlingfeerules = new OrderHandlingFeeRules();
 	 *	HandlingFeeRuleCollection handlingFeeRuleCollection = orderhandlingfeerules.getOrderHandlingFeeRules( profilecode);
 	 * </code></pre></p>
-	 * @param profilecode 
+	 * @param profilecode The unique, user-defined code of the profile with which the order handling fee rule is associated.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRuleCollection
 	 * @see com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRuleCollection
@@ -137,7 +137,7 @@ public class OrderHandlingFeeRulesResource {
 	 *	OrderHandlingFeeRules orderhandlingfeerules = new OrderHandlingFeeRules();
 	 *	CountDownLatch latch = orderhandlingfeerules.getOrderHandlingFeeRules( profilecode, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param profilecode 
+	 * @param profilecode The unique, user-defined code of the profile with which the order handling fee rule is associated.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRuleCollection
@@ -154,8 +154,8 @@ public class OrderHandlingFeeRulesResource {
 	 *	OrderHandlingFeeRules orderhandlingfeerules = new OrderHandlingFeeRules();
 	 *	HandlingFeeRuleCollection handlingFeeRuleCollection = orderhandlingfeerules.getOrderHandlingFeeRules( profilecode,  responseFields);
 	 * </code></pre></p>
-	 * @param profilecode 
-	 * @param responseFields 
+	 * @param profilecode The unique, user-defined code of the profile with which the order handling fee rule is associated.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRuleCollection
 	 * @see com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRuleCollection
@@ -175,8 +175,8 @@ public class OrderHandlingFeeRulesResource {
 	 *	OrderHandlingFeeRules orderhandlingfeerules = new OrderHandlingFeeRules();
 	 *	CountDownLatch latch = orderhandlingfeerules.getOrderHandlingFeeRules( profilecode,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param profilecode 
-	 * @param responseFields 
+	 * @param profilecode The unique, user-defined code of the profile with which the order handling fee rule is associated.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRuleCollection
@@ -196,9 +196,9 @@ public class OrderHandlingFeeRulesResource {
 	 *	OrderHandlingFeeRules orderhandlingfeerules = new OrderHandlingFeeRules();
 	 *	HandlingFeeRule handlingFeeRule = orderhandlingfeerules.createOrderHandlingFeeRule( rule,  profilecode);
 	 * </code></pre></p>
-	 * @param profilecode 
+	 * @param profilecode The unique, user-defined code of the profile with which the order handling fee rule is associated.
 	 * @param dataViewMode DataViewMode
-	 * @param rule 
+	 * @param rule The details of the order handling fee rule.
 	 * @return com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
@@ -214,10 +214,10 @@ public class OrderHandlingFeeRulesResource {
 	 *	OrderHandlingFeeRules orderhandlingfeerules = new OrderHandlingFeeRules();
 	 *	CountDownLatch latch = orderhandlingfeerules.createOrderHandlingFeeRule( rule,  profilecode, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param profilecode 
+	 * @param profilecode The unique, user-defined code of the profile with which the order handling fee rule is associated.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
-	 * @param rule 
+	 * @param rule The details of the order handling fee rule.
 	 * @return com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
@@ -233,10 +233,10 @@ public class OrderHandlingFeeRulesResource {
 	 *	OrderHandlingFeeRules orderhandlingfeerules = new OrderHandlingFeeRules();
 	 *	HandlingFeeRule handlingFeeRule = orderhandlingfeerules.createOrderHandlingFeeRule( rule,  profilecode,  responseFields);
 	 * </code></pre></p>
-	 * @param profilecode 
-	 * @param responseFields 
+	 * @param profilecode The unique, user-defined code of the profile with which the order handling fee rule is associated.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
-	 * @param rule 
+	 * @param rule The details of the order handling fee rule.
 	 * @return com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
@@ -256,11 +256,11 @@ public class OrderHandlingFeeRulesResource {
 	 *	OrderHandlingFeeRules orderhandlingfeerules = new OrderHandlingFeeRules();
 	 *	CountDownLatch latch = orderhandlingfeerules.createOrderHandlingFeeRule( rule,  profilecode,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param profilecode 
-	 * @param responseFields 
+	 * @param profilecode The unique, user-defined code of the profile with which the order handling fee rule is associated.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
-	 * @param rule 
+	 * @param rule The details of the order handling fee rule.
 	 * @return com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
@@ -279,10 +279,10 @@ public class OrderHandlingFeeRulesResource {
 	 *	OrderHandlingFeeRules orderhandlingfeerules = new OrderHandlingFeeRules();
 	 *	HandlingFeeRule handlingFeeRule = orderhandlingfeerules.updateOrderHandlingFeeRule( rule,  profilecode,  id);
 	 * </code></pre></p>
-	 * @param id 
-	 * @param profilecode 
+	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param profilecode The unique, user-defined code of the profile with which the order handling fee rule is associated.
 	 * @param dataViewMode DataViewMode
-	 * @param rule 
+	 * @param rule The updated details of the order handling fee rule.
 	 * @return com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
@@ -298,11 +298,11 @@ public class OrderHandlingFeeRulesResource {
 	 *	OrderHandlingFeeRules orderhandlingfeerules = new OrderHandlingFeeRules();
 	 *	CountDownLatch latch = orderhandlingfeerules.updateOrderHandlingFeeRule( rule,  profilecode,  id, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param id 
-	 * @param profilecode 
+	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param profilecode The unique, user-defined code of the profile with which the order handling fee rule is associated.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
-	 * @param rule 
+	 * @param rule The updated details of the order handling fee rule.
 	 * @return com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
@@ -318,11 +318,11 @@ public class OrderHandlingFeeRulesResource {
 	 *	OrderHandlingFeeRules orderhandlingfeerules = new OrderHandlingFeeRules();
 	 *	HandlingFeeRule handlingFeeRule = orderhandlingfeerules.updateOrderHandlingFeeRule( rule,  profilecode,  id,  responseFields);
 	 * </code></pre></p>
-	 * @param id 
-	 * @param profilecode 
-	 * @param responseFields 
+	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param profilecode The unique, user-defined code of the profile with which the order handling fee rule is associated.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
-	 * @param rule 
+	 * @param rule The updated details of the order handling fee rule.
 	 * @return com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
@@ -342,12 +342,12 @@ public class OrderHandlingFeeRulesResource {
 	 *	OrderHandlingFeeRules orderhandlingfeerules = new OrderHandlingFeeRules();
 	 *	CountDownLatch latch = orderhandlingfeerules.updateOrderHandlingFeeRule( rule,  profilecode,  id,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param id 
-	 * @param profilecode 
-	 * @param responseFields 
+	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param profilecode The unique, user-defined code of the profile with which the order handling fee rule is associated.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
-	 * @param rule 
+	 * @param rule The updated details of the order handling fee rule.
 	 * @return com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
@@ -366,8 +366,8 @@ public class OrderHandlingFeeRulesResource {
 	 *	OrderHandlingFeeRules orderhandlingfeerules = new OrderHandlingFeeRules();
 	 *	orderhandlingfeerules.deleteOrderHandlingFeeRule( profilecode,  id);
 	 * </code></pre></p>
-	 * @param id 
-	 * @param profilecode 
+	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param profilecode The unique, user-defined code of the profile with which the order handling fee rule is associated.
 	 * @param dataViewMode DataViewMode
 	 * @return 
 	 */

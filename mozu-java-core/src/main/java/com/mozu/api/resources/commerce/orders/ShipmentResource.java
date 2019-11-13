@@ -40,7 +40,7 @@ public class ShipmentResource {
 	 *	Shipment shipment = new Shipment();
 	 *	Shipment shipment = shipment.getShipment( orderId,  shipmentId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with the shipment to retrieve.
+	 * @param orderId Unique identifier of the order.
 	 * @param shipmentId Unique identifier of the shipment to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Shipment
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Shipment
@@ -56,8 +56,8 @@ public class ShipmentResource {
 	 *	Shipment shipment = new Shipment();
 	 *	Shipment shipment = shipment.getShipment( orderId,  shipmentId,  responseFields);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with the shipment to retrieve.
-	 * @param responseFields 
+	 * @param orderId Unique identifier of the order.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param shipmentId Unique identifier of the shipment to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Shipment
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Shipment
@@ -77,7 +77,7 @@ public class ShipmentResource {
 	 *	Shipment shipment = new Shipment();
 	 *	ShippingRate shippingRate = shipment.getAvailableShipmentMethods( orderId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order for the available shipment methods being retrieved.
+	 * @param orderId Unique identifier of the order.
 	 * @return List<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate
 	 */
@@ -92,8 +92,8 @@ public class ShipmentResource {
 	 *	Shipment shipment = new Shipment();
 	 *	ShippingRate shippingRate = shipment.getAvailableShipmentMethods( orderId,  draft);
 	 * </code></pre></p>
-	 * @param draft 
-	 * @param orderId Unique identifier of the order for the available shipment methods being retrieved.
+	 * @param draft If true, retrieve the draft version of the order, which might include uncommitted changes to the order or its components.
+	 * @param orderId Unique identifier of the order.
 	 * @return List<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate
 	 */
@@ -112,7 +112,7 @@ public class ShipmentResource {
 	 *	Shipment shipment = new Shipment();
 	 *	Package package = shipment.createPackageShipments( packageIds,  orderId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order for this shipment.
+	 * @param orderId Unique identifier of the order.
 	 * @param packageIds List of unique identifiers for each package associated with this shipment. Not all packages must belong to the same shipment.
 	 * @return List<com.mozu.api.contracts.commerceruntime.fulfillment.Package>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
@@ -274,8 +274,8 @@ public class ShipmentResource {
 	 *	Shipment shipment = new Shipment();
 	 *	Stream stream = shipment.deleteShipment( orderId,  shipmentId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order to cancel shipment.
-	 * @param shipmentId Unique identifier of the shipment to cancel.
+	 * @param orderId Unique identifier of the order.
+	 * @param shipmentId Unique identifier of the shipment to retrieve.
 	 * @return Stream
 	 * @see Stream
 	 */

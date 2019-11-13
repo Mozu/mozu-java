@@ -30,7 +30,7 @@ public class PaymentSettingsClient {
 	 * client.executeRequest();
 	 * ExternalPaymentWorkflowDefinition externalPaymentWorkflowDefinition = client.Result();
 	 * </code></pre></p>
-	 * @param fullyQualifiedName 
+	 * @param fullyQualifiedName Fully qualified name of the attribute for the third-party payment workflow.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition>
 	 * @see com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition
 	 */
@@ -47,8 +47,8 @@ public class PaymentSettingsClient {
 	 * client.executeRequest();
 	 * ExternalPaymentWorkflowDefinition externalPaymentWorkflowDefinition = client.Result();
 	 * </code></pre></p>
-	 * @param fullyQualifiedName 
-	 * @param responseFields 
+	 * @param fullyQualifiedName Fully qualified name of the attribute for the third-party payment workflow.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition>
 	 * @see com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition
 	 */
@@ -95,7 +95,7 @@ public class PaymentSettingsClient {
 	 * client.executeRequest();
 	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param definition 
+	 * @param definition Properties of an external payment processing workflow defined for the site. At this time, only PayPal Express is supported.
 	 * @return Mozu.Api.MozuClient <Stream>
 	 * @see Stream
 	 * @see com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition
@@ -121,7 +121,7 @@ public class PaymentSettingsClient {
 	 * client.executeRequest();
 	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param fullyQualifiedName 
+	 * @param fullyQualifiedName Fully qualified name of the attribute for the third-party payment workflow.
 	 * @return Mozu.Api.MozuClient <Stream>
 	 * @see Stream
 	 */

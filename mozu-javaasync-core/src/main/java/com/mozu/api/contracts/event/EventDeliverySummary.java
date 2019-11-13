@@ -16,12 +16,18 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.event.EventDeliveryAttempt;
 import com.mozu.api.contracts.event.EventSummary;
 
+/**
+ *	Data for event deliveries. Returned content details a summary of actions, events, and results for a delivery event.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class EventDeliverySummary implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The date and time in UTCÂ format set when the object was created.
+	 */
 	protected  DateTime createDate;
 
 	public DateTime getCreateDate() {
@@ -32,6 +38,9 @@ public class EventDeliverySummary implements Serializable
 		this.createDate = createDate;
 	}
 
+	/**
+	 * Status of the delivery process `EventDeliveryStatusType`. System-supplied and read-only.
+	 */
 	protected  String deliveryStatus;
 
 	public String getDeliveryStatus() {
@@ -42,6 +51,9 @@ public class EventDeliverySummary implements Serializable
 		this.deliveryStatus = deliveryStatus;
 	}
 
+	/**
+	 * Unique identifier of the source property, such as a catalog, discount, order, or email template.For a product field it will be the name of the field.For a category ID, must be a positive integer not greater than 2000000. By default,  auto-generates a category ID when categories are created. If you want to specify an ID during creation (which preserves category link relationships when migrating tenant data from one sandbox to another), you must also include the  query string in the endpoint. For example, . Then, use the  property to specify the desired category ID.For a product attribute it will be the Attribute FQN.For a document, the ID must be specified as a 32 character, case-insensitive, alphanumeric string. You can specify the ID as 32 sequential characters or as groups separated by dashes in the format 8-4-4-4-12. For example, or.For email templates, the ID must be one of the following values:			
+	 */
 	protected  Integer id;
 
 	public Integer getId() {
@@ -52,6 +64,9 @@ public class EventDeliverySummary implements Serializable
 		this.id = id;
 	}
 
+	/**
+	 * Indicates whether delivery of the event is currently being attempted at this moment in time
+	 */
 	protected  Boolean isRunning;
 
 	public Boolean getIsRunning() {
@@ -62,6 +77,9 @@ public class EventDeliverySummary implements Serializable
 		this.isRunning = isRunning;
 	}
 
+	/**
+	 * The date that the delivery was last attempted (either successfully or not)
+	 */
 	protected  DateTime lastExecutionDate;
 
 	public DateTime getLastExecutionDate() {
@@ -72,6 +90,9 @@ public class EventDeliverySummary implements Serializable
 		this.lastExecutionDate = lastExecutionDate;
 	}
 
+	/**
+	 * The date that the delivery will next be attempted, if the event has not been successfully delivered yet and there are still retries remaining
+	 */
 	protected  DateTime nextExecutionDate;
 
 	public DateTime getNextExecutionDate() {
@@ -82,6 +103,9 @@ public class EventDeliverySummary implements Serializable
 		this.nextExecutionDate = nextExecutionDate;
 	}
 
+	/**
+	 * Number of delivery attempts remaining
+	 */
 	protected  Integer retriesRemaining;
 
 	public Integer getRetriesRemaining() {
@@ -92,6 +116,9 @@ public class EventDeliverySummary implements Serializable
 		this.retriesRemaining = retriesRemaining;
 	}
 
+	/**
+	 * The date and time in UTC format the object was updated most recently.
+	 */
 	protected  DateTime updateDate;
 
 	public DateTime getUpdateDate() {
@@ -102,6 +129,9 @@ public class EventDeliverySummary implements Serializable
 		this.updateDate = updateDate;
 	}
 
+	/**
+	 * Details about each attempted delivery of the event to the endpoint
+	 */
 	protected List<EventDeliveryAttempt> deliveryAttempts;
 	public List<EventDeliveryAttempt> getDeliveryAttempts() {
 		return this.deliveryAttempts;
@@ -110,6 +140,9 @@ public class EventDeliverySummary implements Serializable
 		this.deliveryAttempts = deliveryAttempts;
 	}
 
+	/**
+	 * Event Summary
+	 */
 	protected  EventSummary eventSummary;
 
 	public EventSummary getEventSummary() {

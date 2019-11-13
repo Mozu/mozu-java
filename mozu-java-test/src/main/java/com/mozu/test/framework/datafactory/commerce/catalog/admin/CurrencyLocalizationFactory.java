@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.catalog.admin.CurrencyLocalizationResource;
 
 /** <summary>
- * 
+ * Manage the currency localization rules and exchange rates for any of the currencies that are supported for placing orders in.
  * </summary>
  */
 public class CurrencyLocalizationFactory

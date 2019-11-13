@@ -14,12 +14,18 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
+/**
+ *	Tags are further details about the group, the FQN and specific option values, to identify the variants and cases that these images will be displayed for.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductImageGroupTag implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The FQN of the option to which this image group belongs.  Should match the fqn of the option that has a true value for isProductImageGroupSelector.
+	 */
 	protected  String fqn;
 
 	public String getFqn() {
@@ -30,6 +36,9 @@ public class ProductImageGroupTag implements Serializable
 		this.fqn = fqn;
 	}
 
+	/**
+	 * List of value data for objects.
+	 */
 	protected List<String> values;
 	public List<String> getValues() {
 		return this.values;

@@ -14,12 +14,18 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
+/**
+ *	The target product of an auto-add discount.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AutoAddDiscountTarget implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The unique identifier of the discount.
+	 */
 	protected  Integer discountId;
 
 	public Integer getDiscountId() {
@@ -30,6 +36,9 @@ public class AutoAddDiscountTarget implements Serializable
 		this.discountId = discountId;
 	}
 
+	/**
+	 * The localizable, shopper-facing description defined for a discount or a storefront message.
+	 */
 	protected  String friendlyDescription;
 
 	public String getFriendlyDescription() {
@@ -40,6 +49,9 @@ public class AutoAddDiscountTarget implements Serializable
 		this.friendlyDescription = friendlyDescription;
 	}
 
+	/**
+	 * The identification codes of products added to the cart as part of an auto-add discount.
+	 */
 	protected List<String> includedProductCodes;
 	public List<String> getIncludedProductCodes() {
 		return this.includedProductCodes;

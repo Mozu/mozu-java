@@ -15,8 +15,8 @@ public class PublishingScopeUrl
 
 	/**
 	 * Get Resource Url for GetPublishSet
-	 * @param publishSetCode 
-	 * @param responseFields 
+	 * @param publishSetCode The unique identifier of the publish set.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getPublishSetUrl(String publishSetCode, String responseFields)
@@ -29,7 +29,7 @@ public class PublishingScopeUrl
 
 	/**
 	 * Get Resource Url for GetPublishSets
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getPublishSetsUrl(String responseFields)
@@ -61,7 +61,7 @@ public class PublishingScopeUrl
 
 	/**
 	 * Get Resource Url for AssignProductsToPublishSet
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl assignProductsToPublishSetUrl(String responseFields)
@@ -73,8 +73,8 @@ public class PublishingScopeUrl
 
 	/**
 	 * Get Resource Url for DeletePublishSet
-	 * @param discardDrafts 
-	 * @param publishSetCode 
+	 * @param discardDrafts Specifies whether to discard all the drafts assigned to the publish set when the publish set is deleted.
+	 * @param publishSetCode The unique identifier of the publish set.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deletePublishSetUrl(Boolean discardDrafts, String publishSetCode)

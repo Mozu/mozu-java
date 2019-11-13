@@ -19,7 +19,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * 
+ * Manage the currency localization rules and exchange rates for any of the currencies that are supported for placing orders in.
  * </summary>
  */
 public class CurrencyLocalizationClient {
@@ -48,7 +48,7 @@ public class CurrencyLocalizationClient {
 	 * client.executeRequest();
 	 * CurrencyLocalizationCollection currencyLocalizationCollection = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.CurrencyLocalizationCollection>
 	 * @see com.mozu.api.contracts.productadmin.CurrencyLocalizationCollection
 	 */
@@ -72,8 +72,8 @@ public class CurrencyLocalizationClient {
 	 * client.executeRequest();
 	 * CurrencyExchangeRate currencyExchangeRate = client.Result();
 	 * </code></pre></p>
-	 * @param currencyCode 
-	 * @param toCurrencyCode 
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
+	 * @param toCurrencyCode The code of the new currency that the original currency's equivalent is being calculated to.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.CurrencyExchangeRate>
 	 * @see com.mozu.api.contracts.productadmin.CurrencyExchangeRate
 	 */
@@ -90,9 +90,9 @@ public class CurrencyLocalizationClient {
 	 * client.executeRequest();
 	 * CurrencyExchangeRate currencyExchangeRate = client.Result();
 	 * </code></pre></p>
-	 * @param currencyCode 
-	 * @param responseFields 
-	 * @param toCurrencyCode 
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param toCurrencyCode The code of the new currency that the original currency's equivalent is being calculated to.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.CurrencyExchangeRate>
 	 * @see com.mozu.api.contracts.productadmin.CurrencyExchangeRate
 	 */
@@ -116,7 +116,7 @@ public class CurrencyLocalizationClient {
 	 * client.executeRequest();
 	 * CurrencyExchangeRateCollection currencyExchangeRateCollection = client.Result();
 	 * </code></pre></p>
-	 * @param currencyCode 
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.CurrencyExchangeRateCollection>
 	 * @see com.mozu.api.contracts.productadmin.CurrencyExchangeRateCollection
 	 */
@@ -133,8 +133,8 @@ public class CurrencyLocalizationClient {
 	 * client.executeRequest();
 	 * CurrencyExchangeRateCollection currencyExchangeRateCollection = client.Result();
 	 * </code></pre></p>
-	 * @param currencyCode 
-	 * @param responseFields 
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.CurrencyExchangeRateCollection>
 	 * @see com.mozu.api.contracts.productadmin.CurrencyExchangeRateCollection
 	 */
@@ -158,7 +158,7 @@ public class CurrencyLocalizationClient {
 	 * client.executeRequest();
 	 * CurrencyLocalization currencyLocalization = client.Result();
 	 * </code></pre></p>
-	 * @param currencyCode 
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.CurrencyLocalization>
 	 * @see com.mozu.api.contracts.productadmin.CurrencyLocalization
 	 */
@@ -175,8 +175,8 @@ public class CurrencyLocalizationClient {
 	 * client.executeRequest();
 	 * CurrencyLocalization currencyLocalization = client.Result();
 	 * </code></pre></p>
-	 * @param currencyCode 
-	 * @param responseFields 
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.CurrencyLocalization>
 	 * @see com.mozu.api.contracts.productadmin.CurrencyLocalization
 	 */
@@ -200,7 +200,7 @@ public class CurrencyLocalizationClient {
 	 * client.executeRequest();
 	 * CurrencyLocalization currencyLocalization = client.Result();
 	 * </code></pre></p>
-	 * @param currencyLocalization 
+	 * @param currencyLocalization The currency localization strategies being added to the currency data.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.CurrencyLocalization>
 	 * @see com.mozu.api.contracts.productadmin.CurrencyLocalization
 	 * @see com.mozu.api.contracts.productadmin.CurrencyLocalization
@@ -218,8 +218,8 @@ public class CurrencyLocalizationClient {
 	 * client.executeRequest();
 	 * CurrencyLocalization currencyLocalization = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param currencyLocalization 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param currencyLocalization The currency localization strategies being added to the currency data.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.CurrencyLocalization>
 	 * @see com.mozu.api.contracts.productadmin.CurrencyLocalization
 	 * @see com.mozu.api.contracts.productadmin.CurrencyLocalization
@@ -245,8 +245,8 @@ public class CurrencyLocalizationClient {
 	 * client.executeRequest();
 	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param currencyCode 
-	 * @param currencyExchangeRates 
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
+	 * @param currencyExchangeRates All of the exchange rates being provided.
 	 * @return Mozu.Api.MozuClient <Stream>
 	 * @see Stream
 	 * @see com.mozu.api.contracts.productadmin.CurrencyExchangeRate
@@ -272,7 +272,7 @@ public class CurrencyLocalizationClient {
 	 * client.executeRequest();
 	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param currencyCode 
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
 	 * @param currencyExchangeRates 
 	 * @return Mozu.Api.MozuClient <Stream>
 	 * @see Stream
@@ -299,8 +299,8 @@ public class CurrencyLocalizationClient {
 	 * client.executeRequest();
 	 * CurrencyLocalization currencyLocalization = client.Result();
 	 * </code></pre></p>
-	 * @param currencyCode 
-	 * @param currencyLocalization 
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
+	 * @param currencyLocalization The currency localization information being updated.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.CurrencyLocalization>
 	 * @see com.mozu.api.contracts.productadmin.CurrencyLocalization
 	 * @see com.mozu.api.contracts.productadmin.CurrencyLocalization
@@ -318,9 +318,9 @@ public class CurrencyLocalizationClient {
 	 * client.executeRequest();
 	 * CurrencyLocalization currencyLocalization = client.Result();
 	 * </code></pre></p>
-	 * @param currencyCode 
-	 * @param responseFields 
-	 * @param currencyLocalization 
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param currencyLocalization The currency localization information being updated.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.CurrencyLocalization>
 	 * @see com.mozu.api.contracts.productadmin.CurrencyLocalization
 	 * @see com.mozu.api.contracts.productadmin.CurrencyLocalization
@@ -346,7 +346,7 @@ public class CurrencyLocalizationClient {
 	 * client.executeRequest();
 	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param currencyCode 
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
 	 * @return Mozu.Api.MozuClient <Stream>
 	 * @see Stream
 	 */
@@ -370,8 +370,8 @@ public class CurrencyLocalizationClient {
 	 * client.executeRequest();
 	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param currencyCode 
-	 * @param toCurrencyCode 
+	 * @param currencyCode The three character ISOÂ currency code, such as USDÂ for US Dollars.
+	 * @param toCurrencyCode The code of the new currency that the original currency's equivalent is being calculated to.
 	 * @return Mozu.Api.MozuClient <Stream>
 	 * @see Stream
 	 */

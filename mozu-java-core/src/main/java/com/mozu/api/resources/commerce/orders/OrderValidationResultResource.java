@@ -60,7 +60,7 @@ public class OrderValidationResultResource {
 	 *	OrderValidationResult orderValidationResult = ordervalidationresult.addValidationResult( validationResult,  orderId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param validationResult Properties of the validation result to add for the order.
+	 * @param validationResult Properties of the resulting order validation performed by an order validation capability.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult
@@ -77,8 +77,8 @@ public class OrderValidationResultResource {
 	 *	OrderValidationResult orderValidationResult = ordervalidationresult.addValidationResult( validationResult,  orderId,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields 
-	 * @param validationResult Properties of the validation result to add for the order.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param validationResult Properties of the resulting order validation performed by an order validation capability.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult

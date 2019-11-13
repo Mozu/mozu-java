@@ -18,7 +18,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * 
+ * Use the TargetRules resource to manage your target rules for products and zones. For example, you can set specific rules that dictate shipping options for specific products.
  * </summary>
  */
 public class TargetRuleResource {
@@ -55,11 +55,11 @@ public class TargetRuleResource {
 	 *	TargetRule targetrule = new TargetRule();
 	 *	TargetRuleCollection targetRuleCollection = targetrule.getTargetRules( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param filter 
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.shippingadmin.TargetRuleCollection
 	 * @see com.mozu.api.contracts.shippingadmin.TargetRuleCollection
@@ -79,7 +79,7 @@ public class TargetRuleResource {
 	 *	TargetRule targetrule = new TargetRule();
 	 *	TargetRule targetRule = targetrule.getTargetRule( code);
 	 * </code></pre></p>
-	 * @param code 
+	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.shippingadmin.TargetRule
 	 * @see com.mozu.api.contracts.shippingadmin.TargetRule
@@ -95,8 +95,8 @@ public class TargetRuleResource {
 	 *	TargetRule targetrule = new TargetRule();
 	 *	TargetRule targetRule = targetrule.getTargetRule( code,  responseFields);
 	 * </code></pre></p>
-	 * @param code 
-	 * @param responseFields 
+	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.shippingadmin.TargetRule
 	 * @see com.mozu.api.contracts.shippingadmin.TargetRule
@@ -117,7 +117,7 @@ public class TargetRuleResource {
 	 *	TargetRule targetRule = targetrule.createTargetRule( targetRule);
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param targetRule 
+	 * @param targetRule The details of the new target rule.
 	 * @return com.mozu.api.contracts.shippingadmin.TargetRule
 	 * @see com.mozu.api.contracts.shippingadmin.TargetRule
 	 * @see com.mozu.api.contracts.shippingadmin.TargetRule
@@ -133,9 +133,9 @@ public class TargetRuleResource {
 	 *	TargetRule targetrule = new TargetRule();
 	 *	TargetRule targetRule = targetrule.createTargetRule( targetRule,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
-	 * @param targetRule 
+	 * @param targetRule The details of the new target rule.
 	 * @return com.mozu.api.contracts.shippingadmin.TargetRule
 	 * @see com.mozu.api.contracts.shippingadmin.TargetRule
 	 * @see com.mozu.api.contracts.shippingadmin.TargetRule
@@ -156,7 +156,7 @@ public class TargetRuleResource {
 	 *	Stream stream = targetrule.validateTargetRule( targetRule);
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param targetRule 
+	 * @param targetRule The details of the target rule you want to validate.
 	 * @return Stream
 	 * @see Stream
 	 * @see com.mozu.api.contracts.shippingadmin.TargetRule
@@ -176,9 +176,9 @@ public class TargetRuleResource {
 	 *	TargetRule targetrule = new TargetRule();
 	 *	TargetRule targetRule = targetrule.updateTargetRule( targetRule,  code);
 	 * </code></pre></p>
-	 * @param code 
+	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @param dataViewMode DataViewMode
-	 * @param targetRule 
+	 * @param targetRule The details of the updated target rule.
 	 * @return com.mozu.api.contracts.shippingadmin.TargetRule
 	 * @see com.mozu.api.contracts.shippingadmin.TargetRule
 	 * @see com.mozu.api.contracts.shippingadmin.TargetRule
@@ -194,10 +194,10 @@ public class TargetRuleResource {
 	 *	TargetRule targetrule = new TargetRule();
 	 *	TargetRule targetRule = targetrule.updateTargetRule( targetRule,  code,  responseFields);
 	 * </code></pre></p>
-	 * @param code 
-	 * @param responseFields 
+	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
-	 * @param targetRule 
+	 * @param targetRule The details of the updated target rule.
 	 * @return com.mozu.api.contracts.shippingadmin.TargetRule
 	 * @see com.mozu.api.contracts.shippingadmin.TargetRule
 	 * @see com.mozu.api.contracts.shippingadmin.TargetRule
@@ -217,7 +217,7 @@ public class TargetRuleResource {
 	 *	TargetRule targetrule = new TargetRule();
 	 *	Stream stream = targetrule.deleteTargetRule( code);
 	 * </code></pre></p>
-	 * @param code 
+	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @param dataViewMode DataViewMode
 	 * @return Stream
 	 * @see Stream

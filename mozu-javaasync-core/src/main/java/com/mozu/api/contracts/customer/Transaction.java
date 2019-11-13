@@ -31,6 +31,9 @@ public class Transaction implements Serializable
 		this.amount = amount;
 	}
 
+	/**
+	 * The localized currency code for the monetary amount. 
+	 */
 	protected  String currencyCode;
 
 	public String getCurrencyCode() {

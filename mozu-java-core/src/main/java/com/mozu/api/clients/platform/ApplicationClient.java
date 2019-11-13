@@ -17,7 +17,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * 
+ * Use the Developer resource to view and update information and files related to application packages.
  * </summary>
  */
 public class ApplicationClient {
@@ -30,7 +30,7 @@ public class ApplicationClient {
 	 * client.executeRequest();
 	 * PackageNamesCollection packageNamesCollection = client.Result();
 	 * </code></pre></p>
-	 * @param applicationKey 
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.PackageNamesCollection>
 	 * @see com.mozu.api.contracts.appdev.PackageNamesCollection
 	 */
@@ -47,8 +47,8 @@ public class ApplicationClient {
 	 * client.executeRequest();
 	 * PackageNamesCollection packageNamesCollection = client.Result();
 	 * </code></pre></p>
-	 * @param applicationKey 
-	 * @param responseFields 
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.PackageNamesCollection>
 	 * @see com.mozu.api.contracts.appdev.PackageNamesCollection
 	 */
@@ -72,7 +72,7 @@ public class ApplicationClient {
 	 * client.executeRequest();
 	 * ApplicationVersionsCollection applicationVersionsCollection = client.Result();
 	 * </code></pre></p>
-	 * @param nsAndAppId 
+	 * @param nsAndAppId The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.ApplicationVersionsCollection>
 	 * @see com.mozu.api.contracts.appdev.ApplicationVersionsCollection
 	 */
@@ -89,8 +89,8 @@ public class ApplicationClient {
 	 * client.executeRequest();
 	 * ApplicationVersionsCollection applicationVersionsCollection = client.Result();
 	 * </code></pre></p>
-	 * @param nsAndAppId 
-	 * @param responseFields 
+	 * @param nsAndAppId The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.ApplicationVersionsCollection>
 	 * @see com.mozu.api.contracts.appdev.ApplicationVersionsCollection
 	 */
@@ -114,8 +114,8 @@ public class ApplicationClient {
 	 * client.executeRequest();
 	 * FileMetadata fileMetadata = client.Result();
 	 * </code></pre></p>
-	 * @param applicationKey 
-	 * @param filepath 
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
+	 * @param filepath Represents the file name and location.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.FileMetadata>
 	 * @see com.mozu.api.contracts.appdev.FileMetadata
 	 */
@@ -132,9 +132,9 @@ public class ApplicationClient {
 	 * client.executeRequest();
 	 * FileMetadata fileMetadata = client.Result();
 	 * </code></pre></p>
-	 * @param applicationKey 
-	 * @param filepath 
-	 * @param responseFields 
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
+	 * @param filepath Represents the file name and location.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.FileMetadata>
 	 * @see com.mozu.api.contracts.appdev.FileMetadata
 	 */
@@ -158,7 +158,7 @@ public class ApplicationClient {
 	 * client.executeRequest();
 	 * FolderMetadata folderMetadata = client.Result();
 	 * </code></pre></p>
-	 * @param applicationKey 
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.FolderMetadata>
 	 * @see com.mozu.api.contracts.appdev.FolderMetadata
 	 */
@@ -175,8 +175,8 @@ public class ApplicationClient {
 	 * client.executeRequest();
 	 * FolderMetadata folderMetadata = client.Result();
 	 * </code></pre></p>
-	 * @param applicationKey 
-	 * @param responseFields 
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.FolderMetadata>
 	 * @see com.mozu.api.contracts.appdev.FolderMetadata
 	 */
@@ -200,8 +200,8 @@ public class ApplicationClient {
 	 * client.executeRequest();
 	 * FileMetadata fileMetadata = client.Result();
 	 * </code></pre></p>
-	 * @param applicationKey 
-	 * @param filepath 
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
+	 * @param filepath The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.FileMetadata>
 	 * @see com.mozu.api.contracts.appdev.FileMetadata
 	 */
@@ -218,10 +218,10 @@ public class ApplicationClient {
 	 * client.executeRequest();
 	 * FileMetadata fileMetadata = client.Result();
 	 * </code></pre></p>
-	 * @param applicationKey 
-	 * @param filepath 
-	 * @param lastModifiedTime 
-	 * @param responseFields 
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
+	 * @param filepath The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
+	 * @param lastModifiedTime The date and time of the last file insert or update. This parameter is optional.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.FileMetadata>
 	 * @see com.mozu.api.contracts.appdev.FileMetadata
 	 */
@@ -245,8 +245,8 @@ public class ApplicationClient {
 	 * client.executeRequest();
 	 * FileMetadata fileMetadata = client.Result();
 	 * </code></pre></p>
-	 * @param applicationKey 
-	 * @param renameInfo 
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
+	 * @param renameInfo Information required to update the name of a file in a package, which consists of the original name and the new name.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.FileMetadata>
 	 * @see com.mozu.api.contracts.appdev.FileMetadata
 	 * @see com.mozu.api.contracts.appdev.RenameInfo
@@ -264,9 +264,9 @@ public class ApplicationClient {
 	 * client.executeRequest();
 	 * FileMetadata fileMetadata = client.Result();
 	 * </code></pre></p>
-	 * @param applicationKey 
-	 * @param responseFields 
-	 * @param renameInfo 
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param renameInfo Information required to update the name of a file in a package, which consists of the original name and the new name.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.FileMetadata>
 	 * @see com.mozu.api.contracts.appdev.FileMetadata
 	 * @see com.mozu.api.contracts.appdev.RenameInfo
@@ -292,8 +292,8 @@ public class ApplicationClient {
 	 * client.executeRequest();
 	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param applicationKey 
-	 * @param filepath 
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
+	 * @param filepath Represents the file name and location.
 	 * @return Mozu.Api.MozuClient <Stream>
 	 * @see Stream
 	 */

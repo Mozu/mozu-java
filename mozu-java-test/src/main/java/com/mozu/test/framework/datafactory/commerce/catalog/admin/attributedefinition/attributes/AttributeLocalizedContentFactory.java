@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.catalog.admin.attributedefinition.attributes.AttributeLocalizedContentResource;
 
 /** <summary>
- * 
+ * Properties of localized content for attributes, based on a `localeCode` at a site/tenant level. This content supports translated text for product, product options, and additional objects. 
  * </summary>
  */
 public class AttributeLocalizedContentFactory

@@ -15,12 +15,18 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate;
 
+/**
+ *	Mozu.CommerceRuntime.Contracts.Checkouts.CheckoutGroupRates ApiType DOCUMENT_HERE 
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CheckoutGroupRates implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The unique identifier of the grouping.
+	 */
 	protected  String groupingId;
 
 	public String getGroupingId() {
@@ -31,6 +37,9 @@ public class CheckoutGroupRates implements Serializable
 		this.groupingId = groupingId;
 	}
 
+	/**
+	 * The shipping rates available to the grouping.
+	 */
 	protected List<ShippingRate> shippingRates;
 	public List<ShippingRate> getShippingRates() {
 		return this.shippingRates;

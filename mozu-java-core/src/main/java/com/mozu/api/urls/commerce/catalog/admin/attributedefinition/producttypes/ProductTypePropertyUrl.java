@@ -27,9 +27,9 @@ public class ProductTypePropertyUrl
 
 	/**
 	 * Get Resource Url for GetProperty
-	 * @param attributeFQN 
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param productTypeId Identifier of the product type.
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getPropertyUrl(String attributeFQN, Integer productTypeId, String responseFields)
@@ -44,7 +44,7 @@ public class ProductTypePropertyUrl
 	/**
 	 * Get Resource Url for AddProperty
 	 * @param productTypeId Identifier of the product type.
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addPropertyUrl(Integer productTypeId, String responseFields)
@@ -57,9 +57,9 @@ public class ProductTypePropertyUrl
 
 	/**
 	 * Get Resource Url for UpdateProperty
-	 * @param attributeFQN 
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param productTypeId Identifier of the product type.
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updatePropertyUrl(String attributeFQN, Integer productTypeId, String responseFields)
@@ -73,7 +73,7 @@ public class ProductTypePropertyUrl
 
 	/**
 	 * Get Resource Url for DeleteProperty
-	 * @param attributeFQN 
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param productTypeId Identifier of the product type.
 	 * @return   String Resource Url
 	 */

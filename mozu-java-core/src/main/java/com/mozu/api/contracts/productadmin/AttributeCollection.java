@@ -16,7 +16,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productadmin.Attribute;
 
 /**
- *	Paged list of defined product attributes.
+ *	Array list of customer or order attributes.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AttributeCollection implements Serializable

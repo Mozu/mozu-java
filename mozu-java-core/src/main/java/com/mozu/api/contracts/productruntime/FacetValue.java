@@ -54,6 +54,9 @@ public class FacetValue implements Serializable
 		this.isApplied = isApplied;
 	}
 
+	/**
+	 * Indicates if the object is displayed on the storefront. If true, the admin product category is displayed in the store. If false, the category is not displayed.
+	 */
 	protected  Boolean isDisplayed;
 
 	public Boolean getIsDisplayed() {

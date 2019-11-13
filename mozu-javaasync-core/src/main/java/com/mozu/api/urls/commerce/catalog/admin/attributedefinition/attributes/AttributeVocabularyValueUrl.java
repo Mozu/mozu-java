@@ -15,7 +15,7 @@ public class AttributeVocabularyValueUrl
 
 	/**
 	 * Get Resource Url for GetAttributeVocabularyValues
-	 * @param attributeFQN 
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getAttributeVocabularyValuesUrl(String attributeFQN)
@@ -27,8 +27,8 @@ public class AttributeVocabularyValueUrl
 
 	/**
 	 * Get Resource Url for GetAttributeVocabularyValueLocalizedContents
-	 * @param attributeFQN 
-	 * @param value 
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param value The value string to create.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getAttributeVocabularyValueLocalizedContentsUrl(String attributeFQN, String value)
@@ -41,10 +41,10 @@ public class AttributeVocabularyValueUrl
 
 	/**
 	 * Get Resource Url for GetAttributeVocabularyValueLocalizedContent
-	 * @param attributeFQN 
-	 * @param localeCode 
-	 * @param responseFields 
-	 * @param value 
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param value The value string to create.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getAttributeVocabularyValueLocalizedContentUrl(String attributeFQN, String localeCode, String responseFields, String value)
@@ -59,9 +59,9 @@ public class AttributeVocabularyValueUrl
 
 	/**
 	 * Get Resource Url for GetAttributeVocabularyValue
-	 * @param attributeFQN 
-	 * @param responseFields 
-	 * @param value The actual unique value of the attribute vocabulary to retrieve. A single attribute must have a unique value and match the attribute's data type. If a string value returns null, the system will generate a value. The actual string content displayed shoud be stored as "Content" and actual content is required for string values.
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param value The value string to create.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getAttributeVocabularyValueUrl(String attributeFQN, String responseFields, String value)
@@ -75,9 +75,9 @@ public class AttributeVocabularyValueUrl
 
 	/**
 	 * Get Resource Url for AddAttributeVocabularyValueLocalizedContent
-	 * @param attributeFQN 
-	 * @param responseFields 
-	 * @param value 
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param value The value string to create.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addAttributeVocabularyValueLocalizedContentUrl(String attributeFQN, String responseFields, String value)
@@ -91,8 +91,8 @@ public class AttributeVocabularyValueUrl
 
 	/**
 	 * Get Resource Url for AddAttributeVocabularyValue
-	 * @param attributeFQN 
-	 * @param responseFields 
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addAttributeVocabularyValueUrl(String attributeFQN, String responseFields)
@@ -105,7 +105,7 @@ public class AttributeVocabularyValueUrl
 
 	/**
 	 * Get Resource Url for UpdateAttributeVocabularyValues
-	 * @param attributeFQN 
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateAttributeVocabularyValuesUrl(String attributeFQN)
@@ -117,8 +117,8 @@ public class AttributeVocabularyValueUrl
 
 	/**
 	 * Get Resource Url for UpdateAttributeVocabularyValueLocalizedContents
-	 * @param attributeFQN 
-	 * @param value 
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param value The value string to create.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateAttributeVocabularyValueLocalizedContentsUrl(String attributeFQN, String value)
@@ -131,10 +131,10 @@ public class AttributeVocabularyValueUrl
 
 	/**
 	 * Get Resource Url for UpdateAttributeVocabularyValueLocalizedContent
-	 * @param attributeFQN 
-	 * @param localeCode 
-	 * @param responseFields 
-	 * @param value 
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param value The value string to create.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateAttributeVocabularyValueLocalizedContentUrl(String attributeFQN, String localeCode, String responseFields, String value)
@@ -149,9 +149,9 @@ public class AttributeVocabularyValueUrl
 
 	/**
 	 * Get Resource Url for UpdateAttributeVocabularyValue
-	 * @param attributeFQN 
-	 * @param responseFields 
-	 * @param value The actual unique value of the attribute vocabulary value to update. A single attribute must have a unique value and match the attribute's data type. If a string value returns null, the system will generate a value. The actual string content displayed shoud be stored as "Content" and actual content is required for string values.
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param value The value string to create.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateAttributeVocabularyValueUrl(String attributeFQN, String responseFields, String value)
@@ -165,8 +165,8 @@ public class AttributeVocabularyValueUrl
 
 	/**
 	 * Get Resource Url for DeleteAttributeVocabularyValue
-	 * @param attributeFQN 
-	 * @param value The actual unique value of the attribute vocabulary to delete. A single attribute must have a unique value and match the attribute's data type. If a string value returns null, the system will generate a value. The actual string content displayed shoud be stored as "Content" and actual content is required for string values.
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param value The value string to create.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteAttributeVocabularyValueUrl(String attributeFQN, String value)
@@ -179,9 +179,9 @@ public class AttributeVocabularyValueUrl
 
 	/**
 	 * Get Resource Url for DeleteAttributeVocabularyValueLocalizedContent
-	 * @param attributeFQN 
-	 * @param localeCode 
-	 * @param value 
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
+	 * @param value The value string to create.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteAttributeVocabularyValueLocalizedContentUrl(String attributeFQN, String localeCode, String value)

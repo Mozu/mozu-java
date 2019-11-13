@@ -48,7 +48,7 @@ public class SiteShippingHandlingFeeClient {
 	 * client.executeRequest();
 	 * SiteShippingHandlingFee siteShippingHandlingFee = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee>
 	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
 	 */
@@ -72,7 +72,7 @@ public class SiteShippingHandlingFeeClient {
 	 * client.executeRequest();
 	 * SiteShippingHandlingFee siteShippingHandlingFee = client.Result();
 	 * </code></pre></p>
-	 * @param orderHandlingFee Properties of the order handling fee to assess for order shipment.
+	 * @param orderHandlingFee Properties of the handling fee to apply to order shipments for the site.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee>
 	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
 	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
@@ -90,8 +90,8 @@ public class SiteShippingHandlingFeeClient {
 	 * client.executeRequest();
 	 * SiteShippingHandlingFee siteShippingHandlingFee = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param orderHandlingFee Properties of the order handling fee to assess for order shipment.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param orderHandlingFee Properties of the handling fee to apply to order shipments for the site.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee>
 	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
 	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
@@ -117,7 +117,7 @@ public class SiteShippingHandlingFeeClient {
 	 * client.executeRequest();
 	 * SiteShippingHandlingFee siteShippingHandlingFee = client.Result();
 	 * </code></pre></p>
-	 * @param orderHandlingFee The combined price for all items in the order, including all selected options but excluding any discounts.
+	 * @param orderHandlingFee Properties of the handling fee to apply to order shipments for the site.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee>
 	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
 	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
@@ -135,8 +135,8 @@ public class SiteShippingHandlingFeeClient {
 	 * client.executeRequest();
 	 * SiteShippingHandlingFee siteShippingHandlingFee = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param orderHandlingFee The combined price for all items in the order, including all selected options but excluding any discounts.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param orderHandlingFee Properties of the handling fee to apply to order shipments for the site.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee>
 	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
 	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee

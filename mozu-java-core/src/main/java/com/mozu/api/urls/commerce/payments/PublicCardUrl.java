@@ -15,7 +15,7 @@ public class PublicCardUrl
 
 	/**
 	 * Get Resource Url for Create
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl createUrl(String responseFields)
@@ -27,8 +27,8 @@ public class PublicCardUrl
 
 	/**
 	 * Get Resource Url for GetGiftCardBalance
-	 * @param cardId 
-	 * @param responseFields 
+	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getGiftCardBalanceUrl(String cardId, String responseFields)
@@ -41,7 +41,7 @@ public class PublicCardUrl
 
 	/**
 	 * Get Resource Url for GetUnregisteredGiftCardBalance
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getUnregisteredGiftCardBalanceUrl(String responseFields)
@@ -53,8 +53,8 @@ public class PublicCardUrl
 
 	/**
 	 * Get Resource Url for Update
-	 * @param cardId 
-	 * @param responseFields 
+	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateUrl(String cardId, String responseFields)
@@ -67,7 +67,7 @@ public class PublicCardUrl
 
 	/**
 	 * Get Resource Url for Delete
-	 * @param cardId 
+	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteUrl(String cardId)

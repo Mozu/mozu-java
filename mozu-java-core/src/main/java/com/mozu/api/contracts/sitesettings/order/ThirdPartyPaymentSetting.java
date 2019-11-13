@@ -12,12 +12,18 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
+/**
+ *	A configuration setting for the third party payment gateway.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ThirdPartyPaymentSetting implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Determines whether payment authorization occurs when the order is placed or when the order is shipped.
+	 */
 	protected  String paymentProcessingFlowType;
 
 	public String getPaymentProcessingFlowType() {
@@ -28,6 +34,9 @@ public class ThirdPartyPaymentSetting implements Serializable
 		this.paymentProcessingFlowType = paymentProcessingFlowType;
 	}
 
+	/**
+	 * A setting configured for the third party payment gateways.
+	 */
 	protected  String type;
 
 	public String getType() {

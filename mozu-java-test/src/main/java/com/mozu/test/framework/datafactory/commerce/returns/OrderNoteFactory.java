@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.returns.OrderNoteResource;
 
 /** <summary>
- * 
+ * Use the Return Notes resource to access and modify internal notes associated with returns. These notes can be useful to customer service representatives viewing them in .
  * </summary>
  */
 public class OrderNoteFactory

@@ -15,7 +15,7 @@ public class AttributeLocalizedContentUrl
 
 	/**
 	 * Get Resource Url for GetAttributeLocalizedContents
-	 * @param attributeFQN 
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getAttributeLocalizedContentsUrl(String attributeFQN)
@@ -27,9 +27,9 @@ public class AttributeLocalizedContentUrl
 
 	/**
 	 * Get Resource Url for GetAttributeLocalizedContent
-	 * @param attributeFQN 
-	 * @param localeCode 
-	 * @param responseFields 
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getAttributeLocalizedContentUrl(String attributeFQN, String localeCode, String responseFields)
@@ -43,8 +43,8 @@ public class AttributeLocalizedContentUrl
 
 	/**
 	 * Get Resource Url for AddLocalizedContent
-	 * @param attributeFQN 
-	 * @param responseFields 
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addLocalizedContentUrl(String attributeFQN, String responseFields)
@@ -57,7 +57,7 @@ public class AttributeLocalizedContentUrl
 
 	/**
 	 * Get Resource Url for UpdateLocalizedContents
-	 * @param attributeFQN 
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateLocalizedContentsUrl(String attributeFQN)
@@ -69,9 +69,9 @@ public class AttributeLocalizedContentUrl
 
 	/**
 	 * Get Resource Url for UpdateLocalizedContent
-	 * @param attributeFQN 
-	 * @param localeCode 
-	 * @param responseFields 
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateLocalizedContentUrl(String attributeFQN, String localeCode, String responseFields)
@@ -85,8 +85,8 @@ public class AttributeLocalizedContentUrl
 
 	/**
 	 * Get Resource Url for DeleteLocalizedContent
-	 * @param attributeFQN 
-	 * @param localeCode 
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteLocalizedContentUrl(String attributeFQN, String localeCode)

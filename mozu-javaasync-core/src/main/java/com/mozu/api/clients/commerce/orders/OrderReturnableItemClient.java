@@ -19,7 +19,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * 
+ * Use this subresource to view which order items are eligible for return.
  * </summary>
  */
 public class OrderReturnableItemClient {
@@ -32,7 +32,7 @@ public class OrderReturnableItemClient {
 	 * client.executeRequest();
 	 * OrderReturnableItemCollection orderReturnableItemCollection = client.Result();
 	 * </code></pre></p>
-	 * @param orderId 
+	 * @param orderId Unique identifier of the order.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.OrderReturnableItemCollection>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderReturnableItemCollection
 	 */
@@ -49,8 +49,8 @@ public class OrderReturnableItemClient {
 	 * client.executeRequest();
 	 * OrderReturnableItemCollection orderReturnableItemCollection = client.Result();
 	 * </code></pre></p>
-	 * @param orderId 
-	 * @param responseFields 
+	 * @param orderId Unique identifier of the order.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.OrderReturnableItemCollection>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderReturnableItemCollection
 	 */

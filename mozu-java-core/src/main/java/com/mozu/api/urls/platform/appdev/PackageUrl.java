@@ -15,7 +15,7 @@ public class PackageUrl
 
 	/**
 	 * Get Resource Url for GetFile
-	 * @param applicationKey 
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}. 
 	 * @param fileName 
 	 * @return   String Resource Url
 	 */

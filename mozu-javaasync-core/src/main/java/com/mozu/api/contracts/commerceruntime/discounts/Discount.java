@@ -33,6 +33,9 @@ public class Discount implements Serializable
 		this.expirationDate = expirationDate;
 	}
 
+	/**
+	 * Indicates whether the discount includes multiple products to be targeted. The target products are what the discount will be applied to, such as a bonus free item.
+	 */
 	protected  Boolean hasMultipleTargetProducts;
 
 	public Boolean getHasMultipleTargetProducts() {

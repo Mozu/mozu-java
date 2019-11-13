@@ -12,12 +12,18 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
+/**
+ *	The details of the payment terms assocaited with the purchase order payment.Refer to [Payment Terms](https://www.mozu.com/docs/guides/orders/purchase-order.htm#payment_terms) in the Purchase Orders guides topic for more information.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PurchaseOrderPaymentTerm implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The payment term code associated with the purchase order.Refer to [Payment Terms](https://www.mozu.com/docs/guides/orders/purchase-order.htm#payment_terms) in the Purchase Order guides topic for more information.
+	 */
 	protected  String code;
 
 	public String getCode() {
@@ -28,6 +34,9 @@ public class PurchaseOrderPaymentTerm implements Serializable
 		this.code = code;
 	}
 
+	/**
+	 * The localized description in text for the object, displayed per the locale code. For example, descriptions are used for product descriptions, attributes, and pre-authorization transaction types.
+	 */
 	protected  String description;
 
 	public String getDescription() {

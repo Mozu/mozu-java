@@ -19,7 +19,7 @@ import com.mozu.api.contracts.productadmin.FacetSource;
 import com.mozu.api.contracts.productadmin.FacetValidity;
 
 /**
- *	Properties of the category, price, or attribute facet shoppers use to filter product display results on a storefront.
+ *	Properties of the facet used to retrieve documents.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Facet implements Serializable
@@ -87,6 +87,9 @@ public class Facet implements Serializable
 		this.overrideFacetId = overrideFacetId;
 	}
 
+	/**
+	 * Determines how the facet values will be sorted in the store. Must be a valid value for DataType defined in FacetValueSortTypeConst. Allowable values are:* * * * * * The default is .
+	 */
 	protected  String valueSortType;
 
 	public String getValueSortType() {

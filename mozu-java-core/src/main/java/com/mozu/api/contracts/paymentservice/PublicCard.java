@@ -18,6 +18,9 @@ public class PublicCard implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The card holder full name.
+	 */
 	protected  String cardHolderName;
 
 	public String getCardHolderName() {
@@ -28,6 +31,9 @@ public class PublicCard implements Serializable
 		this.cardHolderName = cardHolderName;
 	}
 
+	/**
+	 * The month the credit card was issued; used by some cards.
+	 */
 	protected  Integer cardIssueMonth;
 
 	public Integer getCardIssueMonth() {
@@ -38,6 +44,9 @@ public class PublicCard implements Serializable
 		this.cardIssueMonth = cardIssueMonth;
 	}
 
+	/**
+	 * For Amex Cards, this is an additional field for verification that is used in conjunction with a CVV
+	 */
 	protected  String cardIssueNumber;
 
 	public String getCardIssueNumber() {
@@ -48,6 +57,9 @@ public class PublicCard implements Serializable
 		this.cardIssueNumber = cardIssueNumber;
 	}
 
+	/**
+	 * The issue year; used by some cards.
+	 */
 	protected  Integer cardIssueYear;
 
 	public Integer getCardIssueYear() {
@@ -58,6 +70,9 @@ public class PublicCard implements Serializable
 		this.cardIssueYear = cardIssueYear;
 	}
 
+	/**
+	 * This is the full number of the card.
+	 */
 	protected  String cardNumber;
 
 	public String getCardNumber() {
@@ -68,6 +83,9 @@ public class PublicCard implements Serializable
 		this.cardNumber = cardNumber;
 	}
 
+	/**
+	 * The type of credit card, such as Visa or Amex.
+	 */
 	protected  String cardType;
 
 	public String getCardType() {
@@ -78,6 +96,9 @@ public class PublicCard implements Serializable
 		this.cardType = cardType;
 	}
 
+	/**
+	 * The CVV code for the credit card.
+	 */
 	protected  String cvv;
 
 	public String getCvv() {
@@ -88,6 +109,9 @@ public class PublicCard implements Serializable
 		this.cvv = cvv;
 	}
 
+	/**
+	 * The two-digit month a credit card expires for a payment method.
+	 */
 	protected  Integer expireMonth;
 
 	public Integer getExpireMonth() {
@@ -98,6 +122,9 @@ public class PublicCard implements Serializable
 		this.expireMonth = expireMonth;
 	}
 
+	/**
+	 * The four-digit year the credit card expires for a payment method.
+	 */
 	protected  Integer expireYear;
 
 	public Integer getExpireYear() {

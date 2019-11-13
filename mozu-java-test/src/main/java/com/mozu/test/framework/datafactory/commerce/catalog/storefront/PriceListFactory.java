@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.catalog.storefront.PriceListResource;
 
 /** <summary>
- * 
+ * Retrieves the details of a price list. The details may contain a hierarchy of ancestor and/or descendant price lists dependening on your configuration.
  * </summary>
  */
 public class PriceListFactory

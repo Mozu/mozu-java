@@ -18,7 +18,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * 
+ * Use the Customer Account Purchase Order resource to manage purchase order details for specific customer acocunts.
  * </summary>
  */
 public class CustomerPurchaseOrderAccountResource {
@@ -40,7 +40,7 @@ public class CustomerPurchaseOrderAccountResource {
 	 *	CustomerPurchaseOrderAccount customerpurchaseorderaccount = new CustomerPurchaseOrderAccount();
 	 *	CustomerPurchaseOrderAccount customerPurchaseOrderAccount = customerpurchaseorderaccount.getCustomerPurchaseOrderAccount( accountId);
 	 * </code></pre></p>
-	 * @param accountId 
+	 * @param accountId Unique identifier of the customer account.
 	 * @return com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount
 	 * @see com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount
 	 */
@@ -55,8 +55,8 @@ public class CustomerPurchaseOrderAccountResource {
 	 *	CustomerPurchaseOrderAccount customerpurchaseorderaccount = new CustomerPurchaseOrderAccount();
 	 *	CustomerPurchaseOrderAccount customerPurchaseOrderAccount = customerpurchaseorderaccount.getCustomerPurchaseOrderAccount( accountId,  responseFields);
 	 * </code></pre></p>
-	 * @param accountId 
-	 * @param responseFields 
+	 * @param accountId Unique identifier of the customer account.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount
 	 * @see com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount
 	 */
@@ -75,7 +75,7 @@ public class CustomerPurchaseOrderAccountResource {
 	 *	CustomerPurchaseOrderAccount customerpurchaseorderaccount = new CustomerPurchaseOrderAccount();
 	 *	PurchaseOrderTransactionCollection purchaseOrderTransactionCollection = customerpurchaseorderaccount.getCustomerPurchaseOrderTransactions( accountId);
 	 * </code></pre></p>
-	 * @param accountId 
+	 * @param accountId Unique identifier of the customer account.
 	 * @return com.mozu.api.contracts.customer.PurchaseOrderTransactionCollection
 	 * @see com.mozu.api.contracts.customer.PurchaseOrderTransactionCollection
 	 */
@@ -90,12 +90,12 @@ public class CustomerPurchaseOrderAccountResource {
 	 *	CustomerPurchaseOrderAccount customerpurchaseorderaccount = new CustomerPurchaseOrderAccount();
 	 *	PurchaseOrderTransactionCollection purchaseOrderTransactionCollection = customerpurchaseorderaccount.getCustomerPurchaseOrderTransactions( accountId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param accountId 
-	 * @param filter 
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param accountId Unique identifier of the customer account.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return com.mozu.api.contracts.customer.PurchaseOrderTransactionCollection
 	 * @see com.mozu.api.contracts.customer.PurchaseOrderTransactionCollection
 	 */
@@ -114,8 +114,8 @@ public class CustomerPurchaseOrderAccountResource {
 	 *	CustomerPurchaseOrderAccount customerpurchaseorderaccount = new CustomerPurchaseOrderAccount();
 	 *	CustomerPurchaseOrderAccount customerPurchaseOrderAccount = customerpurchaseorderaccount.createCustomerPurchaseOrderAccount( customerPurchaseOrderAccount,  accountId);
 	 * </code></pre></p>
-	 * @param accountId 
-	 * @param customerPurchaseOrderAccount 
+	 * @param accountId Unique identifier of the customer account.
+	 * @param customerPurchaseOrderAccount Unique identifier of the customer purchase order account.
 	 * @return com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount
 	 * @see com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount
 	 * @see com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount
@@ -131,9 +131,9 @@ public class CustomerPurchaseOrderAccountResource {
 	 *	CustomerPurchaseOrderAccount customerpurchaseorderaccount = new CustomerPurchaseOrderAccount();
 	 *	CustomerPurchaseOrderAccount customerPurchaseOrderAccount = customerpurchaseorderaccount.createCustomerPurchaseOrderAccount( customerPurchaseOrderAccount,  accountId,  responseFields);
 	 * </code></pre></p>
-	 * @param accountId 
-	 * @param responseFields 
-	 * @param customerPurchaseOrderAccount 
+	 * @param accountId Unique identifier of the customer account.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param customerPurchaseOrderAccount Unique identifier of the customer purchase order account.
 	 * @return com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount
 	 * @see com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount
 	 * @see com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount
@@ -153,8 +153,8 @@ public class CustomerPurchaseOrderAccountResource {
 	 *	CustomerPurchaseOrderAccount customerpurchaseorderaccount = new CustomerPurchaseOrderAccount();
 	 *	PurchaseOrderTransaction purchaseOrderTransaction = customerpurchaseorderaccount.createPurchaseOrderTransaction( purchaseOrderTransaction,  accountId);
 	 * </code></pre></p>
-	 * @param accountId 
-	 * @param purchaseOrderTransaction 
+	 * @param accountId Unique identifier of the customer account.
+	 * @param purchaseOrderTransaction The purchase order transaction type to add to the specified customer account.
 	 * @return com.mozu.api.contracts.customer.PurchaseOrderTransaction
 	 * @see com.mozu.api.contracts.customer.PurchaseOrderTransaction
 	 * @see com.mozu.api.contracts.customer.PurchaseOrderTransaction
@@ -170,9 +170,9 @@ public class CustomerPurchaseOrderAccountResource {
 	 *	CustomerPurchaseOrderAccount customerpurchaseorderaccount = new CustomerPurchaseOrderAccount();
 	 *	PurchaseOrderTransaction purchaseOrderTransaction = customerpurchaseorderaccount.createPurchaseOrderTransaction( purchaseOrderTransaction,  accountId,  responseFields);
 	 * </code></pre></p>
-	 * @param accountId 
-	 * @param responseFields 
-	 * @param purchaseOrderTransaction 
+	 * @param accountId Unique identifier of the customer account.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param purchaseOrderTransaction The purchase order transaction type to add to the specified customer account.
 	 * @return com.mozu.api.contracts.customer.PurchaseOrderTransaction
 	 * @see com.mozu.api.contracts.customer.PurchaseOrderTransaction
 	 * @see com.mozu.api.contracts.customer.PurchaseOrderTransaction
@@ -192,8 +192,8 @@ public class CustomerPurchaseOrderAccountResource {
 	 *	CustomerPurchaseOrderAccount customerpurchaseorderaccount = new CustomerPurchaseOrderAccount();
 	 *	CustomerPurchaseOrderAccount customerPurchaseOrderAccount = customerpurchaseorderaccount.updateCustomerPurchaseOrderAccount( customerPurchaseOrderAccount,  accountId);
 	 * </code></pre></p>
-	 * @param accountId 
-	 * @param customerPurchaseOrderAccount 
+	 * @param accountId Unique identifier of the customer account.
+	 * @param customerPurchaseOrderAccount Unique identifier of the customer purchase order account.
 	 * @return com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount
 	 * @see com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount
 	 * @see com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount
@@ -209,9 +209,9 @@ public class CustomerPurchaseOrderAccountResource {
 	 *	CustomerPurchaseOrderAccount customerpurchaseorderaccount = new CustomerPurchaseOrderAccount();
 	 *	CustomerPurchaseOrderAccount customerPurchaseOrderAccount = customerpurchaseorderaccount.updateCustomerPurchaseOrderAccount( customerPurchaseOrderAccount,  accountId,  responseFields);
 	 * </code></pre></p>
-	 * @param accountId 
-	 * @param responseFields 
-	 * @param customerPurchaseOrderAccount 
+	 * @param accountId Unique identifier of the customer account.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param customerPurchaseOrderAccount Unique identifier of the customer purchase order account.
 	 * @return com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount
 	 * @see com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount
 	 * @see com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount
@@ -231,7 +231,7 @@ public class CustomerPurchaseOrderAccountResource {
 	 *	CustomerPurchaseOrderAccount customerpurchaseorderaccount = new CustomerPurchaseOrderAccount();
 	 *	Stream stream = customerpurchaseorderaccount.deleteCustomerPurchaseOrderAccount( accountId);
 	 * </code></pre></p>
-	 * @param accountId 
+	 * @param accountId Unique identifier of the customer account.
 	 * @return Stream
 	 * @see Stream
 	 */

@@ -38,7 +38,7 @@ public class OrderValidationResult implements Serializable
 	}
 
 	/**
-	 * The status returned from the order validation capability for the order specified in the request, which is Pass, Fail, Error, or Review.
+	 * The current status of the object.This value is read only. Valid values for this field are: "Active", "Expired", and "Inactive".
 	 */
 	protected  String status;
 
@@ -90,7 +90,7 @@ public class OrderValidationResult implements Serializable
 	}
 
 	/**
-	 * Collection of messages returned by the order validation capability.
+	 * Array list of validation and status messages associated with shipping rates, orders, and product purchasable state.
 	 */
 	protected List<OrderValidationMessage> messages;
 	public List<OrderValidationMessage> getMessages() {

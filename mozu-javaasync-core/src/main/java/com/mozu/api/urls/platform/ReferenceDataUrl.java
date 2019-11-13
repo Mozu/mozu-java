@@ -16,7 +16,7 @@ public class ReferenceDataUrl
 	/**
 	 * Get Resource Url for GetAddressSchema
 	 * @param countryCode The 2-letter country code used to retrieve a specified address schema.
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getAddressSchemaUrl(String countryCode, String responseFields)
@@ -29,7 +29,7 @@ public class ReferenceDataUrl
 
 	/**
 	 * Get Resource Url for GetAddressSchemas
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getAddressSchemasUrl(String responseFields)
@@ -42,7 +42,7 @@ public class ReferenceDataUrl
 	/**
 	 * Get Resource Url for GetBehavior
 	 * @param behaviorId Unique identifier of the behavior.
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getBehaviorUrl(Integer behaviorId, String responseFields)
@@ -55,8 +55,8 @@ public class ReferenceDataUrl
 
 	/**
 	 * Get Resource Url for GetBehaviorCategory
-	 * @param categoryId Unique identifier of the behavior category.
-	 * @param responseFields 
+	 * @param categoryId Unique identifier of the category to modify.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getBehaviorCategoryUrl(Integer categoryId, String responseFields)
@@ -69,7 +69,7 @@ public class ReferenceDataUrl
 
 	/**
 	 * Get Resource Url for GetBehaviorCategories
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getBehaviorCategoriesUrl(String responseFields)
@@ -81,7 +81,7 @@ public class ReferenceDataUrl
 
 	/**
 	 * Get Resource Url for GetBehaviors
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param userType The user type associated with the behaviors to retrieve.
 	 * @return   String Resource Url
 	 */
@@ -95,7 +95,7 @@ public class ReferenceDataUrl
 
 	/**
 	 * Get Resource Url for GetContentLocales
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getContentLocalesUrl(String responseFields)
@@ -107,7 +107,7 @@ public class ReferenceDataUrl
 
 	/**
 	 * Get Resource Url for GetCountries
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getCountriesUrl(String responseFields)
@@ -119,7 +119,7 @@ public class ReferenceDataUrl
 
 	/**
 	 * Get Resource Url for GetCountriesWithStates
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getCountriesWithStatesUrl(String responseFields)
@@ -131,7 +131,7 @@ public class ReferenceDataUrl
 
 	/**
 	 * Get Resource Url for GetCurrencies
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getCurrenciesUrl(String responseFields)
@@ -143,7 +143,7 @@ public class ReferenceDataUrl
 
 	/**
 	 * Get Resource Url for GetTimeZones
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getTimeZonesUrl(String responseFields)
@@ -155,7 +155,7 @@ public class ReferenceDataUrl
 
 	/**
 	 * Get Resource Url for GetTopLevelDomains
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getTopLevelDomainsUrl(String responseFields)
@@ -167,8 +167,8 @@ public class ReferenceDataUrl
 
 	/**
 	 * Get Resource Url for GetUnitsOfMeasure
-	 * @param filter 
-	 * @param responseFields 
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getUnitsOfMeasureUrl(String filter, String responseFields)

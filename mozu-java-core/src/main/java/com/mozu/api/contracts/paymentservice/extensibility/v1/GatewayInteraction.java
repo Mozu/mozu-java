@@ -16,12 +16,18 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.paymentservice.extensibility.v1.KeyValueTuple;
 import com.mozu.api.contracts.paymentservice.extensibility.v1.TransactionType;
 
+/**
+ *	Contains information about interactions with the gateway
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class GatewayInteraction implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Contains information about interactions with the gateway; contains the amount of this interaction.
+	 */
 	protected  Double amount;
 
 	public Double getAmount() {
@@ -32,6 +38,9 @@ public class GatewayInteraction implements Serializable
 		this.amount = amount;
 	}
 
+	/**
+	 * Contains the id for the card for this interaction.
+	 */
 	protected  String cardId;
 
 	public String getCardId() {
@@ -42,6 +51,9 @@ public class GatewayInteraction implements Serializable
 		this.cardId = cardId;
 	}
 
+	/**
+	 * The date and time an object is created.
+	 */
 	protected  DateTime createdOn;
 
 	public DateTime getCreatedOn() {
@@ -52,6 +64,9 @@ public class GatewayInteraction implements Serializable
 		this.createdOn = createdOn;
 	}
 
+	/**
+	 * Unique identifier of the source property, such as a catalog, discount, order, or email template.For a product field it will be the name of the field.For a category ID, must be a positive integer not greater than 2000000. By default,  auto-generates a category ID when categories are created. If you want to specify an ID during creation (which preserves category link relationships when migrating tenant data from one sandbox to another), you must also include the  query string in the endpoint. For example, . Then, use the  property to specify the desired category ID.For a product attribute it will be the Attribute FQN.For a document, the ID must be specified as a 32 character, case-insensitive, alphanumeric string. You can specify the ID as 32 sequential characters or as groups separated by dashes in the format 8-4-4-4-12. For example, or.For email templates, the ID must be one of the following values:			
+	 */
 	protected  Integer id;
 
 	public Integer getId() {
@@ -62,6 +77,9 @@ public class GatewayInteraction implements Serializable
 		this.id = id;
 	}
 
+	/**
+	 * Indicates if the object is deleted. If true, the object has been deleted. This may affect associated child members and objects. For example, a deleted master catalog affects all associated catalogs.
+	 */
 	protected  Boolean isDeleted;
 
 	public Boolean getIsDeleted() {
@@ -72,6 +90,9 @@ public class GatewayInteraction implements Serializable
 		this.isDeleted = isDeleted;
 	}
 
+	/**
+	 * Indicates whether the interaction succeeded or not.
+	 */
 	protected  Boolean isSuccessful;
 
 	public Boolean getIsSuccessful() {
@@ -82,6 +103,9 @@ public class GatewayInteraction implements Serializable
 		this.isSuccessful = isSuccessful;
 	}
 
+	/**
+	 * Contains information not in the object allowing flexibility.
+	 */
 	protected List<KeyValueTuple> responseData;
 	public List<KeyValueTuple> getResponseData() {
 		return this.responseData;
@@ -90,6 +114,9 @@ public class GatewayInteraction implements Serializable
 		this.responseData = responseData;
 	}
 
+	/**
+	 * Specifies the type of transaction, including customer transactions and credit transactions.Valid values for credit transactions are the following:* â€”decreases the credit amount* â€”updates the credit amountValid values for customer transaction types are the following:* * * * 
+	 */
 	protected  TransactionType transactionType;
 
 	public TransactionType getTransactionType() {

@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.customer.B2BAccountResource;
 
 /** <summary>
- * 
+ * The B2B feature includes the primary shared B2B account and a set of user account logins that have access to that primary account. This primary account has its own identifying data and customer attributes, as well as the list of users associated with it. These attributes and users can be managed through other operations of the B2B APIs.
  * </summary>
  */
 public class B2BAccountFactory

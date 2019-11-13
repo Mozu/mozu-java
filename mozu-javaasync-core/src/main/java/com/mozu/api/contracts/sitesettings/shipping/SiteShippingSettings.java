@@ -24,26 +24,6 @@ public class SiteShippingSettings implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected  Boolean refreshShipping;
-
-	public Boolean getRefreshShipping() {
-		return this.refreshShipping;
-	}
-
-	public void setRefreshShipping(Boolean refreshShipping) {
-		this.refreshShipping = refreshShipping;
-	}
-
-	protected  Boolean refreshTax;
-
-	public Boolean getRefreshTax() {
-		return this.refreshTax;
-	}
-
-	public void setRefreshTax(Boolean refreshTax) {
-		this.refreshTax = refreshTax;
-	}
-
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {

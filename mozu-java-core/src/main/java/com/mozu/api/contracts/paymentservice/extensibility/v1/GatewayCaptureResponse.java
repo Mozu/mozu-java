@@ -16,12 +16,18 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.paymentservice.extensibility.v1.ConnectionStatuses;
 import com.mozu.api.contracts.paymentservice.extensibility.v1.KeyValueTuple;
 
+/**
+ *	Contains a capture response
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class GatewayCaptureResponse implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Contains the auth code from the gateway.
+	 */
 	protected  String authCode;
 
 	public String getAuthCode() {
@@ -32,6 +38,9 @@ public class GatewayCaptureResponse implements Serializable
 		this.authCode = authCode;
 	}
 
+	/**
+	 * Contains the avs codes from the gateway.
+	 */
 	protected  String avsCodes;
 
 	public String getAvsCodes() {
@@ -42,6 +51,9 @@ public class GatewayCaptureResponse implements Serializable
 		this.avsCodes = avsCodes;
 	}
 
+	/**
+	 * capturedAmount ApiType DOCUMENT_HERE 
+	 */
 	protected  Double capturedAmount;
 
 	public Double getCapturedAmount() {
@@ -52,6 +64,9 @@ public class GatewayCaptureResponse implements Serializable
 		this.capturedAmount = capturedAmount;
 	}
 
+	/**
+	 * Contains the cvv codes from the gateway.
+	 */
 	protected  String cvV2Codes;
 
 	public String getCvV2Codes() {
@@ -62,6 +77,9 @@ public class GatewayCaptureResponse implements Serializable
 		this.cvV2Codes = cvV2Codes;
 	}
 
+	/**
+	 * Set this to true if the transaction is declined or fails for any reason.
+	 */
 	protected  Boolean isDeclined;
 
 	public Boolean getIsDeclined() {
@@ -72,6 +90,9 @@ public class GatewayCaptureResponse implements Serializable
 		this.isDeclined = isDeclined;
 	}
 
+	/**
+	 * Contains the response code from the gateway.
+	 */
 	protected  String responseCode;
 
 	public String getResponseCode() {
@@ -82,6 +103,9 @@ public class GatewayCaptureResponse implements Serializable
 		this.responseCode = responseCode;
 	}
 
+	/**
+	 * Contains the text for the response, eg, 'Insufficient funds'.
+	 */
 	protected  String responseText;
 
 	public String getResponseText() {
@@ -92,6 +116,9 @@ public class GatewayCaptureResponse implements Serializable
 		this.responseText = responseText;
 	}
 
+	/**
+	 * Contains the id for the transaction provided by the gateway.
+	 */
 	protected  String transactionId;
 
 	public String getTransactionId() {
@@ -102,6 +129,9 @@ public class GatewayCaptureResponse implements Serializable
 		this.transactionId = transactionId;
 	}
 
+	/**
+	 * Contains information about the interaction with the gateway.
+	 */
 	protected  ConnectionStatuses remoteConnectionStatus;
 
 	public ConnectionStatuses getRemoteConnectionStatus() {
@@ -112,6 +142,9 @@ public class GatewayCaptureResponse implements Serializable
 		this.remoteConnectionStatus = remoteConnectionStatus;
 	}
 
+	/**
+	 * Contains information not in the object allowing flexibility.
+	 */
 	protected List<KeyValueTuple> responseData;
 	public List<KeyValueTuple> getResponseData() {
 		return this.responseData;

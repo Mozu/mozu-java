@@ -12,12 +12,18 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
+/**
+ *	Specifies the target on a payment action or on an interaction
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PaymentActionTarget implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The Id of the checkout/order to target.
+	 */
 	protected  String targetId;
 
 	public String getTargetId() {
@@ -28,6 +34,9 @@ public class PaymentActionTarget implements Serializable
 		this.targetId = targetId;
 	}
 
+	/**
+	 * The number of the checkout/order to target.
+	 */
 	protected  Integer targetNumber;
 
 	public Integer getTargetNumber() {
@@ -38,6 +47,9 @@ public class PaymentActionTarget implements Serializable
 		this.targetNumber = targetNumber;
 	}
 
+	/**
+	 * Specifies if the TargetId is a checkout Id or order Id.
+	 */
 	protected  String targetType;
 
 	public String getTargetType() {

@@ -18,7 +18,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * 
+ * Provides details for each attempted delivery of the event to the endpoint.
  * </summary>
  */
 public class EventDeliverySummaryResource {
@@ -40,7 +40,7 @@ public class EventDeliverySummaryResource {
 	 *	EventDeliverySummary eventdeliverysummary = new EventDeliverySummary();
 	 *	EventDeliverySummary eventDeliverySummary = eventdeliverysummary.getDeliveryAttemptSummary( subscriptionId);
 	 * </code></pre></p>
-	 * @param subscriptionId This operation paramenter is the unique identifer for a subscription.
+	 * @param subscriptionId Unique identifier for a subscription, such as subscribing tenants for an event or to receive a notification.
 	 * @return com.mozu.api.contracts.event.EventDeliverySummary
 	 * @see com.mozu.api.contracts.event.EventDeliverySummary
 	 */
@@ -56,8 +56,8 @@ public class EventDeliverySummaryResource {
 	 *	EventDeliverySummary eventDeliverySummary = eventdeliverysummary.getDeliveryAttemptSummary( subscriptionId,  processId,  responseFields);
 	 * </code></pre></p>
 	 * @param processId 
-	 * @param responseFields 
-	 * @param subscriptionId This operation paramenter is the unique identifer for a subscription.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param subscriptionId Unique identifier for a subscription, such as subscribing tenants for an event or to receive a notification.
 	 * @return com.mozu.api.contracts.event.EventDeliverySummary
 	 * @see com.mozu.api.contracts.event.EventDeliverySummary
 	 */
@@ -76,7 +76,7 @@ public class EventDeliverySummaryResource {
 	 *	EventDeliverySummary eventdeliverysummary = new EventDeliverySummary();
 	 *	EventDeliverySummaryCollection eventDeliverySummaryCollection = eventdeliverysummary.getDeliveryAttemptSummaries( subscriptionId);
 	 * </code></pre></p>
-	 * @param subscriptionId 
+	 * @param subscriptionId Unique identifier for a subscription, such as subscribing tenants for an event or to receive a notification.
 	 * @return com.mozu.api.contracts.event.EventDeliverySummaryCollection
 	 * @see com.mozu.api.contracts.event.EventDeliverySummaryCollection
 	 */
@@ -91,12 +91,12 @@ public class EventDeliverySummaryResource {
 	 *	EventDeliverySummary eventdeliverysummary = new EventDeliverySummary();
 	 *	EventDeliverySummaryCollection eventDeliverySummaryCollection = eventdeliverysummary.getDeliveryAttemptSummaries( subscriptionId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param filter 
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
-	 * @param subscriptionId 
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param subscriptionId Unique identifier for a subscription, such as subscribing tenants for an event or to receive a notification.
 	 * @return com.mozu.api.contracts.event.EventDeliverySummaryCollection
 	 * @see com.mozu.api.contracts.event.EventDeliverySummaryCollection
 	 */

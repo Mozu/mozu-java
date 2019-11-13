@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.catalog.storefront.AutoAddDiscountTargetResource;
 
 /** <summary>
- * 
+ * Resources for the discounts supported on the storefront of this catalog.
  * </summary>
  */
 public class AutoAddDiscountTargetFactory

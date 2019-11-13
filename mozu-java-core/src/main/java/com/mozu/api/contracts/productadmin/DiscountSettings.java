@@ -13,12 +13,18 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productadmin.StackingConfiguration;
 
+/**
+ *	Indicates if the stacking is enabled for a specific catalog, here you can set the stacking configuration.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DiscountSettings implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Where we can enable stacking and indicate how many layers we want to use for line item/order discounts.
+	 */
 	protected  StackingConfiguration stackingConfiguration;
 
 	public StackingConfiguration getStackingConfiguration() {

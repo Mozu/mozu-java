@@ -23,7 +23,7 @@ public class DiscountLocalizedContent implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The localizable, shopper-facing description defined for the discount.
+	 * The localizable, shopper-facing description defined for a discount or a storefront message. 
 	 */
 	protected  String friendlyDescription;
 

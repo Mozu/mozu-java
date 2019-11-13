@@ -13,12 +13,18 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 
+/**
+ *	Currency localization formatting rules, such as decimal places and rounding strategies.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CurrencyLocalization implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The localized currency code for the monetary amount.
+	 */
 	protected  String currencyCode;
 
 	public String getCurrencyCode() {
@@ -29,6 +35,9 @@ public class CurrencyLocalization implements Serializable
 		this.currencyCode = currencyCode;
 	}
 
+	/**
+	 * The allowed decimal places used in the localized currency format
+	 */
 	protected  Integer decimalPlaces;
 
 	public Integer getDecimalPlaces() {
@@ -39,6 +48,9 @@ public class CurrencyLocalization implements Serializable
 		this.decimalPlaces = decimalPlaces;
 	}
 
+	/**
+	 * The rounding strategy used in the localized currency format.
+	 */
 	protected  Integer roundingStrategy;
 
 	public Integer getRoundingStrategy() {
@@ -49,6 +61,9 @@ public class CurrencyLocalization implements Serializable
 		this.roundingStrategy = roundingStrategy;
 	}
 
+	/**
+	 * Basic audit info about the object, including date, time, and user account. This data may be captured when creating, updating, and removing data.
+	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {

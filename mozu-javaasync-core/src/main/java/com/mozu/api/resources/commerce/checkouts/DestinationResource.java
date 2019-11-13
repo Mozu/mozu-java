@@ -20,7 +20,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * 
+ * Use this resource to manage the addresses a shopper intends to ship items to. This resource remains active while the Checkouts resource is active (the Checkouts resource only applies to sites that enable shipping to multiple destinations within the same order). The Checkouts resource remains active until the shopper submits their order.
  * </summary>
  */
 public class DestinationResource {
@@ -42,7 +42,7 @@ public class DestinationResource {
 	 *	Destination destination = new Destination();
 	 *	Destination destination = destination.getDestinations( checkoutId);
 	 * </code></pre></p>
-	 * @param checkoutId 
+	 * @param checkoutId The unique identifier of the checkout.
 	 * @return List<com.mozu.api.contracts.commerceruntime.fulfillment.Destination>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Destination
 	 */
@@ -61,7 +61,7 @@ public class DestinationResource {
 	 *	Destination destination = new Destination();
 	 *	CountDownLatch latch = destination.getDestinations( checkoutId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param checkoutId 
+	 * @param checkoutId The unique identifier of the checkout.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return List<com.mozu.api.contracts.commerceruntime.fulfillment.Destination>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Destination
@@ -80,8 +80,8 @@ public class DestinationResource {
 	 *	Destination destination = new Destination();
 	 *	Destination destination = destination.getDestination( checkoutId,  destinationId);
 	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param destinationId 
+	 * @param checkoutId The unique identifier of the checkout.
+	 * @param destinationId The unique identifier of the destination.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Destination
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Destination
 	 */
@@ -96,8 +96,8 @@ public class DestinationResource {
 	 *	Destination destination = new Destination();
 	 *	CountDownLatch latch = destination.getDestination( checkoutId,  destinationId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param destinationId 
+	 * @param checkoutId The unique identifier of the checkout.
+	 * @param destinationId The unique identifier of the destination.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Destination
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Destination
@@ -113,9 +113,9 @@ public class DestinationResource {
 	 *	Destination destination = new Destination();
 	 *	Destination destination = destination.getDestination( checkoutId,  destinationId,  responseFields);
 	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param destinationId 
-	 * @param responseFields 
+	 * @param checkoutId The unique identifier of the checkout.
+	 * @param destinationId The unique identifier of the destination.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Destination
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Destination
 	 */
@@ -134,9 +134,9 @@ public class DestinationResource {
 	 *	Destination destination = new Destination();
 	 *	CountDownLatch latch = destination.getDestination( checkoutId,  destinationId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param destinationId 
-	 * @param responseFields 
+	 * @param checkoutId The unique identifier of the checkout.
+	 * @param destinationId The unique identifier of the destination.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Destination
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Destination
@@ -155,8 +155,8 @@ public class DestinationResource {
 	 *	Destination destination = new Destination();
 	 *	Destination destination = destination.addDestination( destination,  checkoutId);
 	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param destination 
+	 * @param checkoutId The unique identifier of the checkout.
+	 * @param destination The destination object.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Destination
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Destination
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Destination
@@ -172,9 +172,9 @@ public class DestinationResource {
 	 *	Destination destination = new Destination();
 	 *	CountDownLatch latch = destination.addDestination( destination,  checkoutId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param checkoutId 
+	 * @param checkoutId The unique identifier of the checkout.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param destination 
+	 * @param destination The destination object.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Destination
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Destination
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Destination
@@ -190,9 +190,9 @@ public class DestinationResource {
 	 *	Destination destination = new Destination();
 	 *	Destination destination = destination.addDestination( destination,  checkoutId,  responseFields);
 	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param responseFields 
-	 * @param destination 
+	 * @param checkoutId The unique identifier of the checkout.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param destination The destination object.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Destination
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Destination
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Destination
@@ -212,10 +212,10 @@ public class DestinationResource {
 	 *	Destination destination = new Destination();
 	 *	CountDownLatch latch = destination.addDestination( destination,  checkoutId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param responseFields 
+	 * @param checkoutId The unique identifier of the checkout.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param destination 
+	 * @param destination The destination object.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Destination
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Destination
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Destination
@@ -234,9 +234,9 @@ public class DestinationResource {
 	 *	Destination destination = new Destination();
 	 *	Destination destination = destination.updateDestination( destination,  checkoutId,  destinationId);
 	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param destinationId 
-	 * @param destination 
+	 * @param checkoutId The unique identifier of the checkout.
+	 * @param destinationId The unique identifier of the destination.
+	 * @param destination The destination object.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Destination
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Destination
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Destination
@@ -252,10 +252,10 @@ public class DestinationResource {
 	 *	Destination destination = new Destination();
 	 *	CountDownLatch latch = destination.updateDestination( destination,  checkoutId,  destinationId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param destinationId 
+	 * @param checkoutId The unique identifier of the checkout.
+	 * @param destinationId The unique identifier of the destination.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param destination 
+	 * @param destination The destination object.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Destination
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Destination
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Destination
@@ -271,10 +271,10 @@ public class DestinationResource {
 	 *	Destination destination = new Destination();
 	 *	Destination destination = destination.updateDestination( destination,  checkoutId,  destinationId,  responseFields);
 	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param destinationId 
-	 * @param responseFields 
-	 * @param destination 
+	 * @param checkoutId The unique identifier of the checkout.
+	 * @param destinationId The unique identifier of the destination.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param destination The destination object.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Destination
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Destination
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Destination
@@ -294,11 +294,11 @@ public class DestinationResource {
 	 *	Destination destination = new Destination();
 	 *	CountDownLatch latch = destination.updateDestination( destination,  checkoutId,  destinationId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param destinationId 
-	 * @param responseFields 
+	 * @param checkoutId The unique identifier of the checkout.
+	 * @param destinationId The unique identifier of the destination.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param destination 
+	 * @param destination The destination object.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Destination
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Destination
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Destination
@@ -317,8 +317,8 @@ public class DestinationResource {
 	 *	Destination destination = new Destination();
 	 *	Stream stream = destination.removeDestination( checkoutId,  destinationId);
 	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param destinationId 
+	 * @param checkoutId The unique identifier of the checkout.
+	 * @param destinationId The unique identifier of the destination.
 	 * @return Stream
 	 * @see Stream
 	 */
@@ -337,8 +337,8 @@ public class DestinationResource {
 	 *	Destination destination = new Destination();
 	 *	CountDownLatch latch = destination.removeDestination( checkoutId,  destinationId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param checkoutId 
-	 * @param destinationId 
+	 * @param checkoutId The unique identifier of the checkout.
+	 * @param destinationId The unique identifier of the destination.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return Stream
 	 * @see Stream

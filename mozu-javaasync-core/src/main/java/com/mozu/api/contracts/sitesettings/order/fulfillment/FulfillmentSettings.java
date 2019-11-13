@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.sitesettings.order.fulfillment.BPMConfiguration;
+import com.mozu.api.contracts.sitesettings.order.fulfillment.JobSettings;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class FulfillmentSettings implements Serializable
@@ -48,6 +49,16 @@ public class FulfillmentSettings implements Serializable
 
 	public void setBpmConfiguration(BPMConfiguration bpmConfiguration) {
 		this.bpmConfiguration = bpmConfiguration;
+	}
+
+	protected  JobSettings fulfillmentJobSettings;
+
+	public JobSettings getFulfillmentJobSettings() {
+		return this.fulfillmentJobSettings;
+	}
+
+	public void setFulfillmentJobSettings(JobSettings fulfillmentJobSettings) {
+		this.fulfillmentJobSettings = fulfillmentJobSettings;
 	}
 
 

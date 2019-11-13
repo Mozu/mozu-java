@@ -15,10 +15,10 @@ public class OrderItemUrl
 
 	/**
 	 * Get Resource Url for GetOrderItemViaLineId
-	 * @param draft 
-	 * @param lineId 
-	 * @param orderId 
-	 * @param responseFields 
+	 * @param draft If true, retrieve the draft version of the order, which might include uncommitted changes to the order or its components.
+	 * @param lineId The specific line id that's associated with the order item.
+	 * @param orderId Unique identifier of the order.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getOrderItemViaLineIdUrl(Boolean draft, Integer lineId, String orderId, String responseFields)
@@ -33,10 +33,10 @@ public class OrderItemUrl
 
 	/**
 	 * Get Resource Url for GetOrderItem
-	 * @param draft If true, retrieve the draft version of this order item, which might include uncommitted changes to the order item, the order, or other order components.
-	 * @param orderId Unique identifier of the order item to retrieve.
-	 * @param orderItemId Unique identifier of the order item details to retrieve.
-	 * @param responseFields 
+	 * @param draft If true, retrieve the draft version of the order, which might include uncommitted changes to the order or its components.
+	 * @param orderId Unique identifier of the order.
+	 * @param orderItemId Unique identifier of the item to remove from the order.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getOrderItemUrl(Boolean draft, String orderId, String orderItemId, String responseFields)
@@ -51,9 +51,9 @@ public class OrderItemUrl
 
 	/**
 	 * Get Resource Url for GetOrderItems
-	 * @param draft If true, retrieve the draft version of the order's items, which might include uncommitted changes to one or more order items, the order itself, or other order components.
-	 * @param orderId Unique identifier of the order items to retrieve.
-	 * @param responseFields 
+	 * @param draft If true, retrieve the draft version of the order, which might include uncommitted changes to the order or its components.
+	 * @param orderId Unique identifier of the order.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getOrderItemsUrl(Boolean draft, String orderId, String responseFields)
@@ -67,11 +67,11 @@ public class OrderItemUrl
 
 	/**
 	 * Get Resource Url for CreateOrderItem
-	 * @param orderId Unique identifier of the order for which to add the item.
-	 * @param responseFields 
-	 * @param skipInventoryCheck If true, do not validate the product inventory when adding this item to the order.
-	 * @param updateMode Specifies whether to add the item by updating the original order, updating the order in draft mode, or updating the order in draft mode and then committing the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param version 
+	 * @param orderId Unique identifier of the order.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
+	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
+	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl createOrderItemUrl(String orderId, String responseFields, Boolean skipInventoryCheck, String updateMode, String version)
@@ -87,12 +87,12 @@ public class OrderItemUrl
 
 	/**
 	 * Get Resource Url for UpdateOrderItemDiscount
-	 * @param discountId Unique identifier of the discount. System-supplied and read only.
-	 * @param orderId Unique identifier of the order associated with the item discount.
-	 * @param orderItemId Unique identifier of the item in the order.
-	 * @param responseFields 
-	 * @param updateMode Specifies whether to change the item discount by updating the original order, updating the order in draft mode, or updating the order in draft mode and then committing the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param version 
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param orderId Unique identifier of the order.
+	 * @param orderItemId Unique identifier of the item to remove from the order.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
+	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateOrderItemDiscountUrl(Integer discountId, String orderId, String orderItemId, String responseFields, String updateMode, String version)
@@ -109,12 +109,13 @@ public class OrderItemUrl
 
 	/**
 	 * Get Resource Url for UpdateItemDuty
-	 * @param dutyAmount 
-	 * @param orderId 
-	 * @param orderItemId 
-	 * @param responseFields 
-	 * @param updateMode 
-	 * @param version 
+	 * @param dutyAmount The amount added to the order item for duty fees.
+        
+	 * @param orderId Unique identifier of the order.
+	 * @param orderItemId Unique identifier of the item to remove from the order.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
+	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateItemDutyUrl(Double dutyAmount, String orderId, String orderItemId, String responseFields, String updateMode, String version)
@@ -132,10 +133,10 @@ public class OrderItemUrl
 	/**
 	 * Get Resource Url for UpdateItemFulfillment
 	 * @param orderId Unique identifier of the order.
-	 * @param orderItemId Unique identifier of the item in the order.
-	 * @param responseFields 
-	 * @param updateMode Specifies whether to apply the coupon by updating the original order, updating the order in draft mode, or updating the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param version 
+	 * @param orderItemId Unique identifier of the item to remove from the order.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
+	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateItemFulfillmentUrl(String orderId, String orderItemId, String responseFields, String updateMode, String version)
@@ -151,12 +152,12 @@ public class OrderItemUrl
 
 	/**
 	 * Get Resource Url for UpdateItemProductPrice
-	 * @param orderId Unique identifier of the order containing the item to price override.
-	 * @param orderItemId Unique identifier of the item in the order to price override.
+	 * @param orderId Unique identifier of the order.
+	 * @param orderItemId Unique identifier of the item to remove from the order.
 	 * @param price The override price to specify for this item in the specified order.
-	 * @param responseFields 
-	 * @param updateMode Specifies whether to change the product price by updating the original order, updating the order in draft mode, or updating the order in draft mode and then committing the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param version 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
+	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateItemProductPriceUrl(String orderId, String orderItemId, Double price, String responseFields, String updateMode, String version)
@@ -173,12 +174,12 @@ public class OrderItemUrl
 
 	/**
 	 * Get Resource Url for UpdateItemQuantity
-	 * @param orderId Unique identifier of the order containing the item to update quantity.
-	 * @param orderItemId Unique identifier of the item in the order to update quantity.
-	 * @param quantity The quantity of the item in the order to update.
-	 * @param responseFields 
-	 * @param updateMode Specifies whether to change the item quantity by updating the original order, updating the order in draft mode, or updating the order in draft mode and then committing the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param version 
+	 * @param orderId Unique identifier of the order.
+	 * @param orderItemId Unique identifier of the item to remove from the order.
+	 * @param quantity The number of cart items in the shopper's active cart.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
+	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateItemQuantityUrl(String orderId, String orderItemId, Integer quantity, String responseFields, String updateMode, String version)
@@ -195,10 +196,10 @@ public class OrderItemUrl
 
 	/**
 	 * Get Resource Url for DeleteOrderItem
-	 * @param orderId Unique identifier of the order with the item to remove.
+	 * @param orderId Unique identifier of the order.
 	 * @param orderItemId Unique identifier of the item to remove from the order.
-	 * @param updateMode Specifies whether to remove the item by updating the original order, updating the order in draft mode, or updating the order in draft mode and then committing the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param version 
+	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
+	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteOrderItemUrl(String orderId, String orderItemId, String updateMode, String version)

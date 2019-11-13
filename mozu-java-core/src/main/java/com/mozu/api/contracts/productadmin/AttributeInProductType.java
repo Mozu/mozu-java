@@ -36,6 +36,9 @@ public class AttributeInProductType implements Serializable
 		this.attributeFQN = attributeFQN;
 	}
 
+	/**
+	 * If true, this property is not available on the storefront. If false, this property will be available on storefront. The IsHiddenProperty hides the property from the customer, but is still available from the API.
+	 */
 	protected  Boolean isAdminOnlyProperty;
 
 	public Boolean getIsAdminOnlyProperty() {
@@ -76,6 +79,9 @@ public class AttributeInProductType implements Serializable
 		this.isMultiValueProperty = isMultiValueProperty;
 	}
 
+	/**
+	 * If True this property will not be returned storefront product listings (Search,GetProduct) it will still be returned on GetProduct, ValidateProduct...)
+	 */
 	protected  Boolean isProductDetailsOnlyProperty;
 
 	public Boolean getIsProductDetailsOnlyProperty() {
@@ -116,6 +122,9 @@ public class AttributeInProductType implements Serializable
 		this.attributeDetail = attributeDetail;
 	}
 
+	/**
+	 * Defines the intended display of this attribute in the storefront. Options include Drop Down, Image Picker, and Radio Buttons.
+	 */
 	protected  AttributeInProductTypeDisplayInfo displayInfo;
 
 	public AttributeInProductTypeDisplayInfo getDisplayInfo() {

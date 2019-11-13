@@ -74,7 +74,7 @@ public class LocationTypeResource {
 	 *	LocationType locationType = locationtype.getLocationType( locationTypeCode,  responseFields);
 	 * </code></pre></p>
 	 * @param locationTypeCode The user-defined code that identifies the location type.
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.location.LocationType
 	 * @see com.mozu.api.contracts.location.LocationType
 	 */
@@ -93,7 +93,7 @@ public class LocationTypeResource {
 	 *	LocationType locationtype = new LocationType();
 	 *	LocationType locationType = locationtype.addLocationType( locationType);
 	 * </code></pre></p>
-	 * @param locationType Properties of the location type to create.
+	 * @param locationType Properties of a type of physical location, such as warehouse or kiosk. Location types enable tenants to group similar locations for filtering and location usage type definition.
 	 * @return com.mozu.api.contracts.location.LocationType
 	 * @see com.mozu.api.contracts.location.LocationType
 	 * @see com.mozu.api.contracts.location.LocationType
@@ -109,8 +109,8 @@ public class LocationTypeResource {
 	 *	LocationType locationtype = new LocationType();
 	 *	LocationType locationType = locationtype.addLocationType( locationType,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param locationType Properties of the location type to create.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param locationType Properties of a type of physical location, such as warehouse or kiosk. Location types enable tenants to group similar locations for filtering and location usage type definition.
 	 * @return com.mozu.api.contracts.location.LocationType
 	 * @see com.mozu.api.contracts.location.LocationType
 	 * @see com.mozu.api.contracts.location.LocationType
@@ -131,7 +131,7 @@ public class LocationTypeResource {
 	 *	LocationType locationType = locationtype.updateLocationType( locationType,  locationTypeCode);
 	 * </code></pre></p>
 	 * @param locationTypeCode The user-defined code that identifies the location type.
-	 * @param locationType Properties of the location type to update.
+	 * @param locationType Properties of a type of physical location, such as warehouse or kiosk. Location types enable tenants to group similar locations for filtering and location usage type definition.
 	 * @return com.mozu.api.contracts.location.LocationType
 	 * @see com.mozu.api.contracts.location.LocationType
 	 * @see com.mozu.api.contracts.location.LocationType
@@ -148,8 +148,8 @@ public class LocationTypeResource {
 	 *	LocationType locationType = locationtype.updateLocationType( locationType,  locationTypeCode,  responseFields);
 	 * </code></pre></p>
 	 * @param locationTypeCode The user-defined code that identifies the location type.
-	 * @param responseFields 
-	 * @param locationType Properties of the location type to update.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param locationType Properties of a type of physical location, such as warehouse or kiosk. Location types enable tenants to group similar locations for filtering and location usage type definition.
 	 * @return com.mozu.api.contracts.location.LocationType
 	 * @see com.mozu.api.contracts.location.LocationType
 	 * @see com.mozu.api.contracts.location.LocationType
@@ -169,7 +169,7 @@ public class LocationTypeResource {
 	 *	LocationType locationtype = new LocationType();
 	 *	Stream stream = locationtype.deleteLocationType( locationTypeCode);
 	 * </code></pre></p>
-	 * @param locationTypeCode User-defined code used to identify the location type.
+	 * @param locationTypeCode The user-defined code that identifies the location type.
 	 * @return Stream
 	 * @see Stream
 	 */

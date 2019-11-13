@@ -15,7 +15,7 @@ public class TransactionUrl
 
 	/**
 	 * Get Resource Url for GetTransactions
-	 * @param accountId Unique identifier of the customer account for which to retrieve transactions.
+	 * @param accountId Unique identifier of the customer account.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getTransactionsUrl(Integer accountId)
@@ -28,7 +28,7 @@ public class TransactionUrl
 	/**
 	 * Get Resource Url for AddTransaction
 	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addTransactionUrl(Integer accountId, String responseFields)
@@ -41,7 +41,7 @@ public class TransactionUrl
 
 	/**
 	 * Get Resource Url for RemoveTransaction
-	 * @param accountId Unique identifier of the customer account from which to delete the transaction.
+	 * @param accountId Unique identifier of the customer account.
 	 * @param transactionId Unique identifier of the transaction to delete.
 	 * @return   String Resource Url
 	 */

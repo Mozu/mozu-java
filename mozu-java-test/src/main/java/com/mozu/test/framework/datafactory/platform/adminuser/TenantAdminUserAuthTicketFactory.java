@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.platform.adminuser.TenantAdminUserAuthTicketResource;
 
 /** <summary>
- * Use the Admin User authentication tickets resource to generate and refresh authentication tickets that enable Mozu administrator or developer account users to access development or production tenants.
+ * Use the Admin User authentication tickets resource to generate and refresh authentication tickets that enable  administrator or developer account users to access development or production tenants.
  * </summary>
  */
 public class TenantAdminUserAuthTicketFactory

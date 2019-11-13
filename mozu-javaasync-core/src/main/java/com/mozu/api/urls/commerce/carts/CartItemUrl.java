@@ -15,8 +15,8 @@ public class CartItemUrl
 
 	/**
 	 * Get Resource Url for GetCartItem
-	 * @param cartItemId Identifier of the cart item to retrieve.
-	 * @param responseFields 
+	 * @param cartItemId Identifier of the cart item to delete.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getCartItemUrl(String cartItemId, String responseFields)
@@ -29,7 +29,7 @@ public class CartItemUrl
 
 	/**
 	 * Get Resource Url for GetCartItems
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getCartItemsUrl(String responseFields)
@@ -53,7 +53,7 @@ public class CartItemUrl
 
 	/**
 	 * Get Resource Url for AddItemToCart
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addItemToCartUrl(String responseFields)
@@ -65,9 +65,9 @@ public class CartItemUrl
 
 	/**
 	 * Get Resource Url for UpdateCartItemQuantity
-	 * @param cartItemId Identifier of the cart item to update quantity.
+	 * @param cartItemId Identifier of the cart item to delete.
 	 * @param quantity The number of cart items in the shopper's active cart.
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateCartItemQuantityUrl(String cartItemId, Integer quantity, String responseFields)
@@ -81,8 +81,8 @@ public class CartItemUrl
 
 	/**
 	 * Get Resource Url for UpdateCartItem
-	 * @param cartItemId Identifier of the cart item to update.
-	 * @param responseFields 
+	 * @param cartItemId Identifier of the cart item to delete.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateCartItemUrl(String cartItemId, String responseFields)

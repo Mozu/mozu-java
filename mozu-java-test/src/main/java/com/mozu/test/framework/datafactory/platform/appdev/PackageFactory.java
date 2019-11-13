@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.platform.appdev.PackageResource;
 
 /** <summary>
- * 
+ * This resource is not public.
  * </summary>
  */
 public class PackageFactory

@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.platform.SiteDataResource;
 
 /** <summary>
- * Use the site data resource to store site-level information required for a third-party application in the Mozu database.
+ * Use the site data resource to store site-level information required for a third-party application in the  database.
  * </summary>
  */
 public class SiteDataFactory

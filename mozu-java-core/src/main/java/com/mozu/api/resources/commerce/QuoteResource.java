@@ -18,7 +18,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * 
+ * Quotes support the eCommerce B2B feature by providing functionality similar to that of standard wishlists. However, comments can be added to quotes to provide clearer information to other users accessing the quote through the shared B2B account. These basic APIs provide the ability to create new quotes, update them, and retrieve their information.These APIs are currently a work-in-progress and will be enhanced in the future as more functionality such as setting fixed prices, setting expiration, etc. is released. The current models may change and break backwards compatibility, so use caution if interacting with these APIs for now.
  * </summary>
  */
 public class QuoteResource {
@@ -54,13 +54,13 @@ public class QuoteResource {
 	 *	Quote quote = new Quote();
 	 *	QuoteCollection quoteCollection = quote.getQuotes( startIndex,  pageSize,  sortBy,  filter,  q,  qLimit,  responseFields);
 	 * </code></pre></p>
-	 * @param filter 
-	 * @param pageSize 
-	 * @param q 
-	 * @param qLimit 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param q A list of order search terms (not phrases) to use in the query when searching across order number and the name or email of the billing contact. When entering, separate multiple search terms with a space character.
+	 * @param qLimit The maximum number of search results to return in the response. You can limit any range between 1-100.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return com.mozu.api.contracts.commerceruntime.quotes.QuoteCollection
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.QuoteCollection
 	 */
@@ -79,7 +79,7 @@ public class QuoteResource {
 	 *	Quote quote = new Quote();
 	 *	Quote quote = quote.getQuote( quoteId);
 	 * </code></pre></p>
-	 * @param quoteId 
+	 * @param quoteId A unique identifier for the quote.
 	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 */
@@ -94,8 +94,8 @@ public class QuoteResource {
 	 *	Quote quote = new Quote();
 	 *	Quote quote = quote.getQuote( quoteId,  responseFields);
 	 * </code></pre></p>
-	 * @param quoteId 
-	 * @param responseFields 
+	 * @param quoteId A unique identifier for the quote.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 */
@@ -114,8 +114,8 @@ public class QuoteResource {
 	 *	Quote quote = new Quote();
 	 *	Quote quote = quote.getQuoteByName( customerAccountId,  quoteName);
 	 * </code></pre></p>
-	 * @param customerAccountId 
-	 * @param quoteName 
+	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
+	 * @param quoteName A unique name for the quote.
 	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 */
@@ -130,9 +130,9 @@ public class QuoteResource {
 	 *	Quote quote = new Quote();
 	 *	Quote quote = quote.getQuoteByName( customerAccountId,  quoteName,  responseFields);
 	 * </code></pre></p>
-	 * @param customerAccountId 
-	 * @param quoteName 
-	 * @param responseFields 
+	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
+	 * @param quoteName A unique name for the quote.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 */
@@ -151,7 +151,7 @@ public class QuoteResource {
 	 *	Quote quote = new Quote();
 	 *	Quote quote = quote.createQuote( quote);
 	 * </code></pre></p>
-	 * @param quote 
+	 * @param quote The quote being created.
 	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
@@ -167,8 +167,8 @@ public class QuoteResource {
 	 *	Quote quote = new Quote();
 	 *	Quote quote = quote.createQuote( quote,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param quote 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param quote The quote being created.
 	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
@@ -188,8 +188,8 @@ public class QuoteResource {
 	 *	Quote quote = new Quote();
 	 *	Quote quote = quote.updateQuote( quote,  quoteId);
 	 * </code></pre></p>
-	 * @param quoteId 
-	 * @param quote 
+	 * @param quoteId A unique identifier for the quote being updated.
+	 * @param quote The quote that is being updated.
 	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
@@ -205,9 +205,9 @@ public class QuoteResource {
 	 *	Quote quote = new Quote();
 	 *	Quote quote = quote.updateQuote( quote,  quoteId,  responseFields);
 	 * </code></pre></p>
-	 * @param quoteId 
-	 * @param responseFields 
-	 * @param quote 
+	 * @param quoteId A unique identifier for the quote being updated.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param quote The quote that is being updated.
 	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
@@ -227,7 +227,7 @@ public class QuoteResource {
 	 *	Quote quote = new Quote();
 	 *	Stream stream = quote.deleteQuote( quoteId);
 	 * </code></pre></p>
-	 * @param quoteId 
+	 * @param quoteId A unique identifier for the quote.
 	 * @return Stream
 	 * @see Stream
 	 */

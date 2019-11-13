@@ -17,12 +17,18 @@ import com.mozu.api.contracts.paymentservice.extensibility.v1.Address;
 import com.mozu.api.contracts.paymentservice.extensibility.v1.Contact;
 import com.mozu.api.contracts.paymentservice.extensibility.v1.KeyValueTuple;
 
+/**
+ *	Contains information about the customer
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CustomerInformation implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The localized currency code for the monetary amount.
+	 */
 	protected  String currencyCode;
 
 	public String getCurrencyCode() {
@@ -33,6 +39,9 @@ public class CustomerInformation implements Serializable
 		this.currencyCode = currencyCode;
 	}
 
+	/**
+	 * Unique identifier of the customer in , used to associate customers with data, orders, returns, and in-store credit.
+	 */
 	protected  String customerId;
 
 	public String getCustomerId() {
@@ -43,6 +52,9 @@ public class CustomerInformation implements Serializable
 		this.customerId = customerId;
 	}
 
+	/**
+	 * Contains the phone for the customer.
+	 */
 	protected  String phoneNumber;
 
 	public String getPhoneNumber() {
@@ -53,6 +65,9 @@ public class CustomerInformation implements Serializable
 		this.phoneNumber = phoneNumber;
 	}
 
+	/**
+	 * Contains the IP the customer is using.
+	 */
 	protected  String requestorIp;
 
 	public String getRequestorIp() {
@@ -63,6 +78,9 @@ public class CustomerInformation implements Serializable
 		this.requestorIp = requestorIp;
 	}
 
+	/**
+	 * Contains the url the customer is using.
+	 */
 	protected  String requestorUrl;
 
 	public String getRequestorUrl() {
@@ -73,6 +91,9 @@ public class CustomerInformation implements Serializable
 		this.requestorUrl = requestorUrl;
 	}
 
+	/**
+	 * Contains the user agent the customer is using.
+	 */
 	protected  String requestorUserAgent;
 
 	public String getRequestorUserAgent() {
@@ -83,6 +104,9 @@ public class CustomerInformation implements Serializable
 		this.requestorUserAgent = requestorUserAgent;
 	}
 
+	/**
+	 * Address information to supply for a contact.
+	 */
 	protected  Address address;
 
 	public Address getAddress() {
@@ -93,6 +117,9 @@ public class CustomerInformation implements Serializable
 		this.address = address;
 	}
 
+	/**
+	 * Contains the Contact information for the customer.
+	 */
 	protected  Contact contact;
 
 	public Contact getContact() {
@@ -103,6 +130,9 @@ public class CustomerInformation implements Serializable
 		this.contact = contact;
 	}
 
+	/**
+	 * Contains information not in the object allowing flexibility.
+	 */
 	protected List<KeyValueTuple> extendedInfo;
 	public List<KeyValueTuple> getExtendedInfo() {
 		return this.extendedInfo;

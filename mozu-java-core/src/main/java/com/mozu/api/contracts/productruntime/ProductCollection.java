@@ -16,7 +16,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productruntime.Product;
 
 /**
- *	Collection of products and their related properties.
+ *	The container for a set of products.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductCollection implements Serializable
@@ -24,6 +24,9 @@ public class ProductCollection implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * This parameter is associated with deep paging. If you started a deep paged request by specifying ,  returns an encoded value for the . In your most immediate subsequent request, set  to the same value you received for  to continue paging. When  is null, you've reached the end of paged results.
+	 */
 	protected  String nextCursorMark;
 
 	public String getNextCursorMark() {

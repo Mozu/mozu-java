@@ -15,8 +15,8 @@ public class TenantUrl
 
 	/**
 	 * Get Resource Url for GetTenant
-	 * @param responseFields 
-	 * @param tenantId 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param tenantId Unique identifier of the development or production tenant for which to generate the user authentication ticket.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getTenantUrl(String responseFields, Integer tenantId)

@@ -81,6 +81,9 @@ public class ShippingRate implements Serializable
 		this.shippingMethodName = shippingMethodName;
 	}
 
+	/**
+	 * The shipping zone to which this rate applies.
+	 */
 	protected  String shippingZoneCode;
 
 	public String getShippingZoneCode() {
@@ -91,6 +94,9 @@ public class ShippingRate implements Serializable
 		this.shippingZoneCode = shippingZoneCode;
 	}
 
+	/**
+	 * Custom data returned by the shipping service.
+	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {

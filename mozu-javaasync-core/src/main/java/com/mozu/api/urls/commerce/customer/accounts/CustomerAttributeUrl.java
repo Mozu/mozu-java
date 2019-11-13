@@ -15,10 +15,10 @@ public class CustomerAttributeUrl
 
 	/**
 	 * Get Resource Url for GetAccountAttribute
-	 * @param accountId Identifier of the customer account associated with the attribute to retrieve.
-	 * @param attributeFQN 
-	 * @param responseFields 
-	 * @param userId 
+	 * @param accountId Unique identifier of the customer account.
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getAccountAttributeUrl(Integer accountId, String attributeFQN, String responseFields, String userId)
@@ -33,13 +33,13 @@ public class CustomerAttributeUrl
 
 	/**
 	 * Get Resource Url for GetAccountAttributes
-	 * @param accountId Identifier of the customer account associated with the attributes to retrieve.
-	 * @param filter 
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
-	 * @param userId 
+	 * @param accountId Unique identifier of the customer account.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getAccountAttributesUrl(Integer accountId, String filter, Integer pageSize, String responseFields, String sortBy, Integer startIndex, String userId)
@@ -58,8 +58,8 @@ public class CustomerAttributeUrl
 	/**
 	 * Get Resource Url for AddAccountAttribute
 	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields 
-	 * @param userId 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addAccountAttributeUrl(Integer accountId, String responseFields, String userId)
@@ -73,10 +73,10 @@ public class CustomerAttributeUrl
 
 	/**
 	 * Get Resource Url for UpdateAccountAttribute
-	 * @param accountId Identifier of the customer account associated with the attribute.
-	 * @param attributeFQN 
-	 * @param responseFields 
-	 * @param userId 
+	 * @param accountId Unique identifier of the customer account.
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateAccountAttributeUrl(Integer accountId, String attributeFQN, String responseFields, String userId)
@@ -92,8 +92,8 @@ public class CustomerAttributeUrl
 	/**
 	 * Get Resource Url for DeleteAccountAttribute
 	 * @param accountId Unique identifier of the customer account.
-	 * @param attributeFQN 
-	 * @param userId 
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteAccountAttributeUrl(Integer accountId, String attributeFQN, String userId)

@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.payments.PublicTokenResource;
 
 /** <summary>
- * 
+ * commerce/payments/tokens related resources. DOCUMENT_HERE 
  * </summary>
  */
 public class PublicTokenFactory

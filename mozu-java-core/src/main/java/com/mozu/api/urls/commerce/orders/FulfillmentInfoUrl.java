@@ -15,9 +15,9 @@ public class FulfillmentInfoUrl
 
 	/**
 	 * Get Resource Url for GetFulfillmentInfo
-	 * @param draft If true, retrieve the draft version of the order's fulfillment information, which might include uncommitted changes.
+	 * @param draft If true, retrieve the draft version of the order, which might include uncommitted changes to the order or its components.
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getFulfillmentInfoUrl(Boolean draft, String orderId, String responseFields)
@@ -32,9 +32,9 @@ public class FulfillmentInfoUrl
 	/**
 	 * Get Resource Url for SetFulFillmentInfo
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields 
-	 * @param updateMode Specifies whether to set the fulfillment information by updating the original order, updating the order in draft mode, or updating the order in draft mode and then committing the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param version 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
+	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl setFulFillmentInfoUrl(String orderId, String responseFields, String updateMode, String version)

@@ -16,12 +16,18 @@ import com.mozu.api.contracts.paymentservice.extensibility.v1.AdapterContext;
 import com.mozu.api.contracts.paymentservice.extensibility.v1.CustomerInformation;
 import com.mozu.api.contracts.paymentservice.extensibility.v1.PaymentToken;
 
+/**
+ *	Contains a capture request
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CaptureRequest implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The amount to capture.
+	 */
 	protected  Double amount;
 
 	public Double getAmount() {
@@ -32,6 +38,9 @@ public class CaptureRequest implements Serializable
 		this.amount = amount;
 	}
 
+	/**
+	 * The api version of the call.
+	 */
 	protected  String apiVersion;
 
 	public String getApiVersion() {
@@ -42,6 +51,9 @@ public class CaptureRequest implements Serializable
 		this.apiVersion = apiVersion;
 	}
 
+	/**
+	 * The method name being called on the connector.
+	 */
 	protected  String methodName;
 
 	public String getMethodName() {
@@ -52,6 +64,9 @@ public class CaptureRequest implements Serializable
 		this.methodName = methodName;
 	}
 
+	/**
+	 * CardInformation object containing the card information.
+	 */
 	protected  CardInformation card;
 
 	public CardInformation getCard() {
@@ -62,6 +77,9 @@ public class CaptureRequest implements Serializable
 		this.card = card;
 	}
 
+	/**
+	 * The AdapterContext information.
+	 */
 	protected  AdapterContext context;
 
 	public AdapterContext getContext() {
@@ -72,6 +90,9 @@ public class CaptureRequest implements Serializable
 		this.context = context;
 	}
 
+	/**
+	 * The data provided for the capture.
+	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {
@@ -82,6 +103,9 @@ public class CaptureRequest implements Serializable
 		this.data = data;
 	}
 
+	/**
+	 * The customer information for the shopper.
+	 */
 	protected  CustomerInformation shopper;
 
 	public CustomerInformation getShopper() {
@@ -92,6 +116,9 @@ public class CaptureRequest implements Serializable
 		this.shopper = shopper;
 	}
 
+	/**
+	 * The token being used for the capture.
+	 */
 	protected  PaymentToken token;
 
 	public PaymentToken getToken() {

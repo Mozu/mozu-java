@@ -47,9 +47,9 @@ public class DocumentListClient {
 	 * client.executeRequest();
 	 * DocumentListCollection documentListCollection = client.Result();
 	 * </code></pre></p>
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param startIndex 
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentListCollection>
 	 * @see com.mozu.api.contracts.content.DocumentListCollection
 	 */
@@ -74,7 +74,7 @@ public class DocumentListClient {
 	 * client.executeRequest();
 	 * DocumentList documentList = client.Result();
 	 * </code></pre></p>
-	 * @param documentListName The name of the document list.
+	 * @param documentListName Name of content documentListName to delete
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentList>
 	 * @see com.mozu.api.contracts.content.DocumentList
 	 */
@@ -91,8 +91,8 @@ public class DocumentListClient {
 	 * client.executeRequest();
 	 * DocumentList documentList = client.Result();
 	 * </code></pre></p>
-	 * @param documentListName The name of the document list.
-	 * @param responseFields 
+	 * @param documentListName Name of content documentListName to delete
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentList>
 	 * @see com.mozu.api.contracts.content.DocumentList
 	 */
@@ -117,7 +117,7 @@ public class DocumentListClient {
 	 * client.executeRequest();
 	 * DocumentList documentList = client.Result();
 	 * </code></pre></p>
-	 * @param list 
+	 * @param list The list of document types and related properties that define content used by the content management system (CMS).
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentList>
 	 * @see com.mozu.api.contracts.content.DocumentList
 	 * @see com.mozu.api.contracts.content.DocumentList
@@ -135,8 +135,8 @@ public class DocumentListClient {
 	 * client.executeRequest();
 	 * DocumentList documentList = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param list 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param list The list of document types and related properties that define content used by the content management system (CMS).
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentList>
 	 * @see com.mozu.api.contracts.content.DocumentList
 	 * @see com.mozu.api.contracts.content.DocumentList
@@ -163,8 +163,8 @@ public class DocumentListClient {
 	 * client.executeRequest();
 	 * DocumentList documentList = client.Result();
 	 * </code></pre></p>
-	 * @param documentListName 
-	 * @param list 
+	 * @param documentListName Name of content documentListName to delete
+	 * @param list The list of document types and related properties that define content used by the content management system (CMS).
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentList>
 	 * @see com.mozu.api.contracts.content.DocumentList
 	 * @see com.mozu.api.contracts.content.DocumentList
@@ -182,9 +182,9 @@ public class DocumentListClient {
 	 * client.executeRequest();
 	 * DocumentList documentList = client.Result();
 	 * </code></pre></p>
-	 * @param documentListName 
-	 * @param responseFields 
-	 * @param list 
+	 * @param documentListName Name of content documentListName to delete
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param list The list of document types and related properties that define content used by the content management system (CMS).
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentList>
 	 * @see com.mozu.api.contracts.content.DocumentList
 	 * @see com.mozu.api.contracts.content.DocumentList
@@ -210,7 +210,7 @@ public class DocumentListClient {
 	 * client.executeRequest();
 	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param documentListName 
+	 * @param documentListName Name of content documentListName to delete
 	 * @return Mozu.Api.MozuClient <Stream>
 	 * @see Stream
 	 */

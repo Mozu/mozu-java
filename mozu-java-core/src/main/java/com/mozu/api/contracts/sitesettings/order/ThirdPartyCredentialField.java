@@ -44,6 +44,9 @@ public class ThirdPartyCredentialField implements Serializable
 		this.displayName = displayName;
 	}
 
+	/**
+	 * The type of input selection used to define a value for the attribute, including Yes/No, Date, DateTime, List, TextBox, or TextArea.
+	 */
 	protected  String inputType;
 
 	public String getInputType() {
@@ -54,6 +57,9 @@ public class ThirdPartyCredentialField implements Serializable
 		this.inputType = inputType;
 	}
 
+	/**
+	 * A flag to determine if the field holds sensitive information.
+	 */
 	protected  Boolean isSensitive;
 
 	public Boolean getIsSensitive() {
@@ -74,6 +80,9 @@ public class ThirdPartyCredentialField implements Serializable
 		this.value = value;
 	}
 
+	/**
+	 * List of valid vocabulary values defined for an attribute.
+	 */
 	protected List<VocabularyValue> vocabularyValues;
 	public List<VocabularyValue> getVocabularyValues() {
 		return this.vocabularyValues;

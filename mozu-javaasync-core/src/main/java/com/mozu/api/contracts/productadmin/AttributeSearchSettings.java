@@ -21,6 +21,9 @@ public class AttributeSearchSettings implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Indicates whether the attribute should be able to be used in filters, facets, and sorting on the public storefront.
+	 */
 	protected  Boolean allowFilteringAndSortingInStorefront;
 
 	public Boolean getAllowFilteringAndSortingInStorefront() {
@@ -31,6 +34,9 @@ public class AttributeSearchSettings implements Serializable
 		this.allowFilteringAndSortingInStorefront = allowFilteringAndSortingInStorefront;
 	}
 
+	/**
+	 * When set to true, enables you to set a custom search weight for a product attribute in search-settings.
+	 */
 	protected  Boolean customWeightInStorefrontSearch;
 
 	public Boolean getCustomWeightInStorefrontSearch() {
@@ -41,6 +47,9 @@ public class AttributeSearchSettings implements Serializable
 		this.customWeightInStorefrontSearch = customWeightInStorefrontSearch;
 	}
 
+	/**
+	 * Specifies whether to create a case-sensitive Solr search index. The default is .
+	 */
 	protected  Boolean indexValueWithCase;
 
 	public Boolean getIndexValueWithCase() {
@@ -65,7 +74,7 @@ public class AttributeSearchSettings implements Serializable
 	}
 
 	/**
-	 * Indicates whether the attribute value is searchable on the public storefront.
+	 * Indicates if the attribute value is searchable on the public storefront.
 	 */
 	protected  Boolean searchableInStorefront;
 
@@ -78,7 +87,7 @@ public class AttributeSearchSettings implements Serializable
 	}
 
 	/**
-	 * If true, the system indexs the display value of string attributes instead of the canonical value for searching. Always use the canonical value for filtering. This does not apply for for non-string attributes.
+	 * Indicates what kind of values search queries and returns. If true, the system indexes the display value of string attributes instead of the canonical value for searching. Always use the canonical value for filtering. This does not apply for non-string attributes.
 	 */
 	protected  Boolean searchDisplayValue;
 

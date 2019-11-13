@@ -42,8 +42,8 @@ public class CustomerContactResource {
 	 *	CustomerContact customercontact = new CustomerContact();
 	 *	CustomerContact customerContact = customercontact.getAccountContact( accountId,  contactId);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account whose contact information is being retrieved.
-	 * @param contactId Unique identifier of the customer account contact to retrieve.
+	 * @param accountId Unique identifier of the customer account.
+	 * @param contactId Unique identifer of the customer account contact being updated.
 	 * @return com.mozu.api.contracts.customer.CustomerContact
 	 * @see com.mozu.api.contracts.customer.CustomerContact
 	 */
@@ -58,8 +58,8 @@ public class CustomerContactResource {
 	 *	CustomerContact customercontact = new CustomerContact();
 	 *	CountDownLatch latch = customercontact.getAccountContact( accountId,  contactId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account whose contact information is being retrieved.
-	 * @param contactId Unique identifier of the customer account contact to retrieve.
+	 * @param accountId Unique identifier of the customer account.
+	 * @param contactId Unique identifer of the customer account contact being updated.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.CustomerContact
 	 * @see com.mozu.api.contracts.customer.CustomerContact
@@ -75,10 +75,10 @@ public class CustomerContactResource {
 	 *	CustomerContact customercontact = new CustomerContact();
 	 *	CustomerContact customerContact = customercontact.getAccountContact( accountId,  contactId,  userId,  responseFields);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account whose contact information is being retrieved.
-	 * @param contactId Unique identifier of the customer account contact to retrieve.
-	 * @param responseFields 
-	 * @param userId 
+	 * @param accountId Unique identifier of the customer account.
+	 * @param contactId Unique identifer of the customer account contact being updated.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @return com.mozu.api.contracts.customer.CustomerContact
 	 * @see com.mozu.api.contracts.customer.CustomerContact
 	 */
@@ -97,10 +97,10 @@ public class CustomerContactResource {
 	 *	CustomerContact customercontact = new CustomerContact();
 	 *	CountDownLatch latch = customercontact.getAccountContact( accountId,  contactId,  userId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account whose contact information is being retrieved.
-	 * @param contactId Unique identifier of the customer account contact to retrieve.
-	 * @param responseFields 
-	 * @param userId 
+	 * @param accountId Unique identifier of the customer account.
+	 * @param contactId Unique identifer of the customer account contact being updated.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.CustomerContact
 	 * @see com.mozu.api.contracts.customer.CustomerContact
@@ -119,7 +119,7 @@ public class CustomerContactResource {
 	 *	CustomerContact customercontact = new CustomerContact();
 	 *	CustomerContactCollection customerContactCollection = customercontact.getAccountContacts( accountId);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account associated with the contact information to retrieve.
+	 * @param accountId Unique identifier of the customer account.
 	 * @return com.mozu.api.contracts.customer.CustomerContactCollection
 	 * @see com.mozu.api.contracts.customer.CustomerContactCollection
 	 */
@@ -134,7 +134,7 @@ public class CustomerContactResource {
 	 *	CustomerContact customercontact = new CustomerContact();
 	 *	CountDownLatch latch = customercontact.getAccountContacts( accountId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account associated with the contact information to retrieve.
+	 * @param accountId Unique identifier of the customer account.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.CustomerContactCollection
 	 * @see com.mozu.api.contracts.customer.CustomerContactCollection
@@ -150,13 +150,13 @@ public class CustomerContactResource {
 	 *	CustomerContact customercontact = new CustomerContact();
 	 *	CustomerContactCollection customerContactCollection = customercontact.getAccountContacts( accountId,  startIndex,  pageSize,  sortBy,  filter,  userId,  responseFields);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account associated with the contact information to retrieve.
-	 * @param filter 
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
-	 * @param userId 
+	 * @param accountId Unique identifier of the customer account.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @return com.mozu.api.contracts.customer.CustomerContactCollection
 	 * @see com.mozu.api.contracts.customer.CustomerContactCollection
 	 */
@@ -175,13 +175,13 @@ public class CustomerContactResource {
 	 *	CustomerContact customercontact = new CustomerContact();
 	 *	CountDownLatch latch = customercontact.getAccountContacts( accountId,  startIndex,  pageSize,  sortBy,  filter,  userId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account associated with the contact information to retrieve.
-	 * @param filter 
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
-	 * @param userId 
+	 * @param accountId Unique identifier of the customer account.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.CustomerContactCollection
 	 * @see com.mozu.api.contracts.customer.CustomerContactCollection
@@ -200,8 +200,8 @@ public class CustomerContactResource {
 	 *	CustomerContact customercontact = new CustomerContact();
 	 *	CustomerContact customerContact = customercontact.addAccountContact( contact,  accountId);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account containing the new contact.
-	 * @param contact Properties of the new contact. Required properties: Contact.Email, ContactType.
+	 * @param accountId Unique identifier of the customer account.
+	 * @param contact Contact information, including the contact's name, address, phone numbers, email addresses, and company (if supplied). Also indicates whether this is a billing, shipping, or billing and shipping contact.
 	 * @return com.mozu.api.contracts.customer.CustomerContact
 	 * @see com.mozu.api.contracts.customer.CustomerContact
 	 * @see com.mozu.api.contracts.customer.CustomerContact
@@ -217,9 +217,9 @@ public class CustomerContactResource {
 	 *	CustomerContact customercontact = new CustomerContact();
 	 *	CountDownLatch latch = customercontact.addAccountContact( contact,  accountId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account containing the new contact.
+	 * @param accountId Unique identifier of the customer account.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param contact Properties of the new contact. Required properties: Contact.Email, ContactType.
+	 * @param contact Contact information, including the contact's name, address, phone numbers, email addresses, and company (if supplied). Also indicates whether this is a billing, shipping, or billing and shipping contact.
 	 * @return com.mozu.api.contracts.customer.CustomerContact
 	 * @see com.mozu.api.contracts.customer.CustomerContact
 	 * @see com.mozu.api.contracts.customer.CustomerContact
@@ -235,9 +235,9 @@ public class CustomerContactResource {
 	 *	CustomerContact customercontact = new CustomerContact();
 	 *	CustomerContact customerContact = customercontact.addAccountContact( contact,  accountId,  responseFields);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account containing the new contact.
-	 * @param responseFields 
-	 * @param contact Properties of the new contact. Required properties: Contact.Email, ContactType.
+	 * @param accountId Unique identifier of the customer account.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param contact Contact information, including the contact's name, address, phone numbers, email addresses, and company (if supplied). Also indicates whether this is a billing, shipping, or billing and shipping contact.
 	 * @return com.mozu.api.contracts.customer.CustomerContact
 	 * @see com.mozu.api.contracts.customer.CustomerContact
 	 * @see com.mozu.api.contracts.customer.CustomerContact
@@ -257,10 +257,10 @@ public class CustomerContactResource {
 	 *	CustomerContact customercontact = new CustomerContact();
 	 *	CountDownLatch latch = customercontact.addAccountContact( contact,  accountId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account containing the new contact.
-	 * @param responseFields 
+	 * @param accountId Unique identifier of the customer account.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param contact Properties of the new contact. Required properties: Contact.Email, ContactType.
+	 * @param contact Contact information, including the contact's name, address, phone numbers, email addresses, and company (if supplied). Also indicates whether this is a billing, shipping, or billing and shipping contact.
 	 * @return com.mozu.api.contracts.customer.CustomerContact
 	 * @see com.mozu.api.contracts.customer.CustomerContact
 	 * @see com.mozu.api.contracts.customer.CustomerContact
@@ -279,9 +279,9 @@ public class CustomerContactResource {
 	 *	CustomerContact customercontact = new CustomerContact();
 	 *	CustomerContact customerContact = customercontact.updateAccountContact( contact,  accountId,  contactId);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account whose contact information is being updated.
+	 * @param accountId Unique identifier of the customer account.
 	 * @param contactId Unique identifer of the customer account contact being updated.
-	 * @param contact All properties the updated contact will have. Required properties: Name and email address.
+	 * @param contact Contact information, including the contact's name, address, phone numbers, email addresses, and company (if supplied). Also indicates whether this is a billing, shipping, or billing and shipping contact.
 	 * @return com.mozu.api.contracts.customer.CustomerContact
 	 * @see com.mozu.api.contracts.customer.CustomerContact
 	 * @see com.mozu.api.contracts.customer.CustomerContact
@@ -297,10 +297,10 @@ public class CustomerContactResource {
 	 *	CustomerContact customercontact = new CustomerContact();
 	 *	CountDownLatch latch = customercontact.updateAccountContact( contact,  accountId,  contactId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account whose contact information is being updated.
+	 * @param accountId Unique identifier of the customer account.
 	 * @param contactId Unique identifer of the customer account contact being updated.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param contact All properties the updated contact will have. Required properties: Name and email address.
+	 * @param contact Contact information, including the contact's name, address, phone numbers, email addresses, and company (if supplied). Also indicates whether this is a billing, shipping, or billing and shipping contact.
 	 * @return com.mozu.api.contracts.customer.CustomerContact
 	 * @see com.mozu.api.contracts.customer.CustomerContact
 	 * @see com.mozu.api.contracts.customer.CustomerContact
@@ -316,11 +316,11 @@ public class CustomerContactResource {
 	 *	CustomerContact customercontact = new CustomerContact();
 	 *	CustomerContact customerContact = customercontact.updateAccountContact( contact,  accountId,  contactId,  userId,  responseFields);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account whose contact information is being updated.
+	 * @param accountId Unique identifier of the customer account.
 	 * @param contactId Unique identifer of the customer account contact being updated.
-	 * @param responseFields 
-	 * @param userId 
-	 * @param contact All properties the updated contact will have. Required properties: Name and email address.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
+	 * @param contact Contact information, including the contact's name, address, phone numbers, email addresses, and company (if supplied). Also indicates whether this is a billing, shipping, or billing and shipping contact.
 	 * @return com.mozu.api.contracts.customer.CustomerContact
 	 * @see com.mozu.api.contracts.customer.CustomerContact
 	 * @see com.mozu.api.contracts.customer.CustomerContact
@@ -340,12 +340,12 @@ public class CustomerContactResource {
 	 *	CustomerContact customercontact = new CustomerContact();
 	 *	CountDownLatch latch = customercontact.updateAccountContact( contact,  accountId,  contactId,  userId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account whose contact information is being updated.
+	 * @param accountId Unique identifier of the customer account.
 	 * @param contactId Unique identifer of the customer account contact being updated.
-	 * @param responseFields 
-	 * @param userId 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param contact All properties the updated contact will have. Required properties: Name and email address.
+	 * @param contact Contact information, including the contact's name, address, phone numbers, email addresses, and company (if supplied). Also indicates whether this is a billing, shipping, or billing and shipping contact.
 	 * @return com.mozu.api.contracts.customer.CustomerContact
 	 * @see com.mozu.api.contracts.customer.CustomerContact
 	 * @see com.mozu.api.contracts.customer.CustomerContact
@@ -364,8 +364,8 @@ public class CustomerContactResource {
 	 *	CustomerContact customercontact = new CustomerContact();
 	 *	CustomerContactCollection customerContactCollection = customercontact.addAccountContactList( contactList,  accountId);
 	 * </code></pre></p>
-	 * @param accountId 
-	 * @param contactList 
+	 * @param accountId Unique identifier of the customer account.
+	 * @param contactList The list of contacts.
 	 * @return com.mozu.api.contracts.customer.CustomerContactCollection
 	 * @see com.mozu.api.contracts.customer.CustomerContactCollection
 	 * @see com.mozu.api.contracts.customer.CustomerContact
@@ -381,9 +381,9 @@ public class CustomerContactResource {
 	 *	CustomerContact customercontact = new CustomerContact();
 	 *	CountDownLatch latch = customercontact.addAccountContactList( contactList,  accountId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param accountId 
+	 * @param accountId Unique identifier of the customer account.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param contactList 
+	 * @param contactList The list of contacts.
 	 * @return com.mozu.api.contracts.customer.CustomerContactCollection
 	 * @see com.mozu.api.contracts.customer.CustomerContactCollection
 	 * @see com.mozu.api.contracts.customer.CustomerContact
@@ -399,9 +399,9 @@ public class CustomerContactResource {
 	 *	CustomerContact customercontact = new CustomerContact();
 	 *	CustomerContactCollection customerContactCollection = customercontact.addAccountContactList( contactList,  accountId,  responseFields);
 	 * </code></pre></p>
-	 * @param accountId 
-	 * @param responseFields 
-	 * @param contactList 
+	 * @param accountId Unique identifier of the customer account.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param contactList The list of contacts.
 	 * @return com.mozu.api.contracts.customer.CustomerContactCollection
 	 * @see com.mozu.api.contracts.customer.CustomerContactCollection
 	 * @see com.mozu.api.contracts.customer.CustomerContact
@@ -421,10 +421,10 @@ public class CustomerContactResource {
 	 *	CustomerContact customercontact = new CustomerContact();
 	 *	CountDownLatch latch = customercontact.addAccountContactList( contactList,  accountId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param accountId 
-	 * @param responseFields 
+	 * @param accountId Unique identifier of the customer account.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param contactList 
+	 * @param contactList The list of contacts.
 	 * @return com.mozu.api.contracts.customer.CustomerContactCollection
 	 * @see com.mozu.api.contracts.customer.CustomerContactCollection
 	 * @see com.mozu.api.contracts.customer.CustomerContact
@@ -444,7 +444,7 @@ public class CustomerContactResource {
 	 *	Stream stream = customercontact.deleteAccountContact( accountId,  contactId);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param contactId Unique identifier of the customer account contact to delete.
+	 * @param contactId Unique identifer of the customer account contact being updated.
 	 * @return Stream
 	 * @see Stream
 	 */
@@ -464,7 +464,7 @@ public class CustomerContactResource {
 	 *	CountDownLatch latch = customercontact.deleteAccountContact( accountId,  contactId, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param contactId Unique identifier of the customer account contact to delete.
+	 * @param contactId Unique identifer of the customer account contact being updated.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return Stream
 	 * @see Stream

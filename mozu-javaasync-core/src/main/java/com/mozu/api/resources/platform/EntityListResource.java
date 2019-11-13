@@ -20,7 +20,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * 
+ * The Entity Lists resource manages all dynamic entities in your  document store of the  cloud. The content is JSON and can have up to five indexed properties (integer, decimal, string, date, and boolean) with support for additional customized elements as needed. Every document in the entity list has a validated unique ID.
  * </summary>
  */
 public class EntityListResource {
@@ -71,11 +71,11 @@ public class EntityListResource {
 	 *	EntityList entitylist = new EntityList();
 	 *	EntityListCollection entityListCollection = entitylist.getEntityLists( pageSize,  startIndex,  filter,  sortBy,  responseFields);
 	 * </code></pre></p>
-	 * @param filter 
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return com.mozu.api.contracts.mzdb.EntityListCollection
 	 * @see com.mozu.api.contracts.mzdb.EntityListCollection
 	 */
@@ -94,11 +94,11 @@ public class EntityListResource {
 	 *	EntityList entitylist = new EntityList();
 	 *	CountDownLatch latch = entitylist.getEntityLists( pageSize,  startIndex,  filter,  sortBy,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param filter 
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.mzdb.EntityListCollection
 	 * @see com.mozu.api.contracts.mzdb.EntityListCollection
@@ -117,7 +117,7 @@ public class EntityListResource {
 	 *	EntityList entitylist = new EntityList();
 	 *	EntityList entityList = entitylist.getEntityList( entityListFullName);
 	 * </code></pre></p>
-	 * @param entityListFullName 
+	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
 	 * @return com.mozu.api.contracts.mzdb.EntityList
 	 * @see com.mozu.api.contracts.mzdb.EntityList
 	 */
@@ -132,7 +132,7 @@ public class EntityListResource {
 	 *	EntityList entitylist = new EntityList();
 	 *	CountDownLatch latch = entitylist.getEntityList( entityListFullName, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param entityListFullName 
+	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.mzdb.EntityList
 	 * @see com.mozu.api.contracts.mzdb.EntityList
@@ -148,8 +148,8 @@ public class EntityListResource {
 	 *	EntityList entitylist = new EntityList();
 	 *	EntityList entityList = entitylist.getEntityList( entityListFullName,  responseFields);
 	 * </code></pre></p>
-	 * @param entityListFullName 
-	 * @param responseFields 
+	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.mzdb.EntityList
 	 * @see com.mozu.api.contracts.mzdb.EntityList
 	 */
@@ -168,8 +168,8 @@ public class EntityListResource {
 	 *	EntityList entitylist = new EntityList();
 	 *	CountDownLatch latch = entitylist.getEntityList( entityListFullName,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param entityListFullName 
-	 * @param responseFields 
+	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.mzdb.EntityList
 	 * @see com.mozu.api.contracts.mzdb.EntityList
@@ -188,7 +188,7 @@ public class EntityListResource {
 	 *	EntityList entitylist = new EntityList();
 	 *	EntityList entityList = entitylist.createEntityList( entityList);
 	 * </code></pre></p>
-	 * @param entityList 
+	 * @param entityList The definition of an MZDB EntityList which describes the characteristics of the EntityList on a per tenant basis. EntityLists are created at the tenant level, but instances of the EntityLists are implicitly created at the appropriate context level as entities are added or removed from the EntityList.
 	 * @return com.mozu.api.contracts.mzdb.EntityList
 	 * @see com.mozu.api.contracts.mzdb.EntityList
 	 * @see com.mozu.api.contracts.mzdb.EntityList
@@ -205,7 +205,7 @@ public class EntityListResource {
 	 *	CountDownLatch latch = entitylist.createEntityList( entityList, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param entityList 
+	 * @param entityList The definition of an MZDB EntityList which describes the characteristics of the EntityList on a per tenant basis. EntityLists are created at the tenant level, but instances of the EntityLists are implicitly created at the appropriate context level as entities are added or removed from the EntityList.
 	 * @return com.mozu.api.contracts.mzdb.EntityList
 	 * @see com.mozu.api.contracts.mzdb.EntityList
 	 * @see com.mozu.api.contracts.mzdb.EntityList
@@ -221,8 +221,8 @@ public class EntityListResource {
 	 *	EntityList entitylist = new EntityList();
 	 *	EntityList entityList = entitylist.createEntityList( entityList,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param entityList 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param entityList The definition of an MZDB EntityList which describes the characteristics of the EntityList on a per tenant basis. EntityLists are created at the tenant level, but instances of the EntityLists are implicitly created at the appropriate context level as entities are added or removed from the EntityList.
 	 * @return com.mozu.api.contracts.mzdb.EntityList
 	 * @see com.mozu.api.contracts.mzdb.EntityList
 	 * @see com.mozu.api.contracts.mzdb.EntityList
@@ -242,9 +242,9 @@ public class EntityListResource {
 	 *	EntityList entitylist = new EntityList();
 	 *	CountDownLatch latch = entitylist.createEntityList( entityList,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param entityList 
+	 * @param entityList The definition of an MZDB EntityList which describes the characteristics of the EntityList on a per tenant basis. EntityLists are created at the tenant level, but instances of the EntityLists are implicitly created at the appropriate context level as entities are added or removed from the EntityList.
 	 * @return com.mozu.api.contracts.mzdb.EntityList
 	 * @see com.mozu.api.contracts.mzdb.EntityList
 	 * @see com.mozu.api.contracts.mzdb.EntityList
@@ -263,8 +263,8 @@ public class EntityListResource {
 	 *	EntityList entitylist = new EntityList();
 	 *	EntityList entityList = entitylist.updateEntityList( entityList,  entityListFullName);
 	 * </code></pre></p>
-	 * @param entityListFullName 
-	 * @param entityList 
+	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param entityList The definition of an MZDB EntityList which describes the characteristics of the EntityList on a per tenant basis. EntityLists are created at the tenant level, but instances of the EntityLists are implicitly created at the appropriate context level as entities are added or removed from the EntityList.
 	 * @return com.mozu.api.contracts.mzdb.EntityList
 	 * @see com.mozu.api.contracts.mzdb.EntityList
 	 * @see com.mozu.api.contracts.mzdb.EntityList
@@ -280,9 +280,9 @@ public class EntityListResource {
 	 *	EntityList entitylist = new EntityList();
 	 *	CountDownLatch latch = entitylist.updateEntityList( entityList,  entityListFullName, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param entityListFullName 
+	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
 	 * @param  callback callback handler for asynchronous operations
-	 * @param entityList 
+	 * @param entityList The definition of an MZDB EntityList which describes the characteristics of the EntityList on a per tenant basis. EntityLists are created at the tenant level, but instances of the EntityLists are implicitly created at the appropriate context level as entities are added or removed from the EntityList.
 	 * @return com.mozu.api.contracts.mzdb.EntityList
 	 * @see com.mozu.api.contracts.mzdb.EntityList
 	 * @see com.mozu.api.contracts.mzdb.EntityList
@@ -298,9 +298,9 @@ public class EntityListResource {
 	 *	EntityList entitylist = new EntityList();
 	 *	EntityList entityList = entitylist.updateEntityList( entityList,  entityListFullName,  responseFields);
 	 * </code></pre></p>
-	 * @param entityListFullName 
-	 * @param responseFields 
-	 * @param entityList 
+	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param entityList The definition of an MZDB EntityList which describes the characteristics of the EntityList on a per tenant basis. EntityLists are created at the tenant level, but instances of the EntityLists are implicitly created at the appropriate context level as entities are added or removed from the EntityList.
 	 * @return com.mozu.api.contracts.mzdb.EntityList
 	 * @see com.mozu.api.contracts.mzdb.EntityList
 	 * @see com.mozu.api.contracts.mzdb.EntityList
@@ -320,10 +320,10 @@ public class EntityListResource {
 	 *	EntityList entitylist = new EntityList();
 	 *	CountDownLatch latch = entitylist.updateEntityList( entityList,  entityListFullName,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param entityListFullName 
-	 * @param responseFields 
+	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param entityList 
+	 * @param entityList The definition of an MZDB EntityList which describes the characteristics of the EntityList on a per tenant basis. EntityLists are created at the tenant level, but instances of the EntityLists are implicitly created at the appropriate context level as entities are added or removed from the EntityList.
 	 * @return com.mozu.api.contracts.mzdb.EntityList
 	 * @see com.mozu.api.contracts.mzdb.EntityList
 	 * @see com.mozu.api.contracts.mzdb.EntityList
@@ -342,7 +342,7 @@ public class EntityListResource {
 	 *	EntityList entitylist = new EntityList();
 	 *	Stream stream = entitylist.deleteEntityList( entityListFullName);
 	 * </code></pre></p>
-	 * @param entityListFullName 
+	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
 	 * @return Stream
 	 * @see Stream
 	 */
@@ -361,7 +361,7 @@ public class EntityListResource {
 	 *	EntityList entitylist = new EntityList();
 	 *	CountDownLatch latch = entitylist.deleteEntityList( entityListFullName, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param entityListFullName 
+	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
 	 * @param  callback callback handler for asynchronous operations
 	 * @return Stream
 	 * @see Stream

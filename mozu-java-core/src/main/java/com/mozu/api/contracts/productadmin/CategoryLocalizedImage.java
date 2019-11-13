@@ -32,7 +32,7 @@ public class CategoryLocalizedImage implements Serializable
 	}
 
 	/**
-	 * The identifier of the category image in the Mozu CMS. Supply a value for either the CMS ID or Image URL parameter.
+	 * The identifier of the image in the  CMS. Supply a value for either the CMS ID or Image URL parameter.
 	 */
 	protected  String cmsId;
 

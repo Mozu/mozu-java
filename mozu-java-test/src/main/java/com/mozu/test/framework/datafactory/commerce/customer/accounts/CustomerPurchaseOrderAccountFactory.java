@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.customer.accounts.CustomerPurchaseOrderAccountResource;
 
 /** <summary>
- * 
+ * Use the Customer Account Purchase Order resource to manage purchase order details for specific customer acocunts.
  * </summary>
  */
 public class CustomerPurchaseOrderAccountFactory

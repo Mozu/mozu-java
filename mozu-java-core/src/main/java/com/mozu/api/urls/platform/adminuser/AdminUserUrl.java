@@ -49,7 +49,7 @@ public class AdminUserUrl
 
 	/**
 	 * Get Resource Url for GetTenantScopesForUser
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @return   String Resource Url
 	 */
@@ -77,8 +77,8 @@ public class AdminUserUrl
 
 	/**
 	 * Get Resource Url for GetUser
-	 * @param responseFields 
-	 * @param userId Unique identifier of the administrator account to retrieve.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getUserUrl(String responseFields, String userId)

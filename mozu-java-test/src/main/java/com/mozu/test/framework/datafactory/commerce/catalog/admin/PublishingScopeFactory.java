@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.catalog.admin.PublishingScopeResource;
 
 /** <summary>
- * Use the Product Publishing resource to publish or discard pending changes to product definitions in the master catalog.
+ * Use the Product Publishing resource to publish or discard pending changes to products in a master catalog, or to add or remove pending changes to and from product publish sets.You can use product publish sets to group pending product changes together and publish them all at the same time.
  * </summary>
  */
 public class PublishingScopeFactory

@@ -62,11 +62,11 @@ public class CategoryResource {
 	 *	Category category = new Category();
 	 *	CategoryPagedCollection categoryPagedCollection = category.getCategories( filter,  startIndex,  pageSize,  sortBy,  responseFields);
 	 * </code></pre></p>
-	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. You can filter product category search results by any of its properties, including its position in the category hierarchy. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return com.mozu.api.contracts.productruntime.CategoryPagedCollection
 	 * @see com.mozu.api.contracts.productruntime.CategoryPagedCollection
 	 */
@@ -85,7 +85,7 @@ public class CategoryResource {
 	 *	Category category = new Category();
 	 *	Category category = category.getCategory( categoryId);
 	 * </code></pre></p>
-	 * @param categoryId Unique identifier of the product category.
+	 * @param categoryId Unique identifier of the category to modify.
 	 * @return com.mozu.api.contracts.productruntime.Category
 	 * @see com.mozu.api.contracts.productruntime.Category
 	 */
@@ -101,8 +101,8 @@ public class CategoryResource {
 	 *	Category category = category.getCategory( categoryId,  allowInactive,  responseFields);
 	 * </code></pre></p>
 	 * @param allowInactive If true, allow inactive categories to be retrieved in the category list response. If false, the categories retrieved will not include ones marked inactive.
-	 * @param categoryId Unique identifier of the product category.
-	 * @param responseFields 
+	 * @param categoryId Unique identifier of the category to modify.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.productruntime.Category
 	 * @see com.mozu.api.contracts.productruntime.Category
 	 */
@@ -135,7 +135,7 @@ public class CategoryResource {
 	 *	Category category = new Category();
 	 *	CategoryCollection categoryCollection = category.getCategoryTree( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.productruntime.CategoryCollection
 	 * @see com.mozu.api.contracts.productruntime.CategoryCollection
 	 */

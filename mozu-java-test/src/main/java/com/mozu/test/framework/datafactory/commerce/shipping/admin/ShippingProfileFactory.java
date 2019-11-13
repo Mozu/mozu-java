@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.shipping.admin.ShippingProfileResource;
 
 /** <summary>
- * 
+ * Use the Profiles resource to manage your shipping profiles.
  * </summary>
  */
 public class ShippingProfileFactory

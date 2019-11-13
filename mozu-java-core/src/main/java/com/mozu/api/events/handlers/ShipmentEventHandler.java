@@ -16,6 +16,7 @@ public interface ShipmentEventHandler {
 		public EventHandlerStatus adjusted(ApiContext apiContext, Event event);
 		public EventHandlerStatus itemadjusted(ApiContext apiContext, Event event);
 		public EventHandlerStatus itemscanceled(ApiContext apiContext, Event event);
+		public EventHandlerStatus itemsrejected(ApiContext apiContext, Event event);
 		public EventHandlerStatus statuschanged(ApiContext apiContext, Event event);
 		public EventHandlerStatus workflowstatechanged(ApiContext apiContext, Event event);
 

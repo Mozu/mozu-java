@@ -17,7 +17,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * 
+ * Manage Secure App Settings. Expose via arc.js so that arc apps can securely access secrets. Third-party extensions can also access their data. Secured via AppKey.AppId
  * </summary>
  */
 public class SecureAppDataClient {
@@ -31,7 +31,7 @@ public class SecureAppDataClient {
 	 * JObject json = client.Result();
 	 * </code></pre></p>
 	 * @param appKeyId 
-	 * @param dbEntryQuery 
+	 * @param dbEntryQuery The database entry string to create.
 	 * @return Mozu.Api.MozuClient <JObject>
 	 * @see JObject
 	 */
@@ -49,8 +49,8 @@ public class SecureAppDataClient {
 	 * JObject json = client.Result();
 	 * </code></pre></p>
 	 * @param appKeyId 
-	 * @param dbEntryQuery 
-	 * @param responseFields 
+	 * @param dbEntryQuery The database entry string to create.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <JObject>
 	 * @see JObject
 	 */
@@ -75,8 +75,8 @@ public class SecureAppDataClient {
 	 * Stream stream = client.Result();
 	 * </code></pre></p>
 	 * @param appKeyId 
-	 * @param dbEntryQuery 
-	 * @param value 
+	 * @param dbEntryQuery The database entry string to create.
+	 * @param value The value string to create.
 	 * @return Mozu.Api.MozuClient <Stream>
 	 * @see Stream
 	 * @see JObject
@@ -103,8 +103,8 @@ public class SecureAppDataClient {
 	 * Stream stream = client.Result();
 	 * </code></pre></p>
 	 * @param appKeyId 
-	 * @param dbEntryQuery 
-	 * @param value 
+	 * @param dbEntryQuery The database entry string to create.
+	 * @param value The value string to create.
 	 * @return Mozu.Api.MozuClient <Stream>
 	 * @see Stream
 	 * @see JObject
@@ -131,7 +131,7 @@ public class SecureAppDataClient {
 	 * Stream stream = client.Result();
 	 * </code></pre></p>
 	 * @param appKeyId 
-	 * @param dbEntryQuery 
+	 * @param dbEntryQuery The database entry string to create.
 	 * @return Mozu.Api.MozuClient <Stream>
 	 * @see Stream
 	 */

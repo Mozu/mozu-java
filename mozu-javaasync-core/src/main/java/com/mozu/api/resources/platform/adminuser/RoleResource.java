@@ -47,7 +47,7 @@ public class RoleResource {
 	 */
 	public com.mozu.api.contracts.core.RoleCollection getRoles() throws Exception
 	{
-		return getRoles( null,  null);
+		return getRoles( null,  null,  null,  null);
 	}
 
 	/**
@@ -62,23 +62,25 @@ public class RoleResource {
 	 */
 	public CountDownLatch getRolesAsync( AsyncCallback<com.mozu.api.contracts.core.RoleCollection> callback) throws Exception
 	{
-		return getRolesAsync( null,  null, callback);
+		return getRolesAsync( null,  null,  null,  null, callback);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	Role role = new Role();
-	 *	RoleCollection roleCollection = role.getRoles( filter,  responseFields);
+	 *	RoleCollection roleCollection = role.getRoles( startIndex,  pageSize,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param filter 
+	 * @param pageSize 
 	 * @param responseFields 
+	 * @param startIndex 
 	 * @return com.mozu.api.contracts.core.RoleCollection
 	 * @see com.mozu.api.contracts.core.RoleCollection
 	 */
-	public com.mozu.api.contracts.core.RoleCollection getRoles(String filter, String responseFields) throws Exception
+	public com.mozu.api.contracts.core.RoleCollection getRoles(Integer startIndex, Integer pageSize, String filter, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.core.RoleCollection> client = com.mozu.api.clients.platform.adminuser.RoleClient.getRolesClient( filter,  responseFields);
+		MozuClient<com.mozu.api.contracts.core.RoleCollection> client = com.mozu.api.clients.platform.adminuser.RoleClient.getRolesClient( startIndex,  pageSize,  filter,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -89,17 +91,19 @@ public class RoleResource {
 	 * 
 	 * <p><pre><code>
 	 *	Role role = new Role();
-	 *	CountDownLatch latch = role.getRoles( filter,  responseFields, callback );
+	 *	CountDownLatch latch = role.getRoles( startIndex,  pageSize,  filter,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param filter 
+	 * @param pageSize 
 	 * @param responseFields 
+	 * @param startIndex 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.core.RoleCollection
 	 * @see com.mozu.api.contracts.core.RoleCollection
 	 */
-	public CountDownLatch getRolesAsync(String filter, String responseFields, AsyncCallback<com.mozu.api.contracts.core.RoleCollection> callback) throws Exception
+	public CountDownLatch getRolesAsync(Integer startIndex, Integer pageSize, String filter, String responseFields, AsyncCallback<com.mozu.api.contracts.core.RoleCollection> callback) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.core.RoleCollection> client = com.mozu.api.clients.platform.adminuser.RoleClient.getRolesClient( filter,  responseFields);
+		MozuClient<com.mozu.api.contracts.core.RoleCollection> client = com.mozu.api.clients.platform.adminuser.RoleClient.getRolesClient( startIndex,  pageSize,  filter,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 

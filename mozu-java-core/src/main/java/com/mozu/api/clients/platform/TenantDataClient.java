@@ -17,7 +17,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the tenant data resource to store tenant-level information required for a third-party application in the Mozu database.
+ * Use the tenant data resource to store tenant-level information required for a third-party application in the  database.
  * </summary>
  */
 public class TenantDataClient {
@@ -30,7 +30,7 @@ public class TenantDataClient {
 	 * client.executeRequest();
 	 * string string = client.Result();
 	 * </code></pre></p>
-	 * @param dbEntryQuery The database entry query string used to retrieve the record information.
+	 * @param dbEntryQuery The database entry string to create.
 	 * @return Mozu.Api.MozuClient <string>
 	 * @see string
 	 */
@@ -47,8 +47,8 @@ public class TenantDataClient {
 	 * client.executeRequest();
 	 * string string = client.Result();
 	 * </code></pre></p>
-	 * @param dbEntryQuery The database entry query string used to retrieve the record information.
-	 * @param responseFields 
+	 * @param dbEntryQuery The database entry string to create.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <string>
 	 * @see string
 	 */
@@ -99,8 +99,8 @@ public class TenantDataClient {
 	 * client.executeRequest();
 	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param dbEntryQuery The database entry query string used to update the record information.
-	 * @param value The database value to update.
+	 * @param dbEntryQuery The database entry string to create.
+	 * @param value The value string to create.
 	 * @return Mozu.Api.MozuClient <Stream>
 	 * @see Stream
 	 * @see string
@@ -126,7 +126,7 @@ public class TenantDataClient {
 	 * client.executeRequest();
 	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param dbEntryQuery The database entry string to delete.
+	 * @param dbEntryQuery The database entry string to create.
 	 * @return Mozu.Api.MozuClient <Stream>
 	 * @see Stream
 	 */

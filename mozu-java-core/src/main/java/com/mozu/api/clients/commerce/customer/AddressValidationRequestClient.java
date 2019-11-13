@@ -30,7 +30,7 @@ public class AddressValidationRequestClient {
 	 * client.executeRequest();
 	 * AddressValidationResponse addressValidationResponse = client.Result();
 	 * </code></pre></p>
-	 * @param addressValidationRequest Properties of the address to validate.
+	 * @param addressValidationRequest Properties of the address used for validation of the account's full address. This content may include multiple lines of an address, city, state/province, zip/postal code, and country.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.AddressValidationResponse>
 	 * @see com.mozu.api.contracts.customer.AddressValidationResponse
 	 * @see com.mozu.api.contracts.customer.AddressValidationRequest
@@ -48,8 +48,8 @@ public class AddressValidationRequestClient {
 	 * client.executeRequest();
 	 * AddressValidationResponse addressValidationResponse = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param addressValidationRequest Properties of the address to validate.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param addressValidationRequest Properties of the address used for validation of the account's full address. This content may include multiple lines of an address, city, state/province, zip/postal code, and country.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.AddressValidationResponse>
 	 * @see com.mozu.api.contracts.customer.AddressValidationResponse
 	 * @see com.mozu.api.contracts.customer.AddressValidationRequest

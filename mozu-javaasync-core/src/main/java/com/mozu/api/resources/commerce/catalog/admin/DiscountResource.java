@@ -21,7 +21,7 @@ import org.apache.commons.lang.StringUtils;
 
 import com.mozu.api.DataViewMode;
 /** <summary>
- * Define and manage discounts to apply to products, product categories, or orders. The discounts can be a specified amount off the price, percentage off the price, or for free shipping. Create a coupon code that shoppers can use to redeem the discount.
+ * Use the Discounts resource to define and manage discounts to apply to products, product categories, or orders. The discounts can be a specified amount off the price, percentage off the price, or for free shipping. You can create a coupon code that shoppers can use to redeem the discount.
  * </summary>
  */
 public class DiscountResource {
@@ -79,11 +79,11 @@ public class DiscountResource {
 	 *	Discount discount = new Discount();
 	 *	DiscountCollection discountCollection = discount.getDiscounts( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param filter 
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return com.mozu.api.contracts.productadmin.DiscountCollection
 	 * @see com.mozu.api.contracts.productadmin.DiscountCollection
 	 */
@@ -102,11 +102,11 @@ public class DiscountResource {
 	 *	Discount discount = new Discount();
 	 *	CountDownLatch latch = discount.getDiscounts( startIndex,  pageSize,  sortBy,  filter,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param filter 
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.DiscountCollection
 	 * @see com.mozu.api.contracts.productadmin.DiscountCollection
@@ -125,7 +125,7 @@ public class DiscountResource {
 	 *	Discount discount = new Discount();
 	 *	DiscountLocalizedContent discountLocalizedContent = discount.getDiscountContent( discountId);
 	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.productadmin.DiscountLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.DiscountLocalizedContent
 	 */
@@ -140,7 +140,7 @@ public class DiscountResource {
 	 *	Discount discount = new Discount();
 	 *	CountDownLatch latch = discount.getDiscountContent( discountId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.DiscountLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.DiscountLocalizedContent
@@ -156,8 +156,8 @@ public class DiscountResource {
 	 *	Discount discount = new Discount();
 	 *	DiscountLocalizedContent discountLocalizedContent = discount.getDiscountContent( discountId,  responseFields);
 	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
-	 * @param responseFields 
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.productadmin.DiscountLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.DiscountLocalizedContent
 	 */
@@ -176,8 +176,8 @@ public class DiscountResource {
 	 *	Discount discount = new Discount();
 	 *	CountDownLatch latch = discount.getDiscountContent( discountId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
-	 * @param responseFields 
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.DiscountLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.DiscountLocalizedContent
@@ -196,7 +196,7 @@ public class DiscountResource {
 	 *	Discount discount = new Discount();
 	 *	Discount discount = discount.getDiscount( discountId);
 	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.productadmin.Discount
 	 * @see com.mozu.api.contracts.productadmin.Discount
 	 */
@@ -211,7 +211,7 @@ public class DiscountResource {
 	 *	Discount discount = new Discount();
 	 *	CountDownLatch latch = discount.getDiscount( discountId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.Discount
 	 * @see com.mozu.api.contracts.productadmin.Discount
@@ -227,8 +227,8 @@ public class DiscountResource {
 	 *	Discount discount = new Discount();
 	 *	Discount discount = discount.getDiscount( discountId,  responseFields);
 	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
-	 * @param responseFields 
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.productadmin.Discount
 	 * @see com.mozu.api.contracts.productadmin.Discount
 	 */
@@ -247,8 +247,8 @@ public class DiscountResource {
 	 *	Discount discount = new Discount();
 	 *	CountDownLatch latch = discount.getDiscount( discountId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
-	 * @param responseFields 
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.Discount
 	 * @see com.mozu.api.contracts.productadmin.Discount
@@ -296,7 +296,7 @@ public class DiscountResource {
 	 *	Discount discount = new Discount();
 	 *	string string = discount.generateRandomCoupon( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return string
 	 * @see string
 	 */
@@ -315,7 +315,7 @@ public class DiscountResource {
 	 *	Discount discount = new Discount();
 	 *	CountDownLatch latch = discount.generateRandomCoupon( responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return string
 	 * @see string
@@ -334,7 +334,7 @@ public class DiscountResource {
 	 *	Discount discount = new Discount();
 	 *	Discount discount = discount.createDiscount( discount);
 	 * </code></pre></p>
-	 * @param discount Properties of the discount to create. You must specify the discount name, amount type, start date, and target.
+	 * @param discount Name of the discount added and applied to a shopping cart and order for a shopper's purchase. 
 	 * @return com.mozu.api.contracts.productadmin.Discount
 	 * @see com.mozu.api.contracts.productadmin.Discount
 	 * @see com.mozu.api.contracts.productadmin.Discount
@@ -351,7 +351,7 @@ public class DiscountResource {
 	 *	CountDownLatch latch = discount.createDiscount( discount, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param discount Properties of the discount to create. You must specify the discount name, amount type, start date, and target.
+	 * @param discount Name of the discount added and applied to a shopping cart and order for a shopper's purchase. 
 	 * @return com.mozu.api.contracts.productadmin.Discount
 	 * @see com.mozu.api.contracts.productadmin.Discount
 	 * @see com.mozu.api.contracts.productadmin.Discount
@@ -367,8 +367,8 @@ public class DiscountResource {
 	 *	Discount discount = new Discount();
 	 *	Discount discount = discount.createDiscount( discount,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param discount Properties of the discount to create. You must specify the discount name, amount type, start date, and target.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param discount Name of the discount added and applied to a shopping cart and order for a shopper's purchase. 
 	 * @return com.mozu.api.contracts.productadmin.Discount
 	 * @see com.mozu.api.contracts.productadmin.Discount
 	 * @see com.mozu.api.contracts.productadmin.Discount
@@ -388,9 +388,9 @@ public class DiscountResource {
 	 *	Discount discount = new Discount();
 	 *	CountDownLatch latch = discount.createDiscount( discount,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param discount Properties of the discount to create. You must specify the discount name, amount type, start date, and target.
+	 * @param discount Name of the discount added and applied to a shopping cart and order for a shopper's purchase. 
 	 * @return com.mozu.api.contracts.productadmin.Discount
 	 * @see com.mozu.api.contracts.productadmin.Discount
 	 * @see com.mozu.api.contracts.productadmin.Discount
@@ -409,8 +409,8 @@ public class DiscountResource {
 	 *	Discount discount = new Discount();
 	 *	DiscountLocalizedContent discountLocalizedContent = discount.updateDiscountContent( content,  discountId);
 	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
-	 * @param content The discount content to update, including the discount name.
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param content The container for the language-specific name of the discount. A container exists for each supported language (LocaleCode). This parameter enables you to display the discount name in multiple languages yet manage it as a single discount internally.
 	 * @return com.mozu.api.contracts.productadmin.DiscountLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.DiscountLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.DiscountLocalizedContent
@@ -426,9 +426,9 @@ public class DiscountResource {
 	 *	Discount discount = new Discount();
 	 *	CountDownLatch latch = discount.updateDiscountContent( content,  discountId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param content The discount content to update, including the discount name.
+	 * @param content The container for the language-specific name of the discount. A container exists for each supported language (LocaleCode). This parameter enables you to display the discount name in multiple languages yet manage it as a single discount internally.
 	 * @return com.mozu.api.contracts.productadmin.DiscountLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.DiscountLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.DiscountLocalizedContent
@@ -444,9 +444,9 @@ public class DiscountResource {
 	 *	Discount discount = new Discount();
 	 *	DiscountLocalizedContent discountLocalizedContent = discount.updateDiscountContent( content,  discountId,  responseFields);
 	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
-	 * @param responseFields 
-	 * @param content The discount content to update, including the discount name.
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param content The container for the language-specific name of the discount. A container exists for each supported language (LocaleCode). This parameter enables you to display the discount name in multiple languages yet manage it as a single discount internally.
 	 * @return com.mozu.api.contracts.productadmin.DiscountLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.DiscountLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.DiscountLocalizedContent
@@ -466,10 +466,10 @@ public class DiscountResource {
 	 *	Discount discount = new Discount();
 	 *	CountDownLatch latch = discount.updateDiscountContent( content,  discountId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
-	 * @param responseFields 
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param content The discount content to update, including the discount name.
+	 * @param content The container for the language-specific name of the discount. A container exists for each supported language (LocaleCode). This parameter enables you to display the discount name in multiple languages yet manage it as a single discount internally.
 	 * @return com.mozu.api.contracts.productadmin.DiscountLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.DiscountLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.DiscountLocalizedContent
@@ -488,8 +488,8 @@ public class DiscountResource {
 	 *	Discount discount = new Discount();
 	 *	Discount discount = discount.updateDiscount( discount,  discountId);
 	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount to update.
-	 * @param discount Properties of the discount to update.
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param discount Name of the discount added and applied to a shopping cart and order for a shopper's purchase. 
 	 * @return com.mozu.api.contracts.productadmin.Discount
 	 * @see com.mozu.api.contracts.productadmin.Discount
 	 * @see com.mozu.api.contracts.productadmin.Discount
@@ -505,9 +505,9 @@ public class DiscountResource {
 	 *	Discount discount = new Discount();
 	 *	CountDownLatch latch = discount.updateDiscount( discount,  discountId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount to update.
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param discount Properties of the discount to update.
+	 * @param discount Name of the discount added and applied to a shopping cart and order for a shopper's purchase. 
 	 * @return com.mozu.api.contracts.productadmin.Discount
 	 * @see com.mozu.api.contracts.productadmin.Discount
 	 * @see com.mozu.api.contracts.productadmin.Discount
@@ -523,9 +523,9 @@ public class DiscountResource {
 	 *	Discount discount = new Discount();
 	 *	Discount discount = discount.updateDiscount( discount,  discountId,  responseFields);
 	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount to update.
-	 * @param responseFields 
-	 * @param discount Properties of the discount to update.
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param discount Name of the discount added and applied to a shopping cart and order for a shopper's purchase. 
 	 * @return com.mozu.api.contracts.productadmin.Discount
 	 * @see com.mozu.api.contracts.productadmin.Discount
 	 * @see com.mozu.api.contracts.productadmin.Discount
@@ -545,10 +545,10 @@ public class DiscountResource {
 	 *	Discount discount = new Discount();
 	 *	CountDownLatch latch = discount.updateDiscount( discount,  discountId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount to update.
-	 * @param responseFields 
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param discount Properties of the discount to update.
+	 * @param discount Name of the discount added and applied to a shopping cart and order for a shopper's purchase. 
 	 * @return com.mozu.api.contracts.productadmin.Discount
 	 * @see com.mozu.api.contracts.productadmin.Discount
 	 * @see com.mozu.api.contracts.productadmin.Discount
@@ -567,7 +567,7 @@ public class DiscountResource {
 	 *	Discount discount = new Discount();
 	 *	Stream stream = discount.deleteDiscount( discountId);
 	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
 	 * @return Stream
 	 * @see Stream
 	 */
@@ -586,7 +586,7 @@ public class DiscountResource {
 	 *	Discount discount = new Discount();
 	 *	CountDownLatch latch = discount.deleteDiscount( discountId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return Stream
 	 * @see Stream

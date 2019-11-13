@@ -17,7 +17,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use this resource to manage authentication tickets for your applications.
+ * Use the Authetickets for applications resource to manage authentication tickets for your apps.
  * </summary>
  */
 public class AuthTicketClient {
@@ -30,7 +30,7 @@ public class AuthTicketClient {
 	 * client.executeRequest();
 	 * AuthTicket authTicket = client.Result();
 	 * </code></pre></p>
-	 * @param appAuthInfo Authentication information required to generate an authentication ticket includes the application id and the shared secret.
+	 * @param appAuthInfo The information required to authenticate third party applications against the  API.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.AuthTicket>
 	 * @see com.mozu.api.contracts.appdev.AuthTicket
 	 * @see com.mozu.api.contracts.appdev.AppAuthInfo
@@ -48,8 +48,8 @@ public class AuthTicketClient {
 	 * client.executeRequest();
 	 * AuthTicket authTicket = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param appAuthInfo Authentication information required to generate an authentication ticket includes the application id and the shared secret.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param appAuthInfo The information required to authenticate third party applications against the  API.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.AuthTicket>
 	 * @see com.mozu.api.contracts.appdev.AuthTicket
 	 * @see com.mozu.api.contracts.appdev.AppAuthInfo
@@ -120,7 +120,7 @@ public class AuthTicketClient {
 	 * client.executeRequest();
 	 * AuthTicket authTicket = client.Result();
 	 * </code></pre></p>
-	 * @param authTicketRequest The refresh token string required to update the application authentication ticket.
+	 * @param authTicketRequest Properties of the authentication ticket refresh requests, which includes the refresh token string.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.AuthTicket>
 	 * @see com.mozu.api.contracts.appdev.AuthTicket
 	 * @see com.mozu.api.contracts.appdev.AuthTicketRequest
@@ -138,8 +138,8 @@ public class AuthTicketClient {
 	 * client.executeRequest();
 	 * AuthTicket authTicket = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param authTicketRequest The refresh token string required to update the application authentication ticket.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param authTicketRequest Properties of the authentication ticket refresh requests, which includes the refresh token string.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.AuthTicket>
 	 * @see com.mozu.api.contracts.appdev.AuthTicket
 	 * @see com.mozu.api.contracts.appdev.AuthTicketRequest
@@ -165,7 +165,7 @@ public class AuthTicketClient {
 	 * client.executeRequest();
 	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param refreshToken The refresh token string from the application's authentication ticket.
+	 * @param refreshToken Alphanumeric string used for access tokens. This token refreshes access for accounts by generating a new developer or application account authentication ticket after an access token expires.
 	 * @return Mozu.Api.MozuClient <Stream>
 	 * @see Stream
 	 */

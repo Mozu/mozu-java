@@ -48,7 +48,7 @@ public class ApplicationClient {
 	 * client.executeRequest();
 	 * Application application = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.application.Application>
 	 * @see com.mozu.api.contracts.sitesettings.application.Application
 	 */
@@ -72,7 +72,7 @@ public class ApplicationClient {
 	 * client.executeRequest();
 	 * Application application = client.Result();
 	 * </code></pre></p>
-	 * @param application Properties of the application to update.
+	 * @param application Properties of an application installed in a tenant.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.application.Application>
 	 * @see com.mozu.api.contracts.sitesettings.application.Application
 	 * @see com.mozu.api.contracts.sitesettings.application.Application
@@ -90,8 +90,8 @@ public class ApplicationClient {
 	 * client.executeRequest();
 	 * Application application = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param application Properties of the application to update.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param application Properties of an application installed in a tenant.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.application.Application>
 	 * @see com.mozu.api.contracts.sitesettings.application.Application
 	 * @see com.mozu.api.contracts.sitesettings.application.Application

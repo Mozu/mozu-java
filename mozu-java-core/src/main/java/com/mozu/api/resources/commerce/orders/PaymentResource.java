@@ -56,7 +56,7 @@ public class PaymentResource {
 	 *	PaymentCollection paymentCollection = payment.getPayments( orderId,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.commerceruntime.payments.PaymentCollection
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentCollection
 	 */
@@ -75,8 +75,8 @@ public class PaymentResource {
 	 *	Payment payment = new Payment();
 	 *	string string = payment.getAvailablePaymentActions( orderId,  paymentId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with the payment.
-	 * @param paymentId Unique identifer of the payment for which to retrieve available actions.
+	 * @param orderId Unique identifier of the order.
+	 * @param paymentId Unique identifier of the payment for which to perform the action.
 	 * @return List<string>
 	 * @see string
 	 */
@@ -95,8 +95,8 @@ public class PaymentResource {
 	 *	Payment payment = new Payment();
 	 *	Payment payment = payment.getPayment( orderId,  paymentId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with the payment transaction.
-	 * @param paymentId Unique identifier of the payment transaction submitted for the order.
+	 * @param orderId Unique identifier of the order.
+	 * @param paymentId Unique identifier of the payment for which to perform the action.
 	 * @return com.mozu.api.contracts.commerceruntime.payments.Payment
 	 * @see com.mozu.api.contracts.commerceruntime.payments.Payment
 	 */
@@ -111,9 +111,9 @@ public class PaymentResource {
 	 *	Payment payment = new Payment();
 	 *	Payment payment = payment.getPayment( orderId,  paymentId,  responseFields);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with the payment transaction.
-	 * @param paymentId Unique identifier of the payment transaction submitted for the order.
-	 * @param responseFields 
+	 * @param orderId Unique identifier of the order.
+	 * @param paymentId Unique identifier of the payment for which to perform the action.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.commerceruntime.payments.Payment
 	 * @see com.mozu.api.contracts.commerceruntime.payments.Payment
 	 */
@@ -132,9 +132,9 @@ public class PaymentResource {
 	 *	Payment payment = new Payment();
 	 *	Order order = payment.performPaymentAction( action,  orderId,  paymentId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with the payment.
-	 * @param paymentId Unique identifer of the payment for which to perform the action.
-	 * @param action The action to perform for the payment. Possible values are AuthAndCapture, AuthorizePayment, CapturePayment, VoidPayment, CreditPayment, RequestCheck, ApplyCheck, DeclineCheck.
+	 * @param orderId Unique identifier of the order.
+	 * @param paymentId Unique identifier of the payment for which to perform the action.
+	 * @param action Properties of the payment action performed for an order.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentAction
@@ -150,10 +150,10 @@ public class PaymentResource {
 	 *	Payment payment = new Payment();
 	 *	Order order = payment.performPaymentAction( action,  orderId,  paymentId,  responseFields);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with the payment.
-	 * @param paymentId Unique identifer of the payment for which to perform the action.
-	 * @param responseFields 
-	 * @param action The action to perform for the payment. Possible values are AuthAndCapture, AuthorizePayment, CapturePayment, VoidPayment, CreditPayment, RequestCheck, ApplyCheck, DeclineCheck.
+	 * @param orderId Unique identifier of the order.
+	 * @param paymentId Unique identifier of the payment for which to perform the action.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param action Properties of the payment action performed for an order.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentAction
@@ -173,8 +173,8 @@ public class PaymentResource {
 	 *	Payment payment = new Payment();
 	 *	Order order = payment.createPaymentAction( action,  orderId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order for which to apply the payment.
-	 * @param action To action to perform for the newly created payment. Possible values are AuthAndCapture, AuthorizePayment, CapturePayment, VoidPayment, CreditPayment, RequestCheck, ApplyCheck, DeclineCheck.
+	 * @param orderId Unique identifier of the order.
+	 * @param action Properties of the payment action performed for an order.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentAction
@@ -190,9 +190,9 @@ public class PaymentResource {
 	 *	Payment payment = new Payment();
 	 *	Order order = payment.createPaymentAction( action,  orderId,  responseFields);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order for which to apply the payment.
-	 * @param responseFields 
-	 * @param action To action to perform for the newly created payment. Possible values are AuthAndCapture, AuthorizePayment, CapturePayment, VoidPayment, CreditPayment, RequestCheck, ApplyCheck, DeclineCheck.
+	 * @param orderId Unique identifier of the order.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param action Properties of the payment action performed for an order.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentAction

@@ -20,6 +20,7 @@ import com.mozu.api.contracts.commerceruntime.fulfillment.Destination;
 import com.mozu.api.contracts.commerceruntime.fulfillment.ShipmentItem;
 import com.mozu.api.contracts.core.Contact;
 import com.mozu.api.contracts.commerceruntime.fulfillment.Package;
+import com.mozu.api.contracts.commerceruntime.fulfillment.ShipmentStatusReason;
 import com.mozu.api.contracts.commerceruntime.fulfillment.WorkflowState;
 
 /**
@@ -529,6 +530,16 @@ public class Shipment implements Serializable
 	}
 	public void setPackages(List<Package> packages) {
 		this.packages = packages;
+	}
+
+	protected  ShipmentStatusReason shipmentStatusReason;
+
+	public ShipmentStatusReason getShipmentStatusReason() {
+		return this.shipmentStatusReason;
+	}
+
+	public void setShipmentStatusReason(ShipmentStatusReason shipmentStatusReason) {
+		this.shipmentStatusReason = shipmentStatusReason;
 	}
 
 	protected transient com.fasterxml.jackson.databind.JsonNode taxData;

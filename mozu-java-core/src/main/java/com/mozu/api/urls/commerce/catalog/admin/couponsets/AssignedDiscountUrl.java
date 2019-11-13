@@ -15,7 +15,7 @@ public class AssignedDiscountUrl
 
 	/**
 	 * Get Resource Url for GetAssignedDiscounts
-	 * @param couponSetCode 
+	 * @param couponSetCode The unique identifier of the coupon set.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getAssignedDiscountsUrl(String couponSetCode)
@@ -27,7 +27,7 @@ public class AssignedDiscountUrl
 
 	/**
 	 * Get Resource Url for AssignDiscount
-	 * @param couponSetCode 
+	 * @param couponSetCode The unique identifier of the coupon set.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl assignDiscountUrl(String couponSetCode)
@@ -39,8 +39,8 @@ public class AssignedDiscountUrl
 
 	/**
 	 * Get Resource Url for UnAssignDiscount
-	 * @param couponSetCode 
-	 * @param discountId 
+	 * @param couponSetCode The unique identifier of the coupon set.
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl unAssignDiscountUrl(String couponSetCode, Integer discountId)

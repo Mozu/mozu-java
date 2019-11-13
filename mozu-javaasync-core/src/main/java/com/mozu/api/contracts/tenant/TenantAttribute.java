@@ -12,12 +12,18 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
+/**
+ *	Mozu.Tenant.Contracts.TenantAttribute ApiType DOCUMENT_HERE 
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class TenantAttribute implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Identifier of the user that created the object. System created and read only.
+	 */
 	protected  String createBy;
 
 	public String getCreateBy() {
@@ -28,6 +34,9 @@ public class TenantAttribute implements Serializable
 		this.createBy = createBy;
 	}
 
+	/**
+	 * The date and time in UTCÂ format set when the object was created.
+	 */
 	protected  DateTime createDate;
 
 	public DateTime getCreateDate() {
@@ -38,6 +47,9 @@ public class TenantAttribute implements Serializable
 		this.createDate = createDate;
 	}
 
+	/**
+	 * The user supplied name that appears in . You can use this field for identification purposes.
+	 */
 	protected  String name;
 
 	public String getName() {
@@ -48,6 +60,9 @@ public class TenantAttribute implements Serializable
 		this.name = name;
 	}
 
+	/**
+	 * Identifier of the user that updated the entity most recently.
+	 */
 	protected  String updateBy;
 
 	public String getUpdateBy() {
@@ -58,6 +73,9 @@ public class TenantAttribute implements Serializable
 		this.updateBy = updateBy;
 	}
 
+	/**
+	 * The date and time in UTC format the object was updated most recently.
+	 */
 	protected  DateTime updateDate;
 
 	public DateTime getUpdateDate() {
@@ -68,6 +86,9 @@ public class TenantAttribute implements Serializable
 		this.updateDate = updateDate;
 	}
 
+	/**
+	 * The value of a property, used by numerous objects within  including facets, attributes, products, localized content, metadata, capabilities ( and third-party), location inventory adjustment, and more. The value may be a string, integer, or double. Validation may be run against the entered and saved values depending on the object type.
+	 */
 	protected  Object value;
 
 	public Object getValue() {

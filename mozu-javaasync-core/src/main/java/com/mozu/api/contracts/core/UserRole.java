@@ -6,6 +6,8 @@
  */
 package com.mozu.api.contracts.core;
 
+import java.util.List;
+import java.util.HashMap;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -41,6 +43,14 @@ public class UserRole implements Serializable
 
 	public void setRoleName(String roleName) {
 		this.roleName = roleName;
+	}
+
+	protected List<String> roleTags;
+	public List<String> getRoleTags() {
+		return this.roleTags;
+	}
+	public void setRoleTags(List<String> roleTags) {
+		this.roleTags = roleTags;
 	}
 
 	protected  String userId;

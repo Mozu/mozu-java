@@ -16,7 +16,7 @@ public class DeveloperAdminUserAuthTicketUrl
 	/**
 	 * Get Resource Url for CreateDeveloperUserAuthTicket
 	 * @param developerAccountId Unique identifier of the developer account.
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl createDeveloperUserAuthTicketUrl(Integer developerAccountId, String responseFields)
@@ -30,7 +30,7 @@ public class DeveloperAdminUserAuthTicketUrl
 	/**
 	 * Get Resource Url for RefreshDeveloperAuthTicket
 	 * @param developerAccountId Unique identifier of the developer account.
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl refreshDeveloperAuthTicketUrl(Integer developerAccountId, String responseFields)
@@ -43,7 +43,7 @@ public class DeveloperAdminUserAuthTicketUrl
 
 	/**
 	 * Get Resource Url for DeleteUserAuthTicket
-	 * @param refreshToken Refresh token string associated with the developer account authentication ticket.
+	 * @param refreshToken Alphanumeric string used for access tokens. This token refreshes access for accounts by generating a new developer or application account authentication ticket after an access token expires.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteUserAuthTicketUrl(String refreshToken)

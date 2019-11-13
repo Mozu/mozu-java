@@ -40,8 +40,8 @@ public class WishlistItemResource {
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	WishlistItem wishlistItem = wishlistitem.getWishlistItem( wishlistId,  wishlistItemId);
 	 * </code></pre></p>
-	 * @param wishlistId Unique identifier of the wish list item to retrieve.
-	 * @param wishlistItemId Unique identifier of the wish list associated with the item to retrieve.
+	 * @param wishlistId Unique identifier of the wish list.
+	 * @param wishlistItemId Unique identifier of the item to remove from the shopper wish list.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem
 	 */
@@ -56,9 +56,9 @@ public class WishlistItemResource {
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	WishlistItem wishlistItem = wishlistitem.getWishlistItem( wishlistId,  wishlistItemId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param wishlistId Unique identifier of the wish list item to retrieve.
-	 * @param wishlistItemId Unique identifier of the wish list associated with the item to retrieve.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param wishlistId Unique identifier of the wish list.
+	 * @param wishlistItemId Unique identifier of the item to remove from the shopper wish list.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem
 	 */
@@ -77,7 +77,7 @@ public class WishlistItemResource {
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	WishlistItemCollection wishlistItemCollection = wishlistitem.getWishlistItems( wishlistId);
 	 * </code></pre></p>
-	 * @param wishlistId Unique identifier of the wish list associated with the items to retrieve.
+	 * @param wishlistId Unique identifier of the wish list.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.WishlistItemCollection
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.WishlistItemCollection
 	 */
@@ -92,12 +92,12 @@ public class WishlistItemResource {
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	WishlistItemCollection wishlistItemCollection = wishlistitem.getWishlistItems( wishlistId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param filter 
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
-	 * @param wishlistId Unique identifier of the wish list associated with the items to retrieve.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param wishlistId Unique identifier of the wish list.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.WishlistItemCollection
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.WishlistItemCollection
 	 */
@@ -116,8 +116,8 @@ public class WishlistItemResource {
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	WishlistItemCollection wishlistItemCollection = wishlistitem.getWishlistItemsByWishlistName( customerAccountId,  wishlistName);
 	 * </code></pre></p>
-	 * @param customerAccountId The unique identifier of the customer account associated with the wish list.
-	 * @param wishlistName The name of the wish list that contains the items to retrieve.
+	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
+	 * @param wishlistName The name of the wish list to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.WishlistItemCollection
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.WishlistItemCollection
 	 */
@@ -132,13 +132,13 @@ public class WishlistItemResource {
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	WishlistItemCollection wishlistItemCollection = wishlistitem.getWishlistItemsByWishlistName( customerAccountId,  wishlistName,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param customerAccountId The unique identifier of the customer account associated with the wish list.
-	 * @param filter 
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
-	 * @param wishlistName The name of the wish list that contains the items to retrieve.
+	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param wishlistName The name of the wish list to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.WishlistItemCollection
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.WishlistItemCollection
 	 */
@@ -157,8 +157,8 @@ public class WishlistItemResource {
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	WishlistItem wishlistItem = wishlistitem.addItemToWishlist( wishlistItem,  wishlistId);
 	 * </code></pre></p>
-	 * @param wishlistId Unique identifier of the wish list associated with the item to add.
-	 * @param wishlistItem Properties of the item to add to the wish list.
+	 * @param wishlistId Unique identifier of the wish list.
+	 * @param wishlistItem Properties of an item in a shopper wish list.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem
@@ -174,9 +174,9 @@ public class WishlistItemResource {
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	WishlistItem wishlistItem = wishlistitem.addItemToWishlist( wishlistItem,  wishlistId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param wishlistId Unique identifier of the wish list associated with the item to add.
-	 * @param wishlistItem Properties of the item to add to the wish list.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param wishlistId Unique identifier of the wish list.
+	 * @param wishlistItem Properties of an item in a shopper wish list.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem
@@ -196,9 +196,9 @@ public class WishlistItemResource {
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	WishlistItem wishlistItem = wishlistitem.updateWishlistItemQuantity( wishlistId,  wishlistItemId,  quantity);
 	 * </code></pre></p>
-	 * @param quantity The quantity of the item in the wish list.
-	 * @param wishlistId Unique identifier of the wish list associated with the item quantity to update.
-	 * @param wishlistItemId Unique identifier of the item in the wish list to update quantity.
+	 * @param quantity The number of cart items in the shopper's active cart.
+	 * @param wishlistId Unique identifier of the wish list.
+	 * @param wishlistItemId Unique identifier of the item to remove from the shopper wish list.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem
 	 */
@@ -213,10 +213,10 @@ public class WishlistItemResource {
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	WishlistItem wishlistItem = wishlistitem.updateWishlistItemQuantity( wishlistId,  wishlistItemId,  quantity,  responseFields);
 	 * </code></pre></p>
-	 * @param quantity The quantity of the item in the wish list.
-	 * @param responseFields 
-	 * @param wishlistId Unique identifier of the wish list associated with the item quantity to update.
-	 * @param wishlistItemId Unique identifier of the item in the wish list to update quantity.
+	 * @param quantity The number of cart items in the shopper's active cart.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param wishlistId Unique identifier of the wish list.
+	 * @param wishlistItemId Unique identifier of the item to remove from the shopper wish list.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem
 	 */
@@ -235,9 +235,9 @@ public class WishlistItemResource {
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	WishlistItem wishlistItem = wishlistitem.updateWishlistItem( wishlistItem,  wishlistId,  wishlistItemId);
 	 * </code></pre></p>
-	 * @param wishlistId Unique identifier of the wish list associated with the item to update.
-	 * @param wishlistItemId Unique identifier of the item in the shopper wish list to update.
-	 * @param wishlistItem Properties of the shopper wish list item to update.
+	 * @param wishlistId Unique identifier of the wish list.
+	 * @param wishlistItemId Unique identifier of the item to remove from the shopper wish list.
+	 * @param wishlistItem Properties of an item in a shopper wish list.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem
@@ -253,10 +253,10 @@ public class WishlistItemResource {
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	WishlistItem wishlistItem = wishlistitem.updateWishlistItem( wishlistItem,  wishlistId,  wishlistItemId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param wishlistId Unique identifier of the wish list associated with the item to update.
-	 * @param wishlistItemId Unique identifier of the item in the shopper wish list to update.
-	 * @param wishlistItem Properties of the shopper wish list item to update.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param wishlistId Unique identifier of the wish list.
+	 * @param wishlistItemId Unique identifier of the item to remove from the shopper wish list.
+	 * @param wishlistItem Properties of an item in a shopper wish list.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem
@@ -276,7 +276,7 @@ public class WishlistItemResource {
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	Wishlist wishlist = wishlistitem.removeAllWishlistItems( wishlistId);
 	 * </code></pre></p>
-	 * @param wishlistId Unique identifier of the wish list associated with the items to remove.
+	 * @param wishlistId Unique identifier of the wish list.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 */
@@ -295,7 +295,7 @@ public class WishlistItemResource {
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	Stream stream = wishlistitem.deleteWishlistItem( wishlistId,  wishlistItemId);
 	 * </code></pre></p>
-	 * @param wishlistId Unique identifier of the wish list associated with the item to remove.
+	 * @param wishlistId Unique identifier of the wish list.
 	 * @param wishlistItemId Unique identifier of the item to remove from the shopper wish list.
 	 * @return Stream
 	 * @see Stream
