@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.codec.binary.Base64;
 import org.joda.time.DateTime;
+import org.joda.time.DateTimeZone;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 import org.slf4j.Logger;
@@ -24,16 +25,14 @@ public class Crypto {
     public static String getHash(String secretKey, String date, String body) {
         String hash = null;
         try {
-        	logger.info("secret: {}, date: {}, body: {}", secretKey, date, body);
-        	logger.info("Generating hash using {} algorithm and {} charset {}",
-        			MozuConfig.getEncodeAlgorithm(), MozuConfig.getCharSet());
+        	logger.info("Shared secret: {}, date: {}, body: {}", secretKey, date, body);
             MessageDigest digest = MessageDigest.getInstance(MozuConfig.getEncodeAlgorithm());
             String doubleSecretKey = secretKey.concat(secretKey);
             String hashedSecret = Base64.encodeBase64String(digest.digest(doubleSecretKey.getBytes(MozuConfig.getCharSet())));
             
             String payload = hashedSecret.concat(date).concat(body);
             hash = Base64.encodeBase64String(digest.digest(payload.getBytes(MozuConfig.getCharSet())));
-            logger.info("Generated hash: {} from payload: {}", hash, payload);
+            logger.info("Generated hash: {}", hash);
         } catch (NoSuchAlgorithmException nae) {
             logger.error("Bad encoding algorithm " + MozuConfig.getEncodeAlgorithm() + ": " + nae.getMessage() );
         } catch (UnsupportedEncodingException uee) {
@@ -74,12 +73,12 @@ public class Crypto {
             DateTimeFormatter dtf = DateTimeFormat.forPattern("E, dd MMM yyyy HH:mm:ss zzz");
             DateTime requestDttm = dtf.parseDateTime(dateString);
             
-            logger.info("Current system date is {}", DateTime.now());
+            logger.info("Current system date is {}", DateTime.now(DateTimeZone.UTC));
             logger.info("Date in request header is {}", requestDttm);
             
             long deltaTime = (DateTime.now().getMillis() - requestDttm.getMillis())/1000;
             if (deltaTime > requestValidTimeSeconds) {
-                logger.info("{} is greater than {}", deltaTime, requestValidTimeSeconds);
+                logger.info("{} seconds is greater than configured time-out value", deltaTime);
                 logger.info("Request timed out");
                 isValid = false;
             }
