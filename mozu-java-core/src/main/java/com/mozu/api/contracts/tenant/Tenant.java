@@ -83,6 +83,14 @@ public class Tenant implements Serializable
 		this.masterCatalogs = masterCatalogs;
 	}
 
+	protected List<TenantAttribute> attributes;
+	public List<TenantAttribute> getAttributes() {
+		return this.attributes;
+	}
+	public void setAttributes(List<TenantAttribute> attributes) {
+		this.attributes = attributes;
+	}
+	
 	protected List<Site> sites;
 	public List<Site> getSites() {
 		return this.sites;
@@ -90,6 +98,4 @@ public class Tenant implements Serializable
 	public void setSites(List<Site> sites) {
 		this.sites = sites;
 	}
-
-
 }
