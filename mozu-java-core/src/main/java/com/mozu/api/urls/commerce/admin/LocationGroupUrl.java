@@ -35,14 +35,14 @@ public class LocationGroupUrl
 
 	/**
 	 * Get Resource Url for GetLocationGroup
-	 * @param groupId 
+	 * @param locationGroupCode 
 	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getLocationGroupUrl(Integer groupId, String responseFields)
+	public static MozuUrl getLocationGroupUrl(String locationGroupCode, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/admin/locationGroups/{groupId}?responseFields={responseFields}");
-		formatter.formatUrl("groupId", groupId);
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/admin/locationGroups/{locationGroupCode}?responseFields={responseFields}");
+		formatter.formatUrl("locationGroupCode", locationGroupCode);
 		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
@@ -61,27 +61,27 @@ public class LocationGroupUrl
 
 	/**
 	 * Get Resource Url for UpdateLocationGroup
-	 * @param groupId 
+	 * @param locationGroupCode 
 	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl updateLocationGroupUrl(Integer groupId, String responseFields)
+	public static MozuUrl updateLocationGroupUrl(String locationGroupCode, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/admin/locationGroups/{groupId}?responseFields={responseFields}");
-		formatter.formatUrl("groupId", groupId);
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/admin/locationGroups/{locationGroupCode}?responseFields={responseFields}");
+		formatter.formatUrl("locationGroupCode", locationGroupCode);
 		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for DeleteLocationGroup
-	 * @param groupId 
+	 * @param locationGroupCode 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl deleteLocationGroupUrl(Integer groupId)
+	public static MozuUrl deleteLocationGroupUrl(String locationGroupCode)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/admin/locationGroups/{groupId}");
-		formatter.formatUrl("groupId", groupId);
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/admin/locationGroups/{locationGroupCode}");
+		formatter.formatUrl("locationGroupCode", locationGroupCode);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

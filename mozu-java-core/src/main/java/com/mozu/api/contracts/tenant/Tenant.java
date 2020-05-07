@@ -13,6 +13,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
+import com.mozu.api.contracts.tenant.TenantAttribute;
 import com.mozu.api.contracts.tenant.MasterCatalog;
 import com.mozu.api.contracts.tenant.Site;
 
@@ -75,6 +76,14 @@ public class Tenant implements Serializable
 		this.omsMerchantId = omsMerchantId;
 	}
 
+	protected List<TenantAttribute> attributes;
+	public List<TenantAttribute> getAttributes() {
+		return this.attributes;
+	}
+	public void setAttributes(List<TenantAttribute> attributes) {
+		this.attributes = attributes;
+	}
+
 	protected List<MasterCatalog> masterCatalogs;
 	public List<MasterCatalog> getMasterCatalogs() {
 		return this.masterCatalogs;
@@ -83,14 +92,6 @@ public class Tenant implements Serializable
 		this.masterCatalogs = masterCatalogs;
 	}
 
-	protected List<TenantAttribute> attributes;
-	public List<TenantAttribute> getAttributes() {
-		return this.attributes;
-	}
-	public void setAttributes(List<TenantAttribute> attributes) {
-		this.attributes = attributes;
-	}
-	
 	protected List<Site> sites;
 	public List<Site> getSites() {
 		return this.sites;
@@ -98,4 +99,6 @@ public class Tenant implements Serializable
 	public void setSites(List<Site> sites) {
 		this.sites = sites;
 	}
+
+
 }

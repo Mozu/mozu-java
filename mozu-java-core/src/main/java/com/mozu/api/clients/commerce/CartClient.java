@@ -25,6 +25,48 @@ public class CartClient {
 	/**
 	 * 
 	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartSummary> mozuClient=GetCartSummaryByCartIdClient( cartId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * CartSummary cartSummary = client.Result();
+	 * </code></pre></p>
+	 * @param cartId 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.carts.CartSummary>
+	 * @see com.mozu.api.contracts.commerceruntime.carts.CartSummary
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartSummary> getCartSummaryByCartIdClient(String cartId) throws Exception
+	{
+		return getCartSummaryByCartIdClient( cartId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartSummary> mozuClient=GetCartSummaryByCartIdClient( cartId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * CartSummary cartSummary = client.Result();
+	 * </code></pre></p>
+	 * @param cartId 
+	 * @param responseFields 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.carts.CartSummary>
+	 * @see com.mozu.api.contracts.commerceruntime.carts.CartSummary
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartSummary> getCartSummaryByCartIdClient(String cartId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.CartUrl.getCartSummaryByCartIdUrl(cartId, responseFields);
+		String verb = "GET";
+		Class<?> clz = com.mozu.api.contracts.commerceruntime.carts.CartSummary.class;
+		MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartSummary> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartSummary>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> mozuClient=GetCartClient( cartId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
@@ -275,6 +317,95 @@ public class CartClient {
 	/**
 	 * 
 	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> mozuClient=GetOrCreateUserCartClient( userId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Cart cart = client.Result();
+	 * </code></pre></p>
+	 * @param userId 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.carts.Cart>
+	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> getOrCreateUserCartClient(String userId) throws Exception
+	{
+		return getOrCreateUserCartClient( userId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> mozuClient=GetOrCreateUserCartClient( userId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Cart cart = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param userId 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.carts.Cart>
+	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> getOrCreateUserCartClient(String userId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.CartUrl.getOrCreateUserCartUrl(responseFields, userId);
+		String verb = "POST";
+		Class<?> clz = com.mozu.api.contracts.commerceruntime.carts.Cart.class;
+		MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> mozuClient=UpdateCartByCartIdClient( cart,  cartId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Cart cart = client.Result();
+	 * </code></pre></p>
+	 * @param cartId 
+	 * @param cart 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.carts.Cart>
+	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
+	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> updateCartByCartIdClient(com.mozu.api.contracts.commerceruntime.carts.Cart cart, String cartId) throws Exception
+	{
+		return updateCartByCartIdClient( cart,  cartId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> mozuClient=UpdateCartByCartIdClient( cart,  cartId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Cart cart = client.Result();
+	 * </code></pre></p>
+	 * @param cartId 
+	 * @param responseFields 
+	 * @param cart 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.carts.Cart>
+	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
+	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> updateCartByCartIdClient(com.mozu.api.contracts.commerceruntime.carts.Cart cart, String cartId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.CartUrl.updateCartByCartIdUrl(cartId, responseFields);
+		String verb = "PUT";
+		Class<?> clz = com.mozu.api.contracts.commerceruntime.carts.Cart.class;
+		MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(cart);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> mozuClient=UpdateCartClient( cart);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
@@ -320,6 +451,53 @@ public class CartClient {
 	/**
 	 * 
 	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> mozuClient=UpdateUserCartClient( cart,  userId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Cart cart = client.Result();
+	 * </code></pre></p>
+	 * @param userId 
+	 * @param cart 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.carts.Cart>
+	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
+	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> updateUserCartClient(com.mozu.api.contracts.commerceruntime.carts.Cart cart, String userId) throws Exception
+	{
+		return updateUserCartClient( cart,  userId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> mozuClient=UpdateUserCartClient( cart,  userId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Cart cart = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param userId 
+	 * @param cart 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.carts.Cart>
+	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
+	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> updateUserCartClient(com.mozu.api.contracts.commerceruntime.carts.Cart cart, String userId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.CartUrl.updateUserCartUrl(responseFields, userId);
+		String verb = "PUT";
+		Class<?> clz = com.mozu.api.contracts.commerceruntime.carts.Cart.class;
+		MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(cart);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
 	 * MozuClient<java.io.InputStream> mozuClient=DeleteCartClient( cartId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
@@ -332,6 +510,30 @@ public class CartClient {
 	public static MozuClient<java.io.InputStream> deleteCartClient(String cartId) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.CartUrl.deleteCartUrl(cartId);
+		String verb = "DELETE";
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<java.io.InputStream> mozuClient=DeleteUserCartClient( userId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Stream stream = client.Result();
+	 * </code></pre></p>
+	 * @param userId 
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
+	 */
+	public static MozuClient<java.io.InputStream> deleteUserCartClient(String userId) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.CartUrl.deleteUserCartUrl(userId);
 		String verb = "DELETE";
 		Class<?> clz = java.io.InputStream.class;
 		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);

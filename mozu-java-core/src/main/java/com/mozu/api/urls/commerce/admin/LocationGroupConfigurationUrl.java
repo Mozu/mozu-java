@@ -15,14 +15,14 @@ public class LocationGroupConfigurationUrl
 
 	/**
 	 * Get Resource Url for GetLocationGroupConfiguration
-	 * @param locationGroupId 
+	 * @param locationGroupCode 
 	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getLocationGroupConfigurationUrl(Integer locationGroupId, String responseFields)
+	public static MozuUrl getLocationGroupConfigurationUrl(String locationGroupCode, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/admin/locationGroupConfiguration/{locationGroupId}?responseFields={responseFields}");
-		formatter.formatUrl("locationGroupId", locationGroupId);
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/admin/locationGroupConfiguration/{locationGroupCode}?responseFields={responseFields}");
+		formatter.formatUrl("locationGroupCode", locationGroupCode);
 		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
@@ -43,14 +43,14 @@ public class LocationGroupConfigurationUrl
 
 	/**
 	 * Get Resource Url for SetLocationGroupConfiguration
-	 * @param locationGroupId 
+	 * @param locationGroupCode 
 	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl setLocationGroupConfigurationUrl(Integer locationGroupId, String responseFields)
+	public static MozuUrl setLocationGroupConfigurationUrl(String locationGroupCode, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/admin/locationGroupConfiguration/{locationGroupId}?responseFields={responseFields}");
-		formatter.formatUrl("locationGroupId", locationGroupId);
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/admin/locationGroupConfiguration/{locationGroupCode}?responseFields={responseFields}");
+		formatter.formatUrl("locationGroupCode", locationGroupCode);
 		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}

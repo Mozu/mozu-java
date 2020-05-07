@@ -42,6 +42,83 @@ public TenantAdminUserAuthTicketResource(ApiContext apiContext)
 	 * 
 	 * <p><pre><code>
 	 *	TenantAdminUserAuthTicket tenantadminuserauthticket = new TenantAdminUserAuthTicket();
+	 *	string string = tenantadminuserauthticket.getWsFedChallengeUrl( id,  scopeType,  redirect);
+	 * </code></pre></p>
+	 * @param id 
+	 * @param redirect 
+	 * @param scopeType 
+	 * @return string
+	 * @see string
+	 */
+	public String getWsFedChallengeUrl(String id, String scopeType, String redirect) throws Exception
+	{
+		return getWsFedChallengeUrl( id,  null,  scopeType,  redirect,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	TenantAdminUserAuthTicket tenantadminuserauthticket = new TenantAdminUserAuthTicket();
+	 *	string string = tenantadminuserauthticket.getWsFedChallengeUrl( id,  scopeid,  scopeType,  redirect,  responseFields);
+	 * </code></pre></p>
+	 * @param id 
+	 * @param redirect 
+	 * @param responseFields 
+	 * @param scopeid 
+	 * @param scopeType 
+	 * @return string
+	 * @see string
+	 */
+	public String getWsFedChallengeUrl(String id, Integer scopeid, String scopeType, String redirect, String responseFields) throws Exception
+	{
+		MozuClient<String> client = com.mozu.api.clients.platform.adminuser.TenantAdminUserAuthTicketClient.getWsFedChallengeUrlClient( id,  scopeid,  scopeType,  redirect,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	TenantAdminUserAuthTicket tenantadminuserauthticket = new TenantAdminUserAuthTicket();
+	 *	string string = tenantadminuserauthticket.getWsFedSignOutUrl( id,  redirect);
+	 * </code></pre></p>
+	 * @param id 
+	 * @param redirect 
+	 * @return string
+	 * @see string
+	 */
+	public String getWsFedSignOutUrl(String id, String redirect) throws Exception
+	{
+		return getWsFedSignOutUrl( id,  redirect,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	TenantAdminUserAuthTicket tenantadminuserauthticket = new TenantAdminUserAuthTicket();
+	 *	string string = tenantadminuserauthticket.getWsFedSignOutUrl( id,  redirect,  responseFields);
+	 * </code></pre></p>
+	 * @param id 
+	 * @param redirect 
+	 * @param responseFields 
+	 * @return string
+	 * @see string
+	 */
+	public String getWsFedSignOutUrl(String id, String redirect, String responseFields) throws Exception
+	{
+		MozuClient<String> client = com.mozu.api.clients.platform.adminuser.TenantAdminUserAuthTicketClient.getWsFedSignOutUrlClient( id,  redirect,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	TenantAdminUserAuthTicket tenantadminuserauthticket = new TenantAdminUserAuthTicket();
 	 *	TenantAdminUserAuthTicket tenantAdminUserAuthTicket = tenantadminuserauthticket.createUserAuthTicket( userAuthInfo);
 	 * </code></pre></p>
 	 * @param userAuthInfo Information required to authenticate a user.
@@ -70,6 +147,44 @@ public TenantAdminUserAuthTicketResource(ApiContext apiContext)
 	public com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket createUserAuthTicket(com.mozu.api.contracts.core.UserAuthInfo userAuthInfo, Integer tenantId, String responseFields) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket> client = com.mozu.api.clients.platform.adminuser.TenantAdminUserAuthTicketClient.createUserAuthTicketClient( userAuthInfo,  tenantId,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	TenantAdminUserAuthTicket tenantadminuserauthticket = new TenantAdminUserAuthTicket();
+	 *	TenantAdminUserAuthTicket tenantAdminUserAuthTicket = tenantadminuserauthticket.createUserAuthTicketWithWsFed( id,  scopeType);
+	 * </code></pre></p>
+	 * @param id 
+	 * @param scopeType 
+	 * @return com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
+	 * @see com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
+	 */
+	public com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket createUserAuthTicketWithWsFed(String id, String scopeType) throws Exception
+	{
+		return createUserAuthTicketWithWsFed( id,  null,  scopeType,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	TenantAdminUserAuthTicket tenantadminuserauthticket = new TenantAdminUserAuthTicket();
+	 *	TenantAdminUserAuthTicket tenantAdminUserAuthTicket = tenantadminuserauthticket.createUserAuthTicketWithWsFed( id,  scopeid,  scopeType,  responseFields);
+	 * </code></pre></p>
+	 * @param id 
+	 * @param responseFields 
+	 * @param scopeid 
+	 * @param scopeType 
+	 * @return com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
+	 * @see com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
+	 */
+	public com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket createUserAuthTicketWithWsFed(String id, Integer scopeid, String scopeType, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket> client = com.mozu.api.clients.platform.adminuser.TenantAdminUserAuthTicketClient.createUserAuthTicketWithWsFedClient( id,  scopeid,  scopeType,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

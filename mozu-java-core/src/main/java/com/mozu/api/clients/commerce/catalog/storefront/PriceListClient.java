@@ -105,6 +105,51 @@ public class PriceListClient {
 
 	}
 
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productruntime.ResolvedPriceList> mozuClient=GetResolvedPriceList2Client( customerAccountObject);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * ResolvedPriceList resolvedPriceList = client.Result();
+	 * </code></pre></p>
+	 * @param customerAccountObject 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productruntime.ResolvedPriceList>
+	 * @see com.mozu.api.contracts.productruntime.ResolvedPriceList
+	 * @see JObject
+	 */
+	public static MozuClient<com.mozu.api.contracts.productruntime.ResolvedPriceList> getResolvedPriceList2Client(com.fasterxml.jackson.databind.JsonNode customerAccountObject) throws Exception
+	{
+		return getResolvedPriceList2Client( customerAccountObject,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productruntime.ResolvedPriceList> mozuClient=GetResolvedPriceList2Client( customerAccountObject,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * ResolvedPriceList resolvedPriceList = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param customerAccountObject 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productruntime.ResolvedPriceList>
+	 * @see com.mozu.api.contracts.productruntime.ResolvedPriceList
+	 * @see JObject
+	 */
+	public static MozuClient<com.mozu.api.contracts.productruntime.ResolvedPriceList> getResolvedPriceList2Client(com.fasterxml.jackson.databind.JsonNode customerAccountObject, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.storefront.PriceListUrl.getResolvedPriceList2Url(responseFields);
+		String verb = "POST";
+		Class<?> clz = com.mozu.api.contracts.productruntime.ResolvedPriceList.class;
+		MozuClient<com.mozu.api.contracts.productruntime.ResolvedPriceList> mozuClient = (MozuClient<com.mozu.api.contracts.productruntime.ResolvedPriceList>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(customerAccountObject);
+		return mozuClient;
+
+	}
+
 }
 
 

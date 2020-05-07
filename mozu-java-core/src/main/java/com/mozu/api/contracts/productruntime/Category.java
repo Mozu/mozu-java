@@ -84,6 +84,16 @@ public class Category implements Serializable
 		this.sequence = sequence;
 	}
 
+	protected  DateTime updateDate;
+
+	public DateTime getUpdateDate() {
+		return this.updateDate;
+	}
+
+	public void setUpdateDate(DateTime updateDate) {
+		this.updateDate = updateDate;
+	}
+
 	protected List<Category> childrenCategories;
 	public List<Category> getChildrenCategories() {
 		return this.childrenCategories;

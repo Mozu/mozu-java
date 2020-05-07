@@ -13,13 +13,25 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.sitesettings.order.fulfillment.BPMConfiguration;
+import com.mozu.api.contracts.sitesettings.order.fulfillment.FulfillerSettings;
 import com.mozu.api.contracts.sitesettings.order.fulfillment.JobSettings;
+import com.mozu.api.contracts.sitesettings.order.fulfillment.ShipToStore;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class FulfillmentSettings implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
+
+	protected  String actionOnBOPISReject;
+
+	public String getActionOnBOPISReject() {
+		return this.actionOnBOPISReject;
+	}
+
+	public void setActionOnBOPISReject(String actionOnBOPISReject) {
+		this.actionOnBOPISReject = actionOnBOPISReject;
+	}
 
 	protected  Integer defaultBackOrderDays;
 
@@ -51,6 +63,16 @@ public class FulfillmentSettings implements Serializable
 		this.bpmConfiguration = bpmConfiguration;
 	}
 
+	protected  FulfillerSettings fulfillerSettings;
+
+	public FulfillerSettings getFulfillerSettings() {
+		return this.fulfillerSettings;
+	}
+
+	public void setFulfillerSettings(FulfillerSettings fulfillerSettings) {
+		this.fulfillerSettings = fulfillerSettings;
+	}
+
 	protected  JobSettings fulfillmentJobSettings;
 
 	public JobSettings getFulfillmentJobSettings() {
@@ -59,6 +81,16 @@ public class FulfillmentSettings implements Serializable
 
 	public void setFulfillmentJobSettings(JobSettings fulfillmentJobSettings) {
 		this.fulfillmentJobSettings = fulfillmentJobSettings;
+	}
+
+	protected  ShipToStore shipToStore;
+
+	public ShipToStore getShipToStore() {
+		return this.shipToStore;
+	}
+
+	public void setShipToStore(ShipToStore shipToStore) {
+		this.shipToStore = shipToStore;
 	}
 
 

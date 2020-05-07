@@ -31,6 +31,16 @@ public class LocationInventory implements Serializable
 		this.locationCode = locationCode;
 	}
 
+	protected  String mfgPartNumber;
+
+	public String getMfgPartNumber() {
+		return this.mfgPartNumber;
+	}
+
+	public void setMfgPartNumber(String mfgPartNumber) {
+		this.mfgPartNumber = mfgPartNumber;
+	}
+
 	/**
 	 * The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 */
@@ -42,6 +52,16 @@ public class LocationInventory implements Serializable
 
 	public void setProductCode(String productCode) {
 		this.productCode = productCode;
+	}
+
+	protected  String sku;
+
+	public String getSku() {
+		return this.sku;
+	}
+
+	public void setSku(String sku) {
+		this.sku = sku;
 	}
 
 	/**

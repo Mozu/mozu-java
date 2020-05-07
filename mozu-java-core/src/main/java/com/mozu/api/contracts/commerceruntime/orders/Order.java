@@ -644,6 +644,16 @@ public class Order implements Serializable
 		this.priceListCode = priceListCode;
 	}
 
+	protected  Boolean readyToCapture;
+
+	public Boolean getReadyToCapture() {
+		return this.readyToCapture;
+	}
+
+	public void setReadyToCapture(Boolean readyToCapture) {
+		this.readyToCapture = readyToCapture;
+	}
+
 	protected  String returnStatus;
 
 	public String getReturnStatus() {

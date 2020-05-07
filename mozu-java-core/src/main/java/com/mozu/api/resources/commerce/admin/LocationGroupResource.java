@@ -75,31 +75,31 @@ public class LocationGroupResource {
 	 * 
 	 * <p><pre><code>
 	 *	LocationGroup locationgroup = new LocationGroup();
-	 *	LocationGroup locationGroup = locationgroup.getLocationGroup( groupId);
+	 *	LocationGroup locationGroup = locationgroup.getLocationGroup( locationGroupCode);
 	 * </code></pre></p>
-	 * @param groupId 
+	 * @param locationGroupCode 
 	 * @return com.mozu.api.contracts.location.LocationGroup
 	 * @see com.mozu.api.contracts.location.LocationGroup
 	 */
-	public com.mozu.api.contracts.location.LocationGroup getLocationGroup(Integer groupId) throws Exception
+	public com.mozu.api.contracts.location.LocationGroup getLocationGroup(String locationGroupCode) throws Exception
 	{
-		return getLocationGroup( groupId,  null);
+		return getLocationGroup( locationGroupCode,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	LocationGroup locationgroup = new LocationGroup();
-	 *	LocationGroup locationGroup = locationgroup.getLocationGroup( groupId,  responseFields);
+	 *	LocationGroup locationGroup = locationgroup.getLocationGroup( locationGroupCode,  responseFields);
 	 * </code></pre></p>
-	 * @param groupId 
+	 * @param locationGroupCode 
 	 * @param responseFields 
 	 * @return com.mozu.api.contracts.location.LocationGroup
 	 * @see com.mozu.api.contracts.location.LocationGroup
 	 */
-	public com.mozu.api.contracts.location.LocationGroup getLocationGroup(Integer groupId, String responseFields) throws Exception
+	public com.mozu.api.contracts.location.LocationGroup getLocationGroup(String locationGroupCode, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.location.LocationGroup> client = com.mozu.api.clients.commerce.admin.LocationGroupClient.getLocationGroupClient( groupId,  responseFields);
+		MozuClient<com.mozu.api.contracts.location.LocationGroup> client = com.mozu.api.clients.commerce.admin.LocationGroupClient.getLocationGroupClient( locationGroupCode,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -147,35 +147,35 @@ public class LocationGroupResource {
 	 * 
 	 * <p><pre><code>
 	 *	LocationGroup locationgroup = new LocationGroup();
-	 *	LocationGroup locationGroup = locationgroup.updateLocationGroup( group,  groupId);
+	 *	LocationGroup locationGroup = locationgroup.updateLocationGroup( locationGroup,  locationGroupCode);
 	 * </code></pre></p>
-	 * @param groupId 
-	 * @param group 
+	 * @param locationGroupCode 
+	 * @param locationGroup 
 	 * @return com.mozu.api.contracts.location.LocationGroup
 	 * @see com.mozu.api.contracts.location.LocationGroup
 	 * @see com.mozu.api.contracts.location.LocationGroup
 	 */
-	public com.mozu.api.contracts.location.LocationGroup updateLocationGroup(com.mozu.api.contracts.location.LocationGroup group, Integer groupId) throws Exception
+	public com.mozu.api.contracts.location.LocationGroup updateLocationGroup(com.mozu.api.contracts.location.LocationGroup locationGroup, String locationGroupCode) throws Exception
 	{
-		return updateLocationGroup( group,  groupId,  null);
+		return updateLocationGroup( locationGroup,  locationGroupCode,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	LocationGroup locationgroup = new LocationGroup();
-	 *	LocationGroup locationGroup = locationgroup.updateLocationGroup( group,  groupId,  responseFields);
+	 *	LocationGroup locationGroup = locationgroup.updateLocationGroup( locationGroup,  locationGroupCode,  responseFields);
 	 * </code></pre></p>
-	 * @param groupId 
+	 * @param locationGroupCode 
 	 * @param responseFields 
-	 * @param group 
+	 * @param locationGroup 
 	 * @return com.mozu.api.contracts.location.LocationGroup
 	 * @see com.mozu.api.contracts.location.LocationGroup
 	 * @see com.mozu.api.contracts.location.LocationGroup
 	 */
-	public com.mozu.api.contracts.location.LocationGroup updateLocationGroup(com.mozu.api.contracts.location.LocationGroup group, Integer groupId, String responseFields) throws Exception
+	public com.mozu.api.contracts.location.LocationGroup updateLocationGroup(com.mozu.api.contracts.location.LocationGroup locationGroup, String locationGroupCode, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.location.LocationGroup> client = com.mozu.api.clients.commerce.admin.LocationGroupClient.updateLocationGroupClient( group,  groupId,  responseFields);
+		MozuClient<com.mozu.api.contracts.location.LocationGroup> client = com.mozu.api.clients.commerce.admin.LocationGroupClient.updateLocationGroupClient( locationGroup,  locationGroupCode,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -186,15 +186,15 @@ public class LocationGroupResource {
 	 * 
 	 * <p><pre><code>
 	 *	LocationGroup locationgroup = new LocationGroup();
-	 *	Stream stream = locationgroup.deleteLocationGroup( groupId);
+	 *	Stream stream = locationgroup.deleteLocationGroup( locationGroupCode);
 	 * </code></pre></p>
-	 * @param groupId 
+	 * @param locationGroupCode 
 	 * @return Stream
 	 * @see Stream
 	 */
-	public java.io.InputStream deleteLocationGroup(Integer groupId) throws Exception
+	public java.io.InputStream deleteLocationGroup(String locationGroupCode) throws Exception
 	{
-		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.admin.LocationGroupClient.deleteLocationGroupClient( groupId);
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.admin.LocationGroupClient.deleteLocationGroupClient( locationGroupCode);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

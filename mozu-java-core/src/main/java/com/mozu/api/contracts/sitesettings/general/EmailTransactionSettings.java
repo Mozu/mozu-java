@@ -126,6 +126,16 @@ public class EmailTransactionSettings implements Serializable
 		this.orderShipped = orderShipped;
 	}
 
+	protected  Boolean partialPickupReady;
+
+	public Boolean getPartialPickupReady() {
+		return this.partialPickupReady;
+	}
+
+	public void setPartialPickupReady(Boolean partialPickupReady) {
+		this.partialPickupReady = partialPickupReady;
+	}
+
 	/**
 	 * A flag that determines if an email is sent to a shopper account when the described condition is met.
 	 */
@@ -217,6 +227,16 @@ public class EmailTransactionSettings implements Serializable
 		this.returnUpdated = returnUpdated;
 	}
 
+	protected  Boolean shipmentAssigned;
+
+	public Boolean getShipmentAssigned() {
+		return this.shipmentAssigned;
+	}
+
+	public void setShipmentAssigned(Boolean shipmentAssigned) {
+		this.shipmentAssigned = shipmentAssigned;
+	}
+
 	protected  Boolean shipmentBackorderDateChanged;
 
 	public Boolean getShipmentBackorderDateChanged() {
@@ -235,6 +255,16 @@ public class EmailTransactionSettings implements Serializable
 
 	public void setShipmentConfirmation(Boolean shipmentConfirmation) {
 		this.shipmentConfirmation = shipmentConfirmation;
+	}
+
+	protected  Boolean shipmentItemCanceled;
+
+	public Boolean getShipmentItemCanceled() {
+		return this.shipmentItemCanceled;
+	}
+
+	public void setShipmentItemCanceled(Boolean shipmentItemCanceled) {
+		this.shipmentItemCanceled = shipmentItemCanceled;
 	}
 
 	/**
@@ -287,6 +317,36 @@ public class EmailTransactionSettings implements Serializable
 
 	public void setStoreCreditUpdated(Boolean storeCreditUpdated) {
 		this.storeCreditUpdated = storeCreditUpdated;
+	}
+
+	protected  Boolean transferShipmentCreated;
+
+	public Boolean getTransferShipmentCreated() {
+		return this.transferShipmentCreated;
+	}
+
+	public void setTransferShipmentCreated(Boolean transferShipmentCreated) {
+		this.transferShipmentCreated = transferShipmentCreated;
+	}
+
+	protected  Boolean transferShipmentCreatedByFulfiller;
+
+	public Boolean getTransferShipmentCreatedByFulfiller() {
+		return this.transferShipmentCreatedByFulfiller;
+	}
+
+	public void setTransferShipmentCreatedByFulfiller(Boolean transferShipmentCreatedByFulfiller) {
+		this.transferShipmentCreatedByFulfiller = transferShipmentCreatedByFulfiller;
+	}
+
+	protected  Boolean transferShipmentShipped;
+
+	public Boolean getTransferShipmentShipped() {
+		return this.transferShipmentShipped;
+	}
+
+	public void setTransferShipmentShipped(Boolean transferShipmentShipped) {
+		this.transferShipmentShipped = transferShipmentShipped;
 	}
 
 

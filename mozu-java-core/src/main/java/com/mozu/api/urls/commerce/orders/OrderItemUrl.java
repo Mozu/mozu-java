@@ -23,7 +23,7 @@ public class OrderItemUrl
 	 */
 	public static MozuUrl getOrderItemViaLineIdUrl(Boolean draft, Integer lineId, String orderId, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/items/{lineId}?draft={draft}&responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/items/{lineId:int}?draft={draft}&responseFields={responseFields}");
 		formatter.formatUrl("draft", draft);
 		formatter.formatUrl("lineId", lineId);
 		formatter.formatUrl("orderId", orderId);
