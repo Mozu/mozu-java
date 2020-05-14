@@ -165,6 +165,16 @@ public class Package implements Serializable
 		this.status = status;
 	}
 
+	protected  String trackingNumber;
+
+	public String getTrackingNumber() {
+		return this.trackingNumber;
+	}
+
+	public void setTrackingNumber(String trackingNumber) {
+		this.trackingNumber = trackingNumber;
+	}
+
 	protected List<String> trackingNumbers;
 	public List<String> getTrackingNumbers() {
 		return this.trackingNumbers;

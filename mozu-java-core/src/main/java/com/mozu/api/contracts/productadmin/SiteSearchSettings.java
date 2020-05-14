@@ -26,6 +26,16 @@ public class SiteSearchSettings implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected  String certonaApiKey;
+
+	public String getCertonaApiKey() {
+		return this.certonaApiKey;
+	}
+
+	public void setCertonaApiKey(String certonaApiKey) {
+		this.certonaApiKey = certonaApiKey;
+	}
+
 	/**
 	 * Custom boost value for searches.
 	 */
@@ -74,6 +84,16 @@ public class SiteSearchSettings implements Serializable
 
 	public void setSettingsName(String settingsName) {
 		this.settingsName = settingsName;
+	}
+
+	protected  Boolean useCertonaSiteSearch;
+
+	public Boolean getUseCertonaSiteSearch() {
+		return this.useCertonaSiteSearch;
+	}
+
+	public void setUseCertonaSiteSearch(Boolean useCertonaSiteSearch) {
+		this.useCertonaSiteSearch = useCertonaSiteSearch;
 	}
 
 	/**

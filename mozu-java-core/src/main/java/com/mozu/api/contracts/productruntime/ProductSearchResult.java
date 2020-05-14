@@ -59,6 +59,16 @@ public class ProductSearchResult implements Serializable
 		this.pageSize = pageSize;
 	}
 
+	protected  String searchEngine;
+
+	public String getSearchEngine() {
+		return this.searchEngine;
+	}
+
+	public void setSearchEngine(String searchEngine) {
+		this.searchEngine = searchEngine;
+	}
+
 	protected  Integer startIndex;
 
 	public Integer getStartIndex() {
