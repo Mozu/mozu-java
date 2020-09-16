@@ -6,8 +6,6 @@ import java.net.URL;
 
 import org.apache.commons.lang.StringUtils;
 import org.joda.time.DateTime;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import com.mozu.api.ApiException;
 import com.mozu.api.MozuClient;
@@ -18,9 +16,10 @@ import com.mozu.api.contracts.appdev.AuthTicket;
 import com.mozu.api.contracts.appdev.AuthTicketRequest;
 import com.mozu.api.resources.platform.applications.AuthTicketResource;
 import com.mozu.api.urls.platform.applications.AuthTicketUrl;
+import com.mozu.logger.MozuLogger;
 
 public class AppAuthenticator {
-    private static final Logger logger = LoggerFactory.getLogger(AppAuthenticator.class);
+    private static final MozuLogger logger = MozuLogger.getLogger(AppAuthenticator.class);
 
     private static volatile AppAuthenticator auth;
 

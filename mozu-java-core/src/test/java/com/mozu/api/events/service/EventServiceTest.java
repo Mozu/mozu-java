@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import mockit.Expectations;
+import mockit.Mock;
+import mockit.MockUp;
 import mockit.Mocked;
 
 import org.apache.commons.io.IOUtils;
@@ -31,6 +33,7 @@ import com.mozu.api.security.AppAuthenticator;
 import com.mozu.api.security.AuthTicket;
 import com.mozu.api.security.Crypto;
 import com.mozu.api.utils.JsonUtils;
+import com.mozu.logger.MozuLogger;
 
 public class EventServiceTest {
     private static final String TENANT_URL = "/tenant_url";
@@ -66,11 +69,35 @@ public class EventServiceTest {
     @BeforeClass
     public static void registerHandler() {
         EventManager.getInstance().registerHandler(new CartEventHandlerTestImpl());
+        
+        new MockUp<MozuLogger>() {
+
+			@Mock
+			public void info(String msg) {
+				return;
+			}
+			
+			@Mock
+			public void warn(String msg) {
+				return;
+			}
+			
+			@Mock
+			public void debug(String msg) {
+				return;
+			}
+			
+			@SuppressWarnings("rawtypes")
+			@Mock
+			private void initLogger(Class cls) {
+				return;
+			};
+		};
     }
 
-    @Before
-    public void setUp() throws Exception {
-    }
+	@Before
+	public void setUp() throws Exception {
+	}
 
     @After
     public void tearDown() throws Exception {

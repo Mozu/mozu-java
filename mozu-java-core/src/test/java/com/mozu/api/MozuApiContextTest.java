@@ -15,8 +15,11 @@ import org.junit.Test;
 import com.mozu.api.contracts.tenant.Site;
 import com.mozu.api.contracts.tenant.Tenant;
 import com.mozu.api.security.AppAuthenticator;
+import com.mozu.logger.MozuLogger;
 
 import mockit.Expectations;
+import mockit.Mock;
+import mockit.MockUp;
 import mockit.Mocked;
 
 public class MozuApiContextTest {
@@ -42,8 +45,32 @@ public class MozuApiContextTest {
     @Mocked AppAuthenticator mockAppAuthenticator;
     
     @Before
-    public void setUp() throws Exception {
-    }
+	public void setUp() throws Exception {
+
+		new MockUp<MozuLogger>() {
+
+			@Mock
+			public void info(String msg) {
+				return;
+			}
+			
+			@Mock
+			public void warn(String msg) {
+				return;
+			}
+			
+			@Mock
+			public void debug(String msg) {
+				return;
+			}
+			
+			@SuppressWarnings("rawtypes")
+			@Mock
+			private void initLogger(Class cls) {
+				return;
+			};
+		};
+	}
 
     @After
     public void tearDown() throws Exception {

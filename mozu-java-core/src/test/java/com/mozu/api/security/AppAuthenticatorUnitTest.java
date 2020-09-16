@@ -22,6 +22,7 @@ import com.mozu.api.contracts.appdev.AuthTicket;
 import com.mozu.api.contracts.appdev.AuthTicketRequest;
 import com.mozu.api.resources.platform.applications.AuthTicketResource;
 import com.mozu.api.security.AppAuthenticator;
+import com.mozu.logger.MozuLogger;
 
 /**
  *  This test aims to test the AppAuthenticator by mocking out the
@@ -48,6 +49,35 @@ public class AppAuthenticatorUnitTest {
                 return mockHttpClient;
             }
         };
+        
+        new MockUp<MozuLogger>() {
+
+			@Mock
+			public void info(String msg) {
+				return;
+			}
+			
+			@Mock
+			public void warn(String msg) {
+				return;
+			}
+			
+			@Mock
+			public void warn(String msg, Throwable t) {
+				return;
+			}
+			
+			@Mock
+			public void debug(String msg) {
+				return;
+			}
+			
+			@SuppressWarnings("rawtypes")
+			@Mock
+			private void initLogger(Class cls) {
+				return;
+			};
+		};
 
     }
 

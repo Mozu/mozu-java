@@ -4,14 +4,13 @@ import org.apache.jcs.JCS;
 import org.apache.jcs.access.exception.CacheException;
 import org.apache.jcs.engine.control.CompositeCache;
 import org.apache.jcs.engine.control.CompositeCacheManager;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import com.mozu.api.cache.CacheManager;
 import com.mozu.api.cache.CacheManagerFactory;
+import com.mozu.logger.MozuLogger;
 
 public class CacheManagerImpl<T> implements CacheManager<T> {
-    private static final Logger logger = LoggerFactory.getLogger(CacheManagerImpl.class);
+    private static final MozuLogger logger = MozuLogger.getLogger(CacheManagerImpl.class);
     private static final String CACHE_NAME = "mozuCache";
     private JCS jcsCache;
     private boolean _isInitialized = false;

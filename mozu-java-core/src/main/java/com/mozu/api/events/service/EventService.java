@@ -8,20 +8,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.io.IOUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mozu.api.ApiContext;
 import com.mozu.api.MozuApiContext;
 import com.mozu.api.contracts.event.Event;
-import com.mozu.api.security.Crypto;
 import com.mozu.api.events.EventManager;
 import com.mozu.api.events.model.EventHandlerStatus;
+import com.mozu.api.security.Crypto;
+import com.mozu.logger.MozuLogger;
 
 public class EventService {
 
-    private static final Logger logger = LoggerFactory.getLogger(EventService.class);
+	private static final MozuLogger logger = MozuLogger.getLogger(EventService.class);
     private static ObjectMapper mapper = new ObjectMapper();
     
     /**
@@ -48,7 +47,7 @@ public class EventService {
             }
         } catch (IOException exception) {
             StringBuilder msg = new StringBuilder ("Unable to read event: ").append(exception.getMessage());
-            logger.error(msg.toString());
+            logger.warn(msg.toString());
             return( new EventHandlerStatus(msg.toString(), HttpServletResponse.SC_INTERNAL_SERVER_ERROR));
         }
 
@@ -56,7 +55,7 @@ public class EventService {
             invokeHandler(event, apiContext);
         } catch (Exception exception) {
             StringBuilder msg = new StringBuilder ("Unable to process event with correlation id ").append(event.getCorrelationId()).append(". Message: ").append(exception.getMessage());
-            logger.error(msg.toString());
+            logger.warn(msg.toString());
             return( new EventHandlerStatus(msg.toString(), HttpServletResponse.SC_INTERNAL_SERVER_ERROR));
         }
         return( new EventHandlerStatus(null, HttpServletResponse.SC_OK));

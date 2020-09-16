@@ -1,6 +1,7 @@
 package com.mozu.api.utils;
 
 import java.io.IOException;
+import java.text.MessageFormat;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.TimeUnit;
@@ -16,13 +17,12 @@ import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.apache.http.message.BasicHeaderElementIterator;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.protocol.HttpContext;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import com.mozu.api.MozuConfig;
+import com.mozu.logger.MozuLogger;
 
 public class MozuHttpClientPool {
-    private static final Logger logger = LoggerFactory.getLogger(MozuHttpClientPool.class);
+    private static final MozuLogger logger = MozuLogger.getLogger(MozuHttpClientPool.class);
     private static MozuHttpClientPool mozuHttpClientPool = null;
     private final CloseableHttpClient threadSafeClient;
     private final IdleConnectionMonitorThread monitor;
@@ -147,7 +147,7 @@ public class MozuHttpClientPool {
             // Optionally, close connections that have been idle too long.
             cm.closeIdleConnections(60, TimeUnit.SECONDS);
             // Look at pool stats.
-            logger.debug("Stats: {}", cm.getTotalStats());
+            logger.debug(MessageFormat.format("Stats: {0}", cm.getTotalStats()));
           }
           // Acknowledge the stop request.
           stopRequest.stopped();

@@ -5,24 +5,58 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.text.SimpleDateFormat;
+import java.util.Collections;
 import java.util.Date;
 
 import mockit.Expectations;
+import mockit.Mock;
+import mockit.MockUp;
 import mockit.Mocked;
 
 import org.joda.time.DateTime;
+import org.joda.time.DateTimeUtils;
+import org.joda.time.DateTimeZone;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.mozu.api.ApiContext;
 import com.mozu.api.MozuApiContext;
 import com.mozu.api.contracts.appdev.AppAuthInfo;
+import com.mozu.logger.MozuLogger;
 
 public class CryptoTest {
 	private static final String TEST_SHARED_SECRET = "1152aeac1a9f4e1998bfab9b5e3bab76";
 	
 	@Mocked AppAuthenticator mockAppAuthenticator;
+	
+	@BeforeClass
+    public static void registerHandler() {
+        new MockUp<MozuLogger>() {
+
+			@Mock
+			public void info(String msg) {
+				return;
+			}
+			
+			@Mock
+			public void warn(String msg) {
+				return;
+			}
+			
+			@Mock
+			public void debug(String msg) {
+				return;
+			}
+			
+			@SuppressWarnings("rawtypes")
+			@Mock
+			private void initLogger(Class cls) {
+				return;
+			};
+		};
+    }
 	
     @Test
     public void testCryptoHash () throws Exception {
@@ -58,10 +92,9 @@ public class CryptoTest {
         ApiContext apiContext = new MozuApiContext();
 
         DateTime dTime = new DateTime();
-        DateTimeFormatter dtf = DateTimeFormat.forPattern("E, dd MMM yyyy HH:mm:ss zzz");
         
+        DateTimeFormatter dtf = DateTimeFormat.forPattern("E, dd MMM yyyy HH:mm:ss zzz");
         String dateString = dtf.print(dTime);
-        System.out.println(dateString);
 
         apiContext.setHeaderDate(dateString);
         String hmacSha256 = Crypto.getHash(TEST_SHARED_SECRET, dateString, body);
