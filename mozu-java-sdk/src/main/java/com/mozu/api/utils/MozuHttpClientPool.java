@@ -5,10 +5,13 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.http.Header;
 import org.apache.http.HeaderElement;
 import org.apache.http.HeaderElementIterator;
 import org.apache.http.HttpResponse;
+import org.apache.http.client.ServiceUnavailableRetryStrategy;
 import org.apache.http.client.config.RequestConfig;
+import org.apache.http.client.methods.HttpRequestWrapper;
 import org.apache.http.conn.ConnectionKeepAliveStrategy;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
@@ -58,7 +61,34 @@ public class MozuHttpClientPool {
                 .setSocketTimeout(MozuConfig.getHttpClientTimeoutMillis())
                 .setConnectionRequestTimeout(MozuConfig.getHttpClientTimeoutMillis())
                 .build();
+         ServiceUnavailableRetryStrategy retryStrategy = new ServiceUnavailableRetryStrategy() {
+        	private long retryInterval = 60; 
+            @Override
+            public boolean retryRequest(
+                final HttpResponse response, final int executionCount, final HttpContext context) {
+            	
+            	int statusCode = response.getStatusLine().getStatusCode();
+            	boolean shouldRetry = statusCode == 429;
+            	
+            	if (shouldRetry) {            		
+            		logger.info("Received response status " + statusCode + " from API");
 
+            		Header retryHeader = response.getFirstHeader("Retry-After");
+            		String retryHeaderValue  = (retryHeader != null) ? retryHeader.getValue() : "60";
+            		retryInterval = Long.parseLong(retryHeaderValue);
+            		
+            		HttpRequestWrapper  requestWrapper = (HttpRequestWrapper) context.getAttribute("http.request");
+            		logger.info("Retrying request " + requestWrapper.getURI() + " in " + retryInterval/60 + " minutes");
+        		
+            	}
+                return shouldRetry;
+            }
+
+            @Override
+            public long getRetryInterval() {
+                return retryInterval * 1000;
+            }
+        };
         // Build the client.
         threadSafeClient = HttpClients.custom()
                 .setConnectionManager(cm)
@@ -66,6 +96,7 @@ public class MozuHttpClientPool {
                 .disableConnectionState()
                 .setDefaultRequestConfig(requestConfig)
                 .setKeepAliveStrategy(myStrategy)
+                .setServiceUnavailableRetryStrategy(retryStrategy)
                 .build();
 
         monitor = new IdleConnectionMonitorThread(cm);
