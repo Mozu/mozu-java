@@ -28,6 +28,16 @@ public class GenerateLabelResponse implements Serializable
 		this.imageURL = imageURL;
 	}
 
+	protected  String integratorId;
+
+	public String getIntegratorId() {
+		return this.integratorId;
+	}
+
+	public void setIntegratorId(String integratorId) {
+		this.integratorId = integratorId;
+	}
+
 	protected  Double price;
 
 	public Double getPrice() {

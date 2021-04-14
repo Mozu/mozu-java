@@ -190,6 +190,41 @@ public class OrderResource {
 	 * 
 	 * <p><pre><code>
 	 *	Order order = new Order();
+	 *	Order order = order.createOrderFromQuote( quoteId);
+	 * </code></pre></p>
+	 * @param quoteId 
+	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
+	 */
+	public com.mozu.api.contracts.commerceruntime.orders.Order createOrderFromQuote(String quoteId) throws Exception
+	{
+		return createOrderFromQuote( quoteId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Order order = new Order();
+	 *	Order order = order.createOrderFromQuote( quoteId,  responseFields);
+	 * </code></pre></p>
+	 * @param quoteId 
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
+	 */
+	public com.mozu.api.contracts.commerceruntime.orders.Order createOrderFromQuote(String quoteId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> client = com.mozu.api.clients.commerce.OrderClient.createOrderFromQuoteClient( quoteId,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Order order = new Order();
 	 *	Order order = order.createOrder( order);
 	 * </code></pre></p>
 	 * @param order Properties of an order, including its components.
@@ -552,6 +587,25 @@ public class OrderResource {
 	public com.mozu.api.contracts.commerceruntime.orders.Order updateOrder(com.mozu.api.contracts.commerceruntime.orders.Order order, String orderId, String updateMode, String version, String responseFields) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> client = com.mozu.api.clients.commerce.OrderClient.updateOrderClient( order,  orderId,  updateMode,  version,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Order order = new Order();
+	 *	Stream stream = order.smsOptOut( siteId);
+	 * </code></pre></p>
+	 * @param siteId 
+	 * @return Stream
+	 * @see Stream
+	 */
+	public java.io.InputStream smsOptOut(String siteId) throws Exception
+	{
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.OrderClient.smsOptOutClient( siteId);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

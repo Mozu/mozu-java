@@ -37,6 +37,14 @@ public class AttributeVocabularyValue implements Serializable
 		this.displayOrder = displayOrder;
 	}
 
+	protected List<Object> mappedGenericValues;
+	public List<Object> getMappedGenericValues() {
+		return this.mappedGenericValues;
+	}
+	public void setMappedGenericValues(List<Object> mappedGenericValues) {
+		this.mappedGenericValues = mappedGenericValues;
+	}
+
 	/**
 	 * The name of the product that represents a line item in a taxable order or product bundle.
 	 */

@@ -172,6 +172,16 @@ public class Category implements Serializable
 		this.sequence = sequence;
 	}
 
+	protected  Boolean shouldSlice;
+
+	public Boolean getShouldSlice() {
+		return this.shouldSlice;
+	}
+
+	public void setShouldSlice(Boolean shouldSlice) {
+		this.shouldSlice = shouldSlice;
+	}
+
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {

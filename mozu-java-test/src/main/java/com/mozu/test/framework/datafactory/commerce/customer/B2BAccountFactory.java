@@ -98,6 +98,31 @@ public class B2BAccountFactory
 		return returnObj;
 	}
 
+	public static com.mozu.api.contracts.customer.B2BAccountHierarchyResult getB2BAccountHierarchy(ApiContext apiContext, Integer accountId, int expectedCode) throws Exception
+	{
+		return getB2BAccountHierarchy(apiContext,  accountId,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.customer.B2BAccountHierarchyResult getB2BAccountHierarchy(ApiContext apiContext, Integer accountId, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.customer.B2BAccountHierarchyResult returnObj = new com.mozu.api.contracts.customer.B2BAccountHierarchyResult();
+		B2BAccountResource resource = new B2BAccountResource(apiContext);
+		try
+		{
+			returnObj = resource.getB2BAccountHierarchy( accountId,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
 	public static com.mozu.api.contracts.customer.UserRoleCollection getUserRolesAsync(ApiContext apiContext, Integer accountId, String userId, int expectedCode) throws Exception
 	{
 		return getUserRolesAsync(apiContext,  accountId,  userId,  null, expectedCode);
@@ -123,18 +148,18 @@ public class B2BAccountFactory
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.customer.B2BUserCollection getUsers(ApiContext apiContext, Integer accountId, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.customer.B2BUserCollection getUsersAsync(ApiContext apiContext, Integer accountId, int expectedCode) throws Exception
 	{
-		return getUsers(apiContext,  accountId,  null,  null,  null,  null,  null,  null,  null, expectedCode);
+		return getUsersAsync(apiContext,  accountId,  null,  null,  null,  null,  null,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.customer.B2BUserCollection getUsers(ApiContext apiContext, Integer accountId, Integer startIndex, Integer pageSize, String sortBy, String filter, String q, Integer qLimit, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.customer.B2BUserCollection getUsersAsync(ApiContext apiContext, Integer accountId, Integer startIndex, Integer pageSize, String sortBy, String filter, String q, Integer qLimit, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.customer.B2BUserCollection returnObj = new com.mozu.api.contracts.customer.B2BUserCollection();
 		B2BAccountResource resource = new B2BAccountResource(apiContext);
 		try
 		{
-			returnObj = resource.getUsers( accountId,  startIndex,  pageSize,  sortBy,  filter,  q,  qLimit,  responseFields);
+			returnObj = resource.getUsersAsync( accountId,  startIndex,  pageSize,  sortBy,  filter,  q,  qLimit,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -173,6 +198,26 @@ public class B2BAccountFactory
 		return returnObj;
 	}
 
+	public static List<Integer> getAccountsForSalesRep(ApiContext apiContext, String userId, int expectedCode) throws Exception
+	{
+		List<Integer> returnObj = new ArrayList<Integer>();
+		B2BAccountResource resource = new B2BAccountResource(apiContext);
+		try
+		{
+			returnObj = resource.getAccountsForSalesRep( userId);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
 	public static com.mozu.api.contracts.customer.B2BAccount addAccount(ApiContext apiContext, com.mozu.api.contracts.customer.B2BAccount account, int expectedCode) throws Exception
 	{
 		return addAccount(apiContext,  account,  null, expectedCode);
@@ -198,6 +243,31 @@ public class B2BAccountFactory
 		return returnObj;
 	}
 
+	public static com.mozu.api.contracts.customer.B2BAccount addSalesRepsToB2BAccount(ApiContext apiContext, List<String> userIds, Integer accountId, int expectedCode) throws Exception
+	{
+		return addSalesRepsToB2BAccount(apiContext,  userIds,  accountId,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.customer.B2BAccount addSalesRepsToB2BAccount(ApiContext apiContext, List<String> userIds, Integer accountId, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.customer.B2BAccount returnObj = new com.mozu.api.contracts.customer.B2BAccount();
+		B2BAccountResource resource = new B2BAccountResource(apiContext);
+		try
+		{
+			returnObj = resource.addSalesRepsToB2BAccount( userIds,  accountId,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
 	public static com.mozu.api.contracts.customer.CustomerAttribute addB2BAccountAttribute(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerAttribute attribute, Integer accountId, int expectedCode) throws Exception
 	{
 		return addB2BAccountAttribute(apiContext,  attribute,  accountId,  null, expectedCode);
@@ -210,6 +280,56 @@ public class B2BAccountFactory
 		try
 		{
 			returnObj = resource.addB2BAccountAttribute( attribute,  accountId,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
+	public static com.mozu.api.contracts.customer.B2BAccount changeParentAccount(ApiContext apiContext, Integer accountId, Integer parentAccountId, int expectedCode) throws Exception
+	{
+		return changeParentAccount(apiContext,  accountId,  parentAccountId,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.customer.B2BAccount changeParentAccount(ApiContext apiContext, Integer accountId, Integer parentAccountId, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.customer.B2BAccount returnObj = new com.mozu.api.contracts.customer.B2BAccount();
+		B2BAccountResource resource = new B2BAccountResource(apiContext);
+		try
+		{
+			returnObj = resource.changeParentAccount( accountId,  parentAccountId,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
+	public static com.mozu.api.contracts.customer.B2BAccount addSalesRepToB2BAccount(ApiContext apiContext, Integer accountId, String userId, int expectedCode) throws Exception
+	{
+		return addSalesRepToB2BAccount(apiContext,  accountId,  userId,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.customer.B2BAccount addSalesRepToB2BAccount(ApiContext apiContext, Integer accountId, String userId, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.customer.B2BAccount returnObj = new com.mozu.api.contracts.customer.B2BAccount();
+		B2BAccountResource resource = new B2BAccountResource(apiContext);
+		try
+		{
+			returnObj = resource.addSalesRepToB2BAccount( accountId,  userId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -280,6 +400,56 @@ public class B2BAccountFactory
 		try
 		{
 			returnObj = resource.updateB2BAccountAttribute( attribute,  accountId,  attributeFQN,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
+	public static com.mozu.api.contracts.customer.B2BAccount updateSalesRepsOnB2BAccount(ApiContext apiContext, List<String> userIds, Integer accountId, int expectedCode) throws Exception
+	{
+		return updateSalesRepsOnB2BAccount(apiContext,  userIds,  accountId,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.customer.B2BAccount updateSalesRepsOnB2BAccount(ApiContext apiContext, List<String> userIds, Integer accountId, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.customer.B2BAccount returnObj = new com.mozu.api.contracts.customer.B2BAccount();
+		B2BAccountResource resource = new B2BAccountResource(apiContext);
+		try
+		{
+			returnObj = resource.updateSalesRepsOnB2BAccount( userIds,  accountId,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
+	public static com.mozu.api.contracts.customer.B2BAccount updateB2BAccountStatus(ApiContext apiContext, Integer accountId, String actionName, int expectedCode) throws Exception
+	{
+		return updateB2BAccountStatus(apiContext,  accountId,  actionName,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.customer.B2BAccount updateB2BAccountStatus(ApiContext apiContext, Integer accountId, String actionName, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.customer.B2BAccount returnObj = new com.mozu.api.contracts.customer.B2BAccount();
+		B2BAccountResource resource = new B2BAccountResource(apiContext);
+		try
+		{
+			returnObj = resource.updateB2BAccountStatus( accountId,  actionName,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -370,6 +540,26 @@ public class B2BAccountFactory
 		try
 		{
 			returnObj = resource.deleteB2BAccountAttribute( accountId,  attributeFQN);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
+	public static com.mozu.api.contracts.customer.B2BAccount removeSalesRepFromB2BAccount(ApiContext apiContext, Integer accountId, String userId, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.customer.B2BAccount returnObj = new com.mozu.api.contracts.customer.B2BAccount();
+		B2BAccountResource resource = new B2BAccountResource(apiContext);
+		try
+		{
+			returnObj = resource.removeSalesRepFromB2BAccount( accountId,  userId);
 		}
 		catch (ApiException e)
 		{

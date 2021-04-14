@@ -14,6 +14,42 @@ public class TenantAdminUserAuthTicketUrl
 {
 
 	/**
+	 * Get Resource Url for GetWsFedChallengeUrl
+	 * @param id 
+	 * @param redirect 
+	 * @param responseFields 
+	 * @param scopeid 
+	 * @param scopeType 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getWsFedChallengeUrlUrl(String id, String redirect, String responseFields, Integer scopeid, String scopeType)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/platform/adminuser/authtickets/wsfed/challenge/{id}?scopeid={scopeid}&scopeType={scopeType}&redirect={redirect}&responseFields={responseFields}");
+		formatter.formatUrl("id", id);
+		formatter.formatUrl("redirect", redirect);
+		formatter.formatUrl("responseFields", responseFields);
+		formatter.formatUrl("scopeid", scopeid);
+		formatter.formatUrl("scopeType", scopeType);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.HOME_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for GetWsFedSignOutUrl
+	 * @param id 
+	 * @param redirect 
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getWsFedSignOutUrlUrl(String id, String redirect, String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/platform/adminuser/authtickets/wsfed/SignOut/{id}?redirect={redirect}&responseFields={responseFields}");
+		formatter.formatUrl("id", id);
+		formatter.formatUrl("redirect", redirect);
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.HOME_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for CreateUserAuthTicket
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param tenantId Unique identifier of the development or production tenant for which to generate the user authentication ticket.
@@ -24,6 +60,24 @@ public class TenantAdminUserAuthTicketUrl
 		UrlFormatter formatter = new UrlFormatter("/api/platform/adminuser/authtickets/tenants?tenantId={tenantId}&responseFields={responseFields}");
 		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("tenantId", tenantId);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.HOME_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for CreateUserAuthTicketWithWsFed
+	 * @param id 
+	 * @param responseFields 
+	 * @param scopeid 
+	 * @param scopeType 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl createUserAuthTicketWithWsFedUrl(String id, String responseFields, Integer scopeid, String scopeType)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/platform/adminuser/authtickets/wsfed/auth/{id}?scopeid={scopeid}&scopeType={scopeType}&responseFields={responseFields}");
+		formatter.formatUrl("id", id);
+		formatter.formatUrl("responseFields", responseFields);
+		formatter.formatUrl("scopeid", scopeid);
+		formatter.formatUrl("scopeType", scopeType);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.HOME_POD) ;
 	}
 

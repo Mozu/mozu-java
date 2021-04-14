@@ -48,18 +48,43 @@ public class FacetFactory
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.productadmin.FacetSet getFacetCategoryList(ApiContext apiContext, Integer categoryId, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.FacetSet getFacetCategoryListLegacy(ApiContext apiContext, Integer categoryId, int expectedCode) throws Exception
 	{
-		return getFacetCategoryList(apiContext,  categoryId,  null,  null,  null, expectedCode);
+		return getFacetCategoryListLegacy(apiContext,  categoryId,  null,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.productadmin.FacetSet getFacetCategoryList(ApiContext apiContext, Integer categoryId, Boolean includeAvailable, Boolean validate, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.FacetSet getFacetCategoryListLegacy(ApiContext apiContext, Integer categoryId, Boolean includeAvailable, Boolean validate, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.FacetSet returnObj = new com.mozu.api.contracts.productadmin.FacetSet();
 		FacetResource resource = new FacetResource(apiContext);
 		try
 		{
-			returnObj = resource.getFacetCategoryList( categoryId,  includeAvailable,  validate,  responseFields);
+			returnObj = resource.getFacetCategoryListLegacy( categoryId,  includeAvailable,  validate,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
+	public static com.mozu.api.contracts.productadmin.FacetSet getFacetCategoryList(ApiContext apiContext, int expectedCode) throws Exception
+	{
+		return getFacetCategoryList(apiContext,  null,  null,  null,  null,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.productadmin.FacetSet getFacetCategoryList(ApiContext apiContext, Integer categoryId, String categoryCode, Boolean includeAvailable, Boolean validate, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.productadmin.FacetSet returnObj = new com.mozu.api.contracts.productadmin.FacetSet();
+		FacetResource resource = new FacetResource(apiContext);
+		try
+		{
+			returnObj = resource.getFacetCategoryList( categoryId,  categoryCode,  includeAvailable,  validate,  responseFields);
 		}
 		catch (ApiException e)
 		{

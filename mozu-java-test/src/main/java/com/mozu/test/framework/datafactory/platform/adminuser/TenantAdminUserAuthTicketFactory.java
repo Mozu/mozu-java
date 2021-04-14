@@ -23,6 +23,56 @@ import com.mozu.api.resources.platform.adminuser.TenantAdminUserAuthTicketResour
 public class TenantAdminUserAuthTicketFactory
 {
 
+	public static String getWsFedChallengeUrl(ApiContext apiContext, String id, String scopeType, String redirect, int expectedCode) throws Exception
+	{
+		return getWsFedChallengeUrl(apiContext,  id,  null,  scopeType,  redirect,  null, expectedCode);
+	}
+
+	public static String getWsFedChallengeUrl(ApiContext apiContext, String id, Integer scopeid, String scopeType, String redirect, String responseFields, int expectedCode) throws Exception
+	{
+		String returnObj = new String();
+		TenantAdminUserAuthTicketResource resource = new TenantAdminUserAuthTicketResource(apiContext);
+		try
+		{
+			returnObj = resource.getWsFedChallengeUrl( id,  scopeid,  scopeType,  redirect,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
+	public static String getWsFedSignOutUrl(ApiContext apiContext, String id, String redirect, int expectedCode) throws Exception
+	{
+		return getWsFedSignOutUrl(apiContext,  id,  redirect,  null, expectedCode);
+	}
+
+	public static String getWsFedSignOutUrl(ApiContext apiContext, String id, String redirect, String responseFields, int expectedCode) throws Exception
+	{
+		String returnObj = new String();
+		TenantAdminUserAuthTicketResource resource = new TenantAdminUserAuthTicketResource(apiContext);
+		try
+		{
+			returnObj = resource.getWsFedSignOutUrl( id,  redirect,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
 	public static com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket createUserAuthTicket(ApiContext apiContext, com.mozu.api.contracts.core.UserAuthInfo userAuthInfo, int expectedCode) throws Exception
 	{
 		return createUserAuthTicket(apiContext,  userAuthInfo,  null,  null, expectedCode);
@@ -35,6 +85,31 @@ public class TenantAdminUserAuthTicketFactory
 		try
 		{
 			returnObj = resource.createUserAuthTicket( userAuthInfo,  tenantId,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
+	public static com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket createUserAuthTicketWithWsFed(ApiContext apiContext, String id, String scopeType, int expectedCode) throws Exception
+	{
+		return createUserAuthTicketWithWsFed(apiContext,  id,  null,  scopeType,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket createUserAuthTicketWithWsFed(ApiContext apiContext, String id, Integer scopeid, String scopeType, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket returnObj = new com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket();
+		TenantAdminUserAuthTicketResource resource = new TenantAdminUserAuthTicketResource(apiContext);
+		try
+		{
+			returnObj = resource.createUserAuthTicketWithWsFed( id,  scopeid,  scopeType,  responseFields);
 		}
 		catch (ApiException e)
 		{

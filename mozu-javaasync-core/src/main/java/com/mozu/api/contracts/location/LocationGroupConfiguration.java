@@ -18,6 +18,7 @@ import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.location.BoxType;
 import com.mozu.api.contracts.location.BpmConfiguration;
 import com.mozu.api.contracts.location.Carrier;
+import com.mozu.api.contracts.location.PackageSettings;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class LocationGroupConfiguration implements Serializable
@@ -33,6 +34,36 @@ public class LocationGroupConfiguration implements Serializable
 
 	public void setAllowReturns(Boolean allowReturns) {
 		this.allowReturns = allowReturns;
+	}
+
+	protected  Boolean autoPackingListPopup;
+
+	public Boolean getAutoPackingListPopup() {
+		return this.autoPackingListPopup;
+	}
+
+	public void setAutoPackingListPopup(Boolean autoPackingListPopup) {
+		this.autoPackingListPopup = autoPackingListPopup;
+	}
+
+	protected  Boolean blockPartialCancel;
+
+	public Boolean getBlockPartialCancel() {
+		return this.blockPartialCancel;
+	}
+
+	public void setBlockPartialCancel(Boolean blockPartialCancel) {
+		this.blockPartialCancel = blockPartialCancel;
+	}
+
+	protected  Boolean blockPartialStock;
+
+	public Boolean getBlockPartialStock() {
+		return this.blockPartialStock;
+	}
+
+	public void setBlockPartialStock(Boolean blockPartialStock) {
+		this.blockPartialStock = blockPartialStock;
 	}
 
 	protected List<String> closePickWavePermissions;
@@ -73,6 +104,16 @@ public class LocationGroupConfiguration implements Serializable
 		this.defaultCarrier = defaultCarrier;
 	}
 
+	protected  Integer defaultMaxNumberOfShipmentsInPickWave;
+
+	public Integer getDefaultMaxNumberOfShipmentsInPickWave() {
+		return this.defaultMaxNumberOfShipmentsInPickWave;
+	}
+
+	public void setDefaultMaxNumberOfShipmentsInPickWave(Integer defaultMaxNumberOfShipmentsInPickWave) {
+		this.defaultMaxNumberOfShipmentsInPickWave = defaultMaxNumberOfShipmentsInPickWave;
+	}
+
 	protected  Integer defaultNumberOfOrdersInPickWave;
 
 	public Integer getDefaultNumberOfOrdersInPickWave() {
@@ -101,6 +142,16 @@ public class LocationGroupConfiguration implements Serializable
 
 	public void setDefaultReturnRefundReductionAmount(Integer defaultReturnRefundReductionAmount) {
 		this.defaultReturnRefundReductionAmount = defaultReturnRefundReductionAmount;
+	}
+
+	protected  Boolean displayProductImagesInPickWaveDetails;
+
+	public Boolean getDisplayProductImagesInPickWaveDetails() {
+		return this.displayProductImagesInPickWaveDetails;
+	}
+
+	public void setDisplayProductImagesInPickWaveDetails(Boolean displayProductImagesInPickWaveDetails) {
+		this.displayProductImagesInPickWaveDetails = displayProductImagesInPickWaveDetails;
 	}
 
 	protected  Boolean enableAdvancedOptionForPickWaveCreation;
@@ -133,6 +184,26 @@ public class LocationGroupConfiguration implements Serializable
 		this.enableForSTH = enableForSTH;
 	}
 
+	protected  Boolean enablePnpForBOPIS;
+
+	public Boolean getEnablePnpForBOPIS() {
+		return this.enablePnpForBOPIS;
+	}
+
+	public void setEnablePnpForBOPIS(Boolean enablePnpForBOPIS) {
+		this.enablePnpForBOPIS = enablePnpForBOPIS;
+	}
+
+	protected  Boolean enablePnpForSTH;
+
+	public Boolean getEnablePnpForSTH() {
+		return this.enablePnpForSTH;
+	}
+
+	public void setEnablePnpForSTH(Boolean enablePnpForSTH) {
+		this.enablePnpForSTH = enablePnpForSTH;
+	}
+
 	protected  Boolean enableScanningOfUpcForShipToHome;
 
 	public Boolean getEnableScanningOfUpcForShipToHome() {
@@ -141,6 +212,16 @@ public class LocationGroupConfiguration implements Serializable
 
 	public void setEnableScanningOfUpcForShipToHome(Boolean enableScanningOfUpcForShipToHome) {
 		this.enableScanningOfUpcForShipToHome = enableScanningOfUpcForShipToHome;
+	}
+
+	protected  String locationGroupCode;
+
+	public String getLocationGroupCode() {
+		return this.locationGroupCode;
+	}
+
+	public void setLocationGroupCode(String locationGroupCode) {
+		this.locationGroupCode = locationGroupCode;
 	}
 
 	protected  Integer locationGroupId;
@@ -283,6 +364,16 @@ public class LocationGroupConfiguration implements Serializable
 	}
 	public void setCarriers(List<Carrier> carriers) {
 		this.carriers = carriers;
+	}
+
+	protected  PackageSettings packageSettings;
+
+	public PackageSettings getPackageSettings() {
+		return this.packageSettings;
+	}
+
+	public void setPackageSettings(PackageSettings packageSettings) {
+		this.packageSettings = packageSettings;
 	}
 
 

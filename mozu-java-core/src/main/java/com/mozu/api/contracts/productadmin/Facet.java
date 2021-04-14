@@ -27,6 +27,16 @@ public class Facet implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected  String categoryCode;
+
+	public String getCategoryCode() {
+		return this.categoryCode;
+	}
+
+	public void setCategoryCode(String categoryCode) {
+		this.categoryCode = categoryCode;
+	}
+
 	protected  Integer categoryId;
 
 	public Integer getCategoryId() {

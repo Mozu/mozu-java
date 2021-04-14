@@ -65,6 +65,16 @@ public class User implements Serializable
 		this.id = id;
 	}
 
+	protected  String identityProviderId;
+
+	public String getIdentityProviderId() {
+		return this.identityProviderId;
+	}
+
+	public void setIdentityProviderId(String identityProviderId) {
+		this.identityProviderId = identityProviderId;
+	}
+
 	protected  Boolean isActive;
 
 	public Boolean getIsActive() {

@@ -27,6 +27,130 @@ public class SearchClient {
 	/**
 	 * 
 	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> mozuClient=GetAllSynonymDefinitionCollectionsForMasterCatalogClient( languageCode);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * SynonymDefinitionCollection synonymDefinitionCollection = client.Result();
+	 * </code></pre></p>
+	 * @param languageCode 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection>
+	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> getAllSynonymDefinitionCollectionsForMasterCatalogClient(String languageCode) throws Exception
+	{
+		return getAllSynonymDefinitionCollectionsForMasterCatalogClient( languageCode,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> mozuClient=GetAllSynonymDefinitionCollectionsForMasterCatalogClient( languageCode,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * SynonymDefinitionCollection synonymDefinitionCollection = client.Result();
+	 * </code></pre></p>
+	 * @param languageCode 
+	 * @param responseFields 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection>
+	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> getAllSynonymDefinitionCollectionsForMasterCatalogClient(String languageCode, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.SearchUrl.getAllSynonymDefinitionCollectionsForMasterCatalogUrl(languageCode, responseFields);
+		String verb = "GET";
+		Class<?> clz = com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection.class;
+		MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.SearchRedirect> mozuClient=GetSearchRedirectClient( redirectId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * SearchRedirect searchRedirect = client.Result();
+	 * </code></pre></p>
+	 * @param redirectId 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.SearchRedirect>
+	 * @see com.mozu.api.contracts.productadmin.SearchRedirect
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.SearchRedirect> getSearchRedirectClient(String redirectId) throws Exception
+	{
+		return getSearchRedirectClient( redirectId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.SearchRedirect> mozuClient=GetSearchRedirectClient( redirectId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * SearchRedirect searchRedirect = client.Result();
+	 * </code></pre></p>
+	 * @param redirectId 
+	 * @param responseFields 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.SearchRedirect>
+	 * @see com.mozu.api.contracts.productadmin.SearchRedirect
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.SearchRedirect> getSearchRedirectClient(String redirectId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.SearchUrl.getSearchRedirectUrl(redirectId, responseFields);
+		String verb = "GET";
+		Class<?> clz = com.mozu.api.contracts.productadmin.SearchRedirect.class;
+		MozuClient<com.mozu.api.contracts.productadmin.SearchRedirect> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.SearchRedirect>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.SearchRedirectCollection> mozuClient=GetSearchRedirectsClient();
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * SearchRedirectCollection searchRedirectCollection = client.Result();
+	 * </code></pre></p>
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.SearchRedirectCollection>
+	 * @see com.mozu.api.contracts.productadmin.SearchRedirectCollection
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.SearchRedirectCollection> getSearchRedirectsClient() throws Exception
+	{
+		return getSearchRedirectsClient( null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.SearchRedirectCollection> mozuClient=GetSearchRedirectsClient( responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * SearchRedirectCollection searchRedirectCollection = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.SearchRedirectCollection>
+	 * @see com.mozu.api.contracts.productadmin.SearchRedirectCollection
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.SearchRedirectCollection> getSearchRedirectsClient(String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.SearchUrl.getSearchRedirectsUrl(responseFields);
+		String verb = "GET";
+		Class<?> clz = com.mozu.api.contracts.productadmin.SearchRedirectCollection.class;
+		MozuClient<com.mozu.api.contracts.productadmin.SearchRedirectCollection> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.SearchRedirectCollection>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRule> mozuClient=GetSearchTuningRuleClient( searchTuningRuleCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
@@ -144,46 +268,6 @@ public class SearchClient {
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields.class;
 		MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields>) MozuClientFactory.getInstance(clz);
-		mozuClient.setVerb(verb);
-		mozuClient.setResourceUrl(url);
-		return mozuClient;
-
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.SearchSettings> mozuClient=GetSettingsClient();
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * SearchSettings searchSettings = client.Result();
-	 * </code></pre></p>
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.SearchSettings>
-	 * @see com.mozu.api.contracts.productadmin.SearchSettings
-	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.SearchSettings> getSettingsClient() throws Exception
-	{
-		return getSettingsClient( null);
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.SearchSettings> mozuClient=GetSettingsClient( responseFields);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * SearchSettings searchSettings = client.Result();
-	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.SearchSettings>
-	 * @see com.mozu.api.contracts.productadmin.SearchSettings
-	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.SearchSettings> getSettingsClient(String responseFields) throws Exception
-	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.SearchUrl.getSettingsUrl(responseFields);
-		String verb = "GET";
-		Class<?> clz = com.mozu.api.contracts.productadmin.SearchSettings.class;
-		MozuClient<com.mozu.api.contracts.productadmin.SearchSettings> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.SearchSettings>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -314,6 +398,52 @@ public class SearchClient {
 		MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinition> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinition>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.SearchRedirect> mozuClient=AddSearchRedirectClient( searchRedirect);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * SearchRedirect searchRedirect = client.Result();
+	 * </code></pre></p>
+	 * @param searchRedirect 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.SearchRedirect>
+	 * @see com.mozu.api.contracts.productadmin.SearchRedirect
+	 * @see com.mozu.api.contracts.productadmin.SearchRedirect
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.SearchRedirect> addSearchRedirectClient(com.mozu.api.contracts.productadmin.SearchRedirect searchRedirect) throws Exception
+	{
+		return addSearchRedirectClient( searchRedirect,  null,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.SearchRedirect> mozuClient=AddSearchRedirectClient( searchRedirect,  fromSystemDefault,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * SearchRedirect searchRedirect = client.Result();
+	 * </code></pre></p>
+	 * @param fromSystemDefault 
+	 * @param responseFields 
+	 * @param searchRedirect 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.SearchRedirect>
+	 * @see com.mozu.api.contracts.productadmin.SearchRedirect
+	 * @see com.mozu.api.contracts.productadmin.SearchRedirect
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.SearchRedirect> addSearchRedirectClient(com.mozu.api.contracts.productadmin.SearchRedirect searchRedirect, Boolean fromSystemDefault, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.SearchUrl.addSearchRedirectUrl(fromSystemDefault, responseFields);
+		String verb = "POST";
+		Class<?> clz = com.mozu.api.contracts.productadmin.SearchRedirect.class;
+		MozuClient<com.mozu.api.contracts.productadmin.SearchRedirect> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.SearchRedirect>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(searchRedirect);
 		return mozuClient;
 
 	}
@@ -503,6 +633,53 @@ public class SearchClient {
 	/**
 	 * 
 	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.SearchRedirect> mozuClient=UpdateSearchRedirectClient( searchRedirect,  redirectId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * SearchRedirect searchRedirect = client.Result();
+	 * </code></pre></p>
+	 * @param redirectId 
+	 * @param searchRedirect 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.SearchRedirect>
+	 * @see com.mozu.api.contracts.productadmin.SearchRedirect
+	 * @see com.mozu.api.contracts.productadmin.SearchRedirect
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.SearchRedirect> updateSearchRedirectClient(com.mozu.api.contracts.productadmin.SearchRedirect searchRedirect, String redirectId) throws Exception
+	{
+		return updateSearchRedirectClient( searchRedirect,  redirectId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.SearchRedirect> mozuClient=UpdateSearchRedirectClient( searchRedirect,  redirectId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * SearchRedirect searchRedirect = client.Result();
+	 * </code></pre></p>
+	 * @param redirectId 
+	 * @param responseFields 
+	 * @param searchRedirect 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.SearchRedirect>
+	 * @see com.mozu.api.contracts.productadmin.SearchRedirect
+	 * @see com.mozu.api.contracts.productadmin.SearchRedirect
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.SearchRedirect> updateSearchRedirectClient(com.mozu.api.contracts.productadmin.SearchRedirect searchRedirect, String redirectId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.SearchUrl.updateSearchRedirectUrl(redirectId, responseFields);
+		String verb = "PUT";
+		Class<?> clz = com.mozu.api.contracts.productadmin.SearchRedirect.class;
+		MozuClient<com.mozu.api.contracts.productadmin.SearchRedirect> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.SearchRedirect>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(searchRedirect);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRule> mozuClient=UpdateSearchTuningRuleClient( searchTuningRuleIn,  searchTuningRuleCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
@@ -550,51 +727,6 @@ public class SearchClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.SearchSettings> mozuClient=UpdateSettingsClient( settings);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * SearchSettings searchSettings = client.Result();
-	 * </code></pre></p>
-	 * @param settings The search settings to update.
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.SearchSettings>
-	 * @see com.mozu.api.contracts.productadmin.SearchSettings
-	 * @see com.mozu.api.contracts.productadmin.SearchSettings
-	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.SearchSettings> updateSettingsClient(com.mozu.api.contracts.productadmin.SearchSettings settings) throws Exception
-	{
-		return updateSettingsClient( settings,  null);
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.SearchSettings> mozuClient=UpdateSettingsClient( settings,  responseFields);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * SearchSettings searchSettings = client.Result();
-	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param settings The search settings to update.
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.SearchSettings>
-	 * @see com.mozu.api.contracts.productadmin.SearchSettings
-	 * @see com.mozu.api.contracts.productadmin.SearchSettings
-	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.SearchSettings> updateSettingsClient(com.mozu.api.contracts.productadmin.SearchSettings settings, String responseFields) throws Exception
-	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.SearchUrl.updateSettingsUrl(responseFields);
-		String verb = "PUT";
-		Class<?> clz = com.mozu.api.contracts.productadmin.SearchSettings.class;
-		MozuClient<com.mozu.api.contracts.productadmin.SearchSettings> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.SearchSettings>) MozuClientFactory.getInstance(clz);
-		mozuClient.setVerb(verb);
-		mozuClient.setResourceUrl(url);
-		mozuClient.setBody(settings);
-		return mozuClient;
-
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinition> mozuClient=UpdateSynonymDefinitionClient( synonymDefinition,  synonymId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
@@ -635,6 +767,30 @@ public class SearchClient {
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(synonymDefinition);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.SearchRedirect> mozuClient=DeleteSearchRedirectClient( redirectId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * SearchRedirect searchRedirect = client.Result();
+	 * </code></pre></p>
+	 * @param redirectId 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.SearchRedirect>
+	 * @see com.mozu.api.contracts.productadmin.SearchRedirect
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.SearchRedirect> deleteSearchRedirectClient(String redirectId) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.SearchUrl.deleteSearchRedirectUrl(redirectId);
+		String verb = "DELETE";
+		Class<?> clz = com.mozu.api.contracts.productadmin.SearchRedirect.class;
+		MozuClient<com.mozu.api.contracts.productadmin.SearchRedirect> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.SearchRedirect>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
 		return mozuClient;
 
 	}

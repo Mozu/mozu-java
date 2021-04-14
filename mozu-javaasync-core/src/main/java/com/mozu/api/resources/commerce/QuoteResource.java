@@ -119,6 +119,77 @@ public class QuoteResource {
 	 * 
 	 * <p><pre><code>
 	 *	Quote quote = new Quote();
+	 *	ShippingRate shippingRate = quote.getAvailableShippingMethods( quoteId);
+	 * </code></pre></p>
+	 * @param quoteId 
+	 * @return List<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate>
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate
+	 */
+	public List<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate> getAvailableShippingMethods(String quoteId) throws Exception
+	{
+		return getAvailableShippingMethods( quoteId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Quote quote = new Quote();
+	 *	CountDownLatch latch = quote.getAvailableShippingMethods( quoteId, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param quoteId 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return List<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate>
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate
+	 */
+	public CountDownLatch getAvailableShippingMethodsAsync(String quoteId, AsyncCallback<List<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate>> callback) throws Exception
+	{
+		return getAvailableShippingMethodsAsync( quoteId,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Quote quote = new Quote();
+	 *	ShippingRate shippingRate = quote.getAvailableShippingMethods( quoteId,  draft);
+	 * </code></pre></p>
+	 * @param draft 
+	 * @param quoteId 
+	 * @return List<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate>
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate
+	 */
+	public List<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate> getAvailableShippingMethods(String quoteId, Boolean draft) throws Exception
+	{
+		MozuClient<List<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate>> client = com.mozu.api.clients.commerce.QuoteClient.getAvailableShippingMethodsClient( quoteId,  draft);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Quote quote = new Quote();
+	 *	CountDownLatch latch = quote.getAvailableShippingMethods( quoteId,  draft, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param draft 
+	 * @param quoteId 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return List<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate>
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate
+	 */
+	public CountDownLatch getAvailableShippingMethodsAsync(String quoteId, Boolean draft, AsyncCallback<List<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate>> callback) throws Exception
+	{
+		MozuClient<List<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate>> client = com.mozu.api.clients.commerce.QuoteClient.getAvailableShippingMethodsClient( quoteId,  draft);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Quote quote = new Quote();
 	 *	Quote quote = quote.getQuote( quoteId);
 	 * </code></pre></p>
 	 * @param quoteId A unique identifier for the quote.
@@ -127,7 +198,7 @@ public class QuoteResource {
 	 */
 	public com.mozu.api.contracts.commerceruntime.quotes.Quote getQuote(String quoteId) throws Exception
 	{
-		return getQuote( quoteId,  null);
+		return getQuote( quoteId,  null,  null);
 	}
 
 	/**
@@ -143,23 +214,24 @@ public class QuoteResource {
 	 */
 	public CountDownLatch getQuoteAsync(String quoteId, AsyncCallback<com.mozu.api.contracts.commerceruntime.quotes.Quote> callback) throws Exception
 	{
-		return getQuoteAsync( quoteId,  null, callback);
+		return getQuoteAsync( quoteId,  null,  null, callback);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	Quote quote = new Quote();
-	 *	Quote quote = quote.getQuote( quoteId,  responseFields);
+	 *	Quote quote = quote.getQuote( quoteId,  draft,  responseFields);
 	 * </code></pre></p>
+	 * @param draft 
 	 * @param quoteId A unique identifier for the quote.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 */
-	public com.mozu.api.contracts.commerceruntime.quotes.Quote getQuote(String quoteId, String responseFields) throws Exception
+	public com.mozu.api.contracts.commerceruntime.quotes.Quote getQuote(String quoteId, Boolean draft, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> client = com.mozu.api.clients.commerce.QuoteClient.getQuoteClient( quoteId,  responseFields);
+		MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> client = com.mozu.api.clients.commerce.QuoteClient.getQuoteClient( quoteId,  draft,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -170,17 +242,18 @@ public class QuoteResource {
 	 * 
 	 * <p><pre><code>
 	 *	Quote quote = new Quote();
-	 *	CountDownLatch latch = quote.getQuote( quoteId,  responseFields, callback );
+	 *	CountDownLatch latch = quote.getQuote( quoteId,  draft,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
+	 * @param draft 
 	 * @param quoteId A unique identifier for the quote.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 */
-	public CountDownLatch getQuoteAsync(String quoteId, String responseFields, AsyncCallback<com.mozu.api.contracts.commerceruntime.quotes.Quote> callback) throws Exception
+	public CountDownLatch getQuoteAsync(String quoteId, Boolean draft, String responseFields, AsyncCallback<com.mozu.api.contracts.commerceruntime.quotes.Quote> callback) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> client = com.mozu.api.clients.commerce.QuoteClient.getQuoteClient( quoteId,  responseFields);
+		MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> client = com.mozu.api.clients.commerce.QuoteClient.getQuoteClient( quoteId,  draft,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 
@@ -199,7 +272,7 @@ public class QuoteResource {
 	 */
 	public com.mozu.api.contracts.commerceruntime.quotes.Quote getQuoteByName(Integer customerAccountId, String quoteName) throws Exception
 	{
-		return getQuoteByName( customerAccountId,  quoteName,  null);
+		return getQuoteByName( customerAccountId,  quoteName,  null,  null);
 	}
 
 	/**
@@ -216,24 +289,25 @@ public class QuoteResource {
 	 */
 	public CountDownLatch getQuoteByNameAsync(Integer customerAccountId, String quoteName, AsyncCallback<com.mozu.api.contracts.commerceruntime.quotes.Quote> callback) throws Exception
 	{
-		return getQuoteByNameAsync( customerAccountId,  quoteName,  null, callback);
+		return getQuoteByNameAsync( customerAccountId,  quoteName,  null,  null, callback);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	Quote quote = new Quote();
-	 *	Quote quote = quote.getQuoteByName( customerAccountId,  quoteName,  responseFields);
+	 *	Quote quote = quote.getQuoteByName( customerAccountId,  quoteName,  draft,  responseFields);
 	 * </code></pre></p>
 	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
+	 * @param draft 
 	 * @param quoteName A unique name for the quote.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 */
-	public com.mozu.api.contracts.commerceruntime.quotes.Quote getQuoteByName(Integer customerAccountId, String quoteName, String responseFields) throws Exception
+	public com.mozu.api.contracts.commerceruntime.quotes.Quote getQuoteByName(Integer customerAccountId, String quoteName, Boolean draft, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> client = com.mozu.api.clients.commerce.QuoteClient.getQuoteByNameClient( customerAccountId,  quoteName,  responseFields);
+		MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> client = com.mozu.api.clients.commerce.QuoteClient.getQuoteByNameClient( customerAccountId,  quoteName,  draft,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -244,18 +318,19 @@ public class QuoteResource {
 	 * 
 	 * <p><pre><code>
 	 *	Quote quote = new Quote();
-	 *	CountDownLatch latch = quote.getQuoteByName( customerAccountId,  quoteName,  responseFields, callback );
+	 *	CountDownLatch latch = quote.getQuoteByName( customerAccountId,  quoteName,  draft,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
+	 * @param draft 
 	 * @param quoteName A unique name for the quote.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 */
-	public CountDownLatch getQuoteByNameAsync(Integer customerAccountId, String quoteName, String responseFields, AsyncCallback<com.mozu.api.contracts.commerceruntime.quotes.Quote> callback) throws Exception
+	public CountDownLatch getQuoteByNameAsync(Integer customerAccountId, String quoteName, Boolean draft, String responseFields, AsyncCallback<com.mozu.api.contracts.commerceruntime.quotes.Quote> callback) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> client = com.mozu.api.clients.commerce.QuoteClient.getQuoteByNameClient( customerAccountId,  quoteName,  responseFields);
+		MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> client = com.mozu.api.clients.commerce.QuoteClient.getQuoteByNameClient( customerAccountId,  quoteName,  draft,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 
@@ -340,6 +415,354 @@ public class QuoteResource {
 	 * 
 	 * <p><pre><code>
 	 *	Quote quote = new Quote();
+	 *	Quote quote = quote.updateQuoteAdjustments( adjustments,  quoteId);
+	 * </code></pre></p>
+	 * @param quoteId 
+	 * @param adjustments 
+	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
+	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
+	 * @see com.mozu.api.contracts.commerceruntime.quotes.QuoteAdjustment
+	 */
+	public com.mozu.api.contracts.commerceruntime.quotes.Quote updateQuoteAdjustments(com.mozu.api.contracts.commerceruntime.quotes.QuoteAdjustment adjustments, String quoteId) throws Exception
+	{
+		return updateQuoteAdjustments( adjustments,  quoteId,  null,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Quote quote = new Quote();
+	 *	CountDownLatch latch = quote.updateQuoteAdjustments( adjustments,  quoteId, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param quoteId 
+	 * @param  callback callback handler for asynchronous operations
+	 * @param adjustments 
+	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
+	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
+	 * @see com.mozu.api.contracts.commerceruntime.quotes.QuoteAdjustment
+	 */
+	public CountDownLatch updateQuoteAdjustmentsAsync(com.mozu.api.contracts.commerceruntime.quotes.QuoteAdjustment adjustments, String quoteId, AsyncCallback<com.mozu.api.contracts.commerceruntime.quotes.Quote> callback) throws Exception
+	{
+		return updateQuoteAdjustmentsAsync( adjustments,  quoteId,  null,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Quote quote = new Quote();
+	 *	Quote quote = quote.updateQuoteAdjustments( adjustments,  quoteId,  updateMode,  responseFields);
+	 * </code></pre></p>
+	 * @param quoteId 
+	 * @param responseFields 
+	 * @param updateMode 
+	 * @param adjustments 
+	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
+	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
+	 * @see com.mozu.api.contracts.commerceruntime.quotes.QuoteAdjustment
+	 */
+	public com.mozu.api.contracts.commerceruntime.quotes.Quote updateQuoteAdjustments(com.mozu.api.contracts.commerceruntime.quotes.QuoteAdjustment adjustments, String quoteId, String updateMode, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> client = com.mozu.api.clients.commerce.QuoteClient.updateQuoteAdjustmentsClient( adjustments,  quoteId,  updateMode,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Quote quote = new Quote();
+	 *	CountDownLatch latch = quote.updateQuoteAdjustments( adjustments,  quoteId,  updateMode,  responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param quoteId 
+	 * @param responseFields 
+	 * @param updateMode 
+	 * @param  callback callback handler for asynchronous operations
+	 * @param adjustments 
+	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
+	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
+	 * @see com.mozu.api.contracts.commerceruntime.quotes.QuoteAdjustment
+	 */
+	public CountDownLatch updateQuoteAdjustmentsAsync(com.mozu.api.contracts.commerceruntime.quotes.QuoteAdjustment adjustments, String quoteId, String updateMode, String responseFields, AsyncCallback<com.mozu.api.contracts.commerceruntime.quotes.Quote> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> client = com.mozu.api.clients.commerce.QuoteClient.updateQuoteAdjustmentsClient( adjustments,  quoteId,  updateMode,  responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Quote quote = new Quote();
+	 *	Quote quote = quote.copyQuote( quoteId);
+	 * </code></pre></p>
+	 * @param quoteId 
+	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
+	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
+	 */
+	public com.mozu.api.contracts.commerceruntime.quotes.Quote copyQuote(String quoteId) throws Exception
+	{
+		return copyQuote( quoteId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Quote quote = new Quote();
+	 *	CountDownLatch latch = quote.copyQuote( quoteId, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param quoteId 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
+	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
+	 */
+	public CountDownLatch copyQuoteAsync(String quoteId, AsyncCallback<com.mozu.api.contracts.commerceruntime.quotes.Quote> callback) throws Exception
+	{
+		return copyQuoteAsync( quoteId,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Quote quote = new Quote();
+	 *	Quote quote = quote.copyQuote( quoteId,  responseFields);
+	 * </code></pre></p>
+	 * @param quoteId 
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
+	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
+	 */
+	public com.mozu.api.contracts.commerceruntime.quotes.Quote copyQuote(String quoteId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> client = com.mozu.api.clients.commerce.QuoteClient.copyQuoteClient( quoteId,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Quote quote = new Quote();
+	 *	CountDownLatch latch = quote.copyQuote( quoteId,  responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param quoteId 
+	 * @param responseFields 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
+	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
+	 */
+	public CountDownLatch copyQuoteAsync(String quoteId, String responseFields, AsyncCallback<com.mozu.api.contracts.commerceruntime.quotes.Quote> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> client = com.mozu.api.clients.commerce.QuoteClient.copyQuoteClient( quoteId,  responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Quote quote = new Quote();
+	 *	Stream stream = quote.sendQuoteEmail( emailAddresses,  quoteId);
+	 * </code></pre></p>
+	 * @param quoteId 
+	 * @param emailAddresses 
+	 * @return Stream
+	 * @see Stream
+	 * @see string
+	 */
+	public java.io.InputStream sendQuoteEmail(List<String> emailAddresses, String quoteId) throws Exception
+	{
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.QuoteClient.sendQuoteEmailClient( emailAddresses,  quoteId);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Quote quote = new Quote();
+	 *	CountDownLatch latch = quote.sendQuoteEmail( emailAddresses,  quoteId, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param quoteId 
+	 * @param  callback callback handler for asynchronous operations
+	 * @param emailAddresses 
+	 * @return Stream
+	 * @see Stream
+	 * @see string
+	 */
+	public CountDownLatch sendQuoteEmailAsync(List<String> emailAddresses, String quoteId, AsyncCallback<java.io.InputStream> callback) throws Exception
+	{
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.QuoteClient.sendQuoteEmailClient( emailAddresses,  quoteId);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Quote quote = new Quote();
+	 *	Quote quote = quote.updateFulfillmentInfo( fulfillmentInfo,  quoteId);
+	 * </code></pre></p>
+	 * @param quoteId 
+	 * @param fulfillmentInfo 
+	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
+	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo
+	 */
+	public com.mozu.api.contracts.commerceruntime.quotes.Quote updateFulfillmentInfo(com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo fulfillmentInfo, String quoteId) throws Exception
+	{
+		return updateFulfillmentInfo( fulfillmentInfo,  quoteId,  null,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Quote quote = new Quote();
+	 *	CountDownLatch latch = quote.updateFulfillmentInfo( fulfillmentInfo,  quoteId, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param quoteId 
+	 * @param  callback callback handler for asynchronous operations
+	 * @param fulfillmentInfo 
+	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
+	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo
+	 */
+	public CountDownLatch updateFulfillmentInfoAsync(com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo fulfillmentInfo, String quoteId, AsyncCallback<com.mozu.api.contracts.commerceruntime.quotes.Quote> callback) throws Exception
+	{
+		return updateFulfillmentInfoAsync( fulfillmentInfo,  quoteId,  null,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Quote quote = new Quote();
+	 *	Quote quote = quote.updateFulfillmentInfo( fulfillmentInfo,  quoteId,  updateMode,  responseFields);
+	 * </code></pre></p>
+	 * @param quoteId 
+	 * @param responseFields 
+	 * @param updateMode 
+	 * @param fulfillmentInfo 
+	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
+	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo
+	 */
+	public com.mozu.api.contracts.commerceruntime.quotes.Quote updateFulfillmentInfo(com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo fulfillmentInfo, String quoteId, String updateMode, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> client = com.mozu.api.clients.commerce.QuoteClient.updateFulfillmentInfoClient( fulfillmentInfo,  quoteId,  updateMode,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Quote quote = new Quote();
+	 *	CountDownLatch latch = quote.updateFulfillmentInfo( fulfillmentInfo,  quoteId,  updateMode,  responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param quoteId 
+	 * @param responseFields 
+	 * @param updateMode 
+	 * @param  callback callback handler for asynchronous operations
+	 * @param fulfillmentInfo 
+	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
+	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo
+	 */
+	public CountDownLatch updateFulfillmentInfoAsync(com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo fulfillmentInfo, String quoteId, String updateMode, String responseFields, AsyncCallback<com.mozu.api.contracts.commerceruntime.quotes.Quote> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> client = com.mozu.api.clients.commerce.QuoteClient.updateFulfillmentInfoClient( fulfillmentInfo,  quoteId,  updateMode,  responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Quote quote = new Quote();
+	 *	Quote quote = quote.createQuoteFromCart( cartId);
+	 * </code></pre></p>
+	 * @param cartId 
+	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
+	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
+	 */
+	public com.mozu.api.contracts.commerceruntime.quotes.Quote createQuoteFromCart(String cartId) throws Exception
+	{
+		return createQuoteFromCart( cartId,  null,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Quote quote = new Quote();
+	 *	CountDownLatch latch = quote.createQuoteFromCart( cartId, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param cartId 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
+	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
+	 */
+	public CountDownLatch createQuoteFromCartAsync(String cartId, AsyncCallback<com.mozu.api.contracts.commerceruntime.quotes.Quote> callback) throws Exception
+	{
+		return createQuoteFromCartAsync( cartId,  null,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Quote quote = new Quote();
+	 *	Quote quote = quote.createQuoteFromCart( cartId,  updateMode,  responseFields);
+	 * </code></pre></p>
+	 * @param cartId 
+	 * @param responseFields 
+	 * @param updateMode 
+	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
+	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
+	 */
+	public com.mozu.api.contracts.commerceruntime.quotes.Quote createQuoteFromCart(String cartId, String updateMode, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> client = com.mozu.api.clients.commerce.QuoteClient.createQuoteFromCartClient( cartId,  updateMode,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Quote quote = new Quote();
+	 *	CountDownLatch latch = quote.createQuoteFromCart( cartId,  updateMode,  responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param cartId 
+	 * @param responseFields 
+	 * @param updateMode 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
+	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
+	 */
+	public CountDownLatch createQuoteFromCartAsync(String cartId, String updateMode, String responseFields, AsyncCallback<com.mozu.api.contracts.commerceruntime.quotes.Quote> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> client = com.mozu.api.clients.commerce.QuoteClient.createQuoteFromCartClient( cartId,  updateMode,  responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Quote quote = new Quote();
 	 *	Quote quote = quote.updateQuote( quote,  quoteId);
 	 * </code></pre></p>
 	 * @param quoteId A unique identifier for the quote being updated.
@@ -350,7 +773,7 @@ public class QuoteResource {
 	 */
 	public com.mozu.api.contracts.commerceruntime.quotes.Quote updateQuote(com.mozu.api.contracts.commerceruntime.quotes.Quote quote, String quoteId) throws Exception
 	{
-		return updateQuote( quote,  quoteId,  null);
+		return updateQuote( quote,  quoteId,  null,  null);
 	}
 
 	/**
@@ -368,25 +791,26 @@ public class QuoteResource {
 	 */
 	public CountDownLatch updateQuoteAsync(com.mozu.api.contracts.commerceruntime.quotes.Quote quote, String quoteId, AsyncCallback<com.mozu.api.contracts.commerceruntime.quotes.Quote> callback) throws Exception
 	{
-		return updateQuoteAsync( quote,  quoteId,  null, callback);
+		return updateQuoteAsync( quote,  quoteId,  null,  null, callback);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	Quote quote = new Quote();
-	 *	Quote quote = quote.updateQuote( quote,  quoteId,  responseFields);
+	 *	Quote quote = quote.updateQuote( quote,  quoteId,  updateMode,  responseFields);
 	 * </code></pre></p>
 	 * @param quoteId A unique identifier for the quote being updated.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param updateMode 
 	 * @param quote The quote that is being updated.
 	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 */
-	public com.mozu.api.contracts.commerceruntime.quotes.Quote updateQuote(com.mozu.api.contracts.commerceruntime.quotes.Quote quote, String quoteId, String responseFields) throws Exception
+	public com.mozu.api.contracts.commerceruntime.quotes.Quote updateQuote(com.mozu.api.contracts.commerceruntime.quotes.Quote quote, String quoteId, String updateMode, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> client = com.mozu.api.clients.commerce.QuoteClient.updateQuoteClient( quote,  quoteId,  responseFields);
+		MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> client = com.mozu.api.clients.commerce.QuoteClient.updateQuoteClient( quote,  quoteId,  updateMode,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -397,19 +821,20 @@ public class QuoteResource {
 	 * 
 	 * <p><pre><code>
 	 *	Quote quote = new Quote();
-	 *	CountDownLatch latch = quote.updateQuote( quote,  quoteId,  responseFields, callback );
+	 *	CountDownLatch latch = quote.updateQuote( quote,  quoteId,  updateMode,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param quoteId A unique identifier for the quote being updated.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param updateMode 
 	 * @param  callback callback handler for asynchronous operations
 	 * @param quote The quote that is being updated.
 	 * @return com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 */
-	public CountDownLatch updateQuoteAsync(com.mozu.api.contracts.commerceruntime.quotes.Quote quote, String quoteId, String responseFields, AsyncCallback<com.mozu.api.contracts.commerceruntime.quotes.Quote> callback) throws Exception
+	public CountDownLatch updateQuoteAsync(com.mozu.api.contracts.commerceruntime.quotes.Quote quote, String quoteId, String updateMode, String responseFields, AsyncCallback<com.mozu.api.contracts.commerceruntime.quotes.Quote> callback) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> client = com.mozu.api.clients.commerce.QuoteClient.updateQuoteClient( quote,  quoteId,  responseFields);
+		MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> client = com.mozu.api.clients.commerce.QuoteClient.updateQuoteClient( quote,  quoteId,  updateMode,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 
@@ -427,11 +852,7 @@ public class QuoteResource {
 	 */
 	public java.io.InputStream deleteQuote(String quoteId) throws Exception
 	{
-		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.QuoteClient.deleteQuoteClient( quoteId);
-		client.setContext(_apiContext);
-		client.executeRequest();
-		return client.getResult();
-
+		return deleteQuote( quoteId,  null);
 	}
 
 	/**
@@ -447,7 +868,44 @@ public class QuoteResource {
 	 */
 	public CountDownLatch deleteQuoteAsync(String quoteId, AsyncCallback<java.io.InputStream> callback) throws Exception
 	{
-		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.QuoteClient.deleteQuoteClient( quoteId);
+		return deleteQuoteAsync( quoteId,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Quote quote = new Quote();
+	 *	Stream stream = quote.deleteQuote( quoteId,  draft);
+	 * </code></pre></p>
+	 * @param draft 
+	 * @param quoteId A unique identifier for the quote.
+	 * @return Stream
+	 * @see Stream
+	 */
+	public java.io.InputStream deleteQuote(String quoteId, Boolean draft) throws Exception
+	{
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.QuoteClient.deleteQuoteClient( quoteId,  draft);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Quote quote = new Quote();
+	 *	CountDownLatch latch = quote.deleteQuote( quoteId,  draft, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param draft 
+	 * @param quoteId A unique identifier for the quote.
+	 * @param  callback callback handler for asynchronous operations
+	 * @return Stream
+	 * @see Stream
+	 */
+	public CountDownLatch deleteQuoteAsync(String quoteId, Boolean draft, AsyncCallback<java.io.InputStream> callback) throws Exception
+	{
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.QuoteClient.deleteQuoteClient( quoteId,  draft);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 

@@ -23,6 +23,9 @@ import com.mozu.api.contracts.productruntime.ProductOption;
 import com.mozu.api.contracts.productruntime.ProductPrice;
 import com.mozu.api.contracts.productruntime.ProductPriceRange;
 import com.mozu.api.contracts.productruntime.ProductPricingBehaviorInfo;
+import com.mozu.api.contracts.productruntime.ProductCollectionMember;
+import com.mozu.api.contracts.productruntime.ProductCollectionInfo;
+import com.mozu.api.contracts.productruntime.ProductImageGroup;
 import com.mozu.api.contracts.productruntime.ProductProperty;
 import com.mozu.api.contracts.productruntime.ProductPurchasableState;
 import com.mozu.api.contracts.productruntime.VariationSummary;
@@ -277,6 +280,26 @@ public class Product implements Serializable
 		this.purchaseLocation = purchaseLocation;
 	}
 
+	protected  String sliceValue;
+
+	public String getSliceValue() {
+		return this.sliceValue;
+	}
+
+	public void setSliceValue(String sliceValue) {
+		this.sliceValue = sliceValue;
+	}
+
+	protected  String slicingAttributeFQN;
+
+	public String getSlicingAttributeFQN() {
+		return this.slicingAttributeFQN;
+	}
+
+	public void setSlicingAttributeFQN(String slicingAttributeFQN) {
+		this.slicingAttributeFQN = slicingAttributeFQN;
+	}
+
 	protected  String upc;
 
 	public String getUpc() {
@@ -359,6 +382,14 @@ public class Product implements Serializable
 		this.categories = categories;
 	}
 
+	protected List<ProductContent> collectionMembersProductContent;
+	public List<ProductContent> getCollectionMembersProductContent() {
+		return this.collectionMembersProductContent;
+	}
+	public void setCollectionMembersProductContent(List<ProductContent> collectionMembersProductContent) {
+		this.collectionMembersProductContent = collectionMembersProductContent;
+	}
+
 	protected  ProductContent content;
 
 	public ProductContent getContent() {
@@ -428,6 +459,30 @@ public class Product implements Serializable
 
 	public void setPricingBehavior(ProductPricingBehaviorInfo pricingBehavior) {
 		this.pricingBehavior = pricingBehavior;
+	}
+
+	protected List<ProductCollectionMember> productCollectionMembers;
+	public List<ProductCollectionMember> getProductCollectionMembers() {
+		return this.productCollectionMembers;
+	}
+	public void setProductCollectionMembers(List<ProductCollectionMember> productCollectionMembers) {
+		this.productCollectionMembers = productCollectionMembers;
+	}
+
+	protected List<ProductCollectionInfo> productCollections;
+	public List<ProductCollectionInfo> getProductCollections() {
+		return this.productCollections;
+	}
+	public void setProductCollections(List<ProductCollectionInfo> productCollections) {
+		this.productCollections = productCollections;
+	}
+
+	protected List<ProductImageGroup> productImageGroups;
+	public List<ProductImageGroup> getProductImageGroups() {
+		return this.productImageGroups;
+	}
+	public void setProductImageGroups(List<ProductImageGroup> productImageGroups) {
+		this.productImageGroups = productImageGroups;
 	}
 
 	protected List<ProductProperty> properties;

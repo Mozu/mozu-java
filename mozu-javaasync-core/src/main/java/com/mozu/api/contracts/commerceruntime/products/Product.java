@@ -267,6 +267,16 @@ public class Product implements Serializable
 		this.productUsage = productUsage;
 	}
 
+	protected  String sku;
+
+	public String getSku() {
+		return this.sku;
+	}
+
+	public void setSku(String sku) {
+		this.sku = sku;
+	}
+
 	/**
 	 * The universal product code (UPC) is the barcode defined for the product. The UPC is unique across all sales channels. 
 	 */

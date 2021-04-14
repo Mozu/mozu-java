@@ -54,6 +54,20 @@ public class LocationUrl
 	}
 
 	/**
+	 * Get Resource Url for GetCurbsideLocation
+	 * @param includeAttributeDefinition 
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getCurbsideLocationUrl(Boolean includeAttributeDefinition, String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/storefront/locationUsageTypes/CS/location?includeAttributeDefinition={includeAttributeDefinition}&responseFields={responseFields}");
+		formatter.formatUrl("includeAttributeDefinition", includeAttributeDefinition);
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for GetDirectShipLocation
 	 * @param includeAttributeDefinition 
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.

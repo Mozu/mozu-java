@@ -14,6 +14,20 @@ public class CartUrl
 {
 
 	/**
+	 * Get Resource Url for GetCartSummaryByCartId
+	 * @param cartId 
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getCartSummaryByCartIdUrl(String cartId, String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/carts/{cartId}/summary?responseFields={responseFields}");
+		formatter.formatUrl("cartId", cartId);
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for GetCart
 	 * @param cartId Identifier of the cart to delete.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
@@ -96,6 +110,34 @@ public class CartUrl
 	}
 
 	/**
+	 * Get Resource Url for GetOrCreateUserCart
+	 * @param responseFields 
+	 * @param userId 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getOrCreateUserCartUrl(String responseFields, String userId)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/carts/user/{userId}?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
+		formatter.formatUrl("userId", userId);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for UpdateCartByCartId
+	 * @param cartId 
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl updateCartByCartIdUrl(String cartId, String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/carts/{cartId}?responseFields={responseFields}");
+		formatter.formatUrl("cartId", cartId);
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for UpdateCart
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
@@ -108,6 +150,20 @@ public class CartUrl
 	}
 
 	/**
+	 * Get Resource Url for UpdateUserCart
+	 * @param responseFields 
+	 * @param userId 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl updateUserCartUrl(String responseFields, String userId)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/carts/user/{userId}?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
+		formatter.formatUrl("userId", userId);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for DeleteCart
 	 * @param cartId Identifier of the cart to delete.
 	 * @return   String Resource Url
@@ -116,6 +172,18 @@ public class CartUrl
 	{
 		UrlFormatter formatter = new UrlFormatter("/api/commerce/carts/{cartId}");
 		formatter.formatUrl("cartId", cartId);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for DeleteUserCart
+	 * @param userId 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl deleteUserCartUrl(String userId)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/carts/{userId}");
+		formatter.formatUrl("userId", userId);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

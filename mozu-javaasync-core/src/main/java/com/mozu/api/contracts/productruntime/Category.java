@@ -84,6 +84,26 @@ public class Category implements Serializable
 		this.sequence = sequence;
 	}
 
+	protected  Boolean shouldSlice;
+
+	public Boolean getShouldSlice() {
+		return this.shouldSlice;
+	}
+
+	public void setShouldSlice(Boolean shouldSlice) {
+		this.shouldSlice = shouldSlice;
+	}
+
+	protected  DateTime updateDate;
+
+	public DateTime getUpdateDate() {
+		return this.updateDate;
+	}
+
+	public void setUpdateDate(DateTime updateDate) {
+		this.updateDate = updateDate;
+	}
+
 	protected List<Category> childrenCategories;
 	public List<Category> getChildrenCategories() {
 		return this.childrenCategories;

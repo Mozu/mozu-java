@@ -21,6 +21,26 @@ public class Hours implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected  String closeTime;
+
+	public String getCloseTime() {
+		return this.closeTime;
+	}
+
+	public void setCloseTime(String closeTime) {
+		this.closeTime = closeTime;
+	}
+
+	protected  Boolean isClosed;
+
+	public Boolean getIsClosed() {
+		return this.isClosed;
+	}
+
+	public void setIsClosed(Boolean isClosed) {
+		this.isClosed = isClosed;
+	}
+
 	protected  String label;
 
 	public String getLabel() {
@@ -29,6 +49,16 @@ public class Hours implements Serializable
 
 	public void setLabel(String label) {
 		this.label = label;
+	}
+
+	protected  String openTime;
+
+	public String getOpenTime() {
+		return this.openTime;
+	}
+
+	public void setOpenTime(String openTime) {
+		this.openTime = openTime;
 	}
 
 

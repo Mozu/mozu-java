@@ -27,36 +27,36 @@ public class LocationGroupConfigurationClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.location.LocationGroupConfiguration> mozuClient=GetLocationGroupConfigurationClient( locationGroupId);
+	 * MozuClient<com.mozu.api.contracts.location.LocationGroupConfiguration> mozuClient=GetLocationGroupConfigurationClient( locationGroupCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * LocationGroupConfiguration locationGroupConfiguration = client.Result();
 	 * </code></pre></p>
-	 * @param locationGroupId 
+	 * @param locationGroupCode 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.LocationGroupConfiguration>
 	 * @see com.mozu.api.contracts.location.LocationGroupConfiguration
 	 */
-	public static MozuClient<com.mozu.api.contracts.location.LocationGroupConfiguration> getLocationGroupConfigurationClient(Integer locationGroupId) throws Exception
+	public static MozuClient<com.mozu.api.contracts.location.LocationGroupConfiguration> getLocationGroupConfigurationClient(String locationGroupCode) throws Exception
 	{
-		return getLocationGroupConfigurationClient( locationGroupId,  null);
+		return getLocationGroupConfigurationClient( locationGroupCode,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.location.LocationGroupConfiguration> mozuClient=GetLocationGroupConfigurationClient( locationGroupId,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.location.LocationGroupConfiguration> mozuClient=GetLocationGroupConfigurationClient( locationGroupCode,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * LocationGroupConfiguration locationGroupConfiguration = client.Result();
 	 * </code></pre></p>
-	 * @param locationGroupId 
+	 * @param locationGroupCode 
 	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.LocationGroupConfiguration>
 	 * @see com.mozu.api.contracts.location.LocationGroupConfiguration
 	 */
-	public static MozuClient<com.mozu.api.contracts.location.LocationGroupConfiguration> getLocationGroupConfigurationClient(Integer locationGroupId, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.location.LocationGroupConfiguration> getLocationGroupConfigurationClient(String locationGroupCode, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.admin.LocationGroupConfigurationUrl.getLocationGroupConfigurationUrl(locationGroupId, responseFields);
+		MozuUrl url = com.mozu.api.urls.commerce.admin.LocationGroupConfigurationUrl.getLocationGroupConfigurationUrl(locationGroupCode, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.location.LocationGroupConfiguration.class;
 		MozuClient<com.mozu.api.contracts.location.LocationGroupConfiguration> mozuClient = (MozuClient<com.mozu.api.contracts.location.LocationGroupConfiguration>) MozuClientFactory.getInstance(clz);
@@ -111,40 +111,40 @@ public class LocationGroupConfigurationClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.location.LocationGroupConfiguration> mozuClient=SetLocationGroupConfigurationClient( configuration,  locationGroupId);
+	 * MozuClient<com.mozu.api.contracts.location.LocationGroupConfiguration> mozuClient=SetLocationGroupConfigurationClient( configuration,  locationGroupCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * LocationGroupConfiguration locationGroupConfiguration = client.Result();
 	 * </code></pre></p>
-	 * @param locationGroupId 
+	 * @param locationGroupCode 
 	 * @param configuration 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.LocationGroupConfiguration>
 	 * @see com.mozu.api.contracts.location.LocationGroupConfiguration
 	 * @see com.mozu.api.contracts.location.LocationGroupConfiguration
 	 */
-	public static MozuClient<com.mozu.api.contracts.location.LocationGroupConfiguration> setLocationGroupConfigurationClient(com.mozu.api.contracts.location.LocationGroupConfiguration configuration, Integer locationGroupId) throws Exception
+	public static MozuClient<com.mozu.api.contracts.location.LocationGroupConfiguration> setLocationGroupConfigurationClient(com.mozu.api.contracts.location.LocationGroupConfiguration configuration, String locationGroupCode) throws Exception
 	{
-		return setLocationGroupConfigurationClient( configuration,  locationGroupId,  null);
+		return setLocationGroupConfigurationClient( configuration,  locationGroupCode,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.location.LocationGroupConfiguration> mozuClient=SetLocationGroupConfigurationClient( configuration,  locationGroupId,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.location.LocationGroupConfiguration> mozuClient=SetLocationGroupConfigurationClient( configuration,  locationGroupCode,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * LocationGroupConfiguration locationGroupConfiguration = client.Result();
 	 * </code></pre></p>
-	 * @param locationGroupId 
+	 * @param locationGroupCode 
 	 * @param responseFields 
 	 * @param configuration 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.LocationGroupConfiguration>
 	 * @see com.mozu.api.contracts.location.LocationGroupConfiguration
 	 * @see com.mozu.api.contracts.location.LocationGroupConfiguration
 	 */
-	public static MozuClient<com.mozu.api.contracts.location.LocationGroupConfiguration> setLocationGroupConfigurationClient(com.mozu.api.contracts.location.LocationGroupConfiguration configuration, Integer locationGroupId, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.location.LocationGroupConfiguration> setLocationGroupConfigurationClient(com.mozu.api.contracts.location.LocationGroupConfiguration configuration, String locationGroupCode, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.admin.LocationGroupConfigurationUrl.setLocationGroupConfigurationUrl(locationGroupId, responseFields);
+		MozuUrl url = com.mozu.api.urls.commerce.admin.LocationGroupConfigurationUrl.setLocationGroupConfigurationUrl(locationGroupCode, responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.location.LocationGroupConfiguration.class;
 		MozuClient<com.mozu.api.contracts.location.LocationGroupConfiguration> mozuClient = (MozuClient<com.mozu.api.contracts.location.LocationGroupConfiguration>) MozuClientFactory.getInstance(clz);

@@ -23,6 +23,31 @@ import com.mozu.api.resources.commerce.orders.RefundResource;
 public class RefundFactory
 {
 
+	public static com.mozu.api.contracts.commerceruntime.orders.RefundReasonCollection getRefundReasons(ApiContext apiContext, int expectedCode) throws Exception
+	{
+		return getRefundReasons(apiContext,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.orders.RefundReasonCollection getRefundReasons(ApiContext apiContext, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.commerceruntime.orders.RefundReasonCollection returnObj = new com.mozu.api.contracts.commerceruntime.orders.RefundReasonCollection();
+		RefundResource resource = new RefundResource(apiContext);
+		try
+		{
+			returnObj = resource.getRefundReasons( responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
 	public static com.mozu.api.contracts.commerceruntime.refunds.Refund createRefund(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.refunds.Refund refund, String orderId, int expectedCode) throws Exception
 	{
 		return createRefund(apiContext,  refund,  orderId,  null, expectedCode);

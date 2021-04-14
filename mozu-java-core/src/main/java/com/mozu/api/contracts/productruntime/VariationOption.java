@@ -21,14 +21,17 @@ public class VariationOption implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected  String attributeFqn;
+	/**
+	 * The fully qualified name of the attribute. The attributeDefiniteId may be used to generate this name.
+	 */
+	protected  String attributeFQN;
 
-	public String getAttributeFqn() {
-		return this.attributeFqn;
+	public String getAttributeFQN() {
+		return this.attributeFQN;
 	}
 
-	public void setAttributeFqn(String attributeFqn) {
-		this.attributeFqn = attributeFqn;
+	public void setAttributeFQN(String attributeFQN) {
+		this.attributeFQN = attributeFQN;
 	}
 
 	/**

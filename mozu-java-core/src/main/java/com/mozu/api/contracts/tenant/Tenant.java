@@ -56,6 +56,16 @@ public class Tenant implements Serializable
 		this.isDevTenant = isDevTenant;
 	}
 
+	protected  Boolean isUnified;
+
+	public Boolean getIsUnified() {
+		return this.isUnified;
+	}
+
+	public void setIsUnified(Boolean isUnified) {
+		this.isUnified = isUnified;
+	}
+
 	protected  String name;
 
 	public String getName() {

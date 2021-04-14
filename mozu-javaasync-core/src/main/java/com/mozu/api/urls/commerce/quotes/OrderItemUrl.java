@@ -15,14 +15,16 @@ public class OrderItemUrl
 
 	/**
 	 * Get Resource Url for GetQuoteItem
+	 * @param draft 
 	 * @param quoteId A unique identifier for the quote that the item is included within.
 	 * @param quoteItemId A unique identifier for the item included within a quote.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getQuoteItemUrl(String quoteId, String quoteItemId, String responseFields)
+	public static MozuUrl getQuoteItemUrl(Boolean draft, String quoteId, String quoteItemId, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/quotes/{quoteId}/items/{quoteItemId}?responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/quotes/{quoteId}/items/{quoteItemId}?draft={draft}&responseFields={responseFields}");
+		formatter.formatUrl("draft", draft);
 		formatter.formatUrl("quoteId", quoteId);
 		formatter.formatUrl("quoteItemId", quoteItemId);
 		formatter.formatUrl("responseFields", responseFields);
@@ -79,29 +81,73 @@ public class OrderItemUrl
 	 * Get Resource Url for AddItemToQuote
 	 * @param quoteId The unique identifier for the quote that an item is being added to.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param updateMode 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl addItemToQuoteUrl(String quoteId, String responseFields)
+	public static MozuUrl addItemToQuoteUrl(String quoteId, String responseFields, String updateMode)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/quotes/{quoteId}/items?responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/quotes/{quoteId}/items?updatemode={updateMode}&responseFields={responseFields}");
 		formatter.formatUrl("quoteId", quoteId);
 		formatter.formatUrl("responseFields", responseFields);
+		formatter.formatUrl("updateMode", updateMode);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
-	 * Get Resource Url for UpdateQuoteItem
-	 * @param quoteId The unique identifier for the quote that the item being updated is listed within.
-	 * @param quoteItemId The unique identifier for the quote item being updated.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * Get Resource Url for UpdateItemFulfillment
+	 * @param quoteId 
+	 * @param quoteItemId 
+	 * @param responseFields 
+	 * @param updateMode 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl updateQuoteItemUrl(String quoteId, String quoteItemId, String responseFields)
+	public static MozuUrl updateItemFulfillmentUrl(String quoteId, String quoteItemId, String responseFields, String updateMode)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/quotes/{quoteId}/items/{quoteItemId}?responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/quotes/{quoteId}/items/{quoteItemId}/fulfillment?updatemode={updateMode}&responseFields={responseFields}");
 		formatter.formatUrl("quoteId", quoteId);
 		formatter.formatUrl("quoteItemId", quoteItemId);
 		formatter.formatUrl("responseFields", responseFields);
+		formatter.formatUrl("updateMode", updateMode);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for UpdateItemProductPrice
+	 * @param price 
+	 * @param quoteId 
+	 * @param quoteItemId 
+	 * @param responseFields 
+	 * @param updateMode 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl updateItemProductPriceUrl(Double price, String quoteId, String quoteItemId, String responseFields, String updateMode)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/quotes/{quoteId}/items/{quoteItemId}/price/{price}?updatemode={updateMode}&responseFields={responseFields}");
+		formatter.formatUrl("price", price);
+		formatter.formatUrl("quoteId", quoteId);
+		formatter.formatUrl("quoteItemId", quoteItemId);
+		formatter.formatUrl("responseFields", responseFields);
+		formatter.formatUrl("updateMode", updateMode);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for UpdateItemQuantity
+	 * @param quantity 
+	 * @param quoteId 
+	 * @param quoteItemId 
+	 * @param responseFields 
+	 * @param updateMode 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl updateItemQuantityUrl(Integer quantity, String quoteId, String quoteItemId, String responseFields, String updateMode)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/quotes/{quoteId}/items/{quoteItemId}/quantity/{quantity}?updatemode={updateMode}&responseFields={responseFields}");
+		formatter.formatUrl("quantity", quantity);
+		formatter.formatUrl("quoteId", quoteId);
+		formatter.formatUrl("quoteItemId", quoteItemId);
+		formatter.formatUrl("responseFields", responseFields);
+		formatter.formatUrl("updateMode", updateMode);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
@@ -109,13 +155,15 @@ public class OrderItemUrl
 	 * Get Resource Url for DeleteQuoteItem
 	 * @param quoteId A unique identifier for the quote tha the item being deleted belongs to.
 	 * @param quoteItemId A unique identifier for an item included in the quote.
+	 * @param updateMode 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl deleteQuoteItemUrl(String quoteId, String quoteItemId)
+	public static MozuUrl deleteQuoteItemUrl(String quoteId, String quoteItemId, String updateMode)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/quotes/{quoteId}/items/{quoteItemId}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/quotes/{quoteId}/items/{quoteItemId}?updatemode={updateMode}");
 		formatter.formatUrl("quoteId", quoteId);
 		formatter.formatUrl("quoteItemId", quoteItemId);
+		formatter.formatUrl("updateMode", updateMode);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

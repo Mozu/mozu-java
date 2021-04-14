@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
+import com.mozu.api.contracts.sitesettings.order.FlexibleCapture;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AutoCaptureJob implements Serializable
@@ -36,6 +37,16 @@ public class AutoCaptureJob implements Serializable
 
 	public void setIsEnabled(Boolean isEnabled) {
 		this.isEnabled = isEnabled;
+	}
+
+	protected  FlexibleCapture flexibleCapture;
+
+	public FlexibleCapture getFlexibleCapture() {
+		return this.flexibleCapture;
+	}
+
+	public void setFlexibleCapture(FlexibleCapture flexibleCapture) {
+		this.flexibleCapture = flexibleCapture;
 	}
 
 

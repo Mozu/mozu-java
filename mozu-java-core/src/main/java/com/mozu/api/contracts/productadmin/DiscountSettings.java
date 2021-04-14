@@ -22,6 +22,16 @@ public class DiscountSettings implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected  Boolean usePostDiscountedOrderValue;
+
+	public Boolean getUsePostDiscountedOrderValue() {
+		return this.usePostDiscountedOrderValue;
+	}
+
+	public void setUsePostDiscountedOrderValue(Boolean usePostDiscountedOrderValue) {
+		this.usePostDiscountedOrderValue = usePostDiscountedOrderValue;
+	}
+
 	/**
 	 * Where we can enable stacking and indicate how many layers we want to use for line item/order discounts.
 	 */

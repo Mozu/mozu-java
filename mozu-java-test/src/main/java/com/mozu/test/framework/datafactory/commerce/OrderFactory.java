@@ -138,6 +138,31 @@ public class OrderFactory
 		return returnObj;
 	}
 
+	public static com.mozu.api.contracts.commerceruntime.orders.Order createOrderFromQuote(ApiContext apiContext, String quoteId, int expectedCode) throws Exception
+	{
+		return createOrderFromQuote(apiContext,  quoteId,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.orders.Order createOrderFromQuote(ApiContext apiContext, String quoteId, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.commerceruntime.orders.Order returnObj = new com.mozu.api.contracts.commerceruntime.orders.Order();
+		OrderResource resource = new OrderResource(apiContext);
+		try
+		{
+			returnObj = resource.createOrderFromQuote( quoteId,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
 	public static com.mozu.api.contracts.commerceruntime.orders.Order createOrder(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.orders.Order order, int expectedCode) throws Exception
 	{
 		return createOrder(apiContext,  order,  null, expectedCode);
@@ -370,6 +395,26 @@ public class OrderFactory
 		try
 		{
 			returnObj = resource.updateOrder( order,  orderId,  updateMode,  version,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
+	public static java.io.InputStream smsOptOut(ApiContext apiContext, String siteId, int expectedCode) throws Exception
+	{
+		java.io.InputStream returnObj;
+		OrderResource resource = new OrderResource(apiContext);
+		try
+		{
+			returnObj = resource.smsOptOut( siteId);
 		}
 		catch (ApiException e)
 		{

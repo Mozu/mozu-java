@@ -208,6 +208,48 @@ public class OrderClient {
 	/**
 	 * 
 	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=CreateOrderFromQuoteClient( quoteId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Order order = client.Result();
+	 * </code></pre></p>
+	 * @param quoteId 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
+	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> createOrderFromQuoteClient(String quoteId) throws Exception
+	{
+		return createOrderFromQuoteClient( quoteId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=CreateOrderFromQuoteClient( quoteId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Order order = client.Result();
+	 * </code></pre></p>
+	 * @param quoteId 
+	 * @param responseFields 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
+	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> createOrderFromQuoteClient(String quoteId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.OrderUrl.createOrderFromQuoteUrl(quoteId, responseFields);
+		String verb = "POST";
+		Class<?> clz = com.mozu.api.contracts.commerceruntime.orders.Order.class;
+		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=CreateOrderClient( order);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
@@ -649,6 +691,30 @@ public class OrderClient {
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(order);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<java.io.InputStream> mozuClient=SmsOptOutClient( siteId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Stream stream = client.Result();
+	 * </code></pre></p>
+	 * @param siteId 
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
+	 */
+	public static MozuClient<java.io.InputStream> smsOptOutClient(String siteId) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.OrderUrl.smsOptOutUrl(siteId);
+		String verb = "PUT";
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
 		return mozuClient;
 
 	}

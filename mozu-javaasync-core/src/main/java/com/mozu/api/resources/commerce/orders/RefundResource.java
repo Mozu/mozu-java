@@ -40,6 +40,73 @@ public class RefundResource {
 	 * 
 	 * <p><pre><code>
 	 *	Refund refund = new Refund();
+	 *	RefundReasonCollection refundReasonCollection = refund.getRefundReasons();
+	 * </code></pre></p>
+	 * @return com.mozu.api.contracts.commerceruntime.orders.RefundReasonCollection
+	 * @see com.mozu.api.contracts.commerceruntime.orders.RefundReasonCollection
+	 */
+	public com.mozu.api.contracts.commerceruntime.orders.RefundReasonCollection getRefundReasons() throws Exception
+	{
+		return getRefundReasons( null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Refund refund = new Refund();
+	 *	CountDownLatch latch = refund.getRefundReasons( callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.commerceruntime.orders.RefundReasonCollection
+	 * @see com.mozu.api.contracts.commerceruntime.orders.RefundReasonCollection
+	 */
+	public CountDownLatch getRefundReasonsAsync( AsyncCallback<com.mozu.api.contracts.commerceruntime.orders.RefundReasonCollection> callback) throws Exception
+	{
+		return getRefundReasonsAsync( null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Refund refund = new Refund();
+	 *	RefundReasonCollection refundReasonCollection = refund.getRefundReasons( responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.commerceruntime.orders.RefundReasonCollection
+	 * @see com.mozu.api.contracts.commerceruntime.orders.RefundReasonCollection
+	 */
+	public com.mozu.api.contracts.commerceruntime.orders.RefundReasonCollection getRefundReasons(String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.orders.RefundReasonCollection> client = com.mozu.api.clients.commerce.orders.RefundClient.getRefundReasonsClient( responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Refund refund = new Refund();
+	 *	CountDownLatch latch = refund.getRefundReasons( responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.commerceruntime.orders.RefundReasonCollection
+	 * @see com.mozu.api.contracts.commerceruntime.orders.RefundReasonCollection
+	 */
+	public CountDownLatch getRefundReasonsAsync(String responseFields, AsyncCallback<com.mozu.api.contracts.commerceruntime.orders.RefundReasonCollection> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.orders.RefundReasonCollection> client = com.mozu.api.clients.commerce.orders.RefundClient.getRefundReasonsClient( responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Refund refund = new Refund();
 	 *	Refund refund = refund.createRefund( refund,  orderId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.

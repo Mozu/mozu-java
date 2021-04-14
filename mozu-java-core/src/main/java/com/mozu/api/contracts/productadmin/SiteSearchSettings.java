@@ -13,9 +13,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
-import com.mozu.api.contracts.productadmin.SiteSearchRelevancyCustomField;
-import com.mozu.api.contracts.productadmin.SiteSearchKeywordRelevancySettings;
-import com.mozu.api.contracts.productadmin.SiteSearchPhraseRelevancySettings;
+import com.mozu.api.contracts.productadmin.FieldValueBoost;
+import com.mozu.api.contracts.productadmin.SiteSearchFieldWeight;
+import com.mozu.api.contracts.productadmin.search.TypoTolerance;
 
 /**
  *	Properties for the site search settings.
@@ -26,14 +26,14 @@ public class SiteSearchSettings implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected  String certonaApiKey;
+	protected  double crossFieldAdditiveScoreFactor;
 
-	public String getCertonaApiKey() {
-		return this.certonaApiKey;
+	public double getCrossFieldAdditiveScoreFactor() {
+		return this.crossFieldAdditiveScoreFactor;
 	}
 
-	public void setCertonaApiKey(String certonaApiKey) {
-		this.certonaApiKey = certonaApiKey;
+	public void setCrossFieldAdditiveScoreFactor(double crossFieldAdditiveScoreFactor) {
+		this.crossFieldAdditiveScoreFactor = crossFieldAdditiveScoreFactor;
 	}
 
 	/**
@@ -47,90 +47,80 @@ public class SiteSearchSettings implements Serializable
 		this.customBoosts = customBoosts;
 	}
 
-	/**
-	 * Indicates if the object is default. This indicator is used for product variations and site search settings. If true, the value/object is the default option. 
-	 */
-	protected  Boolean isDefault;
-
-	public Boolean getIsDefault() {
-		return this.isDefault;
+	protected List<Integer> minimumMatchPercents;
+	public List<Integer> getMinimumMatchPercents() {
+		return this.minimumMatchPercents;
+	}
+	public void setMinimumMatchPercents(List<Integer> minimumMatchPercents) {
+		this.minimumMatchPercents = minimumMatchPercents;
 	}
 
-	public void setIsDefault(Boolean isDefault) {
-		this.isDefault = isDefault;
+	protected  String personalizationExperience;
+
+	public String getPersonalizationExperience() {
+		return this.personalizationExperience;
 	}
 
-	/**
-	 * Specifies the minimum match percentage setting. The minimum match percentage is a percentage of the number of terms that must match a search request, rounded down. 's default minimum match percentage is 75%. To require all search terms match, set this value to 100%.
-	 */
-	protected  Integer minimumMatchPercent;
-
-	public Integer getMinimumMatchPercent() {
-		return this.minimumMatchPercent;
+	public void setPersonalizationExperience(String personalizationExperience) {
+		this.personalizationExperience = personalizationExperience;
 	}
 
-	public void setMinimumMatchPercent(Integer minimumMatchPercent) {
-		this.minimumMatchPercent = minimumMatchPercent;
+	protected  double personalizationFactor;
+
+	public double getPersonalizationFactor() {
+		return this.personalizationFactor;
 	}
 
-	/**
-	 * The name for the search settings.
-	 */
-	protected  String settingsName;
-
-	public String getSettingsName() {
-		return this.settingsName;
+	public void setPersonalizationFactor(double personalizationFactor) {
+		this.personalizationFactor = personalizationFactor;
 	}
 
-	public void setSettingsName(String settingsName) {
-		this.settingsName = settingsName;
+	protected  Integer phraseSlop;
+
+	public Integer getPhraseSlop() {
+		return this.phraseSlop;
 	}
 
-	protected  Boolean useCertonaSiteSearch;
-
-	public Boolean getUseCertonaSiteSearch() {
-		return this.useCertonaSiteSearch;
+	public void setPhraseSlop(Integer phraseSlop) {
+		this.phraseSlop = phraseSlop;
 	}
 
-	public void setUseCertonaSiteSearch(Boolean useCertonaSiteSearch) {
-		this.useCertonaSiteSearch = useCertonaSiteSearch;
+	protected  Boolean searchChildProductsByDefault;
+
+	public Boolean getSearchChildProductsByDefault() {
+		return this.searchChildProductsByDefault;
 	}
 
-	/**
-	 * Custom field for searches.
-	 */
-	protected List<SiteSearchRelevancyCustomField> customFields;
-	public List<SiteSearchRelevancyCustomField> getCustomFields() {
-		return this.customFields;
-	}
-	public void setCustomFields(List<SiteSearchRelevancyCustomField> customFields) {
-		this.customFields = customFields;
+	public void setSearchChildProductsByDefault(Boolean searchChildProductsByDefault) {
+		this.searchChildProductsByDefault = searchChildProductsByDefault;
 	}
 
-	/**
-	 * The site keyword relevancy settings.
-	 */
-	protected  SiteSearchKeywordRelevancySettings siteKeywordRelevancy;
+	protected  FieldValueBoost fieldValueBoost;
 
-	public SiteSearchKeywordRelevancySettings getSiteKeywordRelevancy() {
-		return this.siteKeywordRelevancy;
+	public FieldValueBoost getFieldValueBoost() {
+		return this.fieldValueBoost;
 	}
 
-	public void setSiteKeywordRelevancy(SiteSearchKeywordRelevancySettings siteKeywordRelevancy) {
-		this.siteKeywordRelevancy = siteKeywordRelevancy;
+	public void setFieldValueBoost(FieldValueBoost fieldValueBoost) {
+		this.fieldValueBoost = fieldValueBoost;
 	}
 
-	/**
-	 * The site phrase relevancy settings.
-	 */
-	protected  SiteSearchPhraseRelevancySettings sitePhraseRelevancy;
-
-	public SiteSearchPhraseRelevancySettings getSitePhraseRelevancy() {
-		return this.sitePhraseRelevancy;
+	protected List<SiteSearchFieldWeight> fieldWeights;
+	public List<SiteSearchFieldWeight> getFieldWeights() {
+		return this.fieldWeights;
+	}
+	public void setFieldWeights(List<SiteSearchFieldWeight> fieldWeights) {
+		this.fieldWeights = fieldWeights;
 	}
 
-	public void setSitePhraseRelevancy(SiteSearchPhraseRelevancySettings sitePhraseRelevancy) {
-		this.sitePhraseRelevancy = sitePhraseRelevancy;
+	protected  TypoTolerance typoTolerance;
+
+	public TypoTolerance getTypoTolerance() {
+		return this.typoTolerance;
+	}
+
+	public void setTypoTolerance(TypoTolerance typoTolerance) {
+		this.typoTolerance = typoTolerance;
 	}
 
 

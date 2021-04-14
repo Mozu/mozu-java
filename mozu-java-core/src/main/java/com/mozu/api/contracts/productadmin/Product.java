@@ -23,11 +23,14 @@ import com.mozu.api.contracts.productadmin.ProductOption;
 import com.mozu.api.contracts.core.Measurement;
 import com.mozu.api.contracts.productadmin.ProductPrice;
 import com.mozu.api.contracts.productadmin.ProductPricingBehaviorInfo;
+import com.mozu.api.contracts.productadmin.ProductCollectionProduct;
+import com.mozu.api.contracts.productadmin.ProductCollectionInfo;
 import com.mozu.api.contracts.productadmin.ProductImageGroup;
 import com.mozu.api.contracts.productadmin.ProductInCatalogInfo;
 import com.mozu.api.contracts.productadmin.ProductProperty;
 import com.mozu.api.contracts.productadmin.ProductPublishingInfo;
 import com.mozu.api.contracts.productadmin.ProductLocalizedSEOContent;
+import com.mozu.api.contracts.productadmin.SlicingSettings;
 import com.mozu.api.contracts.productadmin.ProductSupplierInfo;
 import com.mozu.api.contracts.productadmin.ProductVariationOption;
 
@@ -139,6 +142,16 @@ public class Product implements Serializable
 
 	public void setMasterCatalogId(Integer masterCatalogId) {
 		this.masterCatalogId = masterCatalogId;
+	}
+
+	protected  String primaryProductCollectionCode;
+
+	public String getPrimaryProductCollectionCode() {
+		return this.primaryProductCollectionCode;
+	}
+
+	public void setPrimaryProductCollectionCode(String primaryProductCollectionCode) {
+		this.primaryProductCollectionCode = primaryProductCollectionCode;
 	}
 
 	protected  String productCode;
@@ -352,6 +365,22 @@ public class Product implements Serializable
 		this.pricingBehavior = pricingBehavior;
 	}
 
+	protected List<ProductCollectionProduct> productCollectionProducts;
+	public List<ProductCollectionProduct> getProductCollectionProducts() {
+		return this.productCollectionProducts;
+	}
+	public void setProductCollectionProducts(List<ProductCollectionProduct> productCollectionProducts) {
+		this.productCollectionProducts = productCollectionProducts;
+	}
+
+	protected List<ProductCollectionInfo> productCollections;
+	public List<ProductCollectionInfo> getProductCollections() {
+		return this.productCollections;
+	}
+	public void setProductCollections(List<ProductCollectionInfo> productCollections) {
+		this.productCollections = productCollections;
+	}
+
 	/**
 	 * An array of multiple product image groups, providing an assortment of different themed image sets.
 	 */
@@ -397,6 +426,16 @@ public class Product implements Serializable
 
 	public void setSeoContent(ProductLocalizedSEOContent seoContent) {
 		this.seoContent = seoContent;
+	}
+
+	protected  SlicingSettings slicingSettings;
+
+	public SlicingSettings getSlicingSettings() {
+		return this.slicingSettings;
+	}
+
+	public void setSlicingSettings(SlicingSettings slicingSettings) {
+		this.slicingSettings = slicingSettings;
 	}
 
 	/**

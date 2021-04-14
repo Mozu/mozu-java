@@ -29,6 +29,16 @@ public class LocationGroup implements Serializable
 		this.locationCodes = locationCodes;
 	}
 
+	protected  String locationGroupCode;
+
+	public String getLocationGroupCode() {
+		return this.locationGroupCode;
+	}
+
+	public void setLocationGroupCode(String locationGroupCode) {
+		this.locationGroupCode = locationGroupCode;
+	}
+
 	protected  Integer locationGroupId;
 
 	public Integer getLocationGroupId() {

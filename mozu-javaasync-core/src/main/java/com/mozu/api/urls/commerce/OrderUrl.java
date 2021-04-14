@@ -100,6 +100,20 @@ public class OrderUrl
 	}
 
 	/**
+	 * Get Resource Url for CreateOrderFromQuote
+	 * @param quoteId 
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl createOrderFromQuoteUrl(String quoteId, String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/?quoteId={quoteId}&responseFields={responseFields}");
+		formatter.formatUrl("quoteId", quoteId);
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for CreateOrder
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
@@ -248,6 +262,18 @@ public class OrderUrl
 		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("updateMode", updateMode);
 		formatter.formatUrl("version", version);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for SmsOptOut
+	 * @param siteId 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl smsOptOutUrl(String siteId)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/sms/optout/{siteId}");
+		formatter.formatUrl("siteId", siteId);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

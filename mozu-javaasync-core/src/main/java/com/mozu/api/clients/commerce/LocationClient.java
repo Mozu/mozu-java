@@ -117,6 +117,47 @@ public class LocationClient {
 	/**
 	 * 
 	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.location.Location> mozuClient=GetCurbsideLocationClient();
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Location location = client.Result();
+	 * </code></pre></p>
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.Location>
+	 * @see com.mozu.api.contracts.location.Location
+	 */
+	public static MozuClient<com.mozu.api.contracts.location.Location> getCurbsideLocationClient() throws Exception
+	{
+		return getCurbsideLocationClient( null,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.location.Location> mozuClient=GetCurbsideLocationClient( includeAttributeDefinition,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Location location = client.Result();
+	 * </code></pre></p>
+	 * @param includeAttributeDefinition 
+	 * @param responseFields 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.Location>
+	 * @see com.mozu.api.contracts.location.Location
+	 */
+	public static MozuClient<com.mozu.api.contracts.location.Location> getCurbsideLocationClient(Boolean includeAttributeDefinition, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.LocationUrl.getCurbsideLocationUrl(includeAttributeDefinition, responseFields);
+		String verb = "GET";
+		Class<?> clz = com.mozu.api.contracts.location.Location.class;
+		MozuClient<com.mozu.api.contracts.location.Location> mozuClient = (MozuClient<com.mozu.api.contracts.location.Location>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.location.Location> mozuClient=GetDirectShipLocationClient();
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();

@@ -60,5 +60,15 @@ public class ProductSortOverride implements Serializable
 		this.productCode = productCode;
 	}
 
+	protected  String sliceValue;
+
+	public String getSliceValue() {
+		return this.sliceValue;
+	}
+
+	public void setSliceValue(String sliceValue) {
+		this.sliceValue = sliceValue;
+	}
+
 
 }

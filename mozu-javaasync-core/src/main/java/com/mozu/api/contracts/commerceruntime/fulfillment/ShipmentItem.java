@@ -233,6 +233,16 @@ public class ShipmentItem implements Serializable
 		this.quantity = quantity;
 	}
 
+	protected  Integer readyForPickupQuantity;
+
+	public Integer getReadyForPickupQuantity() {
+		return this.readyForPickupQuantity;
+	}
+
+	public void setReadyForPickupQuantity(Integer readyForPickupQuantity) {
+		this.readyForPickupQuantity = readyForPickupQuantity;
+	}
+
 	protected  Double shipping;
 
 	public Double getShipping() {

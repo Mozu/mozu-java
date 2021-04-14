@@ -13,9 +13,13 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
+import com.mozu.api.contracts.commerceruntime.commerce.Adjustment;
+import com.mozu.api.contracts.commerceruntime.quotes.AuditRecord;
 import com.mozu.api.contracts.core.AuditInfo;
-import com.mozu.api.contracts.commerceruntime.fulfillment.Destination;
+import com.mozu.api.contracts.commerceruntime.quotes.QuoteComment;
+import com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo;
 import com.mozu.api.contracts.commerceruntime.discounts.AppliedDiscount;
+import com.mozu.api.contracts.commerceruntime.discounts.InvalidCoupon;
 import com.mozu.api.contracts.commerceruntime.orders.OrderItem;
 import com.mozu.api.contracts.commerceruntime.discounts.ShippingDiscount;
 
@@ -41,15 +45,12 @@ public class Quote implements Serializable
 		this.channelCode = channelCode;
 	}
 
-	/**
-	 * Notes entered and saved with an order. These notes may be entered by a shopper on a wishlist or for an order. Comments may also be entered by  Admins on an order that may be visible only to authorized shoppers and users.
-	 */
-	protected List<String> comments;
-	public List<String> getComments() {
-		return this.comments;
+	protected List<String> couponCodes;
+	public List<String> getCouponCodes() {
+		return this.couponCodes;
 	}
-	public void setComments(List<String> comments) {
-		this.comments = comments;
+	public void setCouponCodes(List<String> couponCodes) {
+		this.couponCodes = couponCodes;
 	}
 
 	/**
@@ -234,6 +235,16 @@ public class Quote implements Serializable
 		this.handlingTotal = handlingTotal;
 	}
 
+	protected  Boolean hasDraft;
+
+	public Boolean getHasDraft() {
+		return this.hasDraft;
+	}
+
+	public void setHasDraft(Boolean hasDraft) {
+		this.hasDraft = hasDraft;
+	}
+
 	/**
 	 * Unique identifier of the source property, such as a catalog, discount, order, or email template.For a product field it will be the name of the field.For a category ID, must be a positive integer not greater than 2000000. By default,  auto-generates a category ID when categories are created. If you want to specify an ID during creation (which preserves category link relationships when migrating tenant data from one sandbox to another), you must also include the  query string in the endpoint. For example, . Then, use the  property to specify the desired category ID.For a product attribute it will be the Attribute FQN.For a document, the ID must be specified as a 32 character, case-insensitive, alphanumeric string. You can specify the ID as 32 sequential characters or as groups separated by dashes in the format 8-4-4-4-12. For example, or.For email templates, the ID must be one of the following values:			
 	 */
@@ -258,6 +269,16 @@ public class Quote implements Serializable
 
 	public void setIpAddress(String ipAddress) {
 		this.ipAddress = ipAddress;
+	}
+
+	protected  Boolean isDraft;
+
+	public Boolean getIsDraft() {
+		return this.isDraft;
+	}
+
+	public void setIsDraft(Boolean isDraft) {
+		this.isDraft = isDraft;
 	}
 
 	/**
@@ -443,32 +464,6 @@ public class Quote implements Serializable
 	}
 
 	/**
-	 * The code associated with a carrier's shipping method service type, used during fulfillment of packages and shipments. Service type codes include a prefix that indicates the carrier. For example: FEDEX_INTERNATIONAL_STANDARD and UPS_GROUND.If using a custom rate, this property corresponds to the  field in  when you navigate to  &gt;  &gt; , and then click on an existing rate or on .
-	 */
-	protected  String shippingMethodCode;
-
-	public String getShippingMethodCode() {
-		return this.shippingMethodCode;
-	}
-
-	public void setShippingMethodCode(String shippingMethodCode) {
-		this.shippingMethodCode = shippingMethodCode;
-	}
-
-	/**
-	 * The carrier-supplied name for the shipping service type, such as "UPS Ground" or "2nd Day Air".If using a custom rate, this property corresponds to the  field in  when you navigate to  &gt;  &gt; , and then click on an existing rate or on .
-	 */
-	protected  String shippingMethodName;
-
-	public String getShippingMethodName() {
-		return this.shippingMethodName;
-	}
-
-	public void setShippingMethodName(String shippingMethodName) {
-		this.shippingMethodName = shippingMethodName;
-	}
-
-	/**
 	 * The shipping subtotal amount calculated without any applied discounts for line item and entire amounts of carts and orders. This property is not calculated for wish lists at this time.
 	 */
 	protected  Double shippingSubTotal;
@@ -544,6 +539,16 @@ public class Quote implements Serializable
 
 	public void setSourceDevice(String sourceDevice) {
 		this.sourceDevice = sourceDevice;
+	}
+
+	protected  String status;
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	/**
@@ -637,6 +642,24 @@ public class Quote implements Serializable
 		this.webSessionId = webSessionId;
 	}
 
+	protected  Adjustment adjustment;
+
+	public Adjustment getAdjustment() {
+		return this.adjustment;
+	}
+
+	public void setAdjustment(Adjustment adjustment) {
+		this.adjustment = adjustment;
+	}
+
+	protected List<AuditRecord> auditHistory;
+	public List<AuditRecord> getAuditHistory() {
+		return this.auditHistory;
+	}
+	public void setAuditHistory(List<AuditRecord> auditHistory) {
+		this.auditHistory = auditHistory;
+	}
+
 	/**
 	 * Basic audit info about the object, including date, time, and user account. This data may be captured when creating, updating, and removing data.
 	 */
@@ -648,6 +671,17 @@ public class Quote implements Serializable
 
 	public void setAuditInfo(AuditInfo auditInfo) {
 		this.auditInfo = auditInfo;
+	}
+
+	/**
+	 * Notes entered and saved with an order. These notes may be entered by a shopper on a wishlist or for an order. Comments may also be entered by  Admins on an order that may be visible only to authorized shoppers and users.
+	 */
+	protected List<QuoteComment> comments;
+	public List<QuoteComment> getComments() {
+		return this.comments;
+	}
+	public void setComments(List<QuoteComment> comments) {
+		this.comments = comments;
 	}
 
 	/**
@@ -663,15 +697,24 @@ public class Quote implements Serializable
 		this.data = data;
 	}
 
-	/**
-	 * The addresses that the purchaser intends to send these quote items to.
-	 */
-	protected List<Destination> destinations;
-	public List<Destination> getDestinations() {
-		return this.destinations;
+	protected  FulfillmentInfo fulfillmentInfo;
+
+	public FulfillmentInfo getFulfillmentInfo() {
+		return this.fulfillmentInfo;
 	}
-	public void setDestinations(List<Destination> destinations) {
-		this.destinations = destinations;
+
+	public void setFulfillmentInfo(FulfillmentInfo fulfillmentInfo) {
+		this.fulfillmentInfo = fulfillmentInfo;
+	}
+
+	protected  Adjustment handlingAdjustment;
+
+	public Adjustment getHandlingAdjustment() {
+		return this.handlingAdjustment;
+	}
+
+	public void setHandlingAdjustment(Adjustment handlingAdjustment) {
+		this.handlingAdjustment = handlingAdjustment;
 	}
 
 	/**
@@ -683,6 +726,14 @@ public class Quote implements Serializable
 	}
 	public void setHandlingDiscounts(List<AppliedDiscount> handlingDiscounts) {
 		this.handlingDiscounts = handlingDiscounts;
+	}
+
+	protected List<InvalidCoupon> invalidCoupons;
+	public List<InvalidCoupon> getInvalidCoupons() {
+		return this.invalidCoupons;
+	}
+	public void setInvalidCoupons(List<InvalidCoupon> invalidCoupons) {
+		this.invalidCoupons = invalidCoupons;
 	}
 
 	/**
@@ -705,6 +756,16 @@ public class Quote implements Serializable
 	}
 	public void setOrderDiscounts(List<AppliedDiscount> orderDiscounts) {
 		this.orderDiscounts = orderDiscounts;
+	}
+
+	protected  Adjustment shippingAdjustment;
+
+	public Adjustment getShippingAdjustment() {
+		return this.shippingAdjustment;
+	}
+
+	public void setShippingAdjustment(Adjustment shippingAdjustment) {
+		this.shippingAdjustment = shippingAdjustment;
 	}
 
 	/**

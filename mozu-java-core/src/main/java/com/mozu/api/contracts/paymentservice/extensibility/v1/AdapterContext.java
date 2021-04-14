@@ -25,6 +25,26 @@ public class AdapterContext implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected  Boolean isSandbox;
+
+	public Boolean getIsSandbox() {
+		return this.isSandbox;
+	}
+
+	public void setIsSandbox(Boolean isSandbox) {
+		this.isSandbox = isSandbox;
+	}
+
+	protected  Boolean isTestMode;
+
+	public Boolean getIsTestMode() {
+		return this.isTestMode;
+	}
+
+	public void setIsTestMode(Boolean isTestMode) {
+		this.isTestMode = isTestMode;
+	}
+
 	/**
 	 * A list of KeyValueTuples containing the configuration from the application setup.
 	 */

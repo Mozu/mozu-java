@@ -45,6 +45,16 @@ public class LocationInventory implements Serializable
 		this.locationCode = locationCode;
 	}
 
+	protected  String mfgPartNumber;
+
+	public String getMfgPartNumber() {
+		return this.mfgPartNumber;
+	}
+
+	public void setMfgPartNumber(String mfgPartNumber) {
+		this.mfgPartNumber = mfgPartNumber;
+	}
+
 	protected  String productCode;
 
 	public String getProductCode() {
@@ -63,6 +73,16 @@ public class LocationInventory implements Serializable
 
 	public void setProductName(String productName) {
 		this.productName = productName;
+	}
+
+	protected  String sku;
+
+	public String getSku() {
+		return this.sku;
+	}
+
+	public void setSku(String sku) {
+		this.sku = sku;
 	}
 
 	protected  Integer stockAvailable;

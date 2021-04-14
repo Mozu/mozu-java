@@ -112,6 +112,16 @@ public class Shipment implements Serializable
 		this.email = email;
 	}
 
+	protected  String externalOrderId;
+
+	public String getExternalOrderId() {
+		return this.externalOrderId;
+	}
+
+	public void setExternalOrderId(String externalOrderId) {
+		this.externalOrderId = externalOrderId;
+	}
+
 	protected  String externalShipmentId;
 
 	public String getExternalShipmentId() {
@@ -212,6 +222,26 @@ public class Shipment implements Serializable
 		this.id = id;
 	}
 
+	protected  Boolean isExpress;
+
+	public Boolean getIsExpress() {
+		return this.isExpress;
+	}
+
+	public void setIsExpress(Boolean isExpress) {
+		this.isExpress = isExpress;
+	}
+
+	protected  Boolean isTransfer;
+
+	public Boolean getIsTransfer() {
+		return this.isTransfer;
+	}
+
+	public void setIsTransfer(Boolean isTransfer) {
+		this.isTransfer = isTransfer;
+	}
+
 	protected  Double lineItemSubtotal;
 
 	public Double getLineItemSubtotal() {
@@ -292,6 +322,26 @@ public class Shipment implements Serializable
 		this.orderSubmitDate = orderSubmitDate;
 	}
 
+	protected  Integer originalShipmentNumber;
+
+	public Integer getOriginalShipmentNumber() {
+		return this.originalShipmentNumber;
+	}
+
+	public void setOriginalShipmentNumber(Integer originalShipmentNumber) {
+		this.originalShipmentNumber = originalShipmentNumber;
+	}
+
+	protected  Integer parentShipmentNumber;
+
+	public Integer getParentShipmentNumber() {
+		return this.parentShipmentNumber;
+	}
+
+	public void setParentShipmentNumber(Integer parentShipmentNumber) {
+		this.parentShipmentNumber = parentShipmentNumber;
+	}
+
 	protected  String pickStatus;
 
 	public String getPickStatus() {
@@ -310,6 +360,16 @@ public class Shipment implements Serializable
 
 	public void setPickType(String pickType) {
 		this.pickType = pickType;
+	}
+
+	protected  Boolean readyToCapture;
+
+	public Boolean getReadyToCapture() {
+		return this.readyToCapture;
+	}
+
+	public void setReadyToCapture(Boolean readyToCapture) {
+		this.readyToCapture = readyToCapture;
 	}
 
 	protected  Double shipmentAdjustment;
@@ -412,16 +472,6 @@ public class Shipment implements Serializable
 		this.shippingTotal = shippingTotal;
 	}
 
-	protected  Boolean signatureRequired;
-
-	public Boolean getSignatureRequired() {
-		return this.signatureRequired;
-	}
-
-	public void setSignatureRequired(Boolean signatureRequired) {
-		this.signatureRequired = signatureRequired;
-	}
-
 	protected  Double total;
 
 	public Double getTotal() {
@@ -432,12 +482,12 @@ public class Shipment implements Serializable
 		this.total = total;
 	}
 
-	protected List<String> trackingNumbers;
-	public List<String> getTrackingNumbers() {
-		return this.trackingNumbers;
+	protected List<Integer> transferShipmentNumbers;
+	public List<Integer> getTransferShipmentNumbers() {
+		return this.transferShipmentNumbers;
 	}
-	public void setTrackingNumbers(List<String> trackingNumbers) {
-		this.trackingNumbers = trackingNumbers;
+	public void setTransferShipmentNumbers(List<Integer> transferShipmentNumbers) {
+		this.transferShipmentNumbers = transferShipmentNumbers;
 	}
 
 	protected  String workflowProcessContainerId;
@@ -530,6 +580,16 @@ public class Shipment implements Serializable
 	}
 	public void setPackages(List<Package> packages) {
 		this.packages = packages;
+	}
+
+	protected transient com.fasterxml.jackson.databind.JsonNode pickupInfo;
+
+	public com.fasterxml.jackson.databind.JsonNode getPickupInfo() {
+		return this.pickupInfo;
+	}
+
+	public void setPickupInfo(com.fasterxml.jackson.databind.JsonNode pickupInfo) {
+		this.pickupInfo = pickupInfo;
 	}
 
 	protected  ShipmentStatusReason shipmentStatusReason;

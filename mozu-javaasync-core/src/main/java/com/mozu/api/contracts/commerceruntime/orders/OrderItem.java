@@ -100,6 +100,16 @@ public class OrderItem implements Serializable
 		this.dutyAmount = dutyAmount;
 	}
 
+	protected  DateTime expectedDeliveryDate;
+
+	public DateTime getExpectedDeliveryDate() {
+		return this.expectedDeliveryDate;
+	}
+
+	public void setExpectedDeliveryDate(DateTime expectedDeliveryDate) {
+		this.expectedDeliveryDate = expectedDeliveryDate;
+	}
+
 	protected  Double extendedTotal;
 
 	public Double getExtendedTotal() {

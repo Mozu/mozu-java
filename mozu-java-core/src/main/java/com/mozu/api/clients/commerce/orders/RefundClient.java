@@ -25,6 +25,46 @@ public class RefundClient {
 	/**
 	 * 
 	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.RefundReasonCollection> mozuClient=GetRefundReasonsClient();
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * RefundReasonCollection refundReasonCollection = client.Result();
+	 * </code></pre></p>
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.RefundReasonCollection>
+	 * @see com.mozu.api.contracts.commerceruntime.orders.RefundReasonCollection
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.RefundReasonCollection> getRefundReasonsClient() throws Exception
+	{
+		return getRefundReasonsClient( null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.RefundReasonCollection> mozuClient=GetRefundReasonsClient( responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * RefundReasonCollection refundReasonCollection = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.RefundReasonCollection>
+	 * @see com.mozu.api.contracts.commerceruntime.orders.RefundReasonCollection
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.RefundReasonCollection> getRefundReasonsClient(String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.orders.RefundUrl.getRefundReasonsUrl(responseFields);
+		String verb = "GET";
+		Class<?> clz = com.mozu.api.contracts.commerceruntime.orders.RefundReasonCollection.class;
+		MozuClient<com.mozu.api.contracts.commerceruntime.orders.RefundReasonCollection> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.orders.RefundReasonCollection>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.refunds.Refund> mozuClient=CreateRefundClient( refund,  orderId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();

@@ -147,6 +147,16 @@ public class Location implements Serializable
 		this.phone = phone;
 	}
 
+	protected  Boolean requiresManifest;
+
+	public Boolean getRequiresManifest() {
+		return this.requiresManifest;
+	}
+
+	public void setRequiresManifest(Boolean requiresManifest) {
+		this.requiresManifest = requiresManifest;
+	}
+
 	protected  Boolean supportsInventory;
 
 	public Boolean getSupportsInventory() {

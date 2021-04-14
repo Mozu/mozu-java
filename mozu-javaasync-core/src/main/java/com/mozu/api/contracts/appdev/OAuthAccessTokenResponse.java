@@ -18,44 +18,44 @@ public class OAuthAccessTokenResponse implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected  String accessToken;
+	protected  String access_token;
 
-	public String getAccessToken() {
-		return this.accessToken;
+	public String getAccess_token() {
+		return this.access_token;
 	}
 
-	public void setAccessToken(String accessToken) {
-		this.accessToken = accessToken;
+	public void setAccess_token(String access_token) {
+		this.access_token = access_token;
 	}
 
-	protected  Integer expiresIn;
+	protected  Integer expires_in;
 
-	public Integer getExpiresIn() {
-		return this.expiresIn;
+	public Integer getExpires_in() {
+		return this.expires_in;
 	}
 
-	public void setExpiresIn(Integer expiresIn) {
-		this.expiresIn = expiresIn;
+	public void setExpires_in(Integer expires_in) {
+		this.expires_in = expires_in;
 	}
 
-	protected  String refreshToken;
+	protected  String refresh_token;
 
-	public String getRefreshToken() {
-		return this.refreshToken;
+	public String getRefresh_token() {
+		return this.refresh_token;
 	}
 
-	public void setRefreshToken(String refreshToken) {
-		this.refreshToken = refreshToken;
+	public void setRefresh_token(String refresh_token) {
+		this.refresh_token = refresh_token;
 	}
 
-	protected  String tokenType;
+	protected  String token_type;
 
-	public String getTokenType() {
-		return this.tokenType;
+	public String getToken_type() {
+		return this.token_type;
 	}
 
-	public void setTokenType(String tokenType) {
-		this.tokenType = tokenType;
+	public void setToken_type(String token_type) {
+		this.token_type = token_type;
 	}
 
 

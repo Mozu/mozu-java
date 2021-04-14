@@ -18,6 +18,7 @@ import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.customer.CommerceSummary;
 import com.mozu.api.contracts.customer.CustomerContact;
 import com.mozu.api.contracts.customer.CustomerNote;
+import com.mozu.api.contracts.customer.AccountSalesRep;
 import com.mozu.api.contracts.customer.CustomerSegment;
 import com.mozu.api.contracts.customer.B2BUser;
 
@@ -41,6 +42,16 @@ public class B2BAccount implements Serializable
 
 	public void setAccountType(String accountType) {
 		this.accountType = accountType;
+	}
+
+	protected  String approvalStatus;
+
+	public String getApprovalStatus() {
+		return this.approvalStatus;
+	}
+
+	public void setApprovalStatus(String approvalStatus) {
+		this.approvalStatus = approvalStatus;
 	}
 
 	/**
@@ -121,6 +132,16 @@ public class B2BAccount implements Serializable
 		this.isActive = isActive;
 	}
 
+	protected  Integer parentAccountId;
+
+	public Integer getParentAccountId() {
+		return this.parentAccountId;
+	}
+
+	public void setParentAccountId(Integer parentAccountId) {
+		this.parentAccountId = parentAccountId;
+	}
+
 	/**
 	 * priceList ApiType DOCUMENT_HERE 
 	 */
@@ -132,6 +153,16 @@ public class B2BAccount implements Serializable
 
 	public void setPriceList(String priceList) {
 		this.priceList = priceList;
+	}
+
+	protected  Integer rootAccountId;
+
+	public Integer getRootAccountId() {
+		return this.rootAccountId;
+	}
+
+	public void setRootAccountId(Integer rootAccountId) {
+		this.rootAccountId = rootAccountId;
 	}
 
 	/**
@@ -217,6 +248,14 @@ public class B2BAccount implements Serializable
 	}
 	public void setNotes(List<CustomerNote> notes) {
 		this.notes = notes;
+	}
+
+	protected List<AccountSalesRep> salesReps;
+	public List<AccountSalesRep> getSalesReps() {
+		return this.salesReps;
+	}
+	public void setSalesReps(List<AccountSalesRep> salesReps) {
+		this.salesReps = salesReps;
 	}
 
 	/**

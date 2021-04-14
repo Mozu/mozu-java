@@ -14,6 +14,36 @@ public class CartItemUrl
 {
 
 	/**
+	 * Get Resource Url for GetCartItemByCartId
+	 * @param cartId 
+	 * @param cartItemId 
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getCartItemByCartIdUrl(String cartId, String cartItemId, String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/carts/{cartId}/items/{cartItemId}?responseFields={responseFields}");
+		formatter.formatUrl("cartId", cartId);
+		formatter.formatUrl("cartItemId", cartItemId);
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for GetCartItemsByCartId
+	 * @param cartId 
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getCartItemsByCartIdUrl(String cartId, String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/carts/{cartId}/items?responseFields={responseFields}");
+		formatter.formatUrl("cartId", cartId);
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for GetCartItem
 	 * @param cartItemId Identifier of the cart item to delete.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
@@ -40,6 +70,34 @@ public class CartItemUrl
 	}
 
 	/**
+	 * Get Resource Url for AddItemsToCartByCartId
+	 * @param cartId 
+	 * @param throwErrorOnInvalidItems 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl addItemsToCartByCartIdUrl(String cartId, Boolean throwErrorOnInvalidItems)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/carts/{cartId}/bulkitems?throwErrorOnInvalidItems={throwErrorOnInvalidItems}");
+		formatter.formatUrl("cartId", cartId);
+		formatter.formatUrl("throwErrorOnInvalidItems", throwErrorOnInvalidItems);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for AddItemToCartByCartId
+	 * @param cartId 
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl addItemToCartByCartIdUrl(String cartId, String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/carts/{cartId}/items?responseFields={responseFields}");
+		formatter.formatUrl("cartId", cartId);
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for AddItemsToCart
 	 * @param throwErrorOnInvalidItems 
 	 * @return   String Resource Url
@@ -59,6 +117,40 @@ public class CartItemUrl
 	public static MozuUrl addItemToCartUrl(String responseFields)
 	{
 		UrlFormatter formatter = new UrlFormatter("/api/commerce/carts/current/items?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for UpdateCartItemQuantityByCartId
+	 * @param cartId 
+	 * @param cartItemId 
+	 * @param quantity 
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl updateCartItemQuantityByCartIdUrl(String cartId, String cartItemId, Integer quantity, String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/carts/{cartId}/items/{cartItemId}/{quantity}?responseFields={responseFields}");
+		formatter.formatUrl("cartId", cartId);
+		formatter.formatUrl("cartItemId", cartItemId);
+		formatter.formatUrl("quantity", quantity);
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for UpdateCartItemByCartId
+	 * @param cartId 
+	 * @param cartItemId 
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl updateCartItemByCartIdUrl(String cartId, String cartItemId, String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/carts/{cartId}/items/{cartItemId}?responseFields={responseFields}");
+		formatter.formatUrl("cartId", cartId);
+		formatter.formatUrl("cartItemId", cartItemId);
 		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
@@ -90,6 +182,32 @@ public class CartItemUrl
 		UrlFormatter formatter = new UrlFormatter("/api/commerce/carts/current/items/{cartItemId}?responseFields={responseFields}");
 		formatter.formatUrl("cartItemId", cartItemId);
 		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for RemoveAllCartItemsByCartId
+	 * @param cartId 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl removeAllCartItemsByCartIdUrl(String cartId)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/carts/{cartId}/items");
+		formatter.formatUrl("cartId", cartId);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for DeleteCartItemByCartId
+	 * @param cartId 
+	 * @param cartItemId 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl deleteCartItemByCartIdUrl(String cartId, String cartItemId)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/carts/{cartId}/items/{cartItemId}");
+		formatter.formatUrl("cartId", cartId);
+		formatter.formatUrl("cartItemId", cartItemId);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
