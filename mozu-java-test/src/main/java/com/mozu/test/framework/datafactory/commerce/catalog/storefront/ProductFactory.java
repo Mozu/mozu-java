@@ -25,16 +25,16 @@ public class ProductFactory
 
 	public static com.mozu.api.contracts.productruntime.ProductCollection getProducts(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, int expectedCode) throws Exception
 	{
-		return getProducts(apiContext, dataViewMode,  null,  null,  null,  null,  null,  null,  null,  null, expectedCode);
+		return getProducts(apiContext, dataViewMode,  null,  null,  null,  null,  null,  null,  null,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.productruntime.ProductCollection getProducts(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String filter, Integer startIndex, Integer pageSize, String sortBy, String responseOptions, String cursorMark, String defaultSort, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.productruntime.ProductCollection getProducts(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String filter, Integer startIndex, Integer pageSize, String sortBy, String responseOptions, String cursorMark, String defaultSort, String mid, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.productruntime.ProductCollection returnObj = new com.mozu.api.contracts.productruntime.ProductCollection();
 		ProductResource resource = new ProductResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.getProducts( filter,  startIndex,  pageSize,  sortBy,  responseOptions,  cursorMark,  defaultSort,  responseFields);
+			returnObj = resource.getProducts( filter,  startIndex,  pageSize,  sortBy,  responseOptions,  cursorMark,  defaultSort,  mid,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -75,16 +75,16 @@ public class ProductFactory
 
 	public static com.mozu.api.contracts.productruntime.Product getProduct(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, int expectedCode) throws Exception
 	{
-		return getProduct(apiContext, dataViewMode,  productCode,  null,  null,  null,  null,  null,  null,  null,  null,  null, expectedCode);
+		return getProduct(apiContext, dataViewMode,  productCode,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.productruntime.Product getProduct(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String variationProductCode, Boolean allowInactive, Boolean skipInventoryCheck, Boolean supressOutOfStock404, Integer quantity, Boolean acceptVariantProductCode, String purchaseLocation, String variationProductCodeFilter, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.productruntime.Product getProduct(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String variationProductCode, Boolean allowInactive, Boolean skipInventoryCheck, Boolean supressOutOfStock404, Integer quantity, Boolean acceptVariantProductCode, String purchaseLocation, String variationProductCodeFilter, String sliceValue, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.productruntime.Product returnObj = new com.mozu.api.contracts.productruntime.Product();
 		ProductResource resource = new ProductResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.getProduct( productCode,  variationProductCode,  allowInactive,  skipInventoryCheck,  supressOutOfStock404,  quantity,  acceptVariantProductCode,  purchaseLocation,  variationProductCodeFilter,  responseFields);
+			returnObj = resource.getProduct( productCode,  variationProductCode,  allowInactive,  skipInventoryCheck,  supressOutOfStock404,  quantity,  acceptVariantProductCode,  purchaseLocation,  variationProductCodeFilter,  sliceValue,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -98,14 +98,14 @@ public class ProductFactory
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.productruntime.Product getProductForIndexing(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.productruntime.ProductForIndexing getProductForIndexing(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, int expectedCode) throws Exception
 	{
 		return getProductForIndexing(apiContext, dataViewMode,  productCode,  null,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.productruntime.Product getProductForIndexing(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, Long productVersion, DateTime lastModifiedDate, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.productruntime.ProductForIndexing getProductForIndexing(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, Long productVersion, DateTime lastModifiedDate, String responseFields, int expectedCode) throws Exception
 	{
-		com.mozu.api.contracts.productruntime.Product returnObj = new com.mozu.api.contracts.productruntime.Product();
+		com.mozu.api.contracts.productruntime.ProductForIndexing returnObj = new com.mozu.api.contracts.productruntime.ProductForIndexing();
 		ProductResource resource = new ProductResource(apiContext, dataViewMode);
 		try
 		{

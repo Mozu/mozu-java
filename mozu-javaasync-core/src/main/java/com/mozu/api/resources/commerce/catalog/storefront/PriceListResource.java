@@ -176,6 +176,81 @@ public class PriceListResource {
 
 	}
 
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	PriceList pricelist = new PriceList();
+	 *	ResolvedPriceList resolvedPriceList = pricelist.getResolvedPriceList2( customerAccountObject);
+	 * </code></pre></p>
+	 * @param customerAccountObject 
+	 * @return com.mozu.api.contracts.productruntime.ResolvedPriceList
+	 * @see com.mozu.api.contracts.productruntime.ResolvedPriceList
+	 * @see JObject
+	 */
+	public com.mozu.api.contracts.productruntime.ResolvedPriceList getResolvedPriceList2(com.fasterxml.jackson.databind.JsonNode customerAccountObject) throws Exception
+	{
+		return getResolvedPriceList2( customerAccountObject,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	PriceList pricelist = new PriceList();
+	 *	CountDownLatch latch = pricelist.getResolvedPriceList2( customerAccountObject, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param  callback callback handler for asynchronous operations
+	 * @param customerAccountObject 
+	 * @return com.mozu.api.contracts.productruntime.ResolvedPriceList
+	 * @see com.mozu.api.contracts.productruntime.ResolvedPriceList
+	 * @see JObject
+	 */
+	public CountDownLatch getResolvedPriceList2Async(com.fasterxml.jackson.databind.JsonNode customerAccountObject, AsyncCallback<com.mozu.api.contracts.productruntime.ResolvedPriceList> callback) throws Exception
+	{
+		return getResolvedPriceList2Async( customerAccountObject,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	PriceList pricelist = new PriceList();
+	 *	ResolvedPriceList resolvedPriceList = pricelist.getResolvedPriceList2( customerAccountObject,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param customerAccountObject 
+	 * @return com.mozu.api.contracts.productruntime.ResolvedPriceList
+	 * @see com.mozu.api.contracts.productruntime.ResolvedPriceList
+	 * @see JObject
+	 */
+	public com.mozu.api.contracts.productruntime.ResolvedPriceList getResolvedPriceList2(com.fasterxml.jackson.databind.JsonNode customerAccountObject, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productruntime.ResolvedPriceList> client = com.mozu.api.clients.commerce.catalog.storefront.PriceListClient.getResolvedPriceList2Client( customerAccountObject,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	PriceList pricelist = new PriceList();
+	 *	CountDownLatch latch = pricelist.getResolvedPriceList2( customerAccountObject,  responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param  callback callback handler for asynchronous operations
+	 * @param customerAccountObject 
+	 * @return com.mozu.api.contracts.productruntime.ResolvedPriceList
+	 * @see com.mozu.api.contracts.productruntime.ResolvedPriceList
+	 * @see JObject
+	 */
+	public CountDownLatch getResolvedPriceList2Async(com.fasterxml.jackson.databind.JsonNode customerAccountObject, String responseFields, AsyncCallback<com.mozu.api.contracts.productruntime.ResolvedPriceList> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productruntime.ResolvedPriceList> client = com.mozu.api.clients.commerce.catalog.storefront.PriceListClient.getResolvedPriceList2Client( customerAccountObject,  responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
 }
 
 

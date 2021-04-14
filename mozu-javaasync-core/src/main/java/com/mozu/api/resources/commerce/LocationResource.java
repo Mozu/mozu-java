@@ -194,6 +194,75 @@ public class LocationResource {
 	 * 
 	 * <p><pre><code>
 	 *	Location location = new Location();
+	 *	Location location = location.getCurbsideLocation();
+	 * </code></pre></p>
+	 * @return com.mozu.api.contracts.location.Location
+	 * @see com.mozu.api.contracts.location.Location
+	 */
+	public com.mozu.api.contracts.location.Location getCurbsideLocation() throws Exception
+	{
+		return getCurbsideLocation( null,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Location location = new Location();
+	 *	CountDownLatch latch = location.getCurbsideLocation( callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.location.Location
+	 * @see com.mozu.api.contracts.location.Location
+	 */
+	public CountDownLatch getCurbsideLocationAsync( AsyncCallback<com.mozu.api.contracts.location.Location> callback) throws Exception
+	{
+		return getCurbsideLocationAsync( null,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Location location = new Location();
+	 *	Location location = location.getCurbsideLocation( includeAttributeDefinition,  responseFields);
+	 * </code></pre></p>
+	 * @param includeAttributeDefinition 
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.location.Location
+	 * @see com.mozu.api.contracts.location.Location
+	 */
+	public com.mozu.api.contracts.location.Location getCurbsideLocation(Boolean includeAttributeDefinition, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.location.Location> client = com.mozu.api.clients.commerce.LocationClient.getCurbsideLocationClient( includeAttributeDefinition,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Location location = new Location();
+	 *	CountDownLatch latch = location.getCurbsideLocation( includeAttributeDefinition,  responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param includeAttributeDefinition 
+	 * @param responseFields 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.location.Location
+	 * @see com.mozu.api.contracts.location.Location
+	 */
+	public CountDownLatch getCurbsideLocationAsync(Boolean includeAttributeDefinition, String responseFields, AsyncCallback<com.mozu.api.contracts.location.Location> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.location.Location> client = com.mozu.api.clients.commerce.LocationClient.getCurbsideLocationClient( includeAttributeDefinition,  responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Location location = new Location();
 	 *	Location location = location.getDirectShipLocation();
 	 * </code></pre></p>
 	 * @return com.mozu.api.contracts.location.Location

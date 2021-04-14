@@ -48,18 +48,43 @@ public class QuoteFactory
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.quotes.Quote getQuote(ApiContext apiContext, String quoteId, int expectedCode) throws Exception
+	public static List<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate> getAvailableShippingMethods(ApiContext apiContext, String quoteId, int expectedCode) throws Exception
 	{
-		return getQuote(apiContext,  quoteId,  null, expectedCode);
+		return getAvailableShippingMethods(apiContext,  quoteId,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.quotes.Quote getQuote(ApiContext apiContext, String quoteId, String responseFields, int expectedCode) throws Exception
+	public static List<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate> getAvailableShippingMethods(ApiContext apiContext, String quoteId, Boolean draft, int expectedCode) throws Exception
+	{
+		List<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate> returnObj = new ArrayList<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate>();
+		QuoteResource resource = new QuoteResource(apiContext);
+		try
+		{
+			returnObj = resource.getAvailableShippingMethods( quoteId,  draft);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.quotes.Quote getQuote(ApiContext apiContext, String quoteId, int expectedCode) throws Exception
+	{
+		return getQuote(apiContext,  quoteId,  null,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.quotes.Quote getQuote(ApiContext apiContext, String quoteId, Boolean draft, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.quotes.Quote returnObj = new com.mozu.api.contracts.commerceruntime.quotes.Quote();
 		QuoteResource resource = new QuoteResource(apiContext);
 		try
 		{
-			returnObj = resource.getQuote( quoteId,  responseFields);
+			returnObj = resource.getQuote( quoteId,  draft,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -75,16 +100,16 @@ public class QuoteFactory
 
 	public static com.mozu.api.contracts.commerceruntime.quotes.Quote getQuoteByName(ApiContext apiContext, Integer customerAccountId, String quoteName, int expectedCode) throws Exception
 	{
-		return getQuoteByName(apiContext,  customerAccountId,  quoteName,  null, expectedCode);
+		return getQuoteByName(apiContext,  customerAccountId,  quoteName,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.quotes.Quote getQuoteByName(ApiContext apiContext, Integer customerAccountId, String quoteName, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.quotes.Quote getQuoteByName(ApiContext apiContext, Integer customerAccountId, String quoteName, Boolean draft, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.quotes.Quote returnObj = new com.mozu.api.contracts.commerceruntime.quotes.Quote();
 		QuoteResource resource = new QuoteResource(apiContext);
 		try
 		{
-			returnObj = resource.getQuoteByName( customerAccountId,  quoteName,  responseFields);
+			returnObj = resource.getQuoteByName( customerAccountId,  quoteName,  draft,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -123,18 +148,138 @@ public class QuoteFactory
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.quotes.Quote updateQuote(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.quotes.Quote quote, String quoteId, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.quotes.Quote updateQuoteAdjustments(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.quotes.QuoteAdjustment adjustments, String quoteId, int expectedCode) throws Exception
 	{
-		return updateQuote(apiContext,  quote,  quoteId,  null, expectedCode);
+		return updateQuoteAdjustments(apiContext,  adjustments,  quoteId,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.quotes.Quote updateQuote(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.quotes.Quote quote, String quoteId, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.quotes.Quote updateQuoteAdjustments(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.quotes.QuoteAdjustment adjustments, String quoteId, String updateMode, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.quotes.Quote returnObj = new com.mozu.api.contracts.commerceruntime.quotes.Quote();
 		QuoteResource resource = new QuoteResource(apiContext);
 		try
 		{
-			returnObj = resource.updateQuote( quote,  quoteId,  responseFields);
+			returnObj = resource.updateQuoteAdjustments( adjustments,  quoteId,  updateMode,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.quotes.Quote copyQuote(ApiContext apiContext, String quoteId, int expectedCode) throws Exception
+	{
+		return copyQuote(apiContext,  quoteId,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.quotes.Quote copyQuote(ApiContext apiContext, String quoteId, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.commerceruntime.quotes.Quote returnObj = new com.mozu.api.contracts.commerceruntime.quotes.Quote();
+		QuoteResource resource = new QuoteResource(apiContext);
+		try
+		{
+			returnObj = resource.copyQuote( quoteId,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
+	public static java.io.InputStream sendQuoteEmail(ApiContext apiContext, List<String> emailAddresses, String quoteId, int expectedCode) throws Exception
+	{
+		java.io.InputStream returnObj;
+		QuoteResource resource = new QuoteResource(apiContext);
+		try
+		{
+			returnObj = resource.sendQuoteEmail( emailAddresses,  quoteId);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.quotes.Quote updateFulfillmentInfo(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo fulfillmentInfo, String quoteId, int expectedCode) throws Exception
+	{
+		return updateFulfillmentInfo(apiContext,  fulfillmentInfo,  quoteId,  null,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.quotes.Quote updateFulfillmentInfo(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo fulfillmentInfo, String quoteId, String updateMode, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.commerceruntime.quotes.Quote returnObj = new com.mozu.api.contracts.commerceruntime.quotes.Quote();
+		QuoteResource resource = new QuoteResource(apiContext);
+		try
+		{
+			returnObj = resource.updateFulfillmentInfo( fulfillmentInfo,  quoteId,  updateMode,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.quotes.Quote createQuoteFromCart(ApiContext apiContext, String cartId, int expectedCode) throws Exception
+	{
+		return createQuoteFromCart(apiContext,  cartId,  null,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.quotes.Quote createQuoteFromCart(ApiContext apiContext, String cartId, String updateMode, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.commerceruntime.quotes.Quote returnObj = new com.mozu.api.contracts.commerceruntime.quotes.Quote();
+		QuoteResource resource = new QuoteResource(apiContext);
+		try
+		{
+			returnObj = resource.createQuoteFromCart( cartId,  updateMode,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.quotes.Quote updateQuote(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.quotes.Quote quote, String quoteId, int expectedCode) throws Exception
+	{
+		return updateQuote(apiContext,  quote,  quoteId,  null,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.quotes.Quote updateQuote(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.quotes.Quote quote, String quoteId, String updateMode, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.commerceruntime.quotes.Quote returnObj = new com.mozu.api.contracts.commerceruntime.quotes.Quote();
+		QuoteResource resource = new QuoteResource(apiContext);
+		try
+		{
+			returnObj = resource.updateQuote( quote,  quoteId,  updateMode,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -150,11 +295,16 @@ public class QuoteFactory
 
 	public static java.io.InputStream deleteQuote(ApiContext apiContext, String quoteId, int expectedCode) throws Exception
 	{
+		return deleteQuote(apiContext,  quoteId,  null, expectedCode);
+	}
+
+	public static java.io.InputStream deleteQuote(ApiContext apiContext, String quoteId, Boolean draft, int expectedCode) throws Exception
+	{
 		java.io.InputStream returnObj;
 		QuoteResource resource = new QuoteResource(apiContext);
 		try
 		{
-			returnObj = resource.deleteQuote( quoteId);
+			returnObj = resource.deleteQuote( quoteId,  draft);
 		}
 		catch (ApiException e)
 		{

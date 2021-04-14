@@ -18,6 +18,16 @@ public class RestockableReturnItem implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected  String locationCode;
+
+	public String getLocationCode() {
+		return this.locationCode;
+	}
+
+	public void setLocationCode(String locationCode) {
+		this.locationCode = locationCode;
+	}
+
 	protected  Integer quantity;
 
 	public Integer getQuantity() {

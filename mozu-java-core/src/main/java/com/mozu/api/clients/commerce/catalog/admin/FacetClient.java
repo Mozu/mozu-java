@@ -68,28 +68,72 @@ public class FacetClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.FacetSet> mozuClient=GetFacetCategoryListClient( categoryId);
+	 * MozuClient<com.mozu.api.contracts.productadmin.FacetSet> mozuClient=GetFacetCategoryListLegacyClient( categoryId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * FacetSet facetSet = client.Result();
 	 * </code></pre></p>
-	 * @param categoryId Unique identifier of the category to modify.
+	 * @param categoryId 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.FacetSet>
 	 * @see com.mozu.api.contracts.productadmin.FacetSet
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.FacetSet> getFacetCategoryListClient(Integer categoryId) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.FacetSet> getFacetCategoryListLegacyClient(Integer categoryId) throws Exception
 	{
-		return getFacetCategoryListClient( categoryId,  null,  null,  null);
+		return getFacetCategoryListLegacyClient( categoryId,  null,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.FacetSet> mozuClient=GetFacetCategoryListClient( categoryId,  includeAvailable,  validate,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.productadmin.FacetSet> mozuClient=GetFacetCategoryListLegacyClient( categoryId,  includeAvailable,  validate,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * FacetSet facetSet = client.Result();
 	 * </code></pre></p>
+	 * @param categoryId 
+	 * @param includeAvailable 
+	 * @param responseFields 
+	 * @param validate 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.FacetSet>
+	 * @see com.mozu.api.contracts.productadmin.FacetSet
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.FacetSet> getFacetCategoryListLegacyClient(Integer categoryId, Boolean includeAvailable, Boolean validate, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.FacetUrl.getFacetCategoryListLegacyUrl(categoryId, includeAvailable, responseFields, validate);
+		String verb = "GET";
+		Class<?> clz = com.mozu.api.contracts.productadmin.FacetSet.class;
+		MozuClient<com.mozu.api.contracts.productadmin.FacetSet> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.FacetSet>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.FacetSet> mozuClient=GetFacetCategoryListClient();
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * FacetSet facetSet = client.Result();
+	 * </code></pre></p>
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.FacetSet>
+	 * @see com.mozu.api.contracts.productadmin.FacetSet
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.FacetSet> getFacetCategoryListClient() throws Exception
+	{
+		return getFacetCategoryListClient( null,  null,  null,  null,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.FacetSet> mozuClient=GetFacetCategoryListClient( categoryId,  categoryCode,  includeAvailable,  validate,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * FacetSet facetSet = client.Result();
+	 * </code></pre></p>
+	 * @param categoryCode 
 	 * @param categoryId Unique identifier of the category to modify.
 	 * @param includeAvailable If true, returns a list of the attributes and categories associated with a product type that have not been defined as a facet for the category.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
@@ -97,9 +141,9 @@ public class FacetClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.FacetSet>
 	 * @see com.mozu.api.contracts.productadmin.FacetSet
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.FacetSet> getFacetCategoryListClient(Integer categoryId, Boolean includeAvailable, Boolean validate, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.FacetSet> getFacetCategoryListClient(Integer categoryId, String categoryCode, Boolean includeAvailable, Boolean validate, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.FacetUrl.getFacetCategoryListUrl(categoryId, includeAvailable, responseFields, validate);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.FacetUrl.getFacetCategoryListUrl(categoryCode, categoryId, includeAvailable, responseFields, validate);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.FacetSet.class;
 		MozuClient<com.mozu.api.contracts.productadmin.FacetSet> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.FacetSet>) MozuClientFactory.getInstance(clz);

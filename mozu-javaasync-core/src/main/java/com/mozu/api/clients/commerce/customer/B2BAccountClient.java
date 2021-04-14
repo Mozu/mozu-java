@@ -164,6 +164,48 @@ public class B2BAccountClient {
 	/**
 	 * 
 	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.customer.B2BAccountHierarchyResult> mozuClient=GetB2BAccountHierarchyClient( accountId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * B2BAccountHierarchyResult b2BAccountHierarchyResult = client.Result();
+	 * </code></pre></p>
+	 * @param accountId 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.B2BAccountHierarchyResult>
+	 * @see com.mozu.api.contracts.customer.B2BAccountHierarchyResult
+	 */
+	public static MozuClient<com.mozu.api.contracts.customer.B2BAccountHierarchyResult> getB2BAccountHierarchyClient(Integer accountId) throws Exception
+	{
+		return getB2BAccountHierarchyClient( accountId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.customer.B2BAccountHierarchyResult> mozuClient=GetB2BAccountHierarchyClient( accountId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * B2BAccountHierarchyResult b2BAccountHierarchyResult = client.Result();
+	 * </code></pre></p>
+	 * @param accountId 
+	 * @param responseFields 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.B2BAccountHierarchyResult>
+	 * @see com.mozu.api.contracts.customer.B2BAccountHierarchyResult
+	 */
+	public static MozuClient<com.mozu.api.contracts.customer.B2BAccountHierarchyResult> getB2BAccountHierarchyClient(Integer accountId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.customer.B2BAccountUrl.getB2BAccountHierarchyUrl(accountId, responseFields);
+		String verb = "GET";
+		Class<?> clz = com.mozu.api.contracts.customer.B2BAccountHierarchyResult.class;
+		MozuClient<com.mozu.api.contracts.customer.B2BAccountHierarchyResult> mozuClient = (MozuClient<com.mozu.api.contracts.customer.B2BAccountHierarchyResult>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.UserRoleCollection> mozuClient=GetUserRolesAsyncClient( accountId,  userId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
@@ -208,42 +250,42 @@ public class B2BAccountClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.customer.B2BUserCollection> mozuClient=GetUsersClient( accountId);
+	 * MozuClient<com.mozu.api.contracts.customer.B2BUserCollection> mozuClient=GetUsersAsyncClient( accountId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * B2BUserCollection b2BUserCollection = client.Result();
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.B2BUserCollection>
 	 * @see com.mozu.api.contracts.customer.B2BUserCollection
 	 */
-	public static MozuClient<com.mozu.api.contracts.customer.B2BUserCollection> getUsersClient(Integer accountId) throws Exception
+	public static MozuClient<com.mozu.api.contracts.customer.B2BUserCollection> getUsersAsyncClient(Integer accountId) throws Exception
 	{
-		return getUsersClient( accountId,  null,  null,  null,  null,  null,  null,  null);
+		return getUsersAsyncClient( accountId,  null,  null,  null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.customer.B2BUserCollection> mozuClient=GetUsersClient( accountId,  startIndex,  pageSize,  sortBy,  filter,  q,  qLimit,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.customer.B2BUserCollection> mozuClient=GetUsersAsyncClient( accountId,  startIndex,  pageSize,  sortBy,  filter,  q,  qLimit,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * B2BUserCollection b2BUserCollection = client.Result();
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param q A list of order search terms (not phrases) to use in the query when searching across order number and the name or email of the billing contact. When entering, separate multiple search terms with a space character.
-	 * @param qLimit The maximum number of search results to return in the response. You can limit any range between 1-100.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param accountId 
+	 * @param filter 
+	 * @param pageSize 
+	 * @param q 
+	 * @param qLimit 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.B2BUserCollection>
 	 * @see com.mozu.api.contracts.customer.B2BUserCollection
 	 */
-	public static MozuClient<com.mozu.api.contracts.customer.B2BUserCollection> getUsersClient(Integer accountId, Integer startIndex, Integer pageSize, String sortBy, String filter, String q, Integer qLimit, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.customer.B2BUserCollection> getUsersAsyncClient(Integer accountId, Integer startIndex, Integer pageSize, String sortBy, String filter, String q, Integer qLimit, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.customer.B2BAccountUrl.getUsersUrl(accountId, filter, pageSize, q, qLimit, responseFields, sortBy, startIndex);
+		MozuUrl url = com.mozu.api.urls.commerce.customer.B2BAccountUrl.getUsersAsyncUrl(accountId, filter, pageSize, q, qLimit, responseFields, sortBy, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.customer.B2BUserCollection.class;
 		MozuClient<com.mozu.api.contracts.customer.B2BUserCollection> mozuClient = (MozuClient<com.mozu.api.contracts.customer.B2BUserCollection>) MozuClientFactory.getInstance(clz);
@@ -298,6 +340,30 @@ public class B2BAccountClient {
 	/**
 	 * 
 	 * <p><pre><code>
+	 * MozuClient<List<Integer>> mozuClient=GetAccountsForSalesRepClient( userId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * int int = client.Result();
+	 * </code></pre></p>
+	 * @param userId 
+	 * @return Mozu.Api.MozuClient <List<int>>
+	 * @see int
+	 */
+	public static MozuClient<List<Integer>> getAccountsForSalesRepClient(String userId) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.customer.B2BAccountUrl.getAccountsForSalesRepUrl(userId);
+		String verb = "GET";
+		Class<?> clz = new ArrayList<Integer>(){}.getClass();
+		MozuClient<List<Integer>> mozuClient = (MozuClient<List<Integer>>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.B2BAccount> mozuClient=AddAccountClient( account);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
@@ -336,6 +402,53 @@ public class B2BAccountClient {
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(account);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.customer.B2BAccount> mozuClient=AddSalesRepsToB2BAccountClient( userIds,  accountId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * B2BAccount b2BAccount = client.Result();
+	 * </code></pre></p>
+	 * @param accountId 
+	 * @param userIds 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.B2BAccount>
+	 * @see com.mozu.api.contracts.customer.B2BAccount
+	 * @see string
+	 */
+	public static MozuClient<com.mozu.api.contracts.customer.B2BAccount> addSalesRepsToB2BAccountClient(List<String> userIds, Integer accountId) throws Exception
+	{
+		return addSalesRepsToB2BAccountClient( userIds,  accountId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.customer.B2BAccount> mozuClient=AddSalesRepsToB2BAccountClient( userIds,  accountId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * B2BAccount b2BAccount = client.Result();
+	 * </code></pre></p>
+	 * @param accountId 
+	 * @param responseFields 
+	 * @param userIds 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.B2BAccount>
+	 * @see com.mozu.api.contracts.customer.B2BAccount
+	 * @see string
+	 */
+	public static MozuClient<com.mozu.api.contracts.customer.B2BAccount> addSalesRepsToB2BAccountClient(List<String> userIds, Integer accountId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.customer.B2BAccountUrl.addSalesRepsToB2BAccountUrl(accountId, responseFields);
+		String verb = "POST";
+		Class<?> clz = com.mozu.api.contracts.customer.B2BAccount.class;
+		MozuClient<com.mozu.api.contracts.customer.B2BAccount> mozuClient = (MozuClient<com.mozu.api.contracts.customer.B2BAccount>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(userIds);
 		return mozuClient;
 
 	}
@@ -383,6 +496,94 @@ public class B2BAccountClient {
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(attribute);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.customer.B2BAccount> mozuClient=ChangeParentAccountClient( accountId,  parentAccountId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * B2BAccount b2BAccount = client.Result();
+	 * </code></pre></p>
+	 * @param accountId 
+	 * @param parentAccountId 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.B2BAccount>
+	 * @see com.mozu.api.contracts.customer.B2BAccount
+	 */
+	public static MozuClient<com.mozu.api.contracts.customer.B2BAccount> changeParentAccountClient(Integer accountId, Integer parentAccountId) throws Exception
+	{
+		return changeParentAccountClient( accountId,  parentAccountId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.customer.B2BAccount> mozuClient=ChangeParentAccountClient( accountId,  parentAccountId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * B2BAccount b2BAccount = client.Result();
+	 * </code></pre></p>
+	 * @param accountId 
+	 * @param parentAccountId 
+	 * @param responseFields 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.B2BAccount>
+	 * @see com.mozu.api.contracts.customer.B2BAccount
+	 */
+	public static MozuClient<com.mozu.api.contracts.customer.B2BAccount> changeParentAccountClient(Integer accountId, Integer parentAccountId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.customer.B2BAccountUrl.changeParentAccountUrl(accountId, parentAccountId, responseFields);
+		String verb = "POST";
+		Class<?> clz = com.mozu.api.contracts.customer.B2BAccount.class;
+		MozuClient<com.mozu.api.contracts.customer.B2BAccount> mozuClient = (MozuClient<com.mozu.api.contracts.customer.B2BAccount>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.customer.B2BAccount> mozuClient=AddSalesRepToB2BAccountClient( accountId,  userId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * B2BAccount b2BAccount = client.Result();
+	 * </code></pre></p>
+	 * @param accountId 
+	 * @param userId 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.B2BAccount>
+	 * @see com.mozu.api.contracts.customer.B2BAccount
+	 */
+	public static MozuClient<com.mozu.api.contracts.customer.B2BAccount> addSalesRepToB2BAccountClient(Integer accountId, String userId) throws Exception
+	{
+		return addSalesRepToB2BAccountClient( accountId,  userId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.customer.B2BAccount> mozuClient=AddSalesRepToB2BAccountClient( accountId,  userId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * B2BAccount b2BAccount = client.Result();
+	 * </code></pre></p>
+	 * @param accountId 
+	 * @param responseFields 
+	 * @param userId 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.B2BAccount>
+	 * @see com.mozu.api.contracts.customer.B2BAccount
+	 */
+	public static MozuClient<com.mozu.api.contracts.customer.B2BAccount> addSalesRepToB2BAccountClient(Integer accountId, String userId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.customer.B2BAccountUrl.addSalesRepToB2BAccountUrl(accountId, responseFields, userId);
+		String verb = "POST";
+		Class<?> clz = com.mozu.api.contracts.customer.B2BAccount.class;
+		MozuClient<com.mozu.api.contracts.customer.B2BAccount> mozuClient = (MozuClient<com.mozu.api.contracts.customer.B2BAccount>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
 		return mozuClient;
 
 	}
@@ -505,6 +706,97 @@ public class B2BAccountClient {
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(attribute);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.customer.B2BAccount> mozuClient=UpdateSalesRepsOnB2BAccountClient( userIds,  accountId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * B2BAccount b2BAccount = client.Result();
+	 * </code></pre></p>
+	 * @param accountId 
+	 * @param userIds 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.B2BAccount>
+	 * @see com.mozu.api.contracts.customer.B2BAccount
+	 * @see string
+	 */
+	public static MozuClient<com.mozu.api.contracts.customer.B2BAccount> updateSalesRepsOnB2BAccountClient(List<String> userIds, Integer accountId) throws Exception
+	{
+		return updateSalesRepsOnB2BAccountClient( userIds,  accountId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.customer.B2BAccount> mozuClient=UpdateSalesRepsOnB2BAccountClient( userIds,  accountId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * B2BAccount b2BAccount = client.Result();
+	 * </code></pre></p>
+	 * @param accountId 
+	 * @param responseFields 
+	 * @param userIds 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.B2BAccount>
+	 * @see com.mozu.api.contracts.customer.B2BAccount
+	 * @see string
+	 */
+	public static MozuClient<com.mozu.api.contracts.customer.B2BAccount> updateSalesRepsOnB2BAccountClient(List<String> userIds, Integer accountId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.customer.B2BAccountUrl.updateSalesRepsOnB2BAccountUrl(accountId, responseFields);
+		String verb = "PUT";
+		Class<?> clz = com.mozu.api.contracts.customer.B2BAccount.class;
+		MozuClient<com.mozu.api.contracts.customer.B2BAccount> mozuClient = (MozuClient<com.mozu.api.contracts.customer.B2BAccount>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(userIds);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.customer.B2BAccount> mozuClient=UpdateB2BAccountStatusClient( accountId,  actionName);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * B2BAccount b2BAccount = client.Result();
+	 * </code></pre></p>
+	 * @param accountId 
+	 * @param actionName 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.B2BAccount>
+	 * @see com.mozu.api.contracts.customer.B2BAccount
+	 */
+	public static MozuClient<com.mozu.api.contracts.customer.B2BAccount> updateB2BAccountStatusClient(Integer accountId, String actionName) throws Exception
+	{
+		return updateB2BAccountStatusClient( accountId,  actionName,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.customer.B2BAccount> mozuClient=UpdateB2BAccountStatusClient( accountId,  actionName,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * B2BAccount b2BAccount = client.Result();
+	 * </code></pre></p>
+	 * @param accountId 
+	 * @param actionName 
+	 * @param responseFields 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.B2BAccount>
+	 * @see com.mozu.api.contracts.customer.B2BAccount
+	 */
+	public static MozuClient<com.mozu.api.contracts.customer.B2BAccount> updateB2BAccountStatusClient(Integer accountId, String actionName, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.customer.B2BAccountUrl.updateB2BAccountStatusUrl(accountId, actionName, responseFields);
+		String verb = "PUT";
+		Class<?> clz = com.mozu.api.contracts.customer.B2BAccount.class;
+		MozuClient<com.mozu.api.contracts.customer.B2BAccount> mozuClient = (MozuClient<com.mozu.api.contracts.customer.B2BAccount>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
 		return mozuClient;
 
 	}
@@ -649,6 +941,31 @@ public class B2BAccountClient {
 		String verb = "DELETE";
 		Class<?> clz = java.io.InputStream.class;
 		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.customer.B2BAccount> mozuClient=RemoveSalesRepFromB2BAccountClient( accountId,  userId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * B2BAccount b2BAccount = client.Result();
+	 * </code></pre></p>
+	 * @param accountId 
+	 * @param userId 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.B2BAccount>
+	 * @see com.mozu.api.contracts.customer.B2BAccount
+	 */
+	public static MozuClient<com.mozu.api.contracts.customer.B2BAccount> removeSalesRepFromB2BAccountClient(Integer accountId, String userId) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.customer.B2BAccountUrl.removeSalesRepFromB2BAccountUrl(accountId, userId);
+		String verb = "DELETE";
+		Class<?> clz = com.mozu.api.contracts.customer.B2BAccount.class;
+		MozuClient<com.mozu.api.contracts.customer.B2BAccount> mozuClient = (MozuClient<com.mozu.api.contracts.customer.B2BAccount>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

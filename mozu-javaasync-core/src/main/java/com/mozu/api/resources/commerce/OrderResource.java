@@ -347,6 +347,77 @@ public class OrderResource {
 	 * 
 	 * <p><pre><code>
 	 *	Order order = new Order();
+	 *	Order order = order.createOrderFromQuote( quoteId);
+	 * </code></pre></p>
+	 * @param quoteId 
+	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
+	 */
+	public com.mozu.api.contracts.commerceruntime.orders.Order createOrderFromQuote(String quoteId) throws Exception
+	{
+		return createOrderFromQuote( quoteId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Order order = new Order();
+	 *	CountDownLatch latch = order.createOrderFromQuote( quoteId, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param quoteId 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
+	 */
+	public CountDownLatch createOrderFromQuoteAsync(String quoteId, AsyncCallback<com.mozu.api.contracts.commerceruntime.orders.Order> callback) throws Exception
+	{
+		return createOrderFromQuoteAsync( quoteId,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Order order = new Order();
+	 *	Order order = order.createOrderFromQuote( quoteId,  responseFields);
+	 * </code></pre></p>
+	 * @param quoteId 
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
+	 */
+	public com.mozu.api.contracts.commerceruntime.orders.Order createOrderFromQuote(String quoteId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> client = com.mozu.api.clients.commerce.OrderClient.createOrderFromQuoteClient( quoteId,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Order order = new Order();
+	 *	CountDownLatch latch = order.createOrderFromQuote( quoteId,  responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param quoteId 
+	 * @param responseFields 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
+	 */
+	public CountDownLatch createOrderFromQuoteAsync(String quoteId, String responseFields, AsyncCallback<com.mozu.api.contracts.commerceruntime.orders.Order> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> client = com.mozu.api.clients.commerce.OrderClient.createOrderFromQuoteClient( quoteId,  responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Order order = new Order();
 	 *	Order order = order.createOrder( order);
 	 * </code></pre></p>
 	 * @param order Properties of an order, including its components.
@@ -1091,6 +1162,44 @@ public class OrderResource {
 	public CountDownLatch updateOrderAsync(com.mozu.api.contracts.commerceruntime.orders.Order order, String orderId, String updateMode, String version, String responseFields, AsyncCallback<com.mozu.api.contracts.commerceruntime.orders.Order> callback) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> client = com.mozu.api.clients.commerce.OrderClient.updateOrderClient( order,  orderId,  updateMode,  version,  responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Order order = new Order();
+	 *	Stream stream = order.smsOptOut( siteId);
+	 * </code></pre></p>
+	 * @param siteId 
+	 * @return Stream
+	 * @see Stream
+	 */
+	public java.io.InputStream smsOptOut(String siteId) throws Exception
+	{
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.OrderClient.smsOptOutClient( siteId);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Order order = new Order();
+	 *	CountDownLatch latch = order.smsOptOut( siteId, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param siteId 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return Stream
+	 * @see Stream
+	 */
+	public CountDownLatch smsOptOutAsync(String siteId, AsyncCallback<java.io.InputStream> callback) throws Exception
+	{
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.OrderClient.smsOptOutClient( siteId);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 

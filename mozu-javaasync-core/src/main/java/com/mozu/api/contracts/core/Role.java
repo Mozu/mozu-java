@@ -81,14 +81,12 @@ public class Role implements Serializable
 		this.behaviors = behaviors;
 	}
 
-	protected  Owner owner;
-
-	public Owner getOwner() {
-		return this.owner;
+	protected List<Owner> owners;
+	public List<Owner> getOwners() {
+		return this.owners;
 	}
-
-	public void setOwner(Owner owner) {
-		this.owner = owner;
+	public void setOwners(List<Owner> owners) {
+		this.owners = owners;
 	}
 
 	protected List<Resource> resources;

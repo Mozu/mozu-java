@@ -73,6 +73,48 @@ public class QuoteClient {
 	/**
 	 * 
 	 * <p><pre><code>
+	 * MozuClient<List<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate>> mozuClient=GetAvailableShippingMethodsClient( quoteId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * ShippingRate shippingRate = client.Result();
+	 * </code></pre></p>
+	 * @param quoteId 
+	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate>>
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate
+	 */
+	public static MozuClient<List<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate>> getAvailableShippingMethodsClient(String quoteId) throws Exception
+	{
+		return getAvailableShippingMethodsClient( quoteId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<List<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate>> mozuClient=GetAvailableShippingMethodsClient( quoteId,  draft);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * ShippingRate shippingRate = client.Result();
+	 * </code></pre></p>
+	 * @param draft 
+	 * @param quoteId 
+	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate>>
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate
+	 */
+	public static MozuClient<List<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate>> getAvailableShippingMethodsClient(String quoteId, Boolean draft) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.QuoteUrl.getAvailableShippingMethodsUrl(draft, quoteId);
+		String verb = "GET";
+		Class<?> clz = new ArrayList<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate>(){}.getClass();
+		MozuClient<List<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate>> mozuClient = (MozuClient<List<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate>>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> mozuClient=GetQuoteClient( quoteId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
@@ -84,25 +126,26 @@ public class QuoteClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> getQuoteClient(String quoteId) throws Exception
 	{
-		return getQuoteClient( quoteId,  null);
+		return getQuoteClient( quoteId,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> mozuClient=GetQuoteClient( quoteId,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> mozuClient=GetQuoteClient( quoteId,  draft,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Quote quote = client.Result();
 	 * </code></pre></p>
+	 * @param draft 
 	 * @param quoteId A unique identifier for the quote.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.quotes.Quote>
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 */
-	public static MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> getQuoteClient(String quoteId, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> getQuoteClient(String quoteId, Boolean draft, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.QuoteUrl.getQuoteUrl(quoteId, responseFields);
+		MozuUrl url = com.mozu.api.urls.commerce.QuoteUrl.getQuoteUrl(draft, quoteId, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.quotes.Quote.class;
 		MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote>) MozuClientFactory.getInstance(clz);
@@ -127,26 +170,27 @@ public class QuoteClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> getQuoteByNameClient(Integer customerAccountId, String quoteName) throws Exception
 	{
-		return getQuoteByNameClient( customerAccountId,  quoteName,  null);
+		return getQuoteByNameClient( customerAccountId,  quoteName,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> mozuClient=GetQuoteByNameClient( customerAccountId,  quoteName,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> mozuClient=GetQuoteByNameClient( customerAccountId,  quoteName,  draft,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Quote quote = client.Result();
 	 * </code></pre></p>
 	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
+	 * @param draft 
 	 * @param quoteName A unique name for the quote.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.quotes.Quote>
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 */
-	public static MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> getQuoteByNameClient(Integer customerAccountId, String quoteName, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> getQuoteByNameClient(Integer customerAccountId, String quoteName, Boolean draft, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.QuoteUrl.getQuoteByNameUrl(customerAccountId, quoteName, responseFields);
+		MozuUrl url = com.mozu.api.urls.commerce.QuoteUrl.getQuoteByNameUrl(customerAccountId, draft, quoteName, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.quotes.Quote.class;
 		MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote>) MozuClientFactory.getInstance(clz);
@@ -204,6 +248,214 @@ public class QuoteClient {
 	/**
 	 * 
 	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> mozuClient=UpdateQuoteAdjustmentsClient( adjustments,  quoteId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Quote quote = client.Result();
+	 * </code></pre></p>
+	 * @param quoteId 
+	 * @param adjustments 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.quotes.Quote>
+	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
+	 * @see com.mozu.api.contracts.commerceruntime.quotes.QuoteAdjustment
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> updateQuoteAdjustmentsClient(com.mozu.api.contracts.commerceruntime.quotes.QuoteAdjustment adjustments, String quoteId) throws Exception
+	{
+		return updateQuoteAdjustmentsClient( adjustments,  quoteId,  null,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> mozuClient=UpdateQuoteAdjustmentsClient( adjustments,  quoteId,  updateMode,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Quote quote = client.Result();
+	 * </code></pre></p>
+	 * @param quoteId 
+	 * @param responseFields 
+	 * @param updateMode 
+	 * @param adjustments 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.quotes.Quote>
+	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
+	 * @see com.mozu.api.contracts.commerceruntime.quotes.QuoteAdjustment
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> updateQuoteAdjustmentsClient(com.mozu.api.contracts.commerceruntime.quotes.QuoteAdjustment adjustments, String quoteId, String updateMode, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.QuoteUrl.updateQuoteAdjustmentsUrl(quoteId, responseFields, updateMode);
+		String verb = "POST";
+		Class<?> clz = com.mozu.api.contracts.commerceruntime.quotes.Quote.class;
+		MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(adjustments);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> mozuClient=CopyQuoteClient( quoteId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Quote quote = client.Result();
+	 * </code></pre></p>
+	 * @param quoteId 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.quotes.Quote>
+	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> copyQuoteClient(String quoteId) throws Exception
+	{
+		return copyQuoteClient( quoteId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> mozuClient=CopyQuoteClient( quoteId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Quote quote = client.Result();
+	 * </code></pre></p>
+	 * @param quoteId 
+	 * @param responseFields 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.quotes.Quote>
+	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> copyQuoteClient(String quoteId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.QuoteUrl.copyQuoteUrl(quoteId, responseFields);
+		String verb = "POST";
+		Class<?> clz = com.mozu.api.contracts.commerceruntime.quotes.Quote.class;
+		MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<java.io.InputStream> mozuClient=SendQuoteEmailClient( emailAddresses,  quoteId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Stream stream = client.Result();
+	 * </code></pre></p>
+	 * @param quoteId 
+	 * @param emailAddresses 
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
+	 * @see string
+	 */
+	public static MozuClient<java.io.InputStream> sendQuoteEmailClient(List<String> emailAddresses, String quoteId) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.QuoteUrl.sendQuoteEmailUrl(quoteId);
+		String verb = "POST";
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(emailAddresses);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> mozuClient=UpdateFulfillmentInfoClient( fulfillmentInfo,  quoteId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Quote quote = client.Result();
+	 * </code></pre></p>
+	 * @param quoteId 
+	 * @param fulfillmentInfo 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.quotes.Quote>
+	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> updateFulfillmentInfoClient(com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo fulfillmentInfo, String quoteId) throws Exception
+	{
+		return updateFulfillmentInfoClient( fulfillmentInfo,  quoteId,  null,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> mozuClient=UpdateFulfillmentInfoClient( fulfillmentInfo,  quoteId,  updateMode,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Quote quote = client.Result();
+	 * </code></pre></p>
+	 * @param quoteId 
+	 * @param responseFields 
+	 * @param updateMode 
+	 * @param fulfillmentInfo 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.quotes.Quote>
+	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> updateFulfillmentInfoClient(com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo fulfillmentInfo, String quoteId, String updateMode, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.QuoteUrl.updateFulfillmentInfoUrl(quoteId, responseFields, updateMode);
+		String verb = "POST";
+		Class<?> clz = com.mozu.api.contracts.commerceruntime.quotes.Quote.class;
+		MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(fulfillmentInfo);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> mozuClient=CreateQuoteFromCartClient( cartId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Quote quote = client.Result();
+	 * </code></pre></p>
+	 * @param cartId 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.quotes.Quote>
+	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> createQuoteFromCartClient(String cartId) throws Exception
+	{
+		return createQuoteFromCartClient( cartId,  null,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> mozuClient=CreateQuoteFromCartClient( cartId,  updateMode,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Quote quote = client.Result();
+	 * </code></pre></p>
+	 * @param cartId 
+	 * @param responseFields 
+	 * @param updateMode 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.quotes.Quote>
+	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> createQuoteFromCartClient(String cartId, String updateMode, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.QuoteUrl.createQuoteFromCartUrl(cartId, responseFields, updateMode);
+		String verb = "POST";
+		Class<?> clz = com.mozu.api.contracts.commerceruntime.quotes.Quote.class;
+		MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> mozuClient=UpdateQuoteClient( quote,  quoteId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
@@ -217,27 +469,28 @@ public class QuoteClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> updateQuoteClient(com.mozu.api.contracts.commerceruntime.quotes.Quote quote, String quoteId) throws Exception
 	{
-		return updateQuoteClient( quote,  quoteId,  null);
+		return updateQuoteClient( quote,  quoteId,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> mozuClient=UpdateQuoteClient( quote,  quoteId,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> mozuClient=UpdateQuoteClient( quote,  quoteId,  updateMode,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Quote quote = client.Result();
 	 * </code></pre></p>
 	 * @param quoteId A unique identifier for the quote being updated.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param updateMode 
 	 * @param quote The quote that is being updated.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.quotes.Quote>
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 * @see com.mozu.api.contracts.commerceruntime.quotes.Quote
 	 */
-	public static MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> updateQuoteClient(com.mozu.api.contracts.commerceruntime.quotes.Quote quote, String quoteId, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> updateQuoteClient(com.mozu.api.contracts.commerceruntime.quotes.Quote quote, String quoteId, String updateMode, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.QuoteUrl.updateQuoteUrl(quoteId, responseFields);
+		MozuUrl url = com.mozu.api.urls.commerce.QuoteUrl.updateQuoteUrl(quoteId, responseFields, updateMode);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.quotes.Quote.class;
 		MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.quotes.Quote>) MozuClientFactory.getInstance(clz);
@@ -262,7 +515,25 @@ public class QuoteClient {
 	 */
 	public static MozuClient<java.io.InputStream> deleteQuoteClient(String quoteId) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.QuoteUrl.deleteQuoteUrl(quoteId);
+		return deleteQuoteClient( quoteId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<java.io.InputStream> mozuClient=DeleteQuoteClient( quoteId,  draft);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Stream stream = client.Result();
+	 * </code></pre></p>
+	 * @param draft 
+	 * @param quoteId A unique identifier for the quote.
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
+	 */
+	public static MozuClient<java.io.InputStream> deleteQuoteClient(String quoteId, Boolean draft) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.QuoteUrl.deleteQuoteUrl(draft, quoteId);
 		String verb = "DELETE";
 		Class<?> clz = java.io.InputStream.class;
 		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);

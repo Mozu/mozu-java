@@ -78,6 +78,20 @@ public class B2BAccountUrl
 	}
 
 	/**
+	 * Get Resource Url for GetB2BAccountHierarchy
+	 * @param accountId 
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getB2BAccountHierarchyUrl(Integer accountId, String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/b2baccounts/{accountId}/hierarchy?responseFields={responseFields}");
+		formatter.formatUrl("accountId", accountId);
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for GetUserRolesAsync
 	 * @param accountId Unique identifier of the customer account.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
@@ -94,18 +108,18 @@ public class B2BAccountUrl
 	}
 
 	/**
-	 * Get Resource Url for GetUsers
-	 * @param accountId Unique identifier of the customer account.
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param q A list of order search terms (not phrases) to use in the query when searching across order number and the name or email of the billing contact. When entering, separate multiple search terms with a space character.
-	 * @param qLimit The maximum number of search results to return in the response. You can limit any range between 1-100.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * Get Resource Url for GetUsersAsync
+	 * @param accountId 
+	 * @param filter 
+	 * @param pageSize 
+	 * @param q 
+	 * @param qLimit 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getUsersUrl(Integer accountId, String filter, Integer pageSize, String q, Integer qLimit, String responseFields, String sortBy, Integer startIndex)
+	public static MozuUrl getUsersAsyncUrl(Integer accountId, String filter, Integer pageSize, String q, Integer qLimit, String responseFields, String sortBy, Integer startIndex)
 	{
 		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/b2baccounts/{accountId}/users?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}&q={q}&qLimit={qLimit}&responseFields={responseFields}");
 		formatter.formatUrl("accountId", accountId);
@@ -134,6 +148,18 @@ public class B2BAccountUrl
 	}
 
 	/**
+	 * Get Resource Url for GetAccountsForSalesRep
+	 * @param userId 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getAccountsForSalesRepUrl(String userId)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/b2baccounts/salesrep/{userId}");
+		formatter.formatUrl("userId", userId);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for AddAccount
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
@@ -141,6 +167,20 @@ public class B2BAccountUrl
 	public static MozuUrl addAccountUrl(String responseFields)
 	{
 		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/b2baccounts/?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for AddSalesRepsToB2BAccount
+	 * @param accountId 
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl addSalesRepsToB2BAccountUrl(Integer accountId, String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/b2baccounts/{accountId}/addsalesreps?responseFields={responseFields}");
+		formatter.formatUrl("accountId", accountId);
 		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
@@ -156,6 +196,38 @@ public class B2BAccountUrl
 		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/b2baccounts/{accountId}/attributes?responseFields={responseFields}");
 		formatter.formatUrl("accountId", accountId);
 		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for ChangeParentAccount
+	 * @param accountId 
+	 * @param parentAccountId 
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl changeParentAccountUrl(Integer accountId, Integer parentAccountId, String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/b2baccounts/{accountId}/changeparent/{parentAccountId}?responseFields={responseFields}");
+		formatter.formatUrl("accountId", accountId);
+		formatter.formatUrl("parentAccountId", parentAccountId);
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for AddSalesRepToB2BAccount
+	 * @param accountId 
+	 * @param responseFields 
+	 * @param userId 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl addSalesRepToB2BAccountUrl(Integer accountId, String responseFields, String userId)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/b2baccounts/{accountId}/salesrep/{userId}?responseFields={responseFields}");
+		formatter.formatUrl("accountId", accountId);
+		formatter.formatUrl("responseFields", responseFields);
+		formatter.formatUrl("userId", userId);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
@@ -201,6 +273,36 @@ public class B2BAccountUrl
 		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/b2baccounts/{accountId}/attributes/{attributeFQN}?responseFields={responseFields}");
 		formatter.formatUrl("accountId", accountId);
 		formatter.formatUrl("attributeFQN", attributeFQN);
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for UpdateSalesRepsOnB2BAccount
+	 * @param accountId 
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl updateSalesRepsOnB2BAccountUrl(Integer accountId, String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/b2baccounts/{accountId}/salesrep?responseFields={responseFields}");
+		formatter.formatUrl("accountId", accountId);
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for UpdateB2BAccountStatus
+	 * @param accountId 
+	 * @param actionName 
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl updateB2BAccountStatusUrl(Integer accountId, String actionName, String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/b2baccounts/{accountId}/status/{actionName}?responseFields={responseFields}");
+		formatter.formatUrl("accountId", accountId);
+		formatter.formatUrl("actionName", actionName);
 		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
@@ -260,6 +362,20 @@ public class B2BAccountUrl
 		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/b2baccounts/{accountId}/attributes/{attributeFQN}");
 		formatter.formatUrl("accountId", accountId);
 		formatter.formatUrl("attributeFQN", attributeFQN);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for RemoveSalesRepFromB2BAccount
+	 * @param accountId 
+	 * @param userId 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl removeSalesRepFromB2BAccountUrl(Integer accountId, String userId)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/b2baccounts/{accountId}/salesrep/{userId}");
+		formatter.formatUrl("accountId", accountId);
+		formatter.formatUrl("userId", userId);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

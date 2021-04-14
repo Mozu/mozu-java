@@ -63,14 +63,17 @@ public class BundledProduct implements Serializable
 		this.isPackagedStandAlone = isPackagedStandAlone;
 	}
 
-	protected  String optionAttributeFqn;
+	/**
+	 * Fully qualified name of the selected option's attribute. Bundledproducts result from a static bundle or are dynamically added as a result of the shopper selecting products as extras. When the bundled item is dynamic, it includes the attribute's fully qualified name of the extra that it came from. When `optionAttributeFQN `is null, the bundled item was statically defined. When not null, the item came from an extra selection.
+	 */
+	protected  String optionAttributeFQN;
 
-	public String getOptionAttributeFqn() {
-		return this.optionAttributeFqn;
+	public String getOptionAttributeFQN() {
+		return this.optionAttributeFQN;
 	}
 
-	public void setOptionAttributeFqn(String optionAttributeFqn) {
-		this.optionAttributeFqn = optionAttributeFqn;
+	public void setOptionAttributeFQN(String optionAttributeFQN) {
+		this.optionAttributeFQN = optionAttributeFQN;
 	}
 
 	/**

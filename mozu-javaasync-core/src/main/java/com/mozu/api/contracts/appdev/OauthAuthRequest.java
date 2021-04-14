@@ -18,44 +18,44 @@ public class OauthAuthRequest implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected  String clientId;
+	protected  String client_id;
 
-	public String getClientId() {
-		return this.clientId;
+	public String getClient_id() {
+		return this.client_id;
 	}
 
-	public void setClientId(String clientId) {
-		this.clientId = clientId;
+	public void setClient_id(String client_id) {
+		this.client_id = client_id;
 	}
 
-	protected  String clientSecret;
+	protected  String client_secret;
 
-	public String getClientSecret() {
-		return this.clientSecret;
+	public String getClient_secret() {
+		return this.client_secret;
 	}
 
-	public void setClientSecret(String clientSecret) {
-		this.clientSecret = clientSecret;
+	public void setClient_secret(String client_secret) {
+		this.client_secret = client_secret;
 	}
 
-	protected  String grantType;
+	protected  String grant_type;
 
-	public String getGrantType() {
-		return this.grantType;
+	public String getGrant_type() {
+		return this.grant_type;
 	}
 
-	public void setGrantType(String grantType) {
-		this.grantType = grantType;
+	public void setGrant_type(String grant_type) {
+		this.grant_type = grant_type;
 	}
 
-	protected  String refreshToken;
+	protected  String refresh_token;
 
-	public String getRefreshToken() {
-		return this.refreshToken;
+	public String getRefresh_token() {
+		return this.refresh_token;
 	}
 
-	public void setRefreshToken(String refreshToken) {
-		this.refreshToken = refreshToken;
+	public void setRefresh_token(String refresh_token) {
+		this.refresh_token = refresh_token;
 	}
 
 

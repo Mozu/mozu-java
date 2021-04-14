@@ -17,6 +17,7 @@ import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.commerceruntime.commerce.ChangeMessage;
 import com.mozu.api.contracts.commerceruntime.fulfillment.PackageItem;
 import com.mozu.api.contracts.commerceruntime.commerce.PackageMeasurements;
+import com.mozu.api.contracts.commerceruntime.fulfillment.Tracking;
 
 /**
  *	Properties of a physical package shipped for an order.
@@ -33,6 +34,16 @@ public class Package implements Serializable
 	}
 	public void setAvailableActions(List<String> availableActions) {
 		this.availableActions = availableActions;
+	}
+
+	protected  String carrier;
+
+	public String getCarrier() {
+		return this.carrier;
+	}
+
+	public void setCarrier(String carrier) {
+		this.carrier = carrier;
 	}
 
 	/**
@@ -134,6 +145,16 @@ public class Package implements Serializable
 		this.shippingMethodName = shippingMethodName;
 	}
 
+	protected  Boolean signatureRequired;
+
+	public Boolean getSignatureRequired() {
+		return this.signatureRequired;
+	}
+
+	public void setSignatureRequired(Boolean signatureRequired) {
+		this.signatureRequired = signatureRequired;
+	}
+
 	protected  String status;
 
 	public String getStatus() {
@@ -152,6 +173,14 @@ public class Package implements Serializable
 
 	public void setTrackingNumber(String trackingNumber) {
 		this.trackingNumber = trackingNumber;
+	}
+
+	protected List<String> trackingNumbers;
+	public List<String> getTrackingNumbers() {
+		return this.trackingNumbers;
+	}
+	public void setTrackingNumbers(List<String> trackingNumbers) {
+		this.trackingNumbers = trackingNumbers;
 	}
 
 	protected  AuditInfo auditInfo;
@@ -191,6 +220,14 @@ public class Package implements Serializable
 
 	public void setMeasurements(PackageMeasurements measurements) {
 		this.measurements = measurements;
+	}
+
+	protected List<Tracking> trackings;
+	public List<Tracking> getTrackings() {
+		return this.trackings;
+	}
+	public void setTrackings(List<Tracking> trackings) {
+		this.trackings = trackings;
 	}
 
 

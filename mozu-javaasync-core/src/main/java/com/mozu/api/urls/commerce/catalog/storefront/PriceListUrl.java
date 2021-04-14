@@ -41,5 +41,17 @@ public class PriceListUrl
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
+	/**
+	 * Get Resource Url for GetResolvedPriceList2
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getResolvedPriceList2Url(String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/storefront/pricelists/resolved?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
 }
 

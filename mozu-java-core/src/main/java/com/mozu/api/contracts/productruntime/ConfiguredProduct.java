@@ -183,6 +183,14 @@ public class ConfiguredProduct implements Serializable
 		this.productImages = productImages;
 	}
 
+	protected List<ProductProperty> properties;
+	public List<ProductProperty> getProperties() {
+		return this.properties;
+	}
+	public void setProperties(List<ProductProperty> properties) {
+		this.properties = properties;
+	}
+
 	protected  ProductPurchasableState purchasableState;
 
 	public ProductPurchasableState getPurchasableState() {

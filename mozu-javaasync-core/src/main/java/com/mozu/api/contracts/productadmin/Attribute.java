@@ -129,6 +129,16 @@ public class Attribute implements Serializable
 		this.isProperty = isProperty;
 	}
 
+	protected  Boolean isValueMappingAttribute;
+
+	public Boolean getIsValueMappingAttribute() {
+		return this.isValueMappingAttribute;
+	}
+
+	public void setIsValueMappingAttribute(Boolean isValueMappingAttribute) {
+		this.isValueMappingAttribute = isValueMappingAttribute;
+	}
+
 	protected  Integer masterCatalogId;
 
 	public Integer getMasterCatalogId() {
@@ -147,6 +157,16 @@ public class Attribute implements Serializable
 
 	public void setNamespace(String namespace) {
 		this.namespace = namespace;
+	}
+
+	protected  String valueMappingAttributeFQN;
+
+	public String getValueMappingAttributeFQN() {
+		return this.valueMappingAttributeFQN;
+	}
+
+	public void setValueMappingAttributeFQN(String valueMappingAttributeFQN) {
+		this.valueMappingAttributeFQN = valueMappingAttributeFQN;
 	}
 
 	protected  String valueType;

@@ -424,6 +424,16 @@ public class Order implements Serializable
 		this.isImport = isImport;
 	}
 
+	protected  Boolean isOptInForSms;
+
+	public Boolean getIsOptInForSms() {
+		return this.isOptInForSms;
+	}
+
+	public void setIsOptInForSms(Boolean isOptInForSms) {
+		this.isOptInForSms = isOptInForSms;
+	}
+
 	/**
 	 * True if the order is one of multiple orders created to fulfill as parent order that supports shipping to multiple adresses.
 	 */
@@ -518,6 +528,26 @@ public class Order implements Serializable
 
 	public void setOriginalCartId(String originalCartId) {
 		this.originalCartId = originalCartId;
+	}
+
+	protected  String originalQuoteId;
+
+	public String getOriginalQuoteId() {
+		return this.originalQuoteId;
+	}
+
+	public void setOriginalQuoteId(String originalQuoteId) {
+		this.originalQuoteId = originalQuoteId;
+	}
+
+	protected  Integer originalQuoteNumber;
+
+	public Integer getOriginalQuoteNumber() {
+		return this.originalQuoteNumber;
+	}
+
+	public void setOriginalQuoteNumber(Integer originalQuoteNumber) {
+		this.originalQuoteNumber = originalQuoteNumber;
 	}
 
 	/**
@@ -642,6 +672,16 @@ public class Order implements Serializable
 
 	public void setPriceListCode(String priceListCode) {
 		this.priceListCode = priceListCode;
+	}
+
+	protected  Boolean readyToCapture;
+
+	public Boolean getReadyToCapture() {
+		return this.readyToCapture;
+	}
+
+	public void setReadyToCapture(Boolean readyToCapture) {
+		this.readyToCapture = readyToCapture;
 	}
 
 	protected  String returnStatus;

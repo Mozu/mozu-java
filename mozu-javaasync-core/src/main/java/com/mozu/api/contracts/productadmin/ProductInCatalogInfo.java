@@ -82,14 +82,14 @@ public class ProductInCatalogInfo implements Serializable
 		this.isPriceOverridden = isPriceOverridden;
 	}
 
-	protected  Boolean isseoContentOverridden;
+	protected  Boolean isSeoContentOverridden;
 
-	public Boolean getIsseoContentOverridden() {
-		return this.isseoContentOverridden;
+	public Boolean getIsSeoContentOverridden() {
+		return this.isSeoContentOverridden;
 	}
 
-	public void setIsseoContentOverridden(Boolean isseoContentOverridden) {
-		this.isseoContentOverridden = isseoContentOverridden;
+	public void setIsSeoContentOverridden(Boolean isSeoContentOverridden) {
+		this.isSeoContentOverridden = isSeoContentOverridden;
 	}
 
 	/**

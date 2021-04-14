@@ -30,16 +30,36 @@ public class FacetUrl
 	}
 
 	/**
+	 * Get Resource Url for GetFacetCategoryListLegacy
+	 * @param categoryId 
+	 * @param includeAvailable 
+	 * @param responseFields 
+	 * @param validate 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getFacetCategoryListLegacyUrl(Integer categoryId, Boolean includeAvailable, String responseFields, Boolean validate)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/facets/category/{categoryId}?includeAvailable={includeAvailable}&validate={validate}&responseFields={responseFields}");
+		formatter.formatUrl("categoryId", categoryId);
+		formatter.formatUrl("includeAvailable", includeAvailable);
+		formatter.formatUrl("responseFields", responseFields);
+		formatter.formatUrl("validate", validate);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for GetFacetCategoryList
+	 * @param categoryCode 
 	 * @param categoryId Unique identifier of the category to modify.
 	 * @param includeAvailable If true, returns a list of the attributes and categories associated with a product type that have not been defined as a facet for the category.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param validate Validates that the product category associated with a facet is active. System-supplied and read only.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getFacetCategoryListUrl(Integer categoryId, Boolean includeAvailable, String responseFields, Boolean validate)
+	public static MozuUrl getFacetCategoryListUrl(String categoryCode, Integer categoryId, Boolean includeAvailable, String responseFields, Boolean validate)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/facets/category/{categoryId}?includeAvailable={includeAvailable}&validate={validate}&responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/facets/category?categoryId={categoryId}&categoryCode={categoryCode}&includeAvailable={includeAvailable}&validate={validate}&responseFields={responseFields}");
+		formatter.formatUrl("categoryCode", categoryCode);
 		formatter.formatUrl("categoryId", categoryId);
 		formatter.formatUrl("includeAvailable", includeAvailable);
 		formatter.formatUrl("responseFields", responseFields);

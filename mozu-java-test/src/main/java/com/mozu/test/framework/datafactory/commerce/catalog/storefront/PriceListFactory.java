@@ -73,6 +73,31 @@ public class PriceListFactory
 		return returnObj;
 	}
 
+	public static com.mozu.api.contracts.productruntime.ResolvedPriceList getResolvedPriceList2(ApiContext apiContext, com.fasterxml.jackson.databind.JsonNode customerAccountObject, int expectedCode) throws Exception
+	{
+		return getResolvedPriceList2(apiContext,  customerAccountObject,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.productruntime.ResolvedPriceList getResolvedPriceList2(ApiContext apiContext, com.fasterxml.jackson.databind.JsonNode customerAccountObject, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.productruntime.ResolvedPriceList returnObj = new com.mozu.api.contracts.productruntime.ResolvedPriceList();
+		PriceListResource resource = new PriceListResource(apiContext);
+		try
+		{
+			returnObj = resource.getResolvedPriceList2( customerAccountObject,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
 }
 
 

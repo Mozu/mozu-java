@@ -16,6 +16,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice;
 import com.mozu.api.contracts.productadmin.ProductVariationFixedPrice;
 import com.mozu.api.contracts.productadmin.ProductVariationOption;
+import com.mozu.api.contracts.productadmin.ProductVariationProperty;
 import com.mozu.api.contracts.productadmin.ProductSupplierInfo;
 
 /**
@@ -175,6 +176,14 @@ public class ProductVariation implements Serializable
 	}
 	public void setOptions(List<ProductVariationOption> options) {
 		this.options = options;
+	}
+
+	protected List<ProductVariationProperty> properties;
+	public List<ProductVariationProperty> getProperties() {
+		return this.properties;
+	}
+	public void setProperties(List<ProductVariationProperty> properties) {
+		this.properties = properties;
 	}
 
 	/**

@@ -14,6 +14,7 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
+import com.mozu.api.contracts.commerceruntime.payments.CapturableShipmentSummary;
 import com.mozu.api.contracts.commerceruntime.payments.PaymentGatewayResponseData;
 import com.mozu.api.contracts.commerceruntime.payments.PaymentActionTarget;
 
@@ -273,6 +274,14 @@ public class PaymentInteraction implements Serializable
 
 	public void setAuditInfo(AuditInfo auditInfo) {
 		this.auditInfo = auditInfo;
+	}
+
+	protected List<CapturableShipmentSummary> capturableShipmentsSummary;
+	public List<CapturableShipmentSummary> getCapturableShipmentsSummary() {
+		return this.capturableShipmentsSummary;
+	}
+	public void setCapturableShipmentsSummary(List<CapturableShipmentSummary> capturableShipmentsSummary) {
+		this.capturableShipmentsSummary = capturableShipmentsSummary;
 	}
 
 	/**

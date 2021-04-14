@@ -25,14 +25,14 @@ public class ProductProperty implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected  String attributeFqn;
+	protected  String attributeFQN;
 
-	public String getAttributeFqn() {
-		return this.attributeFqn;
+	public String getAttributeFQN() {
+		return this.attributeFQN;
 	}
 
-	public void setAttributeFqn(String attributeFqn) {
-		this.attributeFqn = attributeFqn;
+	public void setAttributeFQN(String attributeFQN) {
+		this.attributeFQN = attributeFQN;
 	}
 
 	protected  Boolean isHidden;
@@ -53,6 +53,16 @@ public class ProductProperty implements Serializable
 
 	public void setIsMultiValue(Boolean isMultiValue) {
 		this.isMultiValue = isMultiValue;
+	}
+
+	protected  String propertyType;
+
+	public String getPropertyType() {
+		return this.propertyType;
+	}
+
+	public void setPropertyType(String propertyType) {
+		this.propertyType = propertyType;
 	}
 
 	protected  AttributeDetail attributeDetail;

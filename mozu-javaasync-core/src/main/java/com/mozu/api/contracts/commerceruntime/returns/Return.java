@@ -98,6 +98,16 @@ public class Return implements Serializable
 		this.id = id;
 	}
 
+	protected  Boolean isUnified;
+
+	public Boolean getIsUnified() {
+		return this.isUnified;
+	}
+
+	public void setIsUnified(Boolean isUnified) {
+		this.isUnified = isUnified;
+	}
+
 	protected  String locationCode;
 
 	public String getLocationCode() {

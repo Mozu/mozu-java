@@ -48,17 +48,14 @@ public class B2BUserAndAuthInfo implements Serializable
 		this.isImport = isImport;
 	}
 
-	/**
-	 * Individual user information for a login that can access a shared B2B account.
-	 */
-	protected  B2BUser b2bUser;
+	protected  B2BUser b2BUser;
 
-	public B2BUser getB2bUser() {
-		return this.b2bUser;
+	public B2BUser getB2BUser() {
+		return this.b2BUser;
 	}
 
-	public void setB2bUser(B2BUser b2bUser) {
-		this.b2bUser = b2bUser;
+	public void setB2BUser(B2BUser b2BUser) {
+		this.b2BUser = b2BUser;
 	}
 
 

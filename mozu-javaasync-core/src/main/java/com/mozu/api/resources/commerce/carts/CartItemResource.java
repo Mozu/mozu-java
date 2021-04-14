@@ -40,6 +40,152 @@ public class CartItemResource {
 	 * 
 	 * <p><pre><code>
 	 *	CartItem cartitem = new CartItem();
+	 *	CartItem cartItem = cartitem.getCartItemByCartId( cartId,  cartItemId);
+	 * </code></pre></p>
+	 * @param cartId 
+	 * @param cartItemId 
+	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 */
+	public com.mozu.api.contracts.commerceruntime.carts.CartItem getCartItemByCartId(String cartId, String cartItemId) throws Exception
+	{
+		return getCartItemByCartId( cartId,  cartItemId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CartItem cartitem = new CartItem();
+	 *	CountDownLatch latch = cartitem.getCartItemByCartId( cartId,  cartItemId, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param cartId 
+	 * @param cartItemId 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 */
+	public CountDownLatch getCartItemByCartIdAsync(String cartId, String cartItemId, AsyncCallback<com.mozu.api.contracts.commerceruntime.carts.CartItem> callback) throws Exception
+	{
+		return getCartItemByCartIdAsync( cartId,  cartItemId,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CartItem cartitem = new CartItem();
+	 *	CartItem cartItem = cartitem.getCartItemByCartId( cartId,  cartItemId,  responseFields);
+	 * </code></pre></p>
+	 * @param cartId 
+	 * @param cartItemId 
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 */
+	public com.mozu.api.contracts.commerceruntime.carts.CartItem getCartItemByCartId(String cartId, String cartItemId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartItem> client = com.mozu.api.clients.commerce.carts.CartItemClient.getCartItemByCartIdClient( cartId,  cartItemId,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CartItem cartitem = new CartItem();
+	 *	CountDownLatch latch = cartitem.getCartItemByCartId( cartId,  cartItemId,  responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param cartId 
+	 * @param cartItemId 
+	 * @param responseFields 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 */
+	public CountDownLatch getCartItemByCartIdAsync(String cartId, String cartItemId, String responseFields, AsyncCallback<com.mozu.api.contracts.commerceruntime.carts.CartItem> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartItem> client = com.mozu.api.clients.commerce.carts.CartItemClient.getCartItemByCartIdClient( cartId,  cartItemId,  responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CartItem cartitem = new CartItem();
+	 *	CartItemCollection cartItemCollection = cartitem.getCartItemsByCartId( cartId);
+	 * </code></pre></p>
+	 * @param cartId 
+	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItemCollection
+	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItemCollection
+	 */
+	public com.mozu.api.contracts.commerceruntime.carts.CartItemCollection getCartItemsByCartId(String cartId) throws Exception
+	{
+		return getCartItemsByCartId( cartId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CartItem cartitem = new CartItem();
+	 *	CountDownLatch latch = cartitem.getCartItemsByCartId( cartId, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param cartId 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItemCollection
+	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItemCollection
+	 */
+	public CountDownLatch getCartItemsByCartIdAsync(String cartId, AsyncCallback<com.mozu.api.contracts.commerceruntime.carts.CartItemCollection> callback) throws Exception
+	{
+		return getCartItemsByCartIdAsync( cartId,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CartItem cartitem = new CartItem();
+	 *	CartItemCollection cartItemCollection = cartitem.getCartItemsByCartId( cartId,  responseFields);
+	 * </code></pre></p>
+	 * @param cartId 
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItemCollection
+	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItemCollection
+	 */
+	public com.mozu.api.contracts.commerceruntime.carts.CartItemCollection getCartItemsByCartId(String cartId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartItemCollection> client = com.mozu.api.clients.commerce.carts.CartItemClient.getCartItemsByCartIdClient( cartId,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CartItem cartitem = new CartItem();
+	 *	CountDownLatch latch = cartitem.getCartItemsByCartId( cartId,  responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param cartId 
+	 * @param responseFields 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItemCollection
+	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItemCollection
+	 */
+	public CountDownLatch getCartItemsByCartIdAsync(String cartId, String responseFields, AsyncCallback<com.mozu.api.contracts.commerceruntime.carts.CartItemCollection> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartItemCollection> client = com.mozu.api.clients.commerce.carts.CartItemClient.getCartItemsByCartIdClient( cartId,  responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CartItem cartitem = new CartItem();
 	 *	CartItem cartItem = cartitem.getCartItem( cartItemId);
 	 * </code></pre></p>
 	 * @param cartItemId Identifier of the cart item to delete.
@@ -169,6 +315,164 @@ public class CartItemResource {
 	public CountDownLatch getCartItemsAsync(String responseFields, AsyncCallback<com.mozu.api.contracts.commerceruntime.carts.CartItemCollection> callback) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartItemCollection> client = com.mozu.api.clients.commerce.carts.CartItemClient.getCartItemsClient( responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CartItem cartitem = new CartItem();
+	 *	Stream stream = cartitem.addItemsToCartByCartId( cartItems,  cartId);
+	 * </code></pre></p>
+	 * @param cartId 
+	 * @param cartItems 
+	 * @return Stream
+	 * @see Stream
+	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 */
+	public java.io.InputStream addItemsToCartByCartId(List<com.mozu.api.contracts.commerceruntime.carts.CartItem> cartItems, String cartId) throws Exception
+	{
+		return addItemsToCartByCartId( cartItems,  cartId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CartItem cartitem = new CartItem();
+	 *	CountDownLatch latch = cartitem.addItemsToCartByCartId( cartItems,  cartId, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param cartId 
+	 * @param  callback callback handler for asynchronous operations
+	 * @param cartItems 
+	 * @return Stream
+	 * @see Stream
+	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 */
+	public CountDownLatch addItemsToCartByCartIdAsync(List<com.mozu.api.contracts.commerceruntime.carts.CartItem> cartItems, String cartId, AsyncCallback<java.io.InputStream> callback) throws Exception
+	{
+		return addItemsToCartByCartIdAsync( cartItems,  cartId,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CartItem cartitem = new CartItem();
+	 *	Stream stream = cartitem.addItemsToCartByCartId( cartItems,  cartId,  throwErrorOnInvalidItems);
+	 * </code></pre></p>
+	 * @param cartId 
+	 * @param throwErrorOnInvalidItems 
+	 * @param cartItems 
+	 * @return Stream
+	 * @see Stream
+	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 */
+	public java.io.InputStream addItemsToCartByCartId(List<com.mozu.api.contracts.commerceruntime.carts.CartItem> cartItems, String cartId, Boolean throwErrorOnInvalidItems) throws Exception
+	{
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.carts.CartItemClient.addItemsToCartByCartIdClient( cartItems,  cartId,  throwErrorOnInvalidItems);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CartItem cartitem = new CartItem();
+	 *	CountDownLatch latch = cartitem.addItemsToCartByCartId( cartItems,  cartId,  throwErrorOnInvalidItems, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param cartId 
+	 * @param throwErrorOnInvalidItems 
+	 * @param  callback callback handler for asynchronous operations
+	 * @param cartItems 
+	 * @return Stream
+	 * @see Stream
+	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 */
+	public CountDownLatch addItemsToCartByCartIdAsync(List<com.mozu.api.contracts.commerceruntime.carts.CartItem> cartItems, String cartId, Boolean throwErrorOnInvalidItems, AsyncCallback<java.io.InputStream> callback) throws Exception
+	{
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.carts.CartItemClient.addItemsToCartByCartIdClient( cartItems,  cartId,  throwErrorOnInvalidItems);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CartItem cartitem = new CartItem();
+	 *	CartItem cartItem = cartitem.addItemToCartByCartId( cartItem,  cartId);
+	 * </code></pre></p>
+	 * @param cartId 
+	 * @param cartItem 
+	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 */
+	public com.mozu.api.contracts.commerceruntime.carts.CartItem addItemToCartByCartId(com.mozu.api.contracts.commerceruntime.carts.CartItem cartItem, String cartId) throws Exception
+	{
+		return addItemToCartByCartId( cartItem,  cartId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CartItem cartitem = new CartItem();
+	 *	CountDownLatch latch = cartitem.addItemToCartByCartId( cartItem,  cartId, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param cartId 
+	 * @param  callback callback handler for asynchronous operations
+	 * @param cartItem 
+	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 */
+	public CountDownLatch addItemToCartByCartIdAsync(com.mozu.api.contracts.commerceruntime.carts.CartItem cartItem, String cartId, AsyncCallback<com.mozu.api.contracts.commerceruntime.carts.CartItem> callback) throws Exception
+	{
+		return addItemToCartByCartIdAsync( cartItem,  cartId,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CartItem cartitem = new CartItem();
+	 *	CartItem cartItem = cartitem.addItemToCartByCartId( cartItem,  cartId,  responseFields);
+	 * </code></pre></p>
+	 * @param cartId 
+	 * @param responseFields 
+	 * @param cartItem 
+	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 */
+	public com.mozu.api.contracts.commerceruntime.carts.CartItem addItemToCartByCartId(com.mozu.api.contracts.commerceruntime.carts.CartItem cartItem, String cartId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartItem> client = com.mozu.api.clients.commerce.carts.CartItemClient.addItemToCartByCartIdClient( cartItem,  cartId,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CartItem cartitem = new CartItem();
+	 *	CountDownLatch latch = cartitem.addItemToCartByCartId( cartItem,  cartId,  responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param cartId 
+	 * @param responseFields 
+	 * @param  callback callback handler for asynchronous operations
+	 * @param cartItem 
+	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 */
+	public CountDownLatch addItemToCartByCartIdAsync(com.mozu.api.contracts.commerceruntime.carts.CartItem cartItem, String cartId, String responseFields, AsyncCallback<com.mozu.api.contracts.commerceruntime.carts.CartItem> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartItem> client = com.mozu.api.clients.commerce.carts.CartItemClient.addItemToCartByCartIdClient( cartItem,  cartId,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 
@@ -328,6 +632,168 @@ public class CartItemResource {
 	 * 
 	 * <p><pre><code>
 	 *	CartItem cartitem = new CartItem();
+	 *	CartItem cartItem = cartitem.updateCartItemQuantityByCartId( cartId,  cartItemId,  quantity);
+	 * </code></pre></p>
+	 * @param cartId 
+	 * @param cartItemId 
+	 * @param quantity 
+	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 */
+	public com.mozu.api.contracts.commerceruntime.carts.CartItem updateCartItemQuantityByCartId(String cartId, String cartItemId, Integer quantity) throws Exception
+	{
+		return updateCartItemQuantityByCartId( cartId,  cartItemId,  quantity,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CartItem cartitem = new CartItem();
+	 *	CountDownLatch latch = cartitem.updateCartItemQuantityByCartId( cartId,  cartItemId,  quantity, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param cartId 
+	 * @param cartItemId 
+	 * @param quantity 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 */
+	public CountDownLatch updateCartItemQuantityByCartIdAsync(String cartId, String cartItemId, Integer quantity, AsyncCallback<com.mozu.api.contracts.commerceruntime.carts.CartItem> callback) throws Exception
+	{
+		return updateCartItemQuantityByCartIdAsync( cartId,  cartItemId,  quantity,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CartItem cartitem = new CartItem();
+	 *	CartItem cartItem = cartitem.updateCartItemQuantityByCartId( cartId,  cartItemId,  quantity,  responseFields);
+	 * </code></pre></p>
+	 * @param cartId 
+	 * @param cartItemId 
+	 * @param quantity 
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 */
+	public com.mozu.api.contracts.commerceruntime.carts.CartItem updateCartItemQuantityByCartId(String cartId, String cartItemId, Integer quantity, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartItem> client = com.mozu.api.clients.commerce.carts.CartItemClient.updateCartItemQuantityByCartIdClient( cartId,  cartItemId,  quantity,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CartItem cartitem = new CartItem();
+	 *	CountDownLatch latch = cartitem.updateCartItemQuantityByCartId( cartId,  cartItemId,  quantity,  responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param cartId 
+	 * @param cartItemId 
+	 * @param quantity 
+	 * @param responseFields 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 */
+	public CountDownLatch updateCartItemQuantityByCartIdAsync(String cartId, String cartItemId, Integer quantity, String responseFields, AsyncCallback<com.mozu.api.contracts.commerceruntime.carts.CartItem> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartItem> client = com.mozu.api.clients.commerce.carts.CartItemClient.updateCartItemQuantityByCartIdClient( cartId,  cartItemId,  quantity,  responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CartItem cartitem = new CartItem();
+	 *	CartItem cartItem = cartitem.updateCartItemByCartId( cartItem,  cartId,  cartItemId);
+	 * </code></pre></p>
+	 * @param cartId 
+	 * @param cartItemId 
+	 * @param cartItem 
+	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 */
+	public com.mozu.api.contracts.commerceruntime.carts.CartItem updateCartItemByCartId(com.mozu.api.contracts.commerceruntime.carts.CartItem cartItem, String cartId, String cartItemId) throws Exception
+	{
+		return updateCartItemByCartId( cartItem,  cartId,  cartItemId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CartItem cartitem = new CartItem();
+	 *	CountDownLatch latch = cartitem.updateCartItemByCartId( cartItem,  cartId,  cartItemId, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param cartId 
+	 * @param cartItemId 
+	 * @param  callback callback handler for asynchronous operations
+	 * @param cartItem 
+	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 */
+	public CountDownLatch updateCartItemByCartIdAsync(com.mozu.api.contracts.commerceruntime.carts.CartItem cartItem, String cartId, String cartItemId, AsyncCallback<com.mozu.api.contracts.commerceruntime.carts.CartItem> callback) throws Exception
+	{
+		return updateCartItemByCartIdAsync( cartItem,  cartId,  cartItemId,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CartItem cartitem = new CartItem();
+	 *	CartItem cartItem = cartitem.updateCartItemByCartId( cartItem,  cartId,  cartItemId,  responseFields);
+	 * </code></pre></p>
+	 * @param cartId 
+	 * @param cartItemId 
+	 * @param responseFields 
+	 * @param cartItem 
+	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 */
+	public com.mozu.api.contracts.commerceruntime.carts.CartItem updateCartItemByCartId(com.mozu.api.contracts.commerceruntime.carts.CartItem cartItem, String cartId, String cartItemId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartItem> client = com.mozu.api.clients.commerce.carts.CartItemClient.updateCartItemByCartIdClient( cartItem,  cartId,  cartItemId,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CartItem cartitem = new CartItem();
+	 *	CountDownLatch latch = cartitem.updateCartItemByCartId( cartItem,  cartId,  cartItemId,  responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param cartId 
+	 * @param cartItemId 
+	 * @param responseFields 
+	 * @param  callback callback handler for asynchronous operations
+	 * @param cartItem 
+	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
+	 */
+	public CountDownLatch updateCartItemByCartIdAsync(com.mozu.api.contracts.commerceruntime.carts.CartItem cartItem, String cartId, String cartItemId, String responseFields, AsyncCallback<com.mozu.api.contracts.commerceruntime.carts.CartItem> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartItem> client = com.mozu.api.clients.commerce.carts.CartItemClient.updateCartItemByCartIdClient( cartItem,  cartId,  cartItemId,  responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CartItem cartitem = new CartItem();
 	 *	CartItem cartItem = cartitem.updateCartItemQuantity( cartItemId,  quantity);
 	 * </code></pre></p>
 	 * @param cartItemId Identifier of the cart item to delete.
@@ -473,6 +939,84 @@ public class CartItemResource {
 	public CountDownLatch updateCartItemAsync(com.mozu.api.contracts.commerceruntime.carts.CartItem cartItem, String cartItemId, String responseFields, AsyncCallback<com.mozu.api.contracts.commerceruntime.carts.CartItem> callback) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartItem> client = com.mozu.api.clients.commerce.carts.CartItemClient.updateCartItemClient( cartItem,  cartItemId,  responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CartItem cartitem = new CartItem();
+	 *	Cart cart = cartitem.removeAllCartItemsByCartId( cartId);
+	 * </code></pre></p>
+	 * @param cartId 
+	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
+	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
+	 */
+	public com.mozu.api.contracts.commerceruntime.carts.Cart removeAllCartItemsByCartId(String cartId) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> client = com.mozu.api.clients.commerce.carts.CartItemClient.removeAllCartItemsByCartIdClient( cartId);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CartItem cartitem = new CartItem();
+	 *	CountDownLatch latch = cartitem.removeAllCartItemsByCartId( cartId, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param cartId 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
+	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
+	 */
+	public CountDownLatch removeAllCartItemsByCartIdAsync(String cartId, AsyncCallback<com.mozu.api.contracts.commerceruntime.carts.Cart> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> client = com.mozu.api.clients.commerce.carts.CartItemClient.removeAllCartItemsByCartIdClient( cartId);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CartItem cartitem = new CartItem();
+	 *	Stream stream = cartitem.deleteCartItemByCartId( cartId,  cartItemId);
+	 * </code></pre></p>
+	 * @param cartId 
+	 * @param cartItemId 
+	 * @return Stream
+	 * @see Stream
+	 */
+	public java.io.InputStream deleteCartItemByCartId(String cartId, String cartItemId) throws Exception
+	{
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.carts.CartItemClient.deleteCartItemByCartIdClient( cartId,  cartItemId);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CartItem cartitem = new CartItem();
+	 *	CountDownLatch latch = cartitem.deleteCartItemByCartId( cartId,  cartItemId, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param cartId 
+	 * @param cartItemId 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return Stream
+	 * @see Stream
+	 */
+	public CountDownLatch deleteCartItemByCartIdAsync(String cartId, String cartItemId, AsyncCallback<java.io.InputStream> callback) throws Exception
+	{
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.carts.CartItemClient.deleteCartItemByCartIdClient( cartId,  cartItemId);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 

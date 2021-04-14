@@ -74,23 +74,60 @@ public class FacetResource {
 	 * 
 	 * <p><pre><code>
 	 *	Facet facet = new Facet();
-	 *	FacetSet facetSet = facet.getFacetCategoryList( categoryId);
+	 *	FacetSet facetSet = facet.getFacetCategoryListLegacy( categoryId);
 	 * </code></pre></p>
-	 * @param categoryId Unique identifier of the category to modify.
+	 * @param categoryId 
 	 * @return com.mozu.api.contracts.productadmin.FacetSet
 	 * @see com.mozu.api.contracts.productadmin.FacetSet
 	 */
-	public com.mozu.api.contracts.productadmin.FacetSet getFacetCategoryList(Integer categoryId) throws Exception
+	public com.mozu.api.contracts.productadmin.FacetSet getFacetCategoryListLegacy(Integer categoryId) throws Exception
 	{
-		return getFacetCategoryList( categoryId,  null,  null,  null);
+		return getFacetCategoryListLegacy( categoryId,  null,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	Facet facet = new Facet();
-	 *	FacetSet facetSet = facet.getFacetCategoryList( categoryId,  includeAvailable,  validate,  responseFields);
+	 *	FacetSet facetSet = facet.getFacetCategoryListLegacy( categoryId,  includeAvailable,  validate,  responseFields);
 	 * </code></pre></p>
+	 * @param categoryId 
+	 * @param includeAvailable 
+	 * @param responseFields 
+	 * @param validate 
+	 * @return com.mozu.api.contracts.productadmin.FacetSet
+	 * @see com.mozu.api.contracts.productadmin.FacetSet
+	 */
+	public com.mozu.api.contracts.productadmin.FacetSet getFacetCategoryListLegacy(Integer categoryId, Boolean includeAvailable, Boolean validate, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.FacetSet> client = com.mozu.api.clients.commerce.catalog.admin.FacetClient.getFacetCategoryListLegacyClient( categoryId,  includeAvailable,  validate,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Facet facet = new Facet();
+	 *	FacetSet facetSet = facet.getFacetCategoryList();
+	 * </code></pre></p>
+	 * @return com.mozu.api.contracts.productadmin.FacetSet
+	 * @see com.mozu.api.contracts.productadmin.FacetSet
+	 */
+	public com.mozu.api.contracts.productadmin.FacetSet getFacetCategoryList() throws Exception
+	{
+		return getFacetCategoryList( null,  null,  null,  null,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Facet facet = new Facet();
+	 *	FacetSet facetSet = facet.getFacetCategoryList( categoryId,  categoryCode,  includeAvailable,  validate,  responseFields);
+	 * </code></pre></p>
+	 * @param categoryCode 
 	 * @param categoryId Unique identifier of the category to modify.
 	 * @param includeAvailable If true, returns a list of the attributes and categories associated with a product type that have not been defined as a facet for the category.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
@@ -98,9 +135,9 @@ public class FacetResource {
 	 * @return com.mozu.api.contracts.productadmin.FacetSet
 	 * @see com.mozu.api.contracts.productadmin.FacetSet
 	 */
-	public com.mozu.api.contracts.productadmin.FacetSet getFacetCategoryList(Integer categoryId, Boolean includeAvailable, Boolean validate, String responseFields) throws Exception
+	public com.mozu.api.contracts.productadmin.FacetSet getFacetCategoryList(Integer categoryId, String categoryCode, Boolean includeAvailable, Boolean validate, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.FacetSet> client = com.mozu.api.clients.commerce.catalog.admin.FacetClient.getFacetCategoryListClient( categoryId,  includeAvailable,  validate,  responseFields);
+		MozuClient<com.mozu.api.contracts.productadmin.FacetSet> client = com.mozu.api.clients.commerce.catalog.admin.FacetClient.getFacetCategoryListClient( categoryId,  categoryCode,  includeAvailable,  validate,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

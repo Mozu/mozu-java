@@ -18,6 +18,8 @@ import com.mozu.api.contracts.sitesettings.general.CacheSettings;
 import com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings;
 import com.mozu.api.contracts.sitesettings.general.EmailTransactionSettings;
 import com.mozu.api.contracts.sitesettings.general.EmailTypeSetting;
+import com.mozu.api.contracts.sitesettings.general.SMSTypeSetting;
+import com.mozu.api.contracts.sitesettings.general.SMSTransactionSettings;
 import com.mozu.api.contracts.sitesettings.general.TaxableTerritory;
 import com.mozu.api.contracts.sitesettings.general.general.ViewAuthorizations;
 
@@ -358,6 +360,14 @@ public class GeneralSettings implements Serializable
 		this.emailTypes = emailTypes;
 	}
 
+	protected List<SMSTypeSetting> smsTypes;
+	public List<SMSTypeSetting> getSmsTypes() {
+		return this.smsTypes;
+	}
+	public void setSmsTypes(List<SMSTypeSetting> smsTypes) {
+		this.smsTypes = smsTypes;
+	}
+
 	/**
 	 * Supressed emails. Setting any of these to 'true' will block  from sending that email and an event will be published instead.
 	 */
@@ -369,6 +379,16 @@ public class GeneralSettings implements Serializable
 
 	public void setSupressedEmailTransactions(EmailTransactionSettings supressedEmailTransactions) {
 		this.supressedEmailTransactions = supressedEmailTransactions;
+	}
+
+	protected  SMSTransactionSettings supressedSmsTransactions;
+
+	public SMSTransactionSettings getSupressedSmsTransactions() {
+		return this.supressedSmsTransactions;
+	}
+
+	public void setSupressedSmsTransactions(SMSTransactionSettings supressedSmsTransactions) {
+		this.supressedSmsTransactions = supressedSmsTransactions;
 	}
 
 	protected List<TaxableTerritory> taxableTerritories;

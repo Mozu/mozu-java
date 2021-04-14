@@ -23,6 +23,81 @@ import com.mozu.api.resources.commerce.catalog.admin.SearchResource;
 public class SearchFactory
 {
 
+	public static com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection getAllSynonymDefinitionCollectionsForMasterCatalog(ApiContext apiContext, String languageCode, int expectedCode) throws Exception
+	{
+		return getAllSynonymDefinitionCollectionsForMasterCatalog(apiContext,  languageCode,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection getAllSynonymDefinitionCollectionsForMasterCatalog(ApiContext apiContext, String languageCode, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection returnObj = new com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection();
+		SearchResource resource = new SearchResource(apiContext);
+		try
+		{
+			returnObj = resource.getAllSynonymDefinitionCollectionsForMasterCatalog( languageCode,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
+	public static com.mozu.api.contracts.productadmin.SearchRedirect getSearchRedirect(ApiContext apiContext, String redirectId, int expectedCode) throws Exception
+	{
+		return getSearchRedirect(apiContext,  redirectId,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.productadmin.SearchRedirect getSearchRedirect(ApiContext apiContext, String redirectId, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.productadmin.SearchRedirect returnObj = new com.mozu.api.contracts.productadmin.SearchRedirect();
+		SearchResource resource = new SearchResource(apiContext);
+		try
+		{
+			returnObj = resource.getSearchRedirect( redirectId,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
+	public static com.mozu.api.contracts.productadmin.SearchRedirectCollection getSearchRedirects(ApiContext apiContext, int expectedCode) throws Exception
+	{
+		return getSearchRedirects(apiContext,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.productadmin.SearchRedirectCollection getSearchRedirects(ApiContext apiContext, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.productadmin.SearchRedirectCollection returnObj = new com.mozu.api.contracts.productadmin.SearchRedirectCollection();
+		SearchResource resource = new SearchResource(apiContext);
+		try
+		{
+			returnObj = resource.getSearchRedirects( responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
 	public static com.mozu.api.contracts.productadmin.search.SearchTuningRule getSearchTuningRule(ApiContext apiContext, String searchTuningRuleCode, int expectedCode) throws Exception
 	{
 		return getSearchTuningRule(apiContext,  searchTuningRuleCode,  null, expectedCode);
@@ -98,31 +173,6 @@ public class SearchFactory
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.productadmin.SearchSettings getSettings(ApiContext apiContext, int expectedCode) throws Exception
-	{
-		return getSettings(apiContext,  null, expectedCode);
-	}
-
-	public static com.mozu.api.contracts.productadmin.SearchSettings getSettings(ApiContext apiContext, String responseFields, int expectedCode) throws Exception
-	{
-		com.mozu.api.contracts.productadmin.SearchSettings returnObj = new com.mozu.api.contracts.productadmin.SearchSettings();
-		SearchResource resource = new SearchResource(apiContext);
-		try
-		{
-			returnObj = resource.getSettings( responseFields);
-		}
-		catch (ApiException e)
-		{
-			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
-			else
-				return null;
-		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
-			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
-		return returnObj;
-	}
-
 	public static com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection getSynonymDefinitionCollection(ApiContext apiContext, String localeCode, int expectedCode) throws Exception
 	{
 		return getSynonymDefinitionCollection(apiContext,  localeCode,  null, expectedCode);
@@ -185,6 +235,31 @@ public class SearchFactory
 		try
 		{
 			returnObj = resource.getSynonymDefinition( synonymId,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
+	public static com.mozu.api.contracts.productadmin.SearchRedirect addSearchRedirect(ApiContext apiContext, com.mozu.api.contracts.productadmin.SearchRedirect searchRedirect, int expectedCode) throws Exception
+	{
+		return addSearchRedirect(apiContext,  searchRedirect,  null,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.productadmin.SearchRedirect addSearchRedirect(ApiContext apiContext, com.mozu.api.contracts.productadmin.SearchRedirect searchRedirect, Boolean fromSystemDefault, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.productadmin.SearchRedirect returnObj = new com.mozu.api.contracts.productadmin.SearchRedirect();
+		SearchResource resource = new SearchResource(apiContext);
+		try
+		{
+			returnObj = resource.addSearchRedirect( searchRedirect,  fromSystemDefault,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -298,6 +373,31 @@ public class SearchFactory
 		return returnObj;
 	}
 
+	public static com.mozu.api.contracts.productadmin.SearchRedirect updateSearchRedirect(ApiContext apiContext, com.mozu.api.contracts.productadmin.SearchRedirect searchRedirect, String redirectId, int expectedCode) throws Exception
+	{
+		return updateSearchRedirect(apiContext,  searchRedirect,  redirectId,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.productadmin.SearchRedirect updateSearchRedirect(ApiContext apiContext, com.mozu.api.contracts.productadmin.SearchRedirect searchRedirect, String redirectId, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.productadmin.SearchRedirect returnObj = new com.mozu.api.contracts.productadmin.SearchRedirect();
+		SearchResource resource = new SearchResource(apiContext);
+		try
+		{
+			returnObj = resource.updateSearchRedirect( searchRedirect,  redirectId,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
 	public static com.mozu.api.contracts.productadmin.search.SearchTuningRule updateSearchTuningRule(ApiContext apiContext, com.mozu.api.contracts.productadmin.search.SearchTuningRule searchTuningRuleIn, String searchTuningRuleCode, int expectedCode) throws Exception
 	{
 		return updateSearchTuningRule(apiContext,  searchTuningRuleIn,  searchTuningRuleCode,  null, expectedCode);
@@ -323,18 +423,18 @@ public class SearchFactory
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.productadmin.SearchSettings updateSettings(ApiContext apiContext, com.mozu.api.contracts.productadmin.SearchSettings settings, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.search.SynonymDefinition updateSynonymDefinition(ApiContext apiContext, com.mozu.api.contracts.productadmin.search.SynonymDefinition synonymDefinition, Integer synonymId, int expectedCode) throws Exception
 	{
-		return updateSettings(apiContext,  settings,  null, expectedCode);
+		return updateSynonymDefinition(apiContext,  synonymDefinition,  synonymId,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.productadmin.SearchSettings updateSettings(ApiContext apiContext, com.mozu.api.contracts.productadmin.SearchSettings settings, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.search.SynonymDefinition updateSynonymDefinition(ApiContext apiContext, com.mozu.api.contracts.productadmin.search.SynonymDefinition synonymDefinition, Integer synonymId, String responseFields, int expectedCode) throws Exception
 	{
-		com.mozu.api.contracts.productadmin.SearchSettings returnObj = new com.mozu.api.contracts.productadmin.SearchSettings();
+		com.mozu.api.contracts.productadmin.search.SynonymDefinition returnObj = new com.mozu.api.contracts.productadmin.search.SynonymDefinition();
 		SearchResource resource = new SearchResource(apiContext);
 		try
 		{
-			returnObj = resource.updateSettings( settings,  responseFields);
+			returnObj = resource.updateSynonymDefinition( synonymDefinition,  synonymId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -348,18 +448,13 @@ public class SearchFactory
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.productadmin.search.SynonymDefinition updateSynonymDefinition(ApiContext apiContext, com.mozu.api.contracts.productadmin.search.SynonymDefinition synonymDefinition, Integer synonymId, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.SearchRedirect deleteSearchRedirect(ApiContext apiContext, String redirectId, int expectedCode) throws Exception
 	{
-		return updateSynonymDefinition(apiContext,  synonymDefinition,  synonymId,  null, expectedCode);
-	}
-
-	public static com.mozu.api.contracts.productadmin.search.SynonymDefinition updateSynonymDefinition(ApiContext apiContext, com.mozu.api.contracts.productadmin.search.SynonymDefinition synonymDefinition, Integer synonymId, String responseFields, int expectedCode) throws Exception
-	{
-		com.mozu.api.contracts.productadmin.search.SynonymDefinition returnObj = new com.mozu.api.contracts.productadmin.search.SynonymDefinition();
+		com.mozu.api.contracts.productadmin.SearchRedirect returnObj = new com.mozu.api.contracts.productadmin.SearchRedirect();
 		SearchResource resource = new SearchResource(apiContext);
 		try
 		{
-			returnObj = resource.updateSynonymDefinition( synonymDefinition,  synonymId,  responseFields);
+			returnObj = resource.deleteSearchRedirect( redirectId);
 		}
 		catch (ApiException e)
 		{

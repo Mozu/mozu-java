@@ -44,6 +44,162 @@ public TenantAdminUserAuthTicketResource(ApiContext apiContext)
 	 * 
 	 * <p><pre><code>
 	 *	TenantAdminUserAuthTicket tenantadminuserauthticket = new TenantAdminUserAuthTicket();
+	 *	string string = tenantadminuserauthticket.getWsFedChallengeUrl( id,  scopeType,  redirect);
+	 * </code></pre></p>
+	 * @param id 
+	 * @param redirect 
+	 * @param scopeType 
+	 * @return string
+	 * @see string
+	 */
+	public String getWsFedChallengeUrl(String id, String scopeType, String redirect) throws Exception
+	{
+		return getWsFedChallengeUrl( id,  null,  scopeType,  redirect,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	TenantAdminUserAuthTicket tenantadminuserauthticket = new TenantAdminUserAuthTicket();
+	 *	CountDownLatch latch = tenantadminuserauthticket.getWsFedChallengeUrl( id,  scopeType,  redirect, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param id 
+	 * @param redirect 
+	 * @param scopeType 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return string
+	 * @see string
+	 */
+	public CountDownLatch getWsFedChallengeUrlAsync(String id, String scopeType, String redirect, AsyncCallback<String> callback) throws Exception
+	{
+		return getWsFedChallengeUrlAsync( id,  null,  scopeType,  redirect,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	TenantAdminUserAuthTicket tenantadminuserauthticket = new TenantAdminUserAuthTicket();
+	 *	string string = tenantadminuserauthticket.getWsFedChallengeUrl( id,  scopeid,  scopeType,  redirect,  responseFields);
+	 * </code></pre></p>
+	 * @param id 
+	 * @param redirect 
+	 * @param responseFields 
+	 * @param scopeid 
+	 * @param scopeType 
+	 * @return string
+	 * @see string
+	 */
+	public String getWsFedChallengeUrl(String id, Integer scopeid, String scopeType, String redirect, String responseFields) throws Exception
+	{
+		MozuClient<String> client = com.mozu.api.clients.platform.adminuser.TenantAdminUserAuthTicketClient.getWsFedChallengeUrlClient( id,  scopeid,  scopeType,  redirect,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	TenantAdminUserAuthTicket tenantadminuserauthticket = new TenantAdminUserAuthTicket();
+	 *	CountDownLatch latch = tenantadminuserauthticket.getWsFedChallengeUrl( id,  scopeid,  scopeType,  redirect,  responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param id 
+	 * @param redirect 
+	 * @param responseFields 
+	 * @param scopeid 
+	 * @param scopeType 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return string
+	 * @see string
+	 */
+	public CountDownLatch getWsFedChallengeUrlAsync(String id, Integer scopeid, String scopeType, String redirect, String responseFields, AsyncCallback<String> callback) throws Exception
+	{
+		MozuClient<String> client = com.mozu.api.clients.platform.adminuser.TenantAdminUserAuthTicketClient.getWsFedChallengeUrlClient( id,  scopeid,  scopeType,  redirect,  responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	TenantAdminUserAuthTicket tenantadminuserauthticket = new TenantAdminUserAuthTicket();
+	 *	string string = tenantadminuserauthticket.getWsFedSignOutUrl( id,  redirect);
+	 * </code></pre></p>
+	 * @param id 
+	 * @param redirect 
+	 * @return string
+	 * @see string
+	 */
+	public String getWsFedSignOutUrl(String id, String redirect) throws Exception
+	{
+		return getWsFedSignOutUrl( id,  redirect,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	TenantAdminUserAuthTicket tenantadminuserauthticket = new TenantAdminUserAuthTicket();
+	 *	CountDownLatch latch = tenantadminuserauthticket.getWsFedSignOutUrl( id,  redirect, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param id 
+	 * @param redirect 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return string
+	 * @see string
+	 */
+	public CountDownLatch getWsFedSignOutUrlAsync(String id, String redirect, AsyncCallback<String> callback) throws Exception
+	{
+		return getWsFedSignOutUrlAsync( id,  redirect,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	TenantAdminUserAuthTicket tenantadminuserauthticket = new TenantAdminUserAuthTicket();
+	 *	string string = tenantadminuserauthticket.getWsFedSignOutUrl( id,  redirect,  responseFields);
+	 * </code></pre></p>
+	 * @param id 
+	 * @param redirect 
+	 * @param responseFields 
+	 * @return string
+	 * @see string
+	 */
+	public String getWsFedSignOutUrl(String id, String redirect, String responseFields) throws Exception
+	{
+		MozuClient<String> client = com.mozu.api.clients.platform.adminuser.TenantAdminUserAuthTicketClient.getWsFedSignOutUrlClient( id,  redirect,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	TenantAdminUserAuthTicket tenantadminuserauthticket = new TenantAdminUserAuthTicket();
+	 *	CountDownLatch latch = tenantadminuserauthticket.getWsFedSignOutUrl( id,  redirect,  responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param id 
+	 * @param redirect 
+	 * @param responseFields 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return string
+	 * @see string
+	 */
+	public CountDownLatch getWsFedSignOutUrlAsync(String id, String redirect, String responseFields, AsyncCallback<String> callback) throws Exception
+	{
+		MozuClient<String> client = com.mozu.api.clients.platform.adminuser.TenantAdminUserAuthTicketClient.getWsFedSignOutUrlClient( id,  redirect,  responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	TenantAdminUserAuthTicket tenantadminuserauthticket = new TenantAdminUserAuthTicket();
 	 *	TenantAdminUserAuthTicket tenantAdminUserAuthTicket = tenantadminuserauthticket.createUserAuthTicket( userAuthInfo);
 	 * </code></pre></p>
 	 * @param userAuthInfo Information required to authenticate a user.
@@ -112,6 +268,83 @@ public TenantAdminUserAuthTicketResource(ApiContext apiContext)
 	public CountDownLatch createUserAuthTicketAsync(com.mozu.api.contracts.core.UserAuthInfo userAuthInfo, Integer tenantId, String responseFields, AsyncCallback<com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket> callback) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket> client = com.mozu.api.clients.platform.adminuser.TenantAdminUserAuthTicketClient.createUserAuthTicketClient( userAuthInfo,  tenantId,  responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	TenantAdminUserAuthTicket tenantadminuserauthticket = new TenantAdminUserAuthTicket();
+	 *	TenantAdminUserAuthTicket tenantAdminUserAuthTicket = tenantadminuserauthticket.createUserAuthTicketWithWsFed( id,  scopeType);
+	 * </code></pre></p>
+	 * @param id 
+	 * @param scopeType 
+	 * @return com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
+	 * @see com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
+	 */
+	public com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket createUserAuthTicketWithWsFed(String id, String scopeType) throws Exception
+	{
+		return createUserAuthTicketWithWsFed( id,  null,  scopeType,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	TenantAdminUserAuthTicket tenantadminuserauthticket = new TenantAdminUserAuthTicket();
+	 *	CountDownLatch latch = tenantadminuserauthticket.createUserAuthTicketWithWsFed( id,  scopeType, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param id 
+	 * @param scopeType 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
+	 * @see com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
+	 */
+	public CountDownLatch createUserAuthTicketWithWsFedAsync(String id, String scopeType, AsyncCallback<com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket> callback) throws Exception
+	{
+		return createUserAuthTicketWithWsFedAsync( id,  null,  scopeType,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	TenantAdminUserAuthTicket tenantadminuserauthticket = new TenantAdminUserAuthTicket();
+	 *	TenantAdminUserAuthTicket tenantAdminUserAuthTicket = tenantadminuserauthticket.createUserAuthTicketWithWsFed( id,  scopeid,  scopeType,  responseFields);
+	 * </code></pre></p>
+	 * @param id 
+	 * @param responseFields 
+	 * @param scopeid 
+	 * @param scopeType 
+	 * @return com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
+	 * @see com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
+	 */
+	public com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket createUserAuthTicketWithWsFed(String id, Integer scopeid, String scopeType, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket> client = com.mozu.api.clients.platform.adminuser.TenantAdminUserAuthTicketClient.createUserAuthTicketWithWsFedClient( id,  scopeid,  scopeType,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	TenantAdminUserAuthTicket tenantadminuserauthticket = new TenantAdminUserAuthTicket();
+	 *	CountDownLatch latch = tenantadminuserauthticket.createUserAuthTicketWithWsFed( id,  scopeid,  scopeType,  responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param id 
+	 * @param responseFields 
+	 * @param scopeid 
+	 * @param scopeType 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
+	 * @see com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
+	 */
+	public CountDownLatch createUserAuthTicketWithWsFedAsync(String id, Integer scopeid, String scopeType, String responseFields, AsyncCallback<com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket> client = com.mozu.api.clients.platform.adminuser.TenantAdminUserAuthTicketClient.createUserAuthTicketWithWsFedClient( id,  scopeid,  scopeType,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 

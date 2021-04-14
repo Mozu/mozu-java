@@ -14,6 +14,18 @@ public class RefundUrl
 {
 
 	/**
+	 * Get Resource Url for GetRefundReasons
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getRefundReasonsUrl(String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/refunds/refundreasons?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for CreateRefund
 	 * @param orderId Unique identifier of the order.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.

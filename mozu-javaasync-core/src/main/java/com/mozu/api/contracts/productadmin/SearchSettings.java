@@ -6,14 +6,15 @@
  */
 package com.mozu.api.contracts.productadmin;
 
-import java.util.List;
-import java.util.HashMap;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
-import com.mozu.api.contracts.productadmin.search.SearchSynonymSettings;
+import com.mozu.api.contracts.core.AuditInfo;
+import com.mozu.api.contracts.productadmin.SuggestSettings;
+import com.mozu.api.contracts.productadmin.ListingSettings;
+import com.mozu.api.contracts.productadmin.ProductSuggestSettings;
 import com.mozu.api.contracts.productadmin.SiteSearchSettings;
 
 /**
@@ -25,27 +26,76 @@ public class SearchSettings implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Settings of keys and values for synonyms in search results.
-	 */
-	protected  SearchSynonymSettings searchSynonymSettings;
+	protected  Boolean isDefault;
 
-	public SearchSynonymSettings getSearchSynonymSettings() {
-		return this.searchSynonymSettings;
+	public Boolean getIsDefault() {
+		return this.isDefault;
 	}
 
-	public void setSearchSynonymSettings(SearchSynonymSettings searchSynonymSettings) {
-		this.searchSynonymSettings = searchSynonymSettings;
+	public void setIsDefault(Boolean isDefault) {
+		this.isDefault = isDefault;
+	}
+
+	protected  String settingsName;
+
+	public String getSettingsName() {
+		return this.settingsName;
+	}
+
+	public void setSettingsName(String settingsName) {
+		this.settingsName = settingsName;
+	}
+
+	protected  AuditInfo auditInfo;
+
+	public AuditInfo getAuditInfo() {
+		return this.auditInfo;
+	}
+
+	public void setAuditInfo(AuditInfo auditInfo) {
+		this.auditInfo = auditInfo;
+	}
+
+	protected  SuggestSettings categorySuggestSettings;
+
+	public SuggestSettings getCategorySuggestSettings() {
+		return this.categorySuggestSettings;
+	}
+
+	public void setCategorySuggestSettings(SuggestSettings categorySuggestSettings) {
+		this.categorySuggestSettings = categorySuggestSettings;
+	}
+
+	protected  ListingSettings listingSettings;
+
+	public ListingSettings getListingSettings() {
+		return this.listingSettings;
+	}
+
+	public void setListingSettings(ListingSettings listingSettings) {
+		this.listingSettings = listingSettings;
+	}
+
+	protected  ProductSuggestSettings productSuggestSettings;
+
+	public ProductSuggestSettings getProductSuggestSettings() {
+		return this.productSuggestSettings;
+	}
+
+	public void setProductSuggestSettings(ProductSuggestSettings productSuggestSettings) {
+		this.productSuggestSettings = productSuggestSettings;
 	}
 
 	/**
 	 * Settings for searches performed at the site level.
 	 */
-	protected List<SiteSearchSettings> siteSearchSettings;
-	public List<SiteSearchSettings> getSiteSearchSettings() {
+	protected  SiteSearchSettings siteSearchSettings;
+
+	public SiteSearchSettings getSiteSearchSettings() {
 		return this.siteSearchSettings;
 	}
-	public void setSiteSearchSettings(List<SiteSearchSettings> siteSearchSettings) {
+
+	public void setSiteSearchSettings(SiteSearchSettings siteSearchSettings) {
 		this.siteSearchSettings = siteSearchSettings;
 	}
 

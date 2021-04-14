@@ -73,6 +73,31 @@ public class LocationFactory
 		return returnObj;
 	}
 
+	public static com.mozu.api.contracts.location.Location getCurbsideLocation(ApiContext apiContext, int expectedCode) throws Exception
+	{
+		return getCurbsideLocation(apiContext,  null,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.location.Location getCurbsideLocation(ApiContext apiContext, Boolean includeAttributeDefinition, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.location.Location returnObj = new com.mozu.api.contracts.location.Location();
+		LocationResource resource = new LocationResource(apiContext);
+		try
+		{
+			returnObj = resource.getCurbsideLocation( includeAttributeDefinition,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
 	public static com.mozu.api.contracts.location.Location getDirectShipLocation(ApiContext apiContext, int expectedCode) throws Exception
 	{
 		return getDirectShipLocation(apiContext,  null,  null, expectedCode);

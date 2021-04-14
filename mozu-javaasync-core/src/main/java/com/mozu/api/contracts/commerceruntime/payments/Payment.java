@@ -16,6 +16,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.commerceruntime.payments.BillingInfo;
 import com.mozu.api.contracts.commerceruntime.commerce.ChangeMessage;
+import com.mozu.api.contracts.commerceruntime.payments.GatewayGiftCard;
 import com.mozu.api.contracts.commerceruntime.payments.PaymentActionTarget;
 import com.mozu.api.contracts.commerceruntime.payments.PaymentInteraction;
 import com.mozu.api.contracts.commerceruntime.payments.SubPayment;
@@ -198,6 +199,16 @@ public class Payment implements Serializable
 
 	public void setData(com.fasterxml.jackson.databind.JsonNode data) {
 		this.data = data;
+	}
+
+	protected  GatewayGiftCard gatewayGiftCard;
+
+	public GatewayGiftCard getGatewayGiftCard() {
+		return this.gatewayGiftCard;
+	}
+
+	public void setGatewayGiftCard(GatewayGiftCard gatewayGiftCard) {
+		this.gatewayGiftCard = gatewayGiftCard;
 	}
 
 	/**

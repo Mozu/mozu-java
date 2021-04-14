@@ -48,18 +48,18 @@ public class LocationGroupFactory
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.location.LocationGroup getLocationGroup(ApiContext apiContext, Integer groupId, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.location.LocationGroup getLocationGroup(ApiContext apiContext, String locationGroupCode, int expectedCode) throws Exception
 	{
-		return getLocationGroup(apiContext,  groupId,  null, expectedCode);
+		return getLocationGroup(apiContext,  locationGroupCode,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.location.LocationGroup getLocationGroup(ApiContext apiContext, Integer groupId, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.location.LocationGroup getLocationGroup(ApiContext apiContext, String locationGroupCode, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.location.LocationGroup returnObj = new com.mozu.api.contracts.location.LocationGroup();
 		LocationGroupResource resource = new LocationGroupResource(apiContext);
 		try
 		{
-			returnObj = resource.getLocationGroup( groupId,  responseFields);
+			returnObj = resource.getLocationGroup( locationGroupCode,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -98,18 +98,18 @@ public class LocationGroupFactory
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.location.LocationGroup updateLocationGroup(ApiContext apiContext, com.mozu.api.contracts.location.LocationGroup group, Integer groupId, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.location.LocationGroup updateLocationGroup(ApiContext apiContext, com.mozu.api.contracts.location.LocationGroup locationGroup, String locationGroupCode, int expectedCode) throws Exception
 	{
-		return updateLocationGroup(apiContext,  group,  groupId,  null, expectedCode);
+		return updateLocationGroup(apiContext,  locationGroup,  locationGroupCode,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.location.LocationGroup updateLocationGroup(ApiContext apiContext, com.mozu.api.contracts.location.LocationGroup group, Integer groupId, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.location.LocationGroup updateLocationGroup(ApiContext apiContext, com.mozu.api.contracts.location.LocationGroup locationGroup, String locationGroupCode, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.location.LocationGroup returnObj = new com.mozu.api.contracts.location.LocationGroup();
 		LocationGroupResource resource = new LocationGroupResource(apiContext);
 		try
 		{
-			returnObj = resource.updateLocationGroup( group,  groupId,  responseFields);
+			returnObj = resource.updateLocationGroup( locationGroup,  locationGroupCode,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -123,13 +123,13 @@ public class LocationGroupFactory
 		return returnObj;
 	}
 
-	public static java.io.InputStream deleteLocationGroup(ApiContext apiContext, Integer groupId, int expectedCode) throws Exception
+	public static java.io.InputStream deleteLocationGroup(ApiContext apiContext, String locationGroupCode, int expectedCode) throws Exception
 	{
 		java.io.InputStream returnObj;
 		LocationGroupResource resource = new LocationGroupResource(apiContext);
 		try
 		{
-			returnObj = resource.deleteLocationGroup( groupId);
+			returnObj = resource.deleteLocationGroup( locationGroupCode);
 		}
 		catch (ApiException e)
 		{

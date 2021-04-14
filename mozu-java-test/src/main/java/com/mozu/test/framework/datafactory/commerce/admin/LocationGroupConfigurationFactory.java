@@ -23,18 +23,18 @@ import com.mozu.api.resources.commerce.admin.LocationGroupConfigurationResource;
 public class LocationGroupConfigurationFactory
 {
 
-	public static com.mozu.api.contracts.location.LocationGroupConfiguration getLocationGroupConfiguration(ApiContext apiContext, Integer locationGroupId, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.location.LocationGroupConfiguration getLocationGroupConfiguration(ApiContext apiContext, String locationGroupCode, int expectedCode) throws Exception
 	{
-		return getLocationGroupConfiguration(apiContext,  locationGroupId,  null, expectedCode);
+		return getLocationGroupConfiguration(apiContext,  locationGroupCode,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.location.LocationGroupConfiguration getLocationGroupConfiguration(ApiContext apiContext, Integer locationGroupId, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.location.LocationGroupConfiguration getLocationGroupConfiguration(ApiContext apiContext, String locationGroupCode, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.location.LocationGroupConfiguration returnObj = new com.mozu.api.contracts.location.LocationGroupConfiguration();
 		LocationGroupConfigurationResource resource = new LocationGroupConfigurationResource(apiContext);
 		try
 		{
-			returnObj = resource.getLocationGroupConfiguration( locationGroupId,  responseFields);
+			returnObj = resource.getLocationGroupConfiguration( locationGroupCode,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -73,18 +73,18 @@ public class LocationGroupConfigurationFactory
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.location.LocationGroupConfiguration setLocationGroupConfiguration(ApiContext apiContext, com.mozu.api.contracts.location.LocationGroupConfiguration configuration, Integer locationGroupId, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.location.LocationGroupConfiguration setLocationGroupConfiguration(ApiContext apiContext, com.mozu.api.contracts.location.LocationGroupConfiguration configuration, String locationGroupCode, int expectedCode) throws Exception
 	{
-		return setLocationGroupConfiguration(apiContext,  configuration,  locationGroupId,  null, expectedCode);
+		return setLocationGroupConfiguration(apiContext,  configuration,  locationGroupCode,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.location.LocationGroupConfiguration setLocationGroupConfiguration(ApiContext apiContext, com.mozu.api.contracts.location.LocationGroupConfiguration configuration, Integer locationGroupId, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.location.LocationGroupConfiguration setLocationGroupConfiguration(ApiContext apiContext, com.mozu.api.contracts.location.LocationGroupConfiguration configuration, String locationGroupCode, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.location.LocationGroupConfiguration returnObj = new com.mozu.api.contracts.location.LocationGroupConfiguration();
 		LocationGroupConfigurationResource resource = new LocationGroupConfigurationResource(apiContext);
 		try
 		{
-			returnObj = resource.setLocationGroupConfiguration( configuration,  locationGroupId,  responseFields);
+			returnObj = resource.setLocationGroupConfiguration( configuration,  locationGroupCode,  responseFields);
 		}
 		catch (ApiException e)
 		{

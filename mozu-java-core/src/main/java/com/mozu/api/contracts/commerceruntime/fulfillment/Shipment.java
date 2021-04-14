@@ -582,6 +582,16 @@ public class Shipment implements Serializable
 		this.packages = packages;
 	}
 
+	protected transient com.fasterxml.jackson.databind.JsonNode pickupInfo;
+
+	public com.fasterxml.jackson.databind.JsonNode getPickupInfo() {
+		return this.pickupInfo;
+	}
+
+	public void setPickupInfo(com.fasterxml.jackson.databind.JsonNode pickupInfo) {
+		this.pickupInfo = pickupInfo;
+	}
+
 	protected  ShipmentStatusReason shipmentStatusReason;
 
 	public ShipmentStatusReason getShipmentStatusReason() {

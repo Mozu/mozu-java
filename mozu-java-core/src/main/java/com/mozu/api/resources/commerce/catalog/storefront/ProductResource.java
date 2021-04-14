@@ -53,18 +53,19 @@ public class ProductResource {
 	 */
 	public com.mozu.api.contracts.productruntime.ProductCollection getProducts() throws Exception
 	{
-		return getProducts( null,  null,  null,  null,  null,  null,  null,  null);
+		return getProducts( null,  null,  null,  null,  null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	Product product = new Product();
-	 *	ProductCollection productCollection = product.getProducts( filter,  startIndex,  pageSize,  sortBy,  responseOptions,  cursorMark,  defaultSort,  responseFields);
+	 *	ProductCollection productCollection = product.getProducts( filter,  startIndex,  pageSize,  sortBy,  responseOptions,  cursorMark,  defaultSort,  mid,  responseFields);
 	 * </code></pre></p>
 	 * @param cursorMark In your first deep paged request, set this parameter to . Then, in all subsequent requests, set this parameter to the subsequent values of  that's returned in each response to continue paging through the results. Continue this pattern until  is null, which signifies the end of the paged results.
 	 * @param defaultSort Sets the default sorting for content. Sort does not use AND in determining the order
 	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param mid 
 	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param responseOptions Options you can specify for the response. This parameter is null by default.You can primarily use this parameter to return volume price band information in product details, which you can then display on category pages and search results depanding on your theme configuration. To return volume price band information, set this parameter to .
@@ -73,9 +74,9 @@ public class ProductResource {
 	 * @return com.mozu.api.contracts.productruntime.ProductCollection
 	 * @see com.mozu.api.contracts.productruntime.ProductCollection
 	 */
-	public com.mozu.api.contracts.productruntime.ProductCollection getProducts(String filter, Integer startIndex, Integer pageSize, String sortBy, String responseOptions, String cursorMark, String defaultSort, String responseFields) throws Exception
+	public com.mozu.api.contracts.productruntime.ProductCollection getProducts(String filter, Integer startIndex, Integer pageSize, String sortBy, String responseOptions, String cursorMark, String defaultSort, String mid, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productruntime.ProductCollection> client = com.mozu.api.clients.commerce.catalog.storefront.ProductClient.getProductsClient(_dataViewMode,  filter,  startIndex,  pageSize,  sortBy,  responseOptions,  cursorMark,  defaultSort,  responseFields);
+		MozuClient<com.mozu.api.contracts.productruntime.ProductCollection> client = com.mozu.api.clients.commerce.catalog.storefront.ProductClient.getProductsClient(_dataViewMode,  filter,  startIndex,  pageSize,  sortBy,  responseOptions,  cursorMark,  defaultSort,  mid,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -130,14 +131,14 @@ public class ProductResource {
 	 */
 	public com.mozu.api.contracts.productruntime.Product getProduct(String productCode) throws Exception
 	{
-		return getProduct( productCode,  null,  null,  null,  null,  null,  null,  null,  null,  null);
+		return getProduct( productCode,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	Product product = new Product();
-	 *	Product product = product.getProduct( productCode,  variationProductCode,  allowInactive,  skipInventoryCheck,  supressOutOfStock404,  quantity,  acceptVariantProductCode,  purchaseLocation,  variationProductCodeFilter,  responseFields);
+	 *	Product product = product.getProduct( productCode,  variationProductCode,  allowInactive,  skipInventoryCheck,  supressOutOfStock404,  quantity,  acceptVariantProductCode,  purchaseLocation,  variationProductCodeFilter,  sliceValue,  responseFields);
 	 * </code></pre></p>
 	 * @param acceptVariantProductCode Specifies whether to accept a product variant's code as the .When you set this parameter to , you can pass in a product variant's code in the GetProduct call to retrieve the product variant details that are associated with the base product.
 	 * @param allowInactive If true, allow inactive categories to be retrieved in the category list response. If false, the categories retrieved will not include ones marked inactive.
@@ -146,15 +147,16 @@ public class ProductResource {
 	 * @param quantity The number of cart items in the shopper's active cart.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
+	 * @param sliceValue 
 	 * @param supressOutOfStock404 Specifies whether to supress the 404 error when the product is out of stock.
 	 * @param variationProductCode Merchant-created code associated with a specific product variation. Variation product codes maintain an association with the base product code.
 	 * @param variationProductCodeFilter Provides support for [Variant Discounts](https://www.mozu.com/docs/guides/marketing/variant-discounts.htm) by indicating single and multiple variant codes. When this data is provided then only the option values for the specified product variants will display under the â€œOptionsâ€ list for the product. If a product has multiple options, then each option and the specified value for that variant will be displayed.
 	 * @return com.mozu.api.contracts.productruntime.Product
 	 * @see com.mozu.api.contracts.productruntime.Product
 	 */
-	public com.mozu.api.contracts.productruntime.Product getProduct(String productCode, String variationProductCode, Boolean allowInactive, Boolean skipInventoryCheck, Boolean supressOutOfStock404, Integer quantity, Boolean acceptVariantProductCode, String purchaseLocation, String variationProductCodeFilter, String responseFields) throws Exception
+	public com.mozu.api.contracts.productruntime.Product getProduct(String productCode, String variationProductCode, Boolean allowInactive, Boolean skipInventoryCheck, Boolean supressOutOfStock404, Integer quantity, Boolean acceptVariantProductCode, String purchaseLocation, String variationProductCodeFilter, String sliceValue, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productruntime.Product> client = com.mozu.api.clients.commerce.catalog.storefront.ProductClient.getProductClient(_dataViewMode,  productCode,  variationProductCode,  allowInactive,  skipInventoryCheck,  supressOutOfStock404,  quantity,  acceptVariantProductCode,  purchaseLocation,  variationProductCodeFilter,  responseFields);
+		MozuClient<com.mozu.api.contracts.productruntime.Product> client = com.mozu.api.clients.commerce.catalog.storefront.ProductClient.getProductClient(_dataViewMode,  productCode,  variationProductCode,  allowInactive,  skipInventoryCheck,  supressOutOfStock404,  quantity,  acceptVariantProductCode,  purchaseLocation,  variationProductCodeFilter,  sliceValue,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -165,13 +167,13 @@ public class ProductResource {
 	 * 
 	 * <p><pre><code>
 	 *	Product product = new Product();
-	 *	Product product = product.getProductForIndexing( productCode);
+	 *	ProductForIndexing productForIndexing = product.getProductForIndexing( productCode);
 	 * </code></pre></p>
 	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @return com.mozu.api.contracts.productruntime.Product
-	 * @see com.mozu.api.contracts.productruntime.Product
+	 * @return com.mozu.api.contracts.productruntime.ProductForIndexing
+	 * @see com.mozu.api.contracts.productruntime.ProductForIndexing
 	 */
-	public com.mozu.api.contracts.productruntime.Product getProductForIndexing(String productCode) throws Exception
+	public com.mozu.api.contracts.productruntime.ProductForIndexing getProductForIndexing(String productCode) throws Exception
 	{
 		return getProductForIndexing( productCode,  null,  null,  null);
 	}
@@ -180,18 +182,18 @@ public class ProductResource {
 	 * 
 	 * <p><pre><code>
 	 *	Product product = new Product();
-	 *	Product product = product.getProductForIndexing( productCode,  productVersion,  lastModifiedDate,  responseFields);
+	 *	ProductForIndexing productForIndexing = product.getProductForIndexing( productCode,  productVersion,  lastModifiedDate,  responseFields);
 	 * </code></pre></p>
 	 * @param lastModifiedDate The date when the product was last updated.
 	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param productVersion The product version.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @return com.mozu.api.contracts.productruntime.Product
-	 * @see com.mozu.api.contracts.productruntime.Product
+	 * @return com.mozu.api.contracts.productruntime.ProductForIndexing
+	 * @see com.mozu.api.contracts.productruntime.ProductForIndexing
 	 */
-	public com.mozu.api.contracts.productruntime.Product getProductForIndexing(String productCode, Long productVersion, DateTime lastModifiedDate, String responseFields) throws Exception
+	public com.mozu.api.contracts.productruntime.ProductForIndexing getProductForIndexing(String productCode, Long productVersion, DateTime lastModifiedDate, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productruntime.Product> client = com.mozu.api.clients.commerce.catalog.storefront.ProductClient.getProductForIndexingClient(_dataViewMode,  productCode,  productVersion,  lastModifiedDate,  responseFields);
+		MozuClient<com.mozu.api.contracts.productruntime.ProductForIndexing> client = com.mozu.api.clients.commerce.catalog.storefront.ProductClient.getProductForIndexingClient(_dataViewMode,  productCode,  productVersion,  lastModifiedDate,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

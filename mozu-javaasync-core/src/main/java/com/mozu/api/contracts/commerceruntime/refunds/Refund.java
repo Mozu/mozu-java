@@ -75,6 +75,26 @@ public class Refund implements Serializable
 		this.reason = reason;
 	}
 
+	protected  String reasonCode;
+
+	public String getReasonCode() {
+		return this.reasonCode;
+	}
+
+	public void setReasonCode(String reasonCode) {
+		this.reasonCode = reasonCode;
+	}
+
+	protected  String refundMethod;
+
+	public String getRefundMethod() {
+		return this.refundMethod;
+	}
+
+	public void setRefundMethod(String refundMethod) {
+		this.refundMethod = refundMethod;
+	}
+
 	/**
 	 * Basic audit info about the object, including date, time, and user account. This data may be captured when creating, updating, and removing data.
 	 */

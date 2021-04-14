@@ -21,6 +21,36 @@ public class EmailTransactionSettings implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected  Boolean accountCreated;
+
+	public Boolean getAccountCreated() {
+		return this.accountCreated;
+	}
+
+	public void setAccountCreated(Boolean accountCreated) {
+		this.accountCreated = accountCreated;
+	}
+
+	protected  Boolean accountDenied;
+
+	public Boolean getAccountDenied() {
+		return this.accountDenied;
+	}
+
+	public void setAccountDenied(Boolean accountDenied) {
+		this.accountDenied = accountDenied;
+	}
+
+	protected  Boolean accountInactive;
+
+	public Boolean getAccountInactive() {
+		return this.accountInactive;
+	}
+
+	public void setAccountInactive(Boolean accountInactive) {
+		this.accountInactive = accountInactive;
+	}
+
 	/**
 	 * A flag that determines if an email is sent to a shopper account when the described condition is met.
 	 */
@@ -44,6 +74,46 @@ public class EmailTransactionSettings implements Serializable
 		this.backorder = backorder;
 	}
 
+	protected  Boolean curbsideReady;
+
+	public Boolean getCurbsideReady() {
+		return this.curbsideReady;
+	}
+
+	public void setCurbsideReady(Boolean curbsideReady) {
+		this.curbsideReady = curbsideReady;
+	}
+
+	protected  Boolean customerAtCurbside;
+
+	public Boolean getCustomerAtCurbside() {
+		return this.customerAtCurbside;
+	}
+
+	public void setCustomerAtCurbside(Boolean customerAtCurbside) {
+		this.customerAtCurbside = customerAtCurbside;
+	}
+
+	protected  Boolean customerIntransit;
+
+	public Boolean getCustomerIntransit() {
+		return this.customerIntransit;
+	}
+
+	public void setCustomerIntransit(Boolean customerIntransit) {
+		this.customerIntransit = customerIntransit;
+	}
+
+	protected  Boolean gatewayGiftCardCreated;
+
+	public Boolean getGatewayGiftCardCreated() {
+		return this.gatewayGiftCardCreated;
+	}
+
+	public void setGatewayGiftCardCreated(Boolean gatewayGiftCardCreated) {
+		this.gatewayGiftCardCreated = gatewayGiftCardCreated;
+	}
+
 	/**
 	 * A flag that determines if an email is sent to a shopper account when the described condition is met.
 	 */
@@ -55,6 +125,16 @@ public class EmailTransactionSettings implements Serializable
 
 	public void setGiftCardCreated(Boolean giftCardCreated) {
 		this.giftCardCreated = giftCardCreated;
+	}
+
+	protected  Boolean intransitConfirmation;
+
+	public Boolean getIntransitConfirmation() {
+		return this.intransitConfirmation;
+	}
+
+	public void setIntransitConfirmation(Boolean intransitConfirmation) {
+		this.intransitConfirmation = intransitConfirmation;
 	}
 
 	protected  Boolean orderCancellation;
@@ -124,6 +204,56 @@ public class EmailTransactionSettings implements Serializable
 
 	public void setOrderShipped(Boolean orderShipped) {
 		this.orderShipped = orderShipped;
+	}
+
+	protected  Boolean partialCurbsideReady;
+
+	public Boolean getPartialCurbsideReady() {
+		return this.partialCurbsideReady;
+	}
+
+	public void setPartialCurbsideReady(Boolean partialCurbsideReady) {
+		this.partialCurbsideReady = partialCurbsideReady;
+	}
+
+	protected  Boolean partialPickupReady;
+
+	public Boolean getPartialPickupReady() {
+		return this.partialPickupReady;
+	}
+
+	public void setPartialPickupReady(Boolean partialPickupReady) {
+		this.partialPickupReady = partialPickupReady;
+	}
+
+	protected  Boolean quoteExpired;
+
+	public Boolean getQuoteExpired() {
+		return this.quoteExpired;
+	}
+
+	public void setQuoteExpired(Boolean quoteExpired) {
+		this.quoteExpired = quoteExpired;
+	}
+
+	protected  Boolean quoteInReview;
+
+	public Boolean getQuoteInReview() {
+		return this.quoteInReview;
+	}
+
+	public void setQuoteInReview(Boolean quoteInReview) {
+		this.quoteInReview = quoteInReview;
+	}
+
+	protected  Boolean quoteReadyForCheckout;
+
+	public Boolean getQuoteReadyForCheckout() {
+		return this.quoteReadyForCheckout;
+	}
+
+	public void setQuoteReadyForCheckout(Boolean quoteReadyForCheckout) {
+		this.quoteReadyForCheckout = quoteReadyForCheckout;
 	}
 
 	/**
@@ -217,6 +347,16 @@ public class EmailTransactionSettings implements Serializable
 		this.returnUpdated = returnUpdated;
 	}
 
+	protected  Boolean shipmentAssigned;
+
+	public Boolean getShipmentAssigned() {
+		return this.shipmentAssigned;
+	}
+
+	public void setShipmentAssigned(Boolean shipmentAssigned) {
+		this.shipmentAssigned = shipmentAssigned;
+	}
+
 	protected  Boolean shipmentBackorderDateChanged;
 
 	public Boolean getShipmentBackorderDateChanged() {
@@ -235,6 +375,16 @@ public class EmailTransactionSettings implements Serializable
 
 	public void setShipmentConfirmation(Boolean shipmentConfirmation) {
 		this.shipmentConfirmation = shipmentConfirmation;
+	}
+
+	protected  Boolean shipmentItemCanceled;
+
+	public Boolean getShipmentItemCanceled() {
+		return this.shipmentItemCanceled;
+	}
+
+	public void setShipmentItemCanceled(Boolean shipmentItemCanceled) {
+		this.shipmentItemCanceled = shipmentItemCanceled;
 	}
 
 	/**
@@ -287,6 +437,36 @@ public class EmailTransactionSettings implements Serializable
 
 	public void setStoreCreditUpdated(Boolean storeCreditUpdated) {
 		this.storeCreditUpdated = storeCreditUpdated;
+	}
+
+	protected  Boolean transferShipmentCreated;
+
+	public Boolean getTransferShipmentCreated() {
+		return this.transferShipmentCreated;
+	}
+
+	public void setTransferShipmentCreated(Boolean transferShipmentCreated) {
+		this.transferShipmentCreated = transferShipmentCreated;
+	}
+
+	protected  Boolean transferShipmentCreatedByFulfiller;
+
+	public Boolean getTransferShipmentCreatedByFulfiller() {
+		return this.transferShipmentCreatedByFulfiller;
+	}
+
+	public void setTransferShipmentCreatedByFulfiller(Boolean transferShipmentCreatedByFulfiller) {
+		this.transferShipmentCreatedByFulfiller = transferShipmentCreatedByFulfiller;
+	}
+
+	protected  Boolean transferShipmentShipped;
+
+	public Boolean getTransferShipmentShipped() {
+		return this.transferShipmentShipped;
+	}
+
+	public void setTransferShipmentShipped(Boolean transferShipmentShipped) {
+		this.transferShipmentShipped = transferShipmentShipped;
 	}
 
 

@@ -71,36 +71,36 @@ public class LocationGroupClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.location.LocationGroup> mozuClient=GetLocationGroupClient( groupId);
+	 * MozuClient<com.mozu.api.contracts.location.LocationGroup> mozuClient=GetLocationGroupClient( locationGroupCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * LocationGroup locationGroup = client.Result();
 	 * </code></pre></p>
-	 * @param groupId 
+	 * @param locationGroupCode 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.LocationGroup>
 	 * @see com.mozu.api.contracts.location.LocationGroup
 	 */
-	public static MozuClient<com.mozu.api.contracts.location.LocationGroup> getLocationGroupClient(Integer groupId) throws Exception
+	public static MozuClient<com.mozu.api.contracts.location.LocationGroup> getLocationGroupClient(String locationGroupCode) throws Exception
 	{
-		return getLocationGroupClient( groupId,  null);
+		return getLocationGroupClient( locationGroupCode,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.location.LocationGroup> mozuClient=GetLocationGroupClient( groupId,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.location.LocationGroup> mozuClient=GetLocationGroupClient( locationGroupCode,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * LocationGroup locationGroup = client.Result();
 	 * </code></pre></p>
-	 * @param groupId 
+	 * @param locationGroupCode 
 	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.LocationGroup>
 	 * @see com.mozu.api.contracts.location.LocationGroup
 	 */
-	public static MozuClient<com.mozu.api.contracts.location.LocationGroup> getLocationGroupClient(Integer groupId, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.location.LocationGroup> getLocationGroupClient(String locationGroupCode, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.admin.LocationGroupUrl.getLocationGroupUrl(groupId, responseFields);
+		MozuUrl url = com.mozu.api.urls.commerce.admin.LocationGroupUrl.getLocationGroupUrl(locationGroupCode, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.location.LocationGroup.class;
 		MozuClient<com.mozu.api.contracts.location.LocationGroup> mozuClient = (MozuClient<com.mozu.api.contracts.location.LocationGroup>) MozuClientFactory.getInstance(clz);
@@ -158,46 +158,46 @@ public class LocationGroupClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.location.LocationGroup> mozuClient=UpdateLocationGroupClient( group,  groupId);
+	 * MozuClient<com.mozu.api.contracts.location.LocationGroup> mozuClient=UpdateLocationGroupClient( locationGroup,  locationGroupCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * LocationGroup locationGroup = client.Result();
 	 * </code></pre></p>
-	 * @param groupId 
-	 * @param group 
+	 * @param locationGroupCode 
+	 * @param locationGroup 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.LocationGroup>
 	 * @see com.mozu.api.contracts.location.LocationGroup
 	 * @see com.mozu.api.contracts.location.LocationGroup
 	 */
-	public static MozuClient<com.mozu.api.contracts.location.LocationGroup> updateLocationGroupClient(com.mozu.api.contracts.location.LocationGroup group, Integer groupId) throws Exception
+	public static MozuClient<com.mozu.api.contracts.location.LocationGroup> updateLocationGroupClient(com.mozu.api.contracts.location.LocationGroup locationGroup, String locationGroupCode) throws Exception
 	{
-		return updateLocationGroupClient( group,  groupId,  null);
+		return updateLocationGroupClient( locationGroup,  locationGroupCode,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.location.LocationGroup> mozuClient=UpdateLocationGroupClient( group,  groupId,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.location.LocationGroup> mozuClient=UpdateLocationGroupClient( locationGroup,  locationGroupCode,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * LocationGroup locationGroup = client.Result();
 	 * </code></pre></p>
-	 * @param groupId 
+	 * @param locationGroupCode 
 	 * @param responseFields 
-	 * @param group 
+	 * @param locationGroup 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.LocationGroup>
 	 * @see com.mozu.api.contracts.location.LocationGroup
 	 * @see com.mozu.api.contracts.location.LocationGroup
 	 */
-	public static MozuClient<com.mozu.api.contracts.location.LocationGroup> updateLocationGroupClient(com.mozu.api.contracts.location.LocationGroup group, Integer groupId, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.location.LocationGroup> updateLocationGroupClient(com.mozu.api.contracts.location.LocationGroup locationGroup, String locationGroupCode, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.admin.LocationGroupUrl.updateLocationGroupUrl(groupId, responseFields);
+		MozuUrl url = com.mozu.api.urls.commerce.admin.LocationGroupUrl.updateLocationGroupUrl(locationGroupCode, responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.location.LocationGroup.class;
 		MozuClient<com.mozu.api.contracts.location.LocationGroup> mozuClient = (MozuClient<com.mozu.api.contracts.location.LocationGroup>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
-		mozuClient.setBody(group);
+		mozuClient.setBody(locationGroup);
 		return mozuClient;
 
 	}
@@ -205,18 +205,18 @@ public class LocationGroupClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<java.io.InputStream> mozuClient=DeleteLocationGroupClient( groupId);
+	 * MozuClient<java.io.InputStream> mozuClient=DeleteLocationGroupClient( locationGroupCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param groupId 
+	 * @param locationGroupCode 
 	 * @return Mozu.Api.MozuClient <Stream>
 	 * @see Stream
 	 */
-	public static MozuClient<java.io.InputStream> deleteLocationGroupClient(Integer groupId) throws Exception
+	public static MozuClient<java.io.InputStream> deleteLocationGroupClient(String locationGroupCode) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.admin.LocationGroupUrl.deleteLocationGroupUrl(groupId);
+		MozuUrl url = com.mozu.api.urls.commerce.admin.LocationGroupUrl.deleteLocationGroupUrl(locationGroupCode);
 		String verb = "DELETE";
 		Class<?> clz = java.io.InputStream.class;
 		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);

@@ -40,6 +40,215 @@ public class SearchResource {
 	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
+	 *	SynonymDefinitionCollection synonymDefinitionCollection = search.getAllSynonymDefinitionCollectionsForMasterCatalog( languageCode);
+	 * </code></pre></p>
+	 * @param languageCode 
+	 * @return com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
+	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
+	 */
+	public com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection getAllSynonymDefinitionCollectionsForMasterCatalog(String languageCode) throws Exception
+	{
+		return getAllSynonymDefinitionCollectionsForMasterCatalog( languageCode,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Search search = new Search();
+	 *	CountDownLatch latch = search.getAllSynonymDefinitionCollectionsForMasterCatalog( languageCode, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param languageCode 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
+	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
+	 */
+	public CountDownLatch getAllSynonymDefinitionCollectionsForMasterCatalogAsync(String languageCode, AsyncCallback<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> callback) throws Exception
+	{
+		return getAllSynonymDefinitionCollectionsForMasterCatalogAsync( languageCode,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Search search = new Search();
+	 *	SynonymDefinitionCollection synonymDefinitionCollection = search.getAllSynonymDefinitionCollectionsForMasterCatalog( languageCode,  responseFields);
+	 * </code></pre></p>
+	 * @param languageCode 
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
+	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
+	 */
+	public com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection getAllSynonymDefinitionCollectionsForMasterCatalog(String languageCode, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.getAllSynonymDefinitionCollectionsForMasterCatalogClient( languageCode,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Search search = new Search();
+	 *	CountDownLatch latch = search.getAllSynonymDefinitionCollectionsForMasterCatalog( languageCode,  responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param languageCode 
+	 * @param responseFields 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
+	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
+	 */
+	public CountDownLatch getAllSynonymDefinitionCollectionsForMasterCatalogAsync(String languageCode, String responseFields, AsyncCallback<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.getAllSynonymDefinitionCollectionsForMasterCatalogClient( languageCode,  responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Search search = new Search();
+	 *	SearchRedirect searchRedirect = search.getSearchRedirect( redirectId);
+	 * </code></pre></p>
+	 * @param redirectId 
+	 * @return com.mozu.api.contracts.productadmin.SearchRedirect
+	 * @see com.mozu.api.contracts.productadmin.SearchRedirect
+	 */
+	public com.mozu.api.contracts.productadmin.SearchRedirect getSearchRedirect(String redirectId) throws Exception
+	{
+		return getSearchRedirect( redirectId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Search search = new Search();
+	 *	CountDownLatch latch = search.getSearchRedirect( redirectId, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param redirectId 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.productadmin.SearchRedirect
+	 * @see com.mozu.api.contracts.productadmin.SearchRedirect
+	 */
+	public CountDownLatch getSearchRedirectAsync(String redirectId, AsyncCallback<com.mozu.api.contracts.productadmin.SearchRedirect> callback) throws Exception
+	{
+		return getSearchRedirectAsync( redirectId,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Search search = new Search();
+	 *	SearchRedirect searchRedirect = search.getSearchRedirect( redirectId,  responseFields);
+	 * </code></pre></p>
+	 * @param redirectId 
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.productadmin.SearchRedirect
+	 * @see com.mozu.api.contracts.productadmin.SearchRedirect
+	 */
+	public com.mozu.api.contracts.productadmin.SearchRedirect getSearchRedirect(String redirectId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.SearchRedirect> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.getSearchRedirectClient( redirectId,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Search search = new Search();
+	 *	CountDownLatch latch = search.getSearchRedirect( redirectId,  responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param redirectId 
+	 * @param responseFields 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.productadmin.SearchRedirect
+	 * @see com.mozu.api.contracts.productadmin.SearchRedirect
+	 */
+	public CountDownLatch getSearchRedirectAsync(String redirectId, String responseFields, AsyncCallback<com.mozu.api.contracts.productadmin.SearchRedirect> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.SearchRedirect> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.getSearchRedirectClient( redirectId,  responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Search search = new Search();
+	 *	SearchRedirectCollection searchRedirectCollection = search.getSearchRedirects();
+	 * </code></pre></p>
+	 * @return com.mozu.api.contracts.productadmin.SearchRedirectCollection
+	 * @see com.mozu.api.contracts.productadmin.SearchRedirectCollection
+	 */
+	public com.mozu.api.contracts.productadmin.SearchRedirectCollection getSearchRedirects() throws Exception
+	{
+		return getSearchRedirects( null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Search search = new Search();
+	 *	CountDownLatch latch = search.getSearchRedirects( callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.productadmin.SearchRedirectCollection
+	 * @see com.mozu.api.contracts.productadmin.SearchRedirectCollection
+	 */
+	public CountDownLatch getSearchRedirectsAsync( AsyncCallback<com.mozu.api.contracts.productadmin.SearchRedirectCollection> callback) throws Exception
+	{
+		return getSearchRedirectsAsync( null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Search search = new Search();
+	 *	SearchRedirectCollection searchRedirectCollection = search.getSearchRedirects( responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.productadmin.SearchRedirectCollection
+	 * @see com.mozu.api.contracts.productadmin.SearchRedirectCollection
+	 */
+	public com.mozu.api.contracts.productadmin.SearchRedirectCollection getSearchRedirects(String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.SearchRedirectCollection> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.getSearchRedirectsClient( responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Search search = new Search();
+	 *	CountDownLatch latch = search.getSearchRedirects( responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.productadmin.SearchRedirectCollection
+	 * @see com.mozu.api.contracts.productadmin.SearchRedirectCollection
+	 */
+	public CountDownLatch getSearchRedirectsAsync(String responseFields, AsyncCallback<com.mozu.api.contracts.productadmin.SearchRedirectCollection> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.SearchRedirectCollection> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.getSearchRedirectsClient( responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Search search = new Search();
 	 *	SearchTuningRule searchTuningRule = search.getSearchTuningRule( searchTuningRuleCode);
 	 * </code></pre></p>
 	 * @param searchTuningRuleCode The unique identifier of the search tuning rule.
@@ -244,73 +453,6 @@ public class SearchResource {
 	public CountDownLatch getSearchTuningRuleSortFieldsAsync(String responseFields, AsyncCallback<com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields> callback) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.getSearchTuningRuleSortFieldsClient( responseFields);
-		client.setContext(_apiContext);
-		return client.executeRequest(callback);
-
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 *	Search search = new Search();
-	 *	SearchSettings searchSettings = search.getSettings();
-	 * </code></pre></p>
-	 * @return com.mozu.api.contracts.productadmin.SearchSettings
-	 * @see com.mozu.api.contracts.productadmin.SearchSettings
-	 */
-	public com.mozu.api.contracts.productadmin.SearchSettings getSettings() throws Exception
-	{
-		return getSettings( null);
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 *	Search search = new Search();
-	 *	CountDownLatch latch = search.getSettings( callback );
-	 *	latch.await()	 * </code></pre></p>
-	 * @param  callback callback handler for asynchronous operations
-	 * @return com.mozu.api.contracts.productadmin.SearchSettings
-	 * @see com.mozu.api.contracts.productadmin.SearchSettings
-	 */
-	public CountDownLatch getSettingsAsync( AsyncCallback<com.mozu.api.contracts.productadmin.SearchSettings> callback) throws Exception
-	{
-		return getSettingsAsync( null, callback);
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 *	Search search = new Search();
-	 *	SearchSettings searchSettings = search.getSettings( responseFields);
-	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @return com.mozu.api.contracts.productadmin.SearchSettings
-	 * @see com.mozu.api.contracts.productadmin.SearchSettings
-	 */
-	public com.mozu.api.contracts.productadmin.SearchSettings getSettings(String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.productadmin.SearchSettings> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.getSettingsClient( responseFields);
-		client.setContext(_apiContext);
-		client.executeRequest();
-		return client.getResult();
-
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 *	Search search = new Search();
-	 *	CountDownLatch latch = search.getSettings( responseFields, callback );
-	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param  callback callback handler for asynchronous operations
-	 * @return com.mozu.api.contracts.productadmin.SearchSettings
-	 * @see com.mozu.api.contracts.productadmin.SearchSettings
-	 */
-	public CountDownLatch getSettingsAsync(String responseFields, AsyncCallback<com.mozu.api.contracts.productadmin.SearchSettings> callback) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.productadmin.SearchSettings> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.getSettingsClient( responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 
@@ -528,6 +670,83 @@ public class SearchResource {
 	public CountDownLatch getSynonymDefinitionAsync(Integer synonymId, String responseFields, AsyncCallback<com.mozu.api.contracts.productadmin.search.SynonymDefinition> callback) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinition> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.getSynonymDefinitionClient( synonymId,  responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Search search = new Search();
+	 *	SearchRedirect searchRedirect = search.addSearchRedirect( searchRedirect);
+	 * </code></pre></p>
+	 * @param searchRedirect 
+	 * @return com.mozu.api.contracts.productadmin.SearchRedirect
+	 * @see com.mozu.api.contracts.productadmin.SearchRedirect
+	 * @see com.mozu.api.contracts.productadmin.SearchRedirect
+	 */
+	public com.mozu.api.contracts.productadmin.SearchRedirect addSearchRedirect(com.mozu.api.contracts.productadmin.SearchRedirect searchRedirect) throws Exception
+	{
+		return addSearchRedirect( searchRedirect,  null,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Search search = new Search();
+	 *	CountDownLatch latch = search.addSearchRedirect( searchRedirect, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param  callback callback handler for asynchronous operations
+	 * @param searchRedirect 
+	 * @return com.mozu.api.contracts.productadmin.SearchRedirect
+	 * @see com.mozu.api.contracts.productadmin.SearchRedirect
+	 * @see com.mozu.api.contracts.productadmin.SearchRedirect
+	 */
+	public CountDownLatch addSearchRedirectAsync(com.mozu.api.contracts.productadmin.SearchRedirect searchRedirect, AsyncCallback<com.mozu.api.contracts.productadmin.SearchRedirect> callback) throws Exception
+	{
+		return addSearchRedirectAsync( searchRedirect,  null,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Search search = new Search();
+	 *	SearchRedirect searchRedirect = search.addSearchRedirect( searchRedirect,  fromSystemDefault,  responseFields);
+	 * </code></pre></p>
+	 * @param fromSystemDefault 
+	 * @param responseFields 
+	 * @param searchRedirect 
+	 * @return com.mozu.api.contracts.productadmin.SearchRedirect
+	 * @see com.mozu.api.contracts.productadmin.SearchRedirect
+	 * @see com.mozu.api.contracts.productadmin.SearchRedirect
+	 */
+	public com.mozu.api.contracts.productadmin.SearchRedirect addSearchRedirect(com.mozu.api.contracts.productadmin.SearchRedirect searchRedirect, Boolean fromSystemDefault, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.SearchRedirect> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.addSearchRedirectClient( searchRedirect,  fromSystemDefault,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Search search = new Search();
+	 *	CountDownLatch latch = search.addSearchRedirect( searchRedirect,  fromSystemDefault,  responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param fromSystemDefault 
+	 * @param responseFields 
+	 * @param  callback callback handler for asynchronous operations
+	 * @param searchRedirect 
+	 * @return com.mozu.api.contracts.productadmin.SearchRedirect
+	 * @see com.mozu.api.contracts.productadmin.SearchRedirect
+	 * @see com.mozu.api.contracts.productadmin.SearchRedirect
+	 */
+	public CountDownLatch addSearchRedirectAsync(com.mozu.api.contracts.productadmin.SearchRedirect searchRedirect, Boolean fromSystemDefault, String responseFields, AsyncCallback<com.mozu.api.contracts.productadmin.SearchRedirect> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.SearchRedirect> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.addSearchRedirectClient( searchRedirect,  fromSystemDefault,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 
@@ -841,6 +1060,85 @@ public class SearchResource {
 	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
+	 *	SearchRedirect searchRedirect = search.updateSearchRedirect( searchRedirect,  redirectId);
+	 * </code></pre></p>
+	 * @param redirectId 
+	 * @param searchRedirect 
+	 * @return com.mozu.api.contracts.productadmin.SearchRedirect
+	 * @see com.mozu.api.contracts.productadmin.SearchRedirect
+	 * @see com.mozu.api.contracts.productadmin.SearchRedirect
+	 */
+	public com.mozu.api.contracts.productadmin.SearchRedirect updateSearchRedirect(com.mozu.api.contracts.productadmin.SearchRedirect searchRedirect, String redirectId) throws Exception
+	{
+		return updateSearchRedirect( searchRedirect,  redirectId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Search search = new Search();
+	 *	CountDownLatch latch = search.updateSearchRedirect( searchRedirect,  redirectId, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param redirectId 
+	 * @param  callback callback handler for asynchronous operations
+	 * @param searchRedirect 
+	 * @return com.mozu.api.contracts.productadmin.SearchRedirect
+	 * @see com.mozu.api.contracts.productadmin.SearchRedirect
+	 * @see com.mozu.api.contracts.productadmin.SearchRedirect
+	 */
+	public CountDownLatch updateSearchRedirectAsync(com.mozu.api.contracts.productadmin.SearchRedirect searchRedirect, String redirectId, AsyncCallback<com.mozu.api.contracts.productadmin.SearchRedirect> callback) throws Exception
+	{
+		return updateSearchRedirectAsync( searchRedirect,  redirectId,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Search search = new Search();
+	 *	SearchRedirect searchRedirect = search.updateSearchRedirect( searchRedirect,  redirectId,  responseFields);
+	 * </code></pre></p>
+	 * @param redirectId 
+	 * @param responseFields 
+	 * @param searchRedirect 
+	 * @return com.mozu.api.contracts.productadmin.SearchRedirect
+	 * @see com.mozu.api.contracts.productadmin.SearchRedirect
+	 * @see com.mozu.api.contracts.productadmin.SearchRedirect
+	 */
+	public com.mozu.api.contracts.productadmin.SearchRedirect updateSearchRedirect(com.mozu.api.contracts.productadmin.SearchRedirect searchRedirect, String redirectId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.SearchRedirect> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.updateSearchRedirectClient( searchRedirect,  redirectId,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Search search = new Search();
+	 *	CountDownLatch latch = search.updateSearchRedirect( searchRedirect,  redirectId,  responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param redirectId 
+	 * @param responseFields 
+	 * @param  callback callback handler for asynchronous operations
+	 * @param searchRedirect 
+	 * @return com.mozu.api.contracts.productadmin.SearchRedirect
+	 * @see com.mozu.api.contracts.productadmin.SearchRedirect
+	 * @see com.mozu.api.contracts.productadmin.SearchRedirect
+	 */
+	public CountDownLatch updateSearchRedirectAsync(com.mozu.api.contracts.productadmin.SearchRedirect searchRedirect, String redirectId, String responseFields, AsyncCallback<com.mozu.api.contracts.productadmin.SearchRedirect> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.SearchRedirect> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.updateSearchRedirectClient( searchRedirect,  redirectId,  responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Search search = new Search();
 	 *	SearchTuningRule searchTuningRule = search.updateSearchTuningRule( searchTuningRuleIn,  searchTuningRuleCode);
 	 * </code></pre></p>
 	 * @param searchTuningRuleCode The unique identifier of the search tuning rule.
@@ -920,81 +1218,6 @@ public class SearchResource {
 	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
-	 *	SearchSettings searchSettings = search.updateSettings( settings);
-	 * </code></pre></p>
-	 * @param settings The search settings to update.
-	 * @return com.mozu.api.contracts.productadmin.SearchSettings
-	 * @see com.mozu.api.contracts.productadmin.SearchSettings
-	 * @see com.mozu.api.contracts.productadmin.SearchSettings
-	 */
-	public com.mozu.api.contracts.productadmin.SearchSettings updateSettings(com.mozu.api.contracts.productadmin.SearchSettings settings) throws Exception
-	{
-		return updateSettings( settings,  null);
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 *	Search search = new Search();
-	 *	CountDownLatch latch = search.updateSettings( settings, callback );
-	 *	latch.await()	 * </code></pre></p>
-	 * @param  callback callback handler for asynchronous operations
-	 * @param settings The search settings to update.
-	 * @return com.mozu.api.contracts.productadmin.SearchSettings
-	 * @see com.mozu.api.contracts.productadmin.SearchSettings
-	 * @see com.mozu.api.contracts.productadmin.SearchSettings
-	 */
-	public CountDownLatch updateSettingsAsync(com.mozu.api.contracts.productadmin.SearchSettings settings, AsyncCallback<com.mozu.api.contracts.productadmin.SearchSettings> callback) throws Exception
-	{
-		return updateSettingsAsync( settings,  null, callback);
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 *	Search search = new Search();
-	 *	SearchSettings searchSettings = search.updateSettings( settings,  responseFields);
-	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param settings The search settings to update.
-	 * @return com.mozu.api.contracts.productadmin.SearchSettings
-	 * @see com.mozu.api.contracts.productadmin.SearchSettings
-	 * @see com.mozu.api.contracts.productadmin.SearchSettings
-	 */
-	public com.mozu.api.contracts.productadmin.SearchSettings updateSettings(com.mozu.api.contracts.productadmin.SearchSettings settings, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.productadmin.SearchSettings> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.updateSettingsClient( settings,  responseFields);
-		client.setContext(_apiContext);
-		client.executeRequest();
-		return client.getResult();
-
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 *	Search search = new Search();
-	 *	CountDownLatch latch = search.updateSettings( settings,  responseFields, callback );
-	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param  callback callback handler for asynchronous operations
-	 * @param settings The search settings to update.
-	 * @return com.mozu.api.contracts.productadmin.SearchSettings
-	 * @see com.mozu.api.contracts.productadmin.SearchSettings
-	 * @see com.mozu.api.contracts.productadmin.SearchSettings
-	 */
-	public CountDownLatch updateSettingsAsync(com.mozu.api.contracts.productadmin.SearchSettings settings, String responseFields, AsyncCallback<com.mozu.api.contracts.productadmin.SearchSettings> callback) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.productadmin.SearchSettings> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.updateSettingsClient( settings,  responseFields);
-		client.setContext(_apiContext);
-		return client.executeRequest(callback);
-
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 *	Search search = new Search();
 	 *	SynonymDefinition synonymDefinition = search.updateSynonymDefinition( synonymDefinition,  synonymId);
 	 * </code></pre></p>
 	 * @param synonymId The unique identifier of the synonym definition.
@@ -1065,6 +1288,44 @@ public class SearchResource {
 	public CountDownLatch updateSynonymDefinitionAsync(com.mozu.api.contracts.productadmin.search.SynonymDefinition synonymDefinition, Integer synonymId, String responseFields, AsyncCallback<com.mozu.api.contracts.productadmin.search.SynonymDefinition> callback) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinition> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.updateSynonymDefinitionClient( synonymDefinition,  synonymId,  responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Search search = new Search();
+	 *	SearchRedirect searchRedirect = search.deleteSearchRedirect( redirectId);
+	 * </code></pre></p>
+	 * @param redirectId 
+	 * @return com.mozu.api.contracts.productadmin.SearchRedirect
+	 * @see com.mozu.api.contracts.productadmin.SearchRedirect
+	 */
+	public com.mozu.api.contracts.productadmin.SearchRedirect deleteSearchRedirect(String redirectId) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.SearchRedirect> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.deleteSearchRedirectClient( redirectId);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Search search = new Search();
+	 *	CountDownLatch latch = search.deleteSearchRedirect( redirectId, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param redirectId 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.productadmin.SearchRedirect
+	 * @see com.mozu.api.contracts.productadmin.SearchRedirect
+	 */
+	public CountDownLatch deleteSearchRedirectAsync(String redirectId, AsyncCallback<com.mozu.api.contracts.productadmin.SearchRedirect> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.SearchRedirect> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.deleteSearchRedirectClient( redirectId);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 

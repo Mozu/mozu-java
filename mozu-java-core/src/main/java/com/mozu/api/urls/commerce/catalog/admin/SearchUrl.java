@@ -14,6 +14,46 @@ public class SearchUrl
 {
 
 	/**
+	 * Get Resource Url for GetAllSynonymDefinitionCollectionsForMasterCatalog
+	 * @param languageCode 
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getAllSynonymDefinitionCollectionsForMasterCatalogUrl(String languageCode, String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/search/master-catalog-synonym-definitions/{languageCode}?responseFields={responseFields}");
+		formatter.formatUrl("languageCode", languageCode);
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for GetSearchRedirect
+	 * @param redirectId 
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getSearchRedirectUrl(String redirectId, String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/search/redirect/{redirectId}?responseFields={responseFields}");
+		formatter.formatUrl("redirectId", redirectId);
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for GetSearchRedirects
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getSearchRedirectsUrl(String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/search/redirect?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for GetSearchTuningRule
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param searchTuningRuleCode The unique identifier of the search tuning rule.
@@ -55,18 +95,6 @@ public class SearchUrl
 	public static MozuUrl getSearchTuningRuleSortFieldsUrl(String responseFields)
 	{
 		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/search/searchtuningrulesortfields?responseFields={responseFields}");
-		formatter.formatUrl("responseFields", responseFields);
-		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
-	}
-
-	/**
-	 * Get Resource Url for GetSettings
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @return   String Resource Url
-	 */
-	public static MozuUrl getSettingsUrl(String responseFields)
-	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/search/settings?responseFields={responseFields}");
 		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
@@ -116,6 +144,20 @@ public class SearchUrl
 		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/search/synonyms/{synonymId}?responseFields={responseFields}");
 		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("synonymId", synonymId);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for AddSearchRedirect
+	 * @param fromSystemDefault 
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl addSearchRedirectUrl(Boolean fromSystemDefault, String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/search/redirect?fromSystemDefault={fromSystemDefault}&redirectId={redirectId}&responseFields={responseFields}");
+		formatter.formatUrl("fromSystemDefault", fromSystemDefault);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
@@ -170,6 +212,20 @@ public class SearchUrl
 	}
 
 	/**
+	 * Get Resource Url for UpdateSearchRedirect
+	 * @param redirectId 
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl updateSearchRedirectUrl(String redirectId, String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/search/redirect/{redirectId}?responseFields={responseFields}");
+		formatter.formatUrl("redirectId", redirectId);
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for UpdateSearchTuningRule
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param searchTuningRuleCode The unique identifier of the search tuning rule.
@@ -184,18 +240,6 @@ public class SearchUrl
 	}
 
 	/**
-	 * Get Resource Url for UpdateSettings
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @return   String Resource Url
-	 */
-	public static MozuUrl updateSettingsUrl(String responseFields)
-	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/search/settings?responseFields={responseFields}");
-		formatter.formatUrl("responseFields", responseFields);
-		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
-	}
-
-	/**
 	 * Get Resource Url for UpdateSynonymDefinition
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param synonymId The unique identifier of the synonym definition.
@@ -206,6 +250,18 @@ public class SearchUrl
 		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/search/synonyms/{synonymId}?responseFields={responseFields}");
 		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("synonymId", synonymId);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for DeleteSearchRedirect
+	 * @param redirectId 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl deleteSearchRedirectUrl(String redirectId)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/search/redirect/{redirectId}");
+		formatter.formatUrl("redirectId", redirectId);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

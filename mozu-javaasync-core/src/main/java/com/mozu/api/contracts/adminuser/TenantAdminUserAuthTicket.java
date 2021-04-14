@@ -73,6 +73,16 @@ public class TenantAdminUserAuthTicket implements Serializable
 		this.jwtAccessToken = jwtAccessToken;
 	}
 
+	protected  String redirect;
+
+	public String getRedirect() {
+		return this.redirect;
+	}
+
+	public void setRedirect(String redirect) {
+		this.redirect = redirect;
+	}
+
 	protected  String refreshToken;
 
 	public String getRefreshToken() {

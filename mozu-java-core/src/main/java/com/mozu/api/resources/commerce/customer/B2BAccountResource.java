@@ -154,6 +154,41 @@ public class B2BAccountResource {
 	 * 
 	 * <p><pre><code>
 	 *	B2BAccount b2baccount = new B2BAccount();
+	 *	B2BAccountHierarchyResult b2BAccountHierarchyResult = b2baccount.getB2BAccountHierarchy( accountId);
+	 * </code></pre></p>
+	 * @param accountId 
+	 * @return com.mozu.api.contracts.customer.B2BAccountHierarchyResult
+	 * @see com.mozu.api.contracts.customer.B2BAccountHierarchyResult
+	 */
+	public com.mozu.api.contracts.customer.B2BAccountHierarchyResult getB2BAccountHierarchy(Integer accountId) throws Exception
+	{
+		return getB2BAccountHierarchy( accountId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	B2BAccount b2baccount = new B2BAccount();
+	 *	B2BAccountHierarchyResult b2BAccountHierarchyResult = b2baccount.getB2BAccountHierarchy( accountId,  responseFields);
+	 * </code></pre></p>
+	 * @param accountId 
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.customer.B2BAccountHierarchyResult
+	 * @see com.mozu.api.contracts.customer.B2BAccountHierarchyResult
+	 */
+	public com.mozu.api.contracts.customer.B2BAccountHierarchyResult getB2BAccountHierarchy(Integer accountId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.customer.B2BAccountHierarchyResult> client = com.mozu.api.clients.commerce.customer.B2BAccountClient.getB2BAccountHierarchyClient( accountId,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	B2BAccount b2baccount = new B2BAccount();
 	 *	UserRoleCollection userRoleCollection = b2baccount.getUserRolesAsync( accountId,  userId);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
@@ -191,37 +226,37 @@ public class B2BAccountResource {
 	 * 
 	 * <p><pre><code>
 	 *	B2BAccount b2baccount = new B2BAccount();
-	 *	B2BUserCollection b2BUserCollection = b2baccount.getUsers( accountId);
+	 *	B2BUserCollection b2BUserCollection = b2baccount.getUsersAsync( accountId);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId 
 	 * @return com.mozu.api.contracts.customer.B2BUserCollection
 	 * @see com.mozu.api.contracts.customer.B2BUserCollection
 	 */
-	public com.mozu.api.contracts.customer.B2BUserCollection getUsers(Integer accountId) throws Exception
+	public com.mozu.api.contracts.customer.B2BUserCollection getUsersAsync(Integer accountId) throws Exception
 	{
-		return getUsers( accountId,  null,  null,  null,  null,  null,  null,  null);
+		return getUsersAsync( accountId,  null,  null,  null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	B2BAccount b2baccount = new B2BAccount();
-	 *	B2BUserCollection b2BUserCollection = b2baccount.getUsers( accountId,  startIndex,  pageSize,  sortBy,  filter,  q,  qLimit,  responseFields);
+	 *	B2BUserCollection b2BUserCollection = b2baccount.getUsersAsync( accountId,  startIndex,  pageSize,  sortBy,  filter,  q,  qLimit,  responseFields);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param q A list of order search terms (not phrases) to use in the query when searching across order number and the name or email of the billing contact. When entering, separate multiple search terms with a space character.
-	 * @param qLimit The maximum number of search results to return in the response. You can limit any range between 1-100.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param accountId 
+	 * @param filter 
+	 * @param pageSize 
+	 * @param q 
+	 * @param qLimit 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @return com.mozu.api.contracts.customer.B2BUserCollection
 	 * @see com.mozu.api.contracts.customer.B2BUserCollection
 	 */
-	public com.mozu.api.contracts.customer.B2BUserCollection getUsers(Integer accountId, Integer startIndex, Integer pageSize, String sortBy, String filter, String q, Integer qLimit, String responseFields) throws Exception
+	public com.mozu.api.contracts.customer.B2BUserCollection getUsersAsync(Integer accountId, Integer startIndex, Integer pageSize, String sortBy, String filter, String q, Integer qLimit, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.customer.B2BUserCollection> client = com.mozu.api.clients.commerce.customer.B2BAccountClient.getUsersClient( accountId,  startIndex,  pageSize,  sortBy,  filter,  q,  qLimit,  responseFields);
+		MozuClient<com.mozu.api.contracts.customer.B2BUserCollection> client = com.mozu.api.clients.commerce.customer.B2BAccountClient.getUsersAsyncClient( accountId,  startIndex,  pageSize,  sortBy,  filter,  q,  qLimit,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -257,6 +292,25 @@ public class B2BAccountResource {
 	public com.mozu.api.contracts.customer.B2BAccount getB2BAccount(Integer accountId, String responseFields) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.customer.B2BAccount> client = com.mozu.api.clients.commerce.customer.B2BAccountClient.getB2BAccountClient( accountId,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	B2BAccount b2baccount = new B2BAccount();
+	 *	int int = b2baccount.getAccountsForSalesRep( userId);
+	 * </code></pre></p>
+	 * @param userId 
+	 * @return List<int>
+	 * @see int
+	 */
+	public List<Integer> getAccountsForSalesRep(String userId) throws Exception
+	{
+		MozuClient<List<Integer>> client = com.mozu.api.clients.commerce.customer.B2BAccountClient.getAccountsForSalesRepClient( userId);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -304,6 +358,45 @@ public class B2BAccountResource {
 	 * 
 	 * <p><pre><code>
 	 *	B2BAccount b2baccount = new B2BAccount();
+	 *	B2BAccount b2BAccount = b2baccount.addSalesRepsToB2BAccount( userIds,  accountId);
+	 * </code></pre></p>
+	 * @param accountId 
+	 * @param userIds 
+	 * @return com.mozu.api.contracts.customer.B2BAccount
+	 * @see com.mozu.api.contracts.customer.B2BAccount
+	 * @see string
+	 */
+	public com.mozu.api.contracts.customer.B2BAccount addSalesRepsToB2BAccount(List<String> userIds, Integer accountId) throws Exception
+	{
+		return addSalesRepsToB2BAccount( userIds,  accountId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	B2BAccount b2baccount = new B2BAccount();
+	 *	B2BAccount b2BAccount = b2baccount.addSalesRepsToB2BAccount( userIds,  accountId,  responseFields);
+	 * </code></pre></p>
+	 * @param accountId 
+	 * @param responseFields 
+	 * @param userIds 
+	 * @return com.mozu.api.contracts.customer.B2BAccount
+	 * @see com.mozu.api.contracts.customer.B2BAccount
+	 * @see string
+	 */
+	public com.mozu.api.contracts.customer.B2BAccount addSalesRepsToB2BAccount(List<String> userIds, Integer accountId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.customer.B2BAccount> client = com.mozu.api.clients.commerce.customer.B2BAccountClient.addSalesRepsToB2BAccountClient( userIds,  accountId,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	B2BAccount b2baccount = new B2BAccount();
 	 *	CustomerAttribute customerAttribute = b2baccount.addB2BAccountAttribute( attribute,  accountId);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
@@ -333,6 +426,80 @@ public class B2BAccountResource {
 	public com.mozu.api.contracts.customer.CustomerAttribute addB2BAccountAttribute(com.mozu.api.contracts.customer.CustomerAttribute attribute, Integer accountId, String responseFields) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.customer.CustomerAttribute> client = com.mozu.api.clients.commerce.customer.B2BAccountClient.addB2BAccountAttributeClient( attribute,  accountId,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	B2BAccount b2baccount = new B2BAccount();
+	 *	B2BAccount b2BAccount = b2baccount.changeParentAccount( accountId,  parentAccountId);
+	 * </code></pre></p>
+	 * @param accountId 
+	 * @param parentAccountId 
+	 * @return com.mozu.api.contracts.customer.B2BAccount
+	 * @see com.mozu.api.contracts.customer.B2BAccount
+	 */
+	public com.mozu.api.contracts.customer.B2BAccount changeParentAccount(Integer accountId, Integer parentAccountId) throws Exception
+	{
+		return changeParentAccount( accountId,  parentAccountId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	B2BAccount b2baccount = new B2BAccount();
+	 *	B2BAccount b2BAccount = b2baccount.changeParentAccount( accountId,  parentAccountId,  responseFields);
+	 * </code></pre></p>
+	 * @param accountId 
+	 * @param parentAccountId 
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.customer.B2BAccount
+	 * @see com.mozu.api.contracts.customer.B2BAccount
+	 */
+	public com.mozu.api.contracts.customer.B2BAccount changeParentAccount(Integer accountId, Integer parentAccountId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.customer.B2BAccount> client = com.mozu.api.clients.commerce.customer.B2BAccountClient.changeParentAccountClient( accountId,  parentAccountId,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	B2BAccount b2baccount = new B2BAccount();
+	 *	B2BAccount b2BAccount = b2baccount.addSalesRepToB2BAccount( accountId,  userId);
+	 * </code></pre></p>
+	 * @param accountId 
+	 * @param userId 
+	 * @return com.mozu.api.contracts.customer.B2BAccount
+	 * @see com.mozu.api.contracts.customer.B2BAccount
+	 */
+	public com.mozu.api.contracts.customer.B2BAccount addSalesRepToB2BAccount(Integer accountId, String userId) throws Exception
+	{
+		return addSalesRepToB2BAccount( accountId,  userId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	B2BAccount b2baccount = new B2BAccount();
+	 *	B2BAccount b2BAccount = b2baccount.addSalesRepToB2BAccount( accountId,  userId,  responseFields);
+	 * </code></pre></p>
+	 * @param accountId 
+	 * @param responseFields 
+	 * @param userId 
+	 * @return com.mozu.api.contracts.customer.B2BAccount
+	 * @see com.mozu.api.contracts.customer.B2BAccount
+	 */
+	public com.mozu.api.contracts.customer.B2BAccount addSalesRepToB2BAccount(Integer accountId, String userId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.customer.B2BAccount> client = com.mozu.api.clients.commerce.customer.B2BAccountClient.addSalesRepToB2BAccountClient( accountId,  userId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -434,6 +601,82 @@ public class B2BAccountResource {
 	public com.mozu.api.contracts.customer.CustomerAttribute updateB2BAccountAttribute(com.mozu.api.contracts.customer.CustomerAttribute attribute, Integer accountId, String attributeFQN, String responseFields) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.customer.CustomerAttribute> client = com.mozu.api.clients.commerce.customer.B2BAccountClient.updateB2BAccountAttributeClient( attribute,  accountId,  attributeFQN,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	B2BAccount b2baccount = new B2BAccount();
+	 *	B2BAccount b2BAccount = b2baccount.updateSalesRepsOnB2BAccount( userIds,  accountId);
+	 * </code></pre></p>
+	 * @param accountId 
+	 * @param userIds 
+	 * @return com.mozu.api.contracts.customer.B2BAccount
+	 * @see com.mozu.api.contracts.customer.B2BAccount
+	 * @see string
+	 */
+	public com.mozu.api.contracts.customer.B2BAccount updateSalesRepsOnB2BAccount(List<String> userIds, Integer accountId) throws Exception
+	{
+		return updateSalesRepsOnB2BAccount( userIds,  accountId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	B2BAccount b2baccount = new B2BAccount();
+	 *	B2BAccount b2BAccount = b2baccount.updateSalesRepsOnB2BAccount( userIds,  accountId,  responseFields);
+	 * </code></pre></p>
+	 * @param accountId 
+	 * @param responseFields 
+	 * @param userIds 
+	 * @return com.mozu.api.contracts.customer.B2BAccount
+	 * @see com.mozu.api.contracts.customer.B2BAccount
+	 * @see string
+	 */
+	public com.mozu.api.contracts.customer.B2BAccount updateSalesRepsOnB2BAccount(List<String> userIds, Integer accountId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.customer.B2BAccount> client = com.mozu.api.clients.commerce.customer.B2BAccountClient.updateSalesRepsOnB2BAccountClient( userIds,  accountId,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	B2BAccount b2baccount = new B2BAccount();
+	 *	B2BAccount b2BAccount = b2baccount.updateB2BAccountStatus( accountId,  actionName);
+	 * </code></pre></p>
+	 * @param accountId 
+	 * @param actionName 
+	 * @return com.mozu.api.contracts.customer.B2BAccount
+	 * @see com.mozu.api.contracts.customer.B2BAccount
+	 */
+	public com.mozu.api.contracts.customer.B2BAccount updateB2BAccountStatus(Integer accountId, String actionName) throws Exception
+	{
+		return updateB2BAccountStatus( accountId,  actionName,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	B2BAccount b2baccount = new B2BAccount();
+	 *	B2BAccount b2BAccount = b2baccount.updateB2BAccountStatus( accountId,  actionName,  responseFields);
+	 * </code></pre></p>
+	 * @param accountId 
+	 * @param actionName 
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.customer.B2BAccount
+	 * @see com.mozu.api.contracts.customer.B2BAccount
+	 */
+	public com.mozu.api.contracts.customer.B2BAccount updateB2BAccountStatus(Integer accountId, String actionName, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.customer.B2BAccount> client = com.mozu.api.clients.commerce.customer.B2BAccountClient.updateB2BAccountStatusClient( accountId,  actionName,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -554,6 +797,26 @@ public class B2BAccountResource {
 	public java.io.InputStream deleteB2BAccountAttribute(Integer accountId, String attributeFQN) throws Exception
 	{
 		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.customer.B2BAccountClient.deleteB2BAccountAttributeClient( accountId,  attributeFQN);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	B2BAccount b2baccount = new B2BAccount();
+	 *	B2BAccount b2BAccount = b2baccount.removeSalesRepFromB2BAccount( accountId,  userId);
+	 * </code></pre></p>
+	 * @param accountId 
+	 * @param userId 
+	 * @return com.mozu.api.contracts.customer.B2BAccount
+	 * @see com.mozu.api.contracts.customer.B2BAccount
+	 */
+	public com.mozu.api.contracts.customer.B2BAccount removeSalesRepFromB2BAccount(Integer accountId, String userId) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.customer.B2BAccount> client = com.mozu.api.clients.commerce.customer.B2BAccountClient.removeSalesRepFromB2BAccountClient( accountId,  userId);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

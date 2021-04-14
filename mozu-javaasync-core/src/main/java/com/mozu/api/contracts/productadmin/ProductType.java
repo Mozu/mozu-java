@@ -133,5 +133,13 @@ public class ProductType implements Serializable
 		this.properties = properties;
 	}
 
+	protected List<AttributeInProductType> variantProperties;
+	public List<AttributeInProductType> getVariantProperties() {
+		return this.variantProperties;
+	}
+	public void setVariantProperties(List<AttributeInProductType> variantProperties) {
+		this.variantProperties = variantProperties;
+	}
+
 
 }

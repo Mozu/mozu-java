@@ -40,47 +40,47 @@ public class LocationGroupConfigurationResource {
 	 * 
 	 * <p><pre><code>
 	 *	LocationGroupConfiguration locationgroupconfiguration = new LocationGroupConfiguration();
-	 *	LocationGroupConfiguration locationGroupConfiguration = locationgroupconfiguration.getLocationGroupConfiguration( locationGroupId);
+	 *	LocationGroupConfiguration locationGroupConfiguration = locationgroupconfiguration.getLocationGroupConfiguration( locationGroupCode);
 	 * </code></pre></p>
-	 * @param locationGroupId 
+	 * @param locationGroupCode 
 	 * @return com.mozu.api.contracts.location.LocationGroupConfiguration
 	 * @see com.mozu.api.contracts.location.LocationGroupConfiguration
 	 */
-	public com.mozu.api.contracts.location.LocationGroupConfiguration getLocationGroupConfiguration(Integer locationGroupId) throws Exception
+	public com.mozu.api.contracts.location.LocationGroupConfiguration getLocationGroupConfiguration(String locationGroupCode) throws Exception
 	{
-		return getLocationGroupConfiguration( locationGroupId,  null);
+		return getLocationGroupConfiguration( locationGroupCode,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	LocationGroupConfiguration locationgroupconfiguration = new LocationGroupConfiguration();
-	 *	CountDownLatch latch = locationgroupconfiguration.getLocationGroupConfiguration( locationGroupId, callback );
+	 *	CountDownLatch latch = locationgroupconfiguration.getLocationGroupConfiguration( locationGroupCode, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param locationGroupId 
+	 * @param locationGroupCode 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.location.LocationGroupConfiguration
 	 * @see com.mozu.api.contracts.location.LocationGroupConfiguration
 	 */
-	public CountDownLatch getLocationGroupConfigurationAsync(Integer locationGroupId, AsyncCallback<com.mozu.api.contracts.location.LocationGroupConfiguration> callback) throws Exception
+	public CountDownLatch getLocationGroupConfigurationAsync(String locationGroupCode, AsyncCallback<com.mozu.api.contracts.location.LocationGroupConfiguration> callback) throws Exception
 	{
-		return getLocationGroupConfigurationAsync( locationGroupId,  null, callback);
+		return getLocationGroupConfigurationAsync( locationGroupCode,  null, callback);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	LocationGroupConfiguration locationgroupconfiguration = new LocationGroupConfiguration();
-	 *	LocationGroupConfiguration locationGroupConfiguration = locationgroupconfiguration.getLocationGroupConfiguration( locationGroupId,  responseFields);
+	 *	LocationGroupConfiguration locationGroupConfiguration = locationgroupconfiguration.getLocationGroupConfiguration( locationGroupCode,  responseFields);
 	 * </code></pre></p>
-	 * @param locationGroupId 
+	 * @param locationGroupCode 
 	 * @param responseFields 
 	 * @return com.mozu.api.contracts.location.LocationGroupConfiguration
 	 * @see com.mozu.api.contracts.location.LocationGroupConfiguration
 	 */
-	public com.mozu.api.contracts.location.LocationGroupConfiguration getLocationGroupConfiguration(Integer locationGroupId, String responseFields) throws Exception
+	public com.mozu.api.contracts.location.LocationGroupConfiguration getLocationGroupConfiguration(String locationGroupCode, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.location.LocationGroupConfiguration> client = com.mozu.api.clients.commerce.admin.LocationGroupConfigurationClient.getLocationGroupConfigurationClient( locationGroupId,  responseFields);
+		MozuClient<com.mozu.api.contracts.location.LocationGroupConfiguration> client = com.mozu.api.clients.commerce.admin.LocationGroupConfigurationClient.getLocationGroupConfigurationClient( locationGroupCode,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -91,17 +91,17 @@ public class LocationGroupConfigurationResource {
 	 * 
 	 * <p><pre><code>
 	 *	LocationGroupConfiguration locationgroupconfiguration = new LocationGroupConfiguration();
-	 *	CountDownLatch latch = locationgroupconfiguration.getLocationGroupConfiguration( locationGroupId,  responseFields, callback );
+	 *	CountDownLatch latch = locationgroupconfiguration.getLocationGroupConfiguration( locationGroupCode,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param locationGroupId 
+	 * @param locationGroupCode 
 	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.location.LocationGroupConfiguration
 	 * @see com.mozu.api.contracts.location.LocationGroupConfiguration
 	 */
-	public CountDownLatch getLocationGroupConfigurationAsync(Integer locationGroupId, String responseFields, AsyncCallback<com.mozu.api.contracts.location.LocationGroupConfiguration> callback) throws Exception
+	public CountDownLatch getLocationGroupConfigurationAsync(String locationGroupCode, String responseFields, AsyncCallback<com.mozu.api.contracts.location.LocationGroupConfiguration> callback) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.location.LocationGroupConfiguration> client = com.mozu.api.clients.commerce.admin.LocationGroupConfigurationClient.getLocationGroupConfigurationClient( locationGroupId,  responseFields);
+		MozuClient<com.mozu.api.contracts.location.LocationGroupConfiguration> client = com.mozu.api.clients.commerce.admin.LocationGroupConfigurationClient.getLocationGroupConfigurationClient( locationGroupCode,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 
@@ -182,53 +182,53 @@ public class LocationGroupConfigurationResource {
 	 * 
 	 * <p><pre><code>
 	 *	LocationGroupConfiguration locationgroupconfiguration = new LocationGroupConfiguration();
-	 *	LocationGroupConfiguration locationGroupConfiguration = locationgroupconfiguration.setLocationGroupConfiguration( configuration,  locationGroupId);
+	 *	LocationGroupConfiguration locationGroupConfiguration = locationgroupconfiguration.setLocationGroupConfiguration( configuration,  locationGroupCode);
 	 * </code></pre></p>
-	 * @param locationGroupId 
+	 * @param locationGroupCode 
 	 * @param configuration 
 	 * @return com.mozu.api.contracts.location.LocationGroupConfiguration
 	 * @see com.mozu.api.contracts.location.LocationGroupConfiguration
 	 * @see com.mozu.api.contracts.location.LocationGroupConfiguration
 	 */
-	public com.mozu.api.contracts.location.LocationGroupConfiguration setLocationGroupConfiguration(com.mozu.api.contracts.location.LocationGroupConfiguration configuration, Integer locationGroupId) throws Exception
+	public com.mozu.api.contracts.location.LocationGroupConfiguration setLocationGroupConfiguration(com.mozu.api.contracts.location.LocationGroupConfiguration configuration, String locationGroupCode) throws Exception
 	{
-		return setLocationGroupConfiguration( configuration,  locationGroupId,  null);
+		return setLocationGroupConfiguration( configuration,  locationGroupCode,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	LocationGroupConfiguration locationgroupconfiguration = new LocationGroupConfiguration();
-	 *	CountDownLatch latch = locationgroupconfiguration.setLocationGroupConfiguration( configuration,  locationGroupId, callback );
+	 *	CountDownLatch latch = locationgroupconfiguration.setLocationGroupConfiguration( configuration,  locationGroupCode, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param locationGroupId 
+	 * @param locationGroupCode 
 	 * @param  callback callback handler for asynchronous operations
 	 * @param configuration 
 	 * @return com.mozu.api.contracts.location.LocationGroupConfiguration
 	 * @see com.mozu.api.contracts.location.LocationGroupConfiguration
 	 * @see com.mozu.api.contracts.location.LocationGroupConfiguration
 	 */
-	public CountDownLatch setLocationGroupConfigurationAsync(com.mozu.api.contracts.location.LocationGroupConfiguration configuration, Integer locationGroupId, AsyncCallback<com.mozu.api.contracts.location.LocationGroupConfiguration> callback) throws Exception
+	public CountDownLatch setLocationGroupConfigurationAsync(com.mozu.api.contracts.location.LocationGroupConfiguration configuration, String locationGroupCode, AsyncCallback<com.mozu.api.contracts.location.LocationGroupConfiguration> callback) throws Exception
 	{
-		return setLocationGroupConfigurationAsync( configuration,  locationGroupId,  null, callback);
+		return setLocationGroupConfigurationAsync( configuration,  locationGroupCode,  null, callback);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	LocationGroupConfiguration locationgroupconfiguration = new LocationGroupConfiguration();
-	 *	LocationGroupConfiguration locationGroupConfiguration = locationgroupconfiguration.setLocationGroupConfiguration( configuration,  locationGroupId,  responseFields);
+	 *	LocationGroupConfiguration locationGroupConfiguration = locationgroupconfiguration.setLocationGroupConfiguration( configuration,  locationGroupCode,  responseFields);
 	 * </code></pre></p>
-	 * @param locationGroupId 
+	 * @param locationGroupCode 
 	 * @param responseFields 
 	 * @param configuration 
 	 * @return com.mozu.api.contracts.location.LocationGroupConfiguration
 	 * @see com.mozu.api.contracts.location.LocationGroupConfiguration
 	 * @see com.mozu.api.contracts.location.LocationGroupConfiguration
 	 */
-	public com.mozu.api.contracts.location.LocationGroupConfiguration setLocationGroupConfiguration(com.mozu.api.contracts.location.LocationGroupConfiguration configuration, Integer locationGroupId, String responseFields) throws Exception
+	public com.mozu.api.contracts.location.LocationGroupConfiguration setLocationGroupConfiguration(com.mozu.api.contracts.location.LocationGroupConfiguration configuration, String locationGroupCode, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.location.LocationGroupConfiguration> client = com.mozu.api.clients.commerce.admin.LocationGroupConfigurationClient.setLocationGroupConfigurationClient( configuration,  locationGroupId,  responseFields);
+		MozuClient<com.mozu.api.contracts.location.LocationGroupConfiguration> client = com.mozu.api.clients.commerce.admin.LocationGroupConfigurationClient.setLocationGroupConfigurationClient( configuration,  locationGroupCode,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -239,9 +239,9 @@ public class LocationGroupConfigurationResource {
 	 * 
 	 * <p><pre><code>
 	 *	LocationGroupConfiguration locationgroupconfiguration = new LocationGroupConfiguration();
-	 *	CountDownLatch latch = locationgroupconfiguration.setLocationGroupConfiguration( configuration,  locationGroupId,  responseFields, callback );
+	 *	CountDownLatch latch = locationgroupconfiguration.setLocationGroupConfiguration( configuration,  locationGroupCode,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param locationGroupId 
+	 * @param locationGroupCode 
 	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @param configuration 
@@ -249,9 +249,9 @@ public class LocationGroupConfigurationResource {
 	 * @see com.mozu.api.contracts.location.LocationGroupConfiguration
 	 * @see com.mozu.api.contracts.location.LocationGroupConfiguration
 	 */
-	public CountDownLatch setLocationGroupConfigurationAsync(com.mozu.api.contracts.location.LocationGroupConfiguration configuration, Integer locationGroupId, String responseFields, AsyncCallback<com.mozu.api.contracts.location.LocationGroupConfiguration> callback) throws Exception
+	public CountDownLatch setLocationGroupConfigurationAsync(com.mozu.api.contracts.location.LocationGroupConfiguration configuration, String locationGroupCode, String responseFields, AsyncCallback<com.mozu.api.contracts.location.LocationGroupConfiguration> callback) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.location.LocationGroupConfiguration> client = com.mozu.api.clients.commerce.admin.LocationGroupConfigurationClient.setLocationGroupConfigurationClient( configuration,  locationGroupId,  responseFields);
+		MozuClient<com.mozu.api.contracts.location.LocationGroupConfiguration> client = com.mozu.api.clients.commerce.admin.LocationGroupConfigurationClient.setLocationGroupConfigurationClient( configuration,  locationGroupCode,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 

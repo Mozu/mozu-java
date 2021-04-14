@@ -22,6 +22,16 @@ public class RegularHours implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected  String timeZone;
+
+	public String getTimeZone() {
+		return this.timeZone;
+	}
+
+	public void setTimeZone(String timeZone) {
+		this.timeZone = timeZone;
+	}
+
 	protected  Hours friday;
 
 	public Hours getFriday() {
