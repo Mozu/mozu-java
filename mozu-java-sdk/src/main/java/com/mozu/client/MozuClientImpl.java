@@ -155,7 +155,8 @@ public class MozuClientImpl<TResult> implements MozuClient<TResult> {
             if (responseType != null) {
                 String className = responseType.getName();
                 if (className.equals(java.io.InputStream.class.getName())) {
-                    tResult = (TResult) httpResponseMessage.getEntity().getContent();
+                    HttpEntity entity = httpResponseMessage.getEntity();
+                    tResult = (entity != null) ? (TResult) entity.getContent() : null;
                 } else {
                 	
                 	
