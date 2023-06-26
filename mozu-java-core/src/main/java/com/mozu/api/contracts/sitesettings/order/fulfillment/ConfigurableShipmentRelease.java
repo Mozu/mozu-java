@@ -44,7 +44,7 @@ public class ConfigurableShipmentRelease implements Serializable
 	}
 
 	public void setReserveInventoryOnOrderPendingShipment(Boolean reserveInventoryOnOrderPendingShipment) {
-		this.cancellation = cancellation;
+		this.reserveInventoryOnOrderPendingShipment = reserveInventoryOnOrderPendingShipment;
 	}
 
 
