@@ -93,5 +93,14 @@ public class FulfillmentSettings implements Serializable
 		this.shipToStore = shipToStore;
 	}
 
+	protected ConfigurableShipmentRelease configurableShipmentRelease;
+
+	public ConfigurableShipmentRelease getConfigurableShipmentRelease() {
+		return this.configurableShipmentRelease;
+	}
+
+	public void setConfigurableShipmentRelease(ConfigurableShipmentRelease configurableShipmentRelease) {
+		this.configurableShipmentRelease = configurableShipmentRelease;
+	}
 
 }
